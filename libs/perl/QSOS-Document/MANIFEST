@@ -1,0 +1,11 @@
+Makefile.PL
+Changes
+Makefile.old
+lib/QSOS/Document.pm
+README
+t/0_common.t
+t/qsos.xml
+t/qsos2.xml
+MANIFEST
+Makefile
+LICENSE
