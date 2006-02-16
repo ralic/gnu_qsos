@@ -1,0 +1,1560 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg
+   xmlns:v="http://schemas.microsoft.com/visio/2003/SVGExtensions/"
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://web.resource.org/cc/"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://inkscape.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="13.3858in"
+   height="8.26772in"
+   viewBox="0 0 963.78 595.276"
+   xml:space="preserve"
+   color-interpolation-filters="sRGB"
+   class="st18"
+   id="svg1306"
+   sodipodi:version="0.32"
+   inkscape:version="0.43"
+   sodipodi:docname="QSOS-process.svg"
+   sodipodi:docbase="/home/raph/Desktop/QSOS Schémas"><metadata
+   id="metadata1586"><rdf:RDF><cc:Work
+       rdf:about=""><dc:format>image/svg+xml</dc:format><dc:type
+         rdf:resource="http://purl.org/dc/dcmitype/StillImage" /></cc:Work></rdf:RDF></metadata><sodipodi:namedview
+   inkscape:window-height="688"
+   inkscape:window-width="1014"
+   inkscape:pageshadow="2"
+   inkscape:pageopacity="0.0"
+   borderopacity="1.0"
+   bordercolor="#666666"
+   pagecolor="#ffffff"
+   id="base"
+   inkscape:zoom="0.46230665"
+   inkscape:cx="602.36102"
+   inkscape:cy="372.04742"
+   inkscape:window-x="0"
+   inkscape:window-y="0"
+   inkscape:current-layer="svg1306" />
+	<v:documentProperties
+   v:langID="1036"
+   v:metric="true"
+   v:viewMarkup="false" />
+
+	<style
+   type="text/css"
+   id="style1308">
+	
+		.st1 {fill:url(#grad36-4);stroke:#b2b2b2;stroke-linecap:round;stroke-linejoin:round;stroke-width:2.16}
+		.st2 {fill:url(#grad36-8);stroke:#b2b2b2;stroke-linecap:round;stroke-linejoin:round;stroke-width:2.16}
+		.st3 {fill:url(#grad36-21);stroke:#86bc44;stroke-linecap:round;stroke-linejoin:round;stroke-width:2.16}
+		.st4 {fill:#ffffff;font-family:Arial;font-size:1.66667em;font-weight:bold}
+		.st5 {fill:url(#grad40-38);stroke:#ff9900;stroke-linecap:round;stroke-linejoin:round;stroke-width:2.16}
+		.st6 {fill:#000000;font-family:Arial;font-size:1.5em}
+		.st7 {font-size:1em}
+		.st8 {fill:url(#grad36-4)}
+		.st9 {stroke:#ff9900;stroke-linecap:round;stroke-linejoin:round;stroke-width:2.16}
+		.st10 {fill:url(#grad36-4);stroke:#ff9900;stroke-linecap:round;stroke-linejoin:round;stroke-width:2.16;visibility:hidden}
+		.st11 {fill:none;stroke:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.72}
+		.st12 {fill:#333333;font-family:Arial;font-size:1.16666em;font-style:italic}
+		.st13 {stroke:#517aff;stroke-linecap:round;stroke-linejoin:round;stroke-width:2.16}
+		.st14 {fill:url(#grad36-4);stroke:#517aff;stroke-linecap:round;stroke-linejoin:round;stroke-width:2.16;visibility:hidden}
+		.st15 {fill:url(#grad36-91);stroke:#517aff;stroke-linecap:round;stroke-linejoin:round;stroke-width:2.16}
+		.st16 {fill:#ffffff;font-family:Arial;font-size:1.5em;font-style:italic;font-weight:bold}
+		.st17 {fill:url(#grad40-38);stroke:#c0c0c0;stroke-linecap:round;stroke-linejoin:round;stroke-width:2.16}
+		.st18 {fill:none;fill-rule:evenodd;font-size:12;overflow:visible;stroke-linecap:square;stroke-miterlimit:3}
+	
+	</style>
+
+	<defs
+   id="Patterns_And_Gradients">
+		<radialGradient
+   id="grad36-4"
+   v:fillPattern="36"
+   v:foreground="#d9d9d9"
+   v:background="#ffffff"
+   cx="0"
+   cy="0"
+   r="1">
+			<stop
+   offset="0"
+   style="stop-color:#d9d9d9;stop-opacity:1"
+   id="stop1312" />
+			<stop
+   offset="1"
+   style="stop-color:#ffffff;stop-opacity:1"
+   id="stop1314" />
+		</radialGradient>
+		<radialGradient
+   id="grad36-8"
+   v:fillPattern="36"
+   v:foreground="#d9d9d9"
+   v:background="#b2b2b2"
+   cx="0"
+   cy="0"
+   r="1">
+			<stop
+   offset="0"
+   style="stop-color:#d9d9d9;stop-opacity:1"
+   id="stop1317" />
+			<stop
+   offset="1"
+   style="stop-color:#b2b2b2;stop-opacity:1"
+   id="stop1319" />
+		</radialGradient>
+		<radialGradient
+   id="grad36-21"
+   v:fillPattern="36"
+   v:foreground="#c7dfa8"
+   v:background="#86bc44"
+   cx="0"
+   cy="0"
+   r="1">
+			<stop
+   offset="0"
+   style="stop-color:#c7dfa8;stop-opacity:1"
+   id="stop1322" />
+			<stop
+   offset="1"
+   style="stop-color:#86bc44;stop-opacity:1"
+   id="stop1324" />
+		</radialGradient>
+		<radialGradient
+   id="grad40-38"
+   v:fillPattern="40"
+   v:foreground="#ffffff"
+   v:background="#eaeaea"
+   cx="0.5"
+   cy="0.5"
+   r="0.5">
+			<stop
+   offset="0"
+   style="stop-color:#ffffff;stop-opacity:1"
+   id="stop1327" />
+			<stop
+   offset="1"
+   style="stop-color:#eaeaea;stop-opacity:1"
+   id="stop1329" />
+		</radialGradient>
+		<radialGradient
+   id="grad36-91"
+   v:fillPattern="36"
+   v:foreground="#c1cfff"
+   v:background="#517aff"
+   cx="0"
+   cy="0"
+   r="1">
+			<stop
+   offset="0"
+   style="stop-color:#c1cfff;stop-opacity:1"
+   id="stop1332" />
+			<stop
+   offset="1"
+   style="stop-color:#517aff;stop-opacity:1"
+   id="stop1334" />
+		</radialGradient>
+	
+		<title
+   id="title1338">Page-1</title>
+		<v:pageProperties
+   v:shadowOffsetY="-8.50394"
+   v:shadowOffsetX="8.50394"
+   v:drawingUnits="24"
+   v:pageScale="0.0393701"
+   v:drawingScale="0.0393701" />
+		<v:layer
+   v:index="0"
+   v:name="Réseau" />
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	
+			<title
+   id="title1575">Feuille.36</title>
+			<desc
+   id="desc1577">Pondération de critères</desc>
+			<v:textBlock
+   v:margins="rect(4,4,4,4)"
+   v:tabSpace="42.5197" />
+			<v:textRect
+   cx="56.6929"
+   cy="571.181"
+   width="113.39"
+   height="48.189" />
+			
+					
+			<title
+   id="title1564">Internet / Intranet.35</title>
+			<desc
+   id="desc1566">Contexte d’évaluation</desc>
+			<v:custProps>
+				<v:cp
+   v:nameU="Manufacturer"
+   v:lbl="Fabricant"
+   v:prompt="Entrer le nom du fabricant."
+   v:type="0"
+   v:sortKey="1"
+   v:invis="false"
+   v:ask="false"
+   v:langID="1036"
+   v:val="VT4()" />
+				<v:cp
+   v:nameU="ProductNumber"
+   v:lbl="N° de produit"
+   v:prompt="Entrer le n° de produit."
+   v:type="0"
+   v:sortKey="1"
+   v:invis="false"
+   v:ask="false"
+   v:langID="1036"
+   v:val="VT4()" />
+				<v:cp
+   v:nameU="PartNumber"
+   v:lbl="Référence"
+   v:prompt="Entrer le n° de référence."
+   v:type="0"
+   v:sortKey="1"
+   v:invis="false"
+   v:ask="false"
+   v:langID="1036"
+   v:val="VT4()" />
+				<v:cp
+   v:nameU="ProductDescription"
+   v:lbl="Description du produit"
+   v:prompt="Entrer la description du produit."
+   v:type="0"
+   v:sortKey="1"
+   v:invis="false"
+   v:ask="false"
+   v:langID="1036"
+   v:val="VT4()" />
+				<v:cp
+   v:nameU="AssetNumber"
+   v:lbl="N° d'inventaire"
+   v:prompt="Entrer le n° d'inventaire."
+   v:type="0"
+   v:sortKey="1"
+   v:invis="false"
+   v:ask="false"
+   v:langID="1036"
+   v:val="VT4()" />
+				<v:cp
+   v:nameU="SerialNumber"
+   v:lbl="N° de série"
+   v:prompt="Entrer le n° de série."
+   v:type="0"
+   v:sortKey="1"
+   v:invis="false"
+   v:ask="false"
+   v:langID="1036"
+   v:val="VT4()" />
+				<v:cp
+   v:nameU="Location"
+   v:lbl="Emplacement"
+   v:prompt="Entrer l'emplacement."
+   v:type="0"
+   v:sortKey="1"
+   v:invis="false"
+   v:ask="false"
+   v:langID="1036"
+   v:val="VT4()" />
+				<v:cp
+   v:nameU="Building"
+   v:lbl="Bâtiment"
+   v:prompt="Entrer le bâtiment."
+   v:type="0"
+   v:sortKey="1"
+   v:invis="false"
+   v:ask="false"
+   v:langID="1036"
+   v:val="VT4()" />
+				<v:cp
+   v:nameU="Room"
+   v:lbl="Salle"
+   v:prompt="Entrer la salle."
+   v:type="0"
+   v:sortKey="1"
+   v:invis="false"
+   v:ask="false"
+   v:langID="1036"
+   v:val="VT4()" />
+				<v:cp
+   v:nameU="Department"
+   v:lbl="Service"
+   v:prompt="Entrer le service."
+   v:type="0"
+   v:sortKey="1"
+   v:invis="false"
+   v:ask="false"
+   v:langID="1036"
+   v:val="VT4()" />
+			</v:custProps>
+			<v:textBlock
+   v:margins="rect(4,4,4,4)"
+   v:tabSpace="42.5197" />
+			<v:textRect
+   cx="67.2047"
+   cy="555.591"
+   width="134.41"
+   height="79.3701" />
+			
+					<radialGradient
+   inkscape:collect="always"
+   xlink:href="#grad40-38"
+   id="radialGradient1790"
+   gradientUnits="userSpaceOnUse"
+   gradientTransform="matrix(1.294235,0.000000,0.000000,0.772657,755.6690,-56.69290)"
+   cx="51.926437"
+   cy="719.06390"
+   fx="51.926437"
+   fy="719.06390"
+   r="52.760907" /><radialGradient
+   inkscape:collect="always"
+   xlink:href="#grad36-4"
+   id="radialGradient1792"
+   gradientUnits="userSpaceOnUse"
+   gradientTransform="scale(1.247197,0.801798)"
+   cx="0.00000000"
+   cy="692.43125"
+   fx="0.00000000"
+   fy="692.43125"
+   r="50.000124" />
+			<v:userDefs>
+				<v:ud
+   v:nameU="visVersion"
+   v:val="VT0(11):26" />
+			</v:userDefs>
+			<title
+   id="title1543">1-D single.31</title>
+			
+			
+			
+			
+		<radialGradient
+   inkscape:collect="always"
+   xlink:href="#grad36-4"
+   id="radialGradient1808"
+   gradientUnits="userSpaceOnUse"
+   gradientTransform="scale(1.189146,0.840940)"
+   cx="0.00000000"
+   cy="660.20200"
+   fx="0.00000000"
+   fy="660.20200"
+   r="47.672865" /><radialGradient
+   inkscape:collect="always"
+   xlink:href="#grad36-4"
+   id="radialGradient1810"
+   gradientUnits="userSpaceOnUse"
+   gradientTransform="scale(0.336787,2.969237)"
+   cx="-3.2067765"
+   cy="193.48099"
+   fx="-3.2067765"
+   fy="193.48099"
+   r="7.3637089" />
+			<v:userDefs>
+				<v:ud
+   v:nameU="visVersion"
+   v:val="VT0(11):26" />
+			</v:userDefs>
+			<title
+   id="title1522">1-D single.27</title>
+			
+			
+			
+			
+		
+			<title
+   id="title1511">Circle.26</title>
+			<desc
+   id="desc1513">Grille de choix</desc>
+			<v:userDefs>
+				<v:ud
+   v:nameU="visVersion"
+   v:val="VT0(11):26" />
+			</v:userDefs>
+			<v:textBlock
+   v:margins="rect(4,4,4,4)"
+   v:tabSpace="42.5197" />
+			<v:textRect
+   cx="59.5276"
+   cy="557.008"
+   width="119.06"
+   height="76.5354" />
+			
+					<radialGradient
+   inkscape:collect="always"
+   xlink:href="#grad36-91"
+   id="radialGradient1831"
+   gradientUnits="userSpaceOnUse"
+   gradientTransform="matrix(1.241092,0.000000,0.000000,0.805742,68.03150,-58.11020)"
+   cx="-0.87020149"
+   cy="642.46459"
+   fx="-0.87020149"
+   fy="642.46459"
+   r="97.672056" />
+			<title
+   id="title1498">Circle</title>
+			<desc
+   id="desc1500">Fiche d’identité Fiche d’évaluation</desc>
+			<v:userDefs>
+				<v:ud
+   v:nameU="visVersion"
+   v:val="VT0(11):26" />
+			</v:userDefs>
+			<v:textBlock
+   v:margins="rect(4,4,4,4)"
+   v:tabSpace="42.5197" />
+			<v:textRect
+   cx="85.0394"
+   cy="554.173"
+   width="170.08"
+   height="82.2047" />
+			
+					<radialGradient
+   inkscape:collect="always"
+   xlink:href="#grad36-91"
+   id="radialGradient1841"
+   gradientUnits="userSpaceOnUse"
+   gradientTransform="matrix(1.428844,0.000000,0.000000,0.699866,748.3460,-320.3150)"
+   cx="-0.75585571"
+   cy="731.55010"
+   fx="-0.75585571"
+   fy="731.55010"
+   r="120.54498" /><radialGradient
+   inkscape:collect="always"
+   xlink:href="#grad36-4"
+   id="radialGradient1843"
+   gradientUnits="userSpaceOnUse"
+   gradientTransform="scale(1.189146,0.840940)"
+   cx="0.00000000"
+   cy="660.20200"
+   fx="0.00000000"
+   fy="660.20200"
+   r="47.672865" /><radialGradient
+   inkscape:collect="always"
+   xlink:href="#grad36-4"
+   id="radialGradient1845"
+   gradientUnits="userSpaceOnUse"
+   gradientTransform="scale(0.336787,2.969237)"
+   cx="-3.2067765"
+   cy="193.48099"
+   fx="-3.2067765"
+   fy="193.48099"
+   r="7.3637089" />
+			<v:userDefs>
+				<v:ud
+   v:nameU="visVersion"
+   v:val="VT0(11):26" />
+			</v:userDefs>
+			<title
+   id="title1477">1-D single.21</title>
+			
+			
+			
+			
+		
+			<title
+   id="title1466">Feuille.20</title>
+			<desc
+   id="desc1468">Analyse de projets / produits</desc>
+			<v:textBlock
+   v:margins="rect(4,4,4,4)"
+   v:tabSpace="42.5197" />
+			<v:textRect
+   cx="56.6929"
+   cy="571.181"
+   width="113.39"
+   height="48.189" />
+			
+					
+			<title
+   id="title1455">Feuille.19</title>
+			<desc
+   id="desc1457">Constitution de référentiels</desc>
+			<v:textBlock
+   v:margins="rect(4,4,4,4)"
+   v:tabSpace="42.5197" />
+			<v:textRect
+   cx="56.6929"
+   cy="571.181"
+   width="113.39"
+   height="48.189" />
+			
+					<radialGradient
+   inkscape:collect="always"
+   xlink:href="#grad36-4"
+   id="radialGradient1869"
+   gradientUnits="userSpaceOnUse"
+   gradientTransform="scale(1.383724,0.722688)"
+   cx="0.00000000"
+   cy="768.22969"
+   fx="0.00000000"
+   fy="768.22969"
+   r="55.473493" /><radialGradient
+   inkscape:collect="always"
+   xlink:href="#grad36-4"
+   id="radialGradient1871"
+   gradientUnits="userSpaceOnUse"
+   gradientTransform="scale(0.344393,2.903656)"
+   cx="-3.1359490"
+   cy="197.85089"
+   fx="-3.1359490"
+   fy="197.85089"
+   r="7.5300232" />
+			<v:userDefs>
+				<v:ud
+   v:nameU="visVersion"
+   v:val="VT0(11):26" />
+			</v:userDefs>
+			<title
+   id="title1434">1-D single.15</title>
+			
+			
+			
+			
+		<radialGradient
+   inkscape:collect="always"
+   xlink:href="#grad36-4"
+   id="radialGradient1885"
+   gradientUnits="userSpaceOnUse"
+   gradientTransform="scale(1.379843,0.724720)"
+   cx="0.00000000"
+   cy="766.07491"
+   fx="0.00000000"
+   fy="766.07491"
+   r="55.317897" /><radialGradient
+   inkscape:collect="always"
+   xlink:href="#grad36-4"
+   id="radialGradient1887"
+   gradientUnits="userSpaceOnUse"
+   gradientTransform="scale(0.344229,2.905044)"
+   cx="-3.1374477"
+   cy="197.75638"
+   fx="-3.1374477"
+   fy="197.75638"
+   r="7.5264262" />
+			<v:userDefs>
+				<v:ud
+   v:nameU="visVersion"
+   v:val="VT0(11):26" />
+			</v:userDefs>
+			<title
+   id="title1413">1-D single</title>
+			
+			
+			
+			
+		
+			<title
+   id="title1402">Internet / Intranet</title>
+			<desc
+   id="desc1404">Communauté Open Source</desc>
+			<v:custProps>
+				<v:cp
+   v:nameU="Manufacturer"
+   v:lbl="Fabricant"
+   v:prompt="Entrer le nom du fabricant."
+   v:type="0"
+   v:sortKey="1"
+   v:invis="false"
+   v:ask="false"
+   v:langID="1036"
+   v:val="VT4()" />
+				<v:cp
+   v:nameU="ProductNumber"
+   v:lbl="N° de produit"
+   v:prompt="Entrer le n° de produit."
+   v:type="0"
+   v:sortKey="1"
+   v:invis="false"
+   v:ask="false"
+   v:langID="1036"
+   v:val="VT4()" />
+				<v:cp
+   v:nameU="PartNumber"
+   v:lbl="Référence"
+   v:prompt="Entrer le n° de référence."
+   v:type="0"
+   v:sortKey="1"
+   v:invis="false"
+   v:ask="false"
+   v:langID="1036"
+   v:val="VT4()" />
+				<v:cp
+   v:nameU="ProductDescription"
+   v:lbl="Description du produit"
+   v:prompt="Entrer la description du produit."
+   v:type="0"
+   v:sortKey="1"
+   v:invis="false"
+   v:ask="false"
+   v:langID="1036"
+   v:val="VT4()" />
+				<v:cp
+   v:nameU="AssetNumber"
+   v:lbl="N° d'inventaire"
+   v:prompt="Entrer le n° d'inventaire."
+   v:type="0"
+   v:sortKey="1"
+   v:invis="false"
+   v:ask="false"
+   v:langID="1036"
+   v:val="VT4()" />
+				<v:cp
+   v:nameU="SerialNumber"
+   v:lbl="N° de série"
+   v:prompt="Entrer le n° de série."
+   v:type="0"
+   v:sortKey="1"
+   v:invis="false"
+   v:ask="false"
+   v:langID="1036"
+   v:val="VT4()" />
+				<v:cp
+   v:nameU="Location"
+   v:lbl="Emplacement"
+   v:prompt="Entrer l'emplacement."
+   v:type="0"
+   v:sortKey="1"
+   v:invis="false"
+   v:ask="false"
+   v:langID="1036"
+   v:val="VT4()" />
+				<v:cp
+   v:nameU="Building"
+   v:lbl="Bâtiment"
+   v:prompt="Entrer le bâtiment."
+   v:type="0"
+   v:sortKey="1"
+   v:invis="false"
+   v:ask="false"
+   v:langID="1036"
+   v:val="VT4()" />
+				<v:cp
+   v:nameU="Room"
+   v:lbl="Salle"
+   v:prompt="Entrer la salle."
+   v:type="0"
+   v:sortKey="1"
+   v:invis="false"
+   v:ask="false"
+   v:langID="1036"
+   v:val="VT4()" />
+				<v:cp
+   v:nameU="Department"
+   v:lbl="Service"
+   v:prompt="Entrer le service."
+   v:type="0"
+   v:sortKey="1"
+   v:invis="false"
+   v:ask="false"
+   v:langID="1036"
+   v:val="VT4()" />
+			</v:custProps>
+			<v:textBlock
+   v:margins="rect(4,4,4,4)"
+   v:tabSpace="42.5197" />
+			<v:textRect
+   cx="101.339"
+   cy="548.504"
+   width="202.68"
+   height="93.5433" />
+			
+					<radialGradient
+   inkscape:collect="always"
+   xlink:href="#grad40-38"
+   id="radialGradient1908"
+   gradientUnits="userSpaceOnUse"
+   gradientTransform="matrix(1.462969,0.000000,0.000000,0.683542,363.5430,-481.8900)"
+   cx="69.270110"
+   cy="802.44562"
+   fx="69.270110"
+   fy="802.44562"
+   r="70.008336" />
+			<title
+   id="title1393">Box.9</title>
+			<desc
+   id="desc1395">Sélectionner</desc>
+			<v:userDefs>
+				<v:ud
+   v:nameU="visVersion"
+   v:val="VT0(11):26" />
+			</v:userDefs>
+			<v:textBlock
+   v:margins="rect(4,0,4,0)"
+   v:tabSpace="42.5197" />
+			<v:textRect
+   cx="60.9449"
+   cy="552.756"
+   width="121.89"
+   height="85.0394" />
+			
+					<radialGradient
+   inkscape:collect="always"
+   xlink:href="#grad36-21"
+   id="radialGradient1916"
+   gradientUnits="userSpaceOnUse"
+   gradientTransform="matrix(1.192729,0.000000,0.000000,0.838414,255.1180,-53.85830)"
+   cx="-0.90548682"
+   cy="607.28492"
+   fx="-0.90548682"
+   fy="607.28492"
+   r="104.00522" />
+			<title
+   id="title1384">Box.8</title>
+			<desc
+   id="desc1386">Qualifier</desc>
+			<v:userDefs>
+				<v:ud
+   v:nameU="visVersion"
+   v:val="VT0(11):26" />
+			</v:userDefs>
+			<v:textBlock
+   v:margins="rect(4,4,4,4)"
+   v:tabSpace="42.5197" />
+			<v:textRect
+   cx="62.3622"
+   cy="552.756"
+   width="124.73"
+   height="85.0394" />
+			
+					<radialGradient
+   inkscape:collect="always"
+   xlink:href="#grad36-21"
+   id="radialGradient1924"
+   gradientUnits="userSpaceOnUse"
+   gradientTransform="matrix(1.206276,0.000000,0.000000,0.828998,555.5910,-53.85830)"
+   cx="-0.89531753"
+   cy="614.18265"
+   fx="-0.89531753"
+   fy="614.18265"
+   r="105.18654" />
+			<title
+   id="title1375">Box.7</title>
+			<desc
+   id="desc1377">Evaluer</desc>
+			<v:userDefs>
+				<v:ud
+   v:nameU="visVersion"
+   v:val="VT0(11):26" />
+			</v:userDefs>
+			<v:textBlock
+   v:margins="rect(4,4,4,4)"
+   v:tabSpace="42.5197" />
+			<v:textRect
+   cx="62.3622"
+   cy="552.756"
+   width="124.73"
+   height="85.0394" />
+			
+					<radialGradient
+   inkscape:collect="always"
+   xlink:href="#grad36-21"
+   id="radialGradient1932"
+   gradientUnits="userSpaceOnUse"
+   gradientTransform="matrix(1.206276,0.000000,0.000000,0.828998,555.5910,-317.4800)"
+   cx="-0.89531753"
+   cy="614.18265"
+   fx="-0.89531753"
+   fy="614.18265"
+   r="105.18654" />
+			<title
+   id="title1366">Box</title>
+			<desc
+   id="desc1368">Définir</desc>
+			<v:userDefs>
+				<v:ud
+   v:nameU="visVersion"
+   v:val="VT0(11):26" />
+			</v:userDefs>
+			<v:textBlock
+   v:margins="rect(4,4,4,4)"
+   v:tabSpace="42.5197" />
+			<v:textRect
+   cx="60.9449"
+   cy="552.756"
+   width="121.89"
+   height="85.0394" />
+			
+					<radialGradient
+   inkscape:collect="always"
+   xlink:href="#grad36-21"
+   id="radialGradient1940"
+   gradientUnits="userSpaceOnUse"
+   gradientTransform="matrix(1.192729,0.000000,0.000000,0.838414,255.1180,-317.4800)"
+   cx="-0.90548682"
+   cy="607.28492"
+   fx="-0.90548682"
+   fy="607.28492"
+   r="104.00522" />
+			<title
+   id="title1361">Curved arrow.5</title>
+			<v:userDefs>
+				<v:ud
+   v:nameU="visVersion"
+   v:val="VT0(11):26" />
+			</v:userDefs>
+			
+		<radialGradient
+   inkscape:collect="always"
+   xlink:href="#grad36-8"
+   id="radialGradient1946"
+   gradientUnits="userSpaceOnUse"
+   gradientTransform="matrix(-0.628089,-1.087881,0.689413,-0.398033,-150.6420,733.6330)"
+   cx="-0.85975122"
+   cy="708.63479"
+   fx="-0.85975122"
+   fy="708.63479"
+   r="120.49254" />
+			<title
+   id="title1356">Curved arrow.4</title>
+			<v:userDefs>
+				<v:ud
+   v:nameU="visVersion"
+   v:val="VT0(11):26" />
+			</v:userDefs>
+			
+		<radialGradient
+   inkscape:collect="always"
+   xlink:href="#grad36-8"
+   id="radialGradient1952"
+   gradientUnits="userSpaceOnUse"
+   gradientTransform="matrix(0.628089,1.087881,-0.689413,0.398033,1083.410,0.540654)"
+   cx="-0.85975122"
+   cy="708.63479"
+   fx="-0.85975122"
+   fy="708.63479"
+   r="120.49254" />
+			<title
+   id="title1351">Curved arrow.3</title>
+			<v:userDefs>
+				<v:ud
+   v:nameU="visVersion"
+   v:val="VT0(11):26" />
+			</v:userDefs>
+			
+		<radialGradient
+   inkscape:collect="always"
+   xlink:href="#grad36-8"
+   id="radialGradient1958"
+   gradientUnits="userSpaceOnUse"
+   gradientTransform="matrix(-1.087881,0.628089,-0.398033,-0.689413,832.5230,987.0330)"
+   cx="-0.85975122"
+   cy="708.63479"
+   fx="-0.85975122"
+   fy="708.63479"
+   r="120.49254" />
+			<title
+   id="title1346">Curved arrow</title>
+			<v:userDefs>
+				<v:ud
+   v:nameU="visVersion"
+   v:val="VT0(11):26" />
+			</v:userDefs>
+			
+		<radialGradient
+   inkscape:collect="always"
+   xlink:href="#grad36-8"
+   id="radialGradient1964"
+   gradientUnits="userSpaceOnUse"
+   gradientTransform="matrix(1.087881,-0.628089,0.398033,0.689413,100.0750,-247.0200)"
+   cx="-0.85975122"
+   cy="708.63479"
+   fx="-0.85975122"
+   fy="708.63479"
+   r="120.49254" />
+			<title
+   id="title1341">Concentric layer 1</title>
+			<v:userDefs>
+				<v:ud
+   v:nameU="ControlX"
+   v:val="VT0(0.78740157):1" />
+				<v:ud
+   v:nameU="Scale"
+   v:val="VT0(1):26" />
+				<v:ud
+   v:nameU="AntiScale"
+   v:val="VT0(1):26" />
+				<v:ud
+   v:nameU="visVersion"
+   v:val="VT0(11):26" />
+			</v:userDefs>
+			<v:textBlock
+   v:margins="rect(4,4,4,4)"
+   v:tabSpace="42.5197" />
+			
+		<radialGradient
+   inkscape:collect="always"
+   xlink:href="#grad36-4"
+   id="radialGradient1970"
+   gradientUnits="userSpaceOnUse"
+   cx="-1.0800000"
+   cy="254.04000"
+   fx="-1.0800000"
+   fy="254.04000"
+   r="342.32000"
+   gradientTransform="translate(294.8030,-56.69290)" /><linearGradient
+   inkscape:collect="always"
+   xlink:href="#grad40-38"
+   id="linearGradient2870"
+   x1="-1.0800000"
+   y1="575.23499"
+   x2="77.410004"
+   y2="575.23499"
+   gradientUnits="userSpaceOnUse" /><linearGradient
+   inkscape:collect="always"
+   xlink:href="#grad40-38"
+   id="linearGradient3604"
+   x1="-1.0800000"
+   y1="575.23499"
+   x2="77.839996"
+   y2="575.23499"
+   gradientUnits="userSpaceOnUse" /><linearGradient
+   inkscape:collect="always"
+   xlink:href="#grad40-38"
+   id="linearGradient4338"
+   x1="-1.0800000"
+   y1="575.23499"
+   x2="57.770000"
+   y2="575.23499"
+   gradientUnits="userSpaceOnUse" /><linearGradient
+   inkscape:collect="always"
+   xlink:href="#grad40-38"
+   id="linearGradient5072"
+   x1="-1.0800000"
+   y1="585.42328"
+   x2="1.4320000"
+   y2="585.42328"
+   gradientUnits="userSpaceOnUse" /><linearGradient
+   inkscape:collect="always"
+   xlink:href="#grad40-38"
+   id="linearGradient5806"
+   x1="-1.0800000"
+   y1="575.23499"
+   x2="57.770000"
+   y2="575.23499"
+   gradientUnits="userSpaceOnUse" /><linearGradient
+   inkscape:collect="always"
+   xlink:href="#grad40-38"
+   id="linearGradient6540"
+   x1="-1.0800000"
+   y1="575.23499"
+   x2="63.439999"
+   y2="575.23499"
+   gradientUnits="userSpaceOnUse" /></defs>
+	<g
+   id="shape11-53"
+   v:mID="11"
+   v:groupContext="groupContent"
+   transform="matrix(-0.371384,0.928479,-0.928479,-0.371384,928.1050,327.0210)">
+				<v:textBlock
+   v:margins="rect(4,4,4,4)"
+   v:tabSpace="42.5197" />
+			</g><g
+   id="shape15-66"
+   v:mID="15"
+   v:groupContext="groupContent"
+   transform="matrix(0.369267,0.929323,-0.929323,0.369267,1070.320,-99.50090)">
+				<v:textBlock
+   v:margins="rect(4,4,4,4)"
+   v:tabSpace="42.5197" />
+			</g><g
+   id="shape21-87"
+   v:mID="21"
+   v:groupContext="groupContent"
+   transform="translate(685.9840,-339.9560)">
+				<v:textBlock
+   v:margins="rect(4,4,4,4)"
+   v:tabSpace="42.5197" />
+			</g><g
+   id="shape27-112"
+   v:mID="27"
+   v:groupContext="groupContent"
+   transform="matrix(-1.000000,0.000000,0.000000,-1.000000,249.4490,1074.130)">
+				<v:textBlock
+   v:margins="rect(4,4,4,4)"
+   v:tabSpace="42.5197" />
+			</g><g
+   id="shape31-125"
+   v:mID="31"
+   v:groupContext="groupContent"
+   transform="matrix(-1.000000,0.000000,0.000000,-1.000000,748.3460,1074.130)">
+				<v:textBlock
+   v:margins="rect(4,4,4,4)"
+   v:tabSpace="42.5197" />
+			</g>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<g
+   id="g1480"
+   inkscape:export-filename="/home/raph/Desktop/QSOS Schémas/processus_4_etapes.png"
+   inkscape:export-xdpi="168.90459"
+   inkscape:export-ydpi="168.90459"><path
+     style="fill:url(#radialGradient1970);stroke:#b2b2b2;stroke-width:2.1600001;stroke-linecap:round;stroke-linejoin:round"
+     id="path1343"
+     class="st1"
+     d="M 294.80300,368.50710 C 294.80300,462.43969 370.95041,538.58710 464.88300,538.58710 C 558.81559,538.58710 634.96300,462.43969 634.96300,368.50710 C 634.96300,274.57451 558.81559,198.42710 464.88300,198.42710 C 370.95041,198.42710 294.80300,274.57451 294.80300,368.50710 L 294.80300,368.50710 z M 351.49300,368.50710 C 351.75522,306.07218 402.44253,255.59730 464.87800,255.59730 C 527.31347,255.59730 578.00078,306.07218 578.26300,368.50710 C 578.00078,430.94202 527.31347,481.41690 464.87800,481.41690 C 402.44253,481.41690 351.75522,430.94202 351.49300,368.50710 L 351.49300,368.50710 z " /><path
+     style="fill:url(#radialGradient1964);stroke:#b2b2b2;stroke-width:2.1599994;stroke-linecap:round;stroke-linejoin:round"
+     id="path1348"
+     class="st2"
+     d="M 392.70000,259.82113 L 408.56558,250.66113 C 447.54378,228.15633 496.20489,231.15890 532.12070,258.28492 L 526.08229,266.28608 L 546.16527,256.33083 L 550.24093,234.29011 L 544.20252,242.29127 C 501.86181,210.30987 444.49407,206.76768 398.54058,233.29733 L 382.67500,242.45733 L 392.70000,259.82113 z " /><path
+     style="fill:url(#radialGradient1958);stroke:#b2b2b2;stroke-width:2.1599994;stroke-linecap:round;stroke-linejoin:round"
+     id="path1353"
+     class="st2"
+     d="M 539.89800,480.19187 L 524.03242,489.35187 C 485.05422,511.85667 436.39311,508.85410 400.47730,481.72808 L 406.51571,473.72692 L 386.43273,483.68217 L 382.35707,505.72289 L 388.39548,497.72173 C 430.73619,529.70313 488.10393,533.24532 534.05742,506.71567 L 549.92300,497.55567 L 539.89800,480.19187 z " /><path
+     style="fill:url(#radialGradient1952);stroke:#b2b2b2;stroke-width:2.1599994;stroke-linecap:round;stroke-linejoin:round"
+     id="path1358"
+     class="st2"
+     d="M 576.56887,293.16565 L 585.72887,309.03123 C 608.23367,348.00943 605.23110,396.67054 578.10508,432.58635 L 570.10392,426.54794 L 580.05917,446.63092 L 602.09989,450.70658 L 594.09873,444.66817 C 626.08013,402.32746 629.62232,344.95973 603.09267,299.00623 L 593.93267,283.14065 L 576.56887,293.16565 z " /><path
+     style="fill:url(#radialGradient1946);stroke:#b2b2b2;stroke-width:2.1599994;stroke-linecap:round;stroke-linejoin:round"
+     id="path1363"
+     class="st2"
+     d="M 356.19913,441.00800 L 347.03913,425.14242 C 324.53433,386.16422 327.53690,337.50311 354.66292,301.58730 L 362.66408,307.62571 L 352.70883,287.54273 L 330.66811,283.46707 L 338.66927,289.50548 C 306.68787,331.84619 303.14568,389.21393 329.67533,435.16742 L 338.83533,451.03300 L 356.19913,441.00800 z " /><rect
+     style="fill:url(#radialGradient1940);stroke:#86bc44;stroke-width:2.1600001;stroke-linecap:round;stroke-linejoin:round"
+     id="rect1370"
+     class="st3"
+     ry="5.6692901"
+     rx="5.6692901"
+     height="85.039398"
+     width="121.89000"
+     y="192.75600"
+     x="255.11800" /><rect
+     style="fill:url(#radialGradient1932);stroke:#86bc44;stroke-width:2.1600001;stroke-linecap:round;stroke-linejoin:round"
+     id="rect1379"
+     class="st3"
+     ry="5.6692901"
+     rx="5.6692901"
+     height="85.039398"
+     width="124.72400"
+     y="192.75600"
+     x="555.59100" /><rect
+     style="fill:url(#radialGradient1924);stroke:#86bc44;stroke-width:2.1600001;stroke-linecap:round;stroke-linejoin:round"
+     id="rect1388"
+     class="st3"
+     ry="5.6692901"
+     rx="5.6692901"
+     height="85.039398"
+     width="124.72400"
+     y="456.37769"
+     x="555.59100" /><rect
+     style="fill:url(#radialGradient1916);stroke:#86bc44;stroke-width:2.1600001;stroke-linecap:round;stroke-linejoin:round"
+     id="rect1397"
+     class="st3"
+     ry="5.6692901"
+     rx="5.6692901"
+     height="85.039398"
+     width="121.89000"
+     y="456.37769"
+     x="255.11800" /><path
+     style="fill:url(#radialGradient1908);stroke:#ff9900;stroke-width:2.1600001;stroke-linecap:round;stroke-linejoin:round"
+     id="path1406"
+     class="st5"
+     d="M 393.35300,89.260000 C 400.15791,101.32250 412.04205,109.82632 425.83118,112.50010 C 439.62031,115.17388 453.90981,111.74525 464.88300,103.13000 C 475.85618,111.74525 490.14569,115.17388 503.93482,112.50010 C 517.72395,109.82632 529.60809,101.32250 536.41300,89.260000 C 543.55541,91.070150 551.14990,89.536010 556.98162,85.105000 C 562.81333,80.673990 566.22550,73.845130 566.22300,66.610000 C 566.22235,59.376620 562.80885,52.550650 556.97758,48.121940 C 551.14632,43.693230 543.55367,42.160290 536.41300,43.970000 C 529.60809,31.907500 517.72395,23.403680 503.93482,20.729900 C 490.14569,18.056120 475.85618,21.484750 464.88300,30.100000 C 453.90981,21.484750 439.62031,18.056120 425.83118,20.729900 C 412.04205,23.403680 400.15791,31.907500 393.35300,43.970000 C 386.21233,42.160290 378.61968,43.693230 372.78842,48.121940 C 366.95715,52.550650 363.54365,59.376620 363.54300,66.610000 C 363.54050,73.845130 366.95267,80.673990 372.78438,85.105000 C 378.61610,89.536010 386.21059,91.070150 393.35300,89.260000 L 393.35300,89.260000 z " /><g
+     transform="matrix(-0.371384,0.928479,-0.928479,-0.371384,928.1050,327.0210)"
+     v:groupContext="shape"
+     v:mID="12"
+     id="shape12-42">
+				<title
+   id="title1416">Feuille.12</title>
+				<v:textBlock
+   v:tabSpace="42.5197"
+   v:margins="rect(4,4,4,4)" />
+				<path
+   style="fill:url(#radialGradient1885)"
+   id="path1418"
+   class="st8"
+   d="M 0.00000000,585.25000 L 66.300000,585.25000 L 66.300000,595.28000 L 76.330000,575.23000 L 66.300000,555.19000 L 66.300000,565.21000 L 0.00000000,565.21000 L 0.00000000,585.25000 z " />
+				<path
+   style="stroke:#ff9900;stroke-width:2.1600001;stroke-linecap:round;stroke-linejoin:round"
+   id="path1420"
+   class="st9"
+   d="M 0.00000000,585.25000 L 66.300000,585.25000 L 66.300000,595.28000 L 76.330000,575.23000 L 66.300000,555.19000 L 66.300000,565.21000 L 0.00000000,565.21000" />
+			</g><g
+     style="fill-opacity:1.0;fill:url(#linearGradient2870)"
+     transform="matrix(-0.371384,0.928479,-0.928479,-0.371384,928.1050,327.0210)"
+     v:groupContext="shape"
+     v:mID="13"
+     id="shape13-46">
+				<title
+   style="fill-opacity:1.0;fill:url(#linearGradient2870)"
+   id="title1423">Feuille.13</title>
+				<v:textBlock
+   style="fill-opacity:1.0;fill:url(#linearGradient2870)"
+   v:tabSpace="42.5197"
+   v:margins="rect(4,4,4,4)" />
+				<path
+   style="stroke:#ff9900;stroke-width:2.1600001;stroke-linecap:round;stroke-linejoin:round;fill-opacity:1.0;fill:url(#linearGradient2870)"
+   id="path1425"
+   class="st9"
+   d="M 0.00000000,585.25000 L 66.300000,585.25000 L 66.300000,595.28000 L 76.330000,575.23000 L 66.300000,555.19000 L 66.300000,565.21000 L 0.00000000,565.21000 L 0.00000000,585.25000" />
+			</g><g
+     transform="matrix(-0.371384,0.928479,-0.928479,-0.371384,937.9312,329.8974)"
+     v:groupContext="shape"
+     v:mID="14"
+     id="shape14-50">
+				<title
+   id="title1428">Feuille.14</title>
+				<rect
+   style="fill:url(#radialGradient1887);stroke:#ff9900;stroke-width:2.1600001;stroke-linecap:round;stroke-linejoin:round;visibility:hidden"
+   id="rect1430"
+   class="st10"
+   height="19.704599"
+   width="0.43081301"
+   y="575.57098"
+   x="0.00000000" />
+			</g><g
+     transform="matrix(0.369267,0.929323,-0.929323,0.369267,1070.320,-99.50090)"
+     v:groupContext="shape"
+     v:mID="16"
+     id="shape16-55">
+				<title
+   id="title1437">Feuille.16</title>
+				<v:textBlock
+   v:tabSpace="42.5197"
+   v:margins="rect(4,4,4,4)" />
+				<path
+   style="fill:url(#radialGradient1869)"
+   id="path1439"
+   class="st8"
+   d="M 0.00000000,585.25000 L 66.740000,585.25000 L 66.740000,595.28000 L 76.760000,575.23000 L 66.740000,555.19000 L 66.740000,565.21000 L 0.00000000,565.21000 L 0.00000000,585.25000 z " />
+				<path
+   style="stroke:#ff9900;stroke-width:2.1600001;stroke-linecap:round;stroke-linejoin:round"
+   id="path1441"
+   class="st9"
+   d="M 0.00000000,585.25000 L 66.740000,585.25000 L 66.740000,595.28000 L 76.760000,575.23000 L 66.740000,555.19000 L 66.740000,565.21000 L 0.00000000,565.21000" />
+			</g><g
+     style="fill-opacity:1.0;fill:url(#linearGradient3604)"
+     transform="matrix(0.369267,0.929323,-0.929323,0.369267,1070.320,-99.50090)"
+     v:groupContext="shape"
+     v:mID="17"
+     id="shape17-59">
+				<title
+   style="fill-opacity:1.0;fill:url(#linearGradient3604)"
+   id="title1444">Feuille.17</title>
+				<v:textBlock
+   style="fill-opacity:1.0;fill:url(#linearGradient3604)"
+   v:tabSpace="42.5197"
+   v:margins="rect(4,4,4,4)" />
+				<path
+   style="stroke:#ff9900;stroke-width:2.1600001;stroke-linecap:round;stroke-linejoin:round;fill-opacity:1.0;fill:url(#linearGradient3604)"
+   id="path1446"
+   class="st9"
+   d="M 0.00000000,585.25000 L 66.740000,585.25000 L 66.740000,595.28000 L 76.760000,575.23000 L 66.740000,555.19000 L 66.740000,565.21000 L 0.00000000,565.21000 L 0.00000000,585.25000" />
+			</g><g
+     transform="matrix(0.369267,0.929323,-0.929323,0.369267,1079.428,-104.1791)"
+     v:groupContext="shape"
+     v:mID="18"
+     id="shape18-63">
+				<title
+   id="title1449">Feuille.18</title>
+				<rect
+   style="fill:url(#radialGradient1871);stroke:#ff9900;stroke-width:2.1600001;stroke-linecap:round;stroke-linejoin:round;visibility:hidden"
+   id="rect1451"
+   class="st10"
+   height="19.704599"
+   width="0.43329000"
+   y="575.57098"
+   x="0.00000000" />
+			</g><rect
+     style="fill:none;stroke:none;stroke-width:0.72000003;stroke-linecap:round;stroke-linejoin:round"
+     id="rect1459"
+     class="st11"
+     height="48.188999"
+     width="113.38600"
+     y="113.38598"
+     x="252.28300" /><rect
+     style="fill:none;stroke:none;stroke-width:0.72000003;stroke-linecap:round;stroke-linejoin:round"
+     id="rect1470"
+     class="st11"
+     height="48.188999"
+     width="113.38600"
+     y="113.38598"
+     x="564.09399" /><g
+     transform="translate(685.9840,-339.9560)"
+     v:groupContext="shape"
+     v:mID="22"
+     id="shape22-76">
+				<title
+   id="title1480">Feuille.22</title>
+				<v:textBlock
+   v:tabSpace="42.5197"
+   v:margins="rect(4,4,4,4)" />
+				<path
+   style="fill:url(#radialGradient1843)"
+   id="path1482"
+   class="st8"
+   d="M 0.00000000,585.25000 L 46.670000,585.25000 L 46.670000,595.28000 L 56.690000,575.23000 L 46.670000,555.19000 L 46.670000,565.21000 L 0.00000000,565.21000 L 0.00000000,585.25000 z " />
+				<path
+   style="stroke:#517aff;stroke-width:2.1600001;stroke-linecap:round;stroke-linejoin:round"
+   id="path1484"
+   class="st13"
+   d="M 0.00000000,585.25000 L 46.670000,585.25000 L 46.670000,595.28000 L 56.690000,575.23000 L 46.670000,555.19000 L 46.670000,565.21000 L 0.00000000,565.21000" />
+			</g><g
+     style="fill-opacity:1.0;fill:url(#linearGradient5806)"
+     transform="translate(685.9840,-339.9560)"
+     v:groupContext="shape"
+     v:mID="23"
+     id="shape23-80">
+				<title
+   style="fill-opacity:1.0;fill:url(#linearGradient5806)"
+   id="title1487">Feuille.23</title>
+				<v:textBlock
+   style="fill-opacity:1.0;fill:url(#linearGradient5806)"
+   v:tabSpace="42.5197"
+   v:margins="rect(4,4,4,4)" />
+				<path
+   style="stroke:#517aff;stroke-width:2.1600001;stroke-linecap:round;stroke-linejoin:round;fill-opacity:1.0;fill:url(#linearGradient5806)"
+   id="path1489"
+   class="st13"
+   d="M 0.00000000,585.25000 L 46.670000,585.25000 L 46.670000,595.28000 L 56.690000,575.23000 L 46.670000,555.19000 L 46.670000,565.21000 L 0.00000000,565.21000 L 0.00000000,585.25000" />
+			</g><g
+     transform="translate(685.2571,-350.1477)"
+     v:groupContext="shape"
+     v:mID="24"
+     id="shape24-84">
+				<title
+   id="title1492">Feuille.24</title>
+				<rect
+   style="fill:url(#radialGradient1845);stroke:#517aff;stroke-width:2.1600001;stroke-linecap:round;stroke-linejoin:round;visibility:hidden"
+   id="rect1494"
+   class="st14"
+   height="19.704599"
+   width="0.31999999"
+   y="575.57098"
+   x="0.00000000" />
+			</g><path
+     style="fill:url(#radialGradient1841);stroke:#517aff;stroke-width:2.1600001;stroke-linecap:round;stroke-linejoin:round"
+     id="path1502"
+     class="st15"
+     d="M 748.34600,233.85500 C 748.34600,211.15461 786.41971,192.75231 833.38600,192.75231 C 880.35230,192.75231 918.42600,211.15461 918.42600,233.85500 C 918.42600,256.55539 880.35230,274.95769 833.38600,274.95769 C 786.41971,274.95769 748.34600,256.55539 748.34600,233.85500 z " /><path
+     style="fill:url(#radialGradient1831);stroke:#517aff;stroke-width:2.1600001;stroke-linecap:round;stroke-linejoin:round"
+     id="path1515"
+     class="st15"
+     d="M 68.031500,498.89980 C 68.031500,477.76428 94.683989,460.63056 127.56150,460.63056 C 160.43901,460.63056 187.09150,477.76428 187.09150,498.89980 C 187.09150,520.03532 160.43901,537.16904 127.56150,537.16904 C 94.683989,537.16904 68.031500,520.03532 68.031500,498.89980 z " /><g
+     transform="matrix(-1.000000,0.000000,0.000000,-1.000000,249.4490,1074.130)"
+     v:groupContext="shape"
+     v:mID="28"
+     id="shape28-101">
+				<title
+   id="title1525">Feuille.28</title>
+				<v:textBlock
+   v:tabSpace="42.5197"
+   v:margins="rect(4,4,4,4)" />
+				<path
+   style="fill:url(#radialGradient1808)"
+   id="path1527"
+   class="st8"
+   d="M 0.00000000,585.25000 L 46.670000,585.25000 L 46.670000,595.28000 L 56.690000,575.23000 L 46.670000,555.19000 L 46.670000,565.21000 L 0.00000000,565.21000 L 0.00000000,585.25000 z " />
+				<path
+   style="stroke:#517aff;stroke-width:2.1600001;stroke-linecap:round;stroke-linejoin:round"
+   id="path1529"
+   class="st13"
+   d="M 0.00000000,585.25000 L 46.670000,585.25000 L 46.670000,595.28000 L 56.690000,575.23000 L 46.670000,555.19000 L 46.670000,565.21000 L 0.00000000,565.21000" />
+			</g><g
+     style="fill-opacity:1.0;fill:url(#linearGradient4338)"
+     transform="matrix(-1.000000,0.000000,0.000000,-1.000000,249.4490,1074.130)"
+     v:groupContext="shape"
+     v:mID="29"
+     id="shape29-105">
+				<title
+   style="fill-opacity:1.0;fill:url(#linearGradient4338)"
+   id="title1532">Feuille.29</title>
+				<v:textBlock
+   style="fill-opacity:1.0;fill:url(#linearGradient4338)"
+   v:tabSpace="42.5197"
+   v:margins="rect(4,4,4,4)" />
+				<path
+   style="stroke:#517aff;stroke-width:2.1600001;stroke-linecap:round;stroke-linejoin:round;fill-opacity:1.0;fill:url(#linearGradient4338)"
+   id="path1534"
+   class="st13"
+   d="M 0.00000000,585.25000 L 46.670000,585.25000 L 46.670000,595.28000 L 56.690000,575.23000 L 46.670000,555.19000 L 46.670000,565.21000 L 0.00000000,565.21000 L 0.00000000,585.25000" />
+			</g><g
+     transform="matrix(-1.000000,0.000000,0.000000,-1.000000,250.1759,1084.322)"
+     v:groupContext="shape"
+     v:mID="30"
+     id="shape30-109">
+				<title
+   id="title1537">Feuille.30</title>
+				<rect
+   style="fill:url(#radialGradient1810);stroke:#517aff;stroke-width:2.1600001;stroke-linecap:round;stroke-linejoin:round;visibility:hidden"
+   id="rect1539"
+   class="st14"
+   height="19.704599"
+   width="0.31999999"
+   y="575.57098"
+   x="0.00000000" />
+			</g><g
+     transform="matrix(-1.000000,0.000000,0.000000,-1.000000,748.3460,1074.130)"
+     v:groupContext="shape"
+     v:mID="32"
+     id="shape32-114">
+				<title
+   id="title1546">Feuille.32</title>
+				<v:textBlock
+   v:tabSpace="42.5197"
+   v:margins="rect(4,4,4,4)" />
+				<path
+   style="fill:url(#radialGradient1792)"
+   id="path1548"
+   class="st8"
+   d="M 0.00000000,585.25000 L 52.340000,585.25000 L 52.340000,595.28000 L 62.360000,575.23000 L 52.340000,555.19000 L 52.340000,565.21000 L 0.00000000,565.21000 L 0.00000000,585.25000 z " />
+				<path
+   style="stroke:#ff9900;stroke-width:2.1600001;stroke-linecap:round;stroke-linejoin:round"
+   id="path1550"
+   class="st9"
+   d="M 0.00000000,585.25000 L 52.340000,585.25000 L 52.340000,595.28000 L 62.360000,575.23000 L 52.340000,555.19000 L 52.340000,565.21000 L 0.00000000,565.21000" />
+			</g><g
+     style="fill-opacity:1.0;fill:url(#linearGradient6540)"
+     transform="matrix(-1.000000,0.000000,0.000000,-1.000000,748.3460,1074.130)"
+     v:groupContext="shape"
+     v:mID="33"
+     id="shape33-118">
+				<title
+   style="fill-opacity:1.0;fill:url(#linearGradient6540)"
+   id="title1553">Feuille.33</title>
+				<v:textBlock
+   style="fill-opacity:1.0;fill:url(#linearGradient6540)"
+   v:tabSpace="42.5197"
+   v:margins="rect(4,4,4,4)" />
+				<path
+   style="stroke:#ff9900;stroke-width:2.1600001;stroke-linecap:round;stroke-linejoin:round;fill-opacity:1.0;fill:url(#linearGradient6540)"
+   id="path1555"
+   class="st9"
+   d="M 0.00000000,585.25000 L 52.340000,585.25000 L 52.340000,595.28000 L 62.360000,575.23000 L 52.340000,555.19000 L 52.340000,565.21000 L 0.00000000,565.21000 L 0.00000000,585.25000" />
+			</g><g
+     style="fill-opacity:1.0;fill:url(#linearGradient5072)"
+     transform="matrix(-1.000000,0.000000,0.000000,-1.000000,749.1456,1084.322)"
+     v:groupContext="shape"
+     v:mID="34"
+     id="shape34-122">
+				<title
+   style="fill-opacity:1.0;fill:url(#linearGradient5072)"
+   id="title1558">Feuille.34</title>
+				<rect
+   style="fill:url(#linearGradient5072);stroke:#ff9900;stroke-width:2.1600001;stroke-linecap:round;stroke-linejoin:round;visibility:hidden;fill-opacity:1.0"
+   id="rect1560"
+   class="st10"
+   height="19.704599"
+   width="0.35200000"
+   y="575.57098"
+   x="0.00000000" />
+			</g><path
+     style="fill:url(#radialGradient1790);stroke:#c0c0c0;stroke-width:2.1600001;stroke-linecap:round;stroke-linejoin:round"
+     id="path1568"
+     class="st17"
+     d="M 775.43900,518.10710 C 779.95184,528.33947 787.83164,535.55312 796.97443,537.82195 C 806.11722,540.09078 815.59203,537.18377 822.86900,529.87710 C 830.14641,537.18842 839.62379,540.09824 848.76926,537.82922 C 857.91473,535.56021 865.79651,528.34352 870.30900,518.10710 C 875.04465,519.64303 880.08018,518.34252 883.94754,514.58471 C 887.81490,510.82689 890.07871,505.03482 890.07900,498.89710 C 890.07871,492.75938 887.81490,486.96731 883.94754,483.20949 C 880.08018,479.45168 875.04465,478.15117 870.30900,479.68710 C 865.79651,469.45068 857.91473,462.23399 848.76926,459.96498 C 839.62379,457.69596 830.14641,460.60578 822.86900,467.91710 C 815.59203,460.61043 806.11722,457.70342 796.97443,459.97225 C 787.83164,462.24108 779.95184,469.45473 775.43900,479.68710 C 770.70335,478.15117 765.66782,479.45168 761.80046,483.20949 C 757.93310,486.96731 755.66929,492.75938 755.66900,498.89710 C 755.66929,505.03482 757.93310,510.82689 761.80046,514.58471 C 765.66782,518.34252 770.70335,519.64303 775.43900,518.10710 L 775.43900,518.10710 z " /><rect
+     style="fill:none;stroke:none;stroke-width:0.72000003;stroke-linecap:round;stroke-linejoin:round"
+     id="rect1579"
+     class="st11"
+     height="48.188999"
+     width="113.38600"
+     y="433.70099"
+     x="683.15002" /><text
+     sodipodi:linespacing="125%"
+     style="font-size:16.000039;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:100.00025%;writing-mode:lr;text-anchor:middle;fill:#000000;font-family:Arial"
+     id="text2116"
+     v:langID="1036"
+     class="st6"
+     y="59.871464"
+     x="462.54547"><tspan
+       y="59.871464"
+       x="462.54547"
+       id="tspan1483"
+       sodipodi:role="line">Open Source</tspan><tspan
+       y="79.871511"
+       x="462.54547"
+       id="tspan1485"
+       sodipodi:role="line">Community</tspan></text>
+<text
+     sodipodi:linespacing="125%"
+     style="font-size:17.600043;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:center;line-height:100.00025%;writing-mode:lr;text-anchor:middle;fill:#ffffff;font-family:Arial"
+     id="text1372"
+     v:langID="1036"
+     class="st4"
+     y="241.54129"
+     x="314.7374"><tspan
+       y="241.54129"
+       x="314.7374"
+       id="tspan2955"
+       sodipodi:role="line">Define</tspan></text>
+<text
+     sodipodi:linespacing="125.00000%"
+     style="font-size:17.600042px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:start;line-height:125.00000%;writing-mode:lr-tb;text-anchor:start;fill:#ffffff;font-family:Arial"
+     id="text1381"
+     v:langID="1036"
+     class="st4"
+     y="241.43387"
+     x="582.10162"><tspan
+       y="241.43387"
+       x="582.10162"
+       id="tspan2957"
+       sodipodi:role="line">Evaluate</tspan></text>
+<text
+     sodipodi:linespacing="125.00000%"
+     style="font-size:17.600042px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:start;line-height:125.00000%;writing-mode:lr-tb;text-anchor:start;fill:#ffffff;font-family:Arial"
+     id="text1399"
+     v:langID="1036"
+     class="st4"
+     y="505.53369"
+     x="289.40381"><tspan
+       y="505.53369"
+       x="289.40381"
+       id="tspan2959"
+       sodipodi:role="line">Select</tspan></text>
+<text
+     sodipodi:linespacing="125.00000%"
+     style="font-size:17.600042px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:start;line-height:125.00000%;writing-mode:lr-tb;text-anchor:start;fill:#ffffff;font-family:Arial"
+     id="text1390"
+     v:langID="1036"
+     class="st4"
+     y="505.01379"
+     x="588.09216"><tspan
+       y="505.01379"
+       x="588.09216"
+       id="tspan2961"
+       sodipodi:role="line">Qualify</tspan></text>
+<text
+     sodipodi:linespacing="125.00000%"
+     style="font-size:17.600042px;font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:center;line-height:125.00000%;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff;font-family:Arial"
+     id="text2124"
+     v:langID="1033"
+     class="st16"
+     y="226.18384"
+     x="832.13287"><tspan
+       y="226.18384"
+       x="832.13287"
+       id="tspan1487"
+       sodipodi:role="line">ID card</tspan><tspan
+       y="248.18389"
+       x="832.13287"
+       id="tspan1489"
+       sodipodi:role="line">Evaluation sheet</tspan></text>
+<text
+     sodipodi:linespacing="125%"
+     style="font-size:16.000039;font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:center;line-height:100.00025%;writing-mode:lr;text-anchor:middle;fill:#ffffff;font-family:Arial"
+     id="text2128"
+     v:langID="1033"
+     class="st16"
+     y="494.60452"
+     x="126.43198"><tspan
+       y="494.60452"
+       x="126.43198"
+       id="tspan2225"
+       sodipodi:role="line">Selection</tspan><tspan
+       y="514.60457"
+       x="126.43198"
+       id="tspan2227"
+       sodipodi:role="line">grid</tspan></text>
+<text
+     sodipodi:linespacing="125.00000%"
+     id="text1865"
+     y="134.76865"
+     x="573.19238"
+     style="font-size:12.800031px;font-style:oblique;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125.00000%;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1.0000000;stroke:none;stroke-width:1.0000000px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1.0000000;font-family:Bitstream Vera Sans"
+     xml:space="preserve"><tspan
+       y="134.76865"
+       x="573.19238"
+       id="tspan2967"
+       sodipodi:role="line">Project / software</tspan><tspan
+       y="150.76868"
+       x="573.19238"
+       id="tspan2969"
+       sodipodi:role="line">analysis</tspan></text>
+<text
+     sodipodi:linespacing="125.00000%"
+     id="text6545"
+     y="453.41199"
+     x="693.89142"
+     style="font-size:12.800031px;font-style:oblique;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125.00000%;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1.0000000;stroke:none;stroke-width:1.0000000px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1.0000000;font-family:Bitstream Vera Sans"
+     xml:space="preserve"><tspan
+       y="453.41199"
+       x="693.89142"
+       id="tspan2971"
+       sodipodi:role="line">Criteria</tspan><tspan
+       y="469.41203"
+       x="693.89142"
+       id="tspan2973"
+       sodipodi:role="line">weighting</tspan></text>
+<text
+     sodipodi:linespacing="125%"
+     id="text6555"
+     y="136.77582"
+     x="354.43259"
+     style="font-size:12.800031;font-style:oblique;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:end;line-height:100.00025%;writing-mode:lr;text-anchor:end;fill:#000000;fill-opacity:1.0000000;stroke:none;stroke-width:1.0000000px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1.0000000;font-family:Bitstream Vera Sans"
+     xml:space="preserve"><tspan
+       y="136.77582"
+       x="354.43259"
+       id="tspan2963"
+       sodipodi:role="line">Frame of</tspan><tspan
+       y="152.77586"
+       x="354.43259"
+       id="tspan2965"
+       sodipodi:role="line">reference</tspan></text>
+<text
+     sodipodi:linespacing="125%"
+     style="font-size:16.000039;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:100.00025%;writing-mode:lr;text-anchor:middle;fill:#000000;font-family:Arial"
+     id="text6565"
+     v:langID="1036"
+     class="st6"
+     y="492.64499"
+     x="821.19629"><tspan
+       y="492.64499"
+       x="821.19629"
+       id="tspan1491"
+       sodipodi:role="line">Evaluation</tspan><tspan
+       y="512.64504"
+       x="821.19629"
+       id="tspan1493"
+       sodipodi:role="line">context</tspan></text>
+</g>
+
+
+</svg>
