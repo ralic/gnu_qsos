@@ -1,0 +1,49 @@
+%Copyright (c) 2004 2005 2006 Atos Origin
+%Permission is granted to copy, distribute and/or modify this
+%document
+%under the terms of the GNU Free Documentation License,
+%      Version 1.2
+%      or any later version published by the Free Software
+%      Foundation;
+%      with no Invariant Sections, no Front-Cover
+%      Texts, and no Back-Cover
+%      Texts.  A copy of the license is
+%      included in the section entitled "GNU
+%      Free Documentation License".
+%
+%$Id: general_process.tex,v 1.1 2006/02/16 18:21:09 goneri Exp $
+\section{Processus général}
+\subsection{Quatre étapes}
+Le processus général de QSOS se décompose en plusieurs étapes interdépendantes  (figure~\ref{fig-process}).
+\begin{figure}[h]
+\includegraphics[width=16cm]{images/processus_4_etapes}
+\caption{Les 4 étapes du processus QSOS}
+\label{fig-process}
+\end{figure}
+
+\begin{figure}
+%a faire en mieux
+\center
+\begin{tabular}{|p{3cm}|p{9cm}|}
+\hline \TS{étape} & \TS{description}\\
+\hline Définir & Constitution et enrichissement des référentiels utilisés par les autres étapes\\
+\hline Évaluer & Évaluation d'une version de logiciel par rapport aux trois axes de critères suivants : couverture fonctionnelle, risques côté utilisateur, risques côté prestataire de services (ceci indépendamment de tout contexte utilisateur ou client particulier).\\
+\hline Qualifier & Pondération des critères constituant les trois axes en fonction du contexte (besoins de l'utilisateur et/ou stratégie retenue par le prestataire de services).\\
+\hline Sélectionner & Utilisation du filtre constitué lors de l'étape de qualification pour procéder à des recherches, comparaisons et sélections de produits, basées sur les données des deux premières étapes.\\
+\hline
+\end{tabular}
+\end{figure}
+Chacune de ces étapes est détaillée plus loin dans ce document.
+
+
+\subsection{Processus itératif}
+Le processus général présenté peut être appliqué avec des granularités différentes.
+Cela permet de s'adapter au niveau de détail souhaité dans le processus de qualification
+ et de sélection ainsi que de procéder par boucles itératives pour affiner chacune des 
+quatre étapes.
+
+\subsection{Outillage}
+Un outil unique est en cours de finalisation par Atos Origin pour permettre d'implémenter de manière cohérente l'application de la méthode présentée ici. 
+
+Cet outil, baptisé O3S (Open Source Selection Software), sera mis à disposition de la communauté via le site \url{http://www.qsos.org} pour coordonner la saisie, la modification et l'utilisation des évaluations réalisées avec la méthode QSOS.
+

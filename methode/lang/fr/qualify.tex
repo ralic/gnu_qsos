@@ -1,0 +1,75 @@
+%Copyright (c) 2004 2005 2006 Atos Origin
+%Permission is granted to copy, distribute and/or modify this
+%document
+%under the terms of the GNU Free Documentation License,
+%      Version 1.2
+%      or any later version published by the Free Software
+%      Foundation;
+%      with no Invariant Sections, no Front-Cover
+%      Texts, and no Back-Cover
+%      Texts.  A copy of the license is
+%      included in the section entitled "GNU
+%      Free Documentation License".
+%
+%$Id: qualify.tex,v 1.1 2006/02/16 18:21:09 goneri Exp $
+\section{Qualifier}
+\begin{figure}[h]
+\includegraphics[width=13cm]{images/fr/qualifier}
+\caption{qualifier}
+\end{figure}
+
+\subsection{Objectif}
+L'objectif de cette étape est de définir un ensemble d'éléments traduisant les besoins
+et les contraintes liés à la démarche de sélection d'un logiciel Open Source. Il s'agit
+ici de qualifier le contexte dans lequel il est envisagé d'utiliser le logiciel libre, de manière à obtenir un filtre utilisé par la suite dans l'étape « Sélectionner » du processus général.
+
+
+\subsection{Filtre sur la fiche d'identité}
+Un premier niveau de filtrage peut être posé au niveau des données constituant la
+fiche d'identité des logiciels.
+
+
+Il peut s'agir, par exemple, de ne considérer que les logiciels d'un type donné
+du référentiel, ou fonctionnant sur un système d'exploitation donné.
+
+
+En général, bien que cela ne soit pas obligatoire, ce filtre ne comporte pas
+d'information de pondération ; il sert principalement à éliminer les logiciels inadéquats dans le contexte de l'utilisateur.
+
+\subsection{Filtre sur la couverture fonctionnelle}
+Chaque fonctionnalité de l'axe fonctionnel est affectée d'un niveau d'exigence,
+choisi parmi les suivants :
+\begin{itemize}
+\item fonctionnalité requise 
+\item fonctionnalité optionnelle
+\item fonctionnalité non requise
+\end{itemize}
+
+
+Ces exigences seront associées à des valeurs de pondération lors de l'étape « Sélectionner », en fonction du mode de sélection retenu.
+
+
+\subsection{Filtre sur les risques Utilisateur}
+Le degré de pertinence de chaque critère de l'axe des risques Utilisateur est positionné
+en fonction du contexte, comme indiqué dans la figure~\ref{fig-relevance}.
+\begin{figure}
+\center
+\begin{tabular}{|c|}
+\hline \TS{Pertinence du critère}\\
+\hline Critère non pertinent, à ne pas intégrer au filtre\\
+\hline Critère pertinent\\
+\hline Critère critique\\
+\hline
+\end{tabular}
+\label{fig-relevance}
+\end{figure}
+Cette pertinence sera traduite par une valeur numérique de pondération à l'étape suivante
+du processus en fonction du mode de sélection utilisé.
+
+\subsection {Filtre sur les risques Prestataire de service}
+Ce filtre est utilisé par un prestataire de services pour évaluer les logiciels et les prestations à intégrer dans son offre et déterminer les niveaux d'engagement associés.
+
+
+\subsection {Outil O3S}
+L'outil O3S permet de définir ces différents filtres, tout en étant guidé à la saisie.
+
