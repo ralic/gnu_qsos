@@ -1,4 +1,4 @@
-# $Id: Document.pm,v 1.1 2006/02/15 17:41:13 goneri Exp $
+# $Id: Document.pm,v 1.2 2006/02/17 14:11:21 goneri Exp $
 #
 #  Copyright (C) 2006 Atos Origin 
 #
@@ -32,7 +32,7 @@ use vars qw($VERSION @ISA @EXPORT @EXPORT_OK $PREFERRED_PARSER);
 
 @ISA               = qw(Exporter);
 @EXPORT            = qw(XMLin XMLout);
-@EXPORT_OK         = qw(new load write setcomment getcomment setscore getscore write);
+@EXPORT_OK         = qw(new load write getdesc setcomment getcomment setscore getscore write);
 $VERSION           = '0.01';
 
 
@@ -90,16 +90,33 @@ sub _pushElem {
   my $h = {
     name => $elt->atts->{name},
     comment_ref => $elt->first_child('comment'),
+    desc_ref => $elt->first_child('desc'),
     score_ref => $elt->first_child('score'),
     deep => $deep
   };
 
-  if ($h->{comment_ref}) {
-    $h->{comment_text} = $elt->first_child('comment')->text;
-  }
-
+  
   push @{$self->{tabular}}, $h;
 }
+
+
+sub getdesc {
+  my ($self, $nbr) = @_;
+
+  if (! defined $nbr) {
+    croak ("nbr is not defined");
+    return;
+  }
+
+  my $comment_ref = $self->{tabular}->[$nbr]->{desc_ref};
+
+  unless ($comment_ref) {
+    return;
+  }
+  $comment_ref->text();
+}
+
+
 
 sub setcomment {
   my ($self, $nbr, $comment) = @_;
@@ -122,7 +139,7 @@ sub setcomment {
 }
 
 sub getcomment {
-  my ($self, $nbr, $comment) = @_;
+  my ($self, $nbr) = @_;
 
   if (! defined $nbr) {
     croak ("nbr is not defined");
@@ -134,7 +151,6 @@ sub getcomment {
   unless ($comment_ref) {
     return;
   }
-#  print $comment_ref->text()."\n";
   $comment_ref->text();
 }
 
@@ -191,16 +207,4 @@ sub write {
   close XMLOUT;
   
 }
-=debug func
-sub dumpage {
 
-  my $self = shift;
-  open DUMPER, ">/tmp/dump_xml";
-  print DUMPER Dumper($self->{twig});
-  close DUMPER;
-  open DUMPER, ">/tmp/dump_tabular";
-  print DUMPER Dumper($self->{twig});
-  close DUMPER;
-
-}
-=cut
