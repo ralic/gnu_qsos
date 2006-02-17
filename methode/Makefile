@@ -11,7 +11,7 @@
 #      included in the section entitled "GNU
 #      Free Documentation License".
 #
-# $Id: Makefile,v 1.4 2006/02/17 12:32:30 goneri Exp $
+# $Id: Makefile,v 1.5 2006/02/17 12:35:04 goneri Exp $
 TEX=changelog.tex define.tex eval.tex eval_app.tex fdl.tex general_process.tex glossary.tex internet_site.tex intro.tex license.tex manifest.tex qsos.tex qualify.tex
 # TODO split this by language :
 GFXS_DEST_PNG=images/comparaison.eps images/processus_4_etapes.eps images/definir.eps images/evaluer.eps images/qualifier.eps images/selectionner.eps images/QSOS.eps images/fr/comparaison.eps images/fr/processus_4_etapes.eps images/fr/definir.eps images/fr/evaluer.eps images/fr/qualifier.eps images/fr/selectionner.eps images/fr/QSOS.eps images/es/comparaison.eps images/es/processus_4_etapes.eps images/es/definir.eps images/es/evaluer.eps images/es/qualifier.eps images/es/selectionner.eps images/es/QSOS.eps
@@ -109,7 +109,9 @@ clean:
 		qsos qsos_* \
 		*.aux *.dvi *.log *.toc \
 		qsos-$(CURRENT_RELEASE)* \
-		*.out *.pdf
+		*.out *.pdf \
+		lang/*/*.aux \
+		lang/*/*.log
 
 license: fdl.tex
 	latex fdl.tex
