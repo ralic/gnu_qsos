@@ -11,7 +11,7 @@
 #      included in the section entitled "GNU
 #      Free Documentation License".
 #
-# $Id: Makefile,v 1.2 2006/02/17 10:27:16 goneri Exp $
+# $Id: Makefile,v 1.3 2006/02/17 11:02:37 goneri Exp $
 TEX=changelog.tex define.tex eval.tex eval_app.tex fdl.tex general_process.tex glossary.tex internet_site.tex intro.tex license.tex manifest.tex qsos.tex qualify.tex
 # TODO split this by language :
 GFXS_DEST_PNG=images/comparaison.eps images/processus_4_etapes.eps images/definir.eps images/evaluer.eps images/qualifier.eps images/selectionner.eps images/QSOS.eps images/fr/comparaison.eps images/fr/processus_4_etapes.eps images/fr/definir.eps images/fr/evaluer.eps images/fr/qualifier.eps images/fr/selectionner.eps images/fr/QSOS.eps images/es/comparaison.eps images/es/processus_4_etapes.eps images/es/definir.eps images/es/evaluer.eps images/es/qualifier.eps images/es/selectionner.eps images/es/QSOS.eps
@@ -20,28 +20,29 @@ GFXS_DEST_PNG=images/comparaison.eps images/processus_4_etapes.eps images/defini
 GFXS_DEST_SVG=
 WWW=../www
 CURRENT_RELEASE=1.5
-DIST_FILES=clean_html.pl Makefile README $(TEX)
+DIST_FILES=README $(TEX)
+BUILD_FILES=clean_html.pl Makefile 
 GFXS_SRC_PNG= $(GFXS_DEST_PNG:.eps=.png)
 GFXS_SRC_SVG= $(GFXS_DEST_SVG:.eps=.svg)
 
 
 dvi-en: qsos-$(CURRENT_RELEASE)-en.dvi
 qsos-$(CURRENT_RELEASE)-en.dvi: $(GFXS_DEST_PNG) $(GFXS_DEST_SVG) $(TEX)
-	rm *.aux
+	rm -f *.aux
 	latex qsos.tex
 	latex qsos.tex
 	mv qsos.dvi qsos-$(CURRENT_RELEASE)-en-dvi
  
 dvi-fr: qsos-$(CURRENT_RELEASE)-fr.dvi
 qsos-$(CURRENT_RELEASE)-fr.dvi: $(GFXS_DEST_PNG) $(GFXS_DEST_SVG) $(TEX)
-	rm *.aux
+	rm -f *.aux
 	latex lang/fr/qsos.tex
 	latex lang/fr/qsos.tex
 	mv qsos.dvi qsos-$(CURRENT_RELEASE)-fr.dvi
 
 dvi-es: qsos-$(CURRENT_RELEASE)-es.dvi
 qsos-$(CURRENT_RELEASE)-es.dvi: $(GFXS_DEST_PNG) $(GFXS_DEST_SVG) $(TEX)
-	rm *.aux
+	rm -f *.aux
 	latex lang/es/qsos.tex
 	latex lang/es/qsos.tex
 	mv qsos.dvi qsos-$(CURRENT_RELEASE)-es.dvi
@@ -114,10 +115,10 @@ license: fdl.tex
 	latex fdl.tex
 
 pdf: $(GFXS_DEST_PNG) $(GFXS_DEST_SVG)
-	rm *.aux
+	rm -f *.aux
 	pdflatex qsos.tex
 	mv qsos.pdf qsos-$(CURRENT_RELEASE)-en.pdf
-	rm *.aux
+	rm -f *.aux
 	pdflatex lang/fr/qsos.tex
 	mv qsos.pdf qsos-$(CURRENT_RELEASE)-fr.pdf
 	pdflatex lang/es/qsos.tex
@@ -136,6 +137,7 @@ qsos-$(CURRENT_RELEASE).tar.gz:
 	mkdir -p qsos-$(CURRENT_RELEASE)/images/es
 	mkdir -p qsos-$(CURRENT_RELEASE)/lang/fr
 	mkdir -p qsos-$(CURRENT_RELEASE)/lang/es
+	cp $(BUILD_FILES) qsos-$(CURRENT_RELEASE)/
 	cp $(DIST_FILES) qsos-$(CURRENT_RELEASE)/
 	cp lang/fr/$(DIST_FILES) qsos-$(CURRENT_RELEASE)/lang/fr
 	cp lang/es/$(DIST_FILES) qsos-$(CURRENT_RELEASE)/lang/es
