@@ -1,4 +1,4 @@
-# $Id: Document.pm,v 1.2 2006/02/17 14:11:21 goneri Exp $
+# $Id: Document.pm,v 1.3 2006/02/17 14:16:42 goneri Exp $
 #
 #  Copyright (C) 2006 Atos Origin 
 #
@@ -208,3 +208,26 @@ sub write {
   
 }
 
+__END__
+
+=header1 NAME
+
+QSOS::Document - QSOS's file access
+
+=head1 SYNOPSIS
+
+TODO
+
+=head1 DESCRIPTION
+
+This librairie give an easy way to edit QSOS file.
+
+=head1 SEE ALSO
+
+http://www.qsos.org
+
+=head1 AUTHORS
+
+Gonéri Le Bouder <goneri.lebouder@atosorigin.org>
+
+=cut
