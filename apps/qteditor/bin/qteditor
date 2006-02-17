@@ -1,0 +1,18 @@
+#!/usr/bin/perl
+
+
+use strict;
+use warnings;
+
+use Qt;
+use QSOS::QtEditor::qsosform;
+
+my $this = {a => 1};
+
+my $a = Qt::Application(\@ARGV);
+my $w = QSOS::QtEditor::qsosform();
+$a->setMainWidget($w);
+#$about->setMainWidget($w);
+$w->show;
+#$about->show;
+exit $a->exec;
