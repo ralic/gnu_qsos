@@ -1,4 +1,4 @@
-# $Id: Document.pm,v 1.3 2006/02/17 14:16:42 goneri Exp $
+# $Id: Document.pm,v 1.4 2006/02/21 11:11:00 goneri Exp $
 #
 #  Copyright (C) 2006 Atos Origin 
 #
@@ -22,6 +22,7 @@
 package QSOS::Document;
 use XML::Twig;
 use Carp;
+use Data::Dumper;
 use open ':utf8';
 use warnings;
 use strict;
@@ -32,7 +33,7 @@ use vars qw($VERSION @ISA @EXPORT @EXPORT_OK $PREFERRED_PARSER);
 
 @ISA               = qw(Exporter);
 @EXPORT            = qw(XMLin XMLout);
-@EXPORT_OK         = qw(new load write getdesc setcomment getcomment setscore getscore write);
+@EXPORT_OK         = qw(new load write getdesc setcomment getcomment setscore getscore write getauthors addauthor delauthor);
 $VERSION           = '0.01';
 
 
@@ -55,6 +56,7 @@ sub new {
   );    # create the twig
 
   $self->{tabular} = [];
+  $self->{authors} = [];
 
   bless $self;
   return $self;
@@ -208,11 +210,67 @@ sub write {
   
 }
 
+
+sub getauthors {
+  my $self = shift;
+
+  return $self->{authors} if (@{$self->{authors}});
+  my @root = $self->{twig}->root->children;
+  my $header = shift @root;
+  my $authors = $header->first_child('authors');
+  my @author = $authors->children('author');
+
+  foreach (@author) {
+    my $name = $_->first_child('name');
+    my $email = $_->first_child('email');
+    push @{$self->{authors}}, {
+      author_ref => $_,
+      name => defined ($name)?$name->text():"",
+      email => defined ($email)?$email->text():""
+    };
+  }
+  
+  $self->{authors};
+}
+
+sub addauthor {
+  my ($self, $name, $email) = @_;
+ 
+  return unless (defined ($name));
+  $email = "" unless defined ($email);
+
+  my @root = $self->{twig}->root->children;
+  my $header = shift @root;
+  my $authors = $header->first_child('authors');
+
+  $authors->insert_new_elt ('last_child', 'author');
+  $authors->last_child()->insert_new_elt ('name' , $name);
+  $authors->last_child()->insert_new_elt ('email' , $email);
+  
+  $self->{authors} = [];
+}
+
+sub delauthor {
+  my ($self, $id) = @_;
+
+  return unless $id;
+  my @root = $self->{twig}->root->children;
+  my $header = shift @root;
+  if ($header->first_child('authors')->children_count()<$id) {
+    carp "id $id doesn't exist";
+    return;
+  }
+
+  my @authors = $header->first_child('authors')->children();
+  $authors[$id]->delete;
+  $self->{authors} = [];
+
+}
 __END__
 
-=header1 NAME
+=head1 NAME
 
-QSOS::Document - QSOS's file access
+QSOS::Document - QSOS file access
 
 =head1 SYNOPSIS
 
