@@ -1,4 +1,4 @@
-# $Id: Document.pm,v 1.4 2006/02/21 11:11:00 goneri Exp $
+# $Id: Document.pm,v 1.5 2006/02/21 13:36:19 goneri Exp $
 #
 #  Copyright (C) 2006 Atos Origin 
 #
@@ -33,7 +33,7 @@ use vars qw($VERSION @ISA @EXPORT @EXPORT_OK $PREFERRED_PARSER);
 
 @ISA               = qw(Exporter);
 @EXPORT            = qw(XMLin XMLout);
-@EXPORT_OK         = qw(new load write getdesc setcomment getcomment setscore getscore write getauthors addauthor delauthor);
+@EXPORT_OK         = qw(new load write getkeydesc setkeycomment getkeycomment setkeyscore getkeyscore write getauthors addauthor delauthor getappliname setappliname getlanguage setlanguage getrelease setrelease getlicenselist getlicense setlicense geturl seturl getdesc setdesc getdemourl setdemourl getqsosformat setqsosformat getqsosspecificformat setqsosspecificformat getqsosappfamily setqsosappfamily);
 $VERSION           = '0.01';
 
 
@@ -102,7 +102,7 @@ sub _pushElem {
 }
 
 
-sub getdesc {
+sub getkeydesc {
   my ($self, $nbr) = @_;
 
   if (! defined $nbr) {
@@ -120,7 +120,7 @@ sub getdesc {
 
 
 
-sub setcomment {
+sub setkeycomment {
   my ($self, $nbr, $comment) = @_;
 
 
@@ -140,7 +140,7 @@ sub setcomment {
   }
 }
 
-sub getcomment {
+sub getkeycomment {
   my ($self, $nbr) = @_;
 
   if (! defined $nbr) {
@@ -266,8 +266,204 @@ sub delauthor {
   $self->{authors} = [];
 
 }
-__END__
 
+sub getappliname {
+  my $self = shift;
+
+  my @root = $self->{twig}->root->children;
+  my $header = shift @root;
+  $header->first_child('appli')->text();
+
+}
+
+sub setappliname {
+  my ($self, $appliname) = @_;
+
+  $appliname = "" unless defined $appliname;
+  my @root = $self->{twig}->root->children;
+  my $header = shift @root;
+  $header->first_child('appli')->set_text($appliname);
+
+}
+
+sub getlanguage {
+  my $self = shift;
+
+  my @root = $self->{twig}->root->children;
+  my $header = shift @root;
+  $header->first_child('language')->text();
+
+}
+
+sub setlanguage {
+  my ($self, $language) = @_;
+
+  $language = "" unless defined $language;
+  my @root = $self->{twig}->root->children;
+  my $header = shift @root;
+  $header->first_child('language')->set_text($language);
+
+}
+
+sub getrelease {
+  my $self = shift;
+
+  my @root = $self->{twig}->root->children;
+  my $header = shift @root;
+  $header->first_child('release')->text();
+
+}
+
+sub setrelease {
+  my ($self, $release) = @_;
+
+  $release = "" unless defined $release;
+  my @root = $self->{twig}->root->children;
+  my $header = shift @root;
+  $header->first_child('release')->set_text($release);
+
+}
+
+sub getlicenselist {
+  # TODO this list must be in the web site!
+[ "Affero GPL", "AFPL (Aladdin)", "APSL (Apple)", "Copyback License", "DFSG approved", "Eclipse Public License", "EFL (Eiffel)", "Free for Eductional Use", "Free for Hum Use", "Free for non-commercial use", "Free but Restricted", "Freely Distribuable", "Freeware", "NPL (Netscape)", "NOKOS (Nokia)", "OSI Approved", "Proprietary", "Proprietary with trial", "Proprietary with source", "Public Domain", "Shareware", "SUN Binary Code License", "The Apache License", "The Apache License 2.0", "CeCILL License (INRIA)", "Artistic License", "LPPL (Latex)", "Open Content License", "Voxel Public License", "WTFPL", "Zope Public License", "GNU GPL", "GNU LGPL", "BSD", "GNU approved License", "GNU FDL" ];
+}
+
+sub setlicense {
+  my ($self, $license) = @_;
+
+  $license = "" unless defined $license;
+  my @root = $self->{twig}->root->children;
+  my $header = shift @root;
+  $header->first_child('license')->set_text($license);
+
+}
+
+sub getlicense {
+  my $self = shift;
+
+  my @root = $self->{twig}->root->children;
+  my $header = shift @root;
+  $header->first_child('license')->text();
+
+}
+
+sub seturl {
+  my ($self, $url) = @_;
+
+  $url = "" unless defined $url;
+  my @root = $self->{twig}->root->children;
+  my $header = shift @root;
+  $header->first_child('url')->set_text($url);
+
+}
+
+sub geturl {
+  my $self = shift;
+
+  my @root = $self->{twig}->root->children;
+  my $header = shift @root;
+  $header->first_child('url')->text();
+
+}
+
+sub setdesc {
+  my ($self, $desc) = @_;
+
+  $desc = "" unless defined $desc;
+  my @root = $self->{twig}->root->children;
+  my $header = shift @root;
+  $header->first_child('desc')->set_text($desc);
+
+}
+
+sub getdesc {
+  my $self = shift;
+
+  my @root = $self->{twig}->root->children;
+  my $header = shift @root;
+  $header->first_child('desc')->text();
+
+}
+
+sub setdemourl {
+  my ($self, $demo) = @_;
+
+  $demo = "" unless defined $demo;
+  my @root = $self->{twig}->root->children;
+  my $header = shift @root;
+  $header->first_child('demourl')->set_text($demo);
+
+}
+
+sub getdemourl {
+  my $self = shift;
+
+  my @root = $self->{twig}->root->children;
+  my $header = shift @root;
+  $header->first_child('demourl')->text();
+
+}
+
+
+sub setqsosformat {
+  my ($self, $qsosformat) = @_;
+
+  $qsosformat = "" unless defined $qsosformat;
+  my @root = $self->{twig}->root->children;
+  my $header = shift @root;
+  $header->first_child('qsosformat')->set_text($qsosformat);
+
+}
+
+sub getqsosformat {
+  my $self = shift;
+
+  my @root = $self->{twig}->root->children;
+  my $header = shift @root;
+  $header->first_child('qsosformat')->text();
+
+}
+
+
+sub setqsosspecificformat {
+  my ($self, $qsosspecificformat) = @_;
+
+  $qsosspecificformat = "" unless defined $qsosspecificformat;
+  my @root = $self->{twig}->root->children;
+  my $header = shift @root;
+  $header->first_child('qsosspecificformat')->set_text($qsosspecificformat);
+
+}
+
+sub getqsosspecificformat {
+  my $self = shift;
+
+  my @root = $self->{twig}->root->children;
+  my $header = shift @root;
+  $header->first_child('qsosspecificformat')->text();
+
+}
+
+
+sub setqsosappfamily {
+  my ($self, $qsosappfamily) = @_;
+
+  $qsosappfamily = "" unless defined $qsosappfamily;
+  my @root = $self->{twig}->root->children;
+  my $header = shift @root;
+  $header->first_child('qsosappfamily')->set_text($qsosappfamily);
+
+}
+
+sub getqsosappfamily {
+  my $self = shift;
+
+  my @root = $self->{twig}->root->children;
+  my $header = shift @root;
+  $header->first_child('qsosappfamily')->text();
+
+}
 =head1 NAME
 
 QSOS::Document - QSOS file access
