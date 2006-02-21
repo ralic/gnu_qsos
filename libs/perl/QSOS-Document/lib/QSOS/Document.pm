@@ -1,4 +1,4 @@
-# $Id: Document.pm,v 1.6 2006/02/21 13:58:31 goneri Exp $
+# $Id: Document.pm,v 1.7 2006/02/21 17:28:49 goneri Exp $
 #
 #  Copyright (C) 2006 Atos Origin 
 #
@@ -69,7 +69,8 @@ sub load {
     carp "file doesn't exist";
     return;
   }
-  $self->{twig}->parsefile($file);
+  return unless $self->{twig}->safe_parsefile($file);
+  return unless ($file);
   $self->{file} = $file;
 
   my $aref;
@@ -79,6 +80,7 @@ sub load {
   foreach (@root) {
     $self->_flatme ($aref, $_);
   }
+  1;
 }
 
 sub _pushElem {
@@ -156,7 +158,7 @@ sub getkeycomment {
   $comment_ref->text();
 }
 
-sub setscore {
+sub setkeyscore {
   my ($self, $nbr, $score) = @_;
 
 
@@ -176,7 +178,7 @@ sub setscore {
   }
 }
 
-sub getscore {
+sub getkeyscore {
   my ($self, $nbr) = @_;
 
   if (! defined $nbr) {
@@ -253,7 +255,7 @@ sub addauthor {
 sub delauthor {
   my ($self, $id) = @_;
 
-  return unless $id;
+  return unless (defined $id);
   my @root = $self->{twig}->root->children;
   my $header = shift @root;
   if ($header->first_child('authors')->children_count()<$id) {
