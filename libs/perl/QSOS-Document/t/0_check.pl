@@ -1,5 +1,5 @@
 #!/usr/bin/perl -w
-# $Id: 0_check.pl,v 1.1 2006/02/21 11:10:10 goneri Exp $
+# $Id: 0_check.pl,v 1.2 2006/02/21 13:34:47 goneri Exp $
 #
 #  Copyright (C) 2006 Atos Origin 
 #
@@ -21,7 +21,7 @@
 #
 #
 use Test;
-BEGIN { plan tests => 2 }
+BEGIN { plan tests => 28 }
 
 use QSOS::Document;
 use Data::Dumper;
@@ -61,3 +61,99 @@ $qsos->delauthor(2);
 $authors = $qsos->getauthors();
 $last = pop @$authors;
 ok($last->{email} ne 'foo@bar.org');
+
+print "getappliname() ";
+$appliname = $qsos->getappliname();
+ok($appliname eq 'demo');
+
+print "setappliname('test') ";
+$qsos->setappliname('test');
+$appliname = $qsos->getappliname();
+ok($appliname eq 'test');
+
+print "getlanguage() ";
+$language = $qsos->getlanguage();
+ok($language eq 'en');
+
+print "setlanguage('fr') ";
+$qsos->setlanguage('fr');
+$language = $qsos->getlanguage();
+ok($language eq 'fr');
+
+print "getrelease() ";
+$release = $qsos->getrelease();
+ok($release eq '1');
+
+print "setrelease('2') ";
+$qsos->setrelease('2');
+$release = $qsos->getrelease();
+ok($release eq '2');
+
+print "getlicenselist() ";
+$licenselist = $qsos->getlicenselist();
+ok(@$licenselist);
+
+print "getlicense() ";
+$license = $qsos->getlicense();
+ok($license eq '1');
+
+print "setlicense(2) ";
+$qsos->setlicense(2);
+$license = $qsos->getlicense();
+ok($license eq '2');
+
+print "geturl() ";
+$url = $qsos->geturl();
+ok($url eq 'http://www.qsos.org');
+
+print "seturl(http://qsos.org) ";
+$qsos->seturl('http://qsos.org');
+$url = $qsos->geturl();
+ok($url eq 'http://qsos.org');
+
+print "getdesc() ";
+$desc = $qsos->getdesc();
+ok($desc eq 'a description');
+
+print "setdesc(something) ";
+$qsos->setdesc('something');
+$desc = $qsos->getdesc();
+ok($desc eq 'something');
+
+print "getdemourl() ";
+$demourl = $qsos->getdemourl();
+ok($demourl eq 'http://demo.site.org');
+
+print "setdemourl(http://demo.qsos.org) ";
+$qsos->setdemourl('http://demo.qsos.org');
+$demo = $qsos->getdemourl();
+ok($demo eq 'http://demo.qsos.org');
+
+print "getqsosformat() ";
+$qsosformat = $qsos->getqsosformat();
+ok($qsosformat eq '1');
+
+print "setqsosformat(1.1) ";
+$qsos->setqsosformat('1.1');
+$qsosformat = $qsos->getqsosformat();
+ok($qsosformat eq '1.1');
+
+print "getqsosspecificformat() ";
+$qsosspecificformat = $qsos->getqsosspecificformat();
+ok($qsosspecificformat eq '1');
+
+print "setqsosspecificformat(1.1) ";
+$qsos->setqsosspecificformat('1.1');
+$qsosspecificformat = $qsos->getqsosspecificformat();
+ok($qsosspecificformat eq '1.1');
+
+print "getqsosappfamily() ";
+$qsosappfamily = $qsos->getqsosappfamily();
+ok($qsosappfamily eq 'groupware');
+
+print "setqsosappfamily(word processor) ";
+$qsos->setqsosappfamily('word processor');
+$qsosappfamily = $qsos->getqsosappfamily();
+ok($qsosappfamily eq 'word processor');
+
+
