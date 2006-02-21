@@ -1,5 +1,5 @@
 #!/usr/bin/perl -w
-# $Id: 0_check.pl,v 1.2 2006/02/21 13:34:47 goneri Exp $
+# $Id: 0_check.pl,v 1.3 2006/02/21 17:25:25 goneri Exp $
 #
 #  Copyright (C) 2006 Atos Origin 
 #
@@ -62,14 +62,14 @@ $authors = $qsos->getauthors();
 $last = pop @$authors;
 ok($last->{email} ne 'foo@bar.org');
 
-print "getappliname() ";
-$appliname = $qsos->getappliname();
-ok($appliname eq 'demo');
+print "getappname() ";
+$appname = $qsos->getappname();
+ok($appname eq 'demo');
 
-print "setappliname('test') ";
-$qsos->setappliname('test');
-$appliname = $qsos->getappliname();
-ok($appliname eq 'test');
+print "setappname('test') ";
+$qsos->setappname('test');
+$appname = $qsos->getappname();
+ok($appname eq 'test');
 
 print "getlanguage() ";
 $language = $qsos->getlanguage();
