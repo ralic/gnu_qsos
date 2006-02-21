@@ -1,4 +1,4 @@
-# $Id: Document.pm,v 1.5 2006/02/21 13:36:19 goneri Exp $
+# $Id: Document.pm,v 1.6 2006/02/21 13:58:31 goneri Exp $
 #
 #  Copyright (C) 2006 Atos Origin 
 #
@@ -33,7 +33,7 @@ use vars qw($VERSION @ISA @EXPORT @EXPORT_OK $PREFERRED_PARSER);
 
 @ISA               = qw(Exporter);
 @EXPORT            = qw(XMLin XMLout);
-@EXPORT_OK         = qw(new load write getkeydesc setkeycomment getkeycomment setkeyscore getkeyscore write getauthors addauthor delauthor getappliname setappliname getlanguage setlanguage getrelease setrelease getlicenselist getlicense setlicense geturl seturl getdesc setdesc getdemourl setdemourl getqsosformat setqsosformat getqsosspecificformat setqsosspecificformat getqsosappfamily setqsosappfamily);
+@EXPORT_OK         = qw(new load write getkeydesc setkeycomment getkeycomment setkeyscore getkeyscore write getauthors addauthor delauthor getappname setappname getlanguage setlanguage getrelease setrelease getlicenselist getlicense setlicense geturl seturl getdesc setdesc getdemourl setdemourl getqsosformat setqsosformat getqsosspecificformat setqsosspecificformat getqsosappfamily setqsosappfamily);
 $VERSION           = '0.01';
 
 
@@ -267,22 +267,22 @@ sub delauthor {
 
 }
 
-sub getappliname {
+sub getappname {
   my $self = shift;
 
   my @root = $self->{twig}->root->children;
   my $header = shift @root;
-  $header->first_child('appli')->text();
+  $header->first_child('appname')->text();
 
 }
 
-sub setappliname {
-  my ($self, $appliname) = @_;
+sub setappname {
+  my ($self, $appname) = @_;
 
-  $appliname = "" unless defined $appliname;
+  $appname = "" unless defined $appname;
   my @root = $self->{twig}->root->children;
   my $header = shift @root;
-  $header->first_child('appli')->set_text($appliname);
+  $header->first_child('appname')->set_text($appname);
 
 }
 
