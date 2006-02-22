@@ -5,12 +5,12 @@ use strict;
 use warnings;
 
 use Qt;
-use QSOS::QtEditor::qsosform;
+use QSOS::QtEditor::Qsosform;
 
 my $this = {a => 1};
 
 my $a = Qt::Application(\@ARGV);
-my $w = QSOS::QtEditor::qsosform();
+my $w = QSOS::QtEditor::Qsosform();
 $a->setMainWidget($w);
 #$about->setMainWidget($w);
 $w->show;

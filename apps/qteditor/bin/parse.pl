@@ -5,7 +5,7 @@
 #
 #  Gonéri Le Bouder <goneri.lebouder@atosorigin.com>
 #
-#
+# $Id: parse.pl,v 1.2 2006/02/22 13:52:28 goneri Exp $
 use strict;
 use warnings;
 
@@ -26,7 +26,7 @@ print TMPOUT '<!DOCTYPE UI><UI version="3.2" stdsetdef="1">';
 my @tmp = <INPUT>;
 shift @tmp;
 foreach(@tmp) {
-	print TMPOUT;
+  print TMPOUT;
 }
 
 close TMPOUT;
@@ -37,16 +37,22 @@ my @perl = `$puic /tmp/qsosform_temp.ui`;
 
 open FINALOUTPUT, ">$outputfile";
 
-my $sub_section;
+my $continu = 1;
+my $insideLastFunc = 0;
 foreach (@perl) {
-unless ($sub_section) {
-	if (/^sub\ fileNew/) { # Change this !
-		$sub_section = 1;
-	} else {
-		print FINALOUTPUT;
-	}
-	}
+  s/package\ /package\ QSOS::QtEditor::/;
+  if ($continu) {
+    if (/^sub\ languageChange/) {
+      $insideLastFunc = 1;
+    }
+
+    $continu = 0 if ($insideLastFunc && /^}/);
+
+    print FINALOUTPUT;
+  }
 }
+
+
 
 print FINALOUTPUT "#### Code section\n";
 
