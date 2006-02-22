@@ -1,8 +1,9 @@
-use Qt::attributes qw( aboutform );
+use Qt::attributes qw( aboutform propertyform );
 use QSOS::Document;
 use Data::Dumper;
 use Qt::debug;
-use QSOS::QtEditor::aboutForm;
+use QSOS::QtEditor::Aboutform;
+use QSOS::QtEditor::Propertyform;
 use Carp;
 use strict;
 use warnings;
@@ -11,7 +12,7 @@ sub saveCurrentValue
 {
 
   my $num = SUPER->{current_section_nbr};
-  SUPER->this->{qsosxml}->setcomment($num, commentBox->text);
+  SUPER->this->{qsosxml}->setkeycomment($num, commentBox->text);
 
 }
 
@@ -25,7 +26,7 @@ sub loadSection
   if (defined SUPER->{current_section_nbr}) {
     saveCurrentValue();
   }
-  my $score = SUPER->this->{qsosxml}->getscore($num);
+  my $score = SUPER->this->{qsosxml}->getkeyscore($num);
   if (defined $score) {
     $score = 3 if ($score !~ /[123]/);
     scoreBox->setCurrentItem($score);
@@ -35,8 +36,8 @@ sub loadSection
     scoreBox->setCurrentItem(3);
   }
 
-  my $comment = SUPER->this->{qsosxml}->getcomment($num);
-  my $desc = SUPER->this->{qsosxml}->getdesc($num);
+  my $comment = SUPER->this->{qsosxml}->getkeycomment($num);
+  my $desc = SUPER->this->{qsosxml}->getkeydesc($num);
   $desc = "no description" unless (defined $desc);
   #descriptionBox->setText('<p align="center"><b>'.$desc.'</b></p>');
   descriptionBox->setText($desc);
@@ -61,7 +62,7 @@ sub fileOpen
 
   my $file = Qt::FileDialog::getOpenFileName(
     undef,
-    "QSOS file (*.xml)",
+    "QSOS file (*.qsos *.xml)",
     this,
     "open file dialog",
     "Choose a file" );
@@ -74,10 +75,14 @@ sub fileOpen
   print "opening file $file\n";
 
   SUPER->this->{qsosxml} = new QSOS::Document; 
-  SUPER->this->{qsosxml}->load($file);
+  if (!SUPER->this->{qsosxml}->load($file)) {
+    Qt::MessageBox::warning(undef, "Can't open $file", "Sorry this file is not a valide QSOS file");
+    SUPER->{file} = undef;
+    return; 
+  }
+
   ### listbox initialisation
   listBox->clear();
-#    print Dumper(SUPER->this->{qsosxml}->{struct});
   foreach (@{SUPER->this->{qsosxml}->{tabular}}) {
   print $_->{name};
   my $v;
@@ -86,6 +91,7 @@ sub fileOpen
   listBox->insertItem($v);
   loadSection(0);
   listBox->setEnabled(1);
+  showProperty->setEnabled(1);
 }
 }
 
@@ -100,7 +106,7 @@ sub fileSave
 
 sub fileSaveAs
 {
-  my $file = Qt::FileDialog::getSaveFileName( undef,"QSOS file (*.xml)", this);
+  my $file = Qt::FileDialog::getSaveFileName( undef,"QSOS file (*.qsos *.xml)", this);
 
   return unless $file;
 
@@ -108,28 +114,17 @@ sub fileSaveAs
   SUPER->this->{qsosxml}->write($file);
 }
 
-sub filePrint
-{
-  print "Qsosform->filePrint(): Not implemented yet.\n";
-}
 
 sub fileExit
 {
-  print "Qsosform->fileExit(): Not implemented yet.\n";
+  this->close();
 }
 
 
 sub helpAbout
 {
-
-  #aboutform = aboutForm(this,"aboutForm");
-  aboutform = QSOS::QtEditor::aboutForm(this);
-#  aboutform = aboutForm(this);
+  aboutform = QSOS::QtEditor::Aboutform(this);
   aboutform->show(1);
-#print Dumper(SUPER->SUPER);
-  print "Qsosform->helpAbout(): Not implemented yet.\n";
-#$about->show();
-  print "Qsosform->helpAbout(): Not implemented yet.\n";
 }
 
 sub itemChanged
@@ -149,7 +144,7 @@ sub scoreChanged
  
   return unless (defined ($score) and ($score));
   return unless (defined ($num) and ($num));
-  SUPER->this->{qsosxml}->setscore($num, $score);
+  SUPER->this->{qsosxml}->setkeyscore($num, $score);
 
 }
 
@@ -161,5 +156,13 @@ sub commentChanged
 #  print "Qsosform->commentChanged(): Not implemented yet.\n";
 
 }
+
+sub propertyBox
+{
+  propertyform = QSOS::QtEditor::Propertyform(this);
+  propertyform->init(SUPER->this->{qsosxml});
+  propertyform->show(1);
+}
+
 
 1;
