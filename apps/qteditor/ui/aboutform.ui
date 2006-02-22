@@ -1,13 +1,13 @@
-<!DOCTYPE UI><UI version="3.2" stdsetdef="1">
-<class>aboutForm</class>
+<!DOCTYPE UI><UI version="3.3" stdsetdef="1">
+<class>Aboutform</class>
 <widget class="QDialog">
     <property name="name">
-        <cstring>aboutForm</cstring>
+        <cstring>Aboutform</cstring>
     </property>
     <property name="geometry">
         <rect>
-            <x>21</x>
-            <y>96</y>
+            <x>0</x>
+            <y>0</y>
             <width>400</width>
             <height>220</height>
         </rect>
@@ -88,7 +88,7 @@
     <connection>
         <sender>pushButton1</sender>
         <signal>clicked()</signal>
-        <receiver>aboutForm</receiver>
+        <receiver>Aboutform</receiver>
         <slot>close()</slot>
     </connection>
 </connections>
