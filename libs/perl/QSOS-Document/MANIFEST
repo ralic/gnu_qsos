@@ -3,9 +3,8 @@ Changes
 Makefile.old
 lib/QSOS/Document.pm
 README
-t/0_common.t
-t/qsos.xml
-t/qsos2.xml
+t/0_check.t
+qsos.xml
 MANIFEST
 Makefile
 LICENSE
