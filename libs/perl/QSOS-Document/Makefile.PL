@@ -1,4 +1,4 @@
-# $Id: Makefile.PL,v 1.3 2006/03/03 09:45:16 goneri Exp $
+# $Id: Makefile.PL,v 1.4 2006/03/03 09:45:39 goneri Exp $
 
 use ExtUtils::MakeMaker;
 
@@ -31,7 +31,7 @@ if ( eval { require XML::Twig } && ! $@ ) {
     print "XML::Twig is installed, it will be used by the test suite\n";
 }
 else {
-    die "You don't have XML::Simple installed!\n";
+    die "You don't have XML::Twig installed!\n";
 }
 
 eval { require Storable };
