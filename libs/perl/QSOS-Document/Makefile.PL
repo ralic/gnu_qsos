@@ -1,4 +1,4 @@
-# $Id: Makefile.PL,v 1.1 2006/02/15 17:37:21 goneri Exp $
+# $Id: Makefile.PL,v 1.2 2006/03/03 09:44:51 goneri Exp $
 
 use ExtUtils::MakeMaker;
 
@@ -27,7 +27,7 @@ my $make_params = {
 
 print "Checking installed modules ...\n";
 
-if ( eval { require XML::Simple } && ! $@ ) {
+if ( eval { require XML::Twig } && ! $@ ) {
     print "XML::Simple is installed, it will be used by the test suite\n";
 }
 else {
