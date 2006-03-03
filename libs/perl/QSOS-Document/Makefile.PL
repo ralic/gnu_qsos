@@ -1,4 +1,4 @@
-# $Id: Makefile.PL,v 1.2 2006/03/03 09:44:51 goneri Exp $
+# $Id: Makefile.PL,v 1.3 2006/03/03 09:45:16 goneri Exp $
 
 use ExtUtils::MakeMaker;
 
@@ -28,7 +28,7 @@ my $make_params = {
 print "Checking installed modules ...\n";
 
 if ( eval { require XML::Twig } && ! $@ ) {
-    print "XML::Simple is installed, it will be used by the test suite\n";
+    print "XML::Twig is installed, it will be used by the test suite\n";
 }
 else {
     die "You don't have XML::Simple installed!\n";
