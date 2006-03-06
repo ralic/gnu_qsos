@@ -40,7 +40,6 @@
     </element>
     <element name="doc">
       <comment>La documentation est plutôt limité http://opengroupware.org/en/users/docs/index.html, http://docs.opengroupware.org. La documentation destinée au développeur est un peu plus soignée</comment>
-      <rate>Oui</rate>
       <element name="debug">
         <comment>commentaire de debug</comment>
       </element>
