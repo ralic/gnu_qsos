@@ -1,5 +1,5 @@
 #!/usr/bin/perl -w
-# $Id: 0_check.pl,v 1.3 2006/02/21 17:25:25 goneri Exp $
+# $Id: 0_check.t,v 1.1 2006/03/06 09:39:30 goneri Exp $
 #
 #  Copyright (C) 2006 Atos Origin 
 #
