@@ -1,4 +1,4 @@
-# $Id: Document.pm,v 1.7 2006/02/21 17:28:49 goneri Exp $
+# $Id: Document.pm,v 1.8 2006/03/08 14:07:11 goneri Exp $
 #
 #  Copyright (C) 2006 Atos Origin 
 #
@@ -69,7 +69,11 @@ sub load {
     carp "file doesn't exist";
     return;
   }
-  return unless $self->{twig}->safe_parsefile($file);
+  unless ($self->{twig}->safe_parsefile($file)) {
+    print "Can't load file `$file'\n";
+    print $@;
+    return;
+  }
   return unless ($file);
   $self->{file} = $file;
 
