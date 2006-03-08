@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- $Id: groupware.qsos,v 1.1 2006/03/08 15:40:50 goneri Exp $ -->
+<!-- $Id: groupware.qsos,v 1.2 2006/03/08 15:56:35 goneri Exp $ -->
 <document>
   <header>
     <authors>
@@ -27,7 +27,7 @@
     <desc>Generic comment</desc>
     <comment></comment>
     <element name="historicissue">
-      <desc>Did the project met important issue in the past years?</desc>
+      <desc>Did the project meet important issue in the past years?</desc>
       <comment></comment>
       <rate></rate>
     </element>
