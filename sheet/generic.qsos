@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- $Id: generic.qsos,v 1.1 2006/03/08 15:40:50 goneri Exp $ -->
+<document>
+  <header>
+    <authors>
+      <author>
+        <name>Foo Bar</name>
+        <email>foo@qsos.org</email>
+      </author>
+    </authors>
+    <dates>
+      <creation>20060307</creation>
+      <validation></validation>
+    </dates>
+    <language>en</language>
+    <appname>kolab</appname>
+    <release>2</release>
+    <license>1</license>
+    <url>http://www.kolab.org</url>
+    <desc>a description</desc>
+    <demourl>http://demo.site.org</demourl>
+    <qsosformat>1</qsosformat>
+    <qsosappfamily>groupware</qsosappfamily>
+    <qsosspecificformat>1</qsosspecificformat>
+  </header>
+  <section name="generic">
+    <desc>Generic comment</desc>
+    <comment></comment>
+    <element name="historicissue">
+      <desc>Did the project met important issue in the past years?</desc>
+      <comment></comment>
+      <rate></rate>
+    </element>
+    <element name="forkmergeprobability"> <!-- modified section -->
+      <desc>Probability of a fork of the project or a merge with another one.</desc>
+      <comment></comment>
+      <rate></rate>
+    </element>
+    <element name="adoptation">
+      <element name="popularity">
+        <desc>Popularity</desc>
+        <comment></comment>
+        <rate></rate>
+      </element>
+      <element name="usegroup">
+        <desc>User group</desc>
+        <comment></comment>
+        <rate></rate>
+        <element name="otherref">
+          <desc>Others references (commercial)</desc>
+          <comment></comment>
+          <rate></rate>
+        </element>
+        <element name="contributorscommunity">
+          <desc>Importance of the contributors community</desc>
+          <comment></comment>
+          <rate></rate>
+        </element>
+        <element name="books">
+          <desc>Books published</desc>
+          <comment></comment>
+          <rate></rate>
+        </element>
+        <element name="awardwon"> <!-- new section -->
+          <desc>Award won by the project</desc>
+          <comment></comment>
+          <rate></rate>
+        </element>
+      </element>
+    </element>
+    <element name="leadmodel">
+      <element name="coreteam">
+        <desc>Core team</desc>
+        <comment></comment>
+        <rate></rate>
+      </element>
+      <element name="leadershipmodel"> <!-- translate me correctly! -->
+        <desc>Leadership model</desc>
+        <comment></comment>
+        <rate></rate>
+      </element>
+    </element>
+    <element name="dynamism">
+      <element name="developperteam">
+        <desc>Developper dynamism, interest, turnover</desc>
+        <comment></comment>
+        <rate></rate>
+      </element>
+      <element name="bugfixe">
+        <desc>Dynamism around bug hunt</desc>
+        <comment></comment>
+        <rate></rate>
+      </element>
+      <element name="feature">
+        <desc>Dynamism around new feature addition</desc>
+        <comment></comment>
+        <rate></rate>
+      </element>
+      <element name="release">
+        <desc>Dynamism around new release</desc>
+        <comment></comment>
+        <rate></rate>
+      </element>
+    </element>
+    <element name="supported_os">
+      <element name="linux">
+        <comment>Supported Operating System</comment>
+        <element name="debian">
+          <desc>Debian Linux and other .deb based distro</desc>
+          <comment></comment>
+        </element>
+        <element name="redhat">
+          <desc>RedHat Linux and others Rh based distro</desc>
+          <comment></comment>
+        </element>
+        <element name="mandriva">
+          <desc>Mandriva Linux and others Rh based distro</desc>
+          <comment></comment>
+        </element>
+        <element name="suse">
+          <desc>SuSE Linux and others SuSE based distro</desc>
+          <comment></comment>
+        </element>
+      </element>
+      <element name="windows">
+        <comment>Windows support</comment>
+        <element name="win95-98-nt">
+          <desc>Windows 95/98/NT</desc>
+          <comment></comment>
+        </element>
+        <element name="win2k-xp-2k3">
+          <desc>Windows 2k/XP/sk3</desc>
+          <comment></comment>
+        </element>
+      </element>
+      <element name="unix">
+        <element name="freebsd">
+          <desc>FreeBSD</desc>
+          <comment></comment>
+        </element>
+        <element name="netbsd">
+          <desc>NetBSD</desc>
+          <comment></comment>
+        </element>
+        <element name="openbsd">
+          <desc>OpenBSD</desc>
+          <comment></comment>
+        </element>
+        <element name="solaris">
+          <desc>Solaris</desc>
+          <comment></comment>
+        </element>
+        <element name="aix">
+          <desc>AIX</desc>
+          <comment></comment>
+        </element>
+      </element>
+    </element>
+    <element name="service">
+      <element name="documentation">
+        <desc>Documentation</desc>
+        <comment></comment>
+      </element>
+      <element name="authorsupport">
+        <desc>Support from the author(s)</desc>
+        <comment></comment>
+      </element>
+      <element name="3thsidesupport">
+        <desc>Support from others people or company</desc>
+        <comment></comment>
+      </element>
+    </element>
+    <element name="technicalside">
+      <desc>Fonctionnal and technic aspect</desc>
+      <comment></comment>
+      <element name="maintechnologies">
+        <desc>Main technologies used</desc>
+        <comment></comment>
+        <element name="requirement">
+          <desc>Requirements</desc>
+          <comment></comment>
+        </element>
+        <element name="fonctionnality">
+          <desc>Fonctionnality overview (URL)</desc>
+          <comment></comment>
+        </element>
+        <element name="roadmap">
+          <desc>Quality of the roadmap</desc>
+          <comment></comment>
+          <rate></rate>
+        </element>
+        <element name="maturity">
+          <desc>Maturity of the program</desc>
+          <comment></comment>
+          <rate></rate>
+        </element>
+        <element name="stability">
+          <desc>Stablity of the stability</desc>
+          <comment></comment>
+          <rate></rate>
+        </element>
+        <element name="stability">
+          <desc>Stablity of the stability</desc>
+          <comment></comment>
+          <rate></rate>
+        </element>
+      </element>
+    </element>
+  </section>
+</document>
