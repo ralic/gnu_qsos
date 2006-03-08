@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- $Id: groupware.qsos,v 1.2 2006/03/08 15:56:35 goneri Exp $ -->
+<!-- $Id: groupware.qsos,v 1.3 2006/03/08 15:59:25 goneri Exp $ -->
 <document>
   <header>
     <authors>
@@ -191,11 +191,6 @@
         </element>
         <element name="maturity">
           <desc>Maturity of the program</desc>
-          <comment></comment>
-          <rate></rate>
-        </element>
-        <element name="stability">
-          <desc>Stablity of the stability</desc>
           <comment></comment>
           <rate></rate>
         </element>
