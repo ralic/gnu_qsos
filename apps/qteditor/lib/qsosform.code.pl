@@ -13,6 +13,7 @@ sub saveCurrentValue
 
   my $num = SUPER->{current_section_nbr};
   SUPER->this->{qsosxml}->setkeycomment($num, commentBox->text);
+  SUPER->this->{qsosxml}->setkeyscore($num, scoreBox->currentItem);
 
 }
 
@@ -26,11 +27,12 @@ sub loadSection
   if (defined SUPER->{current_section_nbr}) {
     saveCurrentValue();
   }
+  SUPER->{current_section_nbr} = $num;
   my $score = SUPER->this->{qsosxml}->getkeyscore($num);
   if (defined $score) {
-    $score = 3 if ($score !~ /[123]/);
+    $score = 3 if ($score !~ /[012]/);
     scoreBox->setCurrentItem($score);
-    scoreBox->setEnabled($score);
+    scoreBox->setEnabled(1);
   } else {
     scoreBox->setEnabled(0);
     scoreBox->setCurrentItem(3);
@@ -50,7 +52,6 @@ sub loadSection
     commentBox->setReadOnly(1);
     commentBox->setEnabled(0);
   }
-  SUPER->{current_section_nbr} = $num;
 }
 
 sub fileNew
@@ -130,7 +131,6 @@ sub helpAbout
 sub itemChanged
 {
   my $item = shift;
-  print "Qsosform->itemChanged(): Not implemented yet.\n";
 
   loadSection($item);
 }

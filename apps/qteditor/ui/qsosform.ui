@@ -154,9 +154,9 @@ Please open a qsos file.
         </property>
         <property name="geometry">
             <rect>
-                <x>621</x>
+                <x>650</x>
                 <y>30</y>
-                <width>170</width>
+                <width>140</width>
                 <height>51</height>
             </rect>
         </property>
@@ -166,17 +166,17 @@ Please open a qsos file.
         <widget class="QComboBox">
             <item>
                 <property name="text">
-                    <string>full support</string>
+                    <string>0</string>
                 </property>
             </item>
             <item>
                 <property name="text">
-                    <string>support</string>
+                    <string>1</string>
                 </property>
             </item>
             <item>
                 <property name="text">
-                    <string>not supported</string>
+                    <string>2</string>
                 </property>
             </item>
             <item>
@@ -192,9 +192,9 @@ Please open a qsos file.
             </property>
             <property name="geometry">
                 <rect>
-                    <x>20</x>
+                    <x>30</x>
                     <y>20</y>
-                    <width>140</width>
+                    <width>90</width>
                     <height>22</height>
                 </rect>
             </property>
@@ -329,10 +329,10 @@ Please open a qsos file.
 </actions>
 <images>
     <image name="image0">
-        <data format="PNG" length="210">89504e470d0a1a0a0000000d4948445200000016000000160806000000c4b46c3b0000009949444154388ded94410e85200c445f89c7367f61bc775d2848a42860ffced9548bbe8e13043e1d928177f481a123dc2b34f6f47a3de2b865a8843f4001982a0b3d5f62c58300aa1ad70550449ab9d507a773a8a4ba4f92a2df333c64c63bebbd82e5b8addecbcc7820eb4266c639745dfa80f36faf66c66fa19c3f882fb470ec05cdc0bed07893f68e171492635f686c3eeff6ba3c8fdd366dc4c0452c8781f8080000000049454e44ae426082</data>
+        <data format="PNG" length="214">89504e470d0a1a0a0000000d4948445200000016000000160806000000c4b46c3b0000009d49444154388ded94bb0ec2300c458fa30cfc301313e2a73b543203949a262d8e65b6dec5511ec737574ae0d45b1238a33f181ae16ea1cb9c6ec711c79ea652fe0005a0ee2c8cdca4170f02a8eab22e8022e2e6ee6eac6b53f9d4572769e6479a17637cb01eabf41cfbeab1ba1907b26ed4cdd8421f77b85498665fbddebea2c885b23e905c68e3380b6ac0b9501b6e2ad438ce85368e03cafc767d7a0264da8b2cdb7796190000000049454e44ae426082</data>
     </image>
     <image name="image1">
-        <data format="PNG" length="217">89504e470d0a1a0a0000000d4948445200000016000000160806000000c4b46c3b000000a049444154388dd5954d0a802010859fd14668e18de662d222bc98376a21b4ac451992c66469e0b7f187f1f11c47052a218e762daddbfb9e99f6568f80b5364b8588ce35440400e80a398ce8f99034d2292cc37c8ebd530feb583a05e954341f8a027b2a7d3a1f09bf854dc5d5d953aa396e4f38cab199e2d2e108abe156f82e30977fcb4d8ff942d75dbebed2e143953a93f6caad3d6111f44b7d4f820ff9c0069bb51ecded318c5c0000000049454e44ae426082</data>
+        <data format="PNG" length="319">89504e470d0a1a0a0000000d4948445200000016000000160806000000c4b46c3b0000010649444154388db5953b6ec33010449f02165bea3c21e05bb90a82c03052e55606e4ce776191820581a49057164df1e738db900b91c3c7c148827faae13afe3c5bd7e8eceb137c80f70f984e1362041f3c182050ecedabe572bee083c7ee2c002f2aec0388b91de9839f27a1b3bfd6222566168f9e1448473fe2c42146001652ad2cb192e004f91e1332272eea8f87d9ce44f89e5849f430edc9f6f1fe8531e7b1922d37c87a1cefcf12e7c9b6fbfbfd558f5bd3d04cdc4adaecf1f19046a756fa72ad89931cabf8baef19132b1e11d91a8bc4fbb72e27223b12e1adeb946a3a4dcbdcee6c3d1551e44ad59be356e2ee1cb712d772fc3071ed5b31acd63eebf734d497fca17e01d07ac8895aedbcd20000000049454e44ae426082</data>
     </image>
 </images>
 <connections>

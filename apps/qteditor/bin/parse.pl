@@ -5,7 +5,7 @@
 #
 #  Gonéri Le Bouder <goneri.lebouder@atosorigin.com>
 #
-# $Id: parse.pl,v 1.2 2006/02/22 13:52:28 goneri Exp $
+# $Id: parse.pl,v 1.3 2006/03/09 09:59:57 goneri Exp $
 use strict;
 use warnings;
 
@@ -34,6 +34,8 @@ close INPUT;
 
 
 my @perl = `$puic /tmp/qsosform_temp.ui`;
+die if( $? );
+#die;
 
 open FINALOUTPUT, ">$outputfile";
 
