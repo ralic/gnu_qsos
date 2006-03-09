@@ -11,7 +11,7 @@
 #      included in the section entitled "GNU
 #      Free Documentation License".
 #
-# $Id: Makefile,v 1.7 2006/03/09 09:33:01 goneri Exp $
+# $Id: Makefile,v 1.8 2006/03/09 16:26:42 goneri Exp $
 TEX=changelog.tex define.tex eval.tex eval_app.tex fdl.tex general_process.tex glossary.tex internet_site.tex intro.tex license.tex manifest.tex qsos.tex qualify.tex
 # TODO split this by language :
 GFXS_DEST_PNG=images/comparaison.eps images/processus_4_etapes.eps images/definir.eps images/evaluer.eps images/qualifier.eps images/selectionner.eps images/QSOS.eps images/fr/comparaison.eps images/fr/processus_4_etapes.eps images/fr/definir.eps images/fr/evaluer.eps images/fr/qualifier.eps images/fr/selectionner.eps images/fr/QSOS.eps images/es/comparaison.eps images/es/processus_4_etapes.eps images/es/definir.eps images/es/evaluer.eps images/es/qualifier.eps images/es/selectionner.eps images/es/QSOS.eps
@@ -48,61 +48,77 @@ qsos-$(CURRENT_RELEASE)-es.dvi: $(GFXS_DEST_PNG) $(GFXS_DEST_SVG) $(TEX)
 	mv qsos.dvi qsos-$(CURRENT_RELEASE)-es.dvi
 
 
-
-html: $(GFXS_DEST_PNG) $(GFXS_DEST_SVG)
 #	hevea qsos.hva hyperref.hva -pedantic -charset iso-8859-1 qsos.tex
 #	imagen -png qsos
-#	TODO : Split that crappy code 
+#	TODO : Split that crappy code
+html-en: $(GFXS_DEST_PNG) $(GFXS_DEST_SVG)
+	mkdir -p qsos
+	rm -rf qsos_www/en
 	latex2html -no_footnode -auto_prefix -split 0 -info 0 -no_navigation qsos.tex
 	latex2html -no_footnode -auto_prefix -split 0 -info 0 -no_navigation qsos.tex
 	latex2html -no_footnode -auto_prefix -split 0 -info 0 -no_navigation qsos.tex
 	latex2html -dir qsos -no_footnode -auto_prefix -split 0 -info 0 -no_navigation license.tex
 	latex2html -dir qsos -no_footnode -auto_prefix -split 0 -info 0 -no_navigation fdl.tex
-	mv qsos qsos_en
-	#French
-	mkdir qsos
-	latex2html -no_footnode -auto_prefix -split 0 -info 0 -no_navigation lang/fr/qsos.tex
-	latex2html -no_footnode -auto_prefix -split 0 -info 0 -no_navigation lang/fr/qsos.tex
-	latex2html -no_footnode -auto_prefix -split 0 -info 0 -no_navigation lang/fr/qsos.tex
-	latex2html -dir qsos -no_footnode -auto_prefix -split 0 -info 0 -no_navigation lang/fr/license.tex
-	latex2html -dir qsos -no_footnode -auto_prefix -split 0 -info 0 -no_navigation lang/fr/fdl.tex
-	mv qsos qsos_fr
-	# Spanish
-	mkdir qsos
-	latex2html -no_footnode -auto_prefix -split 0 -info 0 -no_navigation lang/es/qsos.tex
-	latex2html -no_footnode -auto_prefix -split 0 -info 0 -no_navigation lang/es/qsos.tex
-	latex2html -no_footnode -auto_prefix -split 0 -info 0 -no_navigation lang/es/qsos.tex
-	latex2html -dir qsos -no_footnode -auto_prefix -split 0 -info 0 -no_navigation lang/es/license.tex
-	latex2html -dir qsos -no_footnode -auto_prefix -split 0 -info 0 -no_navigation lang/es/fdl.tex
-	mv qsos qsos_es
-	mkdir qsos
-	mv qsos_en qsos/en
-	mv qsos_fr qsos/fr
-	mv qsos_es qsos/es
 	# latex2html fait du code crade, je passe un coup de tidy pour nettoyer le code
 	# les parentheses autour invrse le code de retour de tidy sinon make s'arrete en
 	# pensant avoir une erreur fatale
-	perl -e 'system("cat qsos/en/license.html | tidy -m -asxml  -clean > qsos/en/license_clean.html");1';
-	perl -e 'system("cat qsos/en/qsos.html | tidy -m -asxml  -clean > qsos/en/qsos_clean.html");1';
-	perl -e 'system("cat qsos/en/fdl.html | tidy -m -asxml  -clean > qsos/en/fdl_clean.html");1';
-	mv qsos/en/license_clean.html qsos/en/license.html
-	mv qsos/en/qsos_clean.html qsos/en/qsos.html
-	mv qsos/en/fdl_clean.html qsos/en/fdl.html
-	#French
-	perl -e 'system("cat qsos/fr/licfrse.html | tidy -m -asxml  -clean > qsos/fr/licfrse_clean.html");1';
-	perl -e 'system("cat qsos/fr/qsos.html | tidy -m -asxml  -clean > qsos/fr/qsos_clean.html");1';
-	perl -e 'system("cat qsos/fr/fdl.html | tidy -m -asxml  -clean > qsos/fr/fdl_clean.html");1';
-	mv qsos/fr/licfrse_clean.html qsos/fr/licfrse.html
-	mv qsos/fr/qsos_clean.html qsos/fr/qsos.html
-	mv qsos/fr/fdl_clean.html qsos/fr/fdl.html
-	#Spanish
-	perl -e 'system("cat qsos/es/licesse.html | tidy -m -asxml  -clean > qsos/es/licesse_clean.html");1';
-	perl -e 'system("cat qsos/es/qsos.html | tidy -m -asxml  -clean > qsos/es/qsos_clean.html");1';
-	perl -e 'system("cat qsos/es/fdl.html | tidy -m -asxml  -clean > qsos/es/fdl_clean.html");1';
-	mv qsos/es/licesse_clean.html qsos/es/licesse.html
-	mv qsos/es/qsos_clean.html qsos/es/qsos.html
-	mv qsos/es/fdl_clean.html qsos/es/fdl.html
+	perl -e 'system("cat qsos/license.html | tidy -m -asxml  -clean > qsos/license_clean.html");1';
+	perl -e 'system("cat qsos/qsos.html | tidy -m -asxml  -clean > qsos/qsos_clean.html");1';
+	perl -e 'system("cat qsos/fdl.html | tidy -m -asxml  -clean > qsos/fdl_clean.html");1';
+	mkdir -p qsos_www
+	mv qsos qsos_www/en
+	mv qsos_www/en/license_clean.html qsos_www/en/license.html
+	mv qsos_www/en/qsos_clean.html qsos_www/en/qsos.html
+	mv qsos_www/en/fdl_clean.html qsos_www/en/fdl.html
+#	rm -Rf qsos
 
+
+
+html-fr: $(GFXS_DEST_PNG) $(GFXS_DEST_SVG)
+	mkdir -p qsos
+	rm -rf qsos_www/fr
+	latex2html -no_footnode -auto_prefix -split 0 -info 0 -no_navigation lang/fr/qsos.tex
+	latex2html -no_footnode -auto_prefix -split 0 -info 0 -no_navigation lang/fr/qsos.tex
+	latex2html -no_footnode -auto_prefix -split 0 -info 0 -no_navigation lang/fr/qsos.tex
+	latex2html -dir qsos -no_footnode -auto_prefix -split 0 -info 0 -no_navigation license.tex
+	latex2html -dir qsos -no_footnode -auto_prefix -split 0 -info 0 -no_navigation fdl.tex
+	# latex2html fait du code crade, je passe un coup de tidy pour nettoyer le code
+	# les parfrtheses autour invrse le code de retour de tidy sinon make s'arrete fr
+	# pfrsant avoir une erreur fatale
+	perl -e 'system("cat qsos/license.html | tidy -m -asxml  -clean > qsos/license_clean.html");1';
+	perl -e 'system("cat qsos/qsos.html | tidy -m -asxml  -clean > qsos/qsos_clean.html");1';
+	perl -e 'system("cat qsos/fdl.html | tidy -m -asxml  -clean > qsos/fdl_clean.html");1';
+	mkdir -p qsos_www
+	mv qsos qsos_www/fr
+	mv qsos_www/fr/license_clean.html qsos_www/fr/license.html
+	mv qsos_www/fr/qsos_clean.html qsos_www/fr/qsos.html
+	mv qsos_www/fr/fdl_clean.html qsos_www/fr/fdl.html
+#	rm -Rf qsos
+
+html-es: $(GFXS_DEST_PNG) $(GFXS_DEST_SVG)
+	mkdir -p qsos
+	rm -rf qsos_www/es
+	latex2html -no_footnode -auto_prefix -split 0 -info 0 -no_navigation lang/es/qsos.tex
+	latex2html -no_footnode -auto_prefix -split 0 -info 0 -no_navigation lang/es/qsos.tex
+	latex2html -no_footnode -auto_prefix -split 0 -info 0 -no_navigation lang/es/qsos.tex
+	latex2html -dir qsos -no_footnode -auto_prefix -split 0 -info 0 -no_navigation license.tex
+	latex2html -dir qsos -no_footnode -auto_prefix -split 0 -info 0 -no_navigation fdl.tex
+	# latex2html fait du code crade, je passe un coup de tidy pour nettoyer le code
+	# les parestheses autour invrse le code de retour de tidy sinon make s'arrete es
+	# pessant avoir une erreur fatale
+	perl -e 'system("cat qsos/license.html | tidy -m -asxml  -clean > qsos/license_clean.html");1';
+	perl -e 'system("cat qsos/qsos.html | tidy -m -asxml  -clean > qsos/qsos_clean.html");1';
+	perl -e 'system("cat qsos/fdl.html | tidy -m -asxml  -clean > qsos/fdl_clean.html");1';
+	mkdir -p qsos_www
+	mv qsos qsos_www/es
+	mv qsos_www/es/license_clean.html qsos_www/es/license.html
+	mv qsos_www/es/qsos_clean.html qsos_www/es/qsos.html
+	mv qsos_www/es/fdl_clean.html qsos_www/es/fdl.html
+#	rm -Rf qsos
+
+
+
+html: html-en html-fr html-es
 
 clean:
 	rm -rf  $(GFXS_DEST_PNG) $(GFXS_DEST_SVG) \
@@ -153,18 +169,19 @@ qsos-$(CURRENT_RELEASE).tar.gz:
 
 
 install: dvi-fr dvi-en html license pdf tgz 
+	mkdir -p $(WWW)/download/
 	mkdir -p $(WWW)/methode/en
 	cp -v qsos/en/*.png $(WWW)/methode/en
 	./clean_html.pl qsos/en/qsos.html| recode ISO-8859-1..UTF-8 > $(WWW)/methode/en/methode.html
 	./clean_html.pl qsos/en/license.html| recode ISO-8859-1..UTF-8 > $(WWW)/methode/en/license.html
 	./clean_html.pl qsos/en/fdl.html| recode ISO-8859-1..UTF-8 > $(WWW)/methode/en/fdl.html
-	cp qsos-en.pdf $(WWW)/download/qsos-$(CURRENT_RELEASE)-en.pdf
-	cp qsos-en.dvi $(WWW)/download/qsos-$(CURRENT_RELEASE)-en.dvi
+	cp qsos-$(CURRENT_RELEASE)-en.pdf $(WWW)/download/
+	cp qsos-$(CURRENT_RELEASE)-en.dvi $(WWW)/download/
 	# french
 	mkdir -p $(WWW)/methode/fr
 	cp -v qsos/fr/*.png $(WWW)/methode/fr
 	./clean_html.pl qsos/fr/qsos.html| recode ISO-8859-1..UTF-8 > $(WWW)/methode/fr/methode.html
-	./clean_html.pl qsos/fr/licfrse.html| recode ISO-8859-1..UTF-8 > $(WWW)/methode/fr/licfrse.html
+	./clean_html.pl qsos/fr/license.html| recode ISO-8859-1..UTF-8 > $(WWW)/methode/fr/license.html
 	./clean_html.pl qsos/fr/fdl.html| recode ISO-8859-1..UTF-8 > $(WWW)/methode/fr/fdl.html
 	cp qsos-fr.pdf $(WWW)/download/qsos-$(CURRENT_RELEASE)-fr.pdf
 	cp qsos-fr.dvi $(WWW)/download/qsos-$(CURRENT_RELEASE)-fr.dvi
@@ -172,7 +189,7 @@ install: dvi-fr dvi-en html license pdf tgz
 	mkdir -p $(WWW)/methode/es
 	cp -v qsos/es/*.png $(WWW)/methode/es
 	./clean_html.pl qsos/es/qsos.html| recode ISO-8859-1..UTF-8 > $(WWW)/methode/es/methode.html
-	./clean_html.pl qsos/es/licesse.html| recode ISO-8859-1..UTF-8 > $(WWW)/methode/es/licesse.html
+	./clean_html.pl qsos/es/license.html| recode ISO-8859-1..UTF-8 > $(WWW)/methode/es/license.html
 	./clean_html.pl qsos/es/fdl.html| recode ISO-8859-1..UTF-8 > $(WWW)/methode/es/fdl.html
 	cp qsos-es.pdf $(WWW)/download/qsos-$(CURRENT_RELEASE)-es.pdf
 	cp qsos-es.dvi $(WWW)/download/qsos-$(CURRENT_RELEASE)-es.dvi
