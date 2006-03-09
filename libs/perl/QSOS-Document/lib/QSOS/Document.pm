@@ -1,4 +1,4 @@
-# $Id: Document.pm,v 1.8 2006/03/08 14:07:11 goneri Exp $
+# $Id: Document.pm,v 1.9 2006/03/09 09:58:04 goneri Exp $
 #
 #  Copyright (C) 2006 Atos Origin 
 #
@@ -174,6 +174,8 @@ sub setkeyscore {
     croak ("Can't setscore in an undef value");
     return;
   }
+
+  $score = '' if ($score !~ /[012]/);
 
   my $score_ref = $self->{tabular}->[$nbr]->{score_ref};
 
