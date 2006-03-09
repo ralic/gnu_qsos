@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- $Id: groupware.qsos,v 1.4 2006/03/08 16:01:15 goneri Exp $ -->
-<document>
+<!-- $Id: groupware.qsos,v 1.5 2006/03/09 12:48:53 goneri Exp $ --><document>
   <header>
     <authors>
       <author>
-        <name>Foo Bar</name>
-        <email>foo@qsos.org</email>
+        <email>goneri.lebouder@atosorigin.com</email>
+        <name>Gonéri Le Bouder</name>
       </author>
     </authors>
     <dates>
@@ -15,10 +14,10 @@
     <language>en</language>
     <appname>kolab</appname>
     <release>2</release>
-    <license>1</license>
+    <license>31</license>
     <url>http://www.kolab.org</url>
-    <desc>a description</desc>
-    <demourl>http://demo.site.org</demourl>
+    <desc>Kolab is a groupware used in the german administration</desc>
+    <demourl>http://kolab.org/screenshots.html</demourl>
     <qsosformat>1</qsosformat>
     <qsosappfamily>groupware</qsosappfamily>
     <qsosspecificformat>1</qsosspecificformat>
@@ -31,7 +30,8 @@
       <comment></comment>
       <score></score>
     </element>
-    <element name="forkmergeprobability"> <!-- modified section -->
+    <element name="forkmergeprobability">
+      <!-- modified section -->
       <desc>Probability of a fork of the project or a merge with another one.</desc>
       <comment></comment>
       <score></score>
@@ -61,7 +61,8 @@
           <comment></comment>
           <score></score>
         </element>
-        <element name="awardwon"> <!-- new section -->
+        <element name="awardwon">
+          <!-- new section -->
           <desc>Award won by the project</desc>
           <comment></comment>
           <score></score>
@@ -74,7 +75,8 @@
         <comment></comment>
         <score></score>
       </element>
-      <element name="leadershipmodel"> <!-- translate me correctly! -->
+      <element name="leadershipmodel">
+        <!-- translate me correctly! -->
         <desc>Leadership model</desc>
         <comment></comment>
         <score></score>
@@ -103,56 +105,70 @@
       </element>
     </element>
     <element name="supported_os">
+      <desc>Supported operating system</desc>
       <element name="linux">
-        <comment>Supported Operating System</comment>
+        <desc>Linux</desc>
+        <comment></comment>
         <element name="debian">
           <desc>Debian Linux and other .deb based distro</desc>
           <comment></comment>
+          <score></score>
         </element>
         <element name="redhat">
           <desc>RedHat Linux and others Rh based distro</desc>
           <comment></comment>
+          <score></score>
         </element>
         <element name="mandriva">
           <desc>Mandriva Linux and others Rh based distro</desc>
           <comment></comment>
+          <score></score>
         </element>
         <element name="suse">
           <desc>SuSE Linux and others SuSE based distro</desc>
           <comment></comment>
+          <score></score>
         </element>
       </element>
       <element name="windows">
-        <comment>Windows support</comment>
+        <desc>Windows support</desc>
+        <comment></comment>
         <element name="win95-98-nt">
           <desc>Windows 95/98/NT</desc>
           <comment></comment>
+          <score></score>
         </element>
         <element name="win2k-xp-2k3">
           <desc>Windows 2k/XP/sk3</desc>
           <comment></comment>
+          <score></score>
         </element>
       </element>
       <element name="unix">
         <element name="freebsd">
           <desc>FreeBSD</desc>
           <comment></comment>
+          <score></score>
         </element>
         <element name="netbsd">
           <desc>NetBSD</desc>
           <comment></comment>
+          <score></score>
         </element>
         <element name="openbsd">
           <desc>OpenBSD</desc>
           <comment></comment>
+          <score></score>
         </element>
         <element name="solaris">
           <desc>Solaris</desc>
           <comment></comment>
+          <score></score>
         </element>
         <element name="aix">
           <desc>AIX</desc>
           <comment></comment>
+          <score></score>
         </element>
       </element>
     </element>
@@ -160,14 +176,17 @@
       <element name="documentation">
         <desc>Documentation</desc>
         <comment></comment>
+        <score></score>
       </element>
       <element name="authorsupport">
         <desc>Support from the author(s)</desc>
         <comment></comment>
+        <score></score>
       </element>
       <element name="3thsidesupport">
         <desc>Support from others people or company</desc>
         <comment></comment>
+        <score></score>
       </element>
     </element>
     <element name="technicalside">
@@ -203,7 +222,7 @@
     </element>
   </section>
   <section name="composant">
-      <comment></comment>
+    <comment></comment>
     <desc>Different composant from the groupware</desc>
     <element name="auth">
       <desc>Authentification backend</desc>
@@ -240,7 +259,7 @@
     </element>
   </section>
   <section name="administration">
-      <comment></comment>
+    <comment></comment>
     <element name="webinterface">
       <desc>Web interface</desc>
       <comment></comment>
@@ -258,7 +277,7 @@
     </element>
   </section>
   <section name="groupwarecomposant">
-      <comment></comment>
+    <comment></comment>
     <element name="calendar">
       <desc>Calendar</desc>
       <comment></comment>
@@ -281,7 +300,7 @@
     </element>
   </section>
   <section name="standard">
-      <comment></comment>
+    <comment></comment>
     <element name="icaloverwebdav">
       <desc>iCalendar over WebDav</desc>
       <comment></comment>
@@ -299,6 +318,34 @@
     </element>
     <element name="syncml">
       <desc>SyncML</desc>
+      <comment></comment>
+      <score></score>
+    </element>
+  </section>
+  <section name="supportedclients">
+    <comment></comment>
+    <element name="web">
+      <desc>Web interface</desc>
+      <comment></comment>
+      <score></score>
+    </element>
+    <element name="outlook">
+      <desc>Microsoft Outlook</desc>
+      <comment></comment>
+      <score></score>
+    </element>
+    <element name="evolution">
+      <desc>Novell Evolution</desc>
+      <comment></comment>
+      <score></score>
+    </element>
+    <element name="kde">
+      <desc>KDE</desc>
+      <comment></comment>
+      <score></score>
+    </element>
+    <element name="ical">
+      <desc>Apple's iCal</desc>
       <comment></comment>
       <score></score>
     </element>
