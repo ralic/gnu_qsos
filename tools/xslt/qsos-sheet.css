@@ -1,0 +1,42 @@
+body {
+  font-family:Verdana,Helvetica;
+  font-size:11px;
+}
+
+h1 {
+  font-size:20px;
+}
+
+h2 {
+  font-size:18px;
+}
+
+h3 {
+  font-size:16px;
+}
+
+div {
+  margin: 10px;
+  padding: 10px;
+}
+
+#header {
+  border-style: dashed;
+}
+
+.section {
+  background-color: #90c3e9;
+  border-style: dashed;
+  background-color: #60a3b9;
+
+}
+.element {
+  background-color: #90c3e9;
+
+}
+
+.score {
+  text-align: right;
+  font-weight: bold;
+  font-size:16px;
+}
