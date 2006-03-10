@@ -1,8 +1,9 @@
-<?php include("func.php");?>
-<?php head();?>
+<?php include("func.php");
 
-<?php include("methode/license.html")?>
+$lang = getlang();
+head($lang);
 
-<?php include("methode/fdl.html")?>
+include("methode/$lang/license.html");
+include("methode/$lang/fdl.html");
 
-<?php foot();?>
+foot();?>

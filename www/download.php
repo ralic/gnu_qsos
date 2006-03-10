@@ -1,5 +1,8 @@
 <?php include("func.php");?>
-<?php head();?>
+<?
+$lang = getlang();
+head($lang);
+?>
 
 <h1>Téléchargement</h1>
 

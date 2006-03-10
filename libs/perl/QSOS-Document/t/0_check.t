@@ -1,5 +1,5 @@
 #!/usr/bin/perl -w
-# $Id: 0_check.t,v 1.1 2006/03/06 09:39:30 goneri Exp $
+# $Id: 0_check.t,v 1.2 2006/03/10 14:16:39 goneri Exp $
 #
 #  Copyright (C) 2006 Atos Origin 
 #
@@ -156,4 +156,5 @@ $qsos->setqsosappfamily('word processor');
 $qsosappfamily = $qsos->getqsosappfamily();
 ok($qsosappfamily eq 'word processor');
 
-
+exit;
+__END__

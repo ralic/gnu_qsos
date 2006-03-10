@@ -71,7 +71,7 @@
         </p>
       </xsl:if>
       <xsl:if test="score">
-        <div class="score">Score : <xsl:value-of select="score" />/3</div>
+        <div class="score">Score : <xsl:value-of select="score" />/2</div>
       </xsl:if>
       </div>
         <xsl:if test="element">

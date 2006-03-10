@@ -1,4 +1,4 @@
-# $Id: Document.pm,v 1.9 2006/03/09 09:58:04 goneri Exp $
+# $Id: Document.pm,v 1.10 2006/03/10 14:16:39 goneri Exp $
 #
 #  Copyright (C) 2006 Atos Origin 
 #
@@ -199,7 +199,6 @@ sub getkeyscore {
   }
   $score_ref->text();
 }
-
 
 
 

@@ -15,23 +15,30 @@
 # Perl script used to clean the html code from latex2html
 # Usage : ./clean_html.pl qsos.html > /tmp/new.html
 # Gonéri Le Bouder (Atos Origin)
-# $Id: clean_html.pl,v 1.1 2006/02/17 10:25:29 goneri Exp $
+# $Id: clean_html.pl,v 1.2 2006/03/10 14:16:39 goneri Exp $
 
 use strict;
 use warnings;
 
-my $imagesdir = "methode";
-my $tmpfile = "/tmp/tmp_f$$";
 my $file = shift @ARGV;
+my $lang = shift @ARGV;
 
 unless ($file) {
-  die "J'attend le nom du fichier en param\n";
+  die "first param is a file name\n";
 }
+unless ($lang) {
+  die "the second param is the language (en,fr,...)";
+}
+
+my $imagesdir = "methode/$lang";
+my $tmpfile = "/tmp/tmp_f$$";
+
+
 open FILE,"<$file" or die "Can't open $file $!";
 
 open TMP,">".$tmpfile or die "Can't open /tmp/f_tmp $!";
 
-# je vire les retours charots qui me gene
+# i remove some stupid \r 
 foreach(<FILE>) {
   s/src=\n.*$/src=/;
   print TMP;

@@ -1,6 +1,6 @@
-<?php include("func.php");?>
-<?php head();?>
+<?php include("func.php");
+$lang = getlang();
+head($lang);
+include("methode/$lang/methode.html");
 
-<?php include("methode/methode.html");?>
-
-<?php foot();?>
+foot();?>
