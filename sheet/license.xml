@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+$Id: license.xml,v 1.1 2006/03/24 13:32:50 goneri Exp $
+For the moment, the license list is _NOT_ dynamicly updated.
+please, if you wish to add another license, ask to an CVS commiter
+or (better) on the mailing list
+-->
+<document>
+  <license  id="0" desc="Affero GPL"/>
+  <license  id="1" desc="AFPL (Aladdin)"/>
+  <license  id="2" desc="APSL (Apple)"/>
+  <license  id="3" desc="Copyback License"/>
+  <license  id="4" desc="DFSG approved"/>
+  <license  id="5" desc="Eclipse Public License"/>
+  <license  id="6" desc="EFL (Eiffel)"/>
+  <license  id="7" desc="Free for Eductional Use"/>
+  <license  id="8" desc="Free for Hum Use"/>
+  <license  id="9" desc="Free for non-commercial use"/>
+  <license id="10" desc="Free but Restricted"/>
+  <license id="11" desc="Freely Distribuable"/>
+  <license id="12" desc="Freeware"/>
+  <license id="13" desc="NPL (Netscape)"/>
+  <license id="14" desc="NOKOS (Nokia)"/>
+  <license id="15" desc="OSI Approved"/>
+  <license id="16" desc="Proprietary"/>
+  <license id="17" desc="Proprietary with trial"/>
+  <license id="18" desc="Proprietary with source"/>
+  <license id="19" desc="Public Domain"/>
+  <license id="20" desc="Shareware"/>
+  <license id="21" desc="SUN Binary Code License"/>
+  <license id="22" desc="The Apache License"/>
+  <license id="23" desc="The Apache License 2.0"/>
+  <license id="24" desc="CeCILL License (INRIA)"/>
+  <license id="25" desc="Artistic License"/>
+  <license id="26" desc="LPPL (Latex)"/>
+  <license id="27" desc="Open Content License"/>
+  <license id="28" desc="Voxel Public License"/>
+  <license id="29" desc="WTFPL"/>
+  <license id="30" desc="Zope Public License"/>
+  <license id="31" desc="GNU GPL"/>
+  <license id="32" desc="GNU LGPL"/>
+  <license id="33" desc="BSD"/>
+  <license id="34" desc="GNU approved License"/>
+</document>
