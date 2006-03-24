@@ -1,5 +1,5 @@
 #!/usr/bin/perl -w
-# $Id: 0_check.t,v 1.2 2006/03/10 14:16:39 goneri Exp $
+# $Id: 0_check.t,v 1.3 2006/03/24 11:11:13 goneri Exp $
 #
 #  Copyright (C) 2006 Atos Origin 
 #
@@ -24,7 +24,6 @@ use Test;
 BEGIN { plan tests => 28 }
 
 use QSOS::Document;
-use Data::Dumper;
 
 $qsos = new QSOS::Document;
 

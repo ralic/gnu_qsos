@@ -1,4 +1,4 @@
-# $Id: Makefile.PL,v 1.4 2006/03/03 09:45:39 goneri Exp $
+# $Id: Makefile.PL,v 1.5 2006/03/24 11:11:13 goneri Exp $
 
 use ExtUtils::MakeMaker;
 
@@ -36,7 +36,7 @@ else {
 
 eval { require Storable };
 if($@) {
-  print "Storable is not installed ... caching functions will not be available\n";
+  die "Storable is not installed ...\n";
 }
 
 

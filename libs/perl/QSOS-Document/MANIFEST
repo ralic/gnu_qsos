@@ -1,10 +1,8 @@
 Makefile.PL
 Changes
-Makefile.old
 lib/QSOS/Document.pm
 README
 t/0_check.t
 qsos.xml
 MANIFEST
-Makefile
 LICENSE

@@ -1,0 +1,11 @@
+This is the debian package for the XML-QSOS module.
+It was created by Gonéri Le Bouder <goneri.lebouder@atosorigin.com> using dh-make-perl.
+
+This copyright info was automatically extracted from the perl module.
+It may not be accurate, so you better check the module sources
+if don't want to get into legal troubles.
+
+The upstream author is: 
+
+Gonéri Le Bouder <goneri.lebouder@atosorigin.org>.
+See /usr/share/common-licenses/GPL-2 for license
