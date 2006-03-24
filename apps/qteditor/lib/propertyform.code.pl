@@ -8,7 +8,17 @@ sub init
   releaseEdit->setText(this->{qsosxml}->getrelease());
 
   my $licenses = this->{qsosxml}->getlicenselist();
+  licensecomboBox->insertItem("not in the list");
   licensecomboBox->insertItem($_) foreach (@$licenses);
+
+  my $licenseid = this->{qsosxml}->getlicenseid();
+  if ($licenseid) {
+    licensecomboBox->setCurrentItem($licenseid+1);
+  } else {
+    licensecomboBox->setCurrentItem(0);
+    newlicenseDesc->setText(this->{qsosxml}->getlicensedesc());
+    newlicenseDesc->setEnabled( 1 );
+  }
 
   commentEdit->setText(this->{qsosxml}->getdesc());
   url->setText(this->{qsosxml}->geturl());
@@ -29,7 +39,13 @@ sub accept
 {
   this->{qsosxml}->setappname(nameEdit->text);
   this->{qsosxml}->setrelease(releaseEdit->text);
-  this->{qsosxml}->setlicense(licensecomboBox->currentItem);
+  if (licensecomboBox->currentItem == 0) {
+  this->{qsosxml}->setlicenseid("");
+  this->{qsosxml}->setlicensedesc(newlicenseDesc->text);
+  } else {
+  this->{qsosxml}->setlicenseid(licensecomboBox->currentItem - 1);
+  this->{qsosxml}->setlicensedesc(licensecomboBox->currentText);
+  }
   this->{qsosxml}->setdesc(commentEdit->text);
   this->{qsosxml}->seturl(url->text);
   this->{qsosxml}->setdemourl(demourl->text);
@@ -52,6 +68,15 @@ sub delauthor
   my $item = authorsList->currentItem;
   this->{qsosxml}->delauthor($item);
   authorsList->removeItem($item);
+}
+
+sub licensecombolistchanged
+{
+  if (licensecomboBox->currentItem == 0) {
+    newlicenseDesc->setEnabled( 1 );
+  } else {
+    newlicenseDesc->setEnabled( 0 );
+  }
 }
 
 1;

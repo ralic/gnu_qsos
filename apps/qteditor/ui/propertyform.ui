@@ -9,7 +9,7 @@
             <x>0</x>
             <y>0</y>
             <width>506</width>
-            <height>364</height>
+            <height>422</height>
         </rect>
     </property>
     <property name="caption">
@@ -39,22 +39,6 @@
                 <attribute name="title">
                     <string>&amp;General</string>
                 </attribute>
-                <widget class="QLabel">
-                    <property name="name">
-                        <cstring>textLabel4</cstring>
-                    </property>
-                    <property name="geometry">
-                        <rect>
-                            <x>30</x>
-                            <y>160</y>
-                            <width>69</width>
-                            <height>20</height>
-                        </rect>
-                    </property>
-                    <property name="text">
-                        <string>Comment:</string>
-                    </property>
-                </widget>
                 <widget class="QLabel">
                     <property name="name">
                         <cstring>textLabel1</cstring>
@@ -129,29 +113,77 @@
                         </rect>
                     </property>
                 </widget>
-                <widget class="QComboBox">
-                    <property name="name">
-                        <cstring>licensecomboBox</cstring>
-                    </property>
-                    <property name="geometry">
-                        <rect>
-                            <x>160</x>
-                            <y>120</y>
-                            <width>240</width>
-                            <height>24</height>
-                        </rect>
-                    </property>
-                </widget>
                 <widget class="QTextEdit">
                     <property name="name">
                         <cstring>commentEdit</cstring>
                     </property>
                     <property name="geometry">
                         <rect>
-                            <x>111</x>
-                            <y>160</y>
+                            <x>120</x>
+                            <y>220</y>
                             <width>330</width>
                             <height>91</height>
+                        </rect>
+                    </property>
+                </widget>
+                <widget class="QLabel">
+                    <property name="name">
+                        <cstring>textLabel4</cstring>
+                    </property>
+                    <property name="geometry">
+                        <rect>
+                            <x>30</x>
+                            <y>230</y>
+                            <width>69</width>
+                            <height>20</height>
+                        </rect>
+                    </property>
+                    <property name="text">
+                        <string>Comment:</string>
+                    </property>
+                </widget>
+                <widget class="QLabel">
+                    <property name="name">
+                        <cstring>textLabel1_3</cstring>
+                    </property>
+                    <property name="geometry">
+                        <rect>
+                            <x>30</x>
+                            <y>170</y>
+                            <width>220</width>
+                            <height>20</height>
+                        </rect>
+                    </property>
+                    <property name="text">
+                        <string>License name (is not in the list):</string>
+                    </property>
+                </widget>
+                <widget class="QLineEdit">
+                    <property name="name">
+                        <cstring>newlicenseDesc</cstring>
+                    </property>
+                    <property name="enabled">
+                        <bool>false</bool>
+                    </property>
+                    <property name="geometry">
+                        <rect>
+                            <x>247</x>
+                            <y>162</y>
+                            <width>201</width>
+                            <height>23</height>
+                        </rect>
+                    </property>
+                </widget>
+                <widget class="QComboBox">
+                    <property name="name">
+                        <cstring>licensecomboBox</cstring>
+                    </property>
+                    <property name="geometry">
+                        <rect>
+                            <x>170</x>
+                            <y>120</y>
+                            <width>240</width>
+                            <height>24</height>
                         </rect>
                     </property>
                 </widget>
@@ -388,17 +420,17 @@
         <slot>newauthor()</slot>
     </connection>
     <connection>
-        <sender>removeauthorButton</sender>
-        <signal>clicked()</signal>
+        <sender>licensecomboBox</sender>
+        <signal>activated(int)</signal>
         <receiver>Propertyform</receiver>
-        <slot>delauthor()</slot>
+        <slot>licensecombolistchanged()</slot>
     </connection>
 </connections>
 <includes>
     <include location="local" impldecl="in implementation">propertyform.ui.h</include>
 </includes>
 <slots>
-    <slot specifier="non virtual">delauthor()</slot>
+    <slot specifier="non virtual">licensecombolistchanged()</slot>
     <slot>newauthor()</slot>
 </slots>
 <layoutdefaults spacing="6" margin="11"/>
