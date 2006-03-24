@@ -1,4 +1,4 @@
-# $Id: Document.pm,v 1.10 2006/03/10 14:16:39 goneri Exp $
+# $Id: Document.pm,v 1.11 2006/03/24 15:15:52 goneri Exp $
 #
 #  Copyright (C) 2006 Atos Origin 
 #
@@ -33,7 +33,7 @@ use vars qw($VERSION @ISA @EXPORT @EXPORT_OK $PREFERRED_PARSER);
 
 @ISA               = qw(Exporter);
 @EXPORT            = qw(XMLin XMLout);
-@EXPORT_OK         = qw(new load write getkeydesc setkeycomment getkeycomment setkeyscore getkeyscore write getauthors addauthor delauthor getappname setappname getlanguage setlanguage getrelease setrelease getlicenselist getlicense setlicense geturl seturl getdesc setdesc getdemourl setdemourl getqsosformat setqsosformat getqsosspecificformat setqsosspecificformat getqsosappfamily setqsosappfamily);
+@EXPORT_OK         = qw(new load write getkeydesc setkeycomment getkeycomment setkeyscore getkeyscore write getauthors addauthor delauthor getappname setappname getlanguage setlanguage getrelease setrelease getlicenselist getlicenseid setlicenseid getlicensedesc setlicensedesc geturl seturl getdesc setdesc getdemourl setdemourl getqsosformat setqsosformat getqsosspecificformat setqsosspecificformat getqsosappfamily setqsosappfamily);
 $VERSION           = '0.01';
 
 
@@ -332,28 +332,50 @@ sub setrelease {
 }
 
 sub getlicenselist {
-  # TODO this list must be in the web site!
+  # TODO read the list from the license.xml file  
+  # cf: http://cvs.savannah.nongnu.org/viewcvs/qsos/sheet/license.xml?root=qsos&view=markup 
 [ "Affero GPL", "AFPL (Aladdin)", "APSL (Apple)", "Copyback License", "DFSG approved", "Eclipse Public License", "EFL (Eiffel)", "Free for Eductional Use", "Free for Hum Use", "Free for non-commercial use", "Free but Restricted", "Freely Distribuable", "Freeware", "NPL (Netscape)", "NOKOS (Nokia)", "OSI Approved", "Proprietary", "Proprietary with trial", "Proprietary with source", "Public Domain", "Shareware", "SUN Binary Code License", "The Apache License", "The Apache License 2.0", "CeCILL License (INRIA)", "Artistic License", "LPPL (Latex)", "Open Content License", "Voxel Public License", "WTFPL", "Zope Public License", "GNU GPL", "GNU LGPL", "BSD", "GNU approved License", "GNU FDL" ];
 }
 
-sub setlicense {
-  my ($self, $license) = @_;
+sub setlicenseid {
+  my ($self, $licenseid) = @_;
 
-  $license = "" unless defined $license;
+  $licenseid = "" unless defined $licenseid;
   my @root = $self->{twig}->root->children;
   my $header = shift @root;
-  $header->first_child('license')->set_text($license);
+  $header->first_child('licenseid')->set_text($licenseid);
 
 }
 
-sub getlicense {
+sub getlicenseid {
   my $self = shift;
 
   my @root = $self->{twig}->root->children;
   my $header = shift @root;
-  $header->first_child('license')->text();
+  $header->first_child('licenseid')->text();
 
 }
+
+sub setlicensedesc {
+  my ($self, $licensedesc) = @_;
+
+  $licensedesc = "" unless defined $licensedesc;
+  my @root = $self->{twig}->root->children;
+  my $header = shift @root;
+  $header->first_child('licensedesc')->set_text($licensedesc);
+
+}
+
+sub getlicensedesc {
+  my $self = shift;
+
+  my @root = $self->{twig}->root->children;
+  my $header = shift @root;
+  $header->first_child('licensedesc')->text();
+
+}
+
+
 
 sub seturl {
   my ($self, $url) = @_;

@@ -18,7 +18,8 @@
     <language>en</language>
     <appname>demo</appname>
     <release>1</release>
-    <license>1</license>
+    <licenseid>1</licenseid>
+    <licensedesc>Affero GPL</licensedesc>
     <url>http://www.qsos.org</url>
     <desc>a description</desc>
     <demourl>http://demo.site.org</demourl>

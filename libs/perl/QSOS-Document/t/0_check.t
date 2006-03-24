@@ -1,5 +1,5 @@
 #!/usr/bin/perl -w
-# $Id: 0_check.t,v 1.3 2006/03/24 11:11:13 goneri Exp $
+# $Id: 0_check.t,v 1.4 2006/03/24 15:15:52 goneri Exp $
 #
 #  Copyright (C) 2006 Atos Origin 
 #
@@ -21,7 +21,7 @@
 #
 #
 use Test;
-BEGIN { plan tests => 28 }
+BEGIN { plan tests => 29 }
 
 use QSOS::Document;
 
@@ -92,14 +92,19 @@ print "getlicenselist() ";
 $licenselist = $qsos->getlicenselist();
 ok(@$licenselist);
 
-print "getlicense() ";
-$license = $qsos->getlicense();
-ok($license eq '1');
+print "getlicenseid() ";
+$licenseid = $qsos->getlicenseid();
+ok($licenseid eq '1');
 
-print "setlicense(2) ";
-$qsos->setlicense(2);
-$license = $qsos->getlicense();
-ok($license eq '2');
+print "setlicenseid(2) ";
+$qsos->setlicenseid(2);
+$licenseid = $qsos->getlicenseid();
+ok($licenseid eq '2');
+
+print "setlicensedesc(\"APSL (Apple)\") ";
+$qsos->setlicensedesc("APSL (Apple)");
+$licensedesc = $qsos->getlicensedesc();
+ok($licensedesc eq 'APSL (Apple)');
 
 print "geturl() ";
 $url = $qsos->geturl();

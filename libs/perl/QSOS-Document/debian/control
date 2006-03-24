@@ -8,7 +8,7 @@ Standards-Version: 3.6.2
 
 Package: libxml-qsos-perl
 Architecture: all
-Depends: ${perl:Depends}, ${misc:Depends}, libxml-twig-perl 
+Depends: ${perl:Depends}, ${misc:Depends}, libxml-twig-perl, libtie-ixhash-perl 
 Description: perl QSOS file abstration layer
  This librairie give an easy way to edit QSOS file.
  QSOS method use XML file to describe software
