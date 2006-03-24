@@ -1,4 +1,4 @@
-Source: libxml-qsos-perl
+Source: libqsos-document-perl
 Section: perl
 Priority: optional
 Build-Depends: debhelper (>= 4.0.2)
@@ -6,7 +6,7 @@ Build-Depends-Indep: perl (>= 5.8.0-7)
 Maintainer: Goneri Le Bouder <goneri.lebouder@atosorigin.com>
 Standards-Version: 3.6.2
 
-Package: libxml-qsos-perl
+Package: libqsos-document-perl
 Architecture: all
 Depends: ${perl:Depends}, ${misc:Depends}, libxml-twig-perl, libtie-ixhash-perl 
 Description: perl QSOS file abstration layer
