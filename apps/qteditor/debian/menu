@@ -1,0 +1,2 @@
+?package(qteditor):needs="X11|text|vc|wm" section="Apps/Editor"\
+  title="qsosqteditor" command="/usr/bin/qsosqteditor"
