@@ -1,0 +1,384 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- $Id: example.qsos,v 1.1 2006/03/24 14:40:50 goneri Exp $ --><document>
+  <header>
+    <authors>
+      <author>
+        <email>goneri.lebouder@atosorigin.com</email>
+        <name>Gonéri Le Bouder</name>
+      </author>
+    </authors>
+    <dates>
+      <creation>20060307</creation>
+      <validation></validation>
+    </dates>
+    <language>en</language>
+    <appname>kolab</appname>
+    <release>2</release>
+    <licenseid>31</licenseid>
+    <licensedesc>GNU GPL</licensedesc>
+    <url>http://www.kolab.org</url>
+    <desc>Kolab is a groupware used in the german administration</desc>
+    <demourl>http://kolab.org/screenshots.html</demourl>
+    <qsosformat>1</qsosformat>
+    <qsosappfamily>groupware</qsosappfamily>
+    <qsosspecificformat>1</qsosspecificformat>
+  </header>
+  <section name="generic" title="Generic">
+    <desc>Common QSOS section</desc>
+    <comment></comment>
+    <element name="historicissue" title="Historic issue">
+      <desc>Did the project meet important issue in the past years?</desc>
+      <comment>Kolab is young project. It didn't get particuar issue since its creation.</comment>
+      <score>1</score>
+    </element>
+    <element name="forkmergeprobability" title="Project fork probablility">
+      <!-- modified section -->
+      <desc>Probability of a fork of the project or a merge with another one.</desc>
+      <comment></comment>
+      <score>2</score>
+    </element>
+    <element name="adoptation" title="Adopation">
+      <element name="popularity" title="Popularity">
+        <desc>Popularity</desc>
+        <comment></comment>
+        <score>1</score>
+      </element>
+      <element name="usegroup" title="Usergroup">
+        <desc>User group</desc>
+        <comment>none</comment>
+        <score>2</score>
+        <element name="otherref" title="Other reference">
+          <desc>Others references (commercial)</desc>
+          <comment>Kolab is used and supported by a Consortium of company : http://www.kolab-konsortium.de/en
+
+            Others companys offert support in Europe.
+
+          </comment>
+          <score>2</score>
+        </element>
+        <element name="contributorscommunity" title="Contributor community">
+          <desc>Importance of the contributors community</desc>
+          <comment></comment>
+          <score>2</score>
+        </element>
+        <element name="books" title="Book published">
+          <desc>Book about this project published</desc>
+          <comment>none</comment>
+          <score>0</score>
+        </element>
+        <element name="awardwon" title="Award">
+          <!-- new section -->
+          <desc>Award won by the project</desc>
+          <comment>"Best Groupware Server" Award at Linux New Media Award 2005 in Frankfurt, Germany
+          </comment>
+          <score></score>
+        </element>
+      </element>
+    </element>
+    <element name="leadmodel" title="Lead model">
+      <element name="coreteam" title="Core team">
+        <desc>Core team</desc>
+        <comment>4 regular commiters</comment>
+        <score>2</score>
+      </element>
+      <element name="leadershipmodel" title="Leadership model">
+        <!-- translate me correctly! -->
+        <desc>Leadership model, is it a democraty, meritocracy, dictatur,...</desc>
+        <comment>core team and a Consortium</comment>
+        <score>2</score>
+      </element>
+    </element>
+    <element name="dynamism" title="Dynamism of the project">
+      <element name="developperteam" title="Dynamism of the developper team">
+        <desc>Developper dynamism, interest, turnover</desc>
+        <comment>Active mailing list</comment>
+        <score>2</score>
+      </element>
+      <element name="bugfix" title="Dynamism around bug fixing">
+        <desc>Dynamism around bug hunt</desc>
+        <comment></comment>
+        <score></score>
+      </element>
+      <element name="feature" title="Dynamism to add feature">
+        <desc>Dynamism around new feature addition</desc>
+        <comment></comment>
+        <score></score>
+      </element>
+      <element name="release" title="Dynamism around release">
+        <desc>Dynamism around new release</desc>
+        <comment></comment>
+        <score></score>
+      </element>
+    </element>
+    <element name="supported_os" title="Supported OS">
+      <desc>Supported Operating System</desc>
+      <element name="linux" title="GNU/Linux">
+        <desc>Linux</desc>
+        <comment>Thanks to the OpenPKG system, the installation on Linux is easy but break the packaging policy of the distributions. Some distro provide specific packages.</comment>
+        <element name="debian" title="Debian">
+          <desc>Debian Linux and other .deb based distro</desc>
+          <comment>A team of Debian developper works on packaging Kolab on Debian
+            http://pkg-kolab.alioth.debian.org/
+
+            The openPkg work fine on it too.</comment>
+          <score>2</score>
+        </element>
+        <element name="redhat" title="RedHat">
+          <desc>RedHat Linux, Fedora and others Rh based distro</desc>
+          <comment>OpenPKG installation for Fedora is describe here :
+            http://wiki.kolab.org/index.php/Fedora
+          </comment>
+          <score>2</score>
+        </element>
+        <element name="mandriva" title="Mandriva">
+          <desc>Mandriva Linux</desc>
+          <comment>Packaged in the Contrib branche
+
+            OpenPKG work too</comment>
+          <score>2</score>
+        </element>
+        <element name="suse" title="SuSE">
+          <desc>SuSE Linux and others SuSE based distro</desc>
+          <comment>APT repositoy exists for SuSE</comment>
+          <score>2</score>
+        </element>
+      </element>
+      <element name="windows" title="Windows">
+        <desc>Windows support</desc>
+        <comment>Kolab can't be installed on Windows</comment>
+        <element name="win95-98-nt" title="Windows 95/98/NT">
+          <desc>Windows 95/98/NT</desc>
+          <comment></comment>
+          <score>0</score>
+        </element>
+        <element name="win2k-xp-2k3" title="Windows2000 end after">
+          <desc>Windows 2k/XP/sk3</desc>
+          <comment></comment>
+          <score>0</score>
+        </element>
+      </element>
+      <element name="unix" title="Unix">
+        <element name="freebsd" title="FreeBSD">
+          <desc>FreeBSD</desc>
+          <comment>OpenPKG installation work fine</comment>
+          <score>2</score>
+        </element>
+        <element name="netbsd" title="NetBSD">
+          <desc>NetBSD</desc>
+          <comment>it's work but it's a tricky</comment>
+          <score>1</score>
+        </element>
+        <element name="openbsd" title="OpenBSD">
+          <desc>OpenBSD</desc>
+          <comment>Like for NetBSD, it's supported but difficult. And there is few information available</comment>
+          <score>1</score>
+        </element>
+        <element name="solaris" title="Solaris">
+          <desc>Solaris</desc>
+          <comment>undocumented, could work</comment>
+          <score>0</score>
+        </element>
+        <element name="aix" title="AIX">
+          <desc>AIX</desc>
+          <comment>could work.</comment>
+          <score>0</score>
+        </element>
+      </element>
+    </element>
+    <element name="service" title="Service">
+      <element name="documentation" title="Documentation">
+        <desc>Documentation</desc>
+        <comment>Online documentation and a wiki available in english.</comment>
+        <score>1</score>
+      </element>
+      <element name="authorsupport" title="Support given by the project team">
+        <desc>Support from the author(s)</desc>
+        <comment>Kolab Konsortium (Germany)</comment>
+        <score>1</score>
+      </element>
+      <element name="3thsidesupport" title="3th side support">
+        <desc>Support from others people or company</desc>
+        <comment>some eurpean company offert support</comment>
+        <score>1</score>
+      </element>
+    </element>
+    <element name="technicalside" title="Fonctionnal and technical aspect">
+      <desc>Fonctionnal and technical aspect</desc>
+      <comment></comment>
+      <element name="maintechnologies" title="Technology">
+        <desc>Main technologies used</desc>
+        <comment>OpenLDAP, Cyrus-IMAP (patched), Postfix</comment>
+        <element name="requirement" title="Requirement">
+          <desc>Requirements</desc>
+          <comment>It depends of the type of installation, just a base install for user of OpenPKG or the specific package from the distro.</comment>
+        </element>
+        <element name="fonctionnality" title="Fonctionnality">
+          <desc>Fonctionnality overview (URL)</desc>
+          <comment></comment>
+        </element>
+        <element name="roadmap" title="Roadmap of the project">
+          <desc>Quality of the roadmap</desc>
+          <comment>Currently, the roadmap for Kolab3 is writing by the core team. They base it on a wishlist from the community : http://wiki.kolab.org/index.php/Kolab_Server_Wishlist
+Actually, the accepted wishs are : Full multi-dmain support and full supported web-client</comment>
+          <score>2</score>
+        </element>
+        <element name="maturity" title="Maturity">
+          <desc>Maturity of the program</desc>
+          <comment>The Kolab 2 branches is stable and mature</comment>
+          <score>2</score>
+        </element>
+        <element name="stability" title="Stability">
+          <desc>Stablity of the stability</desc>
+          <comment>Kolab 2 is stable</comment>
+          <score>2</score>
+        </element>
+      </element>
+    </element>
+  </section>
+  <section name="composant" title="Composants of the project">
+    <comment></comment>
+    <desc>Different composant from the groupware</desc>
+    <element name="auth" title="Authentification backend">
+      <desc>Authentification backend</desc>
+      <comment>OpenLDAP</comment>
+    </element>
+    <element name="mail" title="Mail">
+      <desc>Mail server</desc>
+      <comment>Cyrus-IMAP</comment>
+    </element>
+    <element name="mta" title="Mail Transport Agent">
+      <desc>Mail Transport Agent</desc>
+      <comment>Postfix</comment>
+    </element>
+    <element name="storage" title="Storage backend">
+      <desc>Storage backend</desc>
+      <comment>Content is stored in IMAP shared folder</comment>
+    </element>
+  </section>
+  <section name="clustering" title="Clustering">
+    <element name="synchronise" title="Synchronise ability">
+      <desc>Synchronise ability</desc>
+      <comment>Strong replication ability from OpenLDAP and Cyrus are the bases of system</comment>
+      <score>2</score>
+    </element>
+    <element name="loadbalancing" title="Load balancing">
+      <desc>Load balancing</desc>
+      <comment>Load balancing ability from OpenLDAP and Cyrus are the bases of system.</comment>
+      <score>2</score>
+    </element>
+    <element name="multi-node" title="Multi-node installation">
+      <desc>Is it possible to split the groupware on different hardware server?</desc>
+      <comment>Kolab is designed to support multi-node installation.</comment>
+      <score>2</score>
+    </element>
+  </section>
+  <section name="administration" title="Administration GUI">
+    <comment></comment>
+    <element name="webinterface" title="Web interface">
+      <desc>Web interface</desc>
+      <comment>yes</comment>
+      <score>2</score>
+    </element>
+    <element name="commandline" title="Console mode">
+      <desc>Do the groupware comme with script or can be managed from a console</desc>
+      <comment></comment>
+      <score></score>
+    </element>
+    <element name="installationcomplexity" title="Installation complexisty">
+      <desc>Installation complexity, do the installation nead a lot of time or/and a strong skill?</desc>
+      <comment>Trivial on GNU/Linux with OpenPKG, depend of the distro for specific installation</comment>
+      <score>2</score>
+    </element>
+  </section>
+  <section name="groupwarecomposant" title="Supported groupware composant">
+    <comment></comment>
+    <element name="calendar" title="Calendar">
+      <desc>Calendar</desc>
+      <comment>yes</comment>
+      <score>2</score>
+    </element>
+    <element name="taskmanager" title="Taskmanager">
+      <desc>Task manager</desc>
+      <comment>yes</comment>
+      <score>2</score>
+    </element>
+    <element name="notemanager" title="Notemanager">
+      <desc>Note manager</desc>
+      <comment>yes</comment>
+      <score>2</score>
+    </element>
+    <element name="contactmanager" title="Contactmanager">
+      <desc>Contact manager</desc>
+      <comment>yes</comment>
+      <score>2</score>
+    </element>
+  </section>
+  <section name="standard" title="Standard support">
+    <comment></comment>
+    <element name="icaloverwebdav" title="iCalendar over WebDav">
+      <desc>iCalendar over WebDav</desc>
+      <comment>yes</comment>
+      <score>1</score>
+    </element>
+    <element name="caldav" title="CalDav">
+      <desc>CalDav</desc>
+      <comment>no</comment>
+      <score>0</score>
+    </element>
+    <element name="groupdav" title="Groupdav">
+      <desc>GroupDav</desc>
+      <comment></comment>
+      <score>0</score>
+    </element>
+    <element name="syncml" title="SyncML">
+      <desc>SyncML</desc>
+      <comment></comment>
+      <score>0</score>
+    </element>
+  </section>
+  <section name="supportedclients" title="Supported client">
+    <comment></comment>
+    <element name="web" title="Web client">
+      <desc>Web interface</desc>
+      <comment>yes</comment>
+      <score>1</score>
+    </element>
+    <element name="outlook" title="Microsoft Outlook">
+      <desc>Microsoft Outlook</desc>
+      <comment>Two commercial and not free connected exist. The best is Toltec's one.</comment>
+      <score>2</score>
+    </element>
+    <element name="evolution" title="Novell Evolution">
+      <desc>Novell Evolution</desc>
+      <comment></comment>
+      <score>2</score>
+    </element>
+    <element name="kde" title="KDE">
+      <desc>KDE PIM</desc>
+      <comment></comment>
+      <score>2</score>
+    </element>
+    <element name="ical" title="Apple iCal">
+      <desc>Apple's iCal</desc>
+      <comment></comment>
+      <score>2</score>
+    </element>
+  </section>
+  <section name="codequality" title="Code quality">
+    <element name="remoteapi" title="Remote access API">
+      <desc>remote API (SOAP, XML/RPC, REST)</desc>
+      <comment>none for Kolab2, a wish for Kolab3 exists for support of a remote procedure call infrastucture</comment>
+      <score>0</score>
+    </element>
+    <element name="api" title="code API">
+      <desc>Do the project offert a stantard API too extand the code? Is it well documented?</desc>
+      <comment>A Perl lib is provided but Kolab core can't be change easily. The best way to extend it, is to provide additional service plugged on the LDAP directory server.</comment>
+      <score>1</score>
+    </element>
+    <element name="plugin" title="plugin mechanism">
+      <desc>Can we plugin code composant (plugin) easyly?</desc>
+      <comment></comment>
+      <score>0</score>
+    </element>
+  </section>
+</document>
