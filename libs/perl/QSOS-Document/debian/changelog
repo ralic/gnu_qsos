@@ -1,4 +1,4 @@
-libxml-qsos-perl (0.01-1) unstable; urgency=low
+libqsos-document-perl (0.01-1) unstable; urgency=low
 
   * Initial Release.
   * removed make test since it doesn't work
