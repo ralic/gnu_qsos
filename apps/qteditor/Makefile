@@ -1,8 +1,8 @@
 PARSE=bin/parse.pl
-DESTDIR ?=/usr
+#DESTDIR ?=/usr
 #PM_DIR=$(DESTDIR)/lib/site_perl/QSOS/QtEditor
-PM_DIR=$(DESTDIR)/lib/perl5/site_perl/QSOS/QtEditor
-BIN_DIR=$(DESTDIR)/bin
+PM_DIR=$(DESTDIR)/usr/lib/perl5/site_perl/QSOS/QtEditor
+BIN_DIR=$(DESTDIR)/usr/bin
 
 
 all: lib/qsosform.pm lib/propertyform.pm lib/aboutform.pm
