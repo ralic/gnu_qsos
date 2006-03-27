@@ -11,7 +11,7 @@
 #      included in the section entitled "GNU
 #      Free Documentation License".
 #
-# $Id: Makefile,v 1.10 2006/03/10 16:51:48 goneri Exp $
+# $Id: Makefile,v 1.11 2006/03/27 11:24:42 goneri Exp $
 TEX=changelog.tex define.tex eval.tex eval_app.tex fdl.tex general_process.tex glossary.tex internet_site.tex intro.tex license.tex manifest.tex qsos.tex qualify.tex
 # TODO split this by language :
 GFXS_DEST_PNG=images/comparaison.eps images/processus_4_etapes.eps images/definir.eps images/evaluer.eps images/qualifier.eps images/selectionner.eps images/QSOS.eps images/fr/comparaison.eps images/fr/processus_4_etapes.eps images/fr/definir.eps images/fr/evaluer.eps images/fr/qualifier.eps images/fr/selectionner.eps images/fr/QSOS.eps images/es/comparaison.eps images/es/processus_4_etapes.eps images/es/definir.eps images/es/evaluer.eps images/es/qualifier.eps images/es/selectionner.eps images/es/QSOS.eps
@@ -66,7 +66,7 @@ html-en: $(GFXS_DEST_PNG) $(GFXS_DEST_SVG)
 	perl -e 'system("cat qsos/license.html | tidy -m -asxml  -clean > qsos/license_clean.html");1';
 	perl -e 'system("cat qsos/qsos.html | tidy -m -asxml  -clean > qsos/qsos_clean.html");1';
 	perl -e 'system("cat qsos/fdl.html | tidy -m -asxml  -clean > qsos/fdl_clean.html");1';
-	perl -e 'system("cat overview/overview.html | tidy -m -asxml  -clean > qsos/overview_clean.html");1';
+	perl -e 'system("cat qsos/overview.html | tidy -m -asxml  -clean > qsos/overview_clean.html");1';
 	mkdir -p qsos_www
 	mv qsos qsos_www/en
 #	mv qsos_www/overview/*.png qsos_www
