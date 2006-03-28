@@ -5,7 +5,8 @@
     <html> 
       <head> 
         <title><xsl:value-of select="document/header/appname" /><xsl:value-of select="document/header/release" /></title>
-        <link rel="stylesheet" type="text/css" href="http://www.qsos.org/style/qsos-sheet.css" />
+        <link rel="stylesheet" type="text/css" href="qsos-sheet.css" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
       </head> 
       <body> 
         <h1><xsl:value-of select="document/header/appname" /><xsl:value-of select="document/header/release" /></h1>
@@ -24,31 +25,33 @@
 
   <xsl:template match="header">
     <ul>
-      <xsl:apply-templates select="authors" />
       <xsl:apply-templates select="dates" />
-      <li>Language: <xsl:value-of select="language" /></li>
-      <li>Application: <xsl:value-of select="appli" /></li>
-      <li>Release: <xsl:value-of select="release" /></li>
-      <li>Url: <a href="{url}"><xsl:value-of select="url" /></a></li>
-      <li>Desc: <xsl:value-of select="desc" /></li>
-      <li>Demo: <xsl:value-of select="demo" /></li>
+      <li><strong>Language: </strong> <xsl:value-of select="language" /></li>
+      <li><strong>Application: </strong> <xsl:value-of select="appname" /></li>
+      <li><strong>Release: </strong> <xsl:value-of select="release" /></li>
+      <li><strong>License: </strong> <xsl:value-of select="licensedesc" /></li>
+      <li><strong>Url: </strong> <a href="{url}"><xsl:value-of select="url" /></a></li>
+      <li><strong>Desc: </strong> <xsl:value-of select="desc" /></li>
+      <li><strong>Demo: </strong> <xsl:value-of select="demo" /></li>
+      <xsl:apply-templates select="authors" />
     </ul>
   </xsl:template>
 
   <xsl:template match="authors">
-    <li>Authors:
-      <ul>
-        <xsl:apply-templates select="author" />
-      </ul>
+    <li><strong>Authors of this sheet: </strong> <xsl:apply-templates select="author" />
     </li>
   </xsl:template>
   <xsl:template match="author">
-    <li><a href="mailto:{email}"><xsl:apply-templates select="name" /> </a></li>
+    <a href="mailto:{email}"><xsl:apply-templates select="name" /> </a>  
   </xsl:template>
 
   <xsl:template match="dates">
-    <li>Creation: <xsl:apply-templates select="creation" /></li>
-    <li>Validation: <xsl:apply-templates select="validation" /></li>
+    <li><strong>Sheet created the </strong> <xsl:apply-templates select="creation" /></li>
+
+    <xsl:if test="validation != ''">
+    <li><strong>Sheet validation the </strong> <xsl:apply-templates select="validation" /></li>
+    </xsl:if>
+
   </xsl:template>
 
   <xsl:template match="section">
