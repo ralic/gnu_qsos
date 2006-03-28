@@ -1,4 +1,25 @@
-#$Id: update_sheet.sh,v 1.1 2006/03/28 17:19:33 goneri Exp $
+#$Id: update_sheet.sh,v 1.2 2006/03/28 18:47:51 goneri Exp $
+#  Copyright (C) 2006 Atos Origin 
+#
+#  Author: Gonéri Le Bouder <goneri.lebouder@atosorigin.com>
+#
+#  This program is free software; you can redistribute it and/or modify
+#  it under the terms of the GNU General Public License as published by
+#  the Free Software Foundation; either version 2 of the License, or
+#  (at your option) any later version.
+#
+#  This program is distributed in the hope that it will be useful,
+#  but WITHOUT ANY WARRANTY; without even the implied warranty of
+#  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#  GNU General Public License for more details.
+#
+#  You should have received a copy of the GNU General Public License
+#  along with this program; if not, write to the Free Software
+#  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
+######
+#  This script checkout current sheet from the CVS, translate them
+#  to xhtml and upload them on a ftp server
+
 . qsos.cfg
 
 createSheet () {
@@ -16,8 +37,9 @@ createIndex () {
   local i
   DIR=$@
   LIST="\n<ul>"
-  
-  rm -f index.html
+ 
+  echo $DIR
+  rm -f $DIR/index.html
   for i in `ls $DIR`;do
     if [ -d $i ]; then
       TYPE="folder"
@@ -25,7 +47,7 @@ createIndex () {
       TYPE="file"
     fi
 
-    LIST=$LIST"<li type=$TYPE><a href=\"$i\">$i</a></li>\n"
+    LIST=$LIST"<li type=$TYPE><a href=\"$i\">`echo $i|sed s/\.html$//`</a></li>\n"
   done
   LIST=$LIST"</ul>\n"
   
@@ -35,6 +57,16 @@ createIndex () {
 
 
   echo index $DIR/index.html created
+
+}
+
+upload () {
+cat <<eof | lftp
+open -u $FTP_LOGIN,$FTP_PASSWD $FTP_HOST
+cd $FTP_DIR 
+mirror -c -e -R $DESTDIR .
+exit
+eof
 
 }
 
@@ -53,3 +85,5 @@ cd $DESTDIR
 for i in `find  -type d`; do
   createIndex $i
 done
+
+upload
