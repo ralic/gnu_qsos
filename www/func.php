@@ -3,7 +3,16 @@
 function getlang () {
 	$lang = $_GET['lang'];
 	if (($lang != "en") && ($lang != "fr") && ($lang != "es")) {
-		exit;
+	# unless lang param correctly initialised i try to get read HTTP_ACCEPT_LANGUAGE
+		$tmp = explode(",",$_SERVER["HTTP_ACCEPT_LANGUAGE"]);
+		$http_accept_lang = strtolower(substr(chop($tmp[0]),0,2));
+		if ($http_accept_lang == "en-us") {
+		if ($http_accept_lang == "en-us") $lang = "en";
+		} else if ($http_accept_lang == "fr") {
+		if ($http_accept_lang == "fr") $lang = "fr";
+		} else {
+		$lang = "en";
+		}
 	}
 
 	return $lang;
