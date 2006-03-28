@@ -51,6 +51,9 @@ print "<li><a href=\"index.php?lang=fr\">Présentation</a></li>
 <li><a href=\"fiches.php?lang=fr\">Fiches</a></li>";
 }
 
+if ($lang != "en") print "<div id=\"flags\"><a href=\"?lang=en\"><img src=\"images/flags/uk.png\" /></a></div>"; 
+if ($lang != "fr") print "<div id=\"flags\"><a href=\"?lang=fr\"><img src=\"images/flags/fr.png\" /></a></div>"; 
+
 print('</ul>
 
 
