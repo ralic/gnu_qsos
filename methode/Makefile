@@ -11,7 +11,7 @@
 #      included in the section entitled "GNU
 #      Free Documentation License".
 #
-# $Id: Makefile,v 1.11 2006/03/27 11:24:42 goneri Exp $
+# $Id: Makefile,v 1.12 2006/03/28 20:30:47 goneri Exp $
 TEX=changelog.tex define.tex eval.tex eval_app.tex fdl.tex general_process.tex glossary.tex internet_site.tex intro.tex license.tex manifest.tex qsos.tex qualify.tex
 # TODO split this by language :
 GFXS_DEST_PNG=images/comparaison.eps images/processus_4_etapes.eps images/definir.eps images/evaluer.eps images/qualifier.eps images/selectionner.eps images/QSOS.eps images/fr/comparaison.eps images/fr/processus_4_etapes.eps images/fr/definir.eps images/fr/evaluer.eps images/fr/qualifier.eps images/fr/selectionner.eps images/fr/QSOS.eps images/es/comparaison.eps images/es/processus_4_etapes.eps images/es/definir.eps images/es/evaluer.eps images/es/qualifier.eps images/es/selectionner.eps images/es/QSOS.eps
@@ -91,7 +91,7 @@ html-fr: $(GFXS_DEST_PNG) $(GFXS_DEST_SVG)
 	# latex2html fait du code crade, je passe un coup de tidy pour nettoyer le code
 	# les parfrtheses autour invrse le code de retour de tidy sinon make s'arrete fr
 	# pfrsant avoir une erreur fatale
-	perl -e 'system("cat lang/fr/qsos/license.html | tidy -m -asxml  -clean > lang/fr/qsos/license_clean.html");1';
+	perl -e 'system("cat lang/fr/license.html | tidy -m -asxml  -clean > lang/fr/qsos/license_clean.html");1';
 	perl -e 'system("cat lang/fr/qsos/qsos.html | tidy -m -asxml  -clean > lang/fr/qsos/qsos_clean.html");1';
 	perl -e 'system("cat lang/fr/qsos/fdl.html | tidy -m -asxml  -clean > lang/fr/qsos/fdl_clean.html");1';
 	perl -e 'system("cat lang/fr/qsos/overview.html | tidy -m -asxml  -clean > lang/fr/qsos/overview_clean.html");1';
@@ -117,7 +117,7 @@ html-es: $(GFXS_DEST_PNG) $(GFXS_DEST_SVG)
 	# latex2html fait du code crade, je passe un coup de tidy pour nettoyer le code
 	# les parestheses autour invrse le code de retour de tidy sinon make s'arrete es
 	# pessant avoir une erreur fatale
-	perl -e 'system("cat lang/es/qsos/license.html | tidy -m -asxml  -clean > lang/es/qsos/license_clean.html");1';
+	perl -e 'system("cat lang/es/license.html | tidy -m -asxml  -clean > lang/es/qsos/license_clean.html");1';
 	perl -e 'system("cat lang/es/qsos/qsos.html | tidy -m -asxml  -clean > lang/es/qsos/qsos_clean.html");1';
 	perl -e 'system("cat lang/es/qsos/fdl.html | tidy -m -asxml  -clean > lang/es/qsos/fdl_clean.html");1';
 	perl -e 'system("cat lang/es/qsos/overview.html | tidy -m -asxml  -clean > lang/es/qsos/overview_clean.html");1';
