@@ -15,7 +15,7 @@
 # Perl script used to clean the html code from latex2html
 # Usage : ./clean_html.pl qsos.html > /tmp/new.html
 # Gonéri Le Bouder (Atos Origin)
-# $Id: clean_html.pl,v 1.2 2006/03/10 14:16:39 goneri Exp $
+# $Id: clean_html.pl,v 1.3 2006/03/28 20:10:26 goneri Exp $
 
 use strict;
 use warnings;
@@ -58,7 +58,6 @@ foreach (<FILE>) {
   if ($inbody) {
     $inbody = undef if (/<address>/);
   }
-  s/<HR>//;
   #lien vers les tags correctes
   s/qsos.html/methode.php/;
   s/align="\w*"//;
@@ -68,7 +67,10 @@ foreach (<FILE>) {
   s!\./!!;
   #$_ =~ s!src="\.!prout="!;
   s/\ src="/src="$imagesdir\//;
+  s!<hr\ />!!g;
+  s!<br\ />!!g;
   print if $inbody;
+
 
 }
 close FILE;
