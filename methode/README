@@ -1,5 +1,7 @@
 Packages used :
-
+tidy
+latex2html
+imagemagick
 tetex-base
 tetex-extra
 tetex-frogg
