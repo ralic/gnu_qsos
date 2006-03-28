@@ -1,4 +1,4 @@
-#$Id: update_sheet.sh,v 1.2 2006/03/28 18:47:51 goneri Exp $
+#$Id: update_sheet.sh,v 1.3 2006/03/28 20:01:01 goneri Exp $
 #  Copyright (C) 2006 Atos Origin 
 #
 #  Author: Gonéri Le Bouder <goneri.lebouder@atosorigin.com>
@@ -77,7 +77,7 @@ mkdir -p $DESTDIR
 cd $CVS_LOCAL_DIR
 cvs -z3 -d$CVS_ROOT co -P $CVS_MODULE
 cd $CVS_LOCAL_DIR/$CVS_MODULE
-for i in `find  -type f |grep qsos$`; do
+for i in `find  -type f |grep -v template|grep qsos$`; do
   createSheet $i
 done
 
