@@ -5,7 +5,7 @@
     <html> 
       <head> 
         <title><xsl:value-of select="document/header/appname" /><xsl:value-of select="document/header/release" /></title>
-        <link rel="stylesheet" type="text/css" href="qsos-sheet.css" />
+        <link rel="stylesheet" type="text/css" href="/style/original/qsos-sheet.css" />
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
       </head> 
       <body> 
