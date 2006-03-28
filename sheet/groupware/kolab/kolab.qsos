@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- $Id: kolab.qsos,v 1.5 2006/03/28 09:19:32 goneri Exp $ -->
+<!-- $Id: kolab.qsos,v 1.6 2006/03/28 19:27:14 goneri Exp $ -->
 <document>
   <header>
     <authors>
@@ -16,7 +16,7 @@
     <appname>kolab</appname>
     <release>2</release>
     <licenseid>31</licenseid>
-    <licensedesc>31</licensedesc>
+    <licensedesc>GNU General Public License</licensedesc>
     <url>http://www.kolab.org</url>
     <desc>Kolab is a groupware used in the german administration</desc>
     <demourl>http://kolab.org/screenshots.html</demourl>
