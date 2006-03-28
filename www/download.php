@@ -25,10 +25,14 @@ source
 
 
 <h2>Gnu FDL</h2>
+<?php
+	# Grrik, i18n string shouldn't be here.
+	if ($lang == "fr") print "Document en anglais";
+?>
 <div class="downloads">
 <ul>
-<li class="pdf"><a href="download/fdl.pdf">Format PDF</a></li>
-<li class="dvi"><a href="download/fdl.dvi">Format DVI</a></li>
+<li class="pdf"><a href="download/en/fdl.pdf">PDF</a></li>
+<li class="dvi"><a href="download/en/fdl.dvi">DVI</a></li>
 </li>
 </div>
 
