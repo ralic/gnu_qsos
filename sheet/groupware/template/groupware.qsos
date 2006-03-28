@@ -1,26 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- $Id: groupware.qsos,v 1.5 2006/03/09 12:48:53 goneri Exp $ --><document>
+<!-- $Id: groupware.qsos,v 1.6 2006/03/28 19:59:03 goneri Exp $ --><document>
   <header>
     <authors>
       <author>
-        <email>goneri.lebouder@atosorigin.com</email>
-        <name>Gonéri Le Bouder</name>
       </author>
     </authors>
     <dates>
-      <creation>20060307</creation>
+      <creation></creation>
       <validation></validation>
     </dates>
-    <language>en</language>
-    <appname>kolab</appname>
-    <release>2</release>
-    <license>31</license>
-    <url>http://www.kolab.org</url>
-    <desc>Kolab is a groupware used in the german administration</desc>
-    <demourl>http://kolab.org/screenshots.html</demourl>
-    <qsosformat>1</qsosformat>
-    <qsosappfamily>groupware</qsosappfamily>
-    <qsosspecificformat>1</qsosspecificformat>
+    <language></language>
+    <appname></appname>
+    <release></release>
+    <licenseid></licenseid>
+    <licensedesc></licensedesc>
+    <url></url>
+    <desc></desc>
+    <demourl></demourl>
+    <qsosformat></qsosformat>
+    <qsosappfamily></qsosappfamily>
+    <qsosspecificformat></qsosspecificformat>
   </header>
   <section name="generic">
     <desc>Generic comment</desc>
