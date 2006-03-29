@@ -18,6 +18,7 @@
 
   <xsl:template match="document">
     <div id="header">
+    <h2>Information</h2>
       <xsl:apply-templates select="header" />
     </div>
     <xsl:apply-templates select="section" />
