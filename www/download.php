@@ -8,17 +8,17 @@ head($lang);
 <div class="downloads">
 English
 <ul lang="en">
-<li class="pdf"><a href="download/en/qsos-1.5.pdf">PDF</a></li>
-<li class="dvi"><a href="download/en/qsos-1.5.dvi">DVI</a></li>
+<li class="pdf"><a href="download/qsos-1.5-en.pdf">PDF</a></li>
+<li class="dvi"><a href="download/qsos-1.5-en.dvi">DVI</a></li>
 </ul>
 French
 <ul lang="fr">
-<li class="pdf"><a href="download/fr/qsos-1.5.pdf">PDF</a></li>
-<li class="dvi"><a href="download/fr/qsos-1.5.dvi">DVI</a></li>
+<li class="pdf"><a href="download/qsos-1.5-fr.pdf">PDF</a></li>
+<li class="dvi"><a href="download/qsos-1.5-fr.dvi">DVI</a></li>
 </ul>
 source
 <ul>
-<li class="tgz"><a href="download/fr/qsos-1.5.tar.gz">Latex</a></li>
+<li class="tgz"><a href="download/qsos-1.5.tar.gz">Latex</a></li>
 </ul>
 
 </div>
@@ -31,8 +31,8 @@ source
 ?>
 <div class="downloads">
 <ul>
-<li class="pdf"><a href="download/en/fdl.pdf">PDF</a></li>
-<li class="dvi"><a href="download/en/fdl.dvi">DVI</a></li>
+<li class="pdf"><a href="download/fdl.pdf">PDF</a></li>
+<li class="dvi"><a href="download/fdl.dvi">DVI</a></li>
 </li>
 </div>
 
