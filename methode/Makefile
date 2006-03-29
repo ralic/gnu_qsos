@@ -11,7 +11,7 @@
 #      included in the section entitled "GNU
 #      Free Documentation License".
 #
-# $Id: Makefile,v 1.13 2006/03/29 10:13:18 goneri Exp $
+# $Id: Makefile,v 1.14 2006/03/29 12:21:06 goneri Exp $
 TEX=changelog.tex define.tex eval.tex eval_app.tex fdl.tex general_process.tex glossary.tex internet_site.tex intro.tex license.tex manifest.tex qsos.tex qualify.tex
 # TODO split this by language :
 GFXS_DEST_PNG=images/comparaison.eps images/processus_4_etapes.eps images/definir.eps images/evaluer.eps images/qualifier.eps images/selectionner.eps images/QSOS.eps images/fr/comparaison.eps images/fr/processus_4_etapes.eps images/fr/definir.eps images/fr/evaluer.eps images/fr/qualifier.eps images/fr/selectionner.eps images/fr/QSOS.eps images/es/comparaison.eps images/es/processus_4_etapes.eps images/es/definir.eps images/es/evaluer.eps images/es/qualifier.eps images/es/selectionner.eps images/es/QSOS.eps
@@ -52,8 +52,8 @@ dvi: dvi-en dvi-fr dvi-es
 #	imagen -png qsos
 #	TODO : Split that crappy code
 html-en: $(GFXS_DEST_PNG) $(GFXS_DEST_SVG)
+	rm -rf qsos qsos_www/en
 	mkdir -p qsos
-	rm -rf qsos_www/en
 	latex2html -no_footnode -auto_prefix -split 0 -info 0 -no_navigation qsos.tex
 	latex2html -no_footnode -auto_prefix -split 0 -info 0 -no_navigation qsos.tex
 	latex2html -no_footnode -auto_prefix -split 0 -info 0 -no_navigation qsos.tex
@@ -77,19 +77,19 @@ html-en: $(GFXS_DEST_PNG) $(GFXS_DEST_SVG)
 
 
 html-fr: $(GFXS_DEST_PNG) $(GFXS_DEST_SVG)
+	rm -rf qsos qsos_www/fr
 	mkdir -p qsos
-	rm -rf qsos_www/fr
 	latex2html -no_footnode -auto_prefix -split 0 -info 0 -no_navigation lang/fr/qsos.tex
 	latex2html -no_footnode -auto_prefix -split 0 -info 0 -no_navigation lang/fr/qsos.tex
 	latex2html -no_footnode -auto_prefix -split 0 -info 0 -no_navigation lang/fr/qsos.tex
 	latex2html -dir qsos -no_footnode -auto_prefix -split 0 -info 0 -no_navigation lang/fr/overview.tex
-	latex2html -dir qsos -no_footnode -auto_prefix -split 0 -info 0 -no_navigation license.tex
-	latex2html -dir qsos -no_footnode -auto_prefix -split 0 -info 0 -no_navigation fdl.tex
+	latex2html -dir qsos -no_footnode -auto_prefix -split 0 -info 0 -no_navigation lang/fr/license.tex
+	latex2html -dir qsos -no_footnode -auto_prefix -split 0 -info 0 -no_navigation lang/fr/fdl.tex
 	perl -e 'system("cat qsos/license.html | tidy -m -asxml  -clean > qsos/license_clean.html");1';
 	perl -e 'system("cat qsos/qsos.html | tidy -m -asxml  -clean > qsos/qsos_clean.html");1';
 	perl -e 'system("cat qsos/fdl.html | tidy -m -asxml  -clean > qsos/fdl_clean.html");1';
 	perl -e 'system("cat qsos/overview.html | tidy -m -asxml  -clean > qsos/overview_clean.html");1';
-	mv qsos/license_clean.html qsos_www/fr/license.html
+	mv qsos/license_clean.html qsos/license.html
 	mv qsos/qsos_clean.html qsos/qsos.html
 	mv qsos/fdl_clean.html qsos/fdl.html
 	mv qsos/overview_clean.html qsos/overview.html
@@ -97,24 +97,24 @@ html-fr: $(GFXS_DEST_PNG) $(GFXS_DEST_SVG)
 	mv qsos qsos_www/fr
 
 html-es: $(GFXS_DEST_PNG) $(GFXS_DEST_SVG)
+	rm -rf qsos qsos_www/es
 	mkdir -p qsos
-	rm -rf qsos_www/es
 	latex2html -no_footnode -auto_prefix -split 0 -info 0 -no_navigation lang/es/qsos.tex
 	latex2html -no_footnode -auto_prefix -split 0 -info 0 -no_navigation lang/es/qsos.tex
 	latex2html -no_footnode -auto_prefix -split 0 -info 0 -no_navigation lang/es/qsos.tex
-	latex2html -dir lang/es/qsos -no_footnode -auto_prefix -split 0 -info 0 -no_navigation lang/es/overview.tex
-	latex2html -dir qsos -no_footnode -auto_prefix -split 0 -info 0 -no_navigation license.tex
-	latex2html -dir qsos -no_footnode -auto_prefix -split 0 -info 0 -no_navigation fdl.tex
-	perl -e 'system("cat qsos/license.html | tidy -m -asxml  -clean > lang/es/qsos/license_clean.html");1';
+	latex2html -dir qsos -no_footnode -auto_prefix -split 0 -info 0 -no_navigation lang/es/overview.tex
+	latex2html -dir qsos -no_footnode -auto_prefix -split 0 -info 0 -no_navigation lang/es/license.tex
+	latex2html -dir qsos -no_footnode -auto_prefix -split 0 -info 0 -no_navigation lang/es/fdl.tex
+	perl -e 'system("cat qsos/license.html | tidy -m -asxml  -clean > qsos/license_clean.html");1';
 	perl -e 'system("cat qsos/qsos.html | tidy -m -asxml  -clean > qsos/qsos_clean.html");1';
 	perl -e 'system("cat qsos/fdl.html | tidy -m -asxml  -clean > qsos/fdl_clean.html");1';
 	perl -e 'system("cat qsos/overview.html | tidy -m -asxml  -clean > qsos/overview_clean.html");1';
+	mv qsos/license_clean.html qsos/license.html
+	mv qsos/qsos_clean.html qsos/qsos.html
+	mv qsos/fdl_clean.html qsos/fdl.html
+	mv qsos/overview_clean.html qsos/overview.html
 	mkdir -p qsos_www
-	mv lang/es/qsos qsos_www/es
-	mv qsos_www/es/license_clean.html qsos_www/es/license.html
-	mv qsos_www/es/qsos_clean.html qsos_www/es/qsos.html
-	mv qsos_www/es/fdl_clean.html qsos_www/es/fdl.html
-	mv qsos_www/es/overview_clean.html qsos_www/es/overview.html
+	mv qsos qsos_www/es
 
 
 
@@ -194,7 +194,7 @@ install: dvi html license pdf tgz
 	# spanish 
 	mkdir -p $(WWW)/methode/es
 	mkdir -p $(WWW)/download/es
-	cp -v qsos_www/es/*.png $(WWW)/methode/es
+	cp -vf qsos_www/es/*.png $(WWW)/methode/es
 	./clean_html.pl qsos_www/es/qsos.html es| recode ISO-8859-1..UTF-8 > $(WWW)/methode/es/methode.html
 	./clean_html.pl qsos_www/es/license.html es| recode ISO-8859-1..UTF-8 > $(WWW)/methode/es/license.html
 	./clean_html.pl qsos_www/es/overview.html es| recode ISO-8859-1..UTF-8 > $(WWW)/methode/es/overview.html
