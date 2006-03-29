@@ -11,7 +11,7 @@
 #      included in the section entitled "GNU
 #      Free Documentation License".
 #
-# $Id: Makefile,v 1.14 2006/03/29 12:21:06 goneri Exp $
+# $Id: Makefile,v 1.15 2006/03/29 14:45:00 goneri Exp $
 TEX=changelog.tex define.tex eval.tex eval_app.tex fdl.tex general_process.tex glossary.tex internet_site.tex intro.tex license.tex manifest.tex qsos.tex qualify.tex
 # TODO split this by language :
 GFXS_DEST_PNG=images/comparaison.eps images/processus_4_etapes.eps images/definir.eps images/evaluer.eps images/qualifier.eps images/selectionner.eps images/QSOS.eps images/fr/comparaison.eps images/fr/processus_4_etapes.eps images/fr/definir.eps images/fr/evaluer.eps images/fr/qualifier.eps images/fr/selectionner.eps images/fr/QSOS.eps images/es/comparaison.eps images/es/processus_4_etapes.eps images/es/definir.eps images/es/evaluer.eps images/es/qualifier.eps images/es/selectionner.eps images/es/QSOS.eps
@@ -79,9 +79,9 @@ html-en: $(GFXS_DEST_PNG) $(GFXS_DEST_SVG)
 html-fr: $(GFXS_DEST_PNG) $(GFXS_DEST_SVG)
 	rm -rf qsos qsos_www/fr
 	mkdir -p qsos
-	latex2html -no_footnode -auto_prefix -split 0 -info 0 -no_navigation lang/fr/qsos.tex
-	latex2html -no_footnode -auto_prefix -split 0 -info 0 -no_navigation lang/fr/qsos.tex
-	latex2html -no_footnode -auto_prefix -split 0 -info 0 -no_navigation lang/fr/qsos.tex
+	latex2html -dir qsos -no_footnode -auto_prefix -split 0 -info 0 -no_navigation lang/fr/qsos.tex
+	latex2html -dir qsos -no_footnode -auto_prefix -split 0 -info 0 -no_navigation lang/fr/qsos.tex
+	latex2html -dir qsos -no_footnode -auto_prefix -split 0 -info 0 -no_navigation lang/fr/qsos.tex
 	latex2html -dir qsos -no_footnode -auto_prefix -split 0 -info 0 -no_navigation lang/fr/overview.tex
 	latex2html -dir qsos -no_footnode -auto_prefix -split 0 -info 0 -no_navigation lang/fr/license.tex
 	latex2html -dir qsos -no_footnode -auto_prefix -split 0 -info 0 -no_navigation lang/fr/fdl.tex
@@ -99,9 +99,9 @@ html-fr: $(GFXS_DEST_PNG) $(GFXS_DEST_SVG)
 html-es: $(GFXS_DEST_PNG) $(GFXS_DEST_SVG)
 	rm -rf qsos qsos_www/es
 	mkdir -p qsos
-	latex2html -no_footnode -auto_prefix -split 0 -info 0 -no_navigation lang/es/qsos.tex
-	latex2html -no_footnode -auto_prefix -split 0 -info 0 -no_navigation lang/es/qsos.tex
-	latex2html -no_footnode -auto_prefix -split 0 -info 0 -no_navigation lang/es/qsos.tex
+	latex2html -dir qsos -no_footnode -auto_prefix -split 0 -info 0 -no_navigation lang/es/qsos.tex
+	latex2html -dir qsos -no_footnode -auto_prefix -split 0 -info 0 -no_navigation lang/es/qsos.tex
+	latex2html -dir qsos -no_footnode -auto_prefix -split 0 -info 0 -no_navigation lang/es/qsos.tex
 	latex2html -dir qsos -no_footnode -auto_prefix -split 0 -info 0 -no_navigation lang/es/overview.tex
 	latex2html -dir qsos -no_footnode -auto_prefix -split 0 -info 0 -no_navigation lang/es/license.tex
 	latex2html -dir qsos -no_footnode -auto_prefix -split 0 -info 0 -no_navigation lang/es/fdl.tex
@@ -170,35 +170,35 @@ qsos-$(CURRENT_RELEASE).tar.gz:
 
 install: dvi html license pdf tgz 
 	mkdir -p $(WWW)/methode/en
-	mkdir -p $(WWW)/download/en
+	mkdir -p $(WWW)/download
 	cp -v qsos_www/en/*.png $(WWW)/methode/en
 	./clean_html.pl qsos_www/en/qsos.html en| recode ISO-8859-1..UTF-8 > $(WWW)/methode/en/methode.html
 	./clean_html.pl qsos_www/en/license.html en| recode ISO-8859-1..UTF-8 > $(WWW)/methode/en/license.html
 	./clean_html.pl qsos_www/en/fdl.html en| recode ISO-8859-1..UTF-8 > $(WWW)/methode/en/fdl.html
 	./clean_html.pl qsos_www/en/overview.html en| recode ISO-8859-1..UTF-8 > $(WWW)/methode/en/overview.html
-	cp qsos-$(CURRENT_RELEASE)-en.pdf $(WWW)/download/en
-	cp qsos-$(CURRENT_RELEASE)-en.dvi $(WWW)/download/en
-	cp fdl.pdf fdl.dvi $(WWW)/download/en
-	cp qsos-$(CURRENT_RELEASE).tar.gz $(WWW)/download/en/qsos-$(CURRENT_RELEASE).tar.gz
+	cp qsos-$(CURRENT_RELEASE)-en.pdf $(WWW)/download
+	cp qsos-$(CURRENT_RELEASE)-en.dvi $(WWW)/download
+	cp fdl.pdf fdl.dvi $(WWW)/download
+	cp qsos-$(CURRENT_RELEASE).tar.gz $(WWW)/download
 	# french
 	mkdir -p $(WWW)/methode/fr
-	mkdir -p $(WWW)/download/fr
+	mkdir -p $(WWW)/download
 	cp -v qsos_www/fr/*.png $(WWW)/methode/fr
 	./clean_html.pl qsos_www/fr/qsos.html fr| recode ISO-8859-1..UTF-8 > $(WWW)/methode/fr/methode.html
 	./clean_html.pl qsos_www/fr/license.html fr| recode ISO-8859-1..UTF-8 > $(WWW)/methode/fr/license.html
+	./clean_html.pl qsos_www/fr/fdl.html fr| recode ISO-8859-1..UTF-8 > $(WWW)/methode/fr/fdl.html
 	./clean_html.pl qsos_www/fr/overview.html fr| recode ISO-8859-1..UTF-8 > $(WWW)/methode/fr/overview.html
-	cp qsos-$(CURRENT_RELEASE)-fr.pdf $(WWW)/download/fr
-	cp qsos-$(CURRENT_RELEASE)-fr.dvi $(WWW)/download/fr
-	cp fdl.pdf fdl.dvi $(WWW)/download/fr
-	cp qsos-$(CURRENT_RELEASE).tar.gz $(WWW)/download/fr/qsos-$(CURRENT_RELEASE).tar.gz
+	cp qsos-$(CURRENT_RELEASE)-fr.pdf $(WWW)/download
+	cp qsos-$(CURRENT_RELEASE)-fr.dvi $(WWW)/download
+#	cp fdl.pdf fdl.dvi $(WWW)/download
 	# spanish 
 	mkdir -p $(WWW)/methode/es
-	mkdir -p $(WWW)/download/es
+	mkdir -p $(WWW)/download
 	cp -vf qsos_www/es/*.png $(WWW)/methode/es
 	./clean_html.pl qsos_www/es/qsos.html es| recode ISO-8859-1..UTF-8 > $(WWW)/methode/es/methode.html
 	./clean_html.pl qsos_www/es/license.html es| recode ISO-8859-1..UTF-8 > $(WWW)/methode/es/license.html
+	./clean_html.pl qsos_www/es/fdl.html es| recode ISO-8859-1..UTF-8 > $(WWW)/methode/es/fdl.html
 	./clean_html.pl qsos_www/es/overview.html es| recode ISO-8859-1..UTF-8 > $(WWW)/methode/es/overview.html
-	cp qsos-$(CURRENT_RELEASE)-es.pdf $(WWW)/download/es
-	cp qsos-$(CURRENT_RELEASE)-es.dvi $(WWW)/download/es
-	cp fdl.pdf fdl.dvi $(WWW)/download/es
-	cp qsos-$(CURRENT_RELEASE).tar.gz $(WWW)/download/es/qsos-$(CURRENT_RELEASE).tar.gz
+	cp qsos-$(CURRENT_RELEASE)-es.pdf $(WWW)/download
+	cp qsos-$(CURRENT_RELEASE)-es.dvi $(WWW)/download
+#	cp fdl.pdf fdl.dvi $(WWW)/download/es
