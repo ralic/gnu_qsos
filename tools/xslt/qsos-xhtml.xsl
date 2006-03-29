@@ -5,13 +5,13 @@
     <html> 
       <head> 
         <title><xsl:value-of select="document/header/appname" /><xsl:value-of select="document/header/release" /></title>
-        <link rel="stylesheet" type="text/css" href="/style/original/qsos-sheet.css" />
+        <link rel="stylesheet" type="text/css" href="%%CSS_SHEET%%" />
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
       </head> 
       <body> 
         <h1><xsl:value-of select="document/header/appname" /><xsl:value-of select="document/header/release" /></h1>
         <xsl:apply-templates select="document" />
-        <small><a href="QSOS.org">the QSOS method</a></small>
+        <small><a href="http://QSOS.org">the QSOS method</a></small>
       </body> 
     </html> 
   </xsl:template> 
@@ -32,7 +32,11 @@
       <li><strong>License: </strong> <xsl:value-of select="licensedesc" /></li>
       <li><strong>Url: </strong> <a href="{url}"><xsl:value-of select="url" /></a></li>
       <li><strong>Desc: </strong> <xsl:value-of select="desc" /></li>
+
+      <xsl:if test="demo != ''">
       <li><strong>Demo: </strong> <xsl:value-of select="demo" /></li>
+      </xsl:if>
+
       <xsl:apply-templates select="authors" />
     </ul>
   </xsl:template>
