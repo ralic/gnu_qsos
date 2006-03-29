@@ -1,9 +1,12 @@
 <html>
 </head>
-<title>Qsos repository</title>
-<link rel="stylesheet" type="text/css" href="/style/original/qsos-listing.css" />
+<title>Qsos repository %%DIRECTORY%%</title>
+<link rel="stylesheet" type="text/css" href="%%CSS_LISTING%%" />
 </head>
 <body>
+<div id="corp">
+<h1>Listing of QSOS:%%DIRECTORY%%</h1>
 %%LIST%%
+</div>
 </body>
 </html>

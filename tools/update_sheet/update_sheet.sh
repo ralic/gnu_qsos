@@ -1,4 +1,4 @@
-#$Id: update_sheet.sh,v 1.3 2006/03/28 20:01:01 goneri Exp $
+#$Id: update_sheet.sh,v 1.4 2006/03/29 14:13:07 goneri Exp $
 #  Copyright (C) 2006 Atos Origin 
 #
 #  Author: Gonéri Le Bouder <goneri.lebouder@atosorigin.com>
@@ -30,13 +30,13 @@ createSheet () {
   mkdir -p $DIR
 
   echo converting $FILE 
-  xsltproc $XSLT $FULLPATH > $DIR/$FILE
+  xsltproc $XSLT $FULLPATH|sed s!%%CSS_SHEET%%!"$CSS_SHEET"! > $DIR/$FILE
 }
 
 createIndex () {
   local i
   DIR=$@
-  LIST="\n<ul>"
+  LIST="\n<ul class=\"downloads\">"
  
   echo $DIR
   rm -f $DIR/index.html
@@ -44,14 +44,17 @@ createIndex () {
     if [ -d $i ]; then
       TYPE="folder"
     else
-      TYPE="file"
+      TYPE="sheet"
     fi
 
-    LIST=$LIST"<li type=$TYPE><a href=\"$i\">`echo $i|sed s/\.html$//`</a></li>\n"
+    LIST=$LIST"<li class=$TYPE><a href=\"$i\">`echo $i|sed s/\.html$//`</a></li>\n"
   done
   LIST=$LIST"</ul>\n"
   
-  cat $TEMPLATES_DIR/index.tpl| sed s!%%LIST%%!"$LIST"! \
+  cat $TEMPLATES_DIR/index.tpl| \
+  sed s!%%CSS_LISTING%%!"$CSS_LISTING"!| \
+  sed s!%%LIST%%!"$LIST"!| \
+  sed s!%%DIRECTORY%%!"$DIR"! \
   > $DIR/index.html
 
 
@@ -75,7 +78,7 @@ mkdir -p $CVS_LOCAL_DIR
 mkdir -p $DESTDIR
 
 cd $CVS_LOCAL_DIR
-cvs -z3 -d$CVS_ROOT co -P $CVS_MODULE
+#cvs -z3 -d$CVS_ROOT co -P $CVS_MODULE
 cd $CVS_LOCAL_DIR/$CVS_MODULE
 for i in `find  -type f |grep -v template|grep qsos$`; do
   createSheet $i
@@ -86,4 +89,7 @@ for i in `find  -type d`; do
   createIndex $i
 done
 
-upload
+if [ "$UPLOAD" = yes ]
+then
+  upload
+fi
