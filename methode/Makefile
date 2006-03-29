@@ -11,7 +11,7 @@
 #      included in the section entitled "GNU
 #      Free Documentation License".
 #
-# $Id: Makefile,v 1.12 2006/03/28 20:30:47 goneri Exp $
+# $Id: Makefile,v 1.13 2006/03/29 10:13:18 goneri Exp $
 TEX=changelog.tex define.tex eval.tex eval_app.tex fdl.tex general_process.tex glossary.tex internet_site.tex intro.tex license.tex manifest.tex qsos.tex qualify.tex
 # TODO split this by language :
 GFXS_DEST_PNG=images/comparaison.eps images/processus_4_etapes.eps images/definir.eps images/evaluer.eps images/qualifier.eps images/selectionner.eps images/QSOS.eps images/fr/comparaison.eps images/fr/processus_4_etapes.eps images/fr/definir.eps images/fr/evaluer.eps images/fr/qualifier.eps images/fr/selectionner.eps images/fr/QSOS.eps images/es/comparaison.eps images/es/processus_4_etapes.eps images/es/definir.eps images/es/evaluer.eps images/es/qualifier.eps images/es/selectionner.eps images/es/QSOS.eps
@@ -60,22 +60,19 @@ html-en: $(GFXS_DEST_PNG) $(GFXS_DEST_SVG)
 	latex2html -dir qsos -no_footnode -auto_prefix -split 0 -info 0 -no_navigation license.tex
 	latex2html -dir qsos -no_footnode -auto_prefix -split 0 -info 0 -no_navigation fdl.tex
 	latex2html -dir qsos -no_footnode -auto_prefix -split 0 -info 0 -no_navigation overview.tex
-	# latex2html fait du code crade, je passe un coup de tidy pour nettoyer le code
-	# les parentheses autour invrse le code de retour de tidy sinon make s'arrete en
-	# pensant avoir une erreur fatale
+	#latex2html create an ugly HTML code, i use tidy to clean up it.
+	# Since tidy doesn't love the input code it return an no 0 code to the shell 
+	# to avoir make break, i launch it in a perl system. 
 	perl -e 'system("cat qsos/license.html | tidy -m -asxml  -clean > qsos/license_clean.html");1';
 	perl -e 'system("cat qsos/qsos.html | tidy -m -asxml  -clean > qsos/qsos_clean.html");1';
 	perl -e 'system("cat qsos/fdl.html | tidy -m -asxml  -clean > qsos/fdl_clean.html");1';
 	perl -e 'system("cat qsos/overview.html | tidy -m -asxml  -clean > qsos/overview_clean.html");1';
+	mv qsos/license_clean.html qsos/license.html
+	mv qsos/qsos_clean.html qsos/qsos.html
+	mv qsos/fdl_clean.html qsos/fdl.html
+	mv qsos/overview_clean.html qsos/overview.html
 	mkdir -p qsos_www
 	mv qsos qsos_www/en
-#	mv qsos_www/overview/*.png qsos_www
-#	rm -Rf qsos_www/overview
-	mv qsos_www/en/license_clean.html qsos_www/en/license.html
-	mv qsos_www/en/qsos_clean.html qsos_www/en/qsos.html
-	mv qsos_www/en/fdl_clean.html qsos_www/en/fdl.html
-	mv qsos_www/en/overview_clean.html qsos_www/en/overview.html
-#	rm -Rf qsos
 
 
 
@@ -85,25 +82,19 @@ html-fr: $(GFXS_DEST_PNG) $(GFXS_DEST_SVG)
 	latex2html -no_footnode -auto_prefix -split 0 -info 0 -no_navigation lang/fr/qsos.tex
 	latex2html -no_footnode -auto_prefix -split 0 -info 0 -no_navigation lang/fr/qsos.tex
 	latex2html -no_footnode -auto_prefix -split 0 -info 0 -no_navigation lang/fr/qsos.tex
-	latex2html -dir lang/fr/qsos -no_footnode -auto_prefix -split 0 -info 0 -no_navigation lang/fr/overview.tex
+	latex2html -dir qsos -no_footnode -auto_prefix -split 0 -info 0 -no_navigation lang/fr/overview.tex
 	latex2html -dir qsos -no_footnode -auto_prefix -split 0 -info 0 -no_navigation license.tex
 	latex2html -dir qsos -no_footnode -auto_prefix -split 0 -info 0 -no_navigation fdl.tex
-	# latex2html fait du code crade, je passe un coup de tidy pour nettoyer le code
-	# les parfrtheses autour invrse le code de retour de tidy sinon make s'arrete fr
-	# pfrsant avoir une erreur fatale
-	perl -e 'system("cat lang/fr/license.html | tidy -m -asxml  -clean > lang/fr/qsos/license_clean.html");1';
-	perl -e 'system("cat lang/fr/qsos/qsos.html | tidy -m -asxml  -clean > lang/fr/qsos/qsos_clean.html");1';
-	perl -e 'system("cat lang/fr/qsos/fdl.html | tidy -m -asxml  -clean > lang/fr/qsos/fdl_clean.html");1';
-	perl -e 'system("cat lang/fr/qsos/overview.html | tidy -m -asxml  -clean > lang/fr/qsos/overview_clean.html");1';
+	perl -e 'system("cat qsos/license.html | tidy -m -asxml  -clean > qsos/license_clean.html");1';
+	perl -e 'system("cat qsos/qsos.html | tidy -m -asxml  -clean > qsos/qsos_clean.html");1';
+	perl -e 'system("cat qsos/fdl.html | tidy -m -asxml  -clean > qsos/fdl_clean.html");1';
+	perl -e 'system("cat qsos/overview.html | tidy -m -asxml  -clean > qsos/overview_clean.html");1';
+	mv qsos/license_clean.html qsos_www/fr/license.html
+	mv qsos/qsos_clean.html qsos/qsos.html
+	mv qsos/fdl_clean.html qsos/fdl.html
+	mv qsos/overview_clean.html qsos/overview.html
 	mkdir -p qsos_www
-	mv lang/fr/qsos qsos_www/fr
-#	mv qsos_www/fr/overview/*.png qsos_www/fr
-#	rm -Rf qsos_www/fr/overview
-	mv qsos_www/fr/license_clean.html qsos_www/fr/license.html
-	mv qsos_www/fr/qsos_clean.html qsos_www/fr/qsos.html
-	mv qsos_www/fr/fdl_clean.html qsos_www/fr/fdl.html
-	mv qsos_www/fr/overview_clean.html qsos_www/fr/overview.html
-#	rm -Rf qsos
+	mv qsos qsos_www/fr
 
 html-es: $(GFXS_DEST_PNG) $(GFXS_DEST_SVG)
 	mkdir -p qsos
@@ -114,22 +105,16 @@ html-es: $(GFXS_DEST_PNG) $(GFXS_DEST_SVG)
 	latex2html -dir lang/es/qsos -no_footnode -auto_prefix -split 0 -info 0 -no_navigation lang/es/overview.tex
 	latex2html -dir qsos -no_footnode -auto_prefix -split 0 -info 0 -no_navigation license.tex
 	latex2html -dir qsos -no_footnode -auto_prefix -split 0 -info 0 -no_navigation fdl.tex
-	# latex2html fait du code crade, je passe un coup de tidy pour nettoyer le code
-	# les parestheses autour invrse le code de retour de tidy sinon make s'arrete es
-	# pessant avoir une erreur fatale
-	perl -e 'system("cat lang/es/license.html | tidy -m -asxml  -clean > lang/es/qsos/license_clean.html");1';
-	perl -e 'system("cat lang/es/qsos/qsos.html | tidy -m -asxml  -clean > lang/es/qsos/qsos_clean.html");1';
-	perl -e 'system("cat lang/es/qsos/fdl.html | tidy -m -asxml  -clean > lang/es/qsos/fdl_clean.html");1';
-	perl -e 'system("cat lang/es/qsos/overview.html | tidy -m -asxml  -clean > lang/es/qsos/overview_clean.html");1';
+	perl -e 'system("cat qsos/license.html | tidy -m -asxml  -clean > lang/es/qsos/license_clean.html");1';
+	perl -e 'system("cat qsos/qsos.html | tidy -m -asxml  -clean > qsos/qsos_clean.html");1';
+	perl -e 'system("cat qsos/fdl.html | tidy -m -asxml  -clean > qsos/fdl_clean.html");1';
+	perl -e 'system("cat qsos/overview.html | tidy -m -asxml  -clean > qsos/overview_clean.html");1';
 	mkdir -p qsos_www
 	mv lang/es/qsos qsos_www/es
-#	mv qsos_www/es/overview/*.png qsos_www/es
-#	rm -Rf qsos_www/es/overview
 	mv qsos_www/es/license_clean.html qsos_www/es/license.html
 	mv qsos_www/es/qsos_clean.html qsos_www/es/qsos.html
 	mv qsos_www/es/fdl_clean.html qsos_www/es/fdl.html
 	mv qsos_www/es/overview_clean.html qsos_www/es/overview.html
-#	rm -Rf qsos
 
 
 
