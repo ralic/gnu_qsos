@@ -1,6 +1,5 @@
 use Qt::attributes qw( aboutform propertyform );
 use QSOS::Document;
-use Data::Dumper;
 use Qt::debug;
 use QSOS::QtEditor::Aboutform;
 use QSOS::QtEditor::Propertyform;
@@ -22,7 +21,6 @@ sub loadSection
 {
   my ($num) = @_;
 
-  print "load section n° $num\n";
   # Saving current commentBox :
   if (defined SUPER->{current_section_nbr}) {
     saveCurrentValue();
@@ -137,7 +135,6 @@ sub itemChanged
 
 sub scoreChanged
 {
-  print Dumper(@_);
 
   my $score = shift;
   my $num = SUPER->{current_section_nbr};
