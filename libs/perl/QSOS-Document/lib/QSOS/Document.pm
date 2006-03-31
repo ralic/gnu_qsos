@@ -1,4 +1,4 @@
-# $Id: Document.pm,v 1.11 2006/03/24 15:15:52 goneri Exp $
+# $Id: Document.pm,v 1.12 2006/03/31 16:10:20 goneri Exp $
 #
 #  Copyright (C) 2006 Atos Origin 
 #
@@ -33,7 +33,7 @@ use vars qw($VERSION @ISA @EXPORT @EXPORT_OK $PREFERRED_PARSER);
 
 @ISA               = qw(Exporter);
 @EXPORT            = qw(XMLin XMLout);
-@EXPORT_OK         = qw(new load write getkeydesc setkeycomment getkeycomment setkeyscore getkeyscore write getauthors addauthor delauthor getappname setappname getlanguage setlanguage getrelease setrelease getlicenselist getlicenseid setlicenseid getlicensedesc setlicensedesc geturl seturl getdesc setdesc getdemourl setdemourl getqsosformat setqsosformat getqsosspecificformat setqsosspecificformat getqsosappfamily setqsosappfamily);
+@EXPORT_OK         = qw(new load write getkeydesc getkeydesc0 getkeydesc1 getkeydesc2 setkeycomment getkeycomment setkeyscore getkeyscore write getauthors addauthor delauthor getappname setappname getlanguage setlanguage getrelease setrelease getlicenselist getlicenseid setlicenseid getlicensedesc setlicensedesc geturl seturl getdesc setdesc getdemourl setdemourl getqsosformat setqsosformat getqsosspecificformat setqsosspecificformat getqsosappfamily setqsosappfamily);
 $VERSION           = '0.01';
 
 
@@ -99,6 +99,9 @@ sub _pushElem {
     name => $elt->atts->{name},
     comment_ref => $elt->first_child('comment'),
     desc_ref => $elt->first_child('desc'),
+    desc_ref0 => $elt->first_child('desc0'),
+    desc_ref1 => $elt->first_child('desc1'),
+    desc_ref2 => $elt->first_child('desc2'),
     score_ref => $elt->first_child('score'),
     deep => $deep
   };
@@ -109,21 +112,23 @@ sub _pushElem {
 
 
 sub getkeydesc {
-  my ($self, $nbr) = @_;
+  my ($self, $nbr, $numdesc) = @_;
 
   if (! defined $nbr) {
     croak ("nbr is not defined");
     return;
   }
 
-  my $comment_ref = $self->{tabular}->[$nbr]->{desc_ref};
+  $numdesc = '' if (! defined $numdesc);
+  $numdesc = '' if ($numdesc !~ /^(|0|1|2)$/);
+
+  my $comment_ref = $self->{tabular}->[$nbr]->{"desc_ref".$numdesc};
 
   unless ($comment_ref) {
     return;
   }
   $comment_ref->text();
 }
-
 
 
 sub setkeycomment {

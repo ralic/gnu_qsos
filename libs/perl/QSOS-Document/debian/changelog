@@ -1,3 +1,9 @@
+libqsos-document-perl (0.02-1) unstable; urgency=low
+
+  *  new release to support QSOS 1.6
+
+ -- Goneri Le Bouder <goneri.lebouder@atosorigin.com>  Fri, 31 Mar 2006 18:08:37 +0200
+
 libqsos-document-perl (0.01-1) unstable; urgency=low
 
   * Initial Release.
