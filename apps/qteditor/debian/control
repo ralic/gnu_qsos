@@ -6,8 +6,8 @@ Build-Depends: debhelper (>= 4.0.0)
 Standards-Version: 3.6.2
 
 Package: qsos-qteditor
-Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}, libqsos-document-perl
+Architecture: all 
+Depends: ${shlibs:Depends}, ${misc:Depends}, libqsos-document-perl, libqt-perl
 Description: a basic editor for QSOS sheet 
  a basic editor for QSOS sheet editing
  .
