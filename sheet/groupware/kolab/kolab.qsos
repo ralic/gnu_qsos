@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- $Id: kolab.qsos,v 1.7 2006/03/31 12:12:42 goneri Exp $ -->
+<!-- $Id: kolab.qsos,v 1.8 2006/03/31 15:20:40 goneri Exp $ -->
 <document>
   <header>
     <authors>
@@ -286,7 +286,7 @@
         </element>
         <element name="administrationmonitoring" title="Administration / Monitoring">
           <desc0>No administrative or monitoring functionalities</desc0>
-          <desc1>Existing, functionalities but uncomplete and in need of improvement</desc1>
+          <desc1>Existing, functionalities but uncomplete and or need improvement</desc1>
           <desc2>Complete and easy-to-use administration and monitoring functionalities. Possible integration with external tools (e.g: SNMP, syslog, ...)</desc2>
           <score></score>
           <comment></comment>
