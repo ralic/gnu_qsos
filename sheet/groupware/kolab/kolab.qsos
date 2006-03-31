@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- $Id: kolab.qsos,v 1.6 2006/03/28 19:27:14 goneri Exp $ -->
+<!-- $Id: kolab.qsos,v 1.7 2006/03/31 12:12:42 goneri Exp $ -->
 <document>
   <header>
     <authors>
@@ -24,218 +24,396 @@
     <qsosappfamily>groupware</qsosappfamily>
     <qsosspecificformat>1</qsosspecificformat>
   </header>
-  <section name="generic" title="Generic">
+  <section name="generic" title="Generic section">
     <desc>Common QSOS section</desc>
-    <comment></comment>
-    <element name="historicissue" title="Historic issue">
-      <desc>Did the project meet important issue in the past years?</desc>
-      <comment>Kolab is young project. It didn't get particuar issue since its creation.</comment>
-      <score>1</score>
-    </element>
-    <element name="forkmergeprobability" title="Project fork probablility">
-      <!-- modified section -->
-      <desc>Probability of a fork of the project or a merge with another one.</desc>
-      <comment></comment>
-      <score>2</score>
-    </element>
-    <element name="adoptation" title="Adopation">
-      <element name="popularity" title="Popularity">
-        <desc>Popularity</desc>
-        <comment></comment>
-        <score>1</score>
-      </element>
-      <element name="usegroup" title="Usergroup">
-        <desc>User group</desc>
-        <comment>none</comment>
-        <score>2</score>
-        <element name="otherref" title="Other reference">
-          <desc>Others references (commercial)</desc>
-          <comment>Kolab is used and supported by a Consortium of company : http://www.kolab-konsortium.de/en
-
-            Others companys offert support in Europe.
-
-          </comment>
+    <element name="intrinsicdurability" title="Intrinsic durability">
+      <element name="maturity" title="Maturity">
+        <element name="age" title="Age">
+          <desc0>less than 3 months</desc0>
+          <desc1>if between 3 months and 3 years</desc1>
+          <desc2>after 3 years</desc2>
           <score>2</score>
-        </element>
-        <element name="contributorscommunity" title="Contributor community">
-          <desc>Importance of the contributors community</desc>
-          <comment></comment>
-          <score>2</score>
-        </element>
-        <element name="books" title="Book published">
-          <desc>Book about this project published</desc>
-          <comment>none</comment>
-          <score>0</score>
-        </element>
-        <element name="awardwon" title="Award">
-          <!-- new section -->
-          <desc>Award won by the project</desc>
-          <comment>"Best Groupware Server" Award at Linux New Media Award 2005 in Frankfurt, Germany
-          </comment>
-          <score></score>
-        </element>
-      </element>
-    </element>
-    <element name="leadmodel" title="Lead model">
-      <element name="coreteam" title="Core team">
-        <desc>Core team</desc>
-        <comment>4 regular commiters</comment>
-        <score>2</score>
-      </element>
-      <element name="leadershipmodel" title="Leadership model">
-        <!-- translate me correctly! -->
-        <desc>Leadership model, is it a democraty, meritocracy, dictatur,...</desc>
-        <comment>core team and a Consortium</comment>
-        <score>2</score>
-      </element>
-    </element>
-    <element name="dynamism" title="Dynamism of the project">
-      <element name="developperteam" title="Dynamism of the developper team">
-        <desc>Developper dynamism, interest, turnover</desc>
-        <comment>Active mailing list</comment>
-        <score>2</score>
-      </element>
-      <element name="bugfix" title="Dynamism around bug fixing">
-        <desc>Dynamism around bug hunt</desc>
-        <comment></comment>
-        <score></score>
-      </element>
-      <element name="feature" title="Dynamism to add feature">
-        <desc>Dynamism around new feature addition</desc>
-        <comment></comment>
-        <score></score>
-      </element>
-      <element name="release" title="Dynamism around release">
-        <desc>Dynamism around new release</desc>
-        <comment></comment>
-        <score></score>
-      </element>
-    </element>
-    <element name="supported_os" title="Supported OS">
-      <desc>Supported Operating System</desc>
-      <element name="linux" title="GNU/Linux">
-        <desc>Linux</desc>
-        <comment>Thanks to the OpenPKG system, the installation on Linux is easy but break the packaging policy of the distributions. Some distro provide specific packages.</comment>
-        <element name="debian" title="Debian">
-          <desc>Debian Linux and other .deb based distro</desc>
-          <comment>A team of Debian developper works on packaging Kolab on Debian
-            http://pkg-kolab.alioth.debian.org/
-
-            The openPkg work fine on it too.</comment>
-          <score>2</score>
-        </element>
-        <element name="redhat" title="RedHat">
-          <desc>RedHat Linux, Fedora and others Rh based distro</desc>
-          <comment>OpenPKG installation for Fedora is describe here :
-            http://wiki.kolab.org/index.php/Fedora
-          </comment>
-          <score>2</score>
-        </element>
-        <element name="mandriva" title="Mandriva">
-          <desc>Mandriva Linux</desc>
-          <comment>Packaged in the Contrib branche
-
-            OpenPKG work too</comment>
-          <score>2</score>
-        </element>
-        <element name="suse" title="SuSE">
-          <desc>SuSE Linux and others SuSE based distro</desc>
-          <comment>APT repositoy exists for SuSE</comment>
-          <score>2</score>
-        </element>
-      </element>
-      <element name="windows" title="Windows">
-        <desc>Windows support</desc>
-        <comment>Kolab can't be installed on Windows</comment>
-        <element name="win95-98-nt" title="Windows 95/98/NT">
-          <desc>Windows 95/98/NT</desc>
-          <comment></comment>
-          <score>0</score>
-        </element>
-        <element name="win2k-xp-2k3" title="Windows2000 end after">
-          <desc>Windows 2k/XP/sk3</desc>
-          <comment></comment>
-          <score>0</score>
-        </element>
-      </element>
-      <element name="unix" title="Unix">
-        <element name="freebsd" title="FreeBSD">
-          <desc>FreeBSD</desc>
-          <comment>OpenPKG installation work fine</comment>
-          <score>2</score>
-        </element>
-        <element name="netbsd" title="NetBSD">
-          <desc>NetBSD</desc>
-          <comment>it's work but it's a tricky</comment>
-          <score>1</score>
-        </element>
-        <element name="openbsd" title="OpenBSD">
-          <desc>OpenBSD</desc>
-          <comment>Like for NetBSD, it's supported but difficult. And there is few information available</comment>
-          <score>1</score>
-        </element>
-        <element name="solaris" title="Solaris">
-          <desc>Solaris</desc>
-          <comment>undocumented, could work</comment>
-          <score>0</score>
-        </element>
-        <element name="aix" title="AIX">
-          <desc>AIX</desc>
-          <comment>could work.</comment>
-          <score>0</score>
-        </element>
-      </element>
-    </element>
-    <element name="service" title="Service">
-      <element name="documentation" title="Documentation">
-        <desc>Documentation</desc>
-        <comment>Online documentation and a wiki available in english.</comment>
-        <score>1</score>
-      </element>
-      <element name="authorsupport" title="Support given by the project team">
-        <desc>Support from the author(s)</desc>
-        <comment>Kolab Konsortium (Germany)</comment>
-        <score>1</score>
-      </element>
-      <element name="3thsidesupport" title="3th side support">
-        <desc>Support from others people or company</desc>
-        <comment>some eurpean company offert support</comment>
-        <score>1</score>
-      </element>
-    </element>
-    <element name="technicalside" title="Fonctionnal and technical aspect">
-      <desc>Fonctionnal and technical aspect</desc>
-      <comment></comment>
-      <element name="maintechnologies" title="Technology">
-        <desc>Main technologies used</desc>
-        <comment>OpenLDAP, Cyrus-IMAP (patched), Postfix</comment>
-        <element name="requirement" title="Requirement">
-          <desc>Requirements</desc>
-          <comment>It depends of the type of installation, just a base install for user of OpenPKG or the specific package from the distro.</comment>
-        </element>
-        <element name="fonctionnality" title="Fonctionnality">
-          <desc>Fonctionnality overview (URL)</desc>
-          <comment></comment>
-        </element>
-        <element name="roadmap" title="Roadmap of the project">
-          <desc>Quality of the roadmap</desc>
-          <comment>Currently, the roadmap for Kolab3 is writing by the core team. They base it on a wishlist from the community : http://wiki.kolab.org/index.php/Kolab_Server_Wishlist
-Actually, the accepted wishs are : Full multi-dmain support and full supported web-client</comment>
-          <score>2</score>
-        </element>
-        <element name="maturity" title="Maturity">
-          <desc>Maturity of the program</desc>
-          <comment>The Kolab 2 branches is stable and mature</comment>
-          <score>2</score>
+          <comment>Kolab.org domain was created the 29th of Oct 2002</comment>
         </element>
         <element name="stability" title="Stability">
-          <desc>Stablity of the stability</desc>
-          <comment>Kolab 2 is stable</comment>
+          <desc0>Unstable software with numerous releases or patches generating side effects</desc0>
+          <desc1>Stabilized production release existing but old. Difficulties to stabilize developpement releases</desc1>
+          <desc2>Stabilized software. Releases provide bug fixes corrections but mainly new functionalities</desc2>
           <score>2</score>
+          <comment></comment>
+        </element>
+        <element name="historyknowproblems" title="History, know problems">
+          <desc0>Software knows several problems which can be prohibitive</desc0>
+          <desc1>No know major problem or crisi</desc1>
+          <desc2>History of good management of crisis situations</desc2>
+          <score>2</score>
+          <comment></comment>
+        </element>
+        <element name="forkprobability" title="Fork probability, source of Forking">
+          <desc0>Software is very likely to be forked in the future</desc0>
+          <desc1>Software comes from a fork but has very few chances of being forked in the futur</desc1>
+          <desc2>Software has very little chance of being forked. It does not come from a frok either</desc2>
+          <score>2</score>
+          <comment></comment>
+        </element>
+      </element>
+      <element name="adopation" title="Adopation">
+        <element name="popularity" title="Popularity (related to: general public, niche, ...)">
+          <desc0>Very few users identified</desc0>
+          <desc1>Detectable use on Internet</desc1>
+          <desc2>Numerous users, numerous references</desc2>
+          <score>2</score>
+          <comment></comment>
+        </element>
+        <element name="references" title="References">
+          <desc0>None</desc0>
+          <desc1>Few refences, non critical usages</desc1>
+          <desc2>Often implemented for critical applications</desc2>
+          <score>1</score>
+          <comment>Kolab is know to be use in some important organisation. But they doesn't give information for "security" raison</comment>
+        </element>
+        <element name="contributingcommunity" title="Contributing Community">
+          <desc0>No community or without real activity (forum, mailing list, ...)</desc0>
+          <desc1>Existing community with a notable activity</desc1>
+          <desc2>Strong community: big activity on forums, numerous contributors and advocates</desc2>
+          <score>1</score>
+          <comment></comment>
+        </element>
+        <element name="books" title="books">
+          <desc0>No book about the software</desc0>
+          <desc1>Less than 5 books about the software are available</desc1>
+          <desc2>More than 5 books about software are available, in several languages</desc2>
+          <score>0</score>
+          <comment></comment>
+        </element>
+      </element>
+      <element name="developmentleadership" title="Development leadership">
+        <element name="leadingteam" title="Leading team">
+          <desc0>1 to 2 individuals involved, not clearly identified</desc0>
+          <desc1>Between 2 and 5 independent people</desc1>
+          <desc2>More than 5 people</desc2>
+          <score>1</score>
+          <comment></comment>
+        </element> 
+        <element name="managementstyle" title="Management style">
+          <desc0>Complete dictatorship</desc0>
+          <desc1>Enlightened despotism</desc1>
+          <desc2>Council of architects with identified leader (e.g: KDE)</desc2>
+          <score>1</score>
+          <comment></comment>
+        </element>
+      </element>
+      <element name="activity" title="Activity">
+        <element name="developersidentificationturnover" title="Developers, identification, turnover">
+          <desc0>Less than 3 developers, not clearly identified</desc0>
+          <desc1>Between 4 and 7 developers, or more unidentified developers with important turnover</desc1>
+          <desc2>More than 7 developers, very stable team</desc2>
+          <score>2</score>
+          <comment></comment>
+        </element>
+        <element name="activityonbugs" title="Activity on bugs">
+          <desc0>Slow reactivity in forum or on mailing list, or nothing regarding bug fixes in releases note</desc0>
+          <desc1>Detectable activity but without process clearly exposed, loing reaction/resolution time</desc1>
+          <desc2>Strong reactivity based on roles and tasks assignment</desc2>
+          <score></score>
+          <comment></comment>
+        </element>
+        <element name="activityonfunctionnalities" title="Activity on functionalities">
+          <desc0>No or few new functionalities</desc0>
+          <desc1>Evolution of the product driven by the core team or by user's request without any clearly explained process</desc1>
+          <desc2>Tool(s) to manage feature requests, strong interaction with roadmap</desc2>
+          <score></score>
+          <comment></comment>
+        </element>
+        <element name="activityonreleases" title="Activity on releases">
+          <desc0>Very weak activity on both production and development releases</desc0>
+          <desc1>Activity on production and developmenet releases. Frequent minor releases (bug fixes)</desc1>
+          <desc2>Important activity with frequent minor releases (bugs fixes) and planned major releases relating to the roadmap forcast</desc2>
+          <score>2</score>
+          <comment></comment>
+        </element>
+      </element>
+    </element>
+    <element name="industrialisedsolution" title="Industrialised solution">
+      <element name="independenceofdevelopments" title="Independence of developments">
+        <desc0>Developments realized at 100% by employees of a single company</desc0>
+        <desc1>60% maximum</desc1>
+        <desc2>20% maximum</desc2>
+        <score>2</score>
+        <comment></comment>
+      </element>
+      <element name="services" title="Services"> 
+        <element name="training" title="Training">
+          <desc0>No offer of training identified</desc0>
+          <desc1>Offer exists but is restricted geographically and to one language or is provided by a single contractor</desc1>
+          <desc2>Rich offers provided by several contractors, in serveral languages and split into modules of gradual levels</desc2>
+          <score></score>
+          <comment></comment>
+        </element>
+        <element name="support" title="Support">
+          <desc0>No offer of support except via public forums and mailing lists</desc0>
+          <desc1>Offer exists but is provided by a single contractor without strong commitment quality of services</desc1>
+          <desc2>Multiple service providers with strong commitment (e.g: guaranteed resolution time)</desc2>
+          <score>1</score>
+          <comment></comment>
+        </element>
+        <element name="consulting" title="Consulting">
+          <desc0>No offer of consulting service</desc0>
+          <desc1>Offer exists but is restricted geographically and to one language or is provided by a single contractor</desc1>
+          <desc2>Consulting services provied by different contractors in serveral languages</desc2>
+          <score>1</score>
+          <comment></comment>
+        </element>
+      </element>
+      <element name="documentation" title="Documentation">
+        <desc0>No user documentation</desc0>
+        <desc1>Documentation exists but shifted in time, is restricted to one language or is poorly detailed</desc1>
+        <desc2>Documentation always up to date, translated and possibly adapted to different target readers (end user, sysadmin, manager, ...)</desc2>
+        <score>1</score>
+        <comment></comment>
+      </element>
+      <element name="qualityassurance" title="Quality Assurance">
+        <element name="quality" title="Quality Assurance">
+          <desc0>No QA process</desc0>
+          <desc1>Identifies QA process but not much formalized and with no tool</desc1>
+          <desc2>Automatic testing process included in code's life-cycle with publication of resulats</desc2>
+          <score>1</score>
+          <comment></comment>
+        </element>
+        <element name="tools" title="Tools">
+          <desc0>No bug or feature request management tool</desc0>
+          <desc1>Standard tools provided (for instance by a hosting forge) but poorly used</desc1>
+          <desc2>Very active use of tools for roles/tasks allocation and progress monitoring</desc2>
+          <score></score>
+          <comment>1</comment>
+        </element>
+      </element>
+      <element name="packaging" title="Packaging">
+        <element name="packagingsource" title="Source">
+          <desc0>Software can't be installed from source without a look of work</desc0>
+          <desc1>Installation from source is limited depend on very strict condition (OS, arch, lib, ...)</desc1>
+          <desc2>Installation from source is easy</desc2>
+          <score></score>
+          <comment></comment>
+        </element>
+        <element name="packagingdebian" title="Debian">
+          <desc0>The software is not packaged for Debian</desc0>
+          <desc1>A Debian package exists but it has important issues or it doesn't have an official support</desc1>
+          <desc2>The software is packaged in the distribution</desc2>
+          <score></score>
+          <comment></comment>
+        </element>
+        <element name="packagingfreebsd" title="FreeBSD">
+          <desc0>The software is not packaged for FreeBSD</desc0>
+          <desc1>A port exists but it has important issues or it doesn't have an official support</desc1>
+          <desc2>A official port exists in FreeBSD</desc2>
+          <score></score>
+          <comment></comment>
+        </element>
+        <element name="packaginghpux" title="HP-UX">
+          <desc0>The software is not packaged for HP-UX</desc0>
+          <desc1>A package exists but it has important issues or it doesn't have an official support</desc1>
+          <desc2>A strong packaged is provided for HP-UX</desc2>
+          <score></score>
+          <comment></comment>
+        </element>
+
+        <element name="packagingmacosx" title="MacOSX">
+          <desc0>The software is not packaged for MacOSX</desc0>
+          <desc1>A package exists but it has important issues or it doesn't have an official support</desc1>
+          <desc2>The software is packaged in the distribution</desc2>
+          <score></score>
+          <comment></comment>
+        </element>
+
+        <element name="packagingmandriva" title="Mandriva">
+          <desc0>The software is not packaged for Mandriva</desc0>
+          <desc1>A package exists but it has important issues or it doesn't have an official support</desc1>
+          <desc2>The software is packaged in the distribution</desc2>
+          <score></score>
+          <comment></comment>
+        </element>
+        <element name="packagingnet" title="NetBSD">
+          <desc0>The software is not packaged for NetBSD</desc0>
+          <desc1>A port exists but it has important issues or it doesn't have an official support</desc1>
+          <desc2>A official port exists in NetBSD</desc2>
+          <score></score>
+          <comment></comment>
+        </element>
+        <element name="packagingnet" title="OpenBSD">
+          <desc0>The software is not packaged for OpenBSD</desc0>
+          <desc1>A port exists but it has important issues or it doesn't have an official support</desc1>
+          <desc2>A official port exists in OpenBSD</desc2>
+          <score></score>
+          <comment></comment>
+        </element>
+        <element name="packagingredhat" title="RedHat">
+          <desc0>The software is not packaged for RedHat/Fedora</desc0>
+          <desc1>A package exists but it has important issues or it doesn't have an official support</desc1>
+          <desc2>The software is packaged in the distribution</desc2>
+          <score></score>
+          <comment></comment>
+        </element>
+        <element name="packagingsuse" title="Solaris">
+          <desc0>The software is not packaged for Solaris</desc0>
+          <desc1>A package exists but it has important issues or it doesn't have an official support (e.g: SunFreeware.com )</desc1>
+          <desc2>The software is supported by Sun for Solaris</desc2>
+          <score></score>
+          <comment></comment>
+        </element>
+        <element name="packagingsuse" title="SuSE">
+          <desc0>The software is not packaged for SuSE</desc0>
+          <desc1>A package exists but it has important issues or it doesn't have an official support</desc1>
+          <desc2>The software is packaged in the distribution</desc2>
+          <score></score>
+          <comment></comment>
+        </element>
+        <element name="packagingwindows" title="Windows">
+          <desc0>The project can't be installed on Windows</desc0>
+          <desc1>A package exists but it is limited or has important issues or just cover some specific Windows release (e.g: Windows2000 and WindowsXP)</desc1>
+          <desc2>Windows is full supported and a package is provided</desc2>
+          <score></score>
+          <comment></comment>
+        </element>
+      </element>
+      <element name="exploitability" title="Exploitability">
+        <element name="easeofuseergonomics" title="Ease of use, ergonomics">
+          <desc0>Difficult to use, requires an in depth knowledge of the software functionality</desc0>
+          <desc1>Austere and very technical ergonomics</desc1>
+          <desc2>GUI including help functions and elaborated ergonomics</desc2>
+          <score></score>
+          <comment></comment>
+        </element>
+        <element name="administrationmonitoring" title="Administration / Monitoring">
+          <desc0>No administrative or monitoring functionalities</desc0>
+          <desc1>Existing, functionalities but uncomplete and in need of improvement</desc1>
+          <desc2>Complete and easy-to-use administration and monitoring functionalities. Possible integration with external tools (e.g: SNMP, syslog, ...)</desc2>
+          <score></score>
+          <comment></comment>
+        </element>
+      </element>
+      <element name="technicaladaptability" title="Technical adaptability">
+        <element name="modularity" title="Modularity">
+          <desc0>Monolithic software</desc0>
+          <desc1>Presence of hight level modules alowing a first level of software adaptation</desc1>
+          <desc2>Modular conception, allowing easy adaptation of the software by selecting modules or even develeloping new ones</desc2>
+          <score></score>
+          <comment></comment>
+        </element>
+        <element name="codemodification" title="Code modification">
+          <desc0>Everything by hand</desc0>
+          <desc1>Recompilation possible but complex without any tools or documentation</desc1>
+          <desc2>Recompilation with tools (e.g: make, ANT, ...) and documentation provided</desc2>
+          <score></score>
+          <comment></comment>
+        </element>
+        <element name="codeextension" title="Code extention">
+          <desc0>Any modification requires code recompilation</desc0>
+          <desc1>Architecture designed for static extension but requires recompilation</desc1>
+          <desc2>Principle of plugin, architecture designed for dynamic extension without recompilation</desc2>
+          <score></score>
+          <comment></comment>
+        </element>
+      </element>        
+      <element name="strategy" title="Strategy">    
+        <element name="license" title="License">
+          <element name="permissiveness" title="Permissiveness (only if user wants to become owner of code)">
+            <desc0>Very strict license, like GPL</desc0>
+            <desc1>Moderate permissive license located between both extremes (GPL and BSD) dual-licensing depending on the type of user (person, company, ...) or their activities</desc1>
+            <desc2>Very permissive like BSD or Apache licenses</desc2>
+            <score></score>
+            <comment></comment>
+          </element>
+
+          <element name="protectionagainstproprietaryforks" title="Protection against proprietary forks">
+            <desc0>Very permissive like BSD or Apache licenses</desc0>
+            <desc1>Moderate permissive license located between both extremes (GPL and BSD), dual-licensing depending on the type of user (person, company, ...) or their activies</desc1>
+            <desc2>Very strict license, like GPL</desc2>
+            <score></score>
+            <comment></comment>
+          </element>
+
+        </element>
+        <element name="copyrightowners" title="Copyright owners">
+          <desc0>Rights held by a few individuals or entities, making it easier to change the license</desc0>
+          <desc1>Rights held by numerous individuals owning the code in a homogeneous way, making relicense very difficult</desc1>
+          <desc2>Rights held by a legal entity in whom the community trusts (e.g: FSF or ASF)</desc2>
+          <score></score>
+          <comment></comment>
+        </element>
+        <element name="modificationofsourcecode" title="Modification of source code">
+          <desc0>No pratical way to propose code modification</desc0>
+          <desc1>Tools provided to access and modify code (like CVS or SVN) but not really used to develop the software</desc1>
+          <desc2>The code modification process is well defined, exposed and respected, based on roles assignment</desc2>
+          <score></score>
+          <comment></comment>
+        </element>
+        <element name="roadmap" title="Roadmap">
+          <desc0>No published roadmap</desc0>
+          <desc1>Existing roadmap without planning</desc1>
+          <desc2>Versionned roadmap, with planning and measure of delays</desc2>
+          <score></score>
+          <comment></comment>
+        </element>
+        <element name="sponsor" title="Sponsor">
+          <desc0>Software has no sponsor, the core team is not paid</desc0>
+          <desc1>Software has an unique sponsor who might determine its strategy</desc1>
+          <desc2>Software is sponsored by industry</desc2>
+          <score></score>
+          <comment></comment>
+        </element>
+        <element name="strategicalindependence" title="Strategical independence">
+          <desc0>No detectable strategy or strong dependency on one unique actor (person, company, sponsor)</desc0>
+          <desc1>Strategical vison shared with serveral other free and open source projects but without strong commitment from copyrights owners</desc1>
+          <desc2>Strong independence of the code team, legal entity holding rights, strong involvement in the standardization process</desc2>
+          <score></score>
+          <comment></comment>
+        </element>
+      </element>
+      <element name="servicesprovinding" title="Services provinding">
+        <element name="maintenability" title="Maintenability">
+          <element name="qualityofsourcecode" title="Quality of source code">
+            <desc0>Not very readable code or of poor quality, incoherence in coding styles</desc0>
+            <desc1>Readable code but not really complemented in detail</desc1>
+            <desc2>Readable and commented code, implementing classic design patterns with a coherent and applied coding policy</desc2>
+            <score></score>
+            <comment></comment>
+          </element>
+          <element name="technologicaldispersion" title="Technological dispersion">
+            <desc0>Use of numerous different languages</desc0>
+            <desc1>One main language with certain modules coded in other languages for specific and limited requirements</desc1>
+            <desc2>One unique language</desc2>
+            <score></score>
+            <comment></comment>
+          </element>
+          <element name="intrinsicomplexity" title="Intrinsic complexity">
+            <desc0>Very complex code requiring high level of expertise to perfom modifications without generating side effeetcs</desc0>
+            <desc1>Not very complex code but still requiring expertise programming languages and software design</desc1>
+            <desc2>Simple code and design, easy to modify</desc2>
+            <score></score>
+            <comment></comment>
+          </element>
+          <element name="technicaldocumentation" title="Technical documentation">
+            <desc0>No documentation (development guide or automatically generated doc like javadoc)</desc0>
+            <desc1>Incomplete or old documentation without conception and architectural considerations</desc1>
+            <desc2>Detailed an up to date documentation, including conception, architecure designe and coding considerations</desc2>
+            <score></score>
+            <comment></comment>
+          </element>
+        </element>
+        <element name="codemastery" title="Code mastery">
+          <element name="codemasterydirect" title="Direct">
+            <desc0>No direct expertise of the source code</desc0>
+            <desc1>Mastery of code but limited to a single person or to only a part of the source</desc1>
+            <desc2>Several individuals mastering the code and covering together the totality of the source</desc2>
+            <score></score>
+            <comment></comment>
+          </element>
         </element>
       </element>
     </element>
   </section>
+
   <section name="composant" title="Composants of the project">
     <comment></comment>
     <desc>Different composant from the groupware</desc>
@@ -256,130 +434,144 @@ Actually, the accepted wishs are : Full multi-dmain support and full supported w
       <comment>Content is stored in IMAP shared folder</comment>
     </element>
   </section>
-  <section name="clustering" title="Clustering">
-    <element name="synchronise" title="Synchronise ability">
-      <desc>Synchronise ability</desc>
-      <comment>Strong replication ability from OpenLDAP and Cyrus are the bases of system</comment>
-      <score>2</score>
-    </element>
-    <element name="loadbalancing" title="Load balancing">
-      <desc>Load balancing</desc>
-      <comment>Load balancing ability from OpenLDAP and Cyrus are the bases of system.</comment>
-      <score>2</score>
-    </element>
-    <element name="multi-node" title="Multi-node installation">
-      <desc>Is it possible to split the groupware on different hardware server?</desc>
-      <comment>Kolab is designed to support multi-node installation.</comment>
-      <score>2</score>
-    </element>
-  </section>
+
   <section name="administration" title="Administration GUI">
     <comment></comment>
     <element name="webinterface" title="Web interface">
-      <desc>Web interface</desc>
-      <comment>yes</comment>
+      <desc0>No web interface</desc0>
+      <desc1>an web interface is provided but limited</desc1>
+      <desc2>everything can be completed with the Web interface</desc2>
+      <comment></comment>
       <score>2</score>
     </element>
     <element name="commandline" title="Console mode">
-      <desc>Do the groupware comme with script or can be managed from a console</desc>
+      <desc0>Nothing</desc0>
+      <desc1>Some tools exists, but limited. No text based configuration file or not human readable (e.g: complexe XML)</desc1>
+      <desc2>Total access to the server configuration with powerful tools and well designer text configuration file</desc2>
       <comment></comment>
       <score></score>
     </element>
-    <element name="installationcomplexity" title="Installation complexisty">
-      <desc>Installation complexity, do the installation nead a lot of time or/and a strong skill?</desc>
-      <comment>Trivial on GNU/Linux with OpenPKG, depend of the distro for specific installation</comment>
-      <score>2</score>
-    </element>
   </section>
+
   <section name="groupwarecomposant" title="Supported groupware composant">
     <comment></comment>
     <element name="calendar" title="Calendar">
-      <desc>Calendar</desc>
-      <comment>yes</comment>
+      <desc0>no calendar provied</desc0>
+      <desc1>a calendar is provied, but leak some important feature</desc1>
+      <desc2>a well integrated calendar is provied</desc2>
+      <comment></comment>
       <score>2</score>
     </element>
     <element name="taskmanager" title="Taskmanager">
-      <desc>Task manager</desc>
-      <comment>yes</comment>
+      <desc0>no task manager provied</desc0>
+      <desc1>a task manager is provied but leak some important feature</desc1>
+      <desc2>Task manager fully supported</desc2>
+      <comment></comment>
       <score>2</score>
     </element>
     <element name="notemanager" title="Notemanager">
-      <desc>Note manager</desc>
-      <comment>yes</comment>
+      <desc1>no note manager provided</desc1>
+      <desc1>a limited note manager is provided</desc1>
+      <desc1>a well integred note manager is provided</desc1>
+      <comment></comment>
       <score>2</score>
     </element>
-    <element name="contactmanager" title="Contactmanager">
-      <desc>Contact manager</desc>
+    <element name="contactmanager" title="Contact manager">
+      <desc1>can't add contact in the server</desc1>
+      <desc2>contact manager exists but is limited</desc2>
+      <desc3>contact manager fully supported</desc3>
       <comment>yes</comment>
       <score>2</score>
     </element>
   </section>
+
   <section name="standard" title="Standard support">
     <comment></comment>
     <element name="icaloverwebdav" title="iCalendar over WebDav">
-      <desc>iCalendar over WebDav</desc>
-      <comment>yes</comment>
+      <desc1>iCalendar over WebDav not supported</desc1>
+      <desc2>iCalendar over WebDav partially supported</desc2>
+      <desc3>iCalendar over WebDav works</desc3>
+      <comment></comment>
       <score>1</score>
     </element>
     <element name="caldav" title="CalDav">
-      <desc>CalDav</desc>
-      <comment>no</comment>
+      <desc1>CalDav over WebDav not supported</desc1>
+      <desc2>CalDav over WebDav partially supported</desc2>
+      <desc3>CalDav over WebDav works</desc3>
+      <comment>not supported</comment>
       <score>0</score>
     </element>
     <element name="groupdav" title="Groupdav">
-      <desc>GroupDav</desc>
-      <comment></comment>
+      <desc1>Groupdav over WebDav not supported</desc1>
+      <desc2>Groupdav over WebDav partially supported</desc2>
+      <desc3>Groupdav over WebDav works</desc3>
+      <comment>not supported</comment>
       <score>0</score>
     </element>
     <element name="syncml" title="SyncML">
-      <desc>SyncML</desc>
-      <comment></comment>
+      <desc1>SyncML over WebDav not supported</desc1>
+      <desc2>SyncML over WebDav partially supported</desc2>
+      <desc3>SyncML over WebDav works</desc3>
+      <comment>not supported</comment>
       <score>0</score>
     </element>
   </section>
+
   <section name="supportedclients" title="Supported client">
     <comment></comment>
     <element name="web" title="Web client">
-      <desc>Web interface</desc>
-      <comment>yes</comment>
+      <desc>Web interface doesn't exist</desc>
+      <desc>Web interface is provied but limited or need some work for its integration</desc>
+      <desc>Web interface directly provided with the project</desc>
+      <comment>eGroupware or Hord can be pluged</comment>
       <score>1</score>
     </element>
     <element name="outlook" title="Microsoft Outlook">
-      <desc>Microsoft Outlook</desc>
+      <desc1>Microsoft Outlook not supported</desc1>
+      <desc2>Microsoft Outlook connector is provided but have some limitation</desc2>
+      <desc3>a free Microsoft Outlook connector</desc3>
       <comment>Two commercial and not free connected exist. The best is Toltec's one.</comment>
-      <score>2</score>
+      <score>1</score>
     </element>
     <element name="evolution" title="Novell Evolution">
-      <desc>Novell Evolution</desc>
+      <desc1>Novell Evolution can't be used</desc1>
+      <desc2>Novell Evolution can be used but with some limitation</desc2>
+      <desc3>Novell Evolution fully supported</desc3>
       <comment></comment>
       <score>2</score>
     </element>
     <element name="kde" title="KDE">
-      <desc>KDE PIM</desc>
-      <comment></comment>
+      <desc1>KDE PIM (Korganizer, kmail, ...) can't be used with this groupware</desc1>
+      <desc2>KDE can be used but with some limitation </desc2>
+      <desc3>Fully support of KDE</desc3>
+      <comment>KDE PIM was the first supported client</comment>
       <score>2</score>
     </element>
     <element name="ical" title="Apple iCal">
-      <desc>Apple's iCal</desc>
+      <desc1>Apple's iCal can't be used</desc1>
+      <desc2>Apple's iCal works but with some limitation</desc2>
+      <desc3>Apple's iCal fully supported</desc3>
       <comment></comment>
       <score>2</score>
     </element>
   </section>
+
   <section name="codequality" title="Code quality">
     <element name="remoteapi" title="Remote access API">
-      <desc>remote API (SOAP, XML/RPC, REST)</desc>
+      <desc1>not remote remote API</desc1>
+      <desc2>remote API (SOAP, XML/RPC, REST) exists but is limited or buggy</desc2>
+      <desc3>powerful remote API (SOAP, XML/RPC, REST) provied</desc3>
       <comment>none for Kolab2, a wish for Kolab3 exists for support of a remote procedure call infrastucture</comment>
       <score>0</score>
     </element>
     <element name="api" title="code API">
-      <desc>Do the project offert a stantard API too extand the code? Is it well documented?</desc>
+      <desc1>No API provied to extend the server, or very limited and not documented</desc1>
+      <desc2>An API is provied but limited of not fully documented</desc2>
+      <desc3>Well documented and complet API</desc3>
       <comment>A Perl lib is provided but Kolab core can't be change easily. The best way to extend it, is to provide additional service plugged on the LDAP directory server.</comment>
       <score>1</score>
     </element>
-    <element name="plugin" title="plugin mechanism">
-      <desc>Can we plugin code composant (plugin) easyly?</desc>
-      <comment></comment>
-      <score>0</score>
-    </element>
   </section>
+
+
 </document>
