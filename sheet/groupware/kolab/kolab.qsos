@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- $Id: kolab.qsos,v 1.8 2006/03/31 15:20:40 goneri Exp $ -->
+<!-- $Id: kolab.qsos,v 1.9 2006/04/04 10:26:51 goneri Exp $ -->
 <document>
   <header>
     <authors>
@@ -470,16 +470,16 @@
       <score>2</score>
     </element>
     <element name="notemanager" title="Notemanager">
-      <desc1>no note manager provided</desc1>
+      <desc0>no note manager provided</desc0>
       <desc1>a limited note manager is provided</desc1>
-      <desc1>a well integred note manager is provided</desc1>
+      <desc2>a well integred note manager is provided</desc2>
       <comment></comment>
       <score>2</score>
     </element>
     <element name="contactmanager" title="Contact manager">
-      <desc1>can't add contact in the server</desc1>
-      <desc2>contact manager exists but is limited</desc2>
-      <desc3>contact manager fully supported</desc3>
+      <desc0>can't add contact in the server</desc0>
+      <desc1>contact manager exists but is limited</desc1>
+      <desc2>contact manager fully supported</desc2>
       <comment>yes</comment>
       <score>2</score>
     </element>
@@ -488,30 +488,30 @@
   <section name="standard" title="Standard support">
     <comment></comment>
     <element name="icaloverwebdav" title="iCalendar over WebDav">
-      <desc1>iCalendar over WebDav not supported</desc1>
-      <desc2>iCalendar over WebDav partially supported</desc2>
-      <desc3>iCalendar over WebDav works</desc3>
+      <desc0>iCalendar over WebDav not supported</desc0>
+      <desc1>iCalendar over WebDav partially supported</desc1>
+      <desc2>iCalendar over WebDav works</desc2>
       <comment></comment>
       <score>1</score>
     </element>
     <element name="caldav" title="CalDav">
-      <desc1>CalDav over WebDav not supported</desc1>
-      <desc2>CalDav over WebDav partially supported</desc2>
-      <desc3>CalDav over WebDav works</desc3>
+      <desc0>CalDav over WebDav not supported</desc0>
+      <desc1>CalDav over WebDav partially supported</desc1>
+      <desc2>CalDav over WebDav works</desc2>
       <comment>not supported</comment>
       <score>0</score>
     </element>
     <element name="groupdav" title="Groupdav">
-      <desc1>Groupdav over WebDav not supported</desc1>
-      <desc2>Groupdav over WebDav partially supported</desc2>
-      <desc3>Groupdav over WebDav works</desc3>
+      <desc0>Groupdav over WebDav not supported</desc0>
+      <desc1>Groupdav over WebDav partially supported</desc1>
+      <desc2>Groupdav over WebDav works</desc2>
       <comment>not supported</comment>
       <score>0</score>
     </element>
     <element name="syncml" title="SyncML">
-      <desc1>SyncML over WebDav not supported</desc1>
-      <desc2>SyncML over WebDav partially supported</desc2>
-      <desc3>SyncML over WebDav works</desc3>
+      <desc0>SyncML over WebDav not supported</desc0>
+      <desc1>SyncML over WebDav partially supported</desc1>
+      <desc2>SyncML over WebDav works</desc2>
       <comment>not supported</comment>
       <score>0</score>
     </element>
@@ -520,37 +520,37 @@
   <section name="supportedclients" title="Supported client">
     <comment></comment>
     <element name="web" title="Web client">
-      <desc>Web interface doesn't exist</desc>
-      <desc>Web interface is provied but limited or need some work for its integration</desc>
-      <desc>Web interface directly provided with the project</desc>
+      <desc0>Web interface doesn't exist</desc0>
+      <desc1>Web interface is provied but limited or need some work for its integration</desc1>
+      <desc2>Web interface directly provided with the project</desc2>
       <comment>eGroupware or Hord can be pluged</comment>
       <score>1</score>
     </element>
     <element name="outlook" title="Microsoft Outlook">
-      <desc1>Microsoft Outlook not supported</desc1>
-      <desc2>Microsoft Outlook connector is provided but have some limitation</desc2>
-      <desc3>a free Microsoft Outlook connector</desc3>
+      <desc0>Microsoft Outlook not supported</desc0>
+      <desc1>Microsoft Outlook connector is provided but have some limitation</desc1>
+      <desc2>a free Microsoft Outlook connector</desc2>
       <comment>Two commercial and not free connected exist. The best is Toltec's one.</comment>
       <score>1</score>
     </element>
     <element name="evolution" title="Novell Evolution">
-      <desc1>Novell Evolution can't be used</desc1>
-      <desc2>Novell Evolution can be used but with some limitation</desc2>
-      <desc3>Novell Evolution fully supported</desc3>
+      <desc0>Novell Evolution can't be used</desc0>
+      <desc1>Novell Evolution can be used but with some limitation</desc1>
+      <desc2>Novell Evolution fully supported</desc2>
       <comment></comment>
       <score>2</score>
     </element>
     <element name="kde" title="KDE">
-      <desc1>KDE PIM (Korganizer, kmail, ...) can't be used with this groupware</desc1>
-      <desc2>KDE can be used but with some limitation </desc2>
-      <desc3>Fully support of KDE</desc3>
+      <desc0>KDE PIM (Korganizer, kmail, ...) can't be used with this groupware</desc0>
+      <desc1>KDE can be used but with some limitation </desc1>
+      <desc2>Fully support of KDE</desc2>
       <comment>KDE PIM was the first supported client</comment>
       <score>2</score>
     </element>
     <element name="ical" title="Apple iCal">
-      <desc1>Apple's iCal can't be used</desc1>
-      <desc2>Apple's iCal works but with some limitation</desc2>
-      <desc3>Apple's iCal fully supported</desc3>
+      <desc0>Apple's iCal can't be used</desc0>
+      <desc1>Apple's iCal works but with some limitation</desc1>
+      <desc2>Apple's iCal fully supported</desc2>
       <comment></comment>
       <score>2</score>
     </element>
@@ -558,16 +558,16 @@
 
   <section name="codequality" title="Code quality">
     <element name="remoteapi" title="Remote access API">
-      <desc1>not remote remote API</desc1>
-      <desc2>remote API (SOAP, XML/RPC, REST) exists but is limited or buggy</desc2>
-      <desc3>powerful remote API (SOAP, XML/RPC, REST) provied</desc3>
+      <desc0>not remote remote API</desc0>
+      <desc1>remote API (SOAP, XML/RPC, REST) exists but is limited or buggy</desc1>
+      <desc2>powerful remote API (SOAP, XML/RPC, REST) provied</desc2>
       <comment>none for Kolab2, a wish for Kolab3 exists for support of a remote procedure call infrastucture</comment>
       <score>0</score>
     </element>
     <element name="api" title="code API">
-      <desc1>No API provied to extend the server, or very limited and not documented</desc1>
-      <desc2>An API is provied but limited of not fully documented</desc2>
-      <desc3>Well documented and complet API</desc3>
+      <desc0>No API provied to extend the server, or very limited and not documented</desc0>
+      <desc1>An API is provied but limited of not fully documented</desc1>
+      <desc2>Well documented and complet API</desc2>
       <comment>A Perl lib is provided but Kolab core can't be change easily. The best way to extend it, is to provide additional service plugged on the LDAP directory server.</comment>
       <score>1</score>
     </element>
