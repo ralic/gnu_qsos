@@ -6,13 +6,25 @@ use QSOS::QtEditor::Propertyform;
 use Carp;
 use strict;
 use warnings;
+# all occurances of scoreBox removed
+
 
 sub saveCurrentValue
 {
 
   my $num = SUPER->{current_section_nbr};
   SUPER->this->{qsosxml}->setkeycomment($num, commentBox->text);
-  SUPER->this->{qsosxml}->setkeyscore($num, scoreBox->currentItem);
+
+  my $score;
+  if (radioScore0->isOn()) {
+    $score = 0;
+  } elsif (radioScore1->isOn()) {
+    $score = 1;
+  } elsif (radioScore2->isOn()) {
+    $score = 2;
+  }
+  
+  SUPER->this->{qsosxml}->setkeyscore($num, $score);
 
 }
 
@@ -25,22 +37,66 @@ sub loadSection
   if (defined SUPER->{current_section_nbr}) {
     saveCurrentValue();
   }
+
   SUPER->{current_section_nbr} = $num;
   my $score = SUPER->this->{qsosxml}->getkeyscore($num);
+
   if (defined $score) {
-    $score = 3 if ($score !~ /[012]/);
-    scoreBox->setCurrentItem($score);
-    scoreBox->setEnabled(1);
-  } else {
-    scoreBox->setEnabled(0);
-    scoreBox->setCurrentItem(3);
+      radioScore0->setEnabled(1);
+      radioScore1->setEnabled(1);
+      radioScore2->setEnabled(1);
+
+      my $desc0 = SUPER->this->{qsosxml}->getkeydesc($num,0);
+      $desc0 = "feature not supported" unless (defined $desc0);
+      textScore0->setText($desc0);
+
+      my $desc1 = SUPER->this->{qsosxml}->getkeydesc($num,1);
+      $desc1 = "feature partialy supported" unless (defined $desc1);
+      textScore1->setText($desc1);
+
+      my $desc2 = SUPER->this->{qsosxml}->getkeydesc($num,2);
+      $desc2 = "feature fully supported" unless (defined $desc2);
+      textScore2->setText($desc2);
+
+  }
+ else {
+    # disabling all radio widgets
+      radioScore0->setEnabled(0);
+      radioScore1->setEnabled(0);
+      radioScore2->setEnabled(0);
+      
+      textScore0->setText('');
+      textScore1->setText('');
+      textScore2->setText('');
   }
 
+
+  if (defined $score && $score =~ /^[012]$/) {
+    if ($score == 0) {
+      radioScore0->setChecked(1)
+    } else {
+      radioScore0->setChecked(0)
+    }
+    
+    if ($score == 1) {
+      radioScore1->setChecked(1);
+    } else {
+      radioScore1->setChecked(1);
+    }
+    
+    if ($score == 2) {
+      radioScore1->setChecked(1);
+    } else {
+      radioScore2->setChecked(0);
+    }
+
+  }
   my $comment = SUPER->this->{qsosxml}->getkeycomment($num);
   my $desc = SUPER->this->{qsosxml}->getkeydesc($num);
   $desc = "no description" unless (defined $desc);
-  #descriptionBox->setText('<p align="center"><b>'.$desc.'</b></p>');
   descriptionBox->setText($desc);
+
+
   if (defined ($comment)) {
     commentBox->setText($comment);
     commentBox->setReadOnly(0);
@@ -81,12 +137,15 @@ sub fileOpen
   }
 
   ### listbox initialisation
+  #listView->clear();
   listBox->clear();
   foreach (@{SUPER->this->{qsosxml}->{tabular}}) {
-  print $_->{name};
   my $v;
-  $v .= ' ' foreach (0..$_->{deep});
-  $v .= $_->{name};
+  foreach (0..$_->{deep}) {
+    $v .= ' ';
+  }
+
+  $v .= $_->{title};
   listBox->insertItem($v);
   loadSection(0);
   listBox->setEnabled(1);
@@ -133,18 +192,28 @@ sub itemChanged
   loadSection($item);
 }
 
-sub scoreChanged
+sub setscore0
 {
-
-  my $score = shift;
   my $num = SUPER->{current_section_nbr};
- 
-  return unless (defined ($score) and ($score));
   return unless (defined ($num) and ($num));
-  SUPER->this->{qsosxml}->setkeyscore($num, $score);
-
+  radioScore1->setChecked(0);
+  radioScore2->setChecked(0);
 }
 
+sub setscore1
+{
+  my $num = SUPER->{current_section_nbr};
+  return unless (defined ($num) and ($num));
+  radioScore0->setChecked(0);
+  radioScore2->setChecked(0);
+}
+sub setscore2
+{
+  my $num = SUPER->{current_section_nbr};
+  return unless (defined ($num) and ($num));
+  radioScore0->setChecked(0);
+  radioScore1->setChecked(0);
+}
 
 
 sub commentChanged
