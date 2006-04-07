@@ -1,0 +1,35 @@
+<!DOCTYPE project [
+  <!ENTITY targets SYSTEM "../common/targets.xml">
+]>
+<project name="QSOS-Document" default="jar" basedir=".">
+	<!--property file="build.properties"/-->
+	
+	<target name="init">
+		<mkdir dir="classes"/>
+		<mkdir dir="build"/>
+
+		<path id="compile.cp">
+			<pathelement location="classes"/>
+			<fileset dir="lib">
+				<include name="*.jar"/>
+			</fileset>
+		</path>
+	</target>
+
+
+
+	<target name="jar" description="build jar file." depends="init">
+		<javac srcdir="src" destdir="classes" debug="on" deprecation="off" optimize="off">
+			<classpath refid="compile.cp"/>
+		</javac>
+		<jar destfile="QSOSLib.jar">
+			<fileset dir="classes">
+					<include name="com/ao/o3s/data/*.class"/>
+					<include name="com/ao/o3s/utils/*.class"/>
+					<include name="com/ao/o3s/transformation/*.class"/>
+			</fileset>
+		</jar>
+		
+	</target>
+	
+</project>
