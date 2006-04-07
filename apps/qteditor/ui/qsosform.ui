@@ -45,7 +45,7 @@
         </size>
     </property>
     <property name="caption">
-        <string>Néanderal's QSOS Editor</string>
+        <string>QT QSOS Editor http://www.qsos.org</string>
     </property>
     <widget class="QGroupBox">
         <property name="name">
@@ -54,51 +54,14 @@
         <property name="geometry">
             <rect>
                 <x>270</x>
-                <y>121</y>
-                <width>520</width>
-                <height>350</height>
+                <y>10</y>
+                <width>530</width>
+                <height>460</height>
             </rect>
         </property>
         <property name="title">
             <string>Comment</string>
         </property>
-        <widget class="QFrame">
-            <property name="name">
-                <cstring>frame5</cstring>
-            </property>
-            <property name="geometry">
-                <rect>
-                    <x>20</x>
-                    <y>20</y>
-                    <width>480</width>
-                    <height>140</height>
-                </rect>
-            </property>
-            <property name="frameShape">
-                <enum>StyledPanel</enum>
-            </property>
-            <property name="frameShadow">
-                <enum>Raised</enum>
-            </property>
-            <widget class="QLabel">
-                <property name="name">
-                    <cstring>descriptionBox</cstring>
-                </property>
-                <property name="geometry">
-                    <rect>
-                        <x>20</x>
-                        <y>20</y>
-                        <width>440</width>
-                        <height>100</height>
-                    </rect>
-                </property>
-                <property name="text">
-                    <string>&lt;p&gt;
-Please open a qsos file.
-&lt;/p&gt;</string>
-                </property>
-            </widget>
-        </widget>
         <widget class="QTextEdit">
             <property name="name">
                 <cstring>commentBox</cstring>
@@ -108,97 +71,242 @@ Please open a qsos file.
             </property>
             <property name="geometry">
                 <rect>
-                    <x>20</x>
-                    <y>171</y>
-                    <width>480</width>
-                    <height>170</height>
+                    <x>10</x>
+                    <y>340</y>
+                    <width>510</width>
+                    <height>100</height>
                 </rect>
             </property>
         </widget>
-    </widget>
-    <widget class="QListBox">
-        <property name="name">
-            <cstring>listBox</cstring>
-        </property>
-        <property name="enabled">
-            <bool>false</bool>
-        </property>
-        <property name="geometry">
-            <rect>
-                <x>20</x>
-                <y>10</y>
-                <width>240</width>
-                <height>460</height>
-            </rect>
-        </property>
-    </widget>
-    <widget class="QLabel">
-        <property name="name">
-            <cstring>settingnameBox</cstring>
-        </property>
-        <property name="geometry">
-            <rect>
-                <x>270</x>
-                <y>20</y>
-                <width>320</width>
-                <height>90</height>
-            </rect>
-        </property>
-        <property name="text">
-            <string>&lt;h1&gt;QSOS&lt;/h1&gt;</string>
-        </property>
-    </widget>
-    <widget class="QGroupBox">
-        <property name="name">
-            <cstring>groupBox1</cstring>
-        </property>
-        <property name="geometry">
-            <rect>
-                <x>650</x>
-                <y>30</y>
-                <width>140</width>
-                <height>51</height>
-            </rect>
-        </property>
-        <property name="title">
-            <string>Rate</string>
-        </property>
-        <widget class="QComboBox">
-            <item>
-                <property name="text">
-                    <string>0</string>
-                </property>
-            </item>
-            <item>
-                <property name="text">
-                    <string>1</string>
-                </property>
-            </item>
-            <item>
-                <property name="text">
-                    <string>2</string>
-                </property>
-            </item>
-            <item>
-                <property name="text">
-                    <string></string>
-                </property>
-            </item>
+        <widget class="QGroupBox">
             <property name="name">
-                <cstring>scoreBox</cstring>
-            </property>
-            <property name="enabled">
-                <bool>false</bool>
+                <cstring>groupBox3</cstring>
             </property>
             <property name="geometry">
                 <rect>
-                    <x>30</x>
-                    <y>20</y>
-                    <width>90</width>
-                    <height>22</height>
+                    <x>10</x>
+                    <y>120</y>
+                    <width>510</width>
+                    <height>210</height>
                 </rect>
             </property>
+            <property name="title">
+                <string>Eval</string>
+            </property>
+            <widget class="QRadioButton">
+                <property name="name">
+                    <cstring>radioScore1</cstring>
+                </property>
+                <property name="geometry">
+                    <rect>
+                        <x>10</x>
+                        <y>90</y>
+                        <width>16</width>
+                        <height>22</height>
+                    </rect>
+                </property>
+                <property name="text">
+                    <string></string>
+                </property>
+            </widget>
+            <widget class="QLabel">
+                <property name="name">
+                    <cstring>textScore2</cstring>
+                </property>
+                <property name="geometry">
+                    <rect>
+                        <x>30</x>
+                        <y>140</y>
+                        <width>470</width>
+                        <height>50</height>
+                    </rect>
+                </property>
+                <property name="text">
+                    <string>score2</string>
+                </property>
+                <property name="textFormat">
+                    <enum>PlainText</enum>
+                </property>
+                <property name="scaledContents">
+                    <bool>true</bool>
+                </property>
+                <property name="alignment">
+                    <set>WordBreak|AlignVCenter</set>
+                </property>
+            </widget>
+            <widget class="QRadioButton">
+                <property name="name">
+                    <cstring>radioScore0</cstring>
+                </property>
+                <property name="geometry">
+                    <rect>
+                        <x>10</x>
+                        <y>30</y>
+                        <width>20</width>
+                        <height>22</height>
+                    </rect>
+                </property>
+                <property name="text">
+                    <string></string>
+                </property>
+            </widget>
+            <widget class="QLabel">
+                <property name="name">
+                    <cstring>textScore1</cstring>
+                </property>
+                <property name="geometry">
+                    <rect>
+                        <x>30</x>
+                        <y>80</y>
+                        <width>470</width>
+                        <height>50</height>
+                    </rect>
+                </property>
+                <property name="text">
+                    <string>score1</string>
+                </property>
+                <property name="textFormat">
+                    <enum>PlainText</enum>
+                </property>
+                <property name="scaledContents">
+                    <bool>true</bool>
+                </property>
+                <property name="alignment">
+                    <set>WordBreak|AlignVCenter|AlignLeft</set>
+                </property>
+            </widget>
+            <widget class="QLabel">
+                <property name="name">
+                    <cstring>textScore0</cstring>
+                </property>
+                <property name="geometry">
+                    <rect>
+                        <x>30</x>
+                        <y>20</y>
+                        <width>470</width>
+                        <height>50</height>
+                    </rect>
+                </property>
+                <property name="text">
+                    <string>score0</string>
+                </property>
+                <property name="textFormat">
+                    <enum>PlainText</enum>
+                </property>
+                <property name="scaledContents">
+                    <bool>true</bool>
+                </property>
+                <property name="alignment">
+                    <set>WordBreak|AlignVCenter|AlignLeft</set>
+                </property>
+            </widget>
+            <widget class="QRadioButton">
+                <property name="name">
+                    <cstring>radioScore2</cstring>
+                </property>
+                <property name="geometry">
+                    <rect>
+                        <x>10</x>
+                        <y>150</y>
+                        <width>20</width>
+                        <height>22</height>
+                    </rect>
+                </property>
+                <property name="text">
+                    <string></string>
+                </property>
+            </widget>
         </widget>
+        <widget class="QGroupBox">
+            <property name="name">
+                <cstring>groupBox4</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>10</x>
+                    <y>20</y>
+                    <width>510</width>
+                    <height>100</height>
+                </rect>
+            </property>
+            <property name="title">
+                <string>Comment</string>
+            </property>
+            <widget class="QLabel">
+                <property name="name">
+                    <cstring>descriptionBox</cstring>
+                </property>
+                <property name="geometry">
+                    <rect>
+                        <x>10</x>
+                        <y>20</y>
+                        <width>470</width>
+                        <height>60</height>
+                    </rect>
+                </property>
+                <property name="text">
+                    <string>&lt;p&gt;
+Please open a qsos file.
+&lt;/p&gt;</string>
+                </property>
+            </widget>
+        </widget>
+    </widget>
+    <widget class="QListView">
+        <column>
+            <property name="text">
+                <string>Sections</string>
+            </property>
+            <property name="clickable">
+                <bool>false</bool>
+            </property>
+            <property name="resizable">
+                <bool>false</bool>
+            </property>
+        </column>
+    <item>
+        <property name="text">
+            <string>Item</string>
+        </property>
+        <property name="pixmap">
+            <pixmap></pixmap>
+        </property>
+        <item>
+            <property name="text">
+                <string>Subitem</string>
+            </property>
+            <property name="pixmap">
+                <pixmap></pixmap>
+            </property>
+            <item>
+                <property name="text">
+                    <string>Subitem</string>
+                </property>
+                <property name="pixmap">
+                    <pixmap></pixmap>
+                </property>
+            </item>
+        </item>
+    </item>
+    <item>
+        <property name="text">
+            <string>New Item</string>
+        </property>
+        <property name="pixmap">
+            <pixmap></pixmap>
+        </property>
+    </item>
+        <property name="name">
+            <cstring>listView</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>10</x>
+                <y>10</y>
+                <width>251</width>
+                <height>461</height>
+            </rect>
+        </property>
     </widget>
 </widget>
 <menubar>
@@ -329,10 +437,10 @@ Please open a qsos file.
 </actions>
 <images>
     <image name="image0">
-        <data format="PNG" length="214">89504e470d0a1a0a0000000d4948445200000016000000160806000000c4b46c3b0000009d49444154388ded94bb0ec2300c458fa30cfc301313e2a73b543203949a262d8e65b6dec5511ec737574ae0d45b1238a33f181ae16ea1cb9c6ec711c79ea652fe0005a0ee2c8cdca4170f02a8eab22e8022e2e6ee6eac6b53f9d4572769e6479a17637cb01eabf41cfbeab1ba1907b26ed4cdd8421f77b85498665fbddebea2c885b23e905c68e3380b6ac0b9501b6e2ad438ce85368e03cafc767d7a0264da8b2cdb7796190000000049454e44ae426082</data>
+        <data format="PNG" length="234">89504e470d0a1a0a0000000d4948445200000016000000160806000000c4b46c3b000000b149444154388ded94bb12022110047b2902d2fb582323cb0f3635b8aa3500140e0e81c2cc499667ef3001f057904cdcd12f0c9de11ea1714d8fe319c73d4dc5fc000a803dd91879492d1e0450d5b82f8022d2cd3d3d683f4de55d7d2729d6479a9bc4f8606dcbd41cf7d5b6aa194f645da89a710abddf60b3f0d8c15978eeedf9e59a45d1803a7f697301d298472820218a754e032877bcc2693a50d5754ea38c0f649dd3ccf14aa70578522bbfdd3ebd008c8091c0848d353e0000000049454e44ae426082</data>
     </image>
     <image name="image1">
-        <data format="PNG" length="319">89504e470d0a1a0a0000000d4948445200000016000000160806000000c4b46c3b0000010649444154388db5953b6ec33010449f02165bea3c21e05bb90a82c03052e55606e4ce776191820581a49057164df1e738db900b91c3c7c148827faae13afe3c5bd7e8eceb137c80f70f984e1362041f3c182050ecedabe572bee083c7ee2c002f2aec0388b91de9839f27a1b3bfd6222566168f9e1448473fe2c42146001652ad2cb192e004f91e1332272eea8f87d9ce44f89e5849f430edc9f6f1fe8531e7b1922d37c87a1cefcf12e7c9b6fbfbfd558f5bd3d04cdc4adaecf1f19046a756fa72ad89931cabf8baef19132b1e11d91a8bc4fbb72e27223b12e1adeb946a3a4dcbdcee6c3d1551e44ad59be356e2ee1cb712d772fc3071ed5b31acd63eebf734d497fca17e01d07ac8895aedbcd20000000049454e44ae426082</data>
+        <data format="PNG" length="366">89504e470d0a1a0a0000000d4948445200000016000000160806000000c4b46c3b0000013549444154388db595b16ac33010863f170fd7cd1af31c862e063f51f74ea58490a164ed1305bc74cf337829385b6e10b48322c7b6e2486ed35b743fd2fdf7f3733ec33f45763ebfefcd9bfbece31d3a85d73768f60d8514a82a08a8ea4d5c3e951c3e0fa82a655d02f0e0893b05736e23b970d423e48e2486811efbe853238e1c000b22325236c52bbba2a5a5900280aaae465e8c148b6f3350a65f206a02a56dde5e30b059c36e7b85d808a875b95aa70c0b461e517beab1888cee4524a84ff2b8cd5b2834eaf1b03e50dcf98e33ca66f1b43ec5e3a4e998d6a7789ca2fc9ac77d0fefd1661d8e4e2c76dbd0e3608e8d38f2215e72ce7aec3bff16df54fcfcb2c809e0b26b02e261e79468f68dfb32ad52d5557c8e8da4112f9ee354c58be73855f1e25d91aa38b62bb2c1db7bfd9eb2f8933fc40f2f80180cf314eecb0000000049454e44ae426082</data>
     </image>
 </images>
 <connections>
@@ -367,22 +475,28 @@ Please open a qsos file.
         <slot>helpAbout()</slot>
     </connection>
     <connection>
-        <sender>listBox</sender>
-        <signal>highlighted(int)</signal>
-        <receiver>Qsosform</receiver>
-        <slot>itemChanged(int)</slot>
-    </connection>
-    <connection>
-        <sender>scoreBox</sender>
-        <signal>highlighted(int)</signal>
-        <receiver>Qsosform</receiver>
-        <slot>scoreChanged(int)</slot>
-    </connection>
-    <connection>
         <sender>showProperty</sender>
         <signal>activated()</signal>
         <receiver>Qsosform</receiver>
         <slot>propertyBox()</slot>
+    </connection>
+    <connection>
+        <sender>radioScore2</sender>
+        <signal>clicked()</signal>
+        <receiver>Qsosform</receiver>
+        <slot>setscore2()</slot>
+    </connection>
+    <connection>
+        <sender>radioScore1</sender>
+        <signal>clicked()</signal>
+        <receiver>Qsosform</receiver>
+        <slot>setscore1()</slot>
+    </connection>
+    <connection>
+        <sender>radioScore0</sender>
+        <signal>clicked()</signal>
+        <receiver>Qsosform</receiver>
+        <slot>setscore0()</slot>
     </connection>
 </connections>
 <includes>
@@ -398,20 +512,19 @@ Please open a qsos file.
     <slot>editUndo()</slot>
     <slot>editRedo()</slot>
     <slot>editCut()</slot>
-    <slot>editCopy()</slot>
+    <slot>setscore2()</slot>
     <slot>editPaste()</slot>
     <slot>editFind()</slot>
     <slot>helpIndex()</slot>
     <slot>helpContents()</slot>
     <slot>helpAbout()</slot>
     <slot>itemChanged()</slot>
-    <slot>rateChanged()</slot>
     <slot>propertyBox()</slot>
-    <slot>rateChanged( const QString &amp; )</slot>
     <slot>itemChanged( const QString &amp; )</slot>
     <slot>itemChanged( QListBoxItem * )</slot>
     <slot>itemChanged( int )</slot>
-    <slot>scoreChanged( int )</slot>
+    <slot>setscore1()</slot>
+    <slot>setscore0()</slot>
 </slots>
 <layoutdefaults spacing="6" margin="11"/>
 </UI>
