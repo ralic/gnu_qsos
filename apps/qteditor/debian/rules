@@ -57,6 +57,8 @@ install: build
 
 	# Add here commands to install the package into debian/qteditor.
 	$(MAKE) install DESTDIR=$(CURDIR)/debian/qsos-qteditor
+	mv $(CURDIR)/debian/qsos-qteditor/usr/lib/perl5/site_perl/QSOS \
+		$(CURDIR)/debian/qsos-qteditor/usr/share/perl5
 
 
 # Build architecture-independent files here.
