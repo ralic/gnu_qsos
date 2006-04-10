@@ -11,7 +11,7 @@
 %      included in the section entitled "GNU
 %      Free Documentation License".
 %
-%$Id: eval_app.tex,v 1.1 2006/02/16 18:21:09 goneri Exp $
+%$Id: eval_app.tex,v 1.2 2006/04/10 14:19:42 goneri Exp $
 \subsection{Fiche d'évaluation de logiciel}
 Chaque version d'un logiciel est décrite dans une fiche d'évaluation. Cette fiche 
 comporte des informations plus détaillées que la fiche d'identité car elle s'attache
@@ -319,6 +319,96 @@ le suivi de leur avancement\\
 \end{figure}
 %%% Fin méthode qualité 
 
+
+%%% Start Packaging 
+\begin{figure}
+\center
+\begin{tabular}{|p{2cm}|p{2cm}|p{2.8cm}|p{2.8cm}|p{2.8cm}|}
+\hline \multicolumn{2}{|c|}{\TS{Industrialised solution}} &
+\multicolumn{3}{|c|}{\TS{Score}}\\
+\cline{3-5} \multicolumn{2}{|c|}{} & \multicolumn{1}{|c|}{\TS{0}} &
+\multicolumn{1}{|c|}{\TS{1}} &\multicolumn{1}{|c|}{\TS{2}}\\
+\hline
+\TS{Packaging}&
+\TS{Source}&
+Software can't be installed from source without a look of work&
+nstallation from source is limited depend on very strict condition (OS, arch,
+lib, ...)&
+Installation from source is easy\\
+\cline{2-5}&
+\TS{Debian}&
+The software is not packaged for Debian&
+A Debian package exists but it has important issues or it doesn't have an
+official support&
+The software is packaged in the distribution\\
+\cline{2-5}&
+\TS{FreeBSD}&
+The software is not packaged for FreeBSD&
+A port exists but it has important issues or it doesn't have an official
+support&
+A official port exists in FreeBSD\\
+\cline{2-5}&
+\TS{HP-UX}&
+The software is not packaged for HP-UX&
+A package exists but it has important issues or it doesn't have an official
+support&
+A strong packaged is provided for HP-UX\\
+\cline{2-5}&
+\TS{MacOSX}&
+The software is not packaged for MacOSX&
+A package exists but it has important issues or it doesn't have an official
+support&
+The software is packaged in the distribution\\
+\cline{2-5}&
+\TS{Mandriva}&
+The software is not packaged for Mandriva&
+A package exists but it has important issues or it doesn't have an official
+support&
+The software is packaged in the distribution\\
+\cline{2-5}&
+\TS{NetBSD}&
+The software is not packaged for NetBSD&
+A port exists but it has important issues or it doesn't have an official
+support&
+A official port exists in NetBSD\\
+\cline{2-5}&
+\TS{OpenBSD}&
+The software is not packaged for OpenBSD&
+A port exists but it has important issues or it doesn't have an official
+support&
+A official port exists in OpenBSD\\
+\cline{2-5}&
+\TS{RedHat/Fedora}&
+The software is not packaged for RedHat/Fedora&
+A package exists but it has important issues or it doesn't have an official
+support&
+The software is packaged in the distribution\\
+\cline{2-5}&
+\TS{Solaris}&
+The software is not packaged for Solaris&
+A package exists but it has important issues or it doesn't have an official
+support (e.g: SunFreeware.com )&
+The software is supported by Sun for Solaris\\
+\cline{2-5}&
+\TS{SuSE}&
+The software is not packaged for SuSE&
+A package exists but it has important issues or it doesn't have an official
+support&
+The software is packaged in the distribution\\
+\cline{2-5}&
+\TS{Windows}&
+The project can't be installed on Windows&
+A package exists but it is limited or has important issues or just cover some
+specific Windows release (e.g: Windows2000 and WindowsXP)&
+Windows is full supported and a package is provided\\
+\hline
+\end{tabular}
+\end{figure}
+
+
+
+
+
 %%% Debut exploitablitié 
 \begin{figure}
 \center
@@ -330,13 +420,6 @@ le suivi de leur avancement\\
 
 \hline
 \TS{Exploi\-ta\-bi\-li\-té}&
-\TS{Installation, déploiement}&
-Installation compliquée et peu outillées sans vision globale du déploiement du parc&
-Installation simple par copie de fichier ou dézippage. Pas de vision globale du déploiement
-de parc.&
-Installation très simple et/ou existence d'outils évolués : installateurs, console de
-déploiement intégrant éventuellement un aspect de gestion de parc.\\
-\cline{2-5}&
 \TS{Facilité d'utilisation, ergonomie}&
 Utilisation difficile nécessitant une connaissance approfondie du fonctionnement du logiciel.
 Ergonomie austère et très technique&
@@ -348,54 +431,11 @@ gestion de skins\\
 Absence de fonctionnalités d'administration. Pas d'aspect supervision.&
 Des fonctionnalités d'administration sont proposées mais demandent à être améliorées ou
 complétées.&
-Fonctionnalités d'administration et de supervision complètes et simple d'utilisation.
 Intégration possible avec d'autres outils (via SNMP, ...)\\
 \hline
 \end{tabular}
 \end{figure}
 %%% Fin exploitabilité 
-
-%%%%%%%%%%%%%%%%%%%%%% Intégration 
-%%% Debut respect des standards 
-\begin{figure}
-\center
-\begin{tabular}{|p{2cm}|p{2cm}|p{2.8cm}|p{2.8cm}|p{2.8cm}|}
-\hline \multicolumn{2}{|c|}{\TS{Intégration}} & \multicolumn{3}{|c|}{\TS{Note}}\\
-\cline{3-5} \multicolumn{2}{|c|}{} & \multicolumn{1}{|c|}{\TS{0}} &
-\multicolumn{1}{|c|}{\TS{1}} &\multicolumn{1}{|c|}{\TS{2}}\\
-\hline
-\TS{Respect des standards}&
-\TS{Respect des standards}&
-Le logiciel utilise des implémentations propriétaires ne respectant pas les standards
-officiels ou de facto&
-Respect des standards sur certaines fonctionnalités permettant au logiciel de
-s'interfacer avec d'autres&
-La notion de standard est complètement intégrée dans la conception du logiciel et
-il est facile de l'intégrer avec d'autres\\
-\hline
-\end{tabular}
-\end{figure}
-%%% Fin respect des standards
-
-%%% Debut Interfaçage
-\begin{figure}
-\center
-\begin{tabular}{|p{2cm}|p{2cm}|p{2.8cm}|p{2.8cm}|p{2.8cm}|}
-\hline \multicolumn{2}{|c|}{\TS{Intégration}} & \multicolumn{3}{|c|}{\TS{Note}}\\
-\cline{3-5} \multicolumn{2}{|c|}{} & \multicolumn{1}{|c|}{\TS{0}} &
-\multicolumn{1}{|c|}{\TS{1}} &\multicolumn{1}{|c|}{\TS{2}}\\
-\hline
-\TS{Interfaçage}&
-\TS{Interfaçage avec produits tiers (indépendamment de l'aspect respect des
-standards)}&
-Le logiciel ne communique avec aucun autre&
-Existence d'interfaces ou de conversion à partir ou vers des logiciels tiers.&
-Nombreuses possibilités d'intégration avec d'autres logiciels tiers.\\
-\hline
-\end{tabular}
-\end{figure}
-%%% Fin Interfaçage
-
 
 %%%%%%%%%%%%%%%%%%%%%% Adaptablitié technique 
 %%% Debut Modularité
