@@ -1,4 +1,4 @@
-/* $Id: ILibQSOS.java,v 1.1 2006/04/07 13:09:36 aclerf Exp $
+/* $Id: ILibQSOS.java,v 1.2 2006/04/10 16:10:00 aclerf Exp $
 *
 *  Copyright (C) 2006 Atos Origin 
 *
@@ -21,6 +21,7 @@
 package org.qsos.utils;
 
 import java.net.URL;
+import java.util.List;
 
 /**This interface should be implemented by LibQSOS.
  * It contains all the methods of the api defined to make editors.
@@ -259,4 +260,15 @@ public interface ILibQSOS {
 	 * @param path
 	 */
 	public void write(String path);
+
+	/**
+	 * 
+	 */
+	public List<SimpleMenuEntry> getSimpleTree();
+
+	/**
+	 * @param list
+	 * @return
+	 */
+	public String Debugaffichage(List<SimpleMenuEntry> list);
 }

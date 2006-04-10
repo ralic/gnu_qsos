@@ -1,4 +1,4 @@
-/* $Id: LibQSOS.java,v 1.1 2006/04/07 13:09:36 aclerf Exp $
+/* $Id: LibQSOS.java,v 1.2 2006/04/10 16:10:00 aclerf Exp $
 *
 *  Copyright (C) 2006 Atos Origin 
 *
@@ -111,7 +111,61 @@ public class LibQSOS implements ILibQSOS{
 			System.err.println("Can't find file");
 		}
 	}
+	 public ISheet getSheet(){
+		 return this.sheet;
+	 }
+	 
+	 
+	 public List<SimpleMenuEntry> getSimpleTree(){
+		 List<SimpleMenuEntry> list = new LinkedList<SimpleMenuEntry>();
+		 IElement root = sheet.getRoot();
+		 int deep = 0;
+		 SimpleMenuEntry menu = new SimpleMenuEntry(0,root.getName(),root.getTitle());
+		 list.add(menu);
+		 getSimpleTreeRec(root,deep,list);
+		 return list;
+	 }
+	 
+	 
+	 /**
+	 * @param root
+	 * @param deep
+	 * @param list
+	 * @return
+	 */
+	private void getSimpleTreeRec(IElement root, int deep, List<SimpleMenuEntry> list){
+		if(root.getElements() != null)
+		{
+			for(IElement child : root.getElements())
+			{
+				SimpleMenuEntry menu = new SimpleMenuEntry(deep + 1,child.getName(),child.getTitle());
+				list.add(menu);
+				getSimpleTreeRec(child,deep+1,list);
+			}		
+		}
+	}
+	/**
+	 * Fonction de debuggage
+	 */
+	 
+	public String Debugaffichage(List<SimpleMenuEntry> list){
+		String res = "";
+		
+		for(SimpleMenuEntry menu : list)
+		{	if(menu.getName()!=null)
+			{
+				for(int i=0; i<=menu.getDeep();i++)
+				{
+					res = res + " ";
+				}
+				res = res + menu.getName() + "\n";
+			}
+		}
+		return res;
+	}
 	
+	
+	 
 	/**
 	 * Allows to get the description number numDesc of the element called name.
 	 * @param name the name to search.

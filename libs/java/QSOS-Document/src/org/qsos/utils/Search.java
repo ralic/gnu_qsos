@@ -1,4 +1,4 @@
-/* $Id: Search.java,v 1.1 2006/04/07 13:09:36 aclerf Exp $
+/* $Id: Search.java,v 1.2 2006/04/10 16:10:00 aclerf Exp $
 *
 *  Copyright (C) 2006 Atos Origin 
 *
