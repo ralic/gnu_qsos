@@ -544,7 +544,7 @@
       
     </element>
     
-    <element name="notificationEmail" title="Notification Email"= >
+    <element name="notificationEmail" title="Notification Email" >
       <desc0>No Configuration of notification email </desc0>
       <desc1>Configuration of notification email doesn't work correctly</desc1>
       <desc2>Configuration notification email is managed by web interface</desc2>
@@ -580,7 +580,7 @@
       
     </element>
     
-    <element name="Rights'management" title="Rights'management" >
+    <element name="Rights management" title="Rights management" >
       <desc0>Impossible to manage users rights</desc0>
       <desc1>Rules and rights ' management via source code or don't work correctly </desc1>
       <desc2>Rules and rights ' management via source code by web interface, very easy</desc2>
