@@ -1,30 +1,15 @@
-/* $Id: LibQSOSTest.java,v 1.1 2006/04/07 13:08:41 aclerf Exp $
-*
-*  Copyright (C) 2006 Atos Origin 
-*
-*  Author: Arthur Clerfeuille <arthur.clerfeuille@atosorigin.com>
-*
-*  This program is free software; you can redistribute it and/or modify
-*  it under the terms of the GNU General Public License as published by
-*  the Free Software Foundation; either version 2 of the License, or
-*  (at your option) any later version.
-*
-*  This program is distributed in the hope that it will be useful,
-*  but WITHOUT ANY WARRANTY; without even the implied warranty of
-*  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-*  GNU General Public License for more details.
-*
-*  You should have received a copy of the GNU General Public License
-*  along with this program; if not, write to the Free Software
-*  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
-*/
+/**
+ * 
+ */
 package org.qsos.test;
 
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.List;
 
 import org.qsos.utils.ILibQSOS;
 import org.qsos.utils.LibQSOS;
+import org.qsos.utils.SimpleMenuEntry;
 
 
 import junit.framework.TestCase;
@@ -80,17 +65,17 @@ public class LibQSOSTest extends TestCase {
 		lib.setDesc("Fiche modifiés par des tests");
 		lib.setDemoUrl("www.yahoo.fr");
 		lib.setQsosformat("457812");
-		lib.setQsosappfamily("groupware ");
+		lib.setQsosappfamily("groupware mais pas fiable");
 		lib.setQsosspecificformat("666");
 		
 		lib.delAuthor("Gonéri");
 		lib.addAuthor("Arthur Clerfeuille","clerfeui@enseirb.fr");
 		
 		/* Modification des elements */
-		//lib.setCommentByName("popularity","");
+		lib.setCommentByName("popularity","");
 		
-		
-		
+		List<SimpleMenuEntry> list = lib.getSimpleTree();
+		System.out.println(lib.Debugaffichage(list));
 		lib.write("test/testModif.xml");
 		
 		
