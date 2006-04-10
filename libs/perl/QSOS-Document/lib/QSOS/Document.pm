@@ -1,4 +1,4 @@
-# $Id: Document.pm,v 1.12 2006/03/31 16:10:20 goneri Exp $
+# $Id: Document.pm,v 1.13 2006/04/10 14:20:32 goneri Exp $
 #
 #  Copyright (C) 2006 Atos Origin 
 #
@@ -97,6 +97,7 @@ sub _pushElem {
 
   my $h = {
     name => $elt->atts->{name},
+    title => $elt->atts->{title},
     comment_ref => $elt->first_child('comment'),
     desc_ref => $elt->first_child('desc'),
     desc_ref0 => $elt->first_child('desc0'),
@@ -180,7 +181,7 @@ sub setkeyscore {
     return;
   }
 
-  $score = '' if ($score !~ /[012]/);
+  $score = '' if ((!defined $score) || ($score !~ /[012]/));
 
   my $score_ref = $self->{tabular}->[$nbr]->{score_ref};
 
