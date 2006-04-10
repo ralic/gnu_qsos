@@ -105,6 +105,7 @@ sub fileNew
 {
   print "Qsosform->fileNew(): Not implemented yet.\n";
 }
+
 sub fileOpen
 {
 
@@ -146,19 +147,15 @@ sub fileOpen
     pop @pile; # on baisse
   }
 
-
   if ($_->{deep} == 0) {
     $item = Qt::ListViewItem(listView, undef, $i);
-    print "cree branche\n";
     push @pile, $item;
     $last = $item;
   } elsif ($_->{deep} == @pile) {
-    print "ajoute une clef a ".$pile[$#pile]."\n";
     $item = Qt::ListViewItem($pile[$#pile], undef,$i);
     $last = $item;
   } elsif ($_->{deep} > @pile) {
     $item = Qt::ListViewItem($last , undef, $i);
-    print "ajoute une sous clef a $last\n";
     push @pile, $item;
     $last = $item;
   } else {
@@ -175,7 +172,7 @@ sub fileSave
 {
   saveCurrentValue();
   if (defined SUPER->{file}) {
-    print "sauvegarde du fichier :\n";
+    print "saving :\n";
     SUPER->this->{qsosxml}->write(SUPER->{file});
   }
 }
@@ -232,13 +229,6 @@ sub setscore2
   radioScore1->setChecked(0);
 }
 
-
-sub commentChanged
-{
-
-#  print "Qsosform->commentChanged(): Not implemented yet.\n";
-
-}
 
 sub propertyBox
 {
