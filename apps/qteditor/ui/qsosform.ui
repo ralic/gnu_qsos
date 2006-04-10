@@ -264,38 +264,17 @@ Please open a qsos file.
                 <bool>false</bool>
             </property>
         </column>
-    <item>
-        <property name="text">
-            <string>Item</string>
-        </property>
-        <property name="pixmap">
-            <pixmap></pixmap>
-        </property>
-        <item>
+        <column>
             <property name="text">
-                <string>Subitem</string>
+                <string>Id</string>
             </property>
-            <property name="pixmap">
-                <pixmap></pixmap>
+            <property name="clickable">
+                <bool>true</bool>
             </property>
-            <item>
-                <property name="text">
-                    <string>Subitem</string>
-                </property>
-                <property name="pixmap">
-                    <pixmap></pixmap>
-                </property>
-            </item>
-        </item>
-    </item>
-    <item>
-        <property name="text">
-            <string>New Item</string>
-        </property>
-        <property name="pixmap">
-            <pixmap></pixmap>
-        </property>
-    </item>
+            <property name="resizable">
+                <bool>true</bool>
+            </property>
+        </column>
         <property name="name">
             <cstring>listView</cstring>
         </property>
@@ -498,6 +477,12 @@ Please open a qsos file.
         <receiver>Qsosform</receiver>
         <slot>setscore0()</slot>
     </connection>
+    <connection>
+        <sender>listView</sender>
+        <signal>clicked(QListViewItem*)</signal>
+        <receiver>Qsosform</receiver>
+        <slot>itemChanged()</slot>
+    </connection>
 </connections>
 <includes>
     <include location="local" impldecl="in implementation">qsosform.ui.h</include>
@@ -518,13 +503,10 @@ Please open a qsos file.
     <slot>helpIndex()</slot>
     <slot>helpContents()</slot>
     <slot>helpAbout()</slot>
-    <slot>itemChanged()</slot>
     <slot>propertyBox()</slot>
-    <slot>itemChanged( const QString &amp; )</slot>
-    <slot>itemChanged( QListBoxItem * )</slot>
-    <slot>itemChanged( int )</slot>
     <slot>setscore1()</slot>
     <slot>setscore0()</slot>
+    <slot>itemChanged()</slot>
 </slots>
 <layoutdefaults spacing="6" margin="11"/>
 </UI>
