@@ -69,27 +69,20 @@ sub loadSection
       textScore1->setText('');
       textScore2->setText('');
   }
-
-
+      
+  radioScore0->setChecked(0);
+  radioScore1->setChecked(0);
+  radioScore2->setChecked(0);
   if (defined $score && $score =~ /^[012]$/) {
     if ($score == 0) {
       radioScore0->setChecked(1)
-    } else {
-      radioScore0->setChecked(0)
     }
-    
     if ($score == 1) {
       radioScore1->setChecked(1);
-    } else {
-      radioScore1->setChecked(1);
     }
-    
     if ($score == 2) {
       radioScore1->setChecked(1);
-    } else {
-      radioScore2->setChecked(0);
     }
-
   }
   my $comment = SUPER->this->{qsosxml}->getkeycomment($num);
   my $desc = SUPER->this->{qsosxml}->getkeydesc($num);
@@ -138,19 +131,44 @@ sub fileOpen
 
   ### listbox initialisation
   #listView->clear();
-  listBox->clear();
+  listView->clear();
+  listView->setSortColumn(1);
+  listView->hideColumn(1); #doesn't work
+#listView->setResizeEnabled(0, 1);
+  listView->setColumnWidth(1, 0 );
+
+  my @pile;
+  my $last;
+  my $i=0;
   foreach (@{SUPER->this->{qsosxml}->{tabular}}) {
-  my $v;
-  foreach (0..$_->{deep}) {
-    $v .= ' ';
+  my $item;
+  while ($_->{deep} < @pile) {
+    pop @pile; # on baisse
   }
 
-  $v .= $_->{title};
-  listBox->insertItem($v);
-  loadSection(0);
-  listBox->setEnabled(1);
-  showProperty->setEnabled(1);
+
+  if ($_->{deep} == 0) {
+    $item = Qt::ListViewItem(listView, undef, $i);
+    print "cree branche\n";
+    push @pile, $item;
+    $last = $item;
+  } elsif ($_->{deep} == @pile) {
+    print "ajoute une clef a ".$pile[$#pile]."\n";
+    $item = Qt::ListViewItem($pile[$#pile], undef,$i);
+    $last = $item;
+  } elsif ($_->{deep} > @pile) {
+    $item = Qt::ListViewItem($last , undef, $i);
+    print "ajoute une sous clef a $last\n";
+    push @pile, $item;
+    $last = $item;
+  } else {
+    die;
+  }
+  $item->setText(0,$_->{title});
+  $i++;
 }
+
+
 }
 
 sub fileSave
@@ -187,9 +205,8 @@ sub helpAbout
 
 sub itemChanged
 {
-  my $item = shift;
-
-  loadSection($item);
+  my $item = listView->currentItem()->text(1);
+  loadSection($item) if ($item);
 }
 
 sub setscore0
