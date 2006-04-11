@@ -65,7 +65,7 @@ public class LibQSOSTest extends TestCase {
 		lib.setDesc("Fiche modifiés par des tests");
 		lib.setDemoUrl("www.yahoo.fr");
 		lib.setQsosformat("457812");
-		lib.setQsosappfamily("groupware mais pas fiable");
+		lib.setQsosappfamily("groupware");
 		lib.setQsosspecificformat("666");
 		
 		lib.delAuthor("Gonéri");
