@@ -1,4 +1,4 @@
-/* $Id: IXMLizer.java,v 1.1 2006/04/07 13:09:08 aclerf Exp $
+/* $Id: IXMLizer.java,v 1.2 2006/04/12 10:15:15 aclerf Exp $
 *
 *  Copyright (C) 2006 Atos Origin 
 *
@@ -29,6 +29,7 @@ import org.qsos.data.ISheet;
  * the modelisation in java into a String which contains
  * the xml.
  * 
+ * @author Romain Pelisse <romain.pelisse@atosorigin.com>
  *
  */
 public interface IXMLizer 

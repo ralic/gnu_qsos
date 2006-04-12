@@ -1,4 +1,4 @@
-/* $Id: DesXMLizer.java,v 1.1 2006/04/07 13:09:08 aclerf Exp $
+/* $Id: DesXMLizer.java,v 1.2 2006/04/12 10:15:15 aclerf Exp $
 *
 *  Copyright (C) 2006 Atos Origin 
 *
@@ -40,7 +40,7 @@ import java.util.List;
  * the library jdom is used.
  * <p> This class implements IDesXMLizer.
  * 
- * @author aclerf
+ * @author Arthur Clerfeuille <arthur.clerfeuille@atosorigin.com>
  *
  */
 

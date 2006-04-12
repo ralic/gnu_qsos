@@ -1,4 +1,4 @@
-/* $Id: XMLizer.java,v 1.1 2006/04/07 13:09:08 aclerf Exp $
+/* $Id: XMLizer.java,v 1.2 2006/04/12 10:15:15 aclerf Exp $
 *
 *  Copyright (C) 2006 Atos Origin 
 *
@@ -38,8 +38,8 @@ import org.qsos.data.ISheet;
  * document of the java modelisation. In order to do the conversion,
  * the library jdom is used.
  * 
- * @author rpelisse 
- * @author aclerf
+ * @author Romain Pelisse <romain.pelisse@atosorigin.com>
+ * @author Arthur Clerfeuille <arthur.clerfeuille@atosorigin.com>
  */
 
 public class XMLizer implements IXMLizer

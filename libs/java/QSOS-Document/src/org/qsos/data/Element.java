@@ -1,4 +1,4 @@
-/* $Id: Element.java,v 1.1 2006/04/07 13:07:48 aclerf Exp $
+/* $Id: Element.java,v 1.2 2006/04/12 10:15:15 aclerf Exp $
 *
 *  Copyright (C) 2006 Atos Origin 
 *
@@ -44,8 +44,9 @@ import java.util.List;
  * 
  * see O3S Documentation.
  * 
- * @author rpelisse
- * @author aclerf
+ * 
+ * @author Romain Pelisse <romain.pelisse@atosorigin.com>
+ * @author Arthur Clerfeuille <arthur.clerfeuille@atosorigin.com>
  *
  */
 public class Element implements IElement

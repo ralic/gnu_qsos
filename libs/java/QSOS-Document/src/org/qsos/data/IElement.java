@@ -1,4 +1,4 @@
-/* $Id: IElement.java,v 1.1 2006/04/07 13:07:48 aclerf Exp $
+/* $Id: IElement.java,v 1.2 2006/04/12 10:15:15 aclerf Exp $
 *
 *  Copyright (C) 2006 Atos Origin 
 *
@@ -34,8 +34,8 @@ import java.util.List;
  *  important issue in the past years?").
  * </ul>
  * 
- * @author rpelisse
- * @author aclerf
+ * @author Romain Pelisse <romain.pelisse@atosorigin.com>
+ * @author Arthur Clerfeuille <arthur.clerfeuille@atosorigin.com>
  * 
  */
 

@@ -1,4 +1,4 @@
-/* $Id: LibQSOS.java,v 1.2 2006/04/10 16:10:00 aclerf Exp $
+/* $Id: LibQSOS.java,v 1.3 2006/04/12 10:15:15 aclerf Exp $
 *
 *  Copyright (C) 2006 Atos Origin 
 *
@@ -39,7 +39,7 @@ import org.qsos.transformation.XMLizer;
  * a QSOS Editor in Java. It uses a search class so if the xml
  * format is modified, a very few modifications would have to be done. 
  * It implements the interface ILibQSOS.
- * @author aclerf
+ * @author Arthur Clerfeuille <arthur.clerfeuille@atosorigin.com>
  *
  */
 public class LibQSOS implements ILibQSOS{

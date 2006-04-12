@@ -1,4 +1,4 @@
-/* $Id: ILibQSOS.java,v 1.2 2006/04/10 16:10:00 aclerf Exp $
+/* $Id: ILibQSOS.java,v 1.3 2006/04/12 10:15:15 aclerf Exp $
 *
 *  Copyright (C) 2006 Atos Origin 
 *
@@ -23,9 +23,11 @@ package org.qsos.utils;
 import java.net.URL;
 import java.util.List;
 
+import org.qsos.data.ISheet;
+
 /**This interface should be implemented by LibQSOS.
  * It contains all the methods of the api defined to make editors.
- * @author aclerf
+ * @author Arthur Clerfeuille <arthur.clerfeuille@atosorigin.com>
  *
  */
 public interface ILibQSOS {
@@ -271,4 +273,6 @@ public interface ILibQSOS {
 	 * @return
 	 */
 	public String Debugaffichage(List<SimpleMenuEntry> list);
+
+	public ISheet getSheet();
 }

@@ -1,4 +1,4 @@
-/* $Id: ISheet.java,v 1.1 2006/04/07 13:07:48 aclerf Exp $
+/* $Id: ISheet.java,v 1.2 2006/04/12 10:15:15 aclerf Exp $
 *
 *  Copyright (C) 2006 Atos Origin 
 *
@@ -27,7 +27,7 @@ package org.qsos.data;
  *  <p> It also contains a property id which is the id in data base 
  *  and a name for clarity since we can find it in the IELements.
  * 
- * @author aclerf
+ * @author Arthur Clerfeuille <arthur.clerfeuille@atosorigin.com>
  *
  */	
 	

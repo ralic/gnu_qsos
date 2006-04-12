@@ -15,7 +15,7 @@ import org.qsos.utils.SimpleMenuEntry;
 import junit.framework.TestCase;
 
 /**
- * @author aclerf
+ * @author Arthur Clerfeuille <arthur.clerfeuille@atosorigin.com>
  *
  */
 public class LibQSOSTest extends TestCase {
