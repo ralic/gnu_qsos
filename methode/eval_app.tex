@@ -11,7 +11,7 @@
 %      included in the section entitled "GNU
 %      Free Documentation License".
 %
-%$Id: eval_app.tex,v 1.4 2006/04/10 14:19:42 goneri Exp $
+%$Id: eval_app.tex,v 1.5 2006/04/13 15:11:20 rsemeteys Exp $
 \subsection{Evaluation sheet}
 Every software release is described in an evaluation sheet. This document includes more detailed information 
 than the identity card as it focuses on identifying, describing and analyzing in detail each 
@@ -302,7 +302,7 @@ Very active use of tools for roles/tasks allocation and progess monitoring\\
 %%% End Quality Assurance 
 
 
-%%% Start Packaging 
+%%% Start Packaging - part 1
 \begin{figure}
 \center
 \begin{tabular}{|p{2cm}|p{2cm}|p{2.8cm}|p{2.8cm}|p{2.8cm}|}
@@ -313,80 +313,94 @@ Very active use of tools for roles/tasks allocation and progess monitoring\\
 \hline
 \TS{Packaging}&
 \TS{Source}&
-Software can't be installed from source without a look of work&
-nstallation from source is limited depend on very strict condition (OS, arch,
+Software can't be installed from source without a lot of work&
+Installation from source is limited and depends on very strict conditions (OS, arch,
 lib, ...)&
 Installation from source is easy\\
 \cline{2-5}&
 \TS{Debian}&
 The software is not packaged for Debian&
-A Debian package exists but it has important issues or it doesn't have an
+A Debian package exists but it has important issues or it doesn't have
 official support&
 The software is packaged in the distribution\\
 \cline{2-5}&
 \TS{FreeBSD}&
 The software is not packaged for FreeBSD&
-A port exists but it has important issues or it doesn't have an official
+A port exists but it has important issues or it doesn't have official
 support&
 A official port exists in FreeBSD\\
 \cline{2-5}&
 \TS{HP-UX}&
 The software is not packaged for HP-UX&
-A package exists but it has important issues or it doesn't have an official
+A package exists but it has important issues or it doesn't have official
 support&
-A strong packaged is provided for HP-UX\\
+A tested package is provided for HP-UX\\
 \cline{2-5}&
 \TS{MacOSX}&
 The software is not packaged for MacOSX&
-A package exists but it has important issues or it doesn't have an official
+A package exists but it has important issues or it doesn't have official
 support&
 The software is packaged in the distribution\\
 \cline{2-5}&
 \TS{Mandriva}&
 The software is not packaged for Mandriva&
-A package exists but it has important issues or it doesn't have an official
+A package exists but it has important issues or it doesn't have official
 support&
 The software is packaged in the distribution\\
-\cline{2-5}&
+\hline
+\end{tabular}
+\end{figure}
+%%% End Packaging - part 1
+
+%%% Start Packaging - part 2 
+\begin{figure}
+\center
+\begin{tabular}{|p{2cm}|p{2cm}|p{2.8cm}|p{2.8cm}|p{2.8cm}|}
+\hline \multicolumn{2}{|c|}{\TS{Industrialised solution}} &
+\multicolumn{3}{|c|}{\TS{Score}}\\
+\cline{3-5} \multicolumn{2}{|c|}{} & \multicolumn{1}{|c|}{\TS{0}} &
+\multicolumn{1}{|c|}{\TS{1}} &\multicolumn{1}{|c|}{\TS{2}}\\
+\hline
+\TS{Packaging}&
 \TS{NetBSD}&
 The software is not packaged for NetBSD&
-A port exists but it has important issues or it doesn't have an official
+A port exists but it has important issues or it doesn't have official
 support&
 A official port exists in NetBSD\\
 \cline{2-5}&
 \TS{OpenBSD}&
 The software is not packaged for OpenBSD&
-A port exists but it has important issues or it doesn't have an official
+A port exists but it has important issues or it doesn't have official
 support&
 A official port exists in OpenBSD\\
 \cline{2-5}&
 \TS{RedHat/Fedora}&
 The software is not packaged for RedHat/Fedora&
-A package exists but it has important issues or it doesn't have an official
+A package exists but it has important issues or it doesn't have official
 support&
 The software is packaged in the distribution\\
 \cline{2-5}&
 \TS{Solaris}&
 The software is not packaged for Solaris&
-A package exists but it has important issues or it doesn't have an official
-support (e.g: SunFreeware.com )&
+A package exists but it has important issues or it doesn't have official
+support (e.g: SunFreeware.com)&
 The software is supported by Sun for Solaris\\
 \cline{2-5}&
 \TS{SuSE}&
 The software is not packaged for SuSE&
-A package exists but it has important issues or it doesn't have an official
+A package exists but it has important issues or it doesn't have official
 support&
 The software is packaged in the distribution\\
 \cline{2-5}&
 \TS{Windows}&
 The project can't be installed on Windows&
-A package exists but it is limited or has important issues or just cover some
-specific Windows release (e.g: Windows2000 and WindowsXP)&
-Windows is full supported and a package is provided\\
+A package exists but is limited or has important issues or covers only
+specific Windows releases (e.g: Windows2000 and WindowsXP)&
+Windows is fully supported and a package is provided\\
 \hline
 \end{tabular}
 \end{figure}
-
+%%% End Packaging - part 2
 
 
 %%% Start Exploitability
