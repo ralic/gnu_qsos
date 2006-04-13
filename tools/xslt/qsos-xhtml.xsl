@@ -71,18 +71,32 @@
 
   <xsl:template match="element">
     <li>
+      
       <div class="element" id="{@name}">
-        <strong><xsl:value-of select="@title" /></strong>
-        <xsl:if test="desc">
-        <p>
-          <xsl:value-of select="desc" />
-        </p>
-      </xsl:if>
-      <xsl:if test="score">
-        <div class="score">Score : <xsl:value-of select="score" />/2</div>
-      </xsl:if>
+        
+	<strong><xsl:value-of select="@title" /></strong>
+	
+		<p> <xsl:value-of select="desc0" /> </p>
+       	
+		<p> <xsl:value-of select="desc1" /> </p>
+             
+		<p> <xsl:value-of select="desc2" /> </p>
+       	
+	<xsl:if test="score">
+		<div class="score">Score : <xsl:value-of select="score" />/2</div>
+	</xsl:if>
+	
+	<xsl:if test="comment">
+		<ul>
+			<div><xsl:value-of select="comment"/></div>
+		</ul>
+	</xsl:if>	
+	
+	
+	
       </div>
-        <xsl:if test="element">
+        
+	<xsl:if test="element">
           <ul>
             <xsl:apply-templates select="element" />
           </ul>
