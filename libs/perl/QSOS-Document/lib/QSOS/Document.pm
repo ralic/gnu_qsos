@@ -1,4 +1,4 @@
-# $Id: Document.pm,v 1.13 2006/04/10 14:20:32 goneri Exp $
+# $Id: Document.pm,v 1.14 2006/04/13 13:14:37 goneri Exp $
 #
 #  Copyright (C) 2006 Atos Origin 
 #
@@ -22,7 +22,6 @@
 package QSOS::Document;
 use XML::Twig;
 use Carp;
-use Data::Dumper;
 use open ':utf8';
 use warnings;
 use strict;
@@ -63,7 +62,7 @@ sub new {
 }
 
 sub load {
-  my ($self, $file) = @_;
+  my ($self, $file, $msg) = @_;
 
   if (! -f $file) {
     carp "file doesn't exist";
@@ -72,6 +71,7 @@ sub load {
   unless ($self->{twig}->safe_parsefile($file)) {
     print "Can't load file `$file'\n";
     print $@;
+    $$msg = $@;
     return;
   }
   return unless ($file);
