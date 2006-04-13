@@ -821,21 +821,21 @@ $id$
 	<element name="development" title="development">
 	
 		<element name="multi-IDEsupport" title="mutli-IDE support ">
-			<desc0> </desc0>
-			<desc1> </desc1>
-			<desc2> </desc2> 
+			<desc0>No IDE support</desc0>
+			<desc1>IDE support doesn't work correctly </desc1>
+			<desc2>Numerous IDE supports are supported</desc2> 
 			<comment>
 				
 			</comment>
 			<score>2</score>
 		</element>
 		
-		<element name=" " title=" ">
-			<desc0> </desc0>
-			<desc1> </desc1>
-			<desc2> </desc2> 
+		<element name="developmentssplit" title="development's split ">
+			<desc0>No development split autorized </desc0>
+			<desc1>Development split is partial or doesn't work correctly</desc1>
+			<desc2>Possibility to sub-contract portlets</desc2> 
 			<comment>
-				
+				Possibility to define configuration on the level of portlet or administration
 			</comment>
 			<score>2</score>
 		</element>
