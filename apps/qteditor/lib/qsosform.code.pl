@@ -13,6 +13,7 @@ sub saveCurrentValue
 {
 
   my $num = SUPER->{current_section_nbr};
+  return unless ($num);
   SUPER->this->{qsosxml}->setkeycomment($num, commentBox->text);
 
   my $score;
@@ -101,11 +102,6 @@ sub loadSection
   }
 }
 
-sub fileNew
-{
-  print "Qsosform->fileNew(): Not implemented yet.\n";
-}
-
 sub fileOpen
 {
 
@@ -121,7 +117,6 @@ sub fileOpen
   }
   SUPER->{file} = $file;
 
-  print "opening file $file\n";
 
   SUPER->this->{qsosxml} = new QSOS::Document; 
   if (!SUPER->this->{qsosxml}->load($file)) {
@@ -174,7 +169,6 @@ sub fileSave
 {
   saveCurrentValue();
   if (defined SUPER->{file}) {
-    print "saving :\n";
     SUPER->this->{qsosxml}->setqsosformat("1.6");
     SUPER->this->{qsosxml}->write(SUPER->{file});
   }
