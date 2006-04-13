@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+$id$
 <document>
   <header>
     <authors>
@@ -742,56 +743,105 @@
      
       <element name="authentification" title="authentification">
 		
-		<element name=" " title="">
-			<desc0> </desc0>
-			<desc1> </desc1>
-			<desc2> </desc2> 
+		<element name="LDAPauth" title="LDAP authentification">
+			<desc0>don't support LDAP authentification</desc0>
+			<desc1>LDAP authentification doesn't work correctly</desc1>
+			<desc2>LDAP authentification is performing  and bring a real advantage for the tools<</desc2> 
 			<comment>
-				
+				LDAP authentification is performing via JBossAS
 			</comment>
-			<score>0</score>
+			<score>2</score>
 		
 		</element>
 	
-		<element name=" " title="">
-			<desc0> </desc0>
-			<desc1> </desc1>
-			<desc2> </desc2> 
+		<element name="NTLMauth" title="NTLM authentification">
+			<desc0>No NTLM authentification</desc0>
+			<desc1>NTLM authentification is partial or doesn't work correctly</desc1>
+			<desc2>NTLM authentification is performing </desc2> 
 			<comment>
-				
+				NTLM authentification is partial via JCFS et JAAS, and in beta version
 			</comment>
-			<score>0</score>
+			<score>1</score>
 		
 		</element>
 	
-	
-	
-	
-	
-	
-	
+		<element name="X.509auth" title="X.509 authentification">
+			<desc0>No X.509 authentification </desc0>
+			<desc1>X.509 authentification doesn't work correctly</desc1>
+			<desc2>X.509 authentification is performing and bring a real advantage for the tools</desc2> 
+			<comment>
+				
+			</comment>
+			<score>2</score>
+		</element>
+		
+		<element name="Kerberosauth" title="Kerberos authentification">
+			<desc0>No Kerberos authentification </desc0>
+			<desc1>Kerberos authentification is partial or doesn't work correctly</desc1>
+			<desc2>Kerberos authentification is performing and brings a real advantage for the tools</desc2> 
+			<comment>
+				
+			</comment>
+			<score>1</score>
+		</element>
+		
+		<element name="JAASauth" title="JAAS authentification">
+			<desc0>No JAAS authentification </desc0>
+			<desc1>JAAS authentification is partial or doesn't work correctly</desc1>
+			<desc2>JAAS authentification is performing and brings a real advantage for the tools</desc2> 
+			<comment>
+				
+			</comment>
+			<score>2</score>
+		</element>
+		
 	</element>
      
-     <element name=" " title="">
-		<desc0> </desc0>
-		<desc1> </desc1>
-		<desc2> </desc2> 
-		<comment>
-			
-		</comment>
-		<score>0</score>
-	</element>
-       <element name=" " title="">
-		<desc0> </desc0>
-		<desc1> </desc1>
-		<desc2> </desc2> 
-		<comment>
-			
-		</comment>
-		<score>0</score>
+       <element name="storage" title="storage">
+		<element name="LDAPstorage" title="LDAPstorage">
+			<desc0>No LDAP storage </desc0>
+			<desc1>LDAP storage is partial or doesn't work correctly</desc1>
+			<desc2>LDAP storage is performing and brings a real advantage for the tools</desc2> 
+			<comment>
+				
+			</comment>
+			<score>2</score>
+		</element>
+		<element name="SGBDstorage " title="SGBD storage">
+			<desc0>No SGBD storage</desc0>
+			<desc1>SGBD storage is partial or doesn't work corectly</desc1>
+			<desc2>SGBD storage is performing and brings a real advantage for the tools </desc2> 
+			<comment>
+				All databases supported by Hibernate are performing in JBoss Portal (Oracle, DB2, MySQL, PostgreSql,SQLServer,Sybase)
+			</comment>
+			<score>2</score>
+		</element>
 	</element>
 	
+	<element name="development" title="development">
 	
+		<element name="multi-IDEsupport" title="mutli-IDE support ">
+			<desc0> </desc0>
+			<desc1> </desc1>
+			<desc2> </desc2> 
+			<comment>
+				
+			</comment>
+			<score>2</score>
+		</element>
+		
+		<element name=" " title=" ">
+			<desc0> </desc0>
+			<desc1> </desc1>
+			<desc2> </desc2> 
+			<comment>
+				
+			</comment>
+			<score>2</score>
+		</element>
+	
+	</element>
+		
  </section>
     
   
