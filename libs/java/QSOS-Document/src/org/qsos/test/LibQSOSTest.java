@@ -22,12 +22,12 @@ public class LibQSOSTest extends TestCase {
 	private ILibQSOS lib;
 	
 	public void testGet() throws MalformedURLException{
-		/*Creation de l'objet*/
+		/*Creation of the lib which allow to manipulate datas*/
 		lib = new LibQSOS();
-		/*Initialisation de l'objet*/
+		/*Instanciation with a sheet*/
 		lib.load(new URL("http://cvs.savannah.gnu.org/viewcvs/*checkout*/qsos/qsos/sheet/groupware/kolab/kolab.qsos"));
 		
-		/*Verification des valeurs de l'entete*/
+		/* Check of datas */
 		assertEquals("language",lib.getLanguage(),"en");
 		assertEquals("appname",lib.getAppname(),"kolab");
 		assertEquals("release",lib.getRelease(),"2");
@@ -50,35 +50,37 @@ public class LibQSOSTest extends TestCase {
 	}
 	
 	public void testSet() throws MalformedURLException{
-		/*Creation de l'objet*/
+		/*Creation*/
 		lib = new LibQSOS();
-		/*Initialisation de l'objet*/
-		lib.load(new URL("http://cvs.savannah.gnu.org/viewcvs/*checkout*/qsos/qsos/sheet/groupware/kolab/kolab.qsos"));
+		/*Instanciation with a template*/
+		lib.load(new URL("http://cvs.savannah.gnu.org/viewcvs/*checkout*/qsos/qsos/sheet/groupware/template/groupware.qsos"));
 
-			
-		lib.setLanguage("fr");
-		lib.setAppname("kolab modifié par les tests");
+		/*Adding datas in the header*/	
+		lib.setLanguage("en");
+		lib.setAppname("kolab");
 		lib.setRelease("2.1");
-		lib.setLicenseId("23");
-		lib.setLicenseDesc("la license correspondante");
-		lib.setUrl("www.google.fr");
-		lib.setDesc("Fiche modifiés par des tests");
-		lib.setDemoUrl("www.yahoo.fr");
-		lib.setQsosformat("457812");
+		lib.setLicenseId("31");
+		lib.setLicenseDesc("GNU General Public License");
+		lib.setUrl("http://www.kolab.org");
+		lib.setDesc("Kolab is a groupware used in the german administration");
+		lib.setDemoUrl("http://kolab.org/screenshots.html");
+		lib.setQsosformat("1");
 		lib.setQsosappfamily("groupware");
-		lib.setQsosspecificformat("666");
+		lib.setQsosspecificformat("1");
 		
-		lib.delAuthor("Gonéri");
-		lib.addAuthor("Arthur Clerfeuille","clerfeui@enseirb.fr");
+		lib.addAuthor("Gonéri Le Bouder","goneri.lebouder@atosorigin.com");
 		
-		/* Modification des elements */
-		lib.setCommentByName("popularity","");
+		/* Adding data in the sections but won't work till the update of the template*/
+		lib.setScoreByName("age","2");
+		lib.setCommentByName("age","Kolab.org domain was created the 29th of Oct 2002");
 		
+		
+		/* Getting a tree view of the file */
 		List<SimpleMenuEntry> list = lib.getSimpleTree();
 		System.out.println(lib.Debugaffichage(list));
-		lib.write("test/testModif.xml");
 		
-		
+		/* Writing the file */
+		lib.write("test/testKolabCreation.xml");
 	}
 	
 	
