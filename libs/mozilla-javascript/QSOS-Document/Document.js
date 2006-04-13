@@ -80,7 +80,7 @@ function Document(name) {
     this.dump = dump;
     this.getfilename = getfilename;
     this.setfilename = setfilename;
-    this.getcriteria = getcriteria;
+    this.getcomplextree = getcomplextree;
 
     ////////////////////////////////////////////////////////////////////
     // QSOS XML file functions
@@ -174,9 +174,9 @@ function Document(name) {
     //Array of "criterion" objects typed like this:
     //	criterion.name: section or element's name attribute in the QSOS sheet
     //	criterion.title: section or element's title attribute in the QSOS sheet
-    //	criterion: array of "criterion" objects representing the element's subelements
+    //	criterion.children: array of "criterion" objects representing the element's subelements
     //		or "null" if element doesn't have any subelements
-    function getcriteria() {
+    function getcomplextree() {
 	var criteria = new Array();
 	var sections = sheet.evaluate("//section", sheet, null, XPathResult.ANY_TYPE,null);
 	var section = sections.iterateNext();
@@ -196,7 +196,7 @@ function Document(name) {
     //Returns an array of "criterion" objects typed like this:
     //	criterion.name: section or element's name attribute in the QSOS sheet
     //	criterion.title: section or element's title attribute in the QSOS sheet
-    //	criterion: array of "criterion" objects representing the element's subelements
+    //	criterion.children: array of "criterion" objects representing the element's subelements
     //		or "null" if element doesn't have any subelements
     function getsubcriteria(name) {
 	var subcriteria = new Array();
