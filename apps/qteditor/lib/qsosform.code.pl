@@ -82,7 +82,7 @@ sub loadSection
       radioScore1->setChecked(1);
     }
     if ($score == 2) {
-      radioScore1->setChecked(1);
+      radioScore2->setChecked(1);
     }
   }
   my $comment = SUPER->this->{qsosxml}->getkeycomment($num);
@@ -147,18 +147,15 @@ sub fileOpen
     $item = Qt::ListViewItem(listView, undef, $i);
     push @pile, $item;
     $last = $item;
-  } elsif ($_->{deep} == @pile) {
+  } elsif ($_->{deep} >= @pile) {
+    push @pile, $last if ($_->{deep} > @pile);
     $item = Qt::ListViewItem($pile[$#pile], undef,$i);
-    $last = $item;
-  } elsif ($_->{deep} > @pile) {
-    $item = Qt::ListViewItem($last , undef, $i);
-    push @pile, $item;
     $last = $item;
   } else {
     die;
   }
   $item->setOpen(1);
-  $item->setText(0,$_->{title});
+  $item->setText(0,scalar @pile.$_->{title});
   $i++;
 }
 # Activate the property in the menu entry
