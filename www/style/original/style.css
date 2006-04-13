@@ -106,6 +106,10 @@ li.tar {
   margin: 0px 20px;
 }
 
+li strong {
+  color: red;
+}
+
 body {
   padding: 0px;
   border: 0px;

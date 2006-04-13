@@ -41,14 +41,20 @@ print "<li><a href=\"index.php?lang=en\">Overview</a></li>
 <li><a href=\"download.php?lang=en\">Download</a></li>
 <li><a href=\"forum/index.php?lang=en\" target=\"forum\">Forum</a></li>
 <li><a href=\"license.php?lang=en\">License</a></li>
-<li><a href=\"sheets/\">QSOS Sheet</a></li>";
+<li><a href=\"sheets/\">QSOS Sheet</a></li>
+<li><a href=\"/download/fiches/\">Old sheets (fr)</a></li>
+<li><a href=\"/blog//\"><strong>News!</strong></a></li>
+<li><a href=\"https://savannah.nongnu.org/projects/qsos/\"><strong>Project</strong></a></li>";
 } else if ($lang=="fr"){
 print "<li><a href=\"index.php?lang=fr\">Présentation</a></li>
 <li><a href=\"methode.php?lang=fr\">Méthode QSOS</a></li>
 <li><a href=\"download.php?lang=fr\">Téléchargements</a></li>
 <li><a href=\"forum/index.php?lang=fr\" target=\"forum\">Forum</a></li>
 <li><a href=\"license.php?lang=fr\">Licence</a></li>
-<li><a href=\"sheets/\">Fiches QSOS</a></li>";
+<li><a href=\"sheets/\">Fiches QSOS</a></li>
+<li><a href=\"/download/fiches/\">Anciennes fiches</a></li>
+<li><a href=\"/blog//\"><strong>News!</strong></a></li>
+<li><a href=\"https://savannah.nongnu.org/projects/qsos/\"><strong>Project</strong></a></li>";
 }
 
 if ($lang != "en") print "<div id=\"flags\"><a href=\"?lang=en\"><img src=\"images/flags/uk.png\" /></a></div>"; 
@@ -57,8 +63,14 @@ if ($lang != "fr") print "<div id=\"flags\"><a href=\"?lang=fr\"><img src=\"imag
 print('</ul>
 
 
-<div id="thanks">
-QSOS est mise à disposition sous licence libre par <a href="http://www.atosorigin.com">Atos Origin</a>.
+<div id="thanks">');
+if ($lang=="fr"){
+print 'QSOS est mise à disposition sous licence libre par <a href="http://www.atosorigin.com">Atos Origin</a>.';
+} else {
+print 'QSOS is published under the GNU FDL by <a href="http://www.atosorigin.com">Atos Origin</a>.';
+
+}
+print('
 </div>
 <div id="valide">
 XHTML et CSS valide
