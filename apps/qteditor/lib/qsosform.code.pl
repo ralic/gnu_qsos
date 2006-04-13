@@ -118,9 +118,10 @@ sub fileOpen
   SUPER->{file} = $file;
 
 
+  my $msg;
   SUPER->this->{qsosxml} = new QSOS::Document; 
-  if (!SUPER->this->{qsosxml}->load($file)) {
-    Qt::MessageBox::warning(undef, "Can't open $file", "Sorry this file is not a valide QSOS file");
+  if (!SUPER->this->{qsosxml}->load($file,\$msg)) {
+    Qt::MessageBox::warning(undef, "Can't open $file", "Sorry this file is not a valide QSOS file: $msg");
     SUPER->{file} = undef;
     return; 
   }
