@@ -175,6 +175,7 @@ sub fileSave
   saveCurrentValue();
   if (defined SUPER->{file}) {
     print "saving :\n";
+    SUPER->this->{qsosxml}->setqsosformat("1.6");
     SUPER->this->{qsosxml}->write(SUPER->{file});
   }
 }
