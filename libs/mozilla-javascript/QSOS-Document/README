@@ -1,0 +1,18 @@
+DESCRIPTION
+
+Document.js - API to access/edit QSOS XML files
+
+PREREQUISITES
+
+Mozilla Javascript
+
+STATUS
+
+Document.js is still under development
+
+COPYRIGHT
+
+Copyright 2006 Atos Origin <raphael.semeteys@atosorigin.com>
+
+This library is free software; you can redistribute it
+and/or modify it under the terms of the GNU General Public License.
