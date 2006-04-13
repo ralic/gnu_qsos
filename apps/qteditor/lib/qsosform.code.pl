@@ -161,10 +161,12 @@ sub fileOpen
   } else {
     die;
   }
+  $item->setOpen(1);
   $item->setText(0,$_->{title});
   $i++;
 }
-
+# Activate the property in the menu entry
+showProperty->setEnabled(1);
 
 }
 
