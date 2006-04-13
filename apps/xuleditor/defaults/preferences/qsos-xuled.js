@@ -1,0 +1,1 @@
+pref("toolkit.defaultChromeURI", "chrome://qsos-xuled/content/editor.xul");

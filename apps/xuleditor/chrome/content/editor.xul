@@ -1,0 +1,82 @@
+<?xml version='1.0'?>
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+<?xml-stylesheet href="chrome://qsos-xuled/skin/classic.css" type="text/css"?>
+<!DOCTYPE window>
+
+<window id="QSOS" title="QSOS XUL Editor" width="800px" height="600px"
+    xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+    onload="init();">
+
+<script type="application/x-javascript" src="Document.js"></script>
+<script type="application/x-javascript" src="editor.js"></script>
+
+<vbox flex = "1">
+    <toolbox>
+      <menubar id="mymenubar">
+	      <menu id="file-menu" label="File" onclick="document.getElementById('file-menu').focus();">
+          <menupopup id="file-popup">
+            <menuitem id="file-open" label="Open" onclick="checkopenFile();"/>
+            <menuitem id="file-save" label="Save" onclick="saveFile();"/>
+	    <menuitem id="file-saveas" label="Save As" onclick="saveFileAs();"/>
+            <menuitem id="file-close" label="Close"  onclick="checkcloseFile();"/>
+            <menuseparator/>
+            <menuitem id="file-exit" label="Exit" onclick="checkexit();"/>
+          </menupopup>
+        </menu>
+	<menu id="tree-menu" label="Tree" onclick="document.getElementById('tree-menu').focus();">
+		<menupopup id="tree-popup">
+			<menuitem id="tree-expand" label="Expand all" onclick="expandTree('true');"/>
+			<menuitem id="tree-collapse" label="Collapse all" onclick="expandTree('false');"/>
+		</menupopup>
+        </menu>
+	<menu id="help-menu" label="Help" onclick="document.getElementById('help-menu').focus();">
+          <menupopup id="help-popup">
+            <menuitem id="help-about" label="About" onclick="aboutDialog();"/>
+          </menupopup>
+        </menu>
+      </menubar>
+    </toolbox>
+    
+    <hbox flex = "1">
+	<vbox>
+	    <tree id="mytree" width="300px" onselect="treeselect(this);" flex="1">
+            <treecols>
+                <treecol id="name" label="Criteria" primary="true" flex="1"/>
+            </treecols>
+	    </tree>
+    	</vbox>
+        <vbox flex = "1">
+            <groupbox>
+                <caption><label value="Software"/></caption>
+                <vbox>
+			<label control="f-software" value="Name: "/><textbox id="f-software" oninput="this.setAttribute('class','inside');" onchange="this.setAttribute('class','outside'); changeAppName(this);"/>
+			<label control="f-release" value="Release: "/><textbox id="f-release" oninput="this.setAttribute('class','inside');" onchange="this.setAttribute('class','outside'); changeRelease(this);"/>
+			<label control="f-sotwarefamily" value="Software family: "/><textbox id="f-sotwarefamily" oninput="this.setAttribute('class','inside');" onchange="this.setAttribute('class','outside'); changeSoftwareFamily(this);"/>
+			<label control="f-desc" value="Description: "/><textbox id="f-desc" multiline="true" oninput="this.setAttribute('class','inside');" onchange="this.setAttribute('class','outside'); changeDesc(this);"/>
+			<label control="f-url" value="Website: "/><textbox id="f-url" oninput="this.setAttribute('class','inside');" onchange="this.setAttribute('class','outside'); changeUrl(this);"/>
+			<label control="f-demourl" value="Demo site: "/><textbox id="f-demourl" oninput="this.setAttribute('class','inside');" onchange="this.setAttribute('class','outside'); changeDemoUrl(this);"/>
+                </vbox>
+            </groupbox>
+            <groupbox id="f-c-id">
+                <caption><label id="f-c-title" value="Criterion"/></caption>
+		<deck id="f-c-deck" selectedIndex="1">
+			<groupbox>
+				<caption><label value="Description"/></caption>
+				<label id="f-c-desc"/>
+			</groupbox>
+			<groupbox>
+				<caption><label value="Score"/></caption>
+				<radiogroup id="f-c-score">
+					<radio id="f-c-desc0" label="Score 0" oncommand="changeScore(0);"/>
+					<radio id="f-c-desc1" label="Score 1" oncommand="changeScore(1);"/>
+					<radio id="f-c-desc2" label="Score 2" oncommand="changeScore(2);"/>
+				</radiogroup>
+			</groupbox>
+		</deck>
+		<label control="f-c-comments" value="Comments: "/><textbox id="f-c-comments" multiline="true" oninput="this.setAttribute('class','inside');" onchange="this.setAttribute('class','outside'); changeComments(this);"/>
+            </groupbox>
+        </vbox>
+    </hbox>
+</vbox>
+
+</window>
