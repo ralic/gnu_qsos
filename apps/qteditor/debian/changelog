@@ -1,3 +1,9 @@
+qsos-qteditor (0.02-1) unstable; urgency=low
+
+  * New release with QSOS 1.6 format support 
+
+ -- Goneri Le Bouder <goneri.lebouder@atosorigin.com>  Tue, 11 Apr 2006 17:02:04 +0200
+
 qsos-qteditor (0.01-2) unstable; urgency=low
 
   * add libqt-perl in the depend list 
