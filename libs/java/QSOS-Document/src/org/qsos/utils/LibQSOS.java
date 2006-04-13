@@ -1,4 +1,4 @@
-/* $Id: LibQSOS.java,v 1.3 2006/04/12 10:15:15 aclerf Exp $
+/* $Id: LibQSOS.java,v 1.4 2006/04/13 12:57:37 aclerf Exp $
 *
 *  Copyright (C) 2006 Atos Origin 
 *
@@ -44,7 +44,6 @@ import org.qsos.transformation.XMLizer;
  */
 public class LibQSOS implements ILibQSOS{
 	private Search search;
-	private ISheet sheet;
 	
 	
 	/**Allows to initialize the class search with the right parameters
@@ -90,7 +89,7 @@ public class LibQSOS implements ILibQSOS{
 	 public LibQSOS(ISheet sheet){
 		search = new Search();
 		reInitSearch("","",-1);
-		this.sheet = sheet;
+		search.setSheet(sheet);
 	}
 	
 	/**
@@ -101,8 +100,7 @@ public class LibQSOS implements ILibQSOS{
 	 public void load(URL url){
 		IDesXMLizer desxml = new DesXMLizer();
 		try {
-			sheet = desxml.transformFromXML(url);
-			search.setSheet(sheet);
+			search.setSheet(desxml.transformFromXML(url));
 		} 
 		catch (JDOMException e) {
 			System.err.println("Can't load file");
@@ -112,38 +110,17 @@ public class LibQSOS implements ILibQSOS{
 		}
 	}
 	 public ISheet getSheet(){
-		 return this.sheet;
+		 return search.getSheet();
 	 }
 	 
+	 public void setSheet(ISheet sheet){
+		 search.setSheet(sheet);
+	 }
 	 
 	 public List<SimpleMenuEntry> getSimpleTree(){
-		 List<SimpleMenuEntry> list = new LinkedList<SimpleMenuEntry>();
-		 IElement root = sheet.getRoot();
-		 int deep = 0;
-		 SimpleMenuEntry menu = new SimpleMenuEntry(0,root.getName(),root.getTitle());
-		 list.add(menu);
-		 getSimpleTreeRec(root,deep,list);
-		 return list;
+		 return search.getSimpleTree();
 	 }
 	 
-	 
-	 /**
-	 * @param root
-	 * @param deep
-	 * @param list
-	 * @return
-	 */
-	private void getSimpleTreeRec(IElement root, int deep, List<SimpleMenuEntry> list){
-		if(root.getElements() != null)
-		{
-			for(IElement child : root.getElements())
-			{
-				SimpleMenuEntry menu = new SimpleMenuEntry(deep + 1,child.getName(),child.getTitle());
-				list.add(menu);
-				getSimpleTreeRec(child,deep+1,list);
-			}		
-		}
-	}
 	/**
 	 * Fonction de debuggage
 	 */
@@ -569,6 +546,6 @@ public class LibQSOS implements ILibQSOS{
 	 */
 	public void write(String path) {
 		IXMLizer xml = new XMLizer();
-		xml.transformToXml(sheet,path);
+		xml.transformToXml(search.getSheet(),path);
 	}
 }

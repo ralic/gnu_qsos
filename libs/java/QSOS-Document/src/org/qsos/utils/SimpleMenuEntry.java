@@ -1,4 +1,4 @@
-/* $Id: SimpleMenuEntry.java,v 1.2 2006/04/12 10:15:15 aclerf Exp $
+/* $Id: SimpleMenuEntry.java,v 1.3 2006/04/13 12:57:37 aclerf Exp $
 *
 *  Copyright (C) 2006 Atos Origin 
 *

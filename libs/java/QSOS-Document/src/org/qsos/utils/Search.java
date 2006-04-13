@@ -1,4 +1,4 @@
-/* $Id: Search.java,v 1.3 2006/04/12 10:15:15 aclerf Exp $
+/* $Id: Search.java,v 1.4 2006/04/13 12:57:37 aclerf Exp $
 *
 *  Copyright (C) 2006 Atos Origin 
 *
@@ -190,5 +190,43 @@ public class Search {
 		this.type = type;
 		
 	}
+
+	/**
+	 * @return
+	 */
+	public ISheet getSheet() {
+		return this.sheet;
+	}
+
+	 public List<SimpleMenuEntry> getSimpleTree(){
+		 List<SimpleMenuEntry> list = new LinkedList<SimpleMenuEntry>();
+		 IElement root = sheet.getRoot();
+		 int deep = 0;
+		 SimpleMenuEntry menu = new SimpleMenuEntry(0,root.getName(),root.getTitle());
+		 list.add(menu);
+		 getSimpleTreeRec(root,deep,list);
+		 return list;
+	 }
+	 
+	 
+	 /**
+	 * @param root
+	 * @param deep
+	 * @param list
+	 * @return
+	 */
+	private void getSimpleTreeRec(IElement root, int deep, List<SimpleMenuEntry> list){
+		if(root.getElements() != null)
+		{
+			for(IElement child : root.getElements())
+			{
+				SimpleMenuEntry menu = new SimpleMenuEntry(deep + 1,child.getName(),child.getTitle());
+				list.add(menu);
+				getSimpleTreeRec(child,deep+1,list);
+			}		
+		}
+	}
+	
+	
 	
 }

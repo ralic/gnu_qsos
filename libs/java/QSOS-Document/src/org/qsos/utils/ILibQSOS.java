@@ -1,4 +1,4 @@
-/* $Id: ILibQSOS.java,v 1.3 2006/04/12 10:15:15 aclerf Exp $
+/* $Id: ILibQSOS.java,v 1.4 2006/04/13 12:57:37 aclerf Exp $
 *
 *  Copyright (C) 2006 Atos Origin 
 *
@@ -275,4 +275,9 @@ public interface ILibQSOS {
 	public String Debugaffichage(List<SimpleMenuEntry> list);
 
 	public ISheet getSheet();
+
+	/**
+	 * @param sheet
+	 */
+	public void setSheet(ISheet sheet);
 }
