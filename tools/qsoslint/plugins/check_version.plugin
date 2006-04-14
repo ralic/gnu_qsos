@@ -1,0 +1,18 @@
+sub check {
+  my ($file,$qsos) = @_;
+
+  my @err;
+  my @warn;
+  my $format = $qsos->getqsosformat();
+
+  if (!$format) {
+    push @err, "qsosformat no defined";
+  } else {
+    if ($format < 1.6) {
+    push @err, "qsosformat must be 1.6";
+    }
+  }
+
+  return { err=> \@err, warn => \@warn  };
+}
+1;

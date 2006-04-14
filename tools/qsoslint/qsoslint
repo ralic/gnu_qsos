@@ -1,0 +1,74 @@
+#!/usr/bin/perl -w
+
+use strict;
+
+use Data::Dumper;
+use QSOS::Document;
+use utf8;
+use encoding 'utf8';
+use File::Glob ':glob';
+
+### Global vars
+
+my @plugin_dirs = ("plugins/", "/usr/share/qsoslint/plugins/", "/usr/local/share/qsoslint/plugins/");
+
+
+#####
+sub _usage {
+
+  print "usage:\n";
+  print "\tqsoslint file.qsos\n";
+
+}
+
+sub _loadplugins {
+  my $dir = shift @_;
+
+  my @plugins;
+  return \@plugins unless opendir(DIR, $dir);
+  foreach my $file (readdir(DIR)) {
+    next unless ( $file =~ /^[^\.]\w+\.plugin/ );
+    push @plugins, $dir.$file;
+    #push @plugins, $dir.$file;
+  }
+  closedir DIR;
+  return \@plugins;
+}
+
+my $file = shift;
+
+if (!(defined $file && -f $file) ) {
+  _usage();
+  exit 1;
+}
+
+my $qsos = new QSOS::Document;
+$qsos->load($file);
+
+my @plugins_list;
+foreach my $dir (@plugin_dirs) {
+  next unless ( -d $dir );
+  my $newplugins = _loadplugins ($dir);
+  push @plugins_list, @$newplugins;
+}
+
+my @err;
+my @warn;
+foreach my $plugin (@plugins_list) {
+  if (!eval ("require (\"$plugin\")")) {
+    print "problem with $plugin: $@" if $@;
+  }
+  my $ret = check($file,$qsos);
+  &check = undef;
+  if (defined ($ret->{err}) && @{$ret->{err}}) {
+    push @err, @{$ret->{err}};
+  }
+  if (defined ($ret->{warn}) && $ret->{warn}) {
+    push @err, @{$ret->{warn}};
+  } 
+}
+
+print scalar @err." error(s)\n";
+print "-\t$_\n" foreach (@err);
+print scalar @warn." warning(s)\n";
+print "-\t$_\n" foreach (@warn);

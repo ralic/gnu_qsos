@@ -1,0 +1,22 @@
+sub check {
+  my ($file,$qsos) = @_;
+
+  my @err;
+  my @warn;
+  my $format = $qsos->getqsosformat();
+
+  open QSOSFILE,"<".$file or die;
+
+  my $cpt=1;
+  foreach (<QSOSFILE>) {
+	if (!utf8::valid($_)) {
+	push @err,utf8::is_utf8($_)."No utf8 character line $cpt";
+	}
+	  $cpt++;
+    }
+    
+  close QSOSFILE;
+
+  return { err=> \@err, warn => \@warn  };
+}
+1;
