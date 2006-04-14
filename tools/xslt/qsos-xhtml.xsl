@@ -39,6 +39,9 @@
       </xsl:if>
 
       <xsl:apply-templates select="authors" />
+      <p>
+        You can access to the sheep change log on <a href="http://cvs.savannah.nongnu.org/viewcvs/qsos/sheet/?root=qsos">the CVS</a>.
+      </p>
     </ul>
   </xsl:template>
 
