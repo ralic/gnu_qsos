@@ -21,6 +21,8 @@ xulrunner application.ini
 
 LAUNCHING ON WINDOWS
 
+xuleditor.bat [debug]
+or
 xulrunner.exe application.ini
 
 STATUS
