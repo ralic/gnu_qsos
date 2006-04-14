@@ -21,9 +21,7 @@
 ** QSOS XUL Editor
 ** Documents.js: document object abstracting the QSOS XML format
 **
-**
 ** TODO:
-**	- Authors management
 **	- Load remote QSOS XML file
 */
 
@@ -40,6 +38,7 @@ function Document(name) {
     this.getkeytitle = getkeytitle;
     this.getauthors = getauthors;
     this.addauthor = addauthor;
+    this.delauthor = delauthor;
     this.getappname = getappname;
     this.setappname = setappname;
     this.getlanguage = getlanguage;
@@ -412,18 +411,26 @@ function Document(name) {
     ////////////////////////////////////////////////////////////////////
 
     function getauthors() {
-	//FIXME: return name AND email...
 	var authors = new Array();
-	var nodes = sheet.evaluate("//authors", sheet, null, XPathResult.ANY_TYPE,null);
+	var nodes = sheet.evaluate("//author", sheet, null, XPathResult.ANY_TYPE,null);
 	var node = nodes.iterateNext();
-	
-	var children = sheet.evaluate("//name", node, null, XPathResult.ANY_TYPE,null);
-	var child = children.iterateNext();
-	
-	while (child) {
-		name = child.textContent;
-		authors.push(name);
-		child = children.iterateNext();
+	while (node) {
+		var author = new Object();
+		
+		var names = node.getElementsByTagName("name");
+		if (names.length > 0)
+			author.name = names[0].textContent;
+		else
+			author.name = ""
+		
+		var emails = node.getElementsByTagName("email");
+		if (emails.length > 0)
+			author.email = emails[0].textContent;
+		else
+			author.email = ""
+
+		authors.push(author);
+		node = nodes.iterateNext();
 	}
 	return authors;
     }
@@ -439,6 +446,22 @@ function Document(name) {
 	author.appendChild(name);
 	author.appendChild(email);
 	node.appendChild(author);
+    }
+    
+    function delauthor(varname) {
+    	var marker;
+    	var authors = sheet.evaluate("//authors", sheet, null, XPathResult.ANY_TYPE,null).iterateNext();
+    	var nodes = sheet.evaluate("//author", sheet, null, XPathResult.ANY_TYPE,null);
+	var node = nodes.iterateNext();
+	marker = null;
+	while (node) {
+		var names = node.getElementsByTagName("name");
+		if (names.length > 0) {
+			if (names[0].textContent == varname) marker = node;
+		}
+		node = nodes.iterateNext()
+	}
+	if (marker != null) authors.removeChild(marker);
     }
     
     ////////////////////////////////////////////////////////////////////

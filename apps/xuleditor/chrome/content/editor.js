@@ -21,9 +21,7 @@
 ** QSOS XUL Editor
 ** editor.js: functions associated with the editor.xul file
 **
-**
 ** TODO:
-**	- Authors management
 **	- Load remote QSOS XML file
 */
 
@@ -93,12 +91,12 @@ function openFile() {
         mylist.selectedIndex = licenseid;
         
         //Other fields
-        document.getElementById("f-software").setAttribute("value", myDoc.getappname());
-        document.getElementById("f-release").setAttribute("value", myDoc.getrelease());
-        document.getElementById("f-sotwarefamily").setAttribute("value", myDoc.getqsosappfamily());
-        document.getElementById("f-desc").setAttribute("value", myDoc.getdesc());
-        document.getElementById("f-url").setAttribute("value", myDoc.geturl());
-        document.getElementById("f-demourl").setAttribute("value", myDoc.getdemourl());
+        document.getElementById("f-software").value = myDoc.getappname();
+	document.getElementById("f-release").value = myDoc.getrelease();
+	document.getElementById("f-sotwarefamily").value = myDoc.getqsosappfamily();
+	document.getElementById("f-desc").value = myDoc.getdesc();
+	document.getElementById("f-url").value = myDoc.geturl();
+	document.getElementById("f-demourl").value = myDoc.getdemourl();
         
         freezeGeneric("");
 	//Menu management
@@ -199,29 +197,29 @@ function saveFileAs() {
 //////////////////////////
 //Closes the QSOS XML file and resets window
 function closeFile() {
-    document.getElementById("QSOS").setAttribute("title", "QSOS XUL Editor");
-    document.getElementById("f-software").setAttribute("value", "");
-    document.getElementById("f-release").setAttribute("value", "");
-    document.getElementById("f-sotwarefamily").setAttribute("value", "");
-    document.getElementById("f-desc").setAttribute("value", "");
-    document.getElementById("f-url").setAttribute("value", "");
-    document.getElementById("f-demourl").setAttribute("value", "");
+	document.getElementById("QSOS").setAttribute("title", "QSOS XUL Editor");
+	document.getElementById("f-software").value = "";
+	document.getElementById("f-release").value = "";
+	document.getElementById("f-sotwarefamily").value = "";
+	document.getElementById("f-desc").value = "";
+	document.getElementById("f-url").value = "";
+	document.getElementById("f-demourl").value = "";
 
-	document.getElementById("f-c-title").setAttribute("value","");
+    	document.getElementById("f-c-title").value = "";
 	document.getElementById("f-c-id").setAttribute("myid", "");
 	document.getElementById("f-c-desc0").setAttribute("label", "Score 0");
 	document.getElementById("f-c-desc1").setAttribute("label", "Score 1");
 	document.getElementById("f-c-desc2").setAttribute("label", "Score 2");
-    document.getElementById("f-c-score").selectedIndex = -1;
+    	document.getElementById("f-c-score").selectedIndex = -1;
 	document.getElementById("f-c-comments").value = "";
     
-    init();
-    myDoc = null;
-    id = null;
-    
-    var tree = document.getElementById("mytree");  
-    var treechildren = document.getElementById("myTreechildren");
-    tree.removeChild(treechildren);
+	init();
+	myDoc = null;
+	id = null;
+	
+	var tree = document.getElementById("mytree");  
+	var treechildren = document.getElementById("myTreechildren");
+	tree.removeChild(treechildren);
 }
 
 //Checks Document's state before closing it
@@ -252,11 +250,34 @@ function checkexit() {
 }
 
 ////////////////////////////////////////////////////////////////////
+// Menu "Edit" function
+////////////////////////////////////////////////////////////////////
+
+function updateDoc(newDoc) {
+	if (newDoc != "null") {
+		myDoc = newDoc;
+		docChanged = "true";
+		document.getElementById("file-save").setAttribute("disabled", "false");
+	}
+}
+
+//Submenu "Edit/Authors"
+//Shows the authors.xul window in modal mode
+function authorsDialog() {
+	try {
+		netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect");
+	} catch (e) {
+		alert("Permission to open file was denied.");
+	}
+	window.openDialog('chrome://qsos-xuled/content/authors.xul','Properties','chrome,dialog,modal',myDoc,updateDoc);
+}
+
+////////////////////////////////////////////////////////////////////
 // Menu "Tree" function
 ////////////////////////////////////////////////////////////////////
 
 //Submenus "Tree/Expand All" and "Tree/Collapse All"
-//Expends or collapses the tree
+//Expands or collapses the tree
 //bool: "false" dans collapse, "true" to expand
 function expandTree(bool) {
 	var treeitems = document.getElementsByTagName("treeitem");
@@ -271,7 +292,7 @@ function expandTree(bool) {
 ////////////////////////////////////////////////////////////////////
 
 //Submenu "Help/About"
-//Shox the about.xul window in modal mode
+//Shows the about.xul window in modal mode
 function aboutDialog() {
     try {
         netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect");
@@ -303,6 +324,7 @@ function freezeGeneric(bool) {
 	document.getElementById("f-software").disabled = bool;
 	document.getElementById("f-release").disabled = bool;
 	document.getElementById("f-sotwarefamily").disabled = bool;
+	document.getElementById("f-license").disabled = bool;
 	document.getElementById("f-desc").disabled = bool;
 	document.getElementById("f-url").disabled = bool;
 	document.getElementById("f-demourl").disabled = bool;    
@@ -330,7 +352,7 @@ function treeselect(tree) {
 	//Forces focus to trigger possible onchange event on another XUL element
 	document.getElementById("mytree").focus();
 	id = tree.view.getItemAtIndex(tree.currentIndex).firstChild.firstChild.getAttribute("id");
-	document.getElementById("f-c-title").setAttribute("value", myDoc.getkeytitle(id));
+	document.getElementById("f-c-title").value = myDoc.getkeytitle(id);
 	document.getElementById("f-c-id").setAttribute("myid", id);
 	
 	document.getElementById("f-c-desc0").setAttribute("label", "0: "+myDoc.getkeydesc0(id));
@@ -339,7 +361,7 @@ function treeselect(tree) {
 	var score = myDoc.getkeyscore(id);
     if (score == "-1") {
     	document.getElementById("f-c-deck").selectedIndex = "0";
-	document.getElementById("f-c-desc").setAttribute("value", myDoc.getkeydesc(id));
+	document.getElementById("f-c-desc").value = myDoc.getkeydesc(id);
         freezeScore("true");
     }
     else {
