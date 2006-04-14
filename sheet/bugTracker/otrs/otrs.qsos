@@ -23,7 +23,7 @@
     
     
     <qsosformat>1</qsosformat>
-    <qsosappfamily>ticketingTools</qsosappfamily>
+    <qsosappfamily>bugTrackerTools</qsosappfamily>
     <qsosspecificformat>1</qsosspecificformat>
   </header>
   
@@ -40,7 +40,7 @@
           <desc2>after 3 years</desc2>
           <score>2</score>
           
-	  <comment>Otrs.org domain was created in ??? 2001 </comment>
+	  <comment>Otrs.org domain was created in ? 2001 </comment>
         
 	</element>
         <element name="stability" title="Stability">
@@ -62,7 +62,7 @@
           <desc1>Software comes from a fork but has very few chances of being forked in the futur</desc1>
           <desc2>Software has very little chance of being forked. It does not come from a frok either</desc2>
           
-	  <score>???</score>
+	  <score></score>
           
 	  <comment></comment>
         </element>
@@ -81,7 +81,7 @@
           <desc1>Few refences, non critical usages</desc1>
           <desc2>Often implemented for critical applications</desc2>
           <score>1</score>
-          <comment>OTRS is know to be use in some important organisation.version 2.0.4 is known by its high level of security</comment>
+          <comment>OTRS is known to be use in some important organisation.version 2.0.4 is known by its high level of security</comment>
         </element>
         <element name="contributingcommunity" title="Contributing Community">
           <desc0>No community or without real activity (forum, mailing list, ...)</desc0>
@@ -452,13 +452,13 @@
 
   
   
-  <!--Fonctions propres à un outils de ticketing-->
   
-   <section name="ticketingcomposant" title="ticketing Composant" >
-    <comment>Specific ticketing component tools</comment>
+  
+   <section name="bugTrackercomposant" title="bug tracker Composant" >
+    <comment>Specific bug tracker component tools</comment>
     <desc></desc>
     
-    <!--TRADUIT MOI EN ANGLAIS-->
+   
     <element name="ticketHistoric" title="ticket Historic" >
       
       <desc0>Journalised detail badly defined,not accessible</desc0>
@@ -721,8 +721,8 @@
     </element>
     
     <element name="installationcomplexity" title="installation complexity" >
-      <desc>OTRS installation requires much time and complex configuration 's scripts  </desc>
-      <desc1>OTRS installation requires  much time, no scripts to develop and the readme is detailed </desc1>
+      <desc0>OTRS installation requires much time and complex configuration 's scripts</desc0>
+      <desc1>OTRS installation requires  much time, no scripts to develop and the readme is detailed</desc1>
       <desc2>OTRS installation is done by one clic</desc2>
             
       <comment>Do the installation need a lot of time or/and a strong skill</comment>
