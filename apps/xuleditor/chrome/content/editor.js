@@ -24,7 +24,6 @@
 **
 ** TODO:
 **	- Authors management
-**	- License management
 **	- Load remote QSOS XML file
 */
 
@@ -79,6 +78,19 @@ function openFile() {
         var tree = document.getElementById("mytree");
 	var treechildren = buildtree();
         tree.appendChild(treechildren);
+	
+	//License
+	var licenses = myDoc.getlicenselist();
+	var mypopuplist = document.getElementById("f-license-popup");
+	for(var i=0; i < licenses.length; i++) {
+		var menuitem = document.createElement("menuitem");
+		menuitem.setAttribute("label", licenses[i]);
+		mypopuplist.appendChild(menuitem);
+	}
+			 
+	var licenseid = myDoc.getlicenseid();
+	var mylist = document.getElementById("f-license");
+        mylist.selectedIndex = licenseid;
         
         //Other fields
         document.getElementById("f-software").setAttribute("value", myDoc.getappname());
@@ -358,6 +370,14 @@ function changeRelease(xulelement) {
 function changeSoftwareFamily(xulelement) {
 	docChanged = "true";
 	myDoc.setqsosappfamily(xulelement.value);
+	document.getElementById("file-save").setAttribute("disabled", "false");
+}
+
+//Triggered when software license is modified
+function changeLicense(list, id) {
+	docChanged = "true";
+	myDoc.setlicenseid(id);
+	myDoc.setlicensedesc(list.selectedItem.getAttribute("label"));
 	document.getElementById("file-save").setAttribute("disabled", "false");
 }
 

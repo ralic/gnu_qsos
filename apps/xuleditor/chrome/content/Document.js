@@ -24,7 +24,6 @@
 **
 ** TODO:
 **	- Authors management
-**	- License management
 **	- Load remote QSOS XML file
 */
 
