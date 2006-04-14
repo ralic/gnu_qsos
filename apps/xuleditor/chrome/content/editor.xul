@@ -1,4 +1,4 @@
-<?xml version='1.0'?>
+<?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
 <?xml-stylesheet href="chrome://qsos-xuled/skin/classic.css" type="text/css"?>
 <!DOCTYPE window>
@@ -22,6 +22,11 @@
             <menuseparator/>
             <menuitem id="file-exit" label="Exit" onclick="checkexit();"/>
           </menupopup>
+        </menu>
+	<menu id="edit-menu" label="Edit" onclick="document.getElementById('edit-menu').focus();">
+		<menupopup id="edit-popup">
+			<menuitem id="edit-authors" label="Authors" onclick="authorsDialog();"/>
+		</menupopup>
         </menu>
 	<menu id="tree-menu" label="Tree" onclick="document.getElementById('tree-menu').focus();">
 		<menupopup id="tree-popup">
