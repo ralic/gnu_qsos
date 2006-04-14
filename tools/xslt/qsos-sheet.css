@@ -1,6 +1,7 @@
 body {
   font-family:Verdana,Helvetica;
   font-size:11px;
+  width: 500px;
 }
 
 h1 {
@@ -16,15 +17,11 @@ h3 {
 }
 
 div {
-  margin: 10px;
-  padding: 10px;
-  background-color: #90c3e9;
+  margin: 2px;
 }
 
 li {
-  margin: 12px 12px 12px 12px;
-  padding: 12px 0px 12px 12px;
-  list-style: none  
+  list-style: square; 
 }
 
 #header {
@@ -32,7 +29,6 @@ li {
 }
 
 .section {
-  border-style: dashed;
 
 }
 .element {
@@ -46,3 +42,18 @@ li {
   border-right: 1px solid;
   border-bottom: 1px solid;
 }
+
+.todo {
+  color: red;
+  text-align: right;
+  font-weight: bold;
+  font-size:16px;
+  border-right: 1px solid;
+  border-bottom: 1px solid;
+}
+
+.comments {
+  color: green;
+  
+}
+

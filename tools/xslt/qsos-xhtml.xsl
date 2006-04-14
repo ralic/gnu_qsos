@@ -5,7 +5,7 @@
     <html> 
       <head> 
         <title><xsl:value-of select="document/header/appname" /><xsl:value-of select="document/header/release" /></title>
-        <link rel="stylesheet" type="text/css" href="%%CSS_SHEET%%" />
+        <link rel="stylesheet" type="text/css" href="qsos-sheet.css" />
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
       </head> 
       <body> 
@@ -76,21 +76,51 @@
         
 	<strong><xsl:value-of select="@title" /></strong>
 	
-		<p> <xsl:value-of select="desc0" /> </p>
-       	
-		<p> <xsl:value-of select="desc1" /> </p>
-             
-		<p> <xsl:value-of select="desc2" /> </p>
-       	
-	<xsl:if test="score">
-		<div class="score">Score : <xsl:value-of select="score" />/2</div>
-	</xsl:if>
+	<xsl:if test="desc0">
+	<ul type="desclist">
+		 <xsl:if test="score = '0'">	
+			<li> <strong><xsl:value-of select="desc0" /></strong>  </li>
+			<li> <xsl:value-of select="desc1" /> </li>
+			<li> <xsl:value-of select="desc2" /> </li>
+       		</xsl:if>
+		<xsl:if test="score = '1'">	
+			<li> <xsl:value-of select="desc0" /> </li>
+			<li> <strong><xsl:value-of select="desc1" /></strong>  </li>
+			<li> <xsl:value-of select="desc2" /> </li>
+		</xsl:if>
+		<xsl:if test="score = '2'">	
+			<li> <xsl:value-of select="desc0" /> </li>
+			<li> <xsl:value-of select="desc1" /> </li>
+			<li> <strong><xsl:value-of select="desc2" /></strong>  </li>
+		</xsl:if>
+		<xsl:if test="score = ''">	
+			<li> <xsl:value-of select="desc0" /> </li>
+			<li> <xsl:value-of select="desc1" /> </li>
+			<li> <xsl:value-of select="desc2" /> </li>
+		</xsl:if>
+			
+	</ul>
+	</xsl:if>	
 	
-	<xsl:if test="comment">
+	
+	<xsl:if test="comment !=''">
 		<ul>
-			<div><xsl:value-of select="comment"/></div>
+			<div class="comments">&#60;&#60;<xsl:value-of select="comment"/>&#62;&#62;</div>
 		</ul>
 	</xsl:if>	
+	
+	
+	
+	<xsl:if test="score != ''">
+		<div class="score">Score : <xsl:value-of select="score" />/2</div>
+	
+	</xsl:if>
+	<xsl:if test="score = ''">
+		<div class="todo">Not evaluated</div> 
+	</xsl:if>
+	
+	
+	
 	
 	
 	
