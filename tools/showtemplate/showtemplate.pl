@@ -2,18 +2,22 @@
 
 
 use strict;
+use Getopt::Long;
 
-
-sub _usage {
-  print "usage createtemplate.pl sheet.qsos > template.qsos\n";
+sub _help {
+  print "usage createtemplate.pl -f sheet.qsos > template.qsos\n";
 }
+my ($help, $file, $global);
 
+GetOptions (
+  'file=s' => \$file,
+  'global' => \$global,
+  'help' => \$help,
+);
 
-my $file = shift;
-
-if (!defined ($file)) {
-_usage();
-exit 1;
+if (!($file && (-f $file))) {
+  _help();
+  exit 1;
 }
 
 open FILE,"<".$file or die "can't open $file: $!";
@@ -22,6 +26,10 @@ foreach(<FILE>) {
   s!(<score>).+(</score>)!$1$2!g;
   chomp if (s!^[\ ]{0,}$!!);
   print;
+  if ($global && /<\/section>/) {
+    print "<document>\n";
+    last;
+  }
 }
 
 
