@@ -1,4 +1,4 @@
-#$Id: update_sheet.sh,v 1.5 2006/04/14 11:15:25 goneri Exp $
+#$Id: update_sheet.sh,v 1.6 2006/04/14 11:22:35 goneri Exp $
 #  Copyright (C) 2006 Atos Origin 
 #
 #  Author: Gonéri Le Bouder <goneri.lebouder@atosorigin.com>
@@ -89,7 +89,7 @@ for i in `find  -type d`; do
   createIndex $i
 done
 
-if [ "$UPLOAD" = yes ]
+if [ "$FTP_UPLOAD" = "yes" ]
 then
   upload
 fi
