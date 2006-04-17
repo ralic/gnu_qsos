@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+<!DOCTYPE window>
+
+<dialog id="newscore" title="New score criterion"
+        xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+	buttons="accept,cancel"
+	ondialogaccept="return doOK();"
+        ondialogcancel="return doCancel();">
+	
+<script type="application/x-javascript">
+	
+function doOK() {
+	var fields = new Object();
+	fields.name = document.getElementById("d-c-name").value;
+	fields.title = document.getElementById("d-c-title").value;
+	fields.desc0 = document.getElementById("d-c-desc0").value;
+	fields.desc1 = document.getElementById("d-c-desc1").value;
+	fields.desc2 = document.getElementById("d-c-desc2").value;
+	window.arguments[0](fields);
+	return true;
+}
+
+function doCancel() {
+	return true;
+}
+</script>
+
+<vbox>
+	<label control="d-c-name" value="Unique name: "/>
+	<textbox id="d-c-name"/>
+	
+	<label control="d-c-title" value="Title "/>
+	<textbox id="d-c-title"/>
+	
+	<label control="d-c-desc0" value="Score 0 description: "/>
+	<textbox id="d-c-desc0" multiline="true"/>
+
+	<label control="d-c-desc1" value="Score 0 description: "/>
+	<textbox id="d-c-desc1" multiline="true"/>
+
+	<label control="d-c-desc2" value="Score 0 description: "/>
+	<textbox id="d-c-desc2" multiline="true"/>
+</vbox>
+
+</dialog>

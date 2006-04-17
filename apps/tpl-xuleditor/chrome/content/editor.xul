@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+<?xml-stylesheet href="chrome://qsos-tpl-xuled/skin/classic.css" type="text/css"?>
+<!DOCTYPE window>
+
+<window id="QSOS" title="QSOS Template XUL Editor" width="800px" height="600px"
+    xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+    onload="init();">
+	<script type="application/x-javascript" src="Template.js"></script>
+	<script type="application/x-javascript" src="editor.js"></script>
+	
+	<popup id="element-popup" onpopupshowing="displayPopup();">
+		<menuitem id="element-new-section" label="Insert new section" oncommand="newSection();"/>
+		<menuitem id="element-new-desc" label="Insert new information sub criterion" oncommand="openDescDialog();"/>
+		<menuitem id="element-new-score" label="Insert new score sub criterion" oncommand="openScoreDialog();"/>
+		<menuitem id="element-delete" label="Delete"/>
+	</popup>
+	
+	<vbox flex = "1">
+		<toolbox>
+			<menubar id="mymenubar">
+				<menu id="file-menu" label="File" onclick="document.getElementById('file-menu').focus();">
+					<menupopup id="file-popup">
+						<menuitem id="file-open" label="Open" oncommand="checkopenFile();"/>
+						<menuitem id="file-save" label="Save" oncommand="saveFile();"/>
+						<menuitem id="file-saveas" label="Save As" oncommand="saveFileAs();"/>
+						<menuitem id="file-close" label="Close"  oncommand="checkcloseFile();"/>
+						<menuseparator/>
+						<menuitem id="file-exit" label="Exit" oncommand="checkexit();"/>
+					</menupopup>
+				</menu>
+				<menu id="tree-menu" label="Tree" onclick="document.getElementById('tree-menu').focus();">
+					<menupopup id="tree-popup">
+						<menuitem id="tree-expand" label="Expand all" oncommand="expandTree('true');"/>
+						<menuitem id="tree-collapse" label="Collapse all" oncommand="expandTree('false');"/>
+					</menupopup>
+				</menu>
+				<menu id="help-menu" label="Help" onclick="document.getElementById('help-menu').focus();">
+					<menupopup id="help-popup">
+						<menuitem id="help-about" label="About" oncommand="aboutDialog();"/>
+					</menupopup>
+				</menu>
+			</menubar>
+		</toolbox>
+		<hbox flex = "1">
+			<vbox>
+				<tree id="mytree" context="element-popup" width="300px" onselect="treeselect(this);" flex="1">
+				<treecols>
+					<treecol id="name" label="Criteria" primary="true" flex="1"/>
+				</treecols>
+				</tree>
+			</vbox>
+			<vbox flex = "1">
+				<groupbox id="g-template">
+					<caption><label value="Template"/></caption>
+					<vbox>
+						<label control="f-softwarefamily" value="Software family: "/>
+						<textbox id="f-softwarefamily" onchange="changeSoftwareFamily(this);"/>
+						<label control="f-version" value="Version: "/>
+						<textbox id="f-version" onchange="changeVersion(this);"/>
+					</vbox>
+				</groupbox>
+				<groupbox id="g-c-id">
+					<caption><label id="f-c-title" value="Criterion"/></caption>
+					<groupbox id="g-c-type">
+						<caption><label value="Type"/></caption>
+						<radiogroup id="f-c-type" orient="horizontal">
+							<radio id="f-c-info" label="Information" flex="1" oncommand="changeType('desc');"/>
+							<radio id="f-c-score" label="Score" flex="1" oncommand="changeType('score');"/>
+						</radiogroup>
+					</groupbox>
+					<groupbox id="g-c-desc">
+						<caption><label value="Description"/></caption>
+						<textbox id="f-c-desc" multiline="true" onchange="changeDesc(this);"/>
+					</groupbox>
+					<groupbox id="g-c-scores">
+						<caption><label value="Scores"/></caption>
+						<label control="f-c-score0" value="Score 0: "/>
+						<textbox id="f-c-score0" multiline="true" onchange="changeScore0(this.value);"/>
+						<label control="f-c-score1" value="Score 1: "/>
+						<textbox id="f-c-score1" multiline="true" onchange="changeScore1(this.value);"/>
+						<label control="f-c-score2" value="Score 2: "/>
+						<textbox id="f-c-score2" multiline="true" onchange="changeScore2(this.value);"/>
+					</groupbox>
+				</groupbox>
+			</vbox>
+		</hbox>
+	</vbox>
+</window>

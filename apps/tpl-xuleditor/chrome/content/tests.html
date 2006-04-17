@@ -1,0 +1,24 @@
+<html>
+<head>
+<title>Template.js tests</title>
+<script type="application/x-javascript" src="Template.js"></script>
+<head>
+
+<body>
+<h3>Template.js tests</h3>
+<script type="application/x-javascript">
+
+function echo(text) {
+	document.writeln(text+"<br/>");
+}
+
+var path = "/home/raph/Documents/CVSLOCAL/qsos/apps/tpl-xuleditor/chrome/content/test.qsos";
+var myDoc = new Template();
+myDoc.load(path);
+
+echo(myDoc.getqsosappfamily());
+echo(myDoc.getqsosspecificformat());
+
+</script>
+<body>
+</html>
