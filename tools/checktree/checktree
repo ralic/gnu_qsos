@@ -1,0 +1,29 @@
+#!/bin/sh
+# $Id: checktree,v 1.1 2006/04/18 09:48:40 goneri Exp $
+# Gonéri Le Bouder
+
+SHOWTEMPLATE="../showtemplate/showtemplate.pl"
+DIR=`pwd`
+cd ../../sheet/
+if [ ! -f "global.xml" ]; then
+  echo "global.xml doesn't exist in this tree"
+  exit 1
+fi
+
+for file in `find -name '*.qsos' -type f|grep -v template`;do
+ 
+
+  $DIR/$SHOWTEMPLATE --global -f $file > `dirname $file`/global.tmp
+
+  #diff -E -b global.xml `dirname $file`/global.tmp > /tmp/diff.`basename $file`.$$ 
+  diff -E -b global.xml `dirname $file`/global.tmp > /tmp/diff.`basename $file`.$$ 
+  if [ "$?" -ne "0" ];then
+    echo
+    echo "* Problem with $file"
+    echo $file global section differe from the global.xml section#: /tmp/diff.`basename $file`.$$
+    echo "####### diff ######"
+    cat /tmp/diff.`basename $file`.$$
+  fi
+  rm `dirname $file`/global.tmp
+  rm /tmp/diff.`basename $file`.$$
+done
