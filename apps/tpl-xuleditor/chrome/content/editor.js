@@ -380,6 +380,7 @@ function treeselect(tree) {
 				break;
 			case "score":
 				document.getElementById("f-c-type").selectedIndex = 1;
+				break;
 		}
 		freezeType("true");
 		freezeDesc("true");
@@ -502,22 +503,33 @@ function displayPopup() {
 	var menuSection = document.getElementById("element-new-section");
 	var menuDesc = document.getElementById("element-new-desc");
 	var menuScore = document.getElementById("element-new-score");
-	switch (myDoc.getNodeType(id)) {
-		case "section":
-			menuSection.setAttribute("disabled", "false");
-			menuDesc.setAttribute("disabled", "false");
-			menuScore.setAttribute("disabled", "false");
-			break;
-		case "info":
-			menuSection.setAttribute("disabled", "true");
-			menuDesc.setAttribute("disabled", "false");
-			menuScore.setAttribute("disabled", "false");
-			break;
-		case "score":
-			menuSection.setAttribute("disabled", "true");
-			menuDesc.setAttribute("disabled", "true");
-			menuScore.setAttribute("disabled", "true");
-			break;
+	var menuDelete = document.getElementById("element-delete");
+	
+	if (myDoc.isGenericSection(id)) {
+		menuSection.setAttribute("disabled", "true");
+		menuDesc.setAttribute("disabled", "true");
+		menuScore.setAttribute("disabled", "true");
+		menuDelete.setAttribute("disabled", "true");
+	}
+	else {
+		menuDelete.setAttribute("disabled", "false");
+		switch (myDoc.getNodeType(id)) {
+			case "section":
+				menuSection.setAttribute("disabled", "false");
+				menuDesc.setAttribute("disabled", "false");
+				menuScore.setAttribute("disabled", "false");
+				break;
+			case "info":
+				menuSection.setAttribute("disabled", "true");
+				menuDesc.setAttribute("disabled", "false");
+				menuScore.setAttribute("disabled", "false");
+				break;
+			case "score":
+				menuSection.setAttribute("disabled", "true");
+				menuDesc.setAttribute("disabled", "true");
+				menuScore.setAttribute("disabled", "true");
+				break;
+		}
 	}
 }
 
