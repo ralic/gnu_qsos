@@ -32,6 +32,7 @@ function Template() {
     var filename;
     
     //Public methods declaration
+    this.create = create;
     this.load = load;
     this.write = write;
     this.getqsosspecificformat = getqsosspecificformat;
@@ -39,6 +40,7 @@ function Template() {
     this.getqsosappfamily = getqsosappfamily;
     this.setqsosappfamily = setqsosappfamily;
     this.getkeytitle = getkeytitle;
+    this.setkeytitle = setkeytitle;
     this.getkeydesc = getkeydesc;
     this.setkeydesc = setkeydesc;
     this.getkeydesc0 = getkeydesc0;
@@ -51,6 +53,7 @@ function Template() {
     this.dump = dump;
     this.getfilename = getfilename;
     this.setfilename = setfilename;
+    this.isGenericSection = isGenericSection;
     this.hassubelements = hassubelements;
     this.getcomplextree = getcomplextree;
 
@@ -60,6 +63,7 @@ function Template() {
     this.createElementDesc = createElementDesc;
     this.createElementScore = createElementScore;
     this.insertNodeBefore = insertNodeBefore;
+    this.insertSection = insertSection;
     this.insertSubelement = insertSubelement;
     this.getNodeType = getNodeType;
     this.setElementType = setElementType;
@@ -70,6 +74,19 @@ function Template() {
     // QSOS XML file functions
     ////////////////////////////////////////////////////////////////////
 
+    //Load and parse the local QSOS XML file
+    //initializes local variable: sheet
+    //name: filepath to the QSOS XML file
+    function create(name) {
+	
+	//Gets the generic template
+	loadremote("chrome://qsos-tpl-xuled/content/generic.qsos");
+	
+	//Saves the new file
+	filename = name;
+	write();
+    }
+    
     //Load and parse the local QSOS XML file
     //initializes local variable: sheet
     //name: filepath to the QSOS XML file
@@ -257,12 +274,34 @@ function Template() {
     function getfilename() {
     	return filename
     }
+    
+    //Retruns true if the node belongs to the "generic" section
+    function isGenericSection(element) {
+    	var node = sheet.evaluate("//*[@name='"+element+"']", sheet, null, XPathResult.ANY_TYPE,null).iterateNext();
+	
+	if (node.tagName == "section") {
+		if (node.getAttribute("name") == "generic") return true;
+		else return false;
+	}
+	
+    	while (node.parentNode.tagName != "section") { 
+		node = node.parentNode
+ 	}
+	if (node.parentNode.getAttribute("name") == "generic") return true;
+	else return false;
+    }
 
     function getkeytitle(element) {
-    	var nodes = sheet.evaluate("//element[@name='"+element+"']", sheet, null, XPathResult.ANY_TYPE,null);
+    	var nodes = sheet.evaluate("//*[@name='"+element+"']", sheet, null, XPathResult.ANY_TYPE,null);
         var node = nodes.iterateNext();
         if (node) return node.getAttribute("title");
         else return "";
+    }
+    
+    function setkeytitle(element, value) {
+	var nodes = sheet.evaluate("//*[@name='"+element+"']", sheet, null, XPathResult.ANY_TYPE,null);
+	var node = nodes.iterateNext();
+	if (node) node.setAttribute("title", value);
     }
     
     function getqsosspecificformat() {
@@ -436,6 +475,13 @@ function Template() {
 		var parentElement = refelement.parentNode;
 		parentElement.insertBefore(element, refelement);
 	}
+    }
+    
+    //Inserts a new section
+    //section: section to be inserted
+    function insertSection(element) {
+    	sheet.documentElement.appendChild(element);
+	return "ok";
     }
 
     //Inserts a subelement in another one
