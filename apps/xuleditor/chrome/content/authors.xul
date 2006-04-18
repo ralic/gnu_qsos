@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+<!DOCTYPE window>
+
+<dialog id="authors" title="Authors"
+    xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+    buttons="accept"
+    ondialogaccept="return doOK();"
+    onload="init();">
+
+<script type="application/x-javascript" src="authors.js"></script>
+	
+<vbox>
+	<hbox><label control="f-a-name" value="Name"/><textbox id="f-a-name"/></hbox>
+	<hbox><label control="f-a-email" value="Email"/><textbox id="f-a-email"/></hbox>
+	<hbox>
+		<button label="Add" oncommand="addAuthor();"/>
+		<button label="Delete" oncommand="deleteAuthor();"/>
+	</hbox>
+	<label control="f_a-list" value="Authors: "/>
+	<listbox id="f-a-list" rows="3" onselect="changeAuthor(this.selectedItem);"></listbox>
+</vbox>
+
+</dialog>
