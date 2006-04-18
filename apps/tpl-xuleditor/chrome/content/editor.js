@@ -52,6 +52,55 @@ function init() {
 //////////////////////////
 //Submenu "File/Open"
 //////////////////////////
+//Creates a new local QSOS XML file and populates the window (tree and generic fields)
+function newFile() {
+	try {
+		netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect");
+	} catch (e) {
+		alert("Permission to open file was denied.");
+	}
+	var nsIFilePicker = Components.interfaces.nsIFilePicker;
+	var fp = Components.classes["@mozilla.org/filepicker;1"]
+	.createInstance(nsIFilePicker);
+	fp.init(window, "Save the file as", nsIFilePicker.modeSave);
+	fp.appendFilter("QSOS file","*.qsos");
+	var res = fp.show();
+	if (res == nsIFilePicker.returnOK) {
+		myDoc = new Template();
+		myDoc.create(fp.file.path);
+	
+		//Window's title
+		document.getElementById("QSOS").setAttribute("title", "New QSOS template");
+		
+		//Tree population
+		var tree = document.getElementById("mytree");
+		var treechildren = buildtree();
+		tree.appendChild(treechildren);
+		
+		//Other fields
+		document.getElementById("f-softwarefamily").value = myDoc.getqsosappfamily();
+		document.getElementById("f-version").value = myDoc.getqsosspecificformat();
+		
+		freezeGeneric("");
+		//Menu management
+		document.getElementById("file-close").setAttribute("disabled", "false");
+		document.getElementById("file-saveas").setAttribute("disabled", "false");
+	}
+}
+
+//Checks Document's state before creating a new one
+function checknewFile() {
+	if (myDoc) {
+		if (docChanged == "true") {
+			confirmDialog("Document has been modified but not saved, close it anyway?", closeFile);
+		}
+		else {
+			closeFile();
+		}
+	}
+	newFile();
+}
+
 //Opens a local QSOS XML file and populates the window (tree and generic fields)
 function openFile() {
     try {
@@ -147,8 +196,8 @@ function buildsubtree(criteria) {
 function saveFile() {
     if (myDoc) {
     	myDoc.write();
-	    docChanged = "false";
-	    //Menu management
+	docChanged = "false";
+	//Menu management
         document.getElementById("file-save").setAttribute("disabled", "true");
     }
 }
@@ -280,10 +329,15 @@ function freezeGeneric(bool) {
 	document.getElementById("f-version").disabled = bool;
 }
 
+//(Un)freezes title field (criterion properties)
+//bool: "true" to freeze; "" to unfreeze
+function freezeTitle(bool) {
+	document.getElementById("f-c-title").disabled = bool;
+}
+
 //(Un)freezes type fields (criterion properties)
 //bool: "true" to freeze; "" to unfreeze
 function freezeType(bool) {
-	document.getElementById("f-c-type").selectedIndex = -1;
 	document.getElementById("f-c-type").disabled = bool;
 }
 
@@ -316,33 +370,63 @@ function treeselect(tree) {
 	//Forces focus to trigger possible onchange event on another XUL element
 	document.getElementById("mytree").focus();
 	id = tree.view.getItemAtIndex(tree.currentIndex).firstChild.firstChild.getAttribute("id");
+	
 	document.getElementById("g-c-id").setAttribute("myid", id);
-
-	//TODO: title
-	document.getElementById("f-c-title").value = myDoc.getkeytitle(id);
-	if (myDoc.hassubelements(id)) freezeType("true");
-	else freezeType("");
-	switch (myDoc.getNodeType(id)) {
-		case "section":
-			freezeType("true");
-			freezeDesc("");
-			document.getElementById("f-c-desc").value = myDoc.getkeydesc(id);
-			freezeScores("true");
-			break;
-		case "info":
-			document.getElementById("f-c-type").selectedIndex = 0;
-			freezeDesc("");
-			document.getElementById("f-c-desc").value = myDoc.getkeydesc(id);
-			freezeScores("true");
-			break;
-		case "score":
-			document.getElementById("f-c-type").selectedIndex = 1;
-			freezeScores("");
-			document.getElementById("f-c-score0").value = myDoc.getkeydesc0(id);
-			document.getElementById("f-c-score1").value = myDoc.getkeydesc1(id);
-			document.getElementById("f-c-score2").value = myDoc.getkeydesc2(id);
-			freezeDesc("true");
-			break;
+	
+	if (myDoc.isGenericSection(id)) {
+		switch (myDoc.getNodeType(id)) {
+			case "info":
+				document.getElementById("f-c-type").selectedIndex = 0;
+				break;
+			case "score":
+				document.getElementById("f-c-type").selectedIndex = 1;
+		}
+		freezeType("true");
+		freezeDesc("true");
+		freezeScores("true");
+		freezeTitle("true");
+		document.getElementById("f-c-name").value = "UID: "+id;
+		document.getElementById("f-c-title").value = myDoc.getkeytitle(id);
+		document.getElementById("f-c-desc").value = myDoc.getkeydesc(id);
+		document.getElementById("f-c-score0").value = myDoc.getkeydesc0(id);
+		document.getElementById("f-c-score1").value = myDoc.getkeydesc1(id);
+		document.getElementById("f-c-score2").value = myDoc.getkeydesc2(id);
+	}
+	else {
+		if (myDoc.hassubelements(id)) freezeType("true");
+		else freezeType("");
+		switch (myDoc.getNodeType(id)) {
+			case "section":
+				document.getElementById("f-c-type").selectedIndex = -1;
+				freezeType("true");
+				freezeDesc("");
+				freezeTitle("");
+				document.getElementById("f-c-name").value = "UID: "+id;
+				document.getElementById("f-c-title").value = myDoc.getkeytitle(id);
+				document.getElementById("f-c-desc").value = myDoc.getkeydesc(id);
+				freezeScores("true");
+				break;
+			case "info":
+				document.getElementById("f-c-type").selectedIndex = 0;
+				freezeDesc("");
+				freezeTitle("");
+				document.getElementById("f-c-name").value = "UID: "+id;
+				document.getElementById("f-c-title").value = myDoc.getkeytitle(id);
+				document.getElementById("f-c-desc").value = myDoc.getkeydesc(id);
+				freezeScores("true");
+				break;
+			case "score":
+				document.getElementById("f-c-type").selectedIndex = 1;
+				freezeScores("");
+				freezeTitle("");
+				document.getElementById("f-c-name").value = "UID: "+id;
+				document.getElementById("f-c-title").value = myDoc.getkeytitle(id);
+				document.getElementById("f-c-score0").value = myDoc.getkeydesc0(id);
+				document.getElementById("f-c-score1").value = myDoc.getkeydesc1(id);
+				document.getElementById("f-c-score2").value = myDoc.getkeydesc2(id);
+				freezeDesc("true");
+				break;
+		}
 	}
 }
 
@@ -358,6 +442,14 @@ function changeVersion(xulelement) {
 	docChanged = "true";
 	myDoc.setqsosspecificformat(xulelement.value);
 	document.getElementById("file-save").setAttribute("disabled", "false");
+}
+
+//Triggered when current criteria's title is modified
+function changeTitle(xulelement) {
+	docChanged = "true";
+	myDoc.setkeytitle(id, xulelement.value);
+	document.getElementById("file-save").setAttribute("disabled", "false");
+	document.getElementById(id).setAttribute("label", xulelement.value);
 }
 
 //Triggered when current criteria's description is modified
@@ -429,9 +521,36 @@ function displayPopup() {
 	}
 }
 
-function newSection() {
-	var sectionId = prompt("Enter an id the new section", "");
-	alert(sectionId);
+function newSection(values) {
+	//Creates new section element
+	var section = myDoc.createSection(values.name, values.title, values.desc);
+	myDoc.insertSection(section);
+	
+	//Creates new tree entry
+	var treeitem = document.createElement("treeitem");
+	treeitem.setAttribute("container", "true");
+	treeitem.setAttribute("open", "true");
+	var treerow = document.createElement("treerow");
+	var treecell = document.createElement("treecell");
+	treecell.setAttribute("id", values.name);
+	treecell.setAttribute("label", values.title);
+	treerow.appendChild(treecell);
+	treeitem.appendChild(treerow);
+	
+	document.getElementById("mytree").lastChild.appendChild(treeitem);
+	document.getElementById("mytree").focus();
+	
+	document.getElementById("file-save").setAttribute("disabled", "false");
+	docChanged = "true";
+}
+
+function openSectionDialog() {
+	try {
+		netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect");
+	} catch (e) {
+		alert("Permission to read file was denied.");
+	}
+	window.openDialog('chrome://qsos-tpl-xuled/content/newsection.xul','New section','chrome,dialog,modal', myDoc, newSection);
 }
 
 ////////////////////////////////////////////////////////////////////
@@ -440,6 +559,7 @@ function newSection() {
 
 //Callback function of the newdesc.xul dialog window
 function newDesc(values) {
+	docChanged = "true";
 	//Creates new Information element
 	var criterion = myDoc.createElementDesc(values.name, values.title, values.desc);
 	myDoc.insertSubelement(criterion, id);
@@ -468,6 +588,9 @@ function newDesc(values) {
 		newchildren.appendChild(treeitem);
 		tree.view.getItemAtIndex(tree.currentIndex).appendChild(newchildren);
 	}
+
+	document.getElementById("file-save").setAttribute("disabled", "false");
+	docChanged = "true";
 }
 
 function openDescDialog() {
@@ -481,7 +604,7 @@ function openDescDialog() {
 
 //Callback function of the newdesc.xul dialog window
 function newScore(values) {
-	//Creates new Information element
+	//Creates new Score element
 	var criterion = myDoc.createElementScore(values.name, values.title, values.desc0, values.desc1, values.desc2);
 	myDoc.insertSubelement(criterion, id);
 
@@ -509,6 +632,9 @@ function newScore(values) {
 		newchildren.appendChild(treeitem);
 		tree.view.getItemAtIndex(tree.currentIndex).appendChild(newchildren);
 	}
+	
+	document.getElementById("file-save").setAttribute("disabled", "false");
+	docChanged = "true";
 }
 
 function openScoreDialog() {
@@ -517,5 +643,23 @@ function openScoreDialog() {
         } catch (e) {
             alert("Permission to read file was denied.");
         }
-	window.openDialog('chrome://qsos-tpl-xuled/content/newscore.xul','New criterion','chrome,dialog,modal', newScore);
+	window.openDialog('chrome://qsos-tpl-xuled/content/newscore.xul','New criterion','chrome,dialog,modal', myDoc, newScore);
+}
+
+function deleteCriterion() {
+	var result = confirm("Do you confirm deletion of UID "+id+" criterion?");
+	if (result) {
+		myDoc.deleteNode(id);
+		var node = document.getElementById(id).parentNode.parentNode;
+		var parentNode = node.parentNode;
+		parentNode.removeChild(node);
+		var treeitems = parentNode.getElementsByTagName("treeitem");
+		if (treeitems.length <= 0) {
+			//Parent has no more children
+			parentNode.parentNode.removeChild(parentNode);
+		}
+		
+		document.getElementById("file-save").setAttribute("disabled", "false");
+		docChanged = "true";
+	}
 }
