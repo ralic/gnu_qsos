@@ -10,10 +10,10 @@
 	<script type="application/x-javascript" src="editor.js"></script>
 	
 	<popup id="element-popup" onpopupshowing="displayPopup();">
-		<menuitem id="element-new-section" label="Insert new section" oncommand="newSection();"/>
+		<menuitem id="element-new-section" label="Insert new section" oncommand="openSectionDialog();"/>
 		<menuitem id="element-new-desc" label="Insert new information sub criterion" oncommand="openDescDialog();"/>
 		<menuitem id="element-new-score" label="Insert new score sub criterion" oncommand="openScoreDialog();"/>
-		<menuitem id="element-delete" label="Delete"/>
+		<menuitem id="element-delete" label="Delete" oncommand="deleteCriterion();"/>
 	</popup>
 	
 	<vbox flex = "1">
@@ -21,6 +21,7 @@
 			<menubar id="mymenubar">
 				<menu id="file-menu" label="File" onclick="document.getElementById('file-menu').focus();">
 					<menupopup id="file-popup">
+						<menuitem id="file-new" label="New" oncommand="checknewFile();"/>
 						<menuitem id="file-open" label="Open" oncommand="checkopenFile();"/>
 						<menuitem id="file-save" label="Save" oncommand="saveFile();"/>
 						<menuitem id="file-saveas" label="Save As" oncommand="saveFileAs();"/>
@@ -61,7 +62,9 @@
 					</vbox>
 				</groupbox>
 				<groupbox id="g-c-id">
-					<caption><label id="f-c-title" value="Criterion"/></caption>
+					<caption><label id="f-c-name" value="UID"/></caption>
+					<label control="f-c-title" value="Title"/>
+					<textbox id="f-c-title" onchange="changeTitle(this);"/>
 					<groupbox id="g-c-type">
 						<caption><label value="Type"/></caption>
 						<radiogroup id="f-c-type" orient="horizontal">
