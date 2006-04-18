@@ -11,14 +11,25 @@
 <script type="application/x-javascript">
 	
 function doOK() {
-	var fields = new Object();
-	fields.name = document.getElementById("d-c-name").value;
-	fields.title = document.getElementById("d-c-title").value;
-	fields.desc0 = document.getElementById("d-c-desc0").value;
-	fields.desc1 = document.getElementById("d-c-desc1").value;
-	fields.desc2 = document.getElementById("d-c-desc2").value;
-	window.arguments[0](fields);
-	return true;
+	var myDoc = window.arguments[0];
+	if (document.getElementById("d-c-name").value == "") {
+		alert("UID is mandatory");
+		return false;
+	}
+	if (myDoc.fetchNode(document.getElementById("d-c-name").value) != "false") {
+		alert("A criterion with id "+document.getElementById("d-c-name").value+" already exists.");
+		return false;
+	}
+	else {
+		var fields = new Object();
+		fields.name = document.getElementById("d-c-name").value;
+		fields.title = document.getElementById("d-c-title").value;
+		fields.desc0 = document.getElementById("d-c-desc0").value;
+		fields.desc1 = document.getElementById("d-c-desc1").value;
+		fields.desc2 = document.getElementById("d-c-desc2").value;
+		window.arguments[1](fields);
+		return true;
+	}
 }
 
 function doCancel() {
@@ -27,7 +38,7 @@ function doCancel() {
 </script>
 
 <vbox>
-	<label control="d-c-name" value="Unique name: "/>
+	<label control="d-c-name" value="Unique name (UID): "/>
 	<textbox id="d-c-name"/>
 	
 	<label control="d-c-title" value="Title "/>
@@ -36,10 +47,10 @@ function doCancel() {
 	<label control="d-c-desc0" value="Score 0 description: "/>
 	<textbox id="d-c-desc0" multiline="true"/>
 
-	<label control="d-c-desc1" value="Score 0 description: "/>
+	<label control="d-c-desc1" value="Score 1 description: "/>
 	<textbox id="d-c-desc1" multiline="true"/>
 
-	<label control="d-c-desc2" value="Score 0 description: "/>
+	<label control="d-c-desc2" value="Score 2 description: "/>
 	<textbox id="d-c-desc2" multiline="true"/>
 </vbox>
 

@@ -12,6 +12,10 @@
 	
 function doOK() {
 	var myDoc = window.arguments[0];
+	if (document.getElementById("d-c-name").value == "") {
+		alert("UID is mandatory");
+		return false;
+	}
 	if (myDoc.fetchNode(document.getElementById("d-c-name").value) != "false") {
 	alert("A criterion with id "+document.getElementById("d-c-name").value+" already exists.");
 		return false;
@@ -32,7 +36,7 @@ function doCancel() {
 </script>
 
 <vbox>
-	<label control="d-c-name" value="Unique name: "/>
+	<label control="d-c-name" value="Unique name (UID): "/>
 	<textbox id="d-c-name"/>
 	
 	<label control="d-c-title" value="Title "/>
