@@ -59,7 +59,6 @@ foreach my $plugin (@plugins_list) {
     print "problem with $plugin: $@" if $@;
   }
   my $ret = check($file,$qsos);
-  &check = undef;
   if (defined ($ret->{err}) && @{$ret->{err}}) {
     push @err, @{$ret->{err}};
   }
