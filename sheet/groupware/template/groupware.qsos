@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- $Id: groupware.qsos,v 1.6 2006/03/28 19:59:03 goneri Exp $ --><document>
+<!-- $Id: groupware.qsos,v 1.7 2006/04/18 09:46:40 goneri Exp $ --><document>
   <header>
     <authors>
       <author>
@@ -17,7 +17,7 @@
     <url></url>
     <desc></desc>
     <demourl></demourl>
-    <qsosformat></qsosformat>
+    <qsosformat>1.6</qsosformat>
     <qsosappfamily></qsosappfamily>
     <qsosspecificformat></qsosspecificformat>
   </header>

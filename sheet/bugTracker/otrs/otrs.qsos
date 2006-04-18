@@ -22,7 +22,7 @@
     <demourl>http://otrs.org/demo/</demourl>
     
     
-    <qsosformat>1</qsosformat>
+    <qsosformat>1.6</qsosformat>
     <qsosappfamily>bugTrackerTools</qsosappfamily>
     <qsosspecificformat>1</qsosspecificformat>
   </header>
@@ -138,7 +138,7 @@
         
 	
 	
-	<element name="activityonfunctionnalities" title="Activity on functionalities">
+	<element name="activityonfunctionalities" title="Activity on functionalities">
           <desc0>No or few new functionalities</desc0>
           <desc1>Evolution of the product driven by the core team or by user's request without any clearly explained process</desc1>
           <desc2>Tool(s) to manage feature requests, strong interaction with roadmap</desc2>

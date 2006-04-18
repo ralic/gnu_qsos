@@ -19,7 +19,7 @@
     <url>http://www.jboss.com/products/jbossportal</url>
     <desc>JBoss Portal provides an open source and standards-based environment for hosting and serving a portal's Web interface, publishing and managing its content, and customizing its experience</desc>
     <demourl>http://portal.demo.jboss.com/</demourl>
-    <qsosformat>1</qsosformat>
+    <qsosformat>1.6</qsosformat>
     <qsosappfamily>Portal and CMS tools</qsosappfamily>
     <qsosspecificformat>1</qsosspecificformat>
   </header>
@@ -118,7 +118,7 @@
           <score>2</score>
           <comment></comment>
         </element>
-        <element name="activityonfunctionnalities" title="Activity on functionnalities">
+        <element name="activityonfunctionalities" title="Activity on functionalities">
           <desc0>No or few new functionalities</desc0>
           <desc1>Evolution of the product driven by the core team or by user's request without any clearly explained process</desc1>
           <desc2>Tool(s) to manage feature requests, strong interaction with roadmap</desc2>
