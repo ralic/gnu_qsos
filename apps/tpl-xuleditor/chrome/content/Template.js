@@ -464,9 +464,13 @@ function Template() {
     ////////////////////////////////////////////////////////////////////
 
     //Inserts a element before another one
-    //element: element to be inserted
+    //name: name of the element to be inserted
     //refname: name of the reference element before which insertion must be done
-    function insertNodeBefore(element, refname) {
+    function insertNodeBefore(name, refname) {
+	var element = fetchNode(name);
+	if (element == "false") {
+		return "Error: no "+name+" node found.";
+	}
 	var refelement = fetchNode(refname);
 	if (refelement == "false") {
 		return "Error: no "+refname+" node found.";
@@ -475,6 +479,7 @@ function Template() {
 		var parentElement = refelement.parentNode;
 		parentElement.insertBefore(element, refelement);
 	}
+	return "ok";
     }
     
     //Inserts a new section
