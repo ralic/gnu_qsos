@@ -13,6 +13,8 @@
 		<menuitem id="element-new-section" label="Insert new section" oncommand="openSectionDialog();"/>
 		<menuitem id="element-new-desc" label="Insert new information sub criterion" oncommand="openDescDialog();"/>
 		<menuitem id="element-new-score" label="Insert new score sub criterion" oncommand="openScoreDialog();"/>
+		<menuitem id="element-moveup" label="Move Up" oncommand="moveUp();"/>
+		<menuitem id="element-movedown" label="Move Down" oncommand="moveDown();"/>
 		<menuitem id="element-delete" label="Delete" oncommand="deleteCriterion();"/>
 	</popup>
 	

@@ -369,8 +369,11 @@ function freezeScores(bool) {
 function treeselect(tree) {
 	//Forces focus to trigger possible onchange event on another XUL element
 	document.getElementById("mytree").focus();
-	id = tree.view.getItemAtIndex(tree.currentIndex).firstChild.firstChild.getAttribute("id");
-	
+
+	try {
+		id = tree.view.getItemAtIndex(tree.currentIndex).firstChild.firstChild.getAttribute("id");
+	} catch (e) {}
+
 	document.getElementById("g-c-id").setAttribute("myid", id);
 	
 	if (myDoc.isGenericSection(id)) {
@@ -499,20 +502,33 @@ function changeType(type) {
 	document.getElementById("file-save").setAttribute("disabled", "false");
 }
 
+////////////////////////////////////////////////////////////////////
+// Popup menu functions
+////////////////////////////////////////////////////////////////////
+
 function displayPopup() {
 	var menuSection = document.getElementById("element-new-section");
 	var menuDesc = document.getElementById("element-new-desc");
 	var menuScore = document.getElementById("element-new-score");
 	var menuDelete = document.getElementById("element-delete");
+	var menuMoveUp = document.getElementById("element-moveup");
+	var menuMoveDown = document.getElementById("element-movedown");
 	
 	if (myDoc.isGenericSection(id)) {
-		menuSection.setAttribute("disabled", "true");
+		if (myDoc.getNodeType(id) == "section") 
+			menuSection.setAttribute("disabled", "false");
+		else
+			menuSection.setAttribute("disabled", "true");
 		menuDesc.setAttribute("disabled", "true");
 		menuScore.setAttribute("disabled", "true");
 		menuDelete.setAttribute("disabled", "true");
+		menuMoveUp.setAttribute("disabled", "true");
+		menuMoveDown.setAttribute("disabled", "true");
 	}
 	else {
 		menuDelete.setAttribute("disabled", "false");
+		menuMoveUp.setAttribute("disabled", "false");
+		menuMoveDown.setAttribute("disabled", "false");
 		switch (myDoc.getNodeType(id)) {
 			case "section":
 				menuSection.setAttribute("disabled", "false");
@@ -564,10 +580,6 @@ function openSectionDialog() {
 	}
 	window.openDialog('chrome://qsos-tpl-xuled/content/newsection.xul','New section','chrome,dialog,modal', myDoc, newSection);
 }
-
-////////////////////////////////////////////////////////////////////
-// New criteria creation
-////////////////////////////////////////////////////////////////////
 
 //Callback function of the newdesc.xul dialog window
 function newDesc(values) {
@@ -673,5 +685,55 @@ function deleteCriterion() {
 		
 		document.getElementById("file-save").setAttribute("disabled", "false");
 		docChanged = "true";
+	}
+}
+
+function moveUp() {
+	var tree = document.getElementById("mytree");
+	var currentItem = tree.view.getItemAtIndex(tree.currentIndex);
+
+	//Close siblings that have children
+	var siblings = currentItem.parentNode.getElementsByTagName("treeitem");
+	for (i=0; i < siblings.length; i++) {
+		if (siblings[i].getElementsByTagName("treechildren").length > 0)
+			siblings[i].setAttribute("open", "false");
+	}
+
+	var previousItem = tree.view.getItemAtIndex(tree.currentIndex - 1);
+
+	if (previousItem.parentNode == currentItem.parentNode) {
+		previousItem.parentNode.insertBefore(currentItem, previousItem);
+
+		var currentId = currentItem.firstChild.firstChild.getAttribute("id");
+		var previousId = previousItem.firstChild.firstChild.getAttribute("id");
+		myDoc.insertNodeBefore(currentId, previousId);
+
+		document.getElementById("file-save").setAttribute("disabled", "false");
+		docChanged = "true";
+	}
+}
+
+function moveDown() {
+	var tree = document.getElementById("mytree");
+	var currentItem = tree.view.getItemAtIndex(tree.currentIndex);
+
+	//Close siblings that have children
+	var siblings = currentItem.parentNode.getElementsByTagName("treeitem");
+	for (i=0; i < siblings.length; i++) {
+		if (siblings[i].getElementsByTagName("treechildren").length > 0)
+			siblings[i].setAttribute("open", "false");
+	}
+
+	var nextItem = tree.view.getItemAtIndex(tree.currentIndex + 1);
+
+	if (nextItem.parentNode == currentItem.parentNode) {
+		nextItem.parentNode.insertBefore(nextItem, currentItem);
+
+		var currentId = currentItem.firstChild.firstChild.getAttribute("id");
+		var nextId = nextItem.firstChild.firstChild.getAttribute("id");
+		myDoc.insertNodeBefore(nextId, currentId);
+
+		document.getElementById("file-save").setAttribute("disabled", "false");
+		docChanged = "true"
 	}
 }
