@@ -82,7 +82,7 @@ function Template() {
     function create(name) {
 	
 	//Gets the generic template
-	loadremote("chrome://qsos-tpl-xuled/content/generic.qsos");
+	loadremote("chrome://qsos-tpl-xuled/content/global.xml");
 	
 	//Saves the new file
 	filename = name;
