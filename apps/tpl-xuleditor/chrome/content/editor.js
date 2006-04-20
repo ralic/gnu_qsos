@@ -157,8 +157,10 @@ function buildtree() {
 	treechildren.setAttribute("id", "myTreechildren");
 	var criteria = myDoc.getcomplextree();
 	for (var i=0; i < criteria.length; i++) {
-		treeitem = newtreeitem(criteria[i]);
-		treechildren.appendChild(treeitem);
+		if (i != 0) {
+			treeitem = newtreeitem(criteria[i]);
+			treechildren.appendChild(treeitem);
+		}
 	}
 	return treechildren;
 }
@@ -247,6 +249,7 @@ function closeFile() {
 	var tree = document.getElementById("mytree");
 	var treechildren = document.getElementById("myTreechildren");
 	tree.removeChild(treechildren);
+	document.getElementById("element-popup").setAttribute("disabled", "true");
 }
 
 //Checks Document's state before closing it
@@ -364,7 +367,7 @@ function freezeScores(bool) {
 // Event functions
 ////////////////////////////////////////////////////////////////////
 
-//Triggered when a new criterion is selected in the tree
+//Triggered when an entry is selected in the tree
 //Fills criteria's fields with new values
 function treeselect(tree) {
 	//Forces focus to trigger possible onchange event on another XUL element
@@ -376,61 +379,39 @@ function treeselect(tree) {
 
 	document.getElementById("g-c-id").setAttribute("myid", id);
 	
-	if (myDoc.isGenericSection(id)) {
-		switch (myDoc.getNodeType(id)) {
-			case "info":
-				document.getElementById("f-c-type").selectedIndex = 0;
-				break;
-			case "score":
-				document.getElementById("f-c-type").selectedIndex = 1;
-				break;
-		}
-		freezeType("true");
-		freezeDesc("true");
-		freezeScores("true");
-		freezeTitle("true");
-		document.getElementById("f-c-name").value = "UID: "+id;
-		document.getElementById("f-c-title").value = myDoc.getkeytitle(id);
-		document.getElementById("f-c-desc").value = myDoc.getkeydesc(id);
-		document.getElementById("f-c-score0").value = myDoc.getkeydesc0(id);
-		document.getElementById("f-c-score1").value = myDoc.getkeydesc1(id);
-		document.getElementById("f-c-score2").value = myDoc.getkeydesc2(id);
-	}
-	else {
-		if (myDoc.hassubelements(id)) freezeType("true");
-		else freezeType("");
-		switch (myDoc.getNodeType(id)) {
-			case "section":
-				document.getElementById("f-c-type").selectedIndex = -1;
-				freezeType("true");
-				freezeDesc("");
-				freezeTitle("");
-				document.getElementById("f-c-name").value = "UID: "+id;
-				document.getElementById("f-c-title").value = myDoc.getkeytitle(id);
-				document.getElementById("f-c-desc").value = myDoc.getkeydesc(id);
-				freezeScores("true");
-				break;
-			case "info":
-				document.getElementById("f-c-type").selectedIndex = 0;
-				freezeDesc("");
-				freezeTitle("");
-				document.getElementById("f-c-name").value = "UID: "+id;
-				document.getElementById("f-c-title").value = myDoc.getkeytitle(id);
-				document.getElementById("f-c-desc").value = myDoc.getkeydesc(id);
-				freezeScores("true");
-				break;
-			case "score":
-				document.getElementById("f-c-type").selectedIndex = 1;
-				freezeScores("");
-				freezeTitle("");
-				document.getElementById("f-c-name").value = "UID: "+id;
-				document.getElementById("f-c-title").value = myDoc.getkeytitle(id);
-				document.getElementById("f-c-score0").value = myDoc.getkeydesc0(id);
-				document.getElementById("f-c-score1").value = myDoc.getkeydesc1(id);
-				document.getElementById("f-c-score2").value = myDoc.getkeydesc2(id);
-				freezeDesc("true");
-				break;
-		}
+	if (myDoc.hassubelements(id)) freezeType("true");
+	else freezeType("");
+	switch (myDoc.getNodeType(id)) {
+		case "section":
+			document.getElementById("f-c-type").selectedIndex = -1;
+			freezeType("true");
+			freezeDesc("");
+			freezeTitle("");
+			document.getElementById("f-c-name").value = "UID: "+id;
+			document.getElementById("f-c-title").value = myDoc.getkeytitle(id);
+			document.getElementById("f-c-desc").value = myDoc.getkeydesc(id);
+			freezeScores("true");
+			break;
+		case "info":
+			document.getElementById("f-c-type").selectedIndex = 0;
+			freezeDesc("");
+			freezeTitle("");
+			document.getElementById("f-c-name").value = "UID: "+id;
+			document.getElementById("f-c-title").value = myDoc.getkeytitle(id);
+			document.getElementById("f-c-desc").value = myDoc.getkeydesc(id);
+			freezeScores("true");
+			break;
+		case "score":
+			document.getElementById("f-c-type").selectedIndex = 1;
+			freezeScores("");
+			freezeTitle("");
+			document.getElementById("f-c-name").value = "UID: "+id;
+			document.getElementById("f-c-title").value = myDoc.getkeytitle(id);
+			document.getElementById("f-c-score0").value = myDoc.getkeydesc0(id);
+			document.getElementById("f-c-score1").value = myDoc.getkeydesc1(id);
+			document.getElementById("f-c-score2").value = myDoc.getkeydesc2(id);
+			freezeDesc("true");
+			break;
 	}
 }
 
@@ -506,6 +487,7 @@ function changeType(type) {
 // Popup menu functions
 ////////////////////////////////////////////////////////////////////
 
+//Determines which menu entries are (dis)abled
 function displayPopup() {
 	var menuSection = document.getElementById("element-new-section");
 	var menuDesc = document.getElementById("element-new-desc");
@@ -514,11 +496,8 @@ function displayPopup() {
 	var menuMoveUp = document.getElementById("element-moveup");
 	var menuMoveDown = document.getElementById("element-movedown");
 	
-	if (myDoc.isGenericSection(id)) {
-		if (myDoc.getNodeType(id) == "section") 
-			menuSection.setAttribute("disabled", "false");
-		else
-			menuSection.setAttribute("disabled", "true");
+	if (myDoc == null) {
+		menuSection.setAttribute("disabled", "true");
 		menuDesc.setAttribute("disabled", "true");
 		menuScore.setAttribute("disabled", "true");
 		menuDelete.setAttribute("disabled", "true");
@@ -526,29 +505,40 @@ function displayPopup() {
 		menuMoveDown.setAttribute("disabled", "true");
 	}
 	else {
-		menuDelete.setAttribute("disabled", "false");
-		menuMoveUp.setAttribute("disabled", "false");
-		menuMoveDown.setAttribute("disabled", "false");
-		switch (myDoc.getNodeType(id)) {
-			case "section":
-				menuSection.setAttribute("disabled", "false");
-				menuDesc.setAttribute("disabled", "false");
-				menuScore.setAttribute("disabled", "false");
-				break;
-			case "info":
-				menuSection.setAttribute("disabled", "true");
-				menuDesc.setAttribute("disabled", "false");
-				menuScore.setAttribute("disabled", "false");
-				break;
-			case "score":
-				menuSection.setAttribute("disabled", "true");
-				menuDesc.setAttribute("disabled", "true");
-				menuScore.setAttribute("disabled", "true");
-				break;
+		if (!id) {
+			menuSection.setAttribute("disabled", "false");
+			menuDesc.setAttribute("disabled", "true");
+			menuScore.setAttribute("disabled", "true");
+			menuDelete.setAttribute("disabled", "true");
+			menuMoveUp.setAttribute("disabled", "true");
+			menuMoveDown.setAttribute("disabled", "true");
+		}
+		else {
+			menuDelete.setAttribute("disabled", "false");
+			menuMoveUp.setAttribute("disabled", "false");
+			menuMoveDown.setAttribute("disabled", "false");
+			switch (myDoc.getNodeType(id)) {
+				case "section":
+					menuSection.setAttribute("disabled", "false");
+					menuDesc.setAttribute("disabled", "false");
+					menuScore.setAttribute("disabled", "false");
+					break;
+				case "info":
+					menuSection.setAttribute("disabled", "true");
+					menuDesc.setAttribute("disabled", "false");
+					menuScore.setAttribute("disabled", "false");
+					break;
+				case "score":
+					menuSection.setAttribute("disabled", "true");
+					menuDesc.setAttribute("disabled", "true");
+					menuScore.setAttribute("disabled", "true");
+					break;
+			}
 		}
 	}
 }
 
+//Callback function of the newsection.xul dialog window
 function newSection(values) {
 	//Creates new section element
 	var section = myDoc.createSection(values.name, values.title, values.desc);
@@ -572,6 +562,7 @@ function newSection(values) {
 	docChanged = "true";
 }
 
+//Context menu "New section"
 function openSectionDialog() {
 	try {
 		netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect");
@@ -617,6 +608,7 @@ function newDesc(values) {
 	docChanged = "true";
 }
 
+//Context menu "New information criterion"
 function openDescDialog() {
         try {
             netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect");
@@ -643,6 +635,7 @@ function newScore(values) {
 	treerow.appendChild(treecell);
 	treeitem.appendChild(treerow);
 
+	//Adds it to the tree
 	var tree = document.getElementById("mytree");
 	var treechildren = tree.view.getItemAtIndex(tree.currentIndex).getElementsByTagName("treechildren");
 
@@ -661,6 +654,7 @@ function newScore(values) {
 	docChanged = "true";
 }
 
+//Context menu "New scored criterion"
 function openScoreDialog() {
         try {
             netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect");
@@ -670,6 +664,61 @@ function openScoreDialog() {
 	window.openDialog('chrome://qsos-tpl-xuled/content/newscore.xul','New criterion','chrome,dialog,modal', myDoc, newScore);
 }
 
+//Context menu "Move Up"
+function moveUp() {
+	var tree = document.getElementById("mytree");
+	var currentItem = tree.view.getItemAtIndex(tree.currentIndex);
+
+	//Close siblings that have children
+	var siblings = currentItem.parentNode.getElementsByTagName("treeitem");
+	for (i=0; i < siblings.length; i++) {
+		if (siblings[i].getElementsByTagName("treechildren").length > 0)
+			siblings[i].setAttribute("open", "false");
+	}
+
+	var previousItem = tree.view.getItemAtIndex(tree.currentIndex - 1);
+
+	//Movement only allowed in the same branch of the tree
+	if (previousItem.parentNode == currentItem.parentNode) {
+		previousItem.parentNode.insertBefore(currentItem, previousItem);
+
+		var currentId = currentItem.firstChild.firstChild.getAttribute("id");
+		var previousId = previousItem.firstChild.firstChild.getAttribute("id");
+		myDoc.insertNodeBefore(currentId, previousId);
+
+		document.getElementById("file-save").setAttribute("disabled", "false");
+		docChanged = "true";
+	}
+}
+
+//Context menu "Move Down"
+function moveDown() {
+	var tree = document.getElementById("mytree");
+	var currentItem = tree.view.getItemAtIndex(tree.currentIndex);
+
+	//Close siblings that have children
+	var siblings = currentItem.parentNode.getElementsByTagName("treeitem");
+	for (i=0; i < siblings.length; i++) {
+		if (siblings[i].getElementsByTagName("treechildren").length > 0)
+			siblings[i].setAttribute("open", "false");
+	}
+
+	var nextItem = tree.view.getItemAtIndex(tree.currentIndex + 1);
+
+	//Movement only allowed in the same branch of the tree
+	if (nextItem.parentNode == currentItem.parentNode) {
+		nextItem.parentNode.insertBefore(nextItem, currentItem);
+
+		var currentId = currentItem.firstChild.firstChild.getAttribute("id");
+		var nextId = nextItem.firstChild.firstChild.getAttribute("id");
+		myDoc.insertNodeBefore(nextId, currentId);
+
+		document.getElementById("file-save").setAttribute("disabled", "false");
+		docChanged = "true"
+	}
+}
+
+//Context menu "Delete"
 function deleteCriterion() {
 	var result = confirm("Do you confirm deletion of UID "+id+" criterion?");
 	if (result) {
@@ -685,55 +734,5 @@ function deleteCriterion() {
 		
 		document.getElementById("file-save").setAttribute("disabled", "false");
 		docChanged = "true";
-	}
-}
-
-function moveUp() {
-	var tree = document.getElementById("mytree");
-	var currentItem = tree.view.getItemAtIndex(tree.currentIndex);
-
-	//Close siblings that have children
-	var siblings = currentItem.parentNode.getElementsByTagName("treeitem");
-	for (i=0; i < siblings.length; i++) {
-		if (siblings[i].getElementsByTagName("treechildren").length > 0)
-			siblings[i].setAttribute("open", "false");
-	}
-
-	var previousItem = tree.view.getItemAtIndex(tree.currentIndex - 1);
-
-	if (previousItem.parentNode == currentItem.parentNode) {
-		previousItem.parentNode.insertBefore(currentItem, previousItem);
-
-		var currentId = currentItem.firstChild.firstChild.getAttribute("id");
-		var previousId = previousItem.firstChild.firstChild.getAttribute("id");
-		myDoc.insertNodeBefore(currentId, previousId);
-
-		document.getElementById("file-save").setAttribute("disabled", "false");
-		docChanged = "true";
-	}
-}
-
-function moveDown() {
-	var tree = document.getElementById("mytree");
-	var currentItem = tree.view.getItemAtIndex(tree.currentIndex);
-
-	//Close siblings that have children
-	var siblings = currentItem.parentNode.getElementsByTagName("treeitem");
-	for (i=0; i < siblings.length; i++) {
-		if (siblings[i].getElementsByTagName("treechildren").length > 0)
-			siblings[i].setAttribute("open", "false");
-	}
-
-	var nextItem = tree.view.getItemAtIndex(tree.currentIndex + 1);
-
-	if (nextItem.parentNode == currentItem.parentNode) {
-		nextItem.parentNode.insertBefore(nextItem, currentItem);
-
-		var currentId = currentItem.firstChild.firstChild.getAttribute("id");
-		var nextId = nextItem.firstChild.firstChild.getAttribute("id");
-		myDoc.insertNodeBefore(nextId, currentId);
-
-		document.getElementById("file-save").setAttribute("disabled", "false");
-		docChanged = "true"
 	}
 }
