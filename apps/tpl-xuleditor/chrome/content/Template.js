@@ -31,6 +31,8 @@ function Template() {
     var file;
     var filename;
     
+    this.transform = transform;
+
     //Public methods declaration
     this.create = create;
     this.load = load;
@@ -532,6 +534,7 @@ function Template() {
 	}
     }
 
+    //Changes the type of an element to Information (Desc)
     function setElementDesc(name) {
         var element = sheet.evaluate("//element[@name='"+name+"']", sheet, null, XPathResult.ANY_TYPE,null).iterateNext();
         if (element) {
@@ -546,6 +549,7 @@ function Template() {
         }
     }
 
+    //Changes the type of an element to Score
     function setElementScore(name) {
         var element = sheet.evaluate("//element[@name='"+name+"']", sheet, null, XPathResult.ANY_TYPE,null).iterateNext();
         if (element) {
@@ -564,5 +568,22 @@ function Template() {
 		element.appendChild(score);
 		element.appendChild(comment);
         }
+    }
+
+    ////////////////////////////////////////////////////////////////////
+    // Unused function (for the time being...)
+    ////////////////////////////////////////////////////////////////////
+
+    //Applies a XSL transformation to the document and return a new document
+    function transform(xslSheet) {
+	var xsltProcessor = new XSLTProcessor();
+	var myXMLHTTPRequest = new XMLHttpRequest();
+	myXMLHTTPRequest.open("GET", xslSheet, false);
+	myXMLHTTPRequest.overrideMimeType('text/xml');
+	myXMLHTTPRequest.send(null);
+	
+	var xslRef = myXMLHTTPRequest.responseXML;
+	xsltProcessor.importStylesheet(xslRef);
+	return xsltProcessor.transformToDocument(sheet);
     }
 }
