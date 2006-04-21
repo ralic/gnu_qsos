@@ -417,14 +417,21 @@
         <score/>
         <comment/>
       </element>
-      <element name="namedconstrainsts" title="Named constrainsts">
+      <element name="namedconstraints" title="Named constraints">
         <desc0>Not implemented</desc0>
         <desc1>Partially implemented</desc1>
         <desc2>Fully implemented</desc2>
         <score/>
         <comment/>
       </element>
-      <element name="nullconstrainsts" title="NULL constrainsts">
+      <element name="columnconstraints" title="Column constraints">
+        <desc0>Not implemented</desc0>
+        <desc1>Partially implemented</desc1>
+        <desc2>Fully implemented</desc2>
+        <score/>
+        <comment/>
+      </element>
+      <element name="nullconstraints" title="NULL constraints">
         <desc0>Not implemented</desc0>
         <desc1>Partially implemented</desc1>
         <desc2>Fully implemented</desc2>
