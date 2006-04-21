@@ -45,15 +45,15 @@
 				</element>
 				<element name="historyknowproblems" title="History, know problems">
 					<desc0>Software knows several problems which can be prohibitive</desc0>
-					<desc1>No know major problem or crisi</desc1>
+					<desc1>No know major problem or crisis</desc1>
 					<desc2>History of good management of crisis situations</desc2>
 					<score></score>
 					<comment></comment>
 				</element>
 				<element name="forkprobability" title="Fork probability, source of Forking">
 					<desc0>Software is very likely to be forked in the future</desc0>
-					<desc1>Software comes from a fork but has very few chances of being forked in the futur</desc1>
-					<desc2>Software has very little chance of being forked. It does not come from a frok either</desc2>
+					<desc1>Software comes from a fork but has very few chances of being forked in the future</desc1>
+					<desc2>Software has very little chance of being forked. It does not come from a fork either</desc2>
 					<score></score>
 					<comment></comment>
 				</element>
@@ -183,7 +183,7 @@
 				<element name="quality" title="Quality Assurance">
 					<desc0>No QA process</desc0>
 					<desc1>Identifies QA process but not much formalized and with no tool</desc1>
-					<desc2>Automatic testing process included in code's life-cycle with publication of resulats</desc2>
+					<desc2>Automatic testing process included in code's life-cycle with publication of results</desc2>
 					<score></score>
 					<comment></comment>
 				</element>
