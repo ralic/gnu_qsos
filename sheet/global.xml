@@ -246,7 +246,7 @@
 					<score></score>
 					<comment></comment>
 				</element>
-				<element name="packagingnet" title="OpenBSD">
+				<element name="packagingopen" title="OpenBSD">
 					<desc0>The software is not packaged for OpenBSD</desc0>
 					<desc1>A port exists but it has important issues or it doesn't have official support</desc1>
 					<desc2>A official port exists in OpenBSD</desc2>
