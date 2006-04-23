@@ -1,7 +1,7 @@
 /*
 **  Copyright (C) 2006 Atos Origin 
 **
-**  Author: Raphaël Semeteys <raphael.semeteys@atosorigin.com>
+**  Author: RaphaÃ«l Semeteys <raphael.semeteys@atosorigin.com>
 **
 **  This program is free software; you can redistribute it and/or modify
 ** it under the terms of the GNU General Public License as published by
@@ -80,7 +80,6 @@ function Template() {
     //initializes local variable: sheet
     //name: filepath to the QSOS XML file
     function create(name) {
-	
 	//Gets the generic template
 	loadremote("chrome://qsos-tpl-xuled/content/global.xml");
 	
@@ -101,20 +100,20 @@ function Template() {
         }
         var file = Components.classes["@mozilla.org/file/local;1"]
             .createInstance(Components.interfaces.nsILocalFile);
-        file.initWithPath( filename );
-        if ( file.exists() == false ) {
+        file.initWithPath(filename);
+        if (file.exists() == false) {
             alert("File does not exist");
         }
         var is = Components.classes["@mozilla.org/network/file-input-stream;1"]
-            .createInstance( Components.interfaces.nsIFileInputStream );
-        is.init( file,0x01, 00004, null);
+            .createInstance(Components.interfaces.nsIFileInputStream);
+        is.init(file, 0x01, 00004, null);
         var sis = Components.classes["@mozilla.org/scriptableinputstream;1"]
-            .createInstance( Components.interfaces.nsIScriptableInputStream );
-        sis.init( is );
-        var output = sis.read( sis.available() );
+            .createInstance(Components.interfaces.nsIScriptableInputStream);
+        sis.init(is);
+        var output = sis.read(sis.available());
         
         var domParser = new DOMParser();
-        sheet = domParser.parseFromString(output, "text/xml");
+       sheet = domParser.parseFromString(output, "text/xml");
     }
     
     //Serialize and write the local QSOS XML file
@@ -126,17 +125,17 @@ function Template() {
         }
         var file = Components.classes["@mozilla.org/file/local;1"]
             .createInstance(Components.interfaces.nsILocalFile);
-        file.initWithPath( filename );
-        if ( file.exists() == false ) {
-            file.create( Components.interfaces.nsIFile.NORMAL_FILE_TYPE, 420 );
+        file.initWithPath(filename);
+        if (file.exists() == false) {
+            file.create(Components.interfaces.nsIFile.NORMAL_FILE_TYPE, 420);
         }
         var outputStream = Components.classes["@mozilla.org/network/file-output-stream;1"]
-            .createInstance( Components.interfaces.nsIFileOutputStream );
+            .createInstance(Components.interfaces.nsIFileOutputStream);
 
-        outputStream.init( file, 0x04 | 0x08 | 0x20, 420, 0 );
+        outputStream.init(file, 0x04 | 0x08 | 0x20, 420, 0);
 
         var serializer = new XMLSerializer();
-	serializer.serializeToStream(sheet, outputStream, ""); 
+	serializer.serializeToStream(sheet, outputStream, "UTF-8"); 
         //var xml = serializer.serializeToString(sheet);
         //var result = outputStream.write( xml, xml.length );
         outputStream.close();
