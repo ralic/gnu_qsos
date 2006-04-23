@@ -243,15 +243,15 @@
           <desc0>The software is not packaged for NetBSD</desc0>
           <desc1>A port exists but it has important issues or it doesn't have an official support</desc1>
           <desc2>A official port exists in NetBSD</desc2>
-          <score>1</score>
-          <comment>Only version  4.0 has an official port.  However MySQL provides tar.gz for 4.1 version.</comment>
+          <score>2</score>
+          <comment/>
         </element>
-        <element name="packagingnet" title="OpenBSD">
+        <element name="packagingopen" title="OpenBSD">
           <desc0>The software is not packaged for OpenBSD</desc0>
           <desc1>A port exists but it has important issues or it doesn't have an official support</desc1>
           <desc2>A official port exists in OpenBSD</desc2>
-          <score/>
-          <comment/>
+          <score>1</score>
+          <comment>Only version 4.0 has an official port. However MySQL provides tar.gz for 4.1 version.</comment>
         </element>
         <element name="packagingredhat" title="RedHat">
           <desc0>The software is not packaged for RedHat/Fedora</desc0>
