@@ -21,7 +21,7 @@
     <demourl></demourl>
     <qsosformat>1.6</qsosformat>
     <qsosappfamily></qsosappfamily>
-    <qsosspecificformat>1</qsosspecificformat>
+    <qsosspecificformat></qsosspecificformat>
   </header>
   <section name="generic" title="Generic section">
     <desc>Generic criteria from QSOS version 1.6</desc>
@@ -78,7 +78,7 @@
           <desc0>No community or without real activity (forum, mailing list, ...)</desc0>
           <desc1>Existing community with a notable activity</desc1>
           <desc2>Strong community: big activity on forums, numerous contributors and advocates</desc2>
-          <score>2</score>
+          <score></score>
           <comment></comment>
         </element>
         <element name="books" title="books">
