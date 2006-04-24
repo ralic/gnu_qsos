@@ -3,13 +3,13 @@
   <header>
     <authors>
       <author>
-        <name>Raphael Semeteys</name>
         <email>raphael.semeteys@atosorigin.com</email>
+        <name>Raphael Semeteys</name>
       </author>
     </authors>
     <dates>
       <creation>20051025</creation>
-      <validation/>
+      <validation></validation>
     </dates>
     <language>en</language>
     <appname>PostgreSQL</appname>
@@ -21,7 +21,7 @@
     <demourl>Not applicable</demourl>
     <qsosformat>1.6</qsosformat>
     <qsosappfamily>RDBMS</qsosappfamily>
-    <qsosspecificformat>1.0</qsosspecificformat>
+    <qsosspecificformat></qsosspecificformat>
   </header>
   <section name="generic" title="Generic section">
     <desc>Generic criteria from QSOS version 1.6</desc>
@@ -45,15 +45,15 @@
         </element>
         <element name="historyknowproblems" title="History, know problems">
           <desc0>Software knows several problems which can be prohibitive</desc0>
-          <desc1>No know major problem or crisi</desc1>
+          <desc1>No know major problem or crisis</desc1>
           <desc2>History of good management of crisis situations</desc2>
           <score>2</score>
           <comment>PostgreSQL is generally considered by DBA as the most advanced open source RDBMS</comment>
         </element>
         <element name="forkprobability" title="Fork probability, source of Forking">
           <desc0>Software is very likely to be forked in the future</desc0>
-          <desc1>Software comes from a fork but has very few chances of being forked in the futur</desc1>
-          <desc2>Software has very little chance of being forked. It does not come from a frok either</desc2>
+          <desc1>Software comes from a fork but has very few chances of being forked in the future</desc1>
+          <desc2>Software has very little chance of being forked. It does not come from a fork either</desc2>
           <score>1</score>
           <comment>The BSD license theorically allows proprietary forks, however the large community existing around PostgreSQL reduces this risk</comment>
         </element>
@@ -154,7 +154,7 @@
           <desc1>Offer exists but is restricted geographically and to one language or is provided by a single contractor</desc1>
           <desc2>Rich offers provided by several contractors, in serveral languages and split into modules of gradual levels</desc2>
           <score>2</score>
-          <comment/>
+          <comment></comment>
         </element>
         <element name="support" title="Support">
           <desc0>No offer of support except via public forums and mailing lists</desc0>
@@ -183,7 +183,7 @@
         <element name="quality" title="Quality Assurance">
           <desc0>No QA process</desc0>
           <desc1>Identifies QA process but not much formalized and with no tool</desc1>
-          <desc2>Automatic testing process included in code's life-cycle with publication of resulats</desc2>
+          <desc2>Automatic testing process included in code's life-cycle with publication of results</desc2>
           <score>1</score>
           <comment>No clearly defined process. Code verification scripts are used before each release. There is a build farm where one can publish build results (http://www.pgbuildfarm.org)</comment>
         </element>
@@ -198,78 +198,78 @@
       <element name="packaging" title="Packaging">
         <desc>Packaging for various operating systems</desc>
         <element name="packagingsource" title="Source">
-          <desc0>Software can't be installed from source without a look of work</desc0>
-          <desc1>Installation from source is limited depend on very strict condition (OS, arch, lib, ...)</desc1>
+          <desc0>Software can't be installed from source without lot of work</desc0>
+          <desc1>Installation from source is limited and depends on very strict conditions (OS, arch, lib, ...)</desc1>
           <desc2>Installation from source is easy</desc2>
           <score>2</score>
           <comment>Installation from source  is well documented</comment>
         </element>
         <element name="packagingdebian" title="Debian">
           <desc0>The software is not packaged for Debian</desc0>
-          <desc1>A Debian package exists but it has important issues or it doesn't have an official support</desc1>
+          <desc1>A Debian package exists but it has important issues or it doesn't have official support</desc1>
           <desc2>The software is packaged in the distribution</desc2>
           <score>1</score>
           <comment>A package exists in the "testing" distribution</comment>
         </element>
         <element name="packagingfreebsd" title="FreeBSD">
           <desc0>The software is not packaged for FreeBSD</desc0>
-          <desc1>A port exists but it has important issues or it doesn't have an official support</desc1>
+          <desc1>A port exists but it has important issues or it doesn't have official support</desc1>
           <desc2>A official port exists in FreeBSD</desc2>
           <score>2</score>
-          <comment/>
+          <comment></comment>
         </element>
         <element name="packaginghpux" title="HP-UX">
           <desc0>The software is not packaged for HP-UX</desc0>
-          <desc1>A package exists but it has important issues or it doesn't have an official support</desc1>
-          <desc2>A strong packaged is provided for HP-UX</desc2>
+          <desc1>A package exists but it has important issues or it doesn't have official support</desc1>
+          <desc2>A stable package is provided for HP-UX</desc2>
           <score>0</score>
           <comment>You need to build from sources.</comment>
         </element>
         <element name="packagingmacosx" title="MacOSX">
           <desc0>The software is not packaged for MacOSX</desc0>
-          <desc1>A package exists but it has important issues or it doesn't have an official support</desc1>
+          <desc1>A package exists but it has important issues or it doesn't have official support</desc1>
           <desc2>The software is packaged in the distribution</desc2>
           <score>1</score>
           <comment>Packages are available through the FINK project (http://fink.sourceforge.net)</comment>
         </element>
         <element name="packagingmandriva" title="Mandriva">
           <desc0>The software is not packaged for Mandriva</desc0>
-          <desc1>A package exists but it has important issues or it doesn't have an official support</desc1>
+          <desc1>A package exists but it has important issues or it doesn't have official support</desc1>
           <desc2>The software is packaged in the distribution</desc2>
           <score>2</score>
-          <comment/>
+          <comment></comment>
         </element>
         <element name="packagingnet" title="NetBSD">
           <desc0>The software is not packaged for NetBSD</desc0>
-          <desc1>A port exists but it has important issues or it doesn't have an official support</desc1>
+          <desc1>A port exists but it has important issues or it doesn't have official support</desc1>
           <desc2>A official port exists in NetBSD</desc2>
           <score>2</score>
-          <comment/>
+          <comment></comment>
         </element>
         <element name="packagingopen" title="OpenBSD">
           <desc0>The software is not packaged for OpenBSD</desc0>
-          <desc1>A port exists but it has important issues or it doesn't have an official support</desc1>
+          <desc1>A port exists but it has important issues or it doesn't have official support</desc1>
           <desc2>A official port exists in OpenBSD</desc2>
           <score>2</score>
-          <comment/>
+          <comment></comment>
         </element>
         <element name="packagingredhat" title="RedHat">
           <desc0>The software is not packaged for RedHat/Fedora</desc0>
-          <desc1>A package exists but it has important issues or it doesn't have an official support</desc1>
+          <desc1>A package exists but it has important issues or it doesn't have official support</desc1>
           <desc2>The software is packaged in the distribution</desc2>
           <score>1</score>
           <comment>Project provides RPM for Red Hat Entreprise Linux, but only  version 7.4 is officially supported by Red Hat.</comment>
         </element>
         <element name="packagingsolaris" title="Solaris">
           <desc0>The software is not packaged for Solaris</desc0>
-          <desc1>A package exists but it has important issues or it doesn't have an official support (e.g: SunFreeware.com )</desc1>
+          <desc1>A package exists but it has important issues or it doesn't have official support (e.g: SunFreeware.com )</desc1>
           <desc2>The software is supported by Sun for Solaris</desc2>
           <score>2</score>
           <comment>Sun fully supports PostgreSQL on SOlaris.</comment>
         </element>
         <element name="packagingsuse" title="SuSE">
           <desc0>The software is not packaged for SuSE</desc0>
-          <desc1>A package exists but it has important issues or it doesn't have an official support</desc1>
+          <desc1>A package exists but it has important issues or it doesn't have official support</desc1>
           <desc2>The software is packaged in the distribution</desc2>
           <score>0</score>
           <comment>Project provides no package for SuSE. Novell supports only 7.4 version.</comment>
@@ -307,7 +307,7 @@
         <desc1>Presence of hight level modules alowing a first level of software adaptation</desc1>
         <desc2>Modular conception, allowing easy adaptation of the software by selecting modules or even develeloping new ones</desc2>
         <score>1</score>
-        <comment/>
+        <comment></comment>
       </element>
       <element name="codemodification" title="Code modification">
         <desc0>Everything by hand</desc0>
@@ -333,14 +333,14 @@
           <desc1>Moderate permissive license located between both extremes (GPL and BSD) dual-licensing depending on the type of user (person, company, ...) or their activities</desc1>
           <desc2>Very permissive like BSD or Apache licenses</desc2>
           <score>2</score>
-          <comment/>
+          <comment></comment>
         </element>
         <element name="protectionagainstproprietaryforks" title="Protection against proprietary forks">
           <desc0>Very permissive like BSD or Apache licenses</desc0>
           <desc1>Moderate permissive license located between both extremes (GPL and BSD), dual-licensing depending on the type of user (person, company, ...) or their activies</desc1>
           <desc2>Very strict license, like GPL</desc2>
           <score>0</score>
-          <comment/>
+          <comment></comment>
         </element>
       </element>
       <element name="copyrightowners" title="Copyright owners">
@@ -348,7 +348,7 @@
         <desc1>Rights held by numerous individuals owning the code in a homogeneous way, making relicense very difficult</desc1>
         <desc2>Rights held by a legal entity in whom the community trusts (e.g: FSF or ASF)</desc2>
         <score>1</score>
-        <comment/>
+        <comment></comment>
       </element>
       <element name="modificationofsourcecode" title="Modification of source code">
         <desc0>No pratical way to propose code modification</desc0>
@@ -369,7 +369,7 @@
         <desc1>Software has an unique sponsor who might determine its strategy</desc1>
         <desc2>Software is sponsored by industry</desc2>
         <score>0</score>
-        <comment/>
+        <comment></comment>
       </element>
       <element name="strategicalindependence" title="Strategical independence">
         <desc0>No detectable strategy or strong dependency on one unique actor (person, company, sponsor)</desc0>
@@ -384,13 +384,13 @@
     <desc>Standard RDBMS features</desc>
     <element name="sqlcompliance" title="SQL compliance">
       <desc>Compliance levels with SQL standards</desc>
-      <comment/>
+      <comment></comment>
       <element name="sql92" title="SQL-92 compliance">
         <desc0>Limited to Entry-level only</desc0>
         <desc1>Transitional or Intermediate support levels</desc1>
         <desc2>Full support level</desc2>
         <score>2</score>
-        <comment/>
+        <comment></comment>
       </element>
       <element name="sql99" title="SQL-99 compliance">
         <desc0>Limited to Core level only</desc0>
@@ -404,72 +404,72 @@
         <desc1>Most of SQL:2003 core features are implemented and compliant</desc1>
         <desc2>SQL:2003 core compliant and most of options in packages (SQL/Framework, SQL/Foundation, SQL/CLI, SQL/PSM, SQL/MED, SQL/OLB, SQL/Schemata, SQL/JRT, SQL/XML) are implemented</desc2>
         <score>0</score>
-        <comment/>
+        <comment></comment>
       </element>
     </element>
     <element name="classicsqlfeatures" title="Classic SQL features">
       <desc>Classic SQL features</desc>
-      <comment/>
+      <comment></comment>
       <element name="tableconstraints" title="Table constraints">
         <desc0>Not implemented</desc0>
         <desc1>Partially implemented</desc1>
         <desc2>Fully implemented</desc2>
         <score>2</score>
-        <comment/>
+        <comment></comment>
       </element>
       <element name="namedconstraints" title="Named constraints">
         <desc0>Not implemented</desc0>
         <desc1>Partially implemented</desc1>
         <desc2>Fully implemented</desc2>
         <score>2</score>
-        <comment/>
+        <comment></comment>
       </element>
       <element name="columnconstraints" title="Column constraints">
         <desc0>Not implemented</desc0>
         <desc1>Partially implemented</desc1>
         <desc2>Fully implemented</desc2>
         <score>2</score>
-        <comment/>
+        <comment></comment>
       </element>
       <element name="nullconstraints" title="NULL constraints">
         <desc0>Not implemented</desc0>
         <desc1>Partially implemented</desc1>
         <desc2>Fully implemented</desc2>
         <score>2</score>
-        <comment/>
+        <comment></comment>
       </element>
       <element name="columndefaultvalues" title="Column's default values">
         <desc0>Not implemented</desc0>
         <desc1>Partially implemented</desc1>
         <desc2>Fully implemented</desc2>
         <score>2</score>
-        <comment/>
+        <comment></comment>
       </element>
       <element name="functionsdefaultvalues" title="Functions for default values">
         <desc0>Not implemented</desc0>
         <desc1>Partially implemented</desc1>
         <desc2>Fully implemented</desc2>
         <score>2</score>
-        <comment/>
+        <comment></comment>
       </element>
       <element name="foreignkeys" title="Foreign keys support">
         <desc0>Not implemented</desc0>
         <desc1>Partially implemented</desc1>
         <desc2>Fully implemented</desc2>
         <score>2</score>
-        <comment/>
+        <comment></comment>
       </element>
       <element name="fkupdates" title="Foreign key updates">
         <desc0>Not implemented</desc0>
         <desc1>Partially implemented</desc1>
         <desc2>Fully implemented</desc2>
         <score>0</score>
-        <comment/>
+        <comment></comment>
       </element>
     </element>
     <element name="security" title="Security">
       <desc>Security features</desc>
-      <comment/>
+      <comment></comment>
       <element name="accesscontrol" title="Access control levels">
         <desc>Levels of access control supported (usaername, table, base, etc...)</desc>
         <comment>username, kerberos (4 and 5), ident, PAM</comment>
@@ -483,18 +483,18 @@
         <desc1>Partially implemented</desc1>
         <desc2>Fully implemented</desc2>
         <score>2</score>
-        <comment/>
+        <comment></comment>
       </element>
     </element>
     <element name="transactions" title="Transactions">
       <desc>Transactional aspects</desc>
-      <comment/>
+      <comment></comment>
       <element name="transactionalengine" title="Transactional engine">
         <desc0>Not implemented</desc0>
         <desc1>Partially implemented</desc1>
         <desc2>Fully implemented</desc2>
         <score>2</score>
-        <comment/>
+        <comment></comment>
       </element>
       <element name="transactionmodes" title="Transactional modes">
         <desc>Transactional modes (or isolation level) supported</desc>
@@ -505,67 +505,67 @@
         <desc1>Pages locks</desc1>
         <desc2>Row locks</desc2>
         <score>2</score>
-        <comment/>
+        <comment></comment>
       </element>
       <element name="xacompliance" title="XA compliance">
         <desc0>Not implemented</desc0>
         <desc1>Partially implemented</desc1>
         <desc2>Fully implemented</desc2>
         <score>0</score>
-        <comment/>
+        <comment></comment>
       </element>
     </element>
     <element name="othersqlfeatures" title="Other SQL features">
       <desc>Other SQL features</desc>
-      <comment/>
+      <comment></comment>
       <element name="views" title="Views">
         <desc0>Not implemented</desc0>
         <desc1>Partially implemented</desc1>
         <desc2>Fully implemented</desc2>
         <score>2</score>
-        <comment/>
+        <comment></comment>
       </element>
       <element name="storedprocedures" title="Stored procedures">
         <desc0>Not implemented</desc0>
         <desc1>Partially implemented</desc1>
         <desc2>Fully implemented</desc2>
         <score>2</score>
-        <comment/>
+        <comment></comment>
       </element>
       <element name="triggers" title="Triggers">
         <desc0>Not implemented</desc0>
         <desc1>Partially implemented</desc1>
         <desc2>Fully implemented</desc2>
         <score>2</score>
-        <comment/>
+        <comment></comment>
       </element>
       <element name="schemas" title="Schemas">
         <desc0>Not implemented</desc0>
         <desc1>Partially implemented</desc1>
         <desc2>Fully implemented</desc2>
         <score>2</score>
-        <comment/>
+        <comment></comment>
       </element>
       <element name="subselects" title="Subselects">
         <desc0>Not implemented</desc0>
         <desc1>Partially implemented</desc1>
         <desc2>Fully implemented</desc2>
         <score>2</score>
-        <comment/>
+        <comment></comment>
       </element>
       <element name="tablespaces" title="Tablespaces">
         <desc0>Not implemented</desc0>
         <desc1>Partially implemented</desc1>
         <desc2>Fully implemented</desc2>
         <score>2</score>
-        <comment/>
+        <comment></comment>
       </element>
       <element name="unicode" title="UNICODE">
         <desc0>Not implemented</desc0>
         <desc1>Partially implemented</desc1>
         <desc2>Fully implemented</desc2>
         <score>2</score>
-        <comment/>
+        <comment></comment>
       </element>
     </element>
   </section>
@@ -580,7 +580,7 @@
       <desc1>Active/Passive clustering possible</desc1>
       <desc2>Active/Active clustering possible</desc2>
       <score>0</score>
-      <comment/>
+      <comment></comment>
     </element>
     <element name="replication" title="Replication">
       <desc0>No replication features</desc0>
@@ -594,14 +594,14 @@
       <desc1>Partially supported</desc1>
       <desc2>Fully supported</desc2>
       <score>0</score>
-      <comment/>
+      <comment></comment>
     </element>
     <element name="xmlfeatures" title="XML features">
       <desc0>No XML features</desc0>
       <desc1>Very few XML features</desc1>
       <desc2>XML data is deeply integrated in the system</desc2>
       <score>0</score>
-      <comment/>
+      <comment></comment>
     </element>
     <element name="gis" title="GIS features">
       <desc0>No spatial features</desc0>
@@ -632,7 +632,7 @@
       <desc1>Tool(s) available but limited (features or plateforms)</desc1>
       <desc2>Available tool(s) is(are) complete and easily integrable (scripts, API, ...)</desc2>
       <score>0</score>
-      <comment/>
+      <comment></comment>
     </element>
     <element name="optimizetools" title="Optimization tools">
       <desc0>No tool available</desc0>

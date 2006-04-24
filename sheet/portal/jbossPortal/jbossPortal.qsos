@@ -24,9 +24,11 @@
     <qsosspecificformat>1</qsosspecificformat>
   </header>
   <section name="generic" title="Generic section">
-    <desc>Common QSOS section</desc>
+    <desc>Generic criteria from QSOS version 1.6</desc>
     <element name="intrinsicdurability" title="Intrinsic durability">
+      <desc>Intrinsic durability</desc>
       <element name="maturity" title="Maturity">
+        <desc>Maturity</desc>
         <element name="age" title="Age">
           <desc0>less than 3 months</desc0>
           <desc1>if between 3 months and 3 years</desc1>
@@ -43,20 +45,21 @@
         </element>
         <element name="historyknowproblems" title="History, know problems">
           <desc0>Software knows several problems which can be prohibitive</desc0>
-          <desc1>No know major problem or crisi</desc1>
+          <desc1>No know major problem or crisis</desc1>
           <desc2>History of good management of crisis situations</desc2>
           <score>2</score>
           <comment></comment>
         </element>
         <element name="forkprobability" title="Fork probability, source of Forking">
           <desc0>Software is very likely to be forked in the future</desc0>
-          <desc1>Software comes from a fork but has very few chances of being forked in the futur</desc1>
-          <desc2>Software has very little chance of being forked. It does not come from a frok either</desc2>
+          <desc1>Software comes from a fork but has very few chances of being forked in the future</desc1>
+          <desc2>Software has very little chance of being forked. It does not come from a fork either</desc2>
           <score></score>
           <comment></comment>
         </element>
       </element>
-      <element name="adopation" title="Adopation">
+      <element name="adoption" title="Adoption">
+        <desc>Adoption by community and industry</desc>
         <element name="popularity" title="Popularity (related to: general public, niche, ...)">
           <desc0>Very few users identified</desc0>
           <desc1>Detectable use on Internet</desc1>
@@ -88,6 +91,7 @@
         </element>
       </element>
       <element name="developmentleadership" title="Development leadership">
+        <desc>Organisation and leadership of developments</desc>
         <element name="leadingteam" title="Leading team">
           <desc0>1 to 2 individuals involved, not clearly identified</desc0>
           <desc1>Between 2 and 5 independent people</desc1>
@@ -104,6 +108,7 @@
         </element>
       </element>
       <element name="activity" title="Activity">
+        <desc>Activity of the project and around the software</desc>
         <element name="developersidentificationturnover" title="Developers, identification, turnover">
           <desc0>Less than 3 developers, not clearly identified</desc0>
           <desc1>Between 4 and 7 developers, or more unidentified developers with important turnover</desc1>
@@ -135,7 +140,8 @@
         </element>
       </element>
     </element>
-    <element name="industrialisedsolution" title="Industrialised solution">
+    <element name="industrializedsolution" title="Industrialized solution">
+      <desc>Industrialization level of the project</desc>
       <element name="independenceofdevelopments" title="Independence of developments">
         <desc0>Developments realized at 100% by employees of a single company</desc0>
         <desc1>60% maximum</desc1>
@@ -144,6 +150,7 @@
         <comment></comment>
       </element>
       <element name="services" title="Services">
+        <desc>Services offering</desc>
         <element name="training" title="Training">
           <desc0>No offer of training identified</desc0>
           <desc1>Offer exists but is restricted geographically and to one language or is provided by a single contractor</desc1>
@@ -174,10 +181,11 @@
         <comment></comment>
       </element>
       <element name="qualityassurance" title="Quality Assurance">
+        <desc>Quality assurance process</desc>
         <element name="quality" title="Quality Assurance">
           <desc0>No QA process</desc0>
           <desc1>Identifies QA process but not much formalized and with no tool</desc1>
-          <desc2>Automatic testing process included in code's life-cycle with publication of resulats</desc2>
+          <desc2>Automatic testing process included in code's life-cycle with publication of results</desc2>
           <score>1</score>
           <comment></comment>
         </element>
@@ -190,79 +198,80 @@
         </element>
       </element>
       <element name="packaging" title="Packaging">
+        <desc>Packaging for various operating systems</desc>
         <element name="packagingsource" title="Source">
-          <desc0>Software can't be installed from source without a look of work</desc0>
-          <desc1>Installation from source is limited depend on very strict condition (OS, arch, lib, ...)</desc1>
+          <desc0>Software can't be installed from source without lot of work</desc0>
+          <desc1>Installation from source is limited and depends on very strict conditions (OS, arch, lib, ...)</desc1>
           <desc2>Installation from source is easy</desc2>
           <score></score>
           <comment></comment>
         </element>
         <element name="packagingdebian" title="Debian">
           <desc0>The software is not packaged for Debian</desc0>
-          <desc1>A Debian package exists but it has important issues or it doesn't have an official support</desc1>
+          <desc1>A Debian package exists but it has important issues or it doesn't have official support</desc1>
           <desc2>The software is packaged in the distribution</desc2>
           <score>0</score>
           <comment></comment>
         </element>
         <element name="packagingfreebsd" title="FreeBSD">
           <desc0>The software is not packaged for FreeBSD</desc0>
-          <desc1>A port exists but it has important issues or it doesn't have an official support</desc1>
+          <desc1>A port exists but it has important issues or it doesn't have official support</desc1>
           <desc2>A official port exists in FreeBSD</desc2>
           <score>0</score>
           <comment></comment>
         </element>
         <element name="packaginghpux" title="HP-UX">
           <desc0>The software is not packaged for HP-UX</desc0>
-          <desc1>A package exists but it has important issues or it doesn't have an official support</desc1>
-          <desc2>A strong packaged is provided for HP-UX</desc2>
+          <desc1>A package exists but it has important issues or it doesn't have official support</desc1>
+          <desc2>A stable package is provided for HP-UX</desc2>
           <score>0</score>
           <comment></comment>
         </element>
         <element name="packagingmacosx" title="MacOSX">
           <desc0>The software is not packaged for MacOSX</desc0>
-          <desc1>A package exists but it has important issues or it doesn't have an official support</desc1>
+          <desc1>A package exists but it has important issues or it doesn't have official support</desc1>
           <desc2>The software is packaged in the distribution</desc2>
           <score>0</score>
           <comment></comment>
         </element>
         <element name="packagingmandriva" title="Mandriva">
           <desc0>The software is not packaged for Mandriva</desc0>
-          <desc1>A package exists but it has important issues or it doesn't have an official support</desc1>
+          <desc1>A package exists but it has important issues or it doesn't have official support</desc1>
           <desc2>The software is packaged in the distribution</desc2>
           <score>0</score>
           <comment></comment>
         </element>
         <element name="packagingnet" title="NetBSD">
           <desc0>The software is not packaged for NetBSD</desc0>
-          <desc1>A port exists but it has important issues or it doesn't have an official support</desc1>
+          <desc1>A port exists but it has important issues or it doesn't have official support</desc1>
           <desc2>A official port exists in NetBSD</desc2>
           <score>0</score>
           <comment></comment>
         </element>
-        <element name="packagingnet" title="OpenBSD">
+        <element name="packagingopen" title="OpenBSD">
           <desc0>The software is not packaged for OpenBSD</desc0>
-          <desc1>A port exists but it has important issues or it doesn't have an official support</desc1>
+          <desc1>A port exists but it has important issues or it doesn't have official support</desc1>
           <desc2>A official port exists in OpenBSD</desc2>
           <score>0</score>
           <comment></comment>
         </element>
         <element name="packagingredhat" title="RedHat">
           <desc0>The software is not packaged for RedHat/Fedora</desc0>
-          <desc1>A package exists but it has important issues or it doesn't have an official support</desc1>
+          <desc1>A package exists but it has important issues or it doesn't have official support</desc1>
           <desc2>The software is packaged in the distribution</desc2>
           <score>0</score>
           <comment></comment>
         </element>
-        <element name="packagingsuse" title="Solaris">
+        <element name="packagingsolaris" title="Solaris">
           <desc0>The software is not packaged for Solaris</desc0>
-          <desc1>A package exists but it has important issues or it doesn't have an official support (e.g: SunFreeware.com )</desc1>
+          <desc1>A package exists but it has important issues or it doesn't have official support (e.g: SunFreeware.com )</desc1>
           <desc2>The software is supported by Sun for Solaris</desc2>
           <score>0</score>
           <comment></comment>
         </element>
         <element name="packagingsuse" title="SuSE">
           <desc0>The software is not packaged for SuSE</desc0>
-          <desc1>A package exists but it has important issues or it doesn't have an official support</desc1>
+          <desc1>A package exists but it has important issues or it doesn't have official support</desc1>
           <desc2>The software is packaged in the distribution</desc2>
           <score>0</score>
           <comment></comment>
@@ -275,138 +284,101 @@
           <comment></comment>
         </element>
       </element>
-      <element name="exploitability" title="Exploitability">
-        <element name="easeofuseergonomics" title="Ease of use, ergonomics">
-          <desc0>Difficult to use, requires an in depth knowledge of the software functionality</desc0>
-          <desc1>Austere and very technical ergonomics</desc1>
-          <desc2>GUI including help functions and elaborated ergonomics</desc2>
+    </element>
+    <element name="exploitability" title="Exploitability">
+      <desc>Exploitability level</desc>
+      <element name="easeofuseergonomics" title="Ease of use, ergonomics">
+        <desc0>Difficult to use, requires an in depth knowledge of the software functionality</desc0>
+        <desc1>Austere and very technical ergonomics</desc1>
+        <desc2>GUI including help functions and elaborated ergonomics</desc2>
+        <score></score>
+        <comment></comment>
+      </element>
+      <element name="administrationmonitoring" title="Administration / Monitoring">
+        <desc0>No administrative or monitoring functionalities</desc0>
+        <desc1>Existing, functionalities but uncomplete and or need improvement</desc1>
+        <desc2>Complete and easy-to-use administration and monitoring functionalities. Possible integration with external tools (e.g: SNMP, syslog, ...)</desc2>
+        <score></score>
+        <comment></comment>
+      </element>
+    </element>
+    <element name="technicaladaptability" title="Technical adaptability">
+      <desc>Technical adaptability</desc>
+      <element name="modularity" title="Modularity">
+        <desc0>Monolithic software</desc0>
+        <desc1>Presence of hight level modules alowing a first level of software adaptation</desc1>
+        <desc2>Modular conception, allowing easy adaptation of the software by selecting modules or even develeloping new ones</desc2>
+        <score></score>
+        <comment></comment>
+      </element>
+      <element name="codemodification" title="Code modification">
+        <desc0>Everything by hand</desc0>
+        <desc1>Recompilation possible but complex without any tools or documentation</desc1>
+        <desc2>Recompilation with tools (e.g: make, ANT, ...) and documentation provided</desc2>
+        <score></score>
+        <comment></comment>
+      </element>
+      <element name="codeextension" title="Code extention">
+        <desc0>Any modification requires code recompilation</desc0>
+        <desc1>Architecture designed for static extension but requires recompilation</desc1>
+        <desc2>Principle of plugin, architecture designed for dynamic extension without recompilation</desc2>
+        <score></score>
+        <comment></comment>
+      </element>
+    </element>
+    <element name="strategy" title="Strategy">
+      <desc>Project's strategy</desc>
+      <element name="license" title="License">
+        <desc>License</desc>
+        <element name="permissiveness" title="Permissiveness (only if user wants to become owner of code)">
+          <desc0>Very strict license, like GPL</desc0>
+          <desc1>Moderate permissive license located between both extremes (GPL and BSD) dual-licensing depending on the type of user (person, company, ...) or their activities</desc1>
+          <desc2>Very permissive like BSD or Apache licenses</desc2>
           <score></score>
           <comment></comment>
         </element>
-        <element name="administrationmonitoring" title="Administration / Monitoring">
-          <desc0>No administrative or monitoring functionalities</desc0>
-          <desc1>Existing, functionalities but uncomplete and or need improvement</desc1>
-          <desc2>Complete and easy-to-use administration and monitoring functionalities. Possible integration with external tools (e.g: SNMP, syslog, ...)</desc2>
+        <element name="protectionagainstproprietaryforks" title="Protection against proprietary forks">
+          <desc0>Very permissive like BSD or Apache licenses</desc0>
+          <desc1>Moderate permissive license located between both extremes (GPL and BSD), dual-licensing depending on the type of user (person, company, ...) or their activies</desc1>
+          <desc2>Very strict license, like GPL</desc2>
           <score></score>
           <comment></comment>
         </element>
       </element>
-      <element name="technicaladaptability" title="Technical adaptability">
-        <element name="modularity" title="Modularity">
-          <desc0>Monolithic software</desc0>
-          <desc1>Presence of hight level modules alowing a first level of software adaptation</desc1>
-          <desc2>Modular conception, allowing easy adaptation of the software by selecting modules or even develeloping new ones</desc2>
-          <score></score>
-          <comment></comment>
-        </element>
-        <element name="codemodification" title="Code modification">
-          <desc0>Everything by hand</desc0>
-          <desc1>Recompilation possible but complex without any tools or documentation</desc1>
-          <desc2>Recompilation with tools (e.g: make, ANT, ...) and documentation provided</desc2>
-          <score></score>
-          <comment></comment>
-        </element>
-        <element name="codeextension" title="Code extention">
-          <desc0>Any modification requires code recompilation</desc0>
-          <desc1>Architecture designed for static extension but requires recompilation</desc1>
-          <desc2>Principle of plugin, architecture designed for dynamic extension without recompilation</desc2>
-          <score></score>
-          <comment></comment>
-        </element>
+      <element name="copyrightowners" title="Copyright owners">
+        <desc0>Rights held by a few individuals or entities, making it easier to change the license</desc0>
+        <desc1>Rights held by numerous individuals owning the code in a homogeneous way, making relicense very difficult</desc1>
+        <desc2>Rights held by a legal entity in whom the community trusts (e.g: FSF or ASF)</desc2>
+        <score></score>
+        <comment></comment>
       </element>
-      <element name="strategy" title="Strategy">
-        <element name="license" title="License">
-          <element name="permissiveness" title="Permissiveness (only if user wants to become owner of code)">
-            <desc0>Very strict license, like GPL</desc0>
-            <desc1>Moderate permissive license located between both extremes (GPL and BSD) dual-licensing depending on the type of user (person, company, ...) or their activities</desc1>
-            <desc2>Very permissive like BSD or Apache licenses</desc2>
-            <score></score>
-            <comment></comment>
-          </element>
-          <element name="protectionagainstproprietaryforks" title="Protection against proprietary forks">
-            <desc0>Very permissive like BSD or Apache licenses</desc0>
-            <desc1>Moderate permissive license located between both extremes (GPL and BSD), dual-licensing depending on the type of user (person, company, ...) or their activies</desc1>
-            <desc2>Very strict license, like GPL</desc2>
-            <score></score>
-            <comment></comment>
-          </element>
-        </element>
-        <element name="copyrightowners" title="Copyright owners">
-          <desc0>Rights held by a few individuals or entities, making it easier to change the license</desc0>
-          <desc1>Rights held by numerous individuals owning the code in a homogeneous way, making relicense very difficult</desc1>
-          <desc2>Rights held by a legal entity in whom the community trusts (e.g: FSF or ASF)</desc2>
-          <score></score>
-          <comment></comment>
-        </element>
-        <element name="modificationofsourcecode" title="Modification of source code">
-          <desc0>No pratical way to propose code modification</desc0>
-          <desc1>Tools provided to access and modify code (like CVS or SVN) but not really used to develop the software</desc1>
-          <desc2>The code modification process is well defined, exposed and respected, based on roles assignment</desc2>
-          <score></score>
-          <comment></comment>
-        </element>
-        <element name="roadmap" title="Roadmap">
-          <desc0>No published roadmap</desc0>
-          <desc1>Existing roadmap without planning</desc1>
-          <desc2>Versionned roadmap, with planning and measure of delays</desc2>
-          <score></score>
-          <comment></comment>
-        </element>
-        <element name="sponsor" title="Sponsor">
-          <desc0>Software has no sponsor, the core team is not paid</desc0>
-          <desc1>Software has an unique sponsor who might determine its strategy</desc1>
-          <desc2>Software is sponsored by industry</desc2>
-          <score></score>
-          <comment></comment>
-        </element>
-        <element name="strategicalindependence" title="Strategical independence">
-          <desc0>No detectable strategy or strong dependency on one unique actor (person, company, sponsor)</desc0>
-          <desc1>Strategical vision shared with several other free and open source projects but without strong commitment from copyrights owners</desc1>
-          <desc2>Strong independence of the code team, legal entity holding rights, strong involvement in the standardization process</desc2>
-          <score></score>
-          <comment></comment>
-        </element>
+      <element name="modificationofsourcecode" title="Modification of source code">
+        <desc0>No pratical way to propose code modification</desc0>
+        <desc1>Tools provided to access and modify code (like CVS or SVN) but not really used to develop the software</desc1>
+        <desc2>The code modification process is well defined, exposed and respected, based on roles assignment</desc2>
+        <score></score>
+        <comment></comment>
       </element>
-      <element name="servicesprovinding" title="Services provinding">
-        <element name="maintenability" title="Maintenability">
-          <element name="qualityofsourcecode" title="Quality of source code">
-            <desc0>Not very readable code or of poor quality, incoherence in coding styles</desc0>
-            <desc1>Readable code but not really complemented in detail</desc1>
-            <desc2>Readable and commented code, implementing classic design patterns with a coherent and applied coding policy</desc2>
-            <score></score>
-            <comment></comment>
-          </element>
-          <element name="technologicaldispersion" title="Technological dispersion">
-            <desc0>Use of numerous different languages</desc0>
-            <desc1>One main language with certain modules coded in other languages for specific and limited requirements</desc1>
-            <desc2>One unique language</desc2>
-            <score></score>
-            <comment></comment>
-          </element>
-          <element name="intrinsicomplexity" title="Intrinsic complexity">
-            <desc0>Very complex code requiring high level of expertise to perfom modifications without generating side effeetcs</desc0>
-            <desc1>Not very complex code but still requiring expertise programming languages and software design</desc1>
-            <desc2>Simple code and design, easy to modify</desc2>
-            <score></score>
-            <comment></comment>
-          </element>
-          <element name="technicaldocumentation" title="Technical documentation">
-            <desc0>No documentation (development guide or automatically generated doc like javadoc)</desc0>
-            <desc1>Incomplete or old documentation without conception and architectural considerations</desc1>
-            <desc2>Detailed an up to date documentation, including conception, architecure designe and coding considerations</desc2>
-            <score></score>
-            <comment></comment>
-          </element>
-        </element>
-        <element name="codemastery" title="Code mastery">
-          <element name="codemasterydirect" title="Direct">
-            <desc0>No direct expertise of the source code</desc0>
-            <desc1>Mastery of code but limited to a single person or to only a part of the source</desc1>
-            <desc2>Several individuals mastering the code and covering together the totality of the source</desc2>
-            <score></score>
-            <comment></comment>
-          </element>
-        </element>
+      <element name="roadmap" title="Roadmap">
+        <desc0>No published roadmap</desc0>
+        <desc1>Existing roadmap without planning</desc1>
+        <desc2>Versionned roadmap, with planning and measure of delays</desc2>
+        <score></score>
+        <comment></comment>
+      </element>
+      <element name="sponsor" title="Sponsor">
+        <desc0>Software has no sponsor, the core team is not paid</desc0>
+        <desc1>Software has an unique sponsor who might determine its strategy</desc1>
+        <desc2>Software is sponsored by industry</desc2>
+        <score></score>
+        <comment></comment>
+      </element>
+      <element name="strategicalindependence" title="Strategical independence">
+        <desc0>No detectable strategy or strong dependency on one unique actor (person, company, sponsor)</desc0>
+        <desc1>Strategical vision shared with several other free and open source projects but without strong commitment from copyrights owners</desc1>
+        <desc2>Strong independence of the code team, legal entity holding rights, strong involvement in the standardization process</desc2>
+        <score></score>
+        <comment></comment>
       </element>
     </element>
   </section>
@@ -631,14 +603,12 @@
         <score>2</score>
       </element>
     </element>
-    
     <section name="storage" title="storage">
       <element name="LDAPstorage" title="LDAPstorage">
         <desc0>No LDAP storage</desc0>
         <desc1>LDAP storage is partial or doesn't work correctly</desc1>
         <desc2>LDAP storage is performing and brings a real advantage for the tools</desc2>
-        <comment> 
-	</comment>
+        <comment></comment>
         <score>2</score>
       </element>
       <element name="SGBDstorage" title="SGBD storage">
@@ -649,7 +619,6 @@
         <score>2</score>
       </element>
     </section>
-    
     <element name="development" title="development">
       <element name="multi-IDEsupport" title="mutli-IDE support">
         <desc0>No IDE support</desc0>

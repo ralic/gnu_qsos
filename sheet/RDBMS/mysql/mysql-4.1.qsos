@@ -3,13 +3,13 @@
   <header>
     <authors>
       <author>
-        <name>Raphael Semeteys</name>
         <email>raphael.semeteys@atosorigin.com</email>
+        <name>Raphael Semeteys</name>
       </author>
     </authors>
     <dates>
       <creation>20050411</creation>
-      <validation/>
+      <validation></validation>
     </dates>
     <language>en</language>
     <appname>MySQL Server</appname>
@@ -21,7 +21,7 @@
     <demourl>Not applicable</demourl>
     <qsosformat>1.6</qsosformat>
     <qsosappfamily>RDBMS</qsosappfamily>
-    <qsosspecificformat>1.0</qsosspecificformat>
+    <qsosspecificformat>1</qsosspecificformat>
   </header>
   <section name="generic" title="Generic section">
     <desc>Generic criteria from QSOS version 1.6</desc>
@@ -45,15 +45,15 @@
         </element>
         <element name="historyknowproblems" title="History, know problems">
           <desc0>Software knows several problems which can be prohibitive</desc0>
-          <desc1>No know major problem or crisi</desc1>
+          <desc1>No know major problem or crisis</desc1>
           <desc2>History of good management of crisis situations</desc2>
           <score>1</score>
           <comment>For a long time MySQL was not much considered by DBA, due to table locks on MyISAM tables and the lack of functionalities like stored procedures or transactions</comment>
         </element>
         <element name="forkprobability" title="Fork probability, source of Forking">
           <desc0>Software is very likely to be forked in the future</desc0>
-          <desc1>Software comes from a fork but has very few chances of being forked in the futur</desc1>
-          <desc2>Software has very little chance of being forked. It does not come from a frok either</desc2>
+          <desc1>Software comes from a fork but has very few chances of being forked in the future</desc1>
+          <desc2>Software has very little chance of being forked. It does not come from a fork either</desc2>
           <score>2</score>
           <comment>Mature product. MySQL AB. owns a large part of source code and even if InnoDB storage engine is owned by Oracle (via InnoBase), MySQL seems to be protected against forks</comment>
         </element>
@@ -120,7 +120,7 @@
           <desc1>Detectable activity but without process clearly exposed, loing reaction/resolution time</desc1>
           <desc2>Strong reactivity based on roles and tasks assignment</desc2>
           <score>2</score>
-          <comment/>
+          <comment></comment>
         </element>
         <element name="activityonfunctionalities" title="Activity on functionalities">
           <desc0>No or few new functionalities</desc0>
@@ -183,7 +183,7 @@
         <element name="quality" title="Quality Assurance">
           <desc0>No QA process</desc0>
           <desc1>Identifies QA process but not much formalized and with no tool</desc1>
-          <desc2>Automatic testing process included in code's life-cycle with publication of resulats</desc2>
+          <desc2>Automatic testing process included in code's life-cycle with publication of results</desc2>
           <score>2</score>
           <comment>Integrated test suite (make test), extensible with an interpretor (mysqltest) and with possibility to automatically submit bug reports (mysqlbug)</comment>
         </element>
@@ -191,85 +191,85 @@
           <desc0>No bug or feature request management tool</desc0>
           <desc1>Standard tools provided (for instance by a hosting forge) but poorly used</desc1>
           <desc2>Very active use of tools for roles/tasks allocation and progress monitoring</desc2>
-          <score/>
+          <score></score>
           <comment>Complete bug tracking and feature request tool available (affectations, statistics, search). cf. http://bugs.mysql.com</comment>
         </element>
       </element>
       <element name="packaging" title="Packaging">
         <desc>Packaging for various operating systems</desc>
         <element name="packagingsource" title="Source">
-          <desc0>Software can't be installed from source without a look of work</desc0>
-          <desc1>Installation from source is limited depend on very strict condition (OS, arch, lib, ...)</desc1>
+          <desc0>Software can't be installed from source without lot of work</desc0>
+          <desc1>Installation from source is limited and depends on very strict conditions (OS, arch, lib, ...)</desc1>
           <desc2>Installation from source is easy</desc2>
           <score>2</score>
           <comment>Installation from source  is well documented in the MySQL Reference Manual</comment>
         </element>
         <element name="packagingdebian" title="Debian">
           <desc0>The software is not packaged for Debian</desc0>
-          <desc1>A Debian package exists but it has important issues or it doesn't have an official support</desc1>
+          <desc1>A Debian package exists but it has important issues or it doesn't have official support</desc1>
           <desc2>The software is packaged in the distribution</desc2>
           <score>2</score>
-          <comment/>
+          <comment></comment>
         </element>
         <element name="packagingfreebsd" title="FreeBSD">
           <desc0>The software is not packaged for FreeBSD</desc0>
-          <desc1>A port exists but it has important issues or it doesn't have an official support</desc1>
+          <desc1>A port exists but it has important issues or it doesn't have official support</desc1>
           <desc2>A official port exists in FreeBSD</desc2>
           <score>2</score>
-          <comment/>
+          <comment></comment>
         </element>
         <element name="packaginghpux" title="HP-UX">
           <desc0>The software is not packaged for HP-UX</desc0>
-          <desc1>A package exists but it has important issues or it doesn't have an official support</desc1>
-          <desc2>A strong packaged is provided for HP-UX</desc2>
+          <desc1>A package exists but it has important issues or it doesn't have official support</desc1>
+          <desc2>A stable package is provided for HP-UX</desc2>
           <score>2</score>
           <comment>MySQL AB provides depot files</comment>
         </element>
         <element name="packagingmacosx" title="MacOSX">
           <desc0>The software is not packaged for MacOSX</desc0>
-          <desc1>A package exists but it has important issues or it doesn't have an official support</desc1>
+          <desc1>A package exists but it has important issues or it doesn't have official support</desc1>
           <desc2>The software is packaged in the distribution</desc2>
           <score>1</score>
           <comment>MySQL AB provides dmg files</comment>
         </element>
         <element name="packagingmandriva" title="Mandriva">
           <desc0>The software is not packaged for Mandriva</desc0>
-          <desc1>A package exists but it has important issues or it doesn't have an official support</desc1>
+          <desc1>A package exists but it has important issues or it doesn't have official support</desc1>
           <desc2>The software is packaged in the distribution</desc2>
           <score>2</score>
-          <comment/>
+          <comment></comment>
         </element>
         <element name="packagingnet" title="NetBSD">
           <desc0>The software is not packaged for NetBSD</desc0>
-          <desc1>A port exists but it has important issues or it doesn't have an official support</desc1>
+          <desc1>A port exists but it has important issues or it doesn't have official support</desc1>
           <desc2>A official port exists in NetBSD</desc2>
           <score>2</score>
-          <comment/>
+          <comment></comment>
         </element>
         <element name="packagingopen" title="OpenBSD">
           <desc0>The software is not packaged for OpenBSD</desc0>
-          <desc1>A port exists but it has important issues or it doesn't have an official support</desc1>
+          <desc1>A port exists but it has important issues or it doesn't have official support</desc1>
           <desc2>A official port exists in OpenBSD</desc2>
           <score>1</score>
           <comment>Only version 4.0 has an official port. However MySQL provides tar.gz for 4.1 version.</comment>
         </element>
         <element name="packagingredhat" title="RedHat">
           <desc0>The software is not packaged for RedHat/Fedora</desc0>
-          <desc1>A package exists but it has important issues or it doesn't have an official support</desc1>
+          <desc1>A package exists but it has important issues or it doesn't have official support</desc1>
           <desc2>The software is packaged in the distribution</desc2>
           <score>2</score>
           <comment>The MySQL server package is available in the Extras Channel from Red Hat Network (RHN).  MySQL AB also provides RPM for Red Hat Entreprise Linux.</comment>
         </element>
         <element name="packagingsolaris" title="Solaris">
           <desc0>The software is not packaged for Solaris</desc0>
-          <desc1>A package exists but it has important issues or it doesn't have an official support (e.g: SunFreeware.com )</desc1>
+          <desc1>A package exists but it has important issues or it doesn't have official support (e.g: SunFreeware.com )</desc1>
           <desc2>The software is supported by Sun for Solaris</desc2>
           <score>1</score>
           <comment>MySQL is "managed" by Sun but not fully supported (Sun provides existing patches and escalates new bugs to the developer community)</comment>
         </element>
         <element name="packagingsuse" title="SuSE">
           <desc0>The software is not packaged for SuSE</desc0>
-          <desc1>A package exists but it has important issues or it doesn't have an official support</desc1>
+          <desc1>A package exists but it has important issues or it doesn't have official support</desc1>
           <desc2>The software is packaged in the distribution</desc2>
           <score>1</score>
           <comment>Only version  4.0 is included in SuSE Linux Enterprise Server 9. However MySQL provides RPM for 4.1 version.</comment>
@@ -333,14 +333,14 @@
           <desc1>Moderate permissive license located between both extremes (GPL and BSD) dual-licensing depending on the type of user (person, company, ...) or their activities</desc1>
           <desc2>Very permissive like BSD or Apache licenses</desc2>
           <score>0</score>
-          <comment/>
+          <comment></comment>
         </element>
         <element name="protectionagainstproprietaryforks" title="Protection against proprietary forks">
           <desc0>Very permissive like BSD or Apache licenses</desc0>
           <desc1>Moderate permissive license located between both extremes (GPL and BSD), dual-licensing depending on the type of user (person, company, ...) or their activies</desc1>
           <desc2>Very strict license, like GPL</desc2>
           <score>2</score>
-          <comment/>
+          <comment></comment>
         </element>
       </element>
       <element name="copyrightowners" title="Copyright owners">
@@ -384,73 +384,73 @@
     <desc>Standard RDBMS features</desc>
     <element name="sqlcompliance" title="SQL compliance">
       <desc>Compliance levels with SQL standards</desc>
-      <comment/>
+      <comment></comment>
       <element name="sql92" title="SQL-92 compliance">
         <desc0>Limited to Entry-level only</desc0>
         <desc1>Transitional or Intermediate support levels</desc1>
         <desc2>Full support level</desc2>
         <score>0</score>
-        <comment/>
+        <comment></comment>
       </element>
       <element name="sql99" title="SQL-99 compliance">
         <desc0>Limited to Core level only</desc0>
         <desc1>Some optional features are implemented and compliant</desc1>
         <desc2>Most of options in packages (Framework, Foundation, Call Level Interface, Persistent Stored Modules, and Host Language Bindings) are implemented</desc2>
         <score>0</score>
-        <comment/>
+        <comment></comment>
       </element>
       <element name="sql2003" title="SQL:2003 compliance">
         <desc0>Features implemented far from SQL:2003 core compliance</desc0>
         <desc1>Most of SQL:2003 core features are implemented and compliant</desc1>
         <desc2>SQL:2003 core compliant and most of options in packages (SQL/Framework, SQL/Foundation, SQL/CLI, SQL/PSM, SQL/MED, SQL/OLB, SQL/Schemata, SQL/JRT, SQL/XML) are implemented</desc2>
         <score>0</score>
-        <comment/>
+        <comment></comment>
       </element>
     </element>
     <element name="classicsqlfeatures" title="Classic SQL features">
       <desc>Classic SQL features</desc>
-      <comment/>
+      <comment></comment>
       <element name="tableconstraints" title="Table constraints">
         <desc0>Not implemented</desc0>
         <desc1>Partially implemented</desc1>
         <desc2>Fully implemented</desc2>
         <score>0</score>
-        <comment/>
+        <comment></comment>
       </element>
       <element name="namedconstraints" title="Named constraints">
         <desc0>Not implemented</desc0>
         <desc1>Partially implemented</desc1>
         <desc2>Fully implemented</desc2>
         <score>2</score>
-        <comment/>
+        <comment></comment>
       </element>
       <element name="columnconstraints" title="Column constraints">
         <desc0>Not implemented</desc0>
         <desc1>Partially implemented</desc1>
         <desc2>Fully implemented</desc2>
         <score>0</score>
-        <comment/>
+        <comment></comment>
       </element>
       <element name="nullconstraints" title="NULL constraints">
         <desc0>Not implemented</desc0>
         <desc1>Partially implemented</desc1>
         <desc2>Fully implemented</desc2>
         <score>2</score>
-        <comment/>
+        <comment></comment>
       </element>
       <element name="columndefaultvalues" title="Column's default values">
         <desc0>Not implemented</desc0>
         <desc1>Partially implemented</desc1>
         <desc2>Fully implemented</desc2>
         <score>2</score>
-        <comment/>
+        <comment></comment>
       </element>
       <element name="functionsdefaultvalues" title="Functions for default values">
         <desc0>Not implemented</desc0>
         <desc1>Partially implemented</desc1>
         <desc2>Fully implemented</desc2>
         <score>0</score>
-        <comment/>
+        <comment></comment>
       </element>
       <element name="foreignkeys" title="Foreign keys support">
         <desc0>Not implemented</desc0>
@@ -464,12 +464,12 @@
         <desc1>Partially implemented</desc1>
         <desc2>Fully implemented</desc2>
         <score>0</score>
-        <comment/>
+        <comment></comment>
       </element>
     </element>
     <element name="security" title="Security">
       <desc>Security features</desc>
-      <comment/>
+      <comment></comment>
       <element name="accesscontrol" title="Access control levels">
         <desc>Levels of access control supported (usaername, table, base, etc...)</desc>
         <comment>username, table, base and client's hostname</comment>
@@ -483,12 +483,12 @@
         <desc1>Partially implemented</desc1>
         <desc2>Fully implemented</desc2>
         <score>2</score>
-        <comment/>
+        <comment></comment>
       </element>
     </element>
     <element name="transactions" title="Transactions">
       <desc>Transactional aspects</desc>
-      <comment/>
+      <comment></comment>
       <element name="transactionalengine" title="Transactional engine">
         <desc0>Not implemented</desc0>
         <desc1>Partially implemented</desc1>
@@ -512,12 +512,12 @@
         <desc1>Partially implemented</desc1>
         <desc2>Fully implemented</desc2>
         <score>0</score>
-        <comment/>
+        <comment></comment>
       </element>
     </element>
     <element name="othersqlfeatures" title="Other SQL features">
       <desc>Other SQL features</desc>
-      <comment/>
+      <comment></comment>
       <element name="views" title="Views">
         <desc0>Not implemented</desc0>
         <desc1>Partially implemented</desc1>
@@ -551,21 +551,21 @@
         <desc1>Partially implemented</desc1>
         <desc2>Fully implemented</desc2>
         <score>2</score>
-        <comment/>
+        <comment></comment>
       </element>
       <element name="tablespaces" title="Tablespaces">
         <desc0>Not implemented</desc0>
         <desc1>Partially implemented</desc1>
         <desc2>Fully implemented</desc2>
         <score>2</score>
-        <comment/>
+        <comment></comment>
       </element>
       <element name="unicode" title="UNICODE">
         <desc0>Not implemented</desc0>
         <desc1>Partially implemented</desc1>
         <desc2>Fully implemented</desc2>
         <score>2</score>
-        <comment/>
+        <comment></comment>
       </element>
     </element>
   </section>
@@ -587,21 +587,21 @@
       <desc1>Master/Slave replication</desc1>
       <desc2>Mutli-master replication</desc2>
       <score>1</score>
-      <comment/>
+      <comment></comment>
     </element>
     <element name="olap" title="OLAP">
       <desc0>Not supported</desc0>
       <desc1>Partially supported</desc1>
       <desc2>Fully supported</desc2>
       <score>0</score>
-      <comment/>
+      <comment></comment>
     </element>
     <element name="xmlfeatures" title="XML features">
       <desc0>No XML features</desc0>
       <desc1>Very few XML features</desc1>
       <desc2>XML data is deeply integrated in the system</desc2>
       <score>0</score>
-      <comment/>
+      <comment></comment>
     </element>
     <element name="gis" title="GIS features">
       <desc0>No spatial features</desc0>
