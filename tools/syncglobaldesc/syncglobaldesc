@@ -1,0 +1,76 @@
+#!//usr/bin/perl -w
+# this script is experimental and will be certainly rewrite
+# It depends on the CVS release of QSOS::Document
+# $Id: syncglobaldesc,v 1.1 2006/04/24 16:18:49 goneri Exp $
+use strict;
+
+use Getopt::Long;
+use Data::Dumper;
+use QSOS::Document;
+
+
+sub _help {
+  my $msg = shift;
+  print $msg if (defined $msg && $msg);
+  print "usage syncglobalsection -t file.xml -f sheet.qsos\n";
+  print "option:\n";
+  print "\t--template -t : template\n";
+  print "\t--help -h : help\n";
+  exit 1;
+}
+
+sub _isdiff {
+  my ($v1, $v2) = @_;
+
+  $v1 = '' unless (defined $v1 && $v1);
+  $v2 = '' unless (defined $v2 && $v2);
+
+  return 1 if ($v1 ne $v2);
+  return;
+}
+my ($help, $template, $file);
+
+GetOptions (
+  'file=s' => \$file,
+  'template=s' => \$template,
+  'help' => \$help,
+);
+
+_help("cant't find the QSOS file") unless (defined $file && -f $file);
+_help("cant't find the template file") unless (defined $template && -f $template);
+
+
+my $t = new QSOS::Document;
+$t->load($template);
+my $qsos = new QSOS::Document;
+$qsos->load($file);
+
+  my $cpt = 0;
+foreach (keys %{$t->{section}}) {
+  # TODO: be able to remove key fro the dest file
+
+  if (_isdiff($t->getkeytitle($_), $qsos->getkeytitle($_))) {
+    $qsos->setkeytitle($_,$t->getkeytitle($_));
+    $cpt++;
+  }
+  if (_isdiff($t->getkeydesc($_), $qsos->getkeydesc($_))) {
+    $qsos->setkeydesc($_,$t->getkeydesc($_));
+    $cpt++;
+  }
+  if (_isdiff($t->getkeydesc($_,"0"), $qsos->getkeydesc($_,"0"))) {
+    $qsos->setkeydesc($_,$t->getkeydesc($_,"0"),"0");
+    $cpt++;
+  }
+  if (_isdiff($t->getkeydesc($_,"1"), $qsos->getkeydesc($_,"1"))) {
+    $qsos->setkeydesc($_,$t->getkeydesc($_,"1"),"1");
+    $cpt++;
+  }
+  if (_isdiff($t->getkeydesc($_,"2"), $qsos->getkeydesc($_,"2"))) {
+    $qsos->setkeydesc($_,$t->getkeydesc($_,"2"),"2");
+    $cpt++;
+  }
+
+  
+}
+print $cpt." entry updated\n";
+$qsos->write();
