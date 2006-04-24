@@ -1,4 +1,4 @@
-# $Id: Document.pm,v 1.14 2006/04/13 13:14:37 goneri Exp $
+# $Id: Document.pm,v 1.15 2006/04/24 16:16:16 goneri Exp $
 #
 #  Copyright (C) 2006 Atos Origin 
 #
@@ -25,6 +25,7 @@ use Carp;
 use open ':utf8';
 use warnings;
 use strict;
+use Data::Dumper;
 
 require Exporter;
 
@@ -32,7 +33,7 @@ use vars qw($VERSION @ISA @EXPORT @EXPORT_OK $PREFERRED_PARSER);
 
 @ISA               = qw(Exporter);
 @EXPORT            = qw(XMLin XMLout);
-@EXPORT_OK         = qw(new load write getkeydesc getkeydesc0 getkeydesc1 getkeydesc2 setkeycomment getkeycomment setkeyscore getkeyscore write getauthors addauthor delauthor getappname setappname getlanguage setlanguage getrelease setrelease getlicenselist getlicenseid setlicenseid getlicensedesc setlicensedesc geturl seturl getdesc setdesc getdemourl setdemourl getqsosformat setqsosformat getqsosspecificformat setqsosspecificformat getqsosappfamily setqsosappfamily);
+@EXPORT_OK         = qw(new load write getkeydesc setkeydesc setkeycomment getkeycomment setkeyscore getkeyscore getkeytitle setkeytitle write getauthors addauthor delauthor getappname setappname getlanguage setlanguage getrelease setrelease getlicenselist getlicenseid setlicenseid getlicensedesc setlicensedesc geturl seturl getdesc setdesc getdemourl setdemourl getqsosformat setqsosformat getqsosspecificformat setqsosspecificformat getqsosappfamily setqsosappfamily);
 $VERSION           = '0.01';
 
 
@@ -46,6 +47,29 @@ sub _flatme {
   }
 }
 
+sub _getsectionbyname {
+  my ($self, $name) = @_;
+  if (!$name) {
+    croak ("key is empty");
+    return;
+  }
+  if (!keys %{$self->{section}}) {
+    croak ("ERR: no document loaded\n");
+    return;
+  }
+  if (!exists $self->{section}->{$name}) {
+    print "ERR: no section called $name\n";
+    return;
+  }
+  if (ref $self->{section}->{$name} ne 'HASH') {
+    croak ("Section `$name' is not correcly initialised");
+    return;
+  }
+
+  return $self->{section}->{$name};
+
+}
+
 
 sub new {
   my $self;
@@ -56,6 +80,7 @@ sub new {
 
   $self->{tabular} = [];
   $self->{authors} = [];
+  $self->{section} = {};
 
   bless $self;
   return $self;
@@ -95,6 +120,8 @@ sub _pushElem {
 
   $deep = 0 unless $deep;
 
+  die unless ($elt->atts->{name});
+
   my $h = {
     name => $elt->atts->{name},
     title => $elt->atts->{title},
@@ -104,108 +131,98 @@ sub _pushElem {
     desc_ref1 => $elt->first_child('desc1'),
     desc_ref2 => $elt->first_child('desc2'),
     score_ref => $elt->first_child('score'),
+    elt => $elt,
     deep => $deep
   };
 
-  
-  push @{$self->{tabular}}, $h;
+  if (exists ($self->{section}->{$elt->atts->{name}})) {
+    print "ERR: Section name ".$elt->atts->{name}." already defined in document!\n";
+  }
+  $self->{section}->{$elt->atts->{name}} = $h;
+#  push @{$self->{tabular}}, \$h;
 }
 
 
 sub getkeydesc {
-  my ($self, $nbr, $numdesc) = @_;
-
-  if (! defined $nbr) {
-    croak ("nbr is not defined");
-    return;
-  }
+  my ($self, $name, $numdesc) = @_;
 
   $numdesc = '' if (! defined $numdesc);
   $numdesc = '' if ($numdesc !~ /^(|0|1|2)$/);
 
-  my $comment_ref = $self->{tabular}->[$nbr]->{"desc_ref".$numdesc};
+  my $section = $self->_getsectionbyname($name);
+  my $desc_ref = $section->{"desc_ref".$numdesc};
 
-  unless ($comment_ref) {
-    return;
-  }
-  $comment_ref->text();
+  return unless (defined $desc_ref); # no desc key
+  $desc_ref->text();
 }
 
+sub setkeydesc {
+  my ($self, $name, $desc, $numdesc ) = @_;
+
+  $numdesc = '' if (! defined $numdesc);
+  $numdesc = '' if ($numdesc !~ /^(|0|1|2)$/);
+
+  $desc = '' if (! defined $desc);
+  my $desc_ref = $self->_getsectionbyname($name)->{"desc_ref".$numdesc};
+  if (!$desc_ref) { # no existing <desc></desc>, i create it
+    $desc_ref = $self->_getsectionbyname($name)->{"elt"}->insert_new_elt ('desc');
+    $self->{section}->{$name}->{"desc_ref".$numdesc} = $desc_ref; # save new ref
+    $desc_ref = $self->_getsectionbyname($name)->{"desc_ref".$numdesc};
+  }
+  $desc_ref->set_text($desc);
+}
 
 sub setkeycomment {
-  my ($self, $nbr, $comment) = @_;
+  my ($self, $name, $comment) = @_;
 
+  my $comment_ref = $self->_getsectionbyname($name)->{"comment_ref"};
 
-  if (! defined $nbr) {
-    croak ("nbr is not defined");
-    return;
-  }
-  if (! defined $self->{tabular}->[$nbr]) {
-    croak ("Can't setcomment in an undef value");
-    return;
-  } 
-
-  my $comment_ref = $self->{tabular}->[$nbr]->{comment_ref};
-
-  if ($comment_ref) {
-    $comment_ref->set_text($comment);
-  }
+  $comment_ref->set_text($comment);
 }
 
 sub getkeycomment {
-  my ($self, $nbr) = @_;
+  my ($self, $name) = @_;
 
-  if (! defined $nbr) {
-    croak ("nbr is not defined");
-    return;
-  }
+  my $comment_ref = $self->_getsectionbyname($name)->{"comment_ref"};
 
-  my $comment_ref = $self->{tabular}->[$nbr]->{comment_ref};
-
-  unless ($comment_ref) {
-    return;
-  }
   $comment_ref->text();
 }
 
 sub setkeyscore {
-  my ($self, $nbr, $score) = @_;
-
-
-  if (! defined $nbr) {
-    croak ("nbr is not defined");
-    return;
-  }
-  if (! defined $self->{tabular}->[$nbr]) {
-    croak ("Can't setscore in an undef value");
-    return;
-  }
+  my ($self, $name, $score) = @_;
 
   $score = '' if ((!defined $score) || ($score !~ /[012]/));
 
-  my $score_ref = $self->{tabular}->[$nbr]->{score_ref};
+  my $score_ref = $self->_getsectionbyname($name)->{"score_ref"};
 
-  if ($score_ref) {
-    $score_ref->set_text($score);
-  }
+  $score_ref->set_text($score);
 }
 
 sub getkeyscore {
-  my ($self, $nbr) = @_;
+  my ($self, $name) = @_;
 
-  if (! defined $nbr) {
-    croak ("nbr is not defined");
-    return;
-  }
+  my $score_ref = $self->_getsectionbyname($name)->{"score_ref"};
 
-  my $score_ref = $self->{tabular}->[$nbr]->{score_ref};
-
-  unless ($score_ref) {
-    return;
-  }
   $score_ref->text();
 }
 
+
+sub getkeytitle {
+  my ($self, $name) = @_;
+
+  my $elt = $self->_getsectionbyname($name)->{"elt"};
+
+  $elt->att('title');
+
+}
+
+sub setkeytitle {
+  my ($self, $name, $title) = @_;
+
+  my $elt = $self->_getsectionbyname($name)->{"elt"};
+  $elt->set_att( title => $title);
+
+}
 
 
 sub write {
