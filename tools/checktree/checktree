@@ -1,29 +1,33 @@
 #!/bin/sh
-# $Id: checktree,v 1.1 2006/04/18 09:48:40 goneri Exp $
+# $Id: checktree,v 1.2 2006/04/24 16:20:28 goneri Exp $
 # Gonéri Le Bouder
 
-SHOWTEMPLATE="../showtemplate/showtemplate.pl"
 DIR=`pwd`
+SHOWTEMPLATE=$DIR"/../showtemplate/showtemplate.pl"
+SYNCSECTIONDESC=$DIR"/../syncglobaldesc/syncglobaldesc"
 cd ../../sheet/
 if [ ! -f "global.xml" ]; then
   echo "global.xml doesn't exist in this tree"
   exit 1
 fi
 
+# First i try to sync file desc*
 for file in `find -name '*.qsos' -type f|grep -v template`;do
+  echo "syncing desc: $file"
+  $SYNCSECTIONDESC -t global.xml -f $file
+done
  
-
-  $DIR/$SHOWTEMPLATE --global -f $file > `dirname $file`/global.tmp
+# now i do the diff
+for file in `find -name '*.qsos' -type f|grep -v template`;do
+  $SHOWTEMPLATE --global -f $file > `dirname $file`/global.tmp
 
   #diff -E -b global.xml `dirname $file`/global.tmp > /tmp/diff.`basename $file`.$$ 
-  diff -E -b global.xml `dirname $file`/global.tmp > /tmp/diff.`basename $file`.$$ 
+  diff -E -u -b global.xml `dirname $file`/global.tmp > /tmp/diff.`basename $file`.$$.diff 
   if [ "$?" -ne "0" ];then
     echo
-    echo "* Problem with $file"
-    echo $file global section differe from the global.xml section#: /tmp/diff.`basename $file`.$$
-    echo "####### diff ######"
-    cat /tmp/diff.`basename $file`.$$
+    echo "# Problem with $file"
+    echo \#file global section differe from the global.xml section#: /tmp/diff.`basename $file`.$$.diff
+#    cat /tmp/diff.`basename $file`.$$
   fi
   rm `dirname $file`/global.tmp
-  rm /tmp/diff.`basename $file`.$$
 done
