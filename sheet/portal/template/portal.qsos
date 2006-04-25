@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- $Id: kolab.qsos,v 1.13 2006/04/25 16:05:51 goneri Exp $ --><document>
+<document>
   <header>
     <authors>
       <author>
-        <email>goneri.lebouder@atosorigin.com</email>
-        <name>Gonéri Le Bouder</name>
+        <email></email>
+        <name></name>
       </author>
     </authors>
     <dates>
-      <creation>20060307</creation>
+      <creation></creation>
       <validation></validation>
     </dates>
     <language>en</language>
-    <appname>kolab</appname>
-    <release>2</release>
-    <licenseid>31</licenseid>
-    <licensedesc>GNU General Public License</licensedesc>
-    <url>http://www.kolab.org</url>
-    <desc>Kolab is a groupware used in the german administration</desc>
-    <demourl>http://kolab.org/screenshots.html</demourl>
+    <appname></appname>
+    <release></release>
+    <licenseid></licenseid>
+    <licensedesc></licensedesc>
+    <url></url>
+    <desc></desc>
+    <demourl></demourl>
     <qsosformat>1.6</qsosformat>
-    <qsosappfamily>groupware</qsosappfamily>
-    <qsosspecificformat>1</qsosspecificformat>
+    <qsosappfamily></qsosappfamily>
+    <qsosspecificformat></qsosspecificformat>
   </header>
   <section name="generic" title="Generic section">
     <desc>Generic criteria from QSOS version 1.6</desc>
@@ -33,28 +33,28 @@
           <desc0>less than 3 months</desc0>
           <desc1>if between 3 months and 3 years</desc1>
           <desc2>after 3 years</desc2>
-          <score>2</score>
-          <comment>Kolab.org domain was created the 29th of Oct 2002</comment>
+          <score></score>
+          <comment></comment>
         </element>
         <element name="stability" title="Stability">
           <desc0>Unstable software with numerous releases or patches generating side effects</desc0>
           <desc1>Stabilized production release existing but old. Difficulties to stabilize developpement releases</desc1>
           <desc2>Stabilized software. Releases provide bug fixes corrections but mainly new functionalities</desc2>
-          <score>2</score>
+          <score></score>
           <comment></comment>
         </element>
         <element name="historyknowproblems" title="History, know problems">
           <desc0>Software knows several problems which can be prohibitive</desc0>
           <desc1>No know major problem or crisis</desc1>
           <desc2>History of good management of crisis situations</desc2>
-          <score>2</score>
+          <score></score>
           <comment></comment>
         </element>
         <element name="forkprobability" title="Fork probability, source of Forking">
           <desc0>Software is very likely to be forked in the future</desc0>
           <desc1>Software comes from a fork but has very few chances of being forked in the future</desc1>
           <desc2>Software has very little chance of being forked. It does not come from a fork either</desc2>
-          <score>2</score>
+          <score></score>
           <comment></comment>
         </element>
       </element>
@@ -64,28 +64,28 @@
           <desc0>Very few users identified</desc0>
           <desc1>Detectable use on Internet</desc1>
           <desc2>Numerous users, numerous references</desc2>
-          <score>2</score>
+          <score></score>
           <comment></comment>
         </element>
         <element name="references" title="References">
           <desc0>None</desc0>
           <desc1>Few refences, non critical usages</desc1>
           <desc2>Often implemented for critical applications</desc2>
-          <score>1</score>
-          <comment>Kolab is know to be use in some important organisation. But they doesn't give information for "security" raison</comment>
+          <score></score>
+          <comment></comment>
         </element>
         <element name="contributingcommunity" title="Contributing Community">
           <desc0>No community or without real activity (forum, mailing list, ...)</desc0>
           <desc1>Existing community with a notable activity</desc1>
           <desc2>Strong community: big activity on forums, numerous contributors and advocates</desc2>
-          <score>1</score>
+          <score></score>
           <comment></comment>
         </element>
         <element name="books" title="books">
           <desc0>No book about the software</desc0>
           <desc1>Less than 5 books about the software are available</desc1>
           <desc2>More than 5 books about software are available, in several languages</desc2>
-          <score>0</score>
+          <score></score>
           <comment></comment>
         </element>
       </element>
@@ -95,14 +95,14 @@
           <desc0>1 to 2 individuals involved, not clearly identified</desc0>
           <desc1>Between 2 and 5 independent people</desc1>
           <desc2>More than 5 people</desc2>
-          <score>1</score>
+          <score></score>
           <comment></comment>
         </element>
         <element name="managementstyle" title="Management style">
           <desc0>Complete dictatorship</desc0>
           <desc1>Enlightened despotism</desc1>
           <desc2>Council of architects with identified leader (e.g: KDE)</desc2>
-          <score>1</score>
+          <score></score>
           <comment></comment>
         </element>
       </element>
@@ -112,7 +112,7 @@
           <desc0>Less than 3 developers, not clearly identified</desc0>
           <desc1>Between 4 and 7 developers, or more unidentified developers with important turnover</desc1>
           <desc2>More than 7 developers, very stable team</desc2>
-          <score>2</score>
+          <score></score>
           <comment></comment>
         </element>
         <element name="activityonbugs" title="Activity on bugs">
@@ -133,7 +133,7 @@
           <desc0>Very weak activity on both production and development releases</desc0>
           <desc1>Activity on production and developmenet releases. Frequent minor releases (bug fixes)</desc1>
           <desc2>Important activity with frequent minor releases (bugs fixes) and planned major releases relating to the roadmap forcast</desc2>
-          <score>2</score>
+          <score></score>
           <comment></comment>
         </element>
       </element>
@@ -144,7 +144,7 @@
         <desc0>Developments realized at 100% by employees of a single company</desc0>
         <desc1>60% maximum</desc1>
         <desc2>20% maximum</desc2>
-        <score>2</score>
+        <score></score>
         <comment></comment>
       </element>
       <element name="services" title="Services">
@@ -160,14 +160,14 @@
           <desc0>No offer of support except via public forums and mailing lists</desc0>
           <desc1>Offer exists but is provided by a single contractor without strong commitment quality of services</desc1>
           <desc2>Multiple service providers with strong commitment (e.g: guaranteed resolution time)</desc2>
-          <score>1</score>
+          <score></score>
           <comment></comment>
         </element>
         <element name="consulting" title="Consulting">
           <desc0>No offer of consulting service</desc0>
           <desc1>Offer exists but is restricted geographically and to one language or is provided by a single contractor</desc1>
           <desc2>Consulting services provied by different contractors in serveral languages</desc2>
-          <score>1</score>
+          <score></score>
           <comment></comment>
         </element>
       </element>
@@ -175,7 +175,7 @@
         <desc0>No user documentation</desc0>
         <desc1>Documentation exists but shifted in time, is restricted to one language or is poorly detailed</desc1>
         <desc2>Documentation always up to date, translated and possibly adapted to different target readers (end user, sysadmin, manager, ...)</desc2>
-        <score>1</score>
+        <score></score>
         <comment></comment>
       </element>
       <element name="qualityassurance" title="Quality Assurance">
@@ -184,7 +184,7 @@
           <desc0>No QA process</desc0>
           <desc1>Identifies QA process but not much formalized and with no tool</desc1>
           <desc2>Automatic testing process included in code's life-cycle with publication of results</desc2>
-          <score>1</score>
+          <score></score>
           <comment></comment>
         </element>
         <element name="tools" title="Tools">
@@ -192,7 +192,7 @@
           <desc1>Standard tools provided (for instance by a hosting forge) but poorly used</desc1>
           <desc2>Very active use of tools for roles/tasks allocation and progress monitoring</desc2>
           <score></score>
-          <comment>1</comment>
+          <comment></comment>
         </element>
       </element>
       <element name="packaging" title="Packaging">
@@ -380,157 +380,258 @@
       </element>
     </element>
   </section>
-  <section name="composant" title="Composants of the project">
+  <section name="portalComposant" title="Portal Composant">
     <comment></comment>
-    <desc>Different composant from the groupware</desc>
-    <element name="auth" title="Authentification backend">
-      <desc>Authentification backend</desc>
-      <comment>OpenLDAP</comment>
+    <desc></desc>
+    <element name="standards-support" title="standards support">
+      <element name="portletstandard" title="portlet s standard">y  
+			<desc0>Using no standard specification</desc0><desc1>Specification portal is not indentified</desc1><desc2>Using specification JSR-168</desc2><comment>
+				It is entirely standards-based and supports the JSR-168 portlet specification, which allows you to easily plug-in standards-compliant portlets to meet your specific portal needs. It suports too JSR-170 (Content Repository)
+			</comment><score></score></element>
+      <element name="technologysupported" title="technology supported">
+        <desc0>Not supporting any technologies</desc0>
+        <desc1>likely supporting any technologies but not identified or don't work correctly</desc1>
+        <desc2>support numerous technologies like Struts,JSF,Webdav</desc2>
+        <comment>
+				The technologies supported are Struts, JSF(1.2 version), WebDAV(supported by JBoss2.0 and 2.4)
+			</comment>
+        <score></score>
+      </element>
     </element>
-    <element name="mail" title="Mail">
-      <desc>Mail server</desc>
-      <comment>Cyrus-IMAP</comment>
+    <element name="generaladministration" title="general administration">
+      <element name="administrationsprotocol" title="protocol of administration">
+        <desc0>no protocol supported</desc0>
+        <desc1>protocol HTTP/HTTPs doesn't work correctly or supports only thin heavy (client lourd???)</desc1>
+        <desc2>administration via thin light is performing</desc2>
+        <comment></comment>
+        <score></score>
+      </element>
+      <element name="webapplicationadministration" title="web application s administration">
+        <desc0>no web application administration</desc0>
+        <desc1> web application administration don't work correctly</desc1>
+        <desc2>Three specific portlets about administration </desc2>
+        <comment></comment>
+        <score></score>
+      </element>
+      <element name="commandline" title="command line">
+        <desc0>Administration via commandline  impossible</desc0>
+        <desc1>Administration via commandline is difficult or isn't performing </desc1>
+        <desc2>Administration via command line work very well</desc2>
+        <comment>Do JBoss Portal come with script or can be managed from a console?
+	</comment>
+        <score></score>
+      </element>
     </element>
-    <element name="mta" title="Mail Transport Agent">
-      <desc>Mail Transport Agent</desc>
-      <comment>Postfix</comment>
+    <element name="fonctionaladministration" title="fonctionaladministration">
+      <element name="usersmanagement" title="user s management">
+        <desc0>No user's management</desc0>
+        <desc1>User's management doesn't work correctly</desc1>
+        <desc2>User's management is performing</desc2>
+        <comment>Auto recording user management, user's creation by admin, information's update
+       </comment>
+        <score></score>
+      </element>
+      <element name="sitestructuresmanagement" title="site structure s management">
+        <desc0>No site structure's management</desc0>
+        <desc1>site structure's management doesn't work correctly </desc1>
+        <desc2> Site structure's management by Portal Object Management and by XML scripts</desc2>
+        <comment>Assignment of themes and pages on the portal from  Portal Object Management, reference of themes and layouts by XML scripts
+		</comment>
+        <score></score>
+      </element>
+      <element name="rulesmanagement" title="rules management">
+        <desc0>No rules'management </desc0>
+        <desc1>Rules'management doesn't work correctly</desc1>
+        <desc2>Possibility to manage rules </desc2>
+        <comment></comment>
+        <score></score>
+      </element>
+      <element name="marketinganimation" title="marketing animation">
+        <desc0>No marketing animation</desc0>
+        <desc1>Marketing animation can be customized</desc1>
+        <desc2>Marketing animation integrated</desc2>
+        <comment></comment>
+        <score></score>
+      </element>
     </element>
-    <element name="storage" title="Storage backend">
-      <desc>Storage backend</desc>
-      <comment>Content is stored in IMAP shared folder</comment>
-    </element>
-  </section>
-  <section name="administration" title="Administration GUI">
-    <comment></comment>
-    <element name="webinterface" title="Web interface">
-      <desc0>No web interface</desc0>
-      <desc1>an web interface is provided but limited</desc1>
-      <desc2>everything can be completed with the Web interface</desc2>
-      <comment></comment>
-      <score>2</score>
-    </element>
-    <element name="commandline" title="Console mode">
-      <desc0>Nothing</desc0>
-      <desc1>Some tools exists, but limited. No text based configuration file or not human readable (e.g: complexe XML)</desc1>
-      <desc2>Total access to the server configuration with powerful tools and well designer text configuration file</desc2>
+    <element name="technicaladministration" title="technical administration">
+      <desc0>No technical administration </desc0>
+      <desc1>Technical administration is partial.Especially for JBoss AS </desc1>
+      <desc2>Technical administration performing </desc2>
       <comment></comment>
       <score></score>
     </element>
-  </section>
-  <section name="groupwarecomposant" title="Supported groupware composant">
-    <comment></comment>
-    <element name="calendar" title="Calendar">
-      <desc0>no calendar provied</desc0>
-      <desc1>a calendar is provied, but leak some important feature</desc1>
-      <desc2>a well integrated calendar is provied</desc2>
+    <element name="administrationsdelegation" title="administration s delegation">
+      <desc0>No administration's delegation</desc0>
+      <desc1>administration's delegation doesn't work correctly</desc1>
+      <desc2>administration's delegation is performing</desc2>
       <comment></comment>
-      <score>2</score>
+      <score></score>
     </element>
-    <element name="taskmanager" title="Taskmanager">
-      <desc0>no task manager provied</desc0>
-      <desc1>a task manager is provied but leak some important feature</desc1>
-      <desc2>Task manager fully supported</desc2>
+    <element name="utilisationsstatistics" title="utilisation s statistics">
+      <desc0>No utilisation's statistics</desc0>
+      <desc1>No utilisation's statistics, but any statistics by Webalizer or AW AWStats can be supplied </desc1>
+      <desc2>utilisation's statistics integrated </desc2>
       <comment></comment>
-      <score>2</score>
+      <score></score>
     </element>
-    <element name="notemanager" title="Notemanager">
-      <desc0>no note manager provided</desc0>
-      <desc1>a limited note manager is provided</desc1>
-      <desc2>a well integred note manager is provided</desc2>
+    <element name="monitoring" title="monitoring">
+      <desc0>Don't generate any monitoring file</desc0>
+      <desc1>monitoring file generation doesn't work correctly </desc1>
+      <desc2>generate partially JMX support including information of deployment view and its administration </desc2>
       <comment></comment>
-      <score>2</score>
+      <score></score>
     </element>
-    <element name="contactmanager" title="Contact manager">
-      <desc0>can't add contact in the server</desc0>
-      <desc1>contact manager exists but is limited</desc1>
-      <desc2>contact manager fully supported</desc2>
-      <comment>yes</comment>
-      <score>2</score>
-    </element>
-  </section>
-  <section name="standard" title="Standard support">
-    <comment></comment>
-    <element name="icaloverwebdav" title="iCalendar over WebDav">
-      <desc0>iCalendar over WebDav not supported</desc0>
-      <desc1>iCalendar over WebDav partially supported</desc1>
-      <desc2>iCalendar over WebDav works</desc2>
+    <element name="companymailingsupport" title="company mailing support">
+      <desc0>No mailing support </desc0>
+      <desc1>standard mailing support doesn't work correctly </desc1>
+      <desc2>SMTP and SMTPS integrated</desc2>
       <comment></comment>
-      <score>1</score>
+      <score></score>
     </element>
-    <element name="caldav" title="CalDav">
-      <desc0>CalDav over WebDav not supported</desc0>
-      <desc1>CalDav over WebDav partially supported</desc1>
-      <desc2>CalDav over WebDav works</desc2>
-      <comment>not supported</comment>
-      <score>0</score>
-    </element>
-    <element name="groupdav" title="Groupdav">
-      <desc0>Groupdav over WebDav not supported</desc0>
-      <desc1>Groupdav over WebDav partially supported</desc1>
-      <desc2>Groupdav over WebDav works</desc2>
-      <comment>not supported</comment>
-      <score>0</score>
-    </element>
-    <element name="syncml" title="SyncML">
-      <desc0>SyncML over WebDav not supported</desc0>
-      <desc1>SyncML over WebDav partially supported</desc1>
-      <desc2>SyncML over WebDav works</desc2>
-      <comment>not supported</comment>
-      <score>0</score>
-    </element>
-  </section>
-  <section name="supportedclients" title="Supported client">
-    <comment></comment>
-    <element name="web" title="Web client">
-      <desc0>Web interface doesn't exist</desc0>
-      <desc1>Web interface is provied but limited or need some work for its integration</desc1>
-      <desc2>Web interface directly provided with the project</desc2>
-      <comment>eGroupware or Hord can be pluged</comment>
-      <score>1</score>
-    </element>
-    <element name="outlook" title="Microsoft Outlook">
-      <desc0>Microsoft Outlook not supported</desc0>
-      <desc1>Microsoft Outlook connector is provided but have some limitation</desc1>
-      <desc2>a free Microsoft Outlook connector</desc2>
-      <comment>Two commercial and not free connected exist. The best is Toltec's one.</comment>
-      <score>1</score>
-    </element>
-    <element name="evolution" title="Novell Evolution">
-      <desc0>Novell Evolution can't be used</desc0>
-      <desc1>Novell Evolution can be used but with some limitation</desc1>
-      <desc2>Novell Evolution fully supported</desc2>
+    <element name="safety" title="safety">
+      <desc0>No safety</desc0>
+      <desc1>Safety is not strong</desc1>
+      <desc2>support any modules(SSL/TLS, IIS...)</desc2>
       <comment></comment>
-      <score>2</score>
+      <score></score>
     </element>
-    <element name="kde" title="KDE">
-      <desc0>KDE PIM (Korganizer, kmail, ...) can't be used with this groupware</desc0>
-      <desc1>KDE can be used but with some limitation </desc1>
-      <desc2>Fully support of KDE</desc2>
-      <comment>KDE PIM was the first supported client</comment>
-      <score>2</score>
-    </element>
-    <element name="ical" title="Apple iCal">
-      <desc0>Apple's iCal can't be used</desc0>
-      <desc1>Apple's iCal works but with some limitation</desc1>
-      <desc2>Apple's iCal fully supported</desc2>
+    <element name="installation" title="installation">
+      <desc0>complicated installation</desc0>
+      <desc1>installation with a little assistance by website only</desc1>
+      <desc2>assisted installation by manual and website, possibility to unzip a copy (don't need to install) </desc2>
       <comment></comment>
-      <score>2</score>
+      <score></score>
     </element>
-  </section>
-  <section name="codequality" title="Code quality">
-    <element name="remoteapi" title="Remote access API">
-      <desc0>not remote remote API</desc0>
-      <desc1>remote API (SOAP, XML/RPC, REST) exists but is limited or buggy</desc1>
-      <desc2>powerful remote API (SOAP, XML/RPC, REST) provied</desc2>
-      <comment>none for Kolab2, a wish for Kolab3 exists for support of a remote procedure call infrastucture</comment>
-      <score>0</score>
+    <element name="deployment" title="deployment">
+      <element name="portaldeployment" title="portal deployment">
+        <desc0>impossible portal deployment </desc0>
+        <desc1>portal deployment is partial </desc1>
+        <desc2>portal deployment is complete </desc2>
+        <comment></comment>
+        <score></score>
+      </element>
+      <element name="simplifieddeploymentonacluster" title="simplified deployment on a cluster">
+        <desc0>simplified deployment on a cluster is impossible</desc0>
+        <desc1>deployment on a cluster is possible but not simplified</desc1>
+        <desc2>simplified deployment on a cluster is performing</desc2>
+        <comment></comment>
+        <score></score>
+      </element>
     </element>
-    <element name="api" title="code API">
-      <desc0>No API provied to extend the server, or very limited and not documented</desc0>
-      <desc1>An API is provied but limited of not fully documented</desc1>
-      <desc2>Well documented and complet API</desc2>
-      <comment>A Perl lib is provided but Kolab core can't be change easily. The best way to extend it, is to provide additional service plugged on the LDAP directory server.</comment>
-      <score>1</score>
+    <element name="modifyingadministrationlanguage" title="modifying administration language">
+      <desc0>impossible to modify administration language</desc0>
+      <desc1>possibility to add more administration language </desc1>
+      <desc2>administration languages exist and can be updated</desc2>
+      <comment></comment>
+      <score></score>
+    </element>
+    <element name="contentsmanagement" title="contents management">
+      <element name="contentsmanagementintegrated" title="contents management integrated">
+        <desc0>no contents management</desc0>
+        <desc1>contents management doesn't work correctly </desc1>
+        <desc2>contents management integrated, based on JackRabbit(Apache), implementation of JSR-170</desc2>
+        <comment>contents management integrated with contents versioning support, without conntents validation circuit
+	</comment>
+        <score></score>
+      </element>
+      <element name="contentsprevisualisationfunctionexceptportalcontext" title="contents previsualisation function except portal context">
+        <desc0>no contents previsualisation function</desc0>
+        <desc1>contents previsualisation function don't work correctly</desc1>
+        <desc2>contents previsualisation function except portal context disponible: WYSIWYG contents </desc2>
+        <comment></comment>
+        <score></score>
+      </element>
+      <element name="contentsprevisualisationfunctionintheportalcontext" title="contents previsualisation function in the portal context">
+        <desc0>no contents previsualisation function </desc0>
+        <desc1>contents previsualisation function in the portal context is partial </desc1>
+        <desc2>contents previsualisation function in the portal context is integrated</desc2>
+        <comment></comment>
+        <score></score>
+      </element>
+      <element name="separationofcontentsandform" title="separation of contents and form">
+        <desc0>no separation of contents and form </desc0>
+        <desc1>separation of contents and form is partial</desc1>
+        <desc2>possibility to separate contents and form </desc2>
+        <comment></comment>
+        <score></score>
+      </element>
+    </element>
+    <element name="searchengine" title="search engine">
+      <desc0>no search engine integrated</desc0>
+      <desc1>search engine doesn't work correctly </desc1>
+      <desc2>search engine is performing</desc2>
+      <comment></comment>
+      <score></score>
+    </element>
+    <element name="authentification" title="authentification">
+      <element name="LDAPauthentification" title="LDAP authentification">
+        <desc0>don't support LDAP authentification</desc0>
+        <desc1>LDAP authentification doesn't work correctly</desc1>
+        <desc2>LDAP authentification is performing and bring a real advantage for the tools</desc2>
+        <comment></comment>
+        <score></score>
+      </element>
+      <element name="NTLMauthentification" title="NTLM authentification">
+        <desc0>No NTLM authentification</desc0>
+        <desc1>NTLM authentification is partial or doesn't work correctly</desc1>
+        <desc2>NTLM authentification is performing </desc2>
+        <comment></comment>
+        <score></score>
+      </element>
+      <element name="X.509authentification" title="X.509 authentification">
+        <desc0>No X.509 authentification</desc0>
+        <desc1>X.509 authentification doesn't work correctly</desc1>
+        <desc2>X.509 authentification is performing and bring a real advantage for the tools</desc2>
+        <comment></comment>
+        <score></score>
+      </element>
+      <element name="Kerberosauthentification" title="Kerberos authentification">
+        <desc0>No Kerberos authentification </desc0>
+        <desc1>Kerberos authentification is partial or doesn't work correctly</desc1>
+        <desc2>Kerberos authentification is performing and brings a real advantage for the tools</desc2>
+        <comment></comment>
+        <score></score>
+      </element>
+      <element name="JAASauth" title="JAAS authentification">
+        <desc0>No JAAS authentification </desc0>
+        <desc1>JAAS authentification is partial or doesn't work correctly</desc1>
+        <desc2>JAAS authentification is performing and brings a real advantage for the tools</desc2>
+        <comment></comment>
+        <score></score>
+      </element>
+    </element>
+    <section name="storage" title="storage">
+      <element name="LDAPstorage" title="LDAPstorage">
+        <desc0>No LDAP storage</desc0>
+        <desc1>LDAP storage is partial or doesn't work correctly</desc1>
+        <desc2>LDAP storage is performing and brings a real advantage for the tools</desc2>
+        <comment></comment>
+        <score></score>
+      </element>
+      <element name="SGBDstorage" title="SGBD storage">
+        <desc0>No SGBD storage</desc0>
+        <desc1>SGBD storage is partial or doesn't work corectly</desc1>
+        <desc2>SGBD storage is performing and brings a real advantage for the tools</desc2>
+        <comment></comment>
+        <score></score>
+      </element>
+    </section>
+    <element name="development" title="development">
+      <element name="multi-IDEsupport" title="mutli-IDE support">
+        <desc0>No IDE support</desc0>
+        <desc1>IDE support doesn't work correctly </desc1>
+        <desc2>Numerous IDE supports are supported</desc2>
+        <comment></comment>
+        <score></score>
+      </element>
+      <element name="developmentssplit" title="development s split ">
+        <desc0>No development split autorized</desc0>
+        <desc1>Development split is partial or doesn't work correctly</desc1>
+        <desc2>Possibility to sub-contract portlets</desc2>
+        <comment></comment>
+        <score></score>
+      </element>
     </element>
   </section>
 </document>

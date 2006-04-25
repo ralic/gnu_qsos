@@ -304,7 +304,7 @@
       <desc>Technical adaptability</desc>
       <element name="modularity" title="Modularity">
         <desc0>Monolithic software</desc0>
-        <desc1>Presence of hight level modules alowing a first level of software adaptation</desc1>
+        <desc1>Presence of hight level modules allowing a first level of software adaptation</desc1>
         <desc2>Modular conception, allowing easy adaptation of the software by selecting modules or even develeloping new ones</desc2>
         <score>1</score>
         <comment>Multi storage engine support is a very modular feature</comment>
