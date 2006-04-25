@@ -96,7 +96,7 @@
           <desc1>Between 2 and 5 independent people</desc1>
           <desc2>More than 5 people</desc2>
           <score>2</score>
-          <comment>Memebers of the leading team are known and clearly identified</comment>
+          <comment>Members of the leading team are known and clearly identified</comment>
         </element>
         <element name="managementstyle" title="Management style">
           <desc0>Complete dictatorship</desc0>
@@ -145,7 +145,7 @@
         <desc1>60% maximum</desc1>
         <desc2>20% maximum</desc2>
         <score>0</score>
-        <comment>MySQL AB is the unique copyrigth owner of most part of source code (except some storag engines) and employs core team members</comment>
+        <comment>MySQL AB is the unique copyrigth owner of most part of source code (except some storage engines) and employs core team members</comment>
       </element>
       <element name="services" title="Services">
         <desc>Services offering</desc>
@@ -191,7 +191,7 @@
           <desc0>No bug or feature request management tool</desc0>
           <desc1>Standard tools provided (for instance by a hosting forge) but poorly used</desc1>
           <desc2>Very active use of tools for roles/tasks allocation and progress monitoring</desc2>
-          <score></score>
+          <score>2</score>
           <comment>Complete bug tracking and feature request tool available (affectations, statistics, search). cf. http://bugs.mysql.com</comment>
         </element>
       </element>
@@ -272,7 +272,7 @@
           <desc1>A package exists but it has important issues or it doesn't have official support</desc1>
           <desc2>The software is packaged in the distribution</desc2>
           <score>1</score>
-          <comment>Only version  4.0 is included in SuSE Linux Enterprise Server 9. However MySQL provides RPM for 4.1 version.</comment>
+          <comment>Only version 4.0 is included in SuSE Linux Enterprise Server 9. However MySQL provides RPM for 4.1 version.</comment>
         </element>
         <element name="packagingwindows" title="Windows">
           <desc0>The project can't be installed on Windows</desc0>
@@ -348,7 +348,7 @@
         <desc1>Rights held by numerous individuals owning the code in a homogeneous way, making relicense very difficult</desc1>
         <desc2>Rights held by a legal entity in whom the community trusts (e.g: FSF or ASF)</desc2>
         <score>0</score>
-        <comment>Most part of source code is oned by MySQL AB. The InnoDB transactionnal storage engine is woned by Oracle.</comment>
+        <comment>Most part of source code is owned by MySQL AB. The InnoDB transactionnal storage engine is owned by Oracle.</comment>
       </element>
       <element name="modificationofsourcecode" title="Modification of source code">
         <desc0>No pratical way to propose code modification</desc0>

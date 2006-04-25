@@ -113,7 +113,7 @@
           <desc1>Between 4 and 7 developers, or more unidentified developers with important turnover</desc1>
           <desc2>More than 7 developers, very stable team</desc2>
           <score>2</score>
-          <comment>200 developpers. Real open source project: few have write access to the code repository, it is acquired by meritocracy. Howerver evrybody can submit a patch.</comment>
+          <comment>200 developpers. Real open source project: few have write access to the code repository, it is acquired by meritocracy. However everybody can submit a patch.</comment>
         </element>
         <element name="activityonbugs" title="Activity on bugs">
           <desc0>Slow reactivity in forum or on mailing list, or nothing regarding bug fixes in releases note</desc0>
@@ -176,7 +176,7 @@
         <desc1>Documentation exists but shifted in time, is restricted to one language or is poorly detailed</desc1>
         <desc2>Documentation always up to date, translated and possibly adapted to different target readers (end user, sysadmin, manager, ...)</desc2>
         <score>1</score>
-        <comment>Official english documentation is freely available in SGML, PDF or HTML formats. Numerous technical documents are also available (tutorials, howtos,  installation and migration guides)</comment>
+        <comment>Official english documentation is freely available in SGML, PDF or HTML formats. Numerous technical documents are also available (tutorials, howtos,  installation and migration guides). French documentation is available on the official french site.</comment>
       </element>
       <element name="qualityassurance" title="Quality Assurance">
         <desc>Quality assurance process</desc>
@@ -258,14 +258,14 @@
           <desc1>A package exists but it has important issues or it doesn't have official support</desc1>
           <desc2>The software is packaged in the distribution</desc2>
           <score>1</score>
-          <comment>Project provides RPM for Red Hat Entreprise Linux, but only  version 7.4 is officially supported by Red Hat.</comment>
+          <comment>Project provides RPM for Red Hat Entreprise Linux, but only version 7.4 is officially supported by Red Hat.</comment>
         </element>
         <element name="packagingsolaris" title="Solaris">
           <desc0>The software is not packaged for Solaris</desc0>
           <desc1>A package exists but it has important issues or it doesn't have official support (e.g: SunFreeware.com )</desc1>
           <desc2>The software is supported by Sun for Solaris</desc2>
           <score>2</score>
-          <comment>Sun fully supports PostgreSQL on SOlaris.</comment>
+          <comment>Sun fully supports PostgreSQL on Solaris.</comment>
         </element>
         <element name="packagingsuse" title="SuSE">
           <desc0>The software is not packaged for SuSE</desc0>
@@ -376,7 +376,7 @@
         <desc1>Strategical vision shared with several other free and open source projects but without strong commitment from copyrights owners</desc1>
         <desc2>Strong independence of the code team, legal entity holding rights, strong involvement in the standardization process</desc2>
         <score>2</score>
-        <comment>Project team is reallu independent. Its strategy is to stick the as possible to standards.</comment>
+        <comment>Project team is really independent. Its strategy is to stick the as possible to standards.</comment>
       </element>
     </element>
   </section>
