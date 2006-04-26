@@ -108,7 +108,7 @@
 	
 	<xsl:if test="comment !=''">
 		<ul>
-			<div class="comments">&#60;&#60;<xsl:value-of select="comment"/>&#62;&#62;</div>
+			<div class="comments"><xsl:value-of select="comment"/></div>
 		</ul>
 	</xsl:if>	
 	
