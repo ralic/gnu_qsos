@@ -1,0 +1,24 @@
+DESCRIPTION
+
+  QSOS-Document - Easy API to access/edit QSOS files
+
+PREREQUISITES
+
+  libxml (libxml-ruby on Debian based OS)
+
+BUILDING/INSTALLING
+
+  Once the archive is unpacked, use these commands:
+
+    make install
+
+STATUS
+
+  QSOS-Document is still in developpement
+
+COPYRIGHT
+
+  Copyright 2006 Atos Origin <romain.pelisse@atosorigin.com>
+
+  This library is free software; you can redistribute it
+  and/or modify it under the terms of the GNU General Public License.
