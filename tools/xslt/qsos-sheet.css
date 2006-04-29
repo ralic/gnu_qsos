@@ -24,6 +24,18 @@ li {
   list-style: square; 
 }
 
+li.collapsed {
+  list-style-image: url("expand.png");
+}
+
+li.expanded {
+  list-style-image: url("collapse.png");
+}
+
+.expandable {
+  cursor: pointer;
+}
+
 #header {
   border-style: dashed;
 }
