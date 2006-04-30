@@ -11,7 +11,7 @@
 #      included in the section entitled "GNU
 #      Free Documentation License".
 #
-# $Id: Makefile,v 1.18 2006/04/13 16:16:27 goneri Exp $
+# $Id: Makefile,v 1.19 2006/04/30 10:31:00 goneri Exp $
 TEX=changelog.tex define.tex eval.tex eval_app.tex fdl.tex general_process.tex glossary.tex internet_site.tex intro.tex license.tex manifest.tex qsos.tex qualify.tex
 # TODO split this by language :
 GFXS_DEST_PNG=images/comparaison.eps images/processus_4_etapes.eps images/definir.eps images/evaluer.eps images/qualifier.eps images/selectionner.eps images/QSOS.eps images/fr/comparaison.eps images/fr/processus_4_etapes.eps images/fr/definir.eps images/fr/evaluer.eps images/fr/qualifier.eps images/fr/selectionner.eps images/fr/QSOS.eps images/es/comparaison.eps images/es/processus_4_etapes.eps images/es/definir.eps images/es/evaluer.eps images/es/qualifier.eps images/es/selectionner.eps images/es/QSOS.eps
@@ -60,13 +60,10 @@ html-en: $(GFXS_DEST_PNG) $(GFXS_DEST_SVG)
 	latex2html -dir qsos -no_footnode -auto_prefix -split 0 -info 0 -no_navigation license.tex
 	latex2html -dir qsos -no_footnode -auto_prefix -split 0 -info 0 -no_navigation fdl.tex
 	latex2html -dir qsos -no_footnode -auto_prefix -split 0 -info 0 -no_navigation overview.tex
-	#latex2html create an ugly HTML code, i use tidy to clean up it.
-	# Since tidy doesn't love the input code it return an no 0 code to the shell 
-	# to avoir make break, i launch it in a perl system. 
-	perl -e 'system("cat qsos/license.html | tidy -m -asxml  -clean > qsos/license_clean.html");1';
-	perl -e 'system("cat qsos/qsos.html | tidy -m -asxml  -clean > qsos/qsos_clean.html");1';
-	perl -e 'system("cat qsos/fdl.html | tidy -m -asxml  -clean > qsos/fdl_clean.html");1';
-	perl -e 'system("cat qsos/overview.html | tidy -m -asxml  -clean > qsos/overview_clean.html");1';
+	-cat qsos/license.html | tidy -m -asxml  -clean > qsos/license_clean.html
+	-cat qsos/qsos.html | tidy -m -asxml  -clean > qsos/qsos_clean.html
+	-cat qsos/fdl.html | tidy -m -asxml  -clean > qsos/fdl_clean.html
+	-cat qsos/overview.html | tidy -m -asxml  -clean > qsos/overview_clean.html
 	mv qsos/license_clean.html qsos/license.html
 	mv qsos/qsos_clean.html qsos/qsos.html
 	mv qsos/fdl_clean.html qsos/fdl.html
@@ -85,10 +82,10 @@ html-fr: $(GFXS_DEST_PNG) $(GFXS_DEST_SVG)
 	latex2html -dir qsos -no_footnode -auto_prefix -split 0 -info 0 -no_navigation lang/fr/overview.tex
 	latex2html -dir qsos -no_footnode -auto_prefix -split 0 -info 0 -no_navigation lang/fr/license.tex
 	latex2html -dir qsos -no_footnode -auto_prefix -split 0 -info 0 -no_navigation lang/fr/fdl.tex
-	perl -e 'system("cat qsos/license.html | tidy -m -asxml  -clean > qsos/license_clean.html");1';
-	perl -e 'system("cat qsos/qsos.html | tidy -m -asxml  -clean > qsos/qsos_clean.html");1';
-	perl -e 'system("cat qsos/fdl.html | tidy -m -asxml  -clean > qsos/fdl_clean.html");1';
-	perl -e 'system("cat qsos/overview.html | tidy -m -asxml  -clean > qsos/overview_clean.html");1';
+	-cat qsos/license.html | tidy -m -asxml  -clean > qsos/license_clean.html
+	-cat qsos/qsos.html | tidy -m -asxml  -clean > qsos/qsos_clean.html
+	-cat qsos/fdl.html | tidy -m -asxml  -clean > qsos/fdl_clean.html
+	-cat qsos/overview.html | tidy -m -asxml  -clean > qsos/overview_clean.html
 	mv qsos/license_clean.html qsos/license.html
 	mv qsos/qsos_clean.html qsos/qsos.html
 	mv qsos/fdl_clean.html qsos/fdl.html
@@ -105,10 +102,10 @@ html-es: $(GFXS_DEST_PNG) $(GFXS_DEST_SVG)
 	latex2html -dir qsos -no_footnode -auto_prefix -split 0 -info 0 -no_navigation lang/es/overview.tex
 	latex2html -dir qsos -no_footnode -auto_prefix -split 0 -info 0 -no_navigation lang/es/license.tex
 	latex2html -dir qsos -no_footnode -auto_prefix -split 0 -info 0 -no_navigation lang/es/fdl.tex
-	perl -e 'system("cat qsos/license.html | tidy -m -asxml  -clean > qsos/license_clean.html");1';
-	perl -e 'system("cat qsos/qsos.html | tidy -m -asxml  -clean > qsos/qsos_clean.html");1';
-	perl -e 'system("cat qsos/fdl.html | tidy -m -asxml  -clean > qsos/fdl_clean.html");1';
-	perl -e 'system("cat qsos/overview.html | tidy -m -asxml  -clean > qsos/overview_clean.html");1';
+	-cat qsos/license.html | tidy -m -asxml  -clean > qsos/license_clean.html
+	-cat qsos/qsos.html | tidy -m -asxml  -clean > qsos/qsos_clean.html
+	-cat qsos/fdl.html | tidy -m -asxml  -clean > qsos/fdl_clean.html
+	-cat qsos/overview.html | tidy -m -asxml  -clean > qsos/overview_clean.html
 	mv qsos/license_clean.html qsos/license.html
 	mv qsos/qsos_clean.html qsos/qsos.html
 	mv qsos/fdl_clean.html qsos/fdl.html
