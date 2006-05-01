@@ -13,13 +13,13 @@
    	function expand(div) {
         	document.getElementById(div).style.display = "";
         	document.getElementById("lnk_"+div).setAttribute("onclick", "collapse('"+div+"')");
-        	document.getElementById("list_"+div).setAttribute("class", "expanded");
+        	document.getElementById("lnk_"+div).setAttribute("class", "expanded");
    	}
    
    	function collapse(div) {
         	document.getElementById(div).style.display = "none";
         	document.getElementById("lnk_"+div).setAttribute("onclick", "expand('"+div+"')");
-        	document.getElementById("list_"+div).setAttribute("class", "collapsed");
+        	document.getElementById("lnk_"+div).setAttribute("class", "collapsed");
    	}
       </script>
       </head>
@@ -109,8 +109,8 @@
     </xsl:if>
   </xsl:template>
   <xsl:template match="section">
-    <li id="list_{@name}" class="expanded">
-      <div id="lnk_{@name}" onclick="collapse('{@name}');" class="expandable">
+    <li>
+      <div id="lnk_{@name}" onclick="collapse('{@name}');" class="expanded">
         <h2>
           <xsl:value-of select="@title"/>
         </h2>
@@ -124,8 +124,8 @@
     </li>
   </xsl:template>
   <xsl:template match="element">
-    <li id="list_{@name}" class="expanded">
-      <div id="lnk_{@name}" onclick="collapse('{@name}');" class="expandable">
+    <li>
+      <div id="lnk_{@name}" onclick="collapse('{@name}');" class="expanded">
         <strong>
           <xsl:value-of select="@title"/>
         </strong>

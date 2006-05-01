@@ -1,7 +1,7 @@
 body {
   font-family:Verdana,Helvetica;
   font-size:11px;
-  width: 500px;
+  width: 800px;
 }
 
 h1 {
@@ -21,19 +21,23 @@ div {
 }
 
 li {
-  list-style: square; 
+  list-style: none; 
 }
 
-li.collapsed {
-  list-style-image: url("expand.png");
-}
-
-li.expanded {
-  list-style-image: url("collapse.png");
-}
-
-.expandable {
+div.collapsed {
   cursor: pointer;
+  background-image: url("expand.png");
+  background-repeat: no-repeat;
+  background-position: center left;
+  padding-left: 12px;
+}
+
+div.expanded {
+  cursor: pointer;
+  background-image: url("collapse.png");
+  background-repeat: no-repeat;
+  background-position: center left;
+  padding-left: 12px;
 }
 
 #header {
@@ -66,6 +70,5 @@ li.expanded {
 
 .comments {
   color: green;
-  
 }
 
