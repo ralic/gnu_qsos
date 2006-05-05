@@ -1,4 +1,4 @@
-# $Id: Document.pm,v 1.16 2006/05/05 09:29:10 goneri Exp $
+# $Id: Document.pm,v 1.17 2006/05/05 10:33:56 goneri Exp $
 #
 #  Copyright (C) 2006 Atos Origin 
 #
@@ -19,6 +19,12 @@
 #  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 #
 
+# TODO
+# - sort func
+# - create _item to retrieve xml key and use it with getitem and setitem
+# - doc
+# - update test scripts
+
 package QSOS::Document;
 use XML::Twig;
 use Carp;
@@ -33,7 +39,7 @@ use vars qw($VERSION @ISA @EXPORT @EXPORT_OK $PREFERRED_PARSER);
 
 @ISA               = qw(Exporter);
 @EXPORT            = qw(XMLin XMLout);
-@EXPORT_OK         = qw(new load write content getkeydesc setkeydesc setkeycomment getkeycomment setkeyscore getkeyscore getkeytitle setkeytitle write getauthors addauthor delauthor getappname setappname getlanguage setlanguage getrelease setrelease getlicenselist getlicenseid setlicenseid getlicensedesc setlicensedesc geturl seturl getdesc setdesc getdemourl setdemourl getqsosformat setqsosformat getqsosspecificformat setqsosspecificformat getqsosappfamily setqsosappfamily);
+@EXPORT_OK         = qw(new load write content getkeydesc setkeydesc setkeycomment getkeycomment setkeyscore getkeyscore getkeytitle setkeytitle write getauthors addauthor delauthor getappname setappname getlanguage setlanguage getrelease setrelease getlicenselist getlicenseid setlicenseid getlicensedesc setlicensedesc geturl seturl getdesc setdesc getdemourl setdemourl getqsosformat setqsosformat getqsosspecificformat setqsosspecificformat getqsosappfamily setqsosappfamily getdatevalidation setdatevalidation getdatecreation setdatecreation);
 $VERSION           = '0.01';
 
 
@@ -238,8 +244,11 @@ sub write {
   $file = $self->{file} unless ($file);
 
   my $aout =  $self->{twig}->sprint;
-
   carp "file is empty !" unless ($aout);
+ 
+  # minor clean up
+  $aout =~ s!<dates></dates!<dates>\n</dates>!;
+  $aout =~ s!<authors></authors>!<authors>\n</authors>!;
 
   open XMLOUT,">".$file or carp "can't open $file $!";
   print XMLOUT $aout;
@@ -257,6 +266,67 @@ sub content {
 
   $aout;
 }
+
+sub getdatecreation {
+  my $self = shift;
+
+  my @root = $self->{twig}->root->children;
+  my $header = shift @root;
+  my $authors = $header->first_child('dates');
+  return unless ($authors);
+  my $creation = $authors->first_child('creation');
+
+  return unless ($creation);
+
+  print $creation->text()."\n";
+  $creation->text();
+
+}
+
+sub setdatecreation {
+  my ($self, $date) = @_;
+
+  my @root = $self->{twig}->root->children;
+  my $header = shift @root;
+  my $authors = $header->first_child('dates');
+  return unless ($authors);
+  my $creation = $authors->first_child('creation');
+
+  return unless ($creation);
+
+  $creation->set_text($date);
+}
+
+sub getdatevalidation {
+  my $self = shift;
+
+  my @root = $self->{twig}->root->children;
+  my $header = shift @root;
+  my $authors = $header->first_child('dates');
+  return unless ($authors);
+  my $validation = $authors->first_child('validation');
+
+  return unless ($validation);
+
+  $validation->text();
+
+}
+
+sub setdatevalidation {
+  my ($self, $date) = @_;
+
+  my @root = $self->{twig}->root->children;
+  my $header = shift @root;
+  my $authors = $header->first_child('dates');
+  return unless ($authors);
+  my $validation = $authors->first_child('validation');
+
+  return unless ($validation);
+
+  $validation->set_text($date);
+}
+
+
 
 
 sub getauthors {
