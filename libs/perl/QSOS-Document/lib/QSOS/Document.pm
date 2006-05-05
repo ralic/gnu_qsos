@@ -1,4 +1,4 @@
-# $Id: Document.pm,v 1.17 2006/05/05 10:33:56 goneri Exp $
+# $Id: Document.pm,v 1.18 2006/05/05 13:28:02 goneri Exp $
 #
 #  Copyright (C) 2006 Atos Origin 
 #
@@ -247,8 +247,7 @@ sub write {
   carp "file is empty !" unless ($aout);
  
   # minor clean up
-  $aout =~ s!<dates></dates!<dates>\n</dates>!;
-  $aout =~ s!<authors></authors>!<authors>\n</authors>!;
+  $aout =~ s!(\W*)<authors></authors>!$1<authors>\n$1</authors>!;
 
   open XMLOUT,">".$file or carp "can't open $file $!";
   print XMLOUT $aout;
@@ -278,7 +277,6 @@ sub getdatecreation {
 
   return unless ($creation);
 
-  print $creation->text()."\n";
   $creation->text();
 
 }
