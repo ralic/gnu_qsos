@@ -512,7 +512,7 @@
   </section>
   <section name="codequality" title="Code quality">
     <element name="remoteapi" title="Remote access API">
-      <desc0>not remote remote API</desc0>
+      <desc0>No remote remote API</desc0>
       <desc1>remote API (SOAP, XML/RPC, REST) exists but is limited or buggy</desc1>
       <desc2>powerful remote API (SOAP, XML/RPC, REST) provided</desc2>
       <comment></comment>

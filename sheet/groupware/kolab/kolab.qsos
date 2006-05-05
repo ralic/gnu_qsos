@@ -1,12 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- $Id: kolab.qsos,v 1.14 2006/05/05 14:22:44 goneri Exp $ --><document>
+<document>
   <header>
     <authors>
-      <author>
-        <email>goneri.lebouder@atosorigin.com</email>
-        <name>Gonéri Le Bouder</name>
-      </author>
-    </authors>
+>
+    <author><email>goneri.lebouder@atosorigin.com</email><name>Gonéri Le Bouder</name></author></authors>
     <dates>
       <creation>20060307</creation>
       <validation></validation>
@@ -166,7 +163,7 @@
         <element name="consulting" title="Consulting">
           <desc0>No offer of consulting service</desc0>
           <desc1>Offer exists but is restricted geographically and to one language or is provided by a single contractor</desc1>
-          <desc2>Consulting services provied by different contractors in serveral languages</desc2>
+          <desc2>Consulting services provided by different contractors in serveral languages</desc2>
           <score>1</score>
           <comment></comment>
         </element>
@@ -305,7 +302,7 @@
       <element name="modularity" title="Modularity">
         <desc0>Monolithic software</desc0>
         <desc1>Presence of hight level modules allowing a first level of software adaptation</desc1>
-        <desc2>Modular conception, allowing easy adaptation of the software by selecting modules or even develeloping new ones</desc2>
+        <desc2>Modular conception, allowing easy adaptation of the software by selecting or creating modules</desc2>
         <score></score>
         <comment></comment>
       </element>
@@ -384,11 +381,11 @@
     <comment></comment>
     <desc>Different composant from the groupware</desc>
     <element name="auth" title="Authentification backend">
-      <desc>Authentification backend</desc>
+      <desc>Authentification backend (ldap, db, ...)</desc>
       <comment>OpenLDAP</comment>
     </element>
     <element name="mail" title="Mail">
-      <desc>Mail server</desc>
+      <desc>Mail architecture</desc>
       <comment>Postfix and Cyrus-imap</comment>
     </element>
     <element name="storage" title="Storage backend">
@@ -416,15 +413,15 @@
   <section name="groupwarecomposant" title="Supported groupware composant">
     <comment></comment>
     <element name="calendar" title="Calendar">
-      <desc0>no calendar provied</desc0>
-      <desc1>a calendar is provied, but leak some important feature</desc1>
-      <desc2>a well integrated calendar is provied</desc2>
+      <desc0>no calendar provided</desc0>
+      <desc1>a calendar is provided, but leak some important feature</desc1>
+      <desc2>a well integrated calendar is provided</desc2>
       <comment></comment>
       <score>2</score>
     </element>
     <element name="taskmanager" title="Taskmanager">
-      <desc0>no task manager provied</desc0>
-      <desc1>a task manager is provied but leak some important feature</desc1>
+      <desc0>no task manager provided</desc0>
+      <desc1>a task manager is provided but leak some important feature</desc1>
       <desc2>Task manager fully supported</desc2>
       <comment></comment>
       <score>2</score>
@@ -479,7 +476,7 @@
     <comment></comment>
     <element name="web" title="Web client">
       <desc0>Web interface doesn't exist</desc0>
-      <desc1>Web interface is provied but limited or need some work for its integration</desc1>
+      <desc1>Web interface is provided but limited or need some work for its integration</desc1>
       <desc2>Web interface directly provided with the project</desc2>
       <comment>eGroupware or Hord can be pluged</comment>
       <score>1</score>
@@ -515,15 +512,15 @@
   </section>
   <section name="codequality" title="Code quality">
     <element name="remoteapi" title="Remote access API">
-      <desc0>not remote remote API</desc0>
+      <desc0>No remote remote API</desc0>
       <desc1>remote API (SOAP, XML/RPC, REST) exists but is limited or buggy</desc1>
-      <desc2>powerful remote API (SOAP, XML/RPC, REST) provied</desc2>
+      <desc2>powerful remote API (SOAP, XML/RPC, REST) provided</desc2>
       <comment>none for Kolab2, a wish for Kolab3 exists for support of a remote procedure call infrastucture</comment>
       <score>0</score>
     </element>
     <element name="api" title="code API">
-      <desc0>No API provied to extend the server, or very limited and not documented</desc0>
-      <desc1>An API is provied but limited of not fully documented</desc1>
+      <desc0>No API provided to extend the server, or very limited and not documented</desc0>
+      <desc1>An API is provided but limited of not fully documented</desc1>
       <desc2>Well documented and complet API</desc2>
       <comment>A Perl lib is provided but Kolab core can't be change easily. The best way to extend it, is to provide additional service plugged on the LDAP directory server.</comment>
       <score>1</score>

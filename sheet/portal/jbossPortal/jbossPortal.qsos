@@ -2,11 +2,8 @@
 <document>
   <header>
     <authors>
-      <author>
-        <email>tojo.randrianaivojaona@atosorigin.com</email>
-        <name>Tojo Randrianaivojaona</name>
-      </author>
-    </authors>
+>
+    <author><email>tojo.randrianaivojaona@atosorigin.com</email><name>Tojo Randrianaivojaona</name></author></authors>
     <dates>
       <creation>20060411</creation>
       <validation></validation>
@@ -67,7 +64,6 @@
           <score>2</score>
           <comment></comment>
         </element>
-        <!-- ??????????? -->
         <element name="references" title="References">
           <desc0>None</desc0>
           <desc1>Few refences, non critical usages</desc1>
@@ -130,7 +126,6 @@
           <score>2</score>
           <comment></comment>
         </element>
-        <!---??????????????????????????-->
         <element name="activityonreleases" title="Activity on releases">
           <desc0>Very weak activity on both production and development releases</desc0>
           <desc1>Activity on production and developmenet releases. Frequent minor releases (bug fixes)</desc1>
@@ -168,7 +163,7 @@
         <element name="consulting" title="Consulting">
           <desc0>No offer of consulting service</desc0>
           <desc1>Offer exists but is restricted geographically and to one language or is provided by a single contractor</desc1>
-          <desc2>Consulting services provied by different contractors in serveral languages</desc2>
+          <desc2>Consulting services provided by different contractors in serveral languages</desc2>
           <score>1</score>
           <comment></comment>
         </element>
@@ -307,7 +302,7 @@
       <element name="modularity" title="Modularity">
         <desc0>Monolithic software</desc0>
         <desc1>Presence of hight level modules allowing a first level of software adaptation</desc1>
-        <desc2>Modular conception, allowing easy adaptation of the software by selecting modules or even develeloping new ones</desc2>
+        <desc2>Modular conception, allowing easy adaptation of the software by selecting or creating modules</desc2>
         <score></score>
         <comment></comment>
       </element>
@@ -609,14 +604,14 @@
         <desc1>LDAP storage is partial or doesn't work correctly</desc1>
         <desc2>LDAP storage is performing and brings a real advantage for the tools</desc2>
         <comment></comment>
-        <score>2</score>
+        <score></score>
       </element>
       <element name="SGBDstorage" title="SGBD storage">
         <desc0>No SGBD storage</desc0>
         <desc1>SGBD storage is partial or doesn't work corectly</desc1>
         <desc2>SGBD storage is performing and brings a real advantage for the tools</desc2>
-        <comment>All databases supported by Hibernate are performing in JBoss Portal (Oracle, DB2, MySQL, PostgreSql,SQLServer,Sybase)</comment>
-        <score>2</score>
+        <comment></comment>
+        <score></score>
       </element>
     </section>
     <element name="development" title="development">
