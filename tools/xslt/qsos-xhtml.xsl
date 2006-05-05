@@ -25,7 +25,7 @@
       </head>
       <body>
         <h1>
-          <xsl:value-of select="document/header/appname"/>>&#160;
+          <xsl:value-of select="document/header/appname"/>&#160;
           <xsl:value-of select="document/header/release"/>
         </h1>
         <xsl:apply-templates select="document"/>
