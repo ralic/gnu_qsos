@@ -2,8 +2,6 @@
 <document>
   <header>
     <authors>
-      <author>
-      </author>
     </authors>
     <dates>
       <creation></creation>
@@ -303,7 +301,7 @@
       <element name="modularity" title="Modularity">
         <desc0>Monolithic software</desc0>
         <desc1>Presence of hight level modules allowing a first level of software adaptation</desc1>
-        <desc2>Modular conception, allowing easy adaptation of the software by selecting modules or even develeloping new ones</desc2>
+        <desc2>Modular conception, allowing easy adaptation of the software by selecting or creating modules</desc2>
         <score></score>
         <comment></comment>
       </element>
