@@ -2,11 +2,8 @@
 <document>
   <header>
     <authors>
-      <author>
-        <email>raphael.semeteys@atosorigin.com</email>
-        <name>Raphael Semeteys</name>
-      </author>
-    </authors>
+>
+    <author><email>raphael.semeteys@atosorigin.com</email><name>Raphael Semeteys</name></author></authors>
     <dates>
       <creation>20051025</creation>
       <validation></validation>
@@ -166,7 +163,7 @@
         <element name="consulting" title="Consulting">
           <desc0>No offer of consulting service</desc0>
           <desc1>Offer exists but is restricted geographically and to one language or is provided by a single contractor</desc1>
-          <desc2>Consulting services provied by different contractors in serveral languages</desc2>
+          <desc2>Consulting services provided by different contractors in serveral languages</desc2>
           <score>2</score>
           <comment>Serveral offers exist like Persuasive Postgres (http://www.pervasive-postgres.com)</comment>
         </element>
@@ -305,7 +302,7 @@
       <element name="modularity" title="Modularity">
         <desc0>Monolithic software</desc0>
         <desc1>Presence of hight level modules allowing a first level of software adaptation</desc1>
-        <desc2>Modular conception, allowing easy adaptation of the software by selecting modules or even develeloping new ones</desc2>
+        <desc2>Modular conception, allowing easy adaptation of the software by selecting or creating modules</desc2>
         <score>1</score>
         <comment></comment>
       </element>
