@@ -1,4 +1,4 @@
-# $Id: Document.pm,v 1.15 2006/04/24 16:16:16 goneri Exp $
+# $Id: Document.pm,v 1.16 2006/05/05 09:29:10 goneri Exp $
 #
 #  Copyright (C) 2006 Atos Origin 
 #
@@ -33,7 +33,7 @@ use vars qw($VERSION @ISA @EXPORT @EXPORT_OK $PREFERRED_PARSER);
 
 @ISA               = qw(Exporter);
 @EXPORT            = qw(XMLin XMLout);
-@EXPORT_OK         = qw(new load write getkeydesc setkeydesc setkeycomment getkeycomment setkeyscore getkeyscore getkeytitle setkeytitle write getauthors addauthor delauthor getappname setappname getlanguage setlanguage getrelease setrelease getlicenselist getlicenseid setlicenseid getlicensedesc setlicensedesc geturl seturl getdesc setdesc getdemourl setdemourl getqsosformat setqsosformat getqsosspecificformat setqsosspecificformat getqsosappfamily setqsosappfamily);
+@EXPORT_OK         = qw(new load write content getkeydesc setkeydesc setkeycomment getkeycomment setkeyscore getkeyscore getkeytitle setkeytitle write getauthors addauthor delauthor getappname setappname getlanguage setlanguage getrelease setrelease getlicenselist getlicenseid setlicenseid getlicensedesc setlicensedesc geturl seturl getdesc setdesc getdemourl setdemourl getqsosformat setqsosformat getqsosspecificformat setqsosspecificformat getqsosappfamily setqsosappfamily);
 $VERSION           = '0.01';
 
 
@@ -70,6 +70,36 @@ sub _getsectionbyname {
 
 }
 
+sub _pushElem {
+
+  my ($self, $elt, $deep) = @_;
+
+  carp "element undef" unless ($elt);
+
+  $deep = 0 unless $deep;
+
+  die unless ($elt->atts->{name});
+
+  my $h = {
+    name => $elt->atts->{name},
+    title => $elt->atts->{title},
+    comment_ref => $elt->first_child('comment'),
+    desc_ref => $elt->first_child('desc'),
+    desc_ref0 => $elt->first_child('desc0'),
+    desc_ref1 => $elt->first_child('desc1'),
+    desc_ref2 => $elt->first_child('desc2'),
+    score_ref => $elt->first_child('score'),
+    elt => $elt,
+    deep => $deep
+  };
+
+  if (exists ($self->{section}->{$elt->atts->{name}})) {
+    print "ERR: Section name ".$elt->atts->{name}." already defined in document!\n";
+  }
+  $self->{section}->{$elt->atts->{name}} = $h;
+}
+
+
 
 sub new {
   my $self;
@@ -78,7 +108,6 @@ sub new {
     keep_atts_order => 1
   );    # create the twig
 
-  $self->{tabular} = [];
   $self->{authors} = [];
   $self->{section} = {};
 
@@ -112,37 +141,6 @@ sub load {
   1;
 }
 
-sub _pushElem {
-
-  my ($self, $elt, $deep) = @_;
-
-  carp "element undef" unless ($elt);
-
-  $deep = 0 unless $deep;
-
-  die unless ($elt->atts->{name});
-
-  my $h = {
-    name => $elt->atts->{name},
-    title => $elt->atts->{title},
-    comment_ref => $elt->first_child('comment'),
-    desc_ref => $elt->first_child('desc'),
-    desc_ref0 => $elt->first_child('desc0'),
-    desc_ref1 => $elt->first_child('desc1'),
-    desc_ref2 => $elt->first_child('desc2'),
-    score_ref => $elt->first_child('score'),
-    elt => $elt,
-    deep => $deep
-  };
-
-  if (exists ($self->{section}->{$elt->atts->{name}})) {
-    print "ERR: Section name ".$elt->atts->{name}." already defined in document!\n";
-  }
-  $self->{section}->{$elt->atts->{name}} = $h;
-#  push @{$self->{tabular}}, \$h;
-}
-
-
 sub getkeydesc {
   my ($self, $name, $numdesc) = @_;
 
@@ -164,6 +162,7 @@ sub setkeydesc {
 
   $desc = '' if (! defined $desc);
   my $desc_ref = $self->_getsectionbyname($name)->{"desc_ref".$numdesc};
+  return unless ($desc_ref);
   if (!$desc_ref) { # no existing <desc></desc>, i create it
     $desc_ref = $self->_getsectionbyname($name)->{"elt"}->insert_new_elt ('desc');
     $self->{section}->{$name}->{"desc_ref".$numdesc} = $desc_ref; # save new ref
@@ -175,7 +174,9 @@ sub setkeydesc {
 sub setkeycomment {
   my ($self, $name, $comment) = @_;
 
+  $comment = '' unless $comment;
   my $comment_ref = $self->_getsectionbyname($name)->{"comment_ref"};
+  return unless ($comment_ref);
 
   $comment_ref->set_text($comment);
 }
@@ -185,6 +186,7 @@ sub getkeycomment {
 
   my $comment_ref = $self->_getsectionbyname($name)->{"comment_ref"};
 
+  return unless ($comment_ref);
   $comment_ref->text();
 }
 
@@ -194,6 +196,7 @@ sub setkeyscore {
   $score = '' if ((!defined $score) || ($score !~ /[012]/));
 
   my $score_ref = $self->_getsectionbyname($name)->{"score_ref"};
+  return unless ($score_ref);
 
   $score_ref->set_text($score);
 }
@@ -203,6 +206,7 @@ sub getkeyscore {
 
   my $score_ref = $self->_getsectionbyname($name)->{"score_ref"};
 
+  return unless ($score_ref);
   $score_ref->text();
 }
 
@@ -210,17 +214,20 @@ sub getkeyscore {
 sub getkeytitle {
   my ($self, $name) = @_;
 
-  my $elt = $self->_getsectionbyname($name)->{"elt"};
-
-  $elt->att('title');
+  my $reftitle = $self->_getsectionbyname($name)->{"elt"};
+  return unless($reftitle);
+  
+  $reftitle->att('title');
 
 }
 
 sub setkeytitle {
   my ($self, $name, $title) = @_;
 
-  my $elt = $self->_getsectionbyname($name)->{"elt"};
-  $elt->set_att( title => $title);
+  $title = '' unless $title;
+  my $reftitle = $self->_getsectionbyname($name)->{"elt"};
+  return unless ($reftitle);
+  $reftitle->set_att( title => $title);
 
 }
 
@@ -234,10 +241,21 @@ sub write {
 
   carp "file is empty !" unless ($aout);
 
-  open XMLOUT,">".$file or carp "can't pen $file $!";
+  open XMLOUT,">".$file or carp "can't open $file $!";
   print XMLOUT $aout;
   close XMLOUT;
-  
+}
+
+sub content {
+  my ($self, $file) = @_;
+
+  $file = $self->{file} unless ($file);
+
+  my $aout =  $self->{twig}->sprint;
+
+  carp "file is empty !" unless ($aout);
+
+  $aout;
 }
 
 
