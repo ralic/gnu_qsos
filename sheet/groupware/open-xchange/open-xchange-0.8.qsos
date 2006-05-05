@@ -397,11 +397,7 @@ An open source installer is under development : http://sourceforge.net/projects/
     </element>
     <element name="mail" title="Mail">
       <desc>Mail server</desc>
-      <comment/>
-    </element>
-    <element name="mta" title="Mail Transport Agent">
-      <desc>Mail Transport Agent</desc>
-      <comment>SMTP and IMAP protocols are supported. Official tests with Cyrus Postfix have succeded.</comment>
+      <comment>Cyrus and Postfix (others mta are supported).</comment>
     </element>
     <element name="storage" title="Storage backend">
       <desc>Storage backend</desc>

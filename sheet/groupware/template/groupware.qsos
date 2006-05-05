@@ -385,11 +385,7 @@
       <comment></comment>
     </element>
     <element name="mail" title="Mail">
-      <desc>(TODO)Mail server (cyrus-imap, courrier-pop3, ....)</desc>
-      <comment></comment>
-    </element>
-    <element name="mta" title="Mail Transport Agent">
-      <desc>Mail Transport Agent (sendmail, postfix, ...)</desc>
+      <desc>Mail architecture</desc>
       <comment></comment>
     </element>
     <element name="storage" title="Storage backend">

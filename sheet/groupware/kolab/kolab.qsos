@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- $Id: kolab.qsos,v 1.13 2006/04/25 16:05:51 goneri Exp $ --><document>
+<!-- $Id: kolab.qsos,v 1.14 2006/05/05 14:22:44 goneri Exp $ --><document>
   <header>
     <authors>
       <author>
@@ -389,11 +389,7 @@
     </element>
     <element name="mail" title="Mail">
       <desc>Mail server</desc>
-      <comment>Cyrus-IMAP</comment>
-    </element>
-    <element name="mta" title="Mail Transport Agent">
-      <desc>Mail Transport Agent</desc>
-      <comment>Postfix</comment>
+      <comment>Postfix and Cyrus-imap</comment>
     </element>
     <element name="storage" title="Storage backend">
       <desc>Storage backend</desc>
