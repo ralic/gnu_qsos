@@ -1,0 +1,542 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document>
+  <header>
+    <authors>
+      <author>
+        <email/>
+        <name/>
+      </author>
+    </authors>
+    <dates>
+      <creation/>
+      <validation/>
+    </dates>
+    <language>en</language>
+    <appname>OpenXchange</appname>
+    <release>0.8.2</release>
+    <licenseid/>
+    <licensedesc/>
+    <url>http://mirror.open-xchange.org/ox/EN/community/</url>
+    <desc/>
+    <demourl>http://mirror.open-xchange.org/ox/EN/community/online.htm</demourl>
+    <qsosformat>1.6</qsosformat>
+    <qsosappfamily>Groupware</qsosappfamily>
+    <qsosspecificformat/>
+  </header>
+  <section name="generic" title="Generic section">
+    <desc>Generic criteria from QSOS version 1.6</desc>
+    <element name="intrinsicdurability" title="Intrinsic durability">
+      <desc>Intrinsic durability</desc>
+      <element name="maturity" title="Maturity">
+        <desc>Maturity</desc>
+        <element name="age" title="Age">
+          <desc0>less than 3 months</desc0>
+          <desc1>if between 3 months and 3 years</desc1>
+          <desc2>after 3 years</desc2>
+          <score>2</score>
+          <comment>Old proprietary software edited by Netline, became Open Source in december 2004.</comment>
+        </element>
+        <element name="stability" title="Stability">
+          <desc0>Unstable software with numerous releases or patches generating side effects</desc0>
+          <desc1>Stabilized production release existing but old. Difficulties to stabilize developpement releases</desc1>
+          <desc2>Stabilized software. Releases provide bug fixes corrections but mainly new functionalities</desc2>
+          <score>2</score>
+          <comment>Version 0.8.2 is stable.</comment>
+        </element>
+        <element name="historyknowproblems" title="History, know problems">
+          <desc0>Software knows several problems which can be prohibitive</desc0>
+          <desc1>No know major problem or crisis</desc1>
+          <desc2>History of good management of crisis situations</desc2>
+          <score>1</score>
+          <comment/>
+        </element>
+        <element name="forkprobability" title="Fork probability, source of Forking">
+          <desc0>Software is very likely to be forked in the future</desc0>
+          <desc1>Software comes from a fork but has very few chances of being forked in the future</desc1>
+          <desc2>Software has very little chance of being forked. It does not come from a fork either</desc2>
+          <score>2</score>
+          <comment/>
+        </element>
+      </element>
+      <element name="adoption" title="Adoption">
+        <desc>Adoption by community and industry</desc>
+        <element name="popularity" title="Popularity (related to: general public, niche, ...)">
+          <desc0>Very few users identified</desc0>
+          <desc1>Detectable use on Internet</desc1>
+          <desc2>Numerous users, numerous references</desc2>
+          <score>2</score>
+          <comment>Recognized as the best mature solution for replacing Microsoft Exchange.</comment>
+        </element>
+        <element name="references" title="References">
+          <desc0>None</desc0>
+          <desc1>Few refences, non critical usages</desc1>
+          <desc2>Often implemented for critical applications</desc2>
+          <score>1</score>
+          <comment>Some references listed on this page : http://www.openexchange.com/EN/product/references.html</comment>
+        </element>
+        <element name="contributingcommunity" title="Contributing Community">
+          <desc0>No community or without real activity (forum, mailing list, ...)</desc0>
+          <desc1>Existing community with a notable activity</desc1>
+          <desc2>Strong community: big activity on forums, numerous contributors and advocates</desc2>
+          <score>1</score>
+          <comment>Growing and active community, one of the more active project on SourceForge.</comment>
+        </element>
+        <element name="books" title="books">
+          <desc0>No book about the software</desc0>
+          <desc1>Less than 5 books about the software are available</desc1>
+          <desc2>More than 5 books about software are available, in several languages</desc2>
+          <score>0</score>
+          <comment>As we know, no book has been edited about OX.</comment>
+        </element>
+      </element>
+      <element name="developmentleadership" title="Development leadership">
+        <desc>Organisation and leadership of developments</desc>
+        <element name="leadingteam" title="Leading team">
+          <desc0>1 to 2 individuals involved, not clearly identified</desc0>
+          <desc1>Between 2 and 5 independent people</desc1>
+          <desc2>More than 5 people</desc2>
+          <score>2</score>
+          <comment>No leader, but a core team with an identied role for each member.</comment>
+        </element>
+        <element name="managementstyle" title="Management style">
+          <desc0>Complete dictatorship</desc0>
+          <desc1>Enlightened despotism</desc1>
+          <desc2>Council of architects with identified leader (e.g: KDE)</desc2>
+          <score>2</score>
+          <comment/>
+        </element>
+      </element>
+      <element name="activity" title="Activity">
+        <desc>Activity of the project and around the software</desc>
+        <element name="developersidentificationturnover" title="Developers, identification, turnover">
+          <desc0>Less than 3 developers, not clearly identified</desc0>
+          <desc1>Between 4 and 7 developers, or more unidentified developers with important turnover</desc1>
+          <desc2>More than 7 developers, very stable team</desc2>
+          <score>2</score>
+          <comment>11 identified developers for each modules of OX.</comment>
+        </element>
+        <element name="activityonbugs" title="Activity on bugs">
+          <desc0>Slow reactivity in forum or on mailing list, or nothing regarding bug fixes in releases note</desc0>
+          <desc1>Detectable activity but without process clearly exposed, loing reaction/resolution time</desc1>
+          <desc2>Strong reactivity based on roles and tasks assignment</desc2>
+          <score>2</score>
+          <comment/>
+        </element>
+        <element name="activityonfunctionalities" title="Activity on functionalities">
+          <desc0>No or few new functionalities</desc0>
+          <desc1>Evolution of the product driven by the core team or by user's request without any clearly explained process</desc1>
+          <desc2>Tool(s) to manage feature requests, strong interaction with roadmap</desc2>
+          <score>2</score>
+          <comment>Community is very sensible about the request of the users.</comment>
+        </element>
+        <element name="activityonreleases" title="Activity on releases">
+          <desc0>Very weak activity on both production and development releases</desc0>
+          <desc1>Activity on production and developmenet releases. Frequent minor releases (bug fixes)</desc1>
+          <desc2>Important activity with frequent minor releases (bugs fixes) and planned major releases relating to the roadmap forcast</desc2>
+          <score>1</score>
+          <comment>Since 2004, frequency of the release is increasing.</comment>
+        </element>
+      </element>
+    </element>
+    <element name="industrializedsolution" title="Industrialized solution">
+      <desc>Industrialization level of the project</desc>
+      <element name="independenceofdevelopments" title="Independence of developments">
+        <desc0>Developments realized at 100% by employees of a single company</desc0>
+        <desc1>60% maximum</desc1>
+        <desc2>20% maximum</desc2>
+        <score>0</score>
+        <comment>All the core team is employed by Netline.</comment>
+      </element>
+      <element name="services" title="Services">
+        <desc>Services offering</desc>
+        <element name="training" title="Training">
+          <desc0>No offer of training identified</desc0>
+          <desc1>Offer exists but is restricted geographically and to one language or is provided by a single contractor</desc1>
+          <desc2>Rich offers provided by several contractors, in serveral languages and split into modules of gradual levels</desc2>
+          <score>2</score>
+          <comment>Many companies provide training in France and in others countries. For example, Openxchange Ink or, in France, IdealX, Hermitage Solutions, Cyberlogic, Adelux, Linagora and many more</comment>
+        </element>
+        <element name="support" title="Support">
+          <desc0>No offer of support except via public forums and mailing lists</desc0>
+          <desc1>Offer exists but is provided by a single contractor without strong commitment quality of services</desc1>
+          <desc2>Multiple service providers with strong commitment (e.g: guaranteed resolution time)</desc2>
+          <score>2</score>
+          <comment>Many companies provide training in France and in others countries. For example, Openxchange Ink or, in France, IdealX, Hermitage Solutions, Cyberlogic, Adelux, Linagora and many more</comment>
+        </element>
+        <element name="consulting" title="Consulting">
+          <desc0>No offer of consulting service</desc0>
+          <desc1>Offer exists but is restricted geographically and to one language or is provided by a single contractor</desc1>
+          <desc2>Consulting services provied by different contractors in serveral languages</desc2>
+          <score>2</score>
+          <comment>Many companies provide training in France and in others countries. For example, Openxchange Ink or, in France, IdealX, Hermitage Solutions, Cyberlogic, Adelux, Linagora and many more</comment>
+        </element>
+      </element>
+      <element name="documentation" title="Documentation">
+        <desc0>No user documentation</desc0>
+        <desc1>Documentation exists but shifted in time, is restricted to one language or is poorly detailed</desc1>
+        <desc2>Documentation always up to date, translated and possibly adapted to different target readers (end user, sysadmin, manager, ...)</desc2>
+        <score>2</score>
+        <comment>Official documentation and very helpful wiki available on the web site.
+http://mirror.open-xchange.org/ox/EN/community/documentation.htm
+http://www.open-xchange.org/oxwiki/Open_2dXchange_20Wiki
+</comment>
+      </element>
+      <element name="qualityassurance" title="Quality Assurance">
+        <desc>Quality assurance process</desc>
+        <element name="quality" title="Quality Assurance">
+          <desc0>No QA process</desc0>
+          <desc1>Identifies QA process but not much formalized and with no tool</desc1>
+          <desc2>Automatic testing process included in code's life-cycle with publication of results</desc2>
+          <score>0</score>
+          <comment>No processus has been identified</comment>
+        </element>
+        <element name="tools" title="Tools">
+          <desc0>No bug or feature request management tool</desc0>
+          <desc1>Standard tools provided (for instance by a hosting forge) but poorly used</desc1>
+          <desc2>Very active use of tools for roles/tasks allocation and progress monitoring</desc2>
+          <score>2</score>
+          <comment>The project used BugZilla for the bug monitoring and the forum is used to discuss about the new functionalities.</comment>
+        </element>
+      </element>
+      <element name="packaging" title="Packaging">
+        <desc>Packaging for various operating systems</desc>
+        <element name="packagingsource" title="Source">
+          <desc0>Software can't be installed from source without lot of work</desc0>
+          <desc1>Installation from source is limited and depends on very strict conditions (OS, arch, lib, ...)</desc1>
+          <desc2>Installation from source is easy</desc2>
+          <score>2</score>
+          <comment>Documentation available for installing OX on many Linux distributions on the official wiki.</comment>
+        </element>
+        <element name="packagingdebian" title="Debian">
+          <desc0>The software is not packaged for Debian</desc0>
+          <desc1>A Debian package exists but it has important issues or it doesn't have official support</desc1>
+          <desc2>The software is packaged in the distribution</desc2>
+          <score>1</score>
+          <comment>Package in development. Documentation availabe on the wiki.</comment>
+        </element>
+        <element name="packagingfreebsd" title="FreeBSD">
+          <desc0>The software is not packaged for FreeBSD</desc0>
+          <desc1>A port exists but it has important issues or it doesn't have official support</desc1>
+          <desc2>A official port exists in FreeBSD</desc2>
+          <score>0</score>
+          <comment> Documentation available on the official wiki</comment>
+        </element>
+        <element name="packaginghpux" title="HP-UX">
+          <desc0>The software is not packaged for HP-UX</desc0>
+          <desc1>A package exists but it has important issues or it doesn't have official support</desc1>
+          <desc2>A stable package is provided for HP-UX</desc2>
+          <score>0</score>
+          <comment>No documentation</comment>
+        </element>
+        <element name="packagingmacosx" title="MacOSX">
+          <desc0>The software is not packaged for MacOSX</desc0>
+          <desc1>A package exists but it has important issues or it doesn't have official support</desc1>
+          <desc2>The software is packaged in the distribution</desc2>
+          <score>0</score>
+          <comment/>
+        </element>
+        <element name="packagingmandriva" title="Mandriva">
+          <desc0>The software is not packaged for Mandriva</desc0>
+          <desc1>A package exists but it has important issues or it doesn't have official support</desc1>
+          <desc2>The software is packaged in the distribution</desc2>
+          <score>0</score>
+          <comment/>
+        </element>
+        <element name="packagingnet" title="NetBSD">
+          <desc0>The software is not packaged for NetBSD</desc0>
+          <desc1>A port exists but it has important issues or it doesn't have official support</desc1>
+          <desc2>A official port exists in NetBSD</desc2>
+          <score>0</score>
+          <comment/>
+        </element>
+        <element name="packagingopen" title="OpenBSD">
+          <desc0>The software is not packaged for OpenBSD</desc0>
+          <desc1>A port exists but it has important issues or it doesn't have official support</desc1>
+          <desc2>A official port exists in OpenBSD</desc2>
+          <score>0</score>
+          <comment/>
+        </element>
+        <element name="packagingredhat" title="RedHat">
+          <desc0>The software is not packaged for RedHat/Fedora</desc0>
+          <desc1>A package exists but it has important issues or it doesn't have official support</desc1>
+          <desc2>The software is packaged in the distribution</desc2>
+          <score>0</score>
+          <comment>A package is provided with the commercial version.</comment>
+        </element>
+        <element name="packagingsolaris" title="Solaris">
+          <desc0>The software is not packaged for Solaris</desc0>
+          <desc1>A package exists but it has important issues or it doesn't have official support (e.g: SunFreeware.com )</desc1>
+          <desc2>The software is supported by Sun for Solaris</desc2>
+          <score>0</score>
+          <comment/>
+        </element>
+        <element name="packagingsuse" title="SuSE">
+          <desc0>The software is not packaged for SuSE</desc0>
+          <desc1>A package exists but it has important issues or it doesn't have official support</desc1>
+          <desc2>The software is packaged in the distribution</desc2>
+          <score>0</score>
+          <comment>Novell supports and contributes to the OX project. A package is provided with the commercial version.
+An open source installer is under development : http://sourceforge.net/projects/ava-sbs</comment>
+        </element>
+        <element name="packagingwindows" title="Windows">
+          <desc0>The project can't be installed on Windows</desc0>
+          <desc1>A package exists but it is limited or has important issues or just cover some specific Windows release (e.g: Windows2000 and WindowsXP)</desc1>
+          <desc2>Windows is full supported and a package is provided</desc2>
+          <score>0</score>
+          <comment>No installation has been identified on Windows OS.</comment>
+        </element>
+      </element>
+    </element>
+    <element name="exploitability" title="Exploitability">
+      <desc>Exploitability level</desc>
+      <element name="easeofuseergonomics" title="Ease of use, ergonomics">
+        <desc0>Difficult to use, requires an in depth knowledge of the software functionality</desc0>
+        <desc1>Austere and very technical ergonomics</desc1>
+        <desc2>GUI including help functions and elaborated ergonomics</desc2>
+        <score>2</score>
+        <comment>Utilization is very intuitive and interface is user friendly.</comment>
+      </element>
+      <element name="administrationmonitoring" title="Administration / Monitoring">
+        <desc0>No administrative or monitoring functionalities</desc0>
+        <desc1>Existing, functionalities but uncomplete and or need improvement</desc1>
+        <desc2>Complete and easy-to-use administration and monitoring functionalities. Possible integration with external tools (e.g: SNMP, syslog, ...)</desc2>
+        <score>1</score>
+        <comment>ATFrog is an administration tool provided by the OX community. Commercial version provides an administration interface.</comment>
+      </element>
+    </element>
+    <element name="technicaladaptability" title="Technical adaptability">
+      <desc>Technical adaptability</desc>
+      <element name="modularity" title="Modularity">
+        <desc0>Monolithic software</desc0>
+        <desc1>Presence of hight level modules allowing a first level of software adaptation</desc1>
+        <desc2>Modular conception, allowing easy adaptation of the software by selecting modules or even develeloping new ones</desc2>
+        <score>2</score>
+        <comment>Code is in Java et C</comment>
+      </element>
+      <element name="codemodification" title="Code modification">
+        <desc0>Everything by hand</desc0>
+        <desc1>Recompilation possible but complex without any tools or documentation</desc1>
+        <desc2>Recompilation with tools (e.g: make, ANT, ...) and documentation provided</desc2>
+        <score>2</score>
+        <comment>Compilation is managed by a make file. The source architecture is not documented.</comment>
+      </element>
+      <element name="codeextension" title="Code extention">
+        <desc0>Any modification requires code recompilation</desc0>
+        <desc1>Architecture designed for static extension but requires recompilation</desc1>
+        <desc2>Principle of plugin, architecture designed for dynamic extension without recompilation</desc2>
+        <score>0</score>
+        <comment>You need to recompile the source after a code modification.</comment>
+      </element>
+    </element>
+    <element name="strategy" title="Strategy">
+      <desc>Project's strategy</desc>
+      <element name="license" title="License">
+        <desc>License</desc>
+        <element name="permissiveness" title="Permissiveness (only if user wants to become owner of code)">
+          <desc0>Very strict license, like GPL</desc0>
+          <desc1>Moderate permissive license located between both extremes (GPL and BSD) dual-licensing depending on the type of user (person, company, ...) or their activities</desc1>
+          <desc2>Very permissive like BSD or Apache licenses</desc2>
+          <score>0</score>
+          <comment/>
+        </element>
+        <element name="protectionagainstproprietaryforks" title="Protection against proprietary forks">
+          <desc0>Very permissive like BSD or Apache licenses</desc0>
+          <desc1>Moderate permissive license located between both extremes (GPL and BSD), dual-licensing depending on the type of user (person, company, ...) or their activies</desc1>
+          <desc2>Very strict license, like GPL</desc2>
+          <score>2</score>
+          <comment/>
+        </element>
+      </element>
+      <element name="copyrightowners" title="Copyright owners">
+        <desc0>Rights held by a few individuals or entities, making it easier to change the license</desc0>
+        <desc1>Rights held by numerous individuals owning the code in a homogeneous way, making relicense very difficult</desc1>
+        <desc2>Rights held by a legal entity in whom the community trusts (e.g: FSF or ASF)</desc2>
+        <score>0</score>
+        <comment>All the source code is helded by Netline.</comment>
+      </element>
+      <element name="modificationofsourcecode" title="Modification of source code">
+        <desc0>No pratical way to propose code modification</desc0>
+        <desc1>Tools provided to access and modify code (like CVS or SVN) but not really used to develop the software</desc1>
+        <desc2>The code modification process is well defined, exposed and respected, based on roles assignment</desc2>
+        <score>0</score>
+        <comment>There is no tool for code modification.</comment>
+      </element>
+      <element name="roadmap" title="Roadmap">
+        <desc0>No published roadmap</desc0>
+        <desc1>Existing roadmap without planning</desc1>
+        <desc2>Versionned roadmap, with planning and measure of delays</desc2>
+        <score>1</score>
+        <comment>A roadmap is available on the web site, but no delay are given. http://mirror.open-xchange.org/ox/EN/community/roadmap.htm </comment>
+      </element>
+      <element name="sponsor" title="Sponsor">
+        <desc0>Software has no sponsor, the core team is not paid</desc0>
+        <desc1>Software has an unique sponsor who might determine its strategy</desc1>
+        <desc2>Software is sponsored by industry</desc2>
+        <score>2</score>
+        <comment>OpenEchange Ink, Novell and some other companies sponsored the project.</comment>
+      </element>
+      <element name="strategicalindependence" title="Strategical independence">
+        <desc0>No detectable strategy or strong dependency on one unique actor (person, company, sponsor)</desc0>
+        <desc1>Strategical vision shared with several other free and open source projects but without strong commitment from copyrights owners</desc1>
+        <desc2>Strong independence of the code team, legal entity holding rights, strong involvement in the standardization process</desc2>
+        <score>2</score>
+        <comment>The association with Novell has no impact of the Netline strategy.</comment>
+      </element>
+    </element>
+  </section>
+  <section name="composant" title="Composants of the project">
+    <comment/>
+    <desc>Different composant from the groupware</desc>
+    <element name="auth" title="Authentification backend">
+      <desc>Authentification backend</desc>
+      <comment>Session are supported with Apache 1.3.x et jserver and Apache 2.x and TomCat</comment>
+    </element>
+    <element name="mail" title="Mail">
+      <desc>Mail server</desc>
+      <comment/>
+    </element>
+    <element name="mta" title="Mail Transport Agent">
+      <desc>Mail Transport Agent</desc>
+      <comment>SMTP and IMAP protocols are supported. Official tests with Cyrus Postfix have succeded.</comment>
+    </element>
+    <element name="storage" title="Storage backend">
+      <desc>Storage backend</desc>
+      <comment>By default, OX will run with a postgresql database but some informations provided in the wiki explain how to use OX with Mysql or Oracle.
+There is also a tutorial for replacing OpenLDAP by Active Directory. </comment>
+    </element>
+  </section>
+  <section name="administration" title="Administration GUI">
+    <comment/>
+    <element name="webinterface" title="Web interface">
+      <desc0>No web interface</desc0>
+      <desc1>an web interface is provided but limited</desc1>
+      <desc2>everything can be completed with the Web interface</desc2>
+      <comment>ATFrog is an administration tool provided by the OX community.
+A web interface is also provided with the commercial version.</comment>
+      <score>2</score>
+    </element>
+    <element name="commandline" title="Console mode">
+      <desc0>Nothing</desc0>
+      <desc1>Some tools exists, but limited. No text based configuration file or not human readable (e.g: complexe XML)</desc1>
+      <desc2>Total access to the server configuration with powerful tools and well designer text configuration file</desc2>
+      <comment/>
+      <score>1</score>
+    </element>
+  </section>
+  <section name="groupwarecomposant" title="Supported groupware composant">
+    <comment/>
+    <element name="calendar" title="Calendar">
+      <desc0>no calendar provied</desc0>
+      <desc1>a calendar is provied, but leak some important feature</desc1>
+      <desc2>a well integrated calendar is provied</desc2>
+      <comment/>
+      <score>2</score>
+    </element>
+    <element name="taskmanager" title="Taskmanager">
+      <desc0>no task manager provied</desc0>
+      <desc1>a task manager is provied but leak some important feature</desc1>
+      <desc2>Task manager fully supported</desc2>
+      <comment/>
+      <score>2</score>
+    </element>
+    <element name="notemanager" title="Notemanager">
+      <desc0>no note manager provided</desc0>
+      <desc1>a limited note manager is provided</desc1>
+      <desc2>a well integred note manager is provided</desc2>
+      <comment/>
+      <score>2</score>
+    </element>
+    <element name="contactmanager" title="Contact manager">
+      <desc0>can't add contact in the server</desc0>
+      <desc1>contact manager exists but is limited</desc1>
+      <desc2>contact manager fully supported</desc2>
+      <comment/>
+      <score>2</score>
+    </element>
+  </section>
+  <section name="standard" title="Standard support">
+    <comment/>
+    <element name="icaloverwebdav" title="iCalendar over WebDav">
+      <desc0>iCalendar over WebDav not supported</desc0>
+      <desc1>iCalendar over WebDav partially supported</desc1>
+      <desc2>iCalendar over WebDav works</desc2>
+      <comment/>
+      <score>2</score>
+    </element>
+    <element name="caldav" title="CalDav">
+      <desc0>CalDav over WebDav not supported</desc0>
+      <desc1>CalDav over WebDav partially supported</desc1>
+      <desc2>CalDav over WebDav works</desc2>
+      <comment/>
+      <score>2</score>
+    </element>
+    <element name="groupdav" title="Groupdav">
+      <desc0>Groupdav over WebDav not supported</desc0>
+      <desc1>Groupdav over WebDav partially supported</desc1>
+      <desc2>Groupdav over WebDav works</desc2>
+      <comment/>
+      <score>0</score>
+    </element>
+    <element name="syncml" title="SyncML">
+      <desc0>SyncML over WebDav not supported</desc0>
+      <desc1>SyncML over WebDav partially supported</desc1>
+      <desc2>SyncML over WebDav works</desc2>
+      <comment/>
+      <score>2</score>
+    </element>
+  </section>
+  <section name="supportedclients" title="Supported client">
+    <comment/>
+    <element name="web" title="Web client">
+      <desc0>Web interface doesn't exist</desc0>
+      <desc1>Web interface is provied but limited or need some work for its integration</desc1>
+      <desc2>Web interface directly provided with the project</desc2>
+      <comment/>
+      <score>2</score>
+    </element>
+    <element name="outlook" title="Microsoft Outlook">
+      <desc0>Microsoft Outlook not supported</desc0>
+      <desc1>Microsoft Outlook connector is provided but have some limitation</desc1>
+      <desc2>a free Microsoft Outlook connector</desc2>
+      <comment>The commercial version provides a connector for Outlook.</comment>
+      <score>0</score>
+    </element>
+    <element name="evolution" title="Novell Evolution">
+      <desc0>Novell Evolution can't be used</desc0>
+      <desc1>Novell Evolution can be used but with some limitation</desc1>
+      <desc2>Novell Evolution fully supported</desc2>
+      <comment/>
+      <score>2</score>
+    </element>
+    <element name="kde" title="KDE">
+      <desc0>KDE PIM (Korganizer, kmail, ...) can't be used with this groupware</desc0>
+      <desc1>KDE can be used but with some limitation </desc1>
+      <desc2>Fully support of KDE</desc2>
+      <comment/>
+      <score>2</score>
+    </element>
+    <element name="ical" title="Apple iCal">
+      <desc0>Apple's iCal can't be used</desc0>
+      <desc1>Apple's iCal works but with some limitation</desc1>
+      <desc2>Apple's iCal fully supported</desc2>
+      <comment/>
+      <score>2</score>
+    </element>
+  </section>
+  <section name="codequality" title="Code quality">
+    <element name="remoteapi" title="Remote access API">
+      <desc0>not remote remote API</desc0>
+      <desc1>remote API (SOAP, XML/RPC, REST) exists but is limited or buggy</desc1>
+      <desc2>powerful remote API (SOAP, XML/RPC, REST) provied</desc2>
+      <comment/>
+      <score>0</score>
+    </element>
+    <element name="api" title="code API">
+      <desc0>No API provied to extend the server, or very limited and not documented</desc0>
+      <desc1>An API is provied but limited of not fully documented</desc1>
+      <desc2>Well documented and complet API</desc2>
+      <comment/>
+      <score>0</score>
+    </element>
+  </section>
+</document>
