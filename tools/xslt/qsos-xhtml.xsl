@@ -4,7 +4,7 @@
     <html>
       <head>
         <title>
-          <xsl:value-of select="document/header/appname"/>
+          <xsl:value-of select="document/header/appname"/>&#160;
           <xsl:value-of select="document/header/release"/>
         </title>
         <link rel="stylesheet" type="text/css" href="%%CSS_SHEET%%"/>
@@ -25,7 +25,7 @@
       </head>
       <body>
         <h1>
-          <xsl:value-of select="document/header/appname"/>
+          <xsl:value-of select="document/header/appname"/>>&#160;
           <xsl:value-of select="document/header/release"/>
         </h1>
         <xsl:apply-templates select="document"/>
@@ -94,7 +94,7 @@
   <xsl:template match="author">
     <a href="mailto:{email}">
       <xsl:apply-templates select="name"/>
-    </a>
+    </a>&#160;
   </xsl:template>
   <xsl:template match="dates">
     <li>
