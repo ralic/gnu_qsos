@@ -1,0 +1,793 @@
+<document>
+  <header>
+    <authors>
+      
+    <author><name>Raphael Semeteys</name><email>raphael.semeteys@atosorigin.com</email></author></authors>
+    <dates>
+      <creation/>
+      <validation/>
+    </dates>
+    <language>en</language>
+    <appname>KWord</appname>
+    <release>1.4</release>
+    <licenseid>32</licenseid>
+    <licensedesc>GNU LGPL</licensedesc>
+    <url>http://www.koffice.org/kword/</url>
+    <desc>Word processor from the KDE Office suite (KOffice)</desc>
+    <demourl>http://ktown.kde.org/~binner/klax/ (Klax Live CD)</demourl>
+    <qsosformat>1.6</qsosformat>
+    <qsosappfamily>Word processor</qsosappfamily>
+    <qsosspecificformat>1</qsosspecificformat>
+  </header>
+  <section name="generic" title="Generic section">
+    <desc>Generic criteria from QSOS version 1.6</desc>
+    <element name="intrinsicdurability" title="Intrinsic durability">
+      <desc>Intrinsic durability</desc>
+      <element name="maturity" title="Maturity">
+        <desc>Maturity</desc>
+        <element name="age" title="Age">
+          <desc0>less than 3 months</desc0>
+          <desc1>if between 3 months and 3 years</desc1>
+          <desc2>after 3 years</desc2>
+          <score>2</score>
+          <comment>Porject started in 1997. In 2000 a new maintainer redisigned the architecture and fixed a lot of bugs.</comment>
+        </element>
+        <element name="stability" title="Stability">
+          <desc0>Unstable software with numerous releases or patches generating side effects</desc0>
+          <desc1>Stabilized production release existing but old. Difficulties to stabilize developpement releases</desc1>
+          <desc2>Stabilized software. Releases provide bug fixes corrections but mainly new functionalities</desc2>
+          <score>1</score>
+          <comment/>
+        </element>
+        <element name="historyknowproblems" title="History, know problems">
+          <desc0>Software knows several problems which can be prohibitive</desc0>
+          <desc1>No know major problem or crisi</desc1>
+          <desc2>History of good management of crisis situations</desc2>
+          <score>1</score>
+          <comment>The Koffice project is sometimes critized for adding new features rather fixing bugs. However, different teams work on those tasks.</comment>
+        </element>
+        <element name="forkprobability" title="Fork probability, source of Forking">
+          <desc0>Software is very likely to be forked in the future</desc0>
+          <desc1>Software comes from a fork but has very few chances of being forked in the futur</desc1>
+          <desc2>Software has very little chance of being forked. It does not come from a frok either</desc2>
+          <score>2</score>
+          <comment>Risk is reduced by the LGPL license and the fact that copyrigths are owned by contributors.</comment>
+        </element>
+      </element>
+      <element name="adoption" title="Adoption">
+        <desc>Adoption by community and industry</desc>
+        <element name="popularity" title="Popularity (related to: general public, niche, ...)">
+          <desc0>Very few users identified</desc0>
+          <desc1>Detectable use on Internet</desc1>
+          <desc2>Numerous users, numerous references</desc2>
+          <score>1</score>
+          <comment>Kword popularity is linked to KDE's. For now it's used is forbidden to Widows users.</comment>
+        </element>
+        <element name="references" title="References">
+          <desc0>None</desc0>
+          <desc1>Few refences, non critical usages</desc1>
+          <desc2>Often implemented for critical applications</desc2>
+          <score>1</score>
+          <comment>Few references in the industry.</comment>
+        </element>
+        <element name="contributingcommunity" title="Contributing Community">
+          <desc0>No community or without real activity (forum, mailing list, ...)</desc0>
+          <desc1>Existing community with a notable activity</desc1>
+          <desc2>Strong community: big activity on forums, numerous contributors and advocates</desc2>
+          <score>1</score>
+          <comment>No very large community but an active mailing list.</comment>
+        </element>
+        <element name="books" title="books">
+          <desc0>No book about the software</desc0>
+          <desc1>Less than 5 books about the software are available</desc1>
+          <desc2>More than 5 books about software are available, in several languages</desc2>
+          <score>1</score>
+          <comment>"Mastering KOffice for Linux" was released in 2000. No other books seem to have been published since.</comment>
+        </element>
+      </element>
+      <element name="developmentleadership" title="Development leadership">
+        <desc>Organisation and leadership of developments</desc>
+        <element name="leadingteam" title="Leading team">
+          <desc0>1 to 2 individuals involved, not clearly identified</desc0>
+          <desc1>Between 2 and 5 independent people</desc1>
+          <desc2>More than 5 people</desc2>
+          <score>1</score>
+          <comment>The project's maintainer is clearly identified.</comment>
+        </element>
+        <element name="managementstyle" title="Management style">
+          <desc0>Complete dictatorship</desc0>
+          <desc1>Enlightened despotism</desc1>
+          <desc2>Council of architects with identified leader (e.g: KDE)</desc2>
+          <score>1</score>
+          <comment>Kword follow KDE rules: it is managed by a maintainer but important decisions are voted by all contributors.</comment>
+        </element>
+      </element>
+      <element name="activity" title="Activity">
+        <desc>Activity of the project and around the software</desc>
+        <element name="developersidentificationturnover" title="Developers, identification, turnover">
+          <desc0>Less than 3 developers, not clearly identified</desc0>
+          <desc1>Between 4 and 7 developers, or more unidentified developers with important turnover</desc1>
+          <desc2>More than 7 developers, very stable team</desc2>
+          <score>1</score>
+          <comment>7 identified developers. Stable team, which still includes project's creator.</comment>
+        </element>
+        <element name="activityonbugs" title="Activity on bugs">
+          <desc0>Slow reactivity in forum or on mailing list, or nothing regarding bug fixes in releases note</desc0>
+          <desc1>Detectable activity but without process clearly exposed, loing reaction/resolution time</desc1>
+          <desc2>Strong reactivity based on roles and tasks assignment</desc2>
+          <score>2</score>
+          <comment>Bug tracking tool used, with weekly statistics generation.</comment>
+        </element>
+        <element name="activityonfunctionalities" title="Activity on functionalities">
+          <desc0>No or few new functionalities</desc0>
+          <desc1>Evolution of the product driven by the core team or by user's request without any clearly explained process</desc1>
+          <desc2>Tool(s) to manage feature requests, strong interaction with roadmap</desc2>
+          <score>1</score>
+          <comment>Feature requests can be entered in the bug tracker.</comment>
+        </element>
+        <element name="activityonreleases" title="Activity on releases">
+          <desc0>Very weak activity on both production and development releases</desc0>
+          <desc1>Activity on production and developmenet releases. Frequent minor releases (bug fixes)</desc1>
+          <desc2>Important activity with frequent minor releases (bugs fixes) and planned major releases relating to the roadmap forcast</desc2>
+          <score>2</score>
+          <comment>Planned released, with freeze of new features before each new release (even minor ones).</comment>
+        </element>
+      </element>
+    </element>
+    <element name="industrializedsolution" title="Industrialized solution">
+      <desc>Industrialization level of the project</desc>
+      <element name="independenceofdevelopments" title="Independence of developments">
+        <desc0>Developments realized at 100% by employees of a single company</desc0>
+        <desc1>60% maximum</desc1>
+        <desc2>20% maximum</desc2>
+        <score>1</score>
+        <comment>Kwork, like KOffice and KDE, is thighly linked with Qt, developed by Trolltech and under a dual license (open source and proprietary). Otherwise, developments are independents.</comment>
+      </element>
+      <element name="services" title="Services">
+        <desc>Services offering</desc>
+        <element name="training" title="Training">
+          <desc0>No offer of training identified</desc0>
+          <desc1>Offer exists but is restricted geographically and to one language or is provided by a single contractor</desc1>
+          <desc2>Rich offers provided by several contractors, in serveral languages and split into modules of gradual levels</desc2>
+          <score>1</score>
+          <comment>Generally included in Koffice or even KDE training.</comment>
+        </element>
+        <element name="support" title="Support">
+          <desc0>No offer of support except via public forums and mailing lists</desc0>
+          <desc1>Offer exists but is provided by a single contractor without strong commitment quality of services</desc1>
+          <desc2>Multiple service providers with strong commitment (e.g: guaranteed resolution time)</desc2>
+          <score>1</score>
+          <comment>Around 50 offers referenced on the project's website. Commercial Linux distribution like Mandiva ou SuSE also provide support services.</comment>
+        </element>
+        <element name="consulting" title="Consulting">
+          <desc0>No offer of consulting service</desc0>
+          <desc1>Offer exists but is restricted geographically and to one language or is provided by a single contractor</desc1>
+          <desc2>Consulting services provied by different contractors in serveral languages</desc2>
+          <score>1</score>
+          <comment>Around 60 offers referenced on the project's website.</comment>
+        </element>
+      </element>
+      <element name="documentation" title="Documentation">
+        <desc0>No user documentation</desc0>
+        <desc1>Documentation exists but shifted in time, is restricted to one language or is poorly detailed</desc1>
+        <desc2>Documentation always up to date, translated and possibly adapted to different target readers (end user, sysadmin, manager, ...)</desc2>
+        <score>2</score>
+        <comment>Documentation is been translated in 23 languages (9 are complete). API are described via Doxygen.</comment>
+      </element>
+      <element name="qualityassurance" title="Quality Assurance">
+        <desc>Quality assurance process</desc>
+        <element name="quality" title="Quality Assurance">
+          <desc0>No QA process</desc0>
+          <desc1>Identifies QA process but not much formalized and with no tool</desc1>
+          <desc2>Automatic testing process included in code's life-cycle with publication of resulats</desc2>
+          <score>1</score>
+          <comment>Respect of KDE QA: planned releases, freeze of new features before each release.</comment>
+        </element>
+        <element name="tools" title="Tools">
+          <desc0>No bug or feature request management tool</desc0>
+          <desc1>Standard tools provided (for instance by a hosting forge) but poorly used</desc1>
+          <desc2>Very active use of tools for roles/tasks allocation and progress monitoring</desc2>
+          <score>2</score>
+          <comment>Central bug tracker and feature request tool. Tools to survey contributors activity (Commit-Digest, CommitFilter). No automatic test suite.</comment>
+        </element>
+      </element>
+      <element name="packaging" title="Packaging">
+        <desc>Packaging for various operating systems</desc>
+        <element name="packagingsource" title="Source">
+          <desc0>Software can't be installed from source without a look of work</desc0>
+          <desc1>Installation from source is limited depend on very strict condition (OS, arch, lib, ...)</desc1>
+          <desc2>Installation from source is easy</desc2>
+          <score>1</score>
+          <comment>Qt 3.3, kdelibs 3.3</comment>
+        </element>
+        <element name="packagingdebian" title="Debian">
+          <desc0>The software is not packaged for Debian</desc0>
+          <desc1>A Debian package exists but it has important issues or it doesn't have an official support</desc1>
+          <desc2>The software is packaged in the distribution</desc2>
+          <score>2</score>
+          <comment/>
+        </element>
+        <element name="packagingfreebsd" title="FreeBSD">
+          <desc0>The software is not packaged for FreeBSD</desc0>
+          <desc1>A port exists but it has important issues or it doesn't have an official support</desc1>
+          <desc2>A official port exists in FreeBSD</desc2>
+          <score>2</score>
+          <comment>http://freebsd.kde.org/</comment>
+        </element>
+        <element name="packaginghpux" title="HP-UX">
+          <desc0>The software is not packaged for HP-UX</desc0>
+          <desc1>A package exists but it has important issues or it doesn't have an official support</desc1>
+          <desc2>A strong packaged is provided for HP-UX</desc2>
+          <score>0</score>
+          <comment/>
+        </element>
+        <element name="packagingmacosx" title="MacOSX">
+          <desc0>The software is not packaged for MacOSX</desc0>
+          <desc1>A package exists but it has important issues or it doesn't have an official support</desc1>
+          <desc2>The software is packaged in the distribution</desc2>
+          <score>0</score>
+          <comment/>
+        </element>
+        <element name="packagingmandriva" title="Mandriva">
+          <desc0>The software is not packaged for Mandriva</desc0>
+          <desc1>A package exists but it has important issues or it doesn't have an official support</desc1>
+          <desc2>The software is packaged in the distribution</desc2>
+          <score>2</score>
+          <comment/>
+        </element>
+        <element name="packagingnet" title="NetBSD">
+          <desc0>The software is not packaged for NetBSD</desc0>
+          <desc1>A port exists but it has important issues or it doesn't have an official support</desc1>
+          <desc2>A official port exists in NetBSD</desc2>
+          <score>2</score>
+          <comment/>
+        </element>
+        <element name="packagingnet" title="OpenBSD">
+          <desc0>The software is not packaged for OpenBSD</desc0>
+          <desc1>A port exists but it has important issues or it doesn't have an official support</desc1>
+          <desc2>A official port exists in OpenBSD</desc2>
+          <score/>
+          <comment/>
+        </element>
+        <element name="packagingredhat" title="RedHat">
+          <desc0>The software is not packaged for RedHat/Fedora</desc0>
+          <desc1>A package exists but it has important issues or it doesn't have an official support</desc1>
+          <desc2>The software is packaged in the distribution</desc2>
+          <score>2</score>
+          <comment/>
+        </element>
+        <element name="packagingsuse" title="Solaris">
+          <desc0>The software is not packaged for Solaris</desc0>
+          <desc1>A package exists but it has important issues or it doesn't have an official support (e.g: SunFreeware.com )</desc1>
+          <desc2>The software is supported by Sun for Solaris</desc2>
+          <score>2</score>
+          <comment/>
+        </element>
+        <element name="packagingsuse" title="SuSE">
+          <desc0>The software is not packaged for SuSE</desc0>
+          <desc1>A package exists but it has important issues or it doesn't have an official support</desc1>
+          <desc2>The software is packaged in the distribution</desc2>
+          <score/>
+          <comment/>
+        </element>
+        <element name="packagingwindows" title="Windows">
+          <desc0>The project can't be installed on Windows</desc0>
+          <desc1>A package exists but it is limited or has important issues or just cover some specific Windows release (e.g: Windows2000 and WindowsXP)</desc1>
+          <desc2>Windows is full supported and a package is provided</desc2>
+          <score>0</score>
+          <comment>New versions of Qt are ported to Windows. Wait and see...</comment>
+        </element>
+      </element>
+    </element>
+    <element name="exploitability" title="Exploitability">
+      <desc>Exploitability level</desc>
+      <element name="easeofuseergonomics" title="Ease of use, ergonomics">
+        <desc0>Difficult to use, requires an in depth knowledge of the software functionality</desc0>
+        <desc1>Austere and very technical ergonomics</desc1>
+        <desc2>GUI including help functions and elaborated ergonomics</desc2>
+        <score>2</score>
+        <comment>User-friendly GUI, coherent with KDE.</comment>
+      </element>
+      <element name="administrationmonitoring" title="Administration / Monitoring">
+        <desc0>No administrative or monitoring functionalities</desc0>
+        <desc1>Existing, functionalities but uncomplete and or need improvement</desc1>
+        <desc2>Complete and easy-to-use administration and monitoring functionalities. Possible integration with external tools (e.g: SNMP, syslog, ...)</desc2>
+        <score>0</score>
+        <comment>NA</comment>
+      </element>
+    </element>
+    <element name="technicaladaptability" title="Technical adaptability">
+      <desc>Technical adaptability</desc>
+      <element name="modularity" title="Modularity">
+        <desc0>Monolithic software</desc0>
+        <desc1>Presence of hight level modules alowing a first level of software adaptation</desc1>
+        <desc2>Modular conception, allowing easy adaptation of the software by selecting modules or even develeloping new ones</desc2>
+        <score>2</score>
+        <comment>C++ modular code. Kword is independent from other components of KOffice.</comment>
+      </element>
+      <element name="codemodification" title="Code modification">
+        <desc0>Everything by hand</desc0>
+        <desc1>Recompilation possible but complex without any tools or documentation</desc1>
+        <desc2>Recompilation with tools (e.g: make, ANT, ...) and documentation provided</desc2>
+        <score>1</score>
+        <comment>Relatively complex code. Compilation is documented.</comment>
+      </element>
+      <element name="codeextension" title="Code extention">
+        <desc0>Any modification requires code recompilation</desc0>
+        <desc1>Architecture designed for static extension but requires recompilation</desc1>
+        <desc2>Principle of plugin, architecture designed for dynamic extension without recompilation</desc2>
+        <score>1</score>
+        <comment>Recompilation required. Identified extention area: document format filters.</comment>
+      </element>
+    </element>
+    <element name="strategy" title="Strategy">
+      <desc>Project's strategy</desc>
+      <element name="license" title="License">
+        <desc>License</desc>
+        <element name="permissiveness" title="Permissiveness (only if user wants to become owner of code)">
+          <desc0>Very strict license, like GPL</desc0>
+          <desc1>Moderate permissive license located between both extremes (GPL and BSD) dual-licensing depending on the type of user (person, company, ...) or their activities</desc1>
+          <desc2>Very permissive like BSD or Apache licenses</desc2>
+          <score>1</score>
+          <comment/>
+        </element>
+        <element name="protectionagainstproprietaryforks" title="Protection against proprietary forks">
+          <desc0>Very permissive like BSD or Apache licenses</desc0>
+          <desc1>Moderate permissive license located between both extremes (GPL and BSD), dual-licensing depending on the type of user (person, company, ...) or their activies</desc1>
+          <desc2>Very strict license, like GPL</desc2>
+          <score>1</score>
+          <comment>Qt (provided by Trolltech) is under a dual license. However a deal between Torlltech and KDE e.V. guarantees that Qt will stay open source, and will become BSD code in case of end of development.</comment>
+        </element>
+      </element>
+      <element name="copyrightowners" title="Copyright owners">
+        <desc0>Rights held by a few individuals or entities, making it easier to change the license</desc0>
+        <desc1>Rights held by numerous individuals owning the code in a homogeneous way, making relicense very difficult</desc1>
+        <desc2>Rights held by a legal entity in whom the community trusts (e.g: FSF or ASF)</desc2>
+        <score>1</score>
+        <comment/>
+      </element>
+      <element name="modificationofsourcecode" title="Modification of source code">
+        <desc0>No pratical way to propose code modification</desc0>
+        <desc1>Tools provided to access and modify code (like CVS or SVN) but not really used to develop the software</desc1>
+        <desc2>The code modification process is well defined, exposed and respected, based on roles assignment</desc2>
+        <score>1</score>
+        <comment>Source code available with a large development guide (more than 1000 pages).</comment>
+      </element>
+      <element name="roadmap" title="Roadmap">
+        <desc0>No published roadmap</desc0>
+        <desc1>Existing roadmap without planning</desc1>
+        <desc2>Versionned roadmap, with planning and measure of delays</desc2>
+        <score>1</score>
+        <comment>Macroscopic roadmap.</comment>
+      </element>
+      <element name="sponsor" title="Sponsor">
+        <desc0>Software has no sponsor, the core team is not paid</desc0>
+        <desc1>Software has an unique sponsor who might determine its strategy</desc1>
+        <desc2>Software is sponsored by industry</desc2>
+        <score/>
+        <comment/>
+      </element>
+      <element name="strategicalindependence" title="Strategical independence">
+        <desc0>No detectable strategy or strong dependency on one unique actor (person, company, sponsor)</desc0>
+        <desc1>Strategical vision shared with several other free and open source projects but without strong commitment from copyrights owners</desc1>
+        <desc2>Strong independence of the code team, legal entity holding rights, strong involvement in the standardization process</desc2>
+        <score>2</score>
+        <comment>The non-profit German association KDE e.V. exists to represent legally and financially the project.</comment>
+      </element>
+    </element>
+  </section>
+  <section name="standardfunctionalities" title="Standard functionalities">
+    <desc>Basic functionalities of a word processor</desc>
+    <element name="general" title="General">
+      <desc>Basic transversal features not specific to word processors</desc>
+      <comment/>
+      <element name="officesuite" title="Integration in a Office suite">
+        <desc0>The word processor is a standalone application not integrated in an office suite</desc0>
+        <desc1>The word processor is part of a larger suite but ther is integration between the components</desc1>
+        <desc2>The word processor is fully integrated into a larger Office suite</desc2>
+        <score>2</score>
+        <comment>KOffice</comment>
+      </element>
+      <element name="otherofficecomponents" title="Other components in the Office suite">
+        <desc>Other components provided by the Office suite</desc>
+        <comment>Spreadsheets (KSpread), Slides (KPresenter), Flowcharts (Kivio), Vectorial drawing (Karbon14), Image processing (Krita), Reporting (Kugar), Project management (KPlato), Schemas (KChart), Formulas (Kformula), Database forms (Kexi)</comment>
+      </element>
+      <element name="levelofintegration" title="Office components integration">
+        <desc0>There is not integration between the components of the suite. Or there is no suite at all.</desc0>
+        <desc1>Different components of the suite are integrated but it is limited</desc1>
+        <desc2>Differents components used shared code and libraries and /or use a specific framework to exchange and communicate</desc2>
+        <score>2</score>
+        <comment>Idenpendents modules sharing the same basic libraries (Qt, kdelibs) and communication mecanism (DCOP scipts, Kparts)</comment>
+      </element>
+      <element name="i18n" title="i18n">
+        <desc0>No localisation possible.</desc0>
+        <desc1>Localisation is possible but limited (no or poor documentation translation for instance) with very few existing locale</desc1>
+        <desc2>Localisation is fully implemented, with several locale, UNICODE and bi-directionnal language support</desc2>
+        <score>2</score>
+        <comment>UNICODE and bi-directional language support. No vertical language support. Translations under way in 66 languages (22 are complete).  cours dans 66 langues dont 22 sont quasi complètes (cf.http://i18n.kde.org/stats/gui/stable/koffice/index.php</comment>
+      </element>
+      <element name="accessibility" title="Accessibility">
+        <desc0>No accessibility features supported.</desc0>
+        <desc1>Few accessibility features but limited and not compliant with accessibility standards</desc1>
+        <desc2>Accessibility is really integrated in the software and it complies with standards</desc2>
+        <score>1</score>
+        <comment>Keyboard navigation. Accessibility based on KDE features (http://accessibility.kde.org)</comment>
+      </element>
+      <element name="docrecovery" title="Document recovery">
+        <desc0>No corrupt document recovery feature</desc0>
+        <desc1>Feature is available but limited and/or not really efficient</desc1>
+        <desc2>Feature fully implemented and usable</desc2>
+        <score>0</score>
+        <comment>This leaves the option to manually  tweak XML files </comment>
+      </element>
+      <element name="customization" title="Customization">
+        <desc0>Software is not customizable</desc0>
+        <desc1>Software is customizable but it is limited to few elements</desc1>
+        <desc2>Software is fully customizable (menus, toolbars, shortcuts, ...)</desc2>
+        <score>2</score>
+        <comment/>
+      </element>
+      <element name="help" title="Help">
+        <desc0>No Help features or of very poor quality which make them not usable</desc0>
+        <desc1>Some Help feature but not very user friendly and limited in coverage or in quality</desc1>
+        <desc2>Help features of good quality and very intuitive (contextual help, searchable help, ...)</desc2>
+        <score>2</score>
+        <comment>User help og good quality (it is the official documentation)</comment>
+      </element>
+    </element>
+    <element name="wordprocessing" title="Word processing">
+      <desc>Standard word processing features</desc>
+      <comment/>
+      <element name="modificationtracking" title="Modification tracking">
+        <desc0>Feature not implemented</desc0>
+        <desc1>Feature implemented but not for all elements of a document (for instance table, headers/footers, ...) or not really usable</desc1>
+        <desc2>Feature fully implemented and usable</desc2>
+        <score>0</score>
+        <comment/>
+      </element>
+      <element name="docversioning" title="Document versioning">
+        <desc0>Feature not implemented</desc0>
+        <desc1>Feature implemented but limited or not really usable</desc1>
+        <desc2>Feature fully implemented and usable</desc2>
+        <score>0</score>
+        <comment/>
+      </element>
+      <element name="doccomparison" title="Documents comparison">
+        <desc0>Feature not implemented</desc0>
+        <desc1>Feature implemented but limited or not really usable</desc1>
+        <desc2>Feature fully implemented and usable</desc2>
+        <score>0</score>
+        <comment/>
+      </element>
+      <element name="searchreplace" title="Search/Replace">
+        <desc0>Feature not implemented</desc0>
+        <desc1>Feature implemented but limited or not really usable</desc1>
+        <desc2>Feature fully implemented and usable</desc2>
+        <score>2</score>
+        <comment>Search on word, regex, formats (font, color, ...)</comment>
+      </element>
+      <element name="objectsnavigator" title="Objects navigator">
+        <desc0>No way to navigate through the different objects of a document</desc0>
+        <desc1>Feature implemented but limited or not reallu usable</desc1>
+        <desc2>Feature fully implemented and usable</desc2>
+        <score>2</score>
+        <comment/>
+      </element>
+      <element name="displaymodes" title="Display modes">
+        <desc>List of different supported modes to display a document</desc>
+        <comment/>
+      </element>
+      <element name="fieldsinsertion" title="Field insertion">
+        <desc0>No possibility to insert any field in a document</desc0>
+        <desc1>Few fields can be inserted but it is limited</desc1>
+        <desc2>Meta-data, custom fields and variable, statistics, ... can be inserted anywhere in the document</desc2>
+        <score>2</score>
+        <comment/>
+      </element>
+      <element name="referenceshorcuts" title="Reference shortcuts">
+        <desc0>No feature available to insert shortcuts to other part of the document or to external documents</desc0>
+        <desc1>Feature available but limited to some part or object of the document only</desc1>
+        <desc2>Feature fully implemented to all part or objects of a document</desc2>
+        <score>1</score>
+        <comment>Hypertext bookmark/link system. Bookmarks must be defined fisrt.</comment>
+      </element>
+      <element name="hyperlinks" title="Hyperlinks">
+        <desc0>Feature not implemented</desc0>
+        <desc1>Feature is available but limited and/or not really efficient</desc1>
+        <desc2>Feature fully implemented and usable</desc2>
+        <score>2</score>
+        <comment>Internal and external links.</comment>
+      </element>
+      <element name="commentnote" title="Comment note">
+        <desc0>Feature not implemented</desc0>
+        <desc1>Feature is available but limited and/or not really efficient</desc1>
+        <desc2>Feature fully implemented and usable</desc2>
+        <score>2</score>
+        <comment/>
+      </element>
+      <element name="headerfooter" title="Header/Footer">
+        <desc0>Feature not implemented</desc0>
+        <desc1>Feature is available but limited and/or not really efficient</desc1>
+        <desc2>Feature fully implemented and usable</desc2>
+        <score>2</score>
+        <comment/>
+      </element>
+      <element name="sections" title="Sections">
+        <desc0>Feature not implemented</desc0>
+        <desc1>Feature is available but limited and/or not really efficient</desc1>
+        <desc2>Feature fully implemented and usable</desc2>
+        <score>0</score>
+        <comment/>
+      </element>
+      <element name="indexes" title="Indexes">
+        <desc0>Feature not implemented</desc0>
+        <desc1>Feature is available but limited, for instance the index is not fully editable or customizable</desc1>
+        <desc2>Feature fully implemented and usable</desc2>
+        <score>1</score>
+        <comment>Editable table of contents (format).</comment>
+      </element>
+      <element name="styles" title="Styles management">
+        <desc0>Feature not implemented</desc0>
+        <desc1>Feature is available but not for all objects of the document</desc1>
+        <desc2>Feature fully implemented and usable</desc2>
+        <score>2</score>
+        <comment>Managed styles: characters, lists, borders and tables. Style manager allows style creation, modification, copy, import from other document.</comment>
+      </element>
+      <element name="template" title="Document template">
+        <desc0>Feature not implemented</desc0>
+        <desc1>Feature is available but limited and/or not really efficient</desc1>
+        <desc2>Feature fully implemented and usable</desc2>
+        <score>2</score>
+        <comment/>
+      </element>
+      <element name="spellcheck" title="Spellcheck">
+        <desc0>Feature not implemented</desc0>
+        <desc1>Feature is available but limited and/or not really efficient</desc1>
+        <desc2>Feature fully implemented and usable</desc2>
+        <score/>
+        <comment/>
+      </element>
+      <element name="grammarchek" title="Grammar check">
+        <desc0>Feature not implemented</desc0>
+        <desc1>Feature is available but limited to few languages and/or is not really efficient</desc1>
+        <desc2>Feature fully implemented and usable</desc2>
+        <score>0</score>
+        <comment/>
+      </element>
+      <element name="dictionnary" title="Integrated dictionnary">
+        <desc0>Feature not implemented</desc0>
+        <desc1>Feature is available but limited and/or not really efficient</desc1>
+        <desc2>Feature fully implemented and usable</desc2>
+        <score>0</score>
+        <comment/>
+      </element>
+      <element name="thesaurus" title="Thesaurus">
+        <desc0>Feature not implemented</desc0>
+        <desc1>Feature is available but limited and/or not really efficient</desc1>
+        <desc2>Feature fully implemented and usable</desc2>
+        <score>2</score>
+        <comment/>
+      </element>
+      <element name="autocompletion" title="Word autocompletion">
+        <desc0>Feature not implemented</desc0>
+        <desc1>Feature is available but limited, for instance the list is not editable</desc1>
+        <desc2>Feature fully implemented and usable</desc2>
+        <score>2</score>
+        <comment>Predefined and editable list + list based on words already present in the document</comment>
+      </element>
+      <element name="autocorrect" title="Autocorrect">
+        <desc0>Feature not implemented</desc0>
+        <desc1>Feature is available but limited, for instance the list is not editable</desc1>
+        <desc2>Feature fully implemented and usable</desc2>
+        <score>2</score>
+        <comment>Predefined and editable list.</comment>
+      </element>
+      <element name="nestedtables" title="Nested tables">
+        <desc0>Feature not implemented</desc0>
+        <desc1>Feature is available but limited and/or not really efficient</desc1>
+        <desc2>Feature fully implemented and usable</desc2>
+        <score>0</score>
+        <comment/>
+      </element>
+      <element name="tableautoformat" title="Table autoformat">
+        <desc0>Feature not implemented</desc0>
+        <desc1>Feature is available but limited and/or not really efficient</desc1>
+        <desc2>Feature fully implemented and usable</desc2>
+        <score>1</score>
+        <comment/>
+      </element>
+      <element name="tablesortformula" title="Table sorting and formulas">
+        <desc0>Feature not implemented</desc0>
+        <desc1>Feature is available but limited and/or not really efficient</desc1>
+        <desc2>Feature fully implemented and usable</desc2>
+        <score>0</score>
+        <comment/>
+      </element>
+      <element name="textableconv" title="Text/Table convertion">
+        <desc0>Feature not implemented</desc0>
+        <desc1>Feature is available but limited and/or not really efficient</desc1>
+        <desc2>Feature fully implemented and usable</desc2>
+        <score>0</score>
+        <comment/>
+      </element>
+      <element name="docsecurity" title="Document security">
+        <desc0>Feature not implemented</desc0>
+        <desc1>Feature is available but limited and/or not really efficient</desc1>
+        <desc2>Feature fully implemented and usable</desc2>
+        <score>0</score>
+        <comment/>
+      </element>
+    </element>
+  </section>
+  <section name="formatsmacrosapis" title="Formats, Macros &amp; APIs">
+    <desc>Supported document formats, macros features &amp; supported APIs</desc>
+    <element name="formats" title="Formats">
+      <desc/>
+      <comment/>
+      <element name="supportedformats" title="Supported Formats">
+        <desc>List of document formats supported by the word processor</desc>
+        <comment>SXW (OpenOffice.org), DOC, WRI (Microsoft Write), RTF, TXT, HTML, ABW (AbiWord), Tex, SGML, XML, WML, WPD (WordPerfect)</comment>
+      </element>
+      <element name="opendocument" title="OpenDocument format support">
+        <desc0>OpenDocument format is not supported</desc0>
+        <desc1>OpenDocument format is not supported for all objects inside a document</desc1>
+        <desc2>OpenDocument format is fully supported</desc2>
+        <score>2</score>
+        <comment/>
+      </element>
+      <element name="pdfexport" title="PDF export">
+        <desc0>Feature not implemented</desc0>
+        <desc1>Feature is available but limited</desc1>
+        <desc2>Feature fully implemented and usable</desc2>
+        <score>0</score>
+        <comment/>
+      </element>
+      <element name="docbookexport" title="DocBook export">
+        <desc0>Feature not implemented</desc0>
+        <desc1>Feature is available but limited</desc1>
+        <desc2>Feature fully implemented and usable</desc2>
+        <score>0</score>
+        <comment/>
+      </element>
+      <element name="latexexport" title="LaTeX export">
+        <desc0>Feature not implemented</desc0>
+        <desc1>Feature is available but limited</desc1>
+        <desc2>Feature fully implemented and usable</desc2>
+        <score>2</score>
+        <comment/>
+      </element>
+      <element name="xsltsupport" title="XSLT support">
+        <desc0>Feature not implemented</desc0>
+        <desc1>Feature is available but limited</desc1>
+        <desc2>Feature fully implemented and usable</desc2>
+        <score>0</score>
+        <comment/>
+      </element>
+    </element>
+    <element name="macrosapis" title="Macros &amp; APIs">
+      <desc/>
+      <comment/>
+      <element name="macrosupport" title="Macros support">
+        <desc0>Macros are not supported</desc0>
+        <desc1>Macros features are very limited, for instance not all document's objects are managed</desc1>
+        <desc2>Macros features are fully implemented</desc2>
+        <score>0</score>
+        <comment/>
+      </element>
+      <element name="macrolanguages" title="Macro languages supported">
+        <desc>List of supported macro languages</desc>
+        <comment>NA</comment>
+      </element>
+      <element name="macrorecord" title="Macro record">
+        <desc0>Feature not implemented</desc0>
+        <desc1>Feature is limited and not easy to reuse</desc1>
+        <desc2>Feature fully implemented</desc2>
+        <score>0</score>
+        <comment>NA</comment>
+      </element>
+      <element name="ide" title="IDE">
+        <desc0>No IDE available for macro editing</desc0>
+        <desc1>An IDE is available but is limited and/or not user-friendly</desc1>
+        <desc2>Complete and user-friendly IDE available</desc2>
+        <score>0</score>
+        <comment>NA</comment>
+      </element>
+      <element name="macrosdeployment" title="Macros deployment">
+        <desc0>No macro deployment features implemented</desc0>
+        <desc1>Limited deployment features available</desc1>
+        <desc2>Complete deployment features available</desc2>
+        <score>0</score>
+        <comment>NA</comment>
+      </element>
+      <element name="macrossecurity" title="Macros security">
+        <desc0>No security features implemented for macros</desc0>
+        <desc1>Limited security features available</desc1>
+        <desc2>Complete securtity features available</desc2>
+        <score/>
+        <comment/>
+      </element>
+      <element name="apis" title="APIs supported">
+        <desc>List of available scripting and/or programming languages bindings</desc>
+        <comment>Scripting via DCOP (Desktop COmmunications Protocol) which allows communication from shell, python, perl, php, ruby, etc...</comment>
+      </element>
+    </element>
+  </section>
+  <section name="advancedfunctionalities" title="Advanced Functionalities">
+    <desc/>
+    <element name="mailing" title="Mailing">
+      <desc>Mailing (mail merge) features</desc>
+      <comment/>
+      <element name="mailingengine" title="Mailing engine">
+        <desc0>No mailing features implemented</desc0>
+        <desc1>Mailing engine is limited or unstable</desc1>
+        <desc2>Mailing engine is complete and stable</desc2>
+        <score>1</score>
+        <comment/>
+      </element>
+      <element name="datasources" title="Datasources">
+        <desc0>Feature not implemented</desc0>
+        <desc1>Very few types of datasources available</desc1>
+        <desc2>Many types of datasources available</desc2>
+        <score/>
+        <comment>SQLServer, MySQL, PostgreSQL, UnixODBC, internal storage
+</comment>
+      </element>
+      <element name="imagesmailing" title="Images mailing">
+        <desc0>Feature not implemented</desc0>
+        <desc1>Feature is available but limited and/or not really efficient</desc1>
+        <desc2>Feature fully implemented and usable</desc2>
+        <score>0</score>
+        <comment/>
+      </element>
+    </element>
+    <element name="mathsformulas" title="Math formulas">
+      <desc0>Feature not implemented</desc0>
+      <desc1>Feature is available but limited and/or not really efficient</desc1>
+      <desc2>Feature fully implemented and usable</desc2>
+      <score>2</score>
+      <comment/>
+    </element>
+    <element name="docviews" title="Documents views">
+      <desc0>No possibility to define different views of a same document</desc0>
+      <desc1>Limited features available</desc1>
+      <desc2>Feature fully implemented</desc2>
+      <score>2</score>
+      <comment/>
+    </element>
+    <element name="stylescopypaste" title="Styles Copy/Paste">
+      <desc0>Feature not implemented</desc0>
+      <desc1>Feature is available but limited and/or not really efficient</desc1>
+      <desc2>Feature fully implemented and usable</desc2>
+      <score>0</score>
+      <comment/>
+    </element>
+    <element name="conditionaltext" title="Conditional text">
+      <desc0>No possibility to generate conditional text</desc0>
+      <desc1>Conditional text is implemenetd but limited to basic conditions</desc1>
+      <desc2>Conditional text is fully implemented</desc2>
+      <score>0</score>
+      <comment/>
+    </element>
+    <element name="masterslavedocus" title="Document composition">
+      <desc0>No feature available to include slave documents in a master one</desc0>
+      <desc1>Document composition is possible but limited and/or unstable</desc1>
+      <desc2>Document composition is stable and fully implemented</desc2>
+      <score>0</score>
+      <comment/>
+    </element>
+    <element name="drawingtools" title="Drawing tools">
+      <desc0>No drawing tools available</desc0>
+      <desc1>Few drawing features available</desc1>
+      <desc2>Complete set of drawing features available</desc2>
+      <score>1</score>
+      <comment>Integrated with KOffice deawing tools.</comment>
+    </element>
+    <element name="groupware" title="Groupware features">
+      <desc0>No groupware features available</desc0>
+      <desc1>Limited or experimental groupware features available</desc1>
+      <desc2>Complete set of groupware features available</desc2>
+      <score>0</score>
+      <comment/>
+    </element>
+  </section>
+</document>
