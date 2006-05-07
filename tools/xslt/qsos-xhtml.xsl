@@ -4,22 +4,26 @@
     <html>
       <head>
         <title>
-          <xsl:value-of select="document/header/appname"/>&#160;
+          <xsl:value-of select="document/header/appname"/>
           <xsl:value-of select="document/header/release"/>
         </title>
         <link rel="stylesheet" type="text/css" href="%%CSS_SHEET%%"/>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
         <script>
    	function expand(div) {
-        	document.getElementById(div).style.display = "";
-        	document.getElementById("lnk_"+div).setAttribute("onclick", "collapse('"+div+"')");
-        	document.getElementById("lnk_"+div).setAttribute("class", "expanded");
+		document.getElementById(div).style.display = "";
+		document.getElementById("lnk_"+div).onclick = function () {
+		collapse(div);
+		}
+		document.getElementById("lnk_"+div).setAttribute("class", "expanded");
    	}
    
    	function collapse(div) {
-        	document.getElementById(div).style.display = "none";
-        	document.getElementById("lnk_"+div).setAttribute("onclick", "expand('"+div+"')");
-        	document.getElementById("lnk_"+div).setAttribute("class", "collapsed");
+		document.getElementById(div).style.display = "none";
+		document.getElementById("lnk_"+div).onclick = function () {
+		expand(div);
+		}
+		document.getElementById("lnk_"+div).setAttribute("class", "collapsed");
    	}
       </script>
       </head>
