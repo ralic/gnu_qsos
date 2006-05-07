@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <document>
   <header>
     <authors>
@@ -44,15 +45,15 @@
         </element>
         <element name="historyknowproblems" title="History, know problems">
           <desc0>Software knows several problems which can be prohibitive</desc0>
-          <desc1>No know major problem or crisi</desc1>
+          <desc1>No know major problem or crisis</desc1>
           <desc2>History of good management of crisis situations</desc2>
           <score></score>
           <comment></comment>
         </element>
         <element name="forkprobability" title="Fork probability, source of Forking">
           <desc0>Software is very likely to be forked in the future</desc0>
-          <desc1>Software comes from a fork but has very few chances of being forked in the futur</desc1>
-          <desc2>Software has very little chance of being forked. It does not come from a frok either</desc2>
+          <desc1>Software comes from a fork but has very few chances of being forked in the future</desc1>
+          <desc2>Software has very little chance of being forked. It does not come from a fork either</desc2>
           <score></score>
           <comment></comment>
         </element>
@@ -165,7 +166,7 @@
         <element name="consulting" title="Consulting">
           <desc0>No offer of consulting service</desc0>
           <desc1>Offer exists but is restricted geographically and to one language or is provided by a single contractor</desc1>
-          <desc2>Consulting services provied by different contractors in serveral languages</desc2>
+          <desc2>Consulting services provided by different contractors in serveral languages</desc2>
           <score></score>
           <comment></comment>
         </element>
@@ -182,7 +183,7 @@
         <element name="quality" title="Quality Assurance">
           <desc0>No QA process</desc0>
           <desc1>Identifies QA process but not much formalized and with no tool</desc1>
-          <desc2>Automatic testing process included in code's life-cycle with publication of resulats</desc2>
+          <desc2>Automatic testing process included in code's life-cycle with publication of results</desc2>
           <score></score>
           <comment></comment>
         </element>
@@ -197,78 +198,78 @@
       <element name="packaging" title="Packaging">
         <desc>Packaging for various operating systems</desc>
         <element name="packagingsource" title="Source">
-          <desc0>Software can't be installed from source without a look of work</desc0>
-          <desc1>Installation from source is limited depend on very strict condition (OS, arch, lib, ...)</desc1>
+          <desc0>Software can't be installed from source without lot of work</desc0>
+          <desc1>Installation from source is limited and depends on very strict conditions (OS, arch, lib, ...)</desc1>
           <desc2>Installation from source is easy</desc2>
           <score></score>
           <comment></comment>
         </element>
         <element name="packagingdebian" title="Debian">
           <desc0>The software is not packaged for Debian</desc0>
-          <desc1>A Debian package exists but it has important issues or it doesn't have an official support</desc1>
+          <desc1>A Debian package exists but it has important issues or it doesn't have official support</desc1>
           <desc2>The software is packaged in the distribution</desc2>
           <score></score>
           <comment></comment>
         </element>
         <element name="packagingfreebsd" title="FreeBSD">
           <desc0>The software is not packaged for FreeBSD</desc0>
-          <desc1>A port exists but it has important issues or it doesn't have an official support</desc1>
+          <desc1>A port exists but it has important issues or it doesn't have official support</desc1>
           <desc2>A official port exists in FreeBSD</desc2>
           <score></score>
           <comment></comment>
         </element>
         <element name="packaginghpux" title="HP-UX">
           <desc0>The software is not packaged for HP-UX</desc0>
-          <desc1>A package exists but it has important issues or it doesn't have an official support</desc1>
-          <desc2>A strong packaged is provided for HP-UX</desc2>
+          <desc1>A package exists but it has important issues or it doesn't have official support</desc1>
+          <desc2>A stable package is provided for HP-UX</desc2>
           <score></score>
           <comment></comment>
         </element>
         <element name="packagingmacosx" title="MacOSX">
           <desc0>The software is not packaged for MacOSX</desc0>
-          <desc1>A package exists but it has important issues or it doesn't have an official support</desc1>
+          <desc1>A package exists but it has important issues or it doesn't have official support</desc1>
           <desc2>The software is packaged in the distribution</desc2>
           <score></score>
           <comment></comment>
         </element>
         <element name="packagingmandriva" title="Mandriva">
           <desc0>The software is not packaged for Mandriva</desc0>
-          <desc1>A package exists but it has important issues or it doesn't have an official support</desc1>
+          <desc1>A package exists but it has important issues or it doesn't have official support</desc1>
           <desc2>The software is packaged in the distribution</desc2>
           <score></score>
           <comment></comment>
         </element>
         <element name="packagingnet" title="NetBSD">
           <desc0>The software is not packaged for NetBSD</desc0>
-          <desc1>A port exists but it has important issues or it doesn't have an official support</desc1>
+          <desc1>A port exists but it has important issues or it doesn't have official support</desc1>
           <desc2>A official port exists in NetBSD</desc2>
           <score></score>
           <comment></comment>
         </element>
-        <element name="packagingnet" title="OpenBSD">
+	<element name="packagingopen" title="OpenBSD">
           <desc0>The software is not packaged for OpenBSD</desc0>
-          <desc1>A port exists but it has important issues or it doesn't have an official support</desc1>
+          <desc1>A port exists but it has important issues or it doesn't have official support</desc1>
           <desc2>A official port exists in OpenBSD</desc2>
           <score></score>
           <comment></comment>
         </element>
         <element name="packagingredhat" title="RedHat">
           <desc0>The software is not packaged for RedHat/Fedora</desc0>
-          <desc1>A package exists but it has important issues or it doesn't have an official support</desc1>
+          <desc1>A package exists but it has important issues or it doesn't have official support</desc1>
           <desc2>The software is packaged in the distribution</desc2>
           <score></score>
           <comment></comment>
         </element>
-        <element name="packagingsuse" title="Solaris">
+	<element name="packagingsolaris" title="Solaris">
           <desc0>The software is not packaged for Solaris</desc0>
-          <desc1>A package exists but it has important issues or it doesn't have an official support (e.g: SunFreeware.com )</desc1>
+          <desc1>A package exists but it has important issues or it doesn't have official support (e.g: SunFreeware.com )</desc1>
           <desc2>The software is supported by Sun for Solaris</desc2>
           <score></score>
           <comment></comment>
         </element>
         <element name="packagingsuse" title="SuSE">
           <desc0>The software is not packaged for SuSE</desc0>
-          <desc1>A package exists but it has important issues or it doesn't have an official support</desc1>
+          <desc1>A package exists but it has important issues or it doesn't have official support</desc1>
           <desc2>The software is packaged in the distribution</desc2>
           <score></score>
           <comment></comment>
@@ -303,8 +304,8 @@
       <desc>Technical adaptability</desc>
       <element name="modularity" title="Modularity">
         <desc0>Monolithic software</desc0>
-        <desc1>Presence of hight level modules alowing a first level of software adaptation</desc1>
-        <desc2>Modular conception, allowing easy adaptation of the software by selecting modules or even develeloping new ones</desc2>
+        <desc1>Presence of hight level modules allowing a first level of software adaptation</desc1>
+        <desc2>Modular conception, allowing easy adaptation of the software by selecting or creating modules</desc2>
         <score></score>
         <comment></comment>
       </element>
