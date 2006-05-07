@@ -4,7 +4,7 @@
     <html>
       <head>
         <title>
-          <xsl:value-of select="document/header/appname"/>
+          <xsl:value-of select="document/header/appname"/>&#160;
           <xsl:value-of select="document/header/release"/>
         </title>
         <link rel="stylesheet" type="text/css" href="%%CSS_SHEET%%"/>
