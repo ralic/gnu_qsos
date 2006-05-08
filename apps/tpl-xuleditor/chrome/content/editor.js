@@ -1,7 +1,7 @@
 /*
-**  Copyright (C) 2006 Atos Origin 
+**  Copyright (C) 2006 Atos Origin
 **
-**  Author: Raphaël Semeteys <raphael.semeteys@atosorigin.com>
+**  Author: RaphaÃ«l Semeteys <raphael.semeteys@atosorigin.com>
 **
 **  This program is free software; you can redistribute it and/or modify
 ** it under the terms of the GNU General Public License as published by
@@ -23,6 +23,7 @@
 **
 ** TODO:
 **	- Load remote QSOS XML file
+**	- Write a XMLSerializer to manage identation and generate <tag></tag> rather than <tag/>
 */
 
 //Object "Document" representing data in the QSOS XML file
@@ -403,14 +404,15 @@ function treeselect(tree) {
 			break;
 		case "score":
 			document.getElementById("f-c-type").selectedIndex = 1;
+			freezeDesc("");
 			freezeScores("");
 			freezeTitle("");
 			document.getElementById("f-c-name").value = "UID: "+id;
 			document.getElementById("f-c-title").value = myDoc.getkeytitle(id);
+			document.getElementById("f-c-desc").value = myDoc.getkeydesc(id);
 			document.getElementById("f-c-score0").value = myDoc.getkeydesc0(id);
 			document.getElementById("f-c-score1").value = myDoc.getkeydesc1(id);
 			document.getElementById("f-c-score2").value = myDoc.getkeydesc2(id);
-			freezeDesc("true");
 			break;
 	}
 }
@@ -470,12 +472,12 @@ function changeType(type) {
 	docChanged = "true";
 	switch (type) {
 		case "desc":
+			document.getElementById("f-c-desc").value = "";
 			freezeScores("true");
 			myDoc.setElementDesc(id);
-			freezeDesc("");
 			break;
 		case "score":
-			freezeDesc("true");
+			document.getElementById("f-c-desc").value = "";
 			myDoc.setElementScore(id);
 			freezeScores("");
 			break;
@@ -621,7 +623,7 @@ function openDescDialog() {
 //Callback function of the newdesc.xul dialog window
 function newScore(values) {
 	//Creates new Score element
-	var criterion = myDoc.createElementScore(values.name, values.title, values.desc0, values.desc1, values.desc2);
+	var criterion = myDoc.createElementScore(values.name, values.title, values.desc, values.desc0, values.desc1, values.desc2);
 	myDoc.insertSubelement(criterion, id);
 
 	//Creates new tree entry

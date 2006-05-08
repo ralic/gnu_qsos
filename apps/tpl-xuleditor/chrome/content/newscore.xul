@@ -24,6 +24,7 @@ function doOK() {
 		var fields = new Object();
 		fields.name = document.getElementById("d-c-name").value;
 		fields.title = document.getElementById("d-c-title").value;
+		fields.desc = document.getElementById("d-c-desc").value;
 		fields.desc0 = document.getElementById("d-c-desc0").value;
 		fields.desc1 = document.getElementById("d-c-desc1").value;
 		fields.desc2 = document.getElementById("d-c-desc2").value;
@@ -43,6 +44,9 @@ function doCancel() {
 	
 	<label control="d-c-title" value="Title "/>
 	<textbox id="d-c-title"/>
+
+	<label control="d-c-desc" value="General description: "/>
+	<textbox id="d-c-desc" multiline="true"/>
 	
 	<label control="d-c-desc0" value="Score 0 description: "/>
 	<textbox id="d-c-desc0" multiline="true"/>

@@ -140,7 +140,7 @@ function Template() {
         //var result = outputStream.write( xml, xml.length );
         outputStream.close();
     }
-    
+
     //Load and parse a remote QSOS XML file
     //ex: loadremote("http://localhost/qedit/xul/kolab.qsos")
     //initializes local variable: sheet
@@ -151,7 +151,7 @@ function Template() {
         req.send(null);
         sheet = req.responseXML;
     }
-    
+
     //Show the XML DOM structure in a dialogbox
     function dump() {
         var serializer = new XMLSerializer();
@@ -429,7 +429,7 @@ function Template() {
     //  <score></score>
     //  <comment></comment>
     //</element>
-    function createElementScore(name, title, vardesc0, vardesc1, vardesc2) {
+    function createElementScore(name, title, vardesc, vardesc0, vardesc1, vardesc2) {
 	if (fetchNode(name) != "false") {
 		return "Error: a "+name+" node already exists.";
 	}
@@ -437,6 +437,10 @@ function Template() {
 		var element = sheet.createElement("element");
 		element.setAttribute("name", name);
 		element.setAttribute("title", title);
+
+		var desc = sheet.createElement("desc");
+		desc.appendChild(sheet.createTextNode(vardesc));
+		element.appendChild(desc);
 	
 		var desc0 = sheet.createElement("desc0");
 		desc0.appendChild(sheet.createTextNode(vardesc0));
@@ -509,14 +513,14 @@ function Template() {
     //Returns the type of a node
     //"section", "score" or "info" 
     function getNodeType(name) {
-        var nodes = sheet.evaluate("//*[@name='"+name+"']/desc", sheet, null, XPathResult.ANY_TYPE,null);
-        var node = nodes.iterateNext();
+        var node = sheet.evaluate("//*[@name='"+name+"']/score", sheet, null, XPathResult.ANY_TYPE,null).iterateNext();
         if (node) {
+		return "score";
+	}
+	else {
+		node = sheet.evaluate("//*[@name='"+name+"']/desc", sheet, null, XPathResult.ANY_TYPE,null).iterateNext();
 		if (node.parentNode.nodeName == "section") return "section";
 		else return "info";
-	}
-        else {
-                return "score";
 	}
     }
 
@@ -556,11 +560,13 @@ function Template() {
 			element.removeChild(element.firstChild);
 		}
 		//Creates score tag
+		var desc = sheet.createElement("desc");
 		var desc0 = sheet.createElement("desc0");
 		var desc1 = sheet.createElement("desc1");
 		var desc2 = sheet.createElement("desc2");
 		var score = sheet.createElement("score");
 		var comment = sheet.createElement("comment");
+		element.appendChild(desc);
 		element.appendChild(desc0);
 		element.appendChild(desc1);
 		element.appendChild(desc2);
