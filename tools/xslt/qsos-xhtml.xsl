@@ -13,17 +13,17 @@
    	function expand(div) {
 		document.getElementById(div).style.display = "";
 		document.getElementById("lnk_"+div).onclick = function () {
-		collapse(div);
+			collapse(div);
 		}
-		document.getElementById("lnk_"+div).setAttribute("class", "expanded");
+		document.getElementById("lnk_"+div).className = "expanded"
    	}
    
    	function collapse(div) {
 		document.getElementById(div).style.display = "none";
 		document.getElementById("lnk_"+div).onclick = function () {
-		expand(div);
+			expand(div);
 		}
-		document.getElementById("lnk_"+div).setAttribute("class", "collapsed");
+		document.getElementById("lnk_"+div).className = "collapsed";
    	}
       </script>
       </head>
