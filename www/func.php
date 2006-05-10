@@ -41,7 +41,7 @@ print "<li><a href=\"index.php?lang=en\">Overview</a></li>
 <li><a href=\"download.php?lang=en\">Download</a></li>
 <li><a href=\"forum/index.php?lang=en\" target=\"forum\">Forum</a></li>
 <li><a href=\"license.php?lang=en\">License</a></li>
-<li><a href=\"sheets/\">QSOS Sheet</a></li>
+<li><a href=\"sheets/\">QSOS Sheets</a></li>
 <li><a href=\"/download/fiches/\">Old sheets (fr)</a></li>
 <li><a href=\"/blog//\"><strong>News!</strong></a></li>
 <li><a href=\"https://savannah.nongnu.org/projects/qsos/\"><strong>Project</strong></a></li>";
