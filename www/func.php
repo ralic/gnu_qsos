@@ -64,6 +64,7 @@ print('</ul>
 
 
 <div id="thanks">');
+	
 if ($lang=="fr"){
 print 'QSOS est mise à disposition sous licence libre par <a href="http://www.atosorigin.com">Atos Origin</a>.';
 } else {
@@ -88,6 +89,7 @@ print('
 </div>
 
 <div id="corp">');
+}
 
 function foot (){
 print('</div>
