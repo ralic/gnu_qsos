@@ -70,18 +70,24 @@ print 'QSOS est mise à disposition sous licence libre par <a href="http://www.a
 print 'QSOS is published under the GNU FDL by <a href="http://www.atosorigin.com">Atos Origin</a>.';
 
 }
+
 print('
 </div>
-<div id="valide">
-XHTML et CSS valide
+<div id="valide">');
+
+if ($lang=="fr") {
+	print('Valide XHTML et CSS');
+} else {
+	print('XHTML and CSS compliant');
+}
+
+print('
 </div>
 
 
 </div>
 
 <div id="corp">');
-}
-
 
 function foot (){
 print('</div>
