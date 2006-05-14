@@ -134,11 +134,58 @@ function Template() {
 
         outputStream.init(file, 0x04 | 0x08 | 0x20, 420, 0);
 
-        var serializer = new XMLSerializer();
-	serializer.serializeToStream(sheet, outputStream, "UTF-8"); 
+        //var serializer = new XMLSerializer();
+	//serializer.serializeToStream(sheet, outputStream, "UTF-8"); 
+
         //var xml = serializer.serializeToString(sheet);
         //var result = outputStream.write( xml, xml.length );
+
+	var xml = serialize(sheet.documentElement, 0);
+	outputStream.write(xml, xml.length);
+
         outputStream.close();
+    }
+
+    //Serialize and write the local QSOS XML file
+    function serialize(node, depth) {
+	var indent = "";
+	var line = "";
+
+	if (depth == 0) {
+		line = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n";
+	}
+
+	for (i=0; i < depth; i++) {
+		indent += "   ";
+	}
+
+	line += indent + "<" + node.tagName;
+	if (node.hasAttributes()) {
+		var attributes = node.attributes;
+		for (var i = 0; i < attributes.length; i++) {
+			var attribute = attributes[i];
+			line += " " + attribute.name + "=\"" + attribute.value + "\"";
+		}
+	}
+	line += ">";
+	
+	var test = false;
+	var children = node.childNodes;
+	for (var i = 0; i < children.length; i++) {
+		var child = children[i];
+		if (child.tagName) {
+			line += "\n" + serialize(child, depth+1);
+			test = true;
+		}
+	}
+
+	if (test) {
+		line += "\n" + indent + "</" + node.tagName + ">";
+	} else {
+		line += (children[0]?children[0].nodeValue:"") + "</" + node.tagName + ">";
+	}
+
+	return line;
     }
 
     //Load and parse a remote QSOS XML file
@@ -153,9 +200,9 @@ function Template() {
     }
 
     //Show the XML DOM structure in a dialogbox
-    function dump() {
+    function dump(node) {
         var serializer = new XMLSerializer();
-        var xml = serializer.serializeToString(sheet);
+        var xml = serializer.serializeToString(node);
         alert(xml);
     }	
 
