@@ -205,19 +205,20 @@ function closeFile() {
 	document.getElementById("f-url").value = "";
 	document.getElementById("f-demourl").value = "";
 
-    	document.getElementById("f-c-title").value = "";
-	document.getElementById("f-c-id").setAttribute("myid", "");
+	document.getElementById("t-software").setAttribute("label", "Software");
+	document.getElementById("t-c-title").setAttribute("label", "Criterion");
+	
 	document.getElementById("f-c-desc0").setAttribute("label", "Score 0");
 	document.getElementById("f-c-desc1").setAttribute("label", "Score 1");
 	document.getElementById("f-c-desc2").setAttribute("label", "Score 2");
-    	document.getElementById("f-c-score").selectedIndex = -1;
+	document.getElementById("f-c-score").selectedIndex = -1;
 	document.getElementById("f-c-comments").value = "";
-    
+
 	init();
 	myDoc = null;
 	id = null;
 	
-	var tree = document.getElementById("mytree");  
+	var tree = document.getElementById("mytree");
 	var treechildren = document.getElementById("myTreechildren");
 	tree.removeChild(treechildren);
 }
@@ -351,27 +352,29 @@ function freezeComments(bool) {
 function treeselect(tree) {
 	//Forces focus to trigger possible onchange event on another XUL element
 	document.getElementById("mytree").focus();
-	id = tree.view.getItemAtIndex(tree.currentIndex).firstChild.firstChild.getAttribute("id");
-	document.getElementById("f-c-title").value = myDoc.getkeytitle(id);
-	document.getElementById("f-c-id").setAttribute("myid", id);
+	if (tree.currentIndex != -1) {
+		id = tree.view.getItemAtIndex(tree.currentIndex).firstChild.firstChild.getAttribute("id");
+		document.getElementById("t-c-title").setAttribute("label", myDoc.getkeytitle(id));
+		
+		document.getElementById("f-c-desc0").setAttribute("label", "0: "+myDoc.getkeydesc0(id));
+		document.getElementById("f-c-desc1").setAttribute("label", "1: "+myDoc.getkeydesc1(id));
+		document.getElementById("f-c-desc2").setAttribute("label", "2: "+myDoc.getkeydesc2(id));
+		var score = myDoc.getkeyscore(id);
+		
+		if (score == "-1") {
+			document.getElementById("f-c-deck").selectedIndex = "0";
+			document.getElementById("f-c-desc").value = myDoc.getkeydesc(id);
+			freezeScore("true");
+		}
+		else {
+			document.getElementById("f-c-score").selectedIndex = score;
+			document.getElementById("f-c-deck").selectedIndex = "1";
+			freezeScore("");
+		}
 	
-	document.getElementById("f-c-desc0").setAttribute("label", "0: "+myDoc.getkeydesc0(id));
-	document.getElementById("f-c-desc1").setAttribute("label", "1: "+myDoc.getkeydesc1(id));
-	document.getElementById("f-c-desc2").setAttribute("label", "2: "+myDoc.getkeydesc2(id));
-	var score = myDoc.getkeyscore(id);
-    if (score == "-1") {
-    	document.getElementById("f-c-deck").selectedIndex = "0";
-	document.getElementById("f-c-desc").value = myDoc.getkeydesc(id);
-        freezeScore("true");
-    }
-    else {
-	document.getElementById("f-c-score").selectedIndex = score;
-	document.getElementById("f-c-deck").selectedIndex = "1";
-        freezeScore("");
-    }
-    
-	document.getElementById("f-c-comments").value = myDoc.getkeycomment(id);
-    freezeComments("");
+		document.getElementById("f-c-comments").value = myDoc.getkeycomment(id);
+		freezeComments("");
+	}
 }
 
 //Triggered when software name is modified

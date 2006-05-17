@@ -50,41 +50,48 @@
             </treecols>
 	    </tree>
     	</vbox>
-        <vbox flex = "1">
-            <groupbox>
-                <caption><label value="Software"/></caption>
-                <vbox>
-			<label control="f-software" value="Name: "/><textbox id="f-software" oninput="this.setAttribute('class','inside');" onchange="this.setAttribute('class','outside'); changeAppName(this);"/>
-			<label control="f-release" value="Release: "/><textbox id="f-release" oninput="this.setAttribute('class','inside');" onchange="this.setAttribute('class','outside'); changeRelease(this);"/>
-			<label control="f-sotwarefamily" value="Software family: "/><textbox id="f-sotwarefamily" oninput="this.setAttribute('class','inside');" onchange="this.setAttribute('class','outside'); changeSoftwareFamily(this);"/>
-			<label control="f-license" value="License: "/>
-			<menulist id="f-license" oncommand="changeLicense(this, this.selectedIndex);">
-				<menupopup id="f-license-popup"></menupopup>
-            		</menulist>
-			<label control="f-desc" value="Description: "/><textbox id="f-desc" multiline="true" oninput="this.setAttribute('class','inside');" onchange="this.setAttribute('class','outside'); changeDesc(this);"/>
-			<label control="f-url" value="Website: "/><textbox id="f-url" oninput="this.setAttribute('class','inside');" onchange="this.setAttribute('class','outside'); changeUrl(this);"/>
-			<label control="f-demourl" value="Demo site: "/><textbox id="f-demourl" oninput="this.setAttribute('class','inside');" onchange="this.setAttribute('class','outside'); changeDemoUrl(this);"/>
-                </vbox>
-            </groupbox>
-            <groupbox id="f-c-id">
-                <caption><label id="f-c-title" value="Criterion"/></caption>
-		<deck id="f-c-deck" selectedIndex="1">
-			<groupbox>
-				<caption><label value="Description"/></caption>
-				<label id="f-c-desc"/>
-			</groupbox>
-			<groupbox>
-				<caption><label value="Score"/></caption>
-				<radiogroup id="f-c-score">
-					<radio id="f-c-desc0" label="Score 0" oncommand="changeScore(0);"/>
-					<radio id="f-c-desc1" label="Score 1" oncommand="changeScore(1);"/>
-					<radio id="f-c-desc2" label="Score 2" oncommand="changeScore(2);"/>
-				</radiogroup>
-			</groupbox>
-		</deck>
-		<label control="f-c-comments" value="Comments: "/><textbox id="f-c-comments" multiline="true" oninput="this.setAttribute('class','inside');" onchange="this.setAttribute('class','outside'); changeComments(this);"/>
-            </groupbox>
-        </vbox>
+	
+	<tabbox flex = "1">
+		<tabs>
+			<tab id = "t-software" label = "Software"/>
+			<tab id = "t-c-title" label = "Criterion"/>
+		</tabs>
+		<tabpanels>
+			<tabpanel>
+				<vbox flex = "1">
+					<label control="f-software" value="Name: "/><textbox id="f-software" oninput="this.setAttribute('class','inside');" onchange="this.setAttribute('class','outside'); changeAppName(this);"/>
+					<label control="f-release" value="Release: "/><textbox id="f-release" oninput="this.setAttribute('class','inside');" onchange="this.setAttribute('class','outside'); changeRelease(this);"/>
+					<label control="f-sotwarefamily" value="Software family: "/><textbox id="f-sotwarefamily" oninput="this.setAttribute('class','inside');" onchange="this.setAttribute('class','outside'); changeSoftwareFamily(this);"/>
+					<label control="f-license" value="License: "/>
+					<menulist id="f-license" oncommand="changeLicense(this, this.selectedIndex);">
+						<menupopup id="f-license-popup"></menupopup>
+					</menulist>
+					<label control="f-desc" value="Description: "/><textbox id="f-desc" multiline="true" oninput="this.setAttribute('class','inside');" onchange="this.setAttribute('class','outside'); changeDesc(this);"/>
+					<label control="f-url" value="Website: "/><textbox id="f-url" oninput="this.setAttribute('class','inside');" onchange="this.setAttribute('class','outside'); changeUrl(this);"/>
+					<label control="f-demourl" value="Demo site: "/><textbox id="f-demourl" oninput="this.setAttribute('class','inside');" onchange="this.setAttribute('class','outside'); changeDemoUrl(this);"/>
+                		</vbox>
+			</tabpanel>
+			<tabpanel>
+				<vbox flex = "1">
+					<deck id="f-c-deck" selectedIndex="1">
+						<groupbox>
+							<caption><label value="Description"/></caption>
+							<label id="f-c-desc"/>
+						</groupbox>
+						<groupbox>
+							<caption><label value="Score"/></caption>
+							<radiogroup id="f-c-score">
+								<radio id="f-c-desc0" label="Score 0" oncommand="changeScore(0);"/>
+								<radio id="f-c-desc1" label="Score 1" oncommand="changeScore(1);"/>
+								<radio id="f-c-desc2" label="Score 2" oncommand="changeScore(2);"/>
+							</radiogroup>
+						</groupbox>
+					</deck>
+					<label control="f-c-comments" value="Comments: "/><textbox id="f-c-comments" multiline="true" oninput="this.setAttribute('class','inside');" onchange="this.setAttribute('class','outside'); changeComments(this);"/>
+				</vbox>
+			</tabpanel>
+		</tabpanels>
+	</tabbox>
     </hbox>
 </vbox>
 
