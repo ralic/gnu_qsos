@@ -128,11 +128,78 @@ function Document(name) {
 
         outputStream.init( file, 0x04 | 0x08 | 0x20, 420, 0 );
 
-        var serializer = new XMLSerializer();
-        var xml = serializer.serializeToString(sheet);
-        var result = outputStream.write( xml, xml.length );
+        //var serializer = new XMLSerializer();
+        //var xml = serializer.serializeToString(sheet);
+        //var result = outputStream.write( xml, xml.length );
+
+	var xml = serialize(sheet.documentElement, 0);
+	outputStream.write(xml, xml.length);
+	
         outputStream.close();
     }
+
+    //Recursively serialize a XML node in a string
+    //node: XML node to serialize
+    //depth: depth of recursion (used fo indentation), 0 is used at the beginning
+    //returns the string with identations and \n characters
+    function serialize(node, depth) {
+	var indent = "";
+	var line = "";
+	
+	if (depth == 0) {
+		line = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n";
+	}
+	
+	for (i=0; i < depth; i++) {
+		indent += "   ";
+	}
+	
+	//Opening <tag attribute="value" ...>
+	line += indent + "<" + node.tagName;
+	if (node.hasAttributes()) {
+		var attributes = node.attributes;
+		for (var i = 0; i < attributes.length; i++) {
+			var attribute = attributes[i];
+			line += " " + attribute.name + "=\"" + specialChars(attribute.value) + "\"";
+		}
+	}
+	line += ">";
+		
+	//Children tags (recursion)
+	var test = false;
+	var children = node.childNodes;
+	for (var i = 0; i < children.length; i++) {
+		var child = children[i];
+		if (child.tagName) {
+			line += "\n" + serialize(child, depth+1);
+			//closing </tag> should be indented and on a new line
+			test = true;
+		}
+	}
+			
+	//Node value + closing </tag>
+	if (test) {
+		line += "\n" + indent + "</" + node.tagName + ">";
+	} else {
+		//childNode is the value of the XML node (<tag>value</tag>)
+		if (children[0]) {
+			//Convert XML special chars
+			line += specialChars(children[0].nodeValue);
+		}
+		line += "</" + node.tagName + ">";
+	}
+	
+	return line;
+   }
+
+   //Deals with XML special chars (<,> and &)
+   function specialChars(string) {
+	string = string.replace(/&/g, '&amp;');
+	string = string.replace(/</g, '&lt;');
+	string = string.replace(/>/g, '&gt;');
+
+	return string;
+   }
     
     //Load and parse a remote QSOS XML file
     //ex: loadremote("http://localhost/qedit/xul/kolab.qsos")
@@ -244,7 +311,7 @@ function Document(name) {
     //subelement: subelement's tagname in the QSOS XML file
     //Returns subelement's value or "" if subelement doesn't exist (-1 if subelement is "score")
     function getgeneric(element, subelement) {
-        var nodes = sheet.evaluate("//element[@name='"+element+"']/"+subelement, sheet, null, XPathResult.ANY_TYPE,null);
+        var nodes = sheet.evaluate("//*[@name='"+element+"']/"+subelement, sheet, null, XPathResult.ANY_TYPE,null);
         var node = nodes.iterateNext();
         if (node)
                 return node.textContent;
@@ -260,7 +327,7 @@ function Document(name) {
     //subelement: subelement's tagname in the QSOS XML file
     //value: subelement's new value
     function setgeneric(element, subelement, value) {
-        var nodes = sheet.evaluate("//element[@name='"+element+"']/"+subelement, sheet, null, XPathResult.ANY_TYPE,null);
+        var nodes = sheet.evaluate("//*[@name='"+element+"']/"+subelement, sheet, null, XPathResult.ANY_TYPE,null);
         var node = nodes.iterateNext();
         if (node) node.textContent = value;
     }
@@ -278,7 +345,7 @@ function Document(name) {
     }
     
     function getkeytitle(element) {
-    	var nodes = sheet.evaluate("//element[@name='"+element+"']", sheet, null, XPathResult.ANY_TYPE,null);
+    	var nodes = sheet.evaluate("//*[@name='"+element+"']", sheet, null, XPathResult.ANY_TYPE,null);
         var node = nodes.iterateNext();
         if (node)
             return node.getAttribute("title");
