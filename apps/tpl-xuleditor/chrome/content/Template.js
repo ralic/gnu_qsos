@@ -116,7 +116,7 @@ function Template() {
        sheet = domParser.parseFromString(output, "text/xml");
     }
     
-    //Serialize and write the local QSOS XML file
+    //Write the local QSOS XML file
     function write() {
         try {
             netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect");
@@ -137,16 +137,16 @@ function Template() {
         //var serializer = new XMLSerializer();
 	//serializer.serializeToStream(sheet, outputStream, "UTF-8"); 
 
-        //var xml = serializer.serializeToString(sheet);
-        //var result = outputStream.write( xml, xml.length );
-
 	var xml = serialize(sheet.documentElement, 0);
 	outputStream.write(xml, xml.length);
 
         outputStream.close();
     }
 
-    //Serialize and write the local QSOS XML file
+    //Recursively serialize a XML node in a string
+    //node: XML node to serialize
+    //depth: depth of recursion (used fo indentation), 0 is used at the beginning
+    //returns the string with identations and \n characters
     function serialize(node, depth) {
 	var indent = "";
 	var line = "";
@@ -159,33 +159,51 @@ function Template() {
 		indent += "   ";
 	}
 
+	//Opening <tag attribute="value" ...>
 	line += indent + "<" + node.tagName;
 	if (node.hasAttributes()) {
 		var attributes = node.attributes;
 		for (var i = 0; i < attributes.length; i++) {
 			var attribute = attributes[i];
-			line += " " + attribute.name + "=\"" + attribute.value + "\"";
+			line += " " + attribute.name + "=\"" + specialChars(attribute.value) + "\"";
 		}
 	}
 	line += ">";
 	
+	//Children tags (recursion)
 	var test = false;
 	var children = node.childNodes;
 	for (var i = 0; i < children.length; i++) {
 		var child = children[i];
 		if (child.tagName) {
 			line += "\n" + serialize(child, depth+1);
+			//closing </tag> should be indented and on a new line
 			test = true;
 		}
 	}
 
+	//Node value + closing </tag>
 	if (test) {
 		line += "\n" + indent + "</" + node.tagName + ">";
 	} else {
-		line += (children[0]?children[0].nodeValue:"") + "</" + node.tagName + ">";
+		//childNode is the value of the XML node (<tag>value</tag>)
+		if (children[0]) {
+			//Convert XML special chars
+			line += specialChars(children[0].nodeValue);
+		}
+		line += "</" + node.tagName + ">";
 	}
 
 	return line;
+    }
+    
+    //Deals with XML special chars (<,> and &)
+    function specialChars(string) {
+	string = string.replace(/&/g, '&amp;');
+	string = string.replace(/</g, '&lt;');
+	string = string.replace(/>/g, '&gt;');
+
+	return string;
     }
 
     //Load and parse a remote QSOS XML file
