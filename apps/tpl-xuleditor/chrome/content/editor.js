@@ -22,8 +22,7 @@
 ** editor.js: functions associated with the editor.xul file
 **
 ** TODO:
-**	- Load remote QSOS XML file
-**	- Write a XMLSerializer to manage identation and generate <tag></tag> rather than <tag/>
+**	- Load/save remote QSOS XML file
 */
 
 //Object "Document" representing data in the QSOS XML file
