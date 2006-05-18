@@ -55,6 +55,7 @@
 		<tabs>
 			<tab id = "t-software" label = "Software"/>
 			<tab id = "t-c-title" label = "Criterion"/>
+			<tab id = "t-chart" label = "Chart"/>
 		</tabs>
 		<tabpanels>
 			<tabpanel>
@@ -89,6 +90,11 @@
 					</deck>
 					<label control="f-c-comments" value="Comments: "/><textbox id="f-c-comments" multiline="true" oninput="this.setAttribute('class','inside');" onchange="this.setAttribute('class','outside'); changeComments(this);"/>
 				</vbox>
+			</tabpanel>
+			<tabpanel>
+				<svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+					<g id="chart" transform="translate(300,300)"/>
+				</svg>
 			</tabpanel>
 		</tabpanels>
 	</tabbox>
