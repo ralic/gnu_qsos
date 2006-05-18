@@ -1,7 +1,7 @@
 /*
 **  Copyright (C) 2006 Atos Origin 
 **
-**  Author: Raphaël Semeteys <raphael.semeteys@atosorigin.com>
+**  Author: Raphaï¿½ Semeteys <raphael.semeteys@atosorigin.com>
 **
 **  This program is free software; you can redistribute it and/or modify
 ** it under the terms of the GNU General Public License as published by
@@ -79,6 +79,8 @@ function Document(name) {
     this.getfilename = getfilename;
     this.setfilename = setfilename;
     this.getcomplextree = getcomplextree;
+    this.getChartData = getChartData;
+    this.getSubChartData = getSubChartData;
 
     ////////////////////////////////////////////////////////////////////
     // QSOS XML file functions
@@ -553,5 +555,74 @@ function Document(name) {
     
     function setlicensedesc(value) {
     	return setkey("licensedesc", value);
+    }
+ 
+    ////////////////////////////////////////////////////////////////////
+    // Chart functions
+    ////////////////////////////////////////////////////////////////////
+
+    function getChartData() {
+	var chartData = new Array();
+	var sections = sheet.evaluate("//section", sheet, null, XPathResult.ANY_TYPE,null);
+	var section = sections.iterateNext();
+	while (section) {
+		var criterion = new Object();
+		criterion.name = section.getAttribute("name");
+		criterion.title =  section.getAttribute("title");
+		criterion.children = getSubChartData(criterion.name);
+		criterion.score = renderScore(criterion.children);
+		chartData.push(criterion);
+		section = sections.iterateNext();
+	}
+	return chartData;
+    }
+
+    function getSubChartData(name) {
+	var chartData = new Array();
+	var elements = sheet.evaluate("//*[@name='"+name+"']/element", sheet, null, XPathResult.ANY_TYPE,null);
+	var element = elements.iterateNext();
+	while (element) {
+		var criterion = new Object();
+		criterion.name = element.getAttribute("name");
+		criterion.title =  element.getAttribute("title");
+		
+		if (hassubelements(criterion.name)) {
+			criterion.children = getSubChartData(criterion.name);
+			criterion.score = renderScore(criterion.children);
+			chartData.push(criterion);
+		}
+		else {
+			criterion.children = null;
+			criterion.score = getkeyscore(criterion.name);
+			if (criterion.score == "") criterion.score = null;
+			if (criterion.score != -1) {
+				chartData.push(criterion);
+			}
+		}
+		element = elements.iterateNext();
+	}
+	return chartData;
+    }
+    
+    function renderScore(chartData) {
+    	var score = 0;
+	var sum = 0;
+	var totalWeight = 0
+	var isRenderable = true;
+	
+	for (i=0; i < chartData.length; i++) {
+		totalWeight++;
+		if (chartData[i].score == null) isRenderable = false;
+		sum += Math.round(chartData[i].score * 100)/100;
+	}
+	
+	if (isRenderable) {
+		score = Math.round((sum/totalWeight)*100)/100;
+	}
+	else {
+		score = null;
+	}
+	
+	return score;
     }
 }
