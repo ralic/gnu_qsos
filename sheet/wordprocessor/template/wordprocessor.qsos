@@ -2,10 +2,6 @@
 <document>
   <header>
     <authors>
-      <author>
-        <email></email>
-        <name></name>
-      </author>
     </authors>
     <dates>
       <creation></creation>
@@ -246,7 +242,7 @@
           <score></score>
           <comment></comment>
         </element>
-	<element name="packagingopen" title="OpenBSD">
+        <element name="packagingopen" title="OpenBSD">
           <desc0>The software is not packaged for OpenBSD</desc0>
           <desc1>A port exists but it has important issues or it doesn't have official support</desc1>
           <desc2>A official port exists in OpenBSD</desc2>
@@ -260,7 +256,7 @@
           <score></score>
           <comment></comment>
         </element>
-	<element name="packagingsolaris" title="Solaris">
+        <element name="packagingsolaris" title="Solaris">
           <desc0>The software is not packaged for Solaris</desc0>
           <desc1>A package exists but it has important issues or it doesn't have official support (e.g: SunFreeware.com )</desc1>
           <desc2>The software is supported by Sun for Solaris</desc2>
