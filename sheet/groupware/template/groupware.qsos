@@ -408,6 +408,13 @@
       <comment></comment>
       <score></score>
     </element>
+    <element name="standaloneadmintool" title="Stand alone admin tool">
+      <desc0>Nothing</desc0>
+      <desc1>A limited tool exist allow user to do specific operation</desc1>
+      <desc2>A powerful tool give access to every major feature of the server</desc2>
+      <comment></comment>
+      <score></score>
+    </element>
   </section>
   <section name="groupwarecomposant" title="Supported groupware composant">
     <comment></comment>
@@ -505,6 +512,16 @@
       <desc0>Apple's iCal can't be used</desc0>
       <desc1>Apple's iCal works but with some limitation</desc1>
       <desc2>Apple's iCal fully supported</desc2>
+      <comment></comment>
+      <score></score>
+    </element>
+  </section>
+  <section name="performance" title="Performance">
+    <element name="loadbalancing" title="Load balancing">
+      <desc>Can the load be splited between different computer?</desc>
+      <desc0>This software can't be loadbalancer</desc0>
+      <desc1>Part of the installation can be splited but it keeps important bottleneck</desc1>
+      <desc2>Loadblalancing just works</desc2>
       <comment></comment>
       <score></score>
     </element>
