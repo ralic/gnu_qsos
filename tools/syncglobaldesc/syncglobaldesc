@@ -1,7 +1,7 @@
 #!//usr/bin/perl -w
 # this script is experimental and will be certainly rewrite
 # It depends on the CVS release of QSOS::Document
-# $Id: syncglobaldesc,v 1.1 2006/04/24 16:18:49 goneri Exp $
+# $Id: syncglobaldesc,v 1.2 2006/05/19 10:35:19 goneri Exp $
 use strict;
 
 use Getopt::Long;
@@ -12,10 +12,14 @@ use QSOS::Document;
 sub _help {
   my $msg = shift;
   print $msg if (defined $msg && $msg);
-  print "usage syncglobalsection -t file.xml -f sheet.qsos\n";
+  print "usage syncglobalsection -l -m -t template.xml -f sheet.qsos\n";
   print "option:\n";
   print "\t--template -t : template\n";
-  print "\t--help -h : help\n";
+  print "\t--less -l : don't warning if template.xml have less sections than the sheet\n";
+  print "\t--recreate -d : print on STDOUT a full reformated from template sheet\n";
+  print "\t--save -s : save the processed file\n";
+  print "\t--renew -r : regenerate a sheet from the template and the current sheet\n";
+  print "\t--help -h : this menu\n";
   exit 1;
 }
 
@@ -28,11 +32,15 @@ sub _isdiff {
   return 1 if ($v1 ne $v2);
   return;
 }
-my ($help, $template, $file);
+my ($file, $template, $less, $more, $recreate, $save, $help);
 
 GetOptions (
   'file=s' => \$file,
   'template=s' => \$template,
+  'less' => \$less,
+  'more' => \$more,
+  'save' => \$save,
+  'recreate' => \$recreate,
   'help' => \$help,
 );
 
@@ -41,11 +49,42 @@ _help("cant't find the template file") unless (defined $template && -f $template
 
 
 my $t = new QSOS::Document;
-$t->load($template);
+$t->load($template) or die "Can't load template $template";
 my $qsos = new QSOS::Document;
-$qsos->load($file);
+$qsos->load($file) or die "Can't load sheet $file";
 
-  my $cpt = 0;
+
+if (!$less) {
+  my $section_doesnt_exist = 0;
+  foreach (keys %{$qsos->{section}}) {
+    if (!(exists $t->{section}->{$_} && $t->{section}->{$_})) {
+      if ($section_doesnt_exist == 0) {
+        print STDERR "Section(s) not found in template $template\n"; 
+        print STDERR "Use the --less flag to hide this message\n";
+      }
+      print STDERR "\t$_\n";
+      $section_doesnt_exist = 1;
+    }
+  }
+  exit 1 if ($section_doesnt_exist);
+}
+
+if (!$more) {
+  my $section_doesnt_exist = 0;
+  foreach (keys %{$t->{section}}) {
+    if (!(exists $qsos->{section}->{$_} && $qsos->{section}->{$_})) {
+      if ($section_doesnt_exist == 0) {
+        print STDERR "Section(s) not found in file $file";
+        print STDERR "Use the --more flag to hide this message\n";
+      }
+      print STDERR "\t$_\n";
+      $section_doesnt_exist = 1;
+    }
+  }
+  exit 1 if ($section_doesnt_exist);
+}
+
+my $cpt = 0;
 foreach (keys %{$t->{section}}) {
   # TODO: be able to remove key fro the dest file
 
@@ -70,7 +109,48 @@ foreach (keys %{$t->{section}}) {
     $cpt++;
   }
 
-  
 }
+
+if ($recreate) { # I synchronise other entreys
+
+  foreach (@{$qsos->getauthors()}) {
+    next unless ($_->{name});
+    $t->addauthor($_->{name}, $_->{email});
+  }
+
+  $t->setappname($qsos->getappname());
+  $t->setlanguage($qsos->getlanguage());
+  $t->setrelease($qsos->getrelease());
+  $t->setlicenseid($qsos->getlicenseid());
+  $t->setlicensedesc($qsos->getlicensedesc());
+  $t->seturl($qsos->geturl());
+  $t->setdesc($qsos->getdesc());
+  $t->setdemourl($qsos->getdemourl());
+  $t->setqsosformat($qsos->getqsosformat());
+  $t->setqsosspecificformat($qsos->getqsosspecificformat());
+  $t->setqsosappfamily($qsos->getqsosappfamily());
+  $t->setdatecreation($qsos->getdatecreation());
+  $t->setdatevalidation($qsos->getdatevalidation());
+
+
+
+  foreach (keys %{$t->{section}}) {
+    $t->setkeycomment($_,$qsos->getkeycomment($_));
+    $t->setkeyscore($_,$qsos->getkeyscore($_));
+  }
+}
+
+
 print $cpt." entry updated\n";
-$qsos->write();
+if ($save) {
+  if ($recreate) {
+    print "Saving recreated sheet...\n";
+    $t->write($file);
+  } else {
+    print "Saving sheet change...\n";
+    $qsos->write();
+  }
+} else {
+  print "no -s switch, i don't save change(s)...\n"
+}
+print "ok\n";
