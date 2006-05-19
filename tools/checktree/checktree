@@ -1,33 +1,33 @@
 #!/bin/sh
-# $Id: checktree,v 1.2 2006/04/24 16:20:28 goneri Exp $
+# $Id: checktree,v 1.3 2006/05/19 10:36:07 goneri Exp $
 # Gonéri Le Bouder
 
 DIR=`pwd`
-SHOWTEMPLATE=$DIR"/../showtemplate/showtemplate.pl"
 SYNCSECTIONDESC=$DIR"/../syncglobaldesc/syncglobaldesc"
-cd ../../sheet/
+SHEETDIR="../../sheet"
+
+cd $SHEETDIR 
 if [ ! -f "global.xml" ]; then
   echo "global.xml doesn't exist in this tree"
   exit 1
 fi
 
 # First i try to sync file desc*
-for file in `find -name '*.qsos' -type f|grep -v template`;do
-  echo "syncing desc: $file"
-  $SYNCSECTIONDESC -t global.xml -f $file
-done
- 
-# now i do the diff
-for file in `find -name '*.qsos' -type f|grep -v template`;do
-  $SHOWTEMPLATE --global -f $file > `dirname $file`/global.tmp
 
-  #diff -E -b global.xml `dirname $file`/global.tmp > /tmp/diff.`basename $file`.$$ 
-  diff -E -u -b global.xml `dirname $file`/global.tmp > /tmp/diff.`basename $file`.$$.diff 
-  if [ "$?" -ne "0" ];then
-    echo
-    echo "# Problem with $file"
-    echo \#file global section differe from the global.xml section#: /tmp/diff.`basename $file`.$$.diff
-#    cat /tmp/diff.`basename $file`.$$
-  fi
-  rm `dirname $file`/global.tmp
+for template in `find |grep  template|grep qsos$`;do
+  echo "*syncing template $template"
+  $SYNCSECTIONDESC -s -l -t global.xml -f $template|| exit 1
 done
+
+for dir in `find -mindepth 1 -maxdepth 1 -type d|grep -v CVS`;do 
+  echo "*syncing `basename $dir` directory"
+  tpl=`find $dir|grep template|grep qsos$`
+  for file in `find $dir -type f|grep -v CVS|grep -v template|grep qsos$`;do
+    echo "  "`basename $file `
+    echo $tpl $file
+    $SYNCSECTIONDESC --recreate --more --save --template $tpl --file $file || exit 1
+  done
+done
+
+
+exit 1
