@@ -1,4 +1,4 @@
-# $Id: Document.pm,v 1.18 2006/05/05 13:28:02 goneri Exp $
+# $Id: Document.pm,v 1.19 2006/05/19 10:32:51 goneri Exp $
 #
 #  Copyright (C) 2006 Atos Origin 
 #
@@ -84,7 +84,9 @@ sub _pushElem {
 
   $deep = 0 unless $deep;
 
-  die unless ($elt->atts->{name});
+  unless ($elt->atts->{name}) {
+    die "ERR: Attribute without name";
+  }
 
   my $h = {
     name => $elt->atts->{name},
