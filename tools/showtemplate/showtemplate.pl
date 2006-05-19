@@ -23,8 +23,14 @@ if ($help || !($file && (-f $file))) {
 }
 
 my $inheader;
-open FILE,"<".$file or die "can't open $file: $!";
-foreach(<FILE>) {
+if (open FILE,"<".$file) {
+  undef $/;
+  my $content = <FILE>;
+  close FILE or die;
+} else {
+  die "can't open $file: $!";
+}
+  s!\r!!g;
 
   $inheader = 1 if (/<header>/);
   $inheader = undef if (/<\/header>/);
@@ -43,18 +49,15 @@ foreach(<FILE>) {
     s!(<desc>).+(<\/desc>)!$1$2!g;
   }
 
-  s!(<comment>).+(<\/comment>)!$1$2!g;
+  s!(<comment>)[\n.]+(</comment>)!$1$2!g;
   s!(<score>).+(</score>)!$1$2!g;
   s!<\!--.+-->!!g;
   s!>[\ \t]+$!>!g;
   chomp if (s!^[\t\ ]{0,}$!!);
-  print;
   if ($global && /<\/section>/) {
     print "</document>\n";
     last;
   }
 }
 
-
-close FILE or die;
 
