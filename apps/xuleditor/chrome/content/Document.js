@@ -81,6 +81,7 @@ function Document(name) {
     this.getcomplextree = getcomplextree;
     this.getChartData = getChartData;
     this.getSubChartData = getSubChartData;
+    this.getChartDataParent = getChartDataParent;
 
     ////////////////////////////////////////////////////////////////////
     // QSOS XML file functions
@@ -560,6 +561,16 @@ function Document(name) {
     ////////////////////////////////////////////////////////////////////
     // Chart functions
     ////////////////////////////////////////////////////////////////////
+
+    function getChartDataParent(name) {
+	var node = sheet.evaluate("//*[@name='"+name+"']", sheet, null, XPathResult.ANY_TYPE,null).iterateNext();
+	if (node) {
+		return node.parentNode.getAttribute("name");
+	}
+	else {
+		return null;
+	}
+    }
 
     function getChartData() {
 	var chartData = new Array();

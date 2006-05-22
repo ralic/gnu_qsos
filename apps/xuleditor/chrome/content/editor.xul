@@ -92,9 +92,12 @@
 				</vbox>
 			</tabpanel>
 			<tabpanel>
-				<svg xmlns="http://www.w3.org/2000/svg" version="1.1">
-					<g id="chart" transform="translate(300,300)"/>
-				</svg>
+				<vbox id="chart-box">
+					<hbox id="chart-label" />
+					<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%">
+						<g id="chart" />
+					</svg>
+				</vbox>
 			</tabpanel>
 		</tabpanels>
 	</tabbox>

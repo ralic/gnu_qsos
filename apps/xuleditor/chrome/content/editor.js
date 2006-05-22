@@ -105,6 +105,8 @@ function openFile() {
 
 	//Draw top-level SVG chart
 	drawChart();
+
+	window.sizeToContent();
     }
 }
 
@@ -224,6 +226,7 @@ function closeFile() {
 	var tree = document.getElementById("mytree");
 	var treechildren = document.getElementById("myTreechildren");
 	tree.removeChild(treechildren);
+	clearChart() 
 }
 
 //Checks Document's state before closing it
@@ -451,17 +454,38 @@ function changeScore(score) {
 const SCALE = 100;
 const FONT_SIZE = SCALE/10;
 
-//Draw the SVG chart of a criterion
-//criterion: if not specified, the top-level chart of sections is displayed
-function drawChart(criterion) {
+//Clear the SVG chart
+function clearChart() {
 	var myChart = document.getElementById("chart");
-	//Delete pre-existing chart
 	while (myChart.firstChild) {
 		myChart.removeChild(myChart.firstChild);
 	}
+}
+
+//Draw the SVG chart of a criterion
+//criterion: if not specified, the top-level chart of sections is displayed
+function drawChart(name) {
+	clearChart();
+	var myChart = document.getElementById("chart");
+	var width = myChart.parentNode.width.baseVal.value / 2;
+	var height = myChart.parentNode.height.baseVal.value / 2;
+	myChart.setAttribute("transform", "translate("+width+","+height+")");
 
 	//Collect charting data
-	var myScores = (criterion)?myDoc.getSubChartData(criterion):myDoc.getChartData();
+	var myScores = (name)?myDoc.getSubChartData(name):myDoc.getChartData();
+
+	//Chart's label
+	clearLabels();
+	var marker = null;
+
+	if (name) marker = addLabel(name, null);
+	var parentName = myDoc.getChartDataParent(name);
+
+	while (parentName != null) {
+		marker = addLabel(parentName, marker);
+		parentName = myDoc.getChartDataParent(parentName);
+	}
+	addFirstLabel(marker);
 	
 	//draw chart's axis
 	drawAxis(myScores.length);
@@ -485,6 +509,47 @@ function drawChart(criterion) {
 	myPath.setAttribute("stroke-width", "2");
 	
 	myChart.appendChild(myPath);
+}
+
+function addFirstLabel(marker) {
+	var label = document.getElementById("chart-label");
+	var newLabel = document.createElement("label");
+	newLabel.setAttribute("value", myDoc.getappname() + " " + myDoc.getrelease());
+	newLabel.setAttribute("onclick", "drawChart()");
+	newLabel.style.cursor = "pointer";
+
+	if (marker) {
+		label.insertBefore(newLabel, marker);
+	}
+	else {
+		label.appendChild(newLabel);
+	}
+
+	return newLabel;
+}
+
+function addLabel(name, marker) {
+	var label = document.getElementById("chart-label");
+	var newLabel = document.createElement("label");
+	newLabel.setAttribute("value", ">  " + myDoc.getkeytitle(name));
+	newLabel.setAttribute("onclick", "drawChart(\"" + name + "\")");
+	newLabel.style.cursor = "pointer";
+
+	if (marker) {
+		label.insertBefore(newLabel, marker);
+	}
+	else {
+		label.appendChild(newLabel);
+	}
+
+	return newLabel;
+}
+
+function clearLabels() {
+	var label = document.getElementById("chart-label");
+	while (label.firstChild) {
+		label.removeChild(label.firstChild);
+	}
 }
 
 //draw "n" equidistant axis
@@ -553,12 +618,11 @@ function drawText(x, y, myScore) {
 	}
 	else {
 		myText.setAttribute("fill", "red");
-		myText.setAttribute("text-decoration", "line-through");
 	}
 	
 	if (myScore.children) {
 		myText.setAttribute("onclick", "drawChart(\"" + myScore.name + "\")");
-		myText.setAttribute("text-decoration", "underline");
+		myText.style.cursor = "pointer";
 	}	
 
 	myText.appendChild(document.createTextNode(myScore.title));
@@ -570,5 +634,5 @@ function drawText(x, y, myScore) {
 	myX = (Math.abs(x)==x)?x:x-myTextLength;
 	myY = (Math.abs(y)==y)?y+FONT_SIZE:y;
 	myText.setAttribute("x", myX);
-	myText.setAttribute("y", myY)
+	myText.setAttribute("y", myY);
 }
