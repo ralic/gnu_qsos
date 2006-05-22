@@ -451,7 +451,7 @@ function changeScore(score) {
 // SVG Chart functions
 ////////////////////////////////////////////////////////////////////
 
-const SCALE = 100;
+const SCALE = 100; //1 QSOS unit in pixels
 const FONT_SIZE = SCALE/10;
 
 //Clear the SVG chart
@@ -511,6 +511,8 @@ function drawChart(name) {
 	myChart.appendChild(myPath);
 }
 
+//Add the root label of the chart navigation bar
+//marker: label before which the new label is to be inserted, can be null
 function addFirstLabel(marker) {
 	var label = document.getElementById("chart-label");
 	var newLabel = document.createElement("label");
@@ -528,6 +530,7 @@ function addFirstLabel(marker) {
 	return newLabel;
 }
 
+//Add a label to the chart navigation bar
 function addLabel(name, marker) {
 	var label = document.getElementById("chart-label");
 	var newLabel = document.createElement("label");
@@ -545,6 +548,7 @@ function addLabel(name, marker) {
 	return newLabel;
 }
 
+//Clear all labels
 function clearLabels() {
 	var label = document.getElementById("chart-label");
 	while (label.firstChild) {

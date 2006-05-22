@@ -562,6 +562,7 @@ function Document(name) {
     // Chart functions
     ////////////////////////////////////////////////////////////////////
 
+    //Returns the name of a criterion's parent
     function getChartDataParent(name) {
 	var node = sheet.evaluate("//*[@name='"+name+"']", sheet, null, XPathResult.ANY_TYPE,null).iterateNext();
 	if (node) {
@@ -572,6 +573,12 @@ function Document(name) {
 	}
     }
 
+    //Returns the scored criteria of QSOS document
+    //Returned object: array of chartData
+    //		chartData.name: name of the subcriterion
+    //		chartData.title: title of the subcriterion
+    //		chartData.children: null or array of chartData representing the subcriterion's subcritria
+    //		chartData.score: score of the subcriterion (mean value of subcriretia)
     function getChartData() {
 	var chartData = new Array();
 	var sections = sheet.evaluate("//section", sheet, null, XPathResult.ANY_TYPE,null);
@@ -588,6 +595,12 @@ function Document(name) {
 	return chartData;
     }
 
+    //Recursive function returning the scored subcriteria of a criteria
+    //Returned object: array of chartData
+    //		chartData.name: name of the subcriterion
+    //		chartData.title: title of the subcriterion
+    //		chartData.children: null or array of chartData representing the subcriterion's subcritria
+    //		chartData.score: score of the subcriterion
     function getSubChartData(name) {
 	var chartData = new Array();
 	var elements = sheet.evaluate("//*[@name='"+name+"']/element", sheet, null, XPathResult.ANY_TYPE,null);
@@ -615,6 +628,12 @@ function Document(name) {
 	return chartData;
     }
     
+    //Renders the value of a criterion based on its subecriteria's values
+    //chartData: object representing the criterion
+    //		chartData.name: name of the subcriterion
+    //		chartData.title: title of the subcriterion
+    //		chartData.children: null or array of chartData representing the subcriterion's subcritria
+    //		chartData.score: score of the subcriterion
     function renderScore(chartData) {
     	var score = 0;
 	var sum = 0;
