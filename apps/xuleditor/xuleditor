@@ -1,4 +1,4 @@
-#!/bin/ksh
+#!/bin/sh
 case ${1} in
 	debug)
 		xulrunner application.ini -console -jsconsole
