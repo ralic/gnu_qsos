@@ -106,7 +106,7 @@ function openFile() {
 	//Draw top-level SVG chart
 	drawChart();
 
-	window.sizeToContent();
+	//window.sizeToContent();
     }
 }
 
@@ -226,7 +226,8 @@ function closeFile() {
 	var tree = document.getElementById("mytree");
 	var treechildren = document.getElementById("myTreechildren");
 	tree.removeChild(treechildren);
-	clearChart() 
+	clearChart();
+	clearLabels();
 }
 
 //Checks Document's state before closing it
@@ -467,8 +468,10 @@ function clearChart() {
 function drawChart(name) {
 	clearChart();
 	var myChart = document.getElementById("chart");
-	var width = myChart.parentNode.width.baseVal.value / 2;
-	var height = myChart.parentNode.height.baseVal.value / 2;
+	//var width = myChart.parentNode.width.animVal.value / 2;
+	//var height = myChart.parentNode.height.animVal.value / 2;
+	var width = 300;
+	var height = 300;
 	myChart.setAttribute("transform", "translate("+width+","+height+")");
 
 	//Collect charting data
