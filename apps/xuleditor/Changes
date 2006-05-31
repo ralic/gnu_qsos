@@ -2,3 +2,11 @@ Revision history for QSOS XUL Editor
 
 0.01  2006
       - Initial release
+
+0.02  2006/05/30
+      - Licences list added
+      - "Edit/Authors" menu entry added
+      - Software and criteria properties in separated tabs
+      - New XML serializer
+      - Drill-down charting added (requires SVG support in xulrunner)
+
