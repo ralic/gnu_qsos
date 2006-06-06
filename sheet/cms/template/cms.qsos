@@ -487,7 +487,7 @@
   	<score></score>
         </element>
         <element name="importcommercialpcitureformat" title="commercial formats">
-  	<desc>Fromat are: psp (PaintShopPro), psd (Photopshop)</desc>
+  	<desc>Format are: psp (PaintShopPro), psd (Photopshop)</desc>
   	<desc0>not supported</desc0>
   	<desc1>partialy (buggy or limited feature)</desc1>
   	<desc2>fully supported</desc2>
@@ -497,6 +497,7 @@
         </element>
       </element>
     </element>
+  </element>
   </section>
   <section name="internalprocessing" title="Internal processing">
     <element name="internalcapability" title="Capability">
@@ -528,38 +529,36 @@
       </element>
       <element name="filemanipulation" title="File manipulation">
 	<element name="previewcreation" title="Preview creation">
+	  <desc>Please keep in mind that here we just evaluate the object creation (does it work or not). We ignore how the results are published (e.g: poor visiblity).</desc>
 	  <element name="picturepreview" title="Picture preview">
-	    <desc></desc>
-	    <desc0></desc0>
-	    <desc1></desc1>
-	    <desc2></desc2>
+	    <desc0>The software can't create picture preview</desc0>
+	    <desc1>The software create picture preview for all the major formats (jpg, png, bmp, gif)</desc1>
+	    <desc2>The software can create preview for more than 10 picutres formats</desc2>
 	    <comment>
 	    </comment>
 	    <score></score>
 	  </element>
 	  <element name="odtpreview" title="OpenOffice files preview">
-	    <desc></desc>
-	    <desc0></desc0>
-	    <desc1></desc1>
-	    <desc2></desc2>
+	    <desc0>The feature doesn't exist</desc0>
+	    <desc1>Work fine for at last odt files</desc1>
+	    <desc2>Work fine for the majority of the formats</desc2>
 	    <comment>
 	    </comment>
 	    <score></score>
 	  </element>
 	  <element name="mswordpreview" title="MS Office files preview">
-	    <desc></desc>
-	    <desc0></desc0>
-	    <desc1></desc1>
-	    <desc2></desc2>
+	    <desc0>The feature doesn't exist</desc0>
+	    <desc1>Work fine for at last doc files</desc1>
+	    <desc2>Work fine for the majority of the formats</desc2>
 	    <comment>
 	    </comment>
 	    <score></score>
 	  </element>
 	  <element name="videopreview" title="Video preview">
-	    <desc></desc>
-	    <desc0></desc0>
-	    <desc1></desc1>
-	    <desc2></desc2>
+	    <desc>Please keep in mind that DRM protected file can't be load without official from its manifacturer. Because of this limitation, we prefere to ignore these files in this evaluation. Preview could be a little preview movie (e.g: in flash format) or just a picture.</desc>
+	    <desc0>The feature doesn't exist</desc0>
+	    <desc1>The software doesn't support the majority of the files</desc1>
+	    <desc2>The software can create preview for a large amount of files</desc2>
 	    <comment>
 	    </comment>
 	    <score></score>
@@ -568,27 +567,27 @@
 	<element name="compressedfilesbrowing" title="Compressed files browsing">
 	  <element name="zipfilesprowsing" title="ZIP files">
 	    <desc>zip files</desc>
-	    <desc0></desc0>
-	    <desc1></desc1>
-	    <desc2></desc2>
+	    <desc0>The engine see zip file as opaque binary</desc0>
+	    <desc1>The engine can browse zip archive with limitation (need of a specific action from the use, content not indexed, no keyword can by attached to its content).</desc1>
+	    <desc2>Zip archive are seen like common folder.</desc2>
 	    <comment>
 	    </comment>
 	    <score></score>
 	  </element>
 	  <element name="rarfilesprowsing" title="RAR files">
 	    <desc>rar files</desc>
-	    <desc0></desc0>
-	    <desc1></desc1>
-	    <desc2></desc2>
+	    <desc0>The engine see rar file as opaque binary</desc0>
+	    <desc1>The engine can browse rar archive with limitation (need of a specific action from the use, content not indexed, no keyword can by attached to its content).</desc1>
+	    <desc2>Rar archive are seen like common folder.</desc2>
 	    <comment>
 	    </comment>
 	    <score></score>
 	  </element>
 	  <element name="tarfilesprowsing" title="TAR files">
 	    <desc>tar.gz, tar.bz2 and tar.Z archives</desc>
-	    <desc0></desc0>
-	    <desc1></desc1>
-	    <desc2></desc2>
+	    <desc0>The engine see tar file as opaque binary</desc0>
+	    <desc1>The engine can browse tar archive with limitation (need of a specific action from the use, content not indexed, no keyword can by attached to its content).</desc1>
+	    <desc2>Tarball archive are seen like common folder.</desc2>
 	    <comment>
 	    </comment>
 	    <score></score>
@@ -611,30 +610,28 @@
   <section name="workprocess" title="Work Process">
     <element name="editing" title="Edition tools">
       <element name="journalisedchanges" title="Journalised Changes">
-	<desc></desc>
-	<desc0></desc0>
-	<desc1></desc1>
-	<desc2></desc2>
+	<desc0>No revision control system exist.</desc0>
+	<desc1>Every saved document are archived. Go back to an old revision need an important amount of work.</desc1>
+	<desc2>Every change done with the internal editor are logged. It's easy to come back to an old revision of the document from another user.</desc2>
 	<comment>
 	</comment>
 	<score></score>
       </element>
       <element name="editwithstandalonetools" title="Standalone edition tools">
-	<desc></desc>
-	<desc0></desc0>
-	<desc1></desc1>
-	<desc2></desc2>
+	<desc0>In oder to edit a document the user use the official tool.</desc0>
+	<desc1>It's possible to use a remote stand alone tool to edit documents.</desc1>
+	<desc2>All common feature are supported by a last one stand alone tool.</desc2>
 	<comment>
 	</comment>
 	<score></score>
       </element>
     </element>
     <element name="workflow" title="Workflow">
-      <element name="workflowlock" title="lock">
-	<desc>Ability to lock file</desc>
-	<desc0></desc0>
-	<desc1></desc1>
-	<desc2></desc2>
+      <element name="workflowlock" title="Lock">
+	<desc>Ability to lock file avoid data lost or synchronization issues</desc>
+	<desc0>The feature doesn't exist</desc0>
+	<desc1>The feature just exist</desc1>
+	<desc2>The feature exist, administrator can quickly unlock a file from an user. A time out system exists to unlock file after a certain amount of time.</desc2>
 	<comment>
 	</comment>
 	<score></score>
@@ -658,6 +655,7 @@
 	<score></score>
       </element>
     </element>
+    <!-- What doest it mean exactly?
     <element name="groupwareintegration" title="Groupware integration">
       <desc></desc>
       <desc0></desc0>
@@ -666,50 +664,56 @@
       <comment>
       </comment>
 	<score></score>
+    </element> -->
+    <element  name="spellckecer" title="Groupware integration">
+      <desc0>no spell checker availble or it's just based on a too limited dictionary that make it being a wast of time</desc0>
+      <desc1>working dictionnary but limited (e.g: grammar not included, false positive, hard to extend)</desc1>
+      <desc2>Powerful dictionary</desc2>
+      <comment>
+      </comment>
+      <score></score>
     </element>
   </section>
   <section name="architecture" title="Architecture">
     <element name="security" title="Security">
       <element name="authentifaction" title="Authentification Backend">
 	<element name="authenbackendldap" title="LDAP">
-	  <desc></desc>
-	  <desc0></desc0>
-	  <desc1></desc1>
-	  <desc2></desc2>
+	  <desc0>No LDAP based authentification availble</desc0>
+	  <desc1>LDAP availble but limited (e.g: group mapping limited, etc)</desc1>
+	  <desc2>LDAP is one of the recommended authentification backend</desc2>
 	  <comment>
 	  </comment>
 	  <score></score>
         </element>
 	<element name="authenbackendad" title="Active Directory">
-	  <desc></desc>
-	  <desc0></desc0>
-	  <desc1></desc1>
-	  <desc2></desc2>
+	  <element name="authenbackendldap" title="LDAP">
+	  <desc0>No Active Directory based authentification availble</desc0>
+	  <desc1>Active Directory availble but limited (e.g: group mapping limited, etc)</desc1>
+	  <desc2>Active Directory is one of the recommended authentification backend</desc2>
 	  <comment>
 	  </comment>
 	  <score></score>
         </element>
 	<element name="authenbackenddb" title="data base">
-	  <desc></desc>
-	  <desc0></desc0>
-	  <desc1></desc1>
-	  <desc2></desc2>
+	  <desc>Here we do not attach importance on supported data bases, please see the storage section</desc>
+	  <desc0>No data base base authentification availble</desc0>
+	  <desc1>Data base availble but limited (e.g: group mapping limited, etc)</desc1>
+	  <desc2>Data base is one of the recommended authentification backend</desc2>
 	  <comment>
 	  </comment>
 	  <score></score>
         </element>
       </element>
       <element name="signaturemechansim" title="Signing">
-	<desc></desc>
-	<desc0></desc0>
-	<desc1></desc1>
-	<desc2></desc2>
+	<desc>Is possible to create digital cypher (e.g: GNU PGP)</desc>
+	<desc0>Feature not supported</desc0>
+	<desc1>Fetautre partialy supported</desc1>
+	<desc2>Feature fully supported</desc2>
 	<comment>
 	</comment>
 	  <score></score>
       </element>
       <element name="digitalwatermarking" title="Digital watermarking">
-	<desc></desc>
 	<desc0></desc0>
 	<desc1></desc1>
 	<desc2></desc2>
@@ -718,6 +722,15 @@
 	<score></score>
       </element>
       <element name="DRM" title="DRM">
+	<desc></desc>
+	<desc0></desc0>
+	<desc1></desc1>
+	<desc2></desc2>
+	<comment>
+	</comment>
+	<score></score>
+      </element>
+      <element name="SSL" title="SSL">
 	<desc></desc>
 	<desc0></desc0>
 	<desc1></desc1>
@@ -833,6 +846,5 @@
 	</comment>
 	<score></score>
       </element>
-    </element>
   </section>
 </document>
