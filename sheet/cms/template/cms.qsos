@@ -780,29 +780,29 @@
 	<score></score>
       </element>
       <element name="datawarehouse" title="Data Warehouse">
-	<desc>Can create create indexes to physical material like book or paper document?</desc>
-	<desc0></desc0>
+	<desc>Can user create link to physical material like book or paper document?</desc>
+	<desc0>This feature doesn't exist</desc0>
 	<desc1></desc1>
-	<desc2></desc2>
+	<desc2>The feature exists with limitation ()</desc2>
 	<comment>
 	</comment>
 	<score></score>
       </element>
     </element>
     <element name="multisite" title="Multisite architecure">
-      <desc></desc>
-      <desc0></desc0>
-      <desc1></desc1>
-      <desc2></desc2>
+      <desc>Is it possible to have a different decentralised site?</desc>
+      <desc0>Server is not designed to be decentralised</desc0>
+      <desc1>Some part of the service can be decentrralised but there is still a bottleneck that limited the number of user (e.g: centralised data base)</desc1>
+      <desc2>Thanks to a powerful synchronisation system every site can by temporarly disconnected with just a service limitation interuption (e.g: read only access)</desc2>
       <comment>
       </comment>
       <score></score>
     </element>
     <element name="loadbalancing" title="Load balancing">
-      <desc></desc>
-      <desc0></desc0>
-      <desc1></desc1>
-      <desc2></desc2>
+      <desc>Load balancing capability of the server.</desc>
+      <desc0>The server is not designed to support load balancing</desc0>
+      <desc1>The server support load balancing but bottleneck still exist (e.g: core software can be load balanced)</desc1>
+      <desc2>Load balancing is fully support</desc2>
       <comment>
       </comment>
       <score></score>
