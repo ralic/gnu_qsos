@@ -378,23 +378,22 @@
   </section>
   <section name="contentimportation" title="Content importation">
     <comment>This section describe the different way avaible to import content in the system.</comment>
-    
     <element name="metadata" title="Meta data">
-      <comment></comment>
+      <comment>Meta data are infromation related to a document like (author, copyright holder, ...)</comment>
       <element name="keyword" title="Key word support">
 	<desc>Metadata are all the specific key work that can be attached to a document (e.g: sun, holydays, summer for a picture from your last holydays)</desc>
-	<desc0></desc0>
-	<desc1></desc1>
-	<desc2></desc2>
+	<desc0>Can't add specific key word</desc0>
+	<desc1>Key word can be add but with limitation: limited list, no easy to way extend the list</desc1>
+	<desc2>Key word power are easy to add extend</desc2>
 	<comment>
 	</comment>
 	<score></score>
       </element>
       <element name="hierarchicalclassification" title="Hierarchical Classification">
 	<desc>Ability to do a classication in a predesigned hierarchy</desc>
-	<desc0></desc0>
-	<desc1></desc1>
-	<desc2></desc2>
+	<desc0>This feature doesn't exist</desc0>
+	<desc1>The feature exist but is limited.</desc1>
+	<desc2>A new document can quickly be registered in the hierarchy</desc2>
 	<comment>
 	</comment>
 	<score></score>
@@ -402,49 +401,106 @@
     </element>
     <element name="importformatsupported" title="File format supported during importation">
       <desc>Supported means that the internal engine is able to read or parse file content to create preview file or find key words</desc>
-      <element name="importformathtml" title="HTML files">
-	<desc></desc>
-	<desc0></desc0>
-	<desc1></desc1>
-	<desc2></desc2>
-	<comment>
-	</comment>
-	<score></score>
+      <element name="importtext" title="text formats">
+        <element name="importformathtml" title="HTML files">
+  	<desc></desc>
+  	<desc0>not supported</desc0>
+  	<desc1>partialy (buggy or limited feature)</desc1>
+  	<desc2>fully supported</desc2>
+  	<comment>
+  	</comment>
+  	<score></score>
+        </element>
+        <element name="importformatrtf" title="RTF (Rich Text Format)">
+  	<desc></desc>
+  	<desc0>not supported</desc0>
+  	<desc1>partialy (buggy or limited feature)</desc1>
+  	<desc2>fully supported</desc2>
+  	<comment>
+  	</comment>
+  	<score></score>
+        </element>
+        <element name="importformatcsv" title="CSV">
+  	<desc></desc>
+  	<desc0>not supported</desc0>
+  	<desc1>partialy (buggy or limited feature)</desc1>
+  	<desc2>fully supported</desc2>
+  	<comment>
+  	</comment>
+  	<score></score>
+        </element>
+        <element name="importformatxml" title="XML files">
+  	<desc></desc>
+  	<desc0>not supported</desc0>
+  	<desc1>partialy (buggy or limited feature)</desc1>
+  	<desc2>fully supported</desc2>
+  	<comment>
+  	</comment>
+  	<score></score>
+        </element>
+        <element name="importformatopenoffice" title="OpenOffice files">
+  	<desc>Staroffice and Openoffice document before release 2.0</desc>
+  	<desc0>not supported</desc0>
+  	<desc1>partialy (buggy or limited feature)</desc1>
+  	<desc2>fully supported</desc2>
+  	<comment>
+  	</comment>
+  	<score></score>
+
+        <element name="importformatopendocument" title="Opendocument files">
+  	<desc>Openoffice and others</desc>
+  	<desc0>not supported</desc0>
+  	<desc1>partialy (buggy or limited feature)</desc1>
+  	<desc2>fully supported</desc2>
+  	<comment>
+  	</comment>
+  	<score></score>
+        </element>
+        <element name="importformatooo" title="MS Office files">
+  	<desc></desc>
+  	<desc0>not supported</desc0>
+  	<desc1>partialy (buggy or limited feature)</desc1>
+  	<desc2>fully supported</desc2>
+  	<comment>
+  	</comment>
+  	<score></score>
+        </element>
+
       </element>
-      <element name="importformatxml" title="XML files">
-	<desc></desc>
-	<desc0></desc0>
-	<desc1></desc1>
-	<desc2></desc2>
-	<comment>
-	</comment>
-	<score></score>
+      <element name="importpicutre" title="picture formats">
+        <element name="importcommonpictureformat" title="common file format">
+  	<desc>Format are: jpg, gif, png, bmp, tiff, xpm, </desc>
+  	<desc0>not supported</desc0>
+  	<desc1>partialy (buggy or limited feature)</desc1>
+  	<desc2>fully supported</desc2>
+  	<comment>
+  	</comment>
+  	<score></score>
+        </element>
+        <element name="importvectorialformat" title="common vectorial format">
+  	<desc>Format are: wmf, svg</desc>
+  	<desc0>not supported</desc0>
+  	<desc1>partialy (buggy or limited feature)</desc1>
+  	<desc2>fully supported</desc2>
+  	<comment>
+  	</comment>
+  	<score></score>
+        </element>
+        <element name="importcommercialpcitureformat" title="commercial formats">
+  	<desc>Fromat are: psp (PaintShopPro), psd (Photopshop)</desc>
+  	<desc0>not supported</desc0>
+  	<desc1>partialy (buggy or limited feature)</desc1>
+  	<desc2>fully supported</desc2>
+  	<comment>
+  	</comment>
+  	<score></score>
+        </element>
       </element>
-      <element name="importformatpicutres" title="pictures">
-	<desc></desc>
-	<desc0></desc0>
-	<desc1></desc1>
-	<desc2></desc2>
-	<comment>
-	</comment>
-	<score></score>
-      </element>
-      <element name="importformatpicutres" title="odt">
-	<desc></desc>
-	<desc0></desc0>
-	<desc1></desc1>
-	<desc2></desc2>
-	<comment>
-	</comment>
-	<score></score>
-      </element>
-      <!--TODO-->
     </element>
   </section>
   <section name="internalprocessing" title="Internal processing">
     <element name="internalcapability" title="Capability">
       <element name="metadata" title="Meta data">
-	<desc></desc>
 	<desc0></desc0>
 	<desc1></desc1>
 	<desc2></desc2>
@@ -457,6 +513,15 @@
 	<desc0></desc0>
 	<desc1></desc1>
 	<desc2></desc2>
+	<comment>
+	</comment>
+	<score></score>
+      </element>
+      <element name="documentranking" title="Document ranking">
+	<desc>If a document have a good ranking it will be on the top of the list during searchs. The ranking is determined by a list of parameter like date of creation or amount of recent access to the file.</desc>
+	<desc0>Search are not ordered or the order</desc0>
+	<desc1>Limited, at best, just some documents are correctly sorted, the rest is hidden in the mass (about 1/5 document correctly ordered).</desc1>
+	<desc2>Powerful ranking tool. Most important documents are on the top of the list (4/5 documents correctly sorted).</desc2>
 	<comment>
 	</comment>
 	<score></score>
