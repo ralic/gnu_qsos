@@ -273,7 +273,7 @@
 	<element name="packagingwindows" title="Windows">
 	  <desc0>The project can't be installed on Windows</desc0>
 	  <desc1>A package exists but it is limited or has important issues or just cover some specific Windows release (e.g: Windows2000 and WindowsXP)</desc1>
-	  <desc2>Windows is full supported and a package is provided</desc2>
+	  <desc2>Windows is fully supported and a package is provided</desc2>
 	  <score></score>
 	  <comment></comment>
 	</element>
@@ -761,29 +761,23 @@
       </element>
     </element>
     <element name="storage" title="Storage">
+    <desc>Please keep in mind, that the score doesn't mean that an element is good or bad. e.g: a solution that doesn't use the filesystem for the data storage can be good. See: QSOS Method to get more details</desc>
       <element name="filesystem" title="File System">
-	<desc></desc>
-	<desc0></desc0>
-	<desc1></desc1>
-	<desc2></desc2>
+	<desc>Can the solution use the file system to store data (files, description, ...). Please, descript the recommended environment.</desc>
 	<comment>
 	</comment>
 	<score></score>
       </element>
       <element name="database" title="Data Base">
-	<desc></desc>
-	<desc0></desc0>
-	<desc1></desc1>
-	<desc2></desc2>
+	<desc>No data storage available. Please, descript the recommended environment.</desc>
 	<comment>
 	</comment>
-	<score></score>
       </element>
       <element name="datawarehouse" title="Data Warehouse">
 	<desc>Can user create link to physical material like book or paper document?</desc>
 	<desc0>This feature doesn't exist</desc0>
-	<desc1></desc1>
-	<desc2>The feature exists with limitation ()</desc2>
+	<desc1>The feature exists with limitation (TODO)</desc1>
+	<desc2></desc2>
 	<comment>
 	</comment>
 	<score></score>
@@ -808,10 +802,9 @@
       <score></score>
     </element>
     <element name="failover" title="Fail over">
-      <desc></desc>
-      <desc0></desc0>
-      <desc1></desc1>
-      <desc2></desc2>
+      <desc0>Failover is at best limited</desc0>
+      <desc1>Failover works but important a lot of work (humain intervention to set up the mechanim)</desc1>
+      <desc2>Failover works fine thanks a good designed</desc2>
       <comment>
       </comment>
       <score></score>
@@ -820,28 +813,26 @@
   <section name="administration" title="Administration">
     <element name="rights" title="Rights">
       <element name="usersrights" title="User's rights">
-	<desc></desc>
-	<desc0></desc0>
-	<desc1></desc1>
-	<desc2></desc2>
+	<desc0>Feature is not supported</desc0>
+	<desc1>Feature is partialy supported</desc1>
+	<desc2>Feature is supported</desc2>
 	<comment>
 	</comment>
 	<score></score>
       </element>
       <element name="groupesrights" title="Group's rights">
-	<desc></desc>
-	<desc0></desc0>
-	<desc1></desc1>
-	<desc2></desc2>
+	<desc0>Feature is not supported</desc0>
+	<desc1>Feature is partialy supported</desc1>
+	<desc2>Feature is supported</desc2>
 	<comment>
 	</comment>
 	<score></score>
       </element>
       <element name="role" title="Role">
 	<desc>Can we create a virtual user with specific rights and give his rights to phyical people (e.g: the role "backup administrator" read access on the data base)</desc>
-	<desc0></desc0>
-	<desc1></desc1>
-	<desc2></desc2>
+	<desc0>The feature doesn't exist</desc0>
+	<desc1>The feature exists but is limited</desc1>
+	<desc2>The Feature is available or can easily be simulated thanks to a powerful group system</desc2>
 	<comment>
 	</comment>
 	<score></score>
