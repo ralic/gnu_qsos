@@ -121,7 +121,7 @@
         <element name="activityonfunctionalities" title="Activity on functionalities">
           <desc0>No or few new functionalities</desc0>
           <desc1>Evolution of the product driven by the core team or by user's request without any clearly explained process</desc1>
-          <desc2>Tool(s) to manage feature requests, strong interaction with roadmap</desc2>
+          <desc2>Tool(s) to manage features requests, strong interaction with roadmap</desc2>
           <score></score>
           <comment></comment>
         </element>
@@ -411,7 +411,7 @@
     <element name="standaloneadmintool" title="Stand alone admin tool">
       <desc0>Nothing</desc0>
       <desc1>A limited tool exist allow user to do specific operation</desc1>
-      <desc2>A powerful tool give access to every major feature of the server</desc2>
+      <desc2>A powerful tool give access to every major features of the server</desc2>
       <comment></comment>
       <score></score>
     </element>
@@ -420,14 +420,14 @@
     <comment></comment>
     <element name="calendar" title="Calendar">
       <desc0>no calendar provided</desc0>
-      <desc1>a calendar is provided, but leak some important feature</desc1>
+      <desc1>a calendar is provided, but leak some important features</desc1>
       <desc2>a well integrated calendar is provided</desc2>
       <comment></comment>
       <score></score>
     </element>
     <element name="taskmanager" title="Taskmanager">
       <desc0>no task manager provided</desc0>
-      <desc1>a task manager is provided but leak some important feature</desc1>
+      <desc1>a task manager is provided but leak some important features</desc1>
       <desc2>Task manager fully supported</desc2>
       <comment></comment>
       <score></score>
@@ -457,23 +457,23 @@
       <score></score>
     </element>
     <element name="caldav" title="CalDav">
-      <desc0>CalDav over WebDav not supported</desc0>
-      <desc1>CalDav over WebDav partially supported</desc1>
-      <desc2>CalDav over WebDav works</desc2>
+      <desc0>CalDav not supported</desc0>
+      <desc1>CalDav partially supported</desc1>
+      <desc2>CalDav works</desc2>
       <comment></comment>
       <score></score>
     </element>
     <element name="groupdav" title="Groupdav">
-      <desc0>Groupdav over WebDav not supported</desc0>
-      <desc1>Groupdav over WebDav partially supported</desc1>
-      <desc2>Groupdav over WebDav works</desc2>
+      <desc0>Groupdav not supported</desc0>
+      <desc1>Groupdav partially supported</desc1>
+      <desc2>Groupdav works</desc2>
       <comment></comment>
       <score></score>
     </element>
     <element name="syncml" title="SyncML">
-      <desc0>SyncML over WebDav not supported</desc0>
-      <desc1>SyncML over WebDav partially supported</desc1>
-      <desc2>SyncML over WebDav works</desc2>
+      <desc0>SyncML not supported</desc0>
+      <desc1>SyncML partially supported</desc1>
+      <desc2>SyncML works</desc2>
       <comment></comment>
       <score></score>
     </element>
