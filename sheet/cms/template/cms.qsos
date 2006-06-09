@@ -686,7 +686,6 @@
 	  <score></score>
         </element>
 	<element name="authenbackendad" title="Active Directory">
-	  <element name="authenbackendldap" title="LDAP">
 	  <desc0>No Active Directory based authentification availble</desc0>
 	  <desc1>Active Directory availble but limited (e.g: group mapping limited, etc)</desc1>
 	  <desc2>Active Directory is one of the recommended authentification backend</desc2>
@@ -837,5 +836,6 @@
 	</comment>
 	<score></score>
       </element>
+    </element>
   </section>
 </document>
