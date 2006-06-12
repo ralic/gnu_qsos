@@ -2,6 +2,7 @@
 <document>
   <header>
     <authors>
+>
     <author><email>goneri.lebouder@atosorigin.com</email><name>Gonéri Le Bouder</name></author></authors>
     <dates>
       <creation>20060307</creation>
@@ -408,19 +409,26 @@
       <comment></comment>
       <score></score>
     </element>
+    <element name="standaloneadmintool" title="Stand alone admin tool">
+      <desc0>Nothing</desc0>
+      <desc1>A limited tool exist allow user to do specific operation</desc1>
+      <desc2>A powerful tool give access to every major features of the server</desc2>
+      <comment></comment>
+      <score></score>
+    </element>
   </section>
   <section name="groupwarecomposant" title="Supported groupware composant">
     <comment></comment>
     <element name="calendar" title="Calendar">
       <desc0>no calendar provided</desc0>
-      <desc1>a calendar is provided, but leak some important feature</desc1>
+      <desc1>a calendar is provided, but leak some important features</desc1>
       <desc2>a well integrated calendar is provided</desc2>
       <comment></comment>
       <score>2</score>
     </element>
     <element name="taskmanager" title="Taskmanager">
       <desc0>no task manager provided</desc0>
-      <desc1>a task manager is provided but leak some important feature</desc1>
+      <desc1>a task manager is provided but leak some important features</desc1>
       <desc2>Task manager fully supported</desc2>
       <comment></comment>
       <score>2</score>
@@ -443,30 +451,30 @@
   <section name="standard" title="Standard support">
     <comment></comment>
     <element name="icaloverwebdav" title="iCalendar over WebDav">
-      <desc0>iCalendar over WebDav not supported</desc0>
-      <desc1>iCalendar over WebDav partially supported</desc1>
+      <desc0>iCalendar over WebDav is not supported</desc0>
+      <desc1>iCalendar over WebDav is partially supported</desc1>
       <desc2>iCalendar over WebDav works</desc2>
       <comment></comment>
       <score>1</score>
     </element>
     <element name="caldav" title="CalDav">
-      <desc0>CalDav over WebDav not supported</desc0>
-      <desc1>CalDav over WebDav partially supported</desc1>
-      <desc2>CalDav over WebDav works</desc2>
+      <desc0>CalDav is not supported</desc0>
+      <desc1>CalDav is partially supported</desc1>
+      <desc2>CalDav works</desc2>
       <comment>not supported</comment>
       <score>0</score>
     </element>
     <element name="groupdav" title="Groupdav">
-      <desc0>Groupdav over WebDav not supported</desc0>
-      <desc1>Groupdav over WebDav partially supported</desc1>
-      <desc2>Groupdav over WebDav works</desc2>
+      <desc0>Groupdav is not supported</desc0>
+      <desc1>Groupdav is partially supported</desc1>
+      <desc2>Groupdav works</desc2>
       <comment>not supported</comment>
       <score>0</score>
     </element>
     <element name="syncml" title="SyncML">
-      <desc0>SyncML over WebDav not supported</desc0>
-      <desc1>SyncML over WebDav partially supported</desc1>
-      <desc2>SyncML over WebDav works</desc2>
+      <desc0>SyncML is not supported</desc0>
+      <desc1>SyncML is partially supported</desc1>
+      <desc2>SyncML works</desc2>
       <comment>not supported</comment>
       <score>0</score>
     </element>
@@ -509,6 +517,16 @@
       <score>2</score>
     </element>
   </section>
+  <section name="performance" title="Performance">
+    <element name="loadbalancing" title="Load balancing">
+      <desc>Can the load be splited between different computer?</desc>
+      <desc0>This software can't be loadbalancer</desc0>
+      <desc1>Part of the installation can be splited but it keeps important bottleneck</desc1>
+      <desc2>Loadblalancing just works</desc2>
+      <comment></comment>
+      <score></score>
+    </element>
+  </section>
   <section name="codequality" title="Code quality">
     <element name="remoteapi" title="Remote access API">
       <desc0>No remote remote API</desc0>
@@ -517,7 +535,7 @@
       <comment>none for Kolab2, a wish for Kolab3 exists for support of a remote procedure call infrastucture</comment>
       <score>0</score>
     </element>
-    <element name="api" title="code API">
+    <element name="api" title="unified API">
       <desc0>No API provided to extend the server, or very limited and not documented</desc0>
       <desc1>An API is provided but limited of not fully documented</desc1>
       <desc2>Well documented and complet API</desc2>

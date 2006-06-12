@@ -2,11 +2,8 @@
 <document>
   <header>
     <authors>
-      <author>
-        <email>raphael.semeteys@atosorigin.com</email>
-        <name>Raphael Semeteys</name>
-      </author>
-    </authors>
+>
+    <author><email>raphael.semeteys@atosorigin.com</email><name>Raphael Semeteys</name></author></authors>
     <dates>
       <creation></creation>
       <validation></validation>

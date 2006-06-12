@@ -2,6 +2,7 @@
 <document>
   <header>
     <authors>
+>
     </authors>
     <dates>
       <creation></creation>
@@ -121,7 +122,7 @@
         <element name="activityonfunctionalities" title="Activity on functionalities">
           <desc0>No or few new functionalities</desc0>
           <desc1>Evolution of the product driven by the core team or by user's request without any clearly explained process</desc1>
-          <desc2>Tool(s) to manage features requests, strong interaction with roadmap</desc2>
+          <desc2>Tool(s) to manage feature requests, strong interaction with roadmap</desc2>
           <score></score>
           <comment></comment>
         </element>
@@ -450,29 +451,29 @@
   <section name="standard" title="Standard support">
     <comment></comment>
     <element name="icaloverwebdav" title="iCalendar over WebDav">
-      <desc0>iCalendar over WebDav not supported</desc0>
-      <desc1>iCalendar over WebDav partially supported</desc1>
+      <desc0>iCalendar over WebDav is not supported</desc0>
+      <desc1>iCalendar over WebDav is partially supported</desc1>
       <desc2>iCalendar over WebDav works</desc2>
       <comment></comment>
       <score></score>
     </element>
     <element name="caldav" title="CalDav">
-      <desc0>CalDav not supported</desc0>
-      <desc1>CalDav partially supported</desc1>
+      <desc0>CalDav is not supported</desc0>
+      <desc1>CalDav is partially supported</desc1>
       <desc2>CalDav works</desc2>
       <comment></comment>
       <score></score>
     </element>
     <element name="groupdav" title="Groupdav">
-      <desc0>Groupdav not supported</desc0>
-      <desc1>Groupdav partially supported</desc1>
+      <desc0>Groupdav is not supported</desc0>
+      <desc1>Groupdav is partially supported</desc1>
       <desc2>Groupdav works</desc2>
       <comment></comment>
       <score></score>
     </element>
     <element name="syncml" title="SyncML">
-      <desc0>SyncML not supported</desc0>
-      <desc1>SyncML partially supported</desc1>
+      <desc0>SyncML is not supported</desc0>
+      <desc1>SyncML is partially supported</desc1>
       <desc2>SyncML works</desc2>
       <comment></comment>
       <score></score>
@@ -534,7 +535,7 @@
       <comment></comment>
       <score></score>
     </element>
-    <element name="api" title="code API">
+    <element name="api" title="unified API">
       <desc0>No API provided to extend the server, or very limited and not documented</desc0>
       <desc1>An API is provided but limited of not fully documented</desc1>
       <desc2>Well documented and complet API</desc2>
