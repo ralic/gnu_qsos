@@ -1,4 +1,4 @@
-# $Id: Document.pm,v 1.19 2006/05/19 10:32:51 goneri Exp $
+# $Id: Document.pm,v 1.20 2006/06/14 12:23:43 goneri Exp $
 #
 #  Copyright (C) 2006 Atos Origin 
 #
@@ -64,11 +64,11 @@ sub _getsectionbyname {
     return;
   }
   if (!exists $self->{section}->{$name}) {
-    print "ERR: no section called $name\n";
+    print "ERR: no section called $name in $self->{file}\n";
     return;
   }
   if (ref $self->{section}->{$name} ne 'HASH') {
-    croak ("Section `$name' is not correcly initialised");
+    croak ("Section `$name' is not correcly initialised in $self->{file}");
     return;
   }
 
@@ -102,7 +102,7 @@ sub _pushElem {
   };
 
   if (exists ($self->{section}->{$elt->atts->{name}})) {
-    print "ERR: Section name ".$elt->atts->{name}." already defined in document!\n";
+    die "ERR: Section name ".$elt->atts->{name}." already defined in document $self->{file}!\n";
   }
   $self->{section}->{$elt->atts->{name}} = $h;
 }
@@ -169,7 +169,8 @@ sub setkeydesc {
   $numdesc = '' if ($numdesc !~ /^(|0|1|2)$/);
 
   $desc = '' if (! defined $desc);
-  my $desc_ref = $self->_getsectionbyname($name)->{"desc_ref".$numdesc};
+  my $elt = $self->_getsectionbyname($name);
+  my $desc_ref = $elt->{"desc_ref".$numdesc};
   return unless ($desc_ref);
   if (!$desc_ref) { # no existing <desc></desc>, i create it
     $desc_ref = $self->_getsectionbyname($name)->{"elt"}->insert_new_elt ('desc');
@@ -192,7 +193,8 @@ sub setkeycomment {
 sub getkeycomment {
   my ($self, $name) = @_;
 
-  my $comment_ref = $self->_getsectionbyname($name)->{"comment_ref"};
+  my $elt = $self->_getsectionbyname($name);
+  my $comment_ref = $elt->{"comment_ref"};
 
   return unless ($comment_ref);
   $comment_ref->text();
@@ -212,7 +214,8 @@ sub setkeyscore {
 sub getkeyscore {
   my ($self, $name) = @_;
 
-  my $score_ref = $self->_getsectionbyname($name)->{"score_ref"};
+  my $elt = $self->_getsectionbyname($name);
+  my $score_ref = $elt->{"score_ref"};
 
   return unless ($score_ref);
   $score_ref->text();
@@ -222,7 +225,9 @@ sub getkeyscore {
 sub getkeytitle {
   my ($self, $name) = @_;
 
-  my $reftitle = $self->_getsectionbyname($name)->{"elt"};
+  my $elt = $self->_getsectionbyname($name);
+  return unless $elt;
+  my $reftitle = $elt->{"elt"};
   return unless($reftitle);
   
   $reftitle->att('title');
@@ -233,7 +238,8 @@ sub setkeytitle {
   my ($self, $name, $title) = @_;
 
   $title = '' unless $title;
-  my $reftitle = $self->_getsectionbyname($name)->{"elt"};
+  my $elt = $self->_getsectionbyname($name);
+  my $reftitle = $elt->{"elt"};
   return unless ($reftitle);
   $reftitle->set_att( title => $title);
 
