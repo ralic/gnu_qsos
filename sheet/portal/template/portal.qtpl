@@ -19,7 +19,7 @@
     <qsosappfamily></qsosappfamily>
     <qsosspecificformat></qsosspecificformat>
   </header>
-  <include section="global">
+  <include section="global"/>
   <section name="portalComposant" title="Portal Composant">
     <comment></comment>
     <desc></desc>
