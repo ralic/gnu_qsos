@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document>
+  <header>
+    <authors>
+    </authors>
+    <dates>
+      <creation></creation>
+      <validation></validation>
+    </dates>
+    <language>en</language>
+    <appname></appname>
+    <release></release>
+    <licenseid></licenseid>
+    <licensedesc></licensedesc>
+    <url></url>
+    <desc></desc>
+    <demourl></demourl>
+    <qsosformat>1.6</qsosformat>
+    <qsosappfamily></qsosappfamily>
+    <qsosspecificformat></qsosspecificformat>
+  </header>
+  <include section="global"/>
+  <section name="tools" title="Tools">
+    <desc>This list is just a list. For further information about a tool please check before if a standalone QSOS sheet exists (e.g: webmail)</desc>
+    <element name="calendar" title="Calendar">
+      <desc0></desc0>
+      <desc1></desc1>
+      <desc2></desc2>
+      <score></score>
+      <comment></comment>
+    </element>
+    <element name="contactmanager" title="Contact Manager">
+      <desc0></desc0>
+      <desc1></desc1>
+      <desc2></desc2>
+      <score></score>
+      <comment></comment>
+    </element>
+    <element name="taskmanager" title="Task Manager">
+      <desc0></desc0>
+      <desc1></desc1>
+      <desc2></desc2>
+      <score></score>
+      <comment></comment>
+    </element>
+    <element name="addressbook" title="Addressbook">
+      <desc0></desc0>
+      <desc1></desc1>
+      <desc2></desc2>
+      <score></score>
+      <comment></comment>
+    </element>
+    <element name="instantmessager" title="Instant Messager">
+      <desc0></desc0>
+      <desc1></desc1>
+      <desc2></desc2>
+      <score></score>
+      <comment></comment>
+    </element>
+    <element name="wiki" title="Wiki">
+      <desc0></desc0>
+      <desc1></desc1>
+      <desc2></desc2>
+      <score></score>
+      <comment></comment>
+    </element>
+    <element name="cms" title="CMS feature">
+      <desc>Content Manager System (Web publishing). Since the CMS world is very vast. It's hard to define where it begin. Please have a look on the CMS sheet for further information.</desc>
+      <desc0></desc0>
+      <desc1></desc1>
+      <desc2></desc2>
+      <score></score>
+      <comment></comment>
+    </element>
+  </section>
+
+
+  <section name="technical" name="technical">
+    <element name="codemodularity" title="Code modularity">
+      <element name="remoteapi" title="Remote access API">
+	<desc0>No remote remote API</desc0>
+	<desc1>remote API (SOAP, XML/RPC, REST) exists but is limited or buggy</desc1>
+	<desc2>powerful remote API (SOAP, XML/RPC, REST) provided</desc2>
+	<comment></comment>
+	<score></score>
+      </element>
+      <element name="api" title="unified API">
+	<desc0>No unified API provided to extend the server, or very limited and not documented</desc0>
+	<desc1>An API is provided but limited of not fully documented</desc1>
+	<desc2>Well documented and complet API</desc2>
+	<comment></comment>
+	<score></score>
+      </element>
+    </element>
+  </section>
+</document>

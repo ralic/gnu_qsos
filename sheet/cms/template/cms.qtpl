@@ -1,0 +1,430 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document>
+  <header>
+    <authors>
+    </authors>
+    <dates>
+      <creation></creation>
+      <validation></validation>
+    </dates>
+    <language>en</language>
+    <appname></appname>
+    <release></release>
+    <licenseid></licenseid>
+    <licensedesc></licensedesc>
+    <url></url>
+    <desc></desc>
+    <demourl></demourl>
+    <qsosformat>1.6</qsosformat>
+    <qsosappfamily>cms</qsosappfamily>
+    <qsosspecificformat></qsosspecificformat>
+  </header>
+  <include section="global"/>
+  <section name="contentimportation" title="Content importation">
+    <comment>This section describe the different way avaible to import content in the system.</comment>
+    <element name="metadata" title="Meta data">
+      <comment>Meta data are infromation related to a document like (author, copyright holder, ...)</comment>
+      <element name="keyword" title="Key word support">
+        <desc>Metadata are all the specific key work that can be attached to a document (e.g: sun, holydays, summer for a picture from your last holydays)</desc>
+        <desc0>Can't add specific key word</desc0>
+        <desc1>Key word can be add but with limitation: limited list, no easy to way extend the list</desc1>
+        <desc2>Key word power are easy to add extend</desc2>
+        <comment></comment>
+        <score></score>
+      </element>
+      <element name="hierarchicalclassification" title="Hierarchical Classification">
+        <desc>Ability to do a classication in a predesigned hierarchy</desc>
+        <desc0>This feature doesn't exist</desc0>
+        <desc1>The feature exist but is limited.</desc1>
+        <desc2>A new document can quickly be registered in the hierarchy</desc2>
+        <comment></comment>
+        <score></score>
+      </element>
+    </element>
+    <element name="importformatsupported" title="File format supported during importation">
+      <desc>Supported means that the internal engine is able to read or parse file content to create preview file or find key words</desc>
+      <element name="importtext" title="text formats">
+        <element name="importformathtml" title="HTML files">
+          <desc></desc>
+          <desc0>not supported</desc0>
+          <desc1>partialy (buggy or limited feature)</desc1>
+          <desc2>fully supported</desc2>
+          <comment></comment>
+          <score></score>
+        </element>
+        <element name="importformatrtf" title="RTF (Rich Text Format)">
+          <desc></desc>
+          <desc0>not supported</desc0>
+          <desc1>partialy (buggy or limited feature)</desc1>
+          <desc2>fully supported</desc2>
+          <comment></comment>
+          <score></score>
+        </element>
+        <element name="importformatcsv" title="CSV">
+          <desc></desc>
+          <desc0>not supported</desc0>
+          <desc1>partialy (buggy or limited feature)</desc1>
+          <desc2>fully supported</desc2>
+          <comment></comment>
+          <score></score>
+        </element>
+        <element name="importformatxml" title="XML files">
+          <desc></desc>
+          <desc0>not supported</desc0>
+          <desc1>partialy (buggy or limited feature)</desc1>
+          <desc2>fully supported</desc2>
+          <comment></comment>
+          <score></score>
+        </element>
+        <element name="importformatopenoffice" title="OpenOffice files">
+          <desc>Staroffice and Openoffice document before release 2.0</desc>
+          <desc0>not supported</desc0>
+          <desc1>partialy (buggy or limited feature)</desc1>
+          <desc2>fully supported</desc2>
+          <comment></comment>
+          <score></score>
+          <element name="importformatopendocument" title="Opendocument files">
+            <desc>Openoffice and others</desc>
+            <desc0>not supported</desc0>
+            <desc1>partialy (buggy or limited feature)</desc1>
+            <desc2>fully supported</desc2>
+            <comment></comment>
+            <score></score>
+          </element>
+          <element name="importformatooo" title="MS Office files">
+            <desc></desc>
+            <desc0>not supported</desc0>
+            <desc1>partialy (buggy or limited feature)</desc1>
+            <desc2>fully supported</desc2>
+            <comment></comment>
+            <score></score>
+          </element>
+        </element>
+        <element name="importpicutre" title="picture formats">
+          <element name="importcommonpictureformat" title="common file format">
+            <desc>Format are: jpg, gif, png, bmp, tiff, xpm, </desc>
+            <desc0>not supported</desc0>
+            <desc1>partialy (buggy or limited feature)</desc1>
+            <desc2>fully supported</desc2>
+            <comment></comment>
+            <score></score>
+          </element>
+          <element name="importvectorialformat" title="common vectorial format">
+            <desc>Format are: wmf, svg</desc>
+            <desc0>not supported</desc0>
+            <desc1>partialy (buggy or limited feature)</desc1>
+            <desc2>fully supported</desc2>
+            <comment></comment>
+            <score></score>
+          </element>
+          <element name="importcommercialpcitureformat" title="commercial formats">
+            <desc>Format are: psp (PaintShopPro), psd (Photopshop)</desc>
+            <desc0>not supported</desc0>
+            <desc1>partialy (buggy or limited feature)</desc1>
+            <desc2>fully supported</desc2>
+            <comment></comment>
+            <score></score>
+          </element>
+        </element>
+      </element>
+    </element>
+  </section>
+  <section name="internalprocessing" title="Internal processing">
+    <element name="internalcapability" title="Capability">
+      <element name="documentcrossreference" title="Cross reference">
+        <desc></desc>
+        <desc0></desc0>
+        <desc1></desc1>
+        <desc2></desc2>
+        <comment></comment>
+        <score></score>
+      </element>
+      <element name="documentranking" title="Document ranking">
+        <desc>If a document have a good ranking it will be on the top of the list during searchs. The ranking is determined by a list of parameter like date of creation or amount of recent access to the file.</desc>
+        <desc0>Search are not ordered or the order</desc0>
+        <desc1>Limited, at best, just some documents are correctly sorted, the rest is hidden in the mass (about 1/5 document correctly ordered).</desc1>
+        <desc2>Powerful ranking tool. Most important documents are on the top of the list (4/5 documents correctly sorted).</desc2>
+        <comment></comment>
+        <score></score>
+      </element>
+      <element name="filemanipulation" title="File manipulation">
+        <element name="previewcreation" title="Preview creation">
+          <desc>Please keep in mind that here we just evaluate the object creation (does it work or not). We ignore how the results are published (e.g: poor visiblity).</desc>
+          <element name="picturepreview" title="Picture preview">
+            <desc0>The software can't create picture preview</desc0>
+            <desc1>The software create picture preview for all the major formats (jpg, png, bmp, gif)</desc1>
+            <desc2>The software can create preview for more than 10 picutres formats</desc2>
+            <comment></comment>
+            <score></score>
+          </element>
+          <element name="odtpreview" title="OpenOffice files preview">
+            <desc0>The feature doesn't exist</desc0>
+            <desc1>Work fine for at last odt files</desc1>
+            <desc2>Work fine for the majority of the formats</desc2>
+            <comment></comment>
+            <score></score>
+          </element>
+          <element name="mswordpreview" title="MS Office files preview">
+            <desc0>The feature doesn't exist</desc0>
+            <desc1>Work fine for at last doc files</desc1>
+            <desc2>Work fine for the majority of the formats</desc2>
+            <comment></comment>
+            <score></score>
+          </element>
+          <element name="videopreview" title="Video preview">
+            <desc>Please keep in mind that DRM protected file can't be load without official from its manifacturer. Because of this limitation, we prefere to ignore these files in this evaluation. Preview could be a little preview movie (e.g: in flash format) or just a picture.</desc>
+            <desc0>The feature doesn't exist</desc0>
+            <desc1>The software doesn't support the majority of the files</desc1>
+            <desc2>The software can create preview for a large amount of files</desc2>
+            <comment></comment>
+            <score></score>
+          </element>
+        </element>
+        <element name="compressedfilesbrowing" title="Compressed files browsing">
+          <element name="zipfilesprowsing" title="ZIP files">
+            <desc>zip files</desc>
+            <desc0>The engine see zip file as opaque binary</desc0>
+            <desc1>The engine can browse zip archive with limitation (need of a specific action from the use, content not indexed, no keyword can by attached to its content).</desc1>
+            <desc2>Zip archive are seen like common folder.</desc2>
+            <comment></comment>
+            <score></score>
+          </element>
+          <element name="rarfilesprowsing" title="RAR files">
+            <desc>rar files</desc>
+            <desc0>The engine see rar file as opaque binary</desc0>
+            <desc1>The engine can browse rar archive with limitation (need of a specific action from the use, content not indexed, no keyword can by attached to its content).</desc1>
+            <desc2>Rar archive are seen like common folder.</desc2>
+            <comment></comment>
+            <score></score>
+          </element>
+          <element name="tarfilesprowsing" title="TAR files">
+            <desc>tar.gz, tar.bz2 and tar.Z archives</desc>
+            <desc0>The engine see tar file as opaque binary</desc0>
+            <desc1>The engine can browse tar archive with limitation (need of a specific action from the use, content not indexed, no keyword can by attached to its content).</desc1>
+            <desc2>Tarball archive are seen like common folder.</desc2>
+            <comment></comment>
+            <score></score>
+          </element>
+        </element>
+      </element>
+    </element>
+    <element name="publishing" title="Publishing">
+      <element name="editoriable" title="Editorialibilite!">
+        <desc></desc>
+        <desc0></desc0>
+        <desc1></desc1>
+        <desc2></desc2>
+        <comment></comment>
+        <score></score>
+      </element>
+    </element>
+  </section>
+  <section name="workprocess" title="Work Process">
+    <element name="editing" title="Edition tools">
+      <element name="journalisedchanges" title="Journalised Changes">
+        <desc0>No revision control system exist.</desc0>
+        <desc1>Every saved document are archived. Go back to an old revision need an important amount of work.</desc1>
+        <desc2>Every change done with the internal editor are logged. It's easy to come back to an old revision of the document from another user.</desc2>
+        <comment></comment>
+        <score></score>
+      </element>
+      <element name="editwithstandalonetools" title="Standalone edition tools">
+        <desc0>In oder to edit a document the user use the official tool.</desc0>
+        <desc1>It's possible to use a remote stand alone tool to edit documents.</desc1>
+        <desc2>All common feature are supported by a last one stand alone tool.</desc2>
+        <comment></comment>
+        <score></score>
+      </element>
+    </element>
+    <element name="workflow" title="Workflow">
+      <element name="workflowlock" title="Lock">
+        <desc>Ability to lock file avoid data lost or synchronization issues</desc>
+        <desc0>The feature doesn't exist</desc0>
+        <desc1>The feature just exist</desc1>
+        <desc2>The feature exist, administrator can quickly unlock a file from an user. A time out system exists to unlock file after a certain amount of time.</desc2>
+        <comment></comment>
+        <score></score>
+      </element>
+      <element name="workflowstep" title="step by step workflow">
+        <desc></desc>
+        <desc0></desc0>
+        <desc1></desc1>
+        <desc2></desc2>
+        <comment></comment>
+        <score></score>
+      </element>
+      <element name="workflowbpel" title="BPEL support">
+        <desc></desc>
+        <desc0></desc0>
+        <desc1></desc1>
+        <desc2></desc2>
+        <comment></comment>
+        <score></score>
+      </element>
+    </element>
+    <!-- What doest it mean exactly?
+    <element name="groupwareintegration" title="Groupware integration">
+      <desc></desc>
+      <desc0></desc0>
+      <desc1></desc1>
+      <desc2></desc2>
+      <comment>
+      </comment>
+	<score></score>
+    </element> -->
+    <element name="spellckecer" title="Groupware integration">
+      <desc0>no spell checker availble or it's just based on a too limited dictionary that make it being a wast of time</desc0>
+      <desc1>working dictionnary but limited (e.g: grammar not included, false positive, hard to extend)</desc1>
+      <desc2>Powerful dictionary</desc2>
+      <comment></comment>
+      <score></score>
+    </element>
+  </section>
+  <section name="architecture" title="Architecture">
+    <element name="security" title="Security">
+      <element name="authentifaction" title="Authentification Backend">
+        <element name="authenbackendldap" title="LDAP">
+          <desc0>No LDAP based authentification availble</desc0>
+          <desc1>LDAP availble but limited (e.g: group mapping limited, etc)</desc1>
+          <desc2>LDAP is one of the recommended authentification backend</desc2>
+          <comment></comment>
+          <score></score>
+        </element>
+        <element name="authenbackendad" title="Active Directory">
+          <desc0>No Active Directory based authentification availble</desc0>
+          <desc1>Active Directory availble but limited (e.g: group mapping limited, etc)</desc1>
+          <desc2>Active Directory is one of the recommended authentification backend</desc2>
+          <comment></comment>
+          <score></score>
+        </element>
+        <element name="authenbackenddb" title="data base">
+          <desc>Here we do not attach importance on supported data bases, please see the storage section</desc>
+          <desc0>No data base base authentification availble</desc0>
+          <desc1>Data base availble but limited (e.g: group mapping limited, etc)</desc1>
+          <desc2>Data base is one of the recommended authentification backend</desc2>
+          <comment></comment>
+          <score></score>
+        </element>
+      </element>
+      <element name="signaturemechansim" title="Signing">
+        <desc>Is possible to create digital cypher (e.g: GNU PGP)</desc>
+        <desc0>Feature not supported</desc0>
+        <desc1>Fetautre partialy supported</desc1>
+        <desc2>Feature fully supported</desc2>
+        <comment></comment>
+        <score></score>
+      </element>
+      <element name="digitalwatermarking" title="Digital watermarking">
+        <desc0></desc0>
+        <desc1></desc1>
+        <desc2></desc2>
+        <comment></comment>
+        <score></score>
+      </element>
+      <element name="DRM" title="DRM">
+        <desc></desc>
+        <desc0></desc0>
+        <desc1></desc1>
+        <desc2></desc2>
+        <comment></comment>
+        <score></score>
+      </element>
+      <element name="SSL" title="SSL">
+        <desc></desc>
+        <desc0></desc0>
+        <desc1></desc1>
+        <desc2></desc2>
+        <comment></comment>
+        <score></score>
+      </element>
+    </element>
+    <element name="integration" title="Integration">
+      <element name="syndication" title="Syndication">
+        <desc></desc>
+        <desc0></desc0>
+        <desc1></desc1>
+        <desc2></desc2>
+        <comment></comment>
+        <score></score>
+      </element>
+      <element name="soa" title="SOA">
+        <desc>SOA, SOAP, XML/RPC, (...) capability</desc>
+        <desc0></desc0>
+        <desc1></desc1>
+        <desc2></desc2>
+        <comment></comment>
+        <score></score>
+      </element>
+    </element>
+    <element name="storage" title="Storage">
+      <desc>Please keep in mind, that the score doesn't mean that an element is good or bad. e.g: a solution that doesn't use the filesystem for the data storage can be good. See: QSOS Method to get more details</desc>
+      <element name="filesystem" title="File System">
+        <desc>Can the solution use the file system to store data (files, description, ...). Please, descript the recommended environment.</desc>
+        <comment></comment>
+        <score></score>
+      </element>
+      <element name="database" title="Data Base">
+        <desc>No data storage available. Please, descript the recommended environment.</desc>
+        <comment></comment>
+      </element>
+      <element name="datawarehouse" title="Data Warehouse">
+        <desc>Can user create link to physical material like book or paper document?</desc>
+        <desc0>This feature doesn't exist</desc0>
+        <desc1>The feature exists with limitation (TODO)</desc1>
+        <desc2></desc2>
+        <comment></comment>
+        <score></score>
+      </element>
+    </element>
+    <element name="multisite" title="Multisite architecure">
+      <desc>Is it possible to have a different decentralised site?</desc>
+      <desc0>Server is not designed to be decentralised</desc0>
+      <desc1>Some part of the service can be decentrralised but there is still a bottleneck that limited the number of user (e.g: centralised data base)</desc1>
+      <desc2>Thanks to a powerful synchronisation system every site can by temporarly disconnected with just a service limitation interuption (e.g: read only access)</desc2>
+      <comment></comment>
+      <score></score>
+    </element>
+    <element name="loadbalancing" title="Load balancing">
+      <desc>Load balancing capability of the server.</desc>
+      <desc0>The server is not designed to support load balancing</desc0>
+      <desc1>The server support load balancing but bottleneck still exist (e.g: core software can be load balanced)</desc1>
+      <desc2>Load balancing is fully support</desc2>
+      <comment></comment>
+      <score></score>
+    </element>
+    <element name="failover" title="Fail over">
+      <desc0>Failover is at best limited</desc0>
+      <desc1>Failover works but important a lot of work (humain intervention to set up the mechanim)</desc1>
+      <desc2>Failover works fine thanks a good designed</desc2>
+      <comment></comment>
+      <score></score>
+    </element>
+  </section>
+  <section name="administration" title="Administration">
+    <element name="rights" title="Rights">
+      <element name="usersrights" title="User's rights">
+        <desc0>Feature is not supported</desc0>
+        <desc1>Feature is partialy supported</desc1>
+        <desc2>Feature is supported</desc2>
+        <comment></comment>
+        <score></score>
+      </element>
+      <element name="groupesrights" title="Group's rights">
+        <desc0>Feature is not supported</desc0>
+        <desc1>Feature is partialy supported</desc1>
+        <desc2>Feature is supported</desc2>
+        <comment></comment>
+        <score></score>
+      </element>
+      <element name="role" title="Role">
+        <desc>Can we create a virtual user with specific rights and give his rights to phyical people (e.g: the role "backup administrator" read access on the data base)</desc>
+        <desc0>The feature doesn't exist</desc0>
+        <desc1>The feature exists but is limited</desc1>
+        <desc2>The Feature is available or can easily be simulated thanks to a powerful group system</desc2>
+        <comment></comment>
+        <score></score>
+      </element>
+    </element>
+  </section>
+  <include section="webcompatibility"/>
+</document>

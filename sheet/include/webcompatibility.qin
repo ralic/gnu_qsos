@@ -1,0 +1,112 @@
+<section name="webcompatibility" title="Web compatibility">
+  <element name="webstandards" title="Standards">
+    <element name="htmlstandard" title="HTML">
+      <desc>http://validator.w3.org</desc>
+      <desc0>Page not valid (parse errors)</desc0>
+      <desc1>Page not valid with important errors (encoding mismatch)</desc1>
+      <desc2>Page not valid, but with minor errors (missing "alt" attribute, use of unknow attribute)</desc2>
+      <comment></comment>
+      <score></score>
+    </element>
+    <element name="xhtmlstandard" title="XHTML">
+      <desc>http://validator.w3.org</desc>
+      <desc0>Page not valid (parse errors)</desc0>
+      <desc1>Page not valid with important errors (encoding mismatch)</desc1>
+      <desc2>Page not valid, but with minor errors (missing "alt" attribute, use of unknow attribute)</desc2>
+      <comment></comment>
+      <score></score>
+    </element>
+    <element name="cssstandard" title="CSS">
+      <desc>http://validator.w3.org</desc>
+      <desc0>CSS doesn't or no valid not valide (parse errors)</desc0>
+      <desc1>CSS not valid with important errors (encoding mismatch)</desc1>
+      <desc2>CSS not valid, but with minor errors (missing "alt" attribute, use of unknow attribute)</desc2>
+      <comment></comment>
+      <score></score>
+    </element>
+  </element>
+  <element name="webbestpractice" title="Best Practive">
+    <desc>http://developer.apple.com/internet/webcontent/bestwebdev.htmls</desc>
+    <element name="tablepsitioning" title="Table Positioning">
+      <desc0></desc0>
+      <desc1></desc1>
+      <desc2></desc2>
+      <comment></comment>
+      <score></score>
+    </element>
+    <element name="frameuse" title="Frame use">
+      <desc>&lt;frame&gt; </desc>
+      <desc0></desc0>
+      <desc1></desc1>
+      <desc2></desc2>
+      <comment></comment>
+      <score></score>
+    </element>
+    <element name="firameuse" title="iFrame use">
+      <desc>&lt;iframe&gt; </desc>
+      <desc0></desc0>
+      <desc1></desc1>
+      <desc2></desc2>
+      <comment></comment>
+      <score></score>
+    </element>
+    <element name="cssdesignedforprintout" title="css designed for printout">
+      <desc>&lt;iframe&gt; </desc>
+      <desc0></desc0>
+      <desc1></desc1>
+      <desc2></desc2>
+      <comment></comment>
+      <score></score>
+    </element>
+    <element name="cssdesignedforprintout" title="css designed for printout">
+      <desc>&lt;iframe&gt; </desc>
+      <desc0></desc0>
+      <desc1></desc1>
+      <desc2></desc2>
+      <comment></comment>
+      <score></score>
+    </element>
+  </element>
+  <element supportedbrowser="supportedbrowser" title="Supported Browser">
+    <element name="browsermozillafirefox" title="Mozilla and Firefox">
+      <desc>Firefox > 1</desc>
+      <desc0></desc0>
+      <desc1></desc1>
+      <desc2></desc2>
+      <comment></comment>
+      <score></score>
+    </element>
+    <element name="browserkonqueror" title="Konqueror">
+      <desc>Konqueror > 3</desc>
+      <desc0></desc0>
+      <desc1></desc1>
+      <desc2></desc2>
+      <comment></comment>
+      <score></score>
+    </element>
+    <element name="browsermsie" title="MSIE">
+      <desc>MSIE > 5</desc>
+      <desc0></desc0>
+      <desc1></desc1>
+      <desc2></desc2>
+      <comment></comment>
+      <score></score>
+    </element>
+    <element name="browsersafari" title="Safari">
+      <desc>Safarie</desc>
+      <desc0></desc0>
+      <desc1></desc1>
+      <desc2></desc2>
+      <comment></comment>
+      <score></score>
+    </element>
+    <element name="browserlegacy" title="legacy browsers">
+      <desc>Legacy browser are browser outdated like MSIE4 and Netscape 4.* .</desc>
+      <desc0></desc0>
+      <desc1></desc1>
+      <desc2></desc2>
+      <comment></comment>
+      <score></score>
+    </element>
+  </element>
+</section>

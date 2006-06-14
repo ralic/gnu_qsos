@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document>
+  <header>
+    <authors>
+    </authors>
+    <dates>
+      <creation></creation>
+      <validation></validation>
+    </dates>
+    <language>en</language>
+    <appname></appname>
+    <release></release>
+    <licenseid></licenseid>
+    <licensedesc></licensedesc>
+    <url></url>
+    <desc></desc>
+    <demourl></demourl>
+    <qsosformat>1.6</qsosformat>
+    <qsosappfamily></qsosappfamily>
+    <qsosspecificformat></qsosspecificformat>
+  </header>
+  <include section="global"/>
+  <section name="composant" title="Composants of the project">
+    <comment></comment>
+    <desc>Different composant from the groupware</desc>
+    <element name="auth" title="Authentification backend">
+      <desc>Authentification backend (ldap, db, ...)</desc>
+      <comment></comment>
+    </element>
+    <element name="mail" title="Mail">
+      <desc>Mail architecture</desc>
+      <comment></comment>
+    </element>
+    <element name="storage" title="Storage backend">
+      <desc>Storage backend</desc>
+      <comment></comment>
+    </element>
+  </section>
+  <section name="administration" title="Administration GUI">
+    <comment></comment>
+    <element name="webinterface" title="Web interface">
+      <desc0>No web interface</desc0>
+      <desc1>an web interface is provided but limited</desc1>
+      <desc2>everything can be completed with the Web interface</desc2>
+      <comment></comment>
+      <score></score>
+    </element>
+    <element name="commandline" title="Console mode">
+      <desc0>Nothing</desc0>
+      <desc1>Some tools exists, but limited. No text based configuration file or not human readable (e.g: complexe XML)</desc1>
+      <desc2>Total access to the server configuration with powerful tools and well designer text configuration file</desc2>
+      <comment></comment>
+      <score></score>
+    </element>
+    <element name="standaloneadmintool" title="Stand alone admin tool">
+      <desc0>Nothing</desc0>
+      <desc1>A limited tool exist allow user to do specific operation</desc1>
+      <desc2>A powerful tool give access to every major features of the server</desc2>
+      <comment></comment>
+      <score></score>
+    </element>
+  </section>
+  <section name="groupwarecomposant" title="Supported groupware composant">
+    <comment></comment>
+    <element name="calendar" title="Calendar">
+      <desc0>no calendar provided</desc0>
+      <desc1>a calendar is provided, but leak some important features</desc1>
+      <desc2>a well integrated calendar is provided</desc2>
+      <comment></comment>
+      <score></score>
+    </element>
+    <element name="taskmanager" title="Taskmanager">
+      <desc0>no task manager provided</desc0>
+      <desc1>a task manager is provided but leak some important features</desc1>
+      <desc2>Task manager fully supported</desc2>
+      <comment></comment>
+      <score></score>
+    </element>
+    <element name="notemanager" title="Notemanager">
+      <desc0>no note manager provided</desc0>
+      <desc1>a limited note manager is provided</desc1>
+      <desc2>a well integred note manager is provided</desc2>
+      <comment></comment>
+      <score></score>
+    </element>
+    <element name="contactmanager" title="Contact manager">
+      <desc0>can't add contact in the server</desc0>
+      <desc1>contact manager exists but is limited</desc1>
+      <desc2>contact manager fully supported</desc2>
+      <comment></comment>
+      <score></score>
+    </element>
+  </section>
+  <section name="standard" title="Standard support">
+    <comment></comment>
+    <element name="icaloverwebdav" title="iCalendar over WebDav">
+      <desc0>iCalendar over WebDav is not supported</desc0>
+      <desc1>iCalendar over WebDav is partially supported</desc1>
+      <desc2>iCalendar over WebDav works</desc2>
+      <comment></comment>
+      <score></score>
+    </element>
+    <element name="caldav" title="CalDav">
+      <desc0>CalDav is not supported</desc0>
+      <desc1>CalDav is partially supported</desc1>
+      <desc2>CalDav works</desc2>
+      <comment></comment>
+      <score></score>
+    </element>
+    <element name="groupdav" title="Groupdav">
+      <desc0>Groupdav is not supported</desc0>
+      <desc1>Groupdav is partially supported</desc1>
+      <desc2>Groupdav works</desc2>
+      <comment></comment>
+      <score></score>
+    </element>
+    <element name="syncml" title="SyncML">
+      <desc0>SyncML is not supported</desc0>
+      <desc1>SyncML is partially supported</desc1>
+      <desc2>SyncML works</desc2>
+      <comment></comment>
+      <score></score>
+    </element>
+  </section>
+  <section name="supportedclients" title="Supported client">
+    <comment></comment>
+    <element name="web" title="Web client">
+      <desc0>Web interface doesn't exist</desc0>
+      <desc1>Web interface is provided but limited or need some work for its integration</desc1>
+      <desc2>Web interface directly provided with the project</desc2>
+      <comment></comment>
+      <score></score>
+    </element>
+    <element name="outlook" title="Microsoft Outlook">
+      <desc0>Microsoft Outlook not supported</desc0>
+      <desc1>Microsoft Outlook connector is provided but have some limitation</desc1>
+      <desc2>a free Microsoft Outlook connector</desc2>
+      <comment></comment>
+      <score></score>
+    </element>
+    <element name="evolution" title="Novell Evolution">
+      <desc0>Novell Evolution can't be used</desc0>
+      <desc1>Novell Evolution can be used but with some limitation</desc1>
+      <desc2>Novell Evolution fully supported</desc2>
+      <comment></comment>
+      <score></score>
+    </element>
+    <element name="kde" title="KDE">
+      <desc0>KDE PIM (Korganizer, kmail, ...) can't be used with this groupware</desc0>
+      <desc1>KDE can be used but with some limitation </desc1>
+      <desc2>Fully support of KDE</desc2>
+      <comment></comment>
+      <score></score>
+    </element>
+    <element name="ical" title="Apple iCal">
+      <desc0>Apple's iCal can't be used</desc0>
+      <desc1>Apple's iCal works but with some limitation</desc1>
+      <desc2>Apple's iCal fully supported</desc2>
+      <comment></comment>
+      <score></score>
+    </element>
+  </section>
+  <section name="performance" title="Performance">
+    <element name="loadbalancing" title="Load balancing">
+      <desc>Can the load be splited between different computer?</desc>
+      <desc0>This software can't be loadbalancer</desc0>
+      <desc1>Part of the installation can be splited but it keeps important bottleneck</desc1>
+      <desc2>Loadblalancing just works</desc2>
+      <comment></comment>
+      <score></score>
+    </element>
+  </section>
+  <section name="codequality" title="Code quality">
+    <element name="remoteapi" title="Remote access API">
+      <desc0>No remote remote API</desc0>
+      <desc1>remote API (SOAP, XML/RPC, REST) exists but is limited or buggy</desc1>
+      <desc2>powerful remote API (SOAP, XML/RPC, REST) provided</desc2>
+      <comment></comment>
+      <score></score>
+    </element>
+    <element name="api" title="unified API">
+      <desc0>No API provided to extend the server, or very limited and not documented</desc0>
+      <desc1>An API is provided but limited of not fully documented</desc1>
+      <desc2>Well documented and complet API</desc2>
+      <comment></comment>
+      <score></score>
+    </element>
+  </section>
+</document>
