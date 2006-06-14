@@ -381,9 +381,13 @@
     <desc></desc>
     <element name="standards-support" title="standards support">
       <element name="portletstandard" title="portlet s standard">y  
-			<desc0>Using no standard specification</desc0><desc1>Specification portal is not indentified</desc1><desc2>Using specification JSR-168</desc2><comment>
-				It is entirely standards-based and supports the JSR-168 portlet specification, which allows you to easily plug-in standards-compliant portlets to meet your specific portal needs. It suports too JSR-170 (Content Repository)
-			</comment><score></score></element>
+        <desc0>Using no standard specification</desc0>
+	<desc1>Specification portal is not indentified</desc1>
+	<desc2>Using specification JSR-168</desc2>
+	<comment>It is entirely standards-based and supports the JSR-168 portlet specification, which allows you to easily plug-in standards-compliant portlets to meet your specific portal needs. It suports too JSR-170 (Content Repository)
+	</comment>
+	<score></score>
+	</element>
       <element name="technologysupported" title="technology supported">
         <desc0>Not supporting any technologies</desc0>
         <desc1>likely supporting any technologies but not identified or don't work correctly</desc1>
