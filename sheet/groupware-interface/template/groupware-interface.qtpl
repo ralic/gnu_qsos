@@ -75,7 +75,7 @@
   </section>
 
 
-  <section name="technical" name="technical">
+  <section name="technical" title="technical">
     <element name="codemodularity" title="Code modularity">
       <element name="remoteapi" title="Remote access API">
 	<desc0>No remote remote API</desc0>
