@@ -1,4 +1,4 @@
-#$Id: update_sheet.sh,v 1.7 2006/06/15 13:32:32 goneri Exp $
+#$Id: update_sheet.sh,v 1.8 2006/06/15 15:05:09 goneri Exp $
 #  Copyright (C) 2006 Atos Origin 
 #
 #  Author: Gonéri Le Bouder <goneri.lebouder@atosorigin.com>
@@ -20,17 +20,19 @@
 #  This script checkout current sheet from the CVS, translate them
 #  to xhtml and upload them on a ftp server
 
-. qsos.cfg
+. qsos.cfg || exit 1
 
 createSheet () {
   FULLPATH=$@
-  FILE=`basename $@|sed s/\.qsos$/.html/`
+  HTML_FILE=`basename $@|sed s/\.qsos$/.html/`
+  QSOS_FILE=`basename $@|sed s/\.qsos$/.qsos/`
   DIR=$DESTDIR_SHEETS`dirname $@ | sed s%^.%%`
 
   mkdir -p $DIR
 
   echo converting sheet $FILE 
-  xsltproc $XSLT_QSOS $FULLPATH|sed s!%%CSS_SHEET%%!"$CSS_SHEET"! > $DIR/$FILE
+  cp $FULLPATH $DIR/$QSOS_FILE
+  xsltproc $XSLT_QSOS $FULLPATH|sed s!%%CSS_SHEET%%!"$CSS_SHEET"! > $DIR/$HTML_FILE
 }
 
 createTemplate () {
@@ -43,7 +45,6 @@ createTemplate () {
 
   
   echo converting template $FILE  to $DIR/$FILE
-
 # Caramba !
 cat $FULLPATH | perl -nle "
 if (/<include\W+section=\"(\w*)\"\W+>/) {
@@ -88,13 +89,14 @@ createIndex () {
 
 }
 
+# FIXME if mkdir failed, web site is removed...
 upload () {
 cat <<eof | lftp
 open -u $FTP_LOGIN,$FTP_PASSWD $FTP_HOST
-md $FTP_DIR_SHEETS
+mkdir -p $FTP_DIR_SHEETS
 cd $FTP_DIR_SHEETS 
 mirror -c -e -R $DESTDIR_SHEETS .
-md $FTP_DIR_TEMPLATES
+mkdir -p $FTP_DIR_TEMPLATES
 cd $FTP_DIR_TEMPLATES 
 mirror -c -e -R $DESTDIR_TEMPLATES .
 exit
