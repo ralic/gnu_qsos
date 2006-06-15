@@ -1,4 +1,4 @@
-#$Id: update_sheet.sh,v 1.8 2006/06/15 15:05:09 goneri Exp $
+#$Id: update_sheet.sh,v 1.9 2006/06/15 16:19:51 goneri Exp $
 #  Copyright (C) 2006 Atos Origin 
 #
 #  Author: Gonéri Le Bouder <goneri.lebouder@atosorigin.com>
@@ -66,14 +66,22 @@ createIndex () {
  
   echo $DIR
   rm -f $DIR/index.html
-  for i in `ls $DIR`;do
-    if [ -d $i ]; then
-      TYPE="folder"
-    else
+  for i in `ls $DIR|grep -v qsos`;do
+    echo $i
+    if [ -f "$DIR/$i" ]; then
       TYPE="sheet"
+      echo "sheet: $i"
+    else
+      echo "dossier: $i"
+      TYPE="folder"
     fi
 
-    LIST=$LIST"<li class=$TYPE>`echo $i|sed s/\.html$//` (<a href=\"$i\">view</a>) (<a href="`echo $i|sed s/\.html$/.qsos/`">sources</a>)</li>\n"
+    if [ "$TYPE" = "sheet" ]
+    then
+      LIST=$LIST"<li class=$TYPE>`echo $i|sed s/\.html$//` (<a href=\"$i\">view</a>) (<a href="`echo $i|sed s/\.html$/.qsos/`">sources</a>)</li>\n"
+    else
+      LIST=$LIST"<li class=$TYPE><a href=\"$i\">`echo $i|sed s/\.html$//`</a></li>\n"
+    fi
   done
   LIST=$LIST"</ul>\n"
   
@@ -88,7 +96,6 @@ createIndex () {
   echo index $DIR/index.html created
 
 }
-
 # FIXME if mkdir failed, web site is removed...
 upload () {
 cat <<eof | lftp
