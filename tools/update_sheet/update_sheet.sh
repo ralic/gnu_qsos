@@ -1,4 +1,4 @@
-#$Id: update_sheet.sh,v 1.6 2006/04/14 11:22:35 goneri Exp $
+#$Id: update_sheet.sh,v 1.7 2006/06/15 13:32:32 goneri Exp $
 #  Copyright (C) 2006 Atos Origin 
 #
 #  Author: Gonéri Le Bouder <goneri.lebouder@atosorigin.com>
@@ -25,17 +25,42 @@
 createSheet () {
   FULLPATH=$@
   FILE=`basename $@|sed s/\.qsos$/.html/`
-  DIR=$DESTDIR`dirname $@ | sed s%^.%%`
+  DIR=$DESTDIR_SHEETS`dirname $@ | sed s%^.%%`
 
   mkdir -p $DIR
 
-  echo converting $FILE 
-  xsltproc $XSLT $FULLPATH|sed s!%%CSS_SHEET%%!"$CSS_SHEET"! > $DIR/$FILE
+  echo converting sheet $FILE 
+  xsltproc $XSLT_QSOS $FULLPATH|sed s!%%CSS_SHEET%%!"$CSS_SHEET"! > $DIR/$FILE
+}
+
+createTemplate () {
+  FULLPATH=$@
+  HTML_FILE=`basename $@|sed s/\.qtpl$/.html/`
+  QSOS_FILE=`basename $@|sed s/\.qtpl$/.qsos/`
+  DIR=$DESTDIR_TEMPLATES
+
+  mkdir -p $DIR"/"
+
+  
+  echo converting template $FILE  to $DIR/$FILE
+
+# Caramba !
+cat $FULLPATH | perl -nle "
+if (/<include\W+section=\"(\w*)\"\W+>/) {
+        \$f = \"$INCLUDE_DIR/\$1.qin\";
+        if (-f \$f && (open FILE,\"<\$f\")) {
+                foreach (<FILE>) {chomp;print};
+        } else { die \"can not open \$f\" }
+} else {print}" > $DIR/$QSOS_FILE
+
+xsltproc $XSLT_QTPL $DIR/$QSOS_FILE|sed s!%%CSS_SHEET%%!"$CSS_SHEET"! - > $DIR/$HTML_FILE
 }
 
 createIndex () {
   local i
-  DIR=$@
+  TARGET=$1
+  DIR=$2
+  echo "$TYPE, $DIR"
   LIST="\n<ul class=\"downloads\">"
  
   echo $DIR
@@ -47,11 +72,11 @@ createIndex () {
       TYPE="sheet"
     fi
 
-    LIST=$LIST"<li class=$TYPE><a href=\"$i\">`echo $i|sed s/\.html$//`</a></li>\n"
+    LIST=$LIST"<li class=$TYPE>`echo $i|sed s/\.html$//` (<a href=\"$i\">view</a>) (<a href="`echo $i|sed s/\.html$/.qsos/`">sources</a>)</li>\n"
   done
   LIST=$LIST"</ul>\n"
   
-  cat $TEMPLATES_DIR/index.tpl| \
+  cat $HTMLTEMPLATES_DIR/index_$TARGET.tpl| \
   sed s!%%CSS_LISTING%%!"$CSS_LISTING"!| \
   sed s!%%LIST%%!"$LIST"!| \
   sed s!%%DIRECTORY%%!"$DIR"! \
@@ -66,8 +91,12 @@ createIndex () {
 upload () {
 cat <<eof | lftp
 open -u $FTP_LOGIN,$FTP_PASSWD $FTP_HOST
-cd $FTP_DIR 
-mirror -c -e -R $DESTDIR .
+md $FTP_DIR_SHEETS
+cd $FTP_DIR_SHEETS 
+mirror -c -e -R $DESTDIR_SHEETS .
+md $FTP_DIR_TEMPLATES
+cd $FTP_DIR_TEMPLATES 
+mirror -c -e -R $DESTDIR_TEMPLATES .
 exit
 eof
 
@@ -75,19 +104,27 @@ eof
 
 LOCALDIR=`pwd`
 mkdir -p $CVS_LOCAL_DIR
-mkdir -p $DESTDIR
+mkdir -p $DESTDIR_SHEETS
 
 cd $CVS_LOCAL_DIR
 cvs -z3 -d$CVS_ROOT co -P $CVS_MODULE
 cd $CVS_LOCAL_DIR/$CVS_MODULE
-for i in `find  -type f |grep -v template|grep qsos$`; do
+
+for i in `find -name '*.qtpl'`; do
+  createTemplate $i
+done
+
+
+for i in `find  -name '*.qsos'`; do
   createSheet $i
 done
 
-cd $DESTDIR
+cd $DESTDIR_SHEETS
 for i in `find  -type d`; do
-  createIndex $i
+  createIndex "sheet" $i
 done
+
+createIndex "template" $DESTDIR_TEMPLATES 
 
 if [ "$FTP_UPLOAD" = "yes" ]
 then
