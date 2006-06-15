@@ -19,7 +19,7 @@
     <qsosappfamily></qsosappfamily>
     <qsosspecificformat></qsosspecificformat>
   </header>
-  <include section="global"/>
+  <include section="generic"/>
   <section name="composant" title="Composants of the project">
     <comment></comment>
     <desc>Different composant from the groupware</desc>

@@ -19,7 +19,7 @@
     <qsosappfamily>cms</qsosappfamily>
     <qsosspecificformat></qsosspecificformat>
   </header>
-  <include section="global"/>
+  <include section="generic"/>
   <section name="contentimportation" title="Content importation">
     <comment>This section describe the different way avaible to import content in the system.</comment>
     <element name="metadata" title="Meta data">

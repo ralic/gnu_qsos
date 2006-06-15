@@ -19,7 +19,7 @@
     <qsosappfamily></qsosappfamily>
     <qsosspecificformat></qsosspecificformat>
   </header>
-  <include section="global"/>
+  <include section="generic"/>
   <section name="rdbmsfeatures" title="RDBMS features">
     <desc>Standard RDBMS features</desc>
     <element name="sqlcompliance" title="SQL compliance">

@@ -19,7 +19,7 @@
     <qsosappfamily>Word processor</qsosappfamily>
     <qsosspecificformat>1</qsosspecificformat>
   </header>
-  <include section="global"/>
+  <include section="generic"/>
   <section name="standardfunctionalities" title="Standard functionalities">
     <desc>Basic functionalities of a word processor</desc>
     <element name="general" title="General">
