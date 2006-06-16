@@ -1,5 +1,5 @@
 /*
-**  $Id: RadarAction.java,v 1.1 2006/06/16 14:16:35 goneri Exp $
+**  $Id: RadarAction.java,v 1.2 2006/06/16 14:49:57 goneri Exp $
 **
 **  Copyright (C) 2006 ESME SUDRIA ( www.esme.fr ) 
 **
@@ -53,7 +53,7 @@ public class RadarAction extends Action
 		
 		setText("specialDisplay@Ctrl+d"); //$NON-NLS-1$
 		setToolTipText(Messages.getString("RadarAction.toolTipTextRadar")); //$NON-NLS-1$
-		setImageDescriptor( ImageDescriptor.createFromFile(null,"images/icons/special_display.png")); //$NON-NLS-1$
+		setImageDescriptor( ImageDescriptor.createFromFile(null,"share/icons/special_display.png")); //$NON-NLS-1$
 	}
 	
 	/* (non-Javadoc)

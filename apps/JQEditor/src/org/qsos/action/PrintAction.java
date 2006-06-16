@@ -1,5 +1,5 @@
 /*
-**  $Id: PrintAction.java,v 1.1 2006/06/16 14:16:35 goneri Exp $
+**  $Id: PrintAction.java,v 1.2 2006/06/16 14:49:57 goneri Exp $
 **
 **  Copyright (C) 2006 ESME SUDRIA ( www.esme.fr ) 
 **
@@ -77,7 +77,7 @@ public class PrintAction extends Action
 		
 		setText("Create@Ctrl+p"); //$NON-NLS-1$
 		setToolTipText(Messages.getString("PrintAction.toolTipTextPrint")); //$NON-NLS-1$
-		setImageDescriptor( ImageDescriptor.createFromFile(null,"images/icons/printer.png")); //$NON-NLS-1$
+		setImageDescriptor( ImageDescriptor.createFromFile(null,"share/icons/printer.png")); //$NON-NLS-1$
 	}
 	
 	/* (non-Javadoc)

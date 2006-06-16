@@ -1,5 +1,5 @@
 /*
-**  $Id: ReinitializeFieldsAction.java,v 1.1 2006/06/16 14:16:35 goneri Exp $
+**  $Id: ReinitializeFieldsAction.java,v 1.2 2006/06/16 14:49:57 goneri Exp $
 **
 **  Copyright (C) 2006 ESME SUDRIA ( www.esme.fr ) 
 **
@@ -71,8 +71,8 @@ public class ReinitializeFieldsAction extends Action
 		setText("Create@Ctrl+r"); //$NON-NLS-1$
 		setToolTipText(Messages.getString("ReinitializeFieldsAction.toolTipTextReInitialize")); //$NON-NLS-1$
 		
-		setImageDescriptor( ImageDescriptor.createFromFile(null,"images/icons/reinitialize.png")); //$NON-NLS-1$
-		//setImageDescriptor( ImageDescriptor.createFromURL(getClass().getResource("/images/icons/reinitialize.png")));
+		setImageDescriptor( ImageDescriptor.createFromFile(null,"share/icons/reinitialize.png")); //$NON-NLS-1$
+		//setImageDescriptor( ImageDescriptor.createFromURL(getClass().getResource("/share/icons/reinitialize.png")));
 		
 	}
 	

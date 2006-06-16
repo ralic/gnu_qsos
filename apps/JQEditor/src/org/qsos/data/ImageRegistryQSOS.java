@@ -1,5 +1,5 @@
 /*
-**  $Id: ImageRegistryQSOS.java,v 1.1 2006/06/16 14:16:35 goneri Exp $
+**  $Id: ImageRegistryQSOS.java,v 1.2 2006/06/16 14:49:57 goneri Exp $
 **
 **  Copyright (C) 2006 ESME SUDRIA ( www.esme.fr ) 
 **
@@ -69,19 +69,19 @@ public class ImageRegistryQSOS extends ImageRegistry
 		
 		try 
 		{
-			image_qsos = new Image( null, new FileInputStream("images/image_QSOS_200.png"));
+			image_qsos = new Image( null, new FileInputStream("share/image_QSOS_200.png"));
 		} catch (FileNotFoundException e) 
 		{
-			System.out.println("Error loading: images/qsos.gif");
+			System.out.println("Error loading: share/qsos.gif");
 		}
 		
 		
 		try 
 		{
-			icon_penguin_alone_QSOS_16 = new Image( null, new FileInputStream("images/icons/penguin_alone.bmp"));
+			icon_penguin_alone_QSOS_16 = new Image( null, new FileInputStream("share/icons/penguin_alone.bmp"));
 		} catch (FileNotFoundException e) 
 		{
-			System.out.println("Error loading: src/images/icons/penguin_alone.bmp");
+			System.out.println("Error loading: src/share/icons/penguin_alone.bmp");
 		}
 		
 		

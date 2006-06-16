@@ -1,5 +1,5 @@
 /*
-**  $Id: JQConst.java,v 1.1 2006/06/16 14:16:35 goneri Exp $
+**  $Id: JQConst.java,v 1.2 2006/06/16 14:49:57 goneri Exp $
 **
 **  Copyright (C) 2006 ESME SUDRIA ( www.esme.fr ) 
 **
@@ -97,9 +97,9 @@ public class JQConst
 	public static final double RADAR_AXIS_LABEL_GAP = 0.05;
 	public static final double RADAR_HEAD_PERCENT = 0.03;
 	public static final double RADAR_INTERIOR_GAP = 0.25;
-	public static final String RADAR_SPIDERWEB_4 = "images/Radar/radar4.png"; 
-	public static final String RADAR_SPIDERWEB_5 = "images/Radar/radar5.png";
-	public static final String RADAR_SPIDERWEB_6 = "images/Radar/radar6.png"; 
-	public static final String RADAR_SPIDERWEB_7 = "images/Radar/radar7.png";
+	public static final String RADAR_SPIDERWEB_4 = "share/Radar/radar4.png"; 
+	public static final String RADAR_SPIDERWEB_5 = "share/Radar/radar5.png";
+	public static final String RADAR_SPIDERWEB_6 = "share/Radar/radar6.png"; 
+	public static final String RADAR_SPIDERWEB_7 = "share/Radar/radar7.png";
 
 }

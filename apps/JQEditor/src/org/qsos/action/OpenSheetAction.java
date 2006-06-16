@@ -1,5 +1,5 @@
 /*
-**  $Id: OpenSheetAction.java,v 1.1 2006/06/16 14:16:35 goneri Exp $
+**  $Id: OpenSheetAction.java,v 1.2 2006/06/16 14:49:57 goneri Exp $
 **
 **  Copyright (C) 2006 ESME SUDRIA ( www.esme.fr ) 
 **
@@ -89,7 +89,7 @@ public class OpenSheetAction extends Action
 		window = w;
 		setText("Open@Ctrl+O"); //$NON-NLS-1$
 		setToolTipText(Messages.getString("OpenSheetAction.toolTipTextOpen")); //$NON-NLS-1$
-		setImageDescriptor( ImageDescriptor.createFromFile(null,"images/icons/open_folder_24.ico"));		 //$NON-NLS-1$
+		setImageDescriptor( ImageDescriptor.createFromFile(null,"share/icons/open_folder_24.ico"));		 //$NON-NLS-1$
 	}
 	
 	/* (non-Javadoc)

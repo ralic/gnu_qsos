@@ -1,5 +1,5 @@
 /*
-**  $Id: SaveSheetAction.java,v 1.1 2006/06/16 14:16:35 goneri Exp $
+**  $Id: SaveSheetAction.java,v 1.2 2006/06/16 14:49:57 goneri Exp $
 **
 **  Copyright (C) 2006 ESME SUDRIA ( www.esme.fr ) 
 **
@@ -68,10 +68,10 @@ public class SaveSheetAction extends Action
 	 */
 	public SaveSheetAction(JQ w)
 	{
-		super("&Save@Ctrl+s",ImageDescriptor.createFromFile(SaveSheetAction.class,"/images/icons/save.png")); //$NON-NLS-1$ //$NON-NLS-2$
+		super("&Save@Ctrl+s",ImageDescriptor.createFromFile(SaveSheetAction.class,"/share/icons/save.png")); //$NON-NLS-1$ //$NON-NLS-2$
 		
-		setImageDescriptor( ImageDescriptor.createFromFile(null,"images/icons/save.png")); //$NON-NLS-1$
-		//setDisabledImageDescriptor(ImageDescriptor.createFromFile(SaveSheetAction.class,"images/icons/save.png"));
+		setImageDescriptor( ImageDescriptor.createFromFile(null,"share/icons/save.png")); //$NON-NLS-1$
+		//setDisabledImageDescriptor(ImageDescriptor.createFromFile(SaveSheetAction.class,"share/icons/save.png"));
 
 		setToolTipText(Messages.getString("SaveSheetAction.toolTipTextSave")); //$NON-NLS-1$
 
