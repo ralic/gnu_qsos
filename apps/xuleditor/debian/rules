@@ -57,7 +57,7 @@ install: build
 
 	# Add here commands to install the package into debian/xuleditor.
 	mkdir -p $(CURDIR)/debian/qsos-xuleditor/usr/share/qsos-xuleditor
-	cp -r chrome defaults application.ini chrome.manifest xuleditor \
+	cp -r chrome defaults application.ini chrome.manifest \
 		$(CURDIR)/debian/qsos-xuleditor/usr/share/qsos-xuleditor
 	find $(CURDIR)/debian/qsos-xuleditor/usr/share/qsos-xuleditor -name LICENSE -exec rm {} \;
 	find $(CURDIR)/debian/qsos-xuleditor/usr/share/qsos-xuleditor -type f -exec chmod 644 {} \;

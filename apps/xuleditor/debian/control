@@ -2,7 +2,8 @@ Source: qsos-xuleditor
 Section: editors
 Priority: optional
 Maintainer: Gonéri Le Bouder <goneri.lebouder@atosorigin.com>
-Build-Depends: debhelper (>= 5), docbook-to-man
+Build-Depends: debhelper (>= 5)
+Build-Depends-Indep: docbook-to-man
 Standards-Version: 3.7.2
 
 Package: qsos-xuleditor
