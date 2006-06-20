@@ -1,0 +1,51 @@
+<project name="JQEditor" default="build" basedir=".">
+	<!-- project's properties -->
+	<property name="lib" value="lib"/>
+	<property name="src" value="src"/>			
+	<property name="dist" value="dist"/>
+	<property name="out" value="out"/>
+	<property name="out.classes" value="out"/>
+	<property name="out.lib" value="out"/>
+	
+	
+	<!-- clean -->
+	<target name="clean">
+		<delete dir="${out}"/>
+	</target>
+
+	<!-- init -->
+	<target name="init" depends="clean">
+		<mkdir dir="${out}"/>
+		<mkdir dir="${out.classes}"/>
+		<mkdir dir="${out.lib}"/>
+		<mkdir dir="${dist}"/>
+
+		<path id="classpath">
+			<fileset dir="${lib}">
+				<include name="*.jar" />
+			</fileset>
+		</path>
+	</target>
+
+	<!-- COMPILE -->
+	<target name="compile" depends="init" description="compil all java classes">
+	 	<javac srcdir="${src}"
+	 		   destdir="${out}">
+	 		<classpath refid="classpath" />
+	 	</javac>
+	</target>
+		
+	<!-- JAR -->
+	<target name="jar-jqeditor" depends="compile">
+		<jar destfile="${dist}/jqeditor.jar" >
+			<fileset dir="${out.classes}">
+				<include name="**"/>
+			</fileset>
+		</jar>
+	</target>
+	
+	<!-- all -->
+	<target name="all" depends="clean,compile">
+		<antcall target="jar-jqeditor"/>
+	</target>
+</project>
