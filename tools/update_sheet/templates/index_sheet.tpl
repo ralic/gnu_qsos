@@ -8,5 +8,8 @@
 <h1>Listing of QSOS:%%DIRECTORY%%</h1>
 %%LIST%%
 </div>
+<p>
+<a href="/sheets/templates/">Access to QSOS sheet templates</a>
+</p>
 </body>
 </html>
