@@ -28,7 +28,7 @@
 	</target>
 
 	<!-- COMPILE -->
-	<target name="compile" depends="init" description="compil all java classes">
+	<target name="build" depends="init" description="compil all java classes">
 	 	<javac srcdir="${src}"
 	 		   destdir="${out}">
 	 		<classpath refid="classpath" />
@@ -36,7 +36,7 @@
 	</target>
 		
 	<!-- JAR -->
-	<target name="jar-jqeditor" depends="compile">
+	<target name="jar-jqeditor" depends="build">
 		<jar destfile="${dist}/jqeditor.jar" >
 			<fileset dir="${out.classes}">
 				<include name="**"/>
@@ -45,7 +45,7 @@
 	</target>
 	
 	<!-- all -->
-	<target name="all" depends="clean,compile">
+	<target name="all" depends="clean,build">
 		<antcall target="jar-jqeditor"/>
 	</target>
 </project>
