@@ -36,24 +36,24 @@ print('<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 <ul>');
 
 if ($lang=="en") {
-print "<li><a href=\"index.php?lang=en\">Overview</a></li>
-<li><a href=\"methode.php?lang=en\">QSOS method</a></li>
-<li><a href=\"download.php?lang=en\">Download</a></li>
-<li><a href=\"license.php?lang=en\">License</a></li>
-<li><a href=\"sheets/\">QSOS Sheets</a></li>
+print "<li><a href=\"/index.php?lang=en\">Overview</a></li>
+<li><a href=\"/methode.php?lang=en\">QSOS method</a></li>
+<li><a href=\"/download.php?lang=en\">Download</a></li>
+<li><a href=\"/license.php?lang=en\">License</a></li>
+<li><a href=\"/sheets/\">QSOS Sheets</a></li>
 <li><a href=\"/download/fiches/\">Old sheets (fr)</a></li>
 <li><a href=\"/blog//\"><strong>News!</strong></a></li>
-<!--li><a href=\"contribute.php?lang=en\"><strong>Contribute</strong></a></li-->
+<!--li><a href=\"/contribute.php?lang=en\"><strong>Contribute</strong></a></li-->
 <li><a href=\"https://savannah.nongnu.org/projects/qsos/\"><strong>Project</strong></a></li>";
 } else if ($lang=="fr"){
-print "<li><a href=\"index.php?lang=fr\">Présentation</a></li>
-<li><a href=\"methode.php?lang=fr\">Méthode QSOS</a></li>
-<li><a href=\"download.php?lang=fr\">Téléchargements</a></li>
-<li><a href=\"license.php?lang=fr\">Licence</a></li>
-<li><a href=\"sheets/\">Fiches QSOS</a></li>
+print "<li><a href=\"/index.php?lang=fr\">Présentation</a></li>
+<li><a href=\"/methode.php?lang=fr\">Méthode QSOS</a></li>
+<li><a href=\"/download.php?lang=fr\">Téléchargements</a></li>
+<li><a href=\"/license.php?lang=fr\">Licence</a></li>
+<li><a href=\"/sheets/\">Fiches QSOS</a></li>
 <li><a href=\"/download/fiches/\">Anciennes fiches</a></li>
 <li><a href=\"/blog//\"><strong>News!</strong></a></li>
-<li><a href=\"contribute.php?lang=fr\"><strong>Contribuer</strong></a></li>
+<li><a href=\"/contribute.php?lang=fr\"><strong>Contribuer</strong></a></li>
 <li><a href=\"https://savannah.nongnu.org/projects/qsos/\"><strong>Project</strong></a></li>";
 }
 
