@@ -1,5 +1,5 @@
 /*
-**  $Id: RadarDialog.java,v 1.1 2006/06/16 14:16:35 goneri Exp $
+**  $Id: RadarDialog.java,v 1.2 2006/06/21 15:17:08 rpelisse Exp $
 **
 **  Copyright (C) 2006 ESME SUDRIA ( www.esme.fr ) 
 **
@@ -144,6 +144,7 @@ public class RadarDialog extends  TitleAreaDialog
 		{
 			// When you push the button a new Image of the radar is create
 			generateRadar.createRadar();
+			close();
 		}
 	}
 	
@@ -151,6 +152,7 @@ public class RadarDialog extends  TitleAreaDialog
 	public void run()
 	{
 		this.open();
+		
 	}
 
 }

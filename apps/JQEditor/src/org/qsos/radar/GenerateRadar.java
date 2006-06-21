@@ -1,5 +1,5 @@
 /*
-**  $Id: GenerateRadar.java,v 1.1 2006/06/16 14:16:35 goneri Exp $
+**  $Id: GenerateRadar.java,v 1.2 2006/06/21 15:17:08 rpelisse Exp $
 **
 **  Copyright (C) 2006 ESME SUDRIA ( www.esme.fr ) 
 **
@@ -175,7 +175,7 @@ public class GenerateRadar
 	 *
 	 *
 	 */
-	public void run(String[] Categories, double[] Scores)
+	public void run ( String[] Categories, double[] Scores)
 	{
 		if ( window.getCTabFolder().getItemCount() != 0)
 		{			
@@ -214,6 +214,7 @@ public class GenerateRadar
 
 		FormData CheckData = new FormData();
 		final CheckboxTreeViewer checkboxTreeViewer = new CheckboxTreeViewer(checkTreeComposite);
+		
 		checkboxTreeViewer.getTree().setLayoutData(CheckData);
 		CheckData.height=430;
 		CheckData.width=320;
