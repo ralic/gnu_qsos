@@ -63,7 +63,7 @@ function newFile() {
 	var fp = Components.classes["@mozilla.org/filepicker;1"]
 	.createInstance(nsIFilePicker);
 	fp.init(window, "Save the file as", nsIFilePicker.modeSave);
-	fp.appendFilter("QSOS file","*.qsos");
+	fp.appendFilter("QSOS file","*.qtpl");
 	var res = fp.show();
 	if (res == nsIFilePicker.returnOK) {
 		myDoc = new Template();
@@ -112,7 +112,7 @@ function openFile() {
     var fp = Components.classes["@mozilla.org/filepicker;1"]
             .createInstance(nsIFilePicker);
     fp.init(window, "Select a file", nsIFilePicker.modeOpen);
-    fp.appendFilter("QSOS file","*.qsos");
+    fp.appendFilter("QSOS file","*.qtpl");
     var res = fp.show();
     
     if (res == nsIFilePicker.returnOK) {
@@ -218,7 +218,7 @@ function saveFileAs() {
 	var fp = Components.classes["@mozilla.org/filepicker;1"]
 		.createInstance(nsIFilePicker);
 	fp.init(window, "Save the file as", nsIFilePicker.modeSave);
-	fp.appendFilter("QSOS file","*.qsos");
+	fp.appendFilter("QSOS file","*.qtpl");
 	var res = fp.show();
 	if (res == nsIFilePicker.returnOK) {
 		myDoc.setfilename(fp.file.path);
