@@ -16,7 +16,7 @@
     <desc></desc>
     <demourl></demourl>
     <qsosformat>1.6</qsosformat>
-    <qsosappfamily>Word processor</qsosappfamily>
+    <qsosappfamily>wordprocessor</qsosappfamily>
     <qsosspecificformat>1</qsosspecificformat>
   </header>
   <include section="generic"/>

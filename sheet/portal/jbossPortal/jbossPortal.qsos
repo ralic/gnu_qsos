@@ -16,7 +16,7 @@
     <desc>JBoss Portal provides an open source and standards-based environment for hosting and serving a portal's Web interface, publishing and managing its content, and customizing its experience</desc>
     <demourl>http://portal.demo.jboss.com/</demourl>
     <qsosformat>1.6</qsosformat>
-    <qsosappfamily>Portal and CMS tools</qsosappfamily>
+    <qsosappfamily>portal</qsosappfamily>
     <qsosspecificformat>1</qsosspecificformat>
   </header>
   <section name="generic" title="Generic section">
