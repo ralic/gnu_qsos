@@ -29,8 +29,9 @@
 
 	<!-- COMPILE -->
 	<target name="build" depends="init" description="compil all java classes">
-	 	<javac srcdir="${src}"
-	 		   destdir="${out}">
+	 	<javac 	compiler="gcj"
+			srcdir="${src}"
+	 		destdir="${out}">
 	 		<classpath refid="classpath" />
 	 	</javac>
 	</target>
