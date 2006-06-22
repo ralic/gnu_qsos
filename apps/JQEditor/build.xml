@@ -1,4 +1,4 @@
-<project name="JQEditor" default="build" basedir=".">
+<project name="JQEditor" default="jar-jqeditor" basedir=".">
 	<!-- project's properties -->
 	<property name="lib" value="lib"/>
 	<property name="src" value="src"/>			
