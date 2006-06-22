@@ -31,9 +31,12 @@ var myDoc;
 var docChanged;
 //id (actually "name" in the QSOS XML file) of the currently selected criteria in the tree
 var id;
+//Localized strings bundle
+var strbundle;
 
 //Window initialization after loading
 function init() {
+    strbundle = document.getElementById("properties");
     docChanged = "false";
     freezeGeneric("true");
     freezeScore("true");
@@ -61,8 +64,8 @@ function openFile() {
     var nsIFilePicker = Components.interfaces.nsIFilePicker;
     var fp = Components.classes["@mozilla.org/filepicker;1"]
             .createInstance(nsIFilePicker);
-    fp.init(window, "Select a file", nsIFilePicker.modeOpen);
-    fp.appendFilter("QSOS file","*.qsos");
+    fp.init(window, strbundle.getString("selectFile"), nsIFilePicker.modeOpen);
+    fp.appendFilter(strbundle.getString("QSOSFile"),"*.qsos");
     var res = fp.show();
     
     if (res == nsIFilePicker.returnOK) {
@@ -70,7 +73,7 @@ function openFile() {
         myDoc.load();
         
         //Window's title
-        document.getElementById("QSOS").setAttribute("title", "QSOS evaluation: "+myDoc.getappname());
+        document.getElementById("QSOS").setAttribute("title", strbundle.getString("QSOSEvaluation")+"  "+myDoc.getappname());
         
         //Tree population
         var tree = document.getElementById("mytree");
@@ -114,7 +117,7 @@ function openFile() {
 function checkopenFile() {
 	if (myDoc) {
 		if (docChanged == "true") {
-			confirmDialog("Document has been modified but not saved, close it anyway?", closeFile);
+			confirmDialog(strbundle.getString("closeAnyway"), closeFile);
 		}
 		else {
 			closeFile();
@@ -187,8 +190,8 @@ function saveFileAs() {
 	var nsIFilePicker = Components.interfaces.nsIFilePicker;
 	var fp = Components.classes["@mozilla.org/filepicker;1"]
 		.createInstance(nsIFilePicker);
-	fp.init(window, "Save the file as", nsIFilePicker.modeSave);
-	fp.appendFilter("QSOS file","*.qsos");
+	fp.init(window, strbundle.getString("saveFileAs"), nsIFilePicker.modeSave);
+	fp.appendFilter(strbundle.getString("QSOSFile"),"*.qsos");
 	var res = fp.show();
 	if (res == nsIFilePicker.returnOK) {
 		myDoc.setfilename(fp.file.path);
@@ -202,7 +205,7 @@ function saveFileAs() {
 //////////////////////////
 //Closes the QSOS XML file and resets window
 function closeFile() {
-	document.getElementById("QSOS").setAttribute("title", "QSOS XUL Editor");
+	document.getElementById("QSOS").setAttribute("title", strbundle.getString("QSOSEditor"));
 	document.getElementById("f-software").value = "";
 	document.getElementById("f-release").value = "";
 	document.getElementById("f-sotwarefamily").value = "";
@@ -210,12 +213,12 @@ function closeFile() {
 	document.getElementById("f-url").value = "";
 	document.getElementById("f-demourl").value = "";
 
-	document.getElementById("t-software").setAttribute("label", "Software");
-	document.getElementById("t-c-title").setAttribute("label", "Criterion");
+	document.getElementById("t-software").setAttribute("label", strbundle.getString("softwareLabel"));
+	document.getElementById("t-c-title").setAttribute("label", strbundle.getString("criterionLabel"));
 	
-	document.getElementById("f-c-desc0").setAttribute("label", "Score 0");
-	document.getElementById("f-c-desc1").setAttribute("label", "Score 1");
-	document.getElementById("f-c-desc2").setAttribute("label", "Score 2");
+	document.getElementById("f-c-desc0").setAttribute("label", strbundle.getString("score0Label"));
+	document.getElementById("f-c-desc1").setAttribute("label", strbundle.getString("score1Label"));
+	document.getElementById("f-c-desc2").setAttribute("label", strbundle.getString("score2Label"));
 	document.getElementById("f-c-score").selectedIndex = -1;
 	document.getElementById("f-c-comments").value = "";
 
@@ -233,7 +236,7 @@ function closeFile() {
 //Checks Document's state before closing it
 function checkcloseFile() {
 	if (docChanged == "true") {
-		confirmDialog("Document has been modified, save it before?", saveFile);
+		confirmDialog(strbundle.getString("saveBefore"), saveFile);
 	}
 	closeFile();
 }
@@ -249,7 +252,7 @@ function exit() {
 //Checks Document's state before exiting
 function checkexit() {
 	if (docChanged == "true") {
-		confirmDialog("Document has been modified but not saved, exit anyway?", exit);
+		confirmDialog(strbundle.getString("exitAnyway"), exit);
 		return;
 	}
 	else {
@@ -335,19 +338,19 @@ function freezeGeneric(bool) {
 	document.getElementById("f-license").disabled = bool;
 	document.getElementById("f-desc").disabled = bool;
 	document.getElementById("f-url").disabled = bool;
-	document.getElementById("f-demourl").disabled = bool;    
+	document.getElementById("f-demourl").disabled = bool;
 }
 
 //(Un)freezes the "Score" input files (current criteria properties)
 //bool: "true" to freeze; "" to unfreeze
 function freezeScore(bool) {
-	document.getElementById("f-c-score").disabled = bool;    
+	document.getElementById("f-c-score").disabled = bool;
 }
 
 //(Un)freezes the "Comments" input file (current criteria property)
 //bool: "true" to freeze; "" to unfreeze
 function freezeComments(bool) {
-	document.getElementById("f-c-comments").disabled = bool;    
+	document.getElementById("f-c-comments").disabled = bool;
 }
 
 ////////////////////////////////////////////////////////////////////

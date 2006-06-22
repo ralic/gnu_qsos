@@ -16,7 +16,7 @@
 #
 #
 # QSOS XUL Editor Makefile
-# $Id: Makefile,v 1.1 2006/06/22 17:14:09 rsemeteys Exp $
+# $Id: Makefile,v 1.2 2006/06/22 23:21:31 rsemeteys Exp $
 
 APPPACK=application.ini Changes chrome.manifest LICENSE README xuleditor xuleditor.bat
 EXTPACK=Changes chrome.manifest install.rdf LICENSE README
@@ -24,15 +24,17 @@ EXTPACK=Changes chrome.manifest install.rdf LICENSE README
 APPSRC=chrome/content/about.xul chrome/content/authors.js chrome/content/authors.xul chrome/content/confirm.xul chrome/content/Document.js chrome/content/editor.js chrome/content/editor.xul chrome/content/logo-qsos.png
 EXTSRC=$(APPSRC) chrome/content/qsos-overlay.xul
 
+LOCALE=chrome/locale/en-US/about.dtd chrome/locale/en-US/authors.dtd chrome/locale/en-US/confirm.dtd chrome/locale/en-US/editor.dtd chrome/locale/en-US/editor.properties chrome/locale/en-US/qsos-overlay.dtd chrome/locale/fr-FR/about.dtd chrome/locale/fr-FR/authors.dtd chrome/locale/fr-FR/confirm.dtd chrome/locale/fr-FR/editor.dtd chrome/locale/fr-FR/editor.properties chrome/locale/fr-FR/qsos-overlay.dtd
+
 SKIN=chrome/skin/classic.css
 
 PREFS=defaults/preferences/qsos-xuled.js
 
 ext:
 	rm -f xuleditor.xpi
-	zip -r xuleditor $(EXTPACK) $(EXTSRC) $(SKIN)
+	zip -r xuleditor $(EXTPACK) $(EXTSRC) $(LOCALE) $(SKIN)
 	mv xuleditor.zip xuleditor.xpi
 
 app:
 	rm -f xuleditor.zip
-	zip -r xuleditor $(APPPACK) $(APPSRC) $(SKIN) $(PREFS)
+	zip -r xuleditor $(APPPACK) $(APPSRC) $(LOCALE) $(SKIN) $(PREFS)
