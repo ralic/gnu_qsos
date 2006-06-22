@@ -48,4 +48,17 @@
 	<target name="all" depends="clean,build">
 		<antcall target="jar-jqeditor"/>
 	</target>
+	<target name="run" description="RUN the program">
+		<java classname="org.qsos.main.JQ">
+			<classpath>
+				<path refid="classpath"/>
+				<pathelement location="${dist}/jqeditor.jar"/>
+			</classpath>
+		</java>
+	</target>
+	<copy todir="${out}">
+		<fileset dir="${src}">
+			<exclude name="**/*.java"/>
+		</fileset>
+	</copy>
 </project>
