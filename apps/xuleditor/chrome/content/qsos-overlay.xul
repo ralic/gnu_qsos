@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+
+<overlay id="qsos-overlay" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+	<menupopup id="menu_ToolsPopup">
+		<menuitem id="qsos-xuled" 
+			  label="QSOS Editor" oncommand="window.openDialog('chrome://qsos-xuled/content/editor.xul','QSOS Editor', '_blank', 'chrome,dialog=no');"/>
+	</menupopup>
+</overlay>
