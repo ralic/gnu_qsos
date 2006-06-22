@@ -1,0 +1,8 @@
+<!ENTITY authors.title "Authors">
+<!ENTITY f-a-name.value "Name">
+<!ENTITY f-a-email.value "Email">
+<!ENTITY button1.label "Add">
+<!ENTITY button2.label "Delete">
+<!ENTITY f-a-list "Authors: ">
+
+

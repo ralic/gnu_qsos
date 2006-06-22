@@ -1,0 +1,31 @@
+<!ENTITY QSOS.label "Editeur XUL QSOS">
+<!ENTITY file-menu.label "Fichier">
+<!ENTITY file-open.label "Ouvrir">
+<!ENTITY file-save.label "Sauvegarder">
+<!ENTITY file-saveas.label "Sauvegarder sous">
+<!ENTITY file-close.label "Fermer">
+<!ENTITY file-exit.label "Sortir">
+<!ENTITY edit-menu.label "Editer">
+<!ENTITY edit-authors.label "Auteurs">
+<!ENTITY tree-menu.label "Arbre">
+<!ENTITY tree-expand.label "Exploser">
+<!ENTITY tree-collapse.label "Aplatir">
+<!ENTITY help-menu.label "Aide">
+<!ENTITY help-about.label "A propos">
+<!ENTITY name.label "Critères">
+<!ENTITY t-software.label "LOgiciel">
+<!ENTITY t-c-title.label "Critère">
+<!ENTITY t-chart.label "Graphe">
+<!ENTITY f-software.value "Nom : ">
+<!ENTITY f-release.value "Version : ">
+<!ENTITY f-sotwarefamily.value "Type de logiciel : ">
+<!ENTITY f-license.value "Licence : ">
+<!ENTITY f-desc.value "Description : ">
+<!ENTITY f-url.value "Site Web : ">
+<!ENTITY f-demourl.value "Site de démonstration : ">
+<!ENTITY label1.value "Description">
+<!ENTITY label2.value "Score">
+<!ENTITY f-c-desc0.label "Score 0">
+<!ENTITY f-c-desc1.label "Score 1">
+<!ENTITY f-c-desc2.label "Score 2">
+<!ENTITY f-c-comments.value "Commentaires : ">
