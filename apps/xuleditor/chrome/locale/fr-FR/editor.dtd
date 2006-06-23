@@ -12,9 +12,9 @@
 <!ENTITY tree-collapse.label "Aplatir">
 <!ENTITY help-menu.label "Aide">
 <!ENTITY help-about.label "A propos">
-<!ENTITY name.label "Critères">
-<!ENTITY t-software.label "LOgiciel">
-<!ENTITY t-c-title.label "Critère">
+<!ENTITY name.label "CritÃ¨res">
+<!ENTITY t-software.label "Logiciel">
+<!ENTITY t-c-title.label "CritÃ¨re">
 <!ENTITY t-chart.label "Graphe">
 <!ENTITY f-software.value "Nom : ">
 <!ENTITY f-release.value "Version : ">
@@ -22,7 +22,7 @@
 <!ENTITY f-license.value "Licence : ">
 <!ENTITY f-desc.value "Description : ">
 <!ENTITY f-url.value "Site Web : ">
-<!ENTITY f-demourl.value "Site de démonstration : ">
+<!ENTITY f-demourl.value "Site de dÃ©monstration : ">
 <!ENTITY label1.value "Description">
 <!ENTITY label2.value "Score">
 <!ENTITY f-c-desc0.label "Score 0">
