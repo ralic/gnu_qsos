@@ -1,16 +1,16 @@
 Revision history for QSOS XUL Editor
 
-0.01  2006
+0.1  2006
       - Initial release
 
-0.02  2006/05/30
+0.2  2006/05/30
       - Licences list added
       - "Edit/Authors" menu entry added
       - Software and criteria properties in separated tabs
       - New XML serializer
       - Drill-down charting added (requires SVG support in xulrunner)
 
-0.03  2006/06/26
+0.3  2006/06/27
       - Localization (English and French versions are available)
       - Firefox extention packaging
       - Makefile with "app' and "ext" targets for xulrunner application and Firefox extention packaging
