@@ -10,3 +10,7 @@ Revision history for QSOS XUL Editor
       - New XML serializer
       - Drill-down charting added (requires SVG support in xulrunner)
 
+0.03  2006/06/26
+      - Localization (English and French versions are available)
+      - Firefox extention packaging
+      - Makefile with "app' and "ext" targets for xulrunner application and Firefox extention packaging

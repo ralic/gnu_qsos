@@ -6,9 +6,9 @@ PREREQUISITES
 
 QSOS XML mozilla-javascript library: Document.js (included in chrome/content/ folder)
 Mozilla Javascript
-xulrunner 1.8+
+Xulrunner 1.8+ OR Mozilla Firefox 1.5+
 
-INSTALLING
+INSTALLING ON XULRUNNER
 
 If not done yet, install xulrunner and register it (xulrunner --register-global).
 Copy xuleditor folder where it fits you.
@@ -24,6 +24,14 @@ LAUNCHING ON WINDOWS
 xuleditor.bat [debug]
 or
 xulrunner.exe application.ini
+
+INSTALLING IN FIREFOX
+
+Open the XPI file with Firefox and choose "Install".
+
+LAUNCHING IN FIREFOX
+
+Menu "Tools/QSOS Editor".
 
 STATUS
 
