@@ -1,5 +1,4 @@
 <?xml version="1.0"?>
-
 <RDF xmlns="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:em="http://www.mozilla.org/2004/em-rdf#">
 	<Description about="urn:mozilla:install-manifest">
@@ -14,8 +13,11 @@
 			</Description>
 		</em:targetApplication>
 		<em:name>QSOS XUL Editor</em:name>
+		<em:description>An editor for QSOS evaluations of open source software</em:description>
 		<em:creator>Raphael Semeteys</em:creator>
+		<em:iconURL>chrome://qsos-xuled/content/logo32.png</em:iconURL>
 		<em:homepageURL>http://www.qsos.org/</em:homepageURL>
 		<em:aboutURL>chrome://qsos-xuled/content/about.xul</em:aboutURL>
+		<em:updateURL>http://www.qsos.org/tools/xuleditor-update.rdf</em:updateURL>
 	</Description>
 </RDF>
