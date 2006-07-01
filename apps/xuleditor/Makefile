@@ -16,12 +16,12 @@
 #
 #
 # QSOS XUL Editor Makefile
-# $Id: Makefile,v 1.3 2006/06/26 16:04:34 rsemeteys Exp $
+# $Id: Makefile,v 1.4 2006/07/01 23:43:53 rsemeteys Exp $
 
 APPPACK=application.ini Changes chrome.manifest LICENSE README xuleditor xuleditor.bat
 EXTPACK=Changes chrome.manifest install.rdf LICENSE README
 
-APPSRC=chrome/content/about.xul chrome/content/authors.js chrome/content/authors.xul chrome/content/confirm.xul chrome/content/Document.js chrome/content/editor.js chrome/content/editor.xul chrome/content/logo-qsos.png
+APPSRC=chrome/content/about.xul chrome/content/authors.js chrome/content/authors.xul chrome/content/confirm.xul chrome/content/Document.js chrome/content/editor.js chrome/content/editor.xul chrome/content/logo-qsos.png chrome/content/logo32.png
 EXTSRC=$(APPSRC) chrome/content/qsos-overlay.xul
 
 LOCALE=chrome/locale/en-US/about.dtd chrome/locale/en-US/authors.dtd chrome/locale/en-US/confirm.dtd chrome/locale/en-US/editor.dtd chrome/locale/en-US/editor.properties chrome/locale/en-US/qsos-overlay.dtd chrome/locale/fr-FR/about.dtd chrome/locale/fr-FR/authors.dtd chrome/locale/fr-FR/confirm.dtd chrome/locale/fr-FR/editor.dtd chrome/locale/fr-FR/editor.properties chrome/locale/fr-FR/qsos-overlay.dtd
