@@ -1,7 +1,7 @@
 /*
 **  Copyright (C) 2006 Atos Origin 
 **
-**  Author: Raphaël Semeteys <raphael.semeteys@atosorigin.com>
+**  Author: Raphaï¿½ Semeteys <raphael.semeteys@atosorigin.com>
 **
 **  This program is free software; you can redistribute it and/or modify
 ** it under the terms of the GNU General Public License as published by
@@ -21,10 +21,7 @@
 ** QSOS XUL Editor
 ** Documents.js: document object abstracting the QSOS XML format
 **
-**
 ** TODO:
-**	- Authors management
-**	- License management
 **	- Load remote QSOS XML file
 */
 
@@ -41,6 +38,7 @@ function Document(name) {
     this.getkeytitle = getkeytitle;
     this.getauthors = getauthors;
     this.addauthor = addauthor;
+    this.delauthor = delauthor;
     this.getappname = getappname;
     this.setappname = setappname;
     this.getlanguage = getlanguage;
@@ -81,6 +79,9 @@ function Document(name) {
     this.getfilename = getfilename;
     this.setfilename = setfilename;
     this.getcomplextree = getcomplextree;
+    this.getChartData = getChartData;
+    this.getSubChartData = getSubChartData;
+    this.getChartDataParent = getChartDataParent;
 
     ////////////////////////////////////////////////////////////////////
     // QSOS XML file functions
@@ -130,11 +131,78 @@ function Document(name) {
 
         outputStream.init( file, 0x04 | 0x08 | 0x20, 420, 0 );
 
-        var serializer = new XMLSerializer();
-        var xml = serializer.serializeToString(sheet);
-        var result = outputStream.write( xml, xml.length );
+        //var serializer = new XMLSerializer();
+        //var xml = serializer.serializeToString(sheet);
+        //var result = outputStream.write( xml, xml.length );
+
+	var xml = serialize(sheet.documentElement, 0);
+	outputStream.write(xml, xml.length);
+	
         outputStream.close();
     }
+
+    //Recursively serialize a XML node in a string
+    //node: XML node to serialize
+    //depth: depth of recursion (used fo indentation), 0 is used at the beginning
+    //returns the string with identations and \n characters
+    function serialize(node, depth) {
+	var indent = "";
+	var line = "";
+	
+	if (depth == 0) {
+		line = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n";
+	}
+	
+	for (i=0; i < depth; i++) {
+		indent += "   ";
+	}
+	
+	//Opening <tag attribute="value" ...>
+	line += indent + "<" + node.tagName;
+	if (node.hasAttributes()) {
+		var attributes = node.attributes;
+		for (var i = 0; i < attributes.length; i++) {
+			var attribute = attributes[i];
+			line += " " + attribute.name + "=\"" + specialChars(attribute.value) + "\"";
+		}
+	}
+	line += ">";
+		
+	//Children tags (recursion)
+	var test = false;
+	var children = node.childNodes;
+	for (var i = 0; i < children.length; i++) {
+		var child = children[i];
+		if (child.tagName) {
+			line += "\n" + serialize(child, depth+1);
+			//closing </tag> should be indented and on a new line
+			test = true;
+		}
+	}
+			
+	//Node value + closing </tag>
+	if (test) {
+		line += "\n" + indent + "</" + node.tagName + ">";
+	} else {
+		//childNode is the value of the XML node (<tag>value</tag>)
+		if (children[0]) {
+			//Convert XML special chars
+			line += specialChars(children[0].nodeValue);
+		}
+		line += "</" + node.tagName + ">";
+	}
+	
+	return line;
+   }
+
+   //Deals with XML special chars (<,> and &)
+   function specialChars(string) {
+	string = string.replace(/&/g, '&amp;');
+	string = string.replace(/</g, '&lt;');
+	string = string.replace(/>/g, '&gt;');
+
+	return string;
+   }
     
     //Load and parse a remote QSOS XML file
     //ex: loadremote("http://localhost/qedit/xul/kolab.qsos")
@@ -246,7 +314,7 @@ function Document(name) {
     //subelement: subelement's tagname in the QSOS XML file
     //Returns subelement's value or "" if subelement doesn't exist (-1 if subelement is "score")
     function getgeneric(element, subelement) {
-        var nodes = sheet.evaluate("//element[@name='"+element+"']/"+subelement, sheet, null, XPathResult.ANY_TYPE,null);
+        var nodes = sheet.evaluate("//*[@name='"+element+"']/"+subelement, sheet, null, XPathResult.ANY_TYPE,null);
         var node = nodes.iterateNext();
         if (node)
                 return node.textContent;
@@ -262,7 +330,7 @@ function Document(name) {
     //subelement: subelement's tagname in the QSOS XML file
     //value: subelement's new value
     function setgeneric(element, subelement, value) {
-        var nodes = sheet.evaluate("//element[@name='"+element+"']/"+subelement, sheet, null, XPathResult.ANY_TYPE,null);
+        var nodes = sheet.evaluate("//*[@name='"+element+"']/"+subelement, sheet, null, XPathResult.ANY_TYPE,null);
         var node = nodes.iterateNext();
         if (node) node.textContent = value;
     }
@@ -280,7 +348,7 @@ function Document(name) {
     }
     
     function getkeytitle(element) {
-    	var nodes = sheet.evaluate("//element[@name='"+element+"']", sheet, null, XPathResult.ANY_TYPE,null);
+    	var nodes = sheet.evaluate("//*[@name='"+element+"']", sheet, null, XPathResult.ANY_TYPE,null);
         var node = nodes.iterateNext();
         if (node)
             return node.getAttribute("title");
@@ -413,18 +481,26 @@ function Document(name) {
     ////////////////////////////////////////////////////////////////////
 
     function getauthors() {
-	//FIXME: return name AND email...
 	var authors = new Array();
-	var nodes = sheet.evaluate("//authors", sheet, null, XPathResult.ANY_TYPE,null);
+	var nodes = sheet.evaluate("//author", sheet, null, XPathResult.ANY_TYPE,null);
 	var node = nodes.iterateNext();
-	
-	var children = sheet.evaluate("//name", node, null, XPathResult.ANY_TYPE,null);
-	var child = children.iterateNext();
-	
-	while (child) {
-		name = child.textContent;
-		authors.push(name);
-		child = children.iterateNext();
+	while (node) {
+		var author = new Object();
+		
+		var names = node.getElementsByTagName("name");
+		if (names.length > 0)
+			author.name = names[0].textContent;
+		else
+			author.name = ""
+		
+		var emails = node.getElementsByTagName("email");
+		if (emails.length > 0)
+			author.email = emails[0].textContent;
+		else
+			author.email = ""
+
+		authors.push(author);
+		node = nodes.iterateNext();
 	}
 	return authors;
     }
@@ -440,6 +516,22 @@ function Document(name) {
 	author.appendChild(name);
 	author.appendChild(email);
 	node.appendChild(author);
+    }
+    
+    function delauthor(varname) {
+    	var marker;
+    	var authors = sheet.evaluate("//authors", sheet, null, XPathResult.ANY_TYPE,null).iterateNext();
+    	var nodes = sheet.evaluate("//author", sheet, null, XPathResult.ANY_TYPE,null);
+	var node = nodes.iterateNext();
+	marker = null;
+	while (node) {
+		var names = node.getElementsByTagName("name");
+		if (names.length > 0) {
+			if (names[0].textContent == varname) marker = node;
+		}
+		node = nodes.iterateNext()
+	}
+	if (marker != null) authors.removeChild(marker);
     }
     
     ////////////////////////////////////////////////////////////////////
@@ -464,5 +556,103 @@ function Document(name) {
     
     function setlicensedesc(value) {
     	return setkey("licensedesc", value);
+    }
+ 
+    ////////////////////////////////////////////////////////////////////
+    // Chart functions
+    ////////////////////////////////////////////////////////////////////
+
+    //Returns the name of a criterion's parent
+    function getChartDataParent(name) {
+	var node = sheet.evaluate("//*[@name='"+name+"']", sheet, null, XPathResult.ANY_TYPE,null).iterateNext();
+	if (node) {
+		return node.parentNode.getAttribute("name");
+	}
+	else {
+		return null;
+	}
+    }
+
+    //Returns the scored criteria of QSOS document
+    //Returned object: array of chartData
+    //		chartData.name: name of the subcriterion
+    //		chartData.title: title of the subcriterion
+    //		chartData.children: null or array of chartData representing the subcriterion's subcritria
+    //		chartData.score: score of the subcriterion (mean value of subcriretia)
+    function getChartData() {
+	var chartData = new Array();
+	var sections = sheet.evaluate("//section", sheet, null, XPathResult.ANY_TYPE,null);
+	var section = sections.iterateNext();
+	while (section) {
+		var criterion = new Object();
+		criterion.name = section.getAttribute("name");
+		criterion.title =  section.getAttribute("title");
+		criterion.children = getSubChartData(criterion.name);
+		criterion.score = renderScore(criterion.children);
+		chartData.push(criterion);
+		section = sections.iterateNext();
+	}
+	return chartData;
+    }
+
+    //Recursive function returning the scored subcriteria of a criteria
+    //Returned object: array of chartData
+    //		chartData.name: name of the subcriterion
+    //		chartData.title: title of the subcriterion
+    //		chartData.children: null or array of chartData representing the subcriterion's subcritria
+    //		chartData.score: score of the subcriterion
+    function getSubChartData(name) {
+	var chartData = new Array();
+	var elements = sheet.evaluate("//*[@name='"+name+"']/element", sheet, null, XPathResult.ANY_TYPE,null);
+	var element = elements.iterateNext();
+	while (element) {
+		var criterion = new Object();
+		criterion.name = element.getAttribute("name");
+		criterion.title =  element.getAttribute("title");
+		
+		if (hassubelements(criterion.name)) {
+			criterion.children = getSubChartData(criterion.name);
+			criterion.score = renderScore(criterion.children);
+			chartData.push(criterion);
+		}
+		else {
+			criterion.children = null;
+			criterion.score = getkeyscore(criterion.name);
+			if (criterion.score == "") criterion.score = null;
+			if (criterion.score != -1) {
+				chartData.push(criterion);
+			}
+		}
+		element = elements.iterateNext();
+	}
+	return chartData;
+    }
+    
+    //Renders the value of a criterion based on its subecriteria's values
+    //chartData: object representing the criterion
+    //		chartData.name: name of the subcriterion
+    //		chartData.title: title of the subcriterion
+    //		chartData.children: null or array of chartData representing the subcriterion's subcritria
+    //		chartData.score: score of the subcriterion
+    function renderScore(chartData) {
+    	var score = 0;
+	var sum = 0;
+	var totalWeight = 0
+	var isRenderable = true;
+	
+	for (i=0; i < chartData.length; i++) {
+		totalWeight++;
+		if (chartData[i].score == null) isRenderable = false;
+		sum += Math.round(chartData[i].score * 100)/100;
+	}
+	
+	if (isRenderable) {
+		score = Math.round((sum/totalWeight)*100)/100;
+	}
+	else {
+		score = null;
+	}
+	
+	return score;
     }
 }
