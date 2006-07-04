@@ -6,7 +6,7 @@ head($lang);
 ?>
     <h1>QSOS HOWTO - How to design a new functional grid?</h1>
 
-    Author : <a href="mailto:raphael@semeteys.org">Raphaël Semeteys</a>
+    Author : <a href="mailto:raphael AT semeteys DOT org">Raphaël Semeteys</a>
 
     <h3>Summary</h3>
 
@@ -51,45 +51,47 @@ head($lang);
       <li>Redundant criteria.</li>
     </ul>
 
-    <h4>Critères d'information non notés</h4>
+    <h4>Non scored criteria</h4>
 
     <p>QSOS allows non scored criteria that still carry information and value the the grid.</p>
 
     <p>A common dilemna could be illustrated like this: "Should there be one lonely criterion enumarating all possible supported web browser, or should there rather be a single subcriterion per supported browser, the whole being grouped under a single upper-level criteria?".<p>
-    <p>
+    <p>Each option has pros and cons, a best practise is to considee the middle path. In our example it could be: "Supported Web browsers/Internet Explorer" (to be scored), "Supported Web browsers/Mozilla Firefox" (to be scored), "Supported Web browsers/Safari" (to be scored), "Supported Web browsers/Konqueror" (to be scored) et "Supported Web browsers/Autres navigateurs" (non scored list).</p>
 
-Chaque option a ses avantages et inconvénient, une bonne pratique consiste dans ce cas à choisir la voie du milieu, ainsi dans notre exemple : "Navigateurs Web supportés/Internet Explorer" (évalué), "Navigateurs Web supportés/Mozilla Firefox" (évalué), "Navigateurs Web supportés/Safari" (évalué), "Navigateurs Web supportés/Konqueror" (évalué) et "Navigateurs Web supportés/Autres navigateurs" (liste non évaluée).</p>
+    <h2>Step 2 - Format the grid in a QSOS XML document</h2>
 
-    <h2>Step 2 - Formalize the grid in a QSOS XML document</h2>
+    <h3>Functional grids have to be formalized in the QSOS XML format to be usable.</h3>
 
-    <h3>Les grilles fonctionnelles doivent être formalisées au format XML QSOS pour être utilisables</h3>
-
-    <p>Pour générer le fichier XML, plusieurs options se présentent à vous :</p>
+    <p>You have for now three options to produce the XML document:</p>
 
     <ul>
-      <li>Vous pouvez saisir directement la fiche dans un éditeur de texte en utilisant les balises QSOS. Le bonne pratique est de partir d'une fiche existante.</li>
-      <li>Vous pouvez envoyer votre grille au format texte sur la liste de discussion, un autre utilisateur ou un administrateur du projet se chargera certainement de la convertir au format XML pour vous.</li>
+      <li>You can directly write it with an text editor of your choice. You'll have to write the QSOS tags by yourself. A good practise is to resue an already existing XML grid.</li>
+      <li>You can post your grid in clear text on the QSOS mailing list, somebody (another user or even a project admin) will probably format it for you.</li>
+      <li>You can use a beta version of the "QSOS XUL Template Editor" tool to generate the file without entering any XML tag (<a href="http://cvs.savannah.nongnu.org/viewcvs/qsos/apps/tpl-xuleditor/?root=qsos">CVS access</a>). NB : the "xulrunner" framework from Mozilla must be installed on your computer for the editor to run.</li>
+    </ul>
+
+    <p>Whatever options you choose, do not forget to:</p>
+
+    <ul>
+      <li>Fill all the tags of the XML format (or provide information for somebody else to do it), more particularly the &lt;desc0&gt;, &lt;desc1&gt; and &lt;desc2&gt; tags since they convey the signification of your criteria's scores.</li>
       </li>
-      <li>Vous pouvez utiliser une version bêta de l'outil graphique "QSOS XUL Template Editor" qui permettra de saisir la grille sans se préoccuper du format XML (<a href="http://cvs.savannah.nongnu.org/viewcvs/qsos/apps/tpl-xuleditor/?root=qsos">accès au CVS</a>). NB : le framework "xulrunner" de Mozilla doit être installé sur votre machine pour que l'éditeur puisse fonctionner.</li>
-      <li>Il est primordial de bien remplir toutes le balises du format XML, et notamment les balises &lt;desc0&gt;, &lt;desc1&gt; et &lt;desc2&gt; puisque qu'elles contiennent des indications sur la signification des notes de votre critère (s'il est prévu pour être noté). </li>
-      </li>
-      <li>De même n'omettez pas de préciser les informations d'entête telles que le domaine auquel s'applique la grille, vos nom, prénom et adresse email, etc...</li>
+      <li>Specify header information like the software family, your name and email address, etc.</li>
     </ul>
 
     <!-- to be removed later -->
     <p>
-    Nous sommes conscients qu'actuellement cette étape n'est pas des plus simples. N'hésitez surtout pas à demander de l'aide sur les listes de discussions si jamais vous êtes bloqués ou perdus.
+    We known that for the time being this step is not very simple so do not hesitate to ask for help on the mailing list if you're stuck or lost.
     </p>
 
     <h2>Step 3 - Share your grid and follow its evolution</h2>
 
-    <p>Une fois votre grille formalisée, il est primordial de la reverser à la communauté QSOS pour que d'autres puissent l'utiliser pour évaluer des logiciels du domaine et aussi pour gérer ses futures évolutions via le référentiel QSOS.</p>
+    <p>Once your grid formatted, it is fundamental to contribute it back to the QSOS community so others can use it to evaluate software from this family. Also future evolutions of the grid can then be managed in the QSOS repository.</p>
 
-    <ul>
-      <li>Postez votre grille sur la liste de discussion appropriée qsos-general@nongnu.org ou qsos-french@nongnu.org</li>
-      <li>La grille est alors intégrée au référentiel <a href="https://savannah.nongnu.org/cvs/?group=qsos">CVS</a> de QSOS par les administrateurs du projet et l'ensemble de la communauté QSOS peut ainsi y accéder.</li>
-    </ul>
+    <ol>
+      <li>Post your grid on the qsos-general@nongnu.org mailing list.</li>
+      <li>It will be added to the <a href="https://savannah.nongnu.org/cvs/?group=qsos">QSOS CVS</a> by a QSOS admin and the whole QSOS community will be able to access it.</li>
+    </ol>
 
-    <p>Version de ce document : $Id: QSOS-HOWTO_functional_grid.php,v 1.1 2006/07/02 22:48:15 rsemeteys Exp $</p>
+    <p>Document version : $Id: QSOS-HOWTO_functional_grid.php,v 1.2 2006/07/04 23:20:26 rsemeteys Exp $</p>
 
 <?php foot()?>
