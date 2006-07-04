@@ -42,7 +42,7 @@ print "<li><a href=\"/index.php?lang=en\">Overview</a></li>
 <li><a href=\"/sheets/\">QSOS Sheets</a></li>
 <li><a href=\"/download/fiches/\">Old sheets (fr)</a></li>
 <li><a href=\"/blog//\"><strong>News!</strong></a></li>
-<!--li><a href=\"/contribute.php?lang=en\"><strong>Contribute</strong></a></li-->
+<li><a href=\"/contribute.php?lang=en\"><strong>Contribute</strong></a></li>
 <li><a href=\"https://savannah.nongnu.org/projects/qsos/\"><strong>Project</strong></a></li>";
 } else if ($lang=="fr"){
 print "<li><a href=\"/index.php?lang=fr\">Présentation</a></li>
