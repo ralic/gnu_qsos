@@ -6,7 +6,7 @@ head($lang);
 ?>
     <h1>QSOS HOWTO - Comment créer une nouvelle grille fonctionnelle ?</h1>
 
-    Auteur : <a href="mailto:raphael@semeteys.org">Raphaël Semeteys</a>
+    Auteur : <a href="mailto:raphael AT semeteys DOT org">Raphaël Semeteys</a>
 
     <h3>Résumé</h3>
 
@@ -69,10 +69,13 @@ head($lang);
     <ul>
       <li>Vous pouvez saisir directement la fiche dans un éditeur de texte en utilisant les balises QSOS. Le bonne pratique est de partir d'une fiche existante.</li>
       <li>Vous pouvez envoyer votre grille au format texte sur la liste de discussion, un autre utilisateur ou un administrateur du projet se chargera certainement de la convertir au format XML pour vous.</li>
-      </li>
       <li>Vous pouvez utiliser une version bêta de l'outil graphique "QSOS XUL Template Editor" qui permettra de saisir la grille sans se préoccuper du format XML (<a href="http://cvs.savannah.nongnu.org/viewcvs/qsos/apps/tpl-xuleditor/?root=qsos">accès au CVS</a>). NB : le framework "xulrunner" de Mozilla doit être installé sur votre machine pour que l'éditeur puisse fonctionner.</li>
-      <li>Il est primordial de bien remplir toutes le balises du format XML, et notamment les balises &lt;desc0&gt;, &lt;desc1&gt; et &lt;desc2&gt; puisque qu'elles contiennent des indications sur la signification des notes de votre critère (s'il est prévu pour être noté). </li>
-      </li>
+    </ul>
+
+    <p>Quel que soit votre choix :</p>
+
+    <ul>
+      <li>Il est primordial de bien remplir ou fournir les informations concernant toutes les balises du format XML, et notamment les balises &lt;desc0&gt;, &lt;desc1&gt; et &lt;desc2&gt; puisque qu'elles contiennent des indications sur la signification des notes de votre critère (s'il est prévu pour être noté). </li>
       <li>De même n'omettez pas de préciser les informations d'entête telles que le domaine auquel s'applique la grille, vos nom, prénom et adresse email, etc...</li>
     </ul>
 
@@ -85,11 +88,11 @@ head($lang);
 
     <p>Une fois votre grille formalisée, il est primordial de la reverser à la communauté QSOS pour que d'autres puissent l'utiliser pour évaluer des logiciels du domaine et aussi pour gérer ses futures évolutions via le référentiel QSOS.</p>
 
-    <ul>
+    <ol>
       <li>Postez votre grille sur la liste de discussion appropriée qsos-general@nongnu.org ou qsos-french@nongnu.org</li>
       <li>La grille est alors intégrée au référentiel <a href="https://savannah.nongnu.org/cvs/?group=qsos">CVS</a> de QSOS par les administrateurs du projet et l'ensemble de la communauté QSOS peut ainsi y accéder.</li>
-    </ul>
+    </ol>
 
-    <p>Version de ce document : $Id: QSOS-HOWTO_grille_fonctionnelle.php,v 1.1 2006/06/21 16:48:35 rsemeteys Exp $</p>
+    <p>Version de ce document : $Id: QSOS-HOWTO_grille_fonctionnelle.php,v 1.2 2006/07/04 23:21:01 rsemeteys Exp $</p>
 
 <?php foot()?>
