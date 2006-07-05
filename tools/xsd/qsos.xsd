@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.qsos.org" elementFormDefault="qualified">
+  <xs:element name="document">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="header"/>
+        <xs:element maxOccurs="unbounded" ref="section"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="header">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="authors"/>
+        <xs:element ref="dates"/>
+        <xs:element ref="language"/>
+        <xs:element ref="appname"/>
+        <xs:element ref="release"/>
+        <xs:element ref="licenseid"/>
+        <xs:element ref="licensedesc"/>
+        <xs:element ref="url"/>
+        <xs:element ref="desc"/>
+        <xs:element ref="demourl"/>
+        <xs:element ref="qsosformat"/>
+        <xs:element ref="qsosappfamily"/>
+        <xs:element ref="qsosspecificformat"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="authors">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="author"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="author">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="email"/>
+        <xs:element ref="name"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="email" type="xs:string"/>
+  <xs:element name="name" type="xs:string"/>
+  <xs:element name="dates">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="creation"/>
+        <xs:element ref="validation"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="creation" type="xs:date"/>
+  <xs:element name="validation" type="xs:date"/>
+  <xs:element name="language" type="xs:language"/>
+  <xs:element name="appname" type="xs:string"/>
+  <xs:element name="release" type="xs:string"/>
+  <xs:element name="licenseid" type="xs:integer"/>
+  <xs:element name="licensedesc" type="xs:string"/>
+  <xs:element name="url" type="xs:anyURI"/>
+  <xs:element name="demourl" type="xs:string"/>
+  <xs:element name="qsosformat" type="xs:string"/>
+  <xs:element name="qsosappfamily" type="xs:string"/>
+  <xs:element name="qsosspecificformat" type="xs:string"/>
+  <xs:element name="section">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="desc"/>
+        <xs:element maxOccurs="unbounded" ref="element"/>
+      </xs:sequence>
+      <xs:attribute name="name" use="required" type="xs:ID"/>
+      <xs:attribute name="title" use="required" type="xs:string"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="desc" type="xs:string"/>
+  <xs:element name="element">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="desc"/>
+	<xs:element ref="element" maxOccurs="unbounded"/>
+        <xs:element ref="comment"/>
+	<xs:element ref="desc0" minOccurs="0"/>
+	<xs:element ref="desc1" minOccurs="0"/>
+	<xs:element ref="desc2" minOccurs="0"/>
+	<xs:element ref="score" minOccurs="0"/>
+      </xs:sequence>
+      <xs:attribute name="name" use="required" type="xs:ID"/>
+      <xs:attribute name="title" use="required" type="xs:string"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="comment" type="xs:string"/>
+  <xs:element name="desc0" type="xs:string"/>
+  <xs:element name="desc1" type="xs:string"/>
+  <xs:element name="desc2" type="xs:string"/>
+  <xs:element name="score" type="xs:integer">
+    <xs:simpleType>
+      <xs:restriction base="xs:integer">
+        <xs:enumeration value="0"/>
+        <xs:enumeration value="1"/>
+        <xs:enumeration value="2"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element> 
+</xs:schema>
