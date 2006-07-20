@@ -64,7 +64,7 @@
 	<element name="Open" title="Open Standard Protocols">
 		<desc></desc>
 		<comment></comment>
-		<!--Ajouter la gestion des Multi User Chatrooms (invitations, gestion-->
+		<!--Ajouter les gateways-->
 		<element name="xmmp" title="Extensible Messaging and Presence Protocol">
 			<element name="jabber" title="Core protocol of the Jabber Instant Messaging and Presence technology">
 				<desc0>Not Supported</desc0>
@@ -91,13 +91,114 @@
 			<comment></comment>
 		</element>
 	</element>
+	<element name="clientcompatibility" title="Compatibility with other clients">
+		<element name="openwengo" title="Compatibility with OpenWengo">
+			<desc></desc>
+			<desc0>Not compatible</desc0>
+			<desc1>Partially compatible</desc1>
+			<desc2>Fully comlpatible</desc2>
+			<score></score>
+			<comment></comment>
+		</element>
+		<element name="Ekiga" title="Compatibility with Ekiga">
+			<desc></desc>
+			<desc0>Not compatible</desc0>
+			<desc1>Partially compatible</desc1>
+			<desc2>Fully comlpatible</desc2>
+			<score></score>
+			<comment></comment>
+		</element>
+		<element name="psi" title="Compatibility with Psi">
+			<desc></desc>
+			<desc0>Not compatible</desc0>
+			<desc1>Partially compatible</desc1>
+			<desc2>Fully comlpatible</desc2>
+			<score></score>
+			<comment></comment>
+		</element>
+		<element name="Kopete" title="Compatibility with Kopete">
+			<desc></desc>
+			<desc0>Not compatible</desc0>
+			<desc1>Partially compatible</desc1>
+			<desc2>Fully comlpatible</desc2>
+			<score></score>
+			<comment></comment>
+		</element>
+		<element name="Gaim" title="Compatibility with Gaim">
+			<desc></desc>
+			<desc0>Not compatible</desc0>
+			<desc1>Partially compatible</desc1>
+			<desc2>Fully comlpatible</desc2>
+			<score></score>
+			<comment></comment>
+		</element>
+		<element name="msn" title="Compatibility with Windows Live Messenger">
+			<desc></desc>
+			<desc0>Not compatible</desc0>
+			<desc1>Partially compatible</desc1>
+			<desc2>Fully comlpatible</desc2>
+			<score></score>
+			<comment></comment>
+		</element>
+		<element name="yahoo" title="Compatibility with Yahoo! Messenger">
+			<desc></desc>
+			<desc0>Not compatible</desc0>
+			<desc1>Partially compatible</desc1>
+			<desc2>Fully comlpatible</desc2>
+			<score></score>
+			<comment></comment>
+		</element>
+		<element name="Skype" title="Compatibility with Skype">
+			<desc></desc>
+			<desc0>Not compatible</desc0>
+			<desc1>Partially compatible</desc1>
+			<desc2>Fully comlpatible</desc2>
+			<score></score>
+			<comment></comment>
+		</element>
+		<element name="gtalk" title="Compatibility with Google Talk">
+			<desc></desc>
+			<desc0>Not compatible</desc0>
+			<desc1>Partially compatible</desc1>
+			<desc2>Fully comlpatible</desc2>
+			<score></score>
+			<comment></comment>
+		</element>
+		<element name="other" title="other clients">
+			<desc>List of other client compatible</desc>
+			<comment></comment>
+		</element>
+	</element>
 </section>
 
 <!--Section 3 - Modules de Conférene vocale-->
 <section name="voip" title="Voice over IP Module">
-	<element name="protocol" title="Supported Protocols">
-		<desc>List of supported protocols</desc>
-		<comment></comment>
+	<element name="protocol" title="Compatible Protocols">
+		<element name="h323" title="H323 protocol compatibility">
+			<desc0>Not compatible</desc0>
+			<desc1>Partially compatible</desc1>
+			<desc2>Fully compatible</desc2>
+			<score></score>
+			<comment></comment>
+		</element>
+		<element name="libjingle" title="LibJingle compatibility">
+			<desc0>Not compatible</desc0>
+			<desc1>Partially compatible</desc1>
+			<desc2>Fully compatible</desc2>
+			<score></score>
+			<comment></comment>
+		</element>
+		<element name="sip" title="SIP compatibility">
+			<desc0>Not compatible</desc0>
+			<desc1>Partially compatible</desc1>
+			<desc2>Fully compatible</desc2>
+			<score></score>
+			<comment></comment>
+		</element>
+		<element name="other" title="List of other protocols compatible">
+			<desc>List of open or proprietary protocols compatible</desc>
+			<comment></comment>
+		</element>
 	</element>
 	<element name="networks" title="Network Architecture">
 		<desc></desc>
@@ -168,7 +269,92 @@
 	</element>
 	<element name="other" title="Additional features">
 		<desc>Additional features</desc>
-		<comment></comment>
+		<comment></comment>		
+			<element name="AEC" title="Acoustic Echo Cancellation (AEC) support">
+				<desc0>No AEC provided</desc0>
+				<desc1>AEC system exists but doesn't work properly</desc1>
+				<desc2>Full support of AEC</desc2>
+				<score></score>
+				<comment></comment>
+			</element>
+	</element>
+	<element name="clientcompatibility" title="Compatibility with other clients">
+		<element name="openwengo" title="Compatibility with OpenWengo">
+			<desc></desc>
+			<desc0>Not compatible</desc0>
+			<desc1>Partially compatible</desc1>
+			<desc2>Fully comlpatible</desc2>
+			<score></score>
+			<comment></comment>
+		</element>
+		<element name="Ekiga" title="Compatibility with Ekiga">
+			<desc></desc>
+			<desc0>Not compatible</desc0>
+			<desc1>Partially compatible</desc1>
+			<desc2>Fully comlpatible</desc2>
+			<score></score>
+			<comment></comment>
+		</element>
+		<element name="psi" title="Compatibility with Psi">
+			<desc></desc>
+			<desc0>Not compatible</desc0>
+			<desc1>Partially compatible</desc1>
+			<desc2>Fully comlpatible</desc2>
+			<score></score>
+			<comment></comment>
+		</element>
+		<element name="Kopete" title="Compatibility with Kopete">
+			<desc></desc>
+			<desc0>Not compatible</desc0>
+			<desc1>Partially compatible</desc1>
+			<desc2>Fully comlpatible</desc2>
+			<score></score>
+			<comment></comment>
+		</element>
+		<element name="Gaim" title="Compatibility with Gaim">
+			<desc></desc>
+			<desc0>Not compatible</desc0>
+			<desc1>Partially compatible</desc1>
+			<desc2>Fully comlpatible</desc2>
+			<score></score>
+			<comment></comment>
+		</element>
+		<element name="msn" title="Compatibility with Windows Live Messenger">
+			<desc></desc>
+			<desc0>Not compatible</desc0>
+			<desc1>Partially compatible</desc1>
+			<desc2>Fully comlpatible</desc2>
+			<score></score>
+			<comment></comment>
+		</element>
+		<element name="yahoo" title="Compatibility with Yahoo! Messenger">
+			<desc></desc>
+			<desc0>Not compatible</desc0>
+			<desc1>Partially compatible</desc1>
+			<desc2>Fully comlpatible</desc2>
+			<score></score>
+			<comment></comment>
+		</element>
+		<element name="Skype" title="Compatibility with Skype">
+			<desc></desc>
+			<desc0>Not compatible</desc0>
+			<desc1>Partially compatible</desc1>
+			<desc2>Fully comlpatible</desc2>
+			<score></score>
+			<comment></comment>
+		</element>
+		<element name="gtalk" title="Compatibility with Google Talk">
+			<desc></desc>
+			<desc0>Not compatible</desc0>
+			<desc1>Partially compatible</desc1>
+			<desc2>Fully comlpatible</desc2>
+			<score></score>
+			<comment></comment>
+		</element>
+		<element name="other" title="other clients">
+			<desc>List of other client compatible</desc>
+			<comment></comment>
+		</element>
 	</element>
 </section>
 
@@ -193,51 +379,164 @@
 	</element>
 	<element name="technology" title="Advanced features">
 		<element name="audiocompression" title="Audio compression">
-			<desc0></desc0>
-			<desc1></desc1>
-			<desc2></desc2>
+			<desc0>Telephone quality (8KHz sampled sound)</desc0>
+			<desc1>FM qualtity (16Khz sampled sound)</desc1>
+			<desc2>Hi-fi quality (24Khz sampled sound or more)</desc2>
 			<score></score>
-			<comment></comment>
+			<comment>Codecs:
+								8khz: G.711 loi mu /loi a, G.723, G.728, G.729, EVRC, etc.
+								16khz: G.722, G722.1, etc.
+								24khz: Proprietary codecs </comment>
 		</element>
 		<element name="videocompression" title="video compression">
-			<desc0></desc0>
-			<desc1></desc1>
-			<desc2></desc2>
+			<desc0>Codecs and video format suitable for low rated networks</desc0>
+			<desc1>Codecs and video format optimized for large band networks</desc1>
+			<desc2>Video flows are customizable to fit the networks capacities</desc2>
 			<score></score>
 			<comment></comment>
 		</element>
-		<element name="echo" title="Echo cancellation support">
-			<desc0></desc0>
-			<desc1></desc1>
-			<desc2></desc2>
-			<score></score>
-			<comment></comment>
-		</element>
-		<element name="videocompression" title="video compression">
-			<desc0></desc0>
-			<desc1></desc1>
-			<desc2></desc2>
+		<element name="AEC" title="Acoustic Echo Cancellation (AEC) support">
+			<desc0>No AEC provided</desc0>
+			<desc1>AEC system exists but doesn't work properly</desc1>
+			<desc2>Full support of AEC</desc2>
 			<score></score>
 			<comment></comment>
 		</element>
 		<element name="datatransfert" title="Data transfert">
-			<desc0></desc0>
-			<desc1></desc1>
-			<desc2></desc2>
+			<desc0>No data transfert is expected with VideoConferencing</desc0>
+			<desc1>Data transfert works  but hardly if behind a firewall or a NAT server</desc1>
+			<desc2>Data transfert is fully supported</desc2>
 			<score></score>
 			<comment></comment>
 		</element>
 	</element>
 	<element name="multipoint" title="Multi Point Videoconferencig">
+		<desc0>Only peer to peer videoconferencing is supported</desc0>
+		<desc1>Multi point Video conferencing is possible but no dedicated servers exists</desc1>
+		<desc2>A dedicated architecture permits multi point videoconferencing</desc2>
+		<score></score>
+		<comment></comment>
+	</element>
+	<element name="nat" title="Network Adress Translation">
+		<desc0>Not working behind a firewall using NAT</desc0>
+		<desc1>Works behind a firewall with lots of work</desc1>
+		<desc2>No difficult manipulations to negotiate with an NAT server</desc2>
+		<score></score>
+		<comment></comment>
+	</element>
+	<element name="clientcompatibility" title="Compatibility with other clients">
+		<element name="openwengo" title="Compatibility with OpenWengo">
+			<desc></desc>
+			<desc0>Not compatible</desc0>
+			<desc1>Partially compatible</desc1>
+			<desc2>Fully comlpatible</desc2>
+			<score></score>
+			<comment></comment>
+		</element>
+		<element name="Ekiga" title="Compatibility with Ekiga">
+			<desc></desc>
+			<desc0>Not compatible</desc0>
+			<desc1>Partially compatible</desc1>
+			<desc2>Fully comlpatible</desc2>
+			<score></score>
+			<comment></comment>
+		</element>
+		<element name="psi" title="Compatibility with Psi">
+			<desc></desc>
+			<desc0>Not compatible</desc0>
+			<desc1>Partially compatible</desc1>
+			<desc2>Fully comlpatible</desc2>
+			<score></score>
+			<comment></comment>
+		</element>
+		<element name="Kopete" title="Compatibility with Kopete">
+			<desc></desc>
+			<desc0>Not compatible</desc0>
+			<desc1>Partially compatible</desc1>
+			<desc2>Fully comlpatible</desc2>
+			<score></score>
+			<comment></comment>
+		</element>
+		<element name="Gaim" title="Compatibility with Gaim">
+			<desc></desc>
+			<desc0>Not compatible</desc0>
+			<desc1>Partially compatible</desc1>
+			<desc2>Fully comlpatible</desc2>
+			<score></score>
+			<comment></comment>
+		</element>
+		<element name="msn" title="Compatibility with Windows Live Messenger">
+			<desc></desc>
+			<desc0>Not compatible</desc0>
+			<desc1>Partially compatible</desc1>
+			<desc2>Fully comlpatible</desc2>
+			<score></score>
+			<comment></comment>
+		</element>
+		<element name="yahoo" title="Compatibility with Yahoo! Messenger">
+			<desc></desc>
+			<desc0>Not compatible</desc0>
+			<desc1>Partially compatible</desc1>
+			<desc2>Fully comlpatible</desc2>
+			<score></score>
+			<comment></comment>
+		</element>
+		<element name="Skype" title="Compatibility with Skype">
+			<desc></desc>
+			<desc0>Not compatible</desc0>
+			<desc1>Partially compatible</desc1>
+			<desc2>Fully comlpatible</desc2>
+			<score></score>
+			<comment></comment>
+		</element>
+		<element name="gtalk" title="Compatibility with Google Talk">
+			<desc></desc>
+			<desc0>Not compatible</desc0>
+			<desc1>Partially compatible</desc1>
+			<desc2>Fully comlpatible</desc2>
+			<score></score>
+			<comment></comment>
+		</element>
+		<element name="other" title="other clients">
+			<desc>List of other client compatible</desc>
+			<comment></comment>
+		</element>
+	</element>
+</section>
+
+<!--Section 5 - Interface homme machine-->
+<section name="hmi" title="Human/Machine Interface and other features">
+	<element name="vcard" title="Vcard Gestion">
+		<desc></desc>
 		<desc0></desc0>
 		<desc1></desc1>
 		<desc2></desc2>
 		<score></score>
 		<comment></comment>
 	</element>
-</section>
-
-<!--Section 5 - Autres modules-->
-<section name="goodies" title="Goodies">
+	<element name="skins" title="Customizable skins support">
+		<desc></desc>
+		<desc0></desc0>
+		<desc1></desc1>
+		<desc2></desc2>
+		<score></score>
+		<comment></comment>
+	</element>
+	<element name="accounts" title="Accounts creating facilities">
+		<desc></desc>
+		<desc0></desc0>
+		<desc1></desc1>
+		<desc2></desc2>
+		<score></score>
+		<comment></comment>
+	</element>
+	<element name="avatars" title="???">
+		<desc></desc>
+		<desc0></desc0>
+		<desc1></desc1>
+		<desc2></desc2>
+		<score></score>
+		<comment></comment>
+	</element>
 </section>
 </document>
