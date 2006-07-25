@@ -102,7 +102,7 @@
   </xsl:template>
   <xsl:template match="dates">
     <li>
-      <strong>Sheet created the </strong>
+      <strong>Sheet created on </strong>
       <xsl:apply-templates select="creation"/>
     </li>
     <xsl:if test="validation != ''">
