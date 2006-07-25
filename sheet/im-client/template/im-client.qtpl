@@ -8,7 +8,7 @@
       <validation></validation>
     </dates>
     <language>en</language>
-    <appname>im-client</appname>
+    <appname>VoIP Client</appname>
     <release></release>
     <licenseid></licenseid>
     <licensedesc></licensedesc>
@@ -343,263 +343,245 @@
 			<comment></comment>
 		</element>
 	</section>
-
 	<section name="clientcompatibility" title="Compatibility with other clients">
-		<element name="text" title="Instant Messaging compatibility">
-			<element name="openwengoim" title="WengoPhone">
-				<desc></desc>
-				<desc0>Not compatible</desc0>
-				<desc1>Partially compatible</desc1>
-				<desc2>Fully comlpatible</desc2>
-				<score></score>
-				<comment>WengoPhone is a Voice and Video Over IP application based on standard protocols like SIP and RTP
-website: http://www.openwengo.com/</comment>
-			</element>
-			<element name="Ekigaim" title="Ekiga">
-				<desc></desc>
-				<desc0>Not compatible</desc0>
-				<desc1>Partially compatible</desc1>
-				<desc2>Fully comlpatible</desc2>
-				<score></score>
-				<comment>Ekiga is an open source VoIP and video conferencing application for GNOME.
-website: http://www.ekiga.org/
-</comment>
-			</element>
-			<element name="psiim" title="Psi">
-				<desc></desc>
-				<desc0>Not compatible</desc0>
-				<desc1>Partially compatible</desc1>
-				<desc2>Fully comlpatible</desc2>
-				<score></score>
-				<comment>Psi is a GPLed instant messaging client for the Jabber (XMPP) protocol which uses the Qt toolkit. It runs on Linux, Microsoft Windows, and Mac OS X. Ready-to-install RPM and deb packages are available for many Linux distributions. Successful ports of Psi were reported for FreeBSD and Sun Solaris operating systems.
-website: http://psi-im.org/
-</comment>
-			</element>
-			<element name="Kopeteim" title="Kopete">
-				<desc></desc>
-				<desc0>Not compatible</desc0>
-				<desc1>Partially compatible</desc1>
-				<desc2>Fully comlpatible</desc2>
-				<score></score>
-				<comment>Kopete is an instant messenger supporting AIM, ICQ, MSN, Yahoo, Jabber, IRC, Gadu-Gadu, Novell GroupWise Messenger, and more. It is designed to be a flexible and extensible multi-protocol system suitable for personal and enterprise use.
-Website: http://kopete.kde.org/
-</comment>
-			</element>
-			<element name="Gaimim" title="Gaim">
-				<desc></desc>
-				<desc0>Not compatible</desc0>
-				<desc1>Partially compatible</desc1>
-				<desc2>Fully comlpatible</desc2>
-				<score></score>
-				<comment> Gaim is a multi-protocol instant messaging (IM) client for Linux, BSD, MacOS X, and Windows. It is compatible with AIM and ICQ (Oscar protocol), MSN Messenger, Yahoo!, IRC, Jabber, Gadu-Gadu, SILC, Novell GroupWise Messenger, Lotus Sametime, and Zephyr networks.
-Website: http://gaim.sourceforge.net/
-</comment>
-			</element>
-			<element name="msnim" title="Windows Live Messenger (peviously MSN messenger)">
-				<desc></desc>
-				<desc0>Not compatible</desc0>
-				<desc1>Partially compatible (issues with recent releases)</desc1>
-				<desc2>Fully comlpatible</desc2>
-				<score></score>
-				<comment>Windows Live Messenger (WLM), formerly known as MSN Messenger, is a freeware instant messaging client for Microsoft Windows first released on 22 July 1999 by the Microsoft corporation. It is part of Microsoft's Windows Live set of online services. The current version is 8.0, which was released on June 19, 2006. Amongst its users it is still often referred to as "MSN"
-Official website: http://messenger.live.com/</comment>
-			</element>
-			<element name="yahooim" title="Yahoo! Messenger">
-				<desc></desc>
-				<desc0>Not compatible</desc0>
-				<desc1>Partially compatible (issues with recent releases)</desc1>
-				<desc2>Fully comlpatible</desc2>
-				<score></score>
-				<comment>Yahoo! Messenger is a popular instant messaging client and protocol provided by Yahoo!.
-Website: http://messenger.yahoo.com/</comment>
-			</element>
-			<element name="ichatim" title="iChat">
-				<desc></desc>
-				<desc0>Not compatible</desc0>
-				<desc1>Partially compatible (issues with recent releases)</desc1>
-				<desc2>Fully comlpatible</desc2>
-				<score></score>
-				<comment>iChat is an AOL Instant Messenger (AIM), ICQ and Jabber client for Mac OS X. Using a Jabber-like protocol and Bonjour for user discovery, it also allows for LAN communication. iChat's AIM support is fully endorsed by AOL, and uses their official implementation of the AIM OSCAR protocol. Using a Jabber transport, iChat users may also integrate their MSN and Yahoo! contacts into the Jabber pane, so only one instant messenger program is needed on a Mac.
-WebSite: http://www.apple.com/macosx/features/ichat/</comment>
-			</element>
-			<element name="Skypeim" title="Skype">
-				<desc></desc>
-				<desc0>Not compatible</desc0>
-				<desc1>Partially compatible</desc1>
-				<desc2>Fully comlpatible</desc2>
-				<score></score>
-				<comment>Skype (rhymes with "type") is a proprietary peer-to-peer Internet telephony (VoIP) network founded by the entrepreneurs Niklas Zennström and Janus Friis, also founders of the file sharing application Kazaa. It competes against existing open VoIP protocols such as SIP, IAX, and H.323. 
-Website: http://www.skype.com/</comment>
-			</element>
-			<element name="gtalkim" title="Google Talk">
-				<desc></desc>
-				<desc0>Not compatible</desc0>
-				<desc1>Partially compatible</desc1>
-				<desc2>Fully comlpatible</desc2>
-				<score></score>
-				<comment>Google Talk is a service offered by Google for Voice over IP and instant messaging
-Website: http://talk.google.com/</comment>
-			</element>
-			<element name="otherim" title="Other clients">
-				<desc>List of other client compatible</desc>
+			<element name="openwengoclient" title="WengoPhone">
+				<desc>WengoPhone is a Voice and Video Over IP application based on standard protocols like SIP and RTP<br/>
+Website: http://www.openwengo.com/</desc>
 				<comment></comment>
+				<element name="wengophoneim" title="Instant messaging module">
+					<desc0>Not compatible</desc0>
+					<desc1>Partially compatible</desc1>
+					<desc2>Fully comlpatible</desc2>
+					<score></score>
+					<comment></comment>
+				</element>
+				<element name="wengophonevoip" title="Voice over IP module">
+					<desc0>Not compatible</desc0>
+					<desc1>Partially compatible</desc1>
+					<desc2>Fully comlpatible</desc2>
+					<score></score>
+					<comment></comment>
+				</element>
+				<element name="wengophonevisio" title="Videoconferencing module">
+					<desc0>Not compatible</desc0>
+					<desc1>Partially compatible</desc1>
+					<desc2>Fully comlpatible</desc2>
+					<score></score>
+					<comment></comment>
+				</element>
 			</element>
-		</element>
-		<element name="voice" title="VoIP compatibility">
-			<element name="openwengovoip" title="WengoPhone">
-				<desc></desc>
-				<desc0>Not compatible</desc0>
-				<desc1>Partially compatible</desc1>
-				<desc2>Fully comlpatible</desc2>
-				<score></score>
-				<comment>WengoPhone is a Voice and Video Over IP application based on standard protocols like SIP and RTP
-website: http://www.openwengo.com/</comment>
-			</element>
-			<element name="Ekigavoip" title="Ekiga">
-				<desc></desc>
-				<desc0>Not compatible</desc0>
-				<desc1>Partially compatible</desc1>
-				<desc2>Fully comlpatible</desc2>
-				<score></score>
-				<comment>Ekiga is an open source VoIP and video conferencing application for GNOME.
-website: http://www.ekiga.org/</comment>
-			</element>
-			<element name="psivoip" title="Psi">
-				<desc></desc>
-				<desc0>Not compatible</desc0>
-				<desc1>Partially compatible</desc1>
-				<desc2>Fully comlpatible</desc2>
-				<score></score>
-				<comment>Psi is a GPLed instant messaging client for the Jabber (XMPP) protocol which uses the Qt toolkit. It runs on Linux, Microsoft Windows, and Mac OS X. Ready-to-install RPM and deb packages are available for many Linux distributions. Successful ports of Psi were reported for FreeBSD and Sun Solaris operating systems.
-website: http://psi-im.org/</comment>
-			</element>
-			<element name="Kopetevoip" title="Kopete">
-				<desc></desc>
-				<desc0>Not compatible</desc0>
-				<desc1>Partially compatible</desc1>
-				<desc2>Fully comlpatible</desc2>
-				<score></score>
-				<comment>Kopete is an instant messenger supporting AIM, ICQ, MSN, Yahoo, Jabber, IRC, Gadu-Gadu, Novell GroupWise Messenger, and more. It is designed to be a flexible and extensible multi-protocol system suitable for personal and enterprise use.
-Website: http://kopete.kde.org/</comment>
-			</element>
-			<element name="Gaimvoip" title="Gaim">
-				<desc></desc>
-				<desc0>Not compatible</desc0>
-				<desc1>Partially compatible</desc1>
-				<desc2>Fully comlpatible</desc2>
-				<score></score>
-				<comment>Gaim is a multi-protocol instant messaging (IM) client for Linux, BSD, MacOS X, and Windows. It is compatible with AIM and ICQ (Oscar protocol), MSN Messenger, Yahoo!, IRC, Jabber, Gadu-Gadu, SILC, Novell GroupWise Messenger, Lotus Sametime, and Zephyr networks.
-Website: http://gaim.sourceforge.net/</comment>
-			</element>
-			<element name="msnvoip" title="Windows Live Messenger (peviously MSN messenger)">
-				<desc></desc>
-				<desc0>Not compatible</desc0>
-				<desc1>Partially compatible (issues with recent releases)</desc1>
-				<desc2>Fully comlpatible</desc2>
-				<score></score>
-				<comment>Windows Live Messenger (WLM), formerly known as MSN Messenger, is a freeware instant messaging client for Microsoft Windows first released on 22 July 1999 by the Microsoft corporation. It is part of Microsoft's Windows Live set of online services. The current version is 8.0, which was released on June 19, 2006. Amongst its users it is still often referred to as "MSN"
-Official website: http://messenger.live.com/</comment>
-			</element>
-			<element name="yahoovoip" title="Yahoo! Messenger">
-				<desc></desc>
-				<desc0>Not compatible</desc0>
-				<desc1>Partially compatible (issues with recent releases)</desc1>
-				<desc2>Fully comlpatible</desc2>
-				<score></score>
-				<comment>Yahoo! Messenger is a popular instant messaging client and protocol provided by Yahoo!.
-Website: http://messenger.yahoo.com/</comment>
-			</element>
-			<element name="ichatvoip" title="iChat">
-				<desc></desc>
-				<desc0>Not compatible</desc0>
-				<desc1>Partially compatible (issues with recent releases)</desc1>
-				<desc2>Fully comlpatible</desc2>
-				<score></score>
-				<comment>iChat is an AOL Instant Messenger (AIM), ICQ and Jabber client for Mac OS X. Using a Jabber-like protocol and Bonjour for user discovery, it also allows for LAN communication. iChat's AIM support is fully endorsed by AOL, and uses their official implementation of the AIM OSCAR protocol. Using a Jabber transport, iChat users may also integrate their MSN and Yahoo! contacts into the Jabber pane, so only one instant messenger program is needed on a Mac.
-WebSite: http://www.apple.com/macosx/features/ichat/</comment>
-			</element>
-			<element name="Skypevoip" title="Skype">
-				<desc></desc>
-				<desc0>Not compatible</desc0>
-				<desc1>Partially compatible</desc1>
-				<desc2>Fully comlpatible</desc2>
-				<score></score>
-				<comment>Skype (rhymes with "type") is a proprietary peer-to-peer Internet telephony (VoIP) network founded by the entrepreneurs Niklas Zennström and Janus Friis, also founders of the file sharing application Kazaa. It competes against existing open VoIP protocols such as SIP, IAX, and H.323. 
-Website: http://www.skype.com/</comment>
-			</element>
-			<element name="gtalkvoip" title="Google Talk">
-				<desc></desc>
-				<desc0>Not compatible</desc0>
-				<desc1>Partially compatible</desc1>
-				<desc2>Fully comlpatible</desc2>
-				<score></score>
-				<comment>Google Talk is a service offered by Google for Voice over IP and instant messaging
-Website: http://talk.google.com/</comment>
-			</element>
-			<element name="otherclientsvoip" title="Other clients">
-				<desc>List of other client compatible</desc>
+			<element name="ekigaclient" title="Ekiga">
+				<desc>Ekiga is an open source VoIP and video conferencing application for GNOME.<br/>
+Website: http://www.ekiga.org/</desc>
 				<comment></comment>
+				<element name="ekigaim" title="Instant messaging module">
+					<desc0>Not compatible</desc0>
+					<desc1>Partially compatible</desc1>
+					<desc2>Fully comlpatible</desc2>
+					<score></score>
+					<comment></comment>
+				</element>
+				<element name="ekigavoip" title="Voice over IP module">
+					<desc0>Not compatible</desc0>
+					<desc1>Partially compatible</desc1>
+					<desc2>Fully comlpatible</desc2>
+					<score></score>
+					<comment></comment>
+				</element>
+				<element name="ekigavisio" title="Videoconferencing module">
+					<desc0>Not compatible</desc0>
+					<desc1>Partially compatible</desc1>
+					<desc2>Fully comlpatible</desc2>
+					<score></score>
+					<comment></comment>
+				</element>
 			</element>
-		</element>
-		<element name="video" title="VideoConferencing compatibility">
-			<element name="openwengovisio" title="WengoPhone">
-				<desc></desc>
-				<desc0>Not compatible</desc0>
-				<desc1>Partially compatible</desc1>
-				<desc2>Fully comlpatible</desc2>
-				<score></score>
-				<comment>WengoPhone is a Voice and Video Over IP application based on standard protocols like SIP and RTP
-website: http://www.openwengo.com/</comment>
-			</element>
-			<element name="Ekigavisio" title="Ekiga">
-				<desc></desc>
-				<desc0>Not compatible</desc0>
-				<desc1>Partially compatible</desc1>
-				<desc2>Fully comlpatible</desc2>
-				<score></score>
-				<comment>Ekiga is an open source VoIP and video conferencing application for GNOME.
-website: http://www.ekiga.org/</comment>
-			</element>
-			<element name="psivisio" title="Psi">
-				<desc></desc>
-				<desc0>Not compatible</desc0>
-				<desc1>Partially compatible</desc1>
-				<desc2>Fully comlpatible</desc2>
-				<score></score>
-				<comment>Psi is a GPLed instant messaging client for the Jabber (XMPP) protocol which uses the Qt toolkit. It runs on Linux, Microsoft Windows, and Mac OS X. Ready-to-install RPM and deb packages are available for many Linux distributions. Successful ports of Psi were reported for FreeBSD and Sun Solaris operating systems.
-website: http://psi-im.org/</comment>
-			</element>
-			<element name="msnvisio" title="Windows Live Messenger (peviously MSN messenger)">
-				<desc></desc>
-				<desc0>Not compatible</desc0>
-				<desc1>Partially compatible (issues with recent releases)</desc1>
-				<desc2>Fully comlpatible</desc2>
-				<score></score>
-				<comment>Windows Live Messenger (WLM), formerly known as MSN Messenger, is a freeware instant messaging client for Microsoft Windows first released on 22 July 1999 by the Microsoft corporation. It is part of Microsoft's Windows Live set of online services. The current version is 8.0, which was released on June 19, 2006. Amongst its users it is still often referred to as "MSN"
-Official website: http://messenger.live.com/</comment>
-				</element>		
-			<element name="yahoovisio" title="Yahoo! Messenger">
-				<desc></desc>
-				<desc0>Not compatible</desc0>
-				<desc1>Partially compatible (issues with recent releases)</desc1>
-				<desc2>Fully comlpatible</desc2>
-				<score></score>
-				<comment>Yahoo! Messenger is a popular instant messaging client and protocol provided by Yahoo!.
-Website: http://messenger.yahoo.com/</comment>
-			</element>
-			<element name="ichatvisio" title="iChat">
-				<desc></desc>
-				<desc0>Not compatible</desc0>
-				<desc1>Partially compatible (issues with recent releases)</desc1>
-				<desc2>Fully comlpatible</desc2>
-				<score></score>
-				<comment>iChat is an AOL Instant Messenger (AIM), ICQ and Jabber client for Mac OS X. Using a Jabber-like protocol and Bonjour for user discovery, it also allows for LAN communication. iChat's AIM support is fully endorsed by AOL, and uses their official implementation of the AIM OSCAR protocol. Using a Jabber transport, iChat users may also integrate their MSN and Yahoo! contacts into the Jabber pane, so only one instant messenger program is needed on a Mac.
-WebSite: http://www.apple.com/macosx/features/ichat/</comment>
-			</element>
-			<element name="otherclientsvisio" title="Other clients">
-				<desc>List of other client compatible</desc>
+			<element name="psiclient" title="Psi">
+				<desc>Psi is a GPLed instant messaging client for the Jabber (XMPP) protocol which uses the Qt toolkit. It runs on Linux, Microsoft Windows, and Mac OS X. Ready-to-install RPM and deb packages are available for many Linux distributions. Successful ports of Psi were reported for FreeBSD and Sun Solaris operating systems.<br/>
+website: http://psi-im.org/</desc>
 				<comment></comment>
+				<element name="psiim" title="Instant messaging module">
+					<desc0>Not compatible</desc0>
+					<desc1>Partially compatible</desc1>
+					<desc2>Fully comlpatible</desc2>
+					<score></score>
+					<comment></comment>
+				</element>
+				<element name="psivoip" title="Voice over IP module">
+					<desc0>Not compatible</desc0>
+					<desc1>Partially compatible</desc1>
+					<desc2>Fully comlpatible</desc2>
+					<score></score>
+					<comment></comment>
+				</element>
+				<element name="psivisio" title="Videoconferencing module">
+					<desc0>Not compatible</desc0>
+					<desc1>Partially compatible</desc1>
+					<desc2>Fully comlpatible</desc2>
+					<score></score>
+					<comment></comment>
+				</element>
 			</element>
-		</element>
+			<element name="kopeteclient" title="Kopete">
+				<desc>Kopete is an instant messenger supporting AIM, ICQ, MSN, Yahoo, Jabber, IRC, Gadu-Gadu, Novell GroupWise Messenger, and more. It is designed to be a flexible and extensible multi-protocol system suitable for personal and enterprise use.<br/>
+Website: http://kopete.kde.org/</desc>
+				<comment></comment>
+				<element name="kopeteim" title="Instant messaging module">
+					<desc0>Not compatible</desc0>
+					<desc1>Partially compatible</desc1>
+					<desc2>Fully comlpatible</desc2>
+					<score></score>
+					<comment></comment>
+				</element>
+				<element name="kopetevoip" title="Voice over IP module">
+					<desc0>Not compatible</desc0>
+					<desc1>Partially compatible</desc1>
+					<desc2>Fully comlpatible</desc2>
+					<score></score>
+					<comment></comment>
+				</element>
+			</element>
+			<element name="gaimclient" title="Gaim">
+				<desc> Gaim is a multi-protocol instant messaging (IM) client for Linux, BSD, MacOS X, and Windows. It is compatible with AIM and ICQ (Oscar protocol), MSN Messenger, Yahoo!, IRC, Jabber, Gadu-Gadu, SILC, Novell GroupWise Messenger, Lotus Sametime, and Zephyr networks.<br/>
+Website: http://gaim.sourceforge.net/</desc>
+				<comment></comment>
+				<element name="gaimim" title="Instant messaging module">
+					<desc0>Not compatible</desc0>
+					<desc1>Partially compatible</desc1>
+					<desc2>Fully comlpatible</desc2>
+					<score></score>
+					<comment></comment>
+				</element>
+				<element name="gaimvoip" title="Voice over IP module">
+					<desc0>Not compatible</desc0>
+					<desc1>Partially compatible</desc1>
+					<desc2>Fully comlpatible</desc2>
+					<score></score>
+					<comment></comment>
+				</element>
+			</element>
+			<element name="msnpclient" title="Windows Live Messenger (previously MSN messenger)">
+				<desc>Windows Live Messenger (WLM), formerly known as MSN Messenger, is a freeware instant messaging client for Microsoft Windows. It is part of Microsoft's Windows Live set of online services. Amongst its users it is still often referred to as "MSN".<br/>
+Official website: http://messenger.live.com/</desc>
+				<comment></comment>
+				<element name="msnim" title="Instant messaging module">
+					<desc0>Not compatible</desc0>
+					<desc1>Partially compatible</desc1>
+					<desc2>Fully comlpatible</desc2>
+					<score></score>
+					<comment></comment>
+				</element>
+				<element name="msnvoip" title="Voice over IP module">
+					<desc0>Not compatible</desc0>
+					<desc1>Partially compatible</desc1>
+					<desc2>Fully comlpatible</desc2>
+					<score></score>
+					<comment></comment>
+				</element>
+				<element name="msnvisio" title="Videoconferencing module">
+					<desc0>Not compatible</desc0>
+					<desc1>Partially compatible</desc1>
+					<desc2>Fully comlpatible</desc2>
+					<score></score>
+					<comment></comment>
+				</element>
+			</element>
+			<element name="yahooclient" title="Yahoo! Messenger">
+				<desc>Yahoo! Messenger is a popular instant messaging client and protocol provided by Yahoo!.<br/>
+Website: http://messenger.yahoo.com/</desc>
+				<comment></comment>
+				<element name="yahooim" title="Instant messaging module">
+					<desc0>Not compatible</desc0>
+					<desc1>Partially compatible</desc1>
+					<desc2>Fully comlpatible</desc2>
+					<score></score>
+					<comment></comment>
+				</element>
+				<element name="yahoovoip" title="Voice over IP module">
+					<desc0>Not compatible</desc0>
+					<desc1>Partially compatible</desc1>
+					<desc2>Fully comlpatible</desc2>
+					<score></score>
+					<comment></comment>
+				</element>
+				<element name="yahoovisio" title="Videoconferencing module">
+					<desc0>Not compatible</desc0>
+					<desc1>Partially compatible</desc1>
+					<desc2>Fully comlpatible</desc2>
+					<score></score>
+					<comment></comment>
+				</element>
+			</element>
+			<element name="ichatclient" title="iChat">
+				<desc>iChat is an AOL Instant Messenger (AIM), ICQ and Jabber client for Mac OS X. Using a Jabber-like protocol and Bonjour for user discovery, it also allows for LAN communication. iChat's AIM support is fully endorsed by AOL, and uses their official implementation of the AIM OSCAR protocol. Using a Jabber transport, iChat users may also integrate their MSN and Yahoo! contacts into the Jabber pane, so only one instant messenger program is needed on a Mac.<br/>
+WebSite: http://www.apple.com/macosx/features/ichat/</desc>
+				<comment></comment>
+				<element name="ichatim" title="Instant messaging module">
+					<desc0>Not compatible</desc0>
+					<desc1>Partially compatible</desc1>
+					<desc2>Fully comlpatible</desc2>
+					<score></score>
+					<comment></comment>
+				</element>
+				<element name="ichatvoip" title="Voice over IP module">
+					<desc0>Not compatible</desc0>
+					<desc1>Partially compatible</desc1>
+					<desc2>Fully comlpatible</desc2>
+					<score></score>
+					<comment></comment>
+				</element>
+				<element name="ichatvisio" title="Videoconferencing module">
+					<desc0>Not compatible</desc0>
+					<desc1>Partially compatible</desc1>
+					<desc2>Fully comlpatible</desc2>
+					<score></score>
+					<comment></comment>
+				</element>
+			</element>
+			<element name="skypeclient" title="Skype">
+				<desc>Skypeis a proprietary peer-to-peer Internet telephony (VoIP) network founded by the entrepreneurs Niklas Zennström and Janus Friis, also founders of the file sharing application Kazaa. It competes against existing open VoIP protocols such as SIP, IAX, and H.323.<br/>
+Website: http://www.skype.com/</desc>
+				<comment></comment>
+				<element name="skypeim" title="Instant messaging module">
+					<desc0>Not compatible</desc0>
+					<desc1>Partially compatible</desc1>
+					<desc2>Fully comlpatible</desc2>
+					<score></score>
+					<comment></comment>
+				</element>
+				<element name="skypevoip" title="Voice over IP module">
+					<desc0>Not compatible</desc0>
+					<desc1>Partially compatible</desc1>
+					<desc2>Fully comlpatible</desc2>
+					<score></score>
+					<comment></comment>
+				</element>
+				<element name="skypevisio" title="Videoconferencing module">
+					<desc0>Not compatible</desc0>
+					<desc1>Partially compatible</desc1>
+					<desc2>Fully comlpatible</desc2>
+					<score></score>
+					<comment></comment>
+				</element>
+			</element>
+			<element name="gtalkclient" title="Google Talk">
+				<desc>Google Talk is a service offered by Google for Voice over IP and instant messaging<br/>
+Website: http://talk.google.com/</desc>
+				<comment></comment>
+				<element name="gtalkim" title="Instant messaging module">
+					<desc0>Not compatible</desc0>
+					<desc1>Partially compatible</desc1>
+					<desc2>Fully comlpatible</desc2>
+					<score></score>
+					<comment></comment>
+				</element>
+				<element name="gtalkvoip" title="Voice over IP module">
+					<desc0>Not compatible</desc0>
+					<desc1>Partially compatible</desc1>
+					<desc2>Fully comlpatible</desc2>
+					<score></score>
+					<comment></comment>
+				</element>
+			</element>
 	</section>
 </document>
