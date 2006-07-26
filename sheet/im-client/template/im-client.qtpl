@@ -42,6 +42,13 @@
 					<score></score>
 					<comment></comment>
 				</element>
+				<element name="priority" title="Ressource priority handling">
+					<desc0>No Ressource priority support</desc0>
+					<desc1>Limited support of Ressource priority</desc1>
+					<desc2>Full support of Ressource priority</desc2>
+					<score></score>
+					<comment></comment>
+				</element>
 				<element name="vcard" title="vCard Support">
 					<desc0>No vCard support</desc0>
 					<desc1>Old vCard specification supported</desc1>
@@ -92,9 +99,41 @@ Advanced auto-away system: auto-message when auto-away is activated, settable id
 				<comment></comment>
 			</element>
 		</element>
-		<element name="imtools" title="Instant Messaging tools">
+		<element name="imtools" title="Instant Messaging tools and gadgets">
 			<desc>Tools provided to enlarge Instant Messaging possibilities</desc>
 			<comment></comment>
+			<element name="securityim" title="Security">
+				<desc></desc>
+				<comment></comment>
+				<element name="encryption" title="SSL/SASL/TSL encryption features">
+					<desc0>No encryption support</desc0>
+					<desc1>Encryption partially supported</desc1>
+					<desc2>Advanced encryption suport</desc2>
+					<score></score>
+					<comment></comment>
+				</element>
+				<element name="p2pencryption" title="Peer to peer encryption">
+					<desc0>No peer to peer encryption support</desc0>
+					<desc1>Basic peer to peer encryption support</desc1>
+					<desc2>GPG based encryption</desc2>
+					<score></score>
+					<comment></comment>
+				</element>
+			</element>
+			<element name="smileys" title="Smileys">
+				<desc0>No smileys avalaible</desc0>
+				<desc1>Basics smileys avalaible</desc1>
+				<desc2>Ability to extend and share smileys list</desc2>
+				<score></score>
+				<comment></comment>
+			</element>
+			<element name="nudge" title="Nudge">
+				<desc0>No nudge support</desc0>
+				<desc1>Nudge partially supported</desc1>
+				<desc2>Nudge fully supported</desc2>
+				<score></score>
+				<comment></comment>
+			</element>
 			<element name="whiteboard" title="Whiteboard">
 				<desc0>No whiteboard support</desc0>
 				<desc1>Partial support of whiteboard</desc1>
@@ -306,47 +345,45 @@ Advanced auto-away system: auto-message when auto-away is activated, settable id
 				<comment></comment>
 			</element>
 		</element>
-<!-- identation
-			<element name="multimedianetworks" title="Network Architecture">
-				<desc></desc>
+		<element name="multimedianetworks" title="Network Architecture for Multimedia supports">
+			<desc></desc>
+			<comment></comment>
+			<element name="gwmg" title="Gateway and Media Gateway">
+				<desc>List of Gateway and Media Gateways used/supported for VoIP module</desc>
 				<comment></comment>
-				<element name="gwmg" title="Gateway and Media Gateway">
-					<desc>List of Gateway and Media Gateways used/supported for VoIP module</desc>
-					<comment></comment>
-				</element>
-				<element name="gkmgc" title="Gatekeeper and Media Gateway Controller">
-					<desc></desc>
-					<desc0>No calls possible due to Gatekeeper/Media Gateway controller inexistence</desc0>
-					<desc1>Basic calls (call detection, analog/digital voice conversion and codec functions only)</desc1>
-					<desc2>Calls and extra features (voice compression, echo cancelation, silence suppression..)</desc2>
-					<score></score>
-					<comment></comment>
-				</element>
-				<element name="sg" title="Signaling Gateway">
-					<desc></desc>
-					<desc0>No calls are possible due to Signaling Gateway problems</desc0>
-					<desc1>Signaling Gateways problems may unable users to establish calls</desc1>
-					<desc2>No reported bugs about Signaling Gateway</desc2>
-					<score></score>
-					<comment></comment>
-				</element>
-				<element name="proxyregistrarls" title="Proxy, Registrar and Location Service">
-					<desc>Location possibilities</desc>
-					<desc0>Protocols used don't offer any location service</desc0>
-					<desc1>Possibilities of location service under conditions</desc1>
-					<desc2>Registrar servers exists and permits location services</desc2>
-					<score></score>
-					<comment></comment>
-				</element>
-				<element name="nat" title="Network Adress Translation">
-					<desc0>Not working behind a firewall using NAT</desc0>
-					<desc1>Works behind a firewall with pain</desc1>
-					<desc2>No difficult manipulations to negotiate with an NAT server</desc2>
-					<score></score>
-					<comment></comment>
-				</element>
 			</element>
--->
+			<element name="gkmgc" title="Gatekeeper and Media Gateway Controller">
+				<desc></desc>
+				<desc0>No calls possible due to Gatekeeper/Media Gateway controller inexistence</desc0>
+				<desc1>Basic calls (call detection, analog/digital voice conversion and codec functions only)</desc1>
+				<desc2>Calls and extra features (voice compression, echo cancelation, silence suppression..)</desc2>
+				<score></score>
+				<comment></comment>
+			</element>
+			<element name="sg" title="Signaling Gateway">
+				<desc></desc>
+				<desc0>No calls are possible due to Signaling Gateway problems</desc0>
+				<desc1>Signaling Gateways problems may unable users to establish calls</desc1>
+				<desc2>No reported bugs about Signaling Gateway</desc2>
+				<score></score>
+				<comment></comment>
+			</element>
+			<element name="proxyregistrarls" title="Proxy, Registrar and Location Service">
+				<desc>Location possibilities</desc>
+				<desc0>Protocols used don't offer any location service</desc0>
+				<desc1>Possibilities of location service under conditions</desc1>
+				<desc2>Registrar servers exists and permits location services</desc2>
+				<score></score>
+				<comment></comment>
+			</element>
+			<element name="nat" title="Network Adress Translation">
+				<desc0>Not working behind a firewall using NAT</desc0>
+				<desc1>Works behind a firewall with pain</desc1>
+				<desc2>No difficult manipulations to negotiate with an NAT server</desc2>
+				<score></score>
+				<comment></comment>
+			</element>
+		</element>
 	</section>
 	
 	<!--Section 5 - Interface homme machine -->
@@ -381,13 +418,6 @@ Advanced auto-away system: auto-message when auto-away is activated, settable id
 				<score></score>
 				<comment></comment>
 			</element>
-		</element>
-		<element name="smileys" title="Smileys">
-			<desc0>No smileys avalaible</desc0>
-			<desc1>Basics smileys avalaible</desc1>
-			<desc2>Ability to extend and share smileys list</desc2>
-			<score></score>
-			<comment></comment>
 		</element>
 		<element name="plugins" title="Plug-in support">
 			<desc0>No plug-in system integrated to the client</desc0>
