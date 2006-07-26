@@ -21,8 +21,51 @@
   </header>
 	<include section="generic"/>
 	<!--Section 2 - Modules de messagerie instantanée -->
-	<section name="IMP" title="Instant Messaging Protocols">
+	<section name="IMP" title="Instant Messaging and Presence Protocols">
 		<desc>Textual Instant Messaging Protocols Supported</desc>
+		<element name="Open" title="Open Standard Protocols">
+			<desc></desc>
+			<comment></comment>
+			<element name="xmmp" title="Extensible Messaging and Presence Protocol">
+				<element name="jabber" title="Core protocol of the Jabber Instant Messaging and Presence technology">
+					<desc0>Not Supported</desc0>
+					<desc1>Work in progress in order to integrate XMMP</desc1>
+					<desc2>Supported and works properly</desc2>
+					<score></score>
+					<comment></comment>
+				</element>
+				<element name="priority" title="Presence handling">
+					<desc>Presence handling features</desc>
+					<comment></comment>
+				</element>
+				<element	name="muc" title="Multi User Chatroom handling">
+					<desc>Multi User Chatroom features</desc>
+					<comment></comment>
+				</element>
+				<element name="vcard" title="vCard Support">
+					<desc0>No vCard support</desc0>
+					<desc1>Old vCard specification supported</desc1>
+					<desc2>Flexible vCard support</desc2>
+					<score></score>
+					<comment></comment>
+				</element>
+				<element name="avatar" title="Avatar system">
+					<desc0>No avatar system is provided by the client</desc0>
+					<desc1>http-storage avatar system</desc1>
+					<desc2>vCard-based avatar</desc2>
+					<score></score>
+					<comment></comment>
+				</element>
+			</element>
+			<element name="irc" title="Internet Relay Chat">
+				<desc>Form of instant communication over the Internet</desc>
+				<desc0>Not Supported</desc0>
+				<desc1>Limited support. Some major IRC features are not supported (e.g: op, kick, voice)</desc1>
+				<desc2>Supported and works properly</desc2>
+				<score></score>
+				<comment></comment>
+			</element>
+		</element>
 		<element name="Specific" title="Own Specific Protocol">
 			<desc></desc>
 			<desc2>The IM module uses exclusively standard open protocols</desc2>
@@ -56,45 +99,6 @@
 				<desc>Protocols in use with ICQ and AIM </desc>
 				<desc0>Not Supported</desc0>
 				<desc1>Projects of integration or partially supported</desc1>
-				<desc2>Supported and works properly</desc2>
-				<score></score>
-				<comment></comment>
-			</element>
-		</element>
-		<element name="Open" title="Open Standard Protocols">
-			<desc></desc>
-			<comment></comment>
-			<element name="xmmp" title="Extensible Messaging and Presence Protocol">
-				<element name="jabber" title="Core protocol of the Jabber Instant Messaging and Presence technology">
-					<desc0>Not Supported</desc0>
-					<desc1>Work in progress in order to integrate XMMP</desc1>
-					<desc2>Supported and works properly</desc2>
-					<score></score>
-					<comment></comment>
-				</element>
-				<element	name="muc" title="Multi User Chatroom handling">
-					<desc>Multi User Chatroom features</desc>
-					<comment></comment>
-				</element>
-				<element name="vcard" title="vCard Support">
-					<desc0>No vCard support</desc0>
-					<desc1>Old vCard specification supported</desc1>
-					<desc2>Flexible vCard support</desc2>
-					<score></score>
-					<comment></comment>
-				</element>
-				<element name="avatar" title="Avatar system">
-					<desc0>No avatar system is provided by the client</desc0>
-					<desc1>http-storage avatar system</desc1>
-					<desc2>vCard-based avatar</desc2>
-					<score></score>
-					<comment></comment>
-				</element>
-			</element>
-			<element name="irc" title="Internet Relay Chat">
-				<desc>Form of instant communication over the Internet</desc>
-				<desc0>Not Supported</desc0>
-				<desc1>Limited support. Some major IRC features are not supported (e.g: op, kick, voice)</desc1>
 				<desc2>Supported and works properly</desc2>
 				<score></score>
 				<comment></comment>
