@@ -27,13 +27,7 @@
 			<desc></desc>
 			<comment></comment>
 			<element name="xmmp" title="Extensible Messaging and Presence Protocol">
-				<element name="jabber" title="Core protocol of the Jabber Instant Messaging and Presence technology">
-					<desc0>Not Supported</desc0>
-					<desc1>Work in progress in order to integrate XMMP</desc1>
-					<desc2>Supported and works properly</desc2>
-					<score></score>
-					<comment></comment>
-				</element>
+				<desc>Core protocol of the Jabber Instant Messaging and Presence technology</desc>
 				<element	name="muc" title="Multi User Chatroom (MUC) handling">
 					<desc>Multi User Chatroom features</desc>
 					<desc0>No MUC support</desc0>
@@ -165,28 +159,133 @@ Advanced auto-away system: auto-message when auto-away is activated, settable id
 			</element>
 			<element name="msnp" title="Mobile Status Notification Protocol">
 				<desc>The protocol used by Windows Live Messenger (Previously MSN Messenger)</desc>
-				<desc0>Not Supported</desc0>
-				<desc1>Projects of integration of MSNP in the Client or partially supported</desc1>
-				<desc2>MSNP is supported and works properly</desc2>
-				<score></score>
 				<comment></comment>
+				<element name="msnbasicim" title="Basic Instant Messaging">
+					<desc0>Not Supported</desc0>
+					<desc1>Partially supported</desc1>
+					<desc2>Full support of MSNP basic instant messaging</desc2>
+					<score></score>
+					<comment></comment>
+				</element>
+				<element name="msnfilesharing" title="File sharing">
+					<desc0>Not Supported</desc0>
+					<desc1>Partially supported</desc1>
+					<desc2>Fully supported</desc2>
+					<score></score>
+					<comment></comment>
+				</element>
+				<element name="msnmuc" title="Multi User Conversation">
+					<desc0>Not Supported</desc0>
+					<desc1>Partially supported</desc1>
+					<desc2>Fully supported</desc2>
+					<score></score>
+					<comment></comment>
+				</element>
+				<element name="msnavatar" title="Avatar support for MSNP">
+					<desc0>Not Supported</desc0>
+					<desc1>Partially supported</desc1>
+					<desc2>Fully supported</desc2>
+					<score></score>
+					<comment></comment>
+				</element>
+				<element name="msnuserinfo" title="User information support">
+					<desc0>Not Supported</desc0>
+					<desc1>Partially supported</desc1>
+					<desc2>Fully supported</desc2>
+					<score></score>
+					<comment></comment>
+				</element>
+				<element name="msnadvanced" title="Advanced Windows Live Messenger features supported">
+					<desc>List of advanced instant messaging features of MSN supported (nudges, smileys, whiteboard...)</desc>
+					<comment></comment>
+				</element>
 			</element>
 			<element name="ymgs" title="Yahoo! Messenger Protocol">
-				<desc0>Not Supported</desc0>
-				<desc1>Projects of integration of YMSG or partially supported</desc1>
-				<desc2>YMSG is supported and works properly</desc2>
-				<score></score>
+				<desc></desc>
 				<comment></comment>
+				<element name="ymgsbasicim" title="Basic Instant Messaging">
+					<desc0>Not Supported</desc0>
+					<desc1>Partially supported</desc1>
+					<desc2>Full support of MSNP basic instant messaging</desc2>
+					<score></score>
+					<comment></comment>
+				</element>
+				<element name="ymgsfilesharing" title="File sharing">
+					<desc0>Not Supported</desc0>
+					<desc1>Partially supported</desc1>
+					<desc2>Fully supported</desc2>
+					<score></score>
+					<comment></comment>
+				</element>
+				<element name="ymgsmuc" title="Multi User Conversation">
+					<desc0>Not Supported</desc0>
+					<desc1>Partially supported</desc1>
+					<desc2>Fully supported</desc2>
+					<score></score>
+					<comment></comment>
+				</element>
+				<element name="ymgsavatar" title="Avatar support for MSNP">
+					<desc0>Not Supported</desc0>
+					<desc1>Partially supported</desc1>
+					<desc2>Fully supported</desc2>
+					<score></score>
+					<comment></comment>
+				</element>
+				<element name="ymgsuserinfo" title="User information support">
+					<desc0>Not Supported</desc0>
+					<desc1>Partially supported</desc1>
+					<desc2>Fully supported</desc2>
+					<score></score>
+					<comment></comment>
+				</element>
+				<element name="ymsgadvanced" title="Advanced Yahoo! Messenger features supported">
+					<desc>List of advanced instant messaging features of Yahoo! Messenger supported (nudges, smileys, games...)</desc>
+					<comment></comment>
+				</element>
 			</element>
 			<element name="aol" title="OSCAR/TOP Protocol">
 				<desc>Protocols in use with ICQ and AIM </desc>
-				<desc0>Not Supported</desc0>
-				<desc1>Projects of integration or partially supported</desc1>
-				<desc2>Supported and works properly</desc2>
-				<score></score>
 				<comment></comment>
+				<element name="aolbasicim" title="Basic Instant Messaging">
+					<desc0>Not Supported</desc0>
+					<desc1>Partially supported</desc1>
+					<desc2>Full support of MSNP basic instant messaging</desc2>
+					<score></score>
+					<comment></comment>
+				</element>
+				<element name="aolfilesharing" title="File sharing">
+					<desc0>Not Supported</desc0>
+					<desc1>Partially supported</desc1>
+					<desc2>Fully supported</desc2>
+					<score></score>
+					<comment></comment>
+				</element>
+				<element name="aolmuc" title="Multi User Conversation">
+					<desc0>Not Supported</desc0>
+					<desc1>Partially supported</desc1>
+					<desc2>Fully supported</desc2>
+					<score></score>
+					<comment></comment>
+				</element>
+				<element name="aolavatar" title="Avatar support for MSNP">
+					<desc0>Not Supported</desc0>
+					<desc1>Partially supported</desc1>
+					<desc2>Fully supported</desc2>
+					<score></score>
+					<comment></comment>
+				</element>
+				<element name="aoluserinfo" title="User information support">
+					<desc0>Not Supported</desc0>
+					<desc1>Partially supported</desc1>
+					<desc2>Fully supported</desc2>
+					<score></score>
+					<comment></comment>
+				</element>
+				<element name="aoladvanced" title="Advanced AIM/ICQ features supported">
+					<desc>List of advanced instant messaging features of Yahoo! Messenger supported (smileys...)</desc>
+					<comment></comment>
+				</element>
 			</element>
-		</element>
 		<element name="httpsolutions" title="Alternative to TCP protocols">
 			<desc>Existing solutions for firewall and NAT problems (http-polling, http-binding, etc...)</desc>
 			<comment></comment>
