@@ -224,7 +224,7 @@ Advanced auto-away system: auto-message when auto-away is activated, settable id
 					<score></score>
 					<comment></comment>
 				</element>
-				<element name="ymgsavatar" title="Avatar support for MSNP">
+				<element name="ymgsavatar" title="Avatar support for Yahoo! Messaging">
 					<desc0>Not Supported</desc0>
 					<desc1>Partially supported</desc1>
 					<desc2>Fully supported</desc2>
@@ -267,7 +267,7 @@ Advanced auto-away system: auto-message when auto-away is activated, settable id
 					<score></score>
 					<comment></comment>
 				</element>
-				<element name="aolavatar" title="Avatar support for MSNP">
+				<element name="aolavatar" title="Avatar support for AIM/ICQ">
 					<desc0>Not Supported</desc0>
 					<desc1>Partially supported</desc1>
 					<desc2>Fully supported</desc2>
