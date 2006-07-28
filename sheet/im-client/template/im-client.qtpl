@@ -286,6 +286,7 @@ Advanced auto-away system: auto-message when auto-away is activated, settable id
 					<comment></comment>
 				</element>
 			</element>
+		</element>
 		<element name="httpsolutions" title="Alternative to TCP protocols">
 			<desc>Existing solutions for firewall and NAT problems (http-polling, http-binding, etc...)</desc>
 			<comment></comment>
