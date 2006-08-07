@@ -2,117 +2,109 @@
 	<!-- project's properties -->
 	<property name="appname" value="JQEditeur"/>
 	<property name="lib" value="lib"/>
+	<property name="lib.linux" value="${lib}/linux"/>
+		
 	<property name="src" value="src"/>			
 	<property name="share" value="share"/>
+	<property name="swt.version" value="3232"/>
+	
 	<property name="dist" value="dist"/>
-	<property name="dist.windows" value="${dist}/win32"/>	
+	<property name="dist.common" value="${dist}/common"/>	
+	<property name="dist.common.linux" value="${dist.common}/linux"/>	
+	<property name="dist.common.share" value="${dist.common}/share"/>	
+
 	<property name="out" value="out"/>
 	<property name="out.classes" value="out"/>
-	<property name="out.lib" value="out"/>
+	<property name="out.lib" value="out/lib"/>
+	<property name="out.unzipedJars" value="out/unziped"/>
 
+	<property name="linux.app"	value="run.sh"/>
 
 	<!-- init -->
 	<target name="init" depends="clean">
+		<!-- Building tree directory for ouput -->
 		<mkdir dir="${out}"/>
 		<mkdir dir="${out.classes}"/>
 		<mkdir dir="${out.lib}"/>
 		<mkdir dir="${dist}"/>
-
+		<!-- Common Classpath -->
 		<path id="classpath">
 			<fileset dir="${lib}">
 				<include name="*.jar" />
+			</fileset>
+		</path>
+		
+		<!-- OS related classpath-->
+		<path id="linux-classpath">
+			<fileset dir="${lib}/linux">
+				<include name="*.*" />
 			</fileset>
 		</path>
 	</target>
 
 	<!-- COMPILE -->
 	<target name="build" depends="init" description="compil all java classes">
-	 	<javac 	compiler="gcj"
-			srcdir="${src}"
-	 		destdir="${out}">
+	 	<javac 	
+	 		 	failonerror="true"
+				srcdir="${src}"
+	 			destdir="${out}">
 	 		<classpath refid="classpath" />
+			<classpath refid="linux-classpath" />
 	 	</javac>
+		
 		<copy todir="${out}">
           	<fileset dir="${src}">
             	<include name="**/*.properties"/>
         	</fileset>
 		</copy>
 	</target>
+	
+	<!-- unjar a jar-->
+	
+	<target name="unjar">
 		
+	</target>
+	
 	<!-- JAR -->
 	<target name="jar-jqeditor" depends="build">
+		<mkdir dir="${out.unzipedJars}"/>
+		<unjar dest="${out.unzipedJars}">
+			<fileset dir="${lib}">
+				<include name="*.jar"/>
+			</fileset>
+		</unjar>				
+		
 		<jar destfile="${dist}/jqeditor.jar" >
 			<manifest>
 			    <attribute name="Built-By" value="${user.name}"/>
-			    <section name="common">
-			      <attribute name="Main-Class" value="org.qsos.main.JQ"/>
-			    </section>
+				<attribute name="Sealed" value="false"/>
+				<attribute name="Main-Class" value="org.qsos.main.JQ"/>
 			  </manifest>
 			<fileset dir="${out.classes}">
 				<include name="**/*.class"/>
 				<include name="**/*.properties"/>
 			</fileset>
-			
+			<fileset dir="${out.unzipedJars}">
+				<include name="**/*.*"/>
+			</fileset>			
 		</jar>
+		
 	</target>
 	
-	<!-- all -->
-	<target name="all" depends="clean,build">
-		<antcall target="jar-jqeditor"/>
-	</target>
-
-	<target name="run" description="RUN the program">
-		<java classname="org.qsos.main.JQ">
-			<classpath>
-				<path refid="classpath"/>
-				<pathelement location="${dist}/jqeditor.jar"/>
-			</classpath>
-		</java>
-	</target>
-
-
-	<!-- Building the app directory for the windows distrib -->
-
-	<target name="windows" depends="jar-jqeditor">
-		<mkdir dir="${dist.windows}"/>
-
-		<property name="target" value="${dist.windows}/${appname}"/>
-		<property name="target.src" value="${target}/src"/>
-       		<property name="target.lib" value="${target}/lib"/>       
-		<property name="target.share" value="${target}/share"/>
-
-		<mkdir dir="${target}"/>
-		<mkdir dir="${target.lib}"/>
-		<mkdir dir="${target.share}"/>
-		<mkdir dir="${target.src}"/>
-
+	<!-- Building the final directory tree --> 
+	<target name="common" depends="jar-jqeditor">
+		<mkdir dir="${dist.common}"/>
 		<!-- Copying source to the app's src dir -->
-		<copy todir="${target.src}">
-                	<fileset dir="${src}">
-                        	<include name="**/*.java"/>
-                	</fileset>
+		<copy todir="${dist.common}/src">
+        	<fileset dir="${src}">
+                	<include name="**/*.java"/>
+        	</fileset>
 		</copy>
-
 		<!-- Adding jar to the main directory -->
-
 		<copy 	file="${dist}/jqeditor.jar"
-			tofile="${target}/jqeditor.jar"/>
-
-
-		<copy todir="${target.lib}">
-			<fileset dir="${lib}">
-				<include name="**/*.jar"/>
-			</fileset>
-                </copy>
-
-		<!-- Adding windows dll for SWT -->
-		<copy todir="${target}">
-        	<fileset dir="${share}">
-            	<include name="swt-win32-3139.dll"/>
-            </fileset>
-        </copy>
+				tofile="${dist.common}/jqeditor.jar"/>
 		<!-- Adding resources -->
-		<copy todir="${target.share}">
+		<copy todir="${dist.common.share}">
 			<fileset dir="${share}">
 				<include name="**/*.png"/>
 				<include name="**/*.bmp"/>
@@ -120,8 +112,36 @@
 				<include name="**/*.ico"/>
 			</fileset>
 		</copy>
+		<!-- Adding windows dll for SWT -->
+		<copy todir="${dist.common.share}">
+        	<fileset dir="${share}">
+            	<include name="swt-win32-3139.dll"/>
+            </fileset>
+        </copy>
+		<!-- Copiyng windows launching script 
+		<copy	file=""	tofile=""/> -->
+		<!-- Adding linux .so archive for SWT -->
+		<copy todir="${dist.common.linux}">
+			<fileset dir="${lib.linux}">
+				<include name="**/*${swt.version}.so"/>
+			</fileset>
+		</copy>
+		<!-- Copying linux launching script -->
+		<copy	file="${linux.app}"	tofile="${dist.common}/${linux.app}"/>
+	
 	</target>
 
+	<!-- Running the app -->
+	<target name="run" description="RUN the program" >
+		<java 	fork="true" 
+				jar="${dist.common}/jqeditor.jar"  
+				logerror="true" >
+			<jvmarg value="-Djava.library.path=./${dist.common.linux}"/>
+		</java>
+	</target>
+
+	<!-- Cleanning the directories from products -->
+	
 	<target name="clean">
 		<delete failonerror="false">
 			<fileset dir="${dist}"/>
@@ -130,10 +150,11 @@
 		<delete dir="${dist}"/>
 		<delete dir="${out}"/>
 	</target>
-<!--
-	<copy todir="${out}">
-		<fileset dir="${src}">
-			<exclude name="**/*.java"/>
-		</fileset>
-	</copy> -->
+	
+	<!-- all -->
+	<target name="all" depends="clean,build">
+		<antcall target="jar-jqeditor"/>
+	</target>
+
+	
 </project>

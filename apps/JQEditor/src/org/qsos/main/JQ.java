@@ -1,5 +1,5 @@
 /*
-**  $Id: JQ.java,v 1.1 2006/06/16 14:16:35 goneri Exp $
+**  $Id: JQ.java,v 1.2 2006/08/07 09:08:46 rpelisse Exp $
 **
 **  Copyright (C) 2006 ESME SUDRIA ( www.esme.fr ) 
 **
@@ -144,6 +144,7 @@ public class JQ extends ApplicationWindow
 	public JQ()
 	{
 		super(null);
+        System.out.println("JQ is being run");
 		
 		addStatusLine();
 		addCoolBar(SWT.BORDER);

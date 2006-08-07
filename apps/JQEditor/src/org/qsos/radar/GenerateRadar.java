@@ -1,5 +1,5 @@
 /*
-**  $Id: GenerateRadar.java,v 1.2 2006/06/21 15:17:08 rpelisse Exp $
+**  $Id: GenerateRadar.java,v 1.3 2006/08/07 09:08:46 rpelisse Exp $
 **
 **  Copyright (C) 2006 ESME SUDRIA ( www.esme.fr ) 
 **
@@ -32,6 +32,7 @@ import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.jface.viewers.CheckStateChangedEvent;
 import org.eclipse.jface.viewers.CheckboxTreeViewer;
 import org.eclipse.jface.viewers.ICheckStateListener;
+
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.awt.SWT_AWT;
 import org.eclipse.swt.graphics.Color;
