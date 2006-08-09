@@ -9,6 +9,10 @@ if ($lang=="en") {
 	<ul>
 		<li><a href="docs/howto/en/QSOS-HOWTO_functional_grid.php">How to design a new functional grid?</a></li>
 	</ul>
+        <ul>
+                <li><a href="docs/howto/en/QSOS-HOWTO_sheet_evaluation.php">How to write an evaluation sheet ?</a></li>
+        </ul>
+
 <?php
 } else if ($lang=="fr") {
 ?>
