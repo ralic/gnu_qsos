@@ -22,11 +22,6 @@ class XMLreader
 			value += text.to_s
 		end
 		return value
-#		set = node.find(node.name)
-#		if set != nil && set.length > 0
-#			return set.to_a.first.child
-#		end
-#		return ""
 	end
 	
 	def extractAttribut(attribut)
@@ -40,9 +35,7 @@ class XMLreader
 		end
 		return nil
 	end
-	
-	#private:extractAttribut
-	
+		
     def makeElement(node)
     	if node.nil?
     		# TODO: throw an exception
