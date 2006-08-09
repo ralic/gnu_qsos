@@ -98,7 +98,7 @@
 	</target>
 	
 	<!-- Building the final directory tree --> 
-	<target name="common" depends="jar-jqeditor">
+	<target name="make" depends="jar-jqeditor" description="Make the application">
 		<mkdir dir="${dist.common}"/>
 		<!-- Copying source to the app's src dir -->
 		<copy todir="${dist.common}/src">
