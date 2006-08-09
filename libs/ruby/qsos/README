@@ -1,0 +1,39 @@
+DESCRIPTION
+
+  QSOS-Document - Easy API to access/edit QSOS files
+
+PREREQUISITES
+
+  Ruby 1.8.4 
+  Gems 0.9
+
+BUILDING/INSTALLING
+
+  Once the archive is unpacked, use these commands:
+
+	$ gem build qsos.gemspec
+	# gem install qsos-1.0.0.gem
+
+Note that the last command will NOT test the library.
+
+USING THE API
+
+Once installed with gem, you can use the library in your code this way:
+
+	require 'rubygems'
+	require_gem 'qsos'
+	
+	lib = QSOS::Document.new
+	lib.load("an_valid_xml_file.qsos")
+	...
+
+STATUS
+
+ This libraru is still in developpement
+
+COPYRIGHT
+
+  Copyright 2006 Atos Origin <romain.pelisse@atosorigin.com>
+
+  This library is free software; you can redistribute it
+  and/or modify it under the terms of the GNU General Public License.
