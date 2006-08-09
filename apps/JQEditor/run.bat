@@ -1,0 +1,1 @@
+java -Djava.libra ry.path=./share/windows/ -jar jqeditor.jar 

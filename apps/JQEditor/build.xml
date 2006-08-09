@@ -2,23 +2,28 @@
 	<!-- project's properties -->
 	<property name="appname" value="JQEditeur"/>
 	<property name="lib" value="lib"/>
-	<property name="lib.linux" value="${lib}/linux"/>
 		
 	<property name="src" value="src"/>			
 	<property name="share" value="share"/>
+	<property name="share.linux" 	value="${lib}/linux"/>
+	<property name="share.windows" 	value="${lib}/windows"/>
+
+	
 	<property name="swt.version" value="3232"/>
 	
 	<property name="dist" value="dist"/>
-	<property name="dist.common" value="${dist}/common"/>	
-	<property name="dist.common.linux" value="${dist.common}/linux"/>	
+	<property name="dist.common" value="${dist}/${appname}"/>	
 	<property name="dist.common.share" value="${dist.common}/share"/>	
-
+	<property name="dist.common.share.windows" value="${dist.common.share}/windows"/>	
+	<property name="dist.common.share.linux" value="${dist.common.share}/linux"/>	
+	
 	<property name="out" value="out"/>
 	<property name="out.classes" value="out"/>
 	<property name="out.lib" value="out/lib"/>
 	<property name="out.unzipedJars" value="out/unziped"/>
 
-	<property name="linux.app"	value="run.sh"/>
+	<property name="linux.app"		value="run.sh"/>
+	<property name="windows.app"	value="run.bat"/>
 
 	<!-- init -->
 	<target name="init" depends="clean">
@@ -40,6 +45,13 @@
 				<include name="*.*" />
 			</fileset>
 		</path>
+		
+		<path id="windows-classpath">
+			<fileset dir="${lib}/windows">
+				<include name="*.*" />
+			</fileset>
+		</path>
+		
 	</target>
 
 	<!-- COMPILE -->
@@ -49,7 +61,6 @@
 				srcdir="${src}"
 	 			destdir="${out}">
 	 		<classpath refid="classpath" />
-			<classpath refid="linux-classpath" />
 	 	</javac>
 		
 		<copy todir="${out}">
@@ -59,11 +70,6 @@
 		</copy>
 	</target>
 	
-	<!-- unjar a jar-->
-	
-	<target name="unjar">
-		
-	</target>
 	
 	<!-- JAR -->
 	<target name="jar-jqeditor" depends="build">
@@ -113,35 +119,35 @@
 			</fileset>
 		</copy>
 		<!-- Adding windows dll for SWT -->
-		<copy todir="${dist.common.share}">
-        	<fileset dir="${share}">
-            	<include name="swt-win32-3139.dll"/>
+		<copy todir="${dist.common.share.windows}">
+        	<fileset dir="${share.windows}">
+            	<include name="swt-win32-3232.dll"/>
             </fileset>
         </copy>
-		<!-- Copiyng windows launching script 
-		<copy	file=""	tofile=""/> -->
+		<!-- Copiyng windows launching script -->
+		<copy	file="${windows.app}"	
+				tofile="${dist.common}/${windows.app}"/> 
 		<!-- Adding linux .so archive for SWT -->
-		<copy todir="${dist.common.linux}">
-			<fileset dir="${lib.linux}">
+		<copy todir="${dist.common.share.linux}">
+			<fileset dir="${share.linux}">
 				<include name="**/*${swt.version}.so"/>
 			</fileset>
 		</copy>
 		<!-- Copying linux launching script -->
 		<copy	file="${linux.app}"	tofile="${dist.common}/${linux.app}"/>
-	
 	</target>
 
 	<!-- Running the app -->
-	<target name="run" description="RUN the program" >
+	<target name="run" description="RUN the program">
+		<!-- TODO: Adding test to launch the proper script according to the os -->
 		<java 	fork="true" 
 				jar="${dist.common}/jqeditor.jar"  
 				logerror="true" >
-			<jvmarg value="-Djava.library.path=./${dist.common.linux}"/>
+			<jvmarg value="-Djava.library.path=./${dist.common.share.linux}"/>
 		</java>
 	</target>
 
-	<!-- Cleanning the directories from products -->
-	
+	<!-- Cleanning the directories from products -->	
 	<target name="clean">
 		<delete failonerror="false">
 			<fileset dir="${dist}"/>
@@ -156,5 +162,4 @@
 		<antcall target="jar-jqeditor"/>
 	</target>
 
-	
 </project>
