@@ -207,30 +207,28 @@
 		<property name="dist.common.os"	value="${dist.common}/macosx/JQEditor.app/Contents"/>
 		<mkdir dir="${dist.common.os}"/>
 		<mkdir dir="${dist.common.os}/Resources/"/>
+		<mkdir dir="${dist.common.os}/Resources/Java"/>	
 		<mkdir dir="${dist.common.os}/MacOS"/>
-		<mkdir dir="${dist.common.os}/MacOS/swt"/>
-		<!-- Adding JQEditor classes -->
-		<copy todir="${dist.common.os}/MacOS/">
-			<fileset dir="${out.classes}">
-				<include name="**/*.class"/>
-				<include name="**/*.properties"/>
-			</fileset>
-			<!-- Adding dependencies common to all JQEditor -->
-			<fileset dir="${out.unzipedJars}">
-				<include name="**/*.*"/>
-			</fileset>		
-		</copy>
+		<mkdir dir="${dist.common.os}/MacOS/libs"/>
+		<!-- Adding JQEditor.jar -->
+		<copy file="${dist}/macosx/jqeditor.jar" todir="${dist.common.os}/Resources/Java"/>
 		<!-- Adding native libs -->
-		<copy todir="${dist.common.os}/MacOS/swt/">
+		<copy todir="${dist.common.os}/MacOS/libs/">
 			<fileset dir="${lib}/macosx/swt-M20060629-1905-carbon-macosx">
 				<include name="**/*.*"/>
-				<exclude name="**/*.jar"/>
 			</fileset>
 		</copy>
 		<!-- Adding macosx descriptor to the app -->
 		<copy file="artifact/macosx/Info.plist" todir="${dist.common.os}"/>
-		<!-- and finally adding the launch script -->
-		<copy file="artifact/macosx/jqeditor-run" todir="${dist.common.os}/MacOS"/>
+		<!-- Adding the 'share' folder -->
+		<copy todir="${dist.common.os}/Resources/share">
+			<fileset dir="${share}">
+				<include name="**/*.png"/>
+				<include name="**/*.bmp"/>
+   				<include name="**/*.jpg"/>
+				<include name="**/*.ico"/>
+			</fileset>
+		</copy>
 	</target>
 	
 	<!-- Running the app -->
