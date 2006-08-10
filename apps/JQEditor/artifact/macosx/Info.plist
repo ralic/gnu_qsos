@@ -33,9 +33,7 @@
 		<key>MainClass</key>
 		<string>org.qsos.main.JQ</string>
 		<key>VMOptions</key>
-		<string>-Djava.library.path=$JAVAROOT/libs 
-			-Dorg.eclipse.swt.internal.carbon.noFocusRing 
-			-Dorg.eclipse.swt.internal.carbon.smallFonts</string>
+		<string>-Djava.library.path=$JAVAROOT/libs -Dorg.eclipse.swt.internal.carbon.noFocusRing -Dorg.eclipse.swt.internal.carbon.smallFonts -verbose:gc -verbose:jni -Xdebug -Xnoagent -Djava.compiler=NONE</string>
 		<key>WorkingDirectory</key>
 		<string>$APP_PACKAGE/Contents/Resources/</string>
 	</dict>
