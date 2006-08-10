@@ -1,29 +1,31 @@
 <project name="JQEditor" default="jar-jqeditor" basedir=".">
 	<!-- project's properties -->
-	<property name="appname" value="JQEditeur"/>
+	<property name="appname" value="JQEditor"/>
+
 	<property name="lib" value="lib"/>
-		
+	<property name="lib.linux" value="${lib}/linux"/>
+	
 	<property name="src" value="src"/>			
 	<property name="share" value="share"/>
 	<property name="share.linux" 	value="${lib}/linux"/>
 	<property name="share.windows" 	value="${lib}/windows"/>
-
-	
-	<property name="swt.version" value="3232"/>
 	
 	<property name="dist" value="dist"/>
-	<property name="dist.common" value="${dist}/${appname}"/>	
-	<property name="dist.common.share" value="${dist.common}/share"/>	
-	<property name="dist.common.share.windows" value="${dist.common.share}/windows"/>	
-	<property name="dist.common.share.linux" value="${dist.common.share}/linux"/>	
+	<property name="dist.common" value="${dist}"/>	
+	<property name="dist.common.share" value="${dist.common}/share"/>
+	
+	<property name="dist.common.share.windows" 	value="${dist.common.share}/windows"/>	
+	<property name="dist.common.share.linux" 	value="${dist.common.share}/linux"/>
+	<property name="dist.common.share.macosx"	value="${dist.common.share}/macosx"/>
 	
 	<property name="out" value="out"/>
 	<property name="out.classes" value="out"/>
 	<property name="out.lib" value="out/lib"/>
 	<property name="out.unzipedJars" value="out/unziped"/>
+	<property name="out.os_related_jars" value="out/os_related_unziped"/>
 
-	<property name="linux.app"		value="run.sh"/>
-	<property name="windows.app"	value="run.bat"/>
+	<property name="linux.app"		value="artifact/linux/run.sh"/>
+	<property name="windows.app"	value="artifact/windows/run.bat"/>
 
 	<!-- init -->
 	<target name="init" depends="clean">
@@ -41,14 +43,20 @@
 		
 		<!-- OS related classpath-->
 		<path id="linux-classpath">
-			<fileset dir="${lib}/linux">
-				<include name="*.*" />
+			<fileset dir="${lib}/linux/">
+				<include name="**/*.*" />
 			</fileset>
 		</path>
 		
 		<path id="windows-classpath">
-			<fileset dir="${lib}/windows">
-				<include name="*.*" />
+			<fileset dir="${lib}/windows/">
+				<include name="**/*.*" />
+			</fileset>
+		</path>
+		
+		<path id="macosx-classpath">
+			<fileset dir="${lib}/macosx/">
+				<include name="**/*.*" />
 			</fileset>
 		</path>
 		
@@ -56,13 +64,15 @@
 
 	<!-- COMPILE -->
 	<target name="build" depends="init" description="compil all java classes">
-	 	<javac 	
-	 		 	failonerror="true"
+	 	<javac 	failonerror="true"
 				srcdir="${src}"
 	 			destdir="${out}">
 	 		<classpath refid="classpath" />
+			<classpath refid="linux-classpath" />
+ 			<classpath refid="macosx-classpath" />
+			<classpath refid="windows-classpath" />
 	 	</javac>
-		
+		<!-- Copy resources to output directory -->
 		<copy todir="${out}">
           	<fileset dir="${src}">
             	<include name="**/*.properties"/>
@@ -70,47 +80,111 @@
 		</copy>
 	</target>
 	
+	<!-- Custom unjarring jar task -->
+	<target name="custom-unjar">
+		<unjar dest="${out.os_related_jars}/${target}">
+			<fileset dir="${lib}/${target}/">
+				<include name="**/*.jar"/>
+			</fileset>
+		</unjar>
+	</target>
 	
 	<!-- JAR -->
 	<target name="jar-jqeditor" depends="build">
+		
+		<!-- unjarring jars common to all distrib -->
 		<mkdir dir="${out.unzipedJars}"/>
 		<unjar dest="${out.unzipedJars}">
 			<fileset dir="${lib}">
 				<include name="*.jar"/>
 			</fileset>
-		</unjar>				
+		</unjar>		
+		<!-- unjarring jars for each distribution -->
+		<antcall target="custom-unjar">
+			<param name="target" value="linux"/>
+		</antcall>
+		<antcall target="custom-unjar">
+			<param name="target" value="windows"/>
+		</antcall>
+		<antcall target="custom-unjar">
+			<param name="target" value="macosx"/>
+		</antcall>
 		
-		<jar destfile="${dist}/jqeditor.jar" >
+		<!-- making jar for each distribution -->
+		<mkdir dir="${dist}/linux/"/>
+		<mkdir dir="${dist}/macosx/"/>
+		<mkdir dir="${dist}/windows/"/>
+
+		<antcall target="generic-make-jar">
+			<param name="target" value="linux"/>
+		</antcall>
+		<antcall target="generic-make-jar">
+			<param name="target" value="windows"/>
+		</antcall>
+		<antcall target="generic-make-jar">
+			<param name="target" value="macosx"/>
+		</antcall>
+	</target>
+
+	<!-- Task to generate the application -->
+	<target name="make-dist" depends="jar-jqeditor" description="Make the distributions">
+		<mkdir dir="${dist.common}"/>
+		<antcall target="generic-make-dist">
+			<param name="target" value="linux"/>
+			<param name="app" value="run.sh"/>
+		</antcall>
+
+		<antcall target="generic-make-dist">
+			<param name="target" value="windows"/>
+			<param name="app" value="run.bat"/>
+		</antcall>
+		<!-- MacOSX app -->
+		<!-- <antcall name="macosx-distribution"/> -->
+	</target>
+
+	
+	<!-- Generic jar-task -->
+	<target name="generic-make-jar">
+		<jar destfile="${dist}/${target}/jqeditor.jar" >
 			<manifest>
-			    <attribute name="Built-By" value="${user.name}"/>
+				<attribute name="Built-By" value="${user.name}"/>
 				<attribute name="Sealed" value="false"/>
 				<attribute name="Main-Class" value="org.qsos.main.JQ"/>
-			  </manifest>
+			</manifest>
+			<!-- Adding JQEditor classes -->
 			<fileset dir="${out.classes}">
 				<include name="**/*.class"/>
 				<include name="**/*.properties"/>
 			</fileset>
+			<!-- Adding dependencies common to all JQEditor -->
 			<fileset dir="${out.unzipedJars}">
 				<include name="**/*.*"/>
 			</fileset>			
+			
+			<!-- os specific -->
+			<fileset dir="${out.os_related_jars}/${target}/">
+				<include name="**/*.*"/>
+			</fileset>			
 		</jar>
-		
 	</target>
 	
-	<!-- Building the final directory tree --> 
-	<target name="make" depends="jar-jqeditor" description="Make the application">
-		<mkdir dir="${dist.common}"/>
+	
+	<!-- Generic make-dist task  --> 
+	<target name="generic-make-dist">
+		<property name="dist.common.os"	value="${dist.common}/${target}"/>
+		<mkdir dir="${dist.common.os}"/>
+				
 		<!-- Copying source to the app's src dir -->
-		<copy todir="${dist.common}/src">
+		<copy todir="${dist.common.os}/src">
         	<fileset dir="${src}">
-                	<include name="**/*.java"/>
+                <include name="**/*.java"/>
         	</fileset>
 		</copy>
 		<!-- Adding jar to the main directory -->
-		<copy 	file="${dist}/jqeditor.jar"
-				tofile="${dist.common}/jqeditor.jar"/>
+		<copy 	file="${dist}/${target}/jqeditor.jar"
+				tofile="${dist.common.os}/jqeditor.jar"/>
 		<!-- Adding resources -->
-		<copy todir="${dist.common.share}">
+		<copy todir="${dist.common.os}/share">
 			<fileset dir="${share}">
 				<include name="**/*.png"/>
 				<include name="**/*.bmp"/>
@@ -118,25 +192,47 @@
 				<include name="**/*.ico"/>
 			</fileset>
 		</copy>
-		<!-- Adding windows dll for SWT -->
-		<copy todir="${dist.common.share.windows}">
-        	<fileset dir="${share.windows}">
-            	<include name="swt-win32-3232.dll"/>
-            </fileset>
-        </copy>
-		<!-- Copiyng windows launching script -->
-		<copy	file="${windows.app}"	
-				tofile="${dist.common}/${windows.app}"/> 
-		<!-- Adding linux .so archive for SWT -->
-		<copy todir="${dist.common.share.linux}">
-			<fileset dir="${share.linux}">
-				<include name="**/*${swt.version}.so"/>
+		<!-- Adding libraries -->
+		<copy todir="${dist.common.os}/share/${target}">
+			<fileset dir="${lib}/${target}">
+				<include name="**/*.*"/>
+				<exclude name="**/*.jar"/>
 			</fileset>
 		</copy>
-		<!-- Copying linux launching script -->
-		<copy	file="${linux.app}"	tofile="${dist.common}/${linux.app}"/>
+		<!-- Copying launching script for linux/windows-->
+		<copy	file="artifact/${target}/${app}"	tofile="${dist.common.os}/${app}"/>
 	</target>
 
+	<target name="macosx-distribution">
+		<property name="dist.common.os"	value="${dist.common}/macosx/JQEditor.app/Contents"/>
+		<mkdir dir="${dist.common.os}"/>
+		<mkdir dir="${dist.common.os}/Resources/"/>
+		<mkdir dir="${dist.common.os}/MacOS"/>
+		<mkdir dir="${dist.common.os}/MacOS/swt"/>
+		<!-- Adding JQEditor classes -->
+		<copy todir="${dist.common.os}/MacOS/">
+			<fileset dir="${out.classes}">
+				<include name="**/*.class"/>
+				<include name="**/*.properties"/>
+			</fileset>
+			<!-- Adding dependencies common to all JQEditor -->
+			<fileset dir="${out.unzipedJars}">
+				<include name="**/*.*"/>
+			</fileset>		
+		</copy>
+		<!-- Adding native libs -->
+		<copy todir="${dist.common.os}/MacOS/swt/">
+			<fileset dir="${lib}/macosx/swt-M20060629-1905-carbon-macosx">
+				<include name="**/*.*"/>
+				<exclude name="**/*.jar"/>
+			</fileset>
+		</copy>
+		<!-- Adding macosx descriptor to the app -->
+		<copy file="artifact/macosx/Info.plist" todir="${dist.common.os}"/>
+		<!-- and finally adding the launch script -->
+		<copy file="artifact/macosx/jqeditor-run" todir="${dist.common.os}/MacOS"/>
+	</target>
+	
 	<!-- Running the app -->
 	<target name="run" description="RUN the program">
 		<!-- TODO: Adding test to launch the proper script according to the os -->
@@ -159,7 +255,7 @@
 	
 	<!-- all -->
 	<target name="all" depends="clean,build">
-		<antcall target="jar-jqeditor"/>
+		<antcall target="make-dist"/>
+		<antcall tager="run"/>
 	</target>
-
 </project>
