@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+     id : abrieved command name , ex : n[ew], so 'n' is the id
+     name : full name, same example : 'new'
+     <command 	id=""
+		name="">
+	     <documentation>
+		     this tag contents the documentation for the command.
+	     </documentation>
+	     min: positive integer, the min number of args [0,N]
+	     max: positive integer, the max number of args [0,N]
+	     note : min <= max, unless an exception is thrown
+	     <args 	min=""
+			max="">
+		     Maybe more stuff to validate the command ?
+	     </args>
+	     <script>
+	     	ruby code including here to get the work done !
+	     </script>
+     </command>
+-->
+<querysos-interpreter prompt="QuerySOS> ">
+	<command 	id="o"
+			name="open">
+		<documentation>usage: type "open", no args needed.</documentation>
+		<args 	min="1"
+			max="1">
+		</args>
+		<script>
+			puts "bye..."
+			exit
+		</script>
+	</command>
+	<command 	id="q"
+			name="quit">
+		<documentation>usage : type "quit", no args need</documentation>
+		<args 	min="0"
+			max="0">
+		</args>
+		<script>
+			puts "bye..."
+			exit
+		</script>
+	</command>	
+	<command 	id="s"
+			name="show">
+		<documentation>usage : type "show line", one args needed ( a valid node)</documentation>
+		<args 	min="1"
+			max="1">
+		</args>
+		<script/>
+	</command>	
+	<command 	id="n"
+			name="new">
+		<documentation>usage : type "new filename", one args needed ( a valid filename)</documentation>
+		<args 	min="1"
+			max="1">
+		</args>
+		<script/>
+	</command>	
+	
+	<command 	id="w"
+			name="write">
+		<documentation>usage : type "write", no args needed.</documentation>
+		<args 	min="0"
+			max="0">
+		</args>
+		<script/>
+	</command>	
+	#		- b[rowse] 'node' ( display childs )
+	#		- a[dd] 'nodeA' 'nodeB' ( add nodeA as a child of nodeB
+	#		- r[emove] nodeA 
+
+	
+	<command 	id="b"
+			name="browser">
+		<documentation>usage : type "browse node", one args needed ( the node to browse).</documentation>
+		<args 	min="1"
+			max="1">
+		</args>
+		<script/>
+	</command>	
+	
+	<command 	id="a"
+			name="add">
+		<documentation>usage : type "add nodeToAdd parentNode".</documentation>
+		<args 	min="0" 
+			max="0">
+		</args>
+		<script/>
+	</command>	
+</querysos-interpreter>
