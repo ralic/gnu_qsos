@@ -1,0 +1,721 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document>
+   <header>
+      <authors>
+    </authors>
+      <dates>
+         <creation></creation>
+         <validation></validation>
+      </dates>
+      <language>en</language>
+      <appname></appname>
+      <release></release>
+      <licenseid></licenseid>
+      <licensedesc></licensedesc>
+      <url></url>
+      <desc></desc>
+      <demourl></demourl>
+      <qsosformat>1.6</qsosformat>
+      <qsosappfamily>ESB</qsosappfamily>
+      <qsosspecificformat></qsosspecificformat>
+   </header>
+   <include section="generic"/>
+   <section name="basicfeatures" title="Basic features">
+      <comment>Basic ESB features</comment>
+      <element name="transport" title="Transport">
+         <desc>Transport features</desc>
+         <element name="communicationmodes" title="Communication modes">
+            <desc>Type of supported communication modes</desc>
+            <element name="synchronous" title="Synchronous">
+               <desc>Synchronous communication mode</desc>
+               <desc0>Not supported</desc0>
+               <desc1>Supported but with limitation</desc1>
+               <desc2>Fully supported</desc2>
+               <comment></comment>
+               <score></score>
+            </element>
+            <element name="asynchronous" title="Asynchronous">
+               <desc>Asynchronous communication mode</desc>
+               <desc0>Not supported</desc0>
+               <desc1>Supported but with limitation</desc1>
+               <desc2>Fully supported</desc2>
+               <comment></comment>
+               <score></score>
+            </element>
+            <element name="pointtopoint" title="Point-to-point">
+               <desc>Point-to-point communication mode</desc>
+               <desc0>Not supported</desc0>
+               <desc1>Supported but with limitation</desc1>
+               <desc2>Fully supported</desc2>
+               <comment></comment>
+               <score></score>
+            </element>
+            <element name="publishsubscribe" title="Publish-Subscribe">
+               <desc>Publish and Subscribe communication mode</desc>
+               <desc0>Not supported</desc0>
+               <desc1>Supported but with limitation</desc1>
+               <desc2>Fully supported</desc2>
+               <comment></comment>
+               <score></score>
+            </element>
+            <element name="fireandforget" title="Fire and forget">
+               <desc>Fire and Forget communication mode</desc>
+               <desc0>Not supported</desc0>
+               <desc1>Supported but with limitation</desc1>
+               <desc2>Fully supported</desc2>
+               <comment></comment>
+               <score></score>
+            </element>
+         </element>
+         <element name="transactionsupport" title="Transaction support">
+            <desc>Support of transactions</desc>
+            <desc0>Not supported</desc0>
+            <desc1>Supported but with limitation</desc1>
+            <desc2>Fully supported</desc2>
+            <comment></comment>
+            <score></score>
+         </element>
+         <element name="integratedmom" title="Integrated MOM">
+            <desc>Is a Message Oriented Middleware shipped with the ESB?</desc>
+            <desc0>No MOM is provided</desc0>
+            <desc1>A MOM is provided but is limited</desc1>
+            <desc2>A fully functional MOM is provided</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+      </element>
+      <element name="routing" title="Routing">
+         <desc>Routing services</desc>
+         <comment></comment>
+         <element name="rulebased" title="Rule based">
+            <desc>Rule based routing</desc>
+            <comment></comment>
+            <element name="contentbasedrouting" title="Content based routing">
+               <desc>Messages can be routed depending on their content</desc>
+               <desc0>Not supported</desc0>
+               <desc1>Supported, but with limitations</desc1>
+               <desc2>Fully supported</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="addressbasedrouting" title="Address based routing">
+               <desc>Messages can be routed depending on addresses</desc>
+               <desc0>Not supported</desc0>
+               <desc1>Supported, but with limitations</desc1>
+               <desc2>Fully supported</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="metadatebasedrouting" title="Metadata based routing">
+               <desc>Messages can be routed depending on their metadata</desc>
+               <desc0>Not supported</desc0>
+               <desc1>Supported, but with limitations</desc1>
+               <desc2>Fully supported</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+         </element>
+         <element name="scriptbased" title="Script based">
+            <desc>Script based routing</desc>
+            <desc0>Not supported</desc0>
+            <desc1>Supported, but with limitations</desc1>
+            <desc2>Fully supported</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+      </element>
+      <element name="transformation" title="Transformation">
+         <desc>Available features to transform messages</desc>
+         <comment></comment>
+         <element name="formats" title="Formats">
+            <desc>Supported formats</desc>
+            <comment></comment>
+            <element name="xml" title="XML">
+               <desc>XML transformation</desc>
+               <comment></comment>
+               <element name="xslt" title="XSLT">
+                  <desc>XSLT support</desc>
+                  <desc0>Not supported</desc0>
+                  <desc1>Supported, but with limitations</desc1>
+                  <desc2>Fully supported</desc2>
+                  <score></score>
+                  <comment></comment>
+               </element>
+               <element name="xquery" title="XQuery">
+                  <desc>XQuery support</desc>
+                  <desc0>Not supported</desc0>
+                  <desc1>Supported, but with limitations</desc1>
+                  <desc2>Fully supported</desc2>
+                  <score></score>
+                  <comment></comment>
+               </element>
+            </element>
+            <element name="nonxml" title="Non XML formats">
+               <desc>Transformation features available to transform non XML messages</desc>
+               <desc0>No features available</desc0>
+               <desc1>Very few features available</desc1>
+               <desc2>Comprehensive features available</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+         </element>
+         <element name="rulebasedtransformation" title="Rule based">
+            <desc>Rule based transformation features</desc>
+            <desc0>Not supported</desc0>
+            <desc1>Supported, but with limitations</desc1>
+            <desc2>Fully supported</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="scriptbasedtransformation" title="Script based ">
+            <desc>Script based transformation features</desc>
+            <desc0>Not supported</desc0>
+            <desc1>Supported, but with limitations</desc1>
+            <desc2>Fully supported</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="schemavalidation" title="Schema Validation">
+            <desc>Schema validation features (XSD, DTD, ...)</desc>
+            <desc0>Not supported</desc0>
+            <desc1>Supported, but with limitations</desc1>
+            <desc2>Fully supported</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+      </element>
+   </section>
+   <section name="adapters" title="Adapters">
+      <desc>Shipped adapters</desc>
+      <element name="transportadapters" title="Transport adapters">
+         <desc>Transport adapters available</desc>
+         <comment></comment>
+         <element name="jms" title="JMS">
+            <desc>Java Messaging Service support</desc>
+            <desc0>Not supported</desc0>
+            <desc1>Supported but with limitations</desc1>
+            <desc2>Fully supported</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="http" title="HTTP">
+            <desc>HTTP adapter</desc>
+            <desc0>Not supported</desc0>
+            <desc1>Supported but with limitations</desc1>
+            <desc2>Fully supported</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="soap" title="SOAP">
+            <desc>SOAP adapter</desc>
+            <desc0>Not supported</desc0>
+            <desc1>Supported but with limitations</desc1>
+            <desc2>Fully supported</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="ftp" title="FTP">
+            <desc>FTP adapter</desc>
+            <desc0>Not supported</desc0>
+            <desc1>Supported but with limitations</desc1>
+            <desc2>Fully supported</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="smtp" title="SMTP">
+            <desc>SMTP adapter</desc>
+            <desc0>Not supported</desc0>
+            <desc1>Supported but with limitations</desc1>
+            <desc2>Fully supported</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="rmi" title="RMI">
+            <desc>Java Remote Method Invocation</desc>
+            <desc0>Not supported</desc0>
+            <desc1>Supported but with limitations</desc1>
+            <desc2>Fully supported</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="corba" title="CORBA">
+            <desc>CORBA adapter</desc>
+            <desc0>Not supported</desc0>
+            <desc1>Supported but with limitations</desc1>
+            <desc2>Fully supported</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="xmpp" title="XMPP">
+            <desc>XMPP adapter (Jabber  transport protocol)</desc>
+            <desc0>Not supported</desc0>
+            <desc1>Supported but with limitations</desc1>
+            <desc2>Fully supported</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="propmoms" title="Proprietary MOMs">
+            <desc>Adapters for proprietary MOMs (like Websphere MQ, ...)</desc>
+            <desc0>No adapters available</desc0>
+            <desc1>Limited adapters available</desc1>
+            <desc2>Fully functional adapters available for the most known proprietary MOMs</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+      </element>
+      <element name="functionaladapters" title="Functional Adapters">
+         <desc>Functional adapters available</desc>
+         <comment></comment>
+         <element name="erp" title="ERP">
+            <desc>Adapters for ERP software</desc>
+            <desc0>No adapter available</desc0>
+            <desc1>Few or poor adapters</desc1>
+            <desc2>Fully functional adapters for the most known ERP software</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="crm" title="CRM">
+            <desc>Adapters for CRM software</desc>
+            <desc0>No adapter available</desc0>
+            <desc1>Few or poor adapters</desc1>
+            <desc2>Fully functional adapters for the most known CRM software</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+      </element>
+      <element name="datadapters" title="Data adapters">
+         <desc>Data adapters available</desc>
+         <comment></comment>
+         <element name="sgbd" title="DBMS">
+            <desc>Adapters available for database systems</desc>
+            <desc0>No adapter available</desc0>
+            <desc1>Few or poor adapters</desc1>
+            <desc2>Fully functional adapters for the most known DBMS software</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="file" title="File">
+            <desc>Filesystem adapters</desc>
+            <desc0>No adapter available</desc0>
+            <desc1>Adapter available but with limitation</desc1>
+            <desc2>Fully functional file adapter</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+      </element>
+   </section>
+   <section name="advancedfeatures" title="Advanced features">
+      <desc></desc>
+      <element name="orchestration" title="Orchestration">
+         <desc></desc>
+         <comment></comment>
+         <element name="businessrules" title="Business rules">
+            <desc>Ability to define and apply business rules</desc>
+            <desc0>Not supported</desc0>
+            <desc1>Supported but with limitation</desc1>
+            <desc2>Fully supported</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="bpel" title="BPEL support">
+            <desc></desc>
+            <desc0>Not supported</desc0>
+            <desc1>Supported but with limitation</desc1>
+            <desc2>Fully supported</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+      </element>
+      <element name="security" title="Security">
+         <desc>Security features</desc>
+         <comment></comment>
+         <element name="authentication" title="Authentication">
+            <desc></desc>
+            <comment></comment>
+            <element name="jaas" title="JAAS support">
+               <desc></desc>
+               <desc0>Not supported</desc0>
+               <desc1>Supported but with limitation</desc1>
+               <desc2>Fully supported</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="saml" title="SAML support">
+               <desc></desc>
+               <desc0>Not supported</desc0>
+               <desc1>Supported but with limitation</desc1>
+               <desc2>Fully supported</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+         </element>
+         <element name="authorization" title="Authorization">
+            <desc>Authorization features</desc>
+            <desc0>No feature available</desc0>
+            <desc1>Few or poor features</desc1>
+            <desc2>Fully functional features, with SAML support</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="dataencryption" title="Data encryption">
+            <desc></desc>
+            <desc0>Not supported</desc0>
+            <desc1>Supported but with limitation (on encryption algorithms for instance)</desc1>
+            <desc2>Fully supported</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="dataintegrity" title="Data integrity">
+            <desc>Available features to check data integrity (cheksums, ...)</desc>
+            <desc0>Not supported</desc0>
+            <desc1>Supported but with limitation</desc1>
+            <desc2>Fully supported</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="pkisupport" title="PKI support">
+            <desc></desc>
+            <desc0>Not supported</desc0>
+            <desc1>Supported but with limitation (no revocation list support for instance)</desc1>
+            <desc2>Fully supported</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+      </element>
+      <element name="administration" title="Administration">
+         <desc>Administration features</desc>
+         <comment></comment>
+         <element name="monitoring" title="Monitoring">
+            <desc></desc>
+            <comment></comment>
+            <element name="snmp" title="SNMP support">
+               <desc></desc>
+               <desc0>Not supported</desc0>
+               <desc1>Supported but with limitation</desc1>
+               <desc2>Fully supported</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="jmx" title="JMX support">
+               <desc></desc>
+               <desc0>Not supported</desc0>
+               <desc1>Supported but with limitation</desc1>
+               <desc2>Fully supported</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="supportedems" title="Supported management software">
+               <desc>Supported Entreprise management software (like Nagios, Tivoli, OpenView, ...)</desc>
+               <desc0>Not supported</desc0>
+               <desc1>Few or limited software supported</desc1>
+               <desc2>Full integration with most known management software</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+         </element>
+         <element name="qos" title="QoS">
+            <desc>Quality of Service</desc>
+            <comment></comment>
+            <element name="logging" title="Logging">
+               <desc>Logging features</desc>
+               <desc0>Not supported</desc0>
+               <desc1>Supported but with limitation</desc1>
+               <desc2>Fully supported</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="delivery" title="Guaranteed delivery">
+               <desc></desc>
+               <desc0>Not supported</desc0>
+               <desc1>Supported but with limitation</desc1>
+               <desc2>Fully supported</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="scalability" title="Scalability">
+               <desc>Scalability features (load balancing, ...)</desc>
+               <desc0>No features</desc0>
+               <desc1>Few and limited features</desc1>
+               <desc2>Fully functional features</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="faulttolerance" title="Fault tolerance">
+               <desc>High Availability anf Fault tolerance features</desc>
+               <desc0>No features</desc0>
+               <desc1>Few and limited features</desc1>
+               <desc2>Fully functional features</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+         </element>
+         <element name="processcontrol" title="Process control">
+            <desc></desc>
+            <comment></comment>
+            <element name="bam" title="BAM">
+               <desc>Business Activity Monitoring</desc>
+               <desc0>Not supported</desc0>
+               <desc1>Supported but with limitation</desc1>
+               <desc2>Fully functional features</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="exceptionhandling" title="Exception handling">
+               <desc></desc>
+               <desc0>Not supported</desc0>
+               <desc1>Limited features</desc1>
+               <desc2>Fully supported</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+         </element>
+         <element name="admintools" title="Administration tools">
+            <desc>Available tools for configuration, management, deployment</desc>
+            <desc0>No tools available</desc0>
+            <desc1>Toolset available but with limited functional coverage</desc1>
+            <desc2>Fully functional toolset available, in both GUI and CLI modes</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="servicedisco" title="Service discovery">
+            <desc>Automatic service discovery</desc>
+            <desc0>Not supported</desc0>
+            <desc1>Supported but with limitation</desc1>
+            <desc2>Fully supported</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+      </element>
+      <element name="devtools" title="Development tools">
+         <desc>Available tools for design and development</desc>
+         <desc0>No tools available</desc0>
+         <desc1>Toolset available but with limited functional coverage</desc1>
+         <desc2>Fully functional toolset available</desc2>
+         <score></score>
+         <comment></comment>
+      </element>
+   </section>
+   <section name="integration" title="Integration">
+      <desc></desc>
+      <element name="supportedstandards" title="Supported standards">
+         <desc></desc>
+         <comment></comment>
+         <element name="bpelsupport" title="BPEL">
+            <desc></desc>
+            <desc0>Not supported</desc0>
+            <desc1>Supported, but with limitations</desc1>
+            <desc2>Fully supported</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="webservices" title="Web Services">
+            <desc>Web Services standards</desc>
+            <comment></comment>
+            <element name="wsdl" title="WSDL">
+               <desc></desc>
+               <desc0>Not supported</desc0>
+               <desc1>Supported, but with limitations</desc1>
+               <desc2>Fully supported</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="soapsupport" title="SOAP">
+               <desc></desc>
+               <desc0>Not supported</desc0>
+               <desc1>Supported, but with limitations</desc1>
+               <desc2>Fully supported</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="uddi" title="UDDI">
+               <desc></desc>
+               <desc0>Not supported</desc0>
+               <desc1>Supported, but with limitations</desc1>
+               <desc2>Fully supported</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="wstransaction" title="WS-Transaction">
+               <desc></desc>
+               <desc0>Not supported</desc0>
+               <desc1>Supported, but with limitations</desc1>
+               <desc2>Fully supported</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="wscoordination" title="WS-Coordination">
+               <desc></desc>
+               <desc0>Not supported</desc0>
+               <desc1>Supported, but with limitations</desc1>
+               <desc2>Fully supported</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="wssecurity" title="WS-Security">
+               <desc></desc>
+               <desc0>Not supported</desc0>
+               <desc1>Supported, but with limitations</desc1>
+               <desc2>Fully supported</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="wsreliability" title="WS-Reliability">
+               <desc></desc>
+               <desc0>Not supported</desc0>
+               <desc1>Supported, but with limitations</desc1>
+               <desc2>Fully supported</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="wschoreography" title="WS-Choreography">
+               <desc></desc>
+               <desc0>Not supported</desc0>
+               <desc1>Supported, but with limitations</desc1>
+               <desc2>Fully supported</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+         </element>
+         <element name="javastandards" title="Java standards">
+            <desc></desc>
+            <comment></comment>
+            <element name="jca" title="JCA">
+               <desc>Java Connector Architecture support</desc>
+               <desc0>Not supported</desc0>
+               <desc1>Supported, but with limitations</desc1>
+               <desc2>Fully supported</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="jbi" title="JBI">
+               <desc>Java Business Integration support</desc>
+               <desc0>Not supported</desc0>
+               <desc1>Supported, but with limitations</desc1>
+               <desc2>Fully supported</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+         </element>
+         <element name="xmlsupport" title="XML standards">
+            <desc></desc>
+            <comment></comment>
+            <element name="xsltsupport" title="XSLT">
+               <desc></desc>
+               <desc0>Not supported</desc0>
+               <desc1>Supported, but with limitations</desc1>
+               <desc2>Fully supported</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="xquerysupport" title="XQuery">
+               <desc></desc>
+               <desc0>Not supported</desc0>
+               <desc1>Supported, but with limitations</desc1>
+               <desc2>Fully supported</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="xsd" title="XSD">
+               <desc></desc>
+               <desc0>Not supported</desc0>
+               <desc1>Supported, but with limitations</desc1>
+               <desc2>Fully supported</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+         </element>
+         <element name="sca" title="SCA">
+            <desc>Service Component Architecture support</desc>
+            <comment></comment>
+            <element name="scavesrion" title="SCA supported version">
+               <desc></desc>
+               <comment></comment>
+            </element>
+            <element name="scastimpl" title="Supported service type implementations">
+               <desc></desc>
+               <comment></comment>
+            </element>
+            <element name="scdl" title="SCDL support">
+               <desc></desc>
+               <desc0>Not supported</desc0>
+               <desc1>Supported, but with limitations</desc1>
+               <desc2>Fully supported</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="scacimpl" title="Supported component implementation types">
+               <desc></desc>
+               <comment></comment>
+            </element>
+         </element>
+         <element name="sdo" title="SDO">
+            <desc>Service Data Objects support</desc>
+            <comment></comment>
+            <element name="sdoversion" title="Supported version">
+               <desc></desc>
+               <comment></comment>
+            </element>
+            <element name="businessobject" title="Business Object">
+               <desc></desc>
+               <desc0>Not supported</desc0>
+               <desc1>Supported, but with limitations</desc1>
+               <desc2>Fully supported</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="businessgraph" title="Business Graph">
+               <desc></desc>
+               <desc0>Not supported</desc0>
+               <desc1>Supported, but with limitations</desc1>
+               <desc2>Fully supported</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="botypemeta" title="Business Object Type Metadata">
+               <desc></desc>
+               <desc0>Not supported</desc0>
+               <desc1>Supported, but with limitations</desc1>
+               <desc2>Fully supported</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="boservices" title="Business Object Services">
+               <desc></desc>
+               <desc0>Not supported</desc0>
+               <desc1>Supported, but with limitations</desc1>
+               <desc2>Fully supported</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+         </element>
+      </element>
+      <element name="pluginarchitecture" title="Plugin architecture">
+         <desc>ESB is designed to admit plugins or extensions</desc>
+         <desc0>No plugins support</desc0>
+         <desc1>Available plugin architecture but limited (in features or in number of plugins)</desc1>
+         <desc2>Comprehensice plugin architecture</desc2>
+         <score></score>
+         <comment></comment>
+      </element>
+      <element name="extapis" title="Extensiblity APIs">
+         <desc></desc>
+         <comment></comment>
+         <element name="adapterapi" title="Adapter API">
+            <desc></desc>
+            <desc0>No API available</desc0>
+            <desc1>API provided but with limitation</desc1>
+            <desc2>Comprehensive APIs available</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="transportapi" title="Transport API">
+            <desc></desc>
+            <desc0>No API available</desc0>
+            <desc1>API provided but with limitation</desc1>
+            <desc2>Comprehensive APIs available</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+      </element>
+   </section>
+</document>
