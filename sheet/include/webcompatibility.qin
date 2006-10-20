@@ -1,4 +1,5 @@
 <section name="webcompatibility" title="Web compatibility">
+  
   <element name="webstandards" title="Standards">
     <element name="htmlstandard" title="HTML">
       <desc>http://validator.w3.org</desc>
@@ -25,6 +26,9 @@
       <score></score>
     </element>
   </element>
+  
+  
+  
   <element name="webbestpractice" title="Best Practive">
     <desc>http://developer.apple.com/internet/webcontent/bestwebdev.htmls</desc>
     <element name="tablepsitioning" title="Table Positioning">
@@ -35,23 +39,15 @@
       <score></score>
     </element>
     <element name="frameuse" title="Frame use">
-      <desc>&lt;frame&gt; </desc>
+      <desc>Frame use </desc>
       <desc0></desc0>
       <desc1></desc1>
       <desc2></desc2>
       <comment></comment>
       <score></score>
     </element>
-    <element name="firameuse" title="iFrame use">
-      <desc>&lt;iframe&gt; </desc>
-      <desc0></desc0>
-      <desc1></desc1>
-      <desc2></desc2>
-      <comment></comment>
-      <score></score>
-    </element>
-    <element name="cssdesignedforprintout" title="css designed for printout">
-      <desc>&lt;iframe&gt; </desc>
+    <element name="iframeuse" title="iFrame use">
+      <desc>iFrame use </desc>
       <desc0></desc0>
       <desc1></desc1>
       <desc2></desc2>
@@ -59,7 +55,7 @@
       <score></score>
     </element>
     <element name="cssdesignedforprintout" title="css designed for printout">
-      <desc>&lt;iframe&gt; </desc>
+      <desc>css designed for printout</desc>
       <desc0></desc0>
       <desc1></desc1>
       <desc2></desc2>
@@ -67,6 +63,8 @@
       <score></score>
     </element>
   </element>
+  
+  
   <element supportedbrowser="supportedbrowser" title="Supported Browser">
     <element name="browsermozillafirefox" title="Mozilla and Firefox">
       <desc>Firefox > 1</desc>
@@ -109,4 +107,64 @@
       <score></score>
     </element>
   </element>
+  
+  
+  
+  <element name="browserrequiredenablings" title="Best Practive">
+    <desc>
+    Browser required enablings:  javascript, applet, SVG, and flash. 
+    Reminder: here, a higher score does not mean a better product nor the opposite, 
+    it really depends on your needs and non functional requirements.  
+    </desc>
+    <element name="javascriptrequired" title="Javascript required">
+      <desc>
+        Is the browser javascript enabling required ?
+        If the score is 1 or 2, do indicate in the comment section the required jvm version.
+        If the score is 1, do detail.
+      </desc>
+      <desc0>The interface makes no use of javascript, and thus, does not need javascript to run at full flavor and speed </desc0>
+      <desc1>The interface makes use of javascript but can properly function without it.</desc1>
+      <desc2>Javascript is necessary to use the interface (beacuse it's AJAX based for instance).</desc2>
+      <comment></comment>
+      <score></score>
+    </element>
+    <element name="jvmrequired" title="a Java plugin is required">
+      <desc>
+        Does the browser needs a java plugin (to enable applet) ? 
+        If the score is 1 or 2, do indicate in the comment section the required jvm version.
+        If the score is 1, do detail.
+      </desc>
+      <desc0>The interface does not contains any applet, and thus, does not need java to run at full flavor and speed </desc0>
+      <desc1>The interface makes use of applet(s) but can properly function without it.</desc1>
+      <desc2>A Java plugin is necessary to use the interface, the applets are key players in it.</desc2>
+      <comment></comment>
+      <score></score>
+    </element>
+    <element name="svgrequired" title="a SVG plugin is required">
+      <desc>
+        Does the browser needs a SVG plugin ? 
+        If score is 1 or 2, do indicate in the comment section the required SVG version.
+        If the score is 1, do detail.
+      </desc>
+      <desc0>The interface does not contains any SVG graph, and thus, does not need any SVG plugin to run at full flavor and speed </desc0>
+      <desc1>The interface makes use of SVG but can properly function without it.</desc1>
+      <desc2>A SVG plugin is necessary to use the interface, the SVG graph are part of key features of the interface.</desc2>
+      <comment></comment>
+      <score></score>
+    </element>
+    <element name="flashrequired" title="a flash plugin is required">
+      <desc>
+        Does the browser needs a flash plugin ? 
+        If score is 1 or 2, do indicate in the comment section the required flash version.
+        If the score is 1, do detail.
+      </desc>
+      <desc0>The interface does not contains any flash graph, and thus, does not need any flash plugin to run at full flavor and speed </desc0>
+      <desc1>The interface makes use of flash but can properly function without it.</desc1>
+      <desc2>A flash plugin is necessary to use the interface, the interface is mainly made of flash.</desc2>
+      <comment></comment>
+      <score></score>
+    </element>
+  </element>
+  
+  
 </section>
