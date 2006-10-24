@@ -294,8 +294,7 @@ Minor releases reserved for the Enterprise version . </comment>
             <desc1>Existing, functionalities but uncomplete and or need improvement</desc1>
             <desc2>Complete and easy-to-use administration and monitoring functionalities. Possible integration with external tools (e.g: SNMP, syslog, ...)</desc2>
             <score>2</score>
-            <comment>Gestion intégrée des droits groupes / utilisateurs , import/export complets de repositories , nombreuses API permettant l'integration avec des outils exterieurs .
-Integrated user rights management , full repository import / export , numerous API for integration with external tools .  </comment>
+            <comment>Integrated user rights management , full repository import / export , numerous API for integration with external tools .  </comment>
          </element>
       </element>
       <element name="technicaladaptability" title="Technical adaptability">
@@ -360,7 +359,7 @@ Integrated user rights management , full repository import / export , numerous A
             <desc1>Existing roadmap without planning</desc1>
             <desc2>Versionned roadmap, with planning and measure of delays</desc2>
             <score>2</score>
-            <comment>Roadmap tres detaillée , avec des objectifs et delais clairs 
+            <comment>Roadmap tres detaillï¿½ , avec des objectifs et delais clairs 
 detailed roadmap , with clear and detailed objectives</comment>
          </element>
          <element name="sponsor" title="Sponsor">
@@ -573,7 +572,7 @@ detailed roadmap , with clear and detailed objectives</comment>
             <desc0></desc0>
             <desc1></desc1>
             <desc2></desc2>
-            <comment>Possibilité de personnaliser sa page d'accueil . </comment>
+            <comment>Possibilitï¿½de personnaliser sa page d'accueil . </comment>
             <score>1</score>
          </element>
       </element>
