@@ -116,8 +116,7 @@
                <desc1>Detectable activity but without process clearly exposed, loing reaction/resolution time</desc1>
                <desc2>Strong reactivity based on roles and tasks assignment</desc2>
                <score>2</score>
-               <comment>Jira tres actif . tout le monde peut soulever des bugs ou feature improvements . Les patchs sont cependant reservés a la version entreprise
-Active JIRA . Anybody can raise bugs or feature improvement . However , bugfix releases are reserved for the enterprise version . </comment>
+               <comment>Active JIRA . Anybody can raise bugs or feature improvement . However , bugfix releases are reserved for the enterprise version . </comment>
             </element>
             <element name="activityonfunctionalities" title="Activity on functionalities">
                <desc0>No or few new functionalities</desc0>
