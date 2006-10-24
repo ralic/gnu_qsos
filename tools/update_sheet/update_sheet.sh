@@ -1,4 +1,4 @@
-#$Id: update_sheet.sh,v 1.9 2006/06/15 16:19:51 goneri Exp $
+#$Id: update_sheet.sh,v 1.10 2006/10/24 16:29:13 rsemeteys Exp $
 #  Copyright (C) 2006 Atos Origin 
 #
 #  Author: Gonéri Le Bouder <goneri.lebouder@atosorigin.com>
@@ -111,6 +111,13 @@ eof
 
 }
 
+deploy_local () {
+cd $LOCAL_DIR
+rm -Rf $LOCAL_DIR_SHEETS $LOCAL_DIR_TEMPLATES
+cp -Rf $DESTDIR_SHEETS $LOCAL_DIR_SHEETS
+cp -Rf $DESTDIR_TEMPLATES $LOCAL_DIR_TEMPLATES
+}
+
 LOCALDIR=`pwd`
 mkdir -p $CVS_LOCAL_DIR
 mkdir -p $DESTDIR_SHEETS
@@ -138,4 +145,9 @@ createIndex "template" $DESTDIR_TEMPLATES
 if [ "$FTP_UPLOAD" = "yes" ]
 then
   upload
+fi
+
+if [ "$LOCAL_DEPLOY" = "yes" ]
+then
+  deploy_local
 fi
