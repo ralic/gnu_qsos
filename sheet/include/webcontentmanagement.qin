@@ -1,5 +1,5 @@
 <section name="webcontentmanagement" title="Web content management support">
-    <comment>This section describes the system's web content/attachement management features.</comment>
+    <desc>This section describes the system's web content/attachement management features.</desc>
 
 
     <element name="metadata" title="Support for Meta data on content">
@@ -234,7 +234,7 @@
         </element>
     </element>
 
-    <section name="pluginsandpluginability"
+    <element name="pluginsandpluginability"
         title="Plugins, pluginability, built-in objects, and page templates">
 
         <element name="pluginability" title="plugin ability">
@@ -323,7 +323,7 @@
                 <score/>
             </element>
         </element>
-    </section>
+    </element>
 
 
 
