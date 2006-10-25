@@ -30,6 +30,16 @@
         parse file content in order to create preview file, find key words, and thus use for
         search, merge and diff</desc>
         <element name="textcontent" title="text formats">
+            <element name="txt" title="text files">
+                <desc>If score is 1 or 2, do detail in the comment section the supported features :
+                    parsing, previewing, reading, searching</desc>
+                <desc0>not supported</desc0>
+                <desc1>partially: for instance: storing and metadata are supported but parsing is
+                    not (and consequently nor preview nor search, diff, merge)</desc1>
+                <desc2>fully supported</desc2>
+                <comment/>
+                <score/>
+            </element>
             <element name="importformathtml" title="HTML files">
                 <desc>If score is 1 or 2, do detail in the comment section the supported features :
                     parsing, previewing, reading, searching</desc>
@@ -107,8 +117,7 @@
 
 
     <element name="versioncontrol" title="On line version control">
-        <desc> The documents targeted by the version control are those listed as fully supported in
-            the above "documentsupport" elements </desc>
+        <desc> The documents targeted by the version control are those listed as fully supported in the above "documentsupport" elements </desc>
         <element name="history"
             title="online access to each pages/docs (of fully supported media) history/versioning">
             <desc0>No history/versioning</desc0>

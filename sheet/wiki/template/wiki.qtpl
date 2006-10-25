@@ -350,8 +350,7 @@
     
 
     <section name="pagesexport" title="wiki pages exports">
-        <desc> RSS feeds are already described in the webcontentmanagement include/section. Here we
-            list the other export kinds. </desc>
+        <desc> RSS feeds are already described in the webcontentmanagement include/section. Here we list the other export kinds. </desc>
         <element name="rawexport" title="raw export: wiki page as coded">
             <desc0>No such feature</desc0>
             <desc1>limited support </desc1>
