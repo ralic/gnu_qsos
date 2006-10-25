@@ -1,0 +1,48 @@
+<section name="webappprerequisite" title="web application prerequisites">
+  
+  <element name="platform" title="platform on which the web application is running">
+    <desc>
+      Detail here the platform details and implementation language(s)  and its(their) version
+    </desc>
+    <comment></comment>
+    <element name="j2eeplatform" title="Is the web application running on a j2ee platform?">
+      <desc>
+        Detail in the comment section the J2EE or JavaEE specifications used an their versions as well as the supported servers.
+      </desc>
+      <desc0>the web app is not running on this platform</desc0>
+      <desc1>support a limited number of servers</desc1>
+      <desc2>may run on many servers, respect platform standards</desc2>
+      <comment></comment>
+    </element>
+    mod_perl, cgi, php, j2ee
+    <element name="phpplatform" title="Is the web application running on a php platform?">
+      <desc>
+        Detail in the comment section php versions and the supported servers.
+      </desc>
+      <desc0>the web app is not running on this platform</desc0>
+      <desc1>support a limited number of servers</desc1>
+      <desc2>may run on many servers, respect platform standards</desc2>
+      <comment></comment>
+    </element>
+    <element name="cgiplatform" title="Is the web application running on a cgi platform?">
+      <desc>
+        Detail in the comment section cgi versions and the supported servers.
+      </desc>
+      <desc0>the web app is not running on this platform</desc0>
+      <desc1>support a limited number of servers</desc1>
+      <desc2>may run on many servers, respect platform standards</desc2>
+      <comment></comment>
+    </element>
+    <element name="mod_perlplatform" title="Is the web application running on a mod_perl platform?">
+      <desc>
+        Detail in the comment section cgi versions and the supported servers.
+      </desc>
+      <desc0>the web app is not running on this platform</desc0>
+      <desc1>support a limited number of servers</desc1>
+      <desc2>may run on many servers, respect platform standards</desc2>
+      <comment></comment>
+    </element>
+    
+  </element>
+  
+</section>

@@ -5,7 +5,7 @@
       <desc>http://validator.w3.org</desc>
       <desc0>Page not valid (parse errors)</desc0>
       <desc1>Page not valid with important errors (encoding mismatch)</desc1>
-      <desc2>Page not valid, but with minor errors (missing "alt" attribute, use of unknow attribute)</desc2>
+      <desc2>Page valid, or with minor errors (missing "alt" attribute, use of unknow attribute)</desc2>
       <comment></comment>
       <score></score>
     </element>
@@ -13,7 +13,7 @@
       <desc>http://validator.w3.org</desc>
       <desc0>Page not valid (parse errors)</desc0>
       <desc1>Page not valid with important errors (encoding mismatch)</desc1>
-      <desc2>Page not valid, but with minor errors (missing "alt" attribute, use of unknow attribute)</desc2>
+      <desc2>Page valid, or with minor errors (missing "alt" attribute, use of unknow attribute)</desc2>
       <comment></comment>
       <score></score>
     </element>
@@ -21,7 +21,7 @@
       <desc>http://validator.w3.org</desc>
       <desc0>CSS doesn't or no valid not valide (parse errors)</desc0>
       <desc1>CSS not valid with important errors (encoding mismatch)</desc1>
-      <desc2>CSS not valid, but with minor errors (missing "alt" attribute, use of unknow attribute)</desc2>
+      <desc2>CSS valid, or with minor errors (missing "alt" attribute, use of unknow attribute)</desc2>
       <comment></comment>
       <score></score>
     </element>
@@ -32,33 +32,34 @@
   <element name="webbestpractice" title="Best Practive">
     <desc>http://developer.apple.com/internet/webcontent/bestwebdev.htmls</desc>
     <element name="tablepsitioning" title="Table Positioning">
-      <desc0></desc0>
-      <desc1></desc1>
-      <desc2></desc2>
+      <desc>html tables should not be used for layout/positioning, css is there to help.</desc>
+      <desc0>html tables are not used for layout/positioning</desc0>
+      <desc1>not too much used</desc1>
+      <desc2>systematically, too much used</desc2>
       <comment></comment>
       <score></score>
     </element>
     <element name="frameuse" title="Frame use">
       <desc>Frame use </desc>
-      <desc0></desc0>
-      <desc1></desc1>
-      <desc2></desc2>
+      <desc0>frame are not used</desc0>
+      <desc1>frame are rarely used</desc1>
+      <desc2>systematically, too much used</desc2>
       <comment></comment>
       <score></score>
     </element>
     <element name="iframeuse" title="iFrame use">
       <desc>iFrame use </desc>
-      <desc0></desc0>
-      <desc1></desc1>
-      <desc2></desc2>
+      <desc0>iframe are not used</desc0>
+      <desc1>iframe are rarely used</desc1>
+      <desc2>systematically, too much used</desc2>
       <comment></comment>
       <score></score>
     </element>
     <element name="cssdesignedforprintout" title="css designed for printout">
       <desc>css designed for printout</desc>
-      <desc0></desc0>
-      <desc1></desc1>
-      <desc2></desc2>
+      <desc0>no</desc0>
+      <desc1>yes, but print-outs are not well rendered for a few use cases.</desc1>
+      <desc2>yes</desc2>
       <comment></comment>
       <score></score>
     </element>
@@ -68,41 +69,41 @@
   <element supportedbrowser="supportedbrowser" title="Supported Browser">
     <element name="browsermozillafirefox" title="Mozilla and Firefox">
       <desc>Firefox > 1</desc>
-      <desc0></desc0>
-      <desc1></desc1>
-      <desc2></desc2>
+      <desc0>not supported at all</desc0>
+      <desc1>not officially supported, but works ok or good enough.</desc1>
+      <desc2>supported and advised browser</desc2>
       <comment></comment>
       <score></score>
     </element>
     <element name="browserkonqueror" title="Konqueror">
       <desc>Konqueror > 3</desc>
-      <desc0></desc0>
-      <desc1></desc1>
-      <desc2></desc2>
+      <desc0>not supported at all</desc0>
+      <desc1>not officially supported, but works ok or good enough.</desc1>
+      <desc2>supported and advised browser</desc2>
       <comment></comment>
       <score></score>
     </element>
     <element name="browsermsie" title="MSIE">
       <desc>MSIE > 5</desc>
-      <desc0></desc0>
-      <desc1></desc1>
-      <desc2></desc2>
+      <desc0>not supported at all</desc0>
+      <desc1>not officially supported, but works ok or good enough.</desc1>
+      <desc2>supported and advised browser</desc2>
       <comment></comment>
       <score></score>
     </element>
     <element name="browsersafari" title="Safari">
       <desc>Safarie</desc>
-      <desc0></desc0>
-      <desc1></desc1>
-      <desc2></desc2>
+      <desc0>not supported at all</desc0>
+      <desc1>not officially supported, but works ok or good enough.</desc1>
+      <desc2>supported and advised browser</desc2>
       <comment></comment>
       <score></score>
     </element>
     <element name="browserlegacy" title="legacy browsers">
       <desc>Legacy browser are browser outdated like MSIE4 and Netscape 4.* .</desc>
-      <desc0></desc0>
-      <desc1></desc1>
-      <desc2></desc2>
+      <desc0>not supported at all</desc0>
+      <desc1>not officially supported, but works ok or good enough.</desc1>
+      <desc2>supported and advised browser</desc2>
       <comment></comment>
       <score></score>
     </element>
