@@ -67,6 +67,7 @@
   
   
   <element supportedbrowser="supportedbrowser" title="Supported Browser">
+    <desc>Supported Browser</desc>
     <element name="browsermozillafirefox" title="Mozilla and Firefox">
       <desc>Firefox, please detail the supported version in the comment section</desc>
       <desc0>not supported at all</desc0>

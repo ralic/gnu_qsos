@@ -4,7 +4,6 @@
     <desc>
       Detail here the platform details and implementation language(s)  and its(their) version
     </desc>
-    <comment></comment>
     <element name="j2eeplatform" title="Is the web application running on a j2ee platform?">
       <desc>
         Detail in the comment section the J2EE or JavaEE specifications used an their versions as well as the supported servers.
@@ -13,6 +12,7 @@
       <desc1>support a limited number of servers</desc1>
       <desc2>may run on many servers, respect platform standards</desc2>
       <comment></comment>
+      <score></score>
     </element>
     <element name="phpplatform" title="Is the web application running on a php platform?">
       <desc>
@@ -22,6 +22,7 @@
       <desc1>support a limited number of servers</desc1>
       <desc2>may run on many servers, respect platform standards</desc2>
       <comment></comment>
+       <score></score>
     </element>
     <element name="cgiplatform" title="Is the web application running on a cgi platform?">
       <desc>
@@ -31,6 +32,7 @@
       <desc1>support a limited number of servers</desc1>
       <desc2>may run on many servers, respect platform standards</desc2>
       <comment></comment>
+      <score></score>
     </element>
     <element name="mod_perlplatform" title="Is the web application running on a mod_perl platform?">
       <desc>
@@ -40,8 +42,9 @@
       <desc1>support a limited number of servers</desc1>
       <desc2>may run on many servers, respect platform standards</desc2>
       <comment></comment>
+      <score></score>
     </element>
-    
+    <comment></comment>
   </element>
   
 </section>
