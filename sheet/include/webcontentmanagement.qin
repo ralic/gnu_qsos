@@ -3,8 +3,7 @@
 
 
     <element name="metadata" title="Support for Meta data on content">
-        <desc>Meta data are information related to a document like (keywords, category, author,
-            copyright holder, ...)</desc>
+        <desc>Meta data are information related to a document like (keywords, category, author, copyright holder, ...)</desc>
         <element name="keyword" title="Keyword support">
             <desc>Metadata are all the specific keywords that can be attached to a document (e.g:
                 sun, holydays, summer for a picture from your last holydays)</desc>
@@ -28,9 +27,8 @@
 
     <element name="documentsupport" title="document types support">
         <desc> Supported means that the internal engine is able to store and eventually read or
-            parse file content in order to create preview file, find key words, and thus use for
-            search, merge and diff</desc>
-
+        parse file content in order to create preview file, find key words, and thus use for
+        search, merge and diff</desc>
         <element name="textcontent" title="text formats">
             <element name="importformathtml" title="HTML files">
                 <desc>If score is 1 or 2, do detail in the comment section the supported features :
@@ -108,7 +106,7 @@
 
 
 
-    <section name="versioncontrol" title="On line version control">
+    <element name="versioncontrol" title="On line version control">
         <desc> The documents targeted by the version control are those listed as fully supported in
             the above "documentsupport" elements </desc>
         <element name="history"
@@ -144,12 +142,11 @@
             <score/>
         </element>
 
-    </section>
+    </element>
 
 
     <element name="picture" title="picture formats support">
-        <desc> Supported means that the internal engine is able to store and eventually make
-            thumbnail/preview file</desc>
+        <desc>Supported means that the internal engine is able to store and eventually make thumbnail/preview file</desc>
         <element name="commonpictureformat" title="common file format">
             <desc>Format are: jpg, gif, png, bmp, tiff, xpm, </desc>
             <desc0>not supported</desc0>
@@ -169,8 +166,7 @@
     </element>
 
     <element name="search" title="Support for search">
-        <desc>The metadata and media content support is to be detailed in the above metadata and
-            mediasupport elements </desc>
+        <desc>The metadata and media content support is to be detailed in the above metadata and mediasupport elements </desc>
         <element name="searchengine" title="Search Engine feature">
             <desc0>No search engine available</desc0>
             <desc1>Searches are limited (to filename, metadata or text content for instance)</desc1>
@@ -221,8 +217,7 @@
             <desc>Ability to lock file avoid data lost or synchronization issues</desc>
             <desc0>The feature doesn't exist</desc0>
             <desc1>The feature just exists</desc1>
-            <desc2>The feature exists, and administrator can quickly unlock a file from an user. A
-                time out system exists to unlock file after a certain amount of time.</desc2>
+            <desc2>The feature exists, and administrator can quickly unlock a file from an user. A time out system exists to unlock file after a certain amount of time.</desc2>
             <comment/>
             <score/>
         </element>
@@ -243,9 +238,8 @@
         title="Plugins, pluginability, built-in objects, and page templates">
 
         <element name="pluginability" title="plugin ability">
-            <desc> adequate software architecture for custom plugin creation, easy plugin interface
-                for writing your own additions. Do detail in the comment section the supported
-                plugin languages </desc>
+            <desc>adequate software architecture for custom plugin creation, easy plugin interface 
+            for writing your own additions. Do detail in the comment section the supported plugin languages </desc>
             <desc0>No such feature</desc0>
             <desc1>limited support</desc1>
             <desc2>fully supported</desc2>
@@ -319,10 +313,9 @@
                 <score/>
             </element>
             <element name="otherplugins" title="other noticeable built-in plugins">
-                <desc> others: FAQ, meeting minutes, Action Tracker plugin, bookmarklet,
-                    Geolocalisation features: GeoURL or googleMaps plugins, Tagging and Tag clouds
-                    (delicio.us, technorati, others), etc. Do list the plugins in the comment
-                    section. </desc>
+                <desc> others: FAQ, meeting minutes, Action Tracker plugin, bookmarklet, 
+                Geolocalisation features: GeoURL or googleMaps plugins, Tagging and Tag clouds
+                (delicio.us, technorati, others), etc. Do list the plugins in the comment section. </desc>
                 <desc0>No such feature</desc0>
                 <desc1>a few other plugins </desc1>
                 <desc2>many other plugins</desc2>
