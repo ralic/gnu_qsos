@@ -1,7 +1,7 @@
 #!//usr/bin/perl -w
 # this script is experimental and will be certainly rewrite
 # It depends on the CVS release of QSOS::Document
-# $Id: syncglobaldesc,v 1.2 2006/05/19 10:35:19 goneri Exp $
+# $Id: syncglobaldesc,v 1.3 2006/10/25 15:14:00 goneri Exp $
 use strict;
 
 use Getopt::Long;
@@ -11,7 +11,7 @@ use QSOS::Document;
 
 sub _help {
   my $msg = shift;
-  print $msg if (defined $msg && $msg);
+  print $msg."\n" if (defined $msg && $msg);
   print "usage syncglobalsection -l -m -t template.xml -f sheet.qsos\n";
   print "option:\n";
   print "\t--template -t : template\n";
@@ -44,8 +44,11 @@ GetOptions (
   'help' => \$help,
 );
 
-_help("cant't find the QSOS file") unless (defined $file && -f $file);
-_help("cant't find the template file") unless (defined $template && -f $template);
+
+_help("file parameter is missing") unless (defined $file && $file);
+_help("template parameter is missing") unless (defined $template && $template);
+_help("cant't find the QSOS file: $file") unless (-f $file);
+_help("cant't find the template file: $template") unless (-f $template);
 
 
 my $t = new QSOS::Document;
