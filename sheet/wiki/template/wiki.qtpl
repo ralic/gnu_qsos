@@ -20,9 +20,12 @@
     </header>
 
     <include section="generic"/>
-
+    
+    <include section="webappprerequisite"/>
+    
     <include section="websecurity"/>
     <include section="storagesupport"/>
+    
     <include section="webcompatibility"/>
     <include section="webcontentmanagement"/>
 
