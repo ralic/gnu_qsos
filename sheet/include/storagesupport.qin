@@ -6,8 +6,8 @@
       Reminder: here, a higher score does not mean a better product nor the opposite, 
       it really depends on your needs and non functional requirements.  
     </desc>
-    <desc0>The data persisted by the software cant be stored flatfiles</desc0>
-    <desc1>The data persisted by the software can be stored flatfiles, though it's not the default option.</desc1>
+    <desc0>The data persisted by the software cant be stored in flatfiles</desc0>
+    <desc1>The data persisted by the software can be stored in flatfiles, though it's not the default option.</desc1>
     <desc2>The data persisted by the software is only stored in flatfiles</desc2>
     <comment></comment>
     <score></score>
