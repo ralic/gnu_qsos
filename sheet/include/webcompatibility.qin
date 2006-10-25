@@ -1,34 +1,34 @@
 <section name="webcompatibility" title="Web compatibility">
-  
+
   <element name="webstandards" title="Standards">
     <element name="htmlstandard" title="HTML">
       <desc>http://validator.w3.org</desc>
       <desc0>Page not valid (parse errors)</desc0>
       <desc1>Page not valid with important errors (encoding mismatch)</desc1>
       <desc2>Page valid, or with minor errors (missing "alt" attribute, use of unknow attribute)</desc2>
-      <comment></comment>
-      <score></score>
+      <comment/>
+      <score/>
     </element>
     <element name="xhtmlstandard" title="XHTML">
       <desc>http://validator.w3.org</desc>
       <desc0>Page not valid (parse errors)</desc0>
       <desc1>Page not valid with important errors (encoding mismatch)</desc1>
       <desc2>Page valid, or with minor errors (missing "alt" attribute, use of unknow attribute)</desc2>
-      <comment></comment>
-      <score></score>
+      <comment/>
+      <score/>
     </element>
     <element name="cssstandard" title="CSS">
       <desc>http://validator.w3.org</desc>
       <desc0>CSS doesn't or no valid not valide (parse errors)</desc0>
       <desc1>CSS not valid with important errors (encoding mismatch)</desc1>
       <desc2>CSS valid, or with minor errors (missing "alt" attribute, use of unknow attribute)</desc2>
-      <comment></comment>
-      <score></score>
+      <comment/>
+      <score/>
     </element>
   </element>
-  
-  
-  
+
+
+
   <element name="webbestpractice" title="Best Practive">
     <desc>http://developer.apple.com/internet/webcontent/bestwebdev.htmls</desc>
     <element name="tablepsitioning" title="Table Positioning">
@@ -36,138 +36,130 @@
       <desc2>html tables are not used for layout/positioning</desc2>
       <desc1>not too much used</desc1>
       <desc0>systematically, too much used</desc0>
-      <comment></comment>
-      <score></score>
+      <comment/>
+      <score/>
     </element>
     <element name="frameuse" title="Frame use">
       <desc>Frame use </desc>
       <desc2>frame are not used</desc2>
       <desc1>frame are rarely used</desc1>
       <desc0>systematically, too much used</desc0>
-      <comment></comment>
-      <score></score>
+      <comment/>
+      <score/>
     </element>
     <element name="iframeuse" title="iFrame use">
       <desc>iFrame use </desc>
       <desc2>iframe are not used</desc2>
       <desc1>iframe are rarely used</desc1>
       <desc0>systematically, too much used</desc0>
-      <comment></comment>
-      <score></score>
+      <comment/>
+      <score/>
     </element>
     <element name="cssdesignedforprintout" title="css designed for printout">
       <desc>css designed for printout</desc>
       <desc0>no</desc0>
       <desc1>yes, but print-outs are not well rendered for a few use cases.</desc1>
       <desc2>yes</desc2>
-      <comment></comment>
-      <score></score>
+      <comment/>
+      <score/>
     </element>
   </element>
-  
-  
-  <element supportedbrowser="supportedbrowser" title="Supported Browser">
+
+
+  <element name="supportedbrowser" title="Supported Browser">
     <desc>Supported Browser</desc>
     <element name="browsermozillafirefox" title="Mozilla and Firefox">
       <desc>Firefox, please detail the supported version in the comment section</desc>
       <desc0>not supported at all</desc0>
       <desc1>not officially supported, but works ok or good enough.</desc1>
       <desc2>supported and advised browser</desc2>
-      <comment></comment>
-      <score></score>
+      <comment/>
+      <score/>
     </element>
     <element name="browserkonqueror" title="Konqueror">
       <desc>Konqueror, please detail the supported version in the comment section</desc>
       <desc0>not supported at all</desc0>
       <desc1>not officially supported, but works ok or good enough.</desc1>
       <desc2>supported and advised browser</desc2>
-      <comment></comment>
-      <score></score>
+      <comment/>
+      <score/>
     </element>
     <element name="browsermsie" title="MSIE">
       <desc>MSIE, please detail the supported version in the comment section</desc>
       <desc0>not supported at all</desc0>
       <desc1>not officially supported, but works ok or good enough.</desc1>
       <desc2>supported and advised browser</desc2>
-      <comment></comment>
-      <score></score>
+      <comment/>
+      <score/>
     </element>
     <element name="browsersafari" title="Safari">
       <desc>Safarie, please detail the supported version in the comment section</desc>
       <desc0>not supported at all</desc0>
       <desc1>not officially supported, but works ok or good enough.</desc1>
       <desc2>supported and advised browser</desc2>
-      <comment></comment>
-      <score></score>
+      <comment/>
+      <score/>
     </element>
     <element name="browserlegacy" title="legacy browsers">
-      <desc>Legacy browser are browser outdated like MSIE4 and Netscape 4, 
-      please detail the supported version in the comment section.</desc>
+      <desc>Legacy browser are browser outdated like MSIE4 and Netscape 4, please detail the
+        supported version in the comment section.</desc>
       <desc0>not supported at all</desc0>
       <desc1>not officially supported, but works ok or good enough.</desc1>
       <desc2>supported and advised browser</desc2>
-      <comment></comment>
-      <score></score>
+      <comment/>
+      <score/>
     </element>
   </element>
-  
-  
-  
+
+
+
   <element name="browserrequiredenablings" title="Best Practive">
-    <desc>
-    Browser required enablings:  javascript, applet, SVG, and flash. 
-    Reminder: here, a higher score does not mean a better product nor the opposite, 
-    it really depends on your needs and non functional requirements.  
-    </desc>
+    <desc> Browser required enablings: javascript, applet, SVG, and flash. Reminder: here, a higher
+      score does not mean a better product nor the opposite, it really depends on your needs and non
+      functional requirements. </desc>
     <element name="javascriptrequired" title="Javascript required">
-      <desc>
-        Is the browser javascript enabling required ?
-        If the score is 1 or 2, do indicate in the comment section the required jvm version.
-        If the score is 1, do detail.
-      </desc>
-      <desc0>The interface makes no use of javascript, and thus, does not need javascript to run at full flavor and speed </desc0>
+      <desc> Is the browser javascript enabling required ? If the score is 1 or 2, do indicate in
+        the comment section the required jvm version. If the score is 1, do detail. </desc>
+      <desc0>The interface makes no use of javascript, and thus, does not need javascript to run at
+        full flavor and speed </desc0>
       <desc1>The interface makes use of javascript but can properly function without it.</desc1>
       <desc2>Javascript is necessary to use the interface (beacuse it's AJAX based for instance).</desc2>
-      <comment></comment>
-      <score></score>
+      <comment/>
+      <score/>
     </element>
     <element name="jvmrequired" title="a Java plugin is required">
-      <desc>
-        Does the browser needs a java plugin (to enable applet) ? 
-        If the score is 1 or 2, do indicate in the comment section the required jvm version.
-        If the score is 1, do detail.
-      </desc>
-      <desc0>The interface does not contains any applet, and thus, does not need java to run at full flavor and speed </desc0>
+      <desc> Does the browser needs a java plugin (to enable applet) ? If the score is 1 or 2, do
+        indicate in the comment section the required jvm version. If the score is 1, do detail. </desc>
+      <desc0>The interface does not contains any applet, and thus, does not need java to run at full
+        flavor and speed </desc0>
       <desc1>The interface makes use of applet(s) but can properly function without it.</desc1>
       <desc2>A Java plugin is necessary to use the interface, the applets are key players in it.</desc2>
-      <comment></comment>
-      <score></score>
+      <comment/>
+      <score/>
     </element>
     <element name="svgrequired" title="a SVG plugin is required">
-      <desc>
-        Does the browser needs a SVG plugin ? 
-        If score is 1 or 2, do indicate in the comment section the required SVG version.
-        If the score is 1, do detail.
-      </desc>
-      <desc0>The interface does not contains any SVG graph, and thus, does not need any SVG plugin to run at full flavor and speed </desc0>
+      <desc> Does the browser needs a SVG plugin ? If score is 1 or 2, do indicate in the comment
+        section the required SVG version. If the score is 1, do detail. </desc>
+      <desc0>The interface does not contains any SVG graph, and thus, does not need any SVG plugin
+        to run at full flavor and speed </desc0>
       <desc1>The interface makes use of SVG but can properly function without it.</desc1>
-      <desc2>A SVG plugin is necessary to use the interface, the SVG graph are part of key features of the interface.</desc2>
-      <comment></comment>
-      <score></score>
+      <desc2>A SVG plugin is necessary to use the interface, the SVG graph are part of key features
+        of the interface.</desc2>
+      <comment/>
+      <score/>
     </element>
     <element name="flashrequired" title="a flash plugin is required">
-      <desc>
-        Does the browser needs a flash plugin ? 
-        If score is 1 or 2, do indicate in the comment section the required flash version.
-        If the score is 1, do detail.
-      </desc>
-      <desc0>The interface does not contains any flash graph, and thus, does not need any flash plugin to run at full flavor and speed </desc0>
+      <desc> Does the browser needs a flash plugin ? If score is 1 or 2, do indicate in the comment
+        section the required flash version. If the score is 1, do detail. </desc>
+      <desc0>The interface does not contains any flash graph, and thus, does not need any flash
+        plugin to run at full flavor and speed </desc0>
       <desc1>The interface makes use of flash but can properly function without it.</desc1>
-      <desc2>A flash plugin is necessary to use the interface, the interface is mainly made of flash.</desc2>
-      <comment></comment>
-      <score></score>
+      <desc2>A flash plugin is necessary to use the interface, the interface is mainly made of
+        flash.</desc2>
+      <comment/>
+      <score/>
     </element>
   </element>
-  
-  
+
+
 </section>
