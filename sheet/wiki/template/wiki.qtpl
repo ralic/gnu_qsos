@@ -27,6 +27,7 @@
     <include section="storagesupport"/>
     
     <include section="webcompatibility"/>
+    <include section="UI"/>
     <include section="webcontentmanagement"/>
 
 
