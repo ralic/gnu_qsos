@@ -793,6 +793,30 @@ It's based on many standard os java library like hibernate, velocity....</commen
          </element>
       </element>
    </section>
+   <section name="UI" title="User interface">
+      <element name="i18nUI" title="internationalisation support">
+         <desc>
+                Is the whole user interface internationalizable ? Is Unicode Supported ?
+                Are Right-to-Left languages supported (as for Hebrew and Arabic) ?      
+            </desc>
+         <desc0>The feature doesn't exist</desc0>
+         <desc1>Limited support</desc1>
+         <desc2>fully supported</desc2>
+         <comment></comment>
+         <score>2</score>
+      </element>
+      <element name="skinableUI" title="skin-ability">
+         <desc>
+                Does the UI have a complete skin system ?
+                (a User/UserGroup customizable interface for instance)    
+            </desc>
+         <desc0>The feature doesn't exist</desc0>
+         <desc1>Limited support</desc1>
+         <desc2>fully supported</desc2>
+         <comment></comment>
+         <score>2</score>
+      </element>
+   </section>
    <section name="webcontentmanagement" title="Web content management support">
       <desc>This section describes the system's web content/attachement management features.</desc>
       <element name="metadata" title="Support for Meta data on content">
