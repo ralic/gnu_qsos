@@ -357,7 +357,7 @@
             <desc0>No published roadmap</desc0>
             <desc1>Existing roadmap without planning</desc1>
             <desc2>Versionned roadmap, with planning and measure of delays</desc2>
-            <score></score>
+            <score>1</score>
             <comment>http://www.xwiki.org/xwiki/bin/view/Dev/Roadmap and on Jira
 </comment>
          </element>
@@ -757,7 +757,7 @@ It's based on many standard os java library like hibernate, velocity....</commen
             <desc1>The interface makes use of javascript but can properly function without it.</desc1>
             <desc2>Javascript is necessary to use the interface (beacuse it's AJAX based for instance).</desc2>
             <comment></comment>
-            <score></score>
+            <score>1</score>
          </element>
          <element name="jvmrequired" title="a Java plugin is required">
             <desc>Does the browser needs a java plugin (to enable applet) ? If the score is 1 or 2, do
@@ -767,7 +767,7 @@ It's based on many standard os java library like hibernate, velocity....</commen
             <desc1>The interface makes use of applet(s) but can properly function without it.</desc1>
             <desc2>A Java plugin is necessary to use the interface, the applets are key players in it.</desc2>
             <comment></comment>
-            <score></score>
+            <score>0</score>
          </element>
          <element name="svgrequired" title="a SVG plugin is required">
             <desc> Does the browser needs a SVG plugin ? If score is 1 or 2, do indicate in the comment
@@ -777,8 +777,8 @@ It's based on many standard os java library like hibernate, velocity....</commen
             <desc1>The interface makes use of SVG but can properly function without it.</desc1>
             <desc2>A SVG plugin is necessary to use the interface, the SVG graph are part of key features
                    of the interface.</desc2>
-            <comment></comment>
-            <score></score>
+            <comment>unless you want to use SVG, it's not required</comment>
+            <score>1</score>
          </element>
          <element name="flashrequired" title="a flash plugin is required">
             <desc>Does the browser needs a flash plugin ? If score is 1 or 2, do indicate in the comment
@@ -789,7 +789,7 @@ It's based on many standard os java library like hibernate, velocity....</commen
             <desc2>A flash plugin is necessary to use the interface, the interface is mainly made of
                    flash.</desc2>
             <comment></comment>
-            <score></score>
+            <score>0</score>
          </element>
       </element>
    </section>
