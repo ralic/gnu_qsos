@@ -11,7 +11,7 @@
     <comment/>
     <score/>
   </element>
-  <element name="skinableUI" title="internationalisation support">
+  <element name="skinableUI" title="skin-ability">
     <desc>
       Does the UI have a complete skin system ?
       (a User/UserGroup customizable interface for instance)    
