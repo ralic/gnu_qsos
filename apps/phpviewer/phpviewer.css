@@ -1,0 +1,50 @@
+span.collapsed {
+  cursor: pointer;
+  background-image: url("expand.png");
+  background-repeat: no-repeat;
+  background-position: center left;
+  padding-left: 12px;
+}
+
+span.expanded {
+  cursor: pointer;
+  background-image: url("collapse.png");
+  background-repeat: no-repeat;
+  background-position: center left;
+  padding-left: 12px;
+}
+
+tr.title {
+  background-color: black;
+  font-weight: bold;
+  color: white;
+}
+
+tr.level0 {
+  background-color: #0047ff;
+  font-weight: bold;
+}
+
+tr.level1 {
+  background-color: #0099ff;
+}
+
+tr.level2 {
+  background-color: #99ccff;
+}
+
+tr.level3 {
+  background-color: #bfdbf8;
+}
+
+tr.level4 {
+  background-color: #e7ecf2;
+}
+
+td.score {
+  text-align: center;
+}
+
+A:link    {  text-decoration: none; color: #0b1c51}
+A:visited {  text-decoration: none; color: #0b1c51}
+A:hover   {  text-decoration: underline; color: #0b1c51}
