@@ -63,7 +63,7 @@ function newFile() {
 	var fp = Components.classes["@mozilla.org/filepicker;1"]
 	.createInstance(nsIFilePicker);
 	fp.init(window, "Save the file as", nsIFilePicker.modeSave);
-	fp.appendFilter("QSOS file","*.qtpl");
+	fp.appendFilter("QSOS Template file","*.qtpl");
 	var res = fp.show();
 	if (res == nsIFilePicker.returnOK) {
 		myDoc = new Template();
@@ -112,7 +112,7 @@ function openFile() {
     var fp = Components.classes["@mozilla.org/filepicker;1"]
             .createInstance(nsIFilePicker);
     fp.init(window, "Select a file", nsIFilePicker.modeOpen);
-    fp.appendFilter("QSOS file","*.qtpl");
+    fp.appendFilter("QSOS Template file","*.qtpl");
     var res = fp.show();
     
     if (res == nsIFilePicker.returnOK) {
@@ -157,10 +157,8 @@ function buildtree() {
 	treechildren.setAttribute("id", "myTreechildren");
 	var criteria = myDoc.getcomplextree();
 	for (var i=0; i < criteria.length; i++) {
-		if (i != 0) {
-			treeitem = newtreeitem(criteria[i]);
-			treechildren.appendChild(treeitem);
-		}
+		treeitem = newtreeitem(criteria[i]);
+		treechildren.appendChild(treeitem);
 	}
 	return treechildren;
 }
