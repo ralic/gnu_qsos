@@ -6,9 +6,9 @@
 <body>
 <?php
 
+include("config.php");
+
 $family = $_GET['f'];
-$delim = "/";
-$sheet = "sheet";
 
 function getFamilies($dir) {
    	global $delim;
