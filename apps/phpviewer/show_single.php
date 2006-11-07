@@ -106,7 +106,7 @@ $app = $myDoc->getkey("appname")." ".$myDoc->getkey("release");
 
 echo "[<a id='comment_selector' href='javascript:hideComments();'>Hide comments</a>]";
 echo "<table style='border-collapse: collapse; table-layout: fixed;'>\n";
-echo "<tr class='title'><td>$family</td><td>$app</td><td id='comment'>Comments</td></tr>\n";
+echo "<tr class='title'><td>$family [<a href='radar_single.php?f=$file'>Schema</a>]</td><td>$app</td><td id='comment'>Comments</td></tr>\n";
 showtree($myDoc, $file, $myDoc->getTree(), 0, '');
 echo "</table>\n";
 
@@ -147,6 +147,5 @@ function showtree($myDoc, $file, $tree, $depth, $idP) {
 }
 
 ?>
-<script language="JavaScript" type="text/javascript" src="wz_tooltip.js"></script>
 </body>
 </html>

@@ -1,6 +1,7 @@
 <?php
-include ("jpgraph-2.1.3/src/jpgraph.php");
-include ("jpgraph-2.1.3/src/jpgraph_radar.php");
+include("config.php");
+include("$jpgraph_path/jpgraph.php");
+include("$jpgraph_path/jpgraph_radar.php");
 include("QSOSDocument.php");
 
 $file = $_GET['f'];

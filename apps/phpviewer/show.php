@@ -118,7 +118,14 @@ $family = $myDoc[0]->getkey("qsosappfamily");
 echo "[<a id='comment_selector' href='javascript:hideComments();'>Hide comments</a>]";
 echo "<table style='border-collapse: collapse; table-layout: fixed;'>\n";
 
-echo "<tr class='title'><td>$family</td>";
+echo "<tr class='title'><td>$family ";
+
+$f = "";
+foreach($files as $file) {
+	$f .= "f[]=$file&";
+}
+echo " [<a href='radar.php?".$f."'>Schema</a>]</td>";
+
 for($i=0; $i<$num; $i++) {
 	echo "<td>$app[$i]</td><td id='comment'>Comments</td>";
 }
