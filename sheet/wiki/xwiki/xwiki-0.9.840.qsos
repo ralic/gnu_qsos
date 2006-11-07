@@ -422,7 +422,9 @@ It's based on many standard os java library like hibernate, velocity....</commen
       </element>
    </section>
    <section name="websecurity" title="Security for web application">
-      <element name="authentifaction" title="Authentification Backend">
+      <element name="authentification" title="Authentification Backend">
+         <desc>Detail here the Authentification Backend features
+         </desc>
          <element name="authenbackendldap" title="LDAP">
             <desc0>No LDAP based authentification available</desc0>
             <desc1>LDAP available but limited (e.g: group mapping limited, etc)</desc1>
@@ -717,7 +719,7 @@ It's based on many standard os java library like hibernate, velocity....</commen
             <desc1>not officially supported, but works ok or good enough.</desc1>
             <desc2>supported and advised browser</desc2>
             <comment></comment>
-            <score></score>
+            <score>1</score>
          </element>
          <element name="browsermsie" title="MSIE">
             <desc>MSIE, please detail the supported version in the comment section</desc>
@@ -733,7 +735,7 @@ It's based on many standard os java library like hibernate, velocity....</commen
             <desc1>not officially supported, but works ok or good enough.</desc1>
             <desc2>supported and advised browser</desc2>
             <comment></comment>
-            <score></score>
+            <score>1</score>
          </element>
          <element name="browserlegacy" title="legacy browsers">
             <desc>Legacy browser are browser outdated like MSIE4 and Netscape 4, 
@@ -742,7 +744,7 @@ It's based on many standard os java library like hibernate, velocity....</commen
             <desc1>not officially supported, but works ok or good enough.</desc1>
             <desc2>supported and advised browser</desc2>
             <comment></comment>
-            <score></score>
+            <score>1</score>
          </element>
       </element>
       <element name="browserrequiredenablings" title="Best Practive">
