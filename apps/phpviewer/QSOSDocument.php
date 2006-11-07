@@ -53,11 +53,6 @@ class QSOSDocument {
 		$query = "//*[@name='".$name."']/element";
 		$nb = $this->xpath->query($query);
 		return $nb->length;
-		/*if ($nb->length != 0) {
-			return true;
-		} else {
-			return false;
-		}*/
 	}
 
     //$element: name of the XML header tag
@@ -152,21 +147,16 @@ class QSOSDocument {
 		$score = 0;
 		$sum = 0;
 		$totalWeight = 0;
-		$isRenderable = true;
 
 		for ($i=0; $i < count($tree); $i++) {
 			$totalWeight++;
-			if ($tree[$i]->score == null) $isRenderable = false;
+			if ($tree[$i]->score == null) {
+				$isRenderable = false;
+			}
 			$sum += round($tree[$i]->score, 2);
 		}
 
-;
-		if ($isRenderable) {
-			$score = round(($sum/$totalWeight), 2);
-		}
-		else {
-			$score = null;
-		}
+		$score = round(($sum/$totalWeight), 2);
 		
 		return $score;
 	}
