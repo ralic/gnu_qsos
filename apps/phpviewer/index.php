@@ -65,7 +65,7 @@ if (!isset($family)) {
 			for ($j=0; $j<count($tree[$keys[$i]]); $j++) {
 				$file = $tree[$keys[$i]][$j];
 				$link = $sheet.$delim.$family.$delim.$keys[$i].$delim.$file;
-				echo "<tr class='level1'><td><a href='show_single?f=$link'>$file</a></td>\n";
+				echo "<tr class='level1'><td><a href='show_single.php?f=$link'>$file</a></td>\n";
 				echo "<td><input type='checkbox' name='files[]' value='$link'></td></tr>\n";
 			}
 		}
