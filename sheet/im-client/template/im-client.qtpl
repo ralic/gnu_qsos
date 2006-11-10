@@ -376,7 +376,7 @@ Advanced auto-away system: auto-message when auto-away is activated, settable id
 				<comment></comment>
 			</element>
 			<element name="os" title="Supported OS for Visio Module">
-				<element name="packaging" title="Existing packaging">
+				<element name="visiopackaging" title="Existing packaging">
 					<desc>List of existing OS packaging</desc>
 					<comment></comment>
 				</element>
