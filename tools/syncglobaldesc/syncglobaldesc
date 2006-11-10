@@ -1,7 +1,7 @@
-#!//usr/bin/perl -w
+#!/usr/bin/perl -w
 # this script is experimental and will be certainly rewrite
 # It depends on the CVS release of QSOS::Document
-# $Id: syncglobaldesc,v 1.3 2006/10/25 15:14:00 goneri Exp $
+# $Id: syncglobaldesc,v 1.4 2006/11/10 22:39:56 goneri Exp $
 use strict;
 
 use Getopt::Long;
@@ -12,10 +12,11 @@ use QSOS::Document;
 sub _help {
   my $msg = shift;
   print $msg."\n" if (defined $msg && $msg);
-  print "usage syncglobalsection -l -m -t template.xml -f sheet.qsos\n";
-  print "option:\n";
+  print "Merge template.xml sections description with sheet.qsos\n\n";
+  print "Usage: syncglobaldesc -l -m -s -r -t template.xml -f sheet.qsos\n";
+  print "Option:\n";
   print "\t--template -t : template\n";
-  print "\t--less -l : don't warning if template.xml have less sections than the sheet\n";
+  print "\t--less -l : don't warn if template.xml have less sections than the sheet\n";
   print "\t--recreate -d : print on STDOUT a full reformated from template sheet\n";
   print "\t--save -s : save the processed file\n";
   print "\t--renew -r : regenerate a sheet from the template and the current sheet\n";
