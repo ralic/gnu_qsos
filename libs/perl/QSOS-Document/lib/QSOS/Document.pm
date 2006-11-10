@@ -1,4 +1,4 @@
-# $Id: Document.pm,v 1.20 2006/06/14 12:23:43 goneri Exp $
+# $Id: Document.pm,v 1.21 2006/11/10 22:34:22 goneri Exp $
 #
 #  Copyright (C) 2006 Atos Origin 
 #
@@ -85,7 +85,7 @@ sub _pushElem {
   $deep = 0 unless $deep;
 
   unless ($elt->atts->{name}) {
-    die "ERR: Attribute without name";
+    die "ERR: Attribute without name (".$elt->first_child('comment').")";
   }
 
   my $h = {
