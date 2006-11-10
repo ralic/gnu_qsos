@@ -20,7 +20,7 @@
     <qsosspecificformat></qsosspecificformat>
   </header>
   <include section="generic"/>
-  <section name="tools" title="Tools">
+  <section name="composant" title="Tools">
     <desc>This list is just a list. For further information about a tool please check before if a standalone QSOS sheet exists (e.g: webmail)</desc>
     <element name="calendar" title="Calendar">
       <desc0></desc0>
