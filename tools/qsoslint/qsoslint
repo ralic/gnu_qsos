@@ -1,16 +1,19 @@
-#!/usr/bin/perl -w
+#!/usr/bin/perl
 
 use strict;
+use warnings;
 
-use Data::Dumper;
+#use Data::Dumper;
 use QSOS::Document;
 use utf8;
 use encoding 'utf8';
 use File::Glob ':glob';
+use FindBin;
+
 
 ### Global vars
 
-my @plugin_dirs = ("plugins/", "/usr/share/qsoslint/plugins/", "/usr/local/share/qsoslint/plugins/");
+my @plugin_dirs = ("$FindBin::Bin/plugins/", "/usr/share/qsoslint/plugins/", "/usr/local/share/qsoslint/plugins/");
 
 
 #####
@@ -55,9 +58,11 @@ foreach my $dir (@plugin_dirs) {
 my @err;
 my @warn;
 foreach my $plugin (@plugins_list) {
+  no strict;
   if (!eval ("require (\"$plugin\")")) {
-    print "problem with $plugin: $@" if $@;
+    print "failed to loads `$plugin'". ($@?": $@":"");
   }
+  use strict;
   my $ret = check($file,$qsos);
   if (defined ($ret->{err}) && @{$ret->{err}}) {
     push @err, @{$ret->{err}};
@@ -66,8 +71,11 @@ foreach my $plugin (@plugins_list) {
     push @err, @{$ret->{warn}};
   } 
 }
-
+no warnings;
+exit 0 unless (@warn,@err);
+use warnings;
 print scalar @err." error(s)\n";
 print "-\t$_\n" foreach (@err);
 print scalar @warn." warning(s)\n";
 print "-\t$_\n" foreach (@warn);
+exit 1;
