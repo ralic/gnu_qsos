@@ -2,7 +2,11 @@
 <document>
   <header>
     <authors>
-    <author><email>tojo.randrianaivojaona@atosorigin.com</email><name>Tojo Randrianaivojaona</name></author></authors>
+      <author>
+        <email>tojo.randrianaivojaona@atosorigin.com</email>
+        <name>Tojo Randrianaivojaona</name>
+      </author>
+    </authors>
     <dates>
       <creation>20060411</creation>
       <validation></validation>
@@ -381,7 +385,7 @@
     <desc></desc>
     <element name="standards-support" title="standards support">
       <element name="portletstandard" title="portlet s standard">y  
-			<desc0>Using no standard specification</desc0><desc1>Specification portal is not indentified</desc1><desc2>Using specification JSR-168</desc2><comment>
+        <desc0>Using no standard specification</desc0><desc1>Specification portal is not indentified</desc1><desc2>Using specification JSR-168</desc2><comment>
 				It is entirely standards-based and supports the JSR-168 portlet specification, which allows you to easily plug-in standards-compliant portlets to meet your specific portal needs. It suports too JSR-170 (Content Repository)
 			</comment><score>2</score></element>
       <element name="technologysupported" title="technology supported">

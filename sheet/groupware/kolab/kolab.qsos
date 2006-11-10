@@ -2,7 +2,11 @@
 <document>
   <header>
     <authors>
-    <author><email>goneri.lebouder@atosorigin.com</email><name>Gonéri Le Bouder</name></author></authors>
+      <author>
+        <email>goneri.lebouder@atosorigin.com</email>
+        <name>Gonéri Le Bouder</name>
+      </author>
+    </authors>
     <dates>
       <creation>20060307</creation>
       <validation></validation>
