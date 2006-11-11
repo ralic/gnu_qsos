@@ -202,7 +202,7 @@ function createODS($file) {
 	$style->setAttribute("style:family","table-column");
 	$substyle = $output->createElement('style:table-column-properties');
 	$substyle->setAttribute("fo:break-before","auto");
-	$substyle->setAttribute("style:column-width","7.65cm");
+	$substyle->setAttribute("style:column-width","5.117cm");
 	$style->appendChild($substyle);
 	$styles->appendChild($style);
 	
@@ -212,7 +212,7 @@ function createODS($file) {
 	$style->setAttribute("style:family","table-column");
 	$substyle = $output->createElement('style:table-column-properties');
 	$substyle->setAttribute("fo:break-before","auto");
-	$substyle->setAttribute("style:column-width","12.423cm");
+	$substyle->setAttribute("style:column-width","10.931cm");
 	$style->appendChild($substyle);
 	$styles->appendChild($style);
 	
@@ -447,8 +447,144 @@ function createODS($file) {
 	$cell->setAttribute("table:number-columns-repeated","4");
 	$row->appendChild($cell);
 	$table->appendChild($row);
-	
-	//header
+
+	//Header
+	//Application
+	$row = $output->createElement('table:table-row');
+	$row->setAttribute("table:style-name","ro1");
+	$cell = $output->createElement('table:table-cell');
+	$cell->setAttribute("table:style-name","ce2");
+	$cell->setAttribute("office:value-type","string");
+	$text = $output->createElement('text:p',"Application");
+	$cell->appendChild($text);
+	$row->appendChild($cell);
+	$cell = $output->createElement('table:table-cell');
+	$cell->setAttribute("table:style-name","ce8");
+	$cell->setAttribute("office:value-type","string");
+	$text = $output->createElement('text:p',$input->getkey("appname"));
+	$cell->appendChild($text);
+	$row->appendChild($cell);
+	$cell = $output->createElement('table:table-cell');
+	$cell->setAttribute("table:style-name","ce8");
+	$cell->setAttribute("table:number-columns-repeated","2");
+	$row->appendChild($cell);
+	$table->appendChild($row);
+
+	//Release
+	$row = $output->createElement('table:table-row');
+	$row->setAttribute("table:style-name","ro1");
+	$cell = $output->createElement('table:table-cell');
+	$cell->setAttribute("table:style-name","ce2");
+	$cell->setAttribute("office:value-type","string");
+	$text = $output->createElement('text:p',"Release");
+	$cell->appendChild($text);
+	$row->appendChild($cell);
+	$cell = $output->createElement('table:table-cell');
+	$cell->setAttribute("table:style-name","ce8");
+	$cell->setAttribute("office:value-type","string");
+	$text = $output->createElement('text:p',$input->getkey("release"));
+	$cell->appendChild($text);
+	$row->appendChild($cell);
+	$cell = $output->createElement('table:table-cell');
+	$cell->setAttribute("table:style-name","ce8");
+	$cell->setAttribute("table:number-columns-repeated","2");
+	$row->appendChild($cell);
+	$table->appendChild($row);
+
+	//Software family
+	$row = $output->createElement('table:table-row');
+	$row->setAttribute("table:style-name","ro1");
+	$cell = $output->createElement('table:table-cell');
+	$cell->setAttribute("table:style-name","ce2");
+	$cell->setAttribute("office:value-type","string");
+	$text = $output->createElement('text:p',"Software family");
+	$cell->appendChild($text);
+	$row->appendChild($cell);
+	$cell = $output->createElement('table:table-cell');
+	$cell->setAttribute("table:style-name","ce8");
+	$cell->setAttribute("office:value-type","string");
+	$text = $output->createElement('text:p',$input->getkey("qsosappfamily"));
+	$cell->appendChild($text);
+	$row->appendChild($cell);
+	$cell = $output->createElement('table:table-cell');
+	$cell->setAttribute("table:style-name","ce8");
+	$cell->setAttribute("table:number-columns-repeated","2");
+	$row->appendChild($cell);
+	$table->appendChild($row);
+
+	//License
+	$row = $output->createElement('table:table-row');
+	$row->setAttribute("table:style-name","ro1");
+	$cell = $output->createElement('table:table-cell');
+	$cell->setAttribute("table:style-name","ce2");
+	$cell->setAttribute("office:value-type","string");
+	$text = $output->createElement('text:p',"License");
+	$cell->appendChild($text);
+	$row->appendChild($cell);
+	$cell = $output->createElement('table:table-cell');
+	$cell->setAttribute("table:style-name","ce8");
+	$cell->setAttribute("office:value-type","string");
+	$text = $output->createElement('text:p',$input->getkey("licensedesc"));
+	$cell->appendChild($text);
+	$row->appendChild($cell);
+	$cell = $output->createElement('table:table-cell');
+	$cell->setAttribute("table:style-name","ce8");
+	$cell->setAttribute("table:number-columns-repeated","2");
+	$row->appendChild($cell);
+	$table->appendChild($row);
+
+	//Url
+	$row = $output->createElement('table:table-row');
+	$row->setAttribute("table:style-name","ro1");
+	$cell = $output->createElement('table:table-cell');
+	$cell->setAttribute("table:style-name","ce2");
+	$cell->setAttribute("office:value-type","string");
+	$text = $output->createElement('text:p',"Website");
+	$cell->appendChild($text);
+	$row->appendChild($cell);
+	$cell = $output->createElement('table:table-cell');
+	$cell->setAttribute("table:style-name","ce8");
+	$cell->setAttribute("office:value-type","string");
+	$text = $output->createElement('text:p',$input->getkey("url"));
+	$cell->appendChild($text);
+	$row->appendChild($cell);
+	$cell = $output->createElement('table:table-cell');
+	$cell->setAttribute("table:style-name","ce8");
+	$cell->setAttribute("table:number-columns-repeated","2");
+	$row->appendChild($cell);
+	$table->appendChild($row);
+
+	//Description
+	$row = $output->createElement('table:table-row');
+	$row->setAttribute("table:style-name","ro1");
+	$cell = $output->createElement('table:table-cell');
+	$cell->setAttribute("table:style-name","ce2");
+	$cell->setAttribute("office:value-type","string");
+	$text = $output->createElement('text:p',"Description");
+	$cell->appendChild($text);
+	$row->appendChild($cell);
+	$cell = $output->createElement('table:table-cell');
+	$cell->setAttribute("table:style-name","ce8");
+	$cell->setAttribute("office:value-type","string");
+	$text = $output->createElement('text:p',$input->getkey("desc"));
+	$cell->appendChild($text);
+	$row->appendChild($cell);
+	$cell = $output->createElement('table:table-cell');
+	$cell->setAttribute("table:style-name","ce8");
+	$cell->setAttribute("table:number-columns-repeated","2");
+	$row->appendChild($cell);
+	$table->appendChild($row);
+
+	$row = $output->createElement('table:table-row');
+	$row->setAttribute("table:style-name","ro1");
+	$row->setAttribute("table:number-rows-repeated","2");
+	$cell = $output->createElement('table:table-cell');
+	$cell->setAttribute("table:style-name","Default");
+	$cell->setAttribute("table:number-columns-repeated","4");
+	$row->appendChild($cell);
+	$table->appendChild($row);
+
+	//Criteria
 	$row = $output->createElement('table:table-row');
 	$row->setAttribute("table:style-name","ro1");
 	$cell = $output->createElement('table:table-cell');
@@ -478,7 +614,7 @@ function createODS($file) {
 	$table->appendChild($row);
 	
 	//Init row counter
-	$numrow = 3;
+	$numrow = 11;
 	
 	//Init loop
 	showtree($output, $input, $input->getTree(), $table, 0);
