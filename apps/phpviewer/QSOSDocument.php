@@ -31,6 +31,12 @@ class QSOSCriterion {
 	var $score;
 }
 
+//Class representing a QSOS author (<author/>)
+class Author {
+	var $name;
+	var $email;
+}
+
 //Class representing a QSOS document
 class QSOSDocument {
 	var $doc;
@@ -98,6 +104,33 @@ class QSOSDocument {
 		} else {
 			return "";
 		}
+	}
+
+    //Returns: array of Author objects (cf. Author class above)
+	public function getauthors() {
+		$authors = array();	
+
+		$nodes = $this->xpath->query("//author");
+		for ($i=0; $i < $nodes->length; $i++) {
+			$author = new Author();
+
+			$names = $nodes->item($i)->getElementsByTagName("name");
+			if ($names->length > 0) {
+				$author->name = $names->item(0)->textContent;
+			} else {
+				$author->name = "";
+			}
+
+			$titles = $nodes->item($i)->getElementsByTagName("email");
+			if ($titles->length > 0) {
+				$author->email = $titles->item(0)->textContent;
+			} else {
+				$author->email = "";
+			}
+			array_push($authors, $author);
+		}
+
+		return $authors;
 	}
 
     //Returns: tree of QSOSCriterion objects representing the scored criteria of the QSOS document
