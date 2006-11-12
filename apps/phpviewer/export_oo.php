@@ -575,6 +575,77 @@ function createODS($file) {
 	$row->appendChild($cell);
 	$table->appendChild($row);
 
+	//Authors
+	$authors = $input->getauthors();
+	$list = "";
+	for ($i=0; $i < count($authors); $i++) {
+		if ($i != 0) {
+			$list .= ", ";
+		}
+		$list .= $authors[$i]->name." (".$authors[$i]->email.")";
+	}
+	$row = $output->createElement('table:table-row');
+	$row->setAttribute("table:style-name","ro1");
+	$cell = $output->createElement('table:table-cell');
+	$cell->setAttribute("table:style-name","ce2");
+	$cell->setAttribute("office:value-type","string");
+	$text = $output->createElement('text:p',"Authors");
+	$cell->appendChild($text);
+	$row->appendChild($cell);
+	$cell = $output->createElement('table:table-cell');
+	$cell->setAttribute("table:style-name","ce8");
+	$cell->setAttribute("office:value-type","string");
+	$text = $output->createElement('text:p',$list);
+	$cell->appendChild($text);
+	$row->appendChild($cell);
+	$cell = $output->createElement('table:table-cell');
+	$cell->setAttribute("table:style-name","ce8");
+	$cell->setAttribute("table:number-columns-repeated","2");
+	$row->appendChild($cell);
+	$table->appendChild($row);
+
+	//Creation date
+	$row = $output->createElement('table:table-row');
+	$row->setAttribute("table:style-name","ro1");
+	$cell = $output->createElement('table:table-cell');
+	$cell->setAttribute("table:style-name","ce2");
+	$cell->setAttribute("office:value-type","string");
+	$text = $output->createElement('text:p',"Creation date");
+	$cell->appendChild($text);
+	$row->appendChild($cell);
+	$cell = $output->createElement('table:table-cell');
+	$cell->setAttribute("table:style-name","ce8");
+	$cell->setAttribute("office:value-type","string");
+	$text = $output->createElement('text:p',$input->getkey("creation"));
+	$cell->appendChild($text);
+	$row->appendChild($cell);
+	$cell = $output->createElement('table:table-cell');
+	$cell->setAttribute("table:style-name","ce8");
+	$cell->setAttribute("table:number-columns-repeated","2");
+	$row->appendChild($cell);
+	$table->appendChild($row);
+
+	//Validation date
+	$row = $output->createElement('table:table-row');
+	$row->setAttribute("table:style-name","ro1");
+	$cell = $output->createElement('table:table-cell');
+	$cell->setAttribute("table:style-name","ce2");
+	$cell->setAttribute("office:value-type","string");
+	$text = $output->createElement('text:p',"Validation date");
+	$cell->appendChild($text);
+	$row->appendChild($cell);
+	$cell = $output->createElement('table:table-cell');
+	$cell->setAttribute("table:style-name","ce8");
+	$cell->setAttribute("office:value-type","string");
+	$text = $output->createElement('text:p',$input->getkey("validation"));
+	$cell->appendChild($text);
+	$row->appendChild($cell);
+	$cell = $output->createElement('table:table-cell');
+	$cell->setAttribute("table:style-name","ce8");
+	$cell->setAttribute("table:number-columns-repeated","2");
+	$row->appendChild($cell);
+	$table->appendChild($row);
+
 	$row = $output->createElement('table:table-row');
 	$row->setAttribute("table:style-name","ro1");
 	$row->setAttribute("table:number-rows-repeated","2");
@@ -614,7 +685,7 @@ function createODS($file) {
 	$table->appendChild($row);
 	
 	//Init row counter
-	$numrow = 11;
+	$numrow = 14;
 	
 	//Init loop
 	showtree($output, $input, $input->getTree(), $table, 0);
