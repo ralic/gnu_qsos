@@ -16,7 +16,7 @@ function getFamilies($dir) {
 	if (is_dir($dir)) {
 		if ($dh = opendir($dir)) {
 			while (($file = readdir($dh)) !== false) {
-				if (is_dir($dir.$delim.$file) && ($file != 'CVS') && ($file != '.') && ($file != '..') && ($file != 'include')) {
+				if (is_dir($dir.$delim.$file) && ($file != 'CVS') && ($file != '.') && ($file != '..') && ($file != 'include') && ($file != 'templates')) {
 					array_push($families, $file);
 				}
 			}
