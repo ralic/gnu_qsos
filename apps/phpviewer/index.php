@@ -57,21 +57,27 @@ if (!isset($family)) {
 	
 	echo "<div>Select a software:<br/>\n";
 	echo "<form action='show.php'>\n";
-	echo "<table style='border-collapse: collapse;'>\n";
-	echo "<tr class='title'><td colspan='2'>$family</td></tr>\n";
+	echo "<table>\n";
+	echo "<tr class='title'><td>$family</td><td align='center'>HTML</td><td align='center'>OpenDocument</td><td><input type='submit' value='Compare'></td></tr>\n";
 	for ($i=0; $i<count($keys); $i++) {
 		if (!is_int($keys[$i])) {
-			echo "<tr class='level0'><td colspan='2'>$keys[$i]</td></tr>\n";
+			echo "<tr class='level0'><td colspan='4'>$keys[$i]</td></tr>\n";
 			for ($j=0; $j<count($tree[$keys[$i]]); $j++) {
 				$file = $tree[$keys[$i]][$j];
 				$link = $sheet.$delim.$family.$delim.$keys[$i].$delim.$file;
-				echo "<tr class='level1'><td><a href='show_single.php?f=$link'>$file</a></td>\n";
-				echo "<td><input type='checkbox' name='files[]' value='$link'></td></tr>\n";
+				$name = basename($file, ".qsos");
+				$odsfile = $name.".ods";
+				
+				echo "<tr class='level1'>\n";
+				echo "<td>$name</td>\n";
+				echo "<td align='center'><a href='show_single.php?f=$link'><img src='html.png' border='0'/></a></td>\n";
+				echo "<td align='center'><a href='export_oo.php?f=$link'><img src='ods.png' border='0'/></a></td>\n";
+				echo "<td align='center'><input type='checkbox' name='files[]' value='$link'></td></tr>\n";
 			}
 		}
 	}
 	echo "</table>";
-	echo "<input type='submit' value='Compare'></form></div>\n";
+	echo "</form></div>\n";
 }
 
 ?>
