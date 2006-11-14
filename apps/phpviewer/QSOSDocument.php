@@ -133,6 +133,17 @@ class QSOSDocument {
 		return $authors;
 	}
 
+    //Returns the name of a criterion's parent
+	function getParent($name) {
+		$nodes = $this->xpath->query("//*[@name='".$name."']");
+		if ($nodes->length > 0) {
+			return $nodes->item(0)->parentNode;
+		}
+		else {
+			return null;
+		}
+	}
+
     //Returns: tree of QSOSCriterion objects representing the scored criteria of the QSOS document
 	public function getTree() {
 		$tree = array();
