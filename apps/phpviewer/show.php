@@ -97,7 +97,8 @@ function hideComments() {
 <?php
 include("QSOSDocument.php");
 
-$files = $_GET['files'];
+$files = $_GET['f'];
+$svg = $_GET['svg'];
 
 $num = count($files);
 $myDoc = array();
@@ -125,7 +126,7 @@ $f = "";
 foreach($files as $file) {
 	$f .= "f[]=$file&";
 }
-echo " <a href='radar.php?".$f."'><img src='graph.png' border=''/></a></td>";
+echo " <a href='radar.php?".$f."svg=$svg'><img src='graph.png' border=''/></a></td>";
 
 for($i=0; $i<$num; $i++) {
 	echo "<td>$app[$i]</td><td id='comment'>Comments</td>";
@@ -136,16 +137,13 @@ showtree($myDoc, $trees, 0, '');
 echo "</table>\n";
 
 function showtree($myDoc, $trees, $depth, $idP) {
+	global $svg;
 	$new_depth = $depth + 1;
 	$offset = $new_depth*10;
 	$idF = 0;
 	$tree = $trees[0];
 
 	for($k=0; $k<count($tree); $k++) {
-	//foreach($trees[0] as $element) {
-		//$name = $element->name;
-		//$title = $element->title;
-		//$subtree = $element->children;
 		$name = $tree[$k]->name;
 		$title = $tree[$k]->title;
 		$subtree = $tree[$k]->children;
@@ -162,12 +160,12 @@ function showtree($myDoc, $trees, $depth, $idP) {
 		if ($subtree) {
 			echo "<td><span style='position:relative; left:$offset' onclick=\"collapse(this);\" class='expanded'>$title";
 			if ($myDoc[0]->hassubelements($name) > 2) {
-				$files = $_GET['files'];
+				$files = $_GET['f'];
 				$f = "";
 				foreach($files as $file) {
 					$f .= "f[]=$file&";
 				}
-				echo " <a href='radar.php?".$f."c=$name'><img src='graph.png' border=''/></a>";
+				echo " <a href='radar.php?".$f."c=$name&svg=$svg'><img src='graph.png' border=''/></a>";
 			}
 			echo "</span></td>\n";
 		} else {
