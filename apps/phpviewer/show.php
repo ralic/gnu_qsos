@@ -173,7 +173,12 @@ function showtree($myDoc, $trees, $depth, $idP) {
 		}
 
 		for($i=0; $i<count($trees); $i++) {
-			echo "<td class='score'>".$trees[$i][$k]->score."</td>\n";
+			$desc = addslashes($myDoc[$i]->getgeneric($name, "desc".$trees[$i][$k]->score));
+			if ($desc != "") {
+				echo "<td class='score' onmouseover=\"return escape('".$desc."')\" style='cursor:help'>".$trees[$i][$k]->score."</td>\n";
+			} else {
+				echo "<td class='score'>".$trees[$i][$k]->score."</td>\n";
+			}
 			echo "<td id='comment'>".$myDoc[$i]->getgeneric($name, "comment")."</td>\n";
 		}
 		echo "</tr>\n";
@@ -188,5 +193,6 @@ function showtree($myDoc, $trees, $depth, $idP) {
 }
 
 ?>
+<script language="JavaScript" type="text/javascript" src="wz_tooltip.js"></script>
 </body>
 </html>
