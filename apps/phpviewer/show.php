@@ -115,18 +115,16 @@ foreach($files as $file) {
 
 $family = $myDoc[0]->getkey("qsosappfamily");
 
-
-echo "[<a id='comment_selector' href='javascript:hideComments();'>Hide comments</a>]";
-echo " - Click on the <img src='graph.png' border=''/> icon to see the radar graph";
-echo "<table style='border-collapse: collapse; table-layout: fixed;'>\n";
-
-echo "<tr class='title'><td>$family ";
-
 $f = "";
 foreach($files as $file) {
 	$f .= "f[]=$file&";
 }
-echo " <a href='radar.php?".$f."svg=$svg'><img src='graph.png' border=''/></a></td>";
+
+echo "[<a id='comment_selector' href='javascript:hideComments();'>Hide comments</a>]";
+echo " - Click on the <a href='radar.php?".$f."svg=$svg'><img src='graph.png' border=''/></a> icon to see the radar graph";
+echo "<table style='border-collapse: collapse; table-layout: fixed;'>\n";
+echo "<tr class='title'><td>$family</td>";
+echo "<td><a href='radar.php?".$f."svg=$svg'><img src='graph.png' border=''/></a></td>";
 
 for($i=0; $i<$num; $i++) {
 	echo "<td>$app[$i]</td><td id='comment'>Comments</td>";
@@ -158,18 +156,18 @@ function showtree($myDoc, $trees, $depth, $idP) {
 
 		echo "<tr id='$id' name='$name' class='level$depth'>\n";
 		if ($subtree) {
-			echo "<td><span style='position:relative; left:$offset' onclick=\"collapse(this);\" class='expanded'>$title";
+			echo "<td><span style='position:relative; left:$offset' onclick=\"collapse(this);\" class='expanded'>$title</span></td><td>";
 			if ($myDoc[0]->hassubelements($name) > 2) {
 				$files = $_GET['f'];
 				$f = "";
 				foreach($files as $file) {
 					$f .= "f[]=$file&";
 				}
-				echo " <a href='radar.php?".$f."c=$name&svg=$svg'><img src='graph.png' border=''/></a>";
+				echo "<a href='radar.php?".$f."c=$name&svg=$svg'><img src='graph.png' border=''/></a></td>";
 			}
-			echo "</span></td>\n";
+			//echo "</td>\n";
 		} else {
-			echo "<td><span style='position:relative; left:$offset'>$title</span></td>\n";
+			echo "<td><span style='position:relative; left:$offset'>$title</span></td><td></td>\n";
 		}
 
 		for($i=0; $i<count($trees); $i++) {
