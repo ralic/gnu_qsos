@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document>
+    <header>
+        <authors> Noel Rocher, Laurent Le Grandois, Francois Le Droff </authors>
+        <dates>
+            <creation/>
+            <validation/>
+        </dates>
+        <language>fr</language>
+        <appname/>
+        <release/>
+        <licenseid/>
+        <licensedesc/>
+        <url/>
+        <desc/>
+        <demourl/>
+        <qsosformat>1.6</qsosformat>
+        <qsosappfamily>j2ee-ws-frameworks</qsosappfamily>
+        <qsosspecificformat/>
+    </header>
+
+    <include section="generic_fr"/>
+    
+ 
+
+    <section name="j2ee1.4"
+        title="respects des standards J2EE1.4">
+ 
+            <element name="jsr101" title="JSR 101 Java API for XML-Based RPC (JAX-RPC) 1.1">
+                <desc> list of all the existing pages (and pages within the hierarchy, if the
+                    hierarchy is supported, cf. webcontentmanagement section) </desc>
+                <desc0>JSR/API non implémenté</desc0>
+                <desc1>JSR/API partiellement implémentée, ou implémentation défectueuse</desc1>
+                <desc2>JSR/API implémentée, implémentation stable</desc2>
+                <comment/>
+                <score/>
+            </element>
+
+    </section>
+
+
+
+   
+</document>
