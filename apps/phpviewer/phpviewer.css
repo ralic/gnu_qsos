@@ -14,34 +14,38 @@ span.expanded {
   padding-left: 12px;
 }
 
-tr.title {
+.title {
   background-color: black;
   font-weight: bold;
   color: white;
 }
 
-tr.level0 {
+.level0 {
   background-color: #0047ff;
   font-weight: bold;
 }
 
-tr.level1 {
+.level1 {
   background-color: #0099ff;
 }
 
-tr.level2 {
+.level2 {
   background-color: #99ccff;
 }
 
-tr.level3 {
+.level3 {
   background-color: #bfdbf8;
 }
 
-tr.level4 {
+.level4 {
   background-color: #e7ecf2;
 }
 
-td.score {
+.highlight {
+  background-color: #e0faf3;
+}
+
+.score {
   text-align: center;
 }
 
