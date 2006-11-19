@@ -119,7 +119,7 @@ if(isset($svg) && ($svg == "yes")) {
 			foreach($files as $file) {
 				$f .= "f[]=$file&";
 			}
-			$a->setAttribute("xlink:href", "radar.php?".$f."c=".$element->name."&svg=yes");
+			$a->setAttribute("xlink:href", $_SERVER['PHP_SELF']."?".$f."c=".$element->name."&svg=yes");
 			$a->appendChild($text);
 			$g->appendChild($a);
 		} else {
