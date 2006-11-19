@@ -2,6 +2,8 @@
 <head>
 <LINK REL=StyleSheet HREF="phpviewer.css" TYPE="text/css"/>
 <script language="JavaScript" type="text/javascript">
+var size = 12;
+
 function matchStart(target, pattern) {
 	var pos = target.indexOf(pattern);
 	if (pos == 0) {
@@ -77,7 +79,7 @@ function showComments() {
 		}
 	}
 	document.getElementById("comment_selector").href = "javascript:hideComments();";
-	document.getElementById("comment_selector").firstChild.nodeValue = "Hide comments";
+	document.getElementById("column").src = "hide-comments.png"
 }
 
 function hideComments() {
@@ -89,11 +91,24 @@ function hideComments() {
 		}
 	}
 	document.getElementById("comment_selector").href = "javascript:showComments();";
-	document.getElementById("comment_selector").firstChild.nodeValue = "Show comments";
+	document.getElementById("column").src = "show-comments.png";
+}
+
+function decreaseFontSize() {
+	size--;
+	document.getElementById("table").style.fontSize = size + "pt";
+}
+
+function increaseFontSize() {
+	size++;
+	document.getElementById("table").style.fontSize = size + "pt";
 }
 </script>
 </head>
 <body>
+<center>
+<img src="qsos.png"/>
+<br/><br/>
 <?php
 include("QSOSDocument.php");
 
@@ -120,14 +135,19 @@ foreach($files as $file) {
 	$f .= "f[]=$file&";
 }
 
-echo "[<a id='comment_selector' href='javascript:hideComments();'>Hide comments</a>]";
-echo " - Click on the <a href='radar.php?".$f."svg=$svg'><img src='graph.png' border=''/></a> icon to see the radar graph";
-echo "<table style='border-collapse: collapse; table-layout: fixed;'>\n";
-echo "<tr class='title'><td>$family</td>";
-echo "<td><a href='radar.php?".$f."svg=$svg'><img src='graph.png' border=''/></a></td>";
+echo "<table>";
+echo "<tr width='100%'><td>";
+//echo "<a id='all_selector' href='javascript:collapseAll();'><img src='all.png' border=0 onmouseover=\"return escape('Expand/collapse all')\"/></a>";
+echo "<a id='comment_selector' href='javascript:hideComments();'><img id='column' src='hide-comments.png' border=0 onmouseover=\"return escape('Hide/Show comments')\"/></a>";
+echo " <a href='javascript:decreaseFontSize();'><img src='decrease-font.png' border=0 onmouseover=\"return escape('Decrease font size')\"/></a>";
+echo " <a href='javascript:increaseFontSize();'><img src='increase-font.png' border=0 onmouseover=\"return escape('Increase font size')\"/></a>";
+echo " <a href='radar.php?".$f."svg=$svg'><img src='graph.png' border=0 onmouseover=\"return escape('Show graph')\"/></a></td></tr></table>";
 
+echo "<table id='table' style='border-collapse: collapse; font-size: 12pt; table-layout: fixed'>\n";
+echo "<tr class='title' style='width: 250px'><td>$family</td>";
+echo "<td style='width: 30px'><a href='radar.php?".$f."svg=$svg'><img src='graph.png' border=''/></a></td>";
 for($i=0; $i<$num; $i++) {
-	echo "<td>$app[$i]</td><td id='comment'>Comments</td>";
+	echo "<td><div style='width: 100px'>$app[$i]</div></td><td id='comment' style='width: 300px'>Comments</td>";
 }
 echo "</tr>\n";
 
@@ -154,9 +174,9 @@ function showtree($myDoc, $trees, $depth, $idP) {
 			$id = $idP."-".$idF;
 		}
 
-		echo "<tr id='$id' name='$name' class='level$depth'>\n";
+		echo "<tr id='$id' name='$name' class='level$depth' onmouseover=\"this.setAttribute('class','highlight')\" onmouseout=\"this.setAttribute('class','level$depth')\">\n";
 		if ($subtree) {
-			echo "<td><span style='position:relative; left:$offset' onclick=\"collapse(this);\" class='expanded'>$title</span></td><td>";
+			echo "<td style='width: 250px; text-indent: $offset'><span onclick=\"collapse(this);\" class='expanded'>$title</span></td><td style='width: 30px'>";
 			if ($myDoc[0]->hassubelements($name) > 2) {
 				$files = $_GET['f'];
 				$f = "";
@@ -165,19 +185,18 @@ function showtree($myDoc, $trees, $depth, $idP) {
 				}
 				echo "<a href='radar.php?".$f."c=$name&svg=$svg'><img src='graph.png' border=''/></a></td>";
 			}
-			//echo "</td>\n";
 		} else {
-			echo "<td><span style='position:relative; left:$offset'>$title</span></td><td></td>\n";
+			echo "<td style='width: 250px; text-indent: $offset'><span>$title</span></td><td style='width: 30px'></td>\n";;
 		}
 
 		for($i=0; $i<count($trees); $i++) {
 			$desc = addslashes($myDoc[$i]->getgeneric($name, "desc".$trees[$i][$k]->score));
 			if ($desc != "") {
-				echo "<td class='score' onmouseover=\"return escape('".$desc."')\" style='cursor:help'>".$trees[$i][$k]->score."</td>\n";
+				echo "<td class='score' style='width: 100px; cursor:help'' onmouseover=\"return escape('".$desc."')\">".$trees[$i][$k]->score."</td>\n";
 			} else {
-				echo "<td class='score'>".$trees[$i][$k]->score."</td>\n";
+				echo "<td class='score' style='width: 100px'>".$trees[$i][$k]->score."</td>\n";
 			}
-			echo "<td id='comment'>".$myDoc[$i]->getgeneric($name, "comment")."</td>\n";
+			echo "<td id='comment'><div style='width: 300px'>".$myDoc[$i]->getgeneric($name, "comment")."</div></td>\n";
 		}
 		echo "</tr>\n";
 ;
@@ -191,6 +210,7 @@ function showtree($myDoc, $trees, $depth, $idP) {
 }
 
 ?>
+</center>
 <script language="JavaScript" type="text/javascript" src="wz_tooltip.js"></script>
 </body>
 </html>
