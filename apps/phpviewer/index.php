@@ -70,7 +70,7 @@ if (!isset($family)) {
 	echo "<table style='border-collapse: collapse'>\n";
 	echo "<tr class='title'><td>Software families</td></tr>\n";
 	for ($i=0; $i<count($families); $i++) {
-		echo "<tr class='level1'><td><a href='index.php?f=$families[$i]'>$families[$i]</a></td></tr>\n";
+		echo "<tr class='level1' onmouseover=\"this.setAttribute('class','highlight')\" onmouseout=\"this.setAttribute('class','level1')\"><td><a href='index.php?f=$families[$i]'>$families[$i]</a></td></tr>\n";
 	}
 	echo "</table></div>\n";
 } else {
@@ -90,7 +90,7 @@ if (!isset($family)) {
 				$name = basename($file, ".qsos");
 				$odsfile = $name.".ods";
 				
-				echo "<tr class='level1'>\n";
+				echo "<tr class='level1' onmouseover=\"this.setAttribute('class','highlight')\" onmouseout=\"this.setAttribute('class','level1')\">\n";
 				echo "<td>$name</td>\n";
 				echo "<td align='center'><a href='show.php?f[]=$link&svg=yes'><img src='html.png' border='0'/></a></td>\n";
 				echo "<td align='center'><a href='export_oo.php?f=$link'><img src='ods.png' border='0'/></a></td>\n";
