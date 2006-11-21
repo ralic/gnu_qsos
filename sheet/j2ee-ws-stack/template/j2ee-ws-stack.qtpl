@@ -15,30 +15,631 @@
         <desc/>
         <demourl/>
         <qsosformat>1.6</qsosformat>
-        <qsosappfamily>j2ee-ws-frameworks</qsosappfamily>
+        <qsosappfamily>j2ee-ws-stack</qsosappfamily>
         <qsosspecificformat/>
     </header>
 
     <include section="generic_fr"/>
-    
- 
 
     <section name="j2ee1.4"
         title="respects des standards J2EE1.4">
  
             <element name="jsr101" title="JSR 101 Java API for XML-Based RPC (JAX-RPC) 1.1">
-                <desc> list of all the existing pages (and pages within the hierarchy, if the
-                    hierarchy is supported, cf. webcontentmanagement section) </desc>
-                <desc0>JSR/API non implémenté</desc0>
+                <desc> JAX-RPC supporte SOAP avec des attachements, vous pouvez employer JAX-RPC APIs pour envoyer des attachements MIME. 
+                Mais les types MIME ne peuvent pas être décrits par l'interface WSDL.
+                </desc>
+                <desc0>JSR/API non implémentée</desc0>
                 <desc1>JSR/API partiellement implémentée, ou implémentation défectueuse</desc1>
                 <desc2>JSR/API implémentée, implémentation stable</desc2>
                 <comment/>
                 <score/>
             </element>
+            
+        <element name="jsr67" title="JSR  67 SOAP with Attachments API for Java Specification (SAAJ) 1.2">
+            <desc> SAAJ fournit une manière standard d'envoyer des documents XML par Internet depuis la plateforme Java. 
+            </desc>
+            <desc0>JSR/API non implémentée</desc0>
+            <desc1>JSR/API partiellement implémentée, ou implémentation défectueuse</desc1>
+            <desc2>JSR/API implémentée, implémentation stable</desc2>
+            <comment/>
+            <score/>
+        </element>
+        
+        <element name="jsr109" title="JSR 109 Web Services for EE (WS4EE) 1.0">
+            <desc0>JSR/API non implémentée</desc0>
+            <desc1>JSR/API partiellement implémentée, ou implémentation défectueuse</desc1>
+            <desc2>JSR/API implémentée, implémentation stable</desc2>
+            <comment/>
+            <score/>
+        </element>
+        
+        <element name="jaxr" title="Java API for XML Registries Specification (JAXR) 1.0">
+            <desc0>JSR/API non implémentée</desc0>
+            <desc1>JSR/API partiellement implémentée, ou implémentation défectueuse</desc1>
+            <desc2>JSR/API implémentée, implémentation stable</desc2>
+            <comment/>
+            <score/>
+        </element>
 
     </section>
 
+    <section name="jee5"
+        title="respects des standards JEE5">
+        
+        <element name="jsr101-jee5" title="JSR 101 Java API for XML-Based RPC (JAX-RPC) 1.1">
+            <desc> JAX-RPC supporte SOAP avec des attachements, vous pouvez employer JAX-RPC APIs pour envoyer des attachements MIME. 
+            Mais les types MIME ne peuvent pas être décrits par l'interface WSDL.                
+            </desc>
+            <desc0>JSR/API non implémentée</desc0>
+            <desc1>JSR/API partiellement implémentée, ou implémentation défectueuse</desc1>
+            <desc2>JSR/API implémentée, implémentation stable</desc2>
+            <comment/>
+            <score/>
+        </element>
+        
+        <element name="jsr67" title="JSR  67 SOAP with Attachments API for Java (SAAJ) 1.3">
+            <desc> SAAJ fournit une manière standard d'envoyer des documents XML par Internet depuis la plateforme de Java.
+             SAAJ 1.3 supporte SOAP 1.2. Pour plus d'informations sur les spécifications de SAAJ. 
+             SAAJ est souvent utilisée par des APIs de plus haut niveau comme JAXR et JAX-RPC.
+              Mais, elle peut tout à fait être utilisée de manière indépendante.                 
+            </desc>
+            <desc0>JSR/API non implémentée</desc0>
+            <desc1>JSR/API partiellement implémentée, ou implémentation défectueuse</desc1>
+            <desc2>JSR/API implémentée, implémentation stable</desc2>
+            <comment/>
+            <score/>
+        </element>
+        
+        <element name="jsr921-109" title="JSR 921/109 Implementing Enterprise Web Services (WS4EE 1.1 et 1.2)">
+           <desc0>JSR/API non implémentée</desc0>
+            <desc1>JSR/API partiellement implémentée, ou implémentation défectueuse</desc1>
+            <desc2>JSR/API implémentée, implémentation stable</desc2>
+            <comment/>
+            <score/>
+        </element>
+        
+        <element name="jaxr1.0" title="Java API for XML Registries Specification (JAXR) 1.0">
+            <desc> donne un moyen uniforme d'utiliser les registres basés sur des standards tels que ebXML ou UDDI.
+             Permet l'accès à différents types de registres XML. 
+             Ces registres XML sont une infrastructure permettant la construction, 
+             le déploiement et la découverte de Web services. JAXR permet l'interaction avec plusieurs standards, 
+             dont UDDI (Universal Description, Discovery, and Integration) et ebXML Registry and Repository standard. 
+            </desc>
+            <desc0>API non implémentée</desc0>
+            <desc1>API partiellement implémentée, ou implémentation défectueuse</desc1>
+            <desc2>API implémentée, implémentation stable</desc2>
+            <comment/>
+            <score/>
+        </element>
+        
+        
+        <element name="jsr224" title="JSR 224 Java API for XML-Based Web Services (JAX-WS) 2.0">
+            <desc> JAX-WS est la pièce maitresse de la « pile intégrée » qui inclut JAX-WS 2.0, JAXB 2.0, et SAAJ 1.3.
+             La pile intégrée représente une nouvelle architecture logique de la fonctionnalité de services de Web                
+            </desc>
+            <desc0>JSR/API non implémentée</desc0>
+            <desc1>JSR/API partiellement implémentée, ou implémentation défectueuse</desc1>
+            <desc2>JSR/API implémentée, implémentation stable</desc2>
+            <comment/>
+            <score/>
+        </element>
+        
+        <element name="jsr181" title="JSR 181 Web Service Metadata for the Java Platform">
+            <desc>La JSR 181 définit un format d'annotation facilitant la définition de web service             
+            </desc>
+            <desc0>JSR/API non implémentée</desc0>
+            <desc1>JSR/API partiellement implémentée, ou implémentation défectueuse</desc1>
+            <desc2>JSR/API implémentée, implémentation stable</desc2>
+            <comment/>
+            <score/>
+        </element>
+        
+        <element name="jsr222" title="JSR 222 Java Architecture for XML Binding (JAXB) 2.0">
+            <desc>La JSR 222 fournit une manière commode de lier un schéma XML à une représentation en code Java. 
+            JAXB utilise des schémas (W3C XML Schema) pour faire ces liens.
+             Une fois ce lien créé (grâce à un compilateur qui va générer les packages correspondant à un schéma donné), 
+             vous pouvez facilement sérialiser/desérialiser les objets java sous un format XML.                
+            </desc>
+            <desc0>JSR/API non implémentée</desc0>
+            <desc1>JSR/API partiellement implémentée, ou implémentation défectueuse</desc1>
+            <desc2>JSR/API implémentée, implémentation stable</desc2>
+            <comment/>
+            <score/>
+        </element>
+        
 
+    </section>
 
+    <section name="messaging"
+        title="Messaging">
+        
+        <element name="xml-rpc" title="XML-RPC">
+            <desc>XML-RPC est un protocole RPC (Remote procedure call), une spécification simple  qui permet à des processus 
+            s'exécutant dans des environnements différents de faire des appels de méthodes à travers un réseau 
+            (protocole HTTP pour le transport des données et la norme XML pour le codage des données). 
+            XML-RPC est conçu pour permettre à des structures de données complexes d'être transmises, exécutées et renvoyées très facilement.
+                XML-RPC est l'ancêtre de SOAP
+            </desc>
+            <desc0>non supporté</desc0>
+            <desc1>support limité</desc1>
+            <desc2>supporté</desc2>
+            <comment/>
+            <score/>
+        </element>
+        
+        <element name="soap" title="SOAP">
+            <desc>Simple Object Access Protocol (SOAP): protocole RPC orienté objet bâti sur XML et recommandé par le W3C.
+             Il permet la transmission de messages entre objets distants, ce qui veut dire qu'il autorise un objet à invoquer
+              des méthodes d'objets physiquement situés sur une machine distante (par protocole HTTP ou autre comme SMTP)                
+            </desc>
+            <element name="soap-1.1" title="SOAP 1.1">
+            <desc0>non supporté</desc0>
+            <desc1>support limité</desc1>
+            <desc2>supporté</desc2>
+            <comment/>
+            <score/>
+            </element>
+            <element name="soap-1.2" title="SOAP 1.2">
+                <desc>La version 1.2 de SOAP présente un certain nombre de modifications dans la syntaxe et
+                 fournit de la sémantique supplémentaire (ou clarifiée) par rapport à   SOAP 1.1 
+                </desc>
+                <desc0>non supporté</desc0>
+                <desc1>support limité</desc1>
+                <desc2>supporté</desc2>
+                <comment/>
+                <score/>
+            </element>
+        </element>
+
+    </section>
+
+    <section name="attachements"
+        title="Attachements">
+        
+        <element name="swa" title="SwA: MIME : Multipurpose Internet Mail Extensions">
+            <desc>En 2000, la note du W3C sur SOAP Messages with Attachments (SwA) a expliqué comment continuer à utiliser MIME 
+            (Multipurpose Internet Mail Extensions) pour des attachements référencés dans le header de SOAP.     
+             Si MIME est toujours utilisable, d'autres protocoles ont vu le jour.           
+            </desc>
+            <desc0>non supporté</desc0>
+            <desc1>support limité</desc1>
+            <desc2>supporté</desc2>
+            <comment/>
+            <score/>
+        </element>
+
+        <element name="mtom-xop" title="support de MTOM/XOP  ">
+            <desc>XOP: XML-binary Optimized Packaging  permet d'inclure dans le fichier XML des données binaires
+                (par exemple pour des fichiers images, son, video) pour « améliorer l'efficacité ».                
+                MTOM (pour Message Transmission Optimization Mechanism) est une description de la façon dont XOP est utilisé dans le transport SOAP HTTP.
+                Il spécifie comment gérer les pièces attachées à un message Soap 1.2.
+                Le message et la pièce attachée sont encapsulés dans une enveloppe  Mime Multipart  .
+                MTOM fournit un mécanisme de pointeur logique - l'élément xbinc:Include -, qui permet de créer des références internes aux pièces attachées - 
+                directement dans le message Soap. Cette approche facilite le traitement des messages Soap et favorise leur atomicité.                 
+            </desc>
+            <desc0>non supporté</desc0>
+            <desc1>support limité à XOP</desc1>
+            <desc2>MTOM complètement supporté</desc2>
+            <comment/>
+            <score/>
+        </element>        
+
+    </section>
+
+    <section name="interop"
+        title="Interopérabilité">
+        
+        <element name="ws-i" title="WS-I Basic Profile 1.1">
+            <desc>Ensemble de spécifications et de règles facilitant l'intéropérabilité entre services web régis par les protocoles SOAP         
+            </desc>
+            <desc0>non supporté</desc0>
+            <desc1>support limité</desc1>
+            <desc2>supporté</desc2>
+            <comment/>
+            <score/>
+        </element>
+        
+        <element name="basic-profile" title="Attachment Profile 1.0">
+            <desc>Complète Basic Profile 1.1. Il fournit le support des messages SOAP à base de pièces jointes.      
+            </desc>
+            <desc0>non supporté</desc0>
+            <desc1>support limité</desc1>
+            <desc2>supporté</desc2>
+            <comment/>
+            <score/>
+        </element>
+
+    </section>
+
+    <section name="transport"
+        title="transport">        
+        <element name="http" title="SOAP over HTTP">
+            <desc0>non supporté</desc0>
+            <desc1>support limité</desc1>
+            <desc2>supporté</desc2>
+            <comment/>
+            <score/>
+        </element>
+        <element name="ftp" title="SOAP over FTP">
+            <desc0>non supporté</desc0>
+            <desc1>support limité</desc1>
+            <desc2>supporté</desc2>
+            <comment/>
+            <score/>
+        </element>
+        <element name="vm" title="SOAP intra VM">
+            <desc0>non supporté</desc0>
+            <desc1>support limité</desc1>
+            <desc2>supporté</desc2>
+            <comment/>
+            <score/>
+        </element>
+        <element name="jms" title="SOAP over JMS">
+            <desc0>non supporté</desc0>
+            <desc1>support limité</desc1>
+            <desc2>supporté</desc2>
+            <comment/>
+            <score/>
+        </element>
+        <element name="xmpp" title="SOAP over XMPP (jabber)">
+            <desc0>non supporté</desc0>
+            <desc1>support limité</desc1>
+            <desc2>supporté</desc2>
+            <comment/>
+            <score/>
+        </element>
+        <element name="tcp" title="SOAP over TCP">
+            <desc0>non supporté</desc0>
+            <desc1>support limité</desc1>
+            <desc2>supporté</desc2>
+            <comment/>
+            <score/>
+        </element>        
+    </section>
+
+    <section name="registry"
+        title="Les registres et services de recherche">        
+        <element name="uddi" title="le support UDDI">
+            <desc>UDDI : acronyme de Universal Description Discovery and Integration,
+             est une  norme édictée par l'OASIS définissant une technologie d'annuaire basée sur XML 
+             et plus particulièrement destinée aux services Web, 
+             notamment dans le cadre d'architectures de type SOA (Service Oriented Architecture).
+              Un annuaire UDDI permet de localiser sur le réseau le service Web recherché. 
+              Il repose sur le protocole de transport SOAP.
+            </desc>
+            <desc0>non supporté</desc0>
+            <desc1>support limité</desc1>
+            <desc2>supporté</desc2>
+            <comment/>
+            <score/>
+        </element>
+        <element name="ebXML" title="ebXML">
+            <desc>abréviation de l'anglais Electronic Business using eXtensible Markup Language signifiant commerce électronique en utilisant XML,
+             est une suite de spécifications basées sur le langage XML et définissant un standard pour le commerce électronique. 
+             Ce standard est édité par l'OASIS. 
+             ebXML s'adresse aux entreprises de toutes tailles, en permettant de définir les échanges électroniques 
+             entre l'entreprise et ses divers partenaires, comme les catalogues électroniques                
+            </desc>
+            <desc0>non supporté</desc0>
+            <desc1>support limité</desc1>
+            <desc2>supporté</desc2>
+            <comment/>
+            <score/>
+        </element>
+    </section>
+
+    <section name="metaData"
+        title="MetaData">   
+        <element name="wsdl-1.1" title="support de WSDL 1.1">
+            <desc>Le WSDL décrit une Interface publique d'accès à un Service Web :
+                C'est une description basée sur XML qui indique « comment communiquer pour utiliser le service »; 
+                le Protocole de communication, et le format de messages requis pour communiquer avec ce service.                 
+            </desc>
+            <desc0>non supporté</desc0>
+            <desc1>support limité</desc1>
+            <desc2>supporté : le WSDL est exposé automatiquement</desc2>
+            <comment/>
+            <score/>
+        </element>
+        <element name="wsdl-2.0" title="support de WSDL 2.0">
+            <desc>La version 1.1 n'est pas approuvée par le W3C, 
+            la version 2.0 a pour ambition de devenir un standard officiel approuvé par le W3C.                
+            </desc>
+            <desc0>non supporté</desc0>
+            <desc1>support limité</desc1>
+            <desc2>supporté : le WSDL est exposé automatiquement</desc2>
+            <comment/>
+            <score/>
+        </element>
+        
+    </section>
+
+    <section name="ws-*"
+        title="support des spécifications ws-*">   
+        <element name="meta-data" title="Meta-données">
+            
+            <element name="ws-policy" title="WS-Policy">
+                <desc>WS-Policy permet de spécifier et de prendre en charge les pré-requis et
+                 capacités des fournisseurs et consommateurs de services web.        
+                </desc>
+                <desc0>non supporté</desc0>
+                <desc1>support limité</desc1>
+                <desc2>supporté, la </desc2>
+                <comment/>
+                <score/>
+            </element>
+            
+            <element name="ws-metadata-exchange" title="WS-MetadataExchange">
+                <desc>"WS-MEX" permet d'obtenir les informations décrivant le service  (WSDL, XSD et policies)   
+                    Il vise la standardisation des opérations pour la récupération de la policy d’un endpoint 
+                    mais aussi son WSDL et son schéma de données (GetPolicy, GetWSDL, GetSchema).
+                </desc>
+                <desc0>non supporté</desc0>
+                <desc1>support limité</desc1>
+                <desc2>supporté: exposition des WSDLs, XSDs et policies</desc2>
+                <comment/>
+                <score/>
+            </element>
+             
+        </element>
+        <element name="security" title="sécurité">
+            
+                      
+            <element name="ws-security" title="WS-Security">
+                <desc>WS-Security permet d'assurer l'intégrité et la confidentialité pour le contenu des messages 
+                et ce même en présence d'intermédiaires                   
+                </desc>
+                <desc0>non supporté</desc0>
+                <desc1>support limité</desc1>
+                <desc2>supporté</desc2>
+                <comment/>
+                <score/>
+            </element>
+            
+            <element name="ws-security-policy" title="WS-SecurityPolicy">
+                <desc>WS-SecurityPolicy: Définition d'assertions décrivant la manière dont est sécurisé un message.                 
+                </desc>
+                <desc0>non supporté</desc0>
+                <desc1>support limité</desc1>
+                <desc2>supporté</desc2>
+                <comment/>
+                <score/>
+            </element>
+            
+            <element name="ws-trust" title="WS-Trust">
+                <desc>WS-Trust: offre les méthodes permettant d'obtenir, de renouveler et valider les jetons de sécurité utilisés par WS-Security              
+                </desc>
+                <desc0>non supporté</desc0>
+                <desc1>support limité</desc1>
+                <desc2>supporté</desc2>
+                <comment/>
+                <score/>
+            </element>
+            
+            <element name="ws-secure-conversation" title="WS-SecureConversation">
+                <desc>WS-SecureConversation: peut être vu comme une optimisation du framework de sécurité.  </desc>
+                <desc0>non supporté</desc0>
+                <desc1>support limité</desc1>
+                <desc2>supporté</desc2>
+                <comment/>
+                <score/>
+            </element>
+            
+            
+        </element>
+            
+        <element name="qos" title="Qualité de service">
+            
+            <element name="ws-addressing" title="WS-Addressing">
+                <desc>WS-Addressing : maintient une session entre plusieurs invocations   </desc>
+                <desc0>non supporté</desc0>
+                <desc1>support limité</desc1>
+                <desc2>supporté</desc2>
+                <comment/>
+                <score/>
+            </element>
+            
+            <element name="ws-reliable-messaging" title="WS-ReliableMessaging">
+                <desc>WS-ReliableMessaging : permet à un système de message la gestion de panne et de la perte ou désorganisation des messages.   </desc>
+                <desc0>non supporté</desc0>
+                <desc1>support limité</desc1>
+                <desc2>supporté</desc2>
+                <comment/>
+                <score/>
+            </element>
+            
+            <element name="ws-coordination" title="WS-Coordination">
+                <desc>WS-Coordination : Un framework permettant la coordination des actions au sein d'applications distribuées.
+                 Utilisé par WS-AtomicTransactions. 
+                </desc>
+                <desc0>non supporté</desc0>
+                <desc1>support limité</desc1>
+                <desc2>supporté</desc2>
+                <comment/>
+                <score/>
+            </element>
+            
+            <element name="ws-atomic-transaction" title="WS-AtomicTransaction">
+                <desc> WS-AtomicTransaction : Prise en charge du commit à deux phase tel que toutes les opérations participantes à une transaction atomique soit toutes exécutées avec succès ou toutes annulées.
+                    
+                </desc>
+                <desc0>non supporté</desc0>
+                <desc1>support limité</desc1>
+                <desc2>supporté</desc2>
+                <comment/>
+                <score/>
+            </element>
+            
+            </element>
+            
+        </section>
    
+    <section name="tools"
+        title="Outillage"> 
+        
+        <element name="wsdl2java" title="génération top-down ou WSDL2Java">
+            <desc>outil permettant de créer automatiquement les classes Java sur la base d'un WSDL.                
+            </desc>
+            <desc0>non supporté</desc0>
+            <desc1>support limité, instable ou incomplet ( ne génère que la partie cliente ou serveur)</desc1>
+            <desc2>bon support (client et serveur), le code généré</desc2>
+            <comment/>
+            <score/>
+        </element>
+        
+        <element name="java2wsdl" title="génération bottom-up ou Java2WSDL">
+            <desc>outil permettant de créer automatiquement les WSDL correspondant à des classes Java.             
+            </desc>
+            <desc0>non supporté</desc0>
+            <desc1>support limité, instable ou incomplet (ne génère que la partie cliente ou serveur)</desc1>
+            <desc2>bon support (client et serveur)</desc2>
+            <comment/>
+            <score/>
+        </element>
+        
+        <element name="build-integration" title="facilité d'intégration au build">
+            <desc>Cette pile facilite-t-elle la création de livrable/archive et  l'intégration au build de générations de code listées ci-dessus ?         
+            </desc>
+            <desc0>non supporté: il faut lancer la génération en ligne de commande</desc0>
+            <desc1>support limité: tâche ant uniquement</desc1>
+            <desc2>bon intégration: tâche ant et plugin Maven1 et/ou Maven2</desc2>
+            <comment/>
+            <score/>
+        </element>
+        
+        <element name="IDE-support" title="supports IDE">
+            <desc>Cette pile fournit des plugins pour les environnements de développement intégrés
+                (ces plugins intégrant les fonctionnalités de génération de coe listées ci-dessus et la création de livrable/archive).    
+            </desc>
+            
+            <element name="idea-support" title="support IDEA">
+                <desc0>aucun plugin</desc0>
+                <desc1>plugin aux fonctionalités limitées ou défectueuses</desc1>
+                <desc2>bon plugin, bonne ergonomie</desc2>
+                <comment/>
+                <score/>
+            </element>
+            
+            <element name="eclipse-support" title="support eclipse">
+                <desc0>aucun plugin</desc0>
+                <desc1>plugin aux fonctionalités limitées ou défectueuses</desc1>
+                <desc2>bon plugin, bonne ergonomie</desc2>
+                <comment/>
+                <score/>
+            </element>
+            
+            <element name="netbeans-support" title="support NetBeans">
+                <desc0>aucun plugin</desc0>
+                <desc1>plugin aux fonctionalités limitées ou défectueuses</desc1>
+                <desc2>bon plugin, bonne ergonomie</desc2>
+                <comment/>
+                <score/>
+            </element>
+            
+        </element>
+          
+        </section>
+      
+    <section name="programming"
+        title="Programmation et extensibilité"> 
+                
+        <element name="marshalling-unmarshalling-java-soap" title="Sérialisation/désérialisation automatique d'objets Java depuis et vers des messages SOAP       ">
+            <desc0>non supporté</desc0>
+            <desc1>supporté mais limité ou réalisé par un data binding obsolète ou non standard</desc1>
+            <desc2>supporté et réalisé par un data binding standard (ex: JAXB)</desc2>
+            <comment/>
+            <score/>
+        </element>
+        
+        <element name="handlers" title="support pour intercepteurs (handlers)">
+            <desc>intercepteurs qui peuvent être facilement branchés dans l'environnement d'exécution du service pour réaliser des tâches avant l'arrivée des messages au service et/ou après le traitement du service, avant le renvoi au client.
+            </desc>
+            <desc0>aucun handler/intercepteur supporté</desc0>
+            <desc1>support pour handlers/intercepteurs logiques uniquement: capables de modifier le message du service</desc1>
+            <desc2>support pour handlers/intercepteurs logiques et protocolaires : 
+            c'est à dire capables de modifier le message mais aussi son enveloppe, 
+            associée au  protocole (ex: SOAPHandler et LogicalHandler de JAX-WS 2.0)
+            </desc2>
+            <comment/>
+            <score/>
+        </element>
+        
+        <element name="soap-header-parameter-implicit-explicit-contexts-support" title="support pour paramètres d'entête SOAP">
+            <desc>Comment la pile gère les paramètres en entête de requête SOAP ? 
+                Ces paramètres sont invisibles, par défaut, pour le client ainsi que pour l'implémentation du service. 
+                C'est un contexte implicite pour le service web utilisé par le système de service web ainsi que 
+                les Handlers permettant de gérer des problématiques liées à l'environnement d'exécution du service (la sécurité par exemple).  
+                Si ces paramètres d'entête SOAP sont "bindés dans la WSDL  à une opération, 
+                ils sont ajoutés à la signature de l'opération et seront donc accessibles dans le code du service web. 
+                C'est ce qui forme le contexte explicite. </desc>
+            <desc0>paramètres d'entête non gérés</desc0>
+            <desc1>support pour contexte implicite: les paramètres d'entête peuvent être connus des handlers</desc1>
+            <desc2>support pour contexte implicite et explicite</desc2>
+            <comment/>
+            <score/>
+        </element>
+        
+        <element name="asynchronous-callback" title="support pour appels asynchrones et callback">
+            <desc>Cette solution de mise en oeuvre de web-services fournit-elle un moyen de gérer les appels asynchrones ? </desc>
+            <desc0>appels asynchrones non supportés</desc0>
+            <desc1>les appels asynchrones ont un support limité (au polling). 
+            Le client est capable d'envoyer une requête SOAP sans être bloqué, en attente de réponse. 
+            Mais le callback n'est pas supporté, seul un mécanisme de polling (boucle de rappel basée sur un temporisateur) 
+             est éventuellement prévu.
+            </desc1>
+            <desc2>appels asynchrones supportés par les mécanismes de polling mais aussi de callback: la conversation est supportée. 
+            Le client fournit une adresse de retour, un intercepteur: un "callback handler/end-point". 
+            Cette fonctionalité est intégrée à JAX-WS 2.0.
+            Les notions dérivées de session et conversation sont contenues dans la spécification WS-Addressing.
+            </desc2>
+            <comment/>
+            <score/>
+        </element>
+        
+        
+        
+       </section>
+
+    <section name="admin"
+        title="Fonctionnalités d'administration"> 
+        
+        <element name="deploy" title="Déploiement de nouveaux services">
+            <desc0>Déploiement difficile, ou nécéssitant un outillage non standard, ou de nombreuses étapes ou un reboot du serveur</desc0>
+            <desc1>Déploiement aisée, mais nécessitant un arrêt du service</desc1>
+            <desc2>Déploiement aisée et à chaud (hot deploy)</desc2>
+            <comment/>
+            <score/>
+        </element>
+        
+        <element name="lifecycleManagement" title="Gestion du cycle de vie (arrêt/démarrage/...)">
+            <desc0>pas d'interface ni de fonctionalité d'administration de gestion du cycle de vie des services</desc0>
+            <desc1>fonctionalités d'arrêt de redémarrage à chaud des services</desc1>
+            <desc2>fonctionalités avancées de gestion du cycle de vie des services et/ou interface d'administration associées</desc2>
+            <comment/>
+            <score/>
+        </element>
+        
+        <element name="security-and-access-management" title="Gestion des politiques d'accès et de sécurité ??? TBD">
+            <desc0>aucune</desc0>
+            <desc1>fonctionalités limités</desc1>
+            <desc2>fonctionalités avancées</desc2>
+            <comment/>
+            <score/>
+        </element>
+        
+        </section>
+
+    <section name="supervision"
+        title="Fonctionnalités de supervision">
+        
+        <element name="stats" title="Module de production de statistiques">
+            <desc0>pas d'interface ni de fonctionalité production de statistiques d'accès aux services</desc0>
+            <desc1>statistiques disponibles uniquement en temps réel, en snapshot</desc1>
+            <desc2>statistiques disponibles sur une période, la génération de rapport est supportée</desc2>
+            <comment/>
+            <score/>
+        </element>
+        
+        </section> 
+
 </document>
