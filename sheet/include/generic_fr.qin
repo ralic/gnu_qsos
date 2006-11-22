@@ -178,7 +178,7 @@
       <element name="tools" title="Outillage">
         <desc0>Pas d'outils de gestion de bugs, ni de ticket</desc0>
         <desc1>Outils standard fournis (une forge par exemple) mais peu utilisés</desc1>
-        <desc2>Utilisation très active des outils Outils très Very active use of tools for roles/tasks allocation and progress monitoring</desc2>
+        <desc2>Utilisation très active des outils (roles/tasks allocation and progress monitoring)</desc2>
         <score></score>
         <comment></comment>
       </element>
