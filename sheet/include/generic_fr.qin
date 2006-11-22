@@ -163,8 +163,6 @@
       <comment></comment>
     </element>
     
-      
-    
     
     <element name="qualityassurance" title="Méthode qualité">
       <desc>Processus et méthode qualité</desc>
@@ -185,94 +183,6 @@
     </element>
     
     
-    
-    <element name="packaging" title="Packaging">
-      <desc>Packaging pour les différents systèmes d'exploitation</desc>
-      <element name="packagingsource" title="Source">
-        <desc0>Le logiciel ne peut être facilement installé depuis les sources, cela demande beaucoup de travail</desc0>
-        <desc1>L'installation depuis les sources est limitée ou dépend des conditions (OS, arch, lib, ...)</desc1>
-        <desc2>L'installation depuis les sources est facile</desc2>
-        <score></score>
-        <comment></comment>
-      </element>
-      <element name="packagingdebian" title="Debian">
-        <desc0>Le logiciel n'est pas packagé pour ce système d'exploitation</desc0>
-        <desc1>Le packaging existe, mais est buggé ou n'a pas de support officiel</desc1>
-        <desc2>Le logiciel est correctement packagé pour ce système d'exploitation</desc2>
-        <score></score>
-        <comment></comment>
-      </element>
-      <element name="packagingfreebsd" title="FreeBSD">
-        <desc0>Le logiciel n'est pas packagé pour ce système d'exploitation</desc0>
-        <desc1>Le packaging existe, mais est buggé ou n'a pas de support officiel</desc1>
-        <desc2>Le logiciel est correctement packagé pour ce système d'exploitation</desc2>
-        <score></score>
-        <comment></comment>
-      </element>
-      <element name="packaginghpux" title="HP-UX">
-        <desc0>Le logiciel n'est pas packagé pour ce système d'exploitation</desc0>
-        <desc1>Le packaging existe, mais est buggé ou n'a pas de support officiel</desc1>
-        <desc2>Le logiciel est correctement packagé pour ce système d'exploitation</desc2>
-        <score></score>
-        <comment></comment>
-      </element>
-      <element name="packagingmacosx" title="MacOSX">
-        <desc0>The software is not packaged for MacOSX</desc0>
-        <desc1>A package exists but it has important issues or it doesn't have official support</desc1>
-        <desc2>The software is packaged in the distribution</desc2>
-        <score></score>
-        <comment></comment>
-      </element>
-      <element name="packagingmandriva" title="Mandriva">
-        <desc0>Le logiciel n'est pas packagé pour ce système d'exploitation</desc0>
-        <desc1>Le packaging existe, mais est buggé ou n'a pas de support officiel</desc1>
-        <desc2>Le logiciel est correctement packagé pour ce système d'exploitation</desc2>
-        <score></score>
-        <comment></comment>
-      </element>
-      <element name="packagingnet" title="NetBSD">
-        <desc0>Le logiciel n'est pas packagé pour ce système d'exploitation</desc0>
-        <desc1>Le packaging existe, mais est buggé ou n'a pas de support officiel</desc1>
-        <desc2>Le logiciel est correctement packagé pour ce système d'exploitation</desc2>
-        <score></score>
-        <comment></comment>
-      </element>
-      <element name="packagingopen" title="OpenBSD">
-        <desc0>Le logiciel n'est pas packagé pour ce système d'exploitation</desc0>
-        <desc1>Le packaging existe, mais est buggé ou n'a pas de support officiel</desc1>
-        <desc2>Le logiciel est correctement packagé pour ce système d'exploitation</desc2>
-        <score></score>
-        <comment></comment>
-      </element>
-      <element name="packagingredhat" title="RedHat">
-        <desc0>Le logiciel n'est pas packagé pour ce système d'exploitation</desc0>
-        <desc1>Le packaging existe, mais est buggé ou n'a pas de support officiel</desc1>
-        <desc2>Le logiciel est correctement packagé pour ce système d'exploitation</desc2>
-        <score></score>
-        <comment></comment>
-      </element>
-      <element name="packagingsolaris" title="Solaris">
-        <desc0>Le logiciel n'est pas packagé pour ce système d'exploitation</desc0>
-        <desc1>Le packaging existe, mais est buggé ou n'a pas de support officiel</desc1>
-        <desc2>Le logiciel est correctement packagé pour ce système d'exploitation</desc2>
-        <score></score>
-        <comment></comment>
-      </element>
-      <element name="packagingsuse" title="SuSE">
-        <desc0>Le logiciel n'est pas packagé pour ce système d'exploitation</desc0>
-        <desc1>Le packaging existe, mais est buggé ou n'a pas de support officiel</desc1>
-        <desc2>Le logiciel est correctement packagé pour ce système d'exploitation</desc2>
-        <score></score>
-        <comment></comment>
-      </element>
-      <element name="packagingwindows" title="Windows">
-        <desc0>Le logiciel n'est pas packagé pour ce système d'exploitation</desc0>
-        <desc1>Le packaging existe, mais est buggé ou n'a pas de support officiel</desc1>
-        <desc2>Le logiciel est correctement packagé pour ce système d'exploitation</desc2>
-        <score></score>
-        <comment></comment>
-      </element>
-    </element>
   </element>
   
     
@@ -351,7 +261,7 @@
     </element>
     <element name="modificationofsourcecode" title="Modification du code">
       <desc0>Pas de moyen pratique de proposer des modifications de code</desc0>
-      <desc1>Des outils sont fournies pour accéder et modifier le code (ex: CVS, SVN) mais ils ne sont pas vraiment utilisés pour développer le produit</desc1>
+      <desc1>Des outils sont fournis pour accéder et modifier le code (ex: CVS, SVN) mais ils ne sont pas vraiment utilisés pour développer le produit</desc1>
       <desc2>Le processus de modification de code est bien défini, exposé, et respecté, basé sur des roles bien définis.</desc2>
       <score></score>
       <comment></comment>
