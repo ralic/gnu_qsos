@@ -481,8 +481,8 @@
             <desc>outil permettant de créer automatiquement les classes Java sur la base d'un WSDL.                
             </desc>
             <desc0>non supporté</desc0>
-            <desc1>support limité, instable ou incomplet ( ne génère que la partie cliente ou serveur)</desc1>
-            <desc2>bon support (client et serveur), le code généré</desc2>
+            <desc1>support limité, instable ou incomplet (ne génère que la partie cliente ou serveur)</desc1>
+            <desc2>bon support (client et serveur), l'outil a une granularité fine de génération</desc2>
             <comment/>
             <score/>
         </element>
@@ -492,7 +492,7 @@
             </desc>
             <desc0>non supporté</desc0>
             <desc1>support limité, instable ou incomplet (ne génère que la partie cliente ou serveur)</desc1>
-            <desc2>bon support (client et serveur)</desc2>
+            <desc2>bon support (client et serveur), l'outil a une granularité fine de génération</desc2>
             <comment/>
             <score/>
         </element>
@@ -618,15 +618,7 @@
             <comment/>
             <score/>
         </element>
-        
-        <element name="security-and-access-management" title="Gestion des politiques d'accès et de sécurité ??? TBD">
-            <desc0>aucune</desc0>
-            <desc1>fonctionalités limités</desc1>
-            <desc2>fonctionalités avancées</desc2>
-            <comment/>
-            <score/>
-        </element>
-        
+       
         </section>
 
     <section name="supervision"
@@ -634,8 +626,8 @@
         
         <element name="stats" title="Module de production de statistiques">
             <desc0>pas d'interface ni de fonctionalité production de statistiques d'accès aux services</desc0>
-            <desc1>statistiques disponibles uniquement en temps réel, en snapshot</desc1>
-            <desc2>statistiques disponibles sur une période, la génération de rapport est supportée</desc2>
+            <desc1>statistiques disponibles uniquement en temps réel, en snapshot,  rapports succins</desc1>
+            <desc2>statistiques disponibles sur une période, la génération de rapport évolués est supportée</desc2>
             <comment/>
             <score/>
         </element>
