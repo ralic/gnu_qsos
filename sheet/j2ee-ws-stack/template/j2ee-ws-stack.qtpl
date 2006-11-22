@@ -190,6 +190,14 @@
                 <score/>
             </element>
         </element>
+        
+        <element name="rest-support" title="Support de REST">
+            <desc0>non supporté</desc0>
+            <desc1>support limité</desc1>
+            <desc2>supporté</desc2>
+            <comment/>
+            <score/>
+        </element>
 
     </section>
 
@@ -297,36 +305,7 @@
         </element>        
     </section>
 
-    <section name="registry"
-        title="Les registres et services de recherche">        
-        <element name="uddi" title="le support UDDI">
-            <desc>UDDI : acronyme de Universal Description Discovery and Integration,
-             est une  norme édictée par l'OASIS définissant une technologie d'annuaire basée sur XML 
-             et plus particulièrement destinée aux services Web, 
-             notamment dans le cadre d'architectures de type SOA (Service Oriented Architecture).
-              Un annuaire UDDI permet de localiser sur le réseau le service Web recherché. 
-              Il repose sur le protocole de transport SOAP.
-            </desc>
-            <desc0>non supporté</desc0>
-            <desc1>support limité</desc1>
-            <desc2>supporté</desc2>
-            <comment/>
-            <score/>
-        </element>
-        <element name="ebXML" title="ebXML">
-            <desc>abréviation de l'anglais Electronic Business using eXtensible Markup Language signifiant commerce électronique en utilisant XML,
-             est une suite de spécifications basées sur le langage XML et définissant un standard pour le commerce électronique. 
-             Ce standard est édité par l'OASIS. 
-             ebXML s'adresse aux entreprises de toutes tailles, en permettant de définir les échanges électroniques 
-             entre l'entreprise et ses divers partenaires, comme les catalogues électroniques                
-            </desc>
-            <desc0>non supporté</desc0>
-            <desc1>support limité</desc1>
-            <desc2>supporté</desc2>
-            <comment/>
-            <score/>
-        </element>
-    </section>
+ 
 
     <section name="metaData"
         title="MetaData">   
@@ -364,7 +343,7 @@
                 </desc>
                 <desc0>non supporté</desc0>
                 <desc1>support limité</desc1>
-                <desc2>supporté, la </desc2>
+                <desc2>supporté</desc2>
                 <comment/>
                 <score/>
             </element>
@@ -546,7 +525,7 @@
         <element name="marshalling-unmarshalling-java-soap" title="Sérialisation/désérialisation automatique d'objets Java depuis et vers des messages SOAP       ">
             <desc0>non supporté</desc0>
             <desc1>supporté mais limité ou réalisé par un data binding obsolète ou non standard</desc1>
-            <desc2>supporté et réalisé par un data binding standard (ex: JAXB)</desc2>
+            <desc2>supporté et réalisé par un data binding standard et extensible</desc2>
             <comment/>
             <score/>
         </element>
