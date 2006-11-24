@@ -1,4 +1,9 @@
 <?xml version="1.0"?>
+<!-- 
+TODO:
+remove the <?xml version="1.0"?> from the created file
+add '=' around the title for every subsection.
+--!>
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns="http://www.w3.org/TR/xhtml1/strict" version="1.0">
 <xsl:template match="/">
 =<xsl:value-of select="document/header/appname"/>&#160;<xsl:value-of
