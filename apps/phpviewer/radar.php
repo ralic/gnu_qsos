@@ -60,7 +60,7 @@ if(isset($svg) && ($svg == "yes")) {
 		$circle->setAttribute("cy", 0);
 		$circle->setAttribute("r", $r);
 		$circle->setAttribute("fill", "none");
-		$circle->setAttribute("stroke", "blue");
+		$circle->setAttribute("stroke", "lightgrey");
 		$circle->setAttribute("stroke-width", "1");
 		$g->appendChild($circle);
 	}
@@ -74,7 +74,7 @@ if(isset($svg) && ($svg == "yes")) {
 		$line->setAttribute("y1", $y1);
 		$line->setAttribute("x2", $x2);
 		$line->setAttribute("y2", $y2);
-		$line->setAttribute("stroke", "green");
+		$line->setAttribute("stroke", "lightgrey");
 		$line->setAttribute("stroke-width", "1");
 		$g->appendChild($line);
 	}
@@ -92,7 +92,7 @@ if(isset($svg) && ($svg == "yes")) {
 		$text->setAttribute("font-family", "Verdana");
 		$text->setAttribute("font-size", $FONT_SIZE);
 	
-		$text->setAttribute("fill", "blue");
+		$text->setAttribute("fill", "lightgrey");
 		$text->appendChild($doc->createTextNode($mark));
 		$g->appendChild($text);
 	}
@@ -197,19 +197,15 @@ if(isset($svg) && ($svg == "yes")) {
 		}
 		$myD .= "z";
 		$path->setAttribute("d", $myD);
-		if ($num == 1) {
-			$path->setAttribute("fill", getColor($n));
-			$path->setAttribute("opacity", "0.4");
-		} else {
-			$path->setAttribute("fill", "none");
-		}
+		$path->setAttribute("fill", getColor($n));
+		$path->setAttribute("fill-opacity", "0.2");
 		$path->setAttribute("stroke-width", "3");
 		$path->setAttribute("stroke", getColor($n));
 	
 		return $path;
 	}
 	
-	$colors = array('red', 'blue', 'grey', 'purple');
+	$colors = array('red', 'blue', 'green', 'purple');
 	//Return drawing color depending on software position in the list
 	function getColor($i) {
 		global $colors;
