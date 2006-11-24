@@ -5,12 +5,16 @@ require_once('pclzip.lib.php');
 $file = $_GET['f'];
 $odsfile = basename($file, ".qsos").".ods";
 
-//Global variable
+//Global variables
 $numrow;
+$graph_formula_content;
+$graph_formula_module;
 
 //loop
-function showtree($output, $input, $tree, $table, $depth) {
+function showtree($output, $input, $tree, $table0, $table, $depth) {
 	global $numrow;
+	global $graph_formula_content;
+	global $graph_formula_module;
 	$children = array();
 
 	$new_depth = $depth + 1;
@@ -52,6 +56,11 @@ function showtree($output, $input, $tree, $table, $depth) {
 			break;
 	}
 
+	$graph_formula_content1 = '';
+	$graph_formula_content2 = '';
+	$graph_formula_module1 = '';
+	$graph_formula_module2 = '';
+
 	foreach($tree as $element) {
 		$name = $element->name;
 		$title = $element->title;
@@ -61,7 +70,48 @@ function showtree($output, $input, $tree, $table, $depth) {
 		$numrow++;
 		array_push($children, $numrow);
 
-		//New row
+		if ($depth == '0') {
+			$graph_formula_content1 .= "Evaluation.A$numrow:Evaluation.A$numrow ";
+			$graph_formula_content2 .= "Evaluation.C$numrow:Evaluation.C$numrow ";
+			$graph_formula_module1 .= "\$Evaluation.\$A$numrow;";
+			$graph_formula_module2 .= "\$Evaluation.\$C$numrow;";
+		}
+
+		//New row for first sheet
+		$row = $output->createElement('table:table-row');
+		$row->setAttribute("table:style-name",$style_row);
+		//Criterion
+		$cell = $output->createElement('table:table-cell');
+		if ($style_title != "") $cell->setAttribute("table:style-name",$style_title);
+		$cell->setAttribute("office:value-type","string");
+		$text = $output->createElement('text:p',$title);
+		$cell->appendChild($text);
+		$row->appendChild($cell);
+		//Desc0
+		$cell = $output->createElement('table:table-cell');
+		if ($style_title != "") $cell->setAttribute("table:style-name",$style_title);
+		$cell->setAttribute("office:value-type","string");
+		$text = $output->createElement('text:p',$input->getgeneric($name, "desc0"));
+		$cell->appendChild($text);
+		$row->appendChild($cell);
+		//Desc1
+		$score = $output->createElement('table:table-cell');
+		if ($style_title != "") $score->setAttribute("table:style-name",$style_title);
+		$score->setAttribute("office:value-type","string");
+		$text = $output->createElement('text:p',$input->getgeneric($name, "desc1"));
+		$score->appendChild($text);
+		$row->appendChild($score);
+		//Desc2
+		$cell = $output->createElement('table:table-cell');
+		if ($style_title != "") $cell->setAttribute("table:style-name",$style_title);
+		$cell->setAttribute("office:value-type","string");
+		$text = $output->createElement('text:p',$input->getgeneric($name, "desc2"));
+		$cell->appendChild($text);
+		$row->appendChild($cell);
+
+		$table0->appendChild($row);
+
+		//New row for second sheet
 		$row = $output->createElement('table:table-row');
 		$row->setAttribute("table:style-name",$style_row);
 		//Criterion
@@ -99,15 +149,19 @@ function showtree($output, $input, $tree, $table, $depth) {
 
 		if ($subtree) {
 			//Subcriteria regrouping
+			$group0 = $output->createElement('table:table-row-group');
 			$group = $output->createElement('table:table-row-group');
-			$return = showtree($output, $input, $subtree, $group, $new_depth);
+			$return = showtree($output, $input, $subtree, $group0, $group, $new_depth);
 			//Set score formula
 			$score->setAttribute("table:formula",getFormula($return));
+			$table0->appendChild($group0);
 			$table->appendChild($group);
 		}
 	}
 
 	if ($depth == 0) {
+		$graph_formula_content = $graph_formula_content1.$graph_formula_content2;
+		$graph_formula_module = $graph_formula_module1.$graph_formula_module2;
 		return $children;
 	} else {
 		return $children;
@@ -195,7 +249,17 @@ function createODS($file) {
 	
 	//Styles
 	$styles = $output->createElement('office:automatic-styles');
-	
+
+	//co0
+	$style = $output->createElement('style:style');
+	$style->setAttribute("style:name","co0");
+	$style->setAttribute("style:family","table-column");
+	$substyle = $output->createElement('style:table-column-properties');
+	$substyle->setAttribute("fo:break-before","auto");
+	$substyle->setAttribute("style:column-width","4.717cm");
+	$style->appendChild($substyle);
+	$styles->appendChild($style);
+
 	//co1
 	$style = $output->createElement('style:style');
 	$style->setAttribute("style:name","co1");
@@ -412,8 +476,144 @@ function createODS($file) {
 	//Document body
 	$body = $output->createElement('office:body');
 	$spreadsheet = $output->createElement('office:spreadsheet');
+
+	//First sheet (Criteria)
+	$table0 = $output->createElement('table:table');
+	$table0->setAttribute("table:name","Criteria");
+	$table0->setAttribute("table:style-name","ta1");
+	$table0->setAttribute("table:print","false");
+
+	$column = $output->createElement('table:table-column');
+	$column->setAttribute("table:style-name","co0");
+	$column->setAttribute("table:default-cell-style-name","ce4");
+	$table0->appendChild($column);
 	
-	//First sheet
+	$column = $output->createElement('table:table-column');
+	$column->setAttribute("table:style-name","co0");
+	$column->setAttribute("table:default-cell-style-name","ce4");
+	$table0->appendChild($column);
+
+	$column = $output->createElement('table:table-column');
+	$column->setAttribute("table:style-name","co0");
+	$column->setAttribute("table:default-cell-style-name","ce4");
+	$table0->appendChild($column);
+
+	$column = $output->createElement('table:table-column');
+	$column->setAttribute("table:style-name","co0");
+	$column->setAttribute("table:default-cell-style-name","ce4");
+	$table0->appendChild($column);
+
+	$row = $output->createElement('table:table-row');
+	$row->setAttribute("table:style-name","ro1");
+	$row->setAttribute("table:number-rows-repeated","2");
+	$cell = $output->createElement('table:table-cell');
+	$cell->setAttribute("table:style-name","Default");
+	$cell->setAttribute("table:number-columns-repeated","4");
+	$row->appendChild($cell);
+	$table0->appendChild($row);
+
+	//Software family
+	$row = $output->createElement('table:table-row');
+	$row->setAttribute("table:style-name","ro1");
+	$cell = $output->createElement('table:table-cell');
+	$cell->setAttribute("table:style-name","ce2");
+	$cell->setAttribute("office:value-type","string");
+	$text = $output->createElement('text:p',"Software family");
+	$cell->appendChild($text);
+	$row->appendChild($cell);
+	$cell = $output->createElement('table:table-cell');
+	$cell->setAttribute("table:style-name","ce8");
+	$cell->setAttribute("office:value-type","string");
+	$text = $output->createElement('text:p',$input->getkey("qsosappfamily"));
+	$cell->appendChild($text);
+	$row->appendChild($cell);
+	$cell = $output->createElement('table:table-cell');
+	$cell->setAttribute("table:style-name","ce8");
+	$cell->setAttribute("table:number-columns-repeated","2");
+	$row->appendChild($cell);
+	$table0->appendChild($row);
+
+	//QSOS version
+	$row = $output->createElement('table:table-row');
+	$row->setAttribute("table:style-name","ro1");
+	$cell = $output->createElement('table:table-cell');
+	$cell->setAttribute("table:style-name","ce2");
+	$cell->setAttribute("office:value-type","string");
+	$text = $output->createElement('text:p',"QSOS version");
+	$cell->appendChild($text);
+	$row->appendChild($cell);
+	$cell = $output->createElement('table:table-cell');
+	$cell->setAttribute("table:style-name","ce8");
+	$cell->setAttribute("office:value-type","string");
+	$text = $output->createElement('text:p',$input->getkey("qsosformat"));
+	$cell->appendChild($text);
+	$row->appendChild($cell);
+	$cell = $output->createElement('table:table-cell');
+	$cell->setAttribute("table:style-name","ce8");
+	$cell->setAttribute("table:number-columns-repeated","2");
+	$row->appendChild($cell);
+	$table0->appendChild($row);
+
+	//Template version
+	$row = $output->createElement('table:table-row');
+	$row->setAttribute("table:style-name","ro1");
+	$cell = $output->createElement('table:table-cell');
+	$cell->setAttribute("table:style-name","ce2");
+	$cell->setAttribute("office:value-type","string");
+	$text = $output->createElement('text:p',"Template version");
+	$cell->appendChild($text);
+	$row->appendChild($cell);
+	$cell = $output->createElement('table:table-cell');
+	$cell->setAttribute("table:style-name","ce8");
+	$cell->setAttribute("office:value-type","string");
+	$text = $output->createElement('text:p',$input->getkey("qsosspecificformat"));
+	$cell->appendChild($text);
+	$row->appendChild($cell);
+	$cell = $output->createElement('table:table-cell');
+	$cell->setAttribute("table:style-name","ce8");
+	$cell->setAttribute("table:number-columns-repeated","2");
+	$row->appendChild($cell);
+	$table0->appendChild($row);
+
+	$row = $output->createElement('table:table-row');
+	$row->setAttribute("table:style-name","ro1");
+	$row->setAttribute("table:number-rows-repeated","2");
+	$cell = $output->createElement('table:table-cell');
+	$cell->setAttribute("table:style-name","Default");
+	$cell->setAttribute("table:number-columns-repeated","4");
+	$row->appendChild($cell);
+	$table0->appendChild($row);
+
+	//Criteria
+	$row = $output->createElement('table:table-row');
+	$row->setAttribute("table:style-name","ro1");
+	$cell = $output->createElement('table:table-cell');
+	$cell->setAttribute("table:style-name","ce2");
+	$cell->setAttribute("office:value-type","string");
+	$text = $output->createElement('text:p','Criterion');
+	$cell->appendChild($text);
+	$row->appendChild($cell);
+	$cell = $output->createElement('table:table-cell');
+	$cell->setAttribute("table:style-name","ce2");
+	$cell->setAttribute("office:value-type","string");
+	$text = $output->createElement('text:p','Score 0');
+	$cell->appendChild($text);
+	$row->appendChild($cell);
+	$cell = $output->createElement('table:table-cell');
+	$cell->setAttribute("table:style-name","ce2");
+	$cell->setAttribute("office:value-type","string");
+	$text = $output->createElement('text:p','Score 1');
+	$cell->appendChild($text);
+	$row->appendChild($cell);
+	$cell = $output->createElement('table:table-cell');
+	$cell->setAttribute("table:style-name","ce2");
+	$cell->setAttribute("office:value-type","string");
+	$text = $output->createElement('text:p','Score 2');
+	$cell->appendChild($text);
+	$row->appendChild($cell);
+	$table0->appendChild($row);
+
+	//Second sheet (Evaluation)
 	$table = $output->createElement('table:table');
 	$table->setAttribute("table:name","Evaluation");
 	$table->setAttribute("table:style-name","ta1");
@@ -688,8 +888,9 @@ function createODS($file) {
 	$numrow = 14;
 	
 	//Init loop
-	showtree($output, $input, $input->getTree(), $table, 0);
+	showtree($output, $input, $input->getTree(), $table0, $table, 0);
 	
+	$spreadsheet->appendChild($table0);
 	$spreadsheet->appendChild($table);
 	$body->appendChild($spreadsheet);
 	$document->appendChild($body);
