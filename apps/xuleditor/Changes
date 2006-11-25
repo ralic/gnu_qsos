@@ -14,3 +14,7 @@ Revision history for QSOS XUL Editor
       - Localization (English and French versions are available)
       - Firefox extention packaging
       - Makefile with "app' and "ext" targets for xulrunner application and Firefox extention packaging
+
+0.4  2006/11/25
+      - Firefox 2 support
+      - UTF-8 supported in .qsos files

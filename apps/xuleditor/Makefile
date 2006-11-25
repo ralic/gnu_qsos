@@ -16,7 +16,7 @@
 #
 #
 # QSOS XUL Editor Makefile
-# $Id: Makefile,v 1.4 2006/07/01 23:43:53 rsemeteys Exp $
+# $Id: Makefile,v 1.5 2006/11/25 11:35:53 rsemeteys Exp $
 
 APPPACK=application.ini Changes chrome.manifest LICENSE README xuleditor xuleditor.bat
 EXTPACK=Changes chrome.manifest install.rdf LICENSE README
@@ -30,7 +30,7 @@ SKIN=chrome/skin/classic.css
 
 PREFS=defaults/preferences/qsos-xuled.js
 
-VERSION=0.3
+VERSION=0.4
 
 ext:
 	rm -f xuleditor-firefox-${VERSION}.xpi
