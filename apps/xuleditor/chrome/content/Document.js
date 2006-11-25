@@ -95,22 +95,31 @@ function Document(name) {
         } catch (e) {
             alert("Permission to read file was denied.");
         }
-        var file = Components.classes["@mozilla.org/file/local;1"]
-            .createInstance(Components.interfaces.nsILocalFile);
-        file.initWithPath( filename );
-        if ( file.exists() == false ) {
+        
+	var file = Components.classes["@mozilla.org/file/local;1"]
+		.createInstance(Components.interfaces.nsILocalFile);
+        file.initWithPath(filename);
+        if (file.exists() == false) {
             alert("File does not exist");
         }
+
         var is = Components.classes["@mozilla.org/network/file-input-stream;1"]
-            .createInstance( Components.interfaces.nsIFileInputStream );
-        is.init( file,0x01, 00004, null);
+		.createInstance(Components.interfaces.nsIFileInputStream);
+        is.init(file, 0x01, 00004, null);
+
         var sis = Components.classes["@mozilla.org/scriptableinputstream;1"]
-            .createInstance( Components.interfaces.nsIScriptableInputStream );
+		.createInstance(Components.interfaces.nsIScriptableInputStream);
         sis.init( is );
-        var output = sis.read( sis.available() );
-        
-        var domParser = new DOMParser();
-        sheet = domParser.parseFromString(output, "text/xml");
+
+	var output = sis.read(sis.available());
+
+	var converter = Components.classes["@mozilla.org/intl/scriptableunicodeconverter"]
+		.createInstance(Components.interfaces.nsIScriptableUnicodeConverter);
+	converter.charset = "UTF-8";
+	output = converter.ConvertToUnicode(output);
+
+	var domParser = new DOMParser();
+	sheet = domParser.parseFromString(output, "text/xml");
     }
     
     //Serialize and write the local QSOS XML file
@@ -120,22 +129,30 @@ function Document(name) {
         } catch (e) {
             alert("Permission to save file was denied.");
         }
-        var file = Components.classes["@mozilla.org/file/local;1"]
-            .createInstance(Components.interfaces.nsILocalFile);
-        file.initWithPath( filename );
-        if ( file.exists() == false ) {
-            file.create( Components.interfaces.nsIFile.NORMAL_FILE_TYPE, 420 );
-        }
-        var outputStream = Components.classes["@mozilla.org/network/file-output-stream;1"]
-            .createInstance( Components.interfaces.nsIFileOutputStream );
 
-        outputStream.init( file, 0x04 | 0x08 | 0x20, 420, 0 );
+        var file = Components.classes["@mozilla.org/file/local;1"]
+		.createInstance(Components.interfaces.nsILocalFile);
+        file.initWithPath(filename);
+        if (file.exists() == false) {
+            file.create(Components.interfaces.nsIFile.NORMAL_FILE_TYPE, 420);
+        }
+
+        var outputStream = Components.classes["@mozilla.org/network/file-output-stream;1"]
+		.createInstance(Components.interfaces.nsIFileOutputStream);
+
+        outputStream.init(file, 0x04 | 0x08 | 0x20, 420, 0);
 
         //var serializer = new XMLSerializer();
         //var xml = serializer.serializeToString(sheet);
         //var result = outputStream.write( xml, xml.length );
 
 	var xml = serialize(sheet.documentElement, 0);
+
+	var converter = Components.classes["@mozilla.org/intl/scriptableunicodeconverter"]
+		.createInstance(Components.interfaces.nsIScriptableUnicodeConverter);
+	converter.charset = "UTF-8";
+	xml = converter.ConvertFromUnicode(xml);
+
 	outputStream.write(xml, xml.length);
 	
         outputStream.close();
