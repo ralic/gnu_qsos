@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
-<!DOCTYPE window>
+<!DOCTYPE window SYSTEM "chrome://qsos-tpl-xuled/locale/about.dtd">
 
-<dialog id="about" title="About"
+<dialog id="about" title="&about.label;"
         xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
         buttons="accept">
 
@@ -12,14 +12,14 @@
 	</hbox>
 	<vbox>
 		<label value=""/>
-		<label value="QSOS Template XUL Editor v0.1"/>
-		<label value="Software under the terms of the GNU Public License"/>
+		<label value="&label1.value;"/>
+		<label value="&label2.value;"/>
 		<label value=""/>
-		<label value="Authors:"/>
-		<label value="   . raphael.semeteys@atosorigin.com"/>
+		<label value="&label3.value;"/>
+		<label value="&label4.value;"/>
 		<label value=""/>
-		<label value="Source code available on http://savannah.nongnu.org/projects/qsos"/>
-		<label value="Information on QSOS method available on http://www.qsos.org"/>
+		<label value="&label5.value;"/>
+		<label value="&label6.value;"/>
 	</vbox>
 </vbox>
 

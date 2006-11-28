@@ -18,7 +18,7 @@
 ** Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 **
 **
-** QSOS XUL Editor
+** QSOS XUL Template Editor
 ** editor.js: functions associated with the editor.xul file
 **
 ** TODO:
@@ -31,9 +31,12 @@ var myDoc;
 var docChanged;
 //id (actually "name" in the QSOS XML file) of the currently selected criteria in the tree
 var id;
+//Localized strings bundle
+var strbundle;
 
 //Window initialization after loading
 function init() {
+	strbundle = document.getElementById("properties");
 	docChanged = "false";
 	freezeGeneric("true");
 	freezeType("true");
@@ -62,15 +65,15 @@ function newFile() {
 	var nsIFilePicker = Components.interfaces.nsIFilePicker;
 	var fp = Components.classes["@mozilla.org/filepicker;1"]
 	.createInstance(nsIFilePicker);
-	fp.init(window, "Save the file as", nsIFilePicker.modeSave);
-	fp.appendFilter("QSOS Template file","*.qtpl");
+	fp.init(window,  strbundle.getString("saveFile"), nsIFilePicker.modeSave);
+	fp.appendFilter(strbundle.getString("QSOSTemplateFile"),"*.qtpl");
 	var res = fp.show();
 	if (res == nsIFilePicker.returnOK) {
 		myDoc = new Template();
 		myDoc.create(fp.file.path);
 	
 		//Window's title
-		document.getElementById("QSOS").setAttribute("title", "New QSOS template");
+		document.getElementById("QSOS").setAttribute("title", strbundle.getString("newFile"));
 		
 		//Tree population
 		var tree = document.getElementById("mytree");
@@ -111,8 +114,8 @@ function openFile() {
     var nsIFilePicker = Components.interfaces.nsIFilePicker;
     var fp = Components.classes["@mozilla.org/filepicker;1"]
             .createInstance(nsIFilePicker);
-    fp.init(window, "Select a file", nsIFilePicker.modeOpen);
-    fp.appendFilter("QSOS Template file","*.qtpl");
+    fp.init(window, strbundle.getString("selectFile"), nsIFilePicker.modeOpen);
+    fp.appendFilter(strbundle.getString("QSOSTemplateFile"),"*.qtpl");
     var res = fp.show();
     
     if (res == nsIFilePicker.returnOK) {
@@ -120,7 +123,7 @@ function openFile() {
         myDoc.load(fp.file.path);
         
         //Window's title
-        document.getElementById("QSOS").setAttribute("title", "QSOS template: "+myDoc.getqsosappfamily());
+        document.getElementById("QSOS").setAttribute("title", strbundle.getString("QSOSTemplate")+": "+myDoc.getqsosappfamily());
         
         //Tree population
         var tree = document.getElementById("mytree");
@@ -142,7 +145,7 @@ function openFile() {
 function checkopenFile() {
 	if (myDoc) {
 		if (docChanged == "true") {
-			confirmDialog("Document has been modified but not saved, close it anyway?", closeFile);
+			confirmDialog(strbundle.getString("closeAnyway"), closeFile);
 		}
 		else {
 			closeFile();
@@ -215,8 +218,8 @@ function saveFileAs() {
 	var nsIFilePicker = Components.interfaces.nsIFilePicker;
 	var fp = Components.classes["@mozilla.org/filepicker;1"]
 		.createInstance(nsIFilePicker);
-	fp.init(window, "Save the file as", nsIFilePicker.modeSave);
-	fp.appendFilter("QSOS file","*.qtpl");
+	fp.init(window, strbundle.getString("saveFileAs"), nsIFilePicker.modeSave);
+	fp.appendFilter(strbundle.getString("QSOSTemplateFile"),"*.qtpl");
 	var res = fp.show();
 	if (res == nsIFilePicker.returnOK) {
 		myDoc.setfilename(fp.file.path);
@@ -230,7 +233,7 @@ function saveFileAs() {
 //////////////////////////
 //Closes the QSOS XML file and resets window
 function closeFile() {
-	document.getElementById("QSOS").setAttribute("title", "QSOS XUL Editor");
+	document.getElementById("QSOS").setAttribute("title", strbundle.getString("QSOSTemplateEditor"));
 	document.getElementById("f-softwarefamily").value = "";
 	document.getElementById("f-version").value = "";
 
@@ -253,7 +256,7 @@ function closeFile() {
 //Checks Document's state before closing it
 function checkcloseFile() {
 	if (docChanged == "true") {
-		confirmDialog("Document has been modified, save it before?", saveFile);
+		confirmDialog(strbundle.getString("saveBefore"), saveFile);
 	}
 	closeFile();
 }
@@ -269,7 +272,7 @@ function exit() {
 //Checks Document's state before exiting
 function checkexit() {
 	if (docChanged == "true") {
-		confirmDialog("Document has been modified but not saved, exit anyway?", exit);
+		confirmDialog(strbundle.getString("exitAnyway"), exit);
 		return;
 	}
 	else {
@@ -719,7 +722,7 @@ function moveDown() {
 
 //Context menu "Delete"
 function deleteCriterion() {
-	var result = confirm("Do you confirm deletion of UID "+id+" criterion?");
+	var result = confirm(strbundle.getString("confirmDelete1")+" "+id+" "+strbundle.getString("confirmDelete2"));
 	if (result) {
 		myDoc.deleteNode(id);
 		var node = document.getElementById(id).parentNode.parentNode;

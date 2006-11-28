@@ -1,48 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
-<!DOCTYPE window>
+<!DOCTYPE window SYSTEM "chrome://qsos-tpl-xuled/locale/newsection.dtd">
 
-<dialog id="newsection" title="New section"
+<dialog id="newsection" title="&newsection.label;"
         xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
 	buttons="accept,cancel"
 	ondialogaccept="return doOK();"
         ondialogcancel="return doCancel();">
-	
+
+<script src="commons.js" type="application/x-javascript"/>
 <script type="application/x-javascript">
-	
+<![CDATA[
+	 
 function doOK() {
+	var strbundle = document.getElementById("properties");
 	var myDoc = window.arguments[0];
-	if (document.getElementById("d-c-name").value == "") {
-		alert("UID is mandatory");
+	var fields = new Object();
+	
+	if (document.getElementById("d-c-title").value == "") {
+		alert(strbundle.getString("alert"));
 		return false;
 	}
-	if (myDoc.fetchNode(document.getElementById("d-c-name").value) != "false") {
-		alert("A element with id "+document.getElementById("d-c-name").value+" already exists.");
-		return false;
-	}
-	else {
-		var fields = new Object();
-		fields.name = document.getElementById("d-c-name").value;
-		fields.title = document.getElementById("d-c-title").value;
-		fields.desc = document.getElementById("d-c-desc").value;
-		window.arguments[1](fields);
-		return true;
-	}
+	
+	fields.title = document.getElementById("d-c-title").value;
+	fields.name = getUID(myDoc);
+	fields.desc = document.getElementById("d-c-desc").value;
+	window.arguments[1](fields);
+	return true;
 }
 
 function doCancel() {
 	return true;
 }
+
+]]>
 </script>
 
+<stringbundle id="properties" src="chrome://qsos-tpl-xuled/locale/new.properties"/>
+
 <vbox>
-	<label control="d-c-name" value="Unique name (UID): "/>
-	<textbox id="d-c-name"/>
-	
-	<label control="d-c-title" value="Title "/>
+	<label control="d-c-title" value="&label1.value;"/>
 	<textbox id="d-c-title"/>
 	
-	<label control="d-c-desc" value="Description: "/>
+	<label control="d-c-desc" value="&label2.value;"/>
 	<textbox id="d-c-desc" multiline="true"/>
 </vbox>
 

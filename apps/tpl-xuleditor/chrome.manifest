@@ -1,3 +1,6 @@
 content qsos-tpl-xuled  chrome/content/
 skin qsos-tpl-xuled  classic chrome/skin/
 overlay chrome://browser/content/browser.xul chrome://qsos-tpl-xuled/content/qsos-tpl-overlay.xul
+
+locale qsos-tpl-xuled en-US chrome/locale/en-US/
+locale qsos-tpl-xuled fr-FR chrome/locale/fr-FR/

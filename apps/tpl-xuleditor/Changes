@@ -1,4 +1,8 @@
-Revision history for QSOS XUL Editor
+Revision history for QSOS XUL Template Editor
 
-0.01  2006
-      - Initial release
+0.1  2006
+	- Initial release
+
+0.2  2006/11/28
+	- Firefox extention packaging
+	- UID are now generated
