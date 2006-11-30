@@ -1,0 +1,83 @@
+#!/usr/bin/perl -w
+# tool to convert QSOS sheet to mediawiki format
+
+use strict;
+
+use XML::Twig;
+
+my $file = shift;
+my $out;
+
+my $twig= new XML::Twig( start_tag_handlers => {
+    'element' => \&element,
+    'section' => \&section,
+  },
+
+  TwigHandlers => {
+    'desc' => \&desc,
+    'desc0' => \&desc0,
+    'desc1' => \&desc1,
+    'desc2' => \&desc2,
+    'score' => \&score,
+    'comment' => \&comment,
+  },
+  PrettyPrint => 'indented'
+);
+
+$twig->parsefile( $file);
+
+sub element {
+  my( $twig, $ename) = @_;
+
+  my $depth = $ename->level - 1;
+  $out .= "=" foreach(0 .. $depth);
+  $out .= $ename->{att}->{title};
+  $out .= "=" foreach(0 .. $depth);
+  $out .= "\n";
+  $twig->purge;
+}
+
+sub section {
+  my( $twig, $ename) = @_;
+
+  $out .= "=".$ename->{att}->{title}."=\n";
+  print "section\n";
+  $twig->purge;
+}
+
+sub desc {
+  my( $twig, $ename) = @_;
+  $out .= "* desc:".$ename->text."\n";
+  $twig->purge;
+}
+
+sub desc0 {
+  my( $twig, $ename) = @_;
+  $out .= "* desc0: ".$ename->text."\n";
+  $twig->purge;
+}
+
+sub desc1 {
+  my( $twig, $ename) = @_;
+  $out .= "* desc1: ".$ename->text."\n";
+  $twig->purge;
+}
+
+sub desc2 {
+  my( $twig, $ename) = @_;
+  $out .= "* desc2: ".$ename->text."\n";
+  $twig->purge;
+}
+
+sub score {
+  my( $twig, $ename) = @_;
+  $out .= "* score: '''".$ename->text."'''/2\n";
+  $twig->purge;
+}
+sub comment {
+  my( $twig, $ename) = @_;
+  $out .= "* comment: ".$ename->text."\n";
+  $twig->purge;
+}
+
+print $out;
