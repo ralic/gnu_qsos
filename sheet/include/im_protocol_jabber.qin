@@ -35,7 +35,7 @@
 					<comment></comment>
 				</element>
 			</element>
-	<element name="presence" title="Presence Status Handling">
+		<element name="presence" title="Presence Status Handling">
 			<desc>Presence handling features</desc>
 			<comment></comment>
 			<element name="presencestatus" title="Presence status handling">	
@@ -125,6 +125,7 @@ Advanced auto-away system: auto-message when auto-away is activated, settable id
 				<desc>Supported Protocol using Jabber gateways or native protocols</desc>
 				<comment></comment>
 			</element>
+		</element>
 
 </section>
 
