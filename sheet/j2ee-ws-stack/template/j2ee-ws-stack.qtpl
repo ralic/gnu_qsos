@@ -453,7 +453,7 @@
             
         </section>
    
-    <section name="tools"
+    <section name="specific-tools"
         title="Outillage"> 
         
         <element name="wsdl2java" title="génération top-down ou WSDL2Java">

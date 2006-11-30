@@ -751,7 +751,7 @@
       </element>
     </element>
   </section>
-  <section name="tools" title="Outillage">
+  <section name="specific-tools" title="Outillage">
     <element name="wsdl2java" title="génération top-down ou WSDL2Java">
       <desc>outil permettant de créer automatiquement les classes Java sur la base d'un WSDL. </desc>
       <desc0>non supporté</desc0>
