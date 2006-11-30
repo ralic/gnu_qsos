@@ -1,5 +1,6 @@
 <?xml version="1.0"?>
 <!-- 
+Use qsos2mediawiki instead.
 TODO:
 remove the <?xml version="1.0"?> from the created file
 add '=' around the title for every subsection.
