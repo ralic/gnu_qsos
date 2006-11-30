@@ -4,7 +4,7 @@ use strict;
 
 use Getopt::Long;
 
-my $includedir;
+my $includedir = "../../sheet/include/";
 my $qtpl;
 
 GetOptions (
@@ -18,6 +18,7 @@ sub usage {
 
   print STDERR "usage:\n";
   print STDERR "  createemptysheet --include=/includepath --qtpl qsos-template.qtpl:\n";
+  print STDERR " Default include directory is $includedir\n";
   exit 1;
 }
 
@@ -31,7 +32,7 @@ open QTPL,"<$qtpl" or die "Failed to open $qtpl: $?";
 close QTPL;
 
 while (my $line = shift @buff) {
-  if ($line =~ /<include\W+section="(\w+)"\/>/) { # this is an include
+  if ($line =~ /<include\W+section="([-\w]+)"\W*\/>/) { # this is an include
 #    print STDERR "Including $1\n";
     open INCLUDE, "<$includedir/$1.qin" or die "Failed to open includefile
     $1.qin";
