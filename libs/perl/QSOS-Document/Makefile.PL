@@ -1,4 +1,4 @@
-# $Id: Makefile.PL,v 1.5 2006/03/24 11:11:13 goneri Exp $
+# $Id: Makefile.PL,v 1.6 2006/12/01 14:10:18 goneri Exp $
 
 use ExtUtils::MakeMaker;
 
@@ -32,6 +32,13 @@ if ( eval { require XML::Twig } && ! $@ ) {
 }
 else {
     die "You don't have XML::Twig installed!\n";
+}
+
+if ( eval { require Tie::IxHash } && ! $@ ) {
+    print "Tie::IxHash is installed\n";
+}
+else {
+    die "You don't have Tie::IxHash installed!\n";
 }
 
 eval { require Storable };
