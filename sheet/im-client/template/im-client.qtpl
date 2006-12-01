@@ -20,6 +20,6 @@
     <qsosspecificformat></qsosspecificformat>
   </header>
   <include section="generic"/>
-  <include section="im_protocol_jabber"/>
   <include section="im_client_gui"/>
+  <include section="im_protocol_jabber"/>
 </document>

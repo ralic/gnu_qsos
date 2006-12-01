@@ -126,6 +126,7 @@ Advanced auto-away system: auto-message when auto-away is activated, settable id
 				<comment></comment>
 			</element>
 		</element>
+	</element>
 
 </section>
 
