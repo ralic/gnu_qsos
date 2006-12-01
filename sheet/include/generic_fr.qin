@@ -162,7 +162,7 @@
            <score></score>
         <comment></comment>
         </element>
-        <element name="ticketing" title="Outillage">
+        <element name="tools" title="Outillage">
           <desc0>Pas d'outils de gestion de bugs, ni d'outils de ticketing</desc0>
           <desc1>Outils standards fournis (une forge par exemple) mais peu utilisés</desc1>
           <desc2>Utilisation très active des outils</desc2>
