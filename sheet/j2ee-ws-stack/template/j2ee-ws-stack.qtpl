@@ -32,7 +32,7 @@
       <comment/>
       <score/>
     </element>
-    <element name="jsr67" title="JSR  67 SOAP with Attachments API for Java Specification (SAAJ) 1.2">
+    <element name="jsr67_saaj-1_2" title="JSR  67 SOAP with Attachments API for Java Specification (SAAJ) 1.2">
       <desc> SAAJ fournit une manière standard d'envoyer des documents XML par Internet depuis la plateforme Java. 
       </desc>
       <desc0>JSR/API non implémentée</desc0>
@@ -67,7 +67,7 @@
       <comment/>
       <score/>
     </element>
-    <element name="jsr67" title="JSR  67 SOAP with Attachments API for Java (SAAJ) 1.3">
+    <element name="jsr67_saaj-1_3" title="JSR  67 SOAP with Attachments API for Java (SAAJ) 1.3">
       <desc> SAAJ fournit une manière standard d'envoyer des documents XML par Internet depuis la plateforme de Java.
         SAAJ 1.3 supporte SOAP 1.2. Pour plus d'informations sur les spécifications de SAAJ. 
         SAAJ est souvent utilisée par des APIs de plus haut niveau comme JAXR et JAX-RPC.
@@ -150,14 +150,14 @@
         Il permet la transmission de messages entre objets distants, ce qui signifie qu'il autorise un objet à invoquer
         des méthodes d'objets physiquement situés sur une machine distante (par protocole HTTP, SMTP, etc ...)                
       </desc>
-      <element name="soap-1.1" title="SOAP 1.1">
+      <element name="soap-1_1" title="SOAP 1.1">
         <desc0>non supporté</desc0>
         <desc1>support limité</desc1>
         <desc2>supporté</desc2>
         <comment/>
         <score/>
       </element>
-      <element name="soap-1.2" title="SOAP 1.2">
+      <element name="soap-1_2" title="SOAP 1.2">
         <desc>La version 1.2 de SOAP présente un certain nombre de modifications dans la syntaxe et
           fournit de la sémantique supplémentaire (ou clarifiée) par rapport à SOAP 1.1 
         </desc>
