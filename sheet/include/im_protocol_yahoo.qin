@@ -45,7 +45,7 @@
 
 </section>
 
-<section name="clientcompatibility" title="Compatibility with other clients">
+<section name="yahoocompatibility" title="Compatibility with other clients">
 			<element name="yahooclient" title="Yahoo! Messenger">
 				<desc>Yahoo! Messenger is a popular instant messaging client and protocol provided by Yahoo!.<br/>
 Website: http://messenger.yahoo.com/</desc>

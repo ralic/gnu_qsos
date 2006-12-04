@@ -323,7 +323,7 @@ Advanced auto-away system: auto-message when auto-away is activated, settable id
 		</element>
 	</section>
 
-<section name="clientcompatibility" title="Compatibility with other clients">
+<section name="jabbercompatibility" title="Compatibility with other clients">
 			<element name="openwengoclient" title="WengoPhone">
 				<desc>WengoPhone is a Voice and Video Over IP application based on standard protocols like SIP and RTP<br/>
 Website: http://www.openwengo.com/</desc>

@@ -1,8 +1,9 @@
-<section name="clientcompatibility" title="Compatibility with other clients">
-			<element name="skypeclient" title="Skype">
-				<desc>Skypeis a proprietary peer-to-peer Internet telephony (VoIP) network founded by the entrepreneurs Niklas Zennström and Janus Friis, also founders of the file sharing application Kazaa. It competes against existing open VoIP protocols such as SIP, IAX, and H.323.<br/>
+<section name="skypecompatibility" title="Compatibility with Skype protocle">
+				<desc>Skypeis a proprietary peer-to-peer
+				Internet telephony (VoIP) network founded by
+				the entrepreneurs Niklas Zennstrom and Janus Friis, also founders of the file sharing application Kazaa. It competes against existing open VoIP protocols such as SIP, IAX, and H.323.<br/>
 Website: http://www.skype.com/</desc>
-				<comment></comment>
+			<element name="skypeclient" title="Skype">
 				<element name="skypeim" title="Instant messaging module">
 					<desc0>Not compatible</desc0>
 					<desc1>Partially compatible</desc1>
@@ -26,5 +27,4 @@ Website: http://www.skype.com/</desc>
 				</element>
 			</element>
 
-			</element>
 	</section>

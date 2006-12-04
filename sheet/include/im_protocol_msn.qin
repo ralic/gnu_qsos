@@ -45,7 +45,7 @@
 
 </section>
 
-<section name="clientcompatibility" title="Compatibility with other clients">
+<section name="msncompatibility" title="Compatibility with other clients">
 			<element name="msnpclient" title="Windows Live Messenger (previously MSN messenger)">
 				<desc>Windows Live Messenger (WLM), formerly known as MSN Messenger, is a freeware instant messaging client for Microsoft Windows. It is part of Microsoft's Windows Live set of online services. Amongst its users it is still often referred to as "MSN".<br/>
 Official website: http://messenger.live.com/</desc>
