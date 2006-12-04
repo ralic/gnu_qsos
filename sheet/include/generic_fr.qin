@@ -13,8 +13,8 @@
         </element>
         <element name="stability" title="Stabilité">
           <desc0>Logiciel instable avec de nombreuses versions et patches générant des effets de bords.</desc0>
-        <desc1>Version de production stabilisée mais un peu vieille. Quelques difficultées à stabiliser les versions de développement.</desc1>
-        <desc2>Logiciel stable. Les nouvelles versions corrigent des bugs, mais apportent de façon prépondérante de nouvelles fonctionalités.</desc2>
+          <desc1>Version de production stabilisée mais un peu vieille. Quelques difficultés à stabiliser les versions de développement.</desc1>
+          <desc2>Logiciel stable. Les nouvelles versions corrigent des bugs, mais apportent de façon prépondérante de nouvelles fonctionnalités.</desc2>
          <score></score>
         <comment></comment>
         </element>
@@ -99,7 +99,7 @@
         </element>
         <element name="activityonfunctionalities" title="Activité autour des fonctionnalités">
           <desc0>Pas ou peu de nouvelles fonctionnalités</desc0>
-          <desc1>Evolution du produit conduite par une équipe dédiée ou par des utilisateurs, mais sans processus clairement exposé</desc1>
+          <desc1>Évolution du produit conduite par une équipe dédiée ou par des utilisateurs, mais sans processus clairement exposé</desc1>
           <desc2>Les requêtes pour les nouvelles fonctionnalités sont clairement outillées, Feuille de route disponible</desc2>
           <score></score>
         <comment></comment>
@@ -183,7 +183,7 @@
       <element name="administrationmonitoring" title="Administration / Supervision">
         <desc0>Pas de fonctionnalités de contrôle, ni d'administration</desc0>
         <desc1>Fonctionnalités présentes mais incomplètes ou à améliorer</desc1>
-        <desc2>Fonctionnalités complètes et faciles de contrôle, et d'administration. Integration possible avec des outils tiers (ex: SNMP, syslog, ...)</desc2>
+        <desc2>Fonctionnalités complètes et faciles de contrôle, et d'administration. Intégration possible avec des outils tiers (ex: SNMP, syslog, ...)</desc2>
  <score></score>
       <comment></comment>
      </element>
