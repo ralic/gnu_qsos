@@ -1,7 +1,7 @@
 <section name="websecurity" title="Security for web application">
     
  
-        <element name="authentifaction" title="Authentification Backend">
+    <element name="authentification" title="Authentification Backend">
             <element name="authenbackendldap" title="LDAP">
                 <desc0>No LDAP based authentification available</desc0>
                 <desc1>LDAP available but limited (e.g: group mapping limited, etc)</desc1>
