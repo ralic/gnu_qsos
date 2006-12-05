@@ -43,7 +43,7 @@
           <desc1>entre 3 mois et 3 ans</desc1>
           <desc2>plus de 3 ans</desc2>
           <score>2</score>
-          <comment> Depuis 2002, héritier de Apache SOAP qui lui est encore plus ancien
+          <comment> Depuis 2002, héritier de Apache SOAP qui est encore plus ancien
           </comment>
         </element>
         <element name="stability" title="Stabilité">
@@ -51,14 +51,14 @@
           <desc1>Version de production stabilisée mais un peu vieille. Quelques difficultés à stabiliser les versions de développement.</desc1>
           <desc2>Logiciel stable. Les nouvelles versions corrigent des bugs, mais apportent de façon prépondérante de nouvelles fonctionnalités.</desc2>
           <score>1</score>
-          <comment>S'il est comme axis-1.2</comment>
+          <comment>Stabilité douteuse, s'il est comme axis-1.2</comment>
         </element>
         <element name="historyknowproblems" title="Historique, problèmes connus">
           <desc0>Le logiciel connaît de nombreux problèmes qui peuvent être rédhibitoires.</desc0>
           <desc1>Pas de problèmes majeurs, ni de crise.</desc1>
           <desc2>Bon historique de gestion de projet et de crise.</desc2>
           <score>1</score>
-          <comment>Historique lourd de contreverse et de difficulté de stabilisation</comment>
+          <comment>Historique lourd de controverse et de difficulté de stabilisation</comment>
         </element>
         <element name="forkprobability" title="Probabilité de FORK, provenance d'un FORK">
           <desc0>Forte probabilité de fork dans un futur proche.</desc0>
@@ -66,7 +66,8 @@
           <desc2>Très faible probabilité de fork. Le logiciel ne provient pas d'un fork.</desc2>
           <score>0</score>
           <comment>JBoss a déjà forké ce produit (ce qui est permis par la licence Apache). 
-            IBM a effectué aussi une manoeuvre de ce type. Beaucoup trouvent que les développements sont trop lents et sont tentés de prendre en main le leur de leur côté</comment>
+            IBM a effectué aussi une manoeuvre de ce type. Beaucoup trouvent que les développements sont trop lents et sont tentés de prendre en main le leur de leur côté.
+            La société WSO2 a ré-investit dans le développement d'axis1 mais semble également à l'origine du fork du projet vers axis2. </comment>
         </element>
       </element>
       <element name="adoption" title="Adoption">
@@ -99,7 +100,7 @@
           <desc1>Moins de 5 livres publiés sur ce logiciel.</desc1>
           <desc2>Plus de 5 livres publiés sur ce logiciel et dans différentes langues.</desc2>
           <score>2</score>
-          <comment>Enormément de publications autour d'Apache AXIS</comment>
+          <comment>Énormément de publications autour d'Apache AXIS</comment>
         </element>
       </element>
       <element name="developmentleadership" title="Direction des développements">
@@ -109,7 +110,7 @@
           <desc1>Entre 2 et 5 personnes indépendantes.</desc1>
           <desc2>Plus de 5 personnes.</desc2>
           <score>2</score>
-          <comment>Les membres et les fonctions de l'équipe dirigeante sont connus et clairement définis</comment>
+          <comment>Les membres et les fonctions de l'équipe dirigeante sont connus et définis</comment>
         </element>
         <element name="managementstyle" title="Mode de direction">
           <desc0>Dictature complète.</desc0>
@@ -126,14 +127,14 @@
           <desc1>Entre 4 et 7 développeurs, ou plus, non identifiés, avec un "turnover" important.</desc1>
           <desc2>Plus de 7 développeurs, équipe très simple.</desc2>
           <score>2</score>
-          <comment>Nombreux développeurs. L'équipe coeur est stable et parfaitement identifiée</comment>
+          <comment>Nombreux développeurs. L'équipe coeur semble stable et identifiée</comment>
         </element>
         <element name="activityonbugs" title="Activité autour des bugs">
           <desc0>Réactivité faible sur le forum ou sur la liste de diffusion, ou rien au sujet des corrections de bugs dans les notes de versions.</desc0>
           <desc1>Activité détectable mais sans processus clairement exposé, temps de résolution long</desc1>
           <desc2>Forte réactivité, basée sur des rôles et des assignations de tâches</desc2>
           <score>1</score>
-          <comment>Délais de résolution longs</comment>
+          <comment>Historique de délais de résolution longs</comment>
         </element>
         <element name="activityonfunctionalities" title="Activité autour des fonctionnalités">
           <desc0>Pas ou peu de nouvelles fonctionnalités</desc0>
@@ -158,9 +159,7 @@
         <desc1>60% maximum</desc1>
         <desc2>20% maximum</desc2>
         <score>1</score>
-        <comment>IBM s'étant désengagé, l'indépendance des développements est de nouveau assurée,
-          aucune société n'a pris « le contrôle » complet des dévs., mais les contributions de la
-          société WSO2 semblent être prédomininantes. </comment>
+        <comment>IBM s'est désengagé, mais les contributions de la  société WSO2 semblent être prédominantes.</comment>
       </element>
       <element name="services" title="Services">
         <desc>Offres de services</desc>
@@ -169,7 +168,7 @@
           <desc1>Offre existante mais restreinte géographiquement ou à un seul langage ou fournie par un seul fournisseur</desc1>
           <desc2>Offre riche, plusieurs fournisseurs, plusieurs langages, divisée en modules et en niveaux</desc2>
           <score>2</score>
-          <comment>Axis fait partie du curiculum de nombreux cours de type J2EE</comment>
+          <comment>Axis fait partie du curriculum de nombreux cours de type J2EE</comment>
         </element>
         <element name="support" title="Support">
           <desc0>Pas d'offre de support identifiée</desc0>
@@ -250,7 +249,7 @@
         <desc1>Architecture conçue pour des extensions statiques mais exige une recompilation</desc1>
         <desc2>Architecture de plugins, conçue pour des extensions dynamiques et sans recompilation</desc2>
         <score>1</score>
-        <comment>Principe de "Handlers" qui peuvent modifier le comportement des web services et ajouter des fonctionnalités dans une certaine mesure</comment>
+        <comment>Principe de "Handlers" qui peuvent modifier le comportement des web services et ajouter des fonctionnalités dans une certaine mesure.</comment>
       </element>
     </element>
     <element name="strategy" title="Stratégie">
@@ -262,14 +261,14 @@
           <desc1>Licence modérée entre les deux extrêmes (GPL et BSD), licence duale dépendante du type d'utilisateur (personne, société, ...) ou de leur activité.</desc1>
           <desc2>Licence très permissive comme BSD et Apache</desc2>
           <score>2</score>
-          <comment>Apache license</comment>
+          <comment>Licence Apache.</comment>
         </element>
         <element name="protectionagainstproprietaryforks" title="Protection contre des forks commerciaux">
           <desc0>Licence très permissive comme BSD et Apache</desc0>
           <desc1>Licence modérée entre les deux extrêmes (GPL et BSD), licence duale dépendante du type d'utilisateur (personne, société, ...) ou de leur activité.</desc1>
           <desc2>Licence très stricte, comme la GPL</desc2>
           <score>0</score>
-          <comment>Apache license</comment>
+          <comment>Licence Apache.</comment>
         </element>
       </element>
       <element name="copyrightowners" title="Détenteur des droits">
@@ -284,7 +283,7 @@
         <desc1>Des outils sont fournis pour accéder et modifier le code (ex: CVS, SVN) mais ne sont pas vraiment utilisés pour développer le produit</desc1>
         <desc2>Le processus de modification de code est bien défini, exposé, et respecté, basé sur des rôles bien définis.</desc2>
         <score>2</score>
-        <comment>Code placé sous CVS d'accès public. Rôles de committers défini</comment>
+        <comment>Code placé sous CVS d'accès public. Rôles de contributeurs définis.</comment>
       </element>
       <element name="roadmap" title="Feuille de route">
         <desc0>Pas de feuille de route publiée</desc0>
@@ -298,7 +297,7 @@
         <desc1>Le logiciel a un sponsor unique qui détermine sa stratégie</desc1>
         <desc2>Le logiciel est sponsorisé par l'industrie</desc2>
         <score>2</score>
-        <comment>Les commiters sont pour la plupart payés par des sociétés commerciales</comment>
+        <comment>Les contributeurs sont pour la plupart payés par des sociétés commerciales</comment>
       </element>
       <element name="strategicalindependence" title="Indépendance stratégique">
         <desc0>Pas de stratégie détectable ou forte dépendance à un acteur unique (individu, société, sponsor)</desc0>
@@ -317,8 +316,8 @@
       <desc0>JSR/API non implémentée</desc0>
       <desc1>JSR/API partiellement implémentée, ou implémentation défectueuse</desc1>
       <desc2>JSR/API implémentée, implémentation stable</desc2>
-      <comment>Les test JAX-RPC TCK (Technology Compatibility Kit) ont été complétés. cf.
-        http://wiki.apache.org/ws/FrontPage/Axis/StandardsSupported</comment>
+      <comment>Les tests JAX-RPC TCK (Technology Compatibility Kit) ont été complétés. 
+      cf. http://wiki.apache.org/ws/FrontPage/Axis/StandardsSupported</comment>
       <score>2</score>
     </element>
     <element name="jsr67_saaj-1_2" title="JSR  67 SOAP with Attachments API for Java Specification (SAAJ) 1.2">
@@ -327,8 +326,8 @@
       <desc0>JSR/API non implémentée</desc0>
       <desc1>JSR/API partiellement implémentée, ou implémentation défectueuse</desc1>
       <desc2>JSR/API implémentée, implémentation stable</desc2>
-      <comment>Les test SAAJ TCK (Technology Compatibility Kit) 1.1 ont été complétés. cf.
-        http://wiki.apache.org/ws/FrontPage/Axis/StandardsSupported</comment>
+      <comment>Les tests SAAJ TCK (Technology Compatibility Kit) 1.1 ont été complétés.
+       cf. http://wiki.apache.org/ws/FrontPage/Axis/StandardsSupported</comment>
       <score>1</score>
     </element>
     <element name="jsr109" title="JSR 109 Web Services for EE (WS4EE) 1.0">
@@ -366,14 +365,14 @@
       <desc0>JSR/API non implémentée</desc0>
       <desc1>JSR/API partiellement implémentée, ou implémentation défectueuse</desc1>
       <desc2>JSR/API implémentée, implémentation stable</desc2>
-      <comment>Seul les test SAAJ 1.1 ont été passés</comment>
+      <comment>Seul les tests SAAJ 1.1 ont été passés</comment>
       <score>1</score>
     </element>
     <element name="jsr921-109" title="JSR 921/109 Implementing Enterprise Web Services (WS4EE 1.1 et 1.2)">
       <desc0>JSR/API non implémentée</desc0>
       <desc1>JSR/API partiellement implémentée, ou implémentation défectueuse</desc1>
       <desc2>JSR/API implémentée, implémentation stable</desc2>
-      <comment>"AXIS clearly states that it is not JSR 109 compliant"</comment>
+      <comment>Axis1.4 affiche clairement sa non-compatibilité JSR 109.</comment>
       <score>0</score>
     </element>
     <element name="jaxr1_0" title="Java API for XML Registries Specification (JAXR) 1.0">
@@ -444,9 +443,7 @@
         <desc0>non supporté</desc0>
         <desc1>support limité</desc1>
         <desc2>supporté</desc2>
-        <comment>axis 1.4 est annoncé comme étant un moteur "SOAP 1.1/1.2 compliant"
-          "Although Axis does support SOAP 1.2, it's primarily intended for use with SOAP
-          1.1 (which is required for WS-I BP compliance)" </comment>
+        <comment>Axis 1.4 est annoncé comme étant un moteur "SOAP 1.1/1.2 compliant", mais bien que supportant SOAP 1.2, il a été principalement prévu/conçu pour être utilisé avec SOAP 1.1  (ce qui est requis pour le support de WS-I BP).</comment>
         <score>2</score>
       </element>
       <element name="soap-1_2" title="SOAP 1.2">
@@ -456,9 +453,7 @@
         <desc0>non supporté</desc0>
         <desc1>support limité</desc1>
         <desc2>supporté</desc2>
-        <comment>axis 1.4 est annoncé comme étant un moteur "SOAP 1.1/1.2 compliant"
-          "Although Axis does support SOAP 1.2, it's primarily intended for use with SOAP
-          1.1 (which is required for WS-I BP compliance)"</comment>
+        <comment>Axis 1.4 est annoncé comme étant un moteur "SOAP 1.1/1.2 compliant", mais bien que supportant SOAP 1.2, il a été principalement prévu/conçu pour être utilisé avec SOAP 1.1  (ce qui est requis pour le support de WS-I BP).</comment>
         <score>2</score>
       </element>
     </element>
@@ -498,7 +493,7 @@
       <desc0>non supporté</desc0>
       <desc1>support limité</desc1>
       <desc2>supporté</desc2>
-      <comment>Cela permet entre autre à Axis de gérer les sessions par cookies http</comment>
+      <comment>Cela permet entre autre à Axis de gérer les sessions par cookies http.</comment>
       <score>2</score>
     </element>
     <element name="basic-profile" title="Attachment Profile 1.0">
@@ -593,7 +588,7 @@
       <desc0>non supporté</desc0>
       <desc1>support limité</desc1>
       <desc2>supporté : le WSDL est exposé automatiquement</desc2>
-      <comment> Le WSDL est exposé (en utilisant ?wsdl" à la fin de l'url) </comment>
+      <comment> Le WSDL est exposé (en utilisant ?wsdl" à la fin de l'url).</comment>
       <score>2</score>
     </element>
     <element name="wsdl-2_0" title="support de WSDL 2.0">
@@ -627,7 +622,7 @@
         <desc0>non supporté</desc0>
         <desc1>support limité</desc1>
         <desc2>supporté: exposition des WSDLs, XSDs et policies</desc2>
-        <comment>Seul le WSDL est exposé</comment>
+        <comment>Seul le WSDL est exposé.</comment>
         <score>0</score>
       </element>
     </element>
@@ -639,8 +634,8 @@
         <desc0>non supporté</desc0>
         <desc1>support limité</desc1>
         <desc2>supporté</desc2>
-        <comment>Implémenté par WSS4J (http://ws.apache.org/wss4j/). La documentation sécurité est particulèrement riche :
-          http://ws.apache.org/axis/java/security.html, </comment>
+        <comment>Implémenté par WSS4J (http://ws.apache.org/wss4j/). La documentation sécurité est particulièrement riche :
+          cf. http://ws.apache.org/axis/java/security.html .</comment>
         <score>2</score>
       </element>
       <element name="ws-security-policy" title="WS-SecurityPolicy">
@@ -666,8 +661,7 @@
         <desc0>non supporté</desc0>
         <desc1>support limité</desc1>
         <desc2>supporté</desc2>
-        <comment>Pas de documentation trouvée, mais la javadoc indique que ConversationServerHandler
-          implémente WS-Secure Conversation pour Axis. Implémentation WSS4J ?</comment>
+        <comment>Pas de documentation trouvée, mais la javadoc indique que ConversationServerHandler implémente WS-Secure Conversation pour Axis. Implémentation WSS4J ?</comment>
         <score>1</score>
       </element>
     </element>
@@ -677,9 +671,8 @@
         <desc0>non supporté</desc0>
         <desc1>support limité</desc1>
         <desc2>supporté</desc2>
-        <comment>Axis 1.4 gère les sessions, notamment à travers la classe
-          org.apache.axis.handlers. SimpleSessionHandler cf.
-          http://wiki.apache.org/ws/FrontPage/Axis/SessionSupport </comment>
+        <comment>Axis 1.4 gère les sessions, notamment à travers la classe org.apache.axis.handlers. SimpleSessionHandler
+         cf. http://wiki.apache.org/ws/FrontPage/Axis/SessionSupport </comment>
         <score>2</score>
       </element>
       <element name="ws-reliable-messaging" title="WS-ReliableMessaging">
@@ -687,7 +680,7 @@
         <desc0>non supporté</desc0>
         <desc1>support limité</desc1>
         <desc2>supporté</desc2>
-        <comment>cf Sandesha (http://ws.apache.org/ws-sandesha/)</comment>
+        <comment>Implémenté dans le plugin Sandesha (http://ws.apache.org/ws-sandesha/)</comment>
         <score>2</score>
       </element>
       <element name="ws-coordination" title="WS-Coordination">
@@ -697,8 +690,7 @@
         <desc0>non supporté</desc0>
         <desc1>support limité</desc1>
         <desc2>supporté</desc2>
-        <comment>Kandula (http://ws.apache.org/kandula/) est une brique open-source 
-          qui implémente cette spécification, et est basé sur axis1.X</comment>
+        <comment>Implémenté dans le plugin Kandula (http://ws.apache.org/kandula/). Kandula est une brique open-source qui implémente cette spécification, et est basé sur axis1.X</comment>
         <score>1</score>
       </element>
       <element name="ws-atomic-transaction" title="WS-AtomicTransaction">
@@ -707,8 +699,7 @@
         <desc0>non supporté</desc0>
         <desc1>support limité</desc1>
         <desc2>supporté</desc2>
-        <comment>Kandula (http://ws.apache.org/kandula/) est une brique open-source 
-          qui implémente cette spécification, et est basé sur axis1.X</comment>
+        <comment>Implémenté dans le plugin Kandula (http://ws.apache.org/kandula/). Kandula est une brique open-source qui implémente cette spécification, et est basé sur axis1.X</comment>
         <score>1</score>
       </element>
     </element>
@@ -720,7 +711,7 @@
       <desc0>non supporté</desc0>
       <desc1>support limité, instable ou incomplet (ne génère que la partie cliente ou serveur)</desc1>
       <desc2>bon support (client et serveur), l'outil a une granularité fine de génération</desc2>
-      <comment> Bonne granularité dans les outils de génération </comment>
+      <comment>Bonne granularité dans les outils de génération.</comment>
       <score>2</score>
     </element>
     <element name="java2wsdl" title="génération bottom-up ou Java2WSDL">
@@ -729,7 +720,7 @@
       <desc0>non supporté</desc0>
       <desc1>support limité, instable ou incomplet (ne génère que la partie cliente ou serveur)</desc1>
       <desc2>bon support (client et serveur), l'outil a une granularité fine de génération</desc2>
-      <comment> Bon niveau de configuration de l'outil. </comment>
+      <comment>Bon niveau de configuration de l'outil.</comment>
       <score>2</score>
     </element>
     <element name="build-integration" title="facilité d'intégration au build">
@@ -738,10 +729,9 @@
       <desc0>non supporté: génération en ligne de commande</desc0>
       <desc1>support limité: tâche ant uniquement</desc1>
       <desc2>bonne intégration: tâche ant et plugin Maven1 et/ou Maven2</desc2>
-      <comment> Axis est fournie avec un ensemble de tâche ant pour automatiser le build (les
-        tâches sont axis-wsdl2java, axis-java2wsdl et axis-admin). cf.
-        http://ws.apache.org/axis/java/ant/ant.html. Ils existent des projets (indépendants)
-        de plugins axis pour maven1 et maven2, ainsi que pour xdoclet. </comment>
+      <comment>Axis est fourni avec un ensemble de tâche ant pour automatiser le build (les tâches sont axis-wsdl2java, axis-java2wsdl et axis-admin). cf.
+        http://ws.apache.org/axis/java/ant/ant.html. 
+        Ils existent également des projets (indépendants) de plugins axis pour maven1 et maven2, ainsi que pour xdoclet.</comment>
       <score>2</score>
     </element>
     <element name="IDE-support" title="supports IDE">
@@ -759,16 +749,16 @@
         <desc0>aucun plugin</desc0>
         <desc1>plugin aux fonctionnalités limitées ou défectueuses</desc1>
         <desc2>bon plugin, bonne ergonomie</desc2>
-        <comment>De nombreux plugins existent pour Eclipse: très complet: de la génération
-          de code et wsdl jusqu'à la validation WS-I et le contrôle de traffique SOAP. cf.
-          http://wiki.apache.org/ws/FrontPage/Axis/IDEIntegration</comment>
+        <comment>De nombreux plugins existent pour Eclipse. Ils sont très complets : 
+        de la génération de code et wsdl jusqu'à la validation WS-I et le contrôle de traffique SOAP. 
+        cf. http://wiki.apache.org/ws/FrontPage/Axis/IDEIntegration</comment>
         <score>2</score>
       </element>
       <element name="netbeans-support" title="support NetBeans">
         <desc0>aucun plugin</desc0>
         <desc1>plugin aux fonctionnalités limitées ou défectueuses</desc1>
         <desc2>bon plugin, bonne ergonomie</desc2>
-        <comment>Fonctionalités limitées</comment>
+        <comment>Fonctionnalités limitées.</comment>
         <score>1</score>
       </element>
     </element>
@@ -778,11 +768,8 @@
       <desc0>non supporté</desc0>
       <desc1>supporté mais limité ou réalisé par un data binding obsolète ou non standard</desc1>
       <desc2>supporté et réalisé par un data binding standard et extensible (ex: JAXB)</desc2>
-      <comment> Un ensemble de sérialiseurs ou encodeurs et désérialiseur ou décodeurs sont
-        proposés en standard (Array, Bean, Date, Map, Element ...), il étendent les
-        interfaces standards définies par JAX-RPC. Axis 1.4 definit en plus un mécanisme
-        d'extension pour définir vos propres mapping. (Castor, XMLBeans et JAXB sont par
-        exemple tous supportés) </comment>
+      <comment>Un ensemble de sérialiseurs ou encodeurs et désérialiseurs ou décodeurs sont proposés en standard (Array, Bean, Date, Map, Element ...), ils étendent les  interfaces standards définies par JAX-RPC. 
+      Axis 1.4 définit en plus un mécanisme   d'extension pour définir vos propres mapping. (Castor, XMLBeans et JAXB sont par exemple tous supportés). </comment>
       <score>2</score>
     </element>
     <element name="handlers" title="support pour intercepteurs (handlers)">
@@ -794,8 +781,7 @@
         c'est à dire capables de modifier le message mais aussi son enveloppe
         associée au protocole (ex: SOAPHandler et LogicalHandler de JAX-WS 2.0)
       </desc2>
-      <comment> Le support des handlers est un des premiers arguments d'architecture avancé
-        par la documentation projet. </comment>
+      <comment> Le support des handlers est un des premiers arguments d'architecture avancé par la documentation projet. </comment>
       <score>2</score>
     </element>
     <element name="soap-header-parameter-implicit-explicit-contexts-support" title="support pour paramètres d'entête SOAP">
@@ -809,8 +795,7 @@
       <desc0>paramètres d'entête non gérés</desc0>
       <desc1>support pour contexte implicite: les paramètres d'entête peuvent être connus des handlers</desc1>
       <desc2>support pour contexte implicite et explicite</desc2>
-      <comment> org.apache.axis.MessageContext permet d'accéder à tout ce qu'Axis connait du
-        contexte du message </comment>
+      <comment>La classe org.apache.axis.MessageContext permet d'accéder à tout ce qu'Axis connait du contexte du message </comment>
       <score>2</score>
     </element>
     <element name="asynchronous-callback" title="support pour appels asynchrones et callback"><desc>Cette solution de mise en oeuvre de web-services fournit-elle un moyen de gérer les appels asynchrones ? </desc><desc0>appels asynchrones non supportés</desc0><desc1>les appels asynchrones ont un support limité (au polling). 
@@ -822,17 +807,16 @@
         Cette fonctionnalité est intégrée à JAX-WS 2.0.
         Les notions dérivées de session et conversation sont contenues dans la spécification WS-Addressing.
       </desc2>Polling et Callbacks supportés
-      <comment> Bien que les sessions soient supportées, les appels asynchrones ne le sont
-        pas. </comment><score>0</score></element>
+      <comment> Bien que les sessions soient supportées, les appels asynchrones ne le sont pas. </comment><score>0</score></element>
   </section>
   <section name="ws_admin" title="Fonctionnalités d'administration des web-services">
     <element name="deploy" title="Déploiement de nouveaux services">
       <desc0>Déploiement difficile, ou nécessitant un outillage non standard, ou de nombreuses étapes ou un reboot du serveur</desc0>
       <desc1>Déploiement aisé, mais nécessitant un arrêt du service</desc1>
       <desc2>Déploiement aisé et à chaud (hot deploy)</desc2>
-      <comment> 2 politiques de déploiement possible : déploiement instantané et automatisé
-        par JWS (Java Web Service) ou déploiement personnalisé par WSDD (Web Service
-        Deployment Descriptor) </comment>
+      <comment> 2 politiques de déploiement possibles : déploiement instantané et automatisé
+        par JWS (Java Web Service) 
+        ou déploiement personnalisé par WSDD (Web Service Deployment Descriptor) </comment>
       <score>1</score>
     </element>
     <element name="lifecycleManagement" title="Gestion du cycle de vie (arrêt/démarrage/...)">
@@ -848,11 +832,8 @@
       <desc0>pas d'interface ni de fonctionnalité de production de statistiques d'accès aux services</desc0>
       <desc1>statistiques disponibles uniquement en temps réel, en snapshots ou rapports succints</desc1>
       <desc2>statistiques disponibles sur une période. Génération de rapports évolués</desc2>
-      <comment>Un utilitaire nommé tcpmon est disponible dans le paquetage
-        org.apache.axis.utils, il permet de mettre en place un proxy et de
-        suivre/debugger/rejouer les requêtes SOAP http. De plus un autre outil de contrôle
-        pur: SOAP Monitor permet de contrôller les requêtes et les réponses à travers une
-        applet.</comment>
+      <comment>Un utilitaire nommé tcpmon est disponible dans le paquetage org.apache.axis.utils, il permet de mettre en place un proxy et de suivre/debugger/rejouer les requêtes SOAP http.
+      De plus un autre outil de contrôle pur: SOAP Monitor permet de contrôler les requêtes et les réponses à travers une  applet.</comment>
       <score>1</score>
     </element>
   </section>
