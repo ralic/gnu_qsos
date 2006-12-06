@@ -290,7 +290,7 @@
       <score></score>
     </element>
   </section>
-  <section name="metaData" title="MetaData">
+  <section name="metaData" title="Meta-données">
     <element name="wsdl-1_1" title="support de WSDL 1.1">
       <desc>Le WSDL décrit une Interface publique d'accès à un Service Web :
         C'est une description basée sur XML qui indique « comment communiquer pour utiliser le service »; 
