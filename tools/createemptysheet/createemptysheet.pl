@@ -32,7 +32,7 @@ open QTPL,"<$qtpl" or die "Failed to open $qtpl: $?";
 close QTPL;
 
 while (my $line = shift @buff) {
-  if ($line =~ /<include\W+section="([-\w]+)"\W*\/>/) { # this is an include
+  if ($line =~ /<include\W+section="([-\w]+)"\W*(|\/)>/) { # this is an include
 #    print STDERR "Including $1\n";
     open INCLUDE, "<$includedir/$1.qin" or die "Failed to open includefile
     $1.qin";
