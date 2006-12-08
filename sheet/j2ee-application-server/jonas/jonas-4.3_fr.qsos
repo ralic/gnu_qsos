@@ -1,0 +1,633 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document>
+   <header>
+      <authors>
+      <author>
+        <email>raphael.semeteys@atosorigin.com</email>
+        <name>Raphael Semeteys</name>
+      </author>
+    </authors>
+      <dates>
+         <creation>20050420</creation>
+         <validation></validation>
+      </dates>
+      <language>fr</language>
+      <appname>JOnAS</appname>
+      <release>4.3.4</release>
+      <licenseid>32</licenseid>
+      <licensedesc>GNU LGPL</licensedesc>
+      <url>http://jonas.objectweb.org</url>
+      <desc>Serveur d'applications certifié J2EE 1.4</desc>
+      <demourl>http://jonas.objectweb.org/demos/demo1/JOnASDemo.htm</demourl>
+      <qsosformat>1.6</qsosformat>
+      <qsosappfamily>Serveur d'application J2EE</qsosappfamily>
+      <qsosspecificformat>1.0</qsosspecificformat>
+   </header>
+   <section name="generic" title="Section générique">
+      <desc>Les critères génériques de la méthode qsos version 1.6</desc>
+      <element name="intrinsicdurability" title="Pérennité">
+         <desc>Pérennité</desc>
+         <element name="maturity" title="Maturité">
+            <desc>Maturité</desc>
+            <element name="age" title="Age">
+               <desc0>moins de 3 mois</desc0>
+               <desc1>entre 3 mois et 3 ans</desc1>
+               <desc2>plus de 3 ans</desc2>
+               <score>2</score>
+               <comment>Depuis 1999</comment>
+            </element>
+            <element name="stability" title="Stabilité">
+               <desc0>Logiciel instable avec de nombreuses versions et patches générant des effets de bords.</desc0>
+               <desc1>Version de production stabilisée mais un peu vieille. Quelques difficultés à stabiliser les versions de développement.</desc1>
+               <desc2>Logiciel stable. Les nouvelles versions corrigent des bugs, mais apportent de façon prépondérante de nouvelles fonctionnalités.</desc2>
+               <score>1</score>
+               <comment>Logiciel utilisé en production</comment>
+            </element>
+            <element name="historyknowproblems" title="Historique, problèmes connus">
+               <desc0>Le logiciel connaît de nombreux problèmes qui peuvent être rédhibitoires.</desc0>
+               <desc1>Pas de problèmes majeurs, ni de crise.</desc1>
+               <desc2>Bon historique de gestion de projet et de crise.</desc2>
+               <score>1</score>
+               <comment>Le produit ne connais pas de problème technique majeur. </comment>
+            </element>
+            <element name="forkprobability" title="Probabilité de FORK, provenance d'un FORK">
+               <desc0>Forte probabilité de fork dans un futur proche.</desc0>
+               <desc1>Le logiciel provient d'un fork mais a très peu de chances d'être forké dans un futur proche.</desc1>
+               <desc2>Très faible probabilité de fork. Le logiciel ne provient pas d'un fork.</desc2>
+               <score>2</score>
+               <comment>La licence est sous LGPL. Les contributeurs sont nombreux</comment>
+            </element>
+         </element>
+         <element name="adoption" title="Adoption">
+            <desc>Adoption par la communauté et  l'industrie</desc>
+            <element name="popularity" title="Popularité (à rapporter à la cible visée : grand public, niche, …)">
+               <desc0>Très peu d'utilisateurs identifiés</desc0>
+               <desc1>Usage détectable sur Internet</desc1>
+               <desc2>Nombreux utilisateurs et références</desc2>
+               <score>1</score>
+               <comment>JonAS est peu connu en dehors de la France.</comment>
+            </element>
+            <element name="references" title="Références">
+               <desc0>Aucune</desc0>
+               <desc1>Peu de références, pas d'usage critique</desc1>
+               <desc2>Souvent implémenté sur des applications critiques</desc2>
+               <score>1</score>
+               <comment>Pas très nombreuses (cf. http://jonas.objectweb.org/success.html)</comment>
+            </element>
+            <element name="contributingcommunity" title="Communauté des contributeurs">
+               <desc0>Pas de communauté ou de réelle activité (forum, liste de diffusion, ...)</desc0>
+               <desc1>Communauté existante avec une activité notable.</desc1>
+               <desc2>Communauté forte: grosse activité sur les forums, de nombreux contributeurs et défenseurs.</desc2>
+               <score>2</score>
+               <comment>Une cinquantaine de contributeurs remerciés sur le site  d'Objectweb</comment>
+            </element>
+            <element name="books" title="Livres, Publications">
+               <desc0>Aucun livre sur ce logiciel.</desc0>
+               <desc1>Moins de 5 livres publiés sur ce logiciel.</desc1>
+               <desc2>Plus de 5 livres publiés sur ce logiciel et dans différentes langues.</desc2>
+               <score>0</score>
+               <comment>Un livre à paraître en anglais chez SourceBeat</comment>
+            </element>
+         </element>
+         <element name="developmentleadership" title="Direction des développements">
+            <desc>Organisation et direction des développements</desc>
+            <element name="leadingteam" title="Equipe dirigeante">
+               <desc0>1 ou 2 individus engagés, pas clairement identifiés.</desc0>
+               <desc1>Entre 2 et 5 personnes indépendantes.</desc1>
+               <desc2>Plus de 5 personnes.</desc2>
+               <score>1</score>
+               <comment>Les membres de l'équipe dirigeante sont connus mais leurs rôles pas clairement définis</comment>
+            </element>
+            <element name="managementstyle" title="Mode de direction">
+               <desc0>Dictature complète.</desc0>
+               <desc1>Despotisme éclairé.</desc1>
+               <desc2>Conseil d'architectes avec un leader identifié (ex: KDE)</desc2>
+               <score>2</score>
+               <comment>L'équipe coeur du projet décide de manière collégiale sur la mailing list en échangeant avec les contributeurs</comment>
+            </element>
+         </element>
+         <element name="activity" title="Activité">
+            <desc>Activité du et autour du projet</desc>
+            <element name="developersidentificationturnover" title="Nombre de développeurs, identification, turnover">
+               <desc0>Moins de 3 développeurs, pas clairement identifiés.</desc0>
+               <desc1>Entre 4 et 7 développeurs, ou plus, non identifiés, avec un "turnover" important.</desc1>
+               <desc2>Plus de 7 développeurs, équipe très simple.</desc2>
+               <score>2</score>
+               <comment>Equipe coeur : 19 développeurs. L'équipe est stabilisée par le fait qu'une grande partie est employée par Bull.</comment>
+            </element>
+            <element name="activityonbugs" title="Activité autour des bugs">
+               <desc0>Réactivité faible sur le forum ou sur la liste de diffusion, ou rien au sujet des corrections de bugs dans les notes de versions.</desc0>
+               <desc1>Activité détectable mais sans processus clairement exposé, temps de résolution long</desc1>
+               <desc2>Forte réactivité, basée sur des rôles et des assignations de tâches</desc2>
+               <score>2</score>
+               <comment>Outil Gforge</comment>
+            </element>
+            <element name="activityonfunctionalities" title="Activité autour des fonctionnalités">
+               <desc0>Pas ou peu de nouvelles fonctionnalités</desc0>
+               <desc1>Évolution du produit conduite par une équipe dédiée ou par des utilisateurs, mais sans processus clairement exposé</desc1>
+               <desc2>Les requêtes pour les nouvelles fonctionnalités sont clairement outillées, feuille de route disponible</desc2>
+               <score>2</score>
+               <comment>Outil Gforge</comment>
+            </element>
+            <element name="activityonreleases" title="Activité sur les releases/versions">
+               <desc0>Très faible activité que ce soit sur les versions de production ou beta/de développement</desc0>
+               <desc1>Activité que ce soit sur les versions de production ou bêta/de développement, avec des versions correctives mineures fréquentes.</desc1>
+               <desc2>Activité importante avec des versions correctives fréquentes, et des versions majeures planifiées liées aux prévisions de la feuille de route</desc2>
+               <score>2</score>
+               <comment></comment>
+            </element>
+         </element>
+      </element>
+      <element name="industrializedsolution" title="Industrialisation">
+         <desc>Niveau d'industrialisation du projet</desc>
+         <element name="independenceofdevelopments" title="Indépendance des développements">
+            <desc0>Développements réalisés à plus de 60% par des employés d'une seule société.</desc0>
+            <desc1>60% maximum</desc1>
+            <desc2>20% maximum</desc2>
+            <score>1</score>
+            <comment>Bien qu'une bonne partie des développeurs provienne de Bull, les contributions externes sont nombreuses.</comment>
+         </element>
+         <element name="services" title="Services">
+            <desc>Offres de services</desc>
+            <element name="training" title="Formation">
+               <desc0>Pas d'offre de formation identifiée</desc0>
+               <desc1>Offre existante mais restreinte géographiquement ou à un seul langage ou fournie par un seul fournisseur</desc1>
+               <desc2>Offre riche, plusieurs fournisseurs, plusieurs langages, divisée en modules et en niveaux</desc2>
+               <score>1</score>
+               <comment>Moins d'une dizaine d'offres en français. Quasiment aucune en anglais.</comment>
+            </element>
+            <element name="support" title="Support">
+               <desc0>Pas d'offre de support identifiée</desc0>
+               <desc1>Offre existante mais restreinte géographiquement ou à un seul langage ou fournie par un seul fournisseur, ou sans garantie</desc1>
+               <desc2>Offre riche, plusieurs fournisseurs, avec des garanties (sur les temps de résolution).</desc2>
+               <score>1</score>
+               <comment>2 offres principales : Bull et RedHat</comment>
+            </element>
+            <element name="consulting" title="Conseil">
+               <desc0>Pas d'offres de conseil identifiées</desc0>
+               <desc1>Offre existante mais restreinte géographiquement ou à un seul langage ou fournie par un seul fournisseur</desc1>
+               <desc2>Offre riche, plusieurs fournisseurs, plusieurs langages</desc2>
+               <score>1</score>
+               <comment>Offres spécifiques peu nombreuses. Les autres sont souvent intégrées dans des offres d'expertise Java/J2EE plus globales</comment>
+            </element>
+         </element>
+         <element name="documentation" title="Documentation">
+            <desc0>Pas de documentation utilisateur</desc0>
+            <desc1>La documentation existe mais est en partie obsolète, ou restreinte à un seul langage, ou peu détaillée</desc1>
+            <desc2>Documentation à jour, traduite, et éventuellement adaptée à différentes cibles de lecteurs (end user, sysadmin, manager, ...)</desc2>
+            <score>1</score>
+            <comment>Documentation officielle téléchargeable et gratuite sur le site, en anglais. La version française n'est pas à jour.</comment>
+         </element>
+         <element name="qualityassurance" title="Méthode qualité">
+            <desc>Processus et méthode qualité</desc>
+            <element name="quality" title="Assurance qualité">
+               <desc0>Pas de processus Qualité identifié</desc0>
+               <desc1>Processus Qualité existant, mais non formalisé ou non outillé</desc1>
+               <desc2>Processus automatique de tests dans le cycle de vie du code et publication des résultats</desc2>
+               <score>1</score>
+               <comment>Existence d'une Test suite mais les tests ne sont pas systématiques et donc pas à jour par rapport aux versions de JOnAS</comment>
+            </element>
+            <element name="tools" title="Outillage">
+               <desc0>Pas d'outils de gestion de bugs, ni d'outils de ticketing</desc0>
+               <desc1>Outils standards fournis (une forge par exemple) mais peu utilisés</desc1>
+               <desc2>Utilisation très active d'outils standards</desc2>
+               <score>2</score>
+               <comment>Testsuite, Gforge</comment>
+            </element>
+         </element>
+      </element>
+      <element name="exploitability" title="Exploitabilité">
+         <desc>Niveau d'exploitabilité</desc>
+         <element name="easeofuseergonomics" title="Facilité d'utilisation, ergonomie">
+            <desc0>Difficulté d'utilisation, demande une connaissance approfondie des fonctionnalités du logiciel</desc0>
+            <desc1>Ergonomie austère et très technique</desc1>
+            <desc2>Ergonomie élaborée et IHM comprenant des fonctions d'aide</desc2>
+            <score>1</score>
+            <comment></comment>
+         </element>
+         <element name="administrationmonitoring" title="Administration / Supervision">
+            <desc0>Pas de fonctionnalités de contrôle, ni d'administration</desc0>
+            <desc1>Fonctionnalités présentes mais incomplètes ou à améliorer</desc1>
+            <desc2>Fonctionnalités complètes et faciles de contrôle, et d'administration. Intégration possible avec des outils tiers (ex: SNMP, syslog, ...)</desc2>
+            <score>2</score>
+            <comment>Console Web/Struts </comment>
+         </element>
+      </element>
+      <element name="technicaladaptability" title="Adaptabilité">
+         <desc>Adaptabilité technique</desc>
+         <element name="modularity" title="Modularité">
+            <desc0>Logiciel monolithique</desc0>
+            <desc1>Présence de modules haut niveau permettant un premier niveau d'adaptation</desc1>
+            <desc2>Conception modulaire, permettant des adaptations faciles par sélection et/ou création de modules</desc2>
+            <score>2</score>
+            <comment>JonAS est architecturé en services</comment>
+         </element>
+         <element name="codemodification" title="Facilité technique de modification du code existant">
+            <desc0>Tout à la main</desc0>
+            <desc1>Recompilation possible mais complexe, sans outils, ni documentation.</desc1>
+            <desc2>Recompilation facile, outillée (ex: make, ANT, maven...), et documentée.</desc2>
+            <score>2</score>
+            <comment>Ant très utilisé. Bonne documentation du code (Doxygen et Javadoc).</comment>
+         </element>
+         <element name="codeextension" title="Facilité d'extension du code">
+            <desc0>Toute modification demande une recompilation du code</desc0>
+            <desc1>Architecture conçue pour des extensions statiques mais exige une recompilation</desc1>
+            <desc2>Architecture de plugins, conçue pour des extensions dynamiques et sans recompilation</desc2>
+            <score>1</score>
+            <comment>Possibilité de création des nouveaux services</comment>
+         </element>
+      </element>
+      <element name="strategy" title="Stratégie">
+         <desc>Stratégie du projet</desc>
+         <element name="license" title="Licence">
+            <desc>License</desc>
+            <element name="permissiveness" title="Permissivité (NB : à pondérer uniquement si le client désire un jour devenir propriétaire du code)">
+               <desc0>Licence très stricte, comme la GPL</desc0>
+               <desc1>Licence modérée entre les deux extrêmes (GPL et BSD), licence duale dépendante du type d'utilisateur (personne, société, ...) ou de leur activité.</desc1>
+               <desc2>Licence très permissive comme BSD et Apache</desc2>
+               <score>1</score>
+               <comment>LGPL</comment>
+            </element>
+            <element name="protectionagainstproprietaryforks" title="Protection contre des forks commerciaux">
+               <desc0>Licence très permissive comme BSD et Apache</desc0>
+               <desc1>Licence modérée entre les deux extrêmes (GPL et BSD), licence duale dépendante du type d'utilisateur (personne, société, ...) ou de leur activité.</desc1>
+               <desc2>Licence très stricte, comme la GPL</desc2>
+               <score>2</score>
+               <comment>Protégé par la licence LGPL et la distribution des droits de copyritgth entre les différents développeurs.</comment>
+            </element>
+         </element>
+         <element name="copyrightowners" title="Détenteur des droits">
+            <desc0>Les droits sont détenus par quelques individus ou entités commerciales, facilitant le changement de licence</desc0>
+            <desc1>Les droits sont détenus par de nombreux individus de façon homogène, rendant le changement de licence très difficile</desc1>
+            <desc2>Les droits sont détenus par une entité légale, une fondation dans laquelle la communauté a confiance (ex: FSF, Apache, ObjectWeb)</desc2>
+            <score>1</score>
+            <comment>Le code est « possédé » par les individus. Nombreux « commiters »,  les plus importants (en terme de comtribution) étant employés par Bull et le copyright posé au nom de la société</comment>
+         </element>
+         <element name="modificationofsourcecode" title="Modification du code">
+            <desc0>Pas de moyen pratique de proposer des modifications de code</desc0>
+            <desc1>Des outils sont fournis pour accéder et modifier le code (ex: CVS, SVN) mais ne sont pas vraiment utilisés pour développer le produit</desc1>
+            <desc2>Le processus de modification de code est bien défini, exposé, et respecté, basé sur des rôles bien définis.</desc2>
+            <score>2</score>
+            <comment>Code placé sous CVS d'accès public (Gforge Objectweb)</comment>
+         </element>
+         <element name="roadmap" title="Feuille de route">
+            <desc0>Pas de feuille de route publiée</desc0>
+            <desc1>Feuille de route sans planning</desc1>
+            <desc2>Feuille de route versionnée, avec planning et mesures de retard</desc2>
+            <score>1</score>
+            <comment>Roadmap macroscopique pas très détaillée</comment>
+         </element>
+         <element name="sponsor" title="Sponsor">
+            <desc0>Le logiciel n'a pas de sponsors, l'équipe principale n'est pas rémunérée</desc0>
+            <desc1>Le logiciel a un sponsor unique qui détermine sa stratégie</desc1>
+            <desc2>Le logiciel est sponsorisé par l'industrie</desc2>
+            <score>2</score>
+            <comment>Bull  emploie une grande partie de  l'équipe coeur. Obkectwebest une organisation à but non lucratif fondée par Bull, l'INRIA, et France Telecom. Elle regroupe des entreprise (comme RedHat) et des individus.</comment>
+         </element>
+         <element name="strategicalindependence" title="Indépendance stratégique">
+            <desc0>Pas de stratégie détectable ou forte dépendance à un acteur unique (individu, société, sponsor)</desc0>
+            <desc1>Vision stratégique partagée avec plusieurs autres projets open-source mais sans engagement fort des propriétaires des droits</desc1>
+            <desc2>Indépendance forte de l'équipe de développement, droits détenus par une entité, fort engagement dans un processus de standardisation</desc2>
+            <score>1</score>
+            <comment>Objectweb possède la force et les moyens d'être indépendant au niveau stratégique. Cependant le recent rapprochement avec Apache Foundation rend  cette  stratégie peu claire.</comment>
+         </element>
+      </element>
+   </section>
+   <section name="fonctionnalitesj2eestandards" title="Fonctionnalités J2EE standards">
+      <desc></desc>
+      <element name="conformitej2ee" title="Conformité J2EE">
+         <desc></desc>
+         <comment></comment>
+         <element name="licencej2ee" title="Licence J2EE">
+            <desc>Le serveur d'applications est-il compatible J2EE ?</desc>
+            <desc0>Serveur non compatible J2EE</desc0>
+            <desc1>Serveur partiellement compatible J2EE</desc1>
+            <desc2>Serveur compatible J2EE</desc2>
+            <score>2</score>
+            <comment></comment>
+         </element>
+         <element name="certificationj2ee" title="Certification J2EE">
+            <desc>Le serveur d'applications est-il certifié J2EE par SUN ?</desc>
+            <desc0>Serveur non certifié</desc0>
+            <desc1>Serveur en cours de certification</desc1>
+            <desc2>Serveur certifié</desc2>
+            <score>2</score>
+            <comment>Certifié J2EE 1.4 par SUN</comment>
+         </element>
+      </element>
+      <element name="web/ejb" title="Web/EJB">
+         <desc></desc>
+         <comment></comment>
+         <element name="serveurhttpintegre" title="Serveur HTTP intégré">
+            <desc></desc>
+            <desc0>Pas de serveur HTTP intégré</desc0>
+            <desc1>Serveur HTTP intégré mais limité en fonctionnalités</desc1>
+            <desc2>Serveur HTTP intégré complet</desc2>
+            <score>2</score>
+            <comment>Via intégration de Tomcat 5 ou de Jetty</comment>
+         </element>
+         <element name="httptiers" title="Intégration serveur HTTP">
+            <desc></desc>
+            <desc0>Pas d'intégration possible</desc0>
+            <desc1>Intégration possible via un produit tiers</desc1>
+            <desc2>Intégration native avec des serveurs HHTP tiers</desc2>
+            <score>1</score>
+            <comment>Avec Apache via mod_jk</comment>
+         </element>
+         <element name="jsp" title="JSP">
+            <desc>Java Server Pages</desc>
+            <desc0>JSP est non supporté</desc0>
+            <desc1>Le serveur supporte une ancienne version de JSP ou le support est incomplet</desc1>
+            <desc2>Support complet de JSP</desc2>
+            <score>2</score>
+            <comment>JSP 2.0</comment>
+         </element>
+         <element name="servlet" title="Servlet">
+            <desc></desc>
+            <desc0>Les servlets ne sont pas supportées</desc0>
+            <desc1>Le serveur supporte une ancienne version de servelt ou le support est incomplet</desc1>
+            <desc2>Support complet des servlets</desc2>
+            <score>2</score>
+            <comment>Servlet 2.4</comment>
+         </element>
+         <element name="jsf" title="JSF">
+            <desc>Java Server Faces</desc>
+            <desc0>JSF est non supporté</desc0>
+            <desc1>Le serveur supporte une ancienne version de JSF ou le support est incomplet</desc1>
+            <desc2>Support complet de JSF</desc2>
+            <score>1</score>
+            <comment>Possible via MyFaces mais pas intégré dans la distribution</comment>
+         </element>
+         <element name="ejb" title="EJB">
+            <desc>Enterprise Java Beans</desc>
+            <desc0>EJB n'est pas supporté</desc0>
+            <desc1>Support ancien ou limité d'EJB</desc1>
+            <desc2>Support complet d'EJB</desc2>
+            <score>2</score>
+            <comment>EJB 2.1</comment>
+         </element>
+      </element>
+      <element name="connecteurs" title="Connecteurs">
+         <desc></desc>
+         <comment></comment>
+         <element name="jdbc" title="JDBC">
+            <desc>Java Database Connectivity</desc>
+            <desc0>JDBC est non supporté</desc0>
+            <desc1>Support ancien ou limité de JDBC</desc1>
+            <desc2>Support complet de JDBC</desc2>
+            <score>2</score>
+            <comment>JDBC 3.0</comment>
+         </element>
+         <element name="jca" title="JCA">
+            <desc>J2EE Connector Architecture</desc>
+            <desc0>JCA est on supporté</desc0>
+            <desc1>Support ancien ou limité de JCA</desc1>
+            <desc2>JCA est complétement supporté</desc2>
+            <score>2</score>
+            <comment>JCA 1.5</comment>
+         </element>
+      </element>
+      <element name="autresservicesdebase" title="Autres services de base">
+         <desc></desc>
+         <comment></comment>
+         <element name="jndi" title="JNDI">
+            <desc>Java Naming and Directory Interface</desc>
+            <desc0>JNDI est non supporté</desc0>
+            <desc1>Support ancien ou limité de JNDI</desc1>
+            <desc2>JNDI est complétement supporté</desc2>
+            <score>2</score>
+            <comment>JNDI 1.2.1</comment>
+         </element>
+         <element name="jta" title="JTA">
+            <desc>Java Transaction API</desc>
+            <desc0>JTA est non supporté</desc0>
+            <desc1>Support ancien ou limité de JTA</desc1>
+            <desc2>JTA est complétement supporté</desc2>
+            <score>2</score>
+            <comment>JTA 1.0.1</comment>
+         </element>
+         <element name="jms" title="JMS">
+            <desc>Java Messaging Service</desc>
+            <desc0>JMS est non supporté</desc0>
+            <desc1>Support ancien ou limité de JMS</desc1>
+            <desc2>JMS est complétement supporté</desc2>
+            <score>2</score>
+            <comment>JMS 1.1</comment>
+         </element>
+         <element name="jaf" title="JAF">
+            <desc>JavaBeans Activation Framework</desc>
+            <desc0>JAF est non supporté</desc0>
+            <desc1>Support ancien ou limité de JAF</desc1>
+            <desc2>JAF est complétement supporté</desc2>
+            <score>2</score>
+            <comment>JAF 1.0</comment>
+         </element>
+         <element name="javamail" title="JavaMail">
+            <desc></desc>
+            <desc0>JavaMail est non supporté</desc0>
+            <desc1>Support ancien ou limité de JavaMail</desc1>
+            <desc2>JavaMail est complétement supporté</desc2>
+            <score>2</score>
+            <comment>JavaMail 1.3</comment>
+         </element>
+         <element name="corba" title="CORBA">
+            <desc>Common Object Request Broker Architecture</desc>
+            <desc0>CORBA est non supporté</desc0>
+            <desc1>Support ancien ou limité de CORBA</desc1>
+            <desc2>CORBA est complétement supporté</desc2>
+            <score>2</score>
+            <comment>Via JacORB intégré</comment>
+         </element>
+      </element>
+   </section>
+   <section name="servicedadministration" title="Service d'administration">
+      <desc></desc>
+      <element name="jmx" title="JMX">
+         <desc>Java Management Extension</desc>
+         <desc0>JMX est non supporté</desc0>
+         <desc1>Support ancien ou limité de JMX</desc1>
+         <desc2>JMX est complétement supporté</desc2>
+         <score>1</score>
+         <comment>Via intégration de MX4J</comment>
+      </element>
+      <element name="jmxremoting" title="JMX Remoting">
+         <desc></desc>
+         <desc0>JMX Remoting est non supporté</desc0>
+         <desc1>Support ancien ou limité de JMX Remoting</desc1>
+         <desc2>JMX Remoting est complétement supporté</desc2>
+         <score>2</score>
+         <comment></comment>
+      </element>
+      <element name="j2eemanagementapi" title="J2EE Management API">
+         <desc></desc>
+         <desc0>API non supportée</desc0>
+         <desc1>API supportée de manière limitée</desc1>
+         <desc2>API complétement supportée</desc2>
+         <score>2</score>
+         <comment>J2EE Management API 1.0</comment>
+      </element>
+      <element name="j2eedeploymentapi" title="J2EE Deployment API">
+         <desc></desc>
+         <desc0>API non supportée</desc0>
+         <desc1>API supportée de manière limitée</desc1>
+         <desc2>API complétement supportée</desc2>
+         <score>2</score>
+         <comment>J2EE Deployment API 1.1</comment>
+      </element>
+      <element name="consoledadministration" title="Console d'administration">
+         <desc></desc>
+         <desc0>Aucune console d'administration n'est disponible</desc0>
+         <desc1>Console d'administration limitée et incomplète</desc1>
+         <desc2>Console d'administration complète</desc2>
+         <score>2</score>
+         <comment>Console JSP/Struts</comment>
+      </element>
+   </section>
+   <section name="fonctionnalitesavancees" title="Fonctionnalités avancées">
+      <desc></desc>
+      <element name="servicesweb" title="Services Web">
+         <desc></desc>
+         <comment></comment>
+         <element name="protocolesdebase" title="Protocoles de base">
+            <desc>Support de SOAP, WSDL, WS-I Basic Profile</desc>
+            <desc0>Pas de support SOAP, WSDL, WS-I Basic Profile</desc0>
+            <desc1>Support partiel de SOAP, WSDL, WS-I Basic Profile</desc1>
+            <desc2>Support complet de SOAP, WSDL, WS-I Basic Profile</desc2>
+            <score>2</score>
+            <comment></comment>
+         </element>
+         <element name="jax-rpc" title="JAX-RPC">
+            <desc>Java API for XML-based RPC</desc>
+            <desc0>JAX-RPC est non supporté</desc0>
+            <desc1>Support ancien ou limité de JAX-RPC</desc1>
+            <desc2>JAX-RPC est complétement supporté</desc2>
+            <score>2</score>
+            <comment>JAX-RPC 1.1</comment>
+         </element>
+         <element name="saaj" title="SAAJ">
+            <desc>SOAP with Attachments API for Java</desc>
+            <desc0>SAAJ est non supporté</desc0>
+            <desc1>Support ancien ou limité de SAAJ</desc1>
+            <desc2>SAAJ est complétement supporté</desc2>
+            <score>2</score>
+            <comment>SAAJ 1.2</comment>
+         </element>
+      </element>
+      <element name="xml" title="XML">
+         <desc>eXtended Markup Language</desc>
+         <comment></comment>
+         <element name="jaxp" title="JAXP">
+            <desc>Java API for XML Processing</desc>
+            <desc0>JAXP est non supporté</desc0>
+            <desc1>Support ancien ou limité de JAXP</desc1>
+            <desc2>JAXP est complétement supporté</desc2>
+            <score>2</score>
+            <comment>JAXP 1.2</comment>
+         </element>
+         <element name="jaxr" title="JAXR">
+            <desc>Java API for XML Registries</desc>
+            <desc0>JAXR est non supporté</desc0>
+            <desc1>Support ancien ou limité de JAXR</desc1>
+            <desc2>JAXR est complétement supporté</desc2>
+            <score>2</score>
+            <comment>JAXR 1.0</comment>
+         </element>
+         <element name="jaxb" title="JAXB">
+            <desc>Java API for XML Binding</desc>
+            <desc0>JAXB est non supporté</desc0>
+            <desc1>Support ancien ou limité de JAXB</desc1>
+            <desc2>JAXB est complétement supporté</desc2>
+            <score>0</score>
+            <comment></comment>
+         </element>
+      </element>
+      <element name="securite" title="Sécurité">
+         <desc></desc>
+         <comment></comment>
+         <element name="jaas" title="JAAS">
+            <desc>Java Authentication and Authorization Service</desc>
+            <desc0>JAAS est non supporté</desc0>
+            <desc1>Support ancien ou limité de JAAS</desc1>
+            <desc2>JAAS est complétement supporté</desc2>
+            <score>2</score>
+            <comment>JAAS 1.0</comment>
+         </element>
+         <element name="authentificationexterne" title="Authentification externe">
+            <desc>Intégration de modules d'authentification externes</desc>
+            <desc0>Aucune intégration avec des modules d'authentification externes</desc0>
+            <desc1>Intégration limitée avec des modules d'authentification externes (en fonctionnalités ou en nombre de modules)</desc1>
+            <desc2>Intégration complète avec les pricipaux types d'authentification (LDAP, SGBD, fichiers plats, ...)</desc2>
+            <score>2</score>
+            <comment>Modules de login: SGBD, fichiers textes, LDAP.</comment>
+         </element>
+         <element name="jacc" title="JACC">
+            <desc>Java Authorization Service Provider Contract for Containers</desc>
+            <desc0>JACC est non supporté</desc0>
+            <desc1>Support ancien ou limité de JACC</desc1>
+            <desc2>JACC est complétement supporté</desc2>
+            <score>2</score>
+            <comment>JACC 1.0</comment>
+         </element>
+      </element>
+      <element name="hautedisponibilite" title="Haute disponibilité">
+         <desc>Mécanismes disponibles de sécurisation du fonctionnement</desc>
+         <comment></comment>
+         <element name="equilibragedecharge" title="Equilibrage de charge">
+            <desc>Disponibilité de mécanismes de répartition de charge</desc>
+            <desc0>Aucun mécanisme de répartition de charge</desc0>
+            <desc1>Mécanisme de répartition de charge peu fiable ou limité</desc1>
+            <desc2>Mécanisme de répartition de charge disponible et fonctionnel</desc2>
+            <score>2</score>
+            <comment>Répartition de charge possible au niveau session via l'utilisation d'Apache mod_jk et au niveau EJB</comment>
+         </element>
+         <element name="reprisesurincident" title="Reprise sur incident">
+            <desc>Disponibilité de mécanismes de failover</desc>
+            <desc0>Aucun mécanisme de reprise sur incident</desc0>
+            <desc1>Mécanisme de reprise sur incident peu fiable ou limité</desc1>
+            <desc2>Mécanisme de reprise sur incident disponible et fonctionnel</desc2>
+            <score>1</score>
+            <comment>Possibilité de gestion du failover au niveau de l'accès aux données via C-JDBC</comment>
+         </element>
+         <element name="sessionhttp" title="Session HTTP">
+            <desc>Réplication des sessions HTTP</desc>
+            <desc0>Pas de réplication des sessions HTTP</desc0>
+            <desc1>Réplication limitée des sessions HTTP</desc1>
+            <desc2>Réplication complète des sessions HTTP</desc2>
+            <score>2</score>
+            <comment></comment>
+         </element>
+         <element name="ejbsession" title="EJB session">
+            <desc>Réplication des EJB session</desc>
+            <desc0>Pas de réplication des EJB session</desc0>
+            <desc1>Réplication limitée des EJB session</desc1>
+            <desc2>Réplication complète des EJB session</desc2>
+            <score>0</score>
+            <comment></comment>
+         </element>
+         <element name="ejbentite" title="EJB entité">
+            <desc>Réplication des EJB entité</desc>
+            <desc0>Pas de réplication des EJB entité</desc0>
+            <desc1>Réplication limitée des EJB entité</desc1>
+            <desc2>Réplication complète des EJB entité</desc2>
+            <score>0</score>
+            <comment></comment>
+         </element>
+         <element name="ha-jms" title="JMS">
+            <desc>Réplication des noeud ou files d'attentes JMS</desc>
+            <desc0>Pas de réplication JMS</desc0>
+            <desc1>Réplication JMS limitée</desc1>
+            <desc2>Réplication JMS complète</desc2>
+            <score>2</score>
+            <comment></comment>
+         </element>
+      </element>
+      <element name="integrationide" title="Intégration IDE">
+         <desc>Intégration avec des outils de développement</desc>
+         <desc0>Pas d'intégration IDE possible</desc0>
+         <desc1>Intégration limitée avec les IDE (en termes de fonctionnalités ou de nombre d'IDE)</desc1>
+         <desc2>Intégration complète avec la plupart des IDE du marché</desc2>
+         <score>1</score>
+         <comment>Il existe un plugin pour Eclipse v2. Le projet est inactif depuis plusieurs mois et n'est pas disponible pour Eclipse v3. Mauvaise intégration avec certains outils tiers tels que XDoclet et Ant</comment>
+      </element>
+   </section>
+</document>
