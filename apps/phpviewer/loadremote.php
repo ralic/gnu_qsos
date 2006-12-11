@@ -2,24 +2,29 @@
 include("config.php");
 $output = new DOMDocument();
 
-/*
-function newtreeitem($path, $file) {
+$selector = $_REQUEST["tpl"];
+if (isset($selector) && $selector == "yes") $list_templates = true;
+
+function getListTemplates($path, $webpath) {
 	global $output;
+	global $delim;
 
-	$treeitem = $output->createElement("treeitem");
-	$treeitem->setAttribute("container", "true");
-	$treeitem->setAttribute("open", "true");
-	$treerow = $output->createElement("treerow");
-	$treecell = $output->createElement("treecell");
-	$treecell->setAttribute("id", "http://localhost:88/test/OOo/".$path);
-	$treecell->setAttribute("label", $file);
-	$treerow->appendChild($treecell);
-	$treeitem->appendChild($treerow);
-	return $treeitem;
+	$templates = $output->createElement("templates");
+	if (is_dir($path) && $dh = opendir($path)) {
+		while (($file = readdir($dh)) !== false) {
+			if (substr($file, -5) == ".qsos") {
+				$newtreeitem = $output->createElement("item");
+				$newtreeitem->setAttribute("id", $webpath.$delim.$file);
+				$newtreeitem->setAttribute("label", $file);
+				$templates->appendChild($newtreeitem);
+			}
+		}
+		closedir($dh);
+	}
+	return $templates;
 }
-*/
 
-function buildtree($path) {
+function buildTreeSheets($path, $webpath) {
 	global $output;
 	global $delim;
 
@@ -27,15 +32,16 @@ function buildtree($path) {
 	if (is_dir($path) && $dh = opendir($path)) {
 		while (($file = readdir($dh)) !== false) {
 			$subpath = $path.$delim.$file;
+			$newwebpath = $webpath.$delim.$file;
 			if (is_dir($subpath) && ($file != 'CVS') && ($file != '.') && ($file != '..') && ($file != 'include') && ($file != 'template') && ($file != 'templates') && ($file != '.svn')) {
 				$newtreeitem = $output->createElement("item");
-				$newtreeitem->setAttribute("id", $subpath);
+				$newtreeitem->setAttribute("id", $newwebpath);
 				$newtreeitem->setAttribute("label", $file);
-				$newtreeitem->appendChild(buildtree($subpath, $file));
+				$newtreeitem->appendChild(buildTreeSheets($subpath, $newwebpath));
 				$children->appendChild($newtreeitem);
 			} elseif (substr($file, -5) == ".qsos") {
 				$newtreeitem = $output->createElement("item");
-				$newtreeitem->setAttribute("id", "http://localhost:88/test/OOo/".$subpath);
+				$newtreeitem->setAttribute("id", $newwebpath);
 				$newtreeitem->setAttribute("label", $file);
 				$children->appendChild($newtreeitem);
 			}
@@ -46,7 +52,11 @@ function buildtree($path) {
 }
 
 $doc = $output->createElement("Document");
-$output->appendChild(buildtree($sheet));
+if ($list_templates) {
+	$output->appendChild(getListTemplates($template, $template_web));
+} else {
+	$output->appendChild(buildTreeSheets($sheet, $sheet_web));
+}
 
 header('Content-type: text/xml');
 echo $output->saveXML();
