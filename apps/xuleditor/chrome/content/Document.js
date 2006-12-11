@@ -34,6 +34,7 @@ function Document(name) {
     
     //Public methods declaration
     this.load = load;
+    this.loadremote = loadremote;
     this.write = write;
     this.getkeytitle = getkeytitle;
     this.getauthors = getauthors;
@@ -109,7 +110,7 @@ function Document(name) {
 
         var sis = Components.classes["@mozilla.org/scriptableinputstream;1"]
 		.createInstance(Components.interfaces.nsIScriptableInputStream);
-        sis.init( is );
+        sis.init(is);
 
 	var output = sis.read(sis.available());
 
@@ -120,6 +121,24 @@ function Document(name) {
 
 	var domParser = new DOMParser();
 	sheet = domParser.parseFromString(output, "text/xml");
+    }
+
+    //Load and parse a remote QSOS XML file
+    //ex: loadremote("http://localhost/qedit/xul/kolab.qsos")
+    //initializes local variable: sheet
+    function loadremote(url) {
+        try {
+            netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect");
+        } catch (e) {
+            alert("Permission to save file was denied.");
+        }
+        req = new XMLHttpRequest();
+
+        req.open('GET', url, false); 
+        req.overrideMimeType('text/xml');
+        req.send(null);
+	var domParser = new DOMParser();
+	sheet = domParser.parseFromString(req.responseText, "text/xml");
     }
     
     //Serialize and write the local QSOS XML file
@@ -220,18 +239,7 @@ function Document(name) {
 
 	return string;
    }
-    
-    //Load and parse a remote QSOS XML file
-    //ex: loadremote("http://localhost/qedit/xul/kolab.qsos")
-    //initializes local variable: sheet
-    function loadremote(url) {
-        req = new XMLHttpRequest();
-        req.open('GET', url, false); 
-        req.overrideMimeType('text/xml');
-        req.send(null);
-        sheet = req.responseXML;
-    }
-    
+
     //Show the XML DOM structure in a dialogbox
     function dump() {
         var serializer = new XMLSerializer();

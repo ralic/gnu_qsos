@@ -18,6 +18,7 @@
 	      <menu id="file-menu" label="&file-menu.label;" onclick="document.getElementById('file-menu').focus();">
           <menupopup id="file-popup">
 		  <menuitem id="file-open" label="&file-open.label;" onclick="checkopenFile();"/>
+		  <menuitem id="file-open-remote" label="Open remote" onclick="checkopenRemoteFile();"/>
 		  <menuitem id="file-save" label="&file-save.label;" onclick="saveFile();"/>
 		  <menuitem id="file-saveas" label="&file-saveas.label;" onclick="saveFileAs();"/>
 		  <menuitem id="file-close" label="&file-close.label;"  onclick="checkcloseFile();"/>

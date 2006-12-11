@@ -108,8 +108,6 @@ function openFile() {
 
 	//Draw top-level SVG chart
 	drawChart();
-
-	//window.sizeToContent();
     }
 }
 
@@ -124,6 +122,74 @@ function checkopenFile() {
 		}
 	}
 	openFile();
+}
+
+//Menu "Load Remote"
+//Shows the loads.xul window in modal mode
+function loadRemoteDialog() {
+	try {
+		netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect");
+	} catch (e) {
+		alert("Permission to open file was denied.");
+	}
+	window.openDialog('chrome://qsos-xuled/content/load.xul','Properties','chrome,dialog,modal',myDoc,openRemoteFile);
+}
+
+function openRemoteFile(url) {
+	if (url == "") return;
+
+	myDoc = new Document("");
+	myDoc.loadremote(url);
+
+        //Window's title
+        document.getElementById("QSOS").setAttribute("title", strbundle.getString("QSOSEvaluation")+"  "+myDoc.getappname());
+        
+        //Tree population
+        var tree = document.getElementById("mytree");
+	var treechildren = buildtree();
+        tree.appendChild(treechildren);
+	
+	//License
+	var licenses = myDoc.getlicenselist();
+	var mypopuplist = document.getElementById("f-license-popup");
+	for(var i=0; i < licenses.length; i++) {
+		var menuitem = document.createElement("menuitem");
+		menuitem.setAttribute("label", licenses[i]);
+		mypopuplist.appendChild(menuitem);
+	}
+			 
+	var licenseid = myDoc.getlicenseid();
+	var mylist = document.getElementById("f-license");
+        mylist.selectedIndex = licenseid;
+        
+        //Other fields
+        document.getElementById("f-software").value = myDoc.getappname();
+	document.getElementById("f-release").value = myDoc.getrelease();
+	document.getElementById("f-sotwarefamily").value = myDoc.getqsosappfamily();
+	document.getElementById("f-desc").value = myDoc.getdesc();
+	document.getElementById("f-url").value = myDoc.geturl();
+	document.getElementById("f-demourl").value = myDoc.getdemourl();
+        
+        freezeGeneric("");
+	//Menu management
+        document.getElementById("file-close").setAttribute("disabled", "false");
+	document.getElementById("file-saveas").setAttribute("disabled", "false");
+
+	//Draw top-level SVG chart
+	drawChart();
+}
+
+//Checks Document's state before opening a new one
+function checkopenRemoteFile() {
+	if (myDoc) {
+		if (docChanged == "true") {
+			confirmDialog(strbundle.getString("closeAnyway"), closeFile);
+		}
+		else {
+			closeFile();
+		}
+	}
+	loadRemoteDialog();
 }
 
 //XUL Tree recursive creation function
