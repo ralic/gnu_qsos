@@ -7,7 +7,7 @@ function init() {
 		alert("Permission to open file was denied.");
 	}
         req = new XMLHttpRequest();
-        req.open('GET', "http://localhost:88/test/OOo/loadremote.php", false); 
+        req.open('GET', "http://localhost/loadremote.php", false); 
 	//req.overrideMimeType('text/xml');
         req.send(null);
 
@@ -78,8 +78,10 @@ function buildtree(criteria) {
 //XUL Tree recursive creation function
 function newtreeitem(criterion) {
 	var treeitem = document.createElement("treeitem");
-	treeitem.setAttribute("container", "true");
-	treeitem.setAttribute("open", "true");
+	if (criterion.label.substr(-5) != ".qsos") {
+		treeitem.setAttribute("container", "true");
+		treeitem.setAttribute("open", "false");
+	}
 	var treerow = document.createElement("treerow");
 	var treecell = document.createElement("treecell");
 	treecell.setAttribute("id", criterion.id);
