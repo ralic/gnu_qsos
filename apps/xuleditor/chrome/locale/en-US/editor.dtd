@@ -1,6 +1,8 @@
 <!ENTITY QSOS.label "QSOS XUL Editor">
 <!ENTITY file-menu.label "File">
-<!ENTITY file-open.label "Open">
+<!ENTITY file-new.label "New file">
+<!ENTITY file-open.label "Open local file">
+<!ENTITY file-open-remote.label "Open remote file">
 <!ENTITY file-save.label "Save">
 <!ENTITY file-saveas.label "Save As">
 <!ENTITY file-close.label "Close">

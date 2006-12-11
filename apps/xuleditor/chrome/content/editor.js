@@ -52,6 +52,33 @@ function init() {
 ////////////////////////////////////////////////////////////////////
 
 //////////////////////////
+//Submenu "File/New"
+//////////////////////////
+//Checks Document's state before opening a new one
+function checknewFile() {
+	if (myDoc) {
+		if (docChanged == "true") {
+			confirmDialog(strbundle.getString("closeAnyway"), closeFile);
+		}
+		else {
+			closeFile();
+		}
+	}
+	newFileDialog();
+}
+
+//Menu "New File"
+//Shows the new.xul window in modal mode
+function newFileDialog() {
+	try {
+		netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect");
+	} catch (e) {
+		alert("Permission to open file was denied.");
+	}
+	window.openDialog('chrome://qsos-xuled/content/new.xul','Properties','chrome,dialog,modal',myDoc,openRemoteFile);
+}
+
+//////////////////////////
 //Submenu "File/Open"
 //////////////////////////
 //Opens a local QSOS XML file and populates the window (tree and generic fields)
@@ -124,8 +151,10 @@ function checkopenFile() {
 	openFile();
 }
 
-//Menu "Load Remote"
-//Shows the loads.xul window in modal mode
+//////////////////////////
+//Submenu "File/Load Remote File"
+//////////////////////////
+//Shows the load.xul window in modal mode
 function loadRemoteDialog() {
 	try {
 		netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect");
