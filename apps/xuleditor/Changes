@@ -18,3 +18,8 @@ Revision history for QSOS XUL Editor
 0.4  2006/11/25
       - Firefox 2 support
       - UTF-8 supported in .qsos files
+
+0.5  2006/12/14
+      - Creation of a new evaluation based on a remote template (stored on qsos.org server)
+      - Download and open a evaluation from qsos.org server
+      - Submit an evaluation on qsos.org server
