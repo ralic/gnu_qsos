@@ -174,7 +174,7 @@ function Document(name) {
     }
 
     //Serialize and upload the QSOS XML file to a remote server
-    function writeremote() {
+    function writeremote(url) {
         try {
             netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect");
         } catch (e) {
