@@ -2,6 +2,8 @@
 <!DOCTYPE overlay SYSTEM "chrome://qsos-xuled/locale/qsos-overlay.dtd">
 
 <overlay id="qsos-overlay" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+	<script type="application/x-javascript" src="qsos-overlay.js"></script>
+	
 	<menupopup id="menu_ToolsPopup">
 		<menuitem id="qsos-xuled" 
 			  label="&qsos-xuled.label;" oncommand="window.openDialog('chrome://qsos-xuled/content/editor.xul','&qsos-xuled.label;', '_blank', 'chrome,dialog=no');"/>

@@ -43,6 +43,12 @@ function init() {
     document.getElementById("file-save").setAttribute("disabled", "true");
     document.getElementById("file-saveas").setAttribute("disabled", "true");
     document.getElementById("file-close").setAttribute("disabled", "true");
+
+    //Case of a .qsos browsing redirection (cf. qsos-overlay.js)
+    var url = window.arguments[1];
+    if (url) {
+	openRemoteFile(url)
+    }
 }
 
 ////////////////////////////////////////////////////////////////////

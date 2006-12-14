@@ -23,3 +23,4 @@ Revision history for QSOS XUL Editor
       - Creation of a new evaluation based on a remote template (stored on qsos.org server)
       - Download and open a evaluation from qsos.org server
       - Submit an evaluation on qsos.org server
+      - .qsos URI are trapped and opened in XUL Editor

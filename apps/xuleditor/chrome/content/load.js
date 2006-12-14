@@ -7,7 +7,7 @@ function init() {
 		alert("Permission to open file was denied.");
 	}
         req = new XMLHttpRequest();
-        req.open('GET', "http://localhost/loadremote.php", false); 
+        req.open('GET', "http://www.qsos.org/phpviewer/loadremote.php", false); 
 	//req.overrideMimeType('text/xml');
         req.send(null);
 
