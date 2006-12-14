@@ -21,8 +21,6 @@
 ** QSOS XUL Editor
 ** editor.js: functions associated with the editor.xul file
 **
-** TODO:
-**	- Load remote QSOS XML file
 */
 
 //Object "Document" representing data in the QSOS XML file
@@ -260,7 +258,7 @@ function buildsubtree(criteria) {
 }
 
 //////////////////////////
-//Submenu "File/Save"
+//Submenu "File/Save local file"
 //////////////////////////
 //Saves modifications to the QSOS XML file
 function saveFile() {
@@ -293,6 +291,14 @@ function saveFileAs() {
 		myDoc.write();
 		docChanged = "false";
 	}
+}
+
+//////////////////////////
+//Submenu "File/Save remote file"
+//////////////////////////
+//Saves modifications to a new QSOS XML file
+function saveRemote() {
+	myDoc.writeremote("http://www.qsos.org/phpviewer/writeremote.php");
 }
 
 //////////////////////////

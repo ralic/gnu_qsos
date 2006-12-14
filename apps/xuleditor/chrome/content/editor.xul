@@ -22,6 +22,7 @@
 		  <menuitem id="file-open-remote" label="&file-open-remote.label;" onclick="checkopenRemoteFile();"/>
 		  <menuitem id="file-save" label="&file-save.label;" onclick="saveFile();"/>
 		  <menuitem id="file-saveas" label="&file-saveas.label;" onclick="saveFileAs();"/>
+		  <menuitem id="file-save-remote" label="&file-save-remote.label;" onclick="saveRemote();"/>
 		  <menuitem id="file-close" label="&file-close.label;"  onclick="checkcloseFile();"/>
             <menuseparator/>
 	    <menuitem id="file-exit" label="&file-exit.label;" onclick="checkexit();"/>

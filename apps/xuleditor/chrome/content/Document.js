@@ -21,8 +21,6 @@
 ** QSOS XUL Editor
 ** Documents.js: document object abstracting the QSOS XML format
 **
-** TODO:
-**	- Load remote QSOS XML file
 */
 
 //Constructor
@@ -30,12 +28,14 @@
 function Document(name) {
     var sheet;
     var file;
+    var req;
     filename = name;
     
     //Public methods declaration
     this.load = load;
     this.loadremote = loadremote;
     this.write = write;
+    this.writeremote = writeremote;
     this.getkeytitle = getkeytitle;
     this.getauthors = getauthors;
     this.addauthor = addauthor;
@@ -161,10 +161,6 @@ function Document(name) {
 
         outputStream.init(file, 0x04 | 0x08 | 0x20, 420, 0);
 
-        //var serializer = new XMLSerializer();
-        //var xml = serializer.serializeToString(sheet);
-        //var result = outputStream.write( xml, xml.length );
-
 	var xml = serialize(sheet.documentElement, 0);
 
 	var converter = Components.classes["@mozilla.org/intl/scriptableunicodeconverter"]
@@ -175,6 +171,75 @@ function Document(name) {
 	outputStream.write(xml, xml.length);
 	
         outputStream.close();
+    }
+
+    //Serialize and upload the QSOS XML file to a remote server
+    function writeremote() {
+        try {
+            netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect");
+        } catch (e) {
+            alert("Permission to save file was denied.");
+        }
+
+	var xml = serialize(sheet.documentElement, 0);
+
+	var converter = Components.classes["@mozilla.org/intl/scriptableunicodeconverter"]
+		.createInstance(Components.interfaces.nsIScriptableUnicodeConverter);
+	converter.charset = "UTF-8";
+	xml = converter.ConvertFromUnicode(xml);
+
+	var stream = Components.classes["@mozilla.org/io/string-input-stream;1"]
+		.createInstance(Components.interfaces.nsIStringInputStream);
+	stream.setData(xml, xml.length);
+
+	var bstream =  Components.classes["@mozilla.org/network/buffered-input-stream;1"]
+		.getService();
+	bstream.QueryInterface(Components.interfaces.nsIBufferedInputStream);
+	bstream.init(stream, 1000);
+	bstream.QueryInterface(Components.interfaces.nsIInputStream);
+	var binary = Components.classes["@mozilla.org/binaryinputstream;1"]
+		.createInstance(Components.interfaces.nsIBinaryInputStream);
+	binary.setInputStream(stream);
+
+	req = false;
+        req = new XMLHttpRequest();
+
+	//Set the filename
+	var filename = getqsosappfamily() + "." + getappname() + "." + getrelease();
+	if (filename == "..") filename = "upload";
+
+	//Prepare the MIME POST data
+	var boundaryString = 'qsoswriteremote';
+	var boundary = '--' + boundaryString;
+	var requestbody = boundary + '\n' 
+	+ 'Content-Disposition: form-data; name="myfile"; filename="' 
+		+ filename + '"' + '\n' 
+	+ 'Content-Type: text/xml' + '\n' 
+	+ '\n'
+	+ binary.readBytes(binary.available())
+	+ '\n'
+	+ boundary;
+
+	//Do the AJAX request
+	req.onreadystatechange = requestdone;
+	req.open('POST', url, true);
+	req.setRequestHeader("Content-type", "multipart/form-data; \
+		boundary=\"" + boundaryString + "\"");
+	req.setRequestHeader("Connection", "close");
+	req.setRequestHeader("Content-length", requestbody.length);
+	req.send(requestbody);
+    }
+
+    //Upload callback
+    function requestdone() {
+	if (req.readyState == 4) {
+		if (req.status == 200) {
+			result = req.responseText;
+			alert(result);
+		} else {
+			alert('There was a problem with the upload.');
+		}
+	}
     }
 
     //Recursively serialize a XML node in a string

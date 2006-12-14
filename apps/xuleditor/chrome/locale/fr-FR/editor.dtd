@@ -5,6 +5,7 @@
 <!ENTITY file-open-remote.label "Ouvrir fichier distant">
 <!ENTITY file-save.label "Sauvegarder">
 <!ENTITY file-saveas.label "Sauvegarder sous">
+<!ENTITY file-save-remote.label "Sauvergarder sur le serveur">
 <!ENTITY file-close.label "Fermer">
 <!ENTITY file-exit.label "Sortir">
 <!ENTITY edit-menu.label "Editer">
