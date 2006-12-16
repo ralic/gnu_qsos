@@ -1,0 +1,506 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document>
+   <header>
+      <authors>
+    </authors>
+      <dates>
+         <creation></creation>
+         <validation></validation>
+      </dates>
+      <language>en</language>
+      <appname></appname>
+      <release></release>
+      <licenseid></licenseid>
+      <licensedesc></licensedesc>
+      <url></url>
+      <desc></desc>
+      <demourl></demourl>
+      <qsosformat>1.6</qsosformat>
+      <qsosappfamily>Revision Control Software</qsosappfamily>
+      <qsosspecificformat>1.0</qsosspecificformat>
+   </header>
+   <include section="generic"></include>
+   <section name="repoperations" title="Repository operations">
+      <desc></desc>
+      <element name="commitschekouts" title="Commits/Chekouts">
+         <desc>Commits and chackout features</desc>
+         <comment></comment>
+         <element name="atomiccommits" title="Atomic commits">
+            <desc>If an operation on the repository is interrupted in the middle, the repository will not be left in an inconsistant state</desc>
+            <desc0>No atomic commits</desc0>
+            <desc1>Limlited support of atomic commits</desc1>
+            <desc2>Atomic commits fully supported</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="trackingucommited" title="Tracking uncommited changes">
+            <desc>Are local uncommited changes tracked?</desc>
+            <desc0>Local uncommited changes are not tracked</desc0>
+            <desc1>Local uncommited changes are partially tracked</desc1>
+            <desc2>Local uncommited changes are tracked</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="perfilemessage" title="Per-file commit messages">
+            <desc></desc>
+            <desc0>Commit messages are not on a per-files basis</desc0>
+            <desc1>Per-files commit messages are available but limited</desc1>
+            <desc2>Commit messages are not on a per-files basis</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="directorycheckout" title="Single directory checkout">
+            <desc>Ability to work only on one directory of the repository</desc>
+            <desc0>The whole directory must be checkout</desc0>
+            <desc1>Multiple directories must be checkout even if the whole repository must not</desc1>
+            <desc2>A single directory can be checkout</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+      </element>
+      <element name="tagging" title="Tagging">
+         <desc>Ability to tag or label a set of versionned files</desc>
+         <desc0>Tags are not supported</desc0>
+         <desc1>Tags are partially supported</desc1>
+         <desc2>Tags are fully supported</desc2>
+         <score></score>
+         <comment></comment>
+      </element>
+      <element name="history" title="History">
+         <desc>History and logging features</desc>
+         <comment></comment>
+         <element name="repositoryhistory" title="Repository history">
+            <desc>History/log on the global repository</desc>
+            <desc0>No repository log or history</desc0>
+            <desc1>Limited repository history/log is available</desc1>
+            <desc2>Repository history/log is available</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="filehistory" title="File history">
+            <desc>History/log on individual files</desc>
+            <desc0>No file log or history</desc0>
+            <desc1>Limited file history/log is available</desc1>
+            <desc2>File history/log is available</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="linewisehistory" title="Line-wise file history">
+            <desc>History/log on individual lines in a file</desc>
+            <desc0>No per-line history</desc0>
+            <desc1>Limited line history is available</desc1>
+            <desc2>Per-line history is available</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="showdifferences" title="Show differences">
+            <desc>Possibility to visualize deifferences between different versions of a file (diff)</desc>
+            <desc0>No possibility to visualize differences</desc0>
+            <desc1>Different lines between files are identified</desc1>
+            <desc2>Different caracters of a same line are identified</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+      </element>
+      <element name="brachingmerging" title="Branching/Merging">
+         <desc>Branching and Merging features</desc>
+         <desc0>No branching or merging features</desc0>
+         <desc1>Limited branching or merging features (example: no tracks are kept of merges)</desc1>
+         <desc2>Merge tracking, automatic conflict resolution during merges</desc2>
+         <score></score>
+         <comment></comment>
+      </element>
+      <element name="events" title="Events">
+         <desc>Triggers and notifications</desc>
+         <comment></comment>
+         <element name="triggers" title="Triggers">
+            <desc>Availability of triggers</desc>
+            <comment></comment>
+            <element name="preeventtriggers" title="Pre-event triggers">
+               <desc>Availability of triggers to hook customs actions on system events</desc>
+               <desc0>No triggers available</desc0>
+               <desc1>Triggers on a small part of the commandset</desc1>
+               <desc2>Triggers on most part of the commandset</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="posteventtriggers" title="Post-event triggers">
+               <desc></desc>
+               <desc0>No triggers available</desc0>
+               <desc1>Triggers on a small part of the commandset</desc1>
+               <desc2>Triggers on most part of the commandset</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+         </element>
+         <element name="notifications" title="Notifications">
+            <desc>Automatic notifications generated on system events</desc>
+            <desc0>No notifications available</desc0>
+            <desc1>Limited notification features (small part of the commandset or limited notification channels)</desc1>
+            <desc2>Comprehensive notification features on several channels</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+      </element>
+      <element name="changesets" title="Changesets support">
+         <desc>Changesets are a way to group a number of modifications that are relevant to each other in one atomic package, that can be cancelled or propagated as needed.</desc>
+         <desc0>Changesets are not supported</desc0>
+         <desc1>Limited changeset support</desc1>
+         <desc2>Full changeset support</desc2>
+         <score></score>
+         <comment></comment>
+      </element>
+   </section>
+   <section name="repfeatures" title="Repository features">
+      <desc>Features on the repository level</desc>
+      <element name="storagemodels" title="Storage models">
+         <desc>Supported method of managing concurrent access</desc>
+         <comment></comment>
+         <element name="filelocking" title="File locking">
+            <desc>Only one user at a time has write access to a file</desc>
+            <desc0>No file locking</desc0>
+            <desc1>Limited file locking</desc1>
+            <desc2>File locking is the main storage model</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="versionmerging" title="Version merging">
+            <desc>Multiple users can edit the same file at the same time, the system provides facilities to merge changes into the central repository</desc>
+            <desc0>No version merging features</desc0>
+            <desc1>Limited version merging features</desc1>
+            <desc2>Version merging is the main storage model</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="distributedversioncontrol" title="Distributed version control">
+            <desc>Every user has a working copy that includes the complete repository, all changes are distributed by merging (pushing/pulling) between repositories.</desc>
+            <desc0>No distributed version control/desc0>
+            <desc1>Limited distributed version control</desc1>
+            <desc2>Distributed version control is the main storage model</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+      </element>
+      <element name="filesdirectories" title="Files and Directories">
+         <desc>Available operations on files and directories</desc>
+         <comment></comment>
+         <element name="delete" title="Delete">
+            <desc></desc>
+            <desc0>Files or directories can't be deleted</desc0>
+            <desc1>Only files or only directories can be deleted</desc1>
+            <desc2>Files and directories can be deleted</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="moveorrename" title="Move or rename">
+            <desc></desc>
+            <desc0>Files or directories can't be moved nor renamed</desc0>
+            <desc1>Only files or only directories can be moved or renamed</desc1>
+            <desc2>Files and directories can be moved and renamed</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="copy" title="Copy">
+            <desc></desc>
+            <desc0>Files or directories can't be copied in the repository</desc0>
+            <desc1>Only files or only directories can be copied in the repository</desc1>
+            <desc2>Files and directories can be copied in the repository</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+      </element>
+      <element name="repopermissions" title="Repository permissions">
+         <desc>Possibility to define permissions on different parts of the repository</desc>
+         <desc0>Access is open for the whole repository</desc0>
+         <desc1>Permissions can be set on the directory level</desc1>
+         <desc2>Permissions can be set on the file level</desc2>
+         <score></score>
+         <comment></comment>
+      </element>
+      <element name="metaproject" title="Metaproject">
+         <desc>Multi-tree (or nested trees) project support</desc>
+         <desc0>No metaproject features</desc0>
+         <desc1>Limited metaproject features</desc1>
+         <desc2>Project tree can contain nested trees</desc2>
+         <score></score>
+         <comment></comment>
+      </element>
+   </section>
+   <section name="deployment" title="Deployment">
+      <desc></desc>
+      <element name="architecture" title="Architecture">
+         <desc></desc>
+         <comment></comment>
+         <element name="repositoryreplication" title="Repository replication">
+            <desc>Possibility to clone a remote repository to get a functionally equivalent copy</desc>
+            <desc0>No replication/cloning between remote repositories</desc0>
+            <desc1>Limited replication/cloning between remote repositories</desc1>
+            <desc2>Replication/cloning between remote repositories is supported</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="repositorysync" title="Repository synchronization">
+            <desc>Propagation of changes from one repository to another</desc>
+            <desc0>No online synchronization between remote repositories</desc0>
+            <desc1>Limited synchronization between remote repositories</desc1>
+            <desc2>Synchronization between remote repositories is supported</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="disconnectedmode" title="Disconnected mode">
+            <desc>Possibility to work offline (with local history) and synchronize with central repository later</desc>
+            <desc0>No local history is kept when disconnected</desc0>
+            <desc1>Limited local history is kept when disconnected</desc1>
+            <desc2>Full disconnected mode</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+      </element>
+      <element name="authbackends" title="Authentication backends">
+         <desc>Supported authentication backends</desc>
+         <comment></comment>
+         <element name="ldap" title="LDAP">
+            <desc>Lightweight Directory Access Protocol</desc>
+            <desc0>No LDAP authentication support</desc0>
+            <desc1>Limited LDAP authentication support</desc1>
+            <desc2>Full LDAP and Active Directory authentication support</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="rdbms" title="RDBMS">
+            <desc>Relational database management systems</desc>
+            <desc0>No RDBMS authentication support</desc0>
+            <desc1>Authentication possible through few RDBMS</desc1>
+            <desc2>RDBMS authentication possible through standards API (like JDBC, ...)</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="file" title="File">
+            <desc>Authentication based on user file</desc>
+            <desc0>No file-based authentication is possible</desc0>
+            <desc1>Limited file-based authentication</desc1>
+            <desc2>File-based authentication is fully supported</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="others" title="Others">
+            <desc>Other supported authentication backends</desc>
+            <comment></comment>
+         </element>
+      </element>
+      <element name="integration" title="Integration">
+         <desc></desc>
+         <comment></comment>
+         <element name="developmenttools" title="Development tools">
+            <desc>Integration with development tools</desc>
+            <comment></comment>
+            <element name="ideintegration" title="IDE integration">
+               <desc>Integration with Integrated Development Environments (IDE)</desc>
+               <desc0>No IDE integration</desc0>
+               <desc1>Integration limited to few IDE</desc1>
+               <desc2>Integration possible with most known IDE</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="bugtrackersintegration" title="Bugtracker integration">
+               <desc>Integration with bugtracking systems</desc>
+               <desc0>No bugtracker integration</desc0>
+               <desc1>Integration limited to few bugtrackers</desc1>
+               <desc2>Integration possible with most known bugtrackers</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="forgeintegration" title="Forge integration">
+               <desc>Intregration with forge solutions</desc>
+               <desc0>No forge integration</desc0>
+               <desc1>Integration limited to few forges</desc1>
+               <desc2>Integration possible with most known forges</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+         </element>
+         <element name="desktopintegration" title="Desktop integration">
+            <desc></desc>
+            <comment></comment>
+            <element name="officesuite" title="Office suite integration">
+               <desc>Integration in office suites to provide document versionning</desc>
+               <desc0>No intregration possible with office suites</desc0>
+               <desc1>Limited integration with office suites (few features or very few suites are supported)</desc1>
+               <desc2>Full integration with most known office suites</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="filemanager" title="File manager integration">
+               <desc>Integration in operating systems' file managers</desc>
+               <desc0>No intregration possible with OS file managers</desc0>
+               <desc1>Limited integration with OS file managers (few features or very few OS are supported)</desc1>
+               <desc2>Full integration with most known OS file managers</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+         </element>
+         <element name="availableapis" title="Available APIs">
+            <desc>Available APIs to integrate revision system with other applications</desc>
+            <desc0>No API is available</desc0>
+            <desc1>Poorly features API or very few languages are supported</desc1>
+            <desc2>Full APIs available in several languages</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+      </element>
+   </section>
+   <section name="netsupport" title="Network support">
+      <desc></desc>
+      <element name="csprotocol" title="Client/Server protocols">
+         <desc></desc>
+         <comment></comment>
+         <element name="rpc" title="RPC">
+            <desc>Remote Procedure Call</desc>
+            <desc0>RPC is not supported</desc0>
+            <desc1>Limited RPC support (some features are not available via RPC)</desc1>
+            <desc2>RPC is fully supported</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="tcpsocket" title="TCP/IP socket">
+            <desc></desc>
+            <desc0>TCP/IP sockets are not supported</desc0>
+            <desc1>Limited TCP/IP socket support (some features are not available via sockets)</desc1>
+            <desc2>TCP/IP sockets are fully supported</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="propprotocol" title="Proprietary protocol">
+            <desc>Proprietary protocol provided by the system</desc>
+            <desc0>No C/S proprietary protocol is provided</desc0>
+            <desc1>Limited C/S proprietary protocol is provided (some features are not available)</desc1>
+            <desc2>System implements a C/S proprietary protocol</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+      </element>
+      <element name="webprotocols" title="Web protocols">
+         <desc></desc>
+         <comment></comment>
+         <element name="http" title="HTTP">
+            <desc></desc>
+            <desc0>HTTP is not supported</desc0>
+            <desc1>Limited HTTP support (some features are not available via HTTP)</desc1>
+            <desc2>HTTP is fully supported</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="webdav" title="WebDAV">
+            <desc></desc>
+            <desc0>WebDAV is not supported</desc0>
+            <desc1>Limited WebDAV support (some features are not available via HTTP)</desc1>
+            <desc2>WebDAV is fully supported</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="ftp" title="FTP">
+            <desc></desc>
+            <desc0>FTP is not supported</desc0>
+            <desc1>Limited FTP support (some features are not available via FTP)</desc1>
+            <desc2>FTP is fully supported</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="smtp" title="SMTP">
+            <desc></desc>
+            <desc0>SMTP is not supported</desc0>
+            <desc1>Limited SMTP support (some features are not available via SMTP)</desc1>
+            <desc2>SMTP is fully supported</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+      </element>
+      <element name="fsprotocols" title="Filesystem protocols">
+         <desc>Remote filesystem protocols (NFS, SMB, ...)</desc>
+         <desc0>No remote filesystem protocol is supported</desc0>
+         <desc1>Limited remote filesystem support (some features are not available)</desc1>
+         <desc2>Remote filesystem protocols are fully supported</desc2>
+         <score></score>
+         <comment></comment>
+      </element>
+      <element name="security" title="Security">
+         <desc>Network security features</desc>
+         <comment></comment>
+         <element name="sslsupport" title="SSL support">
+            <desc></desc>
+            <desc0>SSL is not supported</desc0>
+            <desc1>Limited SSL support</desc1>
+            <desc2>SSL is fully supported</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="sshtunneling" title="SSH tunneling">
+            <desc></desc>
+            <desc0>SSH is not supported</desc0>
+            <desc1>Limited SSH support</desc1>
+            <desc2>SSH is fully supported</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+      </element>
+   </section>
+   <section name="tools" title="Tools">
+      <desc></desc>
+      <element name="userinterface" title="User interface">
+         <desc></desc>
+         <comment></comment>
+         <element name="webinterface" title="Web interface">
+            <desc></desc>
+            <desc0>No web interface is available</desc0>
+            <desc1>Limited web interface is available</desc1>
+            <desc2>Full web interface is available</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="graphicalclients" title="Graphical clients">
+            <desc></desc>
+            <desc0>No graphical clients are available</desc0>
+            <desc1>Graphical clients are available on few operating systems</desc1>
+            <desc2>Full featured graphical clients are available on most operating systems</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+      </element>
+      <element name="administration" title="Administration">
+         <desc></desc>
+         <comment></comment>
+         <element name="cli" title="Command line interface">
+            <desc></desc>
+            <desc0>No command line interface is available</desc0>
+            <desc1>Limited command line interface is available or few OS are supported</desc1>
+            <desc2>Full featured command line interface is available</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="visualinterface" title="Visual interface">
+            <desc></desc>
+            <desc0>No visual console is available</desc0>
+            <desc1>Limited visual console is available or few OS are supported</desc1>
+            <desc2>Full featured visual console is available</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="audittrail" title="Audit trail">
+            <desc>Find Who did What When</desc>
+            <desc0>No audit fonctionality</desc0>
+            <desc1>Limited audit fonctionalities are available</desc1>
+            <desc2>Comprehensive audit fonctionalities are available</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="changemanagement" title="Change Management Policies">
+            <desc>Approval and notification</desc>
+            <desc0>No change management policies can be implemented</desc0>
+            <desc1>Limited change management features are available</desc1>
+            <desc2>Comprehensive change management features (policies, monitoring, approval processes)</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+      </element>
+   </section>
+</document>
