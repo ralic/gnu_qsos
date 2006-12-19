@@ -174,7 +174,7 @@
          </element>
          <element name="distributedversioncontrol" title="Distributed version control">
             <desc>Every user has a working copy that includes the complete repository, all changes are distributed by merging (pushing/pulling) between repositories.</desc>
-            <desc0>No distributed version control/desc0>
+            <desc0>No distributed version control</desc0>
             <desc1>Limited distributed version control</desc1>
             <desc2>Distributed version control is the main storage model</desc2>
             <score></score>
