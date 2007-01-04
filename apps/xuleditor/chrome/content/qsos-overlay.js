@@ -17,6 +17,7 @@ var myListener = {
 	onStateChange:function(a,b,c,d){},
 	onLocationChange:function(aProgress,aRequest,aURI) {
 		var url = aURI.spec;
+		url = url.split('?')[0];
 		if (url.substr(-5) == ".qsos") window.openDialog('chrome://qsos-xuled/content/editor.xul','test', '_blank', 'chrome,dialog=no', url);
 	},
 	onProgressChange:function(a,b,c,d,e,f){},
