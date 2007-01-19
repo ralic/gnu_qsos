@@ -559,7 +559,7 @@
    <section name="multimedia" title="Multimedia (voice and video) support">
       <element name="voip" title="Voice over IP Support">
          <element name="protocol" title="Compatible Protocols">
-            <element name="h323" title="H323 protocol compatibility">
+            <element name="h323" title="H.323 protocol compatibility">
                <desc0>Not compatible</desc0>
                <desc1>Partially compatible</desc1>
                <desc2>Fully compatible</desc2>
