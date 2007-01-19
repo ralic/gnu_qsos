@@ -1,0 +1,888 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document>
+   <header>
+      <authors>
+&gt;
+    </authors>
+      <dates>
+         <creation></creation>
+         <validation></validation>
+      </dates>
+      <language>en</language>
+      <appname>Psi</appname>
+      <release>0.10</release>
+      <licenseid>31</licenseid>
+      <licensedesc>GNU GPL</licensedesc>
+      <url>http://psi-im.org</url>
+      <desc>Psi is a Jabber client looking (by design) like licq. Besides basic instant messaging services, it provides support for features like groupchat and multiple accounts. 
+ For more information on jabber, see www.jabber.org (or the jabber package which contains the jabber server software).</desc>
+      <demourl></demourl>
+      <qsosformat>1.6</qsosformat>
+      <qsosappfamily>Jabber client</qsosappfamily>
+      <qsosspecificformat></qsosspecificformat>
+   </header>
+   <section name="generic" title="Generic section">
+      <desc>Generic criteria from QSOS version 1.6</desc>
+      <element name="intrinsicdurability" title="Intrinsic durability">
+         <desc>Intrinsic durability</desc>
+         <element name="maturity" title="Maturity">
+            <desc>Maturity</desc>
+            <element name="age" title="Age">
+               <desc0>less than 3 months</desc0>
+               <desc1>if between 3 months and 3 years</desc1>
+               <desc2>after 3 years</desc2>
+               <score>2</score>
+               <comment>The first entry of the changelog was created the 2004-01-02.</comment>
+            </element>
+            <element name="stability" title="Stability">
+               <desc0>Unstable software with numerous releases or patches generating side effects</desc0>
+               <desc1>Stabilized production release existing but old. Difficulties to stabilize developpement releases</desc1>
+               <desc2>Stabilized software. Releases provide bug fixes corrections but mainly new functionalities</desc2>
+               <score>2</score>
+               <comment></comment>
+            </element>
+            <element name="historyknowproblems" title="History, know problems">
+               <desc0>Software knows several problems which can be prohibitive</desc0>
+               <desc1>No know major problem or crisis</desc1>
+               <desc2>History of good management of crisis situations</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="forkprobability" title="Fork probability, source of Forking">
+               <desc0>Software is very likely to be forked in the future</desc0>
+               <desc1>Software comes from a fork but has very few chances of being forked in the future</desc1>
+               <desc2>Software has very little chance of being forked. It does not come from a fork either</desc2>
+               <score>2</score>
+               <comment></comment>
+            </element>
+         </element>
+         <element name="adoption" title="Adoption">
+            <desc>Adoption by community and industry</desc>
+            <element name="popularity" title="Popularity (related to: general public, niche, ...)">
+               <desc0>Very few users identified</desc0>
+               <desc1>Detectable use on Internet</desc1>
+               <desc2>Numerous users, numerous references</desc2>
+               <score>2</score>
+               <comment></comment>
+            </element>
+            <element name="references" title="References">
+               <desc0>None</desc0>
+               <desc1>Few refences, non critical usages</desc1>
+               <desc2>Often implemented for critical applications</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="contributingcommunity" title="Contributing Community">
+               <desc0>No community or without real activity (forum, mailing list, ...)</desc0>
+               <desc1>Existing community with a notable activity</desc1>
+               <desc2>Strong community: big activity on forums, numerous contributors and advocates</desc2>
+               <score>2</score>
+               <comment></comment>
+            </element>
+            <element name="books" title="books">
+               <desc0>No book about the software</desc0>
+               <desc1>Less than 5 books about the software are available</desc1>
+               <desc2>More than 5 books about software are available, in several languages</desc2>
+               <score>0</score>
+               <comment></comment>
+            </element>
+         </element>
+         <element name="developmentleadership" title="Development leadership">
+            <desc>Organisation and leadership of developments</desc>
+            <element name="leadingteam" title="Leading team">
+               <desc0>1 to 2 individuals involved, not clearly identified</desc0>
+               <desc1>Between 2 and 5 independent people</desc1>
+               <desc2>More than 5 people</desc2>
+               <score>1</score>
+               <comment></comment>
+            </element>
+            <element name="managementstyle" title="Management style">
+               <desc0>Complete dictatorship</desc0>
+               <desc1>Enlightened despotism</desc1>
+               <desc2>Council of architects with identified leader (e.g: KDE)</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+         </element>
+         <element name="activity" title="Activity">
+            <desc>Activity of the project and around the software</desc>
+            <element name="developersidentificationturnover" title="Developers, identification, turnover">
+               <desc0>Less than 3 developers, not clearly identified</desc0>
+               <desc1>Between 4 and 7 developers, or more unidentified developers with important turnover</desc1>
+               <desc2>More than 7 developers, very stable team</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="activityonbugs" title="Activity on bugs">
+               <desc0>Slow reactivity in forum or on mailing list, or nothing regarding bug fixes in releases note</desc0>
+               <desc1>Detectable activity but without process clearly exposed, loing reaction/resolution time</desc1>
+               <desc2>Strong reactivity based on roles and tasks assignment</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="activityonfunctionalities" title="Activity on functionalities">
+               <desc0>No or few new functionalities</desc0>
+               <desc1>Evolution of the product driven by the core team or by user's request without any clearly explained process</desc1>
+               <desc2>Tool(s) to manage feature requests, strong interaction with roadmap</desc2>
+               <score>2</score>
+               <comment></comment>
+            </element>
+            <element name="activityonreleases" title="Activity on releases">
+               <desc0>Very weak activity on both production and development releases</desc0>
+               <desc1>Activity on production and developmenet releases. Frequent minor releases (bug fixes)</desc1>
+               <desc2>Important activity with frequent minor releases (bugs fixes) and planned major releases relating to the roadmap forcast</desc2>
+               <score>2</score>
+               <comment></comment>
+            </element>
+         </element>
+      </element>
+      <element name="industrializedsolution" title="Industrialized solution">
+         <desc>Industrialization level of the project</desc>
+         <element name="independenceofdevelopments" title="Independence of developments">
+            <desc0>Developments realized at 100% by employees of a single company</desc0>
+            <desc1>60% maximum</desc1>
+            <desc2>20% maximum</desc2>
+            <score>2</score>
+            <comment></comment>
+         </element>
+         <element name="services" title="Services">
+            <desc>Services offering</desc>
+            <element name="training" title="Training">
+               <desc0>No offer of training identified</desc0>
+               <desc1>Offer exists but is restricted geographically and to one language or is provided by a single contractor</desc1>
+               <desc2>Rich offers provided by several contractors, in serveral languages and split into modules of gradual levels</desc2>
+               <score>0</score>
+               <comment></comment>
+            </element>
+            <element name="support" title="Support">
+               <desc0>No offer of support except via public forums and mailing lists</desc0>
+               <desc1>Offer exists but is provided by a single contractor without strong commitment quality of services</desc1>
+               <desc2>Multiple service providers with strong commitment (e.g: guaranteed resolution time)</desc2>
+               <score>1</score>
+               <comment></comment>
+            </element>
+            <element name="consulting" title="Consulting">
+               <desc0>No offer of consulting service</desc0>
+               <desc1>Offer exists but is restricted geographically and to one language or is provided by a single contractor</desc1>
+               <desc2>Consulting services provided by different contractors in serveral languages</desc2>
+               <score>0</score>
+               <comment></comment>
+            </element>
+         </element>
+         <element name="documentation" title="Documentation">
+            <desc0>No user documentation</desc0>
+            <desc1>Documentation exists but shifted in time, is restricted to one language or is poorly detailed</desc1>
+            <desc2>Documentation always up to date, translated and possibly adapted to different target readers (end user, sysadmin, manager, ...)</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="qualityassurance" title="Quality Assurance">
+            <desc>Quality assurance process</desc>
+            <element name="quality" title="Quality Assurance">
+               <desc0>No QA process</desc0>
+               <desc1>Identifies QA process but not much formalized and with no tool</desc1>
+               <desc2>Automatic testing process included in code's life-cycle with publication of results</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="tools" title="Tools">
+               <desc0>No bug or feature request management tool</desc0>
+               <desc1>Standard tools provided (for instance by a hosting forge) but poorly used</desc1>
+               <desc2>Very active use of tools for roles/tasks allocation and progress monitoring</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+         </element>
+         <element name="packaging" title="Packaging">
+            <desc>Packaging for various operating systems</desc>
+            <element name="packagingsource" title="Source">
+               <desc0>Software can't be installed from source without lot of work</desc0>
+               <desc1>Installation from source is limited and depends on very strict conditions (OS, arch, lib, ...)</desc1>
+               <desc2>Installation from source is easy</desc2>
+               <score>2</score>
+               <comment></comment>
+            </element>
+            <element name="packagingdebian" title="Debian">
+               <desc0>The software is not packaged for Debian</desc0>
+               <desc1>A Debian package exists but it has important issues or it doesn't have official support</desc1>
+               <desc2>The software is packaged in the distribution</desc2>
+               <score>2</score>
+               <comment></comment>
+            </element>
+            <element name="packagingfreebsd" title="FreeBSD">
+               <desc0>The software is not packaged for FreeBSD</desc0>
+               <desc1>A port exists but it has important issues or it doesn't have official support</desc1>
+               <desc2>A official port exists in FreeBSD</desc2>
+               <score>2</score>
+               <comment></comment>
+            </element>
+            <element name="packaginghpux" title="HP-UX">
+               <desc0>The software is not packaged for HP-UX</desc0>
+               <desc1>A package exists but it has important issues or it doesn't have official support</desc1>
+               <desc2>A stable package is provided for HP-UX</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="packagingmacosx" title="MacOSX">
+               <desc0>The software is not packaged for MacOSX</desc0>
+               <desc1>A package exists but it has important issues or it doesn't have official support</desc1>
+               <desc2>The software is packaged in the distribution</desc2>
+               <score>1</score>
+               <comment></comment>
+            </element>
+            <element name="packagingmandriva" title="Mandriva">
+               <desc0>The software is not packaged for Mandriva</desc0>
+               <desc1>A package exists but it has important issues or it doesn't have official support</desc1>
+               <desc2>The software is packaged in the distribution</desc2>
+               <score>2</score>
+               <comment></comment>
+            </element>
+            <element name="packagingnet" title="NetBSD">
+               <desc0>The software is not packaged for NetBSD</desc0>
+               <desc1>A port exists but it has important issues or it doesn't have official support</desc1>
+               <desc2>A official port exists in NetBSD</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="packagingopen" title="OpenBSD">
+               <desc0>The software is not packaged for OpenBSD</desc0>
+               <desc1>A port exists but it has important issues or it doesn't have official support</desc1>
+               <desc2>A official port exists in OpenBSD</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="packagingredhat" title="RedHat">
+               <desc0>The software is not packaged for RedHat/Fedora</desc0>
+               <desc1>A package exists but it has important issues or it doesn't have official support</desc1>
+               <desc2>The software is packaged in the distribution</desc2>
+               <score>2</score>
+               <comment></comment>
+            </element>
+            <element name="packagingsolaris" title="Solaris">
+               <desc0>The software is not packaged for Solaris</desc0>
+               <desc1>A package exists but it has important issues or it doesn't have official support (e.g: SunFreeware.com )</desc1>
+               <desc2>The software is supported by Sun for Solaris</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="packagingsuse" title="SuSE">
+               <desc0>The software is not packaged for SuSE</desc0>
+               <desc1>A package exists but it has important issues or it doesn't have official support</desc1>
+               <desc2>The software is packaged in the distribution</desc2>
+               <score>2</score>
+               <comment></comment>
+            </element>
+            <element name="packagingwindows" title="Windows">
+               <desc0>The project can't be installed on Windows</desc0>
+               <desc1>A package exists but it is limited or has important issues or just cover some specific Windows release (e.g: Windows2000 and WindowsXP)</desc1>
+               <desc2>Windows is full supported and a package is provided</desc2>
+               <score>1</score>
+               <comment></comment>
+            </element>
+         </element>
+      </element>
+      <element name="exploitability" title="Exploitability">
+         <desc>Exploitability level</desc>
+         <element name="easeofuseergonomics" title="Ease of use, ergonomics">
+            <desc0>Difficult to use, requires an in depth knowledge of the software functionality</desc0>
+            <desc1>Austere and very technical ergonomics</desc1>
+            <desc2>GUI including help functions and elaborated ergonomics</desc2>
+            <score>1</score>
+            <comment>Some part of the GUI are not easy to understand and need technical knowledge</comment>
+         </element>
+         <element name="administrationmonitoring" title="Administration / Monitoring">
+            <desc0>No administrative or monitoring functionalities</desc0>
+            <desc1>Existing, functionalities but uncomplete and or need improvement</desc1>
+            <desc2>Complete and easy-to-use administration and monitoring functionalities. Possible integration with external tools (e.g: SNMP, syslog, ...)</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+      </element>
+      <element name="technicaladaptability" title="Technical adaptability">
+         <desc>Technical adaptability</desc>
+         <element name="modularity" title="Modularity">
+            <desc0>Monolithic software</desc0>
+            <desc1>Presence of hight level modules allowing a first level of software adaptation</desc1>
+            <desc2>Modular conception, allowing easy adaptation of the software by selecting or creating modules</desc2>
+            <score>0</score>
+            <comment>A plugin mechanism is on the way for the next release</comment>
+         </element>
+         <element name="codemodification" title="Code modification">
+            <desc0>Everything by hand</desc0>
+            <desc1>Recompilation possible but complex without any tools or documentation</desc1>
+            <desc2>Recompilation with tools (e.g: make, ANT, ...) and documentation provided</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="codeextension" title="Code extention">
+            <desc0>Any modification requires code recompilation</desc0>
+            <desc1>Architecture designed for static extension but requires recompilation</desc1>
+            <desc2>Principle of plugin, architecture designed for dynamic extension without recompilation</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+      </element>
+      <element name="strategy" title="Strategy">
+         <desc>Project's strategy</desc>
+         <element name="license" title="License">
+            <desc>License</desc>
+            <element name="permissiveness" title="Permissiveness (only if user wants to become owner of code)">
+               <desc0>Very strict license, like GPL</desc0>
+               <desc1>Moderate permissive license located between both extremes (GPL and BSD) dual-licensing depending on the type of user (person, company, ...) or their activities</desc1>
+               <desc2>Very permissive like BSD or Apache licenses</desc2>
+               <score>0</score>
+               <comment></comment>
+            </element>
+            <element name="protectionagainstproprietaryforks" title="Protection against proprietary forks">
+               <desc0>Very permissive like BSD or Apache licenses</desc0>
+               <desc1>Moderate permissive license located between both extremes (GPL and BSD), dual-licensing depending on the type of user (person, company, ...) or their activies</desc1>
+               <desc2>Very strict license, like GPL</desc2>
+               <score>2</score>
+               <comment></comment>
+            </element>
+         </element>
+         <element name="copyrightowners" title="Copyright owners">
+            <desc0>Rights held by a few individuals or entities, making it easier to change the license</desc0>
+            <desc1>Rights held by numerous individuals owning the code in a homogeneous way, making relicense very difficult</desc1>
+            <desc2>Rights held by a legal entity in whom the community trusts (e.g: FSF or ASF)</desc2>
+            <score>0</score>
+            <comment>Justin Karneges is the owner of the source</comment>
+         </element>
+         <element name="modificationofsourcecode" title="Modification of source code">
+            <desc0>No pratical way to propose code modification</desc0>
+            <desc1>Tools provided to access and modify code (like CVS or SVN) but not really used to develop the software</desc1>
+            <desc2>The code modification process is well defined, exposed and respected, based on roles assignment</desc2>
+            <score>2</score>
+            <comment>The source repository use subversion.</comment>
+         </element>
+         <element name="roadmap" title="Roadmap">
+            <desc0>No published roadmap</desc0>
+            <desc1>Existing roadmap without planning</desc1>
+            <desc2>Versionned roadmap, with planning and measure of delays</desc2>
+            <score>2</score>
+            <comment></comment>
+         </element>
+         <element name="sponsor" title="Sponsor">
+            <desc0>Software has no sponsor, the core team is not paid</desc0>
+            <desc1>Software has an unique sponsor who might determine its strategy</desc1>
+            <desc2>Software is sponsored by industry</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="strategicalindependence" title="Strategical independence">
+            <desc0>No detectable strategy or strong dependency on one unique actor (person, company, sponsor)</desc0>
+            <desc1>Strategical vision shared with several other free and open source projects but without strong commitment from copyrights owners</desc1>
+            <desc2>Strong independence of the code team, legal entity holding rights, strong involvement in the standardization process</desc2>
+            <score>1</score>
+            <comment></comment>
+         </element>
+      </element>
+   </section>
+   <section name="hmi" title="Human/Machine Interface and other features">
+      <element name="skins" title="Customizable skins support">
+         <desc0>No customizable skin</desc0>
+         <desc1>Custumizable skin but needs complicated manipulation</desc1>
+         <desc2>User friendly skin support</desc2>
+         <score></score>
+         <comment>List of other clients using the same skin constituent:
+			</comment>
+      </element>
+      <element name="accounts" title="Accounts management">
+         <element name="accountcreation" title="Creation">
+            <desc0>No account creation is possible directly in the client</desc0>
+            <desc1>Account creation is possible for part of the protocols supported</desc1>
+            <desc2>Account creation is avalaible for all supported protocols</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="accountaccess" title="Access to an account for management">
+            <desc0>No link for account management provided by the client</desc0>
+            <desc1>Link to the account management page for all or part of supported protocols</desc1>
+            <desc2>A native interface exists to edit accounts (all or part of supported protocols)</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="accountdeleting" title="Deleting an account">
+            <desc0>Deleting an account is not possible via the client</desc0>
+            <desc1>Link to the deletion page of an account is provided</desc1>
+            <desc2>A native interface permits to delete an account without browsing the web</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+      </element>
+      <element name="plugins" title="Plug-in support">
+         <desc0>No plug-in system integrated to the client</desc0>
+         <desc1>Limited plug-ins features</desc1>
+         <desc2>Advanced plug-ins features</desc2>
+         <score></score>
+         <comment></comment>
+      </element>
+      <element name="bandwidth" title="Minimum bandwidth need">
+         <desc0>512KB/sec at least</desc0>
+         <desc1>256KB/sec at least</desc1>
+         <desc2>64KB/sec or less</desc2>
+         <score></score>
+         <comment></comment>
+      </element>
+   </section>
+   <section name="Jabber" title="XMPP Protocol">
+      <desc>Textual Instant Messaging Protocols Supported</desc>
+      <element name="Open" title="Open Standard Protocols">
+         <desc></desc>
+         <comment></comment>
+         <element name="xmmp" title="Extensible Messaging and Presence Protocol">
+            <desc>Core protocol of the Jabber Instant Messaging and Presence technology</desc>
+            <element name="muc" title="Multi User Chatroom (MUC) handling">
+               <desc>Multi User Chatroom features</desc>
+               <desc0>No MUC support</desc0>
+               <desc1>Limited MUC support</desc1>
+               <desc2>MUC is fully supported</desc2>
+               <score>2</score>
+               <comment></comment>
+            </element>
+            <element name="priority" title="Ressource priority handling">
+               <desc0>No Ressource priority support</desc0>
+               <desc1>Limited support of Ressource priority</desc1>
+               <desc2>Full support of Ressource priority</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="vcard" title="vCard Support">
+               <desc0>No vCard support</desc0>
+               <desc1>Old vCard specification supported</desc1>
+               <desc2>Flexible vCard support</desc2>
+               <score>2</score>
+               <comment></comment>
+            </element>
+            <element name="avatar" title="Avatar system">
+               <desc0>No avatar system is provided by the client</desc0>
+               <desc1>http-storage avatar system</desc1>
+               <desc2>vCard-based avatar</desc2>
+               <score>2</score>
+               <comment></comment>
+            </element>
+         </element>
+         <element name="presence" title="Presence Status Handling">
+            <desc>Presence handling features</desc>
+            <comment></comment>
+            <element name="presencestatus" title="Presence status handling">
+               <desc0>No presence status features</desc0>
+               <desc1>Basic presence status indicators only</desc1>
+               <desc2>Customizable Status indicators</desc2>
+               <score>2</score>
+               <comment></comment>
+            </element>
+            <element name="away" title="Auto-away handling">
+               <desc0>No auto-away system</desc0>
+               <desc1>Basic auto-away system</desc1>
+               <desc2>Advanced auto-away system</desc2>
+               <score>2</score>
+               <comment></comment>
+            </element>
+            <element name="customizablepresence" title="Customizable presence features">
+               <desc0>Presence status is the same for all contacts (one presence status even for more than one account)</desc0>
+               <desc1>Presence status can be different from one account to another</desc1>
+               <desc2>Presence status can be set for each contact</desc2>
+               <score>1</score>
+               <comment></comment>
+            </element>
+         </element>
+         <element name="imtools" title="Instant Messaging tools and gadgets">
+            <desc>Tools provided to enlarge Instant Messaging possibilities</desc>
+            <comment></comment>
+            <element name="securityim" title="Security">
+               <desc></desc>
+               <comment></comment>
+               <element name="encryption" title="SSL/SASL/TSL encryption features">
+                  <desc0>No encryption support</desc0>
+                  <desc1>Encryption partially supported</desc1>
+                  <desc2>Advanced encryption suport</desc2>
+                  <score>2</score>
+                  <comment></comment>
+               </element>
+               <element name="p2pencryption" title="Peer to peer encryption">
+                  <desc0>No peer to peer encryption support</desc0>
+                  <desc1>Basic peer to peer encryption support</desc1>
+                  <desc2>GPG based encryption</desc2>
+                  <score>2</score>
+                  <comment></comment>
+               </element>
+            </element>
+            <element name="smileys" title="Smileys">
+               <desc0>No smileys avalaible</desc0>
+               <desc1>Basics smileys avalaible</desc1>
+               <desc2>Ability to extend and share smileys list</desc2>
+               <score>1</score>
+               <comment></comment>
+            </element>
+            <element name="nudge" title="Nudge">
+               <desc0>No nudge support</desc0>
+               <desc1>Nudge partially supported</desc1>
+               <desc2>Nudge fully supported</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="whiteboard" title="Whiteboard">
+               <desc0>No whiteboard support</desc0>
+               <desc1>Partial support of whiteboard</desc1>
+               <desc2>Full support of whiteboard</desc2>
+               <score>0</score>
+               <comment></comment>
+            </element>
+            <element name="games" title="Game integration to the client">
+               <desc0>No game provided</desc0>
+               <desc1>Limited choice of games with dependencies to the used protocol</desc1>
+               <desc2>Large choice of games compatible with different protocols/clients</desc2>
+               <score>0</score>
+               <comment></comment>
+            </element>
+         </element>
+         <element name="Specific" title="Own Specific Protocol">
+            <desc></desc>
+            <desc2>The IM module uses exclusively standard open protocols</desc2>
+            <desc1>The IM module is based on costumized existing open protocole</desc1>
+            <desc0>The IM module uses a Proprietary Protocol</desc0>
+            <score>2</score>
+            <comment>Psi is a Jabber client</comment>
+         </element>
+         <element name="Proprietary" title="Proprietary Protocols">
+            <desc>Compatibility of the client with the different most popular proprietary protocols of Instant Messaging (throught gateways)</desc>
+            <element name="gateways" title="Access to Proprietary Protocols">
+               <desc>Supported Protocol using Jabber gateways or native protocols</desc>
+               <comment></comment>
+            </element>
+         </element>
+      </element>
+   </section>
+   <section name="multimedia" title="Multimedia (voice and video) support">
+      <element name="voip" title="Voice over IP Support">
+         <element name="protocol" title="Compatible Protocols">
+            <element name="h323" title="H.323 protocol compatibility">
+               <desc0>Not compatible</desc0>
+               <desc1>Partially compatible</desc1>
+               <desc2>Fully compatible</desc2>
+               <score>0</score>
+               <comment></comment>
+            </element>
+            <element name="libjingle" title="Jingle compatibility">
+               <desc0>Not compatible</desc0>
+               <desc1>Partially compatible</desc1>
+               <desc2>Fully compatible</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="sip" title="SIP compatibility">
+               <desc0>Not compatible</desc0>
+               <desc1>Partially compatible</desc1>
+               <desc2>Fully compatible</desc2>
+               <score>0</score>
+               <comment></comment>
+            </element>
+            <element name="otherprotocolscompatible" title="List of other protocols compatible">
+               <desc>List of open or proprietary protocols compatible</desc>
+               <comment></comment>
+            </element>
+         </element>
+         <element name="telecominfrastructure" title="Integration to traditional telecom infrastructure">
+            <comment></comment>
+            <element name="integration" title="Compatibility with traditional telecom infrastructure">
+               <desc></desc>
+               <desc0>No compatibility</desc0>
+               <desc1>Traditional telecom infrastructure is supported but bugs exists</desc1>
+               <desc2>The system is entirely compatible with traditional telecom without important bugs</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="billing" title="Billing and prepaid systems">
+               <desc></desc>
+               <desc0>No billing system needed (no external call possible with the client)</desc0>
+               <desc1>Limited billing system</desc1>
+               <desc2>Adanced billing system</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+         </element>
+         <element name="additionalfeatures" title="Additional features">
+            <desc>Additional features</desc>
+            <comment></comment>
+            <element name="AECvoip" title="Acoustic Echo Cancellation (AEC) support">
+               <desc0>No AEC provided</desc0>
+               <desc1>AEC system exists but doesn't work properly</desc1>
+               <desc2>Full support of AEC</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="ivrasr" title="Interactive Voice Response (IVR) and Automatic Speech Recognition (ASR)">
+               <desc>Interaction with call centers possibilities</desc>
+               <desc0>IVR and ASR are not supported</desc0>
+               <desc1>IVR works but not ASR</desc1>
+               <desc2>ASR and IVR works correctly</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="vms" title="Voice mails (VMS) support">
+               <desc>Voice Mails features</desc>
+               <desc0>No VMS support</desc0>
+               <desc1>Limited VMS features</desc1>
+               <desc2>Large Pannel of VMS possibilites</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+         </element>
+      </element>
+      <element name="visio" title="Visio Support">
+         <element name="standard" title="Protocols supported for Visio Module">
+            <desc>List of used protocols for Visio support Jingle, SIP, proprietary protocols, etc.)</desc>
+            <comment></comment>
+         </element>
+         <element name="os" title="Supported OS for Visio Module">
+            <element name="visiopackaging" title="Existing packaging">
+               <desc>List of existing OS packaging</desc>
+               <comment></comment>
+            </element>
+            <element name="interplateform" title="Compatibility between different packaging">
+               <desc0>Only one plateform supported</desc0>
+               <desc1>Multi-plateform support but no inter-plateform connexion is possible</desc1>
+               <desc2>Full multi-plateform support</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+         </element>
+         <element name="technology" title="Advanced features">
+            <element name="audiocompression" title="Audio compression">
+               <desc>Details about audio compression for videoconferencing</desc>
+               <comment></comment>
+               <element name="audioquality" title="Audio quality">
+                  <desc0>Telephone quality (8KHz sampled sound)</desc0>
+                  <desc1>FM qualtity (16Khz sampled sound at least)</desc1>
+                  <desc2>Hi-fi quality (24Khz sampled sound at least)</desc2>
+                  <score></score>
+                  <comment></comment>
+               </element>
+               <element name="audiocodecs" title="Codecs used for audio compression">
+                  <desc>Lists of supported audio codecs</desc>
+                  <comment></comment>
+               </element>
+            </element>
+            <element name="videocompression" title="video compression">
+               <desc0>Codecs and video format suitable for low rated networks</desc0>
+               <desc1>Codecs and video format optimized for large band networks</desc1>
+               <desc2>Video flows are customizable to fit the networks capacities</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="patentissues" title="Patent issues with codecs provided">
+               <desc>List of codecs provided and details about patent issues</desc>
+               <comment></comment>
+            </element>
+            <element name="propcodecs" title="Proprietary codecs used">
+               <desc>List of proprietary codecs used</desc>
+               <comment></comment>
+            </element>
+            <element name="AECvisio" title="Acoustic Echo Cancellation (AEC) support">
+               <desc0>No AEC provided</desc0>
+               <desc1>AEC system exists but doesn't work properly</desc1>
+               <desc2>Full support of AEC</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="datatransfert" title="Data transfert">
+               <desc0>No data transfert is expected with VideoConferencing</desc0>
+               <desc1>Data transfert works  but hardly if behind a firewall or a NAT server</desc1>
+               <desc2>Data transfert is fully supported</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+         </element>
+         <element name="multipoint" title="Multi Point Videoconferencig">
+            <desc0>Only peer to peer videoconferencing is supported</desc0>
+            <desc1>Multi point Video conferencing is possible but no dedicated servers exists</desc1>
+            <desc2>A dedicated architecture permits multi point videoconferencing</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+      </element>
+      <element name="multimedianetworks" title="Network Architecture for Multimedia supports">
+         <desc></desc>
+         <comment></comment>
+         <element name="gwmg" title="Gateway and Media Gateway">
+            <desc>List of Gateway and Media Gateways used/supported for VoIP module</desc>
+            <comment></comment>
+         </element>
+         <element name="gkmgc" title="Gatekeeper and Media Gateway Controller">
+            <desc></desc>
+            <desc0>No calls possible due to Gatekeeper/Media Gateway controller inexistence</desc0>
+            <desc1>Basic calls (call detection, analog/digital voice conversion and codec functions only)</desc1>
+            <desc2>Calls and extra features (voice compression, echo cancelation, silence suppression..)</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="sg" title="Signaling Gateway">
+            <desc></desc>
+            <desc0>No calls are possible due to Signaling Gateway problems</desc0>
+            <desc1>Signaling Gateways problems may unable users to establish calls</desc1>
+            <desc2>No reported bugs about Signaling Gateway</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="proxyregistrarls" title="Proxy, Registrar and Location Service">
+            <desc>Location possibilities</desc>
+            <desc0>Protocols used don't offer any location service</desc0>
+            <desc1>Possibilities of location service under conditions</desc1>
+            <desc2>Registrar servers exists and permits location services</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="nat" title="Network Adress Translation">
+            <desc0>Not working behind a firewall using NAT</desc0>
+            <desc1>Works behind a firewall with pain</desc1>
+            <desc2>No difficult manipulations to negotiate with an NAT server</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+      </element>
+   </section>
+   <section name="jabbercompatibility" title="Compatibility with other clients">
+      <element name="openwengoclient" title="WengoPhone">
+         <desc>
+            <br></br>
+         </desc>
+         <comment></comment>
+         <element name="wengophoneim" title="Instant messaging module">
+            <desc0>Not compatible</desc0>
+            <desc1>Partially compatible</desc1>
+            <desc2>Fully comlpatible</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="wengophonevoip" title="Voice over IP module">
+            <desc0>Not compatible</desc0>
+            <desc1>Partially compatible</desc1>
+            <desc2>Fully comlpatible</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="wengophonevisio" title="Videoconferencing module">
+            <desc0>Not compatible</desc0>
+            <desc1>Partially compatible</desc1>
+            <desc2>Fully comlpatible</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+      </element>
+      <element name="ekigaclient" title="Ekiga">
+         <desc>
+            <br></br>
+         </desc>
+         <comment></comment>
+         <element name="ekigaim" title="Instant messaging module">
+            <desc0>Not compatible</desc0>
+            <desc1>Partially compatible</desc1>
+            <desc2>Fully comlpatible</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="ekigavoip" title="Voice over IP module">
+            <desc0>Not compatible</desc0>
+            <desc1>Partially compatible</desc1>
+            <desc2>Fully comlpatible</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="ekigavisio" title="Videoconferencing module">
+            <desc0>Not compatible</desc0>
+            <desc1>Partially compatible</desc1>
+            <desc2>Fully comlpatible</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+      </element>
+      <element name="psiclient" title="Psi">
+         <desc>
+            <br></br>
+         </desc>
+         <comment></comment>
+         <element name="psiim" title="Instant messaging module">
+            <desc0>Not compatible</desc0>
+            <desc1>Partially compatible</desc1>
+            <desc2>Fully comlpatible</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="psivoip" title="Voice over IP module">
+            <desc0>Not compatible</desc0>
+            <desc1>Partially compatible</desc1>
+            <desc2>Fully comlpatible</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="psivisio" title="Videoconferencing module">
+            <desc0>Not compatible</desc0>
+            <desc1>Partially compatible</desc1>
+            <desc2>Fully comlpatible</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+      </element>
+      <element name="kopeteclient" title="Kopete">
+         <desc>
+            <br></br>
+         </desc>
+         <comment></comment>
+         <element name="kopeteim" title="Instant messaging module">
+            <desc0>Not compatible</desc0>
+            <desc1>Partially compatible</desc1>
+            <desc2>Fully comlpatible</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="kopetevoip" title="Voice over IP module">
+            <desc0>Not compatible</desc0>
+            <desc1>Partially compatible</desc1>
+            <desc2>Fully comlpatible</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+      </element>
+      <element name="gaimclient" title="Gaim">
+         <desc>
+            <br></br>
+         </desc>
+         <comment></comment>
+         <element name="gaimim" title="Instant messaging module">
+            <desc0>Not compatible</desc0>
+            <desc1>Partially compatible</desc1>
+            <desc2>Fully comlpatible</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="gaimvoip" title="Voice over IP module">
+            <desc0>Not compatible</desc0>
+            <desc1>Partially compatible</desc1>
+            <desc2>Fully comlpatible</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+      </element>
+      <element name="gtalkclient" title="Google Talk">
+         <desc>
+            <br></br>
+         </desc>
+         <comment></comment>
+         <element name="gtalkim" title="Instant messaging module">
+            <desc0>Not compatible</desc0>
+            <desc1>Partially compatible</desc1>
+            <desc2>Fully comlpatible</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="gtalkvoip" title="Voice over IP module">
+            <desc0>Not compatible</desc0>
+            <desc1>Partially compatible</desc1>
+            <desc2>Fully comlpatible</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+      </element>
+   </section>
+</document>
