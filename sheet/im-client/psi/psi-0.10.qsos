@@ -32,7 +32,7 @@
                <desc1>if between 3 months and 3 years</desc1>
                <desc2>after 3 years</desc2>
                <score>2</score>
-               <comment>The first entry of the changelog was created the 2004-01-02.</comment>
+               <comment>The first packages have been released the 2002-07-11.</comment>
             </element>
             <element name="stability" title="Stability">
                <desc0>Unstable software with numerous releases or patches generating side effects</desc0>
@@ -52,8 +52,8 @@
                <desc0>Software is very likely to be forked in the future</desc0>
                <desc1>Software comes from a fork but has very few chances of being forked in the future</desc1>
                <desc2>Software has very little chance of being forked. It does not come from a fork either</desc2>
-               <score>2</score>
-               <comment></comment>
+               <score>0</score>
+               <comment>Psi have already been forked by Jabbin IMP and VoIP client</comment>
             </element>
          </element>
          <element name="adoption" title="Adoption">
@@ -220,7 +220,7 @@
                <desc0>The software is not packaged for HP-UX</desc0>
                <desc1>A package exists but it has important issues or it doesn't have official support</desc1>
                <desc2>A stable package is provided for HP-UX</desc2>
-               <score></score>
+               <score>0</score>
                <comment></comment>
             </element>
             <element name="packagingmacosx" title="MacOSX">
@@ -228,7 +228,7 @@
                <desc1>A package exists but it has important issues or it doesn't have official support</desc1>
                <desc2>The software is packaged in the distribution</desc2>
                <score>1</score>
-               <comment></comment>
+               <comment>Software is packaged for Mac Os X</comment>
             </element>
             <element name="packagingmandriva" title="Mandriva">
                <desc0>The software is not packaged for Mandriva</desc0>
@@ -241,14 +241,14 @@
                <desc0>The software is not packaged for NetBSD</desc0>
                <desc1>A port exists but it has important issues or it doesn't have official support</desc1>
                <desc2>A official port exists in NetBSD</desc2>
-               <score></score>
+               <score>0</score>
                <comment></comment>
             </element>
             <element name="packagingopen" title="OpenBSD">
                <desc0>The software is not packaged for OpenBSD</desc0>
                <desc1>A port exists but it has important issues or it doesn't have official support</desc1>
                <desc2>A official port exists in OpenBSD</desc2>
-               <score></score>
+               <score>0</score>
                <comment></comment>
             </element>
             <element name="packagingredhat" title="RedHat">
@@ -262,7 +262,7 @@
                <desc0>The software is not packaged for Solaris</desc0>
                <desc1>A package exists but it has important issues or it doesn't have official support (e.g: SunFreeware.com )</desc1>
                <desc2>The software is supported by Sun for Solaris</desc2>
-               <score></score>
+               <score>0</score>
                <comment></comment>
             </element>
             <element name="packagingsuse" title="SuSE">
@@ -294,7 +294,7 @@
             <desc0>No administrative or monitoring functionalities</desc0>
             <desc1>Existing, functionalities but uncomplete and or need improvement</desc1>
             <desc2>Complete and easy-to-use administration and monitoring functionalities. Possible integration with external tools (e.g: SNMP, syslog, ...)</desc2>
-            <score></score>
+            <score>0</score>
             <comment></comment>
          </element>
       </element>
@@ -318,7 +318,7 @@
             <desc0>Any modification requires code recompilation</desc0>
             <desc1>Architecture designed for static extension but requires recompilation</desc1>
             <desc2>Principle of plugin, architecture designed for dynamic extension without recompilation</desc2>
-            <score></score>
+            <score>0</score>
             <comment></comment>
          </element>
       </element>
@@ -366,7 +366,7 @@
             <desc0>Software has no sponsor, the core team is not paid</desc0>
             <desc1>Software has an unique sponsor who might determine its strategy</desc1>
             <desc2>Software is sponsored by industry</desc2>
-            <score></score>
+            <score>0</score>
             <comment></comment>
          </element>
          <element name="strategicalindependence" title="Strategical independence">
@@ -392,21 +392,21 @@
             <desc0>No account creation is possible directly in the client</desc0>
             <desc1>Account creation is possible for part of the protocols supported</desc1>
             <desc2>Account creation is avalaible for all supported protocols</desc2>
-            <score></score>
+            <score>2</score>
             <comment></comment>
          </element>
          <element name="accountaccess" title="Access to an account for management">
             <desc0>No link for account management provided by the client</desc0>
             <desc1>Link to the account management page for all or part of supported protocols</desc1>
             <desc2>A native interface exists to edit accounts (all or part of supported protocols)</desc2>
-            <score></score>
+            <score>2</score>
             <comment></comment>
          </element>
          <element name="accountdeleting" title="Deleting an account">
             <desc0>Deleting an account is not possible via the client</desc0>
             <desc1>Link to the deletion page of an account is provided</desc1>
             <desc2>A native interface permits to delete an account without browsing the web</desc2>
-            <score></score>
+            <score>2</score>
             <comment></comment>
          </element>
       </element>
@@ -414,14 +414,14 @@
          <desc0>No plug-in system integrated to the client</desc0>
          <desc1>Limited plug-ins features</desc1>
          <desc2>Advanced plug-ins features</desc2>
-         <score></score>
+         <score>0</score>
          <comment></comment>
       </element>
       <element name="bandwidth" title="Minimum bandwidth need">
          <desc0>512KB/sec at least</desc0>
          <desc1>256KB/sec at least</desc1>
          <desc2>64KB/sec or less</desc2>
-         <score></score>
+         <score>2</score>
          <comment></comment>
       </element>
    </section>
@@ -437,14 +437,14 @@
                <desc0>No MUC support</desc0>
                <desc1>Limited MUC support</desc1>
                <desc2>MUC is fully supported</desc2>
-               <score>2</score>
-               <comment></comment>
+               <score>1</score>
+               <comment>Only groupchat is supported</comment>
             </element>
             <element name="priority" title="Ressource priority handling">
                <desc0>No Ressource priority support</desc0>
                <desc1>Limited support of Ressource priority</desc1>
                <desc2>Full support of Ressource priority</desc2>
-               <score></score>
+               <score>2</score>
                <comment></comment>
             </element>
             <element name="vcard" title="vCard Support">
@@ -459,7 +459,7 @@
                <desc1>http-storage avatar system</desc1>
                <desc2>vCard-based avatar</desc2>
                <score>2</score>
-               <comment></comment>
+               <comment>Psi 0.10 does not display avatars in the roster. You can only publish or see avatars by watching the user information's page.</comment>
             </element>
          </element>
          <element name="presence" title="Presence Status Handling">
@@ -497,8 +497,8 @@
                   <desc0>No encryption support</desc0>
                   <desc1>Encryption partially supported</desc1>
                   <desc2>Advanced encryption suport</desc2>
-                  <score>2</score>
-                  <comment></comment>
+                  <score>1</score>
+                  <comment>Psi 0.10 does not support SASL</comment>
                </element>
                <element name="p2pencryption" title="Peer to peer encryption">
                   <desc0>No peer to peer encryption support</desc0>
@@ -519,7 +519,7 @@
                <desc0>No nudge support</desc0>
                <desc1>Nudge partially supported</desc1>
                <desc2>Nudge fully supported</desc2>
-               <score></score>
+               <score>0</score>
                <comment></comment>
             </element>
             <element name="whiteboard" title="Whiteboard">
@@ -568,7 +568,7 @@
                <desc0>Not compatible</desc0>
                <desc1>Partially compatible</desc1>
                <desc2>Fully compatible</desc2>
-               <score></score>
+               <score>0</score>
                <comment></comment>
             </element>
             <element name="sip" title="SIP compatibility">
@@ -590,7 +590,7 @@
                <desc0>No compatibility</desc0>
                <desc1>Traditional telecom infrastructure is supported but bugs exists</desc1>
                <desc2>The system is entirely compatible with traditional telecom without important bugs</desc2>
-               <score></score>
+               <score>0</score>
                <comment></comment>
             </element>
             <element name="billing" title="Billing and prepaid systems">
@@ -598,7 +598,7 @@
                <desc0>No billing system needed (no external call possible with the client)</desc0>
                <desc1>Limited billing system</desc1>
                <desc2>Adanced billing system</desc2>
-               <score></score>
+               <score>0</score>
                <comment></comment>
             </element>
          </element>
@@ -609,7 +609,7 @@
                <desc0>No AEC provided</desc0>
                <desc1>AEC system exists but doesn't work properly</desc1>
                <desc2>Full support of AEC</desc2>
-               <score></score>
+               <score>0</score>
                <comment></comment>
             </element>
             <element name="ivrasr" title="Interactive Voice Response (IVR) and Automatic Speech Recognition (ASR)">
@@ -617,7 +617,7 @@
                <desc0>IVR and ASR are not supported</desc0>
                <desc1>IVR works but not ASR</desc1>
                <desc2>ASR and IVR works correctly</desc2>
-               <score></score>
+               <score>0</score>
                <comment></comment>
             </element>
             <element name="vms" title="Voice mails (VMS) support">
@@ -625,7 +625,7 @@
                <desc0>No VMS support</desc0>
                <desc1>Limited VMS features</desc1>
                <desc2>Large Pannel of VMS possibilites</desc2>
-               <score></score>
+               <score>0</score>
                <comment></comment>
             </element>
          </element>
@@ -644,7 +644,7 @@
                <desc0>Only one plateform supported</desc0>
                <desc1>Multi-plateform support but no inter-plateform connexion is possible</desc1>
                <desc2>Full multi-plateform support</desc2>
-               <score></score>
+               <score>0</score>
                <comment></comment>
             </element>
          </element>
@@ -752,21 +752,21 @@
             <desc0>Not compatible</desc0>
             <desc1>Partially compatible</desc1>
             <desc2>Fully comlpatible</desc2>
-            <score></score>
+            <score>2</score>
             <comment></comment>
          </element>
          <element name="wengophonevoip" title="Voice over IP module">
             <desc0>Not compatible</desc0>
             <desc1>Partially compatible</desc1>
             <desc2>Fully comlpatible</desc2>
-            <score></score>
+            <score>0</score>
             <comment></comment>
          </element>
          <element name="wengophonevisio" title="Videoconferencing module">
             <desc0>Not compatible</desc0>
             <desc1>Partially compatible</desc1>
             <desc2>Fully comlpatible</desc2>
-            <score></score>
+            <score>0</score>
             <comment></comment>
          </element>
       </element>
@@ -779,21 +779,21 @@
             <desc0>Not compatible</desc0>
             <desc1>Partially compatible</desc1>
             <desc2>Fully comlpatible</desc2>
-            <score></score>
-            <comment></comment>
+            <score>0</score>
+            <comment>Ekiga does not use Jabber/XMPP for text messages</comment>
          </element>
          <element name="ekigavoip" title="Voice over IP module">
             <desc0>Not compatible</desc0>
             <desc1>Partially compatible</desc1>
             <desc2>Fully comlpatible</desc2>
-            <score></score>
+            <score>0</score>
             <comment></comment>
          </element>
          <element name="ekigavisio" title="Videoconferencing module">
             <desc0>Not compatible</desc0>
             <desc1>Partially compatible</desc1>
             <desc2>Fully comlpatible</desc2>
-            <score></score>
+            <score>0</score>
             <comment></comment>
          </element>
       </element>
@@ -833,14 +833,14 @@
             <desc0>Not compatible</desc0>
             <desc1>Partially compatible</desc1>
             <desc2>Fully comlpatible</desc2>
-            <score></score>
+            <score>2</score>
             <comment></comment>
          </element>
          <element name="kopetevoip" title="Voice over IP module">
             <desc0>Not compatible</desc0>
             <desc1>Partially compatible</desc1>
             <desc2>Fully comlpatible</desc2>
-            <score></score>
+            <score>0</score>
             <comment></comment>
          </element>
       </element>
@@ -853,14 +853,14 @@
             <desc0>Not compatible</desc0>
             <desc1>Partially compatible</desc1>
             <desc2>Fully comlpatible</desc2>
-            <score></score>
+            <score>2</score>
             <comment></comment>
          </element>
          <element name="gaimvoip" title="Voice over IP module">
             <desc0>Not compatible</desc0>
             <desc1>Partially compatible</desc1>
             <desc2>Fully comlpatible</desc2>
-            <score></score>
+            <score>0</score>
             <comment></comment>
          </element>
       </element>
@@ -873,14 +873,14 @@
             <desc0>Not compatible</desc0>
             <desc1>Partially compatible</desc1>
             <desc2>Fully comlpatible</desc2>
-            <score></score>
-            <comment></comment>
+            <score>1</score>
+            <comment>Conversation works, but file transferts are not compatible</comment>
          </element>
          <element name="gtalkvoip" title="Voice over IP module">
             <desc0>Not compatible</desc0>
             <desc1>Partially compatible</desc1>
             <desc2>Fully comlpatible</desc2>
-            <score></score>
+            <score>0</score>
             <comment></comment>
          </element>
       </element>
