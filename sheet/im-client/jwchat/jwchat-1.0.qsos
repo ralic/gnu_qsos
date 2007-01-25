@@ -29,8 +29,8 @@
                <desc0>less than 3 months</desc0>
                <desc1>if between 3 months and 3 years</desc1>
                <desc2>after 3 years</desc2>
-               <score></score>
-               <comment></comment>
+               <score>1</score>
+               <comment>Project was initiated in 2004/06</comment>
             </element>
             <element name="stability" title="Stability">
                <desc0>Unstable software with numerous releases or patches generating side effects</desc0>
@@ -50,7 +50,7 @@
                <desc0>Software is very likely to be forked in the future</desc0>
                <desc1>Software comes from a fork but has very few chances of being forked in the future</desc1>
                <desc2>Software has very little chance of being forked. It does not come from a fork either</desc2>
-               <score></score>
+               <score>2</score>
                <comment></comment>
             </element>
          </element>
@@ -60,28 +60,28 @@
                <desc0>Very few users identified</desc0>
                <desc1>Detectable use on Internet</desc1>
                <desc2>Numerous users, numerous references</desc2>
-               <score></score>
+               <score>0</score>
                <comment></comment>
             </element>
             <element name="references" title="References">
                <desc0>None</desc0>
                <desc1>Few refences, non critical usages</desc1>
                <desc2>Often implemented for critical applications</desc2>
-               <score></score>
-               <comment></comment>
+               <score>1</score>
+               <comment>One production reference is given on the website : CortexPro</comment>
             </element>
             <element name="contributingcommunity" title="Contributing Community">
                <desc0>No community or without real activity (forum, mailing list, ...)</desc0>
                <desc1>Existing community with a notable activity</desc1>
                <desc2>Strong community: big activity on forums, numerous contributors and advocates</desc2>
-               <score></score>
-               <comment></comment>
+               <score>1</score>
+               <comment>Jwchat use forum and mailing lists from sourceforge</comment>
             </element>
             <element name="books" title="books">
                <desc0>No book about the software</desc0>
                <desc1>Less than 5 books about the software are available</desc1>
                <desc2>More than 5 books about software are available, in several languages</desc2>
-               <score></score>
+               <score>0</score>
                <comment></comment>
             </element>
          </element>
@@ -91,7 +91,7 @@
                <desc0>1 to 2 individuals involved, not clearly identified</desc0>
                <desc1>Between 2 and 5 independent people</desc1>
                <desc2>More than 5 people</desc2>
-               <score></score>
+               <score>1</score>
                <comment></comment>
             </element>
             <element name="managementstyle" title="Management style">
@@ -108,8 +108,8 @@
                <desc0>Less than 3 developers, not clearly identified</desc0>
                <desc1>Between 4 and 7 developers, or more unidentified developers with important turnover</desc1>
                <desc2>More than 7 developers, very stable team</desc2>
-               <score></score>
-               <comment></comment>
+               <score>0</score>
+               <comment>JWchat is developped by 3 developpers.</comment>
             </element>
             <element name="activityonbugs" title="Activity on bugs">
                <desc0>Slow reactivity in forum or on mailing list, or nothing regarding bug fixes in releases note</desc0>
@@ -140,8 +140,8 @@
             <desc0>Developments realized at 100% by employees of a single company</desc0>
             <desc1>60% maximum</desc1>
             <desc2>20% maximum</desc2>
-            <score></score>
-            <comment></comment>
+            <score>2</score>
+            <comment>JWchat is a communautary project.</comment>
          </element>
          <element name="services" title="Services">
             <desc>Services offering</desc>
@@ -149,21 +149,21 @@
                <desc0>No offer of training identified</desc0>
                <desc1>Offer exists but is restricted geographically and to one language or is provided by a single contractor</desc1>
                <desc2>Rich offers provided by several contractors, in serveral languages and split into modules of gradual levels</desc2>
-               <score></score>
+               <score>0</score>
                <comment></comment>
             </element>
             <element name="support" title="Support">
                <desc0>No offer of support except via public forums and mailing lists</desc0>
                <desc1>Offer exists but is provided by a single contractor without strong commitment quality of services</desc1>
                <desc2>Multiple service providers with strong commitment (e.g: guaranteed resolution time)</desc2>
-               <score></score>
+               <score>0</score>
                <comment></comment>
             </element>
             <element name="consulting" title="Consulting">
                <desc0>No offer of consulting service</desc0>
                <desc1>Offer exists but is restricted geographically and to one language or is provided by a single contractor</desc1>
                <desc2>Consulting services provided by different contractors in serveral languages</desc2>
-               <score></score>
+               <score>0</score>
                <comment></comment>
             </element>
          </element>
@@ -171,7 +171,7 @@
             <desc0>No user documentation</desc0>
             <desc1>Documentation exists but shifted in time, is restricted to one language or is poorly detailed</desc1>
             <desc2>Documentation always up to date, translated and possibly adapted to different target readers (end user, sysadmin, manager, ...)</desc2>
-            <score></score>
+            <score>1</score>
             <comment></comment>
          </element>
          <element name="qualityassurance" title="Quality Assurance">
@@ -180,7 +180,7 @@
                <desc0>No QA process</desc0>
                <desc1>Identifies QA process but not much formalized and with no tool</desc1>
                <desc2>Automatic testing process included in code's life-cycle with publication of results</desc2>
-               <score></score>
+               <score>0</score>
                <comment></comment>
             </element>
             <element name="tools" title="Tools">
@@ -197,7 +197,7 @@
                <desc0>Software can't be installed from source without lot of work</desc0>
                <desc1>Installation from source is limited and depends on very strict conditions (OS, arch, lib, ...)</desc1>
                <desc2>Installation from source is easy</desc2>
-               <score></score>
+               <score>2</score>
                <comment></comment>
             </element>
             <element name="packagingdebian" title="Debian">
@@ -285,14 +285,14 @@
             <desc0>Difficult to use, requires an in depth knowledge of the software functionality</desc0>
             <desc1>Austere and very technical ergonomics</desc1>
             <desc2>GUI including help functions and elaborated ergonomics</desc2>
-            <score></score>
+            <score>1</score>
             <comment></comment>
          </element>
          <element name="administrationmonitoring" title="Administration / Monitoring">
             <desc0>No administrative or monitoring functionalities</desc0>
             <desc1>Existing, functionalities but uncomplete and or need improvement</desc1>
             <desc2>Complete and easy-to-use administration and monitoring functionalities. Possible integration with external tools (e.g: SNMP, syslog, ...)</desc2>
-            <score></score>
+            <score>0</score>
             <comment></comment>
          </element>
       </element>
@@ -302,21 +302,21 @@
             <desc0>Monolithic software</desc0>
             <desc1>Presence of hight level modules allowing a first level of software adaptation</desc1>
             <desc2>Modular conception, allowing easy adaptation of the software by selecting or creating modules</desc2>
-            <score></score>
+            <score>0</score>
             <comment></comment>
          </element>
          <element name="codemodification" title="Code modification">
             <desc0>Everything by hand</desc0>
             <desc1>Recompilation possible but complex without any tools or documentation</desc1>
             <desc2>Recompilation with tools (e.g: make, ANT, ...) and documentation provided</desc2>
-            <score></score>
+            <score>0</score>
             <comment></comment>
          </element>
          <element name="codeextension" title="Code extention">
             <desc0>Any modification requires code recompilation</desc0>
             <desc1>Architecture designed for static extension but requires recompilation</desc1>
             <desc2>Principle of plugin, architecture designed for dynamic extension without recompilation</desc2>
-            <score></score>
+            <score>0</score>
             <comment></comment>
          </element>
       </element>
@@ -328,14 +328,14 @@
                <desc0>Very strict license, like GPL</desc0>
                <desc1>Moderate permissive license located between both extremes (GPL and BSD) dual-licensing depending on the type of user (person, company, ...) or their activities</desc1>
                <desc2>Very permissive like BSD or Apache licenses</desc2>
-               <score></score>
+               <score>0</score>
                <comment></comment>
             </element>
             <element name="protectionagainstproprietaryforks" title="Protection against proprietary forks">
                <desc0>Very permissive like BSD or Apache licenses</desc0>
                <desc1>Moderate permissive license located between both extremes (GPL and BSD), dual-licensing depending on the type of user (person, company, ...) or their activies</desc1>
                <desc2>Very strict license, like GPL</desc2>
-               <score></score>
+               <score>2</score>
                <comment></comment>
             </element>
          </element>
@@ -381,7 +381,7 @@
          <desc0>No customizable skin</desc0>
          <desc1>Custumizable skin but needs complicated manipulation</desc1>
          <desc2>User friendly skin support</desc2>
-         <score></score>
+         <score>1</score>
          <comment>List of other clients using the same skin constituent:
 			</comment>
       </element>
@@ -390,21 +390,21 @@
             <desc0>No account creation is possible directly in the client</desc0>
             <desc1>Account creation is possible for part of the protocols supported</desc1>
             <desc2>Account creation is avalaible for all supported protocols</desc2>
-            <score></score>
+            <score>2</score>
             <comment></comment>
          </element>
          <element name="accountaccess" title="Access to an account for management">
             <desc0>No link for account management provided by the client</desc0>
             <desc1>Link to the account management page for all or part of supported protocols</desc1>
             <desc2>A native interface exists to edit accounts (all or part of supported protocols)</desc2>
-            <score></score>
+            <score>2</score>
             <comment></comment>
          </element>
          <element name="accountdeleting" title="Deleting an account">
             <desc0>Deleting an account is not possible via the client</desc0>
             <desc1>Link to the deletion page of an account is provided</desc1>
             <desc2>A native interface permits to delete an account without browsing the web</desc2>
-            <score></score>
+            <score>0</score>
             <comment></comment>
          </element>
       </element>
@@ -412,14 +412,14 @@
          <desc0>No plug-in system integrated to the client</desc0>
          <desc1>Limited plug-ins features</desc1>
          <desc2>Advanced plug-ins features</desc2>
-         <score></score>
+         <score>0</score>
          <comment></comment>
       </element>
       <element name="bandwidth" title="Minimum bandwidth need">
          <desc0>512KB/sec at least</desc0>
          <desc1>256KB/sec at least</desc1>
          <desc2>64KB/sec or less</desc2>
-         <score></score>
+         <score>2</score>
          <comment></comment>
       </element>
    </section>
@@ -435,28 +435,28 @@
                <desc0>No MUC support</desc0>
                <desc1>Limited MUC support</desc1>
                <desc2>MUC is fully supported</desc2>
-               <score></score>
+               <score>2</score>
                <comment></comment>
             </element>
             <element name="priority" title="Ressource priority handling">
                <desc0>No Ressource priority support</desc0>
                <desc1>Limited support of Ressource priority</desc1>
                <desc2>Full support of Ressource priority</desc2>
-               <score></score>
+               <score>2</score>
                <comment></comment>
             </element>
             <element name="vcard" title="vCard Support">
                <desc0>No vCard support</desc0>
                <desc1>Old vCard specification supported</desc1>
                <desc2>Flexible vCard support</desc2>
-               <score></score>
+               <score>1</score>
                <comment></comment>
             </element>
             <element name="avatar" title="Avatar system">
                <desc0>No avatar system is provided by the client</desc0>
                <desc1>http-storage avatar system</desc1>
                <desc2>vCard-based avatar</desc2>
-               <score></score>
+               <score>0</score>
                <comment></comment>
             </element>
          </element>
@@ -467,14 +467,14 @@
                <desc0>No presence status features</desc0>
                <desc1>Basic presence status indicators only</desc1>
                <desc2>Customizable Status indicators</desc2>
-               <score></score>
-               <comment></comment>
+               <score>2</score>
+               <comment>Is it possible to add custom presence messages</comment>
             </element>
             <element name="away" title="Auto-away handling">
                <desc0>No auto-away system</desc0>
                <desc1>Basic auto-away system</desc1>
                <desc2>Advanced auto-away system</desc2>
-               <score></score>
+               <score>0</score>
                <comment>
                   <br></br>
                </comment>
@@ -483,8 +483,8 @@
                <desc0>Presence status is the same for all contacts (one presence status even for more than one account)</desc0>
                <desc1>Presence status can be different from one account to another</desc1>
                <desc2>Presence status can be set for each contact</desc2>
-               <score></score>
-               <comment></comment>
+               <score>2</score>
+               <comment>Presence can be set globally, or per contact. Note : changing the global presence remove per user presence.</comment>
             </element>
          </element>
          <element name="imtools" title="Instant Messaging tools and gadgets">
@@ -497,14 +497,14 @@
                   <desc0>No encryption support</desc0>
                   <desc1>Encryption partially supported</desc1>
                   <desc2>Advanced encryption suport</desc2>
-                  <score></score>
+                  <score>0</score>
                   <comment></comment>
                </element>
                <element name="p2pencryption" title="Peer to peer encryption">
                   <desc0>No peer to peer encryption support</desc0>
                   <desc1>Basic peer to peer encryption support</desc1>
                   <desc2>GPG based encryption</desc2>
-                  <score></score>
+                  <score>0</score>
                   <comment></comment>
                </element>
             </element>
@@ -512,28 +512,28 @@
                <desc0>No smileys avalaible</desc0>
                <desc1>Basics smileys avalaible</desc1>
                <desc2>Ability to extend and share smileys list</desc2>
-               <score></score>
+               <score>1</score>
                <comment></comment>
             </element>
             <element name="nudge" title="Nudge">
                <desc0>No nudge support</desc0>
                <desc1>Nudge partially supported</desc1>
                <desc2>Nudge fully supported</desc2>
-               <score></score>
+               <score>0</score>
                <comment></comment>
             </element>
             <element name="whiteboard" title="Whiteboard">
                <desc0>No whiteboard support</desc0>
                <desc1>Partial support of whiteboard</desc1>
                <desc2>Full support of whiteboard</desc2>
-               <score></score>
+               <score>0</score>
                <comment></comment>
             </element>
             <element name="games" title="Game integration to the client">
                <desc0>No game provided</desc0>
                <desc1>Limited choice of games with dependencies to the used protocol</desc1>
                <desc2>Large choice of games compatible with different protocols/clients</desc2>
-               <score></score>
+               <score>0</score>
                <comment></comment>
             </element>
          </element>
@@ -542,7 +542,7 @@
             <desc2>The IM module uses exclusively standard open protocols</desc2>
             <desc1>The IM module is based on costumized existing open protocole</desc1>
             <desc0>The IM module uses a Proprietary Protocol</desc0>
-            <score></score>
+            <score>2</score>
             <comment></comment>
          </element>
          <element name="Proprietary" title="Proprietary Protocols">
@@ -756,21 +756,21 @@
             <desc0>Not compatible</desc0>
             <desc1>Partially compatible</desc1>
             <desc2>Fully comlpatible</desc2>
-            <score></score>
+            <score>1</score>
             <comment></comment>
          </element>
          <element name="wengophonevoip" title="Voice over IP module">
             <desc0>Not compatible</desc0>
             <desc1>Partially compatible</desc1>
             <desc2>Fully comlpatible</desc2>
-            <score></score>
+            <score>0</score>
             <comment></comment>
          </element>
          <element name="wengophonevisio" title="Videoconferencing module">
             <desc0>Not compatible</desc0>
             <desc1>Partially compatible</desc1>
             <desc2>Fully comlpatible</desc2>
-            <score></score>
+            <score>0</score>
             <comment></comment>
          </element>
       </element>
@@ -783,21 +783,21 @@
             <desc0>Not compatible</desc0>
             <desc1>Partially compatible</desc1>
             <desc2>Fully comlpatible</desc2>
-            <score></score>
+            <score>0</score>
             <comment></comment>
          </element>
          <element name="ekigavoip" title="Voice over IP module">
             <desc0>Not compatible</desc0>
             <desc1>Partially compatible</desc1>
             <desc2>Fully comlpatible</desc2>
-            <score></score>
+            <score>0</score>
             <comment></comment>
          </element>
          <element name="ekigavisio" title="Videoconferencing module">
             <desc0>Not compatible</desc0>
             <desc1>Partially compatible</desc1>
             <desc2>Fully comlpatible</desc2>
-            <score></score>
+            <score>0</score>
             <comment></comment>
          </element>
       </element>
@@ -810,21 +810,21 @@
             <desc0>Not compatible</desc0>
             <desc1>Partially compatible</desc1>
             <desc2>Fully comlpatible</desc2>
-            <score></score>
+            <score>1</score>
             <comment></comment>
          </element>
          <element name="psivoip" title="Voice over IP module">
             <desc0>Not compatible</desc0>
             <desc1>Partially compatible</desc1>
             <desc2>Fully comlpatible</desc2>
-            <score></score>
+            <score>0</score>
             <comment></comment>
          </element>
          <element name="psivisio" title="Videoconferencing module">
             <desc0>Not compatible</desc0>
             <desc1>Partially compatible</desc1>
             <desc2>Fully comlpatible</desc2>
-            <score></score>
+            <score>0</score>
             <comment></comment>
          </element>
       </element>
@@ -837,14 +837,14 @@
             <desc0>Not compatible</desc0>
             <desc1>Partially compatible</desc1>
             <desc2>Fully comlpatible</desc2>
-            <score></score>
+            <score>1</score>
             <comment></comment>
          </element>
          <element name="kopetevoip" title="Voice over IP module">
             <desc0>Not compatible</desc0>
             <desc1>Partially compatible</desc1>
             <desc2>Fully comlpatible</desc2>
-            <score></score>
+            <score>0</score>
             <comment></comment>
          </element>
       </element>
@@ -857,14 +857,14 @@
             <desc0>Not compatible</desc0>
             <desc1>Partially compatible</desc1>
             <desc2>Fully comlpatible</desc2>
-            <score></score>
+            <score>1</score>
             <comment></comment>
          </element>
          <element name="gaimvoip" title="Voice over IP module">
             <desc0>Not compatible</desc0>
             <desc1>Partially compatible</desc1>
             <desc2>Fully comlpatible</desc2>
-            <score></score>
+            <score>0</score>
             <comment></comment>
          </element>
       </element>
@@ -877,14 +877,14 @@
             <desc0>Not compatible</desc0>
             <desc1>Partially compatible</desc1>
             <desc2>Fully comlpatible</desc2>
-            <score></score>
+            <score>1</score>
             <comment></comment>
          </element>
          <element name="gtalkvoip" title="Voice over IP module">
             <desc0>Not compatible</desc0>
             <desc1>Partially compatible</desc1>
             <desc2>Fully comlpatible</desc2>
-            <score></score>
+            <score>0</score>
             <comment></comment>
          </element>
       </element>
