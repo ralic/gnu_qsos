@@ -2,8 +2,10 @@
 <document>
    <header>
       <authors>
+      	<author>
         <email>olivier.andreotti@atosorigin.com</email>
-        <name>Olivier Andreotti</name>
+	<name>Olivier Andreotti</name>
+	</author>
     </authors>
       <dates>
          <creation>20051107</creation>
