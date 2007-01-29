@@ -9,7 +9,7 @@
 %%LIST%%
 </div>
 <p>
-<a href="..">Access to QSOS Sheets</a>.
+<a href="/sheets/index.html">Access to QSOS Sheets</a>.
 </p>
 </body>
 </html>
