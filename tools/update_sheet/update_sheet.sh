@@ -1,4 +1,4 @@
-#$Id: update_sheet.sh,v 1.10 2006/10/24 16:29:13 rsemeteys Exp $
+#$Id: update_sheet.sh,v 1.11 2007/01/29 12:47:39 goneri Exp $
 #  Copyright (C) 2006 Atos Origin 
 #
 #  Author: Gonéri Le Bouder <goneri.lebouder@atosorigin.com>
@@ -112,13 +112,17 @@ eof
 }
 
 deploy_local () {
-cd $LOCAL_DIR
-rm -Rf $LOCAL_DIR_SHEETS $LOCAL_DIR_TEMPLATES
-cp -Rf $DESTDIR_SHEETS $LOCAL_DIR_SHEETS
-cp -Rf $DESTDIR_TEMPLATES $LOCAL_DIR_TEMPLATES
+rm -rf $LOCAL_DIR_SHEETS
+rm -rf $LOCAL_DIR_TEMPLATES
+mkdir -p $LOCAL_DIR_SHEETS
+mkdir -p $LOCAL_DIR_TEMPLATES
+cp -rv $DESTDIR_SHEETS/* $LOCAL_DIR_SHEETS
+cp -rv $DESTDIR_TEMPLATES/* $LOCAL_DIR_TEMPLATES
 }
 
+
 LOCALDIR=`pwd`
+rm -Rf $CVS_LOCAL_DIR $DESTDIR_SHEETS $DESTDIR_TEMPLATES 
 mkdir -p $CVS_LOCAL_DIR
 mkdir -p $DESTDIR_SHEETS
 
