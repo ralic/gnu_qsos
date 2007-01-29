@@ -34,7 +34,7 @@
           <desc1>if between 3 months and 3 years</desc1>
           <desc2>after 3 years</desc2>
           <score>2</score>
-          <comment>The first stable release was on october 2000</comment>
+          <comment>The first stable release was on october 2000 for KDE 2.0 release. Konqueror is derivated from kfm, KDE 1.x file/web browser.</comment>
         </element>
         <element name="stability" title="Stability">
           <desc0>Unstable software with numerous releases or patches generating side effects</desc0>
@@ -55,7 +55,7 @@
           <desc1>Software comes from a fork but has very few chances of being forked in the future</desc1>
           <desc2>Software has very little chance of being forked. It does not come from a fork either</desc2>
           <score>2</score>
-          <comment>KHTML, Konqueror's engine is also used by Apple for its web browser (Safari). After early risks of fork, Apple and KDE now ollaborate efficiently on teh same code base</comment>
+          <comment>KHTML, Konqueror's engine is also used by Apple for its web browser (Safari). After early risks of fork, Apple and KDE now ollaborate efficiently on the same code base</comment>
         </element>
       </element>
       <element name="adoption" title="Adoption">
@@ -72,7 +72,7 @@
           <desc1>Few refences, non critical usages</desc1>
           <desc2>Often implemented for critical applications</desc2>
           <score>1</score>
-          <comment></comment>
+          <comment>Konqueror engine, khtml is used by Apple Computer for Safari and by Nokia for Nokia Web Browser used on S60 serie phones.</comment>
         </element>
         <element name="contributingcommunity" title="Contributing Community">
           <desc0>No community or without real activity (forum, mailing list, ...)</desc0>
