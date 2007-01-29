@@ -45,7 +45,7 @@
             <desc></desc>
             <desc0>Commit messages are not on a per-files basis</desc0>
             <desc1>Per-files commit messages are available but limited</desc1>
-            <desc2>Commit messages are on a per-files basis</desc2>
+            <desc2>Commit messages are not a per-files basis</desc2>
             <score></score>
             <comment></comment>
          </element>
@@ -444,7 +444,7 @@
          </element>
       </element>
    </section>
-   <section name="tools" title="Tools">
+   <section name="3rdpartytools" title="Tools">
       <desc></desc>
       <element name="userinterface" title="User interface">
          <desc></desc>
