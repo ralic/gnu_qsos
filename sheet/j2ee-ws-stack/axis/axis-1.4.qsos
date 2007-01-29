@@ -139,13 +139,13 @@
         <element name="activityonfunctionalities" title="Activité autour des fonctionnalités">
           <desc0>Pas ou peu de nouvelles fonctionnalités</desc0>
           <desc1>Évolution du produit conduite par une équipe dédiée ou par des utilisateurs, mais sans processus clairement exposé</desc1>
-          <desc2>Les requêtes pour les nouvelles fonctionnalités sont clairement outillées, Feuille de route disponible</desc2>
+          <desc2>Les requêtes pour les nouvelles fonctionnalités sont clairement outillées, feuille de route disponible</desc2>
           <score>1</score>
           <comment>Rebond après une longue période de maintenance</comment>
         </element>
         <element name="activityonreleases" title="Activité sur les releases/versions">
           <desc0>Très faible activité que ce soit sur les versions de production ou beta/de développement</desc0>
-          <desc1>Activité que ce soit sur les versions de production ou beta/de développement, avec des versions correctives mineures fréquentes.</desc1>
+          <desc1>Activité que ce soit sur les versions de production ou bêta/de développement, avec des versions correctives mineures fréquentes.</desc1>
           <desc2>Activité importante avec des versions correctives fréquentes, et des versions majeures planifiées liées aux prévisions de la feuille de route</desc2>
           <score>1</score>
           <comment>L'historique du projet a montré sa lenteur</comment>
@@ -205,7 +205,7 @@
         <element name="tools" title="Outillage">
           <desc0>Pas d'outils de gestion de bugs, ni d'outils de ticketing</desc0>
           <desc1>Outils standards fournis (une forge par exemple) mais peu utilisés</desc1>
-          <desc2>Utilisation très active des outils</desc2>
+          <desc2>Utilisation très active d'outils standards</desc2>
           <score>2</score>
           <comment>JIRA</comment>
         </element>
@@ -579,7 +579,7 @@
       <score>2</score>
     </element>
   </section>
-  <section name="metaData" title="MetaData">
+  <section name="metaData" title="Meta-données">
     <element name="wsdl-1_1" title="support de WSDL 1.1">
       <desc>Le WSDL décrit une Interface publique d'accès à un Service Web :
         C'est une description basée sur XML qui indique « comment communiquer pour utiliser le service »; 
