@@ -2,6 +2,10 @@
 <document>
   <header>
     <authors>
+      <author>
+        <email>romain.guinot@atosorigin.com</email>
+        <name>Romain Guinot</name>
+      </author>
     </authors>
     <dates>
       <creation></creation>
