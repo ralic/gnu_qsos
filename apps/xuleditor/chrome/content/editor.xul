@@ -12,7 +12,7 @@
 
 <stringbundle id="properties" src="chrome://qsos-xuled/locale/editor.properties"/>
 
-<vbox flex = "1">
+<vbox>
     <toolbox>
       <menubar id="mymenubar">
 	      <menu id="file-menu" label="&file-menu.label;" onclick="document.getElementById('file-menu').focus();">
@@ -47,23 +47,21 @@
       </menubar>
     </toolbox>
     
-    <hbox flex = "1">
-	<vbox>
-	    <tree id="mytree" width="300px" onselect="treeselect(this);" flex="1">
-            <treecols>
-		    <treecol id="name" label="&name.label;" primary="true" flex="1"/>
-            </treecols>
-	    </tree>
-    	</vbox>
-
-	<tabbox flex = "1">
+    <hbox>
+	<tree id="mytree" width="300px" hidecolumnpicker="true" onselect="treeselect(this);">
+		<treecols>
+			<treecol id="name" label="&name.label;" primary="true" flex="1"/>
+		</treecols>
+	</tree>
+	<splitter/>
+	<tabbox id = "t" flex = "1">
 		<tabs>
 			<tab id = "t-software" label = "&t-software.label;"/>
 			<tab id = "t-c-title" label = "&t-c-title.label;"/>
 			<tab id = "t-chart" label = "&t-chart.label;"/>
 		</tabs>
-		<tabpanels>
-			<tabpanel>
+		<tabpanels flex = "1">
+			<tabpanel flex = "1">
 				<vbox flex = "1">
 					<label control="f-software" value="&f-software.value;"/><textbox id="f-software" oninput="this.setAttribute('class','inside');" onchange="this.setAttribute('class','outside'); changeAppName(this);"/>
 					<label control="f-release" value="&f-release.value;"/><textbox id="f-release" oninput="this.setAttribute('class','inside');" onchange="this.setAttribute('class','outside'); changeRelease(this);"/>
@@ -77,7 +75,7 @@
 					<label control="f-demourl" value="&f-demourl.value;"/><textbox id="f-demourl" oninput="this.setAttribute('class','inside');" onchange="this.setAttribute('class','outside'); changeDemoUrl(this);"/>
                 		</vbox>
 			</tabpanel>
-			<tabpanel>
+			<tabpanel flex = "1">
 				<vbox flex = "1">
 					<deck id="f-c-deck" selectedIndex="1">
 						<groupbox>
