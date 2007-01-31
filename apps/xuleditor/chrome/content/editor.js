@@ -1,7 +1,7 @@
 /*
-**  Copyright (C) 2006 Atos Origin 
+**  Copyright (C) 2007 Atos Origin 
 **
-**  Author: Rapha� Semeteys <raphael.semeteys@atosorigin.com>
+**  Author: Raphael Semeteys <raphael.semeteys@atosorigin.com>
 **
 **  This program is free software; you can redistribute it and/or modify
 ** it under the terms of the GNU General Public License as published by
@@ -248,8 +248,10 @@ function newtreeitem(criterion) {
 	treecell.setAttribute("label", criterion.title);
 	treerow.appendChild(treecell);
 	treeitem.appendChild(treerow);
-	if (criterion.children != "null")
-	treeitem.appendChild(buildsubtree(criterion.children));
+	if (criterion.children != "null") {
+		treeitem.setAttribute("open", "false");
+		treeitem.appendChild(buildsubtree(criterion.children));
+	}
 	return treeitem;
 }
 
@@ -471,6 +473,7 @@ function treeselect(tree) {
 	document.getElementById("mytree").focus();
 	if (tree.currentIndex != -1) {
 		id = tree.view.getItemAtIndex(tree.currentIndex).firstChild.firstChild.getAttribute("id");
+		document.getElementById("t").selectedIndex = 1;
 		document.getElementById("t-c-title").setAttribute("label", myDoc.getkeytitle(id));
 		
 		document.getElementById("f-c-desc0").setAttribute("label", "0: "+myDoc.getkeydesc0(id));
