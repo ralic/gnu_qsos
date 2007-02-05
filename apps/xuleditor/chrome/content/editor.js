@@ -31,6 +31,44 @@ var docChanged;
 var id;
 //Localized strings bundle
 var strbundle;
+ 
+function init() {
+
+}
+
+function changeAuthor(author) {
+	document.getElementById("f-a-name").value = author.label;
+	document.getElementById("f-a-email").value = author.value;
+}
+
+function addAuthor() {
+	var mylist = document.getElementById("f-a-list");
+	var listitem = document.createElement("listitem");
+	listitem.setAttribute("label", document.getElementById("f-a-name").value);
+	listitem.setAttribute("value", document.getElementById("f-a-email").value);
+	mylist.appendChild(listitem);
+	myDoc.addauthor(document.getElementById("f-a-name").value, document.getElementById("f-a-email").value);
+	docChanged = "true";
+}
+
+function deleteAuthor() {
+	var mylist = document.getElementById("f-a-list");
+	mylist.removeChild(mylist.selectedItem);
+	alert(document.getElementById("f-a-name").value);
+	myDoc.delauthor(document.getElementById("f-a-name").value);
+	document.getElementById("f-a-name").value = "";
+	document.getElementById("f-a-email").value = "";
+	docChanged = "true";
+}
+
+function doOK() {
+	//Call window opener callback function
+	if (docChanged == "true")
+		window.arguments[1](myDoc);
+	else
+		window.arguments[1]("null");
+	return true;
+}
 
 //Window initialization after loading
 function init() {
@@ -131,7 +169,18 @@ function openFile() {
 	document.getElementById("f-desc").value = myDoc.getdesc();
 	document.getElementById("f-url").value = myDoc.geturl();
 	document.getElementById("f-demourl").value = myDoc.getdemourl();
-        
+
+        //docChanged = "false";
+        //myDoc = window.arguments[0];
+        var authors = myDoc.getauthors();
+        var mylist = document.getElementById("f-a-list");
+        for(var i=0; i < authors.length; i++) {
+          var listitem = document.createElement("listitem");
+          listitem.setAttribute("label", authors[i].name);
+          listitem.setAttribute("value", authors[i].email);
+          mylist.appendChild(listitem);
+        }
+            
         freezeGeneric("");
 	//Menu management
         document.getElementById("file-close").setAttribute("disabled", "false");
@@ -370,29 +419,6 @@ function checkexit() {
 }
 
 ////////////////////////////////////////////////////////////////////
-// Menu "Edit" function
-////////////////////////////////////////////////////////////////////
-
-function updateDoc(newDoc) {
-	if (newDoc != "null") {
-		myDoc = newDoc;
-		docChanged = "true";
-		document.getElementById("file-save").setAttribute("disabled", "false");
-	}
-}
-
-//Submenu "Edit/Authors"
-//Shows the authors.xul window in modal mode
-function authorsDialog() {
-	try {
-		netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect");
-	} catch (e) {
-		alert("Permission to open file was denied.");
-	}
-	window.openDialog('chrome://qsos-xuled/content/authors.xul','Properties','chrome,dialog,modal',myDoc,updateDoc);
-}
-
-////////////////////////////////////////////////////////////////////
 // Menu "Tree" function
 ////////////////////////////////////////////////////////////////////
 
@@ -473,8 +499,8 @@ function treeselect(tree) {
 	document.getElementById("mytree").focus();
 	if (tree.currentIndex != -1) {
 		id = tree.view.getItemAtIndex(tree.currentIndex).firstChild.firstChild.getAttribute("id");
-		document.getElementById("t").selectedIndex = 1;
-		document.getElementById("t-c-title").setAttribute("label", myDoc.getkeytitle(id));
+		//document.getElementById("t").selectedIndex = 1;
+		//document.getElementById("t-c-title").setAttribute("label", myDoc.getkeytitle(id));
 		
 		document.getElementById("f-c-desc0").setAttribute("label", "0: "+myDoc.getkeydesc0(id));
 		document.getElementById("f-c-desc1").setAttribute("label", "1: "+myDoc.getkeydesc1(id));
@@ -583,8 +609,8 @@ function drawChart(name) {
 	var myChart = document.getElementById("chart");
 	//var width = myChart.parentNode.width.animVal.value / 2;
 	//var height = myChart.parentNode.height.animVal.value / 2;
-	var width = 300;
-	var height = 300;
+	var width = 400;
+	var height = 250;
 	myChart.setAttribute("transform", "translate("+width+","+height+")");
 
 	//Collect charting data

@@ -8,17 +8,17 @@
 <!ENTITY file-save-remote.label "Save on remote server">
 <!ENTITY file-close.label "Close">
 <!ENTITY file-exit.label "Exit">
-<!ENTITY edit-menu.label "Edit">
-<!ENTITY edit-authors.label "Authors">
 <!ENTITY tree-menu.label "Tree">
 <!ENTITY tree-expand.label "Expand all">
 <!ENTITY tree-collapse.label "Collapse all">
 <!ENTITY help-menu.label "Help">
 <!ENTITY help-about.label "About">
 <!ENTITY name.label "Criteria">
-<!ENTITY t-software.label "Software">
-<!ENTITY t-c-title.label "Criterion">
+<!ENTITY g-evaluation.label "Evaluation">
+<!ENTITY t-header.label "Entête">
+<!ENTITY t-c-title.label "Criteria">
 <!ENTITY t-chart.label "Chart">
+<!ENTITY g-software.label "Software">
 <!ENTITY f-software.value "Name: ">
 <!ENTITY f-release.value "Release: ">
 <!ENTITY f-sotwarefamily.value "Software family: ">
@@ -26,6 +26,12 @@
 <!ENTITY f-desc.value "Description: ">
 <!ENTITY f-url.value "Website: ">
 <!ENTITY f-demourl.value "Demo site: ">
+<!ENTITY authors.title "Authors: ">
+<!ENTITY f-a-name.value "Name: ">
+<!ENTITY f-a-email.value "Email: ">
+<!ENTITY button1.label "Add">
+<!ENTITY button2.label "Delete">
+<!ENTITY f-a-list "Authors: ">
 <!ENTITY label1.value "Description">
 <!ENTITY label2.value "Score">
 <!ENTITY f-c-desc0.label "Score 0">
