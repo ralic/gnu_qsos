@@ -3,3 +3,6 @@ textbox.outside input { background-color:white; }
 
 textbox.inside textarea { background-color:#EEEEEE; }
 textbox.outside textarea { background-color:white; }
+
+treechildren::-moz-tree-row(selected) { background-color: #FFFFAA; }
+treechildren::-moz-tree-cell-text(selected) { color: #000000; }
