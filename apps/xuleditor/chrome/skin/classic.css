@@ -6,3 +6,24 @@ textbox.outside textarea { background-color:white; }
 
 treechildren::-moz-tree-row(selected) { background-color: #FFFFAA; }
 treechildren::-moz-tree-cell-text(selected) { color: #000000; }
+
+tab.header {
+  list-style-image: url("chrome://qsos-xuled/skin/header.png");#
+}
+
+tab.criteria {
+  list-style-image: url("chrome://qsos-xuled/skin/criteria.png");
+}
+
+tab.graph {
+  list-style-image: url("chrome://qsos-xuled/skin/graph.png");
+}
+
+tab[selected="true"] {
+  color: #000066;
+  font-weight: bold;
+}
+
+
+
+
