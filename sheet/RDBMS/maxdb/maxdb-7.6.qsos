@@ -34,7 +34,7 @@
           <desc1>if between 3 months and 3 years</desc1>
           <desc2>after 3 years</desc2>
           <score>2</score>
-          <comment>Project initiated in 1977 betewen the University of Berlin and Nixdorf Computer AG initié en 1977</comment>
+          <comment>Project initiated in 1977 betewen the University of Berlin and Nixdorf Computer AG</comment>
         </element>
         <element name="stability" title="Stability">
           <desc0>Unstable software with numerous releases or patches generating side effects</desc0>
