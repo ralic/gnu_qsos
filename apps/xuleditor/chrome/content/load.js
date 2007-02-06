@@ -6,8 +6,13 @@ function init() {
 	} catch (e) {
 		alert("Permission to open file was denied.");
 	}
+
+	var prefManager = Components.classes["@mozilla.org/preferences-service;1"]
+		.getService(Components.interfaces.nsIPrefBranch);
+	var loadremote = prefManager.getCharPref("extensions.qsos-xuled.loadremote");
+
         req = new XMLHttpRequest();
-        req.open('GET', "http://www.qsos.org/phpviewer/loadremote.php", false); 
+        req.open('GET', loadremote, false); 
 	//req.overrideMimeType('text/xml');
         req.send(null);
 
