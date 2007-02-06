@@ -19,16 +19,16 @@
 <!ENTITY t-c-title.label "Criteria">
 <!ENTITY t-chart.label "Chart">
 <!ENTITY g-software.label "Software">
-<!ENTITY f-software.value "Name: ">
-<!ENTITY f-release.value "Release: ">
-<!ENTITY f-sotwarefamily.value "Software family: ">
-<!ENTITY f-license.value "License: ">
-<!ENTITY f-desc.value "Description: ">
-<!ENTITY f-url.value "Website: ">
-<!ENTITY f-demourl.value "Demo site: ">
-<!ENTITY authors.title "Authors: ">
-<!ENTITY f-a-name.value "Name: ">
-<!ENTITY f-a-email.value "Email: ">
+<!ENTITY f-software.value "Name">
+<!ENTITY f-release.value "Release">
+<!ENTITY f-sotwarefamily.value "Software family">
+<!ENTITY f-license.value "License">
+<!ENTITY f-desc.value "Description">
+<!ENTITY f-url.value "Website">
+<!ENTITY f-demourl.value "Demo site">
+<!ENTITY authors.title "Authors">
+<!ENTITY f-a-name.value "Name">
+<!ENTITY f-a-email.value "Email">
 <!ENTITY button1.label "Add">
 <!ENTITY button2.label "Delete">
 <!ENTITY f-a-list "Authors: ">
@@ -37,4 +37,4 @@
 <!ENTITY f-c-desc0.label "Score 0">
 <!ENTITY f-c-desc1.label "Score 1">
 <!ENTITY f-c-desc2.label "Score 2">
-<!ENTITY f-c-comments.value "Comments: ">
+<!ENTITY f-c-comments.value "Comments">
