@@ -183,11 +183,6 @@ function Document(name) {
 
 	var xml = serialize(sheet.documentElement, 0);
 
-	var converter = Components.classes["@mozilla.org/intl/scriptableunicodeconverter"]
-		.createInstance(Components.interfaces.nsIScriptableUnicodeConverter);
-	converter.charset = "UTF-8";
-	xml = converter.ConvertFromUnicode(xml);
-
 	var stream = Components.classes["@mozilla.org/io/string-input-stream;1"]
 		.createInstance(Components.interfaces.nsIStringInputStream);
 	stream.setData(xml, xml.length);
