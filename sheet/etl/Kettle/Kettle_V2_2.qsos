@@ -1,0 +1,782 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document>
+   <header>
+      <authors>
+         <author>
+            <name>PINCEMAIL Stéphane</name>
+            <email>stephane.pincemail@atosorigin.com</email>
+         </author>
+      </authors>
+      <dates>
+         <creation>01/2007</creation>
+         <validation></validation>
+      </dates>
+      <language>fr</language>
+      <appname>KETTLE (Pentaho Data Integration)</appname>
+      <release>2.2</release>
+      <licenseid></licenseid>
+      <licensedesc>Mozilla Public License version 1.1</licensedesc>
+      <url>http://kettle.pentaho.org/index.php</url>
+      <demourl></demourl>
+      <qsosformat>1.6</qsosformat>
+      <qsosappfamily>ETL</qsosappfamily>
+      <qsosspecificformat></qsosspecificformat>
+   </header>
+   <section name="generic" title="Section générique">
+      <desc>Les critères génériques de la méthode qsos version 1.6</desc>
+      <element name="intrinsicdurability" title="Pérennité">
+         <desc>Pérennité</desc>
+         <element name="maturity" title="Maturité">
+            <desc>Maturité</desc>
+            <element name="age" title="Age">
+               <desc0>moins de 3 mois</desc0>
+               <desc1>entre 3 mois et 3 ans</desc1>
+               <desc2>plus de 3 ans</desc2>
+               <comment>Age exact non documenté</comment>
+               <score>2</score>
+            </element>
+            <element name="stability" title="Stabilité">
+               <desc></desc>
+               <desc0>Logiciel instable avec de nombreuses versions et patches générant des effets de bords.</desc0>
+               <desc1>Version de production stabilisée mais un peu vieille. Quelques difficultés à stabiliser les versions de développement.</desc1>
+               <desc2>Logiciel stable. Les nouvelles versions corrigent des bugs, mais apportent de façon prépondérante de nouvelles fonctionnalités.</desc2>
+               <comment>Projet ayant été intégré a Pentaho sous le nom Pentaho Data Integration</comment>
+               <score>2</score>
+            </element>
+            <element name="historyknowproblems" title="Historique, problèmes connus">
+               <desc></desc>
+               <desc0>Le logiciel connaît de nombreux problèmes qui peuvent être rédhibitoires.</desc0>
+               <desc1>Pas de problèmes majeurs, ni de crise.</desc1>
+               <desc2>Bon historique de gestion de projet et de crise.</desc2>
+               <comment></comment>
+               <score>1</score>
+            </element>
+            <element name="forkprobability" title="Probabilité de FORK, provenance d'un FORK">
+               <desc></desc>
+               <desc0>Forte probabilité de fork dans un futur proche.</desc0>
+               <desc1>Le logiciel provient d'un fork mais a très peu de chances d'être forké dans un futur proche.</desc1>
+               <desc2>Très faible probabilité de fork. Le logiciel ne provient pas d'un fork.</desc2>
+               <comment>Logiciel intégré dans la suite Pentaho, projet développé par une société</comment>
+               <score>2</score>
+            </element>
+         </element>
+         <element name="adoption" title="Adoption">
+            <desc>Adoption par la communauté et  l'industrie</desc>
+            <element name="popularity" title="Popularité (à rapporter à la cible visée : grand public, niche, …)">
+               <desc0>Très peu d'utilisateurs identifiés</desc0>
+               <desc1>Usage détectable sur Internet</desc1>
+               <desc2>Nombreux utilisateurs et références</desc2>
+               <comment>Communauté d'utilisateurs active mais proportionnelle aux nombres d'utilisateurs d' outils ETL propriétaires, c a d faible, cependant l'intégration au projet Pentaho lui donne une forte visibilité</comment>
+               <score>1</score>
+            </element>
+            <element name="references" title="Références">
+               <desc></desc>
+               <desc0>Aucune</desc0>
+               <desc1>Peu de références, pas d'usage critique</desc1>
+               <desc2>Souvent implémenté sur des applications critiques</desc2>
+               <comment>Seulement deux références commercailes</comment>
+               <score>1</score>
+            </element>
+            <element name="contributingcommunity" title="Communauté des contributeurs">
+               <desc></desc>
+               <desc0>Pas de communauté ou de réelle activité (forum, liste de diffusion, ...)</desc0>
+               <desc1>Communauté existante avec une activité notable.</desc1>
+               <desc2>Communauté forte: grosse activité sur les forums, de nombreux contributeurs et défenseurs.</desc2>
+               <comment>Communauté d'utilisateurs uniquement</comment>
+               <score>1</score>
+            </element>
+            <element name="books" title="Livres, Publications">
+               <desc></desc>
+               <desc0>Aucun livre sur ce logiciel.</desc0>
+               <desc1>Moins de 5 livres publiés sur ce logiciel.</desc1>
+               <desc2>Plus de 5 livres publiés sur ce logiciel et dans différentes langues.</desc2>
+               <comment></comment>
+               <score>0</score>
+            </element>
+         </element>
+         <element name="developmentleadership" title="Direction des développements">
+            <desc>Organisation et direction des développements</desc>
+            <element name="leadingteam" title="Equipe dirigeante">
+               <desc0>1 ou 2 individus engagés, pas clairement identifiés.</desc0>
+               <desc1>Entre 2 et 5 personnes indépendantes.</desc1>
+               <desc2>Plus de 5 personnes.</desc2>
+               <comment></comment>
+               <score>0</score>
+            </element>
+            <element name="managementstyle" title="Mode de direction">
+               <desc></desc>
+               <desc0>Dictature complète.</desc0>
+               <desc1>Despotisme éclairé.</desc1>
+               <desc2>Conseil d'architectes avec un leader identifié (ex: KDE)</desc2>
+               <comment></comment>
+               <score>1</score>
+            </element>
+         </element>
+         <element name="activity" title="Activité">
+            <desc>Activité du et autour du projet</desc>
+            <element name="developersidentificationturnover" title="Nombre de développeurs, identification, turnover">
+               <desc0>Moins de 3 développeurs, pas clairement identifiés.</desc0>
+               <desc1>Entre 4 et 7 développeurs, ou plus, non identifiés, avec un "turnover" important.</desc1>
+               <desc2>Plus de 7 développeurs, équipe très simple.</desc2>
+               <comment>1 personne clairement identifiée, réactive</comment>
+               <score>0</score>
+            </element>
+            <element name="activityonbugs" title="Activité autour des bugs">
+               <desc></desc>
+               <desc0>Réactivité faible sur le forum ou sur la liste de diffusion, ou rien au sujet des corrections de bugs dans les notes de versions.</desc0>
+               <desc1>Activité détectable mais sans processus clairement exposé, temps de résolution long</desc1>
+               <desc2>Forte réactivité, basée sur des rôles et des assignations de tâches</desc2>
+               <comment>Bonne réactivité générale</comment>
+               <score>1</score>
+            </element>
+            <element name="activityonfunctionalities" title="Activité autour des fonctionnalités">
+               <desc></desc>
+               <desc0>Pas ou peu de nouvelles fonctionnalités</desc0>
+               <desc1>Évolution du produit conduite par une équipe dédiée ou par des utilisateurs, mais sans processus clairement exposé</desc1>
+               <desc2>Les requêtes pour les nouvelles fonctionnalités sont clairement outillées, feuille de route disponible</desc2>
+               <comment></comment>
+               <score>1</score>
+            </element>
+            <element name="activityonreleases" title="Activité sur les releases/versions">
+               <desc></desc>
+               <desc0>Très faible activité que ce soit sur les versions de production ou beta/de développement</desc0>
+               <desc1>Activité que ce soit sur les versions de production ou bêta/de développement, avec des versions correctives mineures fréquentes.</desc1>
+               <desc2>Activité importante avec des versions correctives fréquentes, et des versions majeures planifiées liées aux prévisions de la feuille de route</desc2>
+               <comment></comment>
+               <score>1</score>
+            </element>
+         </element>
+      </element>
+      <element name="industrializedsolution" title="Industrialisation">
+         <desc>Niveau d'industrialisation du projet</desc>
+         <element name="independenceofdevelopments" title="Indépendance des développements">
+            <desc></desc>
+            <desc0>Développements réalisés à plus de 60% par des employés d'une seule société.</desc0>
+            <desc1>60% maximum</desc1>
+            <desc2>20% maximum</desc2>
+            <comment></comment>
+            <score>0</score>
+         </element>
+         <element name="services" title="Services">
+            <desc>Offres de services</desc>
+            <element name="training" title="Formation">
+               <desc></desc>
+               <desc0>Pas d'offre de formation identifiée</desc0>
+               <desc1>Offre existante mais restreinte géographiquement ou à un seul langage ou fournie par un seul fournisseur</desc1>
+               <desc2>Offre riche, plusieurs fournisseurs, plusieurs langages, divisée en modules et en niveaux</desc2>
+               <comment>Formations proposées aux US, Allemagne</comment>
+               <score>1</score>
+            </element>
+            <element name="support" title="Support">
+               <desc></desc>
+               <desc0>Pas d'offre de support identifiée</desc0>
+               <desc1>Offre existante mais restreinte géographiquement ou à un seul langage ou fournie par un seul fournisseur, ou sans garantie</desc1>
+               <desc2>Offre riche, plusieurs fournisseurs, avec des garanties (sur les temps de résolution).</desc2>
+               <comment>Support téléphonique proposé</comment>
+               <score>1</score>
+            </element>
+            <element name="consulting" title="Conseil">
+               <desc></desc>
+               <desc0>Pas d'offres de conseil identifiées</desc0>
+               <desc1>Offre existante mais restreinte géographiquement ou à un seul langage ou fournie par un seul fournisseur</desc1>
+               <desc2>Offre riche, plusieurs fournisseurs, plusieurs langages</desc2>
+               <comment></comment>
+               <score>1</score>
+            </element>
+         </element>
+         <element name="documentation" title="Documentation">
+            <desc></desc>
+            <desc0>Pas de documentation utilisateur</desc0>
+            <desc1>La documentation existe mais est en partie obsolète, ou restreinte à un seul langage, ou peu détaillée</desc1>
+            <desc2>Documentation à jour, traduite, et éventuellement adaptée à différentes cibles de lecteurs (end user, sysadmin, manager, ...)</desc2>
+            <comment>Documentation électronique en plusieurs langues (en,it,es,cn,pt), quelques "Technical Whitepapers"</comment>
+            <score>2</score>
+         </element>
+         <element name="qualityassurance" title="Méthode qualité">
+            <desc>Processus et méthode qualité</desc>
+            <element name="quality" title="Assurance qualité">
+               <desc></desc>
+               <desc0>Pas de processus Qualité identifié</desc0>
+               <desc1>Processus Qualité existant, mais non formalisé ou non outillé</desc1>
+               <desc2>Processus automatique de tests dans le cycle de vie du code et publication des résultats</desc2>
+               <comment></comment>
+               <score>0</score>
+            </element>
+            <element name="tools" title="Outillage">
+               <desc></desc>
+               <desc0>Pas d'outils de gestion de bugs, ni d'outils de ticketing</desc0>
+               <desc1>Outils standards fournis (une forge par exemple) mais peu utilisés</desc1>
+               <desc2>Utilisation très active d'outils standards</desc2>
+               <comment></comment>
+               <score>1</score>
+            </element>
+         </element>
+      </element>
+      <element name="exploitability" title="Exploitabilité">
+         <desc>Niveau d'exploitabilité</desc>
+         <element name="easeofuseergonomics" title="Facilité d'utilisation, ergonomie">
+            <desc></desc>
+            <desc0>Difficulté d'utilisation, demande une connaissance approfondie des fonctionnalités du logiciel</desc0>
+            <desc1>Ergonomie austère et très technique</desc1>
+            <desc2>Ergonomie élaborée et IHM comprenant des fonctions d'aide</desc2>
+            <comment></comment>
+            <score>2</score>
+         </element>
+         <element name="administrationmonitoring" title="Administration / Supervision">
+            <desc></desc>
+            <desc0>Pas de fonctionnalités de contrôle, ni d'administration</desc0>
+            <desc1>Fonctionnalités présentes mais incomplètes ou à améliorer</desc1>
+            <desc2>Fonctionnalités complètes et faciles de contrôle, et d'administration. Intégration possible avec des outils tiers (ex: SNMP, syslog, ...)</desc2>
+            <comment></comment>
+            <comment></comment>
+            <score>2</score>
+         </element>
+      </element>
+      <element name="technicaladaptability" title="Adaptabilité">
+         <desc>Adaptabilité technique</desc>
+         <element name="modularity" title="Modularité">
+            <desc0>Logiciel monolithique</desc0>
+            <desc1>Présence de modules haut niveau permettant un premier niveau d'adaptation</desc1>
+            <desc2>Conception modulaire, permettant des adaptations faciles par sélection et/ou création de modules</desc2>
+            <comment>Non testée</comment>
+            <score></score>
+         </element>
+         <element name="codemodification" title="Facilité technique de modification du code existant">
+            <desc></desc>
+            <desc0>Tout à la main</desc0>
+            <desc1>Recompilation possible mais complexe, sans outils, ni documentation.</desc1>
+            <desc2>Recompilation facile, outillée (ex: make, ANT, maven...), et documentée.</desc2>
+            <comment></comment>
+            <score>1</score>
+         </element>
+         <element name="codeextension" title="Facilité d'extension du code">
+            <desc></desc>
+            <desc0>Toute modification demande une recompilation du code</desc0>
+            <desc1>Architecture conçue pour des extensions statiques mais exige une recompilation</desc1>
+            <desc2>Architecture de plugins, conçue pour des extensions dynamiques et sans recompilation</desc2>
+            <comment>Non testée</comment>
+            <score></score>
+         </element>
+      </element>
+      <element name="strategy" title="Stratégie">
+         <desc>Stratégie du projet</desc>
+         <element name="license" title="Licence">
+            <desc>License</desc>
+            <element name="permissiveness" title="Permissivité (NB : à pondérer uniquement si le client désire un jour devenir propriétaire du code)">
+               <desc></desc>
+               <desc0>Licence très stricte, comme la GPL</desc0>
+               <desc1>Licence modérée entre les deux extrêmes (GPL et BSD), licence duale dépendante du type d'utilisateur (personne, société, ...) ou de leur activité.</desc1>
+               <desc2>Licence très permissive comme BSD et Apache</desc2>
+               <comment>Mozilla Public License version 1.1</comment>
+               <score>1</score>
+            </element>
+            <element name="protectionagainstproprietaryforks" title="Protection contre des forks commerciaux">
+               <desc></desc>
+               <desc0>Licence très permissive comme BSD et Apache</desc0>
+               <desc1>Licence modérée entre les deux extrêmes (GPL et BSD), licence duale dépendante du type d'utilisateur (personne, société, ...) ou de leur activité.</desc1>
+               <desc2>Licence très stricte, comme la GPL</desc2>
+               <comment>Faible du fait de l'appartenance au projet Pentaho</comment>
+               <score>0</score>
+            </element>
+         </element>
+         <element name="copyrightowners" title="Détenteur des droits">
+            <desc></desc>
+            <desc0>Les droits sont détenus par quelques individus ou entités commerciales, facilitant le changement de licence</desc0>
+            <desc1>Les droits sont détenus par de nombreux individus de façon homogène, rendant le changement de licence très difficile</desc1>
+            <desc2>Les droits sont détenus par une entité légale, une fondation dans laquelle la communauté a confiance (ex: FSF, Apache, ObjectWeb)</desc2>
+            <comment>Droit d'auteur détenu par Pentaho Corporation http://community.pentaho.org/contributors/contributor_agreement.php</comment>
+            <score>0</score>
+         </element>
+         <element name="modificationofsourcecode" title="Modification du code">
+            <desc></desc>
+            <desc0>Pas de moyen pratique de proposer des modifications de code</desc0>
+            <desc1>Des outils sont fournis pour accéder et modifier le code (ex: CVS, SVN) mais ne sont pas vraiment utilisés pour développer le produit</desc1>
+            <desc2>Le processus de modification de code est bien défini, exposé, et respecté, basé sur des rôles bien définis.</desc2>
+            <comment>Pas de documentation UML hors communauté</comment>
+            <score>0</score>
+         </element>
+         <element name="roadmap" title="Feuille de route">
+            <desc></desc>
+            <desc0>Pas de feuille de route publiée</desc0>
+            <desc1>Feuille de route sans planning</desc1>
+            <desc2>Feuille de route versionnée, avec planning et mesures de retard</desc2>
+            <comment>http://community.pentaho.org/roadmap/</comment>
+            <score>1</score>
+         </element>
+         <element name="sponsor" title="Sponsor">
+            <desc></desc>
+            <desc0>Le logiciel n'a pas de sponsors, l'équipe principale n'est pas rémunérée</desc0>
+            <desc1>Le logiciel a un sponsor unique qui détermine sa stratégie</desc1>
+            <desc2>Le logiciel est sponsorisé par l'industrie</desc2>
+            <comment>Projet intégré dans Pentaho</comment>
+            <score>1</score>
+         </element>
+         <element name="strategicalindependence" title="Indépendance stratégique">
+            <desc></desc>
+            <desc0>Pas de stratégie détectable ou forte dépendance à un acteur unique (individu, société, sponsor)</desc0>
+            <desc1>Vision stratégique partagée avec plusieurs autres projets open-source mais sans engagement fort des propriétaires des droits</desc1>
+            <desc2>Indépendance forte de l'équipe de développement, droits détenus par une entité, fort engagement dans un processus de standardisation</desc2>
+            <comment></comment>
+            <score>0</score>
+         </element>
+      </element>
+   </section>
+   <section name="meta-donnees" title="Récupération des Meta-données">
+      <element name="depuisfichierplat" title="Depuis fichier plat">
+         <desc>Récupération des meta-données depuis un fichier plat (longueurs fixes, séparateurs)</desc>
+         <desc0>Non disponible</desc0>
+         <desc1>Partiellement disponible</desc1>
+         <desc2>Disponible</desc2>
+         <comment></comment>
+         <score>2</score>
+      </element>
+      <element name="depuisbasededonnees" title="Depuis Base de données">
+         <desc>Récupération de structure de tables depuis la base de données</desc>
+         <desc0>Non disponible</desc0>
+         <desc1>Partiellement disponible</desc1>
+         <desc2>Disponible</desc2>
+         <comment></comment>
+         <score>2</score>
+      </element>
+   </section>
+   <section name="connectivite" title="Connectivité">
+      <element name="ftp" title="FTP">
+         <desc></desc>
+         <desc0>FTP non supporté</desc0>
+         <desc1>FTP partiellement supporté (exemple : limité à l'input ou l'output)</desc1>
+         <desc2>FTP est supporté</desc2>
+         <comment></comment>
+         <score>0</score>
+      </element>
+      <element name="xml" title="XML">
+         <desc></desc>
+         <desc0>XML non supporté</desc0>
+         <desc1>XML partiellement supporté (exemple : limité à l'input ou l'output)</desc1>
+         <desc2>XML est supporté</desc2>
+         <comment></comment>
+         <score>2</score>
+      </element>
+      <element name="fichiersplats" title="Fichiers plats">
+         <desc>Connectivité vers les fichiers plats</desc>
+         <element name="expressionreguliere" title="Expression régulière">
+            <desc>Support de l'utilisation des expressions régulière lors de la connexion à des fichiers plats</desc>
+            <desc0>Non disponible</desc0>
+            <desc1>Partiellement disponible</desc1>
+            <desc2>Disponible</desc2>
+            <comment></comment>
+            <score>2</score>
+         </element>
+         <element name="lecturedesrepertoires" title="Lecture des répertoires">
+            <desc></desc>
+            <desc0>Non disponible</desc0>
+            <desc1>Partiellement disponible</desc1>
+            <desc2>Disponible</desc2>
+            <comment></comment>
+            <score>2</score>
+         </element>
+         <element name="fichiercompresse" title="Fichier compressé">
+            <desc>Possibilité de se connecter à une archive</desc>
+            <desc0>Non disponible</desc0>
+            <desc1>Partiellement disponible (par exemple limité en taille ou au niveau de l'argorithme de compression)</desc1>
+            <desc2>Complètement disponible</desc2>
+            <comment></comment>
+            <score>2</score>
+         </element>
+      </element>
+      <element name="basesdedonnees" title="Bases de données">
+         <desc>Modes de connexion aux bases de données</desc>
+         <element name="connexionjdbc" title="Connexion JDBC">
+            <desc></desc>
+            <desc0>Connexion JDBC impossible</desc0>
+            <desc1>Connexion JDBC possible mais limitée</desc1>
+            <desc2>Connexion JDBC possible</desc2>
+            <comment></comment>
+            <score>2</score>
+         </element>
+         <element name="connexionnative" title="Connexion native">
+            <element name="oracle" title="Oracle">
+               <desc>Connexion native à Oracle</desc>
+               <desc0>Impossible</desc0>
+               <desc1>Possible mais limitée en termes de versions ou de possibilités</desc1>
+               <desc2>Possible</desc2>
+               <comment>Générateur de fichier ctl pour SQLLoader</comment>
+               <score>0</score>
+            </element>
+            <element name="teradata" title="Teradata">
+               <desc>Connexion native à Teradata</desc>
+               <desc0>Impossible</desc0>
+               <desc1>Possible mais limitée en termes de versions ou de possibilités</desc1>
+               <desc2>Possible</desc2>
+               <comment></comment>
+               <score>0</score>
+            </element>
+            <element name="db2" title="DB2">
+               <desc>Connexion native à DB2</desc>
+               <desc0>Impossible</desc0>
+               <desc1>Possible mais limitée en termes de versions ou de possibilités</desc1>
+               <desc2>Possible</desc2>
+               <comment></comment>
+               <score>0</score>
+            </element>
+            <element name="sqlserver" title="SQLServer">
+               <desc>Connexion native à SQLServer</desc>
+               <desc0>Impossible</desc0>
+               <desc1>Possible mais limitée en termes de versions ou de possibilités</desc1>
+               <desc2>Possible</desc2>
+               <comment></comment>
+               <score>0</score>
+            </element>
+            <element name="informix" title="Informix">
+               <desc>Connexion native à Informix</desc>
+               <desc0>Impossible</desc0>
+               <desc1>Possible mais limitée en termes de versions ou de possibilités</desc1>
+               <desc2>Possible</desc2>
+               <comment></comment>
+               <score>0</score>
+            </element>
+            <element name="sybase" title="Sybase">
+               <desc>Connexion native à Sybase</desc>
+               <desc0>Impossible</desc0>
+               <desc1>Possible mais limitée en termes de versions ou de possibilités</desc1>
+               <desc2>Possible</desc2>
+               <comment></comment>
+               <score></score>
+            </element>
+            <element name="mysql" title="MySQL">
+               <desc>Connexion native à MySQL</desc>
+               <desc0>Impossible</desc0>
+               <desc1>Possible mais limitée en termes de versions ou de possibilités</desc1>
+               <desc2>Possible</desc2>
+               <comment>Générateur de fichier pour chargement de masse</comment>
+               <score>0</score>
+            </element>
+            <element name="postgresql" title="PostgreSQL">
+               <desc>Connexion native à PostgreSQL</desc>
+               <desc0>Impossible</desc0>
+               <desc1>Possible mais limitée en termes de versions ou de possibilités</desc1>
+               <desc2>Possible</desc2>
+               <comment></comment>
+               <score>0</score>
+            </element>
+            <element name="autressgbd" title="Autres SGBD">
+               <desc>Liste des autres SGBD auxquels l'ETL se connecte nativement</desc>
+            </element>
+         </element>
+      </element>
+      <element name="integrationaunerp" title="Intégration à un ERP">
+         <desc>Flux prépackagé depuis un ERP</desc>
+         <element name="sap" title="SAP">
+            <desc></desc>
+            <desc0>Pas d'intégration</desc0>
+            <desc1>Flux existant mais limité</desc1>
+            <desc2>Intégration pré packagée</desc2>
+            <comment>Connexion spécifique a SAP</comment>
+            <score>1</score>
+         </element>
+         <element name="oracleapplication" title="Oracle Application">
+            <desc></desc>
+            <desc0>Pas d'intégration</desc0>
+            <desc1>Flux existant mais limité</desc1>
+            <desc2>Intégration pré packagée</desc2>
+            <comment></comment>
+            <score>0</score>
+         </element>
+      </element>
+   </section>
+   <section name="transformation" title="Transformation">
+      <desc>Fonctionnalités de transformation des données</desc>
+      <element name="tri" title="Tri">
+         <desc>Fonctionnalités de tri</desc>
+         <desc0>Non disponible</desc0>
+         <desc1>Partiellement disponible</desc1>
+         <desc2>Disponible</desc2>
+         <comment>Performance inférieur à CloverETL et a datastage server</comment>
+         <score>2</score>
+      </element>
+      <element name="dedoublonnage" title="Dédoublonnage">
+         <desc>Suppression des doublons</desc>
+         <desc0>Non disponible</desc0>
+         <desc1>Partiellement disponible</desc1>
+         <desc2>Disponible</desc2>
+         <comment></comment>
+         <score>2</score>
+      </element>
+      <element name="filtre" title="Filtre">
+         <desc>Fonctionnalités de filtre</desc>
+         <desc0>Non disponible</desc0>
+         <desc1>Partiellement disponible</desc1>
+         <desc2>Disponible</desc2>
+         <comment></comment>
+         <score>2</score>
+      </element>
+      <element name="concatenation" title="Concaténation">
+         <desc>Fonctionnalités de concaténation</desc>
+         <desc0>Non disponible</desc0>
+         <desc1>Partiellement disponible</desc1>
+         <desc2>Disponible</desc2>
+         <comment></comment>
+         <score>2</score>
+      </element>
+      <element name="lookup" title="Look up">
+         <desc></desc>
+         <desc0>Non disponible</desc0>
+         <desc1>Partiellement disponible</desc1>
+         <desc2>Disponible</desc2>
+         <comment></comment>
+         <score>1</score>
+      </element>
+      <element name="jointure" title="Jointure">
+         <desc></desc>
+         <desc0>Non disponible</desc0>
+         <desc1>Partiellement disponible</desc1>
+         <desc2>Disponible</desc2>
+         <comment></comment>
+         <score>2</score>
+      </element>
+      <element name="reformatagedesdonnees" title="Reformatage des données">
+         <desc>Fonctionnalités de reformatage</desc>
+         <element name="chainedecaracteres" title="Chaîne de caractères">
+            <desc>Reformatage de chaînes de caractères</desc>
+            <desc0>Pas de reformatage possible</desc0>
+            <desc1>Reformatage possible mais limité</desc1>
+            <desc2>Reformatage possible</desc2>
+            <comment></comment>
+            <score>1</score>
+         </element>
+         <element name="date" title="Date">
+            <desc>Reformatage de chaînes de dates</desc>
+            <desc0>Pas de reformatage possible</desc0>
+            <desc1>Reformatage possible mais limité</desc1>
+            <desc2>Reformatage possible</desc2>
+            <comment></comment>
+            <score>1</score>
+         </element>
+         <element name="nombre" title="Nombre">
+            <desc>Reformatage de chaînes des nombres</desc>
+            <desc0>Pas de reformatage possible</desc0>
+            <desc1>Reformatage possible mais limité</desc1>
+            <desc2>Reformatage possible</desc2>
+            <comment></comment>
+            <score>1</score>
+         </element>
+         <element name="fonctionsdecalcul" title="Fonctions de calcul">
+            <desc></desc>
+            <desc0>Aucune fonction de calcul disponible</desc0>
+            <desc1>Quelques fonctions disponibles</desc1>
+            <desc2>Jeu complet de fonctions de calcul disponibles</desc2>
+            <comment></comment>
+            <score>1</score>
+         </element>
+      </element>
+      <element name="comparaisondefichiers" title="Comparaison de fichiers">
+         <desc></desc>
+         <desc0>Non disponible</desc0>
+         <desc1>Partiellement disponible</desc1>
+         <desc2>Disponible</desc2>
+         <comment></comment>
+         <score>0</score>
+      </element>
+      <element name="agregation" title="Agrégation">
+         <desc></desc>
+         <desc0>Non disponible</desc0>
+         <desc1>Partiellement disponible</desc1>
+         <desc2>Disponible</desc2>
+         <comment></comment>
+         <score>2</score>
+      </element>
+      <element name="pivot" title="Pivot">
+         <desc></desc>
+         <desc0>Non disponible</desc0>
+         <desc1>Partiellement disponible</desc1>
+         <desc2>Disponible</desc2>
+         <comment></comment>
+         <score>0</score>
+      </element>
+      <element name="cledesubstitution" title="Clé de substitution">
+         <desc></desc>
+         <desc0>Non disponible</desc0>
+         <desc1>Partiellement disponible</desc1>
+         <desc2>Disponible</desc2>
+         <comment>Possibilité d'ajouter une séquence</comment>
+         <score>1</score>
+      </element>
+      <element name="appeldecommandesexternes" title="Appel de commandes externes">
+         <element name="commandessysteme" title="Commandes système">
+            <desc></desc>
+            <desc0>Non disponible</desc0>
+            <desc1>Partiellement disponible</desc1>
+            <desc2>Disponible</desc2>
+            <comment></comment>
+            <score>0</score>
+         </element>
+         <element name="commandessql" title="Commandes SQL">
+            <desc></desc>
+            <desc0>Non disponible</desc0>
+            <desc1>Partiellement disponible</desc1>
+            <desc2>Disponible</desc2>
+            <comment></comment>
+            <score>2</score>
+         </element>
+      </element>
+   </section>
+   <section name="parametrage" title="Paramétrage">
+      <element name="jobmaquette" title="Job maquette">
+         <desc>Templates</desc>
+         <desc0>Non disponible</desc0>
+         <desc1>Partiellement disponible</desc1>
+         <desc2>Disponible</desc2>
+         <comment></comment>
+         <score>1</score>
+      </element>
+      <element name="parametragedestraitements" title="Paramétrage des traitements">
+         <desc></desc>
+         <desc0>Non disponible</desc0>
+         <desc1>Limité</desc1>
+         <desc2>Illimité</desc2>
+         <comment>Limité a dix paramètres par tâche élémentaire</comment>
+         <score>1</score>
+      </element>
+      <element name="parametragedumoteur" title="Paramétrage du moteur">
+         <desc></desc>
+         <desc0>Non disponible</desc0>
+         <desc1>Partiellement disponible</desc1>
+         <desc2>Disponible</desc2>
+         <comment></comment>
+         <score>0</score>
+      </element>
+   </section>
+   <section name="deboguage" title="Déboguage">
+      <element name="executionpasapas" title="Exécution pas à pas">
+         <desc></desc>
+         <desc0>Non disponible</desc0>
+         <desc1>Partiellement disponible</desc1>
+         <desc2>Disponible</desc2>
+         <comment></comment>
+         <score>0</score>
+      </element>
+      <element name="generationdejeuxdetest" title="Génération de jeux de test">
+         <desc></desc>
+         <desc0>Non disponible</desc0>
+         <desc1>Partiellement disponible</desc1>
+         <desc2>Disponible</desc2>
+         <comment></comment>
+         <score>2</score>
+      </element>
+      <element name="visualisationgraphique" title="Visualisation graphique">
+         <desc>Visualisation graphique de la performance</desc>
+         <desc0>Non disponible</desc0>
+         <desc1>Partiellement disponible</desc1>
+         <desc2>Disponible</desc2>
+         <comment></comment>
+         <score>2</score>
+      </element>
+      <element name="journalisation" title="Journalisation">
+         <desc></desc>
+         <desc0>Non disponible</desc0>
+         <desc1>Partiellement disponible</desc1>
+         <desc2>Disponible</desc2>
+         <comment>Log de bonne qualité concernant les performances </comment>
+         <score>2</score>
+      </element>
+   </section>
+   <section name="performance" title="Performance">
+      <element name="utilisationdefichierinterne" title="Utilisation de fichier interne">
+         <desc></desc>
+         <desc0>Pas de fichier interne</desc0>
+         <desc1>Utilisation limitée</desc1>
+         <desc2>Disponible</desc2>
+         <comment></comment>
+         <score>0</score>
+      </element>
+      <element name="parallelisationdesfluxdedonnees" title="Parallélisation des flux de données">
+         <desc></desc>
+         <desc0>Pas de parallélisation</desc0>
+         <desc1>Fonctionnalité disponible mais limitée</desc1>
+         <desc2>Fonctionnalité disponible</desc2>
+         <comment></comment>
+         <score>0</score>
+      </element>
+   </section>
+   <section name="exploitabilite" title="Exploitabilité">
+      <desc>TBD</desc>
+      <element name="portabilite" title="Portabilité">
+         <desc>TBD</desc>
+         <desc0>TBD</desc0>
+         <desc1>TBD</desc1>
+         <desc2>TBD</desc2>
+         <comment></comment>
+         <score>2</score>
+      </element>
+      <element name="ordonnancement" title="Ordonnancement">
+         <element name="tacheselementaires" title="Tâches élémentaires">
+            <desc>Ordonnancement de tâches élémentaires</desc>
+            <desc0>Non disponible</desc0>
+            <desc1>Partiellement disponible</desc1>
+            <desc2>Complètement disponible</desc2>
+            <comment>Ordonnancement, alerte envoi de mail</comment>
+            <score>2</score>
+         </element>
+         <element name="ordonnanceurintegre" title="Ordonnanceur intégré">
+            <desc></desc>
+            <desc0>Pas d'ordonnanceur intégré</desc0>
+            <desc1>Ordonnanceur intégré limité</desc1>
+            <desc2>Ordonnanceur intégré complet</desc2>
+            <comment></comment>
+            <score>2</score>
+         </element>
+      </element>
+      <element name="lignedecommande" title="Ligne de commande">
+         <desc>Lancement de tâches en ligne de commande</desc>
+         <desc0>Aucun outil en ligne de commande disponible</desc0>
+         <desc1>Existence d'un outil en ligne de commande mais à l'utilisation limitée</desc1>
+         <desc2>Outil en ligne de commande disponible et complet</desc2>
+         <comment></comment>
+         <score>2</score>
+      </element>
+      <element name="richessedesjournaux" title="Richesse des journaux">
+         <desc>Richesse des journaux de traitement</desc>
+         <desc0>Aucun journal de traitement disponible</desc0>
+         <desc1>Journal de traitement existant mais très pauvre</desc1>
+         <desc2>Journal de traitement très riche</desc2>
+         <comment></comment>
+         <score>2</score>
+      </element>
+      <element name="referentiel" title="Référentiel">
+         <desc>Utilisation d'un référentiel</desc>
+         <element name="fichierplat" title="Fichier plat">
+            <desc></desc>
+            <desc0>Pas de référentiel en fichier plat</desc0>
+            <desc1>Référentiel disponible sous forme de fichier plat mais limité</desc1>
+            <desc2>Disponible</desc2>
+            <comment>Interfaçage CVS</comment>
+            <score>2</score>
+         </element>
+         <element name="sgbd" title="SGBD">
+            <desc></desc>
+            <desc0>Pas de référentiel SGBD</desc0>
+            <desc1>Référentiel disponible mais limité</desc1>
+            <desc2>Disponible</desc2>
+            <comment>Référentiel MySQL</comment>
+            <score>2</score>
+         </element>
+      </element>
+   </section>
+   <section name="outillage" title="Outillage">
+      <element name="outildedeveloppement" title="Outil de développement">
+         <desc>Client/serveur, Eclipse, ...</desc>
+         <desc0>Aucun outil fourni</desc0>
+         <desc1>Outillage via des produits tiers</desc1>
+         <desc2>Outil de développement fourni</desc2>
+         <comment>2</comment>
+         <score>1</score>
+      </element>
+      <element name="outildegestiondeconfiguration" title="Outil de gestion de configuration">
+         <desc></desc>
+         <desc0>Aucun outil fourni</desc0>
+         <desc1>Outillage via des produits tiers</desc1>
+         <desc2>Outil de gestion de confoguration fourni</desc2>
+         <comment></comment>
+         <score>1</score>
+      </element>
+   </section>
+</document>
