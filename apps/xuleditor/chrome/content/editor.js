@@ -31,10 +31,6 @@ var docChanged;
 var id;
 //Localized strings bundle
 var strbundle;
- 
-function init() {
-
-}
 
 function changeAuthor(author) {
 	document.getElementById("f-a-name").value = author.label;
@@ -59,15 +55,6 @@ function deleteAuthor() {
 	document.getElementById("f-a-name").value = "";
 	document.getElementById("f-a-email").value = "";
 	docChanged = "true";
-}
-
-function doOK() {
-	//Call window opener callback function
-	if (docChanged == "true")
-		window.arguments[1](myDoc);
-	else
-		window.arguments[1]("null");
-	return true;
 }
 
 //Window initialization after loading
@@ -355,7 +342,11 @@ function saveFileAs() {
 //////////////////////////
 //Saves modifications to a new QSOS XML file
 function saveRemote() {
-	myDoc.writeremote("http://www.qsos.org/phpviewer/writeremote.php");
+	var prefManager = Components.classes["@mozilla.org/preferences-service;1"]
+		.getService(Components.interfaces.nsIPrefBranch);
+	var saveremote = prefManager.getCharPref("extensions.qsos-xuled.saveremote");
+
+	myDoc.writeremote(saveremote);
 }
 
 //////////////////////////
@@ -370,6 +361,14 @@ function closeFile() {
 	document.getElementById("f-desc").value = "";
 	document.getElementById("f-url").value = "";
 	document.getElementById("f-demourl").value = "";
+
+	var myList = document.getElementById("f-a-list");
+	while (myList.hasChildNodes()) {
+		myList.removeChild(myList.childNodes[0]);
+	}
+
+	document.getElementById("f-a-name").value = "";
+	document.getElementById("f-a-email").value = "";
 
 	document.getElementById("t-software").setAttribute("label", strbundle.getString("softwareLabel"));
 	document.getElementById("t-c-title").setAttribute("label", strbundle.getString("criterionLabel"));
@@ -474,6 +473,9 @@ function freezeGeneric(bool) {
 	document.getElementById("f-desc").disabled = bool;
 	document.getElementById("f-url").disabled = bool;
 	document.getElementById("f-demourl").disabled = bool;
+	document.getElementById("f-a-list").disabled = bool;
+	document.getElementById("f-a-name").disabled = bool;
+	document.getElementById("f-a-email").disabled = bool;
 }
 
 //(Un)freezes the "Score" input files (current criteria properties)
