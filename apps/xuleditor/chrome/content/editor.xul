@@ -40,9 +40,9 @@
     <hbox>
       <tabbox id = "t" flex = "1">
       <tabs>
-        <tab id = "t-software" label = "&t-header.label;"/>
-        <tab id = "t-c-title" label = "&t-c-title.label;"/>
-        <tab id = "t-chart" label = "&t-chart.label;"/>
+        <tab id = "t-software" class = "header" label = "&t-header.label;"/>
+        <tab id = "t-c-title" class = "criteria" label = "&t-c-title.label;"/>
+        <tab id = "t-chart" class = "graph" label = "&t-chart.label;"/>
       </tabs>
       <tabpanels flex = "1">
         <tabpanel flex = "1">
@@ -57,12 +57,12 @@
                     <label control="f-sotwarefamily" value="&f-sotwarefamily.value;"/><textbox id="f-sotwarefamily" oninput="this.setAttribute('class','inside');" onchange="this.setAttribute('class','outside'); changeSoftwareFamily(this);"/>
                   </vbox>
                   <vbox flex="1">
+                    <label control="f-url" value="&f-url.value;"/><textbox id="f-url" oninput="this.setAttribute('class','inside');" onchange="this.setAttribute('class','outside'); changeUrl(this);"/>
+                    <label control="f-demourl" value="&f-demourl.value;"/><textbox id="f-demourl" oninput="this.setAttribute('class','inside');" onchange="this.setAttribute('class','outside'); changeDemoUrl(this);"/>
                     <label control="f-license" value="&f-license.value;"/>
                     <menulist id="f-license" oncommand="changeLicense(this, this.selectedIndex);">
                       <menupopup id="f-license-popup"></menupopup>
                     </menulist>
-                    <label control="f-url" value="&f-url.value;"/><textbox id="f-url" oninput="this.setAttribute('class','inside');" onchange="this.setAttribute('class','outside'); changeUrl(this);"/>
-                    <label control="f-demourl" value="&f-demourl.value;"/><textbox id="f-demourl" oninput="this.setAttribute('class','inside');" onchange="this.setAttribute('class','outside'); changeDemoUrl(this);"/>
                   </vbox>
                 </box>
                   <label control="f-desc" value="&f-desc.value;"/><textbox id="f-desc" multiline="true" oninput="this.setAttribute('class','inside');" onchange="this.setAttribute('class','outside'); changeDesc(this);"/>
