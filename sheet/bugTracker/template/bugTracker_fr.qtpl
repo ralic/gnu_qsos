@@ -19,8 +19,8 @@
       <qsosappfamily>Outil de support</qsosappfamily>
       <qsosspecificformat>1.0</qsosspecificformat>
    </header>
-   <include section="generic_fr"></include>
-   <section name="ticketmanagement" title="Gestion de tickets">
+   <include section="generic"/>
+    <section name="ticketmanagement" title="Gestion de tickets">
       <desc>Gestion de tickets de support</desc>
       <element name="basicfeatures" title="Fonctionnalités de base">
          <desc></desc>
@@ -252,10 +252,10 @@
          <desc>Capacités d'intégration de la solution dans un existant</desc>
          <comment></comment>
          <element name="authentication" title="Authentification">
-            <desc></desc>
-            <desc0></desc0>
-            <desc1></desc1>
-            <desc2></desc2>
+            <desc>Méthodes d'autentification supportées</desc>
+            <desc0>Seule l'autentification native de la solution est supportée</desc0>
+            <desc1>Autentification via quelques SGBD ou via fichiers plats</desc1>
+            <desc2>Autentification via la plupart des SGBD, LDAP ou fichiers plats</desc2>
             <score></score>
             <comment></comment>
          </element>
