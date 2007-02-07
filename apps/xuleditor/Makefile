@@ -16,25 +16,27 @@
 #
 #
 # QSOS XUL Editor Makefile
-# $Id: Makefile,v 1.7 2006/12/14 16:48:52 rsemeteys Exp $
+# $Id: Makefile,v 1.8 2007/02/07 07:07:19 rsemeteys Exp $
 
 APPPACK=application.ini Changes chrome.manifest LICENSE README xuleditor xuleditor.bat
+
 EXTPACK=Changes chrome.manifest install.rdf LICENSE README
 
 APPSRC=chrome/content/about.xul chrome/content/authors.js chrome/content/authors.xul chrome/content/confirm.xul chrome/content/Document.js chrome/content/editor.js chrome/content/editor.xul chrome/content/load.js chrome/content/load.xul chrome/content/new.js chrome/content/new.xul chrome/content/logo-qsos.png chrome/content/logo32.png
+
 EXTSRC=$(APPSRC) chrome/content/qsos-overlay.js chrome/content/qsos-overlay.xul
 
 LOCALE=chrome/locale/en-US/about.dtd chrome/locale/en-US/authors.dtd chrome/locale/en-US/confirm.dtd chrome/locale/en-US/editor.dtd chrome/locale/en-US/load.dtd chrome/locale/en-US/new.dtd chrome/locale/en-US/editor.properties chrome/locale/en-US/qsos-overlay.dtd chrome/locale/fr-FR/about.dtd chrome/locale/fr-FR/authors.dtd chrome/locale/fr-FR/confirm.dtd chrome/locale/fr-FR/editor.dtd chrome/locale/fr-FR/load.dtd chrome/locale/fr-FR/new.dtd chrome/locale/fr-FR/editor.properties chrome/locale/fr-FR/qsos-overlay.dtd
 
-SKIN=chrome/skin/classic.css
+SKIN=chrome/skin/classic.css chrome/skin/header.png chrome/skin/criteria.png chrome/skin/graph.png
 
 PREFS=defaults/preferences/qsos-xuled.js
 
-VERSION=0.5
+VERSION=0.6
 
 ext:
 	rm -f xuleditor-firefox-${VERSION}.xpi
-	zip -r xuleditor $(EXTPACK) $(EXTSRC) $(LOCALE) $(SKIN)
+	zip -r xuleditor $(EXTPACK) $(EXTSRC) $(LOCALE) $(SKIN) $(PREFS)
 	mv xuleditor.zip xuleditor-firefox-${VERSION}.xpi
 
 app:
