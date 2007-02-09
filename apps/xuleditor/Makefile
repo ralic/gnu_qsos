@@ -16,7 +16,7 @@
 #
 #
 # QSOS XUL Editor Makefile
-# $Id: Makefile,v 1.8 2007/02/07 07:07:19 rsemeteys Exp $
+# $Id: Makefile,v 1.9 2007/02/09 10:53:02 rsemeteys Exp $
 
 APPPACK=application.ini Changes chrome.manifest LICENSE README xuleditor xuleditor.bat
 
@@ -32,6 +32,8 @@ SKIN=chrome/skin/classic.css chrome/skin/header.png chrome/skin/criteria.png chr
 
 PREFS=defaults/preferences/qsos-xuled.js
 
+PREFS_XULRUNNER=defaults/preferences/qsos-xuled-xulrunner.js
+
 VERSION=0.6
 
 ext:
@@ -41,4 +43,4 @@ ext:
 
 app:
 	rm -f xuleditor-application-${VERSION}.zip
-	zip -r xuleditor-application-${VERSION}.zip $(APPPACK) $(APPSRC) $(LOCALE) $(SKIN) $(PREFS)
+	zip -r xuleditor-application-${VERSION}.zip $(APPPACK) $(APPSRC) $(LOCALE) $(SKIN) $(PREFS_XULRUNNER)

@@ -52,20 +52,20 @@
               <vbox flex="1">
                 <box>
                   <vbox flex="1">
-                    <label control="f-software" value="&f-software.value;"/><textbox id="f-software" oninput="this.setAttribute('class','inside');" onchange="this.setAttribute('class','outside'); changeAppName(this);"/>
-                    <label control="f-release" value="&f-release.value;"/><textbox id="f-release" oninput="this.setAttribute('class','inside');" onchange="this.setAttribute('class','outside'); changeRelease(this);"/>
-                    <label control="f-sotwarefamily" value="&f-sotwarefamily.value;"/><textbox id="f-sotwarefamily" oninput="this.setAttribute('class','inside');" onchange="this.setAttribute('class','outside'); changeSoftwareFamily(this);"/>
+                    <label control="f-software" value="&f-software.value;"/><textbox id="f-software" onchange="changeAppName(this);"/>
+                    <label control="f-release" value="&f-release.value;"/><textbox id="f-release" onchange="changeRelease(this);"/>
+                    <label control="f-sotwarefamily" value="&f-sotwarefamily.value;"/><textbox id="f-sotwarefamily" onchange="changeSoftwareFamily(this);"/>
                   </vbox>
                   <vbox flex="1">
-                    <label control="f-url" value="&f-url.value;"/><textbox id="f-url" oninput="this.setAttribute('class','inside');" onchange="this.setAttribute('class','outside'); changeUrl(this);"/>
-                    <label control="f-demourl" value="&f-demourl.value;"/><textbox id="f-demourl" oninput="this.setAttribute('class','inside');" onchange="this.setAttribute('class','outside'); changeDemoUrl(this);"/>
+                    <label control="f-url" value="&f-url.value;"/><textbox id="f-url" onchange="changeUrl(this);"/>
+                    <label control="f-demourl" value="&f-demourl.value;"/><textbox id="f-demourl" onchange="changeDemoUrl(this);"/>
                     <label control="f-license" value="&f-license.value;"/>
                     <menulist id="f-license" oncommand="changeLicense(this, this.selectedIndex);">
                       <menupopup id="f-license-popup"></menupopup>
                     </menulist>
                   </vbox>
                 </box>
-                  <label control="f-desc" value="&f-desc.value;"/><textbox id="f-desc" multiline="true" oninput="this.setAttribute('class','inside');" onchange="this.setAttribute('class','outside'); changeDesc(this);"/>
+                  <label control="f-desc" value="&f-desc.value;"/><textbox id="f-desc" multiline="true" onchange="changeDesc(this);"/>
               </vbox>
             </groupbox>
             <groupbox>
@@ -115,7 +115,7 @@
               </groupbox>
             </deck>
             <label control="f-c-comments" value="&f-c-comments.value;"/>
-            <textbox id="f-c-comments" multiline="true" rows="5" oninput="this.setAttribute('class','inside');" onchange="this.setAttribute('class','outside'); changeComments(this);"/>
+            <textbox id="f-c-comments" multiline="true" rows="5" onchange="changeComments(this);"/>
           </vbox>
         </tabpanel>
         <tabpanel flex = "1">

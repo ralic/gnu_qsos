@@ -32,31 +32,6 @@ var id;
 //Localized strings bundle
 var strbundle;
 
-function changeAuthor(author) {
-	document.getElementById("f-a-name").value = author.label;
-	document.getElementById("f-a-email").value = author.value;
-}
-
-function addAuthor() {
-	var mylist = document.getElementById("f-a-list");
-	var listitem = document.createElement("listitem");
-	listitem.setAttribute("label", document.getElementById("f-a-name").value);
-	listitem.setAttribute("value", document.getElementById("f-a-email").value);
-	mylist.appendChild(listitem);
-	myDoc.addauthor(document.getElementById("f-a-name").value, document.getElementById("f-a-email").value);
-	docChanged = "true";
-}
-
-function deleteAuthor() {
-	var mylist = document.getElementById("f-a-list");
-	mylist.removeChild(mylist.selectedItem);
-	alert(document.getElementById("f-a-name").value);
-	myDoc.delauthor(document.getElementById("f-a-name").value);
-	document.getElementById("f-a-name").value = "";
-	document.getElementById("f-a-email").value = "";
-	docChanged = "true";
-}
-
 //Window initialization after loading
 function init() {
     strbundle = document.getElementById("properties");
@@ -529,7 +504,7 @@ function treeselect(tree) {
 function changeAppName(xulelement) {
 	docChanged = "true";
 	myDoc.setappname(xulelement.value);
-    document.getElementById("file-save").setAttribute("disabled", "false");
+	document.getElementById("file-save").setAttribute("disabled", "false");
 }
 
 //Triggered when software release is modified
@@ -572,6 +547,36 @@ function changeUrl(xulelement) {
 function changeDemoUrl(xulelement) {
 	docChanged = "true";
 	myDoc.setdemourl(xulelement.value);
+	document.getElementById("file-save").setAttribute("disabled", "false");
+}
+
+//Triggered when an author is select in the list
+function changeAuthor(author) {
+	document.getElementById("f-a-name").value = author.label;
+	document.getElementById("f-a-email").value = author.value;
+}
+
+//Triggered when an author is added
+function addAuthor() {
+	var mylist = document.getElementById("f-a-list");
+	var listitem = document.createElement("listitem");
+	listitem.setAttribute("label", document.getElementById("f-a-name").value);
+	listitem.setAttribute("value", document.getElementById("f-a-email").value);
+	mylist.appendChild(listitem);
+	myDoc.addauthor(document.getElementById("f-a-name").value, document.getElementById("f-a-email").value);
+	docChanged = "true";
+	document.getElementById("file-save").setAttribute("disabled", "false");
+}
+
+//Triggered when an author is deleted
+function deleteAuthor() {
+	var mylist = document.getElementById("f-a-list");
+	mylist.removeChild(mylist.selectedItem);
+	alert(document.getElementById("f-a-name").value);
+	myDoc.delauthor(document.getElementById("f-a-name").value);
+	document.getElementById("f-a-name").value = "";
+	document.getElementById("f-a-email").value = "";
+	docChanged = "true";
 	document.getElementById("file-save").setAttribute("disabled", "false");
 }
 
