@@ -65,7 +65,8 @@ function newFile() {
 	var nsIFilePicker = Components.interfaces.nsIFilePicker;
 	var fp = Components.classes["@mozilla.org/filepicker;1"]
 	.createInstance(nsIFilePicker);
-	fp.init(window,  strbundle.getString("saveFile"), nsIFilePicker.modeSave);
+	fp.init(window, strbundle.getString("saveFile"), nsIFilePicker.modeSave);
+	fp.defaultExtension = ".qtpl";
 	fp.appendFilter(strbundle.getString("QSOSTemplateFile"),"*.qtpl");
 	var res = fp.show();
 	if (res == nsIFilePicker.returnOK) {
@@ -219,6 +220,7 @@ function saveFileAs() {
 	var fp = Components.classes["@mozilla.org/filepicker;1"]
 		.createInstance(nsIFilePicker);
 	fp.init(window, strbundle.getString("saveFileAs"), nsIFilePicker.modeSave);
+	fp.defaultExtension = ".qtpl";
 	fp.appendFilter(strbundle.getString("QSOSTemplateFile"),"*.qtpl");
 	var res = fp.show();
 	if (res == nsIFilePicker.returnOK) {
