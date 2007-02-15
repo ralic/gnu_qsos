@@ -77,6 +77,8 @@ function Document(name) {
     this.setkeyscore = setkeyscore;
 
     this.dump = dump;
+    this.hassubelements = hassubelements;
+    this.getparent = getparent;
     this.getfilename = getfilename;
     this.setfilename = setfilename;
     this.getcomplextree = getcomplextree;
@@ -316,10 +318,20 @@ function Document(name) {
     function hassubelements(name) {
         var nb = sheet.evaluate("count(//*[@name='"+name+"']/element)", sheet, null, XPathResult.ANY_TYPE, null).numberValue;
         if (nb > 0) {
-            return true;
+                return true;
         } 
         else {
-            return false;
+                return false;
+        }
+    }
+
+    function getparent(name) {
+        var node = sheet.evaluate("//*[@name='"+name+"']", sheet, null, XPathResult.ANY_TYPE,null).iterateNext();
+        var parent = node.parentNode;
+        if (parent.nodeName == "section" || parent.nodeName == "element") {
+                return parent.getAttribute("name");
+        } else {
+                return false;
         }
     }
     
