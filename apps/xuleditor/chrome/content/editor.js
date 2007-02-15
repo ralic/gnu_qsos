@@ -1,5 +1,5 @@
 /*
-**  Copyright (C) 2007 Atos Origin 
+**  Copyright (C) 2006, 2007 Atos Origin 
 **
 **  Author: Raphael Semeteys <raphael.semeteys@atosorigin.com>
 **
@@ -54,7 +54,7 @@ function init() {
 	openRemoteFile(url)
     }
 
-    //Chat stuff
+    //Chat stuff (using xmpp4moz extension)
 
     channel = XMPP.createChannel(
         <query xmlns="http://jabber.org/protocol/disco#info">
@@ -70,8 +70,7 @@ function init() {
             conversation.value +=
                 (message.direction == 'out' ? 'Me' : message.stanza.@from) + ' : ' +
                 message.stanza.body + '\n';
-            conversation.scrollTop += conversation.scrollHeight - conversation.clientHeight;
-            //document.getElementById('conversation').scrollIntoView(false);
+            conversation.inputField.scrollTop = conversation.inputField.scrollHeight - conversation.inputField.clientHeight;
         });
 
     XMPP.cache.presenceIn.forEach(receivedPresence);
@@ -86,10 +85,12 @@ function init() {
       </presence>);
 }
 
+//Callback function for presence notification
 function receivedPresence(presence) {
-  document.getElementById("roster").value += presence.stanza.@from + '\n';
+    document.getElementById("roster").value += presence.stanza.@from + '\n';
 }
 
+//Callback function for message sending
 function send() {
     var input = document.getElementById('input').value;
     XMPP.send(account, <message to={chatroom} type='groupchat'><body>{input}</body></message>);
@@ -553,6 +554,7 @@ function treeselect(tree) {
 	}
 }
 
+//Forces the selection of element with id in the criteria tree
 function selectItem(id) {
         expandTree(true);
         tree = document.getElementById("mytree");

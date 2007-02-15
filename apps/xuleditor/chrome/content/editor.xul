@@ -135,11 +135,18 @@
               <textbox id="conversation" multiline="true" rows="20" readonly="true"/>
               <label value="Say something" control="input" accesskey="a"/>
               <textbox id="input" multiline="true" rows="2"/>
-              <button label="Send!" oncommand="send();" accesskey="S"/>
+              <hbox>
+                <spacer flex="1"/>
+                <button label="Send!" oncommand="send();" accesskey="S"/>
+                <spacer flex="1"/>
+              </hbox>
             </vbox>
           </hbox>
           <splitter/>
-          <textbox id="roster" multiline="true" readonly="true"/>
+          <vbox>
+            <label value="Participants"/>
+            <textbox id="roster" multiline="true" flex="1" readonly="true"/>
+          </vbox>
         </tabpanel>
       </tabpanels>
       </tabbox>

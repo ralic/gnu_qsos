@@ -1,5 +1,5 @@
 /*
-**  Copyright (C) 2006 Atos Origin 
+**  Copyright (C) 2006, 2007 Atos Origin 
 **
 **  Author: Rapha� Semeteys <raphael.semeteys@atosorigin.com>
 **
