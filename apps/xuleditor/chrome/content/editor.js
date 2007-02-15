@@ -32,6 +32,10 @@ var id;
 //Localized strings bundle
 var strbundle;
 
+//XMPP account init
+var account = { jid: undefined };
+var chatroom;
+
 //Window initialization after loading
 function init() {
     strbundle = document.getElementById("properties");
@@ -49,6 +53,46 @@ function init() {
     if (url) {
 	openRemoteFile(url)
     }
+
+    //Chat stuff
+
+    channel = XMPP.createChannel(
+        <query xmlns="http://jabber.org/protocol/disco#info">
+        <feature var="http://jabber.org/protocol/muc"/>
+        <feature var="http://jabber.org/protocol/muc#user"/>
+        <feature var='http://jabber.org/protocol/xhtml-im'/>
+        </query>);
+
+    channel.on(
+        {event: 'message'},
+        function(message) {
+            var conversation = document.getElementById('conversation');
+            conversation.value +=
+                (message.direction == 'out' ? 'Me' : message.stanza.@from) + ' : ' +
+                message.stanza.body + '\n';
+            conversation.scrollTop += conversation.scrollHeight - conversation.clientHeight;
+            //document.getElementById('conversation').scrollIntoView(false);
+        });
+
+    XMPP.cache.presenceIn.forEach(receivedPresence);
+
+    var prefManager = Components.classes["@mozilla.org/preferences-service;1"]
+            .getService(Components.interfaces.nsIPrefBranch);
+    chatroom = prefManager.getCharPref("extensions.qsos-xuled.chatroom");
+
+    XMPP.send(account,
+      <presence to={chatroom + '/raphael.semeteys@jabber.fr'}>
+        <x xmlns='http://jabber.org/protocol/muc'/>
+      </presence>);
+}
+
+function receivedPresence(presence) {
+  document.getElementById("roster").value += presence.stanza.@from + '\n';
+}
+
+function send() {
+    var input = document.getElementById('input').value;
+    XMPP.send(account, <message to={chatroom} type='groupchat'><body>{input}</body></message>);
 }
 
 ////////////////////////////////////////////////////////////////////
@@ -497,8 +541,31 @@ function treeselect(tree) {
 	
 		document.getElementById("f-c-comments").value = myDoc.getkeycomment(id);
 		freezeComments("");
+
+                if (myDoc.hassubelements(id)) {
+                        drawChart(id);
+                } else {
+                        if (document.getElementById("t-s").selectedIndex == 1) {
+                                var parentId = myDoc.getparent(id);
+                                if (parentId) drawChart(parentId);
+                        }
+                }
 	}
 }
+
+function selectItem(id) {
+        expandTree(true);
+        tree = document.getElementById("mytree");
+        for(i=0; i < tree.view.rowCount; i++) {
+                currentId = tree.view.getItemAtIndex(i).firstChild.firstChild.getAttribute("id");
+                if (currentId == id) {
+                          tree.view.selection.select(i);
+                          if (document.getElementById("t-s").selectedIndex != 1) tree.treeBoxObject.scrollToRow(i);
+                          break;
+                }
+        }
+}
+
 
 //Triggered when software name is modified
 function changeAppName(xulelement) {
@@ -684,7 +751,7 @@ function addLabel(name, marker) {
 	var label = document.getElementById("chart-label");
 	var newLabel = document.createElement("label");
 	newLabel.setAttribute("value", ">  " + myDoc.getkeytitle(name));
-	newLabel.setAttribute("onclick", "drawChart(\"" + name + "\")");
+	newLabel.setAttribute("onclick", "selectItem(\"" + name + "\"); drawChart(\"" + name + "\")");
 	newLabel.style.cursor = "pointer";
 
 	if (marker) {
@@ -774,9 +841,12 @@ function drawText(x, y, myScore) {
 	}
 	
 	if (myScore.children) {
-		myText.setAttribute("onclick", "drawChart(\"" + myScore.name + "\")");
-		myText.style.cursor = "pointer";
-	}	
+		myText.setAttribute("onclick", "selectItem(\"" + myScore.name + "\"); drawChart(\"" + myScore.name + "\")");	
+	} else {
+		myText.setAttribute("onclick", "selectItem(\"" + myScore.name + "\"); document.getElementById('t-s').selectedIndex = 1");
+        }	
+	myText.style.cursor = "pointer";
+
 
 	myText.appendChild(document.createTextNode(myScore.title));
 
