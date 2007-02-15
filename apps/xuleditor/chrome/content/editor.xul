@@ -7,6 +7,7 @@
   onload="init();">
   <script type="application/x-javascript" src="Document.js"></script>
   <script type="application/x-javascript" src="editor.js"></script>
+  <script type="application/x-javascript" src="chrome://xmpp4moz/content/xmpp.js"/>
   <stringbundle id="properties" src="chrome://qsos-xuled/locale/editor.properties"/>
   <vbox>
     <toolbox>
@@ -39,10 +40,11 @@
       </toolbox>
     <hbox>
       <tabbox id = "t" flex = "1">
-      <tabs>
+      <tabs id = "t-s">
         <tab id = "t-software" class = "header" label = "&t-header.label;"/>
         <tab id = "t-c-title" class = "criteria" label = "&t-c-title.label;"/>
         <tab id = "t-chart" class = "graph" label = "&t-chart.label;"/>
+        <tab id = "t-chat" label = "Chat"/>
       </tabs>
       <tabpanels flex = "1">
         <tabpanel flex = "1">
@@ -121,10 +123,23 @@
         <tabpanel flex = "1">
           <vbox id="chart-box" flex = "1">
             <hbox id="chart-label" />
-              <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+              <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="750px" height="500px">
                 <g id="chart"/>
               </svg>
           </vbox>
+        </tabpanel>
+        <tabpanel flex = "1">
+          <hbox flex = "1">
+            <vbox flex = "5">
+              <label value="Conversation"/>
+              <textbox id="conversation" multiline="true" rows="20" readonly="true"/>
+              <label value="Say something" control="input" accesskey="a"/>
+              <textbox id="input" multiline="true" rows="2"/>
+              <button label="Send!" oncommand="send();" accesskey="S"/>
+            </vbox>
+          </hbox>
+          <splitter/>
+          <textbox id="roster" multiline="true" readonly="true"/>
         </tabpanel>
       </tabpanels>
       </tabbox>
