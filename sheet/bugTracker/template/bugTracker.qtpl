@@ -113,7 +113,7 @@
       </comment>
       <score></score>
     </element>
-    <element name="Rights management" title="Rights management">
+    <element name="rightsmanagement" title="Rights management">
       <desc0>Impossible to manage users rights</desc0>
       <desc1>Rules and rights ' management via source code or don't work correctly </desc1>
       <desc2>Rules and rights ' management via source code by web interface, very easy</desc2>
