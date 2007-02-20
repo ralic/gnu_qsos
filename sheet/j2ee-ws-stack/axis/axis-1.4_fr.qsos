@@ -22,7 +22,7 @@
     </dates>
     <language>fr</language>
     <appname>axis</appname>
-    <release>axis-1.4</release>
+    <release>1.4</release>
     <licenseid>Apache license 2.0</licenseid>
     <licensedesc>Apache license 2.0</licensedesc>
     <url>http://ws.apache.org/axis</url>
