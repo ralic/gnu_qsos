@@ -556,7 +556,7 @@
       </element>
     </element>
   </section>
-  <!--Section 3 - Modules MultimÃ©dia -->
+  <!--Section 3 - Modules Multimédia -->
   <section name="multimedia" title="Multimedia (voice and video) support">
     <element name="voip" title="Voice over IP Support">
       <element name="protocol" title="Compatible Protocols">
