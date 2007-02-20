@@ -20,7 +20,7 @@
     <desc>KDE Web Browser</desc>
     <demourl></demourl>
     <qsosformat>1.6</qsosformat>
-    <qsosappfamily>Web browser</qsosappfamily>
+    <qsosappfamily>webbrowser</qsosappfamily>
     <qsosspecificformat>1.0</qsosspecificformat>
   </header>
   <section name="generic" title="Generic section">
