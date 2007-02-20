@@ -21,7 +21,7 @@
     <demourl>www.alfresco.com</demourl>
     <qsosformat>1.7</qsosformat>
     <qsosappfamily>cms</qsosappfamily>
-    <qsosappname>Alfresco</qsosappname>
+  <qsosappname>Alfresco</qsosappname>
     <qsosspecificformat></qsosspecificformat>
   </header>
   <section name="generic" title="Generic section">

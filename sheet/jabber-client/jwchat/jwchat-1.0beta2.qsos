@@ -25,7 +25,7 @@
     <demourl></demourl>
     <qsosformat>1.7</qsosformat>
     <qsosappfamily>jabber-client</qsosappfamily>
-    <qsosappname></qsosappname>
+    <qsosappname>jwchat</qsosappname>
     <qsosspecificformat></qsosspecificformat>
   </header>
   <section name="generic" title="Generic section">
