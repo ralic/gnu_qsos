@@ -1,4 +1,4 @@
-<section name="packaging" title="Packaging">
+<element name="packaging" title="Packaging">
   <desc>Packaging pour les différents systèmes d'exploitation</desc>
   <element name="packagingbsd" title="BSD">
     <desc>BSD</desc>
@@ -100,5 +100,5 @@
     <score/>
     <comment/>
   </element>
-</section>
+</element>
 

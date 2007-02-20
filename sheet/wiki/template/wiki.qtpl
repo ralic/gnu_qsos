@@ -14,8 +14,9 @@
         <url/>
         <desc/>
         <demourl/>
-        <qsosformat>1.6</qsosformat>
+        <qsosformat>1.7</qsosformat>
         <qsosappfamily>wiki</qsosappfamily>
+        <qsosappname></qsosappname>
         <qsosspecificformat/>
     </header>
 

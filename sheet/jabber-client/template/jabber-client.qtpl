@@ -16,7 +16,8 @@
     <desc></desc>
     <demourl></demourl>
     <qsosformat>1.6</qsosformat>
-    <qsosappfamily></qsosappfamily>
+    <qsosappfamily>jabber-client</qsosappfamily>
+    <qsosappname></qsosappname>
     <qsosspecificformat></qsosspecificformat>
   </header>
   <include section="generic"/>

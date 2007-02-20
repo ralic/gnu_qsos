@@ -171,6 +171,7 @@
         </element>
       </element>
     </element>
+    <include section="packaging"/>
     <element name="exploitability" title="Exploitabilité">
       <desc>Niveau d'exploitabilité</desc>
       <element name="easeofuseergonomics" title="Facilité d'utilisation, ergonomie">

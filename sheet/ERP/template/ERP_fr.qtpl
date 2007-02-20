@@ -15,8 +15,9 @@
       <url></url>
       <desc></desc>
       <demourl></demourl>
-      <qsosformat>1.6</qsosformat>
+      <qsosformat>1.7</qsosformat>
       <qsosappfamily>ERP</qsosappfamily>
+      <qsosappname></qsosappname>
       <qsosspecificformat>0.1</qsosspecificformat>
    </header>
    <include section="generic"></include>

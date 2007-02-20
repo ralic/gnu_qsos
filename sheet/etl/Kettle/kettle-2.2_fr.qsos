@@ -21,6 +21,7 @@
     <demourl></demourl>
     <qsosformat>1.6</qsosformat>
     <qsosappfamily>etl</qsosappfamily>
+    <qsosappname></qsosappname>
     <qsosspecificformat></qsosspecificformat>
   </header>
   <section name="generic" title="Section générique">
