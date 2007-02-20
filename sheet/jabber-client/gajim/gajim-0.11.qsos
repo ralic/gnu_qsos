@@ -17,7 +17,7 @@
     <desc>Gajim is a powerfull jabber client</desc>
     <demourl></demourl>
     <qsosformat>1.6</qsosformat>
-    <qsosappfamily>Instant messaging client</qsosappfamily>
+    <qsosappfamily>jabber-client</qsosappfamily>
     <qsosspecificformat></qsosspecificformat>
   </header>
   <section name="generic" title="Generic section">

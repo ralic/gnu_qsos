@@ -18,7 +18,7 @@
  For more information on jabber, see www.jabber.org (or the jabber package which contains the jabber server software).</desc>
     <demourl></demourl>
     <qsosformat>1.6</qsosformat>
-    <qsosappfamily>Jabber client</qsosappfamily>
+    <qsosappfamily>jabber-client</qsosappfamily>
     <qsosspecificformat></qsosspecificformat>
   </header>
   <section name="generic" title="Generic section">

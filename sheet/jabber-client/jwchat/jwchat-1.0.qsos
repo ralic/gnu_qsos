@@ -17,7 +17,7 @@
     <desc>JWChat (Jabber Web Chat) is a full-featured AJAX Jabber client</desc>
     <demourl></demourl>
     <qsosformat>1.6</qsosformat>
-    <qsosappfamily>Jabber client</qsosappfamily>
+    <qsosappfamily>jabber-client</qsosappfamily>
     <qsosspecificformat></qsosspecificformat>
   </header>
   <section name="generic" title="Generic section">
