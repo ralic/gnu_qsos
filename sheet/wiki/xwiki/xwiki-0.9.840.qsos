@@ -21,7 +21,8 @@
     <demourl>http://www.xwiki.org</demourl>
     <qsosformat>1.7</qsosformat>
     <qsosappfamily>wiki</qsosappfamily>
-    <qsosspecificformat>xwiki</qsosspecificformat>
+    <qsosappname>xwiki</qsosappname>
+    <qsosspecificformat></qsosspecificformat>
   </header>
   <section name="generic" title="Generic section">
     <desc>Generic criteria from QSOS version 1.6</desc>
