@@ -19,9 +19,9 @@
     <url>http://www.nongnu.org/cvs/</url>
     <desc>Wellknown revision control system</desc>
     <demourl></demourl>
-    <qsosformat>1.6</qsosformat>
+    <qsosformat>1.7</qsosformat>
     <qsosappfamily>revision-control-system</qsosappfamily>
-    <qsosappname></qsosappname>
+    <qsosappname>cvs</qsosappname>
     <qsosspecificformat>1.0</qsosspecificformat>
   </header>
   <section name="generic" title="Generic section">

@@ -2,7 +2,14 @@
 <document>
   <header>
     <authors>
->
+      <author>
+	<name>Walid Nouh</name>
+	<email>walid.nouh@atosorigin.com</email>
+      </author>
+      <author>
+	<name>Nicolas Vérité</name>
+	<email>nicolas.verite@atosorigin.com</email>
+      </author>
     </authors>
     <dates>
       <creation></creation>
@@ -16,8 +23,9 @@
     <url>http://jwchat.sf.net/</url>
     <desc>JWChat (Jabber Web Chat) is a full-featured AJAX Jabber client</desc>
     <demourl></demourl>
-    <qsosformat>1.6</qsosformat>
+    <qsosformat>1.7</qsosformat>
     <qsosappfamily>jabber-client</qsosappfamily>
+    <qsosappname>jwchat</qsosappname>
     <qsosspecificformat></qsosspecificformat>
   </header>
   <section name="generic" title="Generic section">

@@ -19,9 +19,9 @@
     <url>www.alfresco.com</url>
     <desc></desc>
     <demourl>www.alfresco.com</demourl>
-    <qsosformat>1.6</qsosformat>
+    <qsosformat>1.7</qsosformat>
     <qsosappfamily>cms</qsosappfamily>
-    <qsosappname></qsosappname>
+    <qsosappname>Alfresco</qsosappname>
     <qsosspecificformat></qsosspecificformat>
   </header>
   <section name="generic" title="Generic section">

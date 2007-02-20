@@ -19,9 +19,9 @@
     <url></url>
     <desc></desc>
     <demourl></demourl>
-    <qsosformat>1.6</qsosformat>
+    <qsosformat>1.7</qsosformat>
     <qsosappfamily>etl</qsosappfamily>
-    <qsosappname></qsosappname>
+    <qsosappname>cloverEtl</qsosappname>
     <qsosspecificformat></qsosspecificformat>
   </header>
   <section name="generic" title="Section générique">

@@ -28,9 +28,9 @@
     <url>http://ws.apache.org/axis</url>
     <desc>Framework de développement, déploiement et consommation de web services en environnement J2EE (partie Web)</desc>
     <demourl></demourl>
-    <qsosformat>1.6</qsosformat>
+    <qsosformat>1.7</qsosformat>
     <qsosappfamily>j2ee-ws-stack</qsosappfamily>
-    <qsosappname>j2ee-ws-stack</qsosappname>
+    <qsosappname>axis</qsosappname>
     <qsosspecificformat></qsosspecificformat>
   </header>
   <section name="generic" title="Section générique">

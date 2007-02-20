@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document>
   <header>
-    <authors> Francois Le Droff </authors>
+    <authors>
+      <author>
+	<email>francois.ledroff@atosorigin.com</email>
+	<name>Francois Le Droff</name>
+      </author>
+    </authors>
     <dates>
       <creation></creation>
       <validation></validation>
@@ -14,9 +19,9 @@
     <url>http://www.xwiki.org</url>
     <desc></desc>
     <demourl>http://www.xwiki.org</demourl>
-    <qsosformat>1.6</qsosformat>
+    <qsosformat>1.7</qsosformat>
     <qsosappfamily>wiki</qsosappfamily>
-    <qsosspecificformat></qsosspecificformat>
+    <qsosspecificformat>xwiki</qsosspecificformat>
   </header>
   <section name="generic" title="Generic section">
     <desc>Generic criteria from QSOS version 1.6</desc>

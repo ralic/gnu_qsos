@@ -12,7 +12,7 @@
       <validation></validation>
     </dates>
     <language>en</language>
-    <appname>kolab</appname>
+    <appname>Kolab</appname>
     <release>2</release>
     <licenseid>31</licenseid>
     <licensedesc>GNU General Public License</licensedesc>
@@ -21,7 +21,7 @@
     <demourl>http://kolab.org/screenshots.html</demourl>
     <qsosformat>1.6</qsosformat>
     <qsosappfamily>groupware</qsosappfamily>
-    <qsosappname></qsosappname>
+    <qsosappname>kolab</qsosappname>
     <qsosspecificformat>1</qsosspecificformat>
   </header>
   <section name="generic" title="Generic section">

@@ -19,9 +19,9 @@
     <url>http://www.koffice.org/kword/</url>
     <desc>Word processor from the KDE Office suite (KOffice)</desc>
     <demourl>http://ktown.kde.org/~binner/klax/ (Klax Live CD)</demourl>
-    <qsosformat>1.6</qsosformat>
+    <qsosformat>1.7</qsosformat>
     <qsosappfamily>wordprocessor</qsosappfamily>
-    <qsosappname></qsosappname>
+    <qsosappname>kword</qsosappname>
     <qsosspecificformat>1</qsosspecificformat>
   </header>
   <section name="generic" title="Generic section">

@@ -19,9 +19,9 @@
     <url>http://www.jivesoftware.org/spark/</url>
     <desc>Spark is a Jabber client</desc>
     <demourl></demourl>
-    <qsosformat>1.6</qsosformat>
+    <qsosformat>1.7</qsosformat>
     <qsosappfamily>jabber-client</qsosappfamily>
-    <qsosappname></qsosappname>
+    <qsosappname>spark</qsosappname>
     <qsosspecificformat></qsosspecificformat>
   </header>
   <section name="generic" title="Generic section">

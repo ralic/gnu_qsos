@@ -19,9 +19,9 @@
     <url>http://www.jboss.org</url>
     <desc>Serveur d'applications J2EE</desc>
     <demourl>Non applicable</demourl>
-    <qsosformat>1.6</qsosformat>
+    <qsosformat>1.7</qsosformat>
     <qsosappfamily>j2ee-application-server</qsosappfamily>
-    <qsosappname></qsosappname>
+    <qsosappname>jbossas</qsosappname>
     <qsosspecificformat>1.0</qsosspecificformat>
   </header>
   <section name="generic" title="Section générique">

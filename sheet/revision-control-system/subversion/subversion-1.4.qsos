@@ -19,9 +19,9 @@
     <url>http://subversion.tigris.org</url>
     <desc>Version control system released under an Apache/BSD-style license</desc>
     <demourl></demourl>
-    <qsosformat>1.6</qsosformat>
+    <qsosformat>1.7</qsosformat>
     <qsosappfamily>revision-control-system</qsosappfamily>
-    <qsosappname></qsosappname>
+    <qsosappname>subversion</qsosappname>
     <qsosspecificformat>1.0</qsosspecificformat>
   </header>
   <section name="generic" title="Generic section">

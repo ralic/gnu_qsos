@@ -19,9 +19,9 @@
     <url>http://jonas.objectweb.org</url>
     <desc>Serveur d'applications certifié J2EE 1.4</desc>
     <demourl>http://jonas.objectweb.org/demos/demo1/JOnASDemo.htm</demourl>
-    <qsosformat>1.6</qsosformat>
+    <qsosformat>1.7</qsosformat>
     <qsosappfamily>j2ee-application-server</qsosappfamily>
-    <qsosappname></qsosappname>
+    <qsosappname>jonas</qsosappname>
     <qsosspecificformat>1.0</qsosspecificformat>
   </header>
   <section name="generic" title="Section générique">

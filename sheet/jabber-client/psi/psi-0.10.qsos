@@ -2,7 +2,14 @@
 <document>
   <header>
     <authors>
->
+      <author>
+	<name>Walid Nouh</name>
+	<email>walid.nouh@atosorigin.com</email>
+      </author>
+      <author>
+	<name>Nicolas Vérité</name>
+	<email>nicolas.verite@atosorigin.com</email>
+      </author>
     </authors>
     <dates>
       <creation></creation>
@@ -17,8 +24,9 @@
     <desc>Psi is a Jabber client looking (by design) like licq. Besides basic instant messaging services, it provides support for features like groupchat and multiple accounts. 
  For more information on jabber, see www.jabber.org (or the jabber package which contains the jabber server software).</desc>
     <demourl></demourl>
-    <qsosformat>1.6</qsosformat>
+    <qsosformat>1.7</qsosformat>
     <qsosappfamily>jabber-client</qsosappfamily>
+    <qsosappname>psi</qsosappname>
     <qsosspecificformat></qsosspecificformat>
   </header>
   <section name="generic" title="Generic section">

@@ -25,7 +25,7 @@
     <demourl>http://mirror.open-xchange.org/ox/EN/community/online.htm</demourl>
     <qsosformat>1.6</qsosformat>
     <qsosappfamily>groupware</qsosappfamily>
-    <qsosappname></qsosappname>
+    <qsosappname>open-xchange</qsosappname>
     <qsosspecificformat></qsosspecificformat>
   </header>
   <section name="generic" title="Generic section">
