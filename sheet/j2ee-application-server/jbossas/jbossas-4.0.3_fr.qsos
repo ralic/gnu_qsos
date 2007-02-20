@@ -20,7 +20,7 @@
     <desc>Serveur d'applications J2EE</desc>
     <demourl>Non applicable</demourl>
     <qsosformat>1.6</qsosformat>
-    <qsosappfamily>Serveur d'application J2EE</qsosappfamily>
+    <qsosappfamily>j2ee-application-server</qsosappfamily>
     <qsosspecificformat>1.0</qsosspecificformat>
   </header>
   <section name="generic" title="Section générique">
