@@ -20,7 +20,7 @@
     <desc>Version control system released under an Apache/BSD-style license</desc>
     <demourl></demourl>
     <qsosformat>1.6</qsosformat>
-    <qsosappfamily>revision-control-system/</qsosappfamily>
+    <qsosappfamily>revision-control-system</qsosappfamily>
     <qsosspecificformat>1.0</qsosspecificformat>
   </header>
   <section name="generic" title="Generic section">
