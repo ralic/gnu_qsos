@@ -19,7 +19,7 @@
       <qsosappfamily>Serveur d'application J2EE</qsosappfamily>
       <qsosspecificformat>1.0</qsosspecificformat>
    </header>
-   <include section="generic_fr"></include>
+   <include section="generic"></include>
    <section name="fonctionnalitesj2eestandards" title="Fonctionnalités J2EE standards">
       <desc></desc>
       <element name="conformitej2ee" title="Conformité J2EE">
