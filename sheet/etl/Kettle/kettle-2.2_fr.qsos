@@ -17,6 +17,7 @@
       <licenseid></licenseid>
       <licensedesc>Mozilla Public License version 1.1</licensedesc>
       <url>http://kettle.pentaho.org/index.php</url>
+      <desc></desc>
       <demourl></demourl>
       <qsosformat>1.6</qsosformat>
       <qsosappfamily>ETL</qsosappfamily>
