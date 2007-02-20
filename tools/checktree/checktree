@@ -1,30 +1,9 @@
 #!/bin/sh
-# $Id: checktree,v 1.4 2006/11/10 22:39:56 goneri Exp $
+# $Id: checktree,v 1.5 2007/02/20 15:02:39 goneri Exp $
 # Gonéri Le Bouder
 
 DIR=`pwd`
-SYNCGLOBALDESC="$DIR/../syncglobaldesc/syncglobaldesc"
-CREATEEMPTYSHEET="$DIR/../createemptysheet/createemptysheet.pl"
-QSOSLINT="$DIR/../qsoslint/qsoslint"
 SHEETDIR="$DIR/../../sheet"
-INCLUDEDIR="$SHEETDIR/include"
-cd $SHEETDIR 
 
-# First i try to sync file desc*
+find $SHEETDIR -name '*.qsos' -exec ./checksheet {} \;
 
-for template in `find -name '*.qtpl'`;do
-  echo "* creating $template.qsostmp"
-  $CREATEEMPTYSHEET --include $INCLUDEDIR --qtpl $template > $template.qsostmp
-  $QSOSLINT $template.qsostmp || exit 1
-#  $SYNCGLOBALDESC -s -l -t global.xml -f $template|| exit 1
-done
-
-for dir in `find -mindepth 1 -maxdepth 1 -type d|grep -v CVS|grep -v include`;do 
-  echo "*syncing `basename $dir` directory"
-  tpl=`find $dir -name '*.qsostmp'`
-  for file in `find $dir -type f|grep -v CVS|grep -v template|grep qsos$`;do
-    echo "  "`basename $file `
-    echo $tpl $file
-    $SYNCGLOBALDESC --recreate --more --save --template $tpl --file $file || exit 1
-  done
-done

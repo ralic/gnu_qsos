@@ -1,0 +1,44 @@
+#!/bin/sh
+# $Id: checksheet,v 1.1 2007/02/20 15:02:39 goneri Exp $
+# Gonéri Le Bouder
+
+DIR=`pwd`
+SYNCGLOBALDESC="$DIR/../syncglobaldesc/syncglobaldesc"
+CREATEEMPTYSHEET="$DIR/../createemptysheet/createemptysheet.pl"
+QSOSLINT="$DIR/../qsoslint/qsoslint"
+SHEETDIR="$DIR/../../sheet"
+INCLUDEDIR="$SHEETDIR/include"
+
+sheet=$1
+if [ ! -f $sheet ]; then
+  echo "file: $sheet doesn't exit"
+  echo "usage: ./checksheet sheetname.qsos"
+  exit 1
+fi
+
+echo "checking $sheet"
+
+family=$(egrep '[\t\ ]*<qsosappfamily>.*</qsosappfamily>' $sheet|sed 's/.*>\(.*\)<.*/\1/')
+lang=$(egrep '[\t\ ]*<language>.*</language>' $sheet|sed 's/.*>\(.*\)<.*/\1/')
+echo " *family: $family"
+if [ ! -d "$SHEETDIR/$family" ]; then
+  echo "this family doesn't exist yet in the repository"
+  exit 1
+fi
+echo " *lang: $lang"
+# refreshing .qsostmp file(s)
+for template in `find $SHEETDIR/$family -name '*.qtpl'`;do
+  echo "* refreshing `basename $template`.qsostmp"
+  $CREATEEMPTYSHEET --include $INCLUDEDIR --qtpl $template > $template.qsostmp
+  $QSOSLINT $template.qsostmp || exit 1
+done
+basetpl=$(find "$SHEETDIR/$family" -name '*.qsostmp'| sed 's/.qtpl.qsostmp//'| sed 's/_..$//'| uniq)
+if [ "$lang" = "en" ]; then
+  tpl=`echo $basetpl".qtpl.qsostmp"`
+else
+  tpl=`echo $basetpl"_$lang.qtpl.qsostmp"`
+fi
+if [ ! -f $tpl ]; then
+  echo "There is not template yet for this language ($tpl)"
+fi
+$SYNCGLOBALDESC --recreate --more --save --template $tpl --file $sheet || exit 1
