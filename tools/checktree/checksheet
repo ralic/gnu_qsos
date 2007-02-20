@@ -1,5 +1,5 @@
 #!/bin/sh
-# $Id: checksheet,v 1.1 2007/02/20 15:02:39 goneri Exp $
+# $Id: checksheet,v 1.2 2007/02/20 15:07:32 goneri Exp $
 # Gonéri Le Bouder
 
 DIR=`pwd`
@@ -16,7 +16,7 @@ if [ ! -f $sheet ]; then
   exit 1
 fi
 
-echo "checking $sheet"
+echo "checking `basename $sheet`"
 
 family=$(egrep '[\t\ ]*<qsosappfamily>.*</qsosappfamily>' $sheet|sed 's/.*>\(.*\)<.*/\1/')
 lang=$(egrep '[\t\ ]*<language>.*</language>' $sheet|sed 's/.*>\(.*\)<.*/\1/')
@@ -27,8 +27,8 @@ if [ ! -d "$SHEETDIR/$family" ]; then
 fi
 echo " *lang: $lang"
 # refreshing .qsostmp file(s)
+  echo " *refreshing template cache"
 for template in `find $SHEETDIR/$family -name '*.qtpl'`;do
-  echo "* refreshing `basename $template`.qsostmp"
   $CREATEEMPTYSHEET --include $INCLUDEDIR --qtpl $template > $template.qsostmp
   $QSOSLINT $template.qsostmp || exit 1
 done
@@ -41,4 +41,5 @@ fi
 if [ ! -f $tpl ]; then
   echo "There is not template yet for this language ($tpl)"
 fi
+echo " *synchronizing the template with the sheet"
 $SYNCGLOBALDESC --recreate --more --save --template $tpl --file $sheet || exit 1
