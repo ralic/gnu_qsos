@@ -1,6 +1,8 @@
 #!/bin/sh
-# $Id: checksheet,v 1.2 2007/02/20 15:07:32 goneri Exp $
+# $Id: checksheet,v 1.3 2007/02/20 20:14:28 goneri Exp $
 # Gonéri Le Bouder
+
+set -e
 
 DIR=`pwd`
 SYNCGLOBALDESC="$DIR/../syncglobaldesc/syncglobaldesc"
@@ -10,22 +12,48 @@ SHEETDIR="$DIR/../../sheet"
 INCLUDEDIR="$SHEETDIR/include"
 
 sheet=$1
+sheetbasename=$(basename $sheet)
 if [ ! -f $sheet ]; then
   echo "file: $sheet doesn't exit"
   echo "usage: ./checksheet sheetname.qsos"
   exit 1
 fi
 
-echo "checking `basename $sheet`"
+echo "checking $sheetbasename"
+
+authors=$(egrep '[\t\ ]*<email>.*</email>' $sheet|sed 's/.*>\(.*\)<.*/\1/')
+if [ "$authors" = "" ]; then
+  echo "There is NO author email for this sheet!"
+  exit 1
+fi
+echo " *author address:"
+for email in $authors; do echo "  $email";done
+
+qsosappname=$(egrep '[\t\ ]*<qsosappname>.*</qsosappname>' $sheet|sed 's/.*>\(.*\)<.*/\1/')
+release=$(egrep '[\t\ ]*<release>.*</release>' $sheet|sed 's/.*>\(.*\)<.*/\1/')
+lang=$(egrep '[\t\ ]*<language>.*</language>' $sheet|sed 's/.*>\(.*\)<.*/\1/')
+echo " *qsosappname: $qsosappname"
+echo " *release: $release"
+echo " *lang: $lang"
+if [ -z $lang ] || [ "$lang" = "en" ];then
+  normalfilename="$qsosappname-$release.qsos"
+else
+  normalfilename=$qsosappname"-"$release"_"$lang".qsos"
+fi
+if [ ! "$normalfilename" = "$sheetbasename"  ]; then
+  echo "the sheep name ($sheetbasename) is malformed. Should be"
+  echo "$normalfilename (qsosappname-release.qsos or" 
+  echo "qsosappname-release_language.qsos)"
+#  exit 1
+fi
 
 family=$(egrep '[\t\ ]*<qsosappfamily>.*</qsosappfamily>' $sheet|sed 's/.*>\(.*\)<.*/\1/')
-lang=$(egrep '[\t\ ]*<language>.*</language>' $sheet|sed 's/.*>\(.*\)<.*/\1/')
 echo " *family: $family"
 if [ ! -d "$SHEETDIR/$family" ]; then
   echo "this family doesn't exist yet in the repository"
   exit 1
 fi
-echo " *lang: $lang"
+
 # refreshing .qsostmp file(s)
   echo " *refreshing template cache"
 for template in `find $SHEETDIR/$family -name '*.qtpl'`;do
@@ -37,9 +65,12 @@ if [ "$lang" = "en" ]; then
   tpl=`echo $basetpl".qtpl.qsostmp"`
 else
   tpl=`echo $basetpl"_$lang.qtpl.qsostmp"`
+  if [ ! -f $tpl ]; then
+    tpl=`echo $basetpl".qtpl.qsostmp"`
+  fi
 fi
 if [ ! -f $tpl ]; then
-  echo "There is not template yet for this language ($tpl)"
+  echo "I can't find a template ($tpl)"
 fi
 echo " *synchronizing the template with the sheet"
 $SYNCGLOBALDESC --recreate --more --save --template $tpl --file $sheet || exit 1

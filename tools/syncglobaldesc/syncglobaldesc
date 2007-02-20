@@ -1,7 +1,7 @@
 #!/usr/bin/perl -w
 # this script is experimental and will be certainly rewrite
 # It depends on the CVS release of QSOS::Document
-# $Id: syncglobaldesc,v 1.4 2006/11/10 22:39:56 goneri Exp $
+# $Id: syncglobaldesc,v 1.5 2007/02/20 20:14:29 goneri Exp $
 use strict;
 
 use Getopt::Long;
@@ -133,6 +133,7 @@ if ($recreate) { # I synchronise other entreys
   $t->setqsosformat($qsos->getqsosformat());
   $t->setqsosspecificformat($qsos->getqsosspecificformat());
   $t->setqsosappfamily($qsos->getqsosappfamily());
+  $t->setqsosappname($qsos->getqsosappname());
   $t->setdatecreation($qsos->getdatecreation());
   $t->setdatevalidation($qsos->getdatevalidation());
 
