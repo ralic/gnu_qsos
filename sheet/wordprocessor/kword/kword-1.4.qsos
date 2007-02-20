@@ -20,7 +20,7 @@
     <desc>Word processor from the KDE Office suite (KOffice)</desc>
     <demourl>http://ktown.kde.org/~binner/klax/ (Klax Live CD)</demourl>
     <qsosformat>1.6</qsosformat>
-    <qsosappfamily>Word processor</qsosappfamily>
+    <qsosappfamily>wordprocessor</qsosappfamily>
     <qsosspecificformat>1</qsosspecificformat>
   </header>
   <section name="generic" title="Generic section">
