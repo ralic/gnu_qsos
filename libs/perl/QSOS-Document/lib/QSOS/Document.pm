@@ -1,4 +1,4 @@
-# $Id: Document.pm,v 1.21 2006/11/10 22:34:22 goneri Exp $
+# $Id: Document.pm,v 1.22 2007/02/20 18:10:42 goneri Exp $
 #
 #  Copyright (C) 2006 Atos Origin 
 #
@@ -608,6 +608,25 @@ sub getqsosappfamily {
   my @root = $self->{twig}->root->children;
   my $header = shift @root;
   $header->first_child('qsosappfamily')->text();
+
+}
+
+sub setqsosappname {
+  my ($self, $qsosappname) = @_;
+
+  $qsosappname = "" unless defined $qsosappname;
+  my @root = $self->{twig}->root->children;
+  my $header = shift @root;
+  $header->first_child('qsosappname')->set_text($qsosappname);
+
+}
+
+sub getqsosappname {
+  my $self = shift;
+
+  my @root = $self->{twig}->root->children;
+  my $header = shift @root;
+  $header->first_child('qsosappname')->text();
 
 }
 =head1 NAME

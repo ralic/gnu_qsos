@@ -62,6 +62,8 @@ function Document(name) {
     this.setqsosspecificformat = setqsosspecificformat;
     this.getqsosappfamily = getqsosappfamily;
     this.setqsosappfamily = setqsosappfamily;
+    this.getqsosappname = getqsosappname;
+    this.setqsosappname = setqsosappname;
     this.getkeydesc = getkeydesc;
     this.setkeydesc = setkeydesc;
     this.getkeydesc0 = getkeydesc0;
@@ -427,7 +429,15 @@ function Document(name) {
     function setqsosappfamily(value) {
         return setkey("qsosappfamily", value);
     }
+
+    function getqsosappname() {
+        return getkey("qsosappname");
+    }
     
+    function setqsosappname(value) {
+        return setkey("qsosappname", value);
+    }
+
     function getkeydesc(element) {
     	return getgeneric(element, "desc")
     }

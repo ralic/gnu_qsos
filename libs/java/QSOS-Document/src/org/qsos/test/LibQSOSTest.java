@@ -38,6 +38,7 @@ public class LibQSOSTest extends TestCase {
 		assertEquals("demourl",lib.getDemoUrl(),"http://kolab.org/screenshots.html");
 		assertEquals("qsosformat",lib.getQsosformat(),"1");
 		assertEquals("qsosappfamily",lib.getQsosappfamily(),"groupware");
+		assertEquals("qsosappname",lib.getQsosappname(),"kolab");
 		assertEquals("qsosspecificformat",lib.getQsosspecificformat(),"1");
 		System.out.println(lib.getAuthors());
 		
@@ -66,6 +67,7 @@ public class LibQSOSTest extends TestCase {
 		lib.setDemoUrl("http://kolab.org/screenshots.html");
 		lib.setQsosformat("1");
 		lib.setQsosappfamily("groupware");
+		lib.setQsosappname("kolab");
 		lib.setQsosspecificformat("1");
 		
 		lib.addAuthor("Gonéri Le Bouder","goneri.lebouder@atosorigin.com");

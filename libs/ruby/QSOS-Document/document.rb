@@ -562,6 +562,38 @@ class Document
 		else
 			# TODO: exception
 		end
+
+		
+	#	Allows to get the application name as it stored in the 
+	#	sheet name.
+	# 
+	#	@return a  corresponding to the application family in QSOS.
+	#
+	def getQsosappname()
+		query = SearchQuery.new
+	 	query.name = @QSOS_APP_FAMILY
+		item = search(query)[0]
+		if ! item.nil?
+			return item.text
+		end
+	end
+	
+	#
+	#	Allows to set the application name as it stored in the 
+	#	sheet name.
+	# 
+	#	@param qsosappname the application family in QSOS to set.
+	#
+	def setQsosappname(qsosappname)
+		query = SearchQuery.new
+	 	query.name = @QSOS_APP_FAMILY
+		item = search(query)[0]
+		if ! item.nil?
+			item.text = qsosappname
+		else
+			# TODO: exception
+		end
+
     end
     
     #

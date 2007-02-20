@@ -1,4 +1,4 @@
-/* $Id: LibQSOS.java,v 1.4 2006/04/13 12:57:37 aclerf Exp $
+/* $Id: LibQSOS.java,v 1.5 2007/02/20 18:10:41 goneri Exp $
 *
 *  Copyright (C) 2006 Atos Origin 
 *
@@ -524,8 +524,7 @@ public class LibQSOS implements ILibQSOS{
 		reInitSearch("meta", "qsosappfamily",-1);
 		return search.searchAndGetString();
 	}
-	
-	
+
 	/**Allows to set the application family in QSOS.
 	 * 
 	 * 
@@ -537,6 +536,26 @@ public class LibQSOS implements ILibQSOS{
 		search.searchAndSet();	
 	}
 
+	/**Allows to get the name of the software stored in the file name.
+	 * 
+	 * @return a string corresponding to the name of the softare stored
+	 * in the file name of the sheet
+	 */
+	public String getQsosappname(){
+		reInitSearch("meta", "qsosappname",-1);
+		return search.searchAndGetString();
+	}
+
+	/**Allows to set the name of the software stored in the file name.
+	 * 
+	 * 
+	 * @param qsosappname the application family in QSOS to set.
+	 */
+
+	public void setQsosappname(String qsosappname){
+		reInitSearch("meta", "qsosappname",-1,qsosappname);
+		search.searchAndSet();	
+	}
 	/**Allows to write the xml file at the given path. 
 	 * This method has a problem since it degrated the xml file (
 	 * not the datas but the presentation).
