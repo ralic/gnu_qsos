@@ -20,7 +20,7 @@
       <desc>Serveur d'applications certifié Java EE 5.0</desc>
       <demourl></demourl>
       <qsosformat>1.7</qsosformat>
-      <qsosappfamily>Serveur d'application Java EE</qsosappfamily>
+      <qsosappfamily>j2ee-application-server</qsosappfamily>
       <qsosappname>glassfish</qsosappname>
       <qsosspecificformat>1.0</qsosspecificformat>
    </header>
