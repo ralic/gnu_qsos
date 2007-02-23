@@ -205,7 +205,7 @@
       <score></score>
       <comment></comment>
     </element>
-    <element name="codeextension" title="Code extention">
+    <element name="codeextension" title="Code extension">
       <desc0>Any modification requires code recompilation</desc0>
       <desc1>Architecture designed for static extension but requires recompilation</desc1>
       <desc2>Principle of plugin, architecture designed for dynamic extension without recompilation</desc2>
