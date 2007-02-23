@@ -56,7 +56,10 @@
           <desc1>Software comes from a fork but has very few chances of being forked in the future</desc1>
           <desc2>Software has very little chance of being forked. It does not come from a fork either</desc2>
           <score>2</score>
-          <comment>KHTML, Konqueror's engine is also used by Apple for its web browser (Safari). After early risks of fork, Apple and KDE now ollaborate efficiently on the same code base</comment>
+          <comment>KHTML, Konqueror's engine was forked by Apple to create
+	  Webkit, Safari's engine. Initialy Apple did nothing to help KDE
+	  developers to backport changes. Today things changed and Webkit
+	  will provably be the default HTML engine of KDE4.</comment>
         </element>
       </element>
       <element name="adoption" title="Adoption">
