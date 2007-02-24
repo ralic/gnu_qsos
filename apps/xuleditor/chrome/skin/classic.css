@@ -13,6 +13,11 @@ tab.graph {
   -moz-border-radius: 6px 6px 0px 0px;
 }
 
+tab.chat {
+  list-style-image: url("chrome://qsos-xuled/skin/chat.png");
+  -moz-border-radius: 6px 6px 0px 0px;
+}
+
 tab[selected="true"] {
   color: #000066;
   font-weight: bold;
