@@ -1,4 +1,4 @@
-#  Copyright (C) 2006 Atos Origin 
+#  Copyright (C) 2006, 2007 Atos Origin 
 #
 #  This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -16,7 +16,7 @@
 #
 #
 # QSOS XUL Editor Makefile
-# $Id: Makefile,v 1.9 2007/02/09 10:53:02 rsemeteys Exp $
+# $Id: Makefile,v 1.10 2007/02/24 23:37:46 rsemeteys Exp $
 
 APPPACK=application.ini Changes chrome.manifest LICENSE README xuleditor xuleditor.bat
 
@@ -28,7 +28,9 @@ EXTSRC=$(APPSRC) chrome/content/qsos-overlay.js chrome/content/qsos-overlay.xul
 
 LOCALE=chrome/locale/en-US/about.dtd chrome/locale/en-US/authors.dtd chrome/locale/en-US/confirm.dtd chrome/locale/en-US/editor.dtd chrome/locale/en-US/load.dtd chrome/locale/en-US/new.dtd chrome/locale/en-US/editor.properties chrome/locale/en-US/qsos-overlay.dtd chrome/locale/fr-FR/about.dtd chrome/locale/fr-FR/authors.dtd chrome/locale/fr-FR/confirm.dtd chrome/locale/fr-FR/editor.dtd chrome/locale/fr-FR/load.dtd chrome/locale/fr-FR/new.dtd chrome/locale/fr-FR/editor.properties chrome/locale/fr-FR/qsos-overlay.dtd
 
-SKIN=chrome/skin/classic.css chrome/skin/header.png chrome/skin/criteria.png chrome/skin/graph.png
+SKIN=chrome/skin/classic.css chrome/skin/header.png chrome/skin/criteria.png chrome/skin/graph.png chrome/skin/chat.png
+
+JSJAC=chrome/content/jsjac/API chrome/content/jsjac/AUTHORS chrome/content/jsjac/ChangeLog chrome/content/jsjac/COPYING chrome/content/jsjac/crypt.js chrome/content/jsjac/JSJaCConnection.js chrome/content/jsjac/JSJaCHttpBindingConnection.js chrome/content/jsjac/JSJaCHttpPollingConnection.js chrome/content/jsjac/JSJaC.js chrome/content/jsjac/JSJaCPacket.js chrome/content/jsjac/json.js chrome/content/jsjac/qm_cookie.js chrome/content/jsjac/README chrome/content/jsjac/semantic.cache chrome/content/jsjac/xmlextras.js
 
 PREFS=defaults/preferences/qsos-xuled.js
 
@@ -38,9 +40,9 @@ VERSION=0.6
 
 ext:
 	rm -f xuleditor-firefox-${VERSION}.xpi
-	zip -r xuleditor $(EXTPACK) $(EXTSRC) $(LOCALE) $(SKIN) $(PREFS)
+	zip -r xuleditor $(EXTPACK) $(EXTSRC) $(LOCALE) $(SKIN) $(PREFS) $(JSJAC)
 	mv xuleditor.zip xuleditor-firefox-${VERSION}.xpi
 
 app:
 	rm -f xuleditor-application-${VERSION}.zip
-	zip -r xuleditor-application-${VERSION}.zip $(APPPACK) $(APPSRC) $(LOCALE) $(SKIN) $(PREFS_XULRUNNER)
+	zip -r xuleditor-application-${VERSION}.zip $(APPPACK) $(APPSRC) $(LOCALE) $(SKIN) $(PREFS_XULRUNNER) $(JSJAC)
