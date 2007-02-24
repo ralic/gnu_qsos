@@ -4,10 +4,17 @@
 <!DOCTYPE window SYSTEM "chrome://qsos-xuled/locale/editor.dtd">
 <window id="QSOS" title="&QSOS.label;" width="800px" height="600px"
   xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+  
   onload="init();">
+  <script type="application/x-javascript" src="jsjac/xmlextras.js"></script>
+  <script type="application/x-javascript" src="jsjac/JSJaCPacket.js"></script>
+  <script type="application/x-javascript" src="jsjac/crypt.js"></script>
+  <script type="application/x-javascript" src="jsjac/json.js"></script>
+  <script type="application/x-javascript" src="jsjac/qm_cookie.js"></script>
+  <script type="application/x-javascript" src="jsjac/JSJaCConnection.js"></script>
+  <script type="application/x-javascript" src="jsjac/JSJaCHttpPollingConnection.js"></script>
   <script type="application/x-javascript" src="Document.js"></script>
   <script type="application/x-javascript" src="editor.js"></script>
-  <script type="application/x-javascript" src="chrome://xmpp4moz/content/xmpp.js"/>
   <stringbundle id="properties" src="chrome://qsos-xuled/locale/editor.properties"/>
   <vbox>
     <toolbox>
@@ -31,6 +38,11 @@
             <menuitem id="tree-collapse" label="&tree-collapse.label;" onclick="expandTree('false');"/>
           </menupopup>
         </menu>
+        <menu id="chat-menu" label="&chat-menu.label;" onclick="document.getElementById('chat-menu').focus();">
+          <menupopup id="chat-popup">
+            <menuitem id="chat-start" label="&chat-start.label;" onclick="startChat();"/>
+          </menupopup>
+        </menu>
         <menu id="help-menu" label="&help-menu.label;" onclick="document.getElementById('help-menu').focus();">
           <menupopup id="help-popup">
             <menuitem id="help-about" label="&help-about.label;" onclick="aboutDialog();"/>
@@ -44,7 +56,7 @@
         <tab id = "t-software" class = "header" label = "&t-header.label;"/>
         <tab id = "t-c-title" class = "criteria" label = "&t-c-title.label;"/>
         <tab id = "t-chart" class = "graph" label = "&t-chart.label;"/>
-        <tab id = "t-chat" label = "Chat"/>
+        <tab id = "t-chat" class = "chat" label = "&t-chat.label;"/>
       </tabs>
       <tabpanels flex = "1">
         <tabpanel flex = "1">
@@ -128,24 +140,25 @@
               </svg>
           </vbox>
         </tabpanel>
-        <tabpanel flex = "1">
+        <tabpanel id = "chatbox" flex = "1">
           <hbox flex = "1">
             <vbox flex = "5">
-              <label value="Conversation"/>
+              <label value="&chat-conversation;"/>
               <textbox id="conversation" multiline="true" rows="20" readonly="true"/>
-              <label value="Say something" control="input" accesskey="a"/>
+              <label value="&chat-input;" control="input"/>
               <textbox id="input" multiline="true" rows="2"/>
+              <textbox id="err" multiline="true" rows="2" hidden="true"/>
               <hbox>
                 <spacer flex="1"/>
-                <button label="Send!" oncommand="send();" accesskey="S"/>
+                <button label="&chat-send;" oncommand="sendMsg();"/>
                 <spacer flex="1"/>
               </hbox>
             </vbox>
           </hbox>
           <splitter/>
           <vbox>
-            <label value="Participants"/>
-            <textbox id="roster" multiline="true" flex="1" readonly="true"/>
+            <label value="&chat-roster;"/>
+            <listbox id="roster" flex="1" readonly="true" onselect="talkToUser();"/>
           </vbox>
         </tabpanel>
       </tabpanels>

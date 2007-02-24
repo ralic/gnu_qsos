@@ -5,12 +5,14 @@
 <!ENTITY file-open-remote.label "Ouvrir fichier distant">
 <!ENTITY file-save.label "Sauvegarder">
 <!ENTITY file-saveas.label "Sauvegarder sous">
-<!ENTITY file-save-remote.label "Sauvergarder sur le serveur">
+<!ENTITY file-save-remote.label "Sauvegarder sur le serveur">
 <!ENTITY file-close.label "Fermer">
 <!ENTITY file-exit.label "Sortir">
 <!ENTITY tree-menu.label "Arbre">
 <!ENTITY tree-expand.label "Exploser">
 <!ENTITY tree-collapse.label "Aplatir">
+<!ENTITY chat-menu.label "Chat">
+<!ENTITY chat-start.label "Démarrer">
 <!ENTITY help-menu.label "Aide">
 <!ENTITY help-about.label "A propos">
 <!ENTITY name.label "Critères">
@@ -38,3 +40,8 @@
 <!ENTITY f-c-desc1.label "Score 1">
 <!ENTITY f-c-desc2.label "Score 2">
 <!ENTITY f-c-comments.value "Commentaires">
+<!ENTITY chat-conversation "Conversation">
+<!ENTITY chat-input "Dites quelquechose">
+<!ENTITY chat-send "Envoyer">
+<!ENTITY chat-roster "Participants">
+<!ENTITY t-chat.label "Chat">

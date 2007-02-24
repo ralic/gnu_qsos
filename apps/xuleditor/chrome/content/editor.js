@@ -21,6 +21,8 @@
 ** QSOS XUL Editor
 ** editor.js: functions associated with the editor.xul file
 **
+** TODO:
+**    - Chat: find a way to colorize text in "conversation" textbox
 */
 
 //Object "Document" representing data in the QSOS XML file
@@ -32,9 +34,10 @@ var id;
 //Localized strings bundle
 var strbundle;
 
-//XMPP account init
-var account = { jid: undefined };
+//Chat variables
+var nick;
 var chatroom;
+var con;
 
 //Window initialization after loading
 function init() {
@@ -53,47 +56,178 @@ function init() {
     if (url) {
 	openRemoteFile(url)
     }
+}
 
-    //Chat stuff (using xmpp4moz extension)
+////////////////////////////////////////////////////////////////////
+// Chat event functions
+////////////////////////////////////////////////////////////////////
 
-    channel = XMPP.createChannel(
-        <query xmlns="http://jabber.org/protocol/disco#info">
-        <feature var="http://jabber.org/protocol/muc"/>
-        <feature var="http://jabber.org/protocol/muc#user"/>
-        <feature var='http://jabber.org/protocol/xhtml-im'/>
-        </query>);
-
-    channel.on(
-        {event: 'message'},
-        function(message) {
-            var conversation = document.getElementById('conversation');
-            conversation.value +=
-                (message.direction == 'out' ? 'Me' : message.stanza.@from) + ' : ' +
-                message.stanza.body + '\n';
-            conversation.inputField.scrollTop = conversation.inputField.scrollHeight - conversation.inputField.clientHeight;
-        });
-
-    XMPP.cache.presenceIn.forEach(receivedPresence);
-
-    var prefManager = Components.classes["@mozilla.org/preferences-service;1"]
+//Initializes chat session
+function startChat() {
+  var prefManager = Components.classes["@mozilla.org/preferences-service;1"]
             .getService(Components.interfaces.nsIPrefBranch);
-    chatroom = prefManager.getCharPref("extensions.qsos-xuled.chatroom");
-
-    XMPP.send(account,
-      <presence to={chatroom + '/raphael.semeteys@jabber.fr'}>
-        <x xmlns='http://jabber.org/protocol/muc'/>
-      </presence>);
+  chatroom = prefManager.getCharPref("extensions.qsos-xuled.chatroom");
+  nick = prefManager.getCharPref("extensions.qsos-xuled.nick", "_");
+  if (nick == "_") {
+    //If nickname is not stored in preferences, ask for it and store it
+    nick = window.prompt(strbundle.getString("nick"));
+    prefManager.setCharPref("extensions.qsos-xuled.nick", nick);
+  }
+  document.getElementById("chat-start").setAttribute("disabled", "true");
+  doLogin();
 }
 
-//Callback function for presence notification
-function receivedPresence(presence) {
-    document.getElementById("roster").value += presence.stanza.@from + '\n';
+function htmlEnc(str) {
+    str = str.replace(/&/g,"&amp;");
+    str = str.replace(/</g,"&lt;");
+    str = str.replace(/>/g,"&gt;");
+    str = str.replace(/\"/g,"&quot;");
+    str = str.replace(/\n/g,"<br />");
+    return str;
 }
 
-//Callback function for message sending
-function send() {
-    var input = document.getElementById('input').value;
-    XMPP.send(account, <message to={chatroom} type='groupchat'><body>{input}</body></message>);
+//Returns nickname from user's JID
+function getUserNick(jid) {
+  var splitted_jid = jid.split("/");
+  if (splitted_jid.length > 1) {
+    return splitted_jid[1];
+  } else {
+    return "Chatroom";
+  }
+}
+
+//Put the selected nick in input field
+function talkToUser() {
+  var listbox = document.getElementById('roster');
+  var inputText = document.getElementById('input');
+  if (listbox.selectedItem) {
+    inputText.value += listbox.selectedItem.getAttribute('id').substring(1) + " ";
+  }
+}
+
+//JSJaC IQ event handler (debug)
+//Remoce the hidden attribute in "err" textbox in editor.xul file to visualize messages
+function handleEvent(aJSJaCPacket) {
+  document.getElementById('err').value += 
+    "IN (raw): " + aJSJaCPacket.xml() + '\n';
+}
+
+//JSJaC message handler
+function handleMessage(aJSJaCPacket) {
+  var conversation = document.getElementById('conversation');
+  conversation.value += getUserNick(aJSJaCPacket.getFrom())+': ' + aJSJaCPacket.getBody() + '\n';
+  conversation.inputField.scrollTop = conversation.inputField.scrollHeight - conversation.inputField.clientHeight;
+}
+
+//JSJaC presence handler
+function handlePresence(aJSJaCPacket) {
+  var item = ''; //Text to be inserted in roster
+  if (!aJSJaCPacket.getType() && !aJSJaCPacket.getShow()) {
+    item += getUserNick(aJSJaCPacket.getFrom())+' (available';
+  } else {
+    item += getUserNick(aJSJaCPacket.getFrom())+' (';
+    if (aJSJaCPacket.getType()) {
+      item += aJSJaCPacket.getType();
+    } else {
+      item += aJSJaCPacket.getShow();
+    }
+    if (aJSJaCPacket.getStatus()) {
+      item += ' '+htmlEnc(aJSJaCPacket.getStatus());
+    }
+  }
+  item += ')';
+
+  var lid = '_'+getUserNick(aJSJaCPacket.getFrom());
+  var listbox = document.getElementById('roster');
+  var entry = document.getElementById(lid);
+  
+  if (entry) {
+    //if nick already in roster, update it
+    entry.setAttribute('label', item);
+  } else {
+    //or create a new entry
+    var listitem = document.createElement('listitem');
+    listitem.setAttribute('label', item);
+    listitem.setAttribute('id', lid);
+    listbox.appendChild(listitem);
+  }
+}
+
+//JSJaC connection handler
+function handleConnected() {
+  //Must send special Presence message before entering the chatroom
+  var aPresence = new JSJaCPresence();
+  aPresence.setTo(chatroom + '/' + nick);
+  aPresence.setFrom('muckl@garous.org');
+  
+  var x = aPresence.getDoc().createElement('x');
+  x.setAttribute('xmlns','http://jabber.org/protocol/muc');
+  aPresence.getNode().appendChild(x);
+  con.send(aPresence);
+}
+
+//JSJaC error handler (debug)
+//Remoce the hidden attribute in "err" textbox in editor.xul file to visualize messages
+function handleError(e) {
+  document.getElementById('err').value = "An error occured: Code: " + e.getAttribute('code') + "\nType:" + e.getAttribute('type') + "\nCondition: " + e.firstChild.nodeName; 
+}
+
+//JSJaC status change handler (TODO)
+function handleStatusChange(status) {
+}
+
+//Connects user to groupchat
+function doLogin() {
+  try {
+    //Setup args for contructor
+    oArgs = new Object();
+    oArgs.httpbase = 'http://88.191.44.3/chat/http-poll/';
+    oArgs.timerval = 2000;
+
+    //Events handlers
+    con = new JSJaCHttpPollingConnection(oArgs);
+    con.registerHandler('message',handleMessage);
+    con.registerHandler('presence',handlePresence);
+    con.registerHandler('iq',handleEvent);
+    con.registerHandler('onconnect',handleConnected);
+    con.registerHandler('onerror',handleError);
+    con.registerHandler('status_changed',handleStatusChange);
+
+    //Setup args for connect method
+    oArgs = new Object();
+    oArgs.domain = 'garous.org';
+    oArgs.username = 'muckl';
+    oArgs.resource = 'xuleditor';
+    oArgs.pass = 'muckl';
+    //oArgs.register = false;
+    con.connect(oArgs);
+
+  } catch (e) {
+    document.getElementById('err').value = e.toString();
+  } finally {
+    return false;
+  }
+}
+
+//Sends content of "input" textbox to the groupchat
+function sendMsg() {
+  var msg = document.getElementById('input').value;
+  if (msg == '') return false;
+
+  var aMsg = new JSJaCMessage();
+  aMsg.setType('groupchat');
+  aMsg.setTo(chatroom);
+  aMsg.setBody(msg);
+  con.send(aMsg);
+
+  document.getElementById('input').value = '';
+
+  return false;
+}
+
+function quit() {
+  if (con && con.connected())
+    con.disconnect();
 }
 
 ////////////////////////////////////////////////////////////////////

@@ -11,11 +11,13 @@
 <!ENTITY tree-menu.label "Tree">
 <!ENTITY tree-expand.label "Expand all">
 <!ENTITY tree-collapse.label "Collapse all">
+<!ENTITY chat-menu.label "Chat">
+<!ENTITY chat-start.label "Start">
 <!ENTITY help-menu.label "Help">
 <!ENTITY help-about.label "About">
 <!ENTITY name.label "Criteria">
 <!ENTITY g-evaluation.label "Evaluation">
-<!ENTITY t-header.label "Entête">
+<!ENTITY t-header.label "Header">
 <!ENTITY t-c-title.label "Criteria">
 <!ENTITY t-chart.label "Chart">
 <!ENTITY g-software.label "Software">
@@ -38,3 +40,8 @@
 <!ENTITY f-c-desc1.label "Score 1">
 <!ENTITY f-c-desc2.label "Score 2">
 <!ENTITY f-c-comments.value "Comments">
+<!ENTITY chat-conversation "Conversation">
+<!ENTITY chat-input "Say something">
+<!ENTITY chat-send "Send!">
+<!ENTITY chat-roster "Participants">
+<!ENTITY t-chat.label "Chat">
