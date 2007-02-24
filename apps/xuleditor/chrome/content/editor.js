@@ -23,6 +23,7 @@
 **
 ** TODO:
 **    - Chat: find a way to colorize text in "conversation" textbox
+**    - Chat: let user change it's nickname
 */
 
 //Object "Document" representing data in the QSOS XML file
@@ -225,9 +226,11 @@ function sendMsg() {
   return false;
 }
 
-function quit() {
-  if (con && con.connected())
+//Disconnect from groupchat
+function doLogout() {
+  if (con && con.connected()) {
     con.disconnect();
+  }
 }
 
 ////////////////////////////////////////////////////////////////////
@@ -557,6 +560,7 @@ function checkcloseFile() {
 //////////////////////////
 //Exits application
 function exit() {
+        doLogout();
 	self.close();
 }
 
