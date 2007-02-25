@@ -22,8 +22,9 @@
 ** editor.js: functions associated with the editor.xul file
 **
 ** TODO:
-**    - Chat: find a way to colorize text in "conversation" textbox
+**    - Chat: remove unavailable users from roster
 **    - Chat: let user change it's nickname
+**    - Chat: smileys replacement
 */
 
 //Object "Document" representing data in the QSOS XML file
@@ -75,15 +76,17 @@ function startChat() {
     prefManager.setCharPref("extensions.qsos-xuled.nick", nick);
   }
   document.getElementById("chat-start").setAttribute("disabled", "true");
+  document.getElementById('t-s').selectedIndex = 3;
   doLogin();
 }
 
+//Replace some HTML reserved characters
 function htmlEnc(str) {
     str = str.replace(/&/g,"&amp;");
     str = str.replace(/</g,"&lt;");
     str = str.replace(/>/g,"&gt;");
     str = str.replace(/\"/g,"&quot;");
-    str = str.replace(/\n/g,"<br />");
+    str = str.replace(/\n/g,"<html:br />");
     return str;
 }
 
@@ -116,8 +119,36 @@ function handleEvent(aJSJaCPacket) {
 //JSJaC message handler
 function handleMessage(aJSJaCPacket) {
   var conversation = document.getElementById('conversation');
-  conversation.value += getUserNick(aJSJaCPacket.getFrom())+': ' + aJSJaCPacket.getBody() + '\n';
-  conversation.inputField.scrollTop = conversation.inputField.scrollHeight - conversation.inputField.clientHeight;
+  var usernick = getUserNick(aJSJaCPacket.getFrom());
+  var msg = htmlEnc(aJSJaCPacket.getBody());
+
+  var nickcolor;
+  switch(usernick) {
+    case nick:
+      nickcolor = 'blue';
+      break
+    case 'Chatroom':
+      nickcolor = 'red';
+      break
+    default:
+      nickcolor = 'black';
+  }
+
+  var msgcolor;
+  if (msg.indexOf(nick) != -1) {
+    msgcolor = 'green';
+  } else {
+    msgcolor = 'black';
+  }
+
+  conversation.innerHTML += 
+    "<html:span style='font-weight: bold; color: " + nickcolor + "'>" + 
+    usernick + ": </html:span>" + 
+    "<html:span style='color: " + msgcolor + "'>" + msg + "</html:span>" +
+    "<html:br />";
+
+  //Scroll to the bottom of the conversation view
+  conversation.scrollTop = conversation.scrollHeight;
 }
 
 //JSJaC presence handler

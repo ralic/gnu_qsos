@@ -4,7 +4,7 @@
 <!DOCTYPE window SYSTEM "chrome://qsos-xuled/locale/editor.dtd">
 <window id="QSOS" title="&QSOS.label;" width="800px" height="600px"
   xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
-  
+  xmlns:html="http://www.w3.org/1999/xhtml"
   onload="init();">
   <script type="application/x-javascript" src="jsjac/xmlextras.js"></script>
   <script type="application/x-javascript" src="jsjac/JSJaCPacket.js"></script>
@@ -144,7 +144,7 @@
           <hbox flex = "1">
             <vbox flex = "5">
               <label value="&chat-conversation;"/>
-              <textbox id="conversation" multiline="true" rows="20" readonly="true"/>
+              <html:div id="conversation" flex="1"/>
               <label value="&chat-input;" control="input"/>
               <textbox id="input" multiline="true" rows="2"/>
               <textbox id="err" multiline="true" rows="2" hidden="true"/>
