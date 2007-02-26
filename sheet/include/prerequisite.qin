@@ -1,10 +1,6 @@
-<section name="prerequisite" title="prerequisite">
-  
-  <element name="implementationlanguage" title="Implementation Language">
-    <desc>
-    Detail here the software implementation language(s)  and its(their) version
-    </desc>
+<section name="prerequisite" title="Prerequisite">
+  <element name="implementationlanguage" title="Implementation language">
+    <desc>Detail here the software implementation language(s) and its(their) version</desc>
     <comment></comment>
   </element>
-  
 </section>
