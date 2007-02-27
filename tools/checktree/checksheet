@@ -1,5 +1,5 @@
 #!/bin/sh
-# $Id: checksheet,v 1.3 2007/02/20 20:14:28 goneri Exp $
+# $Id: checksheet,v 1.4 2007/02/27 13:24:43 Nyco Exp $
 # Gonéri Le Bouder
 
 set -e
@@ -41,7 +41,7 @@ else
   normalfilename=$qsosappname"-"$release"_"$lang".qsos"
 fi
 if [ ! "$normalfilename" = "$sheetbasename"  ]; then
-  echo "the sheep name ($sheetbasename) is malformed. Should be"
+  echo "the sheet name ($sheetbasename) is malformed. Should be"
   echo "$normalfilename (qsosappname-release.qsos or" 
   echo "qsosappname-release_language.qsos)"
 #  exit 1
