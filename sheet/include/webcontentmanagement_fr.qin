@@ -1,8 +1,8 @@
-<section name="webcontentmanagement" title="Web content management support">
+<section name="webcontentmanagement" title="Gestion de contenu sur le web">
     <desc>This section describes the system's web content/attachement management features.</desc>
-    <element name="metadata" title="Support for metadata on content">
+    <element name="metadata" title="Prise en charge des métadonnées">
         <desc>Metadata are information related to a document like (keywords, category, author, copyright holder...)</desc>
-        <element name="keyword" title="Keyword support">
+        <element name="keyword" title="Prise en charge des mots-clés">
             <desc>Metadata are all the specific keywords that can be attached to a document (e.g.:
                 sun, holydays, summer for a picture from your last holydays)</desc>
             <desc0>Can't add specific keywords</desc0>
@@ -12,7 +12,7 @@
             <comment/>
             <score/>
         </element>
-        <element name="hierarchicalclassification" title="Hierarchical classification">
+        <element name="hierarchicalclassification" title="Classification hiérarchique">
             <desc>Ability to do a classication in predesigned hierarchy, category or namespaces</desc>
             <desc0>This feature doesn't exist</desc0>
             <desc1>The feature exists but is limited</desc1>
@@ -21,12 +21,12 @@
             <score/>
         </element>
     </element>
-    <element name="documentsupport" title="Document types support">
+    <element name="documentsupport" title="Types de document pris en charge">
         <desc> Supported means that the internal engine is able to store and eventually read or
         parse file content in order to create preview file, find key words, and thus use for
         search, merge and diff</desc>
-        <element name="textcontent" title="Text formats">
-            <element name="txt" title="Text files">
+        <element name="textcontent" title="Formats texte">
+            <element name="txt" title="Fichiers texte">
                 <desc>If score is 1 or 2, do detail in the comment section the supported features :
                     parsing, previewing, reading, searching</desc>
                 <desc0>not supported</desc0>
@@ -36,7 +36,7 @@
                 <comment/>
                 <score/>
             </element>
-            <element name="importformathtml" title="HTML files">
+            <element name="importformathtml" title="Fichiers HTML">
                 <desc>If score is 1 or 2, do detail in the comment section the supported features :
                     parsing, previewing, reading, searching</desc>
                 <desc0>not supported</desc0>
@@ -46,7 +46,7 @@
                 <comment/>
                 <score/>
             </element>
-            <element name="importformatrtf" title="RTF (Rich Text Format)">
+            <element name="importformatrtf" title="Fichiers RTF (Rich Text Format)">
                 <desc>If score is 1 or 2, do detail in the comment section the supported features :
                     parsing, previewing, reading, searching</desc>
                 <desc0>not supported</desc0>
@@ -56,7 +56,7 @@
                 <comment/>
                 <score/>
             </element>
-            <element name="importformatcsv" title="CSV">
+            <element name="importformatcsv" title="Fichiers CSV">
                 <desc>If score is 1 or 2, do detail in the comment section the supported features :
                     parsing, previewing, reading, searching</desc>
                 <desc0>not supported</desc0>
@@ -66,7 +66,7 @@
                 <comment/>
                 <score/>
             </element>
-            <element name="importformatxml" title="XML files">
+            <element name="importformatxml" title="Fichiers XML">
                 <desc>If score is 1 or 2, do detail in the comment section the supported features :
                     parsing, previewing, reading, searching</desc>
                 <desc0>not supported</desc0>
@@ -77,7 +77,7 @@
                 <score/>
             </element>
         </element>
-        <element name="opendocumentsupport" title="OpenDocument (OpenOffice.org) files support">
+        <element name="opendocumentsupport" title="Fichiers OpenDocument (OpenOffice.org) files">
             <desc>If score is 1 or 2, do detail in the comment section the supported features :
                 parsing, previewing, reading, searching</desc>
             <desc0>not supported</desc0>
@@ -87,7 +87,7 @@
             <comment/>
             <score/>
         </element>
-        <element name="msofficesupport" title="Microsoft Office files support">
+        <element name="msofficesupport" title="Fichiers Microsoft Office">
             <desc>If score is 1 or 2, do detail in the comment section the supported features :
                 parsing, previewing, reading, searching</desc>
             <desc0>not supported</desc0>
@@ -97,7 +97,7 @@
             <comment/>
             <score/>
         </element>
-        <element name="vectorialformat" title="Common vectorial format">
+        <element name="vectorialformat" title="Formats vectoriels usuels">
             <desc>Format are: WMF, SVG</desc>
             <desc0>not supported</desc0>
             <desc1>partialy (buggy or limited feature)</desc1>
@@ -106,10 +106,10 @@
             <score/>
         </element>
     </element>
-    <element name="versioncontrol" title="Online version control">
+    <element name="versioncontrol" title="Gestion de version">
         <desc>The documents targeted by the version control are those listed as fully supported in the above "documentsupport" elements</desc>
         <element name="history"
-            title="Online access to each pages/docs (of fully supported media) history/versioning">
+            title="Accès à tous les historiques et version de pages et documents">
             <desc0>No history/versioning</desc0>
             <desc1>limited number of document revisions</desc1>
             <desc2>unlimited number of document revisions</desc2>
@@ -117,7 +117,7 @@
             <score/>
         </element>
         <element name="diff"
-            title="Online support for version differencing diff and retrieving prior versions">
+            title="Accès auc différences et versions anciennes">
             <desc0>No diff feature</desc0>
             <desc1>Revision Diffs with the latest</desc1>
             <desc2>Revision Diffs with the all</desc2>
@@ -125,7 +125,7 @@
             <score/>
         </element>
         <element name="rollback"
-            title="Online support for retrieving/rollbacking to prior versions">
+            title="Prise en charge du retour arrière">
             <desc0>No rollback feature</desc0>
             <desc1>rollback to the latest</desc1>
             <desc2>rollback to all</desc2>
@@ -133,7 +133,7 @@
             <score/>
         </element>
         <element name="mergetools"
-            title="Tools to facilitate merge pages/docs (of fully supported media)">
+            title="Outils de fusion">
             <desc0>No such merging tools</desc0>
             <desc1>basic merge tools</desc1>
             <desc2>smart merge tools</desc2>
@@ -141,9 +141,9 @@
             <score/>
         </element>
     </element>
-    <element name="picture" title="Picture formats support">
+    <element name="picture" title="Formats d'images">
         <desc>Supported means that the internal engine is able to store and eventually make thumbnail/preview file</desc>
-        <element name="commonpictureformat" title="Common file formats">
+        <element name="commonpictureformat" title="Formats usuels">
             <desc>Format are: JPEG, GIF, PNG, BMP, TIFF, XPM</desc>
             <desc0>not supported</desc0>
             <desc1>supported</desc1>
@@ -151,7 +151,7 @@
             <comment/>
             <score/>
         </element>
-        <element name="commercialpictureformat" title="Commercial/proprietary formats">
+        <element name="commercialpictureformat" title="Formats commerciaux/propriétaires">
             <desc>Format are: PSP (PaintShopPro), PSD (Photopshop)</desc>
             <desc0>not supported</desc0>
             <desc1>supported</desc1>
@@ -160,9 +160,9 @@
             <score/>
         </element>
     </element>
-    <element name="search" title="Support for search">
+    <element name="search" title="Recherche">
         <desc>The metadata and media content support is to be detailed in the above metadata and mediasupport elements</desc>
-        <element name="searchengine" title="Search engine features">
+        <element name="searchengine" title="Moteur de recherche">
             <desc0>No search engine available</desc0>
             <desc1>Searches are limited (to filename, metadata or text content for instance)</desc1>
             <desc2>Searches are feasable through most of the media content and the metadata</desc2>
@@ -170,7 +170,7 @@
             <score/>
         </element>
         <element name="searchAPI"
-            title="Search API for more detailed searching in the contents and their metadata">
+            title="API de recherche dans les contenus et métadonnées">
             <desc0>This feature doesn't exist</desc0>
             <desc1>The feature exist but is limited.</desc1>
             <desc2>This feature is fully powered</desc2>
@@ -178,15 +178,15 @@
             <score/>
         </element>
     </element>
-    <element name="updatenotification" title="Support for new content or update notifications">
-        <element name="recentchanges" title="Recent changes advertised on the web interface">
+    <element name="updatenotification" title="Notifications de mise à jour ou de nouveau contenu">
+        <element name="recentchanges" title="Changements récents sur l'interface web">
             <desc0>No such features</desc0>
             <desc1>recent changes advertised according to the today's date</desc1>
             <desc2>recent changes advertised only changes that happened since user's last visit</desc2>
             <comment/>
             <score/>
         </element>
-        <element name="rss" title="Support for RSS feeds">
+        <element name="rss" title="Flux RSS">
             <desc>Do detail the rss feed format/protocol in the comment section</desc>
             <desc0>This feature doesn't exist</desc0>
             <desc1>The feature exists but is limited</desc1>
@@ -194,7 +194,7 @@
             <comment/>
             <score/>
         </element>
-        <element name="othernotifications" title="Support for other notifications media">
+        <element name="othernotifications" title="AUtre média de notifications">
             <desc>Do detail the media in the comment section</desc>
             <desc0>This feature doesn't exist</desc0>
             <desc1>The feature exists for one communication media</desc1>
@@ -204,7 +204,7 @@
         </element>
     </element>
     <element name="contentworkflow" title="Content management workflow">
-        <element name="simpleLock" title="Simple lock mechanism">
+        <element name="simpleLock" title="Mécanisme de verrou simple">
             <desc>Ability to lock file avoid data lost or synchronization issues</desc>
             <desc0>The feature doesn't exist</desc0>
             <desc1>The feature just exists</desc1>
@@ -225,7 +225,7 @@
         </element>
     </element>
     <element name="pluginsandpluginability"
-        title="Plugins, pluginability, built-in objects, and page templates">
+        title="Greffons, objets inclus et modèles de page">
         <element name="pluginability" title="Plugin ability">
             <desc>Adequate software architecture for custom plugin creation, easy plugin interface 
             for writing your own additions. Do detail in the comment section the supported plugin languages </desc>
@@ -235,29 +235,29 @@
             <comment/>
             <score/>
         </element>
-        <element name="remoteAPI" title="XML/RPC remote API">
+        <element name="remoteAPI" title="API distante XML/RPC">
             <desc0>No such feature</desc0>
             <desc1>poor API</desc1>
             <desc2>rich API</desc2>
             <comment/>
             <score/>
         </element>
-        <element name="webserviceplugin" title="Web service plugin">
+        <element name="webserviceplugin" title="Greffon de service web">
             <desc0>No such feature</desc0>
             <desc1>limited integration capabilities</desc1>
             <desc2>good capabilities</desc2>
             <comment/>
             <score/>
         </element>
-        <element name="feedagregation" title="Ability to aggregate feeds">
+        <element name="feedagregation" title="Agrégation de flux">
             <desc0>No such feature</desc0>
             <desc1>limited integration capabilities</desc1>
             <desc2>good capabilities</desc2>
             <comment/>
             <score/>
         </element>
-        <element name="builtinobjects" title="Builtin objects or plugins">
-            <element name="calendars" title="Calendars and Calendars events">
+        <element name="builtinobjects" title="Objets inclus ou greffons">
+            <element name="calendars" title="Calendriers et évènements">
                 <desc0>No such feature</desc0>
                 <desc1>partially or poorly implemented </desc1>
                 <desc2>well done</desc2>
@@ -271,14 +271,14 @@
                 <comment/>
                 <score/>
             </element>
-            <element name="polls" title="Polls and vote editing and publishing">
+            <element name="polls" title="Édition et publication de sondages et votes">
                 <desc0>No such feature</desc0>
                 <desc1>partially or poorly implemented </desc1>
                 <desc2>well done</desc2>
                 <comment/>
                 <score/>
             </element>
-            <element name="photoalbums" title="Photo albums editing and publishing">
+            <element name="photoalbums" title="Édition et publication d'albums photo">
                 <desc0>No such feature</desc0>
                 <desc1>partially or poorly implemented </desc1>
                 <desc2>well done</desc2>
@@ -286,7 +286,7 @@
                 <score/>
             </element>
             <element name="slideshows"
-                title="Slideshow editing and launching within the internet browser">
+                title="Édition et lancement de diaporama dans le navigateur">
                 <desc0>No such feature</desc0>
                 <desc1>partially or poorly implemented </desc1>
                 <desc2>well done</desc2>
@@ -294,14 +294,14 @@
                 <score/>
             </element>
             <element name="bugtrackingintegration"
-                title="Bug tracking system integration (tickets linking and metadata extraction)">
+                title="Système de gestion de bogues intégré (liens entre tickets et extraction de métadonnées)">
                 <desc0>No such feature</desc0>
                 <desc1>limited integration: tickets linking </desc1>
                 <desc2>well supported: tickets linking and metadata extraction</desc2>
                 <comment/>
                 <score/>
             </element>
-            <element name="otherplugins" title="Other noticeable built-in plugins">
+            <element name="otherplugins" title="autres greffons inclus notables">
                 <desc> others: FAQ, meeting minutes, Action Tracker plugin, bookmarklet, 
                 Geolocalisation features: GeoURL or googleMaps plugins, Tagging and Tag clouds
                 (delicio.us, technorati, others), etc. Do list the plugins in the comment section. </desc>
