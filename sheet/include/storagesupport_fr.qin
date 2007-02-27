@@ -1,5 +1,5 @@
-<section name="storagesupport" title="Storage support">
-    <element name="file system" title="File system storage">
+<section name="storagesupport" title="Stockage">
+    <element name="file system" title="Stockage sur système de fichiers">
         <desc>
             The data persisted by the software can-be/is stored in (flat) files in the file system.
             Reminder: here, a higher score does not mean a better product nor the opposite, 
@@ -11,8 +11,8 @@
         <comment></comment>
         <score></score>
     </element>
-    <element name="database" title="Database">
-        <element name="rdbms" title="Relational database support">
+    <element name="database" title="Base de données">
+        <element name="rdbms" title="Base de données relationnelle">
             <desc> The data persisted by the software can-be/is stored in relational databases.
                 Reminder: here, a higher score does not mean a better product nor the opposite, it
                 really depends on your needs and non functional requirements. If the score is 1 or
@@ -24,7 +24,7 @@
             <comment/>
             <score/>
         </element>
-        <element name="xmldbms" title="XML database support">
+        <element name="xmldbms" title="Base de données XML">
             <desc> The data persisted by the software can-be/is stored in XML databases. Reminder:
                 here, a higher score does not mean a better product nor the opposite, it really
                 depends on your needs and non functional requirements. If the score is 1 or 2, do
@@ -36,7 +36,7 @@
             <comment/>
             <score/>
         </element>
-        <element name="odbms" title="Object database support">
+        <element name="odbms" title="Base de données objet">
             <desc> The data persisted by the software can-be/is stored in object (oriented)
                 databases. Reminder: here, a higher score does not mean a better product nor the
                 opposite, it really depends on your needs and non functional requirements. If the
@@ -48,7 +48,7 @@
             <comment/>
             <score/>
         </element>
-        <element name="rcs" title="Revision control system support">
+        <element name="rcs" title="Système de gestion de version">
             <desc> The data persisted by the software can-be/is stored in revision control system.
                 Reminder: here, a higher score does not mean a better product nor the opposite, it
                 really depends on your needs and non functional requirements. If the score is 1 or
@@ -61,8 +61,8 @@
             <score/>
         </element>
     </element>
-    <element name="datawarehouse" title="Data warehouse">
-        <desc>Does the system support data warehousing?</desc>
+    <element name="datawarehouse" title="Datawarehouse">
+        <desc>Does the system support datawarehousing?</desc>
         <desc0>This feature doesn't exist</desc0>
         <desc1>The feature exists with limitation (TODO)</desc1>
         <desc2></desc2>
