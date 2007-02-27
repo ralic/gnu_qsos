@@ -1,8 +1,8 @@
-<section name="webappprerequisite" title="Web application prerequisites">
-  <element name="platform" title="Platform on which the web application is running">
+<section name="webappprerequisite" title="Prérequis pour les applications web">
+  <element name="platform" title="Plateforme sur laquelle l'application web tourne">
     <desc>Detail here the platform details and implementation language(s)  and its(their) version
     </desc>
-    <element name="j2eeplatform" title="Is the web application running on a J2EE platform?">
+    <element name="j2eeplatform" title="Est-ce que l'application web tourne sur J2EE ?">
       <desc>Detail in the comment section the J2EE or JavaEE specifications used an their versions as well as the supported servers.
       </desc>
       <desc0>The web app is not running on this platform</desc0>
@@ -11,7 +11,7 @@
       <comment></comment>
       <score></score>
     </element>
-    <element name="phpplatform" title="Is the web application running on a PHP platform?">
+    <element name="phpplatform" title="Est-ce que l'application web tourne sur PHP ?">
       <desc>Detail in the comment section PHP versions and the supported servers.
       </desc>
       <desc0>The web app is not running on this platform</desc0>
@@ -20,7 +20,7 @@
       <comment></comment>
        <score></score>
     </element>
-    <element name="cgiplatform" title="Is the web application running on a CGI platform?">
+    <element name="cgiplatform" title="Est-ce que l'application web tourne sur CGI ?">
       <desc>Detail in the comment section CGI versions and the supported servers.
       </desc>
       <desc0>The web app is not running on this platform</desc0>
@@ -29,7 +29,7 @@
       <comment></comment>
       <score></score>
     </element>
-    <element name="mod_perlplatform" title="Is the web application running on a mod_perl platform?">
+    <element name="mod_perlplatform" title="Est-ce que l'application web tourne sur mod_perl ?">
       <desc>Detail in the comment section mod_perl versions and the supported servers.
       </desc>
       <desc0>The web app is not running on this platform</desc0>
