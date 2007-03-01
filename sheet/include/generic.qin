@@ -18,14 +18,14 @@
         <score></score>
         <comment></comment>
       </element>
-      <element name="historyknowproblems" title="History, know problems">
+      <element name="historyknowproblems" title="History">
         <desc0>Software knows several problems which can be prohibitive</desc0>
         <desc1>No know major problem or crisis</desc1>
         <desc2>History of good management of crisis situations</desc2>
         <score></score>
         <comment></comment>
       </element>
-      <element name="forkprobability" title="Fork probability, source of Forking">
+      <element name="forkprobability" title="Fork">
         <desc0>Software is very likely to be forked in the future</desc0>
         <desc1>Software comes from a fork but has very few chances of being forked in the future</desc1>
         <desc2>Software has very little chance of being forked. It does not come from a fork either</desc2>
@@ -35,7 +35,7 @@
     </element>
     <element name="adoption" title="Adoption">
       <desc>Adoption by community and industry</desc>
-      <element name="popularity" title="Popularity (related to: general public, niche, ...)">
+      <element name="popularity" title="Popularity">
         <desc0>Very few users identified</desc0>
         <desc1>Detectable use on Internet</desc1>
         <desc2>Numerous users, numerous references</desc2>
@@ -216,8 +216,8 @@
   <element name="strategy" title="Strategy">
     <desc>Project's strategy</desc>
     <element name="license" title="License">
-      <desc>License</desc>
-      <element name="permissiveness" title="Permissiveness (only if user wants to become owner of code)">
+      <desc>License, only if user wants to become owner of code</desc>
+      <element name="permissiveness" title="Permissiveness">
         <desc0>Very strict license, like GPL</desc0>
         <desc1>Moderate permissive license located between both extremes (GPL and BSD) dual-licensing depending on the type of user (person, company, ...) or their activities</desc1>
         <desc2>Very permissive like BSD or Apache licenses</desc2>
