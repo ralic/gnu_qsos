@@ -35,7 +35,7 @@
                <desc1>Entre 3 mois et 3 ans</desc1>
                <desc2>Plus de 3 ans</desc2>
                <score>1</score>
-               <comment>Juin 2005</comment>
+               <comment>Juin 2005 mais première mise en prod en octobre 2004</comment>
             </element>
             <element name="stability" title="Stabilité">
                <desc0>Logiciel instable avec de nombreuses versions et patches générant des effets de bords</desc0>
@@ -65,8 +65,8 @@
                <desc0>Très peu d'utilisateurs identifiés</desc0>
                <desc1>Usage détectable sur Internet</desc1>
                <desc2>Nombreux utilisateurs et références</desc2>
-               <score>0</score>
-               <comment></comment>
+               <score>1</score>
+               <comment>Quelques entreprises et communautés</comment>
             </element>
             <element name="references" title="Références">
                <desc0>Aucune</desc0>
@@ -79,8 +79,8 @@
                <desc0>Pas de communauté ou de réelle activité (forum, liste de diffusion…)</desc0>
                <desc1>Communauté existante avec une activité notable</desc1>
                <desc2>Communauté forte : grosse activité sur les forums, de nombreux contributeurs et défenseurs</desc2>
-               <score></score>
-               <comment>Artenum, consortium :  INRIA Lorraine, Denis Diderot- Paris 7 University, Henri Poincaré- Nancy 1 University </comment>
+               <score>1</score>
+               <comment>Beaucoup de contacts directs via Artenum et consortium :  INRIA Lorraine, Denis Diderot- Paris 7 University, Henri Poincaré- Nancy 1 University </comment>
             </element>
             <element name="books" title="Livres, publications">
                <desc0>Aucun livre sur ce logiciel</desc0>
@@ -127,8 +127,8 @@
                <desc0>Pas ou peu de nouvelles fonctionnalités</desc0>
                <desc1>Évolution du produit conduite par une équipe dédiée ou par des utilisateurs, mais sans processus clairement exposé</desc1>
                <desc2>Les requêtes pour les nouvelles fonctionnalités sont clairement outillées, feuille de route disponible</desc2>
-               <score>1</score>
-               <comment></comment>
+               <score>2</score>
+               <comment>Roadmap et wishlist, et besoins clients</comment>
             </element>
             <element name="activityonreleases" title="Activité sur les releases/versions">
                <desc0>Très faible activité que ce soit sur les versions de production ou de développement (alpha, beta)</desc0>
@@ -145,8 +145,8 @@
             <desc0>Développements réalisés à plus de 60% par des employés d'une seule société</desc0>
             <desc1>Développements réalisés à 60% maximum par des employés d'une seule société</desc1>
             <desc2>Développements réalisés à 20% maximum par des employés d'une seule société</desc2>
-            <score>0</score>
-            <comment></comment>
+            <score>1</score>
+            <comment>Développements répartie entre INRIA et Artenum</comment>
          </element>
          <element name="services" title="Services">
             <desc>Offres de services</desc>
@@ -154,22 +154,22 @@
                <desc0>Pas d'offre de formation identifiée</desc0>
                <desc1>Offre existante mais restreinte géographiquement ou en une seule langue ou fournie par un seul fournisseur</desc1>
                <desc2>Offre riche, plusieurs fournisseurs, plusieurs langages, divisée en modules et en niveaux</desc2>
-               <score>0</score>
-               <comment></comment>
+               <score>1</score>
+               <comment>Artenum, avec LibreSource Enterprise et Express (offre d'hébergement)</comment>
             </element>
             <element name="support" title="Support">
                <desc0>Pas d'offre de support identifiée</desc0>
                <desc1>Offre existante mais restreinte géographiquement ou en une seule langue ou fournie par un seul fournisseur ou sans garantie</desc1>
                <desc2>Offre riche, plusieurs fournisseurs, avec des garanties (sur les temps de résolution)</desc2>
-               <score>0</score>
-               <comment>Artenum</comment>
+               <score>1</score>
+               <comment>Artenum, avec LibreSource Enterprise et Express (offre d'hébergement)</comment>
             </element>
             <element name="consulting" title="Conseil">
                <desc0>Pas d'offres de conseil identifiées</desc0>
                <desc1>Offre existante mais restreinte géographiquement ou à un seul langage ou fournie par un seul fournisseur</desc1>
                <desc2>Offre riche, plusieurs fournisseurs, plusieurs langages</desc2>
-               <score>0</score>
-               <comment></comment>
+               <score>1</score>
+               <comment>Artenum, avec LibreSource Enterprise et Express (offre d'hébergement)</comment>
             </element>
          </element>
          <element name="documentation" title="Documentation">
@@ -205,29 +205,29 @@
                <desc0>Le logiciel n'est pas packagé pour ce système d'exploitation</desc0>
                <desc1>Le packaging existe, mais est buggé ou n'a pas de support officiel</desc1>
                <desc2>Le logiciel est correctement packagé pour ce système d'exploitation</desc2>
-               <score></score>
-               <comment></comment>
+               <score>2</score>
+               <comment>Java</comment>
             </element>
             <element name="packagingmacosx" title="Mac OS X">
                <desc0>Le logiciel n'est pas packagé pour ce système d'exploitation</desc0>
                <desc1>Le packaging existe, mais est buggé ou n'a pas de support officiel</desc1>
                <desc2>Le logiciel est correctement packagé pour ce système d'exploitation</desc2>
                <score>2</score>
-               <comment></comment>
+               <comment>Java</comment>
             </element>
             <element name="packagingnet" title="NetBSD">
                <desc0>Le logiciel n'est pas packagé pour ce système d'exploitation</desc0>
                <desc1>Le packaging existe, mais est buggé ou n'a pas de support officiel</desc1>
                <desc2>Le logiciel est correctement packagé pour ce système d'exploitation</desc2>
-               <score></score>
-               <comment></comment>
+               <score>1</score>
+               <comment>Java</comment>
             </element>
             <element name="packagingopen" title="OpenBSD">
                <desc0>Le logiciel n'est pas packagé pour ce système d'exploitation</desc0>
                <desc1>Le packaging existe, mais est buggé ou n'a pas de support officiel</desc1>
                <desc2>Le logiciel est correctement packagé pour ce système d'exploitation</desc2>
-               <score></score>
-               <comment></comment>
+               <score>1</score>
+               <comment>Java</comment>
             </element>
          </element>
          <element name="packaginglinux" title="Linux">
@@ -236,37 +236,37 @@
                <desc0>Le logiciel n'est pas packagé pour ce système d'exploitation</desc0>
                <desc1>Le packaging existe, mais est buggé ou n'a pas de support officiel</desc1>
                <desc2>Le logiciel est correctement packagé pour ce système d'exploitation</desc2>
-               <score></score>
-               <comment></comment>
+               <score>1</score>
+               <comment>Java</comment>
             </element>
             <element name="packagingmandriva" title="Mandriva">
                <desc0>Le logiciel n'est pas packagé pour ce système d'exploitation</desc0>
                <desc1>Le packaging existe, mais est buggé ou n'a pas de support officiel</desc1>
                <desc2>Le logiciel est correctement packagé pour ce système d'exploitation</desc2>
-               <score></score>
-               <comment></comment>
+               <score>2</score>
+               <comment>Java</comment>
             </element>
             <element name="packagingredhat" title="Red Hat">
                <desc0>Le logiciel n'est pas packagé pour ce système d'exploitation</desc0>
                <desc1>Le packaging existe, mais est buggé ou n'a pas de support officiel</desc1>
                <desc2>Le logiciel est correctement packagé pour ce système d'exploitation</desc2>
-               <score></score>
-               <comment></comment>
+               <score>2</score>
+               <comment>Java</comment>
             </element>
             <element name="packagingsuse" title="SuSE">
                <desc0>Le logiciel n'est pas packagé pour ce système d'exploitation</desc0>
                <desc1>Le packaging existe, mais est buggé ou n'a pas de support officiel</desc1>
                <desc2>Le logiciel est correctement packagé pour ce système d'exploitation</desc2>
-               <score></score>
-               <comment></comment>
+               <score>2</score>
+               <comment>Java</comment>
             </element>
          </element>
          <element name="packagingsource" title="Source">
             <desc0>Le logiciel ne peut être facilement installé depuis les sources, cela demande beaucoup de travail</desc0>
             <desc1>L'installation depuis les sources est limitée ou dépend des conditions (OS, arch, lib…)</desc1>
             <desc2>L'installation depuis les sources est facile</desc2>
-            <score></score>
-            <comment></comment>
+            <score>2</score>
+            <comment>Java</comment>
          </element>
          <element name="packagingunix" title="Unix">
             <desc>Unix</desc>
@@ -274,22 +274,22 @@
                <desc0>Le logiciel n'est pas packagé pour ce système d'exploitation</desc0>
                <desc1>Le packaging existe, mais est buggé ou n'a pas de support officiel</desc1>
                <desc2>Le logiciel est correctement packagé pour ce système d'exploitation</desc2>
-               <score></score>
-               <comment></comment>
+               <score>2</score>
+               <comment>Java</comment>
             </element>
             <element name="packaginghpux" title="HP-UX">
                <desc0>Le logiciel n'est pas packagé pour ce système d'exploitation</desc0>
                <desc1>Le packaging existe, mais est buggé ou n'a pas de support officiel</desc1>
                <desc2>Le logiciel est correctement packagé pour ce système d'exploitation</desc2>
-               <score></score>
-               <comment></comment>
+               <score>2</score>
+               <comment>Java</comment>
             </element>
             <element name="packagingsolaris" title="Solaris">
                <desc0>Le logiciel n'est pas packagé pour ce système d'exploitation</desc0>
                <desc1>Le packaging existe, mais est buggé ou n'a pas de support officiel</desc1>
                <desc2>Le logiciel est correctement packagé pour ce système d'exploitation</desc2>
-               <score></score>
-               <comment></comment>
+               <score>2</score>
+               <comment>Java</comment>
             </element>
          </element>
          <element name="packagingwindows" title="Windows">
@@ -297,7 +297,7 @@
             <desc1>Le packaging existe, mais est buggé ou n'a pas de support officiel</desc1>
             <desc2>Le logiciel est correctement packagé pour ce système d'exploitation</desc2>
             <score>2</score>
-            <comment></comment>
+            <comment>Java</comment>
          </element>
       </element>
       <element name="exploitability" title="Exploitabilité">
@@ -324,7 +324,7 @@
             <desc1>Présence de modules haut niveau permettant un premier niveau d'adaptation</desc1>
             <desc2>Conception modulaire, permettant des adaptations faciles par sélection et/ou création de modules</desc2>
             <score>1</score>
-            <comment>Composants J2EE</comment>
+            <comment>Composants J2EE, « services » indépendants</comment>
          </element>
          <element name="codemodification" title="Facilité technique de modification du code existant">
             <desc0>Tout à la main</desc0>
@@ -379,7 +379,7 @@
             <desc1>Feuille de route sans planning</desc1>
             <desc2>Feuille de route versionnée, avec planning et mesures de retard</desc2>
             <score>1</score>
-            <comment></comment>
+            <comment>Roadmap et wishlist, et besoins clients</comment>
          </element>
          <element name="sponsor" title="Sponsor">
             <desc0>Le logiciel n'a pas de sponsors, l'équipe principale n'est pas rémunérée</desc0>
