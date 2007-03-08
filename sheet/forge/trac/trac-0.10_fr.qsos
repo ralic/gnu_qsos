@@ -205,7 +205,7 @@
                <desc0>Le logiciel n'est pas packagé pour ce système d'exploitation</desc0>
                <desc1>Le packaging existe, mais est buggé ou n'a pas de support officiel</desc1>
                <desc2>Le logiciel est correctement packagé pour ce système d'exploitation</desc2>
-               <score></score>
+               <score>2</score>
                <comment></comment>
             </element>
             <element name="packagingmacosx" title="Mac OS X">
@@ -250,14 +250,14 @@
                <desc0>Le logiciel n'est pas packagé pour ce système d'exploitation</desc0>
                <desc1>Le packaging existe, mais est buggé ou n'a pas de support officiel</desc1>
                <desc2>Le logiciel est correctement packagé pour ce système d'exploitation</desc2>
-               <score></score>
+               <score>2</score>
                <comment></comment>
             </element>
             <element name="packagingsuse" title="SuSE">
                <desc0>Le logiciel n'est pas packagé pour ce système d'exploitation</desc0>
                <desc1>Le packaging existe, mais est buggé ou n'a pas de support officiel</desc1>
                <desc2>Le logiciel est correctement packagé pour ce système d'exploitation</desc2>
-               <score></score>
+               <score>2</score>
                <comment></comment>
             </element>
          </element>
@@ -265,7 +265,7 @@
             <desc0>Le logiciel ne peut être facilement installé depuis les sources, cela demande beaucoup de travail</desc0>
             <desc1>L'installation depuis les sources est limitée ou dépend des conditions (OS, arch, lib…)</desc1>
             <desc2>L'installation depuis les sources est facile</desc2>
-            <score></score>
+            <score>2</score>
             <comment></comment>
          </element>
          <element name="packagingunix" title="Unix">
