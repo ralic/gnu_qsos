@@ -71,7 +71,7 @@
   </element>
   <element name="packagingunix" title="Unix">
     <desc>Unix</desc>
-    <element name="packaginghpux" title="AIX">
+    <element name="packagingaix" title="AIX">
       <desc0>The software is not packaged for AIX</desc0>
       <desc1>A package exists but it has important issues or it doesn't have official support</desc1>
       <desc2>A stable package is provided for AIX</desc2>
