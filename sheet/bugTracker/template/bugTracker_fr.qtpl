@@ -15,8 +15,9 @@
       <url></url>
       <desc></desc>
       <demourl></demourl>
-      <qsosformat>1.6</qsosformat>
-      <qsosappfamily>Outil de support</qsosappfamily>
+      <qsosformat>1.7</qsosformat>
+      <qsosappfamily>bugTracker</qsosappfamily>
+      <qsosappname></qsosappname>
       <qsosspecificformat>1.0</qsosspecificformat>
    </header>
    <include section="generic"/>
