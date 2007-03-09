@@ -44,14 +44,14 @@
           <score>2</score>
           <comment></comment>
         </element>
-        <element name="historyknowproblems" title="Historique, problèmes connus">
+        <element name="historyknowproblems" title="Historique">
           <desc0>Le logiciel connaît de nombreux problèmes qui peuvent être rédhibitoires</desc0>
           <desc1>Pas de problèmes majeurs, ni de crise</desc1>
           <desc2>Bon historique de gestion de projet et de crise</desc2>
           <score>1</score>
           <comment></comment>
         </element>
-        <element name="forkprobability" title="Probabilité de fork, provenance d'un fork">
+        <element name="forkprobability" title="Fork">
           <desc0>Forte probabilité de fork dans un futur proche</desc0>
           <desc1>Le logiciel provient d'un fork mais a très peu de chances d'être forké dans un futur proche</desc1>
           <desc2>Très faible probabilité de fork. Le logiciel ne provient pas d'un fork</desc2>
@@ -61,7 +61,7 @@
       </element>
       <element name="adoption" title="Adoption">
         <desc>Adoption par la communauté et l'industrie</desc>
-        <element name="popularity" title="Popularité (à rapporter à la cible visée : grand public, niche…)">
+        <element name="popularity" title="Popularité">
           <desc0>Très peu d'utilisateurs identifiés</desc0>
           <desc1>Usage détectable sur Internet</desc1>
           <desc2>Nombreux utilisateurs et références</desc2>
@@ -344,8 +344,8 @@
     <element name="strategy" title="Stratégie">
       <desc>Stratégie du projet</desc>
       <element name="license" title="Licence">
-        <desc>Licence</desc>
-        <element name="permissiveness" title="Permissivité (NB : à pondérer uniquement si le client désire un jour devenir propriétaire du code)">
+        <desc>Licence, à pondérer uniquement si le client désire un jour devenir propriétaire du code</desc>
+        <element name="permissiveness" title="Permissivité">
           <desc0>Licence très stricte, comme la GPL</desc0>
           <desc1>Licence modérée entre les deux extrêmes (GPL et BSD), licence duale dépendante du type d'utilisateur (personne, société…) ou de leur activité</desc1>
           <desc2>Licence très permissive comme BSD et Apache</desc2>
