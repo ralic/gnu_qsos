@@ -17,7 +17,7 @@
     <demourl></demourl>
     <qsosformat>1.7</qsosformat>
     <qsosappfamily>bugTracker</qsosappfamily>
-    <qsosappname>bugTracker</qsosappname>
+    <qsosappname></qsosappname>
     <qsosspecificformat></qsosspecificformat>
   </header>
   <include section="generic"/>
