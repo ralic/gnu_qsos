@@ -20,8 +20,8 @@
       <desc>Trac est une forge libre légère centrée sur Subversion, un système de suivi et un wiki (timeline et roadmap) écrite en Python, se reposant sur SQLite, MySQL et PostgreSQL et publiée sous licence BSD modifiée</desc>
       <demourl>http://www.hosted-projects.com/trac/TracDemo/Demo</demourl>
       <qsosformat>1.7</qsosformat>
-      <qsosappfamily>Forge</qsosappfamily>
-      <qsosappname></qsosappname>
+      <qsosappfamily>forge</qsosappfamily>
+      <qsosappname>trac</qsosappname>
       <qsosspecificformat></qsosspecificformat>
    </header>
    <section name="generic" title="Section générique">
