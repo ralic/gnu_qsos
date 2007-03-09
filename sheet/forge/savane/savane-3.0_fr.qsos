@@ -1,402 +1,1416 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document>
-   <header>
-      <authors>
-         <author>
-            <name>Nicolas Vérité</name>
-            <email>nicolas.verite@gmail.com</email>
-         </author>
-      </authors>
-      <dates>
-         <creation></creation>
-         <validation></validation>
-      </dates>
-      <language>fr</language>
-      <appname>Savane</appname>
-      <release>3.0</release>
-      <licenseid>67</licenseid>
-      <licensedesc>GNU GPL</licensedesc>
-      <url>https://gna.org/projects/savane/</url>
-      <desc>Savane est une forge libre utilisée et développée pour les hébergeurs de projets libres Gna! et Savannah, issue du fork de SourceForge, écrite en PHP et Perl et reposant sur le SGBDR MySQL</desc>
-      <demourl></demourl>
-      <qsosformat>1.7</qsosformat>
-      <qsosappfamily>wiki</qsosappfamily>
-      <qsosappname></qsosappname>
-      <qsosspecificformat></qsosspecificformat>
-   </header>
-   <section name="generic" title="Section générique">
-      <desc>Les critères génériques de la méthode QSOS version 1.6</desc>
-      <element name="intrinsicdurability" title="Pérennité">
-         <desc>Pérennité</desc>
-         <element name="maturity" title="Maturité">
-            <desc>Maturité</desc>
-            <element name="age" title="Âge">
-               <desc0>Moins de 3 mois</desc0>
-               <desc1>Entre 3 mois et 3 ans</desc1>
-               <desc2>Plus de 3 ans</desc2>
-               <score>2</score>
-               <comment>Issue du fork de SourceForge en 2002</comment>
-            </element>
-            <element name="stability" title="Stabilité">
-               <desc0>Logiciel instable avec de nombreuses versions et patches générant des effets de bords</desc0>
-               <desc1>Version de production stabilisée mais un peu vieille. Quelques difficultés à stabiliser les versions de développement</desc1>
-               <desc2>Logiciel stable. Les nouvelles versions corrigent des bugs, mais apportent de façon prépondérante de nouvelles fonctionnalités</desc2>
-               <score>2</score>
-               <comment></comment>
-            </element>
-            <element name="historyknowproblems" title="Historique, problèmes connus">
-               <desc0>Le logiciel connaît de nombreux problèmes qui peuvent être rédhibitoires</desc0>
-               <desc1>Pas de problèmes majeurs, ni de crise</desc1>
-               <desc2>Bon historique de gestion de projet et de crise</desc2>
-               <score>2</score>
-               <comment></comment>
-            </element>
-            <element name="forkprobability" title="Probabilité de fork, provenance d'un fork">
-               <desc0>Forte probabilité de fork dans un futur proche</desc0>
-               <desc1>Le logiciel provient d'un fork mais a très peu de chances d'être forké dans un futur proche</desc1>
-               <desc2>Très faible probabilité de fork. Le logiciel ne provient pas d'un fork</desc2>
-               <score>1</score>
-               <comment></comment>
-            </element>
-         </element>
-         <element name="adoption" title="Adoption">
-            <desc>Adoption par la communauté et l'industrie</desc>
-            <element name="popularity" title="Popularité (à rapporter à la cible visée : grand public, niche…)">
-               <desc0>Très peu d'utilisateurs identifiés</desc0>
-               <desc1>Usage détectable sur Internet</desc1>
-               <desc2>Nombreux utilisateurs et références</desc2>
-               <score>1</score>
-               <comment>Les hébergeurs de projets libres Gna! et Savannah utilisent Savane, ainsi que quelques autres forges</comment>
-            </element>
-            <element name="references" title="Références">
-               <desc0>Aucune</desc0>
-               <desc1>Peu de références, pas d'usage critique</desc1>
-               <desc2>Souvent implémenté sur des applications critiques</desc2>
-               <score>1</score>
-               <comment>Gna!, Savannah
+  <header>
+    <authors>
+      <author>
+        <email>nicolas.verite@gmail.com</email>
+        <name>Nicolas Vérité</name>
+      </author>
+    </authors>
+    <dates>
+      <creation></creation>
+      <validation></validation>
+    </dates>
+    <language>fr</language>
+    <appname>Savane</appname>
+    <release>3.0</release>
+    <licenseid>67</licenseid>
+    <licensedesc>GNU GPL</licensedesc>
+    <url>https://gna.org/projects/savane/</url>
+    <desc>Savane est une forge libre utilisée et développée pour les hébergeurs de projets libres Gna! et Savannah, issue du fork de SourceForge, écrite en PHP et Perl et reposant sur le SGBDR MySQL</desc>
+    <demourl></demourl>
+    <qsosformat>1.7</qsosformat>
+    <qsosappfamily>wiki</qsosappfamily>
+    <qsosappname></qsosappname>
+    <qsosspecificformat></qsosspecificformat>
+  </header>
+  <section name="generic" title="Generic section">
+    <desc>Generic criteria from QSOS version 1.6</desc>
+    <element name="intrinsicdurability" title="Intrinsic durability">
+      <desc>Intrinsic durability</desc>
+      <element name="maturity" title="Maturity">
+        <desc>Maturity</desc>
+        <element name="age" title="Age">
+          <desc0>less than 3 months</desc0>
+          <desc1>if between 3 months and 3 years</desc1>
+          <desc2>after 3 years</desc2>
+          <score>2</score>
+          <comment>Issue du fork de SourceForge en 2002</comment>
+        </element>
+        <element name="stability" title="Stability">
+          <desc0>Unstable software with numerous releases or patches generating side effects</desc0>
+          <desc1>Stabilized production release existing but old. Difficulties to stabilize developpement releases</desc1>
+          <desc2>Stabilized software. Releases provide bug fixes corrections but mainly new functionalities</desc2>
+          <score>2</score>
+          <comment></comment>
+        </element>
+        <element name="historyknowproblems" title="History">
+          <desc0>Software knows several problems which can be prohibitive</desc0>
+          <desc1>No know major problem or crisis</desc1>
+          <desc2>History of good management of crisis situations</desc2>
+          <score>2</score>
+          <comment></comment>
+        </element>
+        <element name="forkprobability" title="Fork">
+          <desc0>Software is very likely to be forked in the future</desc0>
+          <desc1>Software comes from a fork but has very few chances of being forked in the future</desc1>
+          <desc2>Software has very little chance of being forked. It does not come from a fork either</desc2>
+          <score>1</score>
+          <comment></comment>
+        </element>
+      </element>
+      <element name="adoption" title="Adoption">
+        <desc>Adoption by community and industry</desc>
+        <element name="popularity" title="Popularity">
+          <desc0>Very few users identified</desc0>
+          <desc1>Detectable use on Internet</desc1>
+          <desc2>Numerous users, numerous references</desc2>
+          <score>1</score>
+          <comment>Les hébergeurs de projets libres Gna! et Savannah utilisent Savane, ainsi que quelques autres forges</comment>
+        </element>
+        <element name="references" title="References">
+          <desc0>None</desc0>
+          <desc1>Few refences, non critical usages</desc1>
+          <desc2>Often implemented for critical applications</desc2>
+          <score>1</score>
+          <comment>Gna!, Savannah
 https://savannah.cern.ch/
 http://savannah.fzk.de/</comment>
-            </element>
-            <element name="contributingcommunity" title="Communauté des contributeurs">
-               <desc0>Pas de communauté ou de réelle activité (forum, liste de diffusion…)</desc0>
-               <desc1>Communauté existante avec une activité notable</desc1>
-               <desc2>Communauté forte : grosse activité sur les forums, de nombreux contributeurs et défenseurs</desc2>
-               <score>2</score>
-               <comment></comment>
-            </element>
-            <element name="books" title="Livres, publications">
-               <desc0>Aucun livre sur ce logiciel</desc0>
-               <desc1>Moins de cinq livres publiés sur ce logiciel</desc1>
-               <desc2>Plus de cinq livres publiés sur ce logiciel et dans différentes langues</desc2>
-               <score>0</score>
-               <comment>Rien sur Amazon ni Fnac</comment>
-            </element>
-         </element>
-         <element name="developmentleadership" title="Direction des développements">
-            <desc>Organisation et direction des développements</desc>
-            <element name="leadingteam" title="Équipe dirigeante">
-               <desc0>Un ou deux individus engagés, pas clairement identifiés</desc0>
-               <desc1>Entre deux et cinq personnes indépendantes</desc1>
-               <desc2>Plus de cinq personnes</desc2>
-               <score>1</score>
-               <comment>Un développeur central et quelques contributeurs actifs</comment>
-            </element>
-            <element name="managementstyle" title="Mode de direction">
-               <desc0>Dictature complète</desc0>
-               <desc1>Despotisme éclairé</desc1>
-               <desc2>Conseil d'architectes avec un leader identifié (ex : KDE)</desc2>
-               <score>2</score>
-               <comment></comment>
-            </element>
-         </element>
-         <element name="activity" title="Activité">
-            <desc>Activité du et autour du projet</desc>
-            <element name="developersidentificationturnover" title="Nombre de développeurs, identification, turnover">
-               <desc0>Moins de trois développeurs, pas clairement identifiés</desc0>
-               <desc1>Entre quatre et sept développeurs ou plus, non identifiés, avec un turnover important</desc1>
-               <desc2>Plus de sept développeurs, équipe très simple</desc2>
-               <score>1</score>
-               <comment>4 admins, 15 membres</comment>
-            </element>
-            <element name="activityonbugs" title="Activité autour des bugs">
-               <desc0>Réactivité faible sur le forum ou sur la liste de diffusion, ou rien au sujet des corrections de bugs dans les notes de versions</desc0>
-               <desc1>Activité détectable mais sans processus clairement exposé, temps de résolution long</desc1>
-               <desc2>Forte réactivité, basée sur des rôles et des assignations de tâches</desc2>
-               <score>1</score>
-               <comment></comment>
-            </element>
-            <element name="activityonfunctionalities" title="Activité autour des fonctionnalités">
-               <desc0>Pas ou peu de nouvelles fonctionnalités</desc0>
-               <desc1>Évolution du produit conduite par une équipe dédiée ou par des utilisateurs, mais sans processus clairement exposé</desc1>
-               <desc2>Les requêtes pour les nouvelles fonctionnalités sont clairement outillées, feuille de route disponible</desc2>
-               <score>1</score>
-               <comment></comment>
-            </element>
-            <element name="activityonreleases" title="Activité sur les releases/versions">
-               <desc0>Très faible activité que ce soit sur les versions de production ou de développement (alpha, beta)</desc0>
-               <desc1>Activité que ce soit sur les versions de production ou de développement (alpha, beta), avec des versions correctives mineures fréquentes</desc1>
-               <desc2>Activité importante avec des versions correctives fréquentes et des versions majeures planifiées liées aux prévisions de la feuille de route</desc2>
-               <score>1</score>
-               <comment></comment>
-            </element>
-         </element>
+        </element>
+        <element name="contributingcommunity" title="Contributing Community">
+          <desc0>No community or without real activity (forum, mailing list, ...)</desc0>
+          <desc1>Existing community with a notable activity</desc1>
+          <desc2>Strong community: big activity on forums, numerous contributors and advocates</desc2>
+          <score>2</score>
+          <comment></comment>
+        </element>
+        <element name="books" title="books">
+          <desc0>No book about the software</desc0>
+          <desc1>Less than 5 books about the software are available</desc1>
+          <desc2>More than 5 books about software are available, in several languages</desc2>
+          <score>0</score>
+          <comment>Rien sur Amazon ni Fnac</comment>
+        </element>
       </element>
-      <element name="industrializedsolution" title="Industrialisation">
-         <desc>Niveau d'industrialisation du projet</desc>
-         <element name="independenceofdevelopments" title="Indépendance des développements">
-            <desc0>Développements réalisés à plus de 60% par des employés d'une seule société</desc0>
-            <desc1>Développements réalisés à 60% maximum par des employés d'une seule société</desc1>
-            <desc2>Développements réalisés à 20% maximum par des employés d'une seule société</desc2>
-            <score>2</score>
-            <comment>Un contributeur travaille dans une PME offrant du service autour de Savane</comment>
-         </element>
-         <element name="services" title="Services">
-            <desc>Offres de services</desc>
-            <element name="training" title="Formation">
-               <desc0>Pas d'offre de formation identifiée</desc0>
-               <desc1>Offre existante mais restreinte géographiquement ou en une seule langue ou fournie par un seul fournisseur</desc1>
-               <desc2>Offre riche, plusieurs fournisseurs, plusieurs langages, divisée en modules et en niveaux</desc2>
-               <score>0</score>
-               <comment></comment>
-            </element>
-            <element name="support" title="Support">
-               <desc0>Pas d'offre de support identifiée</desc0>
-               <desc1>Offre existante mais restreinte géographiquement ou en une seule langue ou fournie par un seul fournisseur ou sans garantie</desc1>
-               <desc2>Offre riche, plusieurs fournisseurs, avec des garanties (sur les temps de résolution)</desc2>
-               <score>1</score>
-               <comment>Cliss XXI en France dans le nord</comment>
-            </element>
-            <element name="consulting" title="Conseil">
-               <desc0>Pas d'offres de conseil identifiées</desc0>
-               <desc1>Offre existante mais restreinte géographiquement ou à un seul langage ou fournie par un seul fournisseur</desc1>
-               <desc2>Offre riche, plusieurs fournisseurs, plusieurs langages</desc2>
-               <score>1</score>
-               <comment></comment>
-            </element>
-         </element>
-         <element name="documentation" title="Documentation">
-            <desc0>Pas de documentation utilisateur</desc0>
-            <desc1>La documentation existe mais est en partie obsolète ou restreinte à une seule langue ou peu détaillée</desc1>
-            <desc2>Documentation à jour, traduite et éventuellement adaptée à différentes cibles de lecteurs (end-user, sysadmin, manager…)</desc2>
-            <score>2</score>
-            <comment></comment>
-         </element>
-         <element name="qualityassurance" title="Méthode qualité">
-            <desc>Processus et méthode qualité</desc>
-            <element name="quality" title="Assurance qualité">
-               <desc0>Pas de processus qualité identifié</desc0>
-               <desc1>Processus qualité existant, mais non formalisé ou non outillé</desc1>
-               <desc2>Processus automatique de tests dans le cycle de vie du code et publication des résultats</desc2>
-               <score>1</score>
-               <comment></comment>
-            </element>
-            <element name="tools" title="Outillage">
-               <desc0>Pas d'outils de gestion de bugs, ni d'outils de gestion de tickets</desc0>
-               <desc1>Outils standards fournis (une forge par exemple) mais peu utilisés</desc1>
-               <desc2>Utilisation très active d'outils standards</desc2>
-               <score>1</score>
-               <comment></comment>
-            </element>
-         </element>
+      <element name="developmentleadership" title="Development leadership">
+        <desc>Organisation and leadership of developments</desc>
+        <element name="leadingteam" title="Leading team">
+          <desc0>1 to 2 individuals involved, not clearly identified</desc0>
+          <desc1>Between 2 and 5 independent people</desc1>
+          <desc2>More than 5 people</desc2>
+          <score>1</score>
+          <comment>Un développeur central et quelques contributeurs actifs</comment>
+        </element>
+        <element name="managementstyle" title="Management style">
+          <desc0>Complete dictatorship</desc0>
+          <desc1>Enlightened despotism</desc1>
+          <desc2>Council of architects with identified leader (e.g: KDE)</desc2>
+          <score>2</score>
+          <comment></comment>
+        </element>
       </element>
-      <element name="packaging" title="Packaging">
-         <desc>Packaging pour les différents systèmes d'exploitation</desc>
-         <element name="packagingbsd" title="BSD">
-            <desc>BSD</desc>
-            <element name="packagingfreebsd" title="FreeBSD">
-               <desc0>Le logiciel n'est pas packagé pour ce système d'exploitation</desc0>
-               <desc1>Le packaging existe, mais est buggé ou n'a pas de support officiel</desc1>
-               <desc2>Le logiciel est correctement packagé pour ce système d'exploitation</desc2>
-               <score></score>
-               <comment></comment>
-            </element>
-            <element name="packagingmacosx" title="Mac OS X">
-               <desc0>Le logiciel n'est pas packagé pour ce système d'exploitation</desc0>
-               <desc1>Le packaging existe, mais est buggé ou n'a pas de support officiel</desc1>
-               <desc2>Le logiciel est correctement packagé pour ce système d'exploitation</desc2>
-               <score></score>
-               <comment></comment>
-            </element>
-            <element name="packagingnet" title="NetBSD">
-               <desc0>Le logiciel n'est pas packagé pour ce système d'exploitation</desc0>
-               <desc1>Le packaging existe, mais est buggé ou n'a pas de support officiel</desc1>
-               <desc2>Le logiciel est correctement packagé pour ce système d'exploitation</desc2>
-               <score></score>
-               <comment></comment>
-            </element>
-            <element name="packagingopen" title="OpenBSD">
-               <desc0>Le logiciel n'est pas packagé pour ce système d'exploitation</desc0>
-               <desc1>Le packaging existe, mais est buggé ou n'a pas de support officiel</desc1>
-               <desc2>Le logiciel est correctement packagé pour ce système d'exploitation</desc2>
-               <score></score>
-               <comment></comment>
-            </element>
-         </element>
-         <element name="packaginglinux" title="Linux">
-            <desc>Linux</desc>
-            <element name="packagingdebian" title="Debian">
-               <desc0>Le logiciel n'est pas packagé pour ce système d'exploitation</desc0>
-               <desc1>Le packaging existe, mais est buggé ou n'a pas de support officiel</desc1>
-               <desc2>Le logiciel est correctement packagé pour ce système d'exploitation</desc2>
-               <score>2</score>
-               <comment></comment>
-            </element>
-            <element name="packagingmandriva" title="Mandriva">
-               <desc0>Le logiciel n'est pas packagé pour ce système d'exploitation</desc0>
-               <desc1>Le packaging existe, mais est buggé ou n'a pas de support officiel</desc1>
-               <desc2>Le logiciel est correctement packagé pour ce système d'exploitation</desc2>
-               <score></score>
-               <comment></comment>
-            </element>
-            <element name="packagingredhat" title="Red Hat">
-               <desc0>Le logiciel n'est pas packagé pour ce système d'exploitation</desc0>
-               <desc1>Le packaging existe, mais est buggé ou n'a pas de support officiel</desc1>
-               <desc2>Le logiciel est correctement packagé pour ce système d'exploitation</desc2>
-               <score></score>
-               <comment></comment>
-            </element>
-            <element name="packagingsuse" title="SuSE">
-               <desc0>Le logiciel n'est pas packagé pour ce système d'exploitation</desc0>
-               <desc1>Le packaging existe, mais est buggé ou n'a pas de support officiel</desc1>
-               <desc2>Le logiciel est correctement packagé pour ce système d'exploitation</desc2>
-               <score></score>
-               <comment></comment>
-            </element>
-         </element>
-         <element name="packagingsource" title="Source">
-            <desc0>Le logiciel ne peut être facilement installé depuis les sources, cela demande beaucoup de travail</desc0>
-            <desc1>L'installation depuis les sources est limitée ou dépend des conditions (OS, arch, lib…)</desc1>
-            <desc2>L'installation depuis les sources est facile</desc2>
-            <score>2</score>
-            <comment></comment>
-         </element>
-         <element name="packagingunix" title="Unix">
-            <desc>Unix</desc>
-            <element name="packagingaix" title="AIX">
-               <desc0>Le logiciel n'est pas packagé pour ce système d'exploitation</desc0>
-               <desc1>Le packaging existe, mais est buggé ou n'a pas de support officiel</desc1>
-               <desc2>Le logiciel est correctement packagé pour ce système d'exploitation</desc2>
-               <score></score>
-               <comment></comment>
-            </element>
-            <element name="packaginghpux" title="HP-UX">
-               <desc0>Le logiciel n'est pas packagé pour ce système d'exploitation</desc0>
-               <desc1>Le packaging existe, mais est buggé ou n'a pas de support officiel</desc1>
-               <desc2>Le logiciel est correctement packagé pour ce système d'exploitation</desc2>
-               <score></score>
-               <comment></comment>
-            </element>
-            <element name="packagingsolaris" title="Solaris">
-               <desc0>Le logiciel n'est pas packagé pour ce système d'exploitation</desc0>
-               <desc1>Le packaging existe, mais est buggé ou n'a pas de support officiel</desc1>
-               <desc2>Le logiciel est correctement packagé pour ce système d'exploitation</desc2>
-               <score></score>
-               <comment></comment>
-            </element>
-         </element>
-         <element name="packagingwindows" title="Windows">
-            <desc0>Le logiciel n'est pas packagé pour ce système d'exploitation</desc0>
-            <desc1>Le packaging existe, mais est buggé ou n'a pas de support officiel</desc1>
-            <desc2>Le logiciel est correctement packagé pour ce système d'exploitation</desc2>
-            <score>0</score>
-            <comment></comment>
-         </element>
+      <element name="activity" title="Activity">
+        <desc>Activity of the project and around the software</desc>
+        <element name="developersidentificationturnover" title="Developers, identification, turnover">
+          <desc0>Less than 3 developers, not clearly identified</desc0>
+          <desc1>Between 4 and 7 developers, or more unidentified developers with important turnover</desc1>
+          <desc2>More than 7 developers, very stable team</desc2>
+          <score>1</score>
+          <comment>4 admins, 15 membres</comment>
+        </element>
+        <element name="activityonbugs" title="Activity on bugs">
+          <desc0>Slow reactivity in forum or on mailing list, or nothing regarding bug fixes in releases note</desc0>
+          <desc1>Detectable activity but without process clearly exposed, loing reaction/resolution time</desc1>
+          <desc2>Strong reactivity based on roles and tasks assignment</desc2>
+          <score>1</score>
+          <comment></comment>
+        </element>
+        <element name="activityonfunctionalities" title="Activity on functionalities">
+          <desc0>No or few new functionalities</desc0>
+          <desc1>Evolution of the product driven by the core team or by user's request without any clearly explained process</desc1>
+          <desc2>Tool(s) to manage feature requests, strong interaction with roadmap</desc2>
+          <score>1</score>
+          <comment></comment>
+        </element>
+        <element name="activityonreleases" title="Activity on releases">
+          <desc0>Very weak activity on both production and development releases</desc0>
+          <desc1>Activity on production and developmenet releases. Frequent minor releases (bug fixes)</desc1>
+          <desc2>Important activity with frequent minor releases (bugs fixes) and planned major releases relating to the roadmap forcast</desc2>
+          <score>1</score>
+          <comment></comment>
+        </element>
       </element>
-      <element name="exploitability" title="Exploitabilité">
-         <desc>Niveau d'exploitabilité</desc>
-         <element name="easeofuseergonomics" title="Facilité d'utilisation, ergonomie">
-            <desc0>Difficulté d'utilisation, demande une connaissance approfondie des fonctionnalités du logiciel</desc0>
-            <desc1>Ergonomie austère et très technique</desc1>
-            <desc2>Ergonomie élaborée et IHM comprenant des fonctions d'aide</desc2>
-            <score>2</score>
-            <comment>Interface sobre, claire, aérée et assez intuitive, peu de fonctions cachées ou difficilement accessibles</comment>
-         </element>
-         <element name="administrationmonitoring" title="Administration et supervision">
-            <desc0>Pas de fonctionnalités de contrôle, ni d'administration</desc0>
-            <desc1>Fonctionnalités présentes mais incomplètes ou à améliorer</desc1>
-            <desc2>Fonctionnalités complètes et faciles de contrôle et d'administration. Intégration possible avec des outils tiers (ex : SNMP, syslog…)</desc2>
-            <score>2</score>
-            <comment></comment>
-         </element>
+    </element>
+    <element name="industrializedsolution" title="Industrialized solution">
+      <desc>Industrialization level of the project</desc>
+      <element name="independenceofdevelopments" title="Independence of developments">
+        <desc0>Developments realized at 100% by employees of a single company</desc0>
+        <desc1>60% maximum</desc1>
+        <desc2>20% maximum</desc2>
+        <score>2</score>
+        <comment>Un contributeur travaille dans une PME offrant du service autour de Savane</comment>
       </element>
-      <element name="technicaladaptability" title="Adaptabilité">
-         <desc>Adaptabilité technique</desc>
-         <element name="modularity" title="Modularité">
-            <desc0>Logiciel monolithique</desc0>
-            <desc1>Présence de modules haut niveau permettant un premier niveau d'adaptation</desc1>
-            <desc2>Conception modulaire, permettant des adaptations faciles par sélection et/ou création de modules</desc2>
-            <score></score>
-            <comment></comment>
-         </element>
-         <element name="codemodification" title="Facilité technique de modification du code existant">
-            <desc0>Tout à la main</desc0>
-            <desc1>Recompilation possible mais complexe, sans outils, ni documentation</desc1>
-            <desc2>Recompilation facile, outillée (ex : make, ANT, Maven…) et documentée</desc2>
-            <score>0</score>
-            <comment></comment>
-         </element>
-         <element name="codeextension" title="Facilité d'extension du code">
-            <desc0>Toute modification demande une recompilation du code</desc0>
-            <desc1>Architecture conçue pour des extensions statiques mais exige une recompilation</desc1>
-            <desc2>Architecture de plugins, conçue pour des extensions dynamiques et sans recompilation</desc2>
-            <score>1</score>
-            <comment></comment>
-         </element>
+      <element name="services" title="Services">
+        <desc>Services offering</desc>
+        <element name="training" title="Training">
+          <desc0>No offer of training identified</desc0>
+          <desc1>Offer exists but is restricted geographically and to one language or is provided by a single contractor</desc1>
+          <desc2>Rich offers provided by several contractors, in serveral languages and split into modules of gradual levels</desc2>
+          <score>0</score>
+          <comment></comment>
+        </element>
+        <element name="support" title="Support">
+          <desc0>No offer of support except via public forums and mailing lists</desc0>
+          <desc1>Offer exists but is provided by a single contractor without strong commitment quality of services</desc1>
+          <desc2>Multiple service providers with strong commitment (e.g: guaranteed resolution time)</desc2>
+          <score>1</score>
+          <comment>Cliss XXI en France dans le nord</comment>
+        </element>
+        <element name="consulting" title="Consulting">
+          <desc0>No offer of consulting service</desc0>
+          <desc1>Offer exists but is restricted geographically and to one language or is provided by a single contractor</desc1>
+          <desc2>Consulting services provided by different contractors in serveral languages</desc2>
+          <score>1</score>
+          <comment></comment>
+        </element>
       </element>
-      <element name="strategy" title="Stratégie">
-         <desc>Stratégie du projet</desc>
-         <element name="license" title="Licence">
-            <desc>Licence</desc>
-            <element name="permissiveness" title="Permissivité (NB : à pondérer uniquement si le client désire un jour devenir propriétaire du code)">
-               <desc0>Licence très stricte, comme la GPL</desc0>
-               <desc1>Licence modérée entre les deux extrêmes (GPL et BSD), licence duale dépendante du type d'utilisateur (personne, société…) ou de leur activité</desc1>
-               <desc2>Licence très permissive comme BSD et Apache</desc2>
-               <score>0</score>
-               <comment></comment>
-            </element>
-            <element name="protectionagainstproprietaryforks" title="Protection contre des forks commerciaux">
-               <desc0>Licence très permissive comme BSD et Apache</desc0>
-               <desc1>Licence modérée entre les deux extrêmes (GPL et BSD), licence duale dépendante du type d'utilisateur (personne, société…) ou de leur activité</desc1>
-               <desc2>Licence très stricte, comme la GPL</desc2>
-               <score>2</score>
-               <comment></comment>
-            </element>
-         </element>
-         <element name="copyrightowners" title="Détenteur des droits">
-            <desc0>Les droits sont détenus par quelques individus ou entités commerciales, facilitant le changement de licence</desc0>
-            <desc1>Les droits sont détenus par de nombreux individus de façon homogène, rendant le changement de licence très difficile</desc1>
-            <desc2>Les droits sont détenus par une entité légale, une fondation dans laquelle la communauté a confiance (ex: FSF, Apache, ObjectWeb)</desc2>
-            <score>1</score>
-            <comment></comment>
-         </element>
-         <element name="modificationofsourcecode" title="Modification du code">
-            <desc0>Pas de moyen pratique de proposer des modifications de code</desc0>
-            <desc1>Des outils sont fournis pour accéder et modifier le code (ex : CVS, SVN) mais ne sont pas vraiment utilisés pour développer le produit</desc1>
-            <desc2>Le processus de modification de code est bien défini, exposé et respecté, basé sur des rôles bien définis</desc2>
-            <score>2</score>
-            <comment></comment>
-         </element>
-         <element name="roadmap" title="Feuille de route">
-            <desc0>Pas de feuille de route publiée</desc0>
-            <desc1>Feuille de route sans planning</desc1>
-            <desc2>Feuille de route versionnée, avec planning et mesures de retard</desc2>
-            <score>0</score>
-            <comment></comment>
-         </element>
-         <element name="sponsor" title="Sponsor">
-            <desc0>Le logiciel n'a pas de sponsors, l'équipe principale n'est pas rémunérée</desc0>
-            <desc1>Le logiciel a un sponsor unique qui détermine sa stratégie</desc1>
-            <desc2>Le logiciel est sponsorisé par l'industrie</desc2>
-            <score>0</score>
-            <comment></comment>
-         </element>
-         <element name="strategicalindependence" title="Indépendance stratégique">
-            <desc0>Pas de stratégie détectable ou forte dépendance à un acteur unique (individu, société, sponsor)</desc0>
-            <desc1>Vision stratégique partagée avec plusieurs autres projets open-source mais sans engagement fort des propriétaires des droits</desc1>
-            <desc2>Indépendance forte de l'équipe de développement, droits détenus par une entité, fort engagement dans un processus de standardisation</desc2>
-            <score>2</score>
-            <comment></comment>
-         </element>
+      <element name="documentation" title="Documentation">
+        <desc0>No user documentation</desc0>
+        <desc1>Documentation exists but shifted in time, is restricted to one language or is poorly detailed</desc1>
+        <desc2>Documentation always up to date, translated and possibly adapted to different target readers (end user, sysadmin, manager, ...)</desc2>
+        <score>2</score>
+        <comment></comment>
       </element>
-   </section>
+      <element name="qualityassurance" title="Quality Assurance">
+        <desc>Quality assurance process</desc>
+        <element name="quality" title="Quality Assurance">
+          <desc0>No QA process</desc0>
+          <desc1>Identifies QA process but not much formalized and with no tool</desc1>
+          <desc2>Automatic testing process included in code's life-cycle with publication of results</desc2>
+          <score>1</score>
+          <comment></comment>
+        </element>
+        <element name="tools" title="Tools">
+          <desc0>No bug or feature request management tool</desc0>
+          <desc1>Standard tools provided (for instance by a hosting forge) but poorly used</desc1>
+          <desc2>Very active use of tools for roles/tasks allocation and progress monitoring</desc2>
+          <score>1</score>
+          <comment></comment>
+        </element>
+      </element>
+    </element>
+    <element name="packaging" title="Packaging">
+      <desc>Packaging for various operating systems</desc>
+      <element name="packagingbsd" title="BSD">
+        <desc>BSD</desc>
+        <element name="packagingfreebsd" title="FreeBSD">
+          <desc0>The software is not packaged for FreeBSD</desc0>
+          <desc1>A port exists but it has important issues or it doesn't have official support</desc1>
+          <desc2>A official port exists in FreeBSD</desc2>
+          <score></score>
+          <comment></comment>
+        </element>
+        <element name="packagingmacosx" title="Mac OS X">
+          <desc0>The software is not packaged for Mac OS X</desc0>
+          <desc1>A package exists but it has important issues or it doesn't have official support</desc1>
+          <desc2>The software is packaged in the distribution</desc2>
+          <score></score>
+          <comment></comment>
+        </element>
+        <element name="packagingnet" title="NetBSD">
+          <desc0>The software is not packaged for NetBSD</desc0>
+          <desc1>A port exists but it has important issues or it doesn't have official support</desc1>
+          <desc2>A official port exists in NetBSD</desc2>
+          <score></score>
+          <comment></comment>
+        </element>
+        <element name="packagingopen" title="OpenBSD">
+          <desc0>The software is not packaged for OpenBSD</desc0>
+          <desc1>A port exists but it has important issues or it doesn't have official support</desc1>
+          <desc2>A official port exists in OpenBSD</desc2>
+          <score></score>
+          <comment></comment>
+        </element>
+      </element>
+      <element name="packaginglinux" title="Linux">
+        <desc>Linux</desc>
+        <element name="packagingdebian" title="Debian">
+          <desc0>The software is not packaged for Debian</desc0>
+          <desc1>A Debian package exists but it has important issues or it doesn't have official support</desc1>
+          <desc2>The software is packaged in the distribution</desc2>
+          <score>2</score>
+          <comment></comment>
+        </element>
+        <element name="packagingmandriva" title="Mandriva">
+          <desc0>The software is not packaged for Mandriva</desc0>
+          <desc1>A package exists but it has important issues or it doesn't have official support</desc1>
+          <desc2>The software is packaged in the distribution</desc2>
+          <score></score>
+          <comment></comment>
+        </element>
+        <element name="packagingredhat" title="Red Hat">
+          <desc0>The software is not packaged for Red Hat/Fedora</desc0>
+          <desc1>A package exists but it has important issues or it doesn't have official support</desc1>
+          <desc2>The software is packaged in the distribution</desc2>
+          <score></score>
+          <comment></comment>
+        </element>
+        <element name="packagingsuse" title="SuSE">
+          <desc0>The software is not packaged for SuSE</desc0>
+          <desc1>A package exists but it has important issues or it doesn't have official support</desc1>
+          <desc2>The software is packaged in the distribution</desc2>
+          <score></score>
+          <comment></comment>
+        </element>
+      </element>
+      <element name="packagingsource" title="Source">
+        <desc0>Software can't be installed from source without lot of work</desc0>
+        <desc1>Installation from source is limited and depends on very strict conditions (OS, arch, lib, ...)</desc1>
+        <desc2>Installation from source is easy</desc2>
+        <score>2</score>
+        <comment></comment>
+      </element>
+      <element name="packagingunix" title="Unix">
+        <desc>Unix</desc>
+        <element name="packagingaix" title="AIX">
+          <desc0>The software is not packaged for AIX</desc0>
+          <desc1>A package exists but it has important issues or it doesn't have official support</desc1>
+          <desc2>A stable package is provided for AIX</desc2>
+          <score></score>
+          <comment></comment>
+        </element>
+        <element name="packaginghpux" title="HP-UX">
+          <desc0>The software is not packaged for HP-UX</desc0>
+          <desc1>A package exists but it has important issues or it doesn't have official support</desc1>
+          <desc2>A stable package is provided for HP-UX</desc2>
+          <score></score>
+          <comment></comment>
+        </element>
+        <element name="packagingsolaris" title="Solaris">
+          <desc0>The software is not packaged for Solaris</desc0>
+          <desc1>A package exists but it has important issues or it doesn't have official support (e.g: SunFreeware.com )</desc1>
+          <desc2>The software is supported by Sun for Solaris</desc2>
+          <score></score>
+          <comment></comment>
+        </element>
+      </element>
+      <element name="packagingwindows" title="Windows">
+        <desc0>The project can't be installed on Windows</desc0>
+        <desc1>A package exists but it is limited or has important issues or just cover some specific Windows release (e.g: Windows 2000 and Windows XP)</desc1>
+        <desc2>Windows is full supported and a package is provided</desc2>
+        <score>0</score>
+        <comment></comment>
+      </element>
+    </element>
+    <element name="exploitability" title="Exploitability">
+      <desc>Exploitability level</desc>
+      <element name="easeofuseergonomics" title="Ease of use, ergonomics">
+        <desc0>Difficult to use, requires an in depth knowledge of the software functionality</desc0>
+        <desc1>Austere and very technical ergonomics</desc1>
+        <desc2>GUI including help functions and elaborated ergonomics</desc2>
+        <score>2</score>
+        <comment>Interface sobre, claire, aérée et assez intuitive, peu de fonctions cachées ou difficilement accessibles</comment>
+      </element>
+      <element name="administrationmonitoring" title="Administration / Monitoring">
+        <desc0>No administrative or monitoring functionalities</desc0>
+        <desc1>Existing, functionalities but uncomplete and or need improvement</desc1>
+        <desc2>Complete and easy-to-use administration and monitoring functionalities. Possible integration with external tools (e.g: SNMP, syslog, ...)</desc2>
+        <score>2</score>
+        <comment></comment>
+      </element>
+    </element>
+    <element name="technicaladaptability" title="Technical adaptability">
+      <desc>Technical adaptability</desc>
+      <element name="modularity" title="Modularity">
+        <desc0>Monolithic software</desc0>
+        <desc1>Presence of hight level modules allowing a first level of software adaptation</desc1>
+        <desc2>Modular conception, allowing easy adaptation of the software by selecting or creating modules</desc2>
+        <score></score>
+        <comment></comment>
+      </element>
+      <element name="codemodification" title="Code modification">
+        <desc0>Everything by hand</desc0>
+        <desc1>Recompilation possible but complex without any tools or documentation</desc1>
+        <desc2>Recompilation with tools (e.g: make, ANT, ...) and documentation provided</desc2>
+        <score>0</score>
+        <comment></comment>
+      </element>
+      <element name="codeextension" title="Code extension">
+        <desc0>Any modification requires code recompilation</desc0>
+        <desc1>Architecture designed for static extension but requires recompilation</desc1>
+        <desc2>Principle of plugin, architecture designed for dynamic extension without recompilation</desc2>
+        <score>1</score>
+        <comment></comment>
+      </element>
+    </element>
+    <element name="strategy" title="Strategy">
+      <desc>Project's strategy</desc>
+      <element name="license" title="License">
+        <desc>License, only if user wants to become owner of code</desc>
+        <element name="permissiveness" title="Permissiveness">
+          <desc0>Very strict license, like GPL</desc0>
+          <desc1>Moderate permissive license located between both extremes (GPL and BSD) dual-licensing depending on the type of user (person, company, ...) or their activities</desc1>
+          <desc2>Very permissive like BSD or Apache licenses</desc2>
+          <score>0</score>
+          <comment></comment>
+        </element>
+        <element name="protectionagainstproprietaryforks" title="Protection against proprietary forks">
+          <desc0>Very permissive like BSD or Apache licenses</desc0>
+          <desc1>Moderate permissive license located between both extremes (GPL and BSD), dual-licensing depending on the type of user (person, company, ...) or their activies</desc1>
+          <desc2>Very strict license, like GPL</desc2>
+          <score>2</score>
+          <comment></comment>
+        </element>
+      </element>
+      <element name="copyrightowners" title="Copyright owners">
+        <desc0>Rights held by a few individuals or entities, making it easier to change the license</desc0>
+        <desc1>Rights held by numerous individuals owning the code in a homogeneous way, making relicense very difficult</desc1>
+        <desc2>Rights held by a legal entity in whom the community trusts (e.g: FSF or ASF)</desc2>
+        <score>1</score>
+        <comment></comment>
+      </element>
+      <element name="modificationofsourcecode" title="Modification of source code">
+        <desc0>No pratical way to propose code modification</desc0>
+        <desc1>Tools provided to access and modify code (like CVS or SVN) but not really used to develop the software</desc1>
+        <desc2>The code modification process is well defined, exposed and respected, based on roles assignment</desc2>
+        <score>2</score>
+        <comment></comment>
+      </element>
+      <element name="roadmap" title="Roadmap">
+        <desc0>No published roadmap</desc0>
+        <desc1>Existing roadmap without planning</desc1>
+        <desc2>Versionned roadmap, with planning and measure of delays</desc2>
+        <score>0</score>
+        <comment></comment>
+      </element>
+      <element name="sponsor" title="Sponsor">
+        <desc0>Software has no sponsor, the core team is not paid</desc0>
+        <desc1>Software has an unique sponsor who might determine its strategy</desc1>
+        <desc2>Software is sponsored by industry</desc2>
+        <score>0</score>
+        <comment></comment>
+      </element>
+      <element name="strategicalindependence" title="Strategical independence">
+        <desc0>No detectable strategy or strong dependency on one unique actor (person, company, sponsor)</desc0>
+        <desc1>Strategical vision shared with several other free and open source projects but without strong commitment from copyrights owners</desc1>
+        <desc2>Strong independence of the code team, legal entity holding rights, strong involvement in the standardization process</desc2>
+        <score>2</score>
+        <comment></comment>
+      </element>
+    </element>
+  </section>
+  <section name="webappprerequisite" title="Web application platform prerequisites">
+    <desc>Detail here the platform details and implementation language(s)  and its(their) version</desc>
+    <element name="j2eeplatform" title="J2EE">
+      <desc>Detail in the comment section the J2EE or JavaEE specifications used an their versions as well as the supported servers.</desc>
+      <desc0>The web app is not running on this platform</desc0>
+      <desc1>Support for a limited number of servers</desc1>
+      <desc2>May run on many servers, respects platform standards</desc2>
+      <comment></comment>
+      <score></score>
+    </element>
+    <element name="phpplatform" title="PHP">
+      <desc>Detail in the comment section PHP versions and the supported servers.</desc>
+      <desc0>The web app is not running on this platform</desc0>
+      <desc1>Support for a limited number of servers</desc1>
+      <desc2>May run on many servers, respects platform standards</desc2>
+      <comment></comment>
+      <score></score>
+    </element>
+    <element name="cgiplatform" title="CGI">
+      <desc>Detail in the comment section CGI versions and the supported servers.</desc>
+      <desc0>The web app is not running on this platform</desc0>
+      <desc1>Support for a limited number of servers</desc1>
+      <desc2>May run on many servers, respects platform standards</desc2>
+      <comment></comment>
+      <score></score>
+    </element>
+    <element name="mod_perlplatform" title="mod_perl">
+      <desc>Detail in the comment section mod_perl versions and the supported servers.</desc>
+      <desc0>The web app is not running on this platform</desc0>
+      <desc1>Support for a limited number of servers</desc1>
+      <desc2>May run on many servers, respects platform standards</desc2>
+      <comment></comment>
+      <score></score>
+    </element>
+    <comment></comment>
+  </section>
+  <section name="websecurity" title="Security for web applications">
+    <element name="authentication" title="Authentication backend">
+      <element name="authenbackendldap" title="LDAP">
+        <desc0>No LDAP-based authentication available</desc0>
+        <desc1>LDAP available but limited (e.g.: group mapping limited, etc.)</desc1>
+        <desc2>LDAP is one of the recommended authentication backend</desc2>
+        <comment></comment>
+        <score></score>
+      </element>
+      <element name="authenbackendad" title="Active Directory">
+        <desc0>No Active Directory based authentication available</desc0>
+        <desc1>Active Directory available but limited (e.g.: group mapping limited, etc.)</desc1>
+        <desc2>Active Directory is one of the recommended authentification backend</desc2>
+        <comment></comment>
+        <score></score>
+      </element>
+      <element name="authenbackenddb" title="Database">
+        <desc>Here we do not attach importance on supported databases, please see the storage support section</desc>
+        <desc0>No database authentication available</desc0>
+        <desc1>Database available but limited (e.g.: group mapping limited, etc.)</desc1>
+        <desc2>Database is one of the recommended authentication backend</desc2>
+        <comment></comment>
+        <score></score>
+      </element>
+    </element>
+    <element name="usersrightsmanagement" title="User rights management">
+      <element name="accessrights" title="Access rights management">
+        <desc>Does the system support access rights? To control the capabilities (comment, view, edit, delete, compute, script...) of each users on the overall system</desc>
+        <desc0>Feature is not supported, every user has the same capabilities</desc0>
+        <desc1>Feature is partially supported, but not fine grained</desc1>
+        <desc2>Feature is supported, and the capabilities are exhaustive according to the system capabilities</desc2>
+        <comment></comment>
+        <score></score>
+      </element>
+      <element name="usersgroups" title="User groups management">
+        <desc>Does the system support user groups and thus, user groups access rights management? To control the capabilities (comment, view, edit, delete, compute, script...) of each users groups?</desc>
+        <desc0>Feature is not supported</desc0>
+        <desc1>Feature is partially supported</desc1>
+        <desc2>Feature is fully supported</desc2>
+        <comment></comment>
+        <score></score>
+      </element>
+      <element name="spaceaccessrights" title="Space access rights management">
+        <desc>Is the web content dividable in subparts, spaces? Does the system support access rights for those spaces? To control the capabilities (comment, view, edit, delete, compute, script...) of each users (and eventually if they are supported, user groups) on specific space/sub-part of the system?</desc>
+        <desc0>Feature is not supported, the system is not divided in spaces</desc0>
+        <desc1>Feature is partially supported, but not fine grained</desc1>
+        <desc2>Feature is fully supported, and the capabilities are exhaustive according to the system capabilities</desc2>
+        <comment></comment>
+        <score></score>
+      </element>
+    </element>
+    <element name="antispammingandvandalism" title="Anti-spam and anti-vandalism features">
+      <element name="hostblocking" title="Host blocking">
+        <desc>Host blocking: deny access from IP list</desc>
+        <desc0>Feature is not supported</desc0>
+        <desc1>Feature is partially supported</desc1>
+        <desc2>Feature is fully supported</desc2>
+        <comment></comment>
+        <score></score>
+      </element>
+      <element name="blacklist" title="Black list">
+        <desc>Blacklist (of known URL, word or content to associate with spam)</desc>
+        <desc0>Feature is not supported</desc0>
+        <desc1>Feature is partially supported</desc1>
+        <desc2>Feature is fully supported</desc2>
+        <comment></comment>
+        <score></score>
+      </element>
+      <element name="captcha" title="CAPTCHA">
+        <desc>CAPTCHA: to diffenciate a robot from an anonymous user</desc>
+        <desc0>Feature is not supported</desc0>
+        <desc1>Feature is partially supported</desc1>
+        <desc2>Feature is sully supported</desc2>
+        <comment></comment>
+        <score></score>
+      </element>
+      <element name="robotscontrol" title="Robots and search engines control features">
+        <desc>Robots and search engines control features, such as: nofollow (external links tags with rel="nofollow"), delayed Indexing (of search engine, to have time to track down the spam and vandalism). Do Detail in the comment section.</desc>
+        <desc0>No such features</desc0>
+        <desc1>Limited features</desc1>
+        <desc2>Such features are supported</desc2>
+        <comment></comment>
+        <score></score>
+      </element>
+    </element>
+    <element name="signatureandcontentprotection" title="Other signature and content protection features">
+      <element name="signaturemechansim" title="Signing">
+        <desc>Is it possible to create digital cypher (e.g.: GnuPG)?</desc>
+        <desc0>Feature is not supported</desc0>
+        <desc1>Feature is partially supported</desc1>
+        <desc2>Feature is fully supported</desc2>
+        <comment></comment>
+        <score></score>
+      </element>
+      <element name="digitalwatermarking" title="Digital watermarking">
+        <desc>Digital watermarking is a technique which allows an individual to add hidden copyright notices or other verification messages to digital audio, video, or image signals and documents</desc>
+        <desc0>Feature is not supported</desc0>
+        <desc1>Feature is partially supported</desc1>
+        <desc2>Feature is fully supported</desc2>
+        <comment></comment>
+        <score></score>
+      </element>
+      <element name="DRM" title="DRM">
+        <desc>Digital Restrictions/Rights Management</desc>
+        <desc0>Feature is not supported</desc0>
+        <desc1>Feature is partially supported</desc1>
+        <desc2>Feature is fully supported</desc2>
+        <comment></comment>
+        <score></score>
+      </element>
+      <element name="mailencryption" title="Mail encryption">
+        <desc/>
+        <desc0>Feature is not supported</desc0>
+        <desc1>Feature is partially supported</desc1>
+        <desc2>Feature is fully supported</desc2>
+        <comment></comment>
+        <score></score>
+      </element>
+    </element>
+  </section>
+  <section name="storagesupport" title="Storage support">
+    <element name="file system" title="File system storage">
+      <desc>
+            The data persisted by the software can-be/is stored in (flat) files in the file system.
+            Reminder: here, a higher score does not mean a better product nor the opposite, 
+            it really depends on your needs and non functional requirements.  
+        </desc>
+      <desc0>The data persisted by the software can't be stored in flatfiles</desc0>
+      <desc1>The data persisted by the software can be stored in flatfiles, though it's not the default option</desc1>
+      <desc2>The data persisted by the software is only stored in flatfiles</desc2>
+      <comment></comment>
+      <score></score>
+    </element>
+    <element name="database" title="Database">
+      <element name="rdbms" title="Relational database support">
+        <desc> The data persisted by the software can-be/is stored in relational databases.
+                Reminder: here, a higher score does not mean a better product nor the opposite, it
+                really depends on your needs and non functional requirements. If the score is 1 or
+                2, do detail (in the comment section) the supported db (MySQL, PostgreSQL, Oracle,
+                SQLite, other) and their version. </desc>
+        <desc0>The software does not support any relational databases</desc0>
+        <desc1>The software supports a few relational databases</desc1>
+        <desc2>The software supports all (or most) of the market relational databases</desc2>
+        <comment></comment>
+        <score></score>
+      </element>
+      <element name="xmldbms" title="XML database support">
+        <desc> The data persisted by the software can-be/is stored in XML databases. Reminder:
+                here, a higher score does not mean a better product nor the opposite, it really
+                depends on your needs and non functional requirements. If the score is 1 or 2, do
+                detail (in the comment section) the supported db (BerkeleyDB , other) and their
+                version. </desc>
+        <desc0>The software does not support any XML databases</desc0>
+        <desc1>The software supports a few XML databases</desc1>
+        <desc2>The software supports all (or most) of the market XML databases</desc2>
+        <comment></comment>
+        <score></score>
+      </element>
+      <element name="odbms" title="Object database support">
+        <desc> The data persisted by the software can-be/is stored in object (oriented)
+                databases. Reminder: here, a higher score does not mean a better product nor the
+                opposite, it really depends on your needs and non functional requirements. If the
+                score is 1 or 2, do detail (in the comment section) the supported db (ObjectDB,
+                Versant, Cache, other) and their version. </desc>
+        <desc0>The software does not support any object databases</desc0>
+        <desc1>The software supports a few object databases</desc1>
+        <desc2>The software supports all (or most) of the market object databases</desc2>
+        <comment></comment>
+        <score></score>
+      </element>
+      <element name="rcs" title="Revision control system support">
+        <desc> The data persisted by the software can-be/is stored in revision control system.
+                Reminder: here, a higher score does not mean a better product nor the opposite, it
+                really depends on your needs and non functional requirements. If the score is 1 or
+                2, do detail (in the comment section) the supported db (CVS, SVN, ClearCase, other)
+                and their version. </desc>
+        <desc0>The software does not support any RCS</desc0>
+        <desc1>The software supports just one or a few RCS</desc1>
+        <desc2>The software supports all (or most) of the market RCS</desc2>
+        <comment></comment>
+        <score></score>
+      </element>
+    </element>
+    <element name="datawarehouse" title="Data warehouse">
+      <desc>Does the system support data warehousing?</desc>
+      <desc0>This feature doesn't exist</desc0>
+      <desc1>The feature exists with limitation (TODO)</desc1>
+      <desc2></desc2>
+      <comment></comment>
+      <score></score>
+    </element>
+  </section>
+  <section name="webcompatibility" title="Web compatibility">
+    <element name="webstandards" title="Standards">
+      <element name="htmlstandard" title="HTML">
+        <desc>http://validator.w3.org</desc>
+        <desc0>Page not valid (parse errors)</desc0>
+        <desc1>Page not valid with important errors (encoding mismatch)</desc1>
+        <desc2>Page valid, or with minor errors (missing "alt" attribute, use of unknown attributes)</desc2>
+        <comment></comment>
+        <score></score>
+      </element>
+      <element name="xhtmlstandard" title="XHTML">
+        <desc>http://validator.w3.org</desc>
+        <desc0>Page not valid (parse errors)</desc0>
+        <desc1>Page not valid with important errors (encoding mismatch)</desc1>
+        <desc2>Page valid, or with minor errors (missing "alt" attribute, use of unknown attributes)</desc2>
+        <comment></comment>
+        <score></score>
+      </element>
+      <element name="cssstandard" title="CSS">
+        <desc>http://jigsaw.w3.org/css-validator/</desc>
+        <desc0>CSS doesn't or no valid not valide (parse errors)</desc0>
+        <desc1>CSS not valid with important errors (encoding mismatch)</desc1>
+        <desc2>CSS valid, or with minor errors (missing "alt" attribute, use of unknown attributes)</desc2>
+        <comment></comment>
+        <score></score>
+      </element>
+    </element>
+    <element name="webbestpractice" title="Best practices">
+      <desc>http://developer.apple.com/internet/webcontent/bestwebdev.htmls</desc>
+      <element name="tablepsitioning" title="Table positioning">
+        <desc>HTML tables should not be used for layout/positioning, CSS is there to help</desc>
+        <desc2>HTML tables are not used for layout/positioning</desc2>
+        <desc1>Not too much used</desc1>
+        <desc0>Systematically, too much used</desc0>
+        <comment></comment>
+        <score></score>
+      </element>
+      <element name="frameuse" title="Frame use">
+        <desc>Frame use </desc>
+        <desc2>frame tags are not used</desc2>
+        <desc1>frame tags are rarely used</desc1>
+        <desc0>Systematically, too much used</desc0>
+        <comment></comment>
+        <score></score>
+      </element>
+      <element name="iframeuse" title="iFrame use">
+        <desc>iFrame use </desc>
+        <desc2>iframe tags are not used</desc2>
+        <desc1>iframe tags are rarely used</desc1>
+        <desc0>Systematically, too much used</desc0>
+        <comment></comment>
+        <score></score>
+      </element>
+      <element name="cssdesignedforprintout" title="CSS designed for printout">
+        <desc>CSS designed for printout</desc>
+        <desc0>No</desc0>
+        <desc1>Yes, but print-outs are not well rendered for a few use cases.</desc1>
+        <desc2>Yes</desc2>
+        <comment></comment>
+        <score></score>
+      </element>
+    </element>
+    <element name="supportedbrowser" title="Supported browsers">
+      <desc>Supported browsers</desc>
+      <element name="browsermozillafirefox" title="Mozilla and Firefox">
+        <desc>Firefox, please detail the supported version in the comment section</desc>
+        <desc0>Not supported at all</desc0>
+        <desc1>Not officially supported, but works ok or good enough</desc1>
+        <desc2>Supported and advised browser</desc2>
+        <comment></comment>
+        <score></score>
+      </element>
+      <element name="browserkonqueror" title="Konqueror">
+        <desc>Konqueror, please detail the supported version in the comment section</desc>
+        <desc0>Not supported at all</desc0>
+        <desc1>Not officially supported, but works ok or good enough</desc1>
+        <desc2>Supported and advised browser</desc2>
+        <comment></comment>
+        <score></score>
+      </element>
+      <element name="browsermsie" title="MSIE">
+        <desc>MSIE, please detail the supported version in the comment section</desc>
+        <desc0>Not supported at all</desc0>
+        <desc1>Not officially supported, but works ok or good enough</desc1>
+        <desc2>Supported and advised browser</desc2>
+        <comment></comment>
+        <score></score>
+      </element>
+      <element name="browsersafari" title="Safari">
+        <desc>Safari, please detail the supported version in the comment section</desc>
+        <desc0>Not supported at all</desc0>
+        <desc1>Not officially supported, but works ok or good enough</desc1>
+        <desc2>Supported and advised browser</desc2>
+        <comment></comment>
+        <score></score>
+      </element>
+      <element name="browserlegacy" title="Legacy browsers">
+        <desc>Legacy browsers are browsers outdated like MSIE4 and Netscape 4, please detail the
+        supported versions in the comment section</desc>
+        <desc0>Not supported at all</desc0>
+        <desc1>Not officially supported, but works ok or good enough</desc1>
+        <desc2>Supported and advised browser</desc2>
+        <comment></comment>
+        <score></score>
+      </element>
+    </element>
+    <element name="browserrequiredenablings" title="Required enablings">
+      <desc>Browser required enablings: Javascript, applet, SVG, and Flash. Reminder: here, a higher
+      score does not mean a better product nor the opposite, it really depends on your needs and non
+      functional requirements. </desc>
+      <element name="javascriptrequired" title="Javascript required">
+        <desc> Is the browser javascript enabling required ? If the score is 1 or 2, do indicate in
+        the comment section the required jvm version. If the score is 1, do detail. </desc>
+        <desc0>The interface makes no use of javascript, and thus, does not need javascript to run at
+        full flavor and speed </desc0>
+        <desc1>The interface makes use of javascript but can properly function without it.</desc1>
+        <desc2>Javascript is necessary to use the interface (beacuse it's AJAX based for instance).</desc2>
+        <comment></comment>
+        <score></score>
+      </element>
+      <element name="jvmrequired" title="Java plugin required">
+        <desc>Does the browser needs a java plugin (to enable applet) ? If the score is 1 or 2, do
+        indicate in the comment section the required jvm version. If the score is 1, do detail. </desc>
+        <desc0>The interface does not contains any applet, and thus, does not need java to run at full
+        flavor and speed </desc0>
+        <desc1>The interface makes use of applet(s) but can properly function without it.</desc1>
+        <desc2>A Java plugin is necessary to use the interface, the applets are key players in it.</desc2>
+        <comment></comment>
+        <score></score>
+      </element>
+      <element name="svgrequired" title="SVG plugin required">
+        <desc> Does the browser needs a SVG plugin ? If score is 1 or 2, do indicate in the comment
+        section the required SVG version. If the score is 1, do detail. </desc>
+        <desc0>The interface does not contains any SVG graph, and thus, does not need any SVG plugin
+        to run at full flavor and speed </desc0>
+        <desc1>The interface makes use of SVG but can properly function without it.</desc1>
+        <desc2>A SVG plugin is necessary to use the interface, the SVG graph are part of key features
+        of the interface.</desc2>
+        <comment></comment>
+        <score></score>
+      </element>
+      <element name="flashrequired" title="Flash plugin required">
+        <desc>Does the browser needs a Flash plugin ? If score is 1 or 2, do indicate in the comment
+        section the required Flash version. If the score is 1, do detail. </desc>
+        <desc0>The interface does not contains any Flash graph, and thus, does not need any Flash
+        plugin to run at full flavor and speed </desc0>
+        <desc1>The interface makes use of Flash but can properly function without it.</desc1>
+        <desc2>A Flash plugin is necessary to use the interface, the interface is mainly made of
+        Flash.</desc2>
+        <comment></comment>
+        <score></score>
+      </element>
+    </element>
+  </section>
+  <section name="UI" title="User interface">
+    <element name="i18nUI" title="Internationalisation support">
+      <desc>Is the whole user interface internationalizable? Is Unicode supported? Are Right-to-Left languages supported (as for Hebrew and Arabic)?</desc>
+      <desc0>The feature doesn't exist</desc0>
+      <desc1>Limited support</desc1>
+      <desc2>Fully supported</desc2>
+      <comment></comment>
+      <score></score>
+    </element>
+    <element name="skinableUI" title="Skin-ability">
+      <desc>Does the UI have a complete skin system? (a User/UserGroup customizable interface for instance)</desc>
+      <desc0>The feature doesn't exist</desc0>
+      <desc1>Limited support</desc1>
+      <desc2>Fully supported</desc2>
+      <comment></comment>
+      <score></score>
+    </element>
+  </section>
+  <section name="webcontentmanagement" title="Web content management support">
+    <desc>This section describes the system's web content/attachement management features.</desc>
+    <element name="metadata" title="Support for metadata on content">
+      <desc>Metadata are information related to a document like (keywords, category, author, copyright holder...)</desc>
+      <element name="keyword" title="Keyword support">
+        <desc>Metadata are all the specific keywords that can be attached to a document (e.g.:
+                sun, holydays, summer for a picture from your last holydays)</desc>
+        <desc0>Can't add specific keywords</desc0>
+        <desc1>Keyword can be add but with limitation: limited list, no easy to way extend the
+                list</desc1>
+        <desc2>Keyword power are easy to add extend</desc2>
+        <comment></comment>
+        <score></score>
+      </element>
+      <element name="hierarchicalclassification" title="Hierarchical classification">
+        <desc>Ability to do a classication in predesigned hierarchy, category or namespaces</desc>
+        <desc0>This feature doesn't exist</desc0>
+        <desc1>The feature exists but is limited</desc1>
+        <desc2>A new document can quickly be registered in the hierarchy</desc2>
+        <comment></comment>
+        <score></score>
+      </element>
+    </element>
+    <element name="documentsupport" title="Document types support">
+      <desc> Supported means that the internal engine is able to store and eventually read or
+        parse file content in order to create preview file, find key words, and thus use for
+        search, merge and diff</desc>
+      <element name="textcontent" title="Text formats">
+        <element name="txt" title="Text files">
+          <desc>If score is 1 or 2, do detail in the comment section the supported features :
+                    parsing, previewing, reading, searching</desc>
+          <desc0>not supported</desc0>
+          <desc1>partially: for instance: storing and metadata are supported but parsing is
+                    not (and consequently nor preview nor search, diff, merge)</desc1>
+          <desc2>fully supported</desc2>
+          <comment></comment>
+          <score></score>
+        </element>
+        <element name="importformathtml" title="HTML files">
+          <desc>If score is 1 or 2, do detail in the comment section the supported features :
+                    parsing, previewing, reading, searching</desc>
+          <desc0>not supported</desc0>
+          <desc1>partially: for instance: storing and metadata are supported but parsing is
+                    not (and consequently nor preview nor search, diff, merge)</desc1>
+          <desc2>fully supported</desc2>
+          <comment></comment>
+          <score></score>
+        </element>
+        <element name="importformatrtf" title="RTF (Rich Text Format)">
+          <desc>If score is 1 or 2, do detail in the comment section the supported features :
+                    parsing, previewing, reading, searching</desc>
+          <desc0>not supported</desc0>
+          <desc1>partially: for instance: storing and metadata are supported but parsing is
+                    not (and consequently nor preview or search, diff, merge)</desc1>
+          <desc2>fully supported</desc2>
+          <comment></comment>
+          <score></score>
+        </element>
+        <element name="importformatcsv" title="CSV">
+          <desc>If score is 1 or 2, do detail in the comment section the supported features :
+                    parsing, previewing, reading, searching</desc>
+          <desc0>not supported</desc0>
+          <desc1>partially: for instance: storing and metadata are supported but parsing is
+                    not (and consequently nor preview or search, diff, merge)</desc1>
+          <desc2>fully supported</desc2>
+          <comment></comment>
+          <score></score>
+        </element>
+        <element name="importformatxml" title="XML files">
+          <desc>If score is 1 or 2, do detail in the comment section the supported features :
+                    parsing, previewing, reading, searching</desc>
+          <desc0>not supported</desc0>
+          <desc1>partially: for instance: storing and metadata are supported but parsing is
+                    not (and consequently nor preview or search, diff, merge)</desc1>
+          <desc2>fully supported</desc2>
+          <comment></comment>
+          <score></score>
+        </element>
+      </element>
+      <element name="opendocumentsupport" title="OpenDocument (OpenOffice.org) files support">
+        <desc>If score is 1 or 2, do detail in the comment section the supported features :
+                parsing, previewing, reading, searching</desc>
+        <desc0>not supported</desc0>
+        <desc1>partially: for instance: storing and metadata are supported but parsing is not
+                (and consequently nor preview or search, diff, merge)</desc1>
+        <desc2>fully supported</desc2>
+        <comment></comment>
+        <score></score>
+      </element>
+      <element name="msofficesupport" title="Microsoft Office files support">
+        <desc>If score is 1 or 2, do detail in the comment section the supported features :
+                parsing, previewing, reading, searching</desc>
+        <desc0>not supported</desc0>
+        <desc1>partially: for instance: storing and metadata are supported but parsing is not
+                (and consequently nor preview or search, diff, merge)</desc1>
+        <desc2>fully supported</desc2>
+        <comment></comment>
+        <score></score>
+      </element>
+      <element name="vectorialformat" title="Common vectorial format">
+        <desc>Format are: WMF, SVG</desc>
+        <desc0>not supported</desc0>
+        <desc1>partialy (buggy or limited feature)</desc1>
+        <desc2>fully supported</desc2>
+        <comment></comment>
+        <score></score>
+      </element>
+    </element>
+    <element name="versioncontrol" title="Online version control">
+      <desc>The documents targeted by the version control are those listed as fully supported in the above "documentsupport" elements</desc>
+      <element name="history" title="Online access to each pages/docs (of fully supported media) history/versioning">
+        <desc0>No history/versioning</desc0>
+        <desc1>limited number of document revisions</desc1>
+        <desc2>unlimited number of document revisions</desc2>
+        <comment></comment>
+        <score></score>
+      </element>
+      <element name="diff" title="Online support for version differencing diff and retrieving prior versions">
+        <desc0>No diff feature</desc0>
+        <desc1>Revision Diffs with the latest</desc1>
+        <desc2>Revision Diffs with the all</desc2>
+        <comment></comment>
+        <score></score>
+      </element>
+      <element name="rollback" title="Online support for retrieving/rollbacking to prior versions">
+        <desc0>No rollback feature</desc0>
+        <desc1>rollback to the latest</desc1>
+        <desc2>rollback to all</desc2>
+        <comment></comment>
+        <score></score>
+      </element>
+      <element name="mergetools" title="Tools to facilitate merge pages/docs (of fully supported media)">
+        <desc0>No such merging tools</desc0>
+        <desc1>basic merge tools</desc1>
+        <desc2>smart merge tools</desc2>
+        <comment></comment>
+        <score></score>
+      </element>
+    </element>
+    <element name="picture" title="Picture formats support">
+      <desc>Supported means that the internal engine is able to store and eventually make thumbnail/preview file</desc>
+      <element name="commonpictureformat" title="Common file formats">
+        <desc>Format are: JPEG, GIF, PNG, BMP, TIFF, XPM</desc>
+        <desc0>not supported</desc0>
+        <desc1>supported</desc1>
+        <desc2>fully supported</desc2>
+        <comment></comment>
+        <score></score>
+      </element>
+      <element name="commercialpictureformat" title="Commercial/proprietary formats">
+        <desc>Format are: PSP (PaintShopPro), PSD (Photopshop)</desc>
+        <desc0>not supported</desc0>
+        <desc1>supported</desc1>
+        <desc2>fully supported</desc2>
+        <comment></comment>
+        <score></score>
+      </element>
+    </element>
+    <element name="search" title="Support for search">
+      <desc>The metadata and media content support is to be detailed in the above metadata and mediasupport elements</desc>
+      <element name="searchengine" title="Search engine features">
+        <desc0>No search engine available</desc0>
+        <desc1>Searches are limited (to filename, metadata or text content for instance)</desc1>
+        <desc2>Searches are feasable through most of the media content and the metadata</desc2>
+        <comment></comment>
+        <score></score>
+      </element>
+      <element name="searchAPI" title="Search API for more detailed searching in the contents and their metadata">
+        <desc0>This feature doesn't exist</desc0>
+        <desc1>The feature exist but is limited.</desc1>
+        <desc2>This feature is fully powered</desc2>
+        <comment></comment>
+        <score></score>
+      </element>
+    </element>
+    <element name="updatenotification" title="Support for new content or update notifications">
+      <element name="recentchanges" title="Recent changes advertised on the web interface">
+        <desc0>No such features</desc0>
+        <desc1>recent changes advertised according to the today's date</desc1>
+        <desc2>recent changes advertised only changes that happened since user's last visit</desc2>
+        <comment></comment>
+        <score></score>
+      </element>
+      <element name="rss" title="Support for RSS feeds">
+        <desc>Do detail the rss feed format/protocol in the comment section</desc>
+        <desc0>This feature doesn't exist</desc0>
+        <desc1>The feature exists but is limited</desc1>
+        <desc2>This feature exists and feeds are tunable and/or atom feeds are available</desc2>
+        <comment></comment>
+        <score></score>
+      </element>
+      <element name="othernotifications" title="Support for other notifications media">
+        <desc>Do detail the media in the comment section</desc>
+        <desc0>This feature doesn't exist</desc0>
+        <desc1>The feature exists for one communication media</desc1>
+        <desc2>This feature exists for several media: e.mail, and IM for instance </desc2>
+        <comment></comment>
+        <score></score>
+      </element>
+    </element>
+    <element name="contentworkflow" title="Content management workflow">
+      <element name="simpleLock" title="Simple lock mechanism">
+        <desc>Ability to lock file avoid data lost or synchronization issues</desc>
+        <desc0>The feature doesn't exist</desc0>
+        <desc1>The feature just exists</desc1>
+        <desc2>The feature exists, and administrator can quickly unlock a file from an user. A time out system exists to unlock file after a certain amount of time.</desc2>
+        <comment></comment>
+        <score></score>
+      </element>
+      <element name="workflow" title="Content management workflow">
+        <desc>Adding or updating a document in the system may be done through a complex
+                workflow. Do detail in the comment section</desc>
+        <desc0>The feature doesn't exist</desc0>
+        <desc1>The feature just exists, but the workflow is simple, a single moderator system
+                for instance</desc1>
+        <desc2>The feature exists, and the workflow is tunable.</desc2>
+        <comment></comment>
+        <comment/>
+        <score></score>
+      </element>
+    </element>
+    <element name="pluginsandpluginability" title="Plugins, pluginability, built-in objects, and page templates">
+      <element name="pluginability" title="Plugin ability">
+        <desc>Adequate software architecture for custom plugin creation, easy plugin interface 
+            for writing your own additions. Do detail in the comment section the supported plugin languages </desc>
+        <desc0>No such feature</desc0>
+        <desc1>limited support</desc1>
+        <desc2>fully supported</desc2>
+        <comment></comment>
+        <score></score>
+      </element>
+      <element name="remoteAPI" title="XML/RPC remote API">
+        <desc0>No such feature</desc0>
+        <desc1>poor API</desc1>
+        <desc2>rich API</desc2>
+        <comment></comment>
+        <score></score>
+      </element>
+      <element name="webserviceplugin" title="Web service plugin">
+        <desc0>No such feature</desc0>
+        <desc1>limited integration capabilities</desc1>
+        <desc2>good capabilities</desc2>
+        <comment></comment>
+        <score></score>
+      </element>
+      <element name="feedagregation" title="Ability to aggregate feeds">
+        <desc0>No such feature</desc0>
+        <desc1>limited integration capabilities</desc1>
+        <desc2>good capabilities</desc2>
+        <comment></comment>
+        <score></score>
+      </element>
+      <element name="builtinobjects" title="Builtin objects or plugins">
+        <element name="calendars" title="Calendars and Calendars events">
+          <desc0>No such feature</desc0>
+          <desc1>partially or poorly implemented </desc1>
+          <desc2>well done</desc2>
+          <comment></comment>
+          <score></score>
+        </element>
+        <element name="blogs" title="Blogs">
+          <desc0>No such feature</desc0>
+          <desc1>A single blog is possible</desc1>
+          <desc2>multiple blogs supported</desc2>
+          <comment></comment>
+          <score></score>
+        </element>
+        <element name="polls" title="Polls and vote editing and publishing">
+          <desc0>No such feature</desc0>
+          <desc1>partially or poorly implemented </desc1>
+          <desc2>well done</desc2>
+          <comment></comment>
+          <score></score>
+        </element>
+        <element name="photoalbums" title="Photo albums editing and publishing">
+          <desc0>No such feature</desc0>
+          <desc1>partially or poorly implemented </desc1>
+          <desc2>well done</desc2>
+          <comment></comment>
+          <score></score>
+        </element>
+        <element name="slideshows" title="Slideshow editing and launching within the internet browser">
+          <desc0>No such feature</desc0>
+          <desc1>partially or poorly implemented </desc1>
+          <desc2>well done</desc2>
+          <comment></comment>
+          <score></score>
+        </element>
+        <element name="bugtrackingintegration" title="Bug tracking system integration (tickets linking and metadata extraction)">
+          <desc0>No such feature</desc0>
+          <desc1>limited integration: tickets linking </desc1>
+          <desc2>well supported: tickets linking and metadata extraction</desc2>
+          <comment></comment>
+          <score></score>
+        </element>
+        <element name="otherplugins" title="Other noticeable built-in plugins">
+          <desc> others: FAQ, meeting minutes, Action Tracker plugin, bookmarklet, 
+                Geolocalisation features: GeoURL or googleMaps plugins, Tagging and Tag clouds
+                (delicio.us, technorati, others), etc. Do list the plugins in the comment section. </desc>
+          <desc0>No such feature</desc0>
+          <desc1>a few other plugins </desc1>
+          <desc2>many other plugins</desc2>
+          <comment></comment>
+          <score></score>
+        </element>
+      </element>
+    </element>
+  </section>
+  <section name="wikipagelinks" title="wiki page creating, naming, linking, listing and statistics">
+    <element name="pagenaming" title="page creation/naming and linking">
+      <desc> the wiki pages (or documents) can be viewed, created or edited at anytime by
+                anyone from a web browser (with certain limitations for protected areas cf. the
+                websecurity section ). </desc>
+      <desc0>The wiki page are only created and accessible through CamelCase links</desc0>
+      <desc1>the wiki supports free links</desc1>
+      <desc2>the wiki supports free links and image links</desc2>
+      <comment></comment>
+      <score></score>
+    </element>
+    <element name="discussion" title="Each pages has a comments/discussions area">
+      <desc0>Not supported</desc0>
+      <desc1>supported : access to a discussion/comment area particular to that page</desc1>
+      <desc2>fine grained discussion supported : possible to comment the page by section</desc2>
+      <comment></comment>
+      <score></score>
+    </element>
+    <element name="pagelists" title="wiki pages administration and navigation lists">
+      <element name="availablepageslisting" title="list of all available pages">
+        <desc> list of all the existing pages (and pages within the hierarchy, if the
+                    hierarchy is supported, cf. webcontentmanagement section) </desc>
+        <desc0>The features does not exists</desc0>
+        <desc1>The feature exists but is limited</desc1>
+        <desc2>The feature exists and is complete</desc2>
+        <comment></comment>
+        <score></score>
+      </element>
+      <element name="backlinks" title="Backlinks: list of all the pages linking back to the current one">
+        <desc0>The features does not exists</desc0>
+        <desc1>The feature exists but is limited</desc1>
+        <desc2>The feature exists and is complete</desc2>
+        <comment></comment>
+        <score></score>
+      </element>
+      <element name="undefinedpages" title="Undefined Pages : pages that are referred to, but not yet created">
+        <desc0>The features does not exists</desc0>
+        <desc1>The feature exists but is limited</desc1>
+        <desc2>The feature exists and is complete</desc2>
+        <comment></comment>
+        <score></score>
+      </element>
+      <element name="orphanedpages" title="Orphaned Pages : not currently referred to by any other page, thus meaning they are inaccessible through any other means">
+        <desc0>The features does not exists</desc0>
+        <desc1>The feature exists but is limited</desc1>
+        <desc2>The feature exists and is complete</desc2>
+        <comment></comment>
+        <score></score>
+      </element>
+      <element name="lockedpages" title="Lock pages: currently hold for editing pages, if the Lock is supported, cf. webcontentmanagement section">
+        <desc0>The features does not exists</desc0>
+        <desc1>The feature exists but is limited</desc1>
+        <desc2>The feature exists and is complete</desc2>
+        <comment></comment>
+        <score></score>
+      </element>
+      <element name="wantedpages" title="Wanted Pages: list of all the pages wanted for creation by the users">
+        <desc0>The features does not exists</desc0>
+        <desc1>The feature exists but is limited</desc1>
+        <desc2>The feature exists and is complete</desc2>
+        <comment></comment>
+        <score></score>
+      </element>
+      <element name="mostleastpopularpages" title="Most/Least Popular pages">
+        <desc0>The features does not exists</desc0>
+        <desc1>The feature exists but is limited</desc1>
+        <desc2>The feature exists and is complete</desc2>
+        <comment></comment>
+        <score></score>
+      </element>
+      <element name="recentlyvisitedpages" title="Recently visited pages">
+        <desc0>The features does not exists</desc0>
+        <desc1>The feature exists but is limited</desc1>
+        <desc2>The feature exists and is complete</desc2>
+        <comment></comment>
+        <score></score>
+      </element>
+    </element>
+  </section>
+  <section name="pageediting" title="page editing features">
+    <element name="onlinepageediting" title="online page editing">
+      <desc> All the pages (or documents) can edited at anytime by anyone from a web browser,
+                (with certain limitations for protected areas cf. the websecurity section ). The
+                following element details the editing features. </desc>
+      <desc0>Not supported, it's not a wiki</desc0>
+      <desc1>n.a. </desc1>
+      <desc2>supported</desc2>
+      <comment></comment>
+      <score></score>
+    </element>
+    <element name="i18nofdocuments" title="i18n of documents : Internationalization and Multilingual capability for documents">
+      <desc0>Not supported</desc0>
+      <desc1>limited support: unicode, nor Right-to-Left Support (as for Hebrew and Arabic)
+                are supported </desc1>
+      <desc2>fully implemented</desc2>
+      <comment></comment>
+      <score></score>
+    </element>
+    <element name="wikisyntax" title="wiki syntax or wikitext features">
+      <desc> The following features list is supposed to show the ease of learning and using:
+                writing, reading and modifying wiki pages </desc>
+      <comment></comment>
+      <element name="lightweightmarkuplanguage" title="light weight markup language support">
+        <desc> the most known light weight markup language are : CREOLE
+                    (http://www.wikicreole.org/wiki/Home), BBCode
+                    (http://en.wikipedia.org/wiki/BBCode), Textile
+                    (http://en.wikipedia.org/wiki/Textile_%28markup_language%29), Markdown
+                    (http://en.wikipedia.org/wiki/Markdown), BBCode
+                    (http://en.wikipedia.org/wiki/BBCode), Radeox API
+                    (http://radeox.org/space/start) </desc>
+        <desc0>this wiki has a very specific or very poor syntax</desc0>
+        <desc1>this wiki has a uncommon or poor syntax </desc1>
+        <desc2>this wiki support a standard and rich light weight markup language</desc2>
+        <comment></comment>
+        <score></score>
+      </element>
+      <element name="tableedition" title="Tables edition ease: simple and complex (colspan and rowspan) table support">
+        <desc0>not implemented</desc0>
+        <desc1>implemented but with a limited API, simple tables only</desc1>
+        <desc2>implemented exhaustively, simple and complex (colspan and rowspan) table
+                    support</desc2>
+        <comment></comment>
+        <score></score>
+      </element>
+      <element name="htmltags" title="HTML Tags allowed">
+        <desc0>not allowed</desc0>
+        <desc1>limited support</desc1>
+        <desc2>supported</desc2>
+        <comment></comment>
+        <score></score>
+      </element>
+      <element name="toc" title="TOC (Table of content) Auto-generation">
+        <desc0>not implemented</desc0>
+        <desc1>implemented but with a poor API</desc1>
+        <desc2>implemented exhaustively</desc2>
+        <comment></comment>
+        <score></score>
+      </element>
+      <element name="wikicomments" title="Internal Comments / comments in the wiki page code">
+        <desc0>not supported</desc0>
+        <desc1>n.a.</desc1>
+        <desc2>supported</desc2>
+        <comment></comment>
+        <score></score>
+      </element>
+      <element name="otherspecialsyntax" title="other specialized wiki syntax">
+        <desc> support for footnotes, quote, interwiki links, emoticon and other icon rendering
+                    through syntax. Do list in the comment section. </desc>
+        <desc0>No such feature</desc0>
+        <desc1>a few other syntax/editing plugin </desc1>
+        <desc2>many others</desc2>
+        <comment></comment>
+        <score></score>
+      </element>
+    </element>
+    <element name="pageeditingusability" title="page editing Usability">
+      <desc> Does the wiki provides the following features: Preview before saving; Section
+                Editing or whole page only editing; Double-Click on the text to Edit; access Keys
+                (to save, edit, quit ...) ; different editor are supported (some with editing
+                Toolbar); a fully WYSIWYG editor is available. Do detail the available features in
+                the comment section. </desc>
+      <desc0>very limited features</desc0>
+      <desc1>a few of those features are available</desc1>
+      <desc2>all those features are available</desc2>
+      <comment></comment>
+      <score></score>
+    </element>
+    <element name="spellchecker" title="spell checker">
+      <desc>Useless feature if you use a decent browser like firefox2 that contains an inline spell checking: 
+            a built-in spell checker enables users to quickly check the spelling of text entered into Web forms 
+            (like this one) without having to use a seperate application.
+            </desc>
+      <desc0>no spell checker availble or it's just based on a too limited dictionary that make it
+                being a wast of time</desc0>
+      <desc1>working dictionnary but limited (e.g: grammar not included, false positive, hard to
+                extend)</desc1>
+      <desc2>Powerful dictionary</desc2>
+      <comment></comment>
+      <score></score>
+    </element>
+    <element name="contentincludes" title="Content Includes : Inclusion of pages inside another wiki page">
+      <desc0>Not supported</desc0>
+      <desc1>limited support</desc1>
+      <desc2>supported</desc2>
+      <comment></comment>
+      <score></score>
+    </element>
+    <element name="flagging" title="editing flags features : meta data added by the commiters when editing">
+      <desc> Those features are not that usefull when the pagesversioncontrol is well
+                designed, they can be things like: "Minor Changes flagging" feature, or "Change
+                Summary" features </desc>
+      <desc0>No such feature</desc0>
+      <desc1>limited features</desc1>
+      <desc2>exhaustive features</desc2>
+      <comment></comment>
+      <score></score>
+    </element>
+    <element name="advancededitingfeatures" title="Advanced editing features">
+      <element name="templating" title="MetaData Form and templating ability">
+        <desc> Design Engine for Meta-Data and Forms, allowing to design custom forms with
+                    text fields, textarea fields, number fields, static select fields API to display
+                    meta-data in view and edit mode inside the Wiki page. (to create custom forms
+                    and templates and In-place (inline) editing of form information in pages). </desc>
+        <desc0>No such feature</desc0>
+        <desc1>limited features</desc1>
+        <desc2>exhaustive features with a rich API</desc2>
+        <comment></comment>
+        <score></score>
+      </element>
+      <element name="codesyntaxhighlighting" title="Code Syntax Highlighting">
+        <desc> hightlight (colorize) source code snippets when added to a wikipage </desc>
+        <desc0>No such feature</desc0>
+        <desc1>present but minimal</desc1>
+        <desc2>very well supported: colorize according to code/language specifications</desc2>
+        <comment></comment>
+        <score></score>
+      </element>
+      <element name="mathformulas" title="support for Math formulas edition and display">
+        <desc0>No such feature</desc0>
+        <desc1>partially or poorly implemented </desc1>
+        <desc2>fully supported and standard : LaTeX syntac support: to edit mathematical
+                    formulas in Latex syntax directly in the Wiki and display them as images</desc2>
+        <comment></comment>
+        <score></score>
+      </element>
+      <element name="tableplugins" title="plugins associated with wiki table syntax">
+        <element name="tablesorting" title="Table sorting plugin">
+          <desc0>No such feature</desc0>
+          <desc1>partially or poorly implemented </desc1>
+          <desc2>well done</desc2>
+          <comment></comment>
+          <score></score>
+        </element>
+        <element name="spreadsheet" title="Add spreadsheet formulae like $SUM($ABOVE()) to tables">
+          <desc0>No such feature</desc0>
+          <desc1>partially or poorly implemented </desc1>
+          <desc2>well done</desc2>
+          <comment></comment>
+          <score></score>
+        </element>
+        <element name="chartplugin" title="ChartPlugin : charts creation from wiki tables">
+          <desc0>No such feature</desc0>
+          <desc1>partially or poorly implemented </desc1>
+          <desc2>well done</desc2>
+          <comment></comment>
+          <score></score>
+        </element>
+      </element>
+      <element name="media" title="media editing features">
+        <desc> support for Image Editing (applet for instance) or other media in-line editor
+                    (SVG, MindMap ...) </desc>
+        <desc0>No such feature</desc0>
+        <desc1>one or two editing capabilities like these </desc1>
+        <desc2>many capabilities</desc2>
+        <comment></comment>
+        <score></score>
+      </element>
+    </element>
+    <element name="wikiscripting" title="scripting/programming ability within the wiki page code">
+      <desc> programming API to create custom dynamic web applications only using the Wiki
+                interface. Do detail in the comment section the supported wiki scripting languages. </desc>
+      <desc0>No such feature</desc0>
+      <desc1>limited API </desc1>
+      <desc2>rich API</desc2>
+      <comment></comment>
+      <score></score>
+    </element>
+  </section>
+  <section name="pagesexport" title="wiki pages exports">
+    <desc> RSS feeds are already described in the webcontentmanagement include/section. Here we list the other export kinds. </desc>
+    <element name="rawexport" title="raw export: wiki page as coded">
+      <desc0>No such feature</desc0>
+      <desc1>limited support </desc1>
+      <desc2>fully supported</desc2>
+      <comment></comment>
+      <score></score>
+    </element>
+    <element name="htmlexport" title="page HTML Export (without the wiki navigation element)">
+      <desc0>No such feature</desc0>
+      <desc1>limited support </desc1>
+      <desc2>fully supported</desc2>
+      <comment></comment>
+      <score></score>
+    </element>
+    <element name="xmlexport" title="page XML export">
+      <desc0>No such feature</desc0>
+      <desc1>limited support </desc1>
+      <desc2>fully supported</desc2>
+      <comment></comment>
+      <score></score>
+    </element>
+    <element name="pdfexport" title="page PDF export">
+      <desc0>No such feature</desc0>
+      <desc1>limited support </desc1>
+      <desc2>fully supported</desc2>
+      <comment></comment>
+      <score></score>
+    </element>
+    <element name="customoutput" title="custom output plugin-ability (RSS, FOAF)">
+      <desc0>No such feature</desc0>
+      <desc1>limited support </desc1>
+      <desc2>fully supported</desc2>
+      <comment></comment>
+      <score></score>
+    </element>
+  </section>
 </document>
