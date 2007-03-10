@@ -24,176 +24,176 @@
     <qsosappname>savane</qsosappname>
     <qsosspecificformat></qsosspecificformat>
   </header>
-  <section name="generic" title="Generic section">
-    <desc>Generic criteria from QSOS version 1.6</desc>
-    <element name="intrinsicdurability" title="Intrinsic durability">
-      <desc>Intrinsic durability</desc>
-      <element name="maturity" title="Maturity">
-        <desc>Maturity</desc>
-        <element name="age" title="Age">
-          <desc0>less than 3 months</desc0>
-          <desc1>if between 3 months and 3 years</desc1>
-          <desc2>after 3 years</desc2>
+  <section name="generic" title="Section générique">
+    <desc>Les critères génériques de la méthode QSOS version 1.6</desc>
+    <element name="intrinsicdurability" title="Pérennité">
+      <desc>Pérennité</desc>
+      <element name="maturity" title="Maturité">
+        <desc>Maturité</desc>
+        <element name="age" title="Âge">
+          <desc0>Moins de 3 mois</desc0>
+          <desc1>Entre 3 mois et 3 ans</desc1>
+          <desc2>Plus de 3 ans</desc2>
           <score>2</score>
           <comment>Issue du fork de SourceForge en 2002</comment>
         </element>
-        <element name="stability" title="Stability">
-          <desc0>Unstable software with numerous releases or patches generating side effects</desc0>
-          <desc1>Stabilized production release existing but old. Difficulties to stabilize developpement releases</desc1>
-          <desc2>Stabilized software. Releases provide bug fixes corrections but mainly new functionalities</desc2>
+        <element name="stability" title="Stabilité">
+          <desc0>Logiciel instable avec de nombreuses versions et patches générant des effets de bords</desc0>
+          <desc1>Version de production stabilisée mais un peu vieille. Quelques difficultés à stabiliser les versions de développement</desc1>
+          <desc2>Logiciel stable. Les nouvelles versions corrigent des bugs, mais apportent de façon prépondérante de nouvelles fonctionnalités</desc2>
           <score>2</score>
           <comment></comment>
         </element>
-        <element name="historyknowproblems" title="History">
-          <desc0>Software knows several problems which can be prohibitive</desc0>
-          <desc1>No know major problem or crisis</desc1>
-          <desc2>History of good management of crisis situations</desc2>
+        <element name="historyknowproblems" title="Historique">
+          <desc0>Le logiciel connaît de nombreux problèmes qui peuvent être rédhibitoires</desc0>
+          <desc1>Pas de problèmes majeurs, ni de crise</desc1>
+          <desc2>Bon historique de gestion de projet et de crise</desc2>
           <score>2</score>
           <comment></comment>
         </element>
         <element name="forkprobability" title="Fork">
-          <desc0>Software is very likely to be forked in the future</desc0>
-          <desc1>Software comes from a fork but has very few chances of being forked in the future</desc1>
-          <desc2>Software has very little chance of being forked. It does not come from a fork either</desc2>
+          <desc0>Forte probabilité de fork dans un futur proche</desc0>
+          <desc1>Le logiciel provient d'un fork mais a très peu de chances d'être forké dans un futur proche</desc1>
+          <desc2>Très faible probabilité de fork. Le logiciel ne provient pas d'un fork</desc2>
           <score>1</score>
           <comment></comment>
         </element>
       </element>
       <element name="adoption" title="Adoption">
-        <desc>Adoption by community and industry</desc>
-        <element name="popularity" title="Popularity">
-          <desc0>Very few users identified</desc0>
-          <desc1>Detectable use on Internet</desc1>
-          <desc2>Numerous users, numerous references</desc2>
+        <desc>Adoption par la communauté et l'industrie</desc>
+        <element name="popularity" title="Popularité">
+          <desc0>Très peu d'utilisateurs identifiés</desc0>
+          <desc1>Usage détectable sur Internet</desc1>
+          <desc2>Nombreux utilisateurs et références</desc2>
           <score>1</score>
           <comment>Les hébergeurs de projets libres Gna! et Savannah utilisent Savane, ainsi que quelques autres forges</comment>
         </element>
-        <element name="references" title="References">
-          <desc0>None</desc0>
-          <desc1>Few refences, non critical usages</desc1>
-          <desc2>Often implemented for critical applications</desc2>
+        <element name="references" title="Références">
+          <desc0>Aucune</desc0>
+          <desc1>Peu de références, pas d'usage critique</desc1>
+          <desc2>Souvent implémenté sur des applications critiques</desc2>
           <score>1</score>
           <comment>Gna!, Savannah
 https://savannah.cern.ch/
 http://savannah.fzk.de/</comment>
         </element>
-        <element name="contributingcommunity" title="Contributing Community">
-          <desc0>No community or without real activity (forum, mailing list, ...)</desc0>
-          <desc1>Existing community with a notable activity</desc1>
-          <desc2>Strong community: big activity on forums, numerous contributors and advocates</desc2>
+        <element name="contributingcommunity" title="Communauté des contributeurs">
+          <desc0>Pas de communauté ou de réelle activité (forum, liste de diffusion…)</desc0>
+          <desc1>Communauté existante avec une activité notable</desc1>
+          <desc2>Communauté forte : grosse activité sur les forums, de nombreux contributeurs et défenseurs</desc2>
           <score>2</score>
           <comment></comment>
         </element>
-        <element name="books" title="books">
-          <desc0>No book about the software</desc0>
-          <desc1>Less than 5 books about the software are available</desc1>
-          <desc2>More than 5 books about software are available, in several languages</desc2>
+        <element name="books" title="Livres, publications">
+          <desc0>Aucun livre sur ce logiciel</desc0>
+          <desc1>Moins de cinq livres publiés sur ce logiciel</desc1>
+          <desc2>Plus de cinq livres publiés sur ce logiciel et dans différentes langues</desc2>
           <score>0</score>
           <comment>Rien sur Amazon ni Fnac</comment>
         </element>
       </element>
-      <element name="developmentleadership" title="Development leadership">
-        <desc>Organisation and leadership of developments</desc>
-        <element name="leadingteam" title="Leading team">
-          <desc0>1 to 2 individuals involved, not clearly identified</desc0>
-          <desc1>Between 2 and 5 independent people</desc1>
-          <desc2>More than 5 people</desc2>
+      <element name="developmentleadership" title="Direction des développements">
+        <desc>Organisation et direction des développements</desc>
+        <element name="leadingteam" title="Équipe dirigeante">
+          <desc0>Un ou deux individus engagés, pas clairement identifiés</desc0>
+          <desc1>Entre deux et cinq personnes indépendantes</desc1>
+          <desc2>Plus de cinq personnes</desc2>
           <score>1</score>
           <comment>Un développeur central et quelques contributeurs actifs</comment>
         </element>
-        <element name="managementstyle" title="Management style">
-          <desc0>Complete dictatorship</desc0>
-          <desc1>Enlightened despotism</desc1>
-          <desc2>Council of architects with identified leader (e.g: KDE)</desc2>
+        <element name="managementstyle" title="Mode de direction">
+          <desc0>Dictature complète</desc0>
+          <desc1>Despotisme éclairé</desc1>
+          <desc2>Conseil d'architectes avec un leader identifié (ex : KDE)</desc2>
           <score>2</score>
           <comment></comment>
         </element>
       </element>
-      <element name="activity" title="Activity">
-        <desc>Activity of the project and around the software</desc>
-        <element name="developersidentificationturnover" title="Developers, identification, turnover">
-          <desc0>Less than 3 developers, not clearly identified</desc0>
-          <desc1>Between 4 and 7 developers, or more unidentified developers with important turnover</desc1>
-          <desc2>More than 7 developers, very stable team</desc2>
+      <element name="activity" title="Activité">
+        <desc>Activité du et autour du projet</desc>
+        <element name="developersidentificationturnover" title="Nombre de développeurs, identification, turnover">
+          <desc0>Moins de trois développeurs, pas clairement identifiés</desc0>
+          <desc1>Entre quatre et sept développeurs ou plus, non identifiés, avec un turnover important</desc1>
+          <desc2>Plus de sept développeurs, équipe très simple</desc2>
           <score>1</score>
           <comment>4 admins, 15 membres</comment>
         </element>
-        <element name="activityonbugs" title="Activity on bugs">
-          <desc0>Slow reactivity in forum or on mailing list, or nothing regarding bug fixes in releases note</desc0>
-          <desc1>Detectable activity but without process clearly exposed, loing reaction/resolution time</desc1>
-          <desc2>Strong reactivity based on roles and tasks assignment</desc2>
+        <element name="activityonbugs" title="Activité autour des bugs">
+          <desc0>Réactivité faible sur le forum ou sur la liste de diffusion, ou rien au sujet des corrections de bugs dans les notes de versions</desc0>
+          <desc1>Activité détectable mais sans processus clairement exposé, temps de résolution long</desc1>
+          <desc2>Forte réactivité, basée sur des rôles et des assignations de tâches</desc2>
           <score>1</score>
           <comment></comment>
         </element>
-        <element name="activityonfunctionalities" title="Activity on functionalities">
-          <desc0>No or few new functionalities</desc0>
-          <desc1>Evolution of the product driven by the core team or by user's request without any clearly explained process</desc1>
-          <desc2>Tool(s) to manage feature requests, strong interaction with roadmap</desc2>
+        <element name="activityonfunctionalities" title="Activité autour des fonctionnalités">
+          <desc0>Pas ou peu de nouvelles fonctionnalités</desc0>
+          <desc1>Évolution du produit conduite par une équipe dédiée ou par des utilisateurs, mais sans processus clairement exposé</desc1>
+          <desc2>Les requêtes pour les nouvelles fonctionnalités sont clairement outillées, feuille de route disponible</desc2>
           <score>1</score>
           <comment></comment>
         </element>
-        <element name="activityonreleases" title="Activity on releases">
-          <desc0>Very weak activity on both production and development releases</desc0>
-          <desc1>Activity on production and developmenet releases. Frequent minor releases (bug fixes)</desc1>
-          <desc2>Important activity with frequent minor releases (bugs fixes) and planned major releases relating to the roadmap forcast</desc2>
+        <element name="activityonreleases" title="Activité sur les releases/versions">
+          <desc0>Très faible activité que ce soit sur les versions de production ou de développement (alpha, beta)</desc0>
+          <desc1>Activité que ce soit sur les versions de production ou de développement (alpha, beta), avec des versions correctives mineures fréquentes</desc1>
+          <desc2>Activité importante avec des versions correctives fréquentes et des versions majeures planifiées liées aux prévisions de la feuille de route</desc2>
           <score>1</score>
           <comment></comment>
         </element>
       </element>
     </element>
-    <element name="industrializedsolution" title="Industrialized solution">
-      <desc>Industrialization level of the project</desc>
-      <element name="independenceofdevelopments" title="Independence of developments">
-        <desc0>Developments realized at 100% by employees of a single company</desc0>
-        <desc1>60% maximum</desc1>
-        <desc2>20% maximum</desc2>
+    <element name="industrializedsolution" title="Industrialisation">
+      <desc>Niveau d'industrialisation du projet</desc>
+      <element name="independenceofdevelopments" title="Indépendance des développements">
+        <desc0>Développements réalisés à plus de 60% par des employés d'une seule société</desc0>
+        <desc1>Développements réalisés à 60% maximum par des employés d'une seule société</desc1>
+        <desc2>Développements réalisés à 20% maximum par des employés d'une seule société</desc2>
         <score>2</score>
         <comment>Un contributeur travaille dans une PME offrant du service autour de Savane</comment>
       </element>
       <element name="services" title="Services">
-        <desc>Services offering</desc>
-        <element name="training" title="Training">
-          <desc0>No offer of training identified</desc0>
-          <desc1>Offer exists but is restricted geographically and to one language or is provided by a single contractor</desc1>
-          <desc2>Rich offers provided by several contractors, in serveral languages and split into modules of gradual levels</desc2>
+        <desc>Offres de services</desc>
+        <element name="training" title="Formation">
+          <desc0>Pas d'offre de formation identifiée</desc0>
+          <desc1>Offre existante mais restreinte géographiquement ou en une seule langue ou fournie par un seul fournisseur</desc1>
+          <desc2>Offre riche, plusieurs fournisseurs, plusieurs langages, divisée en modules et en niveaux</desc2>
           <score>0</score>
           <comment></comment>
         </element>
         <element name="support" title="Support">
-          <desc0>No offer of support except via public forums and mailing lists</desc0>
-          <desc1>Offer exists but is provided by a single contractor without strong commitment quality of services</desc1>
-          <desc2>Multiple service providers with strong commitment (e.g: guaranteed resolution time)</desc2>
+          <desc0>Pas d'offre de support identifiée</desc0>
+          <desc1>Offre existante mais restreinte géographiquement ou en une seule langue ou fournie par un seul fournisseur ou sans garantie</desc1>
+          <desc2>Offre riche, plusieurs fournisseurs, avec des garanties (sur les temps de résolution)</desc2>
           <score>1</score>
           <comment>Cliss XXI en France dans le nord</comment>
         </element>
-        <element name="consulting" title="Consulting">
-          <desc0>No offer of consulting service</desc0>
-          <desc1>Offer exists but is restricted geographically and to one language or is provided by a single contractor</desc1>
-          <desc2>Consulting services provided by different contractors in serveral languages</desc2>
+        <element name="consulting" title="Conseil">
+          <desc0>Pas d'offres de conseil identifiées</desc0>
+          <desc1>Offre existante mais restreinte géographiquement ou à un seul langage ou fournie par un seul fournisseur</desc1>
+          <desc2>Offre riche, plusieurs fournisseurs, plusieurs langages</desc2>
           <score>1</score>
           <comment></comment>
         </element>
       </element>
       <element name="documentation" title="Documentation">
-        <desc0>No user documentation</desc0>
-        <desc1>Documentation exists but shifted in time, is restricted to one language or is poorly detailed</desc1>
-        <desc2>Documentation always up to date, translated and possibly adapted to different target readers (end user, sysadmin, manager, ...)</desc2>
+        <desc0>Pas de documentation utilisateur</desc0>
+        <desc1>La documentation existe mais est en partie obsolète ou restreinte à une seule langue ou peu détaillée</desc1>
+        <desc2>Documentation à jour, traduite et éventuellement adaptée à différentes cibles de lecteurs (end-user, sysadmin, manager…)</desc2>
         <score>2</score>
         <comment></comment>
       </element>
-      <element name="qualityassurance" title="Quality Assurance">
-        <desc>Quality assurance process</desc>
-        <element name="quality" title="Quality Assurance">
-          <desc0>No QA process</desc0>
-          <desc1>Identifies QA process but not much formalized and with no tool</desc1>
-          <desc2>Automatic testing process included in code's life-cycle with publication of results</desc2>
+      <element name="qualityassurance" title="Méthode qualité">
+        <desc>Processus et méthode qualité</desc>
+        <element name="quality" title="Assurance qualité">
+          <desc0>Pas de processus qualité identifié</desc0>
+          <desc1>Processus qualité existant, mais non formalisé ou non outillé</desc1>
+          <desc2>Processus automatique de tests dans le cycle de vie du code et publication des résultats</desc2>
           <score>1</score>
           <comment></comment>
         </element>
-        <element name="tools" title="Tools">
-          <desc0>No bug or feature request management tool</desc0>
-          <desc1>Standard tools provided (for instance by a hosting forge) but poorly used</desc1>
-          <desc2>Very active use of tools for roles/tasks allocation and progress monitoring</desc2>
+        <element name="tools" title="Outillage">
+          <desc0>Pas d'outils de gestion de bugs, ni d'outils de gestion de tickets</desc0>
+          <desc1>Outils standards fournis (une forge par exemple) mais peu utilisés</desc1>
+          <desc2>Utilisation très active d'outils standards</desc2>
           <score>1</score>
           <comment></comment>
         </element>
