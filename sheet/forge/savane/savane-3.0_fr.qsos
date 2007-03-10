@@ -200,7 +200,7 @@ http://savannah.fzk.de/</comment>
       </element>
     </element>
     <element name="packaging" title="Packaging">
-      <desc>Packaging for various operating systems</desc>
+      <desc>Packaging pour les différents systèmes d'exploitation</desc>
       <element name="packagingbsd" title="BSD">
         <desc>BSD</desc>
         <element name="packagingfreebsd" title="FreeBSD">
@@ -302,104 +302,104 @@ http://savannah.fzk.de/</comment>
         <comment></comment>
       </element>
     </element>
-    <element name="exploitability" title="Exploitability">
-      <desc>Exploitability level</desc>
-      <element name="easeofuseergonomics" title="Ease of use, ergonomics">
-        <desc0>Difficult to use, requires an in depth knowledge of the software functionality</desc0>
-        <desc1>Austere and very technical ergonomics</desc1>
-        <desc2>GUI including help functions and elaborated ergonomics</desc2>
+    <element name="exploitability" title="Exploitabilité">
+      <desc>Niveau d'exploitabilité</desc>
+      <element name="easeofuseergonomics" title="Facilité d'utilisation, ergonomie">
+        <desc0>Difficulté d'utilisation, demande une connaissance approfondie des fonctionnalités du logiciel</desc0>
+        <desc1>Ergonomie austère et très technique</desc1>
+        <desc2>Ergonomie élaborée et IHM comprenant des fonctions d'aide</desc2>
         <score>2</score>
         <comment>Interface sobre, claire, aérée et assez intuitive, peu de fonctions cachées ou difficilement accessibles</comment>
       </element>
-      <element name="administrationmonitoring" title="Administration / Monitoring">
-        <desc0>No administrative or monitoring functionalities</desc0>
-        <desc1>Existing, functionalities but uncomplete and or need improvement</desc1>
-        <desc2>Complete and easy-to-use administration and monitoring functionalities. Possible integration with external tools (e.g: SNMP, syslog, ...)</desc2>
+      <element name="administrationmonitoring" title="Administration et supervision">
+        <desc0>Pas de fonctionnalités de contrôle, ni d'administration</desc0>
+        <desc1>Fonctionnalités présentes mais incomplètes ou à améliorer</desc1>
+        <desc2>Fonctionnalités complètes et faciles de contrôle et d'administration. Intégration possible avec des outils tiers (ex : SNMP, syslog…)</desc2>
         <score>2</score>
         <comment></comment>
       </element>
     </element>
-    <element name="technicaladaptability" title="Technical adaptability">
-      <desc>Technical adaptability</desc>
-      <element name="modularity" title="Modularity">
-        <desc0>Monolithic software</desc0>
-        <desc1>Presence of hight level modules allowing a first level of software adaptation</desc1>
-        <desc2>Modular conception, allowing easy adaptation of the software by selecting or creating modules</desc2>
+    <element name="technicaladaptability" title="Adaptabilité">
+      <desc>Adaptabilité technique</desc>
+      <element name="modularity" title="Modularité">
+        <desc0>Logiciel monolithique</desc0>
+        <desc1>Présence de modules haut niveau permettant un premier niveau d'adaptation</desc1>
+        <desc2>Conception modulaire, permettant des adaptations faciles par sélection et/ou création de modules</desc2>
         <score></score>
         <comment></comment>
       </element>
-      <element name="codemodification" title="Code modification">
-        <desc0>Everything by hand</desc0>
-        <desc1>Recompilation possible but complex without any tools or documentation</desc1>
-        <desc2>Recompilation with tools (e.g: make, ANT, ...) and documentation provided</desc2>
+      <element name="codemodification" title="Facilité technique de modification du code existant">
+        <desc0>Tout à la main</desc0>
+        <desc1>Recompilation possible mais complexe, sans outils, ni documentation</desc1>
+        <desc2>Recompilation facile, outillée (ex : make, ANT, Maven…) et documentée</desc2>
         <score>0</score>
         <comment></comment>
       </element>
-      <element name="codeextension" title="Code extension">
-        <desc0>Any modification requires code recompilation</desc0>
-        <desc1>Architecture designed for static extension but requires recompilation</desc1>
-        <desc2>Principle of plugin, architecture designed for dynamic extension without recompilation</desc2>
+      <element name="codeextension" title="Facilité d'extension du code">
+        <desc0>Toute modification demande une recompilation du code</desc0>
+        <desc1>Architecture conçue pour des extensions statiques mais exige une recompilation</desc1>
+        <desc2>Architecture de plugins, conçue pour des extensions dynamiques et sans recompilation</desc2>
         <score>1</score>
         <comment></comment>
       </element>
     </element>
-    <element name="strategy" title="Strategy">
-      <desc>Project's strategy</desc>
-      <element name="license" title="License">
-        <desc>License, only if user wants to become owner of code</desc>
-        <element name="permissiveness" title="Permissiveness">
-          <desc0>Very strict license, like GPL</desc0>
-          <desc1>Moderate permissive license located between both extremes (GPL and BSD) dual-licensing depending on the type of user (person, company, ...) or their activities</desc1>
-          <desc2>Very permissive like BSD or Apache licenses</desc2>
+    <element name="strategy" title="Stratégie">
+      <desc>Stratégie du projet</desc>
+      <element name="license" title="Licence">
+        <desc>Licence, à pondérer uniquement si le client désire un jour devenir propriétaire du code</desc>
+        <element name="permissiveness" title="Permissivité">
+          <desc0>Licence très stricte, comme la GPL</desc0>
+          <desc1>Licence modérée entre les deux extrêmes (GPL et BSD), licence duale dépendante du type d'utilisateur (personne, société…) ou de leur activité</desc1>
+          <desc2>Licence très permissive comme BSD et Apache</desc2>
           <score>0</score>
           <comment></comment>
         </element>
-        <element name="protectionagainstproprietaryforks" title="Protection against proprietary forks">
-          <desc0>Very permissive like BSD or Apache licenses</desc0>
-          <desc1>Moderate permissive license located between both extremes (GPL and BSD), dual-licensing depending on the type of user (person, company, ...) or their activies</desc1>
-          <desc2>Very strict license, like GPL</desc2>
+        <element name="protectionagainstproprietaryforks" title="Protection contre des forks commerciaux">
+          <desc0>Licence très permissive comme BSD et Apache</desc0>
+          <desc1>Licence modérée entre les deux extrêmes (GPL et BSD), licence duale dépendante du type d'utilisateur (personne, société…) ou de leur activité</desc1>
+          <desc2>Licence très stricte, comme la GPL</desc2>
           <score>2</score>
           <comment></comment>
         </element>
       </element>
-      <element name="copyrightowners" title="Copyright owners">
-        <desc0>Rights held by a few individuals or entities, making it easier to change the license</desc0>
-        <desc1>Rights held by numerous individuals owning the code in a homogeneous way, making relicense very difficult</desc1>
-        <desc2>Rights held by a legal entity in whom the community trusts (e.g: FSF or ASF)</desc2>
+      <element name="copyrightowners" title="Détenteur des droits">
+        <desc0>Les droits sont détenus par quelques individus ou entités commerciales, facilitant le changement de licence</desc0>
+        <desc1>Les droits sont détenus par de nombreux individus de façon homogène, rendant le changement de licence très difficile</desc1>
+        <desc2>Les droits sont détenus par une entité légale, une fondation dans laquelle la communauté a confiance (ex: FSF, Apache, ObjectWeb)</desc2>
         <score>1</score>
         <comment></comment>
       </element>
-      <element name="modificationofsourcecode" title="Modification of source code">
-        <desc0>No pratical way to propose code modification</desc0>
-        <desc1>Tools provided to access and modify code (like CVS or SVN) but not really used to develop the software</desc1>
-        <desc2>The code modification process is well defined, exposed and respected, based on roles assignment</desc2>
+      <element name="modificationofsourcecode" title="Modification du code">
+        <desc0>Pas de moyen pratique de proposer des modifications de code</desc0>
+        <desc1>Des outils sont fournis pour accéder et modifier le code (ex : CVS, SVN) mais ne sont pas vraiment utilisés pour développer le produit</desc1>
+        <desc2>Le processus de modification de code est bien défini, exposé et respecté, basé sur des rôles bien définis</desc2>
         <score>2</score>
         <comment></comment>
       </element>
-      <element name="roadmap" title="Roadmap">
-        <desc0>No published roadmap</desc0>
-        <desc1>Existing roadmap without planning</desc1>
-        <desc2>Versionned roadmap, with planning and measure of delays</desc2>
+      <element name="roadmap" title="Feuille de route">
+        <desc0>Pas de feuille de route publiée</desc0>
+        <desc1>Feuille de route sans planning</desc1>
+        <desc2>Feuille de route versionnée, avec planning et mesures de retard</desc2>
         <score>0</score>
         <comment></comment>
       </element>
       <element name="sponsor" title="Sponsor">
-        <desc0>Software has no sponsor, the core team is not paid</desc0>
-        <desc1>Software has an unique sponsor who might determine its strategy</desc1>
-        <desc2>Software is sponsored by industry</desc2>
+        <desc0>Le logiciel n'a pas de sponsors, l'équipe principale n'est pas rémunérée</desc0>
+        <desc1>Le logiciel a un sponsor unique qui détermine sa stratégie</desc1>
+        <desc2>Le logiciel est sponsorisé par l'industrie</desc2>
         <score>0</score>
         <comment></comment>
       </element>
-      <element name="strategicalindependence" title="Strategical independence">
-        <desc0>No detectable strategy or strong dependency on one unique actor (person, company, sponsor)</desc0>
-        <desc1>Strategical vision shared with several other free and open source projects but without strong commitment from copyrights owners</desc1>
-        <desc2>Strong independence of the code team, legal entity holding rights, strong involvement in the standardization process</desc2>
+      <element name="strategicalindependence" title="Indépendance stratégique">
+        <desc0>Pas de stratégie détectable ou forte dépendance à un acteur unique (individu, société, sponsor)</desc0>
+        <desc1>Vision stratégique partagée avec plusieurs autres projets open-source mais sans engagement fort des propriétaires des droits</desc1>
+        <desc2>Indépendance forte de l'équipe de développement, droits détenus par une entité, fort engagement dans un processus de standardisation</desc2>
         <score>2</score>
         <comment></comment>
       </element>
     </element>
   </section>
-  <section name="webappprerequisite" title="Web application platform prerequisites">
+  <section name="webappprerequisite" title="Plateforme prérequiss pour les applications web">
     <desc>Detail here the platform details and implementation language(s)  and its(their) version</desc>
     <element name="j2eeplatform" title="J2EE">
       <desc>Detail in the comment section the J2EE or JavaEE specifications used an their versions as well as the supported servers.</desc>
@@ -656,7 +656,7 @@ http://savannah.fzk.de/</comment>
     </element>
     <element name="webbestpractice" title="Meilleures pratiques">
       <desc>http://developer.apple.com/internet/webcontent/bestwebdev.htmls</desc>
-      <element name="tablepsitioning" title="Table positioning">
+      <element name="tablepsitioning" title="Positionnement par tables">
         <desc>HTML tables should not be used for layout/positioning, CSS is there to help</desc>
         <desc2>HTML tables are not used for layout/positioning</desc2>
         <desc1>Not too much used</desc1>
@@ -982,7 +982,7 @@ http://savannah.fzk.de/</comment>
         <comment></comment>
         <score></score>
       </element>
-      <element name="rss" title="Support for RSS feeds">
+      <element name="rss" title="Flux RSS">
         <desc>Do detail the rss feed format/protocol in the comment section</desc>
         <desc0>This feature doesn't exist</desc0>
         <desc1>The feature exists but is limited</desc1>
@@ -990,7 +990,7 @@ http://savannah.fzk.de/</comment>
         <comment></comment>
         <score></score>
       </element>
-      <element name="othernotifications" title="Support for other notifications media">
+      <element name="othernotifications" title="AUtre média de notifications">
         <desc>Do detail the media in the comment section</desc>
         <desc0>This feature doesn't exist</desc0>
         <desc1>The feature exists for one communication media</desc1>
@@ -1000,7 +1000,7 @@ http://savannah.fzk.de/</comment>
       </element>
     </element>
     <element name="contentworkflow" title="Content management workflow">
-      <element name="simpleLock" title="Simple lock mechanism">
+      <element name="simpleLock" title="Mécanisme de verrou simple">
         <desc>Ability to lock file avoid data lost or synchronization issues</desc>
         <desc0>The feature doesn't exist</desc0>
         <desc1>The feature just exists</desc1>
@@ -1105,6 +1105,12 @@ http://savannah.fzk.de/</comment>
           <score></score>
         </element>
       </element>
+    </element>
+  </section>
+  <section name="prerequisite" title="Prérequis">
+    <element name="implementationlanguage" title="Langage d'implémentation">
+      <desc>Detaillez ici le(s) langage(s) d'implémentation et sa(ses) version(s)</desc>
+      <comment></comment>
     </element>
   </section>
 </document>
