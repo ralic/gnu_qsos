@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document>
     <header>
-        <authors></authors>
+        <authors>
+          <email/>
+          <name/>
+        </authors>
         <dates>
             <creation/>
             <validation/>
@@ -15,7 +18,7 @@
         <desc/>
         <demourl/>
         <qsosformat>1.7</qsosformat>
-        <qsosappfamily>wiki</qsosappfamily>
+        <qsosappfamily>forge</qsosappfamily>
         <qsosappname></qsosappname>
         <qsosspecificformat/>
     </header>
