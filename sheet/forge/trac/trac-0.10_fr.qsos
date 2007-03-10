@@ -8,13 +8,13 @@
       </author>
     </authors>
     <dates>
-      <creation></creation>
+      <creation>20070308</creation>
       <validation></validation>
     </dates>
     <language>fr</language>
     <appname>Trac</appname>
     <release>0.10</release>
-    <licenseid>105</licenseid>
+    <licenseid>33</licenseid>
     <licensedesc>BSD</licensedesc>
     <url>http://trac.edgewall.org/</url>
     <desc>Trac est une forge libre légère centrée sur Subversion, un système de suivi et un wiki (timeline et roadmap) écrite en Python, se reposant sur SQLite, MySQL et PostgreSQL et publiée sous licence BSD modifiée</desc>
