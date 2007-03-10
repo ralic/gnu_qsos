@@ -435,33 +435,33 @@ http://savannah.fzk.de/</comment>
     </element>
     <comment></comment>
   </section>
-  <section name="websecurity" title="Security for web applications">
-    <element name="authentication" title="Authentication backend">
+  <section name="websecurity" title="Securité des applications web">
+    <element name="authentication" title="Infrastructure d'authentification">
       <element name="authenbackendldap" title="LDAP">
-        <desc0>No LDAP-based authentication available</desc0>
-        <desc1>LDAP available but limited (e.g.: group mapping limited, etc.)</desc1>
-        <desc2>LDAP is one of the recommended authentication backend</desc2>
+        <desc0>Pas d'authentification LDAP disponible</desc0>
+        <desc1>LDAP disponible mais limité</desc1>
+        <desc2>LDAP est une des infrastructures d'authentification recommandées</desc2>
         <comment></comment>
         <score></score>
       </element>
       <element name="authenbackendad" title="Active Directory">
-        <desc0>No Active Directory based authentication available</desc0>
-        <desc1>Active Directory available but limited (e.g.: group mapping limited, etc.)</desc1>
-        <desc2>Active Directory is one of the recommended authentification backend</desc2>
+        <desc0>Pas d'authentification Active Directory disponible</desc0>
+        <desc1>Active Directory disponible mais limité</desc1>
+        <desc2>Active Directory est une des infrastructures d'authentification recommandées</desc2>
         <comment></comment>
         <score></score>
       </element>
-      <element name="authenbackenddb" title="Database">
-        <desc>Here we do not attach importance on supported databases, please see the storage support section</desc>
-        <desc0>No database authentication available</desc0>
-        <desc1>Database available but limited (e.g.: group mapping limited, etc.)</desc1>
-        <desc2>Database is one of the recommended authentication backend</desc2>
+      <element name="authenbackenddb" title="Base de données">
+        <desc>Ici nous n'attachons pas d'importance aux bases de données prises en charge, voir la section stockage</desc>
+        <desc0>Pas d'authentification sur base de données disponible</desc0>
+        <desc1>La base de données disponible mais limitée</desc1>
+        <desc2>La base de données est une des infrastructures d'authentification recommandées</desc2>
         <comment></comment>
         <score></score>
       </element>
     </element>
-    <element name="usersrightsmanagement" title="User rights management">
-      <element name="accessrights" title="Access rights management">
+    <element name="usersrightsmanagement" title="Gestion des droits">
+      <element name="accessrights" title="Gestion des droits d'accès">
         <desc>Does the system support access rights? To control the capabilities (comment, view, edit, delete, compute, script...) of each users on the overall system</desc>
         <desc0>Feature is not supported, every user has the same capabilities</desc0>
         <desc1>Feature is partially supported, but not fine grained</desc1>
@@ -469,7 +469,7 @@ http://savannah.fzk.de/</comment>
         <comment></comment>
         <score></score>
       </element>
-      <element name="usersgroups" title="User groups management">
+      <element name="usersgroups" title="Gestion des groupes">
         <desc>Does the system support user groups and thus, user groups access rights management? To control the capabilities (comment, view, edit, delete, compute, script...) of each users groups?</desc>
         <desc0>Feature is not supported</desc0>
         <desc1>Feature is partially supported</desc1>
@@ -477,7 +477,7 @@ http://savannah.fzk.de/</comment>
         <comment></comment>
         <score></score>
       </element>
-      <element name="spaceaccessrights" title="Space access rights management">
+      <element name="spaceaccessrights" title="Gestion des droits d'accès aux espaces">
         <desc>Is the web content dividable in subparts, spaces? Does the system support access rights for those spaces? To control the capabilities (comment, view, edit, delete, compute, script...) of each users (and eventually if they are supported, user groups) on specific space/sub-part of the system?</desc>
         <desc0>Feature is not supported, the system is not divided in spaces</desc0>
         <desc1>Feature is partially supported, but not fine grained</desc1>
@@ -486,8 +486,8 @@ http://savannah.fzk.de/</comment>
         <score></score>
       </element>
     </element>
-    <element name="antispammingandvandalism" title="Anti-spam and anti-vandalism features">
-      <element name="hostblocking" title="Host blocking">
+    <element name="antispammingandvandalism" title="Fonctionnalités anti-spam et anti-vandalisme">
+      <element name="hostblocking" title="Blocage d'hôtes">
         <desc>Host blocking: deny access from IP list</desc>
         <desc0>Feature is not supported</desc0>
         <desc1>Feature is partially supported</desc1>
@@ -495,7 +495,7 @@ http://savannah.fzk.de/</comment>
         <comment></comment>
         <score></score>
       </element>
-      <element name="blacklist" title="Black list">
+      <element name="blacklist" title="Liste noire">
         <desc>Blacklist (of known URL, word or content to associate with spam)</desc>
         <desc0>Feature is not supported</desc0>
         <desc1>Feature is partially supported</desc1>
@@ -511,7 +511,7 @@ http://savannah.fzk.de/</comment>
         <comment></comment>
         <score></score>
       </element>
-      <element name="robotscontrol" title="Robots and search engines control features">
+      <element name="robotscontrol" title="Fonctionnalités de contrôle de robots et de moteurs de recherche">
         <desc>Robots and search engines control features, such as: nofollow (external links tags with rel="nofollow"), delayed Indexing (of search engine, to have time to track down the spam and vandalism). Do Detail in the comment section.</desc>
         <desc0>No such features</desc0>
         <desc1>Limited features</desc1>
@@ -520,8 +520,8 @@ http://savannah.fzk.de/</comment>
         <score></score>
       </element>
     </element>
-    <element name="signatureandcontentprotection" title="Other signature and content protection features">
-      <element name="signaturemechansim" title="Signing">
+    <element name="signatureandcontentprotection" title="Autres fonctionnalités de signature et de protection de contenu">
+      <element name="signaturemechansim" title="Signature">
         <desc>Is it possible to create digital cypher (e.g.: GnuPG)?</desc>
         <desc0>Feature is not supported</desc0>
         <desc1>Feature is partially supported</desc1>
@@ -529,7 +529,7 @@ http://savannah.fzk.de/</comment>
         <comment></comment>
         <score></score>
       </element>
-      <element name="digitalwatermarking" title="Digital watermarking">
+      <element name="digitalwatermarking" title="Filigranage numérique">
         <desc>Digital watermarking is a technique which allows an individual to add hidden copyright notices or other verification messages to digital audio, video, or image signals and documents</desc>
         <desc0>Feature is not supported</desc0>
         <desc1>Feature is partially supported</desc1>
@@ -538,14 +538,14 @@ http://savannah.fzk.de/</comment>
         <score></score>
       </element>
       <element name="DRM" title="DRM">
-        <desc>Digital Restrictions/Rights Management</desc>
+        <desc>Gestion Numérique des Droits (Digital Restrictions/Rights Management)</desc>
         <desc0>Feature is not supported</desc0>
         <desc1>Feature is partially supported</desc1>
         <desc2>Feature is fully supported</desc2>
         <comment></comment>
         <score></score>
       </element>
-      <element name="mailencryption" title="Mail encryption">
+      <element name="mailencryption" title="Chiffrement du courriel">
         <desc/>
         <desc0>Feature is not supported</desc0>
         <desc1>Feature is partially supported</desc1>
@@ -555,8 +555,8 @@ http://savannah.fzk.de/</comment>
       </element>
     </element>
   </section>
-  <section name="storagesupport" title="Storage support">
-    <element name="file system" title="File system storage">
+  <section name="storagesupport" title="Stockage">
+    <element name="file system" title="Stockage sur système de fichiers">
       <desc>
             The data persisted by the software can-be/is stored in (flat) files in the file system.
             Reminder: here, a higher score does not mean a better product nor the opposite, 
@@ -568,8 +568,8 @@ http://savannah.fzk.de/</comment>
       <comment></comment>
       <score></score>
     </element>
-    <element name="database" title="Database">
-      <element name="rdbms" title="Relational database support">
+    <element name="database" title="Base de données">
+      <element name="rdbms" title="Base de données relationnelle">
         <desc> The data persisted by the software can-be/is stored in relational databases.
                 Reminder: here, a higher score does not mean a better product nor the opposite, it
                 really depends on your needs and non functional requirements. If the score is 1 or
@@ -581,7 +581,7 @@ http://savannah.fzk.de/</comment>
         <comment></comment>
         <score></score>
       </element>
-      <element name="xmldbms" title="XML database support">
+      <element name="xmldbms" title="Base de données XML">
         <desc> The data persisted by the software can-be/is stored in XML databases. Reminder:
                 here, a higher score does not mean a better product nor the opposite, it really
                 depends on your needs and non functional requirements. If the score is 1 or 2, do
@@ -593,7 +593,7 @@ http://savannah.fzk.de/</comment>
         <comment></comment>
         <score></score>
       </element>
-      <element name="odbms" title="Object database support">
+      <element name="odbms" title="Base de données objet">
         <desc> The data persisted by the software can-be/is stored in object (oriented)
                 databases. Reminder: here, a higher score does not mean a better product nor the
                 opposite, it really depends on your needs and non functional requirements. If the
@@ -605,7 +605,7 @@ http://savannah.fzk.de/</comment>
         <comment></comment>
         <score></score>
       </element>
-      <element name="rcs" title="Revision control system support">
+      <element name="rcs" title="Système de gestion de version">
         <desc> The data persisted by the software can-be/is stored in revision control system.
                 Reminder: here, a higher score does not mean a better product nor the opposite, it
                 really depends on your needs and non functional requirements. If the score is 1 or
@@ -618,8 +618,8 @@ http://savannah.fzk.de/</comment>
         <score></score>
       </element>
     </element>
-    <element name="datawarehouse" title="Data warehouse">
-      <desc>Does the system support data warehousing?</desc>
+    <element name="datawarehouse" title="Datawarehouse">
+      <desc>Does the system support datawarehousing?</desc>
       <desc0>This feature doesn't exist</desc0>
       <desc1>The feature exists with limitation (TODO)</desc1>
       <desc2></desc2>
@@ -627,7 +627,7 @@ http://savannah.fzk.de/</comment>
       <score></score>
     </element>
   </section>
-  <section name="webcompatibility" title="Web compatibility">
+  <section name="webcompatibility" title="Compatibilité web">
     <element name="webstandards" title="Standards">
       <element name="htmlstandard" title="HTML">
         <desc>http://validator.w3.org</desc>
@@ -654,7 +654,7 @@ http://savannah.fzk.de/</comment>
         <score></score>
       </element>
     </element>
-    <element name="webbestpractice" title="Best practices">
+    <element name="webbestpractice" title="Meilleures pratiques">
       <desc>http://developer.apple.com/internet/webcontent/bestwebdev.htmls</desc>
       <element name="tablepsitioning" title="Table positioning">
         <desc>HTML tables should not be used for layout/positioning, CSS is there to help</desc>
@@ -664,7 +664,7 @@ http://savannah.fzk.de/</comment>
         <comment></comment>
         <score></score>
       </element>
-      <element name="frameuse" title="Frame use">
+      <element name="frameuse" title="Utilisation de frames">
         <desc>Frame use </desc>
         <desc2>frame tags are not used</desc2>
         <desc1>frame tags are rarely used</desc1>
@@ -672,7 +672,7 @@ http://savannah.fzk.de/</comment>
         <comment></comment>
         <score></score>
       </element>
-      <element name="iframeuse" title="iFrame use">
+      <element name="iframeuse" title="Utilisation d'iFrame">
         <desc>iFrame use </desc>
         <desc2>iframe tags are not used</desc2>
         <desc1>iframe tags are rarely used</desc1>
@@ -680,7 +680,7 @@ http://savannah.fzk.de/</comment>
         <comment></comment>
         <score></score>
       </element>
-      <element name="cssdesignedforprintout" title="CSS designed for printout">
+      <element name="cssdesignedforprintout" title="CSS conçue pour les sorties papier">
         <desc>CSS designed for printout</desc>
         <desc0>No</desc0>
         <desc1>Yes, but print-outs are not well rendered for a few use cases.</desc1>
@@ -689,9 +689,9 @@ http://savannah.fzk.de/</comment>
         <score></score>
       </element>
     </element>
-    <element name="supportedbrowser" title="Supported browsers">
+    <element name="supportedbrowser" title="Navigateurs pris en charge">
       <desc>Supported browsers</desc>
-      <element name="browsermozillafirefox" title="Mozilla and Firefox">
+      <element name="browsermozillafirefox" title="Mozilla et Firefox">
         <desc>Firefox, please detail the supported version in the comment section</desc>
         <desc0>Not supported at all</desc0>
         <desc1>Not officially supported, but works ok or good enough</desc1>
@@ -723,7 +723,7 @@ http://savannah.fzk.de/</comment>
         <comment></comment>
         <score></score>
       </element>
-      <element name="browserlegacy" title="Legacy browsers">
+      <element name="browserlegacy" title="Anciens navigateurs">
         <desc>Legacy browsers are browsers outdated like MSIE4 and Netscape 4, please detail the
         supported versions in the comment section</desc>
         <desc0>Not supported at all</desc0>
@@ -733,11 +733,11 @@ http://savannah.fzk.de/</comment>
         <score></score>
       </element>
     </element>
-    <element name="browserrequiredenablings" title="Required enablings">
+    <element name="browserrequiredenablings" title="Activations requises">
       <desc>Browser required enablings: Javascript, applet, SVG, and Flash. Reminder: here, a higher
       score does not mean a better product nor the opposite, it really depends on your needs and non
       functional requirements. </desc>
-      <element name="javascriptrequired" title="Javascript required">
+      <element name="javascriptrequired" title="Javascript">
         <desc> Is the browser javascript enabling required ? If the score is 1 or 2, do indicate in
         the comment section the required jvm version. If the score is 1, do detail. </desc>
         <desc0>The interface makes no use of javascript, and thus, does not need javascript to run at
@@ -747,7 +747,7 @@ http://savannah.fzk.de/</comment>
         <comment></comment>
         <score></score>
       </element>
-      <element name="jvmrequired" title="Java plugin required">
+      <element name="jvmrequired" title="Greffon Java">
         <desc>Does the browser needs a java plugin (to enable applet) ? If the score is 1 or 2, do
         indicate in the comment section the required jvm version. If the score is 1, do detail. </desc>
         <desc0>The interface does not contains any applet, and thus, does not need java to run at full
@@ -757,7 +757,7 @@ http://savannah.fzk.de/</comment>
         <comment></comment>
         <score></score>
       </element>
-      <element name="svgrequired" title="SVG plugin required">
+      <element name="svgrequired" title="Greffon SVG">
         <desc> Does the browser needs a SVG plugin ? If score is 1 or 2, do indicate in the comment
         section the required SVG version. If the score is 1, do detail. </desc>
         <desc0>The interface does not contains any SVG graph, and thus, does not need any SVG plugin
@@ -768,7 +768,7 @@ http://savannah.fzk.de/</comment>
         <comment></comment>
         <score></score>
       </element>
-      <element name="flashrequired" title="Flash plugin required">
+      <element name="flashrequired" title="Greffon Flash">
         <desc>Does the browser needs a Flash plugin ? If score is 1 or 2, do indicate in the comment
         section the required Flash version. If the score is 1, do detail. </desc>
         <desc0>The interface does not contains any Flash graph, and thus, does not need any Flash
@@ -781,29 +781,29 @@ http://savannah.fzk.de/</comment>
       </element>
     </element>
   </section>
-  <section name="UI" title="User interface">
-    <element name="i18nUI" title="Internationalisation support">
-      <desc>Is the whole user interface internationalizable? Is Unicode supported? Are Right-to-Left languages supported (as for Hebrew and Arabic)?</desc>
-      <desc0>The feature doesn't exist</desc0>
-      <desc1>Limited support</desc1>
-      <desc2>Fully supported</desc2>
+  <section name="UI" title="Interface utilisateur">
+    <element name="i18nUI" title="Prise en charge de l'internationalisation">
+      <desc>Est-ce que l'interface utilisateur dans sa globalité est internationalisable ? Est-ce que l'Unicode est pris en charge ? Est-ce que les écritures de droite à gauche son prises en charge (comme l'Hébreu et l'Arabe) ?</desc>
+      <desc0>Cette fonctionnalité n'existe pas</desc0>
+      <desc1>Prise en charge limitée</desc1>
+      <desc2>Prise en charge complète</desc2>
       <comment></comment>
       <score></score>
     </element>
-    <element name="skinableUI" title="Skin-ability">
-      <desc>Does the UI have a complete skin system? (a User/UserGroup customizable interface for instance)</desc>
-      <desc0>The feature doesn't exist</desc0>
-      <desc1>Limited support</desc1>
-      <desc2>Fully supported</desc2>
+    <element name="skinableUI" title="Moteur de thèmes">
+      <desc>Est-ce que l'interface utilisateur possède un moteur de thèmes ? (par exemple une interface par utilisateur/groupe)</desc>
+      <desc0>Cette fonctionnalité n'existe pas</desc0>
+      <desc1>Prise en charge limitée</desc1>
+      <desc2>Prise en charge complète</desc2>
       <comment></comment>
       <score></score>
     </element>
   </section>
-  <section name="webcontentmanagement" title="Web content management support">
+  <section name="webcontentmanagement" title="Gestion de contenu sur le web">
     <desc>This section describes the system's web content/attachement management features.</desc>
-    <element name="metadata" title="Support for metadata on content">
+    <element name="metadata" title="Prise en charge des métadonnées">
       <desc>Metadata are information related to a document like (keywords, category, author, copyright holder...)</desc>
-      <element name="keyword" title="Keyword support">
+      <element name="keyword" title="Prise en charge des mots-clés">
         <desc>Metadata are all the specific keywords that can be attached to a document (e.g.:
                 sun, holydays, summer for a picture from your last holydays)</desc>
         <desc0>Can't add specific keywords</desc0>
@@ -813,7 +813,7 @@ http://savannah.fzk.de/</comment>
         <comment></comment>
         <score></score>
       </element>
-      <element name="hierarchicalclassification" title="Hierarchical classification">
+      <element name="hierarchicalclassification" title="Classification hiérarchique">
         <desc>Ability to do a classication in predesigned hierarchy, category or namespaces</desc>
         <desc0>This feature doesn't exist</desc0>
         <desc1>The feature exists but is limited</desc1>
@@ -822,12 +822,12 @@ http://savannah.fzk.de/</comment>
         <score></score>
       </element>
     </element>
-    <element name="documentsupport" title="Document types support">
+    <element name="documentsupport" title="Types de document pris en charge">
       <desc> Supported means that the internal engine is able to store and eventually read or
         parse file content in order to create preview file, find key words, and thus use for
         search, merge and diff</desc>
-      <element name="textcontent" title="Text formats">
-        <element name="txt" title="Text files">
+      <element name="textcontent" title="Formats texte">
+        <element name="txt" title="Fichiers texte">
           <desc>If score is 1 or 2, do detail in the comment section the supported features :
                     parsing, previewing, reading, searching</desc>
           <desc0>not supported</desc0>
@@ -837,7 +837,7 @@ http://savannah.fzk.de/</comment>
           <comment></comment>
           <score></score>
         </element>
-        <element name="importformathtml" title="HTML files">
+        <element name="importformathtml" title="Fichiers HTML">
           <desc>If score is 1 or 2, do detail in the comment section the supported features :
                     parsing, previewing, reading, searching</desc>
           <desc0>not supported</desc0>
@@ -847,7 +847,7 @@ http://savannah.fzk.de/</comment>
           <comment></comment>
           <score></score>
         </element>
-        <element name="importformatrtf" title="RTF (Rich Text Format)">
+        <element name="importformatrtf" title="Fichiers RTF (Rich Text Format)">
           <desc>If score is 1 or 2, do detail in the comment section the supported features :
                     parsing, previewing, reading, searching</desc>
           <desc0>not supported</desc0>
@@ -857,7 +857,7 @@ http://savannah.fzk.de/</comment>
           <comment></comment>
           <score></score>
         </element>
-        <element name="importformatcsv" title="CSV">
+        <element name="importformatcsv" title="Fichiers CSV">
           <desc>If score is 1 or 2, do detail in the comment section the supported features :
                     parsing, previewing, reading, searching</desc>
           <desc0>not supported</desc0>
@@ -867,7 +867,7 @@ http://savannah.fzk.de/</comment>
           <comment></comment>
           <score></score>
         </element>
-        <element name="importformatxml" title="XML files">
+        <element name="importformatxml" title="Fichiers XML">
           <desc>If score is 1 or 2, do detail in the comment section the supported features :
                     parsing, previewing, reading, searching</desc>
           <desc0>not supported</desc0>
@@ -878,7 +878,7 @@ http://savannah.fzk.de/</comment>
           <score></score>
         </element>
       </element>
-      <element name="opendocumentsupport" title="OpenDocument (OpenOffice.org) files support">
+      <element name="opendocumentsupport" title="Fichiers OpenDocument (OpenOffice.org) files">
         <desc>If score is 1 or 2, do detail in the comment section the supported features :
                 parsing, previewing, reading, searching</desc>
         <desc0>not supported</desc0>
@@ -888,7 +888,7 @@ http://savannah.fzk.de/</comment>
         <comment></comment>
         <score></score>
       </element>
-      <element name="msofficesupport" title="Microsoft Office files support">
+      <element name="msofficesupport" title="Fichiers Microsoft Office">
         <desc>If score is 1 or 2, do detail in the comment section the supported features :
                 parsing, previewing, reading, searching</desc>
         <desc0>not supported</desc0>
@@ -898,7 +898,7 @@ http://savannah.fzk.de/</comment>
         <comment></comment>
         <score></score>
       </element>
-      <element name="vectorialformat" title="Common vectorial format">
+      <element name="vectorialformat" title="Formats vectoriels usuels">
         <desc>Format are: WMF, SVG</desc>
         <desc0>not supported</desc0>
         <desc1>partialy (buggy or limited feature)</desc1>
@@ -907,30 +907,30 @@ http://savannah.fzk.de/</comment>
         <score></score>
       </element>
     </element>
-    <element name="versioncontrol" title="Online version control">
+    <element name="versioncontrol" title="Gestion de version">
       <desc>The documents targeted by the version control are those listed as fully supported in the above "documentsupport" elements</desc>
-      <element name="history" title="Online access to each pages/docs (of fully supported media) history/versioning">
+      <element name="history" title="Accès à tous les historiques et version de pages et documents">
         <desc0>No history/versioning</desc0>
         <desc1>limited number of document revisions</desc1>
         <desc2>unlimited number of document revisions</desc2>
         <comment></comment>
         <score></score>
       </element>
-      <element name="diff" title="Online support for version differencing diff and retrieving prior versions">
+      <element name="diff" title="Accès auc différences et versions anciennes">
         <desc0>No diff feature</desc0>
         <desc1>Revision Diffs with the latest</desc1>
         <desc2>Revision Diffs with the all</desc2>
         <comment></comment>
         <score></score>
       </element>
-      <element name="rollback" title="Online support for retrieving/rollbacking to prior versions">
+      <element name="rollback" title="Prise en charge du retour arrière">
         <desc0>No rollback feature</desc0>
         <desc1>rollback to the latest</desc1>
         <desc2>rollback to all</desc2>
         <comment></comment>
         <score></score>
       </element>
-      <element name="mergetools" title="Tools to facilitate merge pages/docs (of fully supported media)">
+      <element name="mergetools" title="Outils de fusion">
         <desc0>No such merging tools</desc0>
         <desc1>basic merge tools</desc1>
         <desc2>smart merge tools</desc2>
@@ -938,9 +938,9 @@ http://savannah.fzk.de/</comment>
         <score></score>
       </element>
     </element>
-    <element name="picture" title="Picture formats support">
+    <element name="picture" title="Formats d'images">
       <desc>Supported means that the internal engine is able to store and eventually make thumbnail/preview file</desc>
-      <element name="commonpictureformat" title="Common file formats">
+      <element name="commonpictureformat" title="Formats usuels">
         <desc>Format are: JPEG, GIF, PNG, BMP, TIFF, XPM</desc>
         <desc0>not supported</desc0>
         <desc1>supported</desc1>
@@ -948,7 +948,7 @@ http://savannah.fzk.de/</comment>
         <comment></comment>
         <score></score>
       </element>
-      <element name="commercialpictureformat" title="Commercial/proprietary formats">
+      <element name="commercialpictureformat" title="Formats commerciaux/propriétaires">
         <desc>Format are: PSP (PaintShopPro), PSD (Photopshop)</desc>
         <desc0>not supported</desc0>
         <desc1>supported</desc1>
@@ -957,16 +957,16 @@ http://savannah.fzk.de/</comment>
         <score></score>
       </element>
     </element>
-    <element name="search" title="Support for search">
+    <element name="search" title="Recherche">
       <desc>The metadata and media content support is to be detailed in the above metadata and mediasupport elements</desc>
-      <element name="searchengine" title="Search engine features">
+      <element name="searchengine" title="Moteur de recherche">
         <desc0>No search engine available</desc0>
         <desc1>Searches are limited (to filename, metadata or text content for instance)</desc1>
         <desc2>Searches are feasable through most of the media content and the metadata</desc2>
         <comment></comment>
         <score></score>
       </element>
-      <element name="searchAPI" title="Search API for more detailed searching in the contents and their metadata">
+      <element name="searchAPI" title="API de recherche dans les contenus et métadonnées">
         <desc0>This feature doesn't exist</desc0>
         <desc1>The feature exist but is limited.</desc1>
         <desc2>This feature is fully powered</desc2>
@@ -974,8 +974,8 @@ http://savannah.fzk.de/</comment>
         <score></score>
       </element>
     </element>
-    <element name="updatenotification" title="Support for new content or update notifications">
-      <element name="recentchanges" title="Recent changes advertised on the web interface">
+    <element name="updatenotification" title="Notifications de mise à jour ou de nouveau contenu">
+      <element name="recentchanges" title="Changements récents sur l'interface web">
         <desc0>No such features</desc0>
         <desc1>recent changes advertised according to the today's date</desc1>
         <desc2>recent changes advertised only changes that happened since user's last visit</desc2>
@@ -1020,7 +1020,7 @@ http://savannah.fzk.de/</comment>
         <score></score>
       </element>
     </element>
-    <element name="pluginsandpluginability" title="Plugins, pluginability, built-in objects, and page templates">
+    <element name="pluginsandpluginability" title="Greffons, objets inclus et modèles de page">
       <element name="pluginability" title="Plugin ability">
         <desc>Adequate software architecture for custom plugin creation, easy plugin interface 
             for writing your own additions. Do detail in the comment section the supported plugin languages </desc>
@@ -1030,29 +1030,29 @@ http://savannah.fzk.de/</comment>
         <comment></comment>
         <score></score>
       </element>
-      <element name="remoteAPI" title="XML/RPC remote API">
+      <element name="remoteAPI" title="API distante XML/RPC">
         <desc0>No such feature</desc0>
         <desc1>poor API</desc1>
         <desc2>rich API</desc2>
         <comment></comment>
         <score></score>
       </element>
-      <element name="webserviceplugin" title="Web service plugin">
+      <element name="webserviceplugin" title="Greffon de service web">
         <desc0>No such feature</desc0>
         <desc1>limited integration capabilities</desc1>
         <desc2>good capabilities</desc2>
         <comment></comment>
         <score></score>
       </element>
-      <element name="feedagregation" title="Ability to aggregate feeds">
+      <element name="feedagregation" title="Agrégation de flux">
         <desc0>No such feature</desc0>
         <desc1>limited integration capabilities</desc1>
         <desc2>good capabilities</desc2>
         <comment></comment>
         <score></score>
       </element>
-      <element name="builtinobjects" title="Builtin objects or plugins">
-        <element name="calendars" title="Calendars and Calendars events">
+      <element name="builtinobjects" title="Objets inclus ou greffons">
+        <element name="calendars" title="Calendriers et évènements">
           <desc0>No such feature</desc0>
           <desc1>partially or poorly implemented </desc1>
           <desc2>well done</desc2>
@@ -1066,35 +1066,35 @@ http://savannah.fzk.de/</comment>
           <comment></comment>
           <score></score>
         </element>
-        <element name="polls" title="Polls and vote editing and publishing">
+        <element name="polls" title="Édition et publication de sondages et votes">
           <desc0>No such feature</desc0>
           <desc1>partially or poorly implemented </desc1>
           <desc2>well done</desc2>
           <comment></comment>
           <score></score>
         </element>
-        <element name="photoalbums" title="Photo albums editing and publishing">
+        <element name="photoalbums" title="Édition et publication d'albums photo">
           <desc0>No such feature</desc0>
           <desc1>partially or poorly implemented </desc1>
           <desc2>well done</desc2>
           <comment></comment>
           <score></score>
         </element>
-        <element name="slideshows" title="Slideshow editing and launching within the internet browser">
+        <element name="slideshows" title="Édition et lancement de diaporama dans le navigateur">
           <desc0>No such feature</desc0>
           <desc1>partially or poorly implemented </desc1>
           <desc2>well done</desc2>
           <comment></comment>
           <score></score>
         </element>
-        <element name="bugtrackingintegration" title="Bug tracking system integration (tickets linking and metadata extraction)">
+        <element name="bugtrackingintegration" title="Système de gestion de bogues intégré (liens entre tickets et extraction de métadonnées)">
           <desc0>No such feature</desc0>
           <desc1>limited integration: tickets linking </desc1>
           <desc2>well supported: tickets linking and metadata extraction</desc2>
           <comment></comment>
           <score></score>
         </element>
-        <element name="otherplugins" title="Other noticeable built-in plugins">
+        <element name="otherplugins" title="autres greffons inclus notables">
           <desc> others: FAQ, meeting minutes, Action Tracker plugin, bookmarklet, 
                 Geolocalisation features: GeoURL or googleMaps plugins, Tagging and Tag clouds
                 (delicio.us, technorati, others), etc. Do list the plugins in the comment section. </desc>
