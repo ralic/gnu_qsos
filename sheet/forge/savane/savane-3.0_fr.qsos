@@ -8,20 +8,20 @@
       </author>
     </authors>
     <dates>
-      <creation></creation>
+      <creation>20070308</creation>
       <validation></validation>
     </dates>
     <language>fr</language>
     <appname>Savane</appname>
     <release>3.0</release>
-    <licenseid>67</licenseid>
+    <licenseid>31</licenseid>
     <licensedesc>GNU GPL</licensedesc>
     <url>https://gna.org/projects/savane/</url>
     <desc>Savane est une forge libre utilisée et développée pour les hébergeurs de projets libres Gna! et Savannah, issue du fork de SourceForge, écrite en PHP et Perl et reposant sur le SGBDR MySQL</desc>
     <demourl></demourl>
     <qsosformat>1.7</qsosformat>
-    <qsosappfamily>wiki</qsosappfamily>
-    <qsosappname></qsosappname>
+    <qsosappfamily>forge</qsosappfamily>
+    <qsosappname>savane</qsosappname>
     <qsosspecificformat></qsosspecificformat>
   </header>
   <section name="generic" title="Generic section">
