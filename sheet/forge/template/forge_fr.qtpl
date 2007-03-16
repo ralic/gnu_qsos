@@ -1,33 +1,730 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document>
-    <header>
-        <authors>
-          <email/>
-          <name/>
-        </authors>
-        <dates>
-            <creation/>
-            <validation/>
-        </dates>
-        <language>fr</language>
-        <appname/>
-        <release/>
-        <licenseid/>
-        <licensedesc/>
-        <url/>
-        <desc/>
-        <demourl/>
-        <qsosformat>1.7</qsosformat>
-        <qsosappfamily>forge</qsosappfamily>
-        <qsosappname></qsosappname>
-        <qsosspecificformat/>
-    </header>
-    <include section="generic"/>
-    <include section="webappprerequisite"/>
-    <include section="websecurity"/>
-    <include section="storagesupport"/>
-    <include section="webcompatibility"/>
-    <include section="UI"/>
-    <include section="webcontentmanagement"/>
-    <include section="prerequisite"/>
-</document>
+<parsererror>
+   <sourcetext>
+</sourcetext>
+   <section name="servicestrans-projets" title="Services trans-projets">
+      <desc></desc>
+      <element name="personnalisation" title="Personnalisation">
+         <desc></desc>
+         <comment></comment>
+         <element name="globale" title="Globale">
+            <desc></desc>
+            <comment></comment>
+            <element name="adaptabilite" title="Adaptabilité">
+               <desc>Capacité multi-users, multi-teams, multi-projects, multi-purposes...</desc>
+	       <desc0>La forge n'est adaptée qu'à de petits projets logiciels restreints en taille et spectre</desc0>
+	       <desc1>a forge sert au développement logiciel</desc1>
+	       <desc2>La forge peut servir un grand nombre de projets et utilisateurs avec un large spectre de possibilités</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="siteswebdesprojets" title="Sites web des projets">
+               <desc>Capacité de la forge à aussi faire office de site web des projets (homepage)</desc>
+               <desc0>La page ne propose pas cette fonctionnalité</desc0>
+               <desc1>Page unique ou pages statiques</desc1>
+               <desc2>Pages dynamiques PHP/Perl/Java</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="isolation" title="Isolation">
+               <desc>Isolation entre interface admin globale à la forge et les admins locaux des projets</desc>
+               <desc0>Mauvaise isolation</desc0>
+               <desc1>Isolation moyenne</desc1>
+               <desc2>Bonne isolation</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+         </element>
+         <element name="parprojet" title="Par projet">
+            <desc></desc>
+            <comment></comment>
+            <element name="modeledestructure" title="Modèle de structure">
+               <desc>Capacité à reproduire une structure intéressante (template)</desc>
+               <desc0>Pas de modèle</desc0>
+               <desc1>Modèle simple</desc1>
+               <desc2>Modèle détaillé</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="structurationlibredessousprojets" title="Structuration libre des sous-projets">
+               <desc>Structuration libre des sous-projets</desc>
+               <desc0>Pas de sous-projets</desc0>
+               <desc1>Sous-projets linéaires</desc1>
+               <desc2>Sous-projets pouvant recevoir un organisation locale</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="etancheiteentreprojets" title="Étanchéité entre projets">
+               <desc>Capacité de la forge à empêcher les utilisateurs d'un projet de pouvoir consulter les infos d'un autre projet</desc>
+               <desc0>Forge ouverte</desc0>
+               <desc1>Certains aspects non-paramétrables sont visibles des autres projets</desc1>
+               <desc2>Étanchéité paramétrable</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+         </element>
+         <element name="parutilisateur" title="Par utilisateur">
+            <desc></desc>
+            <comment></comment>
+            <element name="internationalisation" title="Internationalisation">
+               <desc>Traduction de l'interface utilisateur</desc>
+               <desc0>Pas de sélection possible de langue</desc0>
+               <desc1>Possibilité de sélectionner une langue, nombre de langues limité</desc1>
+               <desc2>Possibilité de sélectionner une langue, grand nombre de langues disponibles</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="pagepersonnelle" title="Page personnelle">
+               <desc>Possibilité de page personnelle</desc>
+               <desc0>Pas de page personnelle</desc0>
+               <desc1>Page personnelle basique, pas ou peu paramétrable</desc1>
+               <desc2>Informations détaillées ou paramétrage fin de la sélection des informations</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="fuseauxhoraires" title="Fuseaux horaires">
+               <desc>Possibilité de sélectionner le fuseau horaire de l'utilisateur</desc>
+               <desc0>Pas de fuseaux horaires</desc0>
+               <desc1>Fuseaux horaires disponibles</desc1>
+               <desc2>Fuseaux horaires disponibles avec heures d'été/hiver</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+         </element>
+      </element>
+      <element name="notifications" title="Notifications (média et couverture)">
+         <desc></desc>
+         <comment></comment>
+         <element name="e-mail" title="E-mail">
+            <desc>Notifications par e-mail : commits, tracker, forum, news, wiki...</desc>
+            <desc0>Pas de notifications par e-mail</desc0>
+            <desc1>Couverture limitée des notifications</desc1>
+            <desc2>Toutes les notifications par e-mail sont paramétrables</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="jabber" title="Jabber">
+            <desc>Notifications par Jabber/XMPP</desc>
+            <desc0>Pas de notifications par Jabber/XMPP</desc0>
+            <desc1>Couverture limitée des notifications</desc1>
+            <desc2>Toutes les notifications par Jabber/XMPP sont paramétrables</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="webrssatom" title="Web (RSS, Atom)">
+            <desc>Notifications sur le web</desc>
+            <desc0>Pas de flux RSS/Atom</desc0>
+            <desc1>Flux RSS/Atom non-paramétrables</desc1>
+            <desc2>Flux RSS/Atom complètement paramétrables</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+      </element>
+      <element name="integrationdesdifferentsmodules" title="Intégration des différents modules">
+         <desc></desc>
+         <comment></comment>
+         <element name="integrationavecoutilsclients" title="Intégration avec outils clients">
+            <desc>Existe-t-il des outils clients permettant de se connecter aux modules sans passer par l'interface web ?</desc>
+            <desc0>Pas de clients</desc0>
+            <desc1>Un ou deux clients (CVS/SVN)</desc1>
+            <desc2>Panoplie de clients ou intégré</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="referencescroisees" title="Références croisées">
+            <desc>Possibilité de gérer des références entre les modules</desc>
+            <desc0>Pas de références croisées</desc0>
+            <desc1>Possiblités limitées</desc1>
+            <desc2>Interface d'édition des références croisées, références reconnues et indexées</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="modulariteflexibilite" title="Modularité, flexibilité">
+            <desc>Peut-on avoir plusieurs forums, des sous-projets, des zones privées, etc. ?</desc>
+            <desc0>Modules rigides</desc0>
+            <desc1>Quelques paramétrages présents et inégaux dans les différents modules</desc1>
+            <desc2>Tous les modules sont riches et paramétrables uniformément</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="navigationuniforme" title="Navigation uniforme">
+            <desc>Navigation uniforme sur les différents modules</desc>
+            <desc0>Modules hétérogènes en navigation</desc0>
+            <desc1>Modules visuellement similaires</desc1>
+            <desc2>Modules visuellement et fonctionnellement similaires, intuitivité globale</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="navigationalacarte" title="Navigation à la carte">
+            <desc>Navigation à la carte définissable par l'équipe</desc>
+            <desc0>Navigation non-paramétrable</desc0>
+            <desc1>Quelques liens personnalisables</desc1>
+            <desc2>Navigation entièrement personnalisable</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="integrationdemodulesexternes" title="Intégration de modules externes">
+            <desc>Intégration à la forge de modules externes (wiki, forum, tracker...)</desc>
+            <desc0>Pas d'intégration possible</desc0>
+            <desc1>Intégration limitée (uniquement graphique)</desc1>
+            <desc2>Intégration avancée (création d'utilisateurs, groupes, projets...)</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+      </element>
+      <element name="aspectstechniques" title="Aspects techniques">
+         <desc></desc>
+         <comment></comment>
+         <element name="exportetimportdedonnees" title="Export et import de données">
+            <desc>Facilité d'export et import de données</desc>
+            <desc0>Pas de module d'export/import</desc0>
+            <desc1>Modules d'export/import à fonctionnalités ou couverture limitée</desc1>
+            <desc2>Module d'export/import global</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="sauvegardeetrestauration" title="Sauvegarde et restauration">
+            <desc>Facilité de sauvegarde et restauration, intégration de scripts</desc>
+            <desc0>Sauvegarde et restauration difficile ou non-implémentée</desc0>
+            <desc1>Scripts existants, mais limités ou couverture incomplète</desc1>
+            <desc2>Scripts de type « bouton-poussoir » prêt à l'emploi</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="respectdesstandardsprotocolesetformatsouverts" title="Respect des standards, protocoles et formats ouverts">
+            <desc>Prise en charge par la forge de standards, protocoles et formats ouverts</desc>
+            <desc0>La forge prend en charge un nombre très limité/minimaliste de standards, protocoles et formats ouverts</desc0>
+            <desc1>La forge prend en charge les principaux standards, protocoles et formats ouverts</desc1>
+            <desc2>La forge prend en charge un large spectre de standards, protocoles et formats ouverts</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="monteeenchargeethautedisponibilite" title="Montée en charge et haute disponibilité">
+            <desc>Capacité de la forge à accepter la montée en charge</desc>
+            <desc0>Application monolithique</desc0>
+            <desc1>La forge permet de répartir des modules sur différentes machines</desc1>
+            <desc2>Architecture à base de redondance et répartition de charge</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="chiffrement" title="Chiffrement">
+            <desc>Chiffrement des communications HTTPS, LDAPS, SMTPS</desc>
+            <desc0>Aucun chiffrement</desc0>
+            <desc1>Chiffrement possible sur quelques modules</desc1>
+            <desc2>Chiffrement activable sur tous les modules</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="inclusiondelements" title="Inclusion d'éléments">
+            <desc>Capacité d'inclusion d'éléments de la forge (schémas, images, docs...)</desc>
+            <desc0>Pas d'éléments autres que le texte entré dans les formulaires</desc0>
+            <desc1>Quelques formats acceptés</desc1>
+            <desc2>Grand nombre de formats acceptés, gérés correctement pour la majorité</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="centralisationetdistribution" title="Centralisation et distribution">
+            <desc>Centralisation et distribution, en vue de fédération de forges</desc>
+            <desc0>Complètement centralisé</desc0>
+            <desc1>Simple export/import</desc1>
+            <desc2>Mécanismes complets d'échanges de données entre forges</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+      </element>
+      <element name="metadonnees" title="Méta-données">
+         <desc></desc>
+         <comment></comment>
+         <element name="arbredeprojets" title="Arbre de projets">
+            <desc>Arbre de projets de la forge</desc>
+            <desc0>Pas de liste</desc0>
+            <desc1>Liste plate, pas de classification</desc1>
+            <desc2>Arbre et classement présents</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="fonctionsderecherche" title="Fonctions de recherche">
+            <desc>Capacités de recherche plein texte</desc>
+            <desc0>Pas de recherche possible</desc0>
+            <desc1>Recherche partielle</desc1>
+            <desc2>Recherche avancée, sur tous les modules</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="statistiques" title="Statistiques">
+            <desc>Statistiques globales et rapports (reporting)</desc>
+            <desc0>Pas de statistiques</desc0>
+            <desc1>Statistiques simples ou sans graphes</desc1>
+            <desc2>Statistiques poussées et paramétrables avec graphes</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="resumeduprojet" title="Résumé du projet">
+            <desc>Page de synthèse/présentation courte du projet</desc>
+            <desc0>Pas de résumé</desc0>
+            <desc1>Résumé simple et statique</desc1>
+            <desc2>Résume et synthèse complets du projet, avec métriques dynamiques</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+      </element>
+   </section>
+   <section name="gestiondecodesource" title="Gestion de code source">
+      <desc></desc>
+      <element name="gestiondesversions" title="Gestion des versions">
+         <desc></desc>
+         <comment></comment>
+         <element name="accesanonyme" title="Accès anonyme">
+            <desc>Accès anonyme au code source</desc>
+            <desc0>Pas d'accès anonyme</desc0>
+            <desc1>Accès anonyme en lecture seule</desc1>
+            <desc2>Accès anonyme en lecture seule désactivable et/ou chiffrable</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="accesweb" title="Accès web">
+            <desc>Représentation web du dépôt de code</desc>
+            <desc0>Pas de visualisation sur le web du code source</desc0>
+            <desc1>Visualisation basique</desc1>
+            <desc2>Visualisation complète avec gestion des différences</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="atomicite" title="Atomicité">
+            <desc>Capacité à gérer chaque commit comme un tout unitaire</desc>
+            <desc0>Pas atomicité</desc0>
+            <desc1>Atomicité partielle</desc1>
+            <desc2>Atomicité et transactions</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="branches" title="Branches">
+            <desc>Gestion des branches</desc>
+            <desc0>Pas de branches</desc0>
+            <desc1>Branches basiques</desc1>
+            <desc2>Gestion complète des branches</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="tags" title="Tags">
+            <desc>Gestion des tags</desc>
+            <desc0>Pas de tags</desc0>
+            <desc1>Tags minimalistes</desc1>
+            <desc2>Gestion avancée des tags</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+      </element>
+      <element name="visualisationdesdifferences" title="Visualisation des différences">
+         <desc>Visualisation des différences (diff)</desc>
+         <desc0>Pas de visualisation des différences</desc0>
+         <desc1>Visualisation simple des différences</desc1>
+         <desc2>Visualisation complète des différences (branche/tag)</desc2>
+         <score></score>
+         <comment></comment>
+      </element>
+      <element name="gestiondepatches" title="Gestion de patches">
+         <desc>Gestion de patches (rustines)</desc>
+         <desc0>Pas de gestion de patches</desc0>
+         <desc1>Gestion minimaliste</desc1>
+         <desc2>Bonne gestion des patches</desc2>
+         <score></score>
+         <comment></comment>
+      </element>
+      <element name="assurancequalite" title="Assurance qualité">
+         <desc>Outils de test, de contrôle de la qualité du code, intégration continue</desc>
+         <desc0>Pas d'outils de QA</desc0>
+         <desc1>Outils simples</desc1>
+         <desc2>Outillage fourni</desc2>
+         <score></score>
+         <comment></comment>
+      </element>
+   </section>
+   <section name="gestionprojet" title="Gestion Projet">
+      <desc></desc>
+      <element name="gestiondetaches" title="Gestion de tâches">
+         <desc>Gestion de tâches du projet</desc>
+         <desc0>Pas de tâches</desc0>
+         <desc1>Gestion simple</desc1>
+         <desc2>Gestion avancée des tâches avec avancement</desc2>
+         <score></score>
+         <comment></comment>
+      </element>
+      <element name="feuillederoute" title="Feuille de route">
+         <desc>Roadmap, plan de développement</desc>
+         <desc0>Pas de roadmap</desc0>
+         <desc1>Roadmap sous forme de document plat</desc1>
+         <desc2>Roadmap avec indicateurs de progression</desc2>
+         <score></score>
+         <comment></comment>
+      </element>
+      <element name="suivitemporel" title="Suivi temporel">
+         <desc>Timeline</desc>
+         <desc0>Pas de timeline</desc0>
+         <desc1>Timeline simple</desc1>
+         <desc2>Timeline prenant en compte tous les modules actifs</desc2>
+         <score></score>
+         <comment></comment>
+      </element>
+      <element name="diagrammesdegantt" title="Diagrammes de Gantt">
+         <desc>Diagrammes de Gantt ou outil équivalent de gestion de planning</desc>
+         <desc0>Pas de diagramme de Gantt</desc0>
+         <desc1>Diagramme basique</desc1>
+         <desc2>Diagramme de Gantt éditable et exportable</desc2>
+         <score></score>
+         <comment></comment>
+      </element>
+      <element name="tableaudebord" title="Tableau de bord">
+         <desc>Tableau de bord modulaire</desc>
+         <desc0>Pas de tableau de bord</desc0>
+         <desc1>Tableau de bord basique</desc1>
+         <desc2>Tableau de bord avec métriques paramétrables</desc2>
+         <score></score>
+         <comment></comment>
+      </element>
+   </section>
+   <section name="gestiondeslivraisons" title="Gestion des livraisons">
+      <desc></desc>
+      <element name="telechargement" title="Téléchargement">
+         <desc>Téléchargement, téléchargement anonyme des paquets mis à disposition</desc>
+         <desc0>Pas de zone de téléchargement</desc0>
+         <desc1>Liste plate de paquets disponibles</desc1>
+         <desc2>Zone de téléchargement avancée</desc2>
+         <score></score>
+         <comment></comment>
+      </element>
+      <element name="upload" title="Upload">
+         <desc>Envoi de fichiers sur le serveur</desc>
+         <desc0>Pas d'upload</desc0>
+         <desc1>Upload manuel</desc1>
+         <desc2>Formulaire d'upload complet</desc2>
+         <score></score>
+         <comment></comment>
+      </element>
+      <element name="versionnement" title="Versionnement">
+         <desc>Gestion des version de paquets</desc>
+         <desc0>Pas de versionnement</desc0>
+         <desc1>Versionnement basique</desc1>
+         <desc2>Versionnement avancé</desc2>
+         <score></score>
+         <comment></comment>
+      </element>
+      <element name="dependances" title="Dépendances">
+         <desc>Gestion des dépendances entre paquets</desc>
+         <desc0>Pas de dépendances</desc0>
+         <desc1>Dépendances basiques</desc1>
+         <desc2>Dépendances avancées</desc2>
+         <score></score>
+         <comment></comment>
+      </element>
+   </section>
+   <section name="gestiondedocuments" title="Gestion de documents">
+      <desc></desc>
+      <element name="miseadisposition" title="Mise à disposition">
+         <desc>Mise à disposition simple de documents</desc>
+         <desc0>Pas de documents</desc0>
+         <desc1>Mise à disposition basique</desc1>
+         <desc2>Mise à disposition avec classement et versionnement</desc2>
+         <score></score>
+         <comment></comment>
+      </element>
+      <element name="cycledevie" title="Cycle de vie">
+         <desc>Flux d'approbation, gestion du cycle de vie, workflow</desc>
+         <desc0>Pas de gestion de cycle de vie</desc0>
+         <desc1>Statuts basiques</desc1>
+         <desc2>Workflow avancé</desc2>
+         <score></score>
+         <comment></comment>
+      </element>
+      <element name="formatsouverts" title="Formats ouverts">
+         <desc>Formats ouverts pris en charge : OpenDocument, PDF, XHTML/CSS, DocBook, LATEX</desc>
+         <desc0>Formats propriétaire uniquement</desc0>
+         <desc1>Quelques formats ouverts</desc1>
+         <desc2>Grand nombre de formats ouverts</desc2>
+         <score></score>
+         <comment></comment>
+      </element>
+      <element name="protocolesouverts" title="Protocoles ouverts">
+         <desc>Protocoles ouverts : WebDAV, FTP, SSH</desc>
+         <desc0>Communication uniquement sur HTTP</desc0>
+         <desc1>Un ou deux protocoles pris en charge, en plus du HTTP</desc1>
+         <desc2>Nombreux protocoles pris en charge</desc2>
+         <score></score>
+         <comment></comment>
+      </element>
+      <element name="classification" title="Classification">
+         <desc>Classification : tag, arbre, catégorie, etc.</desc>
+         <desc0>Pas de classification</desc0>
+         <desc1>Classification basique</desc1>
+         <desc2>Classification avancée</desc2>
+         <score></score>
+         <comment></comment>
+      </element>
+      <element name="gestiondeversions" title="Gestion de versions">
+         <desc>Versionnement des documents</desc>
+         <desc0>Pas de versionnement</desc0>
+         <desc1>Versionnement par stockage de toutes les versions complètes</desc1>
+         <desc2>Versionnement par différences</desc2>
+         <score></score>
+         <comment></comment>
+      </element>
+   </section>
+   <section name="systemedesuivi" title="Système de suivi">
+      <desc></desc>
+      <element name="typologies" title="Typologies">
+         <desc></desc>
+         <comment></comment>
+         <element name="gestiondanomalies" title="Gestion d'anomalies">
+            <desc>Anomalies, bugs et dysfonctionnements</desc>
+            <desc0>Pas de gestion d'anomalies</desc0>
+            <desc1>Gestion simple</desc1>
+            <desc2>Gestion avancée des anomalies</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="gestiondesdemandes" title="Gestion des demandes">
+            <desc>Demandes d'évolutions et de fonctionnalités</desc>
+            <desc0>Pas de gestion de demandes</desc0>
+            <desc1>Gestion simple</desc1>
+            <desc2>Gestion avancée des demandes</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="gestiondespatches" title="Gestion des patches">
+            <desc>Prise en charge des rustines et différences de code</desc>
+            <desc0>Pas de gestion de patches</desc0>
+            <desc1>Gestion simple</desc1>
+            <desc2>Gestion avancée des patches</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="gestiondestaches" title="Gestion des tâches">
+            <desc>Tâches du projet</desc>
+            <desc0>Pas de gestion de tâches</desc0>
+            <desc1>Gestion simple</desc1>
+            <desc2>Gestion avancée des tâches</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+      </element>
+      <element name="fonctionnalitedebase" title="Fonctionnalité de base">
+         <desc></desc>
+         <comment></comment>
+         <element name="liaisonsentretickets" title="Liaisons entre tickets">
+            <desc>Dépendance, doublon, fusion, cission</desc>
+            <desc0>Pas de liaisons</desc0>
+            <desc1>Liaisons simples</desc1>
+            <desc2>Liaisons avancées</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="historisation1" title="Historisation">
+            <desc>Navigation dans l'historique</desc>
+            <desc0>Navigation absente ou très limitée</desc0>
+            <desc1>Navigation basique</desc1>
+            <desc2>Navigation avancée</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="piecesjointes" title="Pièces jointes">
+            <desc>Les système de suivi accepte-t-il les pièces jointes ?</desc>
+            <desc0>Pas de pièces jointes possibles</desc0>
+            <desc1>Pièces jointes restreintes</desc1>
+            <desc2>Large spectre de pièces jointes acceptées</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="commentaires1" title="Commentaires">
+            <desc>Système de commantaires</desc>
+            <desc0>Pas de commentaires</desc0>
+            <desc1>Commentaires simples</desc1>
+            <desc2>Commentaires avancés</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+      </element>
+      <element name="adaptabilitesouplesse" title="Adaptabilité, souplesse">
+         <desc></desc>
+         <comment></comment>
+         <element name="personnalisationdesetats" title="Personnalisation des états">
+            <desc>Possibilité modifier les requêtes et mises en formes</desc>
+            <desc0>Pas de personnalisation possible</desc0>
+            <desc1>Personnalisation basique</desc1>
+            <desc2>Personnalisation avancée</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="personnalisationdeschamps" title="Personnalisation des champs">
+            <desc>Possibilité de modifier les champs</desc>
+            <desc0>Pas de personnalisation possible</desc0>
+            <desc1>Personnalisation basique</desc1>
+            <desc2>Personnalisation avancée</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="workflowcycledevie" title="Workflow, cycle de vie">
+            <desc>Circuit des éléments du suivi</desc>
+            <desc0>Pas de gestion</desc0>
+            <desc1>Statuts simple</desc1>
+            <desc2>Cycle de vie avancé</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="assignationetchangementdeproprietaire" title="Assignation et changement de propriétaire">
+            <desc>Possibilité de gérer les intervenants</desc>
+            <desc0>Pas de gestion d'intervenants</desc0>
+            <desc1>Gestion basique</desc1>
+            <desc2>Gestion avancée</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+      </element>
+   </section>
+   <section name="outilscollaboratifs" title="Outils collaboratifs">
+      <desc></desc>
+      <element name="forums" title="Forums">
+         <desc></desc>
+         <comment></comment>
+         <element name="multiples" title="Multiples">
+            <desc>Gestion de la multiplicité des forums</desc>
+            <desc0>Pas de forum</desc0>
+            <desc1>Forum unique par projet</desc1>
+            <desc2>Forums multiples, création/destruction, gestion des archives</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="filsdediscussion" title="Fils de discussion">
+            <desc>Finesse des fils</desc>
+            <desc0>Fils de discussion linéaires</desc0>
+            <desc1>Fils de discussion linéaires avec références et citations</desc1>
+            <desc2>Gestion de fils de dicussion groupés, avec références et citations</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="integrationaveclamessagerie" title="Intégration avec la messagerie">
+            <desc>Intégration avec la messagerie (liste de discussion, adresse e-mail)</desc>
+            <desc0>Pas d'intégration</desc0>
+            <desc1>Envoi de copies ou notifications</desc1>
+            <desc2>Interaction par mail</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+      </element>
+      <element name="listesdediscussion" title="Listes de discussion">
+         <desc>Gestion des listes de discussion et de diffusion (réception pour l'utilisateur)</desc>
+         <desc0>Pas de listes de discussion</desc0>
+         <desc1>Listes de discussion limitées</desc1>
+         <desc2>Listes de diffusion/discussion, archives sur le web</desc2>
+         <score></score>
+         <comment></comment>
+      </element>
+      <element name="annoncesdepechesbreves" title="Annonces, dépêches, brèves">
+         <desc></desc>
+         <comment></comment>
+         <element name="editioncollaborative" title="Édition collaborative">
+            <desc>Possibilité et richesse de l'édition</desc>
+            <desc0>Édition solo</desc0>
+            <desc1>Possibilité d'édition à plusieurs utilisateurs, mais sans gestion des collisions</desc1>
+            <desc2>Workflow complet avec statuts</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="commentaires" title="Commentaires">
+            <desc>Richesse du système de commentaires</desc>
+            <desc0>Pas de commentaires</desc0>
+            <desc1>Commentaires basiques</desc1>
+            <desc2>Gestion fine des commentaires</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="publication" title="Publication">
+            <desc>Richesse de la publication : projet/forge/publique, catégories, archives, tags</desc>
+            <desc0>Publication linéaire et monolithique</desc0>
+            <desc1>Publication proposant quelques fonctionnalités avancées</desc1>
+            <desc2>Publication proposant de nombreuses fonctionnalités avancées</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+      </element>
+      <element name="wiki" title="Wiki">
+         <desc></desc>
+         <comment></comment>
+         <element name="syntaxe" title="Syntaxe">
+            <desc>Simplicité et de la syntaxe</desc>
+            <desc0>Syntaxe difficile ou rigide</desc0>
+            <desc1>Syntaxe de base facile, avec des extensions peu pratiques</desc1>
+            <desc2>Syntaxe souple, facile et riche</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="editeurwysiwyg" title="Éditeur WYSIWYG">
+            <desc>Éditeur tel affichage, tel résultat (WYSIWYG : What You See Is What You Get)</desc>
+            <desc0>Pas d'éditeur</desc0>
+            <desc1>Éditeur basique</desc1>
+            <desc2>Éditeur avancé</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="historisation" title="Historisation">
+            <desc>Gestion de l'historisation</desc>
+            <desc0>Pas d'historisation</desc0>
+            <desc1>Historisation linéraire</desc1>
+            <desc2>Navigation complète, souplesse dans la visualisation des différences</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="annulationsetgestiondescollisions" title="Annulations et gestion des collisions">
+            <desc>Annulations et gestion des collisions</desc>
+            <desc0>Pas d'annulations, pas de détection des collisions</desc0>
+            <desc1>Annulations d'une version, résolution manuelle des collisions</desc1>
+            <desc2>Annulations multiples, aide à la résolution des collisions</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="affichageducodesource" title="Affichage du code source">
+            <desc>Affiche propre et bien formaté du code source</desc>
+            <desc0>Ne permet pas d'afficher du code source, confusion entre code source et syntaxe wiki</desc0>
+            <desc1>Affichage acceptable</desc1>
+            <desc2>Affichage propre et respectueux des indentations, colorisation syntaxique</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+      </element>
+      <element name="faq" title="FAQ">
+         <desc>Foire Aux Questions (Frequently Asked Questions)</desc>
+         <desc0>Pas de FAQ</desc0>
+         <desc1>FAQ monolithique</desc1>
+         <desc2>FAQ multiples ou à édition locale ou multi-éditeur</desc2>
+         <score></score>
+         <comment></comment>
+      </element>
+      <element name="votesondagequestionnaire" title="Vote, sondage, questionnaire">
+         <desc></desc>
+         <comment></comment>
+         <element name="utilisateur" title="Utilisateur">
+            <desc>Possibilités pour l'utilisateur</desc>
+            <desc0>Pas de vote ou vote anonyme</desc0>
+            <desc1>Vote basique</desc1>
+            <desc2>Possibilité de réviser son vote, de proposer des votes/sondages/questionnaires</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="statuts" title="Statuts">
+            <desc>Variété des statuts</desc>
+            <desc0>Pas de gestion de statut</desc0>
+            <desc1>Statuts basiques : ouvert/fermé</desc1>
+            <desc2>Statuts complets : brouillon/ouvert/fermé, public/privé, etc.</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="resultats" title="Résultats">
+            <desc>Richesse de l'affichage des résultats</desc>
+            <desc0>Pas de graphiques, tableaux basiques</desc0>
+            <desc1>Graphiques basiques, tableaux complets</desc1>
+            <desc2>Graphiques avancés et tableaux dynamiques, exports disponibles</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+      </element>
+   </section>
+</parsererror>
