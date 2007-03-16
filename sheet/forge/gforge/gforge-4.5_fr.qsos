@@ -41,14 +41,14 @@
                <desc0>Logiciel instable avec de nombreuses versions et patches générant des effets de bords</desc0>
                <desc1>Version de production stabilisée mais un peu vieille. Quelques difficultés à stabiliser les versions de développement</desc1>
                <desc2>Logiciel stable. Les nouvelles versions corrigent des bugs, mais apportent de façon prépondérante de nouvelles fonctionnalités</desc2>
-               <score>1</score>
+               <score>2</score>
                <comment>La version 4.6 semble prendre du temps à se finaliser</comment>
             </element>
             <element name="historyknowproblems" title="Historique">
                <desc0>Le logiciel connaît de nombreux problèmes qui peuvent être rédhibitoires</desc0>
                <desc1>Pas de problèmes majeurs, ni de crise</desc1>
                <desc2>Bon historique de gestion de projet et de crise</desc2>
-               <score>1</score>
+               <score>2</score>
                <comment></comment>
             </element>
             <element name="forkprobability" title="Fork">
@@ -83,14 +83,14 @@ http://overcrowded.anoptique.org/ForgesEtatArtReferences</comment>
                <desc0>Aucune</desc0>
                <desc1>Peu de références, pas d'usage critique</desc1>
                <desc2>Souvent implémenté sur des applications critiques</desc2>
-               <score>1</score>
+               <score>2</score>
                <comment>Les usages de GForge sont faits en entreprise, d'où rien ne filtre</comment>
             </element>
             <element name="contributingcommunity" title="Communauté des contributeurs">
                <desc0>Pas de communauté ou de réelle activité (forum, liste de diffusion…)</desc0>
                <desc1>Communauté existante avec une activité notable</desc1>
                <desc2>Communauté forte : grosse activité sur les forums, de nombreux contributeurs et défenseurs</desc2>
-               <score>1</score>
+               <score>2</score>
                <comment>Communauté de développeurs récemment devenue inactive (6mois), et communauté d'utilisateurs active</comment>
             </element>
             <element name="books" title="Livres, publications">
@@ -131,21 +131,21 @@ http://overcrowded.anoptique.org/ForgesEtatArtReferences</comment>
                <desc0>Réactivité faible sur le forum ou sur la liste de diffusion, ou rien au sujet des corrections de bugs dans les notes de versions</desc0>
                <desc1>Activité détectable mais sans processus clairement exposé, temps de résolution long</desc1>
                <desc2>Forte réactivité, basée sur des rôles et des assignations de tâches</desc2>
-               <score>0</score>
+               <score>1</score>
                <comment>Depuis quelques mois</comment>
             </element>
             <element name="activityonfunctionalities" title="Activité autour des fonctionnalités">
                <desc0>Pas ou peu de nouvelles fonctionnalités</desc0>
                <desc1>Évolution du produit conduite par une équipe dédiée ou par des utilisateurs, mais sans processus clairement exposé</desc1>
                <desc2>Les requêtes pour les nouvelles fonctionnalités sont clairement outillées, feuille de route disponible</desc2>
-               <score>0</score>
+               <score>2</score>
                <comment>Depuis quelques mois</comment>
             </element>
             <element name="activityonreleases" title="Activité sur les releases/versions">
                <desc0>Très faible activité que ce soit sur les versions de production ou de développement (alpha, beta)</desc0>
                <desc1>Activité que ce soit sur les versions de production ou de développement (alpha, beta), avec des versions correctives mineures fréquentes</desc1>
                <desc2>Activité importante avec des versions correctives fréquentes et des versions majeures planifiées liées aux prévisions de la feuille de route</desc2>
-               <score>0</score>
+               <score>1</score>
                <comment>Une version 4.6 est en préparation</comment>
             </element>
          </element>
@@ -341,14 +341,14 @@ http://overcrowded.anoptique.org/ForgesEtatArtReferences</comment>
             <desc0>Tout à la main</desc0>
             <desc1>Recompilation possible mais complexe, sans outils, ni documentation</desc1>
             <desc2>Recompilation facile, outillée (ex : make, ANT, Maven…) et documentée</desc2>
-            <score>0</score>
+            <score>1</score>
             <comment></comment>
          </element>
          <element name="codeextension" title="Facilité d'extension du code">
             <desc0>Toute modification demande une recompilation du code</desc0>
             <desc1>Architecture conçue pour des extensions statiques mais exige une recompilation</desc1>
             <desc2>Architecture de plugins, conçue pour des extensions dynamiques et sans recompilation</desc2>
-            <score></score>
+            <score>1</score>
             <comment></comment>
          </element>
       </element>
@@ -396,7 +396,7 @@ http://overcrowded.anoptique.org/ForgesEtatArtReferences</comment>
             <desc0>Le logiciel n'a pas de sponsors, l'équipe principale n'est pas rémunérée</desc0>
             <desc1>Le logiciel a un sponsor unique qui détermine sa stratégie</desc1>
             <desc2>Le logiciel est sponsorisé par l'industrie</desc2>
-            <score>0</score>
+            <score>1</score>
             <comment>Pas de sponsor en tant que tel, mais des contributeurs salariés sur des missions ponctuelles</comment>
          </element>
          <element name="strategicalindependence" title="Indépendance stratégique">
