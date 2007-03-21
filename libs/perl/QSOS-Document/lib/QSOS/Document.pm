@@ -1,4 +1,4 @@
-# $Id: Document.pm,v 1.22 2007/02/20 18:10:42 goneri Exp $
+# $Id: Document.pm,v 1.23 2007/03/21 13:24:55 goneri Exp $
 #
 #  Copyright (C) 2006 Atos Origin 
 #
@@ -64,7 +64,7 @@ sub _getsectionbyname {
     return;
   }
   if (!exists $self->{section}->{$name}) {
-    print "ERR: no section called $name in $self->{file}\n";
+    print "WARN: no section called $name in $self->{file}\n";
     return;
   }
   if (ref $self->{section}->{$name} ne 'HASH') {
