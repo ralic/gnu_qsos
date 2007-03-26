@@ -1,4 +1,4 @@
-#$Id: update_sheet.sh,v 1.11 2007/01/29 12:47:39 goneri Exp $
+#$Id: update_sheet.sh,v 1.12 2007/03/26 11:11:27 goneri Exp $
 #  Copyright (C) 2006 Atos Origin 
 #
 #  Author: Gonéri Le Bouder <goneri.lebouder@atosorigin.com>
@@ -19,7 +19,7 @@
 ######
 #  This script checkout current sheet from the CVS, translate them
 #  to xhtml and upload them on a ftp server
-
+set -e
 . qsos.cfg || exit 1
 
 createSheet () {
