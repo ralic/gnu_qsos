@@ -1,5 +1,5 @@
 <html>
-</head>
+<head>
 <title>Empty QSOS sheets</title>
 <link rel="stylesheet" type="text/css" href="%%CSS_LISTING%%" />
 </head>
