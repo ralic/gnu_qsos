@@ -1,6 +1,5 @@
-#!/bin/sh
-#$Id: update_sheet.sh,v 1.13 2007/03/31 01:57:05 goneri Exp $
-#  Copyright (C) 2006 2007 Atos Origin 
+#$Id: update_sheet.sh,v 1.14 2007/04/06 12:30:47 goneri Exp $
+#  Copyright (C) 2006 Atos Origin 
 #
 #  Author: Gonéri Le Bouder <goneri.lebouder@atosorigin.com>
 #
@@ -20,7 +19,6 @@
 ######
 #  This script checkout current sheet from the CVS, translate them
 #  to xhtml and upload them on a ftp server
-set -e
 
 . qsos.cfg || exit 1
 
@@ -93,9 +91,11 @@ createIndex () {
   sed s!%%DIRECTORY%%!"$DIR"! \
   > $DIR/index.html
 
-  echo index $DIR/index.html created
-}
 
+
+  echo index $DIR/index.html created
+
+}
 # FIXME if mkdir failed, web site is removed...
 upload () {
 cat <<eof | lftp
@@ -112,13 +112,10 @@ eof
 }
 
 deploy_local () {
-if [ ! -d $LOCAL_DIR_SHEETS ] || [ ! -d $LOCAL_DIR_TEMPLATES ]; then
-  echo "LOCAL_DIR_SHEETS and LOCAL_DIR_TEMPLATES must exist"
-  exit 1
-fi
-
-rm -rf $LOCAL_DIR_SHEETS/*
-rm -rf $LOCAL_DIR_TEMPLATES/*
+rm -rf $LOCAL_DIR_SHEETS
+rm -rf $LOCAL_DIR_TEMPLATES
+mkdir -p $LOCAL_DIR_SHEETS
+mkdir -p $LOCAL_DIR_TEMPLATES
 cp -rv $DESTDIR_SHEETS/* $LOCAL_DIR_SHEETS
 cp -rv $DESTDIR_TEMPLATES/* $LOCAL_DIR_TEMPLATES
 }
@@ -148,6 +145,7 @@ for i in `find  -type d`; do
 done
 
 createIndex "template" $DESTDIR_TEMPLATES 
+
 if [ "$FTP_UPLOAD" = "yes" ]
 then
   upload

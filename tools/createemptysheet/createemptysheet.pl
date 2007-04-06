@@ -18,7 +18,6 @@ sub getLanguage {
   foreach (<FILE>) {
     if (/<language>(\S+)<\/language>/) {
       $insheetlang = $1;
-      last;
     }
   }
   close $file;

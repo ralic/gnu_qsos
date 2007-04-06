@@ -34,7 +34,7 @@ clean:
 	dh_testroot
 
 	# Add commands to clean up after the build process here
-	[ ! -f Makefile ] || $(MAKE) clean
+	[ ! -f Makefile ] || $(MAKE) realclean
 
 	dh_clean build-stamp install-stamp
 

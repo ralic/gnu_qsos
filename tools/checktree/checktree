@@ -1,5 +1,5 @@
 #!/bin/sh
-# $Id: checktree,v 1.6 2007/03/21 13:25:48 goneri Exp $
+# $Id: checktree,v 1.7 2007/04/06 12:30:46 goneri Exp $
 # Gonéri Le Bouder
 
 set -e

@@ -1,5 +1,5 @@
 <html>
-<head>
+</head>
 <title>Qsos repository %%DIRECTORY%%</title>
 <link rel="stylesheet" type="text/css" href="%%CSS_LISTING%%" />
 </head>
@@ -9,7 +9,7 @@
 %%LIST%%
 </div>
 <p>
-<a href="/sheets/index.html">Access to QSOS sheet</a>
+<a href="/sheets/templates/">Access to QSOS sheet templates</a>
 </p>
 </body>
 </html>
