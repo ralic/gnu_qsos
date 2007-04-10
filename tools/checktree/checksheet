@@ -1,16 +1,23 @@
 #!/bin/sh
-# $Id: checksheet,v 1.4 2007/02/27 13:24:43 Nyco Exp $
+# $Id: checksheet,v 1.5 2007/04/10 16:27:33 goneri Exp $
 # Gonéri Le Bouder
 
 set -e
 
-DIR=`pwd`
-SYNCGLOBALDESC="$DIR/../syncglobaldesc/syncglobaldesc"
-CREATEEMPTYSHEET="$DIR/../createemptysheet/createemptysheet.pl"
-QSOSLINT="$DIR/../qsoslint/qsoslint"
-SHEETDIR="$DIR/../../sheet"
+if [ -f ~/.qsos.conf ]; then
+  . ~/.qsos.conf
+else
+  echo "Please create a ~/.qsos.conf file with this content:"
+  echo "BASEDIR=\$HOME/whereqsosisinstalled"
+  BASEDIR="`pwd`/../../"
+fi
+echo "basedur = $BASEDIR"
+SYNCGLOBALDESC="$BASEDIR/tools/syncglobaldesc/syncglobaldesc"
+CREATEEMPTYSHEET="$BASEDIR/tools/createemptysheet/createemptysheet.pl"
+QSOSLINT="$BASEDIR/tools/qsoslint/qsoslint"
+SHEETDIR="$BASEDIR/sheet"
 INCLUDEDIR="$SHEETDIR/include"
-
+echo $SHEETDIR
 sheet=$1
 sheetbasename=$(basename $sheet)
 if [ ! -f $sheet ]; then
@@ -44,7 +51,7 @@ if [ ! "$normalfilename" = "$sheetbasename"  ]; then
   echo "the sheet name ($sheetbasename) is malformed. Should be"
   echo "$normalfilename (qsosappname-release.qsos or" 
   echo "qsosappname-release_language.qsos)"
-#  exit 1
+  exit 1
 fi
 
 family=$(egrep '[\t\ ]*<qsosappfamily>.*</qsosappfamily>' $sheet|sed 's/.*>\(.*\)<.*/\1/')
