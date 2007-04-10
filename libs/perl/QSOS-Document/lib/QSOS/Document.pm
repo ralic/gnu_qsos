@@ -1,4 +1,4 @@
-# $Id: Document.pm,v 1.24 2007/04/06 12:30:46 goneri Exp $
+# $Id: Document.pm,v 1.25 2007/04/10 16:23:54 goneri Exp $
 #
 #  Copyright (C) 2006 Atos Origin 
 #
@@ -85,7 +85,16 @@ sub _pushElem {
   $deep = 0 unless $deep;
 
   unless ($elt->atts->{name}) {
-    die "ERR: Attribute without name (".$elt->first_child('comment').")";
+    my $error = '';
+
+    if ($elt->first_child('title')) {
+      $error .= "title: `".$elt->first_child('title')."' "
+    }
+    if ($elt->first_child('comment')) {
+      $error .= "comment: `".$elt->first_child('comment')."'"
+    }
+
+    die "ERR: Attribute without name ($error)\n";
   }
 
   my $h = {
@@ -396,6 +405,7 @@ sub getappname {
 
   my @root = $self->{twig}->root->children;
   my $header = shift @root;
+  return unless $header->first_child('appname');
   $header->first_child('appname')->text();
 
 }
@@ -406,6 +416,7 @@ sub setappname {
   $appname = "" unless defined $appname;
   my @root = $self->{twig}->root->children;
   my $header = shift @root;
+  return unless $header->first_child('appname');
   $header->first_child('appname')->set_text($appname);
 
 }
@@ -415,6 +426,7 @@ sub getlanguage {
 
   my @root = $self->{twig}->root->children;
   my $header = shift @root;
+  return unless $header->first_child('language');
   $header->first_child('language')->text();
 
 }
@@ -434,6 +446,7 @@ sub getrelease {
 
   my @root = $self->{twig}->root->children;
   my $header = shift @root;
+  return unless $header->first_child('release');
   $header->first_child('release')->text();
 
 }
@@ -469,6 +482,7 @@ sub getlicenseid {
 
   my @root = $self->{twig}->root->children;
   my $header = shift @root;
+  return unless $header->first_child('licenseid');
   $header->first_child('licenseid')->text();
 
 }
@@ -488,6 +502,7 @@ sub getlicensedesc {
 
   my @root = $self->{twig}->root->children;
   my $header = shift @root;
+  return unless $header->first_child('licensedesc');
   $header->first_child('licensedesc')->text();
 
 }
@@ -509,6 +524,7 @@ sub geturl {
 
   my @root = $self->{twig}->root->children;
   my $header = shift @root;
+  return unless $header->first_child('url');
   $header->first_child('url')->text();
 
 }
@@ -528,6 +544,7 @@ sub getdesc {
 
   my @root = $self->{twig}->root->children;
   my $header = shift @root;
+  return $header->first_child('desc');
   $header->first_child('desc')->text();
 
 }
@@ -547,6 +564,7 @@ sub getdemourl {
 
   my @root = $self->{twig}->root->children;
   my $header = shift @root;
+  return unless $header->first_child('demourl');
   $header->first_child('demourl')->text();
 
 }
@@ -567,6 +585,7 @@ sub getqsosformat {
 
   my @root = $self->{twig}->root->children;
   my $header = shift @root;
+  return unless $header->first_child('qsosformat');
   $header->first_child('qsosformat')->text();
 
 }
@@ -587,6 +606,7 @@ sub getqsosspecificformat {
 
   my @root = $self->{twig}->root->children;
   my $header = shift @root;
+  return unless $header->first_child('qsosspecificformat');
   $header->first_child('qsosspecificformat')->text();
 
 }
@@ -607,6 +627,7 @@ sub getqsosappfamily {
 
   my @root = $self->{twig}->root->children;
   my $header = shift @root;
+  return unless $header->first_child('qsosappfamily');
   $header->first_child('qsosappfamily')->text();
 
 }
@@ -626,9 +647,11 @@ sub getqsosappname {
 
   my @root = $self->{twig}->root->children;
   my $header = shift @root;
+  return unless $header->first_child('qsosappname');
   $header->first_child('qsosappname')->text();
 
 }
+
 =head1 NAME
 
 QSOS::Document - QSOS file access
