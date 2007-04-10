@@ -1,0 +1,71 @@
+#!/usr/bin/perl -w
+# $Id: importsheet,v 1.1 2007/04/10 16:26:57 goneri Exp $
+use strict;
+use lib '/home/qsos/cvs_qsos/qsos/libs/perl/QSOS-Document/lib/';
+use QSOS::Document;
+use File::Copy;
+
+my $basedir = "/home/qsos/cvs_qsos/qsos/";
+my $sheetdir = "$basedir/sheet";
+my $toolsdir = "$basedir/tools";
+
+sub usage {
+  print "commit.pl qsos-sheet.qsos";
+  exit 1;
+}
+
+my $file = shift;
+usage() unless $file && -f $file;
+
+my $qsos = new QSOS::Document;
+$qsos->load($file);
+
+my $qsosappfamily = $qsos->getqsosappfamily();
+my $qsosappname = $qsos->getqsosappname();
+my $release = $qsos->getrelease();
+my $language = $qsos->getlanguage();
+
+if (! $qsosappfamily) {
+  print "<qsosappfamily/> tag is empty!\n";
+  exit 1;
+}
+
+if (! $qsosappname) {
+  print "<qsosappname/> tag is empty!\n";
+  exit 1;
+}
+
+if (-d "$sheetdir/$qsosappname") {
+  print "<qsosappname/> is an invalide appname!\n";
+  exit 1;
+}
+
+if (! $release) {
+  print "<release/> tag is empty!\n";
+  exit 1;
+}
+
+if ($language !~ /^\w\w$/ ) {
+  print "<language/> is malformed!\n";
+  exit 1;
+}
+
+$language = '' if $language eq 'en';
+
+print $qsosappfamily."\n";
+print $qsosappname."\n";
+print $release."\n";
+my $finalfile = "$sheetdir/$qsosappfamily/$qsosappname/$qsosappname-$release".($language?"_$language":"").".qsos";
+
+mkdir ("$sheetdir/$qsosappfamily/$qsosappname");
+copy ($file,$finalfile) or die "Can't copy the sheet to the repository";
+my @checksheetret = `$toolsdir/checktree/checksheet $finalfile`;
+if (($? >> 8)!=0) {
+  print "\n\n**check failed!";
+  foreach (@checksheetret) {
+    print $_
+  }
+} else {
+  print "Thank you for your contribution!\n";
+}
+
