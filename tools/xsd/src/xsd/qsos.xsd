@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema    xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+               elementFormDefault="qualified">
+    <xsd:element name="header">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element ref="authors"/>
+                <xsd:element ref="dates"/>
+                <xsd:element ref="language"/>
+                <xsd:element ref="appname"/>
+                <xsd:element ref="release"/>
+                <xsd:element ref="licenseid"/>
+                <xsd:element ref="licensedesc"/>
+                <xsd:element ref="url"/>
+                <xsd:element ref="desc"/>
+                <xsd:element ref="demourl"/>
+                <xsd:element ref="qsosformat"/>
+                <xsd:element ref="qsosappfamily"/>
+                <xsd:element ref="qsosspecificformat"/>
+                <xsd:element ref="qsosappname"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+    <xsd:element name="authors">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element ref="author"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+    <xsd:element name="author">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element ref="email"/>
+                <xsd:element ref="name"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+    <xsd:element name="email" type="xsd:string"/>
+    <xsd:element name="name" type="xsd:string"/>
+    <xsd:element name="dates">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element ref="creation"/>
+                <xsd:element ref="validation"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+    <xsd:element name="creation">
+        <xsd:simpleType>
+            <xsd:restriction base="xsd:string">
+                <xsd:pattern value="([0-9][0-9][0-9][0-9]-[0-9][0-9]-[0-9]|)"/>
+            </xsd:restriction>
+        </xsd:simpleType>        
+    </xsd:element>
+    <xsd:element name="validation">
+        <xsd:simpleType>
+            <xsd:restriction base="xsd:string">
+                <xsd:pattern value="([0-9][0-9][0-9][0-9]-[0-9][0-9]-[0-9]|)"/>
+            </xsd:restriction>
+        </xsd:simpleType>                
+    </xsd:element>
+    <xsd:element name="desc" type="xsd:string"/>
+    <xsd:element name="language" type="xsd:language"/>
+    <xsd:element name="appname" type="xsd:string"/>
+    <xsd:element name="release" type="xsd:string"/>
+    <xsd:element name="licenseid" type="xsd:integer"/>
+    <xsd:element name="licensedesc" type="xsd:string"/>
+    <xsd:element name="url" type="xsd:anyURI"/>
+    <xsd:element name="demourl" type="xsd:string"/>
+    <xsd:element name="qsosformat" type="xsd:string"/>
+    <xsd:element name="qsosappfamily" type="xsd:string"/>
+    <xsd:element name="qsosspecificformat" type="xsd:string"/>
+    <xsd:element name="qsosappname" type="xsd:string"/>    
+
+    <xsd:element name="section">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element ref="desc"/>
+                <xsd:element maxOccurs="unbounded" ref="element"/>
+            </xsd:sequence>
+            <xsd:attribute name="name" use="required" type="xsd:ID"/>
+            <xsd:attribute name="title" use="required" type="xsd:string"/>
+        </xsd:complexType>
+    </xsd:element>
+    
+    
+    <xsd:element     name="comment"  type="xsd:string"/>
+    <xsd:element     name="desc0"    type="xsd:string"/>
+    <xsd:element     name="desc1"    type="xsd:string"/>
+    <xsd:element     name="desc2"    type="xsd:string"/>
+    
+    <xsd:element name="score">
+        <xsd:simpleType>
+            <xsd:restriction base="xsd:integer">                
+                <xsd:enumeration value="0"/>
+                <xsd:enumeration value="1"/>
+                <xsd:enumeration value="2"/>
+            </xsd:restriction>
+        </xsd:simpleType>
+    </xsd:element> 
+    
+    <xsd:element name="element">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element ref="desc"      minOccurs="0" maxOccurs="1"/>
+                <xsd:element ref="element"   minOccurs="0" maxOccurs="unbounded"/>                
+                <xsd:element ref="desc0"     minOccurs="0" maxOccurs="1" />
+                <xsd:element ref="desc1"     minOccurs="0" maxOccurs="1" />
+                <xsd:element ref="desc2"     minOccurs="0" maxOccurs="1" /> 
+                <xsd:element ref="score"     minOccurs="0" maxOccurs="1"/>                 
+                <xsd:element ref="comment"   minOccurs="0" maxOccurs="1"   />
+            </xsd:sequence>
+            <xsd:attribute name="name" use="required" type="xsd:ID"/>
+            <xsd:attribute name="title" use="required" type="xsd:string"/>
+        </xsd:complexType>
+    </xsd:element>
+
+    
+            
+    <xsd:element name="document">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element     ref="header"/>
+                <xsd:element     minOccurs="1" 
+                                 maxOccurs="unbounded" 
+                                 ref="section"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+    
+</xsd:schema>
