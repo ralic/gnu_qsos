@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xsd:schema    xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+<xsd:schema    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
                elementFormDefault="qualified">
     <xsd:element name="header">
         <xsd:complexType>
@@ -51,14 +51,14 @@
             <xsd:restriction base="xsd:string">
                 <xsd:pattern value="([0-9][0-9][0-9][0-9]-[0-9][0-9]-[0-9]|)"/>
             </xsd:restriction>
-        </xsd:simpleType>        
+        </xsd:simpleType>
     </xsd:element>
     <xsd:element name="validation">
         <xsd:simpleType>
             <xsd:restriction base="xsd:string">
                 <xsd:pattern value="([0-9][0-9][0-9][0-9]-[0-9][0-9]-[0-9]|)"/>
             </xsd:restriction>
-        </xsd:simpleType>                
+        </xsd:simpleType>
     </xsd:element>
     <xsd:element name="desc" type="xsd:string"/>
     <xsd:element name="language" type="xsd:language"/>
@@ -71,7 +71,7 @@
     <xsd:element name="qsosformat" type="xsd:string"/>
     <xsd:element name="qsosappfamily" type="xsd:string"/>
     <xsd:element name="qsosspecificformat" type="xsd:string"/>
-    <xsd:element name="qsosappname" type="xsd:string"/>    
+    <xsd:element name="qsosappname" type="xsd:string"/>
 
     <xsd:element name="section">
         <xsd:complexType>
@@ -83,32 +83,37 @@
             <xsd:attribute name="title" use="required" type="xsd:string"/>
         </xsd:complexType>
     </xsd:element>
-    
-    
+
+
     <xsd:element     name="comment"  type="xsd:string"/>
     <xsd:element     name="desc0"    type="xsd:string"/>
     <xsd:element     name="desc1"    type="xsd:string"/>
     <xsd:element     name="desc2"    type="xsd:string"/>
-    
+
     <xsd:element name="score">
         <xsd:simpleType>
-            <xsd:restriction base="xsd:integer">                
+        <!--
+            <xsd:restriction base="xsd:integer">
                 <xsd:enumeration value="0"/>
                 <xsd:enumeration value="1"/>
                 <xsd:enumeration value="2"/>
             </xsd:restriction>
+            -->
+            <xsd:restriction base="xsd:string">
+        		<xsd:pattern value="(^$|0|1|2)"/>
+      		</xsd:restriction>
         </xsd:simpleType>
-    </xsd:element> 
-    
+    </xsd:element>
+
     <xsd:element name="element">
         <xsd:complexType>
             <xsd:sequence>
                 <xsd:element ref="desc"      minOccurs="0" maxOccurs="1"/>
-                <xsd:element ref="element"   minOccurs="0" maxOccurs="unbounded"/>                
+                <xsd:element ref="element"   minOccurs="0" maxOccurs="unbounded"/>
                 <xsd:element ref="desc0"     minOccurs="0" maxOccurs="1" />
                 <xsd:element ref="desc1"     minOccurs="0" maxOccurs="1" />
-                <xsd:element ref="desc2"     minOccurs="0" maxOccurs="1" /> 
-                <xsd:element ref="score"     minOccurs="0" maxOccurs="1"/>                 
+                <xsd:element ref="desc2"     minOccurs="0" maxOccurs="1" />
+                <xsd:element ref="score"     minOccurs="0" maxOccurs="1"/>
                 <xsd:element ref="comment"   minOccurs="0" maxOccurs="1"   />
             </xsd:sequence>
             <xsd:attribute name="name" use="required" type="xsd:ID"/>
@@ -116,17 +121,17 @@
         </xsd:complexType>
     </xsd:element>
 
-    
-            
+
+
     <xsd:element name="document">
         <xsd:complexType>
             <xsd:sequence>
                 <xsd:element     ref="header"/>
-                <xsd:element     minOccurs="1" 
-                                 maxOccurs="unbounded" 
+                <xsd:element     minOccurs="1"
+                                 maxOccurs="unbounded"
                                  ref="section"/>
             </xsd:sequence>
         </xsd:complexType>
     </xsd:element>
-    
+
 </xsd:schema>
