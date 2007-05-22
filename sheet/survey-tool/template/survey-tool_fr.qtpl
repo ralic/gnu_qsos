@@ -17,6 +17,7 @@
       <demourl></demourl>
       <qsosformat>1.7</qsosformat>
       <qsosappfamily>Outil d'enquête en ligne</qsosappfamily>
+      <qsosappname>survey-tool</qsosappname>
       <qsosspecificformat>1.0</qsosspecificformat>
    </header>
    <include section="generic"></include>
@@ -322,7 +323,7 @@
             <desc>Mécanismes de répartition de charge disponibles</desc>
             <desc0>Aucun mécanisme de répartition de charge n'est disponible</desc0>
             <desc1>Possibilité de répartir la charge entre plusieurs serveurs mais via des produits tiers ou sans affinité de session</desc1>
-            <desc2>Présence d'un mécanisme  e répartition de charge avec affinité de session</desc2>
+            <desc2>Présence d'un mécanisme de répartition de charge avec affinité de session</desc2>
             <score></score>
             <comment></comment>
          </element>
