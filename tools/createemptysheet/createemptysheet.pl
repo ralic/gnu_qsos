@@ -57,7 +57,7 @@ open QTPL,"<$qtpl" or die "Failed to open $qtpl: $?";
 close QTPL;
 
 while (my $line = shift @buff) {
-  if ($line =~ /<include\W+section="([-\w]+)"\W*(|\/)>/) { # this is an include
+  if ($line =~ /<include\W+section="([-\w]+)"\W*(|\/)>/ || $line =~ /<include\W+section="([-\w]+)"\W*>\W*<\/include>/) { # this is an include
     if ($lang ne 'en' && -f "$includedir/$1_$lang.qin" ) {
       open INCLUDE, "<$includedir/$1_$lang.qin" or die "Failed to open ".
       "localised includefile"
