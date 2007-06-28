@@ -17,7 +17,7 @@
       <demourl></demourl>
       <qsosformat>1.7</qsosformat>
       <qsosappfamily>e-learning</qsosappfamily>
-      <qsosappname>e-learning</qsosappname>
+      <qsosappname></qsosappname>
       <qsosspecificformat>1.0</qsosspecificformat>
    </header>
    <include section="generic"></include>
