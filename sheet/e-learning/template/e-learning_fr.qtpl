@@ -20,7 +20,7 @@
       <qsosappname></qsosappname>
       <qsosspecificformat>1.0</qsosspecificformat>
    </header>
-   <include section="generic"></include>
+   <include section="generic"/>
    <section name="registrationadministration" title="Inscriptions et gestion">
      <desc></desc>
      <comment></comment>
