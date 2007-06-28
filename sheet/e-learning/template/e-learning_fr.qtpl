@@ -20,7 +20,7 @@
       <qsosappname>e-learning</qsosappname>
       <qsosspecificformat>1.0</qsosspecificformat>
    </header>
-   <include section="generic_fr"></include>
+   <include section="generic"></include>
    <section name="registrationadministration" title="Inscriptions et gestion">
      <desc></desc>
      <comment></comment>
