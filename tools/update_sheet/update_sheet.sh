@@ -1,4 +1,4 @@
-#$Id: update_sheet.sh,v 1.15 2007/06/28 10:23:06 goneri Exp $
+#$Id: update_sheet.sh,v 1.16 2007/06/28 10:41:07 goneri Exp $
 #  Copyright (C) 2006 Atos Origin 
 #
 #  Author: Gonéri Le Bouder <goneri.lebouder@atosorigin.com>
@@ -45,14 +45,16 @@ createTemplate () {
 
   
   echo converting template $FILE  to $DIR/$FILE
+
+perl $CREATEEMPTYSHEET --include=$INCLUDE_DIR --qtpl=$FULLPATH > $DIR/$QSOS_FILE
 # Caramba !
-cat $FULLPATH | perl -nle "
-if (/<include\W+section=\"(\w*)\"\W+>/) {
-        \$f = \"$INCLUDE_DIR/\$1.qin\";
-        if (-f \$f && (open FILE,\"<\$f\")) {
-                foreach (<FILE>) {chomp;print};
-        } else { die \"can not open \$f\" }
-} else {print}" > $DIR/$QSOS_FILE
+#cat $FULLPATH | perl -nle "
+#if (/<include\W+section=\"(\w*)\"\W+>/) {
+#        \$f = \"$INCLUDE_DIR/\$1.qin\";
+#        if (-f \$f && (open FILE,\"<\$f\")) {
+#                foreach (<FILE>) {chomp;print};
+#        } else { die \"can not open \$f\" }
+#} else {print}" > $DIR/$QSOS_FILE
 
 xsltproc $XSLT_QTPL $DIR/$QSOS_FILE|sed s!%%CSS_SHEET%%!"$CSS_SHEET"! - > $DIR/$HTML_FILE
 }
