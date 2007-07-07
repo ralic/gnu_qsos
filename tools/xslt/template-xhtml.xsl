@@ -34,7 +34,7 @@
         </h1>
         <xsl:apply-templates select="document"/>
         <small>
-          <a href="http://QSOS.org">the QSOS method</a>
+          <a href="http://www.qsos.org">The QSOS method</a>
         </small>
       </body>
     </html>
