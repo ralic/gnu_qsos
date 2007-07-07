@@ -1,6 +1,6 @@
 <html>
 </head>
-<title>Qsos repository %%DIRECTORY%%</title>
+<title>QSOS repository %%DIRECTORY%%</title>
 <link rel="stylesheet" type="text/css" href="%%CSS_LISTING%%" />
 </head>
 <body>
@@ -9,7 +9,7 @@
 %%LIST%%
 </div>
 <p>
-<a href="/sheets/templates/">Access to QSOS sheet templates</a>
+<a href="/templates/">Access to QSOS templates</a>
 </p>
 </body>
 </html>

@@ -1,6 +1,6 @@
 <html>
 </head>
-<title>Empty QSOS sheets</title>
+<title>QSOS Templates</title>
 <link rel="stylesheet" type="text/css" href="%%CSS_LISTING%%" />
 </head>
 <body>
@@ -9,7 +9,7 @@
 %%LIST%%
 </div>
 <p>
-<a href="/sheets/index.html">Access to QSOS Sheets</a>.
+<a href="/sheets/index.html">Access to QSOS sheets</a>.
 </p>
 </body>
 </html>
