@@ -30,6 +30,7 @@ $msg['g_license_notice'] = "The content of this page is under the <a href='http:
 //Step 1 (index.php)
 $msg['s1_title'] = "Step 1 - Select a software family";
 $msg['s1_table_title'] = "Software families";
+$msg['s1_no_evaluations'] = "No evaluation match your locale";
 $msg['s1_search'] = "or search by keywords";
 $msg['s1_button'] = "Search!";
 //Step 1 (search.php)

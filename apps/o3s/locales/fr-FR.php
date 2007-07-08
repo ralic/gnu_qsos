@@ -30,6 +30,7 @@ $msg['g_license_notice'] = "Le contenu de cette page est soumis à la  <a href='
 //Step 1 (index.php)
 $msg['s1_title'] = "Etape 1 - Sélectionner un domaine logiciel";
 $msg['s1_table_title'] = "Domaines logiciels";
+$msg['s1_no_evaluations'] = "Aucune évaluation disponible dans votre langue";
 $msg['s1_search'] = "ou effectuer une recherche par mots-clés";
 $msg['s1_button'] = "Chercher";
 //Step 1 (search.php)

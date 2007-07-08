@@ -30,6 +30,7 @@ session_destroy();
 $_SESSION = array();
 
 include("config.php");
+include("fs.functions.php");
 include("locales/$lang.php");
 
 echo "<html>\n";
@@ -118,33 +119,11 @@ if (isset($_FILES['weighting'])) {
 	}
 }
 
-$tree= retrieveTree($sheet.$delim.$family);
+$tree= retrieveLocalizedTree($sheet.$delim.$family, $locale);
 $keys = array_keys($tree);
-function retrieveTree($path)  {
-	global $delim;
-	
-	if ($dir=@opendir($path)) {
-	while (($element=readdir($dir))!== false) {
-		if (is_dir($path.$delim.$element) 
-		&& $element != "." 
-		&& $element != ".." 
-		&& $element != "CVS" 
-		&& $element != "template" 
-		&& $element != "templates" 
-		&& $element != ".svn") {
-			$array[$element] = retrieveTree($path.$delim.$element);
-		} elseif (substr($element, -5) == ".qsos") {
-			$array[] = $element;
-		}
-	}
-	closedir($dir);
-	}
-	return (isset($array) ? $array : false);
-}
 
 $file = $tree[$keys[0]][0];
 $file = $sheet.$delim.$family.$delim.$keys[0].$delim.$file;
-
 
 $myDoc = new QSOSDocument($file);
 $tree = $myDoc->getTree();

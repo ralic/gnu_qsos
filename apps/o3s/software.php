@@ -26,6 +26,7 @@
 
 session_start();
 include("config.php");
+include("fs.functions.php");
 include("locales/$lang.php");
 
 echo "<html>\n";
@@ -85,30 +86,8 @@ if (!isset($_SESSION["generic"])) {
 	}
 }
 
-$tree= retrieveTree($sheet.$delim.$family); 
+$tree = retrieveLocalizedTree($sheet.$delim.$family, $locale);
 $keys = array_keys($tree);
-
-function retrieveTree($path)  {
-	global $delim;
-	
-	if ($dir=@opendir($path)) {
-	while (($element=readdir($dir))!== false) {
-		if (is_dir($path.$delim.$element) 
-		&& $element != "." 
-		&& $element != ".." 
-		&& $element != "CVS" 
-		&& $element != "template" 
-		&& $element != "templates" 
-		&& $element != ".svn") {
-			$array[$element] = retrieveTree($path.$delim.$element);
-		} elseif (substr($element, -5) == ".qsos") {
-			$array[] = $element;
-		}
-	}
-	closedir($dir);
-	}
-	return (isset($array) ? $array : false);
-}
 
 echo "<div style='font-weight: bold'>".
 	$msg['s3_title'].

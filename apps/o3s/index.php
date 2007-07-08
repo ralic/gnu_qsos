@@ -25,6 +25,7 @@
 */
 
 include("config.php");
+include("fs.functions.php");
 include("locales/$lang.php");
 
 echo "<html>\n";
@@ -37,44 +38,27 @@ echo "<center>\n";
 echo "<img src='skins/$skin/o3s.png'/>\n";
 echo "<br/><br/>\n";
 
-//Returns array of software families
-function getFamilies($dir) {
-   	global $delim;
-	$families = array();
-	if (is_dir($dir)) {
-		if ($dh = opendir($dir)) {
-			while (($file = readdir($dh)) !== false) {
-				if (is_dir($dir.$delim.$file) 
-				&& ($file != 'CVS') 
-				&& ($file != '.') 
-				&& ($file != '..') 
-				&& ($file != 'include') 
-				&& ($file != 'template') 
-				&& ($file != 'templates') 
-				&& ($file != '.svn')) {
-					array_push($families, $file);
-				}
-			}
-			closedir($dh);
-		}
-	}
-	return (isset($families) ? $families : false);
-}
-
-$families = getFamilies($sheet);
-
 echo "<div style='font-weight: bold'>".$msg['s1_title']."<br/><br/>\n";
 
 echo "<table style='border-collapse: collapse'>\n";
-echo "<tr class='title'>\n";
-echo "<td>".$msg['s1_table_title']."</td>\n";
-echo "</tr>\n";
 
-for ($i=0; $i<count($families); $i++) {
-	echo "<tr class='level1' 
-		onmouseover=\"this.setAttribute('class','highlight')\" 
-		onmouseout=\"this.setAttribute('class','level1')\">\n";
-	echo "<td><a href='set_weighting.php?family=$families[$i]'>$families[$i]</a></td>\n";
+$tree = retrieveLocalizedTree($sheet, $locale);
+if (count($tree)) {
+	echo "<tr class='title'>\n";
+	echo "<td>".$msg['s1_table_title']."</td>\n";
+	echo "</tr>\n";
+	
+	$families = array_keys(retrieveLocalizedTree($sheet, $locale));
+	for ($i=0; $i<count($families); $i++) {
+		echo "<tr class='level1' 
+			onmouseover=\"this.setAttribute('class','highlight')\" 
+			onmouseout=\"this.setAttribute('class','level1')\">\n";
+		echo "<td><a href='set_weighting.php?family=$families[$i]'>$families[$i]</a></td>\n";
+		echo "</tr>\n";
+	}
+} else {
+	echo "<tr class='title'>\n";
+	echo "<td>".$msg['s1_no_evaluations']."</td>\n";
 	echo "</tr>\n";
 }
 

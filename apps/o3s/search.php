@@ -9,6 +9,7 @@ $_SESSION = array();
 $searchstr = $_REQUEST['s'];
 
 include("config.php");
+include("fs.functions.php");
 include("locales/$lang.php");
 
 echo "<html>\n";
@@ -30,37 +31,39 @@ echo "</form></p>\n";
 echo "</center>\n";
 
 if (! empty($searchstr)) {
-     // empty() is used to check if we've any search string.
-     // If we do, call grep and display the results.
-     echo '<hr/>';
-     // Call grep with case-insensitive search mode on all files
-     $cmdstr = "grep -i -l $searchstr $sheet/*/*/*.qsos";
-     $fp = popen($cmdstr, 'r'); // open the output of command as a pipe
-     $myresult = array(); // to hold my search results
-     while ($buffer = fgetss($fp, 4096)) {
-          // grep returns in the format
-          // filename: line
-          // So, we use split() to split the data
-          list($fname, $fline) = split(':', $buffer, 2);
-          // we take only the first hit per file
-          if (! defined($myresult[$fname])) {
-              $myresult[$fname] = $fline;
-          }
-      }
-      // we have results in a hash. lets walk through it and print it
-      if (count($myresult)) {
-           echo '<ul><br/>';
-           while (list($fname, $fline) = each ($myresult)) {
-		$name = basename($fname, ".qsos");
-               echo "<li><a href='show.php?svg=yes&s=$searchstr&f[]=$fname'>$name</a></li>\n";
-           }
-           echo '</ul><br/>';
-       } else { 
-            // no hits
-            echo $msg['s1_search_msg1']."<strong>$searchstr</strong>".$msg['s1_search_msg2']."<br/>\n";
-       }
-       pclose($fp);
-   }
+	// empty() is used to check if we've any search string.
+	// If we do, call grep and display the results.
+	echo '<hr/>';
+	// Call grep with case-insensitive search mode on all files
+	$cmdstr = "grep -i -l $searchstr $sheet/*/*/*.qsos";
+	$fp = popen($cmdstr, 'r'); // open the output of command as a pipe
+	$myresult = array(); // to hold my search results
+	while ($buffer = fgetss($fp, 4096)) {
+			// grep returns in the format
+			// filename: line
+			// So, we use split() to split the data
+			list($fname, $fline) = split(':', $buffer, 2);
+			$fname = trim($fname);
+			// we take only the first hit per file matching the locale filter
+			if (isLocalizedName($fname, $locale) && ! defined($myresult[$fname])) {
+				$myresult[$fname] = $fline;
+			}
+	}
+
+	// we have results in a hash. lets walk through it and print it
+	if (count($myresult)) {
+		echo '<ul><br/>';
+		while (list($fname, $fline) = each ($myresult)) {
+			$name = basename($fname, ".qsos");
+			echo "<li><a href='show.php?svg=yes&s=$searchstr&f[]=$fname'>$name</a></li>\n";
+		}
+		echo '</ul><br/>';
+	} else { 
+		// no hits
+		echo $msg['s1_search_msg1']."<strong>$searchstr</strong>".$msg['s1_search_msg2']."<br/>\n";
+	}
+	pclose($fp);
+}
 
 echo "</body>\n";
 echo "</html>\n";

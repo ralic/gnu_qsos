@@ -25,14 +25,14 @@
 */
 
 //Local and web paths to QSOS sheets and templates
-$sheet = "sheets";
-$sheet_web = "http://localhost:88/o3s/sheets";
-$template = "template";
-$template_web = "http://localhost:88/o3s/template";
+$sheet = "../sheets";
+$sheet_web = "http://qsos/sheets";
+$template = "../templates";
+$template_web = "http://qsos/templates";
 $delim = "/";
 
 //Path to jpgraph library (for PNG graphs)
-$jpgraph_path = "libs/jpgraph-2.1.3/src/";
+$jpgraph_path = "/home/raph/qsos/web/o3s/libs/jpgraph-2.2/src/";
 
 //Temp directory, with trailing slash
 $temp = "/tmp/";
@@ -45,4 +45,5 @@ $skin = "default";
 
 //Locale to use (locale files are stored i, locales/ subdirectory)
 $lang = "fr-FR";
+$locale = "fr";
 ?>
