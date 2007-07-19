@@ -58,13 +58,16 @@ close QTPL;
 
 while (my $line = shift @buff) {
   if ($line =~ /<include\W+section="([-\w]+)"\W*(|\/)>/ || $line =~ /<include\W+section="([-\w]+)"\W*>\W*<\/include>/) { # this is an include
+    my $include = $1;
     if ($lang ne 'en' && -f "$includedir/$1_$lang.qin" ) {
-      open INCLUDE, "<$includedir/$1_$lang.qin" or die "Failed to open ".
+      open INCLUDE, "<$includedir/".$include."_"."$lang.qin" or die "Failed to open ".
       "localised includefile"
     } else {
-      open INCLUDE, "<$includedir/$1.qin" or die "Failed to open includefile"
+      open INCLUDE, "<$includedir/$include.qin" or die "Failed to open includefile"
     }
-    unshift @buff, <INCLUDE>;
+
+    # I put the new document on the top of the buffer 
+    unshift @buff, ("<!-- BEGIN include: $include -->\n", <INCLUDE>, "<!-- END include: $include -->\n");
     close INCLUDE;
   } else {
     print $line;
