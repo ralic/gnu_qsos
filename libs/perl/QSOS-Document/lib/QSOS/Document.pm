@@ -1,4 +1,4 @@
-# $Id: Document.pm,v 1.25 2007/04/10 16:23:54 goneri Exp $
+# $Id: Document.pm,v 1.26 2007/07/19 22:31:15 goneri Exp $
 #
 #  Copyright (C) 2006 Atos Origin 
 #
@@ -544,7 +544,6 @@ sub getdesc {
 
   my @root = $self->{twig}->root->children;
   my $header = shift @root;
-  return $header->first_child('desc');
   $header->first_child('desc')->text();
 
 }
