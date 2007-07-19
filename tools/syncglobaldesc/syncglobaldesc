@@ -1,7 +1,7 @@
 #!/usr/bin/perl -w
 # this script is experimental and will be certainly rewrite
 # It depends on the CVS release of QSOS::Document
-# $Id: syncglobaldesc,v 1.5 2007/02/20 20:14:29 goneri Exp $
+# $Id: syncglobaldesc,v 1.6 2007/07/19 21:27:49 goneri Exp $
 use strict;
 
 use Getopt::Long;
@@ -64,7 +64,7 @@ if (!$less) {
     if (!(exists $t->{section}->{$_} && $t->{section}->{$_})) {
       if ($section_doesnt_exist == 0) {
         print STDERR "Section(s) not found in template $template\n"; 
-        print STDERR "Use the --less flag to hide this message\n";
+        print STDERR "Use the --less flag to ignore this message\n";
       }
       print STDERR "\t$_\n";
       $section_doesnt_exist = 1;
