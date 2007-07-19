@@ -96,7 +96,6 @@
             </element>
             <element name="importvectorialformat" title="common vectorial format">
                <desc>Format are: wmf, svg</desc>
-               <desc></desc>
                <desc0>not supported</desc0>
                <desc1>partialy (buggy or limited feature)</desc1>
                <desc2>fully supported</desc2>
@@ -105,7 +104,6 @@
             </element>
             <element name="importcommercialpcitureformat" title="commercial formats">
                <desc>Format are: psp (PaintShopPro), psd (Photopshop)</desc>
-               <desc></desc>
                <desc0>not supported</desc0>
                <desc1>partialy (buggy or limited feature)</desc1>
                <desc2>fully supported</desc2>
