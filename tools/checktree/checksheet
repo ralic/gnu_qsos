@@ -1,5 +1,5 @@
 #!/bin/sh
-# $Id: checksheet,v 1.5 2007/04/10 16:27:33 goneri Exp $
+# $Id: checksheet,v 1.6 2007/07/19 21:36:21 goneri Exp $
 # Gonéri Le Bouder
 
 set -e
@@ -18,13 +18,18 @@ QSOSLINT="$BASEDIR/tools/qsoslint/qsoslint"
 SHEETDIR="$BASEDIR/sheet"
 INCLUDEDIR="$SHEETDIR/include"
 echo $SHEETDIR
+if [ -z $1 ]; then
+  echo "No parameter!"
+  echo "usage: checksheet sheet.qsos"
+  exit 1
+fi
 sheet=$1
-sheetbasename=$(basename $sheet)
 if [ ! -f $sheet ]; then
   echo "file: $sheet doesn't exit"
   echo "usage: ./checksheet sheetname.qsos"
   exit 1
 fi
+sheetbasename=$(basename $sheet)
 
 echo "checking $sheetbasename"
 
