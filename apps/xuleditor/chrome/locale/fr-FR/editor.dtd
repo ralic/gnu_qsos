@@ -12,7 +12,9 @@
 <!ENTITY tree-expand.label "Exploser">
 <!ENTITY tree-collapse.label "Aplatir">
 <!ENTITY chat-menu.label "Chat">
-<!ENTITY chat-start.label "Démarrer">
+<!ENTITY chat-start.label "Se connecter">
+<!ENTITY chat-end.label "Se déconnecter">
+<!ENTITY chat-nick.label "Pseudonyme">
 <!ENTITY help-menu.label "Aide">
 <!ENTITY help-about.label "A propos">
 <!ENTITY name.label "Critères">

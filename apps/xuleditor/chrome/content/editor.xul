@@ -41,6 +41,8 @@
         <menu id="chat-menu" label="&chat-menu.label;" onclick="document.getElementById('chat-menu').focus();">
           <menupopup id="chat-popup">
             <menuitem id="chat-start" label="&chat-start.label;" onclick="startChat();"/>
+            <menuitem id="chat-end" label="&chat-end.label;" onclick="doLogout();" disabled="true"/>
+            <menuitem id="chat-nick" label="&chat-nick.label;" onclick="changeNick();"/>
           </menupopup>
         </menu>
         <menu id="help-menu" label="&help-menu.label;" onclick="document.getElementById('help-menu').focus();">
