@@ -367,8 +367,7 @@ function openFile() {
     document.getElementById("f-url").value = myDoc.geturl();
     document.getElementById("f-demourl").value = myDoc.getdemourl();
 
-    //docChanged = "false";
-    //myDoc = window.arguments[0];
+    //Authors
     var authors = myDoc.getauthors();
     var mylist = document.getElementById("f-a-list");
     for(var i=0; i < authors.length; i++) {
@@ -447,6 +446,16 @@ function openRemoteFile(url) {
   document.getElementById("f-desc").value = myDoc.getdesc();
   document.getElementById("f-url").value = myDoc.geturl();
   document.getElementById("f-demourl").value = myDoc.getdemourl();
+
+  //Authors
+  var authors = myDoc.getauthors();
+  var mylist = document.getElementById("f-a-list");
+  for(var i=0; i < authors.length; i++) {
+    var listitem = document.createElement("listitem");
+    listitem.setAttribute("label", authors[i].name);
+    listitem.setAttribute("value", authors[i].email);
+    mylist.appendChild(listitem);
+  }
   
   freezeGeneric("");
   //Menu management
