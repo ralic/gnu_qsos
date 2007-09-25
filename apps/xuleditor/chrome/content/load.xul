@@ -4,15 +4,16 @@
 
 <dialog id="Load" title="&load.label;"
         xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
-	buttons="accept"
+	buttons="accept,cancel"
 	width="300px"
 	height="500px"
-	ondialogaccept="return doOK();"
+        ondialogaccept="return doOK();"
+        ondialogcancel="cancelDialog();"
 	onload="init();">
 
 <script type="application/x-javascript" src="load.js"></script>
 
-<tree id="evalTree" flex="1">
+<tree id="evalTree" flex="1" ondblclick="checkLabel();">
 	<treecols>
 		<treecol id="name" width="300px" label="&label1.value;" primary="true" flex="1"/>
 	</treecols>

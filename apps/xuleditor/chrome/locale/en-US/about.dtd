@@ -1,6 +1,6 @@
 <!ENTITY about.label "About">
-<!ENTITY label1.value "QSOS XUL Editor v0.6">
-<!ENTITY label2.value "Software under the terms of the GNU Public License">
+<!ENTITY label1.value "QSOS XUL Editor v0.7">
+<!ENTITY label2.value "Software under the terms of the GNU Public License, using the LGPL JsJac library">
 <!ENTITY label3.value "Authors:">
 <!ENTITY label4.value "   . raphael.semeteys@atosorigin.com">
 <!ENTITY label5.value "Source code available on http://savannah.nongnu.org/projects/qsos">

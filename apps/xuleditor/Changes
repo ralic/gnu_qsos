@@ -29,5 +29,7 @@ Revision history for QSOS XUL Editor
       - UI redisign
       - Use of preferences
 
-0.7  2007/XX/XX
-      - Chat features: user can connect to QSOS chatroom
+0.7  2007/09/25
+      - XUL Editor is now XMPP oriented: user can connect a QSOS chatroom
+      - bugfix on author's list after remote evaluation loading
+      - better synchronization between hierchical and graph views
