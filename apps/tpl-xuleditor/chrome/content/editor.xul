@@ -49,13 +49,14 @@
 		</menubar>
 	</toolbox>
 	<hbox flex = "1">
-		<vbox>
-			<tree id="mytree" context="element-popup" width="300px" onselect="treeselect(this);" flex="1">
+                
+                  <tree id="mytree" context="element-popup" width="300px" hidecolumnpicker="true"  onselect="treeselect(this);">
 			<treecols>
 				<treecol id="name" label="&name.label;" primary="true" flex="1"/>
 			</treecols>
-			</tree>
-		</vbox>
+		  </tree>
+		
+                <splitter/>
 		<vbox flex = "1">
 			<groupbox id="g-template">
 				<caption><label value="&g-template.label;"/></caption>
