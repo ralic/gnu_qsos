@@ -13,7 +13,7 @@
             </element>
             <element name="stability" title="Stability">
                <desc0>Unstable software with numerous releases or patches generating side effects</desc0>
-               <desc1>Stabilized production release existing but old. Difficulties to stabilize developpement releases</desc1>
+               <desc1>Stabilized production release existing but old. Difficulties to stabilize development releases</desc1>
                <desc2>Stabilized software. Releases provide bug fixes corrections but mainly new functionalities</desc2>
                <score></score>
                <comment></comment>
@@ -92,7 +92,7 @@
             </element>
             <element name="activityonbugs" title="Activity on bugs">
                <desc0>Slow reactivity in forum or on mailing list, or nothing regarding bug fixes in releases note</desc0>
-               <desc1>Detectable activity but without process clearly exposed, loing reaction/resolution time</desc1>
+               <desc1>Detectable activity but without process clearly exposed, long reaction/resolution time</desc1>
                <desc2>Strong reactivity based on roles and tasks assignment</desc2>
                <score></score>
                <comment></comment>
@@ -106,7 +106,7 @@
             </element>
             <element name="activityonreleases" title="Activity on releases">
                <desc0>Very weak activity on both production and development releases</desc0>
-               <desc1>Activity on production and developmenet releases. Frequent minor releases (bug fixes)</desc1>
+               <desc1>Activity on production and development releases. Frequent minor releases (bug fixes)</desc1>
                <desc2>Important activity with frequent minor releases (bugs fixes) and planned major releases relating to the roadmap forcast</desc2>
                <score></score>
                <comment></comment>
@@ -127,7 +127,7 @@
             <element name="training" title="Training">
                <desc0>No offer of training identified</desc0>
                <desc1>Offer exists but is restricted geographically and to one language or is provided by a single contractor</desc1>
-               <desc2>Rich offers provided by several contractors, in serveral languages and split into modules of gradual levels</desc2>
+               <desc2>Rich offers provided by several contractors, in several languages and split into modules of gradual levels</desc2>
                <score></score>
                <comment></comment>
             </element>
@@ -141,7 +141,7 @@
             <element name="consulting" title="Consulting">
                <desc0>No offer of consulting service</desc0>
                <desc1>Offer exists but is restricted geographically and to one language or is provided by a single contractor</desc1>
-               <desc2>Consulting services provided by different contractors in serveral languages</desc2>
+               <desc2>Consulting services provided by different contractors in several languages</desc2>
                <score></score>
                <comment></comment>
             </element>
@@ -269,7 +269,7 @@
          </element>
          <element name="administrationmonitoring" title="Administration / Monitoring">
             <desc0>No administrative or monitoring functionalities</desc0>
-            <desc1>Existing, functionalities but uncomplete and or need improvement</desc1>
+            <desc1>Existing, functionalities but incomplete and or need improvement</desc1>
             <desc2>Complete and easy-to-use administration and monitoring functionalities. Possible integration with external tools (e.g: SNMP, syslog, ...)</desc2>
             <score></score>
             <comment></comment>
@@ -326,7 +326,7 @@
             <comment></comment>
          </element>
          <element name="modificationofsourcecode" title="Modification of source code">
-            <desc0>No pratical way to propose code modification</desc0>
+            <desc0>No practical way to propose code modification</desc0>
             <desc1>Tools provided to access and modify code (like CVS or SVN) but not really used to develop the software</desc1>
             <desc2>The code modification process is well defined, exposed and respected, based on roles assignment</desc2>
             <score></score>
@@ -346,9 +346,9 @@
             <score></score>
             <comment></comment>
          </element>
-         <element name="strategicalindependence" title="Strategical independence">
+         <element name="strategicalindependence" title="Strategic independence">
             <desc0>No detectable strategy or strong dependency on one unique actor(person, company,sponsor)</desc0>
-            <desc1>Strategical vision shared with several other free and open source projects but without strong commitment from copyrights owners</desc1>
+            <desc1>Strategic vision shared with several other free and open source projects but without strong commitment from copyrights owners</desc1>
             <desc2>Strong independence of the code team, legal entity holding rights, strong involvement in the standardization process</desc2>
             <score></score>
             <comment></comment>
