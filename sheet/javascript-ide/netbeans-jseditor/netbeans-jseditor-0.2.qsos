@@ -1,0 +1,694 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document>
+   <header>
+      <authors>
+         <author>
+            <name>Raphaël Semeteys</name>
+            <email>raphael.semeteys@atosorigin.com</email>
+         </author>
+      </authors>
+      <dates>
+         <creation></creation>
+         <validation></validation>
+      </dates>
+      <language>en</language>
+      <appname>NetBeans JavaScript Editor</appname>
+      <release>0.2</release>
+      <licenseid>10</licenseid>
+      <licensedesc>Free but Restricted</licensedesc>
+      <url>http://www.liguorien.org/javascripteditor/</url>
+      <desc>The goal of this project is to provide JavaScript support to NetBeans IDE 5.0.</desc>
+      <demourl></demourl>
+      <qsosformat>1.6</qsosformat>
+      <qsosappfamily>javascript-IDE</qsosappfamily>
+      <qsosspecificformat>1</qsosspecificformat>
+   </header>
+   <section name="generic" title="Generic section">
+      <desc>Generic criteria from QSOS version 1.6</desc>
+      <element name="intrinsicdurability" title="Intrinsic durability">
+         <desc>Intrinsic durability</desc>
+         <element name="maturity" title="Maturity">
+            <desc>Maturity</desc>
+            <element name="age" title="Age">
+               <desc0>less than 3 months</desc0>
+               <desc1>if between 3 months and 3 years</desc1>
+               <desc2>after 3 years</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="stability" title="Stability">
+               <desc0>Unstable software with numerous releases or patches generating side effects</desc0>
+               <desc1>Stabilized production release existing but old. Difficulties to stabilize developpement releases</desc1>
+               <desc2>Stabilized software. Releases provide bug fixes corrections but mainly new functionalities</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="historyknownproblems" title="History, known problems">
+               <desc0>Software knows several problems which can be prohibitive</desc0>
+               <desc1>No know major problem or crisis</desc1>
+               <desc2>History of good management of crisis situations</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="forkprobability" title="Fork probability, source of Forking">
+               <desc0>Software is very likely to be forked in the future</desc0>
+               <desc1>Software comes from a fork but has very few chances of being forked in the future</desc1>
+               <desc2>Software has very little chance of being forked. It does not come from a fork either</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+         </element>
+         <element name="adoption" title="Adoption">
+            <desc>Adoption by community and industry</desc>
+            <element name="popularity" title="Popularity (related to: general public, niche, ...)">
+               <desc0>Very few users identified</desc0>
+               <desc1>Detectable use on Internet</desc1>
+               <desc2>Numerous users, numerous references</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="references" title="References">
+               <desc0>None</desc0>
+               <desc1>Few refences, non critical usages</desc1>
+               <desc2>Often implemented for critical applications</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="contributingcommunity" title="Contributing Community">
+               <desc0>No community or without real activity (forum, mailing list, ...)</desc0>
+               <desc1>Existing community with a notable activity</desc1>
+               <desc2>Strong community: big activity on forums, numerous contributors and advocates</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="books" title="books">
+               <desc0>No book about the software</desc0>
+               <desc1>Less than 5 books about the software are available</desc1>
+               <desc2>More than 5 books about software are available, in several languages</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+         </element>
+         <element name="developmentleadership" title="Development leadership">
+            <desc>Organisation and leadership of developments</desc>
+            <element name="leadingteam" title="Leading team">
+               <desc0>1 to 2 individuals involved, not clearly identified</desc0>
+               <desc1>Between 2 and 5 independent people</desc1>
+               <desc2>More than 5 people</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="managementstyle" title="Management style">
+               <desc0>Complete dictatorship</desc0>
+               <desc1>Enlightened despotism</desc1>
+               <desc2>Council of architects with identified leader (e.g: KDE)</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+         </element>
+         <element name="activity" title="Activity">
+            <desc>Activity of the project and around the software</desc>
+            <element name="developersidentificationturnover" title="Developers, identification, turnover">
+               <desc0>Less than 3 developers, not clearly identified</desc0>
+               <desc1>Between 4 and 7 developers, or more unidentified developers with important turnover</desc1>
+               <desc2>More than 7 developers, very stable team</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="activityonbugs" title="Activity on bugs">
+               <desc0>Slow reactivity in forum or on mailing list, or nothing regarding bug fixes in releases note</desc0>
+               <desc1>Detectable activity but without process clearly exposed, loing reaction/resolution time</desc1>
+               <desc2>Strong reactivity based on roles and tasks assignment</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="activityonfunctionalities" title="Activity on functionalities">
+               <desc0>No or few new functionalities</desc0>
+               <desc1>Evolution of the product driven by the core team or by user's request without any clearly explained process</desc1>
+               <desc2>Tool(s) to manage feature requests, strong interaction with roadmap</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="activityonreleases" title="Activity on releases">
+               <desc0>Very weak activity on both production and development releases</desc0>
+               <desc1>Activity on production and developmenet releases. Frequent minor releases (bug fixes)</desc1>
+               <desc2>Important activity with frequent minor releases (bugs fixes) and planned major releases relating to the roadmap forcast</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+         </element>
+      </element>
+      <element name="industrializedsolution" title="Industrialized solution">
+         <desc>Industrialization level of the project</desc>
+         <element name="independenceofdevelopments" title="Independence of developments">
+            <desc0>Developments realized at 100% by employees of a single company</desc0>
+            <desc1>60% maximum</desc1>
+            <desc2>20% maximum</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="services" title="Services">
+            <desc>Services offering</desc>
+            <element name="training" title="Training">
+               <desc0>No offer of training identified</desc0>
+               <desc1>Offer exists but is restricted geographically and to one language or is provided by a single contractor</desc1>
+               <desc2>Rich offers provided by several contractors, in serveral languages and split into modules of gradual levels</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="support" title="Support">
+               <desc0>No offer of support except via public forums and mailing lists</desc0>
+               <desc1>Offer exists but is provided by a single contractor without strong commitment quality of services</desc1>
+               <desc2>Multiple service providers with strong commitment (e.g: guaranteed resolution time)</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="consulting" title="Consulting">
+               <desc0>No offer of consulting service</desc0>
+               <desc1>Offer exists but is restricted geographically and to one language or is provided by a single contractor</desc1>
+               <desc2>Consulting services provided by different contractors in serveral languages</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+         </element>
+         <element name="documentation" title="Documentation">
+            <desc0>No user documentation</desc0>
+            <desc1>Documentation exists but shifted in time, is restricted to one language or is poorly detailed</desc1>
+            <desc2>Documentation always up to date, translated and possibly adapted to different target readers (end user, sysadmin, manager, ...)</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="qualityassurance" title="Quality Assurance">
+            <desc>Quality assurance process</desc>
+            <element name="quality" title="Quality Assurance">
+               <desc0>No QA process</desc0>
+               <desc1>Identifies QA process but not much formalized and with no tool</desc1>
+               <desc2>Automatic testing process included in code's life-cycle with publication of results</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="tools" title="Tools">
+               <desc0>No bug or feature request management tool</desc0>
+               <desc1>Standard tools provided (for instance by a hosting forge) but poorly used</desc1>
+               <desc2>Very active use of tools for roles/tasks allocation and progress monitoring</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+         </element>
+         <element name="packaging" title="Packaging">
+            <desc>Packaging for various operating systems</desc>
+            <element name="packagingsource" title="Source">
+               <desc0>Software can't be installed from source without lot of work</desc0>
+               <desc1>Installation from source is limited and depends on very strict conditions (OS, arch, lib, ...)</desc1>
+               <desc2>Installation from source is easy</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="packagingdebian" title="Debian">
+               <desc0>The software is not packaged for Debian</desc0>
+               <desc1>A Debian package exists but it has important issues or it doesn't have official support</desc1>
+               <desc2>The software is packaged in the distribution</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="packagingfreebsd" title="FreeBSD">
+               <desc0>The software is not packaged for FreeBSD</desc0>
+               <desc1>A port exists but it has important issues or it doesn't have official support</desc1>
+               <desc2>A official port exists in FreeBSD</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="packaginghpux" title="HP-UX">
+               <desc0>The software is not packaged for HP-UX</desc0>
+               <desc1>A package exists but it has important issues or it doesn't have official support</desc1>
+               <desc2>A stable package is provided for HP-UX</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="packagingmacosx" title="MacOSX">
+               <desc0>The software is not packaged for MacOSX</desc0>
+               <desc1>A package exists but it has important issues or it doesn't have official support</desc1>
+               <desc2>The software is packaged in the distribution</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="packagingmandriva" title="Mandriva">
+               <desc0>The software is not packaged for Mandriva</desc0>
+               <desc1>A package exists but it has important issues or it doesn't have official support</desc1>
+               <desc2>The software is packaged in the distribution</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="packagingnet" title="NetBSD">
+               <desc0>The software is not packaged for NetBSD</desc0>
+               <desc1>A port exists but it has important issues or it doesn't have official support</desc1>
+               <desc2>A official port exists in NetBSD</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="packagingopen" title="OpenBSD">
+               <desc0>The software is not packaged for OpenBSD</desc0>
+               <desc1>A port exists but it has important issues or it doesn't have official support</desc1>
+               <desc2>A official port exists in OpenBSD</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="packagingredhat" title="RedHat">
+               <desc0>The software is not packaged for RedHat/Fedora</desc0>
+               <desc1>A package exists but it has important issues or it doesn't have official support</desc1>
+               <desc2>The software is packaged in the distribution</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="packagingsolaris" title="Solaris">
+               <desc0>The software is not packaged for Solaris</desc0>
+               <desc1>A package exists but it has important issues or it doesn't have official support (e.g: SunFreeware.com )</desc1>
+               <desc2>The software is supported by Sun for Solaris</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="packagingsuse" title="SuSE">
+               <desc0>The software is not packaged for SuSE</desc0>
+               <desc1>A package exists but it has important issues or it doesn't have official support</desc1>
+               <desc2>The software is packaged in the distribution</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="packagingwindows" title="Windows">
+               <desc0>The project can't be installed on Windows</desc0>
+               <desc1>A package exists but it is limited or has important issues or just cover some specific Windows release (e.g: Windows2000 and WindowsXP)</desc1>
+               <desc2>Windows is full supported and a package is provided</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+         </element>
+      </element>
+      <element name="exploitability" title="Exploitability">
+         <desc>Exploitability level</desc>
+         <element name="easeofuseergonomics" title="Ease of use, ergonomics">
+            <desc0>Difficult to use, requires an in depth knowledge of the software functionality</desc0>
+            <desc1>Austere and very technical ergonomics</desc1>
+            <desc2>GUI including help functions and elaborated ergonomics</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="administrationmonitoring" title="Administration / Monitoring">
+            <desc0>No administrative or monitoring functionalities</desc0>
+            <desc1>Existing, functionalities but uncomplete and or need improvement</desc1>
+            <desc2>Complete and easy-to-use administration and monitoring functionalities. Possible integration with external tools (e.g: SNMP, syslog, ...)</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+      </element>
+      <element name="technicaladaptability" title="Technical adaptability">
+         <desc>Technical adaptability</desc>
+         <element name="modularity" title="Modularity">
+            <desc0>Monolithic software</desc0>
+            <desc1>Presence of hight level modules allowing a first level of software adaptation</desc1>
+            <desc2>Modular conception, allowing easy adaptation of the software by selecting or creating modules</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="codemodification" title="Code modification">
+            <desc0>Everything by hand</desc0>
+            <desc1>Recompilation possible but complex without any tools or documentation</desc1>
+            <desc2>Recompilation with tools (e.g: make, ANT, ...) and documentation provided</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="codeextension" title="Code extension">
+            <desc0>Any modification requires code recompilation</desc0>
+            <desc1>Architecture designed for static extension but requires recompilation</desc1>
+            <desc2>Principle of plugin, architecture designed for dynamic extension without recompilation</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+      </element>
+      <element name="strategy" title="Strategy">
+         <desc>Project's strategy</desc>
+         <element name="license" title="License">
+            <desc>License</desc>
+            <element name="permissiveness" title="Permissiveness (only if user wants to become owner of code)">
+               <desc0>Very strict license, like GPL</desc0>
+               <desc1>Moderate permissive license located between both extremes (GPL and BSD) dual-licensing depending on the type of user (person, company, ...) or their activities</desc1>
+               <desc2>Very permissive like BSD or Apache licenses</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="protectionagainstproprietaryforks" title="Protection against proprietary forks">
+               <desc0>Very permissive like BSD or Apache licenses</desc0>
+               <desc1>Moderate permissive license located between both extremes (GPL and BSD), dual-licensing depending on the type of user (person, company, ...) or their activies</desc1>
+               <desc2>Very strict license, like GPL</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+         </element>
+         <element name="copyrightowners" title="Copyright owners">
+            <desc0>Rights held by a few individuals or entities, making it easier to change the license</desc0>
+            <desc1>Rights held by numerous individuals owning the code in a homogeneous way, making relicense very difficult</desc1>
+            <desc2>Rights held by a legal entity in whom the community trusts (e.g: FSF or ASF)</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="modificationofsourcecode" title="Modification of source code">
+            <desc0>No pratical way to propose code modification</desc0>
+            <desc1>Tools provided to access and modify code (like CVS or SVN) but not really used to develop the software</desc1>
+            <desc2>The code modification process is well defined, exposed and respected, based on roles assignment</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="roadmap" title="Roadmap">
+            <desc0>No published roadmap</desc0>
+            <desc1>Existing roadmap without planning</desc1>
+            <desc2>Versionned roadmap, with planning and measure of delays</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="sponsor" title="Sponsor">
+            <desc0>Software has no sponsor, the core team is not paid</desc0>
+            <desc1>Software has an unique sponsor who might determine its strategy</desc1>
+            <desc2>Software is sponsored by industry</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="strategicalindependence" title="Strategical independence">
+            <desc0>No detectable strategy or strong dependency on one unique actor(person, company,sponsor)</desc0>
+            <desc1>Strategical vision shared with several other free and open source projects but without strong commitment from copyrights owners</desc1>
+            <desc2>Strong independence of the code team, legal entity holding rights, strong involvement in the standardization process</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+      </element>
+   </section>
+   <section name="genericediting" title="Generic Editing">
+      <desc>Generic features of code editor</desc>
+      <element name="draganddrop" title="Drag and Drop">
+         <desc>Drag and Drop of code in editor</desc>
+         <desc0>No Drag and Drop</desc0>
+         <desc1>Code can be dragged and dropped but with some limitation</desc1>
+         <desc2>Code can be easily dragged and dropped</desc2>
+         <score>2</score>
+         <comment></comment>
+      </element>
+      <element name="expand/collapse" title="Expand/Collapse">
+         <desc>Avility to expand and collapse code blocks </desc>
+         <desc0>No expand/collapse feature</desc0>
+         <desc1>Code blocks can be individually expanded/collapsed</desc1>
+         <desc2>Code blocks can be expanded/collapsed, individually or as a group action</desc2>
+         <score>0</score>
+         <comment>Feature not available for JavaScript but for Java and HTML (NetBeans features)</comment>
+      </element>
+      <element name="linenumbering" title="Line numbering">
+         <desc>Lines of code can be numbered</desc>
+         <desc0>No line numbering</desc0>
+         <desc1>Line numbering is not optional</desc1>
+         <desc2>Optional line numbering</desc2>
+         <score>2</score>
+         <comment></comment>
+      </element>
+      <element name="wordwrap" title="Word wrap">
+         <desc>Word wrap of code in editor</desc>
+         <desc0>No word wrap</desc0>
+         <desc1>Word wrap is not optional or not configurable</desc1>
+         <desc2>Word wrap is optional and is configurable (column width)</desc2>
+         <score>0</score>
+         <comment></comment>
+      </element>
+      <element name="find/replace" title="Find/Replace">
+         <desc>Features available to find and replace text in editor</desc>
+         <desc0>No find/replace feature</desc0>
+         <desc1>Basic find/replace features</desc1>
+         <desc2>Advanced find/replace features like filtering based on coding language, styles, regex, ...</desc2>
+         <score>2</score>
+         <comment>Match Case, RegEx, whole word</comment>
+      </element>
+      <element name="undo/redo" title="Undo/Redo">
+         <desc>Available undo/redo features</desc>
+         <desc0>No undo/redo features</desc0>
+         <desc1>Limited number of undo/redo</desc1>
+         <desc2>Unlimited undo/redo</desc2>
+         <score>2</score>
+         <comment>Lilited to 1000 edits which is quite big</comment>
+      </element>
+      <element name="comments" title="Comments">
+         <desc>Available features to comment code</desc>
+         <desc0>No feature available, comments must be entered by developer</desc0>
+         <desc1>Existing commenting features</desc1>
+         <desc2>Easy block commenting (keyboard shorthut and/or context menu), with ability to comment code in heterogeneous languages (CSS, HTML, JavaScript)</desc2>
+         <score>0</score>
+         <comment>Available for Java but note for JavaScript, HTML or CSS</comment>
+      </element>
+      <element name="codeformatter/beautifier" title="Code formatter/beautifier">
+         <desc>Features available to format and beautify source code</desc>
+         <desc0>No feature available</desc0>
+         <desc1>Existing features but limited to JavaScript only</desc1>
+         <desc2>Features available for JavaScript and other languages such as HTML or CSS</desc2>
+         <score>1</score>
+         <comment>Available for JavaSCript and HTML, but not for CSS</comment>
+      </element>
+      <element name="refactoring" title="Refactoring">
+         <desc>Available features to refactor source code (variables and functions renaming)</desc>
+         <desc0>No refactoring</desc0>
+         <desc1>Refactoring limited to few types of object</desc1>
+         <desc2>Advanced refactoring features (like refactoring on multiple documents)</desc2>
+         <score>0</score>
+         <comment>Available for Java only.</comment>
+      </element>
+   </section>
+   <section name="javascriptediting" title="JavaScript Editing">
+      <desc>JavaScript code editing features</desc>
+      <element name="jssyntaxhighlighting" title="Syntax highlighting">
+         <desc>Is JavaScript code highligthed in editor?</desc>
+         <desc0>No syntax highlighting for JavaScript</desc0>
+         <desc1>Basic syntax highlighting for JavaScript (mainly keywords and built-in objects)</desc1>
+         <desc2>Extended syntax highlighting for JavaScript (keywords, built-in, DOM and developer's objects)</desc2>
+         <score>2</score>
+         <comment></comment>
+      </element>
+      <element name="brace/bracketsupport" title="Brace/bracket editing">
+         <desc>Available features to help with brace/bracket editing</desc>
+         <desc0>No automatic brace/bracket editing features</desc0>
+         <desc1>Auto brace/bracket insertion OR brace/bracket pairs matching</desc1>
+         <desc2>Auto brace/bracket insertion AND brace/bracket pairs matching</desc2>
+         <score>1</score>
+         <comment>Auto brace insertion is only available for Java</comment>
+      </element>
+      <element name="jsautocompletion" title="Autocompletion">
+         <desc>Autocompletion of source code</desc>
+         <desc0>No autocompletion available</desc0>
+         <desc1>Autocompletion for JavaScript keywords, native and DOM objects only</desc1>
+         <desc2>Autocompletion for JavaScript keywords, native, DOM (0, 1 and 2) and developer's objects</desc2>
+         <score>1</score>
+         <comment></comment>
+      </element>
+      <element name="jsintellisense" title="Intellisense">
+         <desc>Autocompletion of variables, objects, methofs and properties usinf metadata reflection</desc>
+         <desc0>No Intellisense feature</desc0>
+         <desc1>Intellisense for JavaScript keywords and native objects only</desc1>
+         <desc2>Intellisense for JavaScript keywords, native objects and developer's objects</desc2>
+         <score>0</score>
+         <comment>Available for HTML and Java but not for JavaScript</comment>
+      </element>
+      <element name="jserrorwarningmanagement" title="Error/Warning management">
+         <desc>Available features to manage errors/warning detection and highlignting (static code analysis)</desc>
+         <desc0>No automatic error/warning detection</desc0>
+         <desc1>Errors are detected but not warnings OR are not highlighted in code as long as listed in a separate panel</desc1>
+         <desc2>Errors and warning are detected, highlighted in code and listed in a separate panel</desc2>
+         <score>0</score>
+         <comment>Available for Java but not for JavaScript, HTML and CSS</comment>
+      </element>
+      <element name="codegeneration" title="Code generation">
+         <desc>Available features to automatically generate JavaScript code</desc>
+         <desc0>No code generation</desc0>
+         <desc1>Reusable code snippets/templates OR class skeletons</desc1>
+         <desc2>Generation from an upper design view (using UML formalism for instance)</desc2>
+         <score>1</score>
+         <comment>JavaScript class (with prototype heritage), AJAX callback template</comment>
+      </element>
+      <element name="pre-packagedjavascriptlibraries" title="Pre-packaged JavaScript Libraries">
+         <desc>Does th IDE integrates pre-packaged wellknown JavaScript librairies like Dojo, jQuey, Prototype, Scriptaculous, YUI, ... </desc>
+         <desc0>No external libraries available</desc0>
+         <desc1>Few libraries available with no ability for developer to add new ones by himself</desc1>
+         <desc2>Several external libraries are integrated with easy way to add more (via a plugin system for instance)</desc2>
+         <score>0</score>
+         <comment></comment>
+      </element>
+   </section>
+   <section name="javascriptcodeoptimization" title="JavaScript code optimization">
+      <desc>Available features to optimize JavaScript code (logging, debugging and profiling)</desc>
+      <element name="logging" title="Logging">
+         <desc></desc>
+         <desc0>No integrated logging features</desc0>
+         <desc1>IDE offers limited logging functions</desc1>
+         <desc2>IDE offers logging framework with centralized and filtered logs</desc2>
+         <score>0</score>
+         <comment></comment>
+      </element>
+      <element name="debugging" title="Debugging">
+         <desc>Debugging features</desc>
+         <comment></comment>
+         <element name="debugger" title="Debugger">
+            <desc>Kind of debugger available</desc>
+            <desc0>No debugger available for JavaScript</desc0>
+            <desc1>Debugger limited to Web browsers</desc1>
+            <desc2>Debugger usable for any JavaScript context (not only web)</desc2>
+            <score>0</score>
+            <comment></comment>
+         </element>
+         <element name="statemanagement" title="State management">
+            <desc>Possible actions on current state</desc>
+            <desc0>Only current state value can be watched</desc0>
+            <desc1>Evaluation of expressions entered by developer AND stack traces are also available</desc1>
+            <desc2>State values can by modified on the fly by developer</desc2>
+            <score>0</score>
+            <comment></comment>
+         </element>
+         <element name="breaking" title="Breaking">
+            <desc>Ability to pause the program to examine the current state</desc>
+            <desc0>No breaking features</desc0>
+            <desc1>Break on breakpoints manually defined by the developer</desc1>
+            <desc2>Conditional breaking: on error and advanced conditions (use of assertions) AND ability to exclude some code for breaking scope (functions or eval code)</desc2>
+            <score>0</score>
+            <comment></comment>
+         </element>
+         <element name="stepping" title="Stepping">
+            <desc>Step by step program execution</desc>
+            <desc0>No step by step execution</desc0>
+            <desc1>Only next step can be executed</desc1>
+            <desc2>Stepping into, over and out of functions is also possible</desc2>
+            <score>0</score>
+            <comment></comment>
+         </element>
+      </element>
+      <element name="profiling" title="Profiling">
+         <desc>Profiling features available to analyse performances of code execution</desc>
+         <desc0>No profiler available</desc0>
+         <desc1>Flat profiler shows out-of-context call times and download times (in a web context)</desc1>
+         <desc2>Call-graph profiler shows call times and frequencies AND call-chains involved</desc2>
+         <score>0</score>
+         <comment></comment>
+      </element>
+   </section>
+   <section name="advancedfeatures" title="Advanced features">
+      <desc></desc>
+      <element name="codenavigation" title="Code navigation">
+         <desc></desc>
+         <desc0>No code navigation feature</desc0>
+         <desc1>Document outline provides list of functions and variables</desc1>
+         <desc2>Source code contains hyperlinks to navigate to declarations of variables and functions (even between files)</desc2>
+         <score>0</score>
+         <comment>Navigator is only available for CSS and Java. 
+"Go to Source/Declaration" are only available for Java</comment>
+      </element>
+      <element name="documentationgeneration" title="Documentation generation">
+         <desc>Available features to automatically generate code documentation</desc>
+         <desc0>No documentation generation</desc0>
+         <desc1>Static code generation using JsDoc/ScriptDoc tags</desc1>
+         <desc2>Dynamic documentation generated on the fly by the IDE, OR advanced and customizable reporting features</desc2>
+         <score>0</score>
+         <comment>For Java only (JavaDoc)</comment>
+      </element>
+      <element name="codeexecutioninide" title="Code execution in IDE">
+         <desc>Available features allowing to execute JavaScript code in the IDE</desc>
+         <desc0>No code execution in IDE</desc0>
+         <desc1>Basic testing code, like functions calls can be made in and from IDE </desc1>
+         <desc2>A JavaScript shell is integrated in IDE to test code, OR specific code execution can be triggered in breaking context while debugging</desc2>
+         <score>0</score>
+         <comment></comment>
+      </element>
+   </section>
+   <section name="webdevelopment" title="Web Development">
+      <desc></desc>
+      <element name="webpreview" title="Web preview">
+         <desc></desc>
+         <desc0>No preview in internal or external browser</desc0>
+         <desc1>Basic preview with no inspection</desc1>
+         <desc2>Preview with ability to inspect HTML tags, DOM elements and CSS declarations</desc2>
+         <score>1</score>
+         <comment></comment>
+      </element>
+      <element name="htmlediting" title="HTML Editing">
+         <desc>Available features for HTML editing</desc>
+         <comment></comment>
+         <element name="htmlsyntaxhighlighting" title="Syntax highlighting">
+            <desc>Are HTML tags highligthed in editor?</desc>
+            <desc0>No syntax highlighting for X/HTML</desc0>
+            <desc1>Basic syntax highlighting for X/HTML, limited to tagnames for instance</desc1>
+            <desc2>Extended syntax highlighting for X/HTML including attributes AND JavaSCript code included in attributes values</desc2>
+            <score>1</score>
+            <comment></comment>
+         </element>
+         <element name="htmlautocompletion" title="Autocompletion">
+            <desc>Autocompletion of HTML tags and attributes</desc>
+            <desc0>No autocompletion available</desc0>
+            <desc1>Autocompletion of HTML tags keywords and attributes</desc1>
+            <desc2>Autocompletion of HTML tags/attributes AND possibles children elements of current element</desc2>
+            <score>1</score>
+            <comment></comment>
+         </element>
+         <element name="htmlerrorwarningmanagement" title="Error/Warning management">
+            <desc>Detection and presentation of X/HTML errors/warnings</desc>
+            <desc0>No automatic X/HTML error/warning detection</desc0>
+            <desc1>Only not well formed X/HTML is detected without warnings OR it is not highlighted in code as long as listed in a separate panel</desc1>
+            <desc2>HTML errors and warning are detected, highlighted in code and listed in a separate panel</desc2>
+            <score>0</score>
+            <comment></comment>
+         </element>
+      </element>
+      <element name="cssediting" title="CSS Editing">
+         <desc>Available features for CSS editing</desc>
+         <comment></comment>
+         <element name="csssyntaxhighlighting" title="Syntax highlighting">
+            <desc>Are CSS declarations highligthed in editor?</desc>
+            <desc0>No highlighting for CSS</desc0>
+            <desc1>Limited CSS highlighting</desc1>
+            <desc2>Complete highlighting of all versions of CSS standard, support of specific-browser CSS declarations</desc2>
+            <score>1</score>
+            <comment></comment>
+         </element>
+         <element name="cssautocompletion" title="Autocompletion">
+            <desc>Autocompletion of CSS declarations</desc>
+            <desc0>No CSS autocompletion available</desc0>
+            <desc1>Limited CSS autocompletion</desc1>
+            <desc2>Complete CSS autocompletion for all versions of CSS standard and specific-browser declarations</desc2>
+            <score>1</score>
+            <comment></comment>
+         </element>
+         <element name="csserrorwarningmanagement" title="Error/Warning management">
+            <desc>Detection and presentation CSS errors/warnings</desc>
+            <desc0>No automatic CSS error/warning detection</desc0>
+            <desc1>Only CSS errors are detected</desc1>
+            <desc2>CSS errors and warnings (those regarding cascade inspection for instance)</desc2>
+            <score>0</score>
+            <comment></comment>
+         </element>
+      </element>
+   </section>
+   <section name="help" title="Help">
+      <desc>Available help features</desc>
+      <element name="referenceguides" title="Reference guides">
+         <desc></desc>
+         <desc0>No JavaScript language reference guide available</desc0>
+         <desc1>Internal OR  limited  JavaScript reference guide (for instance with no object-oriented section)</desc1>
+         <desc2>Complete and up-to-date (for instance via online sync) JavaSCript, X/HTML and CSS reference guides</desc2>
+         <score>0</score>
+         <comment></comment>
+      </element>
+      <element name="contextualhelp" title="Contextual Help">
+         <desc></desc>
+         <desc0>No contextual Help</desc0>
+         <desc1>Basic and limited contextual Help</desc1>
+         <desc2>Contextual help available in editor or through a specific contextual Help panel, on JavaScript but also X/HTML and CSS</desc2>
+         <score>0</score>
+         <comment></comment>
+      </element>
+      <element name="tutorials" title="Tutorials">
+         <desc></desc>
+         <desc0>No tutorial available</desc0>
+         <desc1>Basic and simple tutorials integrated in IDE</desc1>
+         <desc2>Many tutorials on JavaScript, X/HTML and CSS, with regular updates (through an online sync or connextion to wiki for instance)</desc2>
+         <score>0</score>
+         <comment>Online tutorials are java oriented Java</comment>
+      </element>
+   </section>
+</document>
