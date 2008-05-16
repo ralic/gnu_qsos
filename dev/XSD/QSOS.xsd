@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema targetNamespace="http://qsos.org" elementFormDefault="qualified"
+	xmlns="http://www.w3.org/2001/XMLSchema"
+	xmlns:qsos="http://qsos.org">
+
+
+	<complexType name="Authors">
+		<sequence>
+			<element ref="qsos:author"></element>
+		</sequence>
+	</complexType>
+
+	<complexType name="Dates">
+		<sequence>
+			<element ref="qsos:creation"></element>
+			<element ref="qsos:validation"></element>
+		</sequence>
+	</complexType>
+
+	<element name="author">
+		<complexType>
+			<sequence>
+				<element ref="qsos:name"></element>
+				<element ref="qsos:e-mail"></element>
+			</sequence>
+		</complexType>
+	</element>
+
+	<element name="e-mail" type="string"></element>
+
+	<element name="creation" type="date"></element>
+
+	<element name="validation" type="date"></element>
+
+	<element name="name" type="string"></element>
+</schema>
