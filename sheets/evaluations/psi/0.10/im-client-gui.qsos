@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<qsosevaluation>
+	<header>
+		<authors>
+			<author>
+				<email>walid.nouh@atosorigin.com</email>
+				<name>Walid Nouh</name>
+			</author>
+			<author>
+				<email>nicolas.verite@atosorigin.com</email>
+				<name>Nicolas Vérité</name>
+			</author>
+		</authors>
+		<dates>
+			<creation></creation>
+			<validation></validation>
+		</dates>
+	</header>
+	<section name="im-client-gui">
+		<section name="hmi">
+			<element name="skins">
+				<comment>
+					List of other clients using the same skin
+					constituent:
+				</comment>
+			</element>
+			<element name="accounts">
+				<element name="accountcreation">
+					<score>2</score>
+				</element>
+				<element name="accountaccess">
+					<score>2</score>
+				</element>
+				<element name="accountdeleting">
+					<score>2</score>
+				</element>
+			</element>
+			<element name="plugins">
+				<score>0</score>
+			</element>
+			<element name="bandwidth">
+				<score>2</score>
+			</element>
+		</section>
+	</section>
+</qsosevaluation>

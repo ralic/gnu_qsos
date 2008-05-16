@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<qsostemplate>
+	<header>
+		<authors>
+			<author>
+				<email>walid.nouh@atosorigin.com</email>
+				<name>Walid Nouh</name>
+			</author>
+			<author>
+				<email>nicolas.verite@atosorigin.com</email>
+				<name>Nicolas Vérité</name>
+			</author>
+		</authors>
+		<dates>
+			<creation></creation>
+			<validation></validation>
+		</dates>
+	</header>
+	<template>
+		<language>en</language>
+		<appname>Psi</appname>
+		<release>0.10</release>
+		<licenseid>31</licenseid>
+		<licensedesc>GNU GPL</licensedesc>
+		<url>http://psi-im.org</url>
+		<desc>
+			Psi is a Jabber client looking (by design) like licq.
+			Besides basic instant messaging services, it provides
+			support for features like groupchat and multiple accounts.
+			For more information on jabber, see www.jabber.org (or the
+			jabber package which contains the jabber server software).
+		</desc>
+		<demourl></demourl>
+		<qsosformat>2.0</qsosformat>
+		<qsosappfamilies>
+			<qsosappfamily>im-client-gui</qsosappfamily>
+			<qsosappfamily>im-protocol-jabber</qsosappfamily>
+		</qsosappfamilies>
+		<qsosappname>psi</qsosappname>
+		<qsosspecificformat></qsosspecificformat>
+	</template>
+</qsostemplate>

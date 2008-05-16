@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="generic" title="Generic section">
+   <authors>
+	   <author>
+	      <email>walid.nouh@atosorigin.com</email>
+	      <name>Walid Nouh</name>
+	   </author>
+	   <author>
+	      <email>nicolas.verite@atosorigin.com</email>
+	      <name>Nicolas Vérité</name>
+	   </author>
+   </authors>
+	<element name="intrinsicdurability">
+		<element name="maturity">
+			<element name="age">
+				<score>2</score>
+				<comment>
+					The first packages have been released the
+					2002-07-11.
+				</comment>
+			</element>
+			<element name="stability">
+				<score>2</score>
+				<comment />
+			</element>
+			<element name="historyknowproblems">
+				<score />
+				<comment />
+			</element>
+			<element name="forkprobability">
+				<score>0</score>
+				<comment>
+					Psi have already been forked by Jabbin IMP and VoIP
+					client
+				</comment>
+			</element>
+		</element>
+		<element name="adoption">
+			<element name="popularity">
+				<score>2</score>
+				<comment />
+			</element>
+			<element name="references">
+				<score />
+				<comment />
+			</element>
+			<element name="contributingcommunity">
+				<score>2</score>
+				<comment />
+			</element>
+			<element name="books">
+				<score>0</score>
+				<comment />
+			</element>
+		</element>
+		<element name="developmentleadership">
+			<element name="leadingteam">
+				<score>1</score>
+			</element>
+			<element name="managementstyle">
+				<score />
+			</element>
+		</element>
+		<element name="activity">
+			<element name="developersidentificationturnover">
+				<score />
+			</element>
+			<element name="activityonbugs">
+				<score />
+				<comment />
+			</element>
+			<element name="activityonfunctionalities">
+				<score>2</score>
+				<comment />
+			</element>
+			<element name="activityonreleases">
+				<score>2</score>
+				<comment />
+			</element>
+		</element>
+	</element>
+	<element name="industrializedsolution">
+		<element name="independenceofdevelopments">
+			<score>2</score>
+			<comment />
+		</element>
+		<element name="services">
+			<element name="training">
+				<score>0</score>
+				<comment />
+			</element>
+			<element name="support">
+				<score>1</score>
+				<comment />
+			</element>
+			<element name="consulting">
+				<score>0</score>
+				<comment />
+			</element>
+		</element>
+		<element name="documentation">
+			<score />
+			<comment />
+		</element>
+		<element name="qualityassurance">
+			<element name="quality">
+				<score />
+				<comment />
+			</element>
+			<element name="tools">
+				<score />
+				<comment />
+			</element>
+		</element>
+	</element>
+	<element name="packaging">
+		<element name="packagingbsd">
+			<element name="packagingfreebsd">
+				<score>2</score>
+				<comment />
+			</element>
+			<element name="packagingmacosx">
+				<score>1</score>
+				<comment>Software is packaged for Mac Os X</comment>
+			</element>
+			<element name="packagingnet">
+				<score>0</score>
+				<comment />
+			</element>
+			<element name="packagingopen">
+				<score>0</score>
+				<comment />
+			</element>
+		</element>
+		<element name="packaginglinux">
+			<desc>Linux</desc>
+			<element name="packagingdebian">
+				<score>2</score>
+				<comment />
+			</element>
+			<element name="packagingmandriva">
+				<score>2</score>
+				<comment />
+			</element>
+			<element name="packagingredhat">
+				<score>2</score>
+				<comment />
+			</element>
+			<element name="packagingsuse">
+				<score>2</score>
+				<comment />
+			</element>
+		</element>
+		<element name="packagingsource">
+			<score>2</score>
+			<comment />
+		</element>
+		<element name="packagingunix">
+			<element name="packagingaix">
+				<score />
+				<comment />
+			</element>
+			<element name="packaginghpux">
+				<score>0</score>
+				<comment />
+			</element>
+			<element name="packagingsolaris">
+				<score>0</score>
+				<comment />
+			</element>
+		</element>
+		<element name="packagingwindows">
+			<score>1</score>
+			<comment />
+		</element>
+	</element>
+	<element name="exploitability">
+		<element name="easeofuseergonomics">
+			<score>1</score>
+			<comment>
+				Some part of the GUI are not easy to understand and need
+				technical knowledge
+			</comment>
+		</element>
+		<element name="administrationmonitoring">
+			<score>0</score>
+			<comment />
+		</element>
+	</element>
+	<element name="technicaladaptability">
+		<desc>Technical adaptability</desc>
+		<element name="modularity">
+			<score>0</score>
+			<comment>
+				A plugin mechanism is on the way for the next release
+			</comment>
+		</element>
+		<element name="codemodification">
+			<score />
+			<comment />
+		</element>
+		<element name="codeextension">
+			<score>0</score>
+			<comment />
+		</element>
+	</element>
+	<element name="strategy">
+		<element name="license">
+			<element name="permissiveness">
+				<score>0</score>
+				<comment />
+			</element>
+			<element name="protectionagainstproprietaryforks">
+				<score>2</score>
+				<comment />
+			</element>
+		</element>
+		<element name="copyrightowners">
+			<score>0</score>
+			<comment>
+				Justin Karneges is the owner of the source
+			</comment>
+		</element>
+		<element name="modificationofsourcecode">
+			<score>2</score>
+			<comment>The source repository use subversion.</comment>
+		</element>
+		<element name="roadmap">
+			<score>2</score>
+			<comment />
+		</element>
+		<element name="sponsor">
+			<score>0</score>
+		</element>
+		<element name="strategicalindependence">
+			<score>1</score>
+		</element>
+	</element>
+</section>
