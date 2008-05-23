@@ -55,7 +55,7 @@
   </diagrams>
   <subdiagrams xmi:id="_otZVkBtCEd20Ic5V7wlTYw">
     <model href="QSOS.uml#_fQjnsBtCEd20Ic5V7wlTYw"/>
-    <diagrams xmi:id="_Ij3MUBtNEd20Ic5V7wlTYw" position="0,0" size="100,100" name="Engine" viewport="0,254">
+    <diagrams xmi:id="_Ij3MUBtNEd20Ic5V7wlTYw" position="0,0" size="100,100" name="Engine" viewport="34,291">
       <property xmi:id="_Ik5uIBtNEd20Ic5V7wlTYw" key="pageFormatName" value="A5"/>
       <property xmi:id="_Ik5uIRtNEd20Ic5V7wlTYw" key="diagramWidth" value="592"/>
       <property xmi:id="_Ik5uIhtNEd20Ic5V7wlTYw" key="diagramHeight" value="840"/>
@@ -146,7 +146,7 @@
           </semanticModel>
         </contained>
       </contained>
-      <contained xsi:type="di:GraphNode" xmi:id="_id9BUCJUEd2I4KumF2ZrXg" position="152,309" size="253,-1">
+      <contained xsi:type="di:GraphNode" xmi:id="_id9BUCJUEd2I4KumF2ZrXg" position="196,309" size="253,-1">
         <property xmi:id="_pRWtICJnEd2I4KumF2ZrXg" key="backgroundColor" value="255,230,128"/>
         <anchorage xmi:id="_Wr2vcCJYEd2I4KumF2ZrXg" graphEdge="_Wr4koCJYEd2I4KumF2ZrXg"/>
         <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_id9BUSJUEd2I4KumF2ZrXg" presentation="default">

@@ -10,68 +10,80 @@ def parse(evaluation):
     Returns document"""
     pass
 
+def createDocument(evaluation,familypath="../../sheets/families"):
+    rawDocument = minidom.parseString(evaluation).firstChild
+    section = rawDocument.firstChild.childNodes
+    #Create the property list from the content of header.
+    #the first, second and last tag of header are ignored
+    #as they are not document properties but part of families contents
+    properties = [str(node.firstChild.data) for node in section[2:-2]]
+    
+    #The same header applies for each family evaluation
+#    header = minidom.Element("header")
+#    for item in section[0:2] :
+#        header.appendChild(item)
+#    sections = [item.firstChild.data for item in section[-1].childNodes]
+
+    #Instantiate a QSOS-Document object initiated with the properties extracted
+    #from XML evaluation and empty family dictionnary
+    #At least, one author must be identified for the document
+    qsos = document.Document(properties,{})
+    authors = dict([(item.firstChild.firstChild.data, item.lastChild.firstChild.data) for item in section[0].childNodes])
+    
+    #dates must be tested
+    dates = (section[1].firstChild.firstChild.data, section[1].lastChild.firstChild.data)
+    
+    
+    families = [node.firstChild.data for node in section[-1].childNodes]
+    fam = minidom.parse("/".join([familypath,".".join([families[0],"qin"])]))
+    print fam.toxml()
+    #Each family is assumed to bo a section xml fragment
+    for section in rawDocument.getElementsByTagName("section") :
+        f = document.family(authors, dates)
+        scores = {}
+        for score in section.getElementsByTagName("score") :
+            try :
+                value = score.firstChild.data
+            except AttributeError :
+                value = ""
+            scores[score.parentNode.getAttribute("name")]=value
+        f.scores = scores
+        qsos.families[section.getAttribute("name")]=f
+    return qsos
+
+def toXML(document):
+    for f in document.families :
+        evaluation = minidom.Document()
+        root = evaluation.createElement("qsosscore")
+        evaluation.appendChild(root)
+        print document[f]["authors"]
+    pass
+
 def createScore(familyEvaluation):
     """Creates the XML document to be stored on the 
     filesystem of the evaluation of a given family"""
     
     #Parse first the xmlflow to a DOM
     evaluation = minidom.parseString(familyEvaluation)
+    nodes = evaluation.firstChild.childNodes
     
     #Create the return DOM with root element <qsosscore>
     document = minidom.Document()
     root = document.createElement("qsosscore")
     document.appendChild(root)
     
-    #Create and append the header to the return DOM
-    header = createEmptyHeader()
+    #Create and fill the header to the return DOM
+    header = document.createElement("header")
+    header.appendChild(nodes[0].getElementsByTagName("authors")[0])
+    header.appendChild(nodes[0].getElementsByTagName("dates")[0])
+    
+    #Append the header to the DOM
     root.appendChild(header)
+    
+    
     
     #Pretty format ant return the result qsos score sheet
     return document.toprettyxml("\t", "\n", "utf-8")
-
-
-def createEmptyHeader():
-    """Create an empty header fragment for a QSOS-* flow
-    
-    Returns string."""
-    #Create header element
-    header = minidom.Element("header")
-    
-    #Create and append authors tag to header
-    authors = minidom.Element("authors")
-#    authors.appendChild(createAuthor(["author name","em@il"]))
-    header.appendChild(authors) 
-    
-    #Create and append blank dates structure to header
-    dates = minidom.Element("dates")
-    dates.appendChild(minidom.Element("creation"))
-    dates.appendChild(minidom.Element("validation"))
-    header.appendChild(dates)
-    
-    return header
-
-def createAuthor(authorInfo):
-    """Create an author fragment for a QSOS-* XML flow
-    
-    Parameter :
-        - authorInfo    -    String list with [name,email]
-        
-    Returns string."""
-    
-    #Toplevel tag
-    author = minidom.Element("author")
-    
-    #Name tag
-    name = minidom.Element("name")
-    name.appendChild(minidom.Document().createTextNode(authorInfo[0]))
-    author.appendChild(name)
-    
-    #email tag
-    email = minidom.Element("email")
-    email.appendChild(minidom.Document().createTextNode(authorInfo[1]))
-    author.appendChild(email)
-    
-    return author
 
 def createSection(name):
     """Creates an empty section with its name attribute
@@ -86,7 +98,7 @@ def createSection(name):
     
     return section    
 
-def createElement(name,score="",comment=""):
+def createElement(name, score="", comment=""):
     """Creates an element for qsos-score sheet
     
     Parameters :

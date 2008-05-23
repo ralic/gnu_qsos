@@ -1,4 +1,4 @@
-from Family import *
+from family import *
 
 class Document :
     "Python wrapper for QSOS document"
@@ -6,7 +6,18 @@ class Document :
         """Initializes the document with :
         - document properties
         - application families"""
-        pass
+        self.properties = properties
+        self.families = families
     
+    def __getitem__(self,key):
+        if key == "properties":
+            return self.properties
+        else :
+            try :
+                [family,criterion]=key.split(".")
+                return self.families[family][criterion]
+            except ValueError :
+                return self.families[key]
+        
         
              
