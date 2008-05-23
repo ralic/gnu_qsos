@@ -11,8 +11,12 @@ def parse(evaluation):
     pass
 
 def createDocument(evaluation,familypath="../../sheets/families"):
-    rawDocument = minidom.parseString(evaluation).firstChild
-    section = rawDocument.firstChild.childNodes
+    rawDocument = minidom.parseString(evaluation)
+    #Define the ID attribute of each element tag of the raw document
+    for element in rawDocument.getElementsByTagName("element"):
+        element.setIdAttribute("name")
+        
+    section = rawDocument.firstChild.firstChild.childNodes
     #Create the property list from the content of header.
     #the first, second and last tag of header are ignored
     #as they are not document properties but part of families contents
@@ -35,8 +39,12 @@ def createDocument(evaluation,familypath="../../sheets/families"):
     
     
     families = [node.firstChild.data for node in section[-1].childNodes]
-    fam = minidom.parse("/".join([familypath,".".join([families[0],"qin"])]))
-    print fam.toxml()
+    for include in families :
+        template = minidom.parse("/".join([familypath,".".join([families[0],"qin"])]))
+        for element in template.getElementsByTagName("desc0"):
+            name = element.parentNode.getAttribute("name")
+            print rawDocument.getElementById(name).getElementsByTagName("score").item(0).firstChild
+            
     #Each family is assumed to bo a section xml fragment
     for section in rawDocument.getElementsByTagName("section") :
         f = document.family(authors, dates)
