@@ -68,14 +68,6 @@ def createDocument(evaluation,familypath="../../sheets/families"):
         print createScore(qsos.families["generic"])
     return qsos
 
-def toXML(document):
-    for f in document.families :
-        evaluation = minidom.Document()
-        root = evaluation.createElement("qsosscore")
-        evaluation.appendChild(root)
-        print document[f]["authors"]
-    pass
-
 def createScore(family):
     """Creates the XML document to be stored on the 
     filesystem of the evaluation from a family object
@@ -108,9 +100,15 @@ def createScore(family):
     header.appendChild(tag)
     
     #Build score section
+    #Local copies of family's attribute are made as destructive
+    #iterator are used.
     section = document.createElement("scores")
     scores = family.scores.copy()
     comments = family.comments.copy()
+    
+    #Elements with score tags are generated first. Corresponding
+    #comments are also added to elements tag (and removed from
+    #comments dictionnary)
     while scores :
         (name,value) = scores.popitem()
         tag = document.createElement("element")
@@ -124,6 +122,17 @@ def createScore(family):
             tag.appendChild(leaf)
         section.appendChild(tag)
     
+    #Remaining items of comments dictionnary are added to output XML
+    #No score tags for these elements as there must be no item left in scores 
+    while comments :
+        (name, value) = comments.popitem()
+        tag = document.createElement("element")
+        tag.setAttribute("name", name)
+        leaf = document.createElement("comment")
+        leaf.appendChild(document.createTextNode(value))
+        tag.appendChild(leaf)
+        section.appendChild(tag)
+    
     #Build the final document
     root.appendChild(header)
     root.appendChild(section)
@@ -132,33 +141,6 @@ def createScore(family):
     #Pretty format ant return the result qsos score sheet
     return document.toprettyxml("\t", "\n", "utf-8")
 
-def createElement(name, score="", comment=""):
-    """Creates an element for qsos-score sheet
-    
-    Parameters :
-        - name     -    the value of name attribute of the element
-        - score    -    the score of the item (optional)
-        - comment  -    a comment about the evalutation of the item (optional)
-        
-    Returns string."""
-    
-    #Create the element and initialize its name attribute
-    element = minidom.Element("element")
-    element.setAttribute("name", name)
-    
-    #Create and append the score tag if a score is provided
-    if score != "" :
-        value = minidom.Element("score")
-        value.appendChild(minidom.Document().createTextNode(score))
-        element.appendChild(value)
-    
-    #Create and append the comment tag if any comment is provided
-    if comment != "" :
-        desc = minidom.Element("desc")
-        desc.appendChild(minidom.Document().createTextNode(comment))
-        element.appendChild(desc)
-    
-    return element
 
 def split(document):
     """Splits an evaluation
