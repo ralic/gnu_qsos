@@ -1,15 +1,27 @@
 from Engine import document
 from Engine import family
 from xml.dom import minidom
+import os
 
-def parse(evaluation):
+def parse(evaluation,repositoryroot="../.."):
     """Parses an evaluation
     
     Parameter : 
         - evaluation    -   string of evaluation XML flow
         
     Returns document"""
-    pass
+    #Transform XML flow into document object
+    document = createDocument(evaluation)
+    
+    #Create tree folder in filesystem
+    path = os.path.join(repositoryroot,"sheets","evaluations",document["properties"][1],document["properties"][2])
+    try :
+        os.makedirs(path)
+    except OSError :
+        pass
+    f = open(os.path.join(path,"foo"),"w")
+    f.close()
+    
 
 def createDocument(evaluation,familypath="../../sheets/families"):
     rawDocument = minidom.parseString(evaluation)
@@ -140,13 +152,3 @@ def createScore(family):
     
     #Pretty format ant return the result qsos score sheet
     return document.toprettyxml("\t", "\n", "utf-8")
-
-
-def split(document):
-    """Splits an evaluation
-    
-    Parameter :
-        - document    -    the document representation of to be splitted evaluation
-        
-    Returns  {{(string,string}}"""
-    pass
