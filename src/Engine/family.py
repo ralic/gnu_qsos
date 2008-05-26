@@ -15,4 +15,8 @@ class family:
         elif item == "authors" :
             return self.authors
         else :
-            return self.scores[item]
+            [key, what] = item.split(".")
+            if what == "score" :
+                return self.scores[key]
+            elif what == "comment" :
+                return self.comments[key]
