@@ -1,9 +1,10 @@
 class family:
     "QSOS Application family wrapper for QSOS"
-    def __init__(self,authors, dates, scores={}):
+    def __init__(self,authors, dates, scores={},comments={}):
         self.authors = authors
         self.dates = dates
         self.scores = scores
+        self.comments = comments
         
     def __getitem__(self, item) :
         if item.startswith("date") :

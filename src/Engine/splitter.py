@@ -1,4 +1,5 @@
 from Engine import document
+from Engine import family
 from xml.dom import minidom
 
 def parse(evaluation):
@@ -16,47 +17,54 @@ def createDocument(evaluation,familypath="../../sheets/families"):
     for element in rawDocument.getElementsByTagName("element"):
         element.setIdAttribute("name")
         
-    section = rawDocument.firstChild.firstChild.childNodes
     #Create the property list from the content of header.
     #the first, second and last tag of header are ignored
     #as they are not document properties but part of families contents
-    properties = [str(node.firstChild.data) for node in section[2:-2]]
+    header = rawDocument.firstChild.firstChild.childNodes
+    properties = [str(node.firstChild.data) for node in header[2:-2]]
     
-    #The same header applies for each family evaluation
-#    header = minidom.Element("header")
-#    for item in section[0:2] :
-#        header.appendChild(item)
-#    sections = [item.firstChild.data for item in section[-1].childNodes]
-
     #Instantiate a QSOS-Document object initiated with the properties extracted
     #from XML evaluation and empty family dictionnary
-    #At least, one author must be identified for the document
     qsos = document.Document(properties,{})
-    authors = dict([(item.firstChild.firstChild.data, item.lastChild.firstChild.data) for item in section[0].childNodes])
     
-    #dates must be tested
-    dates = (section[1].firstChild.firstChild.data, section[1].lastChild.firstChild.data)
+    #Extract  relevant information from the raw evaluation:
+    #    - authors
+    #    - dates
+    #    - families (generic section is manually as it appears in each evaluation
     
+    # TODO : Each information should be probed in case no values are
+    #         provided in the XML document
     
-    families = [node.firstChild.data for node in section[-1].childNodes]
+    authors = dict([(item.firstChild.firstChild.data, item.lastChild.firstChild.data) for item in header[0].childNodes])
+    dates = (header[1].firstChild.firstChild.data, header[1].lastChild.firstChild.data)
+    families = [node.firstChild.data for node in header[-1].childNodes]
+    families.insert(0,"generic")
+
+    #Build the Family object for each family component of the evaluation :
+    #    - Extract from repository the family sheet (.qin files)
+    #    - Read the scores and comments from evaluation
+    #    - Update entry in family object
     for include in families :
         template = minidom.parse("/".join([familypath,".".join([families[0],"qin"])]))
+        #Initiate the family object : 
+        #    -same authors and dates for all families of the same evaluation
+        #    -empty score and comments dictionnary
+        f = family.family(authors, dates)
         for element in template.getElementsByTagName("desc0"):
             name = element.parentNode.getAttribute("name")
-            print rawDocument.getElementById(name).getElementsByTagName("score").item(0).firstChild
             
-    #Each family is assumed to bo a section xml fragment
-    for section in rawDocument.getElementsByTagName("section") :
-        f = document.family(authors, dates)
-        scores = {}
-        for score in section.getElementsByTagName("score") :
+            # TODO : use a logger for AttributeError exception^^
+        
             try :
-                value = score.firstChild.data
+                f.scores[name] = rawDocument.getElementById(name).getElementsByTagName("score").item(0).firstChild.data
             except AttributeError :
-                value = ""
-            scores[score.parentNode.getAttribute("name")]=value
-        f.scores = scores
-        qsos.families[section.getAttribute("name")]=f
+                print "No score found for element %s" % (name,)
+            try :
+                f.comments[name] = rawDocument.getElementById(name).getElementsByTagName("comment").item(0).firstChild.data
+            except AttributeError :
+                print "No comment found for element %s" % (name,)
+        #End of iteration, just add the family in document object
+        qsos.families[include] = f
     return qsos
 
 def toXML(document):
