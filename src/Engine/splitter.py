@@ -35,7 +35,7 @@ def createDocument(evaluation,familypath="../../sheets/families"):
     # TODO : Each information should be probed in case no values are
     #         provided in the XML document
     
-    authors = dict([(item.firstChild.firstChild.data, item.lastChild.firstChild.data) for item in header[0].childNodes])
+    authors = [(item.firstChild.firstChild.data, item.lastChild.firstChild.data) for item in header[0].childNodes]
     dates = (header[1].firstChild.firstChild.data, header[1].lastChild.firstChild.data)
     families = [node.firstChild.data for node in header[-1].childNodes]
     families.insert(0,"generic")
@@ -65,6 +65,7 @@ def createDocument(evaluation,familypath="../../sheets/families"):
                 print "No comment found for element %s" % (name,)
         #End of iteration, just add the family in document object
         qsos.families[include] = f
+        print createScore(qsos.families["generic"])
     return qsos
 
 def toXML(document):
@@ -75,44 +76,48 @@ def toXML(document):
         print document[f]["authors"]
     pass
 
-def createScore(familyEvaluation):
+def createScore(family):
     """Creates the XML document to be stored on the 
-    filesystem of the evaluation of a given family"""
+    filesystem of the evaluation from a family object
     
-    #Parse first the xmlflow to a DOM
-    evaluation = minidom.parseString(familyEvaluation)
-    nodes = evaluation.firstChild.childNodes
+    Returns : string    String flow of the family object"""
     
-    #Create the return DOM with root element <qsosscore>
+    #Create the return DOM and root element <qsosscore>
     document = minidom.Document()
     root = document.createElement("qsosscore")
-    document.appendChild(root)
     
-    #Create and fill the header to the return DOM
+    #Build header which contains only author and dates
     header = document.createElement("header")
-    header.appendChild(nodes[0].getElementsByTagName("authors")[0])
-    header.appendChild(nodes[0].getElementsByTagName("dates")[0])
+    for author in family["authors"] :
+        tag = document.createElement("author")
+        leaf = document.createElement("name")
+        leaf.appendChild(document.createTextNode(author[0]))
+        tag.appendChild(leaf)
+        leaf = document.createElement("email")
+        leaf.appendChild(document.createTextNode(author[1]))
+        tag.appendChild(leaf)                           
+        header.appendChild(tag)
     
-    #Append the header to the DOM
+    tag = document.createElement("dates")
+    leaf = document.createElement("creation")
+    leaf.appendChild(document.createTextNode(family["date.creation"]))
+    tag.appendChild(leaf)
+    leaf = document.createElement("validation")
+    leaf.appendChild(document.createTextNode(family["date.validation"]))
+    tag.appendChild(leaf)
+    header.appendChild(tag)
+    
+    #Build score section
+    section = document.createElement("scores")
+
+    
+    #Build the final document
     root.appendChild(header)
-    
-    
+    root.appendChild(section)
+    document.appendChild(root)    
     
     #Pretty format ant return the result qsos score sheet
     return document.toprettyxml("\t", "\n", "utf-8")
-
-def createSection(name):
-    """Creates an empty section with its name attribute
-    
-    Parameters :
-        - name    -    the value of name attribute of the section
-        
-    Returns string."""
-
-    section = minidom.Element("section")
-    section.setAttribute("name", name)
-    
-    return section    
 
 def createElement(name, score="", comment=""):
     """Creates an element for qsos-score sheet
