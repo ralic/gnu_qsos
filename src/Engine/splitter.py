@@ -109,7 +109,20 @@ def createScore(family):
     
     #Build score section
     section = document.createElement("scores")
-
+    scores = family.scores.copy()
+    comments = family.comments.copy()
+    while scores :
+        (name,value) = scores.popitem()
+        tag = document.createElement("element")
+        tag.setAttribute("name", name)
+        leaf = document.createElement("score")
+        leaf.appendChild(document.createTextNode(value))
+        tag.appendChild(leaf)
+        if name in comments :
+            leaf = document.createElement("comment")
+            leaf.appendChild(document.createTextNode(comments.pop(name)))
+            tag.appendChild(leaf)
+        section.appendChild(tag)
     
     #Build the final document
     root.appendChild(header)
