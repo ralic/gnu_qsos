@@ -14,14 +14,19 @@ def parse(evaluation,repositoryroot="../.."):
     document = createDocument(evaluation)
     
     #Create tree folder in filesystem
+    #makedirs fails with OSError 17 whenever the directory to make
+    #already exists. This specific error is excepted 
     path = os.path.join(repositoryroot,"sheets","evaluations",document["properties"][1],document["properties"][2])
     try :
         os.makedirs(path)
-    except OSError :
-        pass
-    f = open(os.path.join(path,"foo"),"w")
-    f.close()
+    except OSError, error :
+        if error[0] != 17 : raise OSError, error
     
+    #As the folder is created, can be added into.
+    for f in document.families :
+        file = open(os.path.join(path,".".join([f,"qscore"])),'w')
+        file.write(createScore(document[f]))
+        file.close()
 
 def createDocument(evaluation,familypath="../../sheets/families"):
     rawDocument = minidom.parseString(evaluation)
@@ -57,11 +62,11 @@ def createDocument(evaluation,familypath="../../sheets/families"):
     #    - Read the scores and comments from evaluation
     #    - Update entry in family object
     for include in families :
-        template = minidom.parse("/".join([familypath,".".join([families[0],"qin"])]))
+        template = minidom.parse("/".join([familypath,".".join([include,"qin"])]))
         #Initiate the family object : 
         #    -same authors and dates for all families of the same evaluation
         #    -empty score and comments dictionnary
-        f = family.family(authors, dates)
+        f = family.family(authors, dates, {}, {})
         for element in template.getElementsByTagName("desc0"):
             name = element.parentNode.getAttribute("name")
             
@@ -71,14 +76,16 @@ def createDocument(evaluation,familypath="../../sheets/families"):
                 f.scores[name] = rawDocument.getElementById(name).getElementsByTagName("score").item(0).firstChild.data
             except AttributeError :
                 print "No score found for element %s" % (name,)
+                pass    
             try :
                 f.comments[name] = rawDocument.getElementById(name).getElementsByTagName("comment").item(0).firstChild.data
             except AttributeError :
+                pass
                 print "No comment found for element %s" % (name,)
         #End of iteration, just add the family in document object
         qsos.families[include] = f
-        print createScore(qsos.families["generic"])
     return qsos
+
 
 def createScore(family):
     """Creates the XML document to be stored on the 

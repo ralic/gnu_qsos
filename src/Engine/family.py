@@ -1,6 +1,6 @@
 class family:
     "QSOS Application family wrapper for QSOS"
-    def __init__(self,authors, dates, scores={},comments={}):
+    def __init__(self,authors, dates, scores,comments):
         """Create new family object
         
         Parameters :

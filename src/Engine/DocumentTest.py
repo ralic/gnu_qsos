@@ -4,12 +4,12 @@ xml = """<?xml version="1.0" encoding="UTF-8"?>
   <header>
     <authors>
       <author>
-        <email>walid.nouh@atosorigin.com</email>
         <name>Walid Nouh</name>
+        <email>walid.nouh@atosorigin.com</email>
       </author>
       <author>
-        <email>nicolas.verite@atosorigin.com</email>
         <name>Nicolas Verite</name>
+        <email>nicolas.verite@atosorigin.com</email>
       </author>
     </authors>
     <dates>
@@ -43,7 +43,7 @@ xml = """<?xml version="1.0" encoding="UTF-8"?>
           <desc0>less than 3 months</desc0>
           <desc1>if between 3 months and 3 years</desc1>
           <desc2>after 3 years</desc2>
-          <score>2</score>
+          <score></score>
           <comment>The first packages have been released the 2002-07-11.</comment>
         </element>
         <element name="stability" title="Stability">
@@ -903,13 +903,11 @@ Website: http://talk.google.com/</desc>
         <desc0>Not compatible</desc0>
         <desc1>Partially compatible</desc1>
         <desc2>Fully comlpatible</desc2>
-        <score>0</score>
-        <comment></comment>
+        <comment>Test comment</comment>
       </element>
     </element>
   </section>
 </document>"""
 
 xml = "".join([line.strip() for line in (xml.splitlines())])
-d = splitter.createDocument(xml)
-print d["generic"]["packagingfreebsd"]
+d = splitter.parse(xml)

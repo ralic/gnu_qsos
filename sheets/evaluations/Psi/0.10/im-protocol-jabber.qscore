@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<qsosscore>
+	<header>
+		<author>
+			<name>
+				Walid Nouh
+			</name>
+			<email>
+				walid.nouh@atosorigin.com
+			</email>
+		</author>
+		<author>
+			<name>
+				Nicolas Verite
+			</name>
+			<email>
+				nicolas.verite@atosorigin.com
+			</email>
+		</author>
+		<dates>
+			<creation>
+				 
+			</creation>
+			<validation>
+				 
+			</validation>
+		</dates>
+	</header>
+	<scores>
+		<element name="customizablepresence">
+			<score>
+				1
+			</score>
+		</element>
+		<element name="gtalkim">
+			<score>
+				1
+			</score>
+			<comment>
+				Conversation works, but file transferts are not compatible
+			</comment>
+		</element>
+		<element name="AECvoip">
+			<score>
+				0
+			</score>
+		</element>
+		<element name="h323">
+			<score>
+				0
+			</score>
+		</element>
+		<element name="kopeteim">
+			<score>
+				2
+			</score>
+		</element>
+		<element name="interplateform">
+			<score>
+				0
+			</score>
+		</element>
+		<element name="vms">
+			<score>
+				0
+			</score>
+		</element>
+		<element name="sip">
+			<score>
+				0
+			</score>
+		</element>
+		<element name="nudge">
+			<score>
+				0
+			</score>
+		</element>
+		<element name="billing">
+			<score>
+				0
+			</score>
+		</element>
+		<element name="wengophonevoip">
+			<score>
+				0
+			</score>
+		</element>
+		<element name="encryption">
+			<score>
+				1
+			</score>
+			<comment>
+				Psi 0.10 does not support SASL
+			</comment>
+		</element>
+		<element name="away">
+			<score>
+				2
+			</score>
+		</element>
+		<element name="ekigaim">
+			<score>
+				0
+			</score>
+			<comment>
+				Ekiga does not use Jabber/XMPP for text messages
+			</comment>
+		</element>
+		<element name="integration">
+			<score>
+				0
+			</score>
+		</element>
+		<element name="priority">
+			<score>
+				2
+			</score>
+		</element>
+		<element name="ekigavisio">
+			<score>
+				0
+			</score>
+		</element>
+		<element name="muc">
+			<score>
+				1
+			</score>
+			<comment>
+				Only groupchat is supported
+			</comment>
+		</element>
+		<element name="presencestatus">
+			<score>
+				2
+			</score>
+		</element>
+		<element name="kopetevoip">
+			<score>
+				0
+			</score>
+		</element>
+		<element name="ivrasr">
+			<score>
+				0
+			</score>
+		</element>
+		<element name="Specific">
+			<score>
+				2
+			</score>
+			<comment>
+				Psi is a Jabber client
+			</comment>
+		</element>
+		<element name="smileys">
+			<score>
+				1
+			</score>
+		</element>
+		<element name="gaimvoip">
+			<score>
+				0
+			</score>
+		</element>
+		<element name="wengophoneim">
+			<score>
+				2
+			</score>
+		</element>
+		<element name="vcard">
+			<score>
+				2
+			</score>
+		</element>
+		<element name="whiteboard">
+			<score>
+				0
+			</score>
+		</element>
+		<element name="libjingle">
+			<score>
+				0
+			</score>
+		</element>
+		<element name="games">
+			<score>
+				0
+			</score>
+		</element>
+		<element name="avatar">
+			<score>
+				2
+			</score>
+			<comment>
+				Psi 0.10 does not display avatars in the roster. You can only publish or see avatars by watching the user information's page.
+			</comment>
+		</element>
+		<element name="gaimim">
+			<score>
+				2
+			</score>
+		</element>
+		<element name="p2pencryption">
+			<score>
+				2
+			</score>
+		</element>
+		<element name="wengophonevisio">
+			<score>
+				0
+			</score>
+		</element>
+		<element name="ekigavoip">
+			<score>
+				0
+			</score>
+		</element>
+		<element name="gtalkvoip">
+			<comment>
+				Test comment
+			</comment>
+		</element>
+	</scores>
+</qsosscore>
