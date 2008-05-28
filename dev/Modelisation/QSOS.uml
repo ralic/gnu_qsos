@@ -8,6 +8,7 @@
     <packagedElement xmi:type="uml:Package" xmi:id="_fQjnsBtCEd20Ic5V7wlTYw" name="Engine">
       <packagedElement xmi:type="uml:Class" xmi:id="_sEMnYBtEEd20Ic5V7wlTYw" name="Document">
         <ownedAttribute xmi:id="_z5D64BxBEd2LtfxPq-Jmnw" name="Attributes"/>
+        <ownedAttribute xmi:id="_4HrwMCvTEd2SB4RUxM895Q" name="properties" type="_uwYO4RtGEd20Ic5V7wlTYw"/>
         <ownedOperation xmi:id="_u_824BxBEd2LtfxPq-Jmnw" name="get"/>
         <ownedOperation xmi:id="_ySciYBxBEd2LtfxPq-Jmnw" name="set"/>
       </packagedElement>
@@ -75,9 +76,18 @@
         </ownedEnd>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="_iePVMCJUEd2I4KumF2ZrXg" name="Splitter">
-        <ownedOperation xmi:id="_Ob7EICJZEd2I4KumF2ZrXg" name="Parse">
-          <ownedParameter xmi:id="_TscikCJZEd2I4KumF2ZrXg" name="Evaluation" type="_sEMnYBtEEd20Ic5V7wlTYw" direction="return"/>
-          <ownedParameter xmi:id="_S_ZvACJcEd2I4KumF2ZrXg" name="Evaluation" type="_6IH4UBtIEd20Ic5V7wlTYw"/>
+        <ownedOperation xmi:id="_Ob7EICJZEd2I4KumF2ZrXg" name="parse">
+          <ownedParameter xmi:id="_S_ZvACJcEd2I4KumF2ZrXg" name="Evaluation" type="_uwYO4RtGEd20Ic5V7wlTYw"/>
+          <ownedParameter xmi:id="_q4r0wCvSEd2SB4RUxM895Q" name="repositoryroot" type="_uwYO4RtGEd20Ic5V7wlTYw"/>
+        </ownedOperation>
+        <ownedOperation xmi:id="_EjQVgCvTEd2SB4RUxM895Q" name="createDocument">
+          <ownedParameter xmi:id="_HT204CvTEd2SB4RUxM895Q" name="return" type="_sEMnYBtEEd20Ic5V7wlTYw" direction="return"/>
+          <ownedParameter xmi:id="_J9iM4CvTEd2SB4RUxM895Q" name="evaluation" type="_uwYO4RtGEd20Ic5V7wlTYw"/>
+          <ownedParameter xmi:id="_KOcWsCvTEd2SB4RUxM895Q" name="familypath" type="_uwYO4RtGEd20Ic5V7wlTYw"/>
+        </ownedOperation>
+        <ownedOperation xmi:id="_daEeECvTEd2SB4RUxM895Q" name="createScore">
+          <ownedParameter xmi:id="_guxJACvTEd2SB4RUxM895Q" name="return" type="_uwYO4RtGEd20Ic5V7wlTYw" direction="return"/>
+          <ownedParameter xmi:id="_k8DBwCvTEd2SB4RUxM895Q" name="family" type="_v88YMCJjEd2I4KumF2ZrXg"/>
         </ownedOperation>
       </packagedElement>
       <packagedElement xmi:type="uml:Package" xmi:id="_yay4gCJUEd2I4KumF2ZrXg" name="Plugins">
@@ -123,7 +133,14 @@
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Wr5LtyJYEd2I4KumF2ZrXg" value="1"/>
         </ownedEnd>
       </packagedElement>
-      <packagedElement xmi:type="uml:Class" xmi:id="_v88YMCJjEd2I4KumF2ZrXg" name="Family"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="_v88YMCJjEd2I4KumF2ZrXg" name="Family">
+        <ownedAttribute xmi:id="_LfkK4CvUEd2SB4RUxM895Q" name="authors"/>
+        <ownedAttribute xmi:id="_M9jy4CvUEd2SB4RUxM895Q" name="dates"/>
+        <ownedAttribute xmi:id="_OWmCYCvUEd2SB4RUxM895Q" name="scores"/>
+        <ownedAttribute xmi:id="_P3aU4CvUEd2SB4RUxM895Q" name="comments"/>
+        <ownedOperation xmi:id="_0ch3oCvUEd2SB4RUxM895Q" name="get"/>
+        <ownedOperation xmi:id="_1QttoCvUEd2SB4RUxM895Q" name="set"/>
+      </packagedElement>
       <packagedElement xmi:type="uml:Association" xmi:id="_78UUQCJjEd2I4KumF2ZrXg" name="Association6" memberEnd="_78UUQSJjEd2I4KumF2ZrXg _78UURCJjEd2I4KumF2ZrXg">
         <ownedEnd xmi:id="_78UUQSJjEd2I4KumF2ZrXg" name="source" type="_sEMnYBtEEd20Ic5V7wlTYw" association="_78UUQCJjEd2I4KumF2ZrXg">
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_78UUQiJjEd2I4KumF2ZrXg" value="1"/>
@@ -132,17 +149,6 @@
         <ownedEnd xmi:id="_78UURCJjEd2I4KumF2ZrXg" name="target" type="_v88YMCJjEd2I4KumF2ZrXg" aggregation="composite" association="_78UUQCJjEd2I4KumF2ZrXg">
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_78UURSJjEd2I4KumF2ZrXg" value="*"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_78U7UCJjEd2I4KumF2ZrXg" value="1"/>
-        </ownedEnd>
-      </packagedElement>
-      <packagedElement xmi:type="uml:Class" xmi:id="_CuEU4CJkEd2I4KumF2ZrXg" name="Properties"/>
-      <packagedElement xmi:type="uml:Association" xmi:id="_uwvOWCJkEd2I4KumF2ZrXg" name="Association7" memberEnd="_uwvOWSJkEd2I4KumF2ZrXg _uwvOXCJkEd2I4KumF2ZrXg">
-        <ownedEnd xmi:id="_uwvOWSJkEd2I4KumF2ZrXg" name="source" type="_sEMnYBtEEd20Ic5V7wlTYw" association="_uwvOWCJkEd2I4KumF2ZrXg">
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_uwvOWiJkEd2I4KumF2ZrXg" value="1"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_uwvOWyJkEd2I4KumF2ZrXg" value="1"/>
-        </ownedEnd>
-        <ownedEnd xmi:id="_uwvOXCJkEd2I4KumF2ZrXg" name="target" type="_CuEU4CJkEd2I4KumF2ZrXg" aggregation="composite" association="_uwvOWCJkEd2I4KumF2ZrXg">
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_uwvOXSJkEd2I4KumF2ZrXg" value="1"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_uwvOXiJkEd2I4KumF2ZrXg" value="1"/>
         </ownedEnd>
       </packagedElement>
       <packagedElement xmi:type="uml:Association" xmi:id="_NEVBQCJoEd2I4KumF2ZrXg" name="Association8" memberEnd="_NEVBQSJoEd2I4KumF2ZrXg _NEVBRCJoEd2I4KumF2ZrXg">

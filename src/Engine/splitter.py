@@ -4,12 +4,19 @@ from xml.dom import minidom
 import os
 
 def parse(evaluation,repositoryroot="../.."):
-    """Parses an evaluation
+    """Parses a qsos evaluation and creates/overwrite qscore files containing
+    elements' scores and comments for each family declared in qsosappfamily
+    evaluation's tag.
     
-    Parameter : 
-        - evaluation    -   string of evaluation XML flow
-        
-    Returns document"""
+    The tree structure under sheet directory may also be modified as qscore files
+    are created into appname/version directory. (appname and version are also
+    extracted from evaluation's header)
+    
+    Parameters : 
+        - evaluation     -   string of evaluation XML flow
+        - repositoryroot -   path to root of local copy of repository
+            default value of repositoryroot is ../..
+    """
     #Transform XML flow into document object
     document = createDocument(evaluation)
     
@@ -29,6 +36,23 @@ def parse(evaluation,repositoryroot="../.."):
         file.close()
 
 def createDocument(evaluation,familypath="../../sheets/families"):
+    """Creates a document object  from qsos raw evaluation
+    Relevant elements are extracted from families modelsheets (elements
+    with sub-elements are skipped as they do not have any score nor 
+    comment tag) and their evaluations are extracted from the qsos
+    evaluation. The authors and dates are the same (evaluation's in fact)
+    for each family. Generic section of qsos evaluation is also added to
+    families component of a document. 
+    
+    
+    Parameters :
+        - evaluation    -    string flow of qsos evaluation
+        - familypath    -    path to directory of families modelsheet
+            default value is ../../sheets/families
+        
+    Returns
+        document        -    document object of representation of evaluation
+        """
     rawDocument = minidom.parseString(evaluation)
     #Define the ID attribute of each element tag of the raw document
     for element in rawDocument.getElementsByTagName("element"):
@@ -88,10 +112,14 @@ def createDocument(evaluation,familypath="../../sheets/families"):
 
 
 def createScore(family):
-    """Creates the XML document to be stored on the 
-    filesystem of the evaluation from a family object
+    """Creates the qscore XML document of family object evaluation
+    content to be stored on the local copy of repository
     
-    Returns : string    String flow of the family object"""
+    Parameter :
+        family    -    the family object to be transformed
+    
+    Returns
+        string    -    XML formatted family's qscore sheet"""
     
     #Create the return DOM and root element <qsosscore>
     document = minidom.Document()
