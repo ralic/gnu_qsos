@@ -1,4 +1,5 @@
 import splitter
+import builder
 xml = """<?xml version="1.0" encoding="UTF-8"?>
 <document>
   <header>
@@ -909,5 +910,7 @@ Website: http://talk.google.com/</desc>
   </section>
 </document>"""
 
-xml = "".join([line.strip() for line in (xml.splitlines())])
-d = splitter.parse(xml)
+#xml = "".join([line.strip() for line in (xml.splitlines())])
+#d = splitter.parse(xml)
+
+print builder.build("psi", "0.10")

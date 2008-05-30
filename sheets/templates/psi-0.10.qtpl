@@ -30,13 +30,13 @@
 			For more information on jabber, see www.jabber.org (or the
 			jabber package which contains the jabber server software).
 		</desc>
-		<demourl></demourl>
+		<demourl> </demourl>
 		<qsosformat>2.0</qsosformat>
+		<qsosappname>psi</qsosappname>
+		<qsosspecificformat> </qsosspecificformat>
 		<qsosappfamilies>
 			<qsosappfamily>im-client-gui</qsosappfamily>
 			<qsosappfamily>im-protocol-jabber</qsosappfamily>
 		</qsosappfamilies>
-		<qsosappname>psi</qsosappname>
-		<qsosspecificformat></qsosspecificformat>
 	</template>
 </qsostemplate>

@@ -23,7 +23,7 @@ def parse(evaluation,repositoryroot="../.."):
     #Create tree folder in filesystem
     #makedirs fails with OSError 17 whenever the directory to make
     #already exists. This specific error is excepted 
-    path = os.path.join(repositoryroot,"sheets","evaluations",document["properties"][1],document["properties"][2])
+    path = os.path.join(repositoryroot,"sheets","evaluations",document["properties"][-1],document["properties"][2])
     try :
         os.makedirs(path)
     except OSError, error :
@@ -62,7 +62,7 @@ def createDocument(evaluation,familypath="../../sheets/families"):
     #the first, second and last tag of header are ignored
     #as they are not document properties but part of families contents
     header = rawDocument.firstChild.firstChild.childNodes
-    properties = [str(node.firstChild.data) for node in header[2:-2]]
+    properties = [node.firstChild.data for node in header[2:-2]]
     
     #Instantiate a QSOS-Document object initiated with the properties extracted
     #from XML evaluation and empty family dictionnary
@@ -127,6 +127,7 @@ def createScore(family):
     
     #Build header which contains only author and dates
     header = document.createElement("header")
+    toplevel = document.createElement("authors")
     for author in family["authors"] :
         tag = document.createElement("author")
         leaf = document.createElement("name")
@@ -134,9 +135,9 @@ def createScore(family):
         tag.appendChild(leaf)
         leaf = document.createElement("email")
         leaf.appendChild(document.createTextNode(author[1]))
-        tag.appendChild(leaf)                           
-        header.appendChild(tag)
-    
+        tag.appendChild(leaf)
+        toplevel.appendChild(tag)
+    header.appendChild(toplevel)
     tag = document.createElement("dates")
     leaf = document.createElement("creation")
     leaf.appendChild(document.createTextNode(family["date.creation"]))
