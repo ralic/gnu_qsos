@@ -15,7 +15,7 @@ def build(name, version, repositoryroot="../.."):
     content = minidom.parseString(template).firstChild.lastChild.childNodes
     
     #Extract properties from template contents
-    properties = [node.firstChild.data for node in content[0:-2]]
+    properties = dict([(node.tagName,node.firstChild.data) for node in content[0:-2]])
     
     #Build families object according to families declared from template
     #generic *family* must also be added to families
@@ -61,8 +61,37 @@ def build(name, version, repositoryroot="../.."):
     return document.Document(properties,families)
     
     
-def assembleSheet(name, repositoryroot="../.."):
-    pass
+def assembleSheet(document, repositoryroot="../.."):
+    #Create the global frame of the qsos document
+    sheet = minidom.Document()
+    root = sheet.createElement("document")
+    header = sheet.createElement("header")
+    authors = sheet.createElement("authors")
+    dates = sheet.createElement("dates")
+    header.appendChild(authors)
+    header.appendChild(dates)
+    root.appendChild(header)
+    
+    #Fill in header with properties
+    for item in document["properties"] :
+        tag = sheet.createElement(item)
+        tag.appendChild(sheet.createTextNode(document["properties"][item]))
+        header.appendChild(tag)
+    families = document["families"].keys()
+    
+    #Add blank qsos evaluation of families
+    for item in families :
+        include = ".".join([item, "qin"])
+        include = os.path.join(repositoryroot,"sheets","families",include)
+        include = file(include).read()
+        include = "".join([line.strip() for line in include.splitlines()])
+        include = minidom.parseString(include).firstChild
+        for section in include.childNodes[1:]:
+            root.appendChild(section)
+
+    #Finalize return document
+    sheet.appendChild(root)
+    return sheet
 
 def toqsos(sheet, document):
     pass

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<qsosappfamily name="im-client-gui">
+<qsosappfamily>
 	<header>
 		<authors>
 			<author>
@@ -12,12 +12,11 @@
 			</author>
 		</authors>
 		<dates>
-			<creation></creation>
-			<validation></validation>
+			<creation />
+			<validation />
 		</dates>
 	</header>
-	<section name="hmi"
-		title="Human/Machine Interface and other features">
+	<section name="hmi" title="Human/Machine Interface and other features">
 		<element name="skins" title="Customizable skins support">
 			<desc0>No customizable skin</desc0>
 			<desc1>
@@ -43,23 +42,18 @@
 					protocols
 				</desc2>
 			</element>
-			<element name="accountaccess"
-				title="Access to an account for management">
+			<element name="accountaccess" title="Access to an account for management">
 				<desc0>
-					No link for account management provided by the
-					client
+					No link for account management provided by the client
 				</desc0>
 				<desc1>
-					Link to the account management page for all or part
-					of supported protocols
+					Link to the account management page for all or part	of supported protocols
 				</desc1>
 				<desc2>
-					A native interface exists to edit accounts (all or
-					part of supported protocols)
+					A native interface exists to edit accounts (all or part of supported protocols)
 				</desc2>
 			</element>
-			<element name="accountdeleting"
-				title="Deleting an account">
+			<element name="accountdeleting" title="Deleting an account">
 				<desc0>
 					Deleting an account is not possible via the client
 				</desc0>
@@ -67,8 +61,7 @@
 					Link to the deletion page of an account is provided
 				</desc1>
 				<desc2>
-					A native interface permits to delete an account
-					without browsing the web
+					A native interface permits to delete an account	without browsing the web
 				</desc2>
 			</element>
 		</element>

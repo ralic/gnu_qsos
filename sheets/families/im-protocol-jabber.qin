@@ -1,5 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<qsosappfamily name="im-protocol-jabber">
+<qsosappfamily>
+	<header>
+		<authors>
+			<author>
+				<email>walid.nouh@atosorigin.com</email>
+				<name>Walid Nouh</name>
+			</author>
+			<author>
+				<email>nicolas.verite@atosorigin.com</email>
+				<name>Nicolas Vérité</name>
+			</author>
+		</authors>
+		<dates>
+			<creation></creation>
+			<validation></validation>
+		</dates>
+	</header>
 	<section name="Jabber" title="XMPP Protocol">
 		<desc>Textual Instant Messaging Protocols Supported</desc>
 		<element name="Open" title="Open Standard Protocols">

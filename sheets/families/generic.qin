@@ -1,5 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <generic>
+	<header>
+		<authors>
+			<author>
+				<email></email>
+				<name></name>
+			</author>
+			<author>
+				<email></email>
+				<name></name>
+			</author>
+		</authors>
+		<dates>
+			<creation />
+			<validation />
+		</dates>
+	</header>
    <section name="generic" title="Generic section">
       <desc>Generic criteria from QSOS version 1.6</desc>
       <element name="intrinsicdurability" title="Intrinsic durability">

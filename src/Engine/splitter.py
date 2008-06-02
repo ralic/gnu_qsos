@@ -23,7 +23,7 @@ def parse(evaluation,repositoryroot="../.."):
     #Create tree folder in filesystem
     #makedirs fails with OSError 17 whenever the directory to make
     #already exists. This specific error is excepted 
-    path = os.path.join(repositoryroot,"sheets","evaluations",document["properties"][-1],document["properties"][2])
+    path = os.path.join(repositoryroot,"sheets","evaluations",document["properties"]["qsosappname"],document["properties"]["release"])
     try :
         os.makedirs(path)
     except OSError, error :
@@ -62,7 +62,7 @@ def createDocument(evaluation,familypath="../../sheets/families"):
     #the first, second and last tag of header are ignored
     #as they are not document properties but part of families contents
     header = rawDocument.firstChild.firstChild.childNodes
-    properties = [node.firstChild.data for node in header[2:-2]]
+    properties = dict([(node.tagName,node.firstChild.data) for node in header[2:-2]])
     
     #Instantiate a QSOS-Document object initiated with the properties extracted
     #from XML evaluation and empty family dictionnary

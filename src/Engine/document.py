@@ -13,6 +13,8 @@ class Document :
         #Get properties of family and families sub components
         if key == "properties":
             return self.properties
+        elif key == "families":
+            return self.families
         else :
             try :
                 args = key.split(".") 
