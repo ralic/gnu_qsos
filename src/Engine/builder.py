@@ -88,10 +88,37 @@ def assembleSheet(document, repositoryroot="../.."):
         include = minidom.parseString(include).firstChild
         for section in include.childNodes[1:]:
             root.appendChild(section)
-
-    #Finalize return document
+    
+    #Finalize the blank  document
     sheet.appendChild(root)
-    return sheet
+    
+            
+    sheet = minidom.parseString(sheet.toxml())
+    #Define ID tag for the document
+    for elements in sheet.getElementsByTagName("element") :
+        elements.setIdAttribute("name")
+    #Fill-in evaluation with families data
+    for item in document["families"] :
+        scores = document[item].scores.copy()
+        comments = document[item].comments.copy()
+        #Iterate first from elements with scores
+        while scores :
+            (element,score) = scores.popitem()
+            e =  sheet.getElementById(element)
+            if not e.getElementsByTagName("score") :
+                e.appendChild(sheet.createElement("score"))
+            e.getElementsByTagName("score").item(0).appendChild(sheet.createTextNode(score))
+            if element in comments :
+                if not e.getElementsByTagName("comment"):
+                    e.appendChild(sheet.createElement("comment"))
+                e.getElementsByTagName("comment").item(0).appendChild(sheet.createTextNode(comments.pop(element)))
+        while comments :
+            (element, comment) = comments.popitem()
+            e =  sheet.getElementById(element)
+            if not e.getElementsByTagName("comment"):
+                e.appendChild(sheet.createElement("comment"))
+            e.getElementsByTagName("comment").item(0).appendChild(sheet.createTextNode(comment))
+    return sheet.toprettyxml("\t", "\n", "utf-8")
 
 def toqsos(sheet, document):
     pass
