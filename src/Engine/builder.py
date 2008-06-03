@@ -72,6 +72,13 @@ def assembleSheet(document, repositoryroot="../.."):
     header.appendChild(dates)
     root.appendChild(header)
     
+    #Lambda fucntions :
+    #    * add a text node in an element
+    #    * check if the element has the child node and create it if not
+    
+    addTextNode = lambda element,tag,text : element.getElementsByTagName(tag).item(0).appendChild(sheet.createTextNode(text))
+    checkChildNode = lambda element,tag : element.getElementsByTagName(tag) or element.appendChild(sheet.createElement(tag))
+    
     #Fill in header with properties
     for item in document["properties"] :
         tag = sheet.createElement(item)
@@ -94,31 +101,42 @@ def assembleSheet(document, repositoryroot="../.."):
     
             
     sheet = minidom.parseString(sheet.toxml())
+    
     #Define ID tag for the document
     for elements in sheet.getElementsByTagName("element") :
         elements.setIdAttribute("name")
-    #Fill-in evaluation with families data
+    
+    #Fill-in evaluations' section with families data
     for item in document["families"] :
         scores = document[item].scores.copy()
         comments = document[item].comments.copy()
-        #Iterate first from elements with scores
+        
+        #Iterate over families' contents :
+        #  (Scores and comments are duplicated so destructive iteration
+        #   won't affect families reference to them)
+        #
+        #    -Proceed first with elements with score :
+        #        * Begin with fetching the element and corresponding score
+        #        * Check if element has score tag (and add if so not)
+        #        * Check if element has comment component and fill-in the tag
+        #            (create it if doesn't exist yet)
+        #    -Do the same with remaining comments
+
         while scores :
             (element,score) = scores.popitem()
             e =  sheet.getElementById(element)
-            if not e.getElementsByTagName("score") :
-                e.appendChild(sheet.createElement("score"))
-            e.getElementsByTagName("score").item(0).appendChild(sheet.createTextNode(score))
+            
+            checkChildNode(e,"score")
+            addTextNode(e,"score",score)
+            
             if element in comments :
-                if not e.getElementsByTagName("comment"):
-                    e.appendChild(sheet.createElement("comment"))
-                e.getElementsByTagName("comment").item(0).appendChild(sheet.createTextNode(comments.pop(element)))
+                checkChildNode(e,"comment")
+                addTextNode(e,"comment",comments.pop(element))
+                
         while comments :
             (element, comment) = comments.popitem()
             e =  sheet.getElementById(element)
-            if not e.getElementsByTagName("comment"):
-                e.appendChild(sheet.createElement("comment"))
-            e.getElementsByTagName("comment").item(0).appendChild(sheet.createTextNode(comment))
+            checkChildNode(e,"comment")
+            addTextNode(e,"comment",comment)
+            
     return sheet.toprettyxml("\t", "\n", "utf-8")
-
-def toqsos(sheet, document):
-    pass
