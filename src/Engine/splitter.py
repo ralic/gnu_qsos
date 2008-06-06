@@ -15,8 +15,7 @@ def parse(evaluation,repositoryroot="../.."):
     Parameters : 
         - evaluation     -   string of evaluation XML flow
         - repositoryroot -   path to root of local copy of repository
-            default value of repositoryroot is ../..
-    """
+            default value of repositoryroot is ../.."""
     #Transform XML flow into document object
     document = createDocument(evaluation)
     

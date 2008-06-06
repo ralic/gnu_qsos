@@ -4,6 +4,7 @@ from nevow               import rend
 from nevow               import loaders
 from nevow               import tags as T
 from nevow               import inevow
+from nevow               import static
 
 from Engine import builder
 import os
@@ -48,7 +49,14 @@ class ReportsPage ( rend.Page ):
 class ReportEvaluation ( rend.Page ):
     
     def locateChild ( self, ctx, segments ):
-        return ( RenderEvaluation(), () )
+        [name,version]= inevow.IRequest ( ctx ).path.split("/")[-2:]
+        document = builder.build(name, version,"..")
+        tmp = "/".join(["","tmp","-".join([name,version])])
+        file = open(tmp,'w')
+        file.write(builder.assembleSheet(document,".."))
+        file.close()
+        return (static.File(tmp), ())
+#        return ( RenderEvaluation(), () )
     
 class SubPage ( rend.Page ):
     
@@ -60,7 +68,7 @@ class SubPage ( rend.Page ):
         request = inevow.IRequest ( ctx )
         path = "/".join(request.prepath[1:])
         body = [ T.h1 [path] ]
-        body.extend([T.p [ T.a ( href = 'repository/'+path+'/'+dir ) [ dir ] ] for dir in os.listdir("../sheets/"+path)])
+        body.extend([T.p [ T.a ( href = 'repository/'+path+'/'+dir ) [ dir.split(".")[:-1] ] ] for dir in os.listdir("../sheets/"+path)])
         return body
     
     docFactory = loaders.stan (
