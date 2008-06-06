@@ -5,6 +5,7 @@ from nevow               import loaders
 from nevow               import tags as T
 from nevow               import inevow
 
+from Engine import builder
 import os
 
 class Page404 ( rend.Page ):
@@ -21,16 +22,34 @@ class Page404 ( rend.Page ):
         T.html [ T.head [ T.title [ render_title ] ],
                  T.body [ render_body ]
         ]
+    ) 
+
+class RenderEvaluation ( rend.Page ):
+    
+    def render_title ( self, ctx, data ):
+        return "Title"
+    
+    def render_body ( self, ctx, data ):
+        [name,version]= inevow.IRequest ( ctx ).path.split("/")[-2:]
+        document = builder.build(name, version,"..")
+        return builder.assembleSheet(document,"..")
+    
+    docFactory = loaders.stan (
+        T.html [ T.head [ T.title [ render_title ] ],
+                 T.body [ render_body ]
+        ]
     )  
 
 class ReportsPage ( rend.Page ):
 
     def locateChild ( self, ctx, segments ):
-        request = inevow.IRequest ( ctx )
-        print "/".join(request.prepath[1:])
         return ( Page404(), () )
      
-
+class ReportEvaluation ( rend.Page ):
+    
+    def locateChild ( self, ctx, segments ):
+        return ( RenderEvaluation(), () )
+    
 class SubPage ( rend.Page ):
     
     def render_title ( self, ctx, data ):
@@ -41,7 +60,7 @@ class SubPage ( rend.Page ):
         request = inevow.IRequest ( ctx )
         path = "/".join(request.prepath[1:])
         body = [ T.h1 [path] ]
-        body.extend([T.p [ T.a ( href = 'repository/'+path+'/'+dir ) [ dir ] ] for dir in os.listdir("../../sheets/"+path)])
+        body.extend([T.p [ T.a ( href = 'repository/'+path+'/'+dir ) [ dir ] ] for dir in os.listdir("../sheets/"+path)])
         return body
     
     docFactory = loaders.stan (
@@ -50,7 +69,6 @@ class SubPage ( rend.Page ):
                  ]
         )
     
-    child_evaluations = ReportsPage();
     
 class EvaluationPage ( rend.Page ):
     
@@ -63,11 +81,10 @@ class EvaluationPage ( rend.Page ):
         path = "/".join(request.prepath[1:])
         body = [ T.h1 [path] ]
         body.extend([ [ T.p [
-                             T.a ( href = "/".join(["repository",dir,version]) ) [
-                                                               dir + "-" + version
-                                                               ]
-                             ] for version in os.listdir("../../sheets/"+path+'/'+dir)]
-                      for dir in os.listdir("../../sheets/"+path)])
+                             T.a ( href = "/".join(["evaluations",dir,version]) )
+                             [ dir + "-" + version ]
+                             ] for version in os.listdir("../sheets/"+path+'/'+dir)]
+                      for dir in os.listdir("../sheets/"+path)])
         return body
     
     docFactory = loaders.stan (
@@ -76,11 +93,12 @@ class EvaluationPage ( rend.Page ):
                  ]
         )
     
-    child_evaluations = ReportsPage();
+    def childFactory ( self, ctx, name ):
+        return ReportEvaluation()
 
 class MainPage ( rend.Page ):
     body = [ T.h1 ["/"] ]
-    body.extend([T.p [ T.a ( href = 'repository/'+dir ) [ dir ] ]for dir in os.listdir("../../sheets")])
+    body.extend([T.p [ T.a ( href = 'repository/'+dir ) [ dir ] ]for dir in os.listdir("../sheets")])
     docFactory = loaders.stan (
         T.html [ T.head ( title = 'Main Page' ),
                  T.body [ body ]
