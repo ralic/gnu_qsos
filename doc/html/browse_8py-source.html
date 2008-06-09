@@ -1,0 +1,141 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<title>QSOS-Upgrade:  Fichier source de git/src/Services/browse.py</title>
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+<link href="tabs.css" rel="stylesheet" type="text/css">
+</head><body>
+<!-- Généré par Doxygen 1.5.5 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="main.html"><span>Page&nbsp;principale</span></a></li>
+      <li><a href="namespaces.html"><span>Espaces de nommage</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Fichiers</span></a></li>
+    </ul>
+  </div>
+<h1>git/src/Services/browse.py</h1><a href="browse_8py.html">Aller à la documentation de ce fichier.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a><a class="code" href="namespaceServices_1_1browse.html">00001</a> <span class="keyword">from</span> twisted.application <span class="keyword">import</span> service, internet
+<a name="l00002"></a>00002 
+<a name="l00003"></a>00003 <span class="keyword">from</span> nevow               <span class="keyword">import</span> rend
+<a name="l00004"></a>00004 <span class="keyword">from</span> nevow               <span class="keyword">import</span> loaders
+<a name="l00005"></a>00005 <span class="keyword">from</span> nevow               <span class="keyword">import</span> tags <span class="keyword">as</span> T
+<a name="l00006"></a>00006 <span class="keyword">from</span> nevow               <span class="keyword">import</span> inevow
+<a name="l00007"></a>00007 <span class="keyword">from</span> nevow               <span class="keyword">import</span> static
+<a name="l00008"></a>00008 
+<a name="l00009"></a>00009 <span class="keyword">from</span> Engine <span class="keyword">import</span> builder
+<a name="l00010"></a>00010 <span class="keyword">import</span> os
+<a name="l00011"></a>00011 
+<a name="l00012"></a><a class="code" href="classServices_1_1browse_1_1Page404.html">00012</a> <span class="keyword">class </span><a class="code" href="classServices_1_1browse_1_1Page404.html">Page404</a> ( rend.Page ):
+<a name="l00013"></a>00013 
+<a name="l00014"></a><a class="code" href="classServices_1_1browse_1_1Page404.html#3b97d2d074e8ee4f560d2bc8c2424061">00014</a>     <span class="keyword">def </span><a class="code" href="classServices_1_1browse_1_1Page404.html#3b97d2d074e8ee4f560d2bc8c2424061">render_title</a> ( self, ctx, data ):
+<a name="l00015"></a>00015         request = inevow.IRequest ( ctx )
+<a name="l00016"></a>00016         <span class="keywordflow">return</span> <span class="stringliteral">"Currently browsing  %s"</span> % ( <span class="stringliteral">"/"</span>.join(request.prepath[1:]), )
+<a name="l00017"></a>00017 
+<a name="l00018"></a><a class="code" href="classServices_1_1browse_1_1Page404.html#5a19dec53ad65c08eb2dbd9019f73737">00018</a>     <span class="keyword">def </span><a class="code" href="classServices_1_1browse_1_1Page404.html#5a19dec53ad65c08eb2dbd9019f73737">render_body</a> ( self, ctx, data ):
+<a name="l00019"></a>00019         request = inevow.IRequest ( ctx )
+<a name="l00020"></a>00020         <span class="keywordflow">return</span> <span class="stringliteral">"Not Found"</span>
+<a name="l00021"></a>00021 
+<a name="l00022"></a><a class="code" href="classServices_1_1browse_1_1Page404.html#4c38806413947bcd2fd8c735f0413a18">00022</a>     docFactory = loaders.stan (
+<a name="l00023"></a>00023         T.html [ T.head [ T.title [ render_title ] ],
+<a name="l00024"></a>00024                  T.body [ render_body ]
+<a name="l00025"></a>00025         ]
+<a name="l00026"></a>00026     ) 
+<a name="l00027"></a>00027 
+<a name="l00028"></a><a class="code" href="classServices_1_1browse_1_1RenderEvaluation.html">00028</a> <span class="keyword">class </span><a class="code" href="classServices_1_1browse_1_1RenderEvaluation.html">RenderEvaluation</a> ( rend.Page ):
+<a name="l00029"></a>00029     
+<a name="l00030"></a><a class="code" href="classServices_1_1browse_1_1RenderEvaluation.html#be112e1787676b938e9749a9bab91886">00030</a>     <span class="keyword">def </span><a class="code" href="classServices_1_1browse_1_1RenderEvaluation.html#be112e1787676b938e9749a9bab91886">render_title</a> ( self, ctx, data ):
+<a name="l00031"></a>00031         <span class="keywordflow">return</span> <span class="stringliteral">"Title"</span>
+<a name="l00032"></a>00032     
+<a name="l00033"></a><a class="code" href="classServices_1_1browse_1_1RenderEvaluation.html#938ff707e351513a09a6b196901ecc70">00033</a>     <span class="keyword">def </span><a class="code" href="classServices_1_1browse_1_1RenderEvaluation.html#938ff707e351513a09a6b196901ecc70">render_body</a> ( self, ctx, data ):
+<a name="l00034"></a>00034         [name,version]= inevow.IRequest ( ctx ).path.split(<span class="stringliteral">"/"</span>)[-2:]
+<a name="l00035"></a>00035         document = builder.build(name, version,<span class="stringliteral">".."</span>)
+<a name="l00036"></a>00036         <span class="keywordflow">return</span> builder.assembleSheet(document,<span class="stringliteral">".."</span>)
+<a name="l00037"></a>00037     
+<a name="l00038"></a><a class="code" href="classServices_1_1browse_1_1RenderEvaluation.html#50f269d84be802a4cef124838b81cfa9">00038</a>     docFactory = loaders.stan (
+<a name="l00039"></a>00039         T.html [ T.head [ T.title [ render_title ] ],
+<a name="l00040"></a>00040                  T.body [ render_body ]
+<a name="l00041"></a>00041         ]
+<a name="l00042"></a>00042     )  
+<a name="l00043"></a>00043 
+<a name="l00044"></a><a class="code" href="classServices_1_1browse_1_1ReportsPage.html">00044</a> <span class="keyword">class </span><a class="code" href="classServices_1_1browse_1_1ReportsPage.html">ReportsPage</a> ( rend.Page ):
+<a name="l00045"></a>00045 
+<a name="l00046"></a><a class="code" href="classServices_1_1browse_1_1ReportsPage.html#9545c2da18e3b4f7dd350329b5d44acc">00046</a>     <span class="keyword">def </span><a class="code" href="classServices_1_1browse_1_1ReportsPage.html#9545c2da18e3b4f7dd350329b5d44acc">locateChild</a> ( self, ctx, segments ):
+<a name="l00047"></a>00047         <span class="keywordflow">return</span> ( Page404(), () )
+<a name="l00048"></a>00048      
+<a name="l00049"></a><a class="code" href="classServices_1_1browse_1_1ReportEvaluation.html">00049</a> <span class="keyword">class </span><a class="code" href="classServices_1_1browse_1_1ReportEvaluation.html">ReportEvaluation</a> ( rend.Page ):
+<a name="l00050"></a>00050     
+<a name="l00051"></a><a class="code" href="classServices_1_1browse_1_1ReportEvaluation.html#3b0f91a6ef8c1efa79d52eae60b5793d">00051</a>     <span class="keyword">def </span><a class="code" href="classServices_1_1browse_1_1ReportEvaluation.html#3b0f91a6ef8c1efa79d52eae60b5793d">locateChild</a> ( self, ctx, segments ):
+<a name="l00052"></a>00052         [name,version]= inevow.IRequest ( ctx ).path.split(<span class="stringliteral">"/"</span>)[-2:]
+<a name="l00053"></a>00053         document = builder.build(name, version,<span class="stringliteral">".."</span>)
+<a name="l00054"></a>00054         tmp = <span class="stringliteral">"/"</span>.join([<span class="stringliteral">""</span>,<span class="stringliteral">"tmp"</span>,<span class="stringliteral">"-"</span>.join([name,version])])
+<a name="l00055"></a>00055         file = open(tmp,<span class="stringliteral">'w'</span>)
+<a name="l00056"></a>00056         file.write(builder.assembleSheet(document,<span class="stringliteral">".."</span>))
+<a name="l00057"></a>00057         file.close()
+<a name="l00058"></a>00058         <span class="keywordflow">return</span> (static.File(tmp), ())
+<a name="l00059"></a>00059 <span class="comment">#        return ( RenderEvaluation(), () )</span>
+<a name="l00060"></a>00060     
+<a name="l00061"></a><a class="code" href="classServices_1_1browse_1_1SubPage.html">00061</a> <span class="keyword">class </span><a class="code" href="classServices_1_1browse_1_1SubPage.html">SubPage</a> ( rend.Page ):
+<a name="l00062"></a>00062     
+<a name="l00063"></a><a class="code" href="classServices_1_1browse_1_1SubPage.html#edf0952510c5febcabd930687a348cac">00063</a>     <span class="keyword">def </span><a class="code" href="classServices_1_1browse_1_1SubPage.html#edf0952510c5febcabd930687a348cac">render_title</a> ( self, ctx, data ):
+<a name="l00064"></a>00064         request = inevow.IRequest ( ctx )
+<a name="l00065"></a>00065         <span class="keywordflow">return</span> <span class="stringliteral">"Currently browsing  %s"</span> % ( <span class="stringliteral">"/"</span>.join(request.prepath[1:]), )
+<a name="l00066"></a>00066     
+<a name="l00067"></a><a class="code" href="classServices_1_1browse_1_1SubPage.html#d1b0d96c4086b64de18c37f812da8174">00067</a>     <span class="keyword">def </span><a class="code" href="classServices_1_1browse_1_1SubPage.html#d1b0d96c4086b64de18c37f812da8174">body</a> ( self, ctx, data ):
+<a name="l00068"></a>00068         request = inevow.IRequest ( ctx )
+<a name="l00069"></a>00069         path = <span class="stringliteral">"/"</span>.join(request.prepath[1:])
+<a name="l00070"></a>00070         body = [ T.h1 [path] ]
+<a name="l00071"></a>00071         body.extend([T.p [ T.a ( href = <span class="stringliteral">'repository/'</span>+path+<span class="stringliteral">'/'</span>+dir ) [ dir.split(<span class="stringliteral">"."</span>)[:-1] ] ] <span class="keywordflow">for</span> dir <span class="keywordflow">in</span> os.listdir(<span class="stringliteral">"../sheets/"</span>+path)])
+<a name="l00072"></a>00072         <span class="keywordflow">return</span> body
+<a name="l00073"></a>00073     
+<a name="l00074"></a><a class="code" href="classServices_1_1browse_1_1SubPage.html#12e7c573b23b32650766f304c954f27d">00074</a>     docFactory = loaders.stan (
+<a name="l00075"></a>00075         T.html [  T.head [ T.title [ render_title ] ], 
+<a name="l00076"></a>00076                   body
+<a name="l00077"></a>00077                  ]
+<a name="l00078"></a>00078         )
+<a name="l00079"></a>00079     
+<a name="l00080"></a>00080     
+<a name="l00081"></a><a class="code" href="classServices_1_1browse_1_1EvaluationPage.html">00081</a> <span class="keyword">class </span><a class="code" href="classServices_1_1browse_1_1EvaluationPage.html">EvaluationPage</a> ( rend.Page ):
+<a name="l00082"></a>00082     
+<a name="l00083"></a><a class="code" href="classServices_1_1browse_1_1EvaluationPage.html#5a963e938fd597ab15902ecd48d430ea">00083</a>     <span class="keyword">def </span><a class="code" href="classServices_1_1browse_1_1EvaluationPage.html#5a963e938fd597ab15902ecd48d430ea">render_title</a> ( self, ctx, data ):
+<a name="l00084"></a>00084         request = inevow.IRequest ( ctx )
+<a name="l00085"></a>00085         <span class="keywordflow">return</span> <span class="stringliteral">"Currently browsing  %s"</span> % ( <span class="stringliteral">"/"</span>.join(request.prepath[1:]), )
+<a name="l00086"></a>00086     
+<a name="l00087"></a><a class="code" href="classServices_1_1browse_1_1EvaluationPage.html#72b0bdd199654d5b837d997fe926e930">00087</a>     <span class="keyword">def </span><a class="code" href="classServices_1_1browse_1_1EvaluationPage.html#72b0bdd199654d5b837d997fe926e930">body</a> ( self, ctx, data ):
+<a name="l00088"></a>00088         request = inevow.IRequest ( ctx )
+<a name="l00089"></a>00089         path = <span class="stringliteral">"/"</span>.join(request.prepath[1:])
+<a name="l00090"></a>00090         body = [ T.h1 [path] ]
+<a name="l00091"></a>00091         body.extend([ [ T.p [
+<a name="l00092"></a>00092                              T.a ( href = <span class="stringliteral">"/"</span>.join([<span class="stringliteral">"evaluations"</span>,dir,version]) )
+<a name="l00093"></a>00093                              [ dir + <span class="stringliteral">"-"</span> + version ]
+<a name="l00094"></a>00094                              ] <span class="keywordflow">for</span> version <span class="keywordflow">in</span> os.listdir(<span class="stringliteral">"../sheets/"</span>+path+<span class="stringliteral">'/'</span>+dir)]
+<a name="l00095"></a>00095                       <span class="keywordflow">for</span> dir <span class="keywordflow">in</span> os.listdir(<span class="stringliteral">"../sheets/"</span>+path)])
+<a name="l00096"></a>00096         <span class="keywordflow">return</span> body
+<a name="l00097"></a>00097     
+<a name="l00098"></a><a class="code" href="classServices_1_1browse_1_1EvaluationPage.html#10270ee88d0a66efd3807111a9b480dd">00098</a>     docFactory = loaders.stan (
+<a name="l00099"></a>00099         T.html [  T.head [ T.title [ render_title ] ], 
+<a name="l00100"></a>00100                   body
+<a name="l00101"></a>00101                  ]
+<a name="l00102"></a>00102         )
+<a name="l00103"></a>00103     
+<a name="l00104"></a><a class="code" href="classServices_1_1browse_1_1EvaluationPage.html#453928db9ee127ede78b1d180871c2cd">00104</a>     <span class="keyword">def </span><a class="code" href="classServices_1_1browse_1_1EvaluationPage.html#453928db9ee127ede78b1d180871c2cd">childFactory</a> ( self, ctx, name ):
+<a name="l00105"></a>00105         <span class="keywordflow">return</span> ReportEvaluation()
+<a name="l00106"></a>00106 
+<a name="l00107"></a><a class="code" href="classServices_1_1browse_1_1MainPage.html">00107</a> <span class="keyword">class </span><a class="code" href="classServices_1_1browse_1_1MainPage.html">MainPage</a> ( rend.Page ):
+<a name="l00108"></a><a class="code" href="classServices_1_1browse_1_1MainPage.html#d3587a8b61a10a56b9748f900139e40f">00108</a>     body = [ T.h1 [<span class="stringliteral">"/"</span>] ]
+<a name="l00109"></a>00109     body.extend([T.p [ T.a ( href = <span class="stringliteral">'repository/'</span>+dir ) [ dir ] ]<span class="keywordflow">for</span> dir <span class="keywordflow">in</span> os.listdir(<span class="stringliteral">"../sheets"</span>)])
+<a name="l00110"></a><a class="code" href="classServices_1_1browse_1_1MainPage.html#99a27f3ca30d61dd9af0f0e18c025050">00110</a>     docFactory = loaders.stan (
+<a name="l00111"></a>00111         T.html [ T.head ( title = <span class="stringliteral">'Main Page'</span> ),
+<a name="l00112"></a>00112                  T.body [ body ]
+<a name="l00113"></a>00113                  ]
+<a name="l00114"></a>00114         )
+<a name="l00115"></a>00115     
+<a name="l00116"></a><a class="code" href="classServices_1_1browse_1_1MainPage.html#c0df155a91265380868257b33610d5a0">00116</a>     <span class="keyword">def </span><a class="code" href="classServices_1_1browse_1_1MainPage.html#c0df155a91265380868257b33610d5a0">childFactory</a> ( self, ctx, name ):
+<a name="l00117"></a>00117         <span class="keywordflow">return</span> SubPage()
+<a name="l00118"></a>00118 
+<a name="l00119"></a><a class="code" href="classServices_1_1browse_1_1MainPage.html#2a058c4cbda42ea6bcc4abaf5dd4f1e6">00119</a>     children = { <span class="stringliteral">'evaluations'</span> : EvaluationPage() }
+</pre></div></div>
+<hr size="1"><address style="text-align: right;"><small>Généré le Mon Jun 9 17:49:00 2008 pour QSOS-Upgrade par&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.5 </small></address>
+</body>
+</html>

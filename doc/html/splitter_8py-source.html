@@ -1,0 +1,211 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<title>QSOS-Upgrade:  Fichier source de git/src/Engine/splitter.py</title>
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+<link href="tabs.css" rel="stylesheet" type="text/css">
+</head><body>
+<!-- Généré par Doxygen 1.5.5 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="main.html"><span>Page&nbsp;principale</span></a></li>
+      <li><a href="namespaces.html"><span>Espaces de nommage</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Fichiers</span></a></li>
+    </ul>
+  </div>
+<h1>git/src/Engine/splitter.py</h1><a href="splitter_8py.html">Aller à la documentation de ce fichier.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a><a class="code" href="namespaceEngine_1_1splitter.html">00001</a> <span class="keyword">from</span> Engine <span class="keyword">import</span> document
+<a name="l00002"></a>00002 <span class="keyword">from</span> Engine <span class="keyword">import</span> family
+<a name="l00003"></a>00003 <span class="keyword">from</span> xml.dom <span class="keyword">import</span> minidom
+<a name="l00004"></a>00004 <span class="keyword">import</span> os
+<a name="l00005"></a>00005 
+<a name="l00006"></a><a class="code" href="namespaceEngine_1_1splitter.html#b2872987c1888afb3b6094ba5caf774c">00006</a> <span class="keyword">def </span><a class="code" href="namespaceEngine_1_1splitter.html#b2872987c1888afb3b6094ba5caf774c">parse</a>(evaluation,repositoryroot="../.."):
+<a name="l00007"></a>00007     <span class="stringliteral">"""Parses a qsos evaluation and creates/overwrite qscore files containing</span>
+<a name="l00008"></a>00008 <span class="stringliteral">    elements' scores and comments for each family declared in qsosappfamily</span>
+<a name="l00009"></a>00009 <span class="stringliteral">    evaluation's tag.</span>
+<a name="l00010"></a>00010 <span class="stringliteral">    </span>
+<a name="l00011"></a>00011 <span class="stringliteral">    The tree structure under sheet directory may also be modified as qscore files</span>
+<a name="l00012"></a>00012 <span class="stringliteral">    are created into appname/version directory. (appname and version are also</span>
+<a name="l00013"></a>00013 <span class="stringliteral">    extracted from evaluation's header)</span>
+<a name="l00014"></a>00014 <span class="stringliteral">    </span>
+<a name="l00015"></a>00015 <span class="stringliteral">    Parameters : </span>
+<a name="l00016"></a>00016 <span class="stringliteral">        - evaluation     -   string of evaluation XML flow</span>
+<a name="l00017"></a>00017 <span class="stringliteral">        - repositoryroot -   path to root of local copy of repository</span>
+<a name="l00018"></a>00018 <span class="stringliteral">            default value of repositoryroot is ../.."""</span>
+<a name="l00019"></a>00019     <span class="comment">#Transform XML flow into document object</span>
+<a name="l00020"></a>00020     document = createDocument(evaluation)
+<a name="l00021"></a>00021     
+<a name="l00022"></a>00022     <span class="comment">#Create tree folder in filesystem</span>
+<a name="l00023"></a>00023     <span class="comment">#makedirs fails with OSError 17 whenever the directory to make</span>
+<a name="l00024"></a>00024     <span class="comment">#already exists. This specific error is excepted </span>
+<a name="l00025"></a>00025     path = os.path.join(repositoryroot,<span class="stringliteral">"sheets"</span>,<span class="stringliteral">"evaluations"</span>,document[<span class="stringliteral">"properties"</span>][<span class="stringliteral">"qsosappname"</span>],document[<span class="stringliteral">"properties"</span>][<span class="stringliteral">"release"</span>])
+<a name="l00026"></a>00026     <span class="keywordflow">try</span> :
+<a name="l00027"></a>00027         os.makedirs(path)
+<a name="l00028"></a>00028     <span class="keywordflow">except</span> OSError, error :
+<a name="l00029"></a>00029         <span class="keywordflow">if</span> error[0] != 17 : <span class="keywordflow">raise</span> OSError, error
+<a name="l00030"></a>00030     
+<a name="l00031"></a>00031     <span class="comment">#As the folder is created, can be added into.</span>
+<a name="l00032"></a>00032     <span class="keywordflow">for</span> f <span class="keywordflow">in</span> document.families :
+<a name="l00033"></a>00033         file = open(os.path.join(path,<span class="stringliteral">"."</span>.join([f,<span class="stringliteral">"qscore"</span>])),<span class="stringliteral">'w'</span>)
+<a name="l00034"></a>00034         file.write(createScore(document[f]))
+<a name="l00035"></a>00035         file.close()
+<a name="l00036"></a>00036 
+<a name="l00037"></a><a class="code" href="namespaceEngine_1_1splitter.html#85a4a85af4c8fbf2f756f0d77bf3371e">00037</a> <span class="keyword">def </span><a class="code" href="namespaceEngine_1_1splitter.html#85a4a85af4c8fbf2f756f0d77bf3371e">createDocument</a>(evaluation,familypath="../../sheets/families"):
+<a name="l00038"></a>00038     <span class="stringliteral">"""Creates a document object  from qsos raw evaluation</span>
+<a name="l00039"></a>00039 <span class="stringliteral">    Relevant elements are extracted from families modelsheets (elements</span>
+<a name="l00040"></a>00040 <span class="stringliteral">    with sub-elements are skipped as they do not have any score nor </span>
+<a name="l00041"></a>00041 <span class="stringliteral">    comment tag) and their evaluations are extracted from the qsos</span>
+<a name="l00042"></a>00042 <span class="stringliteral">    evaluation. The authors and dates are the same (evaluation's in fact)</span>
+<a name="l00043"></a>00043 <span class="stringliteral">    for each family. Generic section of qsos evaluation is also added to</span>
+<a name="l00044"></a>00044 <span class="stringliteral">    families component of a document. </span>
+<a name="l00045"></a>00045 <span class="stringliteral">    </span>
+<a name="l00046"></a>00046 <span class="stringliteral">    </span>
+<a name="l00047"></a>00047 <span class="stringliteral">    Parameters :</span>
+<a name="l00048"></a>00048 <span class="stringliteral">        - evaluation    -    string flow of qsos evaluation</span>
+<a name="l00049"></a>00049 <span class="stringliteral">        - familypath    -    path to directory of families modelsheet</span>
+<a name="l00050"></a>00050 <span class="stringliteral">            default value is ../../sheets/families</span>
+<a name="l00051"></a>00051 <span class="stringliteral">        </span>
+<a name="l00052"></a>00052 <span class="stringliteral">    Returns</span>
+<a name="l00053"></a>00053 <span class="stringliteral">        document        -    document object of representation of evaluation</span>
+<a name="l00054"></a>00054 <span class="stringliteral">        """</span>
+<a name="l00055"></a>00055     rawDocument = minidom.parseString(evaluation)
+<a name="l00056"></a>00056     <span class="comment">#Define the ID attribute of each element tag of the raw document</span>
+<a name="l00057"></a>00057     <span class="keywordflow">for</span> element <span class="keywordflow">in</span> rawDocument.getElementsByTagName(<span class="stringliteral">"element"</span>):
+<a name="l00058"></a>00058         element.setIdAttribute(<span class="stringliteral">"name"</span>)
+<a name="l00059"></a>00059         
+<a name="l00060"></a>00060     <span class="comment">#Create the property list from the content of header.</span>
+<a name="l00061"></a>00061     <span class="comment">#the first, second and last tag of header are ignored</span>
+<a name="l00062"></a>00062     <span class="comment">#as they are not document properties but part of families contents</span>
+<a name="l00063"></a>00063     header = rawDocument.firstChild.firstChild.childNodes
+<a name="l00064"></a>00064     properties = dict([(node.tagName,node.firstChild.data) <span class="keywordflow">for</span> node <span class="keywordflow">in</span> header[2:-2]])
+<a name="l00065"></a>00065     
+<a name="l00066"></a>00066     <span class="comment">#Instantiate a QSOS-Document object initiated with the properties extracted</span>
+<a name="l00067"></a>00067     <span class="comment">#from XML evaluation and empty family dictionnary</span>
+<a name="l00068"></a>00068     qsos = document.Document(properties,{})
+<a name="l00069"></a>00069     
+<a name="l00070"></a>00070     <span class="comment">#Extract  relevant information from the raw evaluation:</span>
+<a name="l00071"></a>00071     <span class="comment">#    - authors</span>
+<a name="l00072"></a>00072     <span class="comment">#    - dates</span>
+<a name="l00073"></a>00073     <span class="comment">#    - families (generic section is manually as it appears in each evaluation</span>
+<a name="l00074"></a>00074     
+<a name="l00075"></a>00075     <span class="comment"># TODO : Each information should be probed in case no values are</span>
+<a name="l00076"></a>00076     <span class="comment">#         provided in the XML document</span>
+<a name="l00077"></a>00077     
+<a name="l00078"></a>00078     authors = [(item.firstChild.firstChild.data, item.lastChild.firstChild.data) <span class="keywordflow">for</span> item <span class="keywordflow">in</span> header[0].childNodes]
+<a name="l00079"></a>00079     dates = (header[1].firstChild.firstChild.data, header[1].lastChild.firstChild.data)
+<a name="l00080"></a>00080     families = [node.firstChild.data <span class="keywordflow">for</span> node <span class="keywordflow">in</span> header[-1].childNodes]
+<a name="l00081"></a>00081     families.insert(0,<span class="stringliteral">"generic"</span>)
+<a name="l00082"></a>00082 
+<a name="l00083"></a>00083     <span class="comment">#Build the Family object for each family component of the evaluation :</span>
+<a name="l00084"></a>00084     <span class="comment">#    - Extract from repository the family sheet (.qin files)</span>
+<a name="l00085"></a>00085     <span class="comment">#    - Read the scores and comments from evaluation</span>
+<a name="l00086"></a>00086     <span class="comment">#    - Update entry in family object</span>
+<a name="l00087"></a>00087     <span class="keywordflow">for</span> include <span class="keywordflow">in</span> families :
+<a name="l00088"></a>00088         template = minidom.parse(<span class="stringliteral">"/"</span>.join([familypath,<span class="stringliteral">"."</span>.join([include,<span class="stringliteral">"qin"</span>])]))
+<a name="l00089"></a>00089         <span class="comment">#Initiate the family object : </span>
+<a name="l00090"></a>00090         <span class="comment">#    -same authors and dates for all families of the same evaluation</span>
+<a name="l00091"></a>00091         <span class="comment">#    -empty score and comments dictionnary</span>
+<a name="l00092"></a>00092         f = family.family(authors, dates, {}, {})
+<a name="l00093"></a>00093         <span class="keywordflow">for</span> element <span class="keywordflow">in</span> template.getElementsByTagName(<span class="stringliteral">"desc0"</span>):
+<a name="l00094"></a>00094             name = element.parentNode.getAttribute(<span class="stringliteral">"name"</span>)
+<a name="l00095"></a>00095             
+<a name="l00096"></a>00096             <span class="comment"># TODO : use a logger for AttributeError exception^^</span>
+<a name="l00097"></a>00097         
+<a name="l00098"></a>00098             <span class="keywordflow">try</span> :
+<a name="l00099"></a>00099                 f.scores[name] = rawDocument.getElementById(name).getElementsByTagName(<span class="stringliteral">"score"</span>).item(0).firstChild.data
+<a name="l00100"></a>00100             <span class="keywordflow">except</span> AttributeError :
+<a name="l00101"></a>00101                 <span class="keywordflow">print</span> <span class="stringliteral">"No score found for element %s"</span> % (name,)
+<a name="l00102"></a>00102                 <span class="keywordflow">pass</span>    
+<a name="l00103"></a>00103             <span class="keywordflow">try</span> :
+<a name="l00104"></a>00104                 f.comments[name] = rawDocument.getElementById(name).getElementsByTagName(<span class="stringliteral">"comment"</span>).item(0).firstChild.data
+<a name="l00105"></a>00105             <span class="keywordflow">except</span> AttributeError :
+<a name="l00106"></a>00106                 <span class="keywordflow">pass</span>
+<a name="l00107"></a>00107                 <span class="keywordflow">print</span> <span class="stringliteral">"No comment found for element %s"</span> % (name,)
+<a name="l00108"></a>00108         <span class="comment">#End of iteration, just add the family in document object</span>
+<a name="l00109"></a>00109         qsos.families[include] = f
+<a name="l00110"></a>00110     <span class="keywordflow">return</span> qsos
+<a name="l00111"></a>00111 
+<a name="l00112"></a>00112 
+<a name="l00113"></a><a class="code" href="namespaceEngine_1_1splitter.html#f8103d0504abf06c3a6cbaf61bb045e2">00113</a> <span class="keyword">def </span><a class="code" href="namespaceEngine_1_1splitter.html#f8103d0504abf06c3a6cbaf61bb045e2">createScore</a>(family):
+<a name="l00114"></a>00114     <span class="stringliteral">"""Creates the qscore XML document of family object evaluation</span>
+<a name="l00115"></a>00115 <span class="stringliteral">    content to be stored on the local copy of repository</span>
+<a name="l00116"></a>00116 <span class="stringliteral">    </span>
+<a name="l00117"></a>00117 <span class="stringliteral">    Parameter :</span>
+<a name="l00118"></a>00118 <span class="stringliteral">        family    -    the family object to be transformed</span>
+<a name="l00119"></a>00119 <span class="stringliteral">    </span>
+<a name="l00120"></a>00120 <span class="stringliteral">    Returns</span>
+<a name="l00121"></a>00121 <span class="stringliteral">        string    -    XML formatted family's qscore sheet"""</span>
+<a name="l00122"></a>00122     
+<a name="l00123"></a>00123     <span class="comment">#Create the return DOM and root element &lt;qsosscore&gt;</span>
+<a name="l00124"></a>00124     document = minidom.Document()
+<a name="l00125"></a>00125     root = document.createElement(<span class="stringliteral">"qsosscore"</span>)
+<a name="l00126"></a>00126     
+<a name="l00127"></a>00127     <span class="comment">#Build header which contains only author and dates</span>
+<a name="l00128"></a>00128     header = document.createElement(<span class="stringliteral">"header"</span>)
+<a name="l00129"></a>00129     toplevel = document.createElement(<span class="stringliteral">"authors"</span>)
+<a name="l00130"></a>00130     <span class="keywordflow">for</span> author <span class="keywordflow">in</span> family[<span class="stringliteral">"authors"</span>] :
+<a name="l00131"></a>00131         tag = document.createElement(<span class="stringliteral">"author"</span>)
+<a name="l00132"></a>00132         leaf = document.createElement(<span class="stringliteral">"name"</span>)
+<a name="l00133"></a>00133         leaf.appendChild(document.createTextNode(author[0]))
+<a name="l00134"></a>00134         tag.appendChild(leaf)
+<a name="l00135"></a>00135         leaf = document.createElement(<span class="stringliteral">"email"</span>)
+<a name="l00136"></a>00136         leaf.appendChild(document.createTextNode(author[1]))
+<a name="l00137"></a>00137         tag.appendChild(leaf)
+<a name="l00138"></a>00138         toplevel.appendChild(tag)
+<a name="l00139"></a>00139     header.appendChild(toplevel)
+<a name="l00140"></a>00140     tag = document.createElement(<span class="stringliteral">"dates"</span>)
+<a name="l00141"></a>00141     leaf = document.createElement(<span class="stringliteral">"creation"</span>)
+<a name="l00142"></a>00142     leaf.appendChild(document.createTextNode(family[<span class="stringliteral">"date.creation"</span>]))
+<a name="l00143"></a>00143     tag.appendChild(leaf)
+<a name="l00144"></a>00144     leaf = document.createElement(<span class="stringliteral">"validation"</span>)
+<a name="l00145"></a>00145     leaf.appendChild(document.createTextNode(family[<span class="stringliteral">"date.validation"</span>]))
+<a name="l00146"></a>00146     tag.appendChild(leaf)
+<a name="l00147"></a>00147     header.appendChild(tag)
+<a name="l00148"></a>00148     
+<a name="l00149"></a>00149     <span class="comment">#Build score section</span>
+<a name="l00150"></a>00150     <span class="comment">#Local copies of family's attribute are made as destructive</span>
+<a name="l00151"></a>00151     <span class="comment">#iterator are used.</span>
+<a name="l00152"></a>00152     section = document.createElement(<span class="stringliteral">"scores"</span>)
+<a name="l00153"></a>00153     scores = family.scores.copy()
+<a name="l00154"></a>00154     comments = family.comments.copy()
+<a name="l00155"></a>00155     
+<a name="l00156"></a>00156     <span class="comment">#Elements with score tags are generated first. Corresponding</span>
+<a name="l00157"></a>00157     <span class="comment">#comments are also added to elements tag (and removed from</span>
+<a name="l00158"></a>00158     <span class="comment">#comments dictionnary)</span>
+<a name="l00159"></a>00159     <span class="keywordflow">while</span> scores :
+<a name="l00160"></a>00160         (name,value) = scores.popitem()
+<a name="l00161"></a>00161         tag = document.createElement(<span class="stringliteral">"element"</span>)
+<a name="l00162"></a>00162         tag.setAttribute(<span class="stringliteral">"name"</span>, name)
+<a name="l00163"></a>00163         leaf = document.createElement(<span class="stringliteral">"score"</span>)
+<a name="l00164"></a>00164         leaf.appendChild(document.createTextNode(value))
+<a name="l00165"></a>00165         tag.appendChild(leaf)
+<a name="l00166"></a>00166         <span class="keywordflow">if</span> name <span class="keywordflow">in</span> comments :
+<a name="l00167"></a>00167             leaf = document.createElement(<span class="stringliteral">"comment"</span>)
+<a name="l00168"></a>00168             leaf.appendChild(document.createTextNode(comments.pop(name)))
+<a name="l00169"></a>00169             tag.appendChild(leaf)
+<a name="l00170"></a>00170         section.appendChild(tag)
+<a name="l00171"></a>00171     
+<a name="l00172"></a>00172     <span class="comment">#Remaining items of comments dictionnary are added to output XML</span>
+<a name="l00173"></a>00173     <span class="comment">#No score tags for these elements as there must be no item left in scores </span>
+<a name="l00174"></a>00174     <span class="keywordflow">while</span> comments :
+<a name="l00175"></a>00175         (name, value) = comments.popitem()
+<a name="l00176"></a>00176         tag = document.createElement(<span class="stringliteral">"element"</span>)
+<a name="l00177"></a>00177         tag.setAttribute(<span class="stringliteral">"name"</span>, name)
+<a name="l00178"></a>00178         leaf = document.createElement(<span class="stringliteral">"comment"</span>)
+<a name="l00179"></a>00179         leaf.appendChild(document.createTextNode(value))
+<a name="l00180"></a>00180         tag.appendChild(leaf)
+<a name="l00181"></a>00181         section.appendChild(tag)
+<a name="l00182"></a>00182     
+<a name="l00183"></a>00183     <span class="comment">#Build the final document</span>
+<a name="l00184"></a>00184     root.appendChild(header)
+<a name="l00185"></a>00185     root.appendChild(section)
+<a name="l00186"></a>00186     document.appendChild(root)    
+<a name="l00187"></a>00187     
+<a name="l00188"></a>00188     <span class="comment">#Pretty format ant return the result qsos score sheet</span>
+<a name="l00189"></a>00189     <span class="keywordflow">return</span> document.toprettyxml(<span class="stringliteral">"\t"</span>, <span class="stringliteral">"\n"</span>, <span class="stringliteral">"utf-8"</span>)
+</pre></div></div>
+<hr size="1"><address style="text-align: right;"><small>Généré le Mon Jun 9 17:49:00 2008 pour QSOS-Upgrade par&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.5 </small></address>
+</body>
+</html>

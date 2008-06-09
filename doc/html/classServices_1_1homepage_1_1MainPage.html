@@ -1,0 +1,98 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<title>QSOS-Upgrade: Référence de la classe Services::homepage::MainPage</title>
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+<link href="tabs.css" rel="stylesheet" type="text/css">
+</head><body>
+<!-- Généré par Doxygen 1.5.5 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="main.html"><span>Page&nbsp;principale</span></a></li>
+      <li><a href="namespaces.html"><span>Espaces de nommage</span></a></li>
+      <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
+      <li><a href="files.html"><span>Fichiers</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="annotated.html"><span>Liste&nbsp;des&nbsp;classes</span></a></li>
+      <li><a href="functions.html"><span>Membres&nbsp;de&nbsp;classe</span></a></li>
+    </ul>
+  </div>
+  <div class="navpath"><a class="el" href="namespaceServices.html">Services</a>::<a class="el" href="namespaceServices_1_1homepage.html">homepage</a>::<a class="el" href="classServices_1_1homepage_1_1MainPage.html">MainPage</a>
+  </div>
+</div>
+<div class="contents">
+<h1>Référence de la classe Services::homepage::MainPage</h1><!-- doxytag: class="Services::homepage::MainPage" -->
+<p>
+<a href="classServices_1_1homepage_1_1MainPage-members.html">Liste de tous les membres</a><table border="0" cellpadding="0" cellspacing="0">
+<tr><td></td></tr>
+<tr><td colspan="2"><br><h2>Attributs publics statiques</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">tuple&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classServices_1_1homepage_1_1MainPage.html#daf7ccc80a7bca89487b54fb2734e58e">docFactory</a></td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">dictionary&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classServices_1_1homepage_1_1MainPage.html#cbb1b52b1096a7f16a1f65f4650b0eef">children</a></td></tr>
+
+</table>
+<hr><a name="_details"></a><h2>Description détaillée</h2>
+
+<p>Définition à la ligne <a class="el" href="homepage_8py-source.html#l00011">11</a> du fichier <a class="el" href="homepage_8py-source.html">homepage.py</a>.</p>
+<hr><h2>Documentation des données membres</h2>
+<a class="anchor" name="daf7ccc80a7bca89487b54fb2734e58e"></a><!-- doxytag: member="Services::homepage::MainPage::docFactory" ref="daf7ccc80a7bca89487b54fb2734e58e" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">tuple <a class="el" href="classServices_1_1homepage_1_1MainPage.html#daf7ccc80a7bca89487b54fb2734e58e">Services::homepage::MainPage::docFactory</a><code> [static]</code>          </td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+<b>Valeur initiale :</b><div class="fragment"><pre class="fragment">loaders.stan(
+        T.html [ T.head ( title = <span class="stringliteral">'Main Page'</span> ),
+                 T.body [ T.h1 [ <span class="stringliteral">"This is the QSOS Repository Main Page"</span> ],
+                          T.p [<span class="stringliteral">"For now, you can "</span>,
+                               T.a ( href = <span class="stringliteral">'repository'</span> ) [ <span class="stringliteral">"browse"</span> ],
+                               <span class="stringliteral">" the repository or "</span>,
+                               T.a ( href = <span class="stringliteral">'submit'</span> ) [ <span class="stringliteral">"submit"</span> ],
+                               <span class="stringliteral">" an evaluation. "</span>
+                                ]
+                 ],
+               ]
+        )
+</pre></div>
+<p>Définition à la ligne <a class="el" href="homepage_8py-source.html#l00013">13</a> du fichier <a class="el" href="homepage_8py-source.html">homepage.py</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="cbb1b52b1096a7f16a1f65f4650b0eef"></a><!-- doxytag: member="Services::homepage::MainPage::children" ref="cbb1b52b1096a7f16a1f65f4650b0eef" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">dictionary <a class="el" href="classServices_1_1homepage_1_1MainPage.html#cbb1b52b1096a7f16a1f65f4650b0eef">Services::homepage::MainPage::children</a><code> [static]</code>          </td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+<b>Valeur initiale :</b><div class="fragment"><pre class="fragment">{
+                <span class="stringliteral">'repository'</span>    : browse.MainPage(),
+                <span class="stringliteral">'submit'</span>        : <span class="keywordtype">None</span>
+                }
+</pre></div>
+<p>Définition à la ligne <a class="el" href="homepage_8py-source.html#l00026">26</a> du fichier <a class="el" href="homepage_8py-source.html">homepage.py</a>.</p>
+
+</div>
+</div><p>
+<hr>La documentation de cette classe a été générée à partir du fichier suivant :<ul>
+<li>git/src/Services/<a class="el" href="homepage_8py-source.html">homepage.py</a></ul>
+</div>
+<hr size="1"><address style="text-align: right;"><small>Généré le Mon Jun 9 17:49:00 2008 pour QSOS-Upgrade par&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.5 </small></address>
+</body>
+</html>

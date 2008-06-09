@@ -1,0 +1,163 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<title>QSOS-Upgrade: Référence de l&#39;espace de nommage Engine::splitter</title>
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+<link href="tabs.css" rel="stylesheet" type="text/css">
+</head><body>
+<!-- Généré par Doxygen 1.5.5 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="main.html"><span>Page&nbsp;principale</span></a></li>
+      <li class="current"><a href="namespaces.html"><span>Espaces de nommage</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li><a href="files.html"><span>Fichiers</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="namespaces.html"><span>Liste des espaces de nommage</span></a></li>
+      <li><a href="namespacemembers.html"><span>Membres&nbsp;de&nbsp;l'espace&nbsp;de&nbsp;nommage</span></a></li>
+    </ul>
+  </div>
+  <div class="navpath"><a class="el" href="namespaceEngine.html">Engine</a>::<a class="el" href="namespaceEngine_1_1splitter.html">splitter</a>
+  </div>
+</div>
+<div class="contents">
+<h1>Référence de l'espace de nommage Engine::splitter</h1>
+<p>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr><td></td></tr>
+<tr><td colspan="2"><br><h2>Fonctions</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">def&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceEngine_1_1splitter.html#b2872987c1888afb3b6094ba5caf774c">parse</a></td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">def&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceEngine_1_1splitter.html#85a4a85af4c8fbf2f756f0d77bf3371e">createDocument</a></td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">def&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceEngine_1_1splitter.html#f8103d0504abf06c3a6cbaf61bb045e2">createScore</a></td></tr>
+
+</table>
+<hr><h2>Documentation des fonctions</h2>
+<a class="anchor" name="85a4a85af4c8fbf2f756f0d77bf3371e"></a><!-- doxytag: member="Engine::splitter::createDocument" ref="85a4a85af4c8fbf2f756f0d77bf3371e" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def Engine::splitter::createDocument           </td>
+          <td>(</td>
+          <td class="paramtype">&nbsp;</td>
+          <td class="paramname"> <em>evaluation</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&nbsp;</td>
+          <td class="paramname"> <em>familypath</em> = <code>&quot;../../sheets/families&quot;</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td width="100%"></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+<div class="fragment"><pre class="fragment">Creates a document object  from qsos raw evaluation
+Relevant elements are extracted from families modelsheets (elements
+with sub-elements are skipped as they do not have any score nor 
+comment tag) and their evaluations are extracted from the qsos
+evaluation. The authors and dates are the same (evaluation's in fact)
+for each family. Generic section of qsos evaluation is also added to
+families component of a document. 
+
+
+Parameters :
+    - evaluation    -    string flow of qsos evaluation
+    - familypath    -    path to directory of families modelsheet
+        default value is ../../sheets/families
+    
+Returns
+    document        -    document object of representation of evaluation
+    </pre></div> 
+<p>Définition à la ligne <a class="el" href="splitter_8py-source.html#l00037">37</a> du fichier <a class="el" href="splitter_8py-source.html">splitter.py</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="f8103d0504abf06c3a6cbaf61bb045e2"></a><!-- doxytag: member="Engine::splitter::createScore" ref="f8103d0504abf06c3a6cbaf61bb045e2" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def Engine::splitter::createScore           </td>
+          <td>(</td>
+          <td class="paramtype">&nbsp;</td>
+          <td class="paramname"> <em>family</em>          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+<div class="fragment"><pre class="fragment">Creates the qscore XML document of family object evaluation
+content to be stored on the local copy of repository
+
+Parameter :
+    family    -    the family object to be transformed
+
+Returns
+    string    -    XML formatted family's qscore sheet</pre></div> 
+<p>Définition à la ligne <a class="el" href="splitter_8py-source.html#l00113">113</a> du fichier <a class="el" href="splitter_8py-source.html">splitter.py</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="b2872987c1888afb3b6094ba5caf774c"></a><!-- doxytag: member="Engine::splitter::parse" ref="b2872987c1888afb3b6094ba5caf774c" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def Engine::splitter::parse           </td>
+          <td>(</td>
+          <td class="paramtype">&nbsp;</td>
+          <td class="paramname"> <em>evaluation</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&nbsp;</td>
+          <td class="paramname"> <em>repositoryroot</em> = <code>&quot;../..&quot;</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td width="100%"></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+<div class="fragment"><pre class="fragment">Parses a qsos evaluation and creates/overwrite qscore files containing
+elements' scores and comments for each family declared in qsosappfamily
+evaluation's tag.
+
+The tree structure under sheet directory may also be modified as qscore files
+are created into appname/version directory. (appname and version are also
+extracted from evaluation's header)
+
+Parameters : 
+    - evaluation     -   string of evaluation XML flow
+    - repositoryroot -   path to root of local copy of repository
+        default value of repositoryroot is ../..</pre></div> 
+<p>Définition à la ligne <a class="el" href="splitter_8py-source.html#l00006">6</a> du fichier <a class="el" href="splitter_8py-source.html">splitter.py</a>.</p>
+
+</div>
+</div><p>
+</div>
+<hr size="1"><address style="text-align: right;"><small>Généré le Mon Jun 9 17:49:00 2008 pour QSOS-Upgrade par&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.5 </small></address>
+</body>
+</html>
