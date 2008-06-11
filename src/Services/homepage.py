@@ -7,6 +7,7 @@ from nevow               import tags as T
 from nevow               import inevow
 
 import browse
+import submit
 
 class MainPage ( rend.Page ):
 
@@ -25,5 +26,6 @@ class MainPage ( rend.Page ):
 
     children = {
                 'repository'    : browse.MainPage(),
-                'submit'        : None
+                'submit'        : submit.NewsEditPage(store=[dict(title="Lorum Ipsum", description="""Lorem ipsum dolor sit amet, 
+consectetuer adipiscing elit. Sed sed enim mollis nulla faucibus aliquet.""")])
                 }
