@@ -26,6 +26,5 @@ class MainPage ( rend.Page ):
 
     children = {
                 'repository'    : browse.MainPage(),
-                'submit'        : submit.NewsEditPage(store=[dict(title="Lorum Ipsum", description="""Lorem ipsum dolor sit amet, 
-consectetuer adipiscing elit. Sed sed enim mollis nulla faucibus aliquet.""")])
+                'submit'        : submit.UploadPage()
                 }

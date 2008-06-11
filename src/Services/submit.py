@@ -11,6 +11,8 @@ from nevow                  import tags as T
 from formless               import annotate
 from formless               import webform 
 
+from Engine                 import splitter
+
 class ConfirmationPage(rend.Page):
     head = [ T.title ["QSOS evaluation Upload"] ]
     body = [ T.h1 [ "Your evaluation has been uploaded" ] ,
@@ -21,7 +23,7 @@ class ConfirmationPage(rend.Page):
     docFactory = loaders.stan( T.html[ T.head [ head ], T.body [ body ] ] )
     
 
-class NewsEditPage(rend.Page):
+class UploadPage(rend.Page):
     docFactory = loaders.xmlstr("""
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
            "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -31,39 +33,30 @@ class NewsEditPage(rend.Page):
     </head>
     <body>
         <h1>Example 1: A News Item Editor</h1>
-        <n:invisible n:render="newsInputForm" />
-        
-        <ol n:render="sequence" n:data="newsItems">
-            <li n:pattern="item" n:render="mapping">
-                <strong><n:slot name="title" /></strong>: <n:slot name="description" />
-            </li>
-        </ol>
+        <n:invisible n:render="fileUploader" />
     </body>
 </html>
 """)
+    
 
-#    child_form_css = webform.defaultCSS
 
     def __init__(self, *args, **kwargs):
-        self.store = kwargs.pop('store')
-        super(NewsEditPage, self).__init__(*args, **kwargs)
+        super(UploadPage, self).__init__(*args, **kwargs)
     
-    def saveNewsItem(self, **newsItemData):
-        self.store.append(newsItemData)
+    def submitEvaluation(self, **newsItemData):
+        qsos = newsItemData["File"].file.read()
+        qsos = "".join([line.strip() for line in (qsos.splitlines())]) 
+        splitter.parse(qsos,"..")
         return url.here.click('submit/confirmation')
 
-    def bind_saveNewsItem(self, ctx):
+    def bind_submitEvaluation(self, ctx):
         return [
-            ('title', annotate.String(required=True)),
-            ('description', annotate.Text(required=True)),
+            ('File', annotate.FileUpload(required=True)),
         ]
 
-    def render_newsInputForm(self, ctx, data):
+    def render_fileUploader(self, ctx, data):
         return ctx.tag.clear()[
             webform.renderForms()
         ]
-        
-    def data_newsItems(self, ctx, name):
-        return self.store
     
     children = {'confirmation'  : ConfirmationPage()}

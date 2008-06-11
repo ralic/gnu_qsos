@@ -3,7 +3,7 @@ from Engine import family
 from xml.dom import minidom
 import os
 
-def parse(evaluation,repositoryroot="../.."):
+def parse(evaluation,repositoryroot=".."):
     """Parses a qsos evaluation and creates/overwrite qscore files containing
     elements' scores and comments for each family declared in qsosappfamily
     evaluation's tag.
@@ -34,7 +34,7 @@ def parse(evaluation,repositoryroot="../.."):
         file.write(createScore(document[f]))
         file.close()
 
-def createDocument(evaluation,familypath="../../sheets/families"):
+def createDocument(evaluation,familypath="../sheets/families"):
     """Creates a document object  from qsos raw evaluation
     Relevant elements are extracted from families modelsheets (elements
     with sub-elements are skipped as they do not have any score nor 
@@ -47,7 +47,7 @@ def createDocument(evaluation,familypath="../../sheets/families"):
     Parameters :
         - evaluation    -    string flow of qsos evaluation
         - familypath    -    path to directory of families modelsheet
-            default value is ../../sheets/families
+            default value is ../sheets/families
         
     Returns
         document        -    document object of representation of evaluation
