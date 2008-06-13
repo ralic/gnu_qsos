@@ -1,29 +1,61 @@
+"""
+Family evaluation's wrapper.
+
+This module defines the family object.
+"""
+##
+#    @author Hery Randriamanamihaga
+#    @defgroup family Family
+#    @ingroup Engine
+
+    ##
+    #    @ingroup family
+    #
 class family:
     "QSOS Application family wrapper for QSOS"
+    
+    
     def __init__(self,authors, dates, scores,comments):
-        """Create new family object
+        """
+        Initializer
         
-        Parameters :
-            * authors   : [(string,string)] - couples (name,email)
-            * dates     :  (string,string)  - couple (creation, validation)
-            * scores    :  {string:string}  - dictionary of name:value
-            * comments  :  {string:string}  - dictionary of name:content"""
-            
+        Creates a new family object with provided parameters
+        
+        @param authors
+                A list of family's evaluation authors.
+                Each entry is a couple of string (name, e-mail)
+        @param dates
+                Family's evaluation dates.
+                dates must be a couple of string (creation,validation)
+        @param scores
+                Scores' dictionnary
+                Key entry is the element id from qsos xml
+        @param comments
+                Comments' dictionnary
+                Key entry is the element id from qsos xml
+        """
         self.authors = authors
         self.dates = dates
         self.scores = scores
         self.comments = comments
-        
+    
     def __getitem__(self, item) :
-        """Getter
+        """
+        Accessor
         
-        Parameters :
-            * item  : string    -   the item to get from self object
-        item parameter content must be  :
-            * date.value with value as creation or validation
-            * authors
-            * key.what with what as score or comment"""
+        Getter
         
+        @param self
+                Pointer to the object
+        @param item
+                The item to get from this family. It can be :
+                    - dateofcreation
+                    - dateofvalidation
+                    - authors
+                    - element.score
+                    - element.comment
+            
+        """
         #First case : dates
         if item.startswith("date") :
             if item.endswith("creation") :

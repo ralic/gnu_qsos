@@ -1,9 +1,36 @@
+"""
+QSOS-Engine's builder module.
+
+This module provides all required tools to build a qsos evaluation sheet from
+splitted repository's qscore, qin and qtpl files
+"""
+##
+#    @defgroup builder Builder
+#    @ingroup Engine 
+#    @author Hery Randriamanamihaga
+
 from Engine import document
 from Engine import family
 from xml.dom import minidom
 import os
 
-def build(name, version, repositoryroot="../.."):
+##
+#    @ingroup builder
+#
+def build(name, version, repositoryroot=".."):
+    """
+    Builds name-version's qsos evaluation document
+    
+    @param name
+            Application name.
+    @param version
+            Application version.
+    @param repositoryroot
+            Path to local repository's root.
+            Default value is ..
+    @return
+        Builded Document object of name-version's qsos evaluation
+    """
     #Read the template of requested evaluation from repository
     template = "-".join([name,version])
     template = ".".join([template,"qtpl"])
@@ -26,7 +53,13 @@ def build(name, version, repositoryroot="../.."):
     for include in includes :
         #parse family .qin file
         familySheet = ".".join([include,"qscore"])
-        familySheet = os.path.join(repositoryroot,"sheets","evaluations",name,version,familySheet)
+        familySheet = os.path.join(repositoryroot,
+                                   "sheets",
+                                   "evaluations",
+                                   name,
+                                   version,
+                                   familySheet
+                                   )
         familySheet = file(familySheet).read()
         familySheet = "".join([line.strip() for line in familySheet.splitlines()])
         xml = minidom.parseString(familySheet).firstChild
@@ -60,8 +93,22 @@ def build(name, version, repositoryroot="../.."):
     #Create and return the expected documents
     return document.Document(properties,families)
     
+##
+#    @ingroup builder
+#
+def assembleSheet(document, repositoryroot=".."):
+    """
+    Generate the qsos XML file corresponding to givent document object
     
-def assembleSheet(document, repositoryroot="../.."):
+    @param document
+        Evaluation's document object.
+        
+    @param repositoryroot
+        Path to repository's root.
+        Defalut value is ..
+    @return
+        qsos XML string flow of document's content
+    """
     #Create the global frame of the qsos document
     sheet = minidom.Document()
     root = sheet.createElement("document")
@@ -76,8 +123,16 @@ def assembleSheet(document, repositoryroot="../.."):
     #    * add a text node in an element
     #    * check if the element has the child node and create it if not
     
-    addTextNode = lambda element,tag,text : element.getElementsByTagName(tag).item(0).appendChild(sheet.createTextNode(text))
-    checkChildNode = lambda element,tag : element.getElementsByTagName(tag) or element.appendChild(sheet.createElement(tag))
+    addTextNode = lambda element,tag,text :                                     \
+                    element.                                                    \
+                        getElementsByTagName(tag).item(0).                      \
+                        appendChild(sheet.createTextNode(text))
+                        
+    checkChildNode = lambda element,tag :                                       \
+                    element.                                                    \
+                            getElementsByTagName(tag)                           \
+                        or                                                      \
+                            element.appendChild(sheet.createElement(tag))
     
     #Fill in header with properties
     for item in document["properties"] :

@@ -1,28 +1,58 @@
+"""
+QSOS-Engine's splitter module.
+
+This module provides all required tools for splitting a raw QSOS-Evaluation into
+new qscores files, stored into the convenient folder of local repository copy.
+splitter
+"""
+
+##
+#    @defgroup splitter Splitter 
+#    @ingroup Engine
+#    @author Hery Randriamanamihaga
+
+
+
+
 from Engine import document
 from Engine import family
 from xml.dom import minidom
 import os
 
+
+##
+#    @ingroup splitter
+#        
 def parse(evaluation,repositoryroot=".."):
-    """Parses a qsos evaluation and creates/overwrite qscore files containing
+    """
+    Parses a qsos evaluation and creates/overwrite qscore files containing
     elements' scores and comments for each family declared in qsosappfamily
     evaluation's tag.
+
+    The tree structure under sheet directory may also be modified as qscore
+    files are created into appname/version directory. (appname and version are
+    also extracted from evaluation's header)
     
-    The tree structure under sheet directory may also be modified as qscore files
-    are created into appname/version directory. (appname and version are also
-    extracted from evaluation's header)
+    @param evaluation
+            string of evaluation XML flow
     
-    Parameters : 
-        - evaluation     -   string of evaluation XML flow
-        - repositoryroot -   path to root of local copy of repository
-            default value of repositoryroot is ../.."""
+    @param repositoryroot
+            path to root of local copy of repository.
+            Default value is ..
+    """
+    
     #Transform XML flow into document object
     document = createDocument(evaluation)
     
     #Create tree folder in filesystem
     #makedirs fails with OSError 17 whenever the directory to make
     #already exists. This specific error is excepted 
-    path = os.path.join(repositoryroot,"sheets","evaluations",document["properties"]["qsosappname"],document["properties"]["release"])
+    path = os.path.join(repositoryroot,
+                        "sheets",
+                        "evaluations",
+                        document["properties"]["qsosappname"],
+                        document["properties"]["release"]
+                        )
     try :
         os.makedirs(path)
     except OSError, error :
@@ -33,25 +63,28 @@ def parse(evaluation,repositoryroot=".."):
         file = open(os.path.join(path,".".join([f,"qscore"])),'w')
         file.write(createScore(document[f]))
         file.close()
-
+##
+#    @ingroup splitter
+#
 def createDocument(evaluation,familypath="../sheets/families"):
-    """Creates a document object  from qsos raw evaluation
-    Relevant elements are extracted from families modelsheets (elements
-    with sub-elements are skipped as they do not have any score nor 
-    comment tag) and their evaluations are extracted from the qsos
-    evaluation. The authors and dates are the same (evaluation's in fact)
-    for each family. Generic section of qsos evaluation is also added to
-    families component of a document. 
+    """
+    Creates a document object  from qsos raw evaluation. Relevant elements are
+    extracted from families modelsheets (elements with sub-elements are skipped
+    as they do not have any score nor comment tag) and their evaluations are
+    extracted from the qsos evaluation. The authors and dates are the same
+    (evaluation's in fact) for each family. Generic section of qsos evaluation
+    is also added to families component of a document. 
     
+    @param evaluation
+            Qsos evaluation's string flow
     
-    Parameters :
-        - evaluation    -    string flow of qsos evaluation
-        - familypath    -    path to directory of families modelsheet
-            default value is ../sheets/families
+    @param familypath
+            Path to families model sheets.
+            Default value is ../sheets/families
         
-    Returns
-        document        -    document object of representation of evaluation
-        """
+    @return
+        Evaluation's representation's document object
+    """
     rawDocument = minidom.parseString(evaluation)
     #Define the ID attribute of each element tag of the raw document
     for element in rawDocument.getElementsByTagName("element"):
@@ -61,7 +94,9 @@ def createDocument(evaluation,familypath="../sheets/families"):
     #the first, second and last tag of header are ignored
     #as they are not document properties but part of families contents
     header = rawDocument.firstChild.firstChild.childNodes
-    properties = dict([(node.tagName,node.firstChild.data) for node in header[2:-2]])
+    properties = dict( [ (node.tagName,node.firstChild.data)
+                        for node in header[2:-2] ]
+                      )
     
     #Instantiate a QSOS-Document object initiated with the properties extracted
     #from XML evaluation and empty family dictionnary
@@ -75,7 +110,8 @@ def createDocument(evaluation,familypath="../sheets/families"):
     # TODO : Each information should be probed in case no values are
     #         provided in the XML document
     
-    authors = [(item.firstChild.firstChild.data, item.lastChild.firstChild.data) for item in header[0].childNodes]
+    authors = [(item.firstChild.firstChild.data, item.lastChild.firstChild.data)
+               for item in header[0].childNodes]
     dates = (header[1].firstChild.firstChild.data, header[1].lastChild.firstChild.data)
     families = [node.firstChild.data for node in header[-1].childNodes]
     families.insert(0,"generic")
@@ -96,12 +132,18 @@ def createDocument(evaluation,familypath="../sheets/families"):
             # TODO : use a logger for AttributeError exception^^
         
             try :
-                f.scores[name] = rawDocument.getElementById(name).getElementsByTagName("score").item(0).firstChild.data
+                f.scores[name] = rawDocument.                                   \
+                                    getElementById(name).                       \
+                                    getElementsByTagName("score").              \
+                                    item(0).firstChild.data
             except AttributeError :
                 print "No score found for element %s" % (name,)
                 pass    
             try :
-                f.comments[name] = rawDocument.getElementById(name).getElementsByTagName("comment").item(0).firstChild.data
+                f.comments[name] = rawDocument.                                 \
+                                    getElementById(name).                       \
+                                    getElementsByTagName("comment")             \
+                                    .item(0).firstChild.data
             except AttributeError :
                 pass
                 print "No comment found for element %s" % (name,)
@@ -109,16 +151,20 @@ def createDocument(evaluation,familypath="../sheets/families"):
         qsos.families[include] = f
     return qsos
 
-
+##
+#    @ingroup splitter
+#
 def createScore(family):
-    """Creates the qscore XML document of family object evaluation
-    content to be stored on the local copy of repository
+    """
+    Creates the qscore XML document of family object evaluation content to be
+    stored on the local copy of repository.
     
-    Parameter :
-        family    -    the family object to be transformed
+    @param family 
+            The family object to be transformed
     
-    Returns
-        string    -    XML formatted family's qscore sheet"""
+    @return
+        XML formatted family's qscore sheet
+    """
     
     #Create the return DOM and root element <qsosscore>
     document = minidom.Document()

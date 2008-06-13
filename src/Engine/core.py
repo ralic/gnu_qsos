@@ -1,22 +1,37 @@
-from Engine import document
+"""
+QSOS-Engine's core module.
 
+This module provides should schedule Engine's task. The current implementation
+does not uses it yet.
+"""
+
+##
+#    @defgroup core Core 
+#    @ingroup Engine
+#    @author Hery Randriamanamihaga
+
+
+from Engine import document
+##
+#    @ingroup core
+#
 def buildEvaluation(document):
-    """Builds a .qsos XML evaluation from a QSOS-Document
+    """
+    Builds a .qsos XML evaluation from a QSOS-Document
     
-    Parameter :
-        - the document to be built
-        
-    return the string flow of .qsos XML evaluation
+    @attention
+        Not yet implemented
     """
     pass
 
+##
+#    @ingroup core
+#
 def store(evaluation):
-    """Stores an evaluation in the filesystem
+    """
+    Stores an evaluation in the filesystem
     
-    Parameter :
-        - evaluation    -    string containing the evaluation to be stored
-    
-    Side effects :
-        Files corresponding to the evaluation's content are written on filesystem
+    @attention
+        Not yet implemented
     """
     pass

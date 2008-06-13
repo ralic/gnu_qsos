@@ -19,7 +19,7 @@ xml = """<?xml version="1.0" encoding="UTF-8"?>
     </dates>
     <language>en</language>
     <appname>Psi</appname>
-    <release>0.10</release>
+    <release>0.51</release>
     <licenseid>31</licenseid>
     <licensedesc>GNU GPL</licensedesc>
     <url>http://psi-im.org</url>
@@ -910,7 +910,7 @@ Website: http://talk.google.com/</desc>
   </section>
 </document>"""
 
-#xml = "".join([line.strip() for line in (xml.splitlines())])
-#d = splitter.parse(xml)
-
-print builder.build("psi", "0.10")
+xml = "".join([line.strip() for line in (xml.splitlines())])
+d = splitter.parse(xml)
+print xml
+#print builder.build("psi", "0.10")
