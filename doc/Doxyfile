@@ -5,7 +5,7 @@
 #---------------------------------------------------------------------------
 DOXYFILE_ENCODING      = UTF-8
 PROJECT_NAME           = QSOS-Upgrade
-PROJECT_NUMBER         = 
+PROJECT_NUMBER         = alpha-1
 OUTPUT_DIRECTORY       = /home/hery/git/doc/
 CREATE_SUBDIRS         = YES
 OUTPUT_LANGUAGE        = English

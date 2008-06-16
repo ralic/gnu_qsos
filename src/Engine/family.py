@@ -12,7 +12,12 @@ This module defines the family object.
     #    @ingroup family
     #
 class family:
-    "QSOS Application family wrapper for QSOS"
+    """
+    QSOS Application family wrapper for QSOS
+    
+    This class provides a wrapper for a family evaluation which corresponds to
+    qscore files stored on the repository
+    """
     
     
     def __init__(self,authors, dates, scores,comments):

@@ -1,10 +1,8 @@
 """
-QSOS Engine
-
-Implementation of Engine layer of QSOS
+QSOS Engine Core
 """
 
 ##
 #   @defgroup Engine Engine
 #   @author Hery Randriamanamihaga
-
+#

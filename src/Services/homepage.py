@@ -1,4 +1,7 @@
 """
+Homepage module .
+
+This module provides the implementation of qsos repository site's root
 """
 ##
 #    @defgroup  homepage Homepage
@@ -16,7 +19,15 @@ from nevow               import inevow
 import browse
 import submit
 
+##
+#    @ingroup homepage
+#
 class MainPage ( rend.Page ):
+    """
+    Handles site's main page
+    
+    This class handles qsos repository home page.
+    """
 
     docFactory = loaders.stan (
         T.html [ T.head ( title = 'Main Page' ),

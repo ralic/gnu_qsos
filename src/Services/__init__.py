@@ -1,7 +1,5 @@
 """
-Presentation layer
-
-Implementation of Engine layer of QSOS
+QSOS Presentation layer
 """
 
 ##
