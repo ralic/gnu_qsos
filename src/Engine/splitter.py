@@ -23,7 +23,7 @@ import os
 ##
 #    @ingroup splitter
 #        
-def parse(evaluation,repositoryroot=".."):
+def parse(document,repositoryroot=".."):
     """
     Parses a qsos evaluation and creates/overwrite qscore files containing
     elements' scores and comments for each family declared in qsosappfamily
@@ -33,8 +33,8 @@ def parse(evaluation,repositoryroot=".."):
     files are created into appname/version directory. (appname and version are
     also extracted from evaluation's header)
     
-    @param evaluation
-            string of evaluation XML flow
+    @param document
+            document object of evaluation to be parsed
     
     @param repositoryroot
             path to root of local copy of repository.
@@ -94,9 +94,7 @@ def createDocument(evaluation,familypath="../sheets/families"):
     #the first, second and last tag of header are ignored
     #as they are not document properties but part of families contents
     header = rawDocument.firstChild.firstChild.childNodes
-    properties = dict( [ (node.tagName,node.firstChild.data)
-                        for node in header[2:-2] ]
-                      )
+    properties = dict((n.tagName,n.firstChild.data) for n in header[2:-2])
     
     #Instantiate a QSOS-Document object initiated with the properties extracted
     #from XML evaluation and empty family dictionnary

@@ -56,6 +56,13 @@ class Document :
             return self.properties
         elif key == "families":
             return self.families
+        elif key == "id":
+            lang = properties['language']
+            if lang == "en" :
+                lang = ""
+            else :
+                lang = "_" + lang
+            return properties['qsosappname'] + "-" +properties['release'] + lang 
         else :
             try :
                 args = key.split(".") 
