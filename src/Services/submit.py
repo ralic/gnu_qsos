@@ -76,9 +76,7 @@ class UploadPage(rend.Page):
     
     def submitEvaluation(self, **formData):
         "Put the uploaded evaluation into the local repository"
-        qsos = formData["File"].file.read()
-        qsos = "".join([line.strip() for line in (qsos.splitlines())]) 
-        splitter.parse(qsos,"..")
+        core.submit(formData["File"].file)
         return url.here.click('submit/confirmation')
 
     def bind_submitEvaluation(self, ctx):

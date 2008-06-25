@@ -17,32 +17,26 @@ import os
 ##
 #    @ingroup builder
 #
-def build(name, version, repositoryroot=".."):
+def build(id, repositoryroot):
     """
     Builds name-version's qsos evaluation document
     
-    @param name
-            Application name.
-    @param version
-            Application version.
+    @param id
+            Evaluation identifier
     @param repositoryroot
             Path to local repository's root.
-            Default value is ..
     @return
         Builded Document object of name-version's qsos evaluation
     """
     #Read the template of requested evaluation from repository
-    template = "-".join([name,version])
-    template = ".".join([template,"qtpl"])
-    template = os.path.join(repositoryroot,"sheets","templates",template)
-    template = file(template).read()
-    template = "".join([line.strip() for line in (template.splitlines())])
+    template = os.path.join(repositoryroot,"sheets","templates", id + ".qtpl")
+    template = "".join(line.strip() for line in file(template).readlines())
     
-    #Extract template contents
+    #Extract template content
     content = minidom.parseString(template).firstChild.lastChild.childNodes
     
     #Extract properties from template contents
-    properties = dict([(node.tagName,node.firstChild.data) for node in content[0:-2]])
+    properties = dict((node.tagName,node.firstChild.data) for node in content[0:-2])
     
     #Build families object according to families declared from template
     #generic *family* must also be added to families
@@ -52,17 +46,11 @@ def build(name, version, repositoryroot=".."):
     #Handle each family to be included
     for include in includes :
         #parse family .qin file
-        familySheet = ".".join([include,"qscore"])
-        familySheet = os.path.join(repositoryroot,
-                                   "sheets",
-                                   "evaluations",
-                                   name,
-                                   version,
-                                   familySheet
-                                   )
-        familySheet = file(familySheet).read()
-        familySheet = "".join([line.strip() for line in familySheet.splitlines()])
-        xml = minidom.parseString(familySheet).firstChild
+        sheet = os.path.join(repositoryroot,"sheets","evaluations",
+                             properties["qsosappname"],properties["release"],
+                             include + ".qscore")
+        sheet = "".join(line.strip() for line in file(sheet).readlines())
+        xml = minidom.parseString(sheet).firstChild
         
         #extract directly interesting information :
         #    - authors
@@ -96,7 +84,7 @@ def build(name, version, repositoryroot=".."):
 ##
 #    @ingroup builder
 #
-def assembleSheet(document, repositoryroot=".."):
+def assembleSheet(document, repositoryroot):
     """
     Generate the qsos XML file corresponding to givent document object
     
@@ -105,7 +93,6 @@ def assembleSheet(document, repositoryroot=".."):
         
     @param repositoryroot
         Path to repository's root.
-        Defalut value is ..
     @return
         qsos XML string flow of document's content
     """

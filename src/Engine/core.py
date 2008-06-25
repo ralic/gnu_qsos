@@ -59,7 +59,7 @@ class Core():
             Not yet tested
         """
         #Unpack raw XML qsos evaluation into single-lined string
-        evaluation = "".join(line.strip() for line in qsos.read().splitlines())
+        evaluation = "".join(line.strip() for line in qsos.readlines())
         
         #Create document object and add/update it in library
         #Key of library's item is appname-version_language
@@ -85,14 +85,13 @@ class Core():
         into library, it will be builded from repository if possible. 
         
         @param evaluation
-            Requested evaluation's id. The id must respect the following format:
-            qsosappname-release_language or qsosappname-release when evaluation's
-            language is english
+            Requested evaluation's id. The id must be qsosappname-release
             
         @attention
-            Not yet implemented
+            Not yet tested
         """
-        try :
-            builder.assembleSheet(library[evaluation])
-        except KeyError :
-            pass
+        
+        return builder.assembleSheet(library.setdefault(evaluation,
+                                                        builder.build(evaluation,
+                                                                      self.path)),
+                                     self.path)

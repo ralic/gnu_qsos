@@ -22,6 +22,7 @@ from nevow               import inevow
 from nevow               import static
 
 from Engine import builder
+from Engine import core
 import os
 
 ##
@@ -121,14 +122,14 @@ class ReportEvaluation ( rend.Page ):
     This class locates evaluation page of requested qsos sheet
     """
     def locateChild ( self, ctx, segments ):
+        global scheduler
 #        "Locate and generate the evaluation page"
-         [name,version]= inevow.IRequest ( ctx ).path.split("/")[-2:]
-         document = builder.build(name, version,"..")
-         tmp = "/".join(["","tmp","-".join([name,version])])+".xml"
-         file = open(tmp,'w')
-         file.write(builder.assembleSheet(document,".."))
-         file.close()
-         return (static.File(tmp), ())
+        id= "-".join(inevow.IRequest ( ctx ).path.split("/")[-2:])
+        tmp =  "/tmp/" + id + "." + "xml"
+        file = open(tmp,'w')
+        file.write(scheduler.request(id))
+        file.close()
+        return (static.File(tmp), ())
 #    def locateChild ( self, ctx, segments ):
 #        "Locate and generate the evaluation page"
 #        return ( RenderEvaluation(), () )
