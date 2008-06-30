@@ -143,7 +143,6 @@ def createDocument(evaluation,familypath="../sheets/families"):
                                     getElementsByTagName("comment")             \
                                     .item(0).firstChild.data
             except AttributeError :
-                pass
                 print "No comment found for element %s" % (name,)
         #End of iteration, just add the family in document object
         qsos.families[include] = f

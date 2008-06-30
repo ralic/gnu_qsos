@@ -2,11 +2,12 @@ from twisted.application import service, internet
 from nevow import appserver
 from Services import homepage, browse
 from Engine import core
+import os
 
 
 application = service.Application ( "nevowdemo" )
+core.init(os.pardir)
 port        = 8080
-scheduler   = core.Core()
 res         = homepage.MainPage()
 site        = appserver.NevowSite ( res )
 webService  = internet.TCPServer ( port, site )

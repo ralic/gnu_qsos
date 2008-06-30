@@ -122,12 +122,11 @@ class ReportEvaluation ( rend.Page ):
     This class locates evaluation page of requested qsos sheet
     """
     def locateChild ( self, ctx, segments ):
-        global scheduler
 #        "Locate and generate the evaluation page"
         id= "-".join(inevow.IRequest ( ctx ).path.split("/")[-2:])
         tmp =  "/tmp/" + id + "." + "xml"
         file = open(tmp,'w')
-        file.write(scheduler.request(id))
+        file.write(core.request(id))
         file.close()
         return (static.File(tmp), ())
 #    def locateChild ( self, ctx, segments ):

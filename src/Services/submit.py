@@ -25,6 +25,7 @@ from formless               import annotate
 from formless               import webform 
 
 from Engine                 import splitter
+from Engine import  core
 
 ##
 #    @ingroup submit

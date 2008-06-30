@@ -19,79 +19,72 @@ from os import path
 ##
 #    @ingroup core
 #
-class Core():
-    """
-    QSOS engine core application.
-    
-    Main application that runs the engine and performs required task for each
-    QSOS-Engine's feature.
-    """
-    
-    def __init__(self, path=".."):
-        """
-        Initializer
-        
-        Attributes :
-            - library -- Dictionnary of evaluation stored on the local repository
-            - path -- Path to local repository
-            
-        @param path
-            Path to root of repository local copy.
-            Default value is ..
-        
-        @todo Scan repository and build tree on initialization?
-        """
-        self.library = {}
-        self.path = path
-    
-    def submit(self, qsos):
-        """
-        Submit an evaluation.
-        
-        Parse, validate, split and store .qsos XML file to repository as .qscore
-        files. Files in repository are overwritten without confirmation and objects
-        contained in library dictionnary are updated.
-        
-        @param qsos
-            Evaluation to submit
-            
-        @attention
-            Not yet tested
-        """
-        #Unpack raw XML qsos evaluation into single-lined string
-        evaluation = "".join(line.strip() for line in qsos.readlines())
-        
-        #Create document object and add/update it in library
-        #Key of library's item is appname-version_language
-        document = splitter.createDocument(evaluation,
-                                           path.join(self.path,sheets,family))
-        self.library[document["id"]] = document
-        
-        #Generate .qscore files into repository 
-        splitter.parse(document, self.path)
+"""
+QSOS engine core application.
 
+Main application that runs the engine and performs required task for each
+QSOS-Engine's feature.
+"""
+
+def init(path=".."):
+    """
+    Initializer
     
-    def request(evaluation):
-        """
-        Assemble and return a qsos XML file from repository.
+    Initializes global variables such as path to root of repository or object
+    collection in memory
         
-        A document object copy of the evaluation is first checked into library
-        before building it from filesystem.
-        
-        library attribute of the object is supposed to be up to date, otherwise,
-        the returned evaluation can be out of date.
-        
-        When the document representation of the requested evaluation is not yet 
-        into library, it will be builded from repository if possible. 
-        
-        @param evaluation
-            Requested evaluation's id. The id must be qsosappname-release
-            
-        @attention
-            Not yet tested
-        """
-        
-        return builder.assembleSheet(library.setdefault(evaluation,
-                                                        builder.build(evaluation,
-                                                                      self.path)),
-                                     self.path)
+    @param path
+        Path to root of repository local copy.
+        Default value is ..
+    
+    @todo Scan repository and build tree on initialization?
+    """
+    global PATH
+    global STORE
+    STORE = {}
+    PATH = ".."
+
+def submit(qsos):
+    """
+    Submit an evaluation.
+    
+    Parse, validate, split and store .qsos XML file to repository as .qscore
+    files. Files in repository are overwritten without confirmation and objects
+    contained in STORE dictionnary are updated.
+    
+    @param qsos
+        Evaluation to submit
+    """
+    #Unpack raw XML qsos evaluation into single-lined string
+    evaluation = "".join(line.strip() for line in qsos.readlines())
+    
+    #Create document object and add/update it in STORE
+    #Key of STORE's item is appname-version_language
+    document = splitter.createDocument(evaluation,
+                                       path.join(PATH,"sheets","families"))
+    STORE[document["id"]] = document
+    
+    #Generate .qscore files into repository 
+    splitter.parse(document, PATH)
+
+
+def request(evaluation):
+    """
+    Assemble and return a qsos XML file from repository.
+    
+    A document object copy of the evaluation is first checked into STORE
+    before building it from filesystem.
+    
+    STORE attribute of the object is supposed to be up to date, otherwise,
+    the returned evaluation can be out of date.
+    
+    When the document representation of the requested evaluation is not yet 
+    into STORE, it will be builded from repository if possible. 
+    
+    @param evaluation
+        Requested evaluation's id. The id must be qsosappname-release
+    """
+    if evaluation not in STORE :
+        STORE[evaluation] = builder.build(evaluation, PATH)
+    sheet = builder.assembleSheet(STORE[evaluation], PATH)
+    return builder.fillSheet(STORE[evaluation], sheet, PATH)
