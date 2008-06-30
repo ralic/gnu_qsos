@@ -40,10 +40,6 @@ def parse(document,repositoryroot=".."):
             path to root of local copy of repository.
             Default value is ..
     """
-    
-    #Transform XML flow into document object
-    document = createDocument(evaluation)
-    
     #Create tree folder in filesystem
     #makedirs fails with OSError 17 whenever the directory to make
     #already exists. This specific error is excepted 
@@ -60,7 +56,7 @@ def parse(document,repositoryroot=".."):
     
     #As the folder is created, can be added into.
     for f in document.families :
-        file = open(os.path.join(path,".".join([f,"qscore"])),'w')
+        file = open(os.path.join(path,f + ".qscore"),'w')
         file.write(createScore(document[f]))
         file.close()
 ##

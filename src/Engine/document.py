@@ -57,12 +57,12 @@ class Document :
         elif key == "families":
             return self.families
         elif key == "id":
-            lang = properties['language']
+            lang = self.properties['language']
             if lang == "en" :
                 lang = ""
             else :
                 lang = "_" + lang
-            return properties['qsosappname'] + "-" +properties['release'] + lang 
+            return self.properties['qsosappname'] + "-" + self.properties['release'] + lang 
         else :
             try :
                 args = key.split(".") 
