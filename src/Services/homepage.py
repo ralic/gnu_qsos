@@ -19,6 +19,8 @@ from nevow               import inevow
 import browse
 import submit
 
+from Engine import core
+
 ##
 #    @ingroup homepage
 #
@@ -28,10 +30,16 @@ class MainPage ( rend.Page ):
     
     This class handles qsos repository home page.
     """
-    
-    docFactory = loaders.stan (
+    def __init__ (self, repository, *args, **kwargs):
+        rend.Page.__init__ ( self, *args, **kwargs )
+        self.repository = repository
+        self.docFactory = self.makeDocFactory()
+        core.setup(self.repository)
+        
+    def makeDocFactory(self) :
+        return loaders.stan (
         T.html [ T.head ( title = 'Main Page' ),
-                 T.body [ T.h1 [ "This is the QSOS Repository Main Page" ],
+                 T.body [ T.h1 [ "This is the QSOS Repository [" + self.repository + "] Main Page" ],
                           T.p ["For now, you can ",
                                T.a ( href = 'repository' ) [ "browse" ],
                                " the repository or ",
@@ -44,6 +52,6 @@ class MainPage ( rend.Page ):
     
     def childFactory ( self, ctx, name ):
         if name == 'repository' :
-            return browse.MainPage()
+            return browse.MainPage(self.repository)
         else :
             return submit.UploadPage()
