@@ -23,15 +23,14 @@ import os
 ##
 #    @ingroup splitter
 #        
-def parse(document,repositoryroot=".."):
+def parse(document,repositoryroot):
     """
-    Parses a qsos evaluation and creates/overwrite qscore files containing
-    elements' scores and comments for each family declared in qsosappfamily
-    evaluation's tag.
-
-    The tree structure under sheet directory may also be modified as qscore
-    files are created into appname/version directory. (appname and version are
-    also extracted from evaluation's header)
+    Parse a qsos evaluation and build dictionnary containing qscore evaluations.
+    Dictionnary keys are path to qscore file and values are qscore contents which
+    are element tag's score and contents for each family declared in qsosappfamily
+    evaluation's tag 
+    
+    
     
     @param document
             document object of evaluation to be parsed
@@ -39,26 +38,17 @@ def parse(document,repositoryroot=".."):
     @param repositoryroot
             path to root of local copy of repository.
             Default value is ..
+            
+    @return dictionnary of parsed document
     """
-    #Create tree folder in filesystem
-    #makedirs fails with OSError 17 whenever the directory to make
-    #already exists. This specific error is excepted 
-    path = os.path.join(repositoryroot,
-                        "sheets",
-                        "evaluations",
+     
+    base = os.path.join("sheets", "evaluations",
                         document["properties"]["qsosappname"],
                         document["properties"]["release"]
                         )
-    try :
-        os.makedirs(path)
-    except OSError, error :
-        if error[0] != 17 : raise OSError, error
+    return dict((base+"/"+f+".qscore", createScore(document[f])) for f in document.families)
+        
     
-    #As the folder is created, can be added into.
-    for f in document.families :
-        file = open(os.path.join(path,f + ".qscore"),'w')
-        file.write(createScore(document[f]))
-        file.close()
 ##
 #    @ingroup splitter
 #

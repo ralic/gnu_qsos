@@ -11,10 +11,11 @@ does not uses it yet.
 #    @author Hery Randriamanamihaga
 
 
-from Engine import document
-from Engine import splitter
-from Engine import builder
-from os import path
+from Engine import document, splitter, builder
+
+import os
+
+from Repository import gitshelve as git
 
 ##
 #    @ingroup core
@@ -26,7 +27,7 @@ Main application that runs the engine and performs required task for each
 QSOS-Engine's feature.
 """
 
-def init(path=".."):
+def setup(path=".."):
     """
     Initializer
     
@@ -41,10 +42,15 @@ def init(path=".."):
     """
     global PATH
     global STORE
+    
+    PATH = path
+    
+     
     STORE = {}
-    PATH = ".."
 
+    
 def submit(qsos):
+    
     """
     Submit an evaluation.
     
@@ -61,11 +67,20 @@ def submit(qsos):
     #Create document object and add/update it in STORE
     #Key of STORE's item is appname-version_language
     document = splitter.createDocument(evaluation,
-                                       path.join(PATH,"sheets","families"))
+                                       os.path.join(PATH,"sheets","families"))
     STORE[document["id"]] = document
     
-    #Generate .qscore files into repository 
-    splitter.parse(document, PATH)
+    #Generate .qscore files into repository
+    scores = splitter.parse(document, PATH)
+    
+    for file in scores :
+        print file
+        REPO = git.open('core', os.path.join(PATH, ".git"))
+        REPO.git('push')
+        REPO[file] = scores[file]
+        REPO.commit(file + " generated")
+        REPO.git('push')
+        REPO.close()
 
 
 def request(evaluation):

@@ -28,7 +28,7 @@ class MainPage ( rend.Page ):
     
     This class handles qsos repository home page.
     """
-
+    
     docFactory = loaders.stan (
         T.html [ T.head ( title = 'Main Page' ),
                  T.body [ T.h1 [ "This is the QSOS Repository Main Page" ],
@@ -41,8 +41,9 @@ class MainPage ( rend.Page ):
                  ],
                ]
         )
-
-    children = {
-                'repository'    : browse.MainPage(),
-                'submit'        : submit.UploadPage()
-                }
+    
+    def childFactory ( self, ctx, name ):
+        if name == 'repository' :
+            return browse.MainPage()
+        else :
+            return submit.UploadPage()

@@ -211,18 +211,22 @@ class MainPage ( rend.Page ):
     
     This class renders the main page when browse request is handled
     """
+    def body(self, ctx, data):
+        body = [ T.h1 ["/"] ]
+        body.extend([T.p [ T.a ( href = 'repository/'+dir ) [ dir ] ]for dir in os.listdir("../sheets")])
+        return body
     
-    body = [ T.h1 ["/"] ]
-    body.extend([T.p [ T.a ( href = 'repository/'+dir ) [ dir ] ]for dir in os.listdir("../sheets")])
+    
     docFactory = loaders.stan (
         T.html [ T.head ( title = 'Main Page' ),
                  T.body [ body ]
                  ]
         )
     
-    
     def childFactory ( self, ctx, name ):
         "Handles children with no explicit renderer"
-        return SubPage()
+        children = SubPage()
+        if name == 'evaluations' :
+            children = EvaluationPage()
+        return children
 
-    children = { 'evaluations' : EvaluationPage() }
