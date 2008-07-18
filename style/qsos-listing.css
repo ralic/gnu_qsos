@@ -1,0 +1,28 @@
+body {
+  font-family:Verdana,Helvetica;
+  font-size:11px;
+}
+
+
+h1 {
+  font-size:20px;
+}
+
+li.folder {
+  list-style-type:none;
+  background-image: url("folder.png");
+  background-repeat: no-repeat;
+  background-position: 0px 0px;
+  padding: 25px 40px 25px 80px;
+  margin: 0px 20px;
+}
+li.sheet {
+  list-style-type:none;
+  background-image: url("sheet.png");
+  background-repeat: no-repeat;
+  background-position: 0px 0px;
+  padding: 25px 40px 25px 80px;
+  margin: 0px 20px;
+}
+
+

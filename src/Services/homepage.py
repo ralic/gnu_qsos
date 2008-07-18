@@ -15,11 +15,13 @@ from nevow               import rend
 from nevow               import loaders
 from nevow               import tags as T
 from nevow               import inevow
+from nevow  import static
 
 import browse
 import submit
 
 from Engine import core
+
 
 ##
 #    @ingroup homepage
@@ -35,6 +37,7 @@ class MainPage ( rend.Page ):
         self.repository = repository
         self.docFactory = self.makeDocFactory()
         core.setup(self.repository)
+        self.child_css = static.File(self.repository + "/style/")
         
     def makeDocFactory(self) :
         return loaders.stan (
@@ -55,3 +58,4 @@ class MainPage ( rend.Page ):
             return browse.MainPage(self.repository)
         else :
             return submit.UploadPage()
+        

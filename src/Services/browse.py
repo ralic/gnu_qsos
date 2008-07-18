@@ -24,119 +24,83 @@ from nevow  import static
 from os     import listdir
 
 from Engine import core
+from QSOSpage import QSOSPage
 
 
 ##
 #    @ingroup browse
 #   
-class SubPage ( rend.Page ):
+
+
+class SubPage ( QSOSPage ):
     """
     Handles repository subpages
     
     This class renders a page for any location on the repository that is not
     explicitly binded to a handler
     """
-    def __init__ (self, repository):
-        rend.Page.__init__ (self)
-        self.repository = repository
-        self.docFactory = self.makeDocFactory()
-        
-        
-    def render_title ( self, ctx, data ):
-        "Renders page's title"
-        request = inevow.IRequest ( ctx )
-        return "Currently browsing  %s" % ( "/".join(request.prepath[1:]), )
-    
-    def render_body ( self, ctx, data ):
+    def renderBody ( self, ctx, data ):
         "Renders page's content"
         path = "/".join(inevow.IRequest(ctx).prepath[1:])
-        return [ T.h1 [path] ] + \
-               [ T.p[
-                     T.a ( href = path+'/'+item ) [ item.split(".")[:-1] ]
+        return [ T.li (class_='sheet') [T.a ( href = path + '/' + item ) [ item.split(".")[:-1] ]
                      ] for item in listdir(self.repository + "/sheets/"+path) ]
-    
-    def makeDocFactory(self):
-        page = T.html [
-                      T.head[ T.title [ self.render_title ] ],
-                      T.body[ self.render_body ]
-                      ]
-        return loaders.stan (page)
+        
+    def childFactory ( self, ctx, segments ):
+        "Locate and generate the evaluation page"
+        path = "/".join([self.repository, "sheets"]+
+                        inevow.IRequest(ctx).prepath[1:]+list(segments))
+        return (static.File(path, defaultType='xml'),())
     
   
 ##
 #    @ingroup browse
 #  
-class EvaluationPage ( rend.Page ):
+class EvaluationPage ( QSOSPage ):
     """
     Renders Evaluation pages content
     
     This class renders the evaluation home page dynamically from repository's
     content.
     """
-    def __init__ (self, repository):
-        rend.Page.__init__ (self)
-        self.repository = repository
-        self.docFactory = self.makeDocFactory()
         
-    def render_title ( self, ctx, data ):
-        "Renders page's title"
-        request = inevow.IRequest ( ctx )
-        return "Currently browsing  %s" % ( "/".join(request.prepath[1:]), )
     
-    def render_body ( self, ctx, data ):
+    def renderBody (self, ctx, data):
         "Renders page's body"
         path = "/".join([self.repository, "sheets"]+
                         inevow.IRequest(ctx).prepath[1:])
-        evals = [ T.p [
+        return [ T.li (class_='sheet') [
                        T.a (href = "/".join(["evaluations", dir, version]))
                        [ dir + "-" + version ]
                     ] for dir in listdir(path)
                       for version in listdir(path + '/' + dir) ]
         
-        return [ T.h1 ["/".join(inevow.IRequest(ctx).prepath[1:])] ] + evals 
     
-    def makeDocFactory(self):
-        page = T.html [
-                      T.head[ T.title [ self.render_title ] ],
-                      T.body[ self.render_body]
-                      ]
-        return loaders.stan (page)
+
     
     def locateChild ( self, ctx, segments ):
-#        "Locate and generate the evaluation page"
+        "Locate and generate the evaluation page"
         id= "-".join(segments)
-        tmp =  "/tmp/" + id + "." + "xml"
+        tmp =  "/tmp/" + id + "." + "qsos"
         file = open(tmp,'w')
         file.write(core.request(id))
         file.close()
-        return (static.File(tmp), ())
+        return (static.File(tmp, defaultType='xml'), ())
 
 ##
 #    @ingroup browse
 #
-class MainPage ( rend.Page ):
+class MainPage ( QSOSPage ):
     """
     Renders repository home page
     
     This class renders the main page when browse request is handled
     """
     
-    def __init__ (self, repository):
-        rend.Page.__init__ (self)
-        self.repository = repository
-        self.docFactory = self.makeDocFactory()
-        
-    
-    def makeDocFactory (self):
-        dirs = [T.p[
+    def renderBody (self, ctx, data):
+        return [T.li (class_='folder')[
                     T.a(href='repository/' + dir)[dir]
                     ] for dir in listdir(self.repository + "/sheets") ]
                     
-        page = T.html[
-                      T.head(title='Main Page'),
-                      T.body[[T.h1["/"]], dirs]
-                      ]
-        return loaders.stan(page)
     
     def childFactory (self, ctx, name):
         "Handles children with no explicit renderer"
