@@ -44,8 +44,6 @@ def setup(path=".."):
     global STORE
     
     PATH = path
-    
-     
     STORE = {}
 
     

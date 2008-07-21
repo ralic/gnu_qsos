@@ -22,6 +22,7 @@ from nevow  import inevow
 from nevow  import static
 
 from os     import listdir
+from os import path
 
 from Engine import core
 from QSOSpage import QSOSPage
@@ -45,11 +46,13 @@ class SubPage ( QSOSPage ):
         return [ T.li (class_='sheet') [T.a ( href = path + '/' + item ) [ item.split(".")[:-1] ]
                      ] for item in listdir(self.repository + "/sheets/"+path) ]
         
-    def childFactory ( self, ctx, segments ):
+    def childFactory (self, ctx, name):
         "Locate and generate the evaluation page"
-        path = "/".join([self.repository, "sheets"]+
-                        inevow.IRequest(ctx).prepath[1:]+list(segments))
-        return (static.File(path, defaultType='xml'),())
+        location = "/".join([self.repository, 'sheets'] + inevow.IRequest(ctx).prepath[1:]+[name])
+        if path.isfile(location): 
+            return static.File(location, defaultType='xml')
+        else :
+            return None
     
   
 ##
@@ -104,7 +107,10 @@ class MainPage ( QSOSPage ):
     
     def childFactory (self, ctx, name):
         "Handles children with no explicit renderer"
-        return SubPage(self.repository)
+        if name :
+            return SubPage(self.repository)
+        else :
+            return None
     
     def child_evaluations (self, ctx):
         return EvaluationPage(self.repository)

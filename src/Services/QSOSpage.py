@@ -18,7 +18,8 @@ class QSOSPage (rend.Page):
         
     def renderHead (self, ctx, data):
         css =  T.link (rel="stylesheet", type="text/css", href='/css/qsos-listing.css')
-        return T.head [ T.title [ self.renderTitle ], css ]
+        favicon = T.link (rel="icon", type="image/png", href='/css/favicon.ico')
+        return T.head [ T.title [ self.renderTitle ], css , favicon]
 
     def renderTitle(self, ctx, data):
         return "QSOS Repository/%s" % ("/".join(inevow.IRequest ( ctx ).prepath[1:]), )
@@ -34,4 +35,3 @@ class QSOSPage (rend.Page):
     
     def child_css (self, ctx):
         return self.child_css
-    

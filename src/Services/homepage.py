@@ -19,29 +19,24 @@ from nevow  import static
 
 import browse
 import submit
-
+from QSOSpage import QSOSPage
 from Engine import core
 
 
 ##
 #    @ingroup homepage
 #
-class MainPage ( rend.Page ):
+class MainPage ( QSOSPage ):
     """
     Handles site's main page
     
     This class handles qsos repository home page.
     """
-    def __init__ (self, repository, *args, **kwargs):
-        rend.Page.__init__ ( self, *args, **kwargs )
-        self.repository = repository
-        self.docFactory = self.makeDocFactory()
-        core.setup(self.repository)
-        self.child_css = static.File(self.repository + "/style/")
         
     def makeDocFactory(self) :
+        core.setup(self.repository)
         return loaders.stan (
-        T.html [ T.head ( title = 'Main Page' ),
+        T.html [ self.renderHead,
                  T.body [ T.h1 [ "This is the QSOS Repository [" + self.repository + "] Main Page" ],
                           T.p ["For now, you can ",
                                T.a ( href = 'repository' ) [ "browse" ],
@@ -56,6 +51,8 @@ class MainPage ( rend.Page ):
     def childFactory ( self, ctx, name ):
         if name == 'repository' :
             return browse.MainPage(self.repository)
-        else :
+        elif name == 'submit' :
             return submit.UploadPage()
+        else :
+            return None
         
