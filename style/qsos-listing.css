@@ -16,13 +16,30 @@ li.folder {
   padding: 25px 40px 25px 80px;
   margin: 0px 20px;
 }
+
 li.sheet {
   list-style-type:none;
-  background-image: url("sheet.png");
+  background-image: url("qsos.png");
   background-repeat: no-repeat;
   background-position: 0px 0px;
   padding: 25px 40px 25px 80px;
   margin: 0px 20px;
 }
 
+li.qtpl {
+  list-style-type:none;
+  background-image: url("qtpl.png");
+  background-repeat: no-repeat;
+  background-position: 0px 0px;
+  padding: 25px 40px 25px 80px;
+  margin: 0px 20px;
+}
 
+li.qin {
+  list-style-type:none;
+  background-image: url("qin.png");
+  background-repeat: no-repeat;
+  background-position: 0px 0px;
+  padding: 25px 40px 25px 80px;
+  margin: 0px 20px;
+}

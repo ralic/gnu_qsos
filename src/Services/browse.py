@@ -42,15 +42,22 @@ class SubPage ( QSOSPage ):
     """
     def renderBody ( self, ctx, data ):
         "Renders page's content"
-        path = "/".join(inevow.IRequest(ctx).prepath[1:])
-        return [ T.li (class_='sheet') [T.a ( href = path + '/' + item ) [ item.split(".")[:-1] ]
-                     ] for item in listdir(self.repository + "/sheets/"+path) ]
+        location = "/".join([self.repository, 'sheets']+inevow.IRequest(ctx).prepath[1:])
+        return [ self.renderItem(item, location)  for item in listdir(location) ]
+        
+    def renderItem (self, item, location):
+        if path.isdir(location+item) :
+            return T.li ( class_ = 'folder' ) [ T.a (href=item) [item] ]
+        elif path.isfile(location+item) :
+            return T.li ( class_ = item.split(".")[-1] ) [ T.a (href=item) [item.split(".")[:-1]] ]
         
     def childFactory (self, ctx, name):
         "Locate and generate the evaluation page"
         location = "/".join([self.repository, 'sheets'] + inevow.IRequest(ctx).prepath[1:]+[name])
         if path.isfile(location): 
             return static.File(location, defaultType='xml')
+        elif path.isdir(location):
+            return SubPage(self.repository)
         else :
             return None
     
@@ -65,14 +72,13 @@ class EvaluationPage ( QSOSPage ):
     This class renders the evaluation home page dynamically from repository's
     content.
     """
-        
     
     def renderBody (self, ctx, data):
         "Renders page's body"
         path = "/".join([self.repository, "sheets"]+
                         inevow.IRequest(ctx).prepath[1:])
         return [ T.li (class_='sheet') [
-                       T.a (href = "/".join(["evaluations", dir, version]))
+                       T.a (href = "/".join([dir, version]))
                        [ dir + "-" + version ]
                     ] for dir in listdir(path)
                       for version in listdir(path + '/' + dir) ]
@@ -83,6 +89,8 @@ class EvaluationPage ( QSOSPage ):
     def locateChild ( self, ctx, segments ):
         "Locate and generate the evaluation page"
         id= "-".join(segments)
+        if not id :
+            return (self, ())
         tmp =  "/tmp/" + id + "." + "qsos"
         file = open(tmp,'w')
         file.write(core.request(id))
@@ -101,7 +109,7 @@ class MainPage ( QSOSPage ):
     
     def renderBody (self, ctx, data):
         return [T.li (class_='folder')[
-                    T.a(href='repository/' + dir)[dir]
+                    T.a(href= dir)[dir]
                     ] for dir in listdir(self.repository + "/sheets") ]
                     
     

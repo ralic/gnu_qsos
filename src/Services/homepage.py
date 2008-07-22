@@ -36,7 +36,7 @@ class MainPage ( QSOSPage ):
     def makeDocFactory(self) :
         core.setup(self.repository)
         return loaders.stan (
-        T.html [ self.renderHead,
+        T.html [ self.render_Head,
                  T.body [ T.h1 [ "This is the QSOS Repository [" + self.repository + "] Main Page" ],
                           T.p ["For now, you can ",
                                T.a ( href = 'repository' ) [ "browse" ],
@@ -52,7 +52,7 @@ class MainPage ( QSOSPage ):
         if name == 'repository' :
             return browse.MainPage(self.repository)
         elif name == 'submit' :
-            return submit.UploadPage()
+            return submit.UploadPage(self.repository)
         else :
             return None
         
