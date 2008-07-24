@@ -7,7 +7,7 @@ import os
 
 application = service.Application ( "QSOS Engine" )
 port        = 8080
-res         = homepage.MainPage('/home/hery/git')
+res         = homepage.MainPage('/tmp/local/')
 site        = appserver.NevowSite ( res )
 webService  = internet.TCPServer ( port, site )
 webService.setServiceParent ( application )

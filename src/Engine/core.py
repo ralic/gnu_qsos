@@ -72,7 +72,6 @@ def submit(qsos):
     scores = splitter.parse(document, PATH)
     
     for file in scores :
-        print file
         REPO = git.open('core', os.path.join(PATH, ".git"))
         REPO.git('push')
         REPO[file] = scores[file]

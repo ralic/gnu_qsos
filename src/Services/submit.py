@@ -26,6 +26,7 @@ from formless               import webform
 
 from Engine                 import splitter
 from Engine import  core
+from QSOSpage import QSOSPage
 
 ##
 #    @ingroup submit
@@ -49,21 +50,25 @@ class ConfirmationPage(rend.Page):
 ##
 #    @ingroup submit
 #
-class UploadPage(rend.Page):
+class UploadPage(QSOSPage):
     """
     Handles upload page.
     
     This class renders the main page of submit branch of the site.
     
     """
+    def render_Head (self, ctx, data):
+        css =  T.link (rel="stylesheet", type="text/css", href='/css/style.css')
+        favicon = T.link (rel="icon", type="image/png", href='/css/favicon.ico')
+        return T.head [ T.title [ self.renderTitle ], css , favicon]
     
-    
-    docFactory = loaders.xmlstr("""
+    def makeDocFactory(self):
+        return loaders.xmlstr("""
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
            "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns:n="http://nevow.com/ns/nevow/0.1">
     <head>
-        <title>Example 1: A News Item Editor</title>
+        <n:invisible n:render="Head" />
     </head>
     <body>
         <h1>Example 1: A News Item Editor</h1>
@@ -72,24 +77,23 @@ class UploadPage(rend.Page):
 </html>
 """)
     
-    def __init__(self, *args, **kwargs):
-        super(UploadPage, self).__init__(*args, **kwargs)
-    
     def submitEvaluation(self, **formData):
         "Put the uploaded evaluation into the local repository"
         core.submit(formData["File"].file)
-        return url.here.click('submit/confirmation')
+        return url.here.click('confirmation')
 
     def bind_submitEvaluation(self, ctx):
         "Bind the proper action to perform when submit action is invoked"
         return [
             ('File', annotate.FileUpload(required=True)),
         ]
-
+    
     def render_fileUploader(self, ctx, data):
         "Renders the file uploader form"
-        return ctx.tag.clear()[
+        
+        return [
             webform.renderForms()
         ]
     
     children = {'confirmation'  : ConfirmationPage()}
+

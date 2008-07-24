@@ -15,8 +15,9 @@ class QSOSPage (rend.Page):
         self.repository = repository
         self.docFactory = self.makeDocFactory()
         self.child_css = static.File(self.repository + "/style/")
+        self.addSlash = True
         
-    def renderHead (self, ctx, data):
+    def render_Head (self, ctx, data):
         css =  T.link (rel="stylesheet", type="text/css", href='/css/qsos-listing.css')
         favicon = T.link (rel="icon", type="image/png", href='/css/favicon.ico')
         return T.head [ T.title [ self.renderTitle ], css , favicon]
@@ -26,7 +27,7 @@ class QSOSPage (rend.Page):
     
     def makeDocFactory(self):
         page = T.html [
-                      self.renderHead,
+                      self.render_Head,
                       T.body [T.div(id = "corp")[
                                                   T.h1 [self.renderTitle],
                                                   T.ul (class_ = "downloads")[self.renderBody]

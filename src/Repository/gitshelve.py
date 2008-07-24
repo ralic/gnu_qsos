@@ -220,6 +220,7 @@ class gitshelve(dict):
                         '\0')
         for line in ls_tree:
             match = self.ls_tree_pat.match(line)
+            print line, match
             assert match
 
             treep = match.group(1) == "040000 tree"
