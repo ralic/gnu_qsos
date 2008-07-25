@@ -71,14 +71,15 @@ def submit(qsos):
     #Generate .qscore files into repository
     scores = splitter.parse(document, PATH)
     
-    for file in scores :
-        REPO = git.open('core', os.path.join(PATH, ".git"))
-        REPO.git('push')
-        REPO[file] = scores[file]
-        REPO.commit(file + " generated")
-        REPO.git('push')
-        REPO.close()
-
+#    for file in scores :
+#        REPO = git.open('core', os.path.join(PATH, ".git"))
+#        REPO.git('push')
+#        REPO[file] = scores[file]
+#        REPO.commit(file + " generated")
+#        REPO.git('push')
+#        REPO.close()
+def show (str):
+    print str
 
 def request(evaluation):
     """

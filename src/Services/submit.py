@@ -20,6 +20,7 @@ from nevow                  import rend
 from nevow                  import static
 from nevow                  import url
 from nevow                  import tags as T
+from nevow import inevow
 
 from formless               import annotate
 from formless               import webform 
@@ -27,73 +28,62 @@ from formless               import webform
 from Engine                 import splitter
 from Engine import  core
 from QSOSpage import QSOSPage
+from QSOSpage import DefaultPage
 
 ##
 #    @ingroup submit
 #
-class ConfirmationPage(rend.Page):
+class ConfirmationPage(DefaultPage):
     """
     Renders confirmation page.
     
     Handles the confirmation page of a successful evaluation upload.
     Return to root page or submit another evaluation are suggested.
     """
-    head = [ T.title ["QSOS evaluation Upload"] ]
-    body = [ T.h1 [ "Your evaluation has been uploaded" ] ,
-             T.a ( href = "../" ) [ "Go to Repository Main Page" ],
+    def renderBody ( self, ctx, data ):
+        return T.body [ T.h1 [ "Your evaluation has been uploaded" ] ,
+             T.a ( href = "/" ) [ "Go to Repository Main Page" ],
              " or ",
-             T.a ( href = "../submit" ) [ "Upload another evaluation" ]
+             T.a ( href = "/submit" ) [ "Upload another evaluation" ]
             ]
-    docFactory = loaders.stan( T.html[ T.head [ head ], T.body [ body ] ] )
+        
+    def renderTitle(self, ctx, data):
+        return "QSOS Upload Page Confirmation"
     
-
 ##
 #    @ingroup submit
 #
-class UploadPage(QSOSPage):
+class UploadPage(DefaultPage):
     """
     Handles upload page.
     
     This class renders the main page of submit branch of the site.
     
     """
-    def render_Head (self, ctx, data):
-        css =  T.link (rel="stylesheet", type="text/css", href='/css/style.css')
-        favicon = T.link (rel="icon", type="image/png", href='/css/favicon.ico')
-        return T.head [ T.title [ self.renderTitle ], css , favicon]
+    def renderBody (self, ctx, data):
+        return T.body[webform.renderForms()]
     
-    def makeDocFactory(self):
-        return loaders.xmlstr("""
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-           "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns:n="http://nevow.com/ns/nevow/0.1">
-    <head>
-        <n:invisible n:render="Head" />
-    </head>
-    <body>
-        <h1>Example 1: A News Item Editor</h1>
-        <n:invisible n:render="fileUploader" />
-    </body>
-</html>
-""")
-    
+    def renderTitle(self, ctx, data):
+        return "QSOS Upload Page"
+
     def submitEvaluation(self, **formData):
         "Put the uploaded evaluation into the local repository"
-        core.submit(formData["File"].file)
-        return url.here.click('confirmation')
+        core.show(['TODO : check', formData['E-mail']])
+        core.show(['TODO : check', formData['Author']])
+        core.show(['TODO : check', formData['Description']])
+        core.show(['TODO : exploit', formData['Type']])
+        core.show(['TODO : exploit', formData['File']])
+        return url.here.child('confirmation')
 
     def bind_submitEvaluation(self, ctx):
         "Bind the proper action to perform when submit action is invoked"
         return [
-            ('File', annotate.FileUpload(required=True)),
-        ]
-    
-    def render_fileUploader(self, ctx, data):
-        "Renders the file uploader form"
-        
-        return [
-            webform.renderForms()
-        ]
-    
-    children = {'confirmation'  : ConfirmationPage()}
+                ('Author', annotate.String()),
+                ('E-mail', annotate.String()),
+                ('Description', annotate.Text()),
+                ('Type', annotate.Choice(['Evaluation','Template', 'Family'])),
+                ('File', annotate.FileUpload(required=False))
+                        ]
+    def child_confirmation(self, ctx):
+        return ConfirmationPage(self.repository)
 

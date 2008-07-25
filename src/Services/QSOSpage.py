@@ -8,7 +8,7 @@ from nevow  import static
 
 from os     import listdir
 
-class QSOSPage (rend.Page):
+class DefaultPage (rend.Page):
     def __init__ (self, repository):
         rend.Page.__init__ (self)
         self.title = ""
@@ -22,17 +22,48 @@ class QSOSPage (rend.Page):
         favicon = T.link (rel="icon", type="image/png", href='/css/favicon.ico')
         return T.head [ T.title [ self.renderTitle ], css , favicon]
 
-    def renderTitle(self, ctx, data):
-        return "QSOS Repository/%s" % ("/".join(inevow.IRequest ( ctx ).prepath[1:]), )
-    
     def makeDocFactory(self):
         page = T.html [
                       self.render_Head,
-                      T.body [T.div(id = "corp")[
-                                                  T.h1 [self.renderTitle],
-                                                  T.ul (class_ = "downloads")[self.renderBody]
-                                                  ] ] ]
+                      self.renderBody
+                      ]
         return loaders.stan (page)
-    
+
     def child_css (self, ctx):
         return self.child_css
+
+
+class QSOSPage (DefaultPage):
+
+    def renderTitle(self, ctx, data):
+        return "QSOS Repository/%s" % ("/".join(inevow.IRequest ( ctx ).prepath[1:]), )
+    
+    def renderBody(self, ctx, data):
+        return T.div(id = "corp")[
+                                  T.h1 [self.renderTitle],
+                                  T.ul [self.renderList]
+                                                  ]
+
+        
+
+class ErrorPage(QSOSPage):
+    """
+    Renders confirmation page.
+    
+    Handles the confirmation page of a successful evaluation upload.
+    Return to root page or submit another evaluation are suggested.
+    """
+    def __init__ (self, repository, errorList):
+        QSOSPage.__init__(self, repository)
+        self.errorList = errorList
+    
+    def renderList(self, ctx, data):
+        return [ self.renderItem(error, level)  for (error,level) in self.errorList ]
+    
+    
+    def renderItem (self, error, level):
+            return T.li ( class_ = level ) [ error ]
+        
+
+    def renderTitle(self, ctx, data):
+        return "QSOS Error Page"

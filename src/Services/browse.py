@@ -40,7 +40,7 @@ class SubPage ( QSOSPage ):
     This class renders a page for any location on the repository that is not
     explicitly binded to a handler
     """
-    def renderBody ( self, ctx, data ):
+    def renderList ( self, ctx, data ):
         "Renders page's content"
         location = "/".join([self.repository, 'sheets']+inevow.IRequest(ctx).prepath[1:])
         return [ self.renderItem(item, location)  for item in listdir(location) ]
@@ -73,7 +73,7 @@ class EvaluationPage ( QSOSPage ):
     content.
     """
     
-    def renderBody (self, ctx, data):
+    def renderList (self, ctx, data):
         "Renders page's body"
         path = "/".join([self.repository, "sheets"]+
                         inevow.IRequest(ctx).prepath[1:])
@@ -107,7 +107,7 @@ class MainPage ( QSOSPage ):
     This class renders the main page when browse request is handled
     """
     
-    def renderBody (self, ctx, data):
+    def renderList (self, ctx, data):
         return [T.li (class_='folder')[
                     T.a(href= dir)[dir]
                     ] for dir in listdir(self.repository + "/sheets") ]
