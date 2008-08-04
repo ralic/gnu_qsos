@@ -66,7 +66,7 @@ class UploadPage(DefaultPage):
     def renderTitle(self, ctx, data):
         return "QSOS Upload Page"
 
-    def submitEvaluation(self, **formData):
+    def submitYourContribution(self, **formData):
         "Put the uploaded evaluation into the local repository"
         core.show(['TODO : check', formData['E-mail']])
         core.show(['TODO : check', formData['Author']])
@@ -75,7 +75,7 @@ class UploadPage(DefaultPage):
         core.show(['TODO : exploit', formData['File']])
         return url.here.child('confirmation')
 
-    def bind_submitEvaluation(self, ctx):
+    def bind_submitYourContribution(self, ctx):
         "Bind the proper action to perform when submit action is invoked"
         return [
                 ('Author', annotate.String()),
