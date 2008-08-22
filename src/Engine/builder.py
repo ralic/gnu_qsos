@@ -12,6 +12,8 @@ splitted repository's qscore, qin and qtpl files
 from Engine import document
 from Engine import family
 from xml.dom import minidom
+from Repository import gitshelve as git
+import re
 import os
 
 ##
@@ -47,29 +49,20 @@ def build(id, repositoryroot):
     #Handle each family to be included
     for include in includes :
         #parse family .qin file
-        sheet = os.path.join(repositoryroot,"sheets","evaluations",
+        relPath = os.path.join("sheets","evaluations",
                              properties["qsosappname"],properties["release"],
                              include + ".qscore")
-        sheet = "".join(line.strip() for line in file(sheet).readlines())
+        absPath = os.path.join(repositoryroot, relPath)
+        sheet = "".join(line.strip() for line in file(absPath).readlines())
         xml = minidom.parseString(sheet).firstChild
         
-        #extract directly interesting information :
-        #    - authors
-        #    - dates
-        [h, elt] = xml.childNodes
-        [a,d]=h.childNodes
         
-        authors =[(n.firstChild.data,e.firstChild.data) 
-                  for [n,e] in [i.childNodes for i in a.childNodes]]
-        #Dates can be not provided on .qin files, in which case, empty string
-        #is assumed to be date value
-        value = lambda x : (x and [x.data] or [""])[0]
-        dates = (value(d.firstChild.firstChild),value(d.lastChild.firstChild))
+        author = getAuthor(repositoryroot, relPath)
         
         #Scores and comments extraction loop
         scores = {}
         comments = {}
-        for node in elt.childNodes :
+        for node in xml.childNodes :
             n = node.getAttribute("name")
             v = node.getElementsByTagName("score")
             if v : scores[n] = v[0].firstChild.data 
@@ -77,7 +70,7 @@ def build(id, repositoryroot):
             if v : comments[n] = v[0].firstChild.data
             
         #Add the family into family list for the document 
-        families[include]=family.family(authors, dates, scores, comments)
+        families[include]=family.family(author, scores, comments)
         
     #Create and return the expected documents
     return document.Document(properties,families)
@@ -102,29 +95,40 @@ def assembleSheet(document, repositoryroot):
     root = sheet.createElement("document")
     header = sheet.createElement("header")
     authors = sheet.createElement("authors")
-    dates = sheet.createElement("dates")
     header.appendChild(authors)
-    header.appendChild(dates)
     root.appendChild(header)
+    
+ 
     
     #Fill in header with properties
     for item in document["properties"] :
         tag = sheet.createElement(item)
         tag.appendChild(sheet.createTextNode(document["properties"][item]))
         header.appendChild(tag)
-
+    
+    auths = {}
     #Add blank qsos evaluation of families
-    families = document["families"].keys()
-    for item in families :
+    for item in document["families"] :
+        (name, mail) = document[item]['author']
+        auths[name] = mail
         include = os.path.join(repositoryroot,"sheets","families",item + ".qin")
         include = "".join(line.strip() for line in file(include).readlines())
         include = minidom.parseString(include).firstChild
         for section in include.childNodes[1:] : root.appendChild(section)
-            
     
-    #Finalize the blank  document
+    #Fill-in authors tag with data extracted 
+    for k, v in auths.iteritems() :
+        tag = sheet.createElement('author')
+        leaf = sheet.createElement("name")
+        leaf.appendChild(sheet.createTextNode(k))
+        tag.appendChild(leaf)
+        leaf = sheet.createElement("email")
+        leaf.appendChild(sheet.createTextNode(v))
+        tag.appendChild(leaf)
+        authors.appendChild(tag)
+        
+    #Finalize the document
     sheet.appendChild(root)
-    print document["families"]
     return sheet.toxml('utf-8')
 
 ##
@@ -182,3 +186,13 @@ def fillSheet(document, sheet, repositoryroot):
             addTextNode(e,"comment",comment)
             
     return sheet.toprettyxml("\t", "\n", "utf-8")
+
+
+def getAuthor(repository, file):
+    log = git.git('log', file)
+    result = re.compile('Author: (.*)<(.+@.+)>').search(log)
+    if result :
+        return result.group(1), result.group(2)
+    else :
+        raise StandardError("No author found for " + file + " in " + repository)
+    

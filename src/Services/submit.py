@@ -68,11 +68,7 @@ class UploadPage(DefaultPage):
 
     def submitYourContribution(self, **formData):
         "Put the uploaded evaluation into the local repository"
-        core.show(['TODO : check', formData['E-mail']])
-        core.show(['TODO : check', formData['Author']])
-        core.show(['TODO : check', formData['Description']])
-        core.show(['TODO : exploit', formData['Type']])
-        core.show(['TODO : exploit', formData['File']])
+        core.submit(formData)
         return url.here.child('confirmation')
 
     def bind_submitYourContribution(self, ctx):

@@ -14,7 +14,7 @@ does not uses it yet.
 from Engine import document, splitter, builder
 
 import os
-
+import re
 from Repository import gitshelve as git
 
 ##
@@ -35,7 +35,7 @@ def setup(path=".."):
     collection in memory
         
     @param path
-        Path to root of repository local copy.
+        Path to root of local repository.
         Default value is ..
     
     @todo Scan repository and build tree on initialization?
@@ -44,10 +44,11 @@ def setup(path=".."):
     global STORE
     
     PATH = path
+    os.chdir(PATH)
     STORE = {}
 
     
-def submit(qsos):
+def submit(data):#, author, email, comment):
     
     """
     Submit an evaluation.
@@ -56,30 +57,54 @@ def submit(qsos):
     files. Files in repository are overwritten without confirmation and objects
     contained in STORE dictionnary are updated.
     
-    @param qsos
-        Evaluation to submit
+    @param data
+        Data to submit. data must be a dictionnary with the following keys:
+            * Author
+            * E-mail
+            * File type (evaluation, template or family)
+            * Description of uploaded file
+            * File
     """
-    #Unpack raw XML qsos evaluation into single-lined string
-    evaluation = "".join(line.strip() for line in qsos.readlines())
+    #First check if e-mail adress is valid and format git author
+    if checkEmail(data["E-mail"]):
+        Author = "%s <%s>" % (data["Author"], data["E-mail"])
+    else :
+        raise StandardError("Not a valid e-mail adress")
     
-    #Create document object and add/update it in STORE
-    #Key of STORE's item is appname-version_language
-    document = splitter.createDocument(evaluation,
-                                       os.path.join(PATH,"sheets","families"))
-    STORE[document["id"]] = document
+    #Open and update the repository
+    repository = git.open('core', os.path.join(PATH, ".git"))
+    repository.git('pull')
     
-    #Generate .qscore files into repository
-    scores = splitter.parse(document, PATH)
+    #Put contribution on the correct location
+    if data["Type"] == "Evaluation" :
+        #Unpack raw XML qsos evaluation into single-lined string
+        evaluation = "".join(line.strip() for line in data['File'].file.readlines())
+        
+        #Create document object and add/update it in STORE
+        #Key of STORE's item is appname-version_language
+        document = splitter.createDocument(evaluation,
+                                           os.path.join(PATH,"sheets","families"))
+        STORE[document["id"]] = document
+        
+        #Generate .qscore files into repository
+        scores = splitter.parse(document, PATH)
+        
+        for file in scores :
+            repository[file] = scores[file]
     
-#    for file in scores :
-#        REPO = git.open('core', os.path.join(PATH, ".git"))
-#        REPO.git('push')
-#        REPO[file] = scores[file]
-#        REPO.commit(file + " generated")
-#        REPO.git('push')
-#        REPO.close()
+    #Make a commit with proper parameters
+    repository.commit("%s added %s into %s.\n%s" % (Author, data['File'].filename, data['Type'], data['Description']),
+                      (data['Author'], data['E-mail'])
+                    )
+#    repository.git('push')
+    repository.close()     
+       
 def show (str):
     print str
+    
+def checkEmail (str):
+    return re.compile("\S+@\S+").match(str)
+
 
 def request(evaluation):
     """

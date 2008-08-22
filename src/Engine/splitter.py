@@ -17,6 +17,7 @@ splitter
 from Engine import document
 from Engine import family
 from xml.dom import minidom
+
 import os
 
 
@@ -109,7 +110,7 @@ def createDocument(evaluation,familypath="../sheets/families"):
         #Initiate the family object : 
         #    -same authors and dates for all families of the same evaluation
         #    -empty score and comments dictionnary
-        f = family.family(authors, dates, {}, {})
+        f = family.family(authors, {}, {})
         for element in template.getElementsByTagName("desc0"):
             name = element.parentNode.getAttribute("name")
             
@@ -153,28 +154,6 @@ def createScore(family):
     document = minidom.Document()
     root = document.createElement("qsosscore")
     
-    #Build header which contains only author and dates
-    header = document.createElement("header")
-    toplevel = document.createElement("authors")
-    for author in family["authors"] :
-        tag = document.createElement("author")
-        leaf = document.createElement("name")
-        leaf.appendChild(document.createTextNode(author[0]))
-        tag.appendChild(leaf)
-        leaf = document.createElement("email")
-        leaf.appendChild(document.createTextNode(author[1]))
-        tag.appendChild(leaf)
-        toplevel.appendChild(tag)
-    header.appendChild(toplevel)
-    tag = document.createElement("dates")
-    leaf = document.createElement("creation")
-    leaf.appendChild(document.createTextNode(family["date.creation"]))
-    tag.appendChild(leaf)
-    leaf = document.createElement("validation")
-    leaf.appendChild(document.createTextNode(family["date.validation"]))
-    tag.appendChild(leaf)
-    header.appendChild(tag)
-    
     #Build score section
     #Local copies of family's attribute are made as destructive
     #iterator are used.
@@ -210,7 +189,6 @@ def createScore(family):
         section.appendChild(tag)
     
     #Build the final document
-    root.appendChild(header)
     root.appendChild(section)
     document.appendChild(root)    
     
