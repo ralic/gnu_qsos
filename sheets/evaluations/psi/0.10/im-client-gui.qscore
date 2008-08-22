@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<qsosscore>
+		<element name="accountaccess">
+			<score>
+				2
+			</score>
+		</element>
+		<element name="plugins">
+			<score>
+				0
+			</score>
+		</element>
+		<element name="bandwidth">
+			<score>
+				2
+			</score>
+		</element>
+		<element name="accountdeleting">
+			<score>
+				2
+			</score>
+		</element>
+		<element name="accountcreation">
+			<score>
+				2
+			</score>
+		</element>
+		<element name="skins">
+			<comment>
+				List of other clients using the same skin constituent:List of other clients using the same skin constituent:
+			</comment>
+		</element>
+</qsosscore>
