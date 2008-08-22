@@ -157,7 +157,6 @@ def createScore(family):
     #Build score section
     #Local copies of family's attribute are made as destructive
     #iterator are used.
-    section = document.createElement("scores")
     scores = family.scores.copy()
     comments = family.comments.copy()
     
@@ -175,7 +174,7 @@ def createScore(family):
             leaf = document.createElement("comment")
             leaf.appendChild(document.createTextNode(comments.pop(name)))
             tag.appendChild(leaf)
-        section.appendChild(tag)
+        root.appendChild(tag)
     
     #Remaining items of comments dictionnary are added to output XML
     #No score tags for these elements as there must be no item left in scores 
@@ -186,10 +185,9 @@ def createScore(family):
         leaf = document.createElement("comment")
         leaf.appendChild(document.createTextNode(value))
         tag.appendChild(leaf)
-        section.appendChild(tag)
+        root.appendChild(tag)
     
     #Build the final document
-    root.appendChild(section)
     document.appendChild(root)    
     
     #Pretty format ant return the result qsos score sheet

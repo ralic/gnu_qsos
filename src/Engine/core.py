@@ -45,7 +45,6 @@ def setup(path=".."):
     
     PATH = path
     os.chdir(PATH)
-    STORE = {}
 
     
 def submit(data):#, author, email, comment):
@@ -84,7 +83,6 @@ def submit(data):#, author, email, comment):
         #Key of STORE's item is appname-version_language
         document = splitter.createDocument(evaluation,
                                            os.path.join(PATH,"sheets","families"))
-        STORE[document["id"]] = document
         
         #Generate .qscore files into repository
         scores = splitter.parse(document, PATH)
@@ -96,7 +94,7 @@ def submit(data):#, author, email, comment):
     repository.commit("%s added %s into %s.\n%s" % (Author, data['File'].filename, data['Type'], data['Description']),
                       (data['Author'], data['E-mail'])
                     )
-#    repository.git('push')
+    repository.git('push')
     repository.close()     
        
 def show (str):
@@ -122,7 +120,6 @@ def request(evaluation):
     @param evaluation
         Requested evaluation's id. The id must be qsosappname-release
     """
-    if evaluation not in STORE :
-        STORE[evaluation] = builder.build(evaluation, PATH)
-    sheet = builder.assembleSheet(STORE[evaluation], PATH)
-    return builder.fillSheet(STORE[evaluation], sheet, PATH)
+    eval = builder.build(evaluation, PATH)
+    sheet = builder.assembleSheet(eval, PATH)
+    return builder.fillSheet(eval, sheet, PATH)

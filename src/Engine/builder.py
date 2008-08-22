@@ -80,7 +80,7 @@ def build(id, repositoryroot):
 #
 def assembleSheet(document, repositoryroot):
     """
-    Generate the qsos XML file corresponding to givent document object
+    Generate the qsos XML file corresponding to given document object
     
     @param document
         Evaluation's document object.
