@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<qsostemplate xmlns="http://qsos.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://qsos.org ../XSD/QSOS-Template.xsd ">
+  <header>
+    <authors>
+      <author>
+            <email>jihed.trifi@atosorigin.com</email>
+            <name>Jihed TRIFI</name>
+      </author>
+    </authors>
+    <dates>
+      <creation>2007-07-04</creation>
+    </dates>
+  </header>
+  <template>
+      <language>en</language>
+      <appname>Nuxeo 5</appname>
+      <release>1.M1</release>
+      <licenseid>32</licenseid>
+      <licensedesc>GNU LGPL</licensedesc>
+      <url>www.nuxeo.com</url>
+      <desc>ECM framework</desc>
+      <demourl>www.nuxeo.org</demourl>
+      <qsosformat>1.7</qsosformat>
+      <qsosappname>Nuxeo5</qsosappname>
+      <qsosspecificformat></qsosspecificformat>
+	<qsosappfamilies>
+      <qsosappfamily>cms</qsosappfamily>
+    </qsosappfamilies>
+  </template>
+</qsostemplate>
