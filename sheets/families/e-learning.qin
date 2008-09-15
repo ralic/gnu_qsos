@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<qsosappfamily xmlns="http://qsos.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://qsos.org ../XSD/QSOS-Family.xsd ">
+	<header>
+		<authors>
+			<author>
+				<email>goin.quentin@hotmail.fr</email>
+				<name>Quentin Goin</name>
+			</author>
+		</authors>
+		<dates>
+			<creation>2007-06-28</creation>
+		</dates>
+	</header>
+	<section name="registrationadministration" title="Inscriptions et gestion">
+		<element name="learnerregistration" title="Inscription en mode apprenant">
+			<desc0>Inscription réalisée par l'utilisateur</desc0>
+			<desc1>Demande d'inscription de l'utilisateur avec acceptation
+				de l'administrateur</desc1>
+			<desc2>Paramétrage du mode d'inscription rendant possible
+				les deux possibilités précédentes et l'inscription par
+				l'administrateur lui-même</desc2>
+		</element>
+		<element name="teacherregistration" title="Inscription en mode professeur">
+			<desc0>Inscription réalisée par l'utilisateur</desc0>
+			<desc1>Demande d'inscription de l'utilisateur avec acceptation
+				de l'administrateur</desc1>
+			<desc2>Parametrage du mode d'inscription rendant possible
+				les deux possibilités précédentes et l'inscription par
+				l'administrateur lui-même</desc2>
+		</element>
+		<element name="usermanagement" title="Gestion des utilisateurs">
+			<desc0>Gestion sommaire ajouter/éditer/supprimer</desc0>
+			<desc1>Attribution de droits spéciaux</desc1>
+			<desc2>Création de nouveaux profils utilisateur</desc2>
+		</element>
+		<element name="groupmanagement" title="Gestion des groupes">
+			<desc0>Pas de possibilité de création de groupes</desc0>
+			<desc1>Création de groupes sans ou avec peu d'options
+				paramétrables</desc1>
+			<desc2>Création de groupes avec plusieurs options
+				paramétrables</desc2>
+		</element>
+		<element name="userinformation" title="Informations utilisateurs">
+			<desc0>Peu de champs de renseignement disponibles et non
+				modifiables</desc0>
+			<desc1>Plusieurs champs de renseignement disponibles et
+				modifiables</desc1>
+			<desc2>Choix des informations utilisateurs à renseigner avec
+				options de modification paramétrables</desc2>
+		</element>
+	</section>
+	<section name="reporting" title="Suivi">
+		<element name="logfile" title="Journal de connexion">
+			<desc0>Pas de journal de connexion</desc0>
+			<desc1>Journal de connexion à la plate forme</desc1>
+			<desc2>Journal de connexion à la plate forme et relevé
+				détaillé du temps passé sur chaque parties d'un cours</desc2>
+		</element>
+		<element name="learnerreporting" title="Suivi d'un apprenant">
+			<desc0>Pas de statistiques sur la progression d'un apprenant</desc0>
+			<desc1>Statistiques sommaires sur la progression d'un
+				apprenant</desc1>
+			<desc2>Statistiques complètes sur la progression d'un
+				apprenant</desc2>
+		</element>
+		<element name="coursereporting" title="Suivi d'un cours">
+			<desc0>Pas de statistiques sur le taux de participation aux cours</desc0>
+			<desc1>Statistiques sommaires sur le taux de
+				participation aux cours</desc1>
+			<desc2>Statistiques complètes sur le taux de
+				participation aux cours</desc2>
+		</element>
+	</section>
+	<section name="accessoptions" title="Options d'accés aux cours">
+		<element name="courseaccess" title="Accès aux cours">
+			<desc0>Accès libre</desc0>
+			<desc1>Accessible pour les inscrits à la plate forme
+				seulement</desc1>
+			<desc2>Paramétrage de l'ccessibilité public/privé/limité</desc2>
+		</element>
+		<element name="coursepublication" title="Publication des cours">
+			<desc0>Cours accessible dès sa conception</desc0>
+			<desc1>Cours accessible dès qu'il est considéré comme publié</desc1>
+			<desc2>Cours accessible dès qu'il est considéré comme publié
+				avec paramétrage des dates d'accès</desc2>
+		</element>
+	</section>
+	<section name="communicationtools" title="Outils de communication">
+		<element name="share" title="Partage de fichiers">
+			<desc0>Pas d'outil de partage des fichiers</desc0>
+			<desc1>Outil de partage commun à toute l'application</desc1>
+			<desc2>Outil de partage permettant le classement des documents
+				et leur attribution par groupe d'utilisateurs ou à des cours</desc2>
+		</element>
+		<element name="forum" title="Forum">
+			<desc0>Pas de forum disponible</desc0>
+			<desc1>Un seul forum commun à toute l'application</desc1>
+			<desc2>Création de plusieurs forums spécifiques à des groupes
+				d'utilisateurs ou à des cours</desc2>
+		</element>
+		<element name="chat" title="Chat">
+			<desc0>Pas de Chat</desc0>
+			<desc1>Un seul Chat commun à toute l'application</desc1>
+			<desc2>Création de plusieurs chats spécifiques à des groupes
+				d'utilisateurs ou à des cours</desc2>
+		</element>
+		<element name="mail" title="Messagerie">
+			<desc0>Pas de messagerie</desc0>
+			<desc1>Outil de messagerie nécessitant un client de messagerie</desc1>
+			<desc2>Outil de messagerie interne</desc2>
+		</element>
+		<element name="blog" title="Blog">
+			<desc0>Pas de Blog</desc0>
+			<desc1>Un seul Blog commun à toute l'application</desc1>
+			<desc2>Création de plusieurs blogs spécifiques à des groupes
+				d'utilisateurs ou à des cours</desc2>
+		</element>
+		<element name="wiki" title="Wiki">
+			<desc0>Pas de Wiki</desc0>
+			<desc1>Un seul Wiki commun à toute l'application</desc1>
+			<desc2>Création de plusieurs Wiki spécifiques à  des groupes
+				d'utilisateurs ou à des cours</desc2>
+		</element>
+		<element name="agenda" title="Agenda">
+			<desc0>Pas d'agenda</desc0>
+			<desc1>Agenda de groupe configurable par une seule personne</desc1>
+			<desc2>Agenda personnel et de groupe configurable par ses
+				acteurs</desc2>
+		</element>
+		<element name="videoconference" title="Vidéo conférence">
+			<desc0>Pas de vidéo conférence</desc0>
+			<desc1>Vidéo conférence peu fonctionnelle</desc1>
+			<desc2>Vidéo conférence adaptée et utilisable facilement</desc2>
+		</element>
+		<element name="othertool" title="Autres outils de communication ou multimédia">
+			<desc0>Pas d'autres outils</desc0>
+			<desc1>D'autres outils mais à l'utilisation plus
+				qu'optionnelle</desc1>
+			<desc2>D'autres outils fonctionnels offrant des services
+				vraiment utiles</desc2>
+		</element>
+	</section>
+	<section name="contentcreation" title="Création de contenu">
+		<element name="coursecreation" title="Outil de création de cours">
+			<desc0>Editeur de texte basique</desc0>
+			<desc1>Editeur de texte plus élaboré</desc1>
+			<desc2>Editeur de texte complet ou Editeur de PowerPoint</desc2>
+		</element>
+		<element name="coursecontribution" title="Contribution à l'élaboration des cours">
+			<desc0>Conception via l'application et par l'auteur du
+				cours uniquement</desc0>
+			<desc1>Attribution par l'auteur du cours de droits de
+				modification à d'autres utilisateurs</desc1>
+			<desc2>Attribution par l'auteur du cours de diff'rents
+				niveaux de droits d'accès à son cours à d'autres utilisateurs</desc2>
+		</element>
+		<element name="import" title="Import de cours">
+			<desc0>Le logiciel ne permet pas l'import des cours</desc0>
+			<desc1>Le logiciel permet l’import de certains cours. Il ne
+				respecte que partiellement les normes SCORM et AICC</desc1>
+			<desc2>Le logiciel permet l’import de cours générés par tous (ou la
+				plupart) les logiciels d’e learning. Il respecte pleinement les
+				normes SCORM et AICC</desc2>
+		</element>
+		<element name="export" title="Export de cours">
+			<desc0>Le logiciel ne permet pas l’export des cours</desc0>
+			<desc1>Le logiciel permet l’export de cours qui ne seront
+				consultables que par certains autres logiciels. Il ne respecte que
+				partiellement les normes SCORM et AICC</desc1>
+			<desc2>Le logiciel permet l’export de cours vers tous (ou la
+				plupart) des logiciels d’e learning. Il respecte pleinement les
+				normes SCORM et AICC</desc2>
+		</element>
+		<element name="supporteddocformat" title="Formats des documents supportés">
+			<desc0>Le logiciel ne supporte que les documents texte</desc0>
+			<desc1>Le logiciel supporte les fichiers texte/image/son/vidéo</desc1>
+			<desc2>Le logiciel gère tous les types de document (flash,
+				PowerPoint, ...)</desc2>
+		</element>
+		<element name="QCM" title="Création de QCM">
+			<desc0>Pas d'outils de création de QCM</desc0>
+			<desc1>Outil de création de QCM basic</desc1>
+			<desc2>Outil de création de QCM complet avec possibilité
+				d'import/export des QCM</desc2>
+		</element>
+		<element name="URL" title="Gestion des URL">
+			<desc0>Pas de page de gestion des URL</desc0>
+			<desc1>Page de gestion simple des URL</desc1>
+			<desc2>Gestion des URL par catégories et par cours</desc2>
+		</element>
+	</section>
+</qsosappfamily>
