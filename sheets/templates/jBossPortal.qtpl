@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<qsostemplate xmlns="http://qsos.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://qsos.org ../XSD/QSOS-Template.xsd ">
+  <header>
+    <authors>
+      <author>
+        <email>tojo.randrianaivojaona@atosorigin.com</email>
+        <name>Tojo Randrianaivojaona</name>
+      </author>
+    </authors>
+    <dates>
+      <creation>2006-04-11</creation>
+    </dates>
+  </header>
+  <template>
+    <language>en</language>
+    <appname>jBossPortal</appname>
+    <release>2</release>
+    <licenseid>31</licenseid>
+    <licensedesc>GNU Lesser General Public License (LGPL)</licensedesc>
+    <url>http://www.jboss.com/products/jbossportal</url>
+    <desc>JBoss Portal provides an open source and standards-based environment for hosting and serving a portal's Web interface, publishing and managing its content, and customizing its experience</desc>
+    <demourl>http://portal.demo.jboss.com/</demourl>
+    <qsosformat>2.0</qsosformat>
+    <qsosappname>jBossPortal</qsosappname>
+    <qsosappfamilies>
+      <qsosappfamily>portal</qsosappfamily>
+    </qsosappfamilies>
+  </template>
+</qsostemplate>
