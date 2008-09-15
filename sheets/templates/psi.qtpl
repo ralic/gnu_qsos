@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<qsostemplate
-	xmlns="http://qsos.org" 
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-	xsi:schemaLocation="http://qsos.org ../XSD/QSOS-Template.xsd ">
+<qsostemplate xmlns="http://qsos.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://qsos.org ../XSD/QSOS-Template.xsd ">
 	<header>
 		<authors>
 			<author>
@@ -24,13 +21,7 @@
 		<licenseid>31</licenseid>
 		<licensedesc>GNU GPL</licensedesc>
 		<url>http://psi-im.org</url>
-		<desc>
-			Psi is a Jabber client looking (by design) like licq.
-			Besides basic instant messaging services, it provides
-			support for features like groupchat and multiple accounts.
-			For more information on jabber, see www.jabber.org (or the
-			jabber package which contains the jabber server software).
-		</desc>
+		<desc> Psi is a Jabber client looking (by design) like licq. Besides basic instant messaging services, it provides support for features like groupchat and multiple accounts. For more information on jabber, see www.jabber.org (or the jabber package which contains the jabber server software). </desc>
 		<demourl>http://psi-im.org</demourl>
 		<qsosformat>2.0</qsosformat>
 		<qsosappname>psi</qsosappname>

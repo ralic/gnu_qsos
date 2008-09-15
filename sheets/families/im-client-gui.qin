@@ -3,61 +3,35 @@
 	<header>
 		<authors>
 			<author>
-				<email>walid.nouh@atosorigin.com</email>
-				<name>Walid Nouh</name>
-			</author>
-			<author>
-				<email>nicolas.verite@atosorigin.com</email>
-				<name>Nicolas Vérité</name>
+				<email>goneri@rulezlan.org</email>
+				<name>Goneri Le Bouder</name>
 			</author>
 		</authors>
 		<dates>
+			<creation>2007-02-20</creation>
 		</dates>
 	</header>
 	<section name="hmi" title="Human/Machine Interface and other features">
 		<element name="skins" title="Customizable skins support">
 			<desc0>No customizable skin</desc0>
-			<desc1>
-				Custumizable skin but needs complicated manipulation
-			</desc1>
+			<desc1> Custumizable skin but needs complicated manipulation </desc1>
 			<desc2>User friendly skin support</desc2>
 		</element>
 		<element name="accounts" title="Accounts management">
 			<element name="accountcreation" title="Creation">
-				<desc0>
-					No account creation is possible directly in the
-					client
-				</desc0>
-				<desc1>
-					Account creation is possible for part of the
-					protocols supported
-				</desc1>
-				<desc2>
-					Account creation is avalaible for all supported
-					protocols
-				</desc2>
+				<desc0> No account creation is possible directly in the client </desc0>
+				<desc1> Account creation is possible for part of the protocols supported </desc1>
+				<desc2> Account creation is avalaible for all supported protocols </desc2>
 			</element>
 			<element name="accountaccess" title="Access to an account for management">
-				<desc0>
-					No link for account management provided by the client
-				</desc0>
-				<desc1>
-					Link to the account management page for all or part	of supported protocols
-				</desc1>
-				<desc2>
-					A native interface exists to edit accounts (all or part of supported protocols)
-				</desc2>
+				<desc0> No link for account management provided by the client </desc0>
+				<desc1> Link to the account management page for all or part of supported protocols </desc1>
+				<desc2> A native interface exists to edit accounts (all or part of supported protocols) </desc2>
 			</element>
 			<element name="accountdeleting" title="Deleting an account">
-				<desc0>
-					Deleting an account is not possible via the client
-				</desc0>
-				<desc1>
-					Link to the deletion page of an account is provided
-				</desc1>
-				<desc2>
-					A native interface permits to delete an account	without browsing the web
-				</desc2>
+				<desc0> Deleting an account is not possible via the client </desc0>
+				<desc1> Link to the deletion page of an account is provided </desc1>
+				<desc2> A native interface permits to delete an account without browsing the web </desc2>
 			</element>
 		</element>
 		<element name="plugins" title="Plug-in support">

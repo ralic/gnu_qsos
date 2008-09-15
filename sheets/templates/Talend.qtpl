@@ -8,8 +8,7 @@
 			</author>
 		</authors>
 		<dates>
-			<creation>2001-01-01</creation>
-			<validation>2001-01-01</validation>
+			<creation>2007-09-14</creation>
 		</dates>
 	</header>
 	<template>
@@ -21,7 +20,7 @@
 		<url>www.talend.com</url>
 		<desc>ETL open source 100% français. Possibilité de coder les jobs en Java ou en Perl.</desc>
       <demourl>http://www.talend.com/tos/tutorials/menu.php</demourl>
-      <qsosformat>1.7</qsosformat>
+      <qsosformat>2.0</qsosformat>
       <qsosappname>Talend</qsosappname>
     <qsosappfamilies>
       <qsosappfamily>etl</qsosappfamily>

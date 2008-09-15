@@ -15,37 +15,37 @@
 		<element name="agentperoperatingsystem" title="Agent per Operating System">
 			<element name="agentforaix" title="Agent for AIX">
 				<desc0>not supported</desc0>
-				<desc1>partaly supported</desc1>
+				<desc1>partially supported</desc1>
 				<desc2>supported</desc2>
 			</element>
 			<element name="agentforhpux" title="Agent for HP-UX">
 				<desc0>not supported</desc0>
-				<desc1>partaly supported</desc1>
+				<desc1>partially supported</desc1>
 				<desc2>supported</desc2>
 			</element>
 			<element name="agentforlinux" title="Agent for Linux">
 				<desc0>not supported</desc0>
-				<desc1>partaly supported</desc1>
+				<desc1>partially supported</desc1>
 				<desc2>supported</desc2>
 			</element>
 			<element name="agentformacos" title="Agent for MacOS">
 				<desc0>not supported</desc0>
-				<desc1>partaly supported</desc1>
+				<desc1>partially supported</desc1>
 				<desc2>supported</desc2>
 			</element>
 			<element name="agentforbsd" title="Agent for BSD">
 				<desc0>not supported</desc0>
-				<desc1>partaly supported</desc1>
+				<desc1>partially supported</desc1>
 				<desc2>supported</desc2>
 			</element>
 			<element name="agentforsolaris" title="Agent for Solaris">
 				<desc0>not supported</desc0>
-				<desc1>partaly supported</desc1>
+				<desc1>partially supported</desc1>
 				<desc2>supported</desc2>
 			</element>
 			<element name="agentforwindows" title="Agent for Windows">
 				<desc0>not supported</desc0>
-				<desc1>partaly supported</desc1>
+				<desc1>partially supported</desc1>
 				<desc2>supported</desc2>
 			</element>
 		</element>
@@ -53,28 +53,28 @@
 			<element name="format" title="Format">
 				<element name="xml" title="XML">
 					<desc0>not supported</desc0>
-					<desc1>partaly supported</desc1>
+					<desc1>partially supported</desc1>
 					<desc2>supported</desc2>
 				</element>
 				<element name="text" title="Text">
 					<desc0>not supported</desc0>
-					<desc1>partaly supported</desc1>
+					<desc1>partially supported</desc1>
 					<desc2>supported</desc2>
 				</element>
 				<element name="csv" title="CSV">
 					<desc0>not supported</desc0>
-					<desc1>partaly supported</desc1>
+					<desc1>partially supported</desc1>
 					<desc2>supported</desc2>
 				</element>
 				<element name="binary" title="Binary">
 					<desc0>not supported</desc0>
-					<desc1>partaly supported</desc1>
+					<desc1>partially supported</desc1>
 					<desc2>supported</desc2>
 				</element>
 			</element>
 			<element name="utf8" title="Utf8">
 				<desc0>Not supported</desc0>
-				<desc1>Partaly supported</desc1>
+				<desc1>partially supported</desc1>
 				<desc2>Supported</desc2>
 			</element>
 			<element name="documentation" title="documentation">
@@ -85,15 +85,14 @@
 		</element>
 		<element name="datacompression" title="Data compression">
 			<desc0>not supported</desc0>
-			<desc1>propriatary format</desc1>
+			<desc1>proprietary format</desc1>
 			<desc2>Open source format</desc2>
 		</element>
 		<element name="reportingmanagement" title="Reporting management">
-			<desc>For example, random reporting, at boot, planned, at
-				administrator command ... </desc>
+			<desc>For example, random reporting, at boot, planned, at administrator command ... </desc>
 			<desc0>not possible</desc0>
 			<desc1>Few possibilities</desc1>
-			<desc2>Lot of possiblities</desc2>
+			<desc2>Lot of posisblities</desc2>
 		</element>
 		<element name="inventorycontent" title="Inventory content">
 			<element name="inventorysize" title="Inventory size">
@@ -105,61 +104,61 @@
 			<element name="hardware" title="Hardware">
 				<element name="hardwareserailid" title="Hardware serial ID">
 					<desc0>not supported</desc0>
-					<desc1>partaly supported</desc1>
+					<desc1>partially supported</desc1>
 					<desc2>supported</desc2>
 				</element>
 				<element name="biosfirmware" title="Bios or Firmware">
 					<desc0>not supported</desc0>
-					<desc1>partaly supported</desc1>
+					<desc1>partially supported</desc1>
 					<desc2>supported</desc2>
 				</element>
 				<element name="cpu" title="CPU">
 					<desc0>not supported</desc0>
-					<desc1>partaly supported</desc1>
+					<desc1>partially supported</desc1>
 					<desc2>supported</desc2>
 				</element>
 				<element name="memory" title="Memory">
 					<desc0>not supported</desc0>
-					<desc1>partaly supported</desc1>
+					<desc1>partially supported</desc1>
 					<desc2>supported</desc2>
 				</element>
 				<element name="storage" title="Storage">
 					<desc>Hard drive, DVD/CD ROM, Floppy</desc>
 					<desc0>not supported</desc0>
-					<desc1>partaly supported</desc1>
+					<desc1>partially supported</desc1>
 					<desc2>supported</desc2>
 				</element>
 				<element name="port" title="Port">
 					<desc>Serial, Printers, USB, PS/2</desc>
 					<desc0>not supported</desc0>
-					<desc1>partaly supported</desc1>
+					<desc1>partially supported</desc1>
 					<desc2>supported</desc2>
 				</element>
 				<element name="monitor" title="Monitor">
 					<desc0>not supported</desc0>
-					<desc1>partaly supported</desc1>
+					<desc1>partially supported</desc1>
 					<desc2>supported</desc2>
 				</element>
 				<element name="printer" title="Printer">
 					<desc0>not supported</desc0>
-					<desc1>partaly supported</desc1>
+					<desc1>partially supported</desc1>
 					<desc2>supported</desc2>
 				</element>
 			</element>
 			<element name="software" title="Software">
 				<desc0>not supported</desc0>
-				<desc1>partaly supported</desc1>
+				<desc1>partially supported</desc1>
 				<desc2>supported</desc2>
 			</element>
 			<element name="network" title="Network">
 				<element name="globalnetwork" title="Network">
 					<desc0>not supported</desc0>
-					<desc1>partaly supported</desc1>
+					<desc1>partially supported</desc1>
 					<desc2>supported</desc2>
 				</element>
 				<element name="localnetworktopology" title="Local Network topology">
 					<desc0>not supported</desc0>
-					<desc1>partaly supported</desc1>
+					<desc1>partially supported</desc1>
 					<desc2>supported</desc2>
 				</element>
 			</element>
@@ -167,7 +166,7 @@
 		<element name="serverquestionning" title="Server questionning">
 			<desc>Server can question the agent?</desc>
 			<desc0>not supported</desc0>
-			<desc1>partaly supported</desc1>
+			<desc1>partially supported</desc1>
 			<desc2>supported</desc2>
 		</element>
 		<element name="agentinstallation" title="Agent installation">
@@ -185,61 +184,61 @@
 		<element name="transportprotocol" title="transportprotocol">
 			<element name="http" title="HTTP">
 				<desc0>not supported</desc0>
-				<desc1>partaly supported</desc1>
+				<desc1>partially supported</desc1>
 				<desc2>supported</desc2>
 			</element>
 			<element name="xmpp" title="XMPP">
 				<desc0>not supported</desc0>
-				<desc1>partaly supported</desc1>
+				<desc1>partially supported</desc1>
 				<desc2>supported</desc2>
 			</element>
 			<element name="snmp" title="SNMP">
 				<desc0>not supported</desc0>
-				<desc1>partaly supported</desc1>
+				<desc1>partially supported</desc1>
 				<desc2>supported</desc2>
 			</element>
 			<element name="smtp" title="SMTP">
 				<desc0>not supported</desc0>
-				<desc1>partaly supported</desc1>
+				<desc1>partially supported</desc1>
 				<desc2>supported</desc2>
 			</element>
 			<element name="ftp" title="FTP">
 				<desc0>not supported</desc0>
-				<desc1>partaly supported</desc1>
+				<desc1>partially supported</desc1>
 				<desc2>supported</desc2>
 			</element>
 			<element name="sambacifs" title="SMB/CIFS (Windows or Samba shared directory)">
 				<desc0>not supported</desc0>
-				<desc1>partaly supported</desc1>
+				<desc1>partially supported</desc1>
 				<desc2>supported</desc2>
 			</element>
 		</element>
 		<element name="security" title="Security">
 			<element name="authentificationclientserver" title="Authentification Client to Server">
 				<desc0>not supported</desc0>
-				<desc1>partaly supported</desc1>
+				<desc1>partially supported</desc1>
 				<desc2>supported</desc2>
 			</element>
 			<element name="authentificationserverclient" title="Authentification Server to client">
 				<desc0>not supported</desc0>
-				<desc1>partaly supported</desc1>
+				<desc1>partially supported</desc1>
 				<desc2>supported</desc2>
 			</element>
 			<element name="streamencryption" title="Stream encryption">
 				<desc0>not supported</desc0>
-				<desc1>partaly supported</desc1>
+				<desc1>partially supported</desc1>
 				<desc2>supported</desc2>
 			</element>
 		</element>
 		<element name="datastorage" title="Data Storage">
 			<element name="databases" title="Databases">
 				<desc0>not supported</desc0>
-				<desc1>partaly supported</desc1>
+				<desc1>partially supported</desc1>
 				<desc2>supported</desc2>
 			</element>
 			<element name="plaintext" title="Plain text files">
 				<desc0>not supported</desc0>
-				<desc1>partaly supported</desc1>
+				<desc1>partially supported</desc1>
 				<desc2>supported</desc2>
 			</element>
 		</element>
@@ -258,23 +257,23 @@
 		<element name="inventorymanagement" title="Inventory management">
 			<element name="duplicatedmanagement" title="Duplicated computers management">
 				<desc0>not supported</desc0>
-				<desc1>partaly supported</desc1>
+				<desc1>partially supported</desc1>
 				<desc2>supported</desc2>
 			</element>
 			<element name="groupedcommands" title="Grouped commands">
 				<desc>Abitily to launch command on a pool of machines</desc>
 				<desc0>not supported</desc0>
-				<desc1>partaly supported</desc1>
+				<desc1>partially supported</desc1>
 				<desc2>supported</desc2>
 			</element>
 			<element name="dataimport" title="Data import">
 				<desc0>not supported</desc0>
-				<desc1>partaly supported</desc1>
+				<desc1>partially supported</desc1>
 				<desc2>supported</desc2>
 			</element>
 			<element name="dataexport" title="Data export">
 				<desc0>not supported</desc0>
-				<desc1>partaly supported</desc1>
+				<desc1>partially supported</desc1>
 				<desc2>supported</desc2>
 			</element>
 		</element>

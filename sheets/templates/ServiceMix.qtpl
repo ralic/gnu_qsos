@@ -19,8 +19,7 @@
 		<licensedesc>The Apache License 2.0</licensedesc>
 		<url>http://incubator.apache.org/servicemix/home.html</url>
 		<desc></desc>
-		<demourl></demourl>
-		<qsosformat>1.7</qsosformat>
+		<qsosformat>2.0</qsosformat>
 		<qsosappname>ServiceMix</qsosappname>
 		<qsosappfamilies>
 			<qsosappfamily>esb</qsosappfamily>

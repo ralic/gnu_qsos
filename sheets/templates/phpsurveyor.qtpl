@@ -1,17 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<qsostemplate xmlns="http://qsos.org"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://qsos.org ../XSD/QSOS-Template.xsd ">
+<qsostemplate xmlns="http://qsos.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://qsos.org ../XSD/QSOS-Template.xsd ">
 	<header>
 		<authors>
 			<author>
-				<email>email</email>
-				<name>name</name>
+				<email>olivier.portier@finances.gouv.fr</email>
+				<name>Olivier PORTIER</name>
 			</author>
 		</authors>
 		<dates>
-			<creation>2001-01-01</creation>
-			<validation>2001-01-01</validation>
+			<creation>2007-12-02</creation>
 		</dates>
 	</header>
 	<template>
@@ -21,15 +18,10 @@
 		<licenseid>31</licenseid>
 		<licensedesc>GNU GPL</licensedesc>
 		<url>http://www.phpsurveyor.org/</url>
-		<desc>PHPSurveyor est un des principaux outils Open Source
-			de questionnaires en ligne écrit en PHP. PHPSurveyor vous permet de
-			développer, publier et collecter les réponses à des questionnaires.
-			PHPSurveyor inclut un large éventail de types de questions et de
-			nombreuses options.</desc>
+		<desc>PHPSurveyor est un des principaux outils Open Source de questionnaires en ligne écrit en PHP. PHPSurveyor vous permet de développer, publier et collecter les réponses à des questionnaires. PHPSurveyor inclut un large éventail de types de questions et de nombreuses options.</desc>
 		<demourl>http://demo.phpsurveyor.org/admin/admin.php</demourl>
-		<qsosformat>1.7</qsosformat>
-		<qsosappname>survey-tool</qsosappname>
-		<qsosspecificformat>1.0</qsosspecificformat>
+		<qsosformat>2.0</qsosformat>
+		<qsosappname>phpsurveyor</qsosappname>
 		<qsosappfamilies>
 			<qsosappfamily>survey-tool</qsosappfamily>
 		</qsosappfamilies>

@@ -15,12 +15,8 @@
 		<desc>Fonctionnalités métier couvertes par le logiciel</desc>
 		<element name="gestioncomptable" title="Gestion comptable">
 			<desc>Comptabilite générale, analytique et budgetaire</desc>
-			<comment></comment>
 			<element name="immobilisations" title="Immobilisations">
-				<desc></desc>
-				<comment></comment>
 				<element name="gestiondesbiensimmobiliers" title="Gestion des biens immobiliers">
-					<desc></desc>
 					<desc0>Non couverte</desc0>
 					<desc1>Partiellement couverte</desc1>
 					<desc2>Totalement couverte</desc2>
@@ -29,13 +25,11 @@
 			<element name="comptabilitegenerale" title="Comptabilité générale">
 				<desc>Comptabilité privée et publique</desc>
 				<element name="grandlivre" title="Grand livre de compte">
-					<desc></desc>
 					<desc0>Non couverte</desc0>
 					<desc1>Partiellement couverte</desc1>
 					<desc2>Totalement couverte</desc2>
 				</element>
 				<element name="consolidation" title="Consolidation">
-					<desc></desc>
 					<desc0>Non couverte</desc0>
 					<desc1>Partiellement couverte</desc1>
 					<desc2>Totalement couverte</desc2>
@@ -62,43 +56,35 @@
 			<element name="comptabiliteauxiliaire" title="Comptabilité auxiliaire">
 				<desc>Gestion des tiers</desc>
 				<element name="journalclient" title="journal client">
-					<desc></desc>
 					<desc0>Non couverte</desc0>
 					<desc1>Partiellement couverte</desc1>
 					<desc2>Totalement couverte</desc2>
 				</element>
 				<element name="journalfournisseur" title="journal fournisseur">
-					<desc></desc>
 					<desc0>Non couverte</desc0>
 					<desc1>Partiellement couverte</desc1>
 					<desc2>Totalement couverte</desc2>
 				</element>
 				<element name="autresjournaux" title="autres journaux">
-					<desc></desc>
 					<desc0>Non couverte</desc0>
 					<desc1>Partiellement couverte</desc1>
 					<desc2>Totalement couverte</desc2>
 				</element>
 			</element>
 			<element name="comptabiliteanalytique" title="Comptabilité analytique">
-				<desc></desc>
 				<desc0>Non couverte</desc0>
 				<desc1>Partiellement couverte</desc1>
 				<desc2>Totalement couverte</desc2>
 			</element>
 			<element name="comptabilitebudgetaire" title="Comptabilité budgétaire">
-				<desc></desc>
 				<desc0>Non couverte</desc0>
 				<desc1>Partiellement couverte</desc1>
 				<desc2>Totalement couverte</desc2>
 			</element>
 		</element>
 		<element name="finances" title="Finances">
-			<desc></desc>
 			<element name="investissements" title="Investissements">
-				<desc></desc>
 				<element name="choixetcalculs" title="Choix et calculs">
-					<desc></desc>
 					<desc0>Non couverte</desc0>
 					<desc1>Partiellement couverte</desc1>
 					<desc2>Totalement couverte</desc2>
@@ -110,22 +96,18 @@
 					<desc2>Totalement couverte</desc2>
 				</element>
 				<element name="gestiondestitres" title="Gestion des titres">
-					<desc></desc>
 					<desc0>Non couverte</desc0>
 					<desc1>Partiellement couverte</desc1>
 					<desc2>Totalement couverte</desc2>
 				</element>
 			</element>
 			<element name="tresorerie" title="Trésorerie">
-				<desc></desc>
 				<element name="flux" title="Flux">
-					<desc></desc>
 					<desc0>Non couverte</desc0>
 					<desc1>Partiellement couverte</desc1>
 					<desc2>Totalement couverte</desc2>
 				</element>
 				<element name="budget" title="Budget">
-					<desc></desc>
 					<desc0>Non couverte</desc0>
 					<desc1>Partiellement couverte</desc1>
 					<desc2>Totalement couverte</desc2>
@@ -138,87 +120,70 @@
 				</element>
 			</element>
 			<element name="controledegestion" title="Contrôle de gestion">
-				<desc></desc>
 			</element>
 		</element>
 		<element name="ressourceshumaines" title="Ressources Humaines">
-			<desc></desc>
 			<element name="paie" title="Paie">
-				<desc></desc>
 				<element name="calculdepaie1" title="Calcul de paie">
-					<desc></desc>
 					<desc0>Non couverte</desc0>
 					<desc1>Partiellement couverte</desc1>
 					<desc2>Totalement couverte</desc2>
 				</element>
 				<element name="bulletinsdesalaire" title="Bulletins de salaire">
-					<desc></desc>
 					<desc0>Non couverte</desc0>
 					<desc1>Partiellement couverte</desc1>
 					<desc2>Totalement couverte</desc2>
 				</element>
 				<element name="remuneration" title="Rémunération">
-					<desc></desc>
 					<desc0>Non couverte</desc0>
 					<desc1>Partiellement couverte</desc1>
 					<desc2>Totalement couverte</desc2>
 				</element>
 				<element name="grillessalariales" title="Grilles salariales">
-					<desc></desc>
 					<desc0>Non couverte</desc0>
 					<desc1>Partiellement couverte</desc1>
 					<desc2>Totalement couverte</desc2>
 				</element>
 				<element name="declarationsannuelles" title="Déclarations annuelles">
-					<desc></desc>
 					<desc0>Non couverte</desc0>
 					<desc1>Partiellement couverte</desc1>
 					<desc2>Totalement couverte</desc2>
 				</element>
 				<element name="journaldepaie" title="Journal de paie">
-					<desc></desc>
 					<desc0>Non couverte</desc0>
 					<desc1>Partiellement couverte</desc1>
 					<desc2>Totalement couverte</desc2>
 				</element>
 			</element>
 			<element name="gestiondupersonnel" title="Gestion du personnel">
-				<desc></desc>
 				<element name="avantagesociaux" title="Avantage sociaux">
-					<desc></desc>
 					<desc0>Non couverte</desc0>
 					<desc1>Partiellement couverte</desc1>
 					<desc2>Totalement couverte</desc2>
 				</element>
 				<element name="gestiondurecrutement" title="Recrutement">
-					<desc></desc>
 					<desc0>Non couverte</desc0>
 					<desc1>Partiellement couverte</desc1>
 					<desc2>Totalement couverte</desc2>
 				</element>
 				<element name="tempsdactivite" title="Temps d'activité">
-					<desc></desc>
 					<desc0>Non couverte</desc0>
 					<desc1>Partiellement couverte</desc1>
 					<desc2>Totalement couverte</desc2>
 				</element>
 				<element name="notesdefrais" title="Notes de frais">
-					<desc></desc>
 					<desc0>Non couverte</desc0>
 					<desc1>Partiellement couverte</desc1>
 					<desc2>Totalement couverte</desc2>
 				</element>
 			</element>
 			<element name="planificationdupersonnel" title="Planification du personnel">
-				<desc></desc>
 				<element name="conges" title="Congés">
-					<desc></desc>
 					<desc0>Non couverte</desc0>
 					<desc1>Partiellement couverte</desc1>
 					<desc2>Totalement couverte</desc2>
 				</element>
 				<element name="formation" title="Formations">
-					<desc></desc>
 					<desc0>Non couverte</desc0>
 					<desc1>Partiellement couverte</desc1>
 					<desc2>Totalement couverte</desc2>
@@ -231,15 +196,12 @@
 				</element>
 			</element>
 			<element name="interventionsexternes" title="Interventions externes">
-				<desc></desc>
 				<element name="prestationdeservice" title="Prestation de service">
-					<desc></desc>
 					<desc0>Non couverte</desc0>
 					<desc1>Partiellement couverte</desc1>
 					<desc2>Totalement couverte</desc2>
 				</element>
 				<element name="interimaires" title="Interimaires">
-					<desc></desc>
 					<desc0>Non couverte</desc0>
 					<desc1>Partiellement couverte</desc1>
 					<desc2>Totalement couverte</desc2>
@@ -247,9 +209,7 @@
 			</element>
 		</element>
 		<element name="achatslogistiquedistribution" title="Achats, logistique et distribution">
-			<desc></desc>
 			<element name="achats" title="Achats">
-				<desc></desc>
 				<element name="demandesdachats" title="Demandes d'achats">
 					<desc>A partir de catalogues fournisseur</desc>
 					<desc0>Non couverte</desc0>
@@ -257,7 +217,6 @@
 					<desc2>Totalement couverte</desc2>
 				</element>
 				<element name="commandes" title="Commandes">
-					<desc></desc>
 					<desc0>Non couverte</desc0>
 					<desc1>Partiellement couverte</desc1>
 					<desc2>Totalement couverte</desc2>
@@ -269,7 +228,6 @@
 					<desc2>Totalement couverte</desc2>
 				</element>
 				<element name="facturation1" title="Facturation">
-					<desc></desc>
 					<desc0>Non couverte</desc0>
 					<desc1>Partiellement couverte</desc1>
 					<desc2>Totalement couverte</desc2>
@@ -282,21 +240,17 @@
 				</element>
 			</element>
 			<element name="logisitiqueetstocks" title="Logisitique et stocks">
-				<desc></desc>
 				<element name="inventaires" title="Inventaires">
-					<desc></desc>
 					<desc0>Non couverte</desc0>
 					<desc1>Partiellement couverte</desc1>
 					<desc2>Totalement couverte</desc2>
 				</element>
 				<element name="reapprovisionnements" title="Réapprovisionnements">
-					<desc></desc>
 					<desc0>Non couverte</desc0>
 					<desc1>Partiellement couverte</desc1>
 					<desc2>Totalement couverte</desc2>
 				</element>
 				<element name="multientrepots" title="Multi Entrepôts">
-					<desc></desc>
 					<desc0>Non couverte</desc0>
 					<desc1>Partiellement couverte</desc1>
 					<desc2>Totalement couverte</desc2>
@@ -308,28 +262,23 @@
 					<desc2>Totalement couverte</desc2>
 				</element>
 				<element name="mouvementsdestocks" title="Mouvements de stocks">
-					<desc></desc>
 					<desc0>Non couverte</desc0>
 					<desc1>Partiellement couverte</desc1>
 					<desc2>Totalement couverte</desc2>
 				</element>
 			</element>
 			<element name="distribution" title="Distribution">
-				<desc></desc>
 				<element name="magasins" title="Magasins">
-					<desc></desc>
 					<desc0>Non couverte</desc0>
 					<desc1>Partiellement couverte</desc1>
 					<desc2>Totalement couverte</desc2>
 				</element>
 				<element name="expeditions" title="Expéditions">
-					<desc></desc>
 					<desc0>Non couverte</desc0>
 					<desc1>Partiellement couverte</desc1>
 					<desc2>Totalement couverte</desc2>
 				</element>
 				<element name="livraisons" title="Livraisons">
-					<desc></desc>
 					<desc0>Non couverte</desc0>
 					<desc1>Partiellement couverte</desc1>
 					<desc2>Totalement couverte</desc2>
@@ -337,24 +286,20 @@
 			</element>
 		</element>
 		<element name="strategiecommerciale" title="Stratégie Commerciale">
-			<desc></desc>
 			<element name="gestioncommerciale" title="Gestion Commerciale">
 				<desc>Administration des ventes</desc>
 				<element name="cataloguearticles" title="Catalogue et articles">
-					<desc>caractéristiques, référencement, tarifs,
-						etc.</desc>
+					<desc>caractéristiques, référencement, tarifs, etc.</desc>
 					<desc0>Non couverte</desc0>
 					<desc1>Partiellement couverte</desc1>
 					<desc2>Totalement couverte</desc2>
 				</element>
 				<element name="devispropositionscommerciales" title="Devis et propositions commerciales">
-					<desc></desc>
 					<desc0>Non couverte</desc0>
 					<desc1>Partiellement couverte</desc1>
 					<desc2>Totalement couverte</desc2>
 				</element>
 				<element name="prospects" title="Prospects">
-					<desc></desc>
 					<desc0>Non couverte</desc0>
 					<desc1>Partiellement couverte</desc1>
 					<desc2>Totalement couverte</desc2>
@@ -366,13 +311,11 @@
 					<desc2>Totalement couverte</desc2>
 				</element>
 				<element name="commandesdeventes" title="Commandes de ventes">
-					<desc></desc>
 					<desc0>Non couverte</desc0>
 					<desc1>Partiellement couverte</desc1>
 					<desc2>Totalement couverte</desc2>
 				</element>
 				<element name="facturationclients" title="Facturation clients">
-					<desc></desc>
 					<desc0>Non couverte</desc0>
 					<desc1>Partiellement couverte</desc1>
 					<desc2>Totalement couverte</desc2>
@@ -385,7 +328,6 @@
 				</element>
 			</element>
 			<element name="marketing" title="Marketing">
-				<desc></desc>
 				<element name="etudesdemarches" title="Etudes de marchés">
 					<desc>gestion des questionnaires</desc>
 					<desc0>Non couverte</desc0>
@@ -393,13 +335,11 @@
 					<desc2>Totalement couverte</desc2>
 				</element>
 				<element name="campagnespublicitaires" title="Campagnes publicitaires">
-					<desc></desc>
 					<desc0>Non couverte</desc0>
 					<desc1>Partiellement couverte</desc1>
 					<desc2>Totalement couverte</desc2>
 				</element>
 				<element name="gestiondespromotions" title="Gestion des promotions">
-					<desc></desc>
 					<desc0>Non couverte</desc0>
 					<desc1>Partiellement couverte</desc1>
 					<desc2>Totalement couverte</desc2>
@@ -407,9 +347,7 @@
 			</element>
 		</element>
 		<element name="gestionindustrielle" title="Gestion industrielle">
-			<desc></desc>
 			<element name="gestiondelaproduction" title="Gestion de la production">
-				<desc></desc>
 				<element name="gpao" title="GPAO">
 					<desc>Gestion de la Production Assistée par Ordinateur</desc>
 					<desc0>Non couverte</desc0>
@@ -417,38 +355,32 @@
 					<desc2>Totalement couverte</desc2>
 				</element>
 				<element name="devis" title="Devis">
-					<desc></desc>
 					<desc0>Non couverte</desc0>
 					<desc1>Partiellement couverte</desc1>
 					<desc2>Totalement couverte</desc2>
 				</element>
 				<element name="planification" title="Planification">
-					<desc></desc>
 					<desc0>Non couverte</desc0>
 					<desc1>Partiellement couverte</desc1>
 					<desc2>Totalement couverte</desc2>
 				</element>
 				<element name="ordresdefabrication" title="Ordres de fabrication">
-					<desc></desc>
 					<desc0>Non couverte</desc0>
 					<desc1>Partiellement couverte</desc1>
 					<desc2>Totalement couverte</desc2>
 				</element>
 				<element name="nomenclatures" title="Nomenclatures">
-					<desc></desc>
 					<desc0>Non couverte</desc0>
 					<desc1>Partiellement couverte</desc1>
 					<desc2>Totalement couverte</desc2>
 				</element>
 				<element name="gestiondeconfiguration" title="Gestion de configuration">
-					<desc></desc>
 					<desc0>Non couverte</desc0>
 					<desc1>Partiellement couverte</desc1>
 					<desc2>Totalement couverte</desc2>
 				</element>
 			</element>
 			<element name="maintenance" title="Maintenance">
-				<desc></desc>
 				<element name="gmao" title="GMAO">
 					<desc>Gestion de la Maintenance Assitée par Ordinateur</desc>
 					<desc0>Non couverte</desc0>
@@ -459,8 +391,7 @@
 		</element>
 	</section>
 	<section name="categoriestransverses" title="Catégories transverses">
-		<desc>Fonctionnalités transverses couvertes par le
-			logiciel</desc>
+		<desc>Fonctionnalités transverses couvertes par le logiciel</desc>
 		<element name="mesuresdesperformances" title="Mesures des performances">
 			<desc>Reporting et décisionnel</desc>
 			<element name="indicateurs" title="Indicateurs">
@@ -489,10 +420,8 @@
 			</element>
 		</element>
 		<element name="qualite" title="Qualite">
-			<desc></desc>
 		</element>
 		<element name="managementdeprojet" title="Management de projet">
-			<desc></desc>
 			<desc0>Non couverte</desc0>
 			<desc1>Partiellement couverte</desc1>
 			<desc2>Totalement couverte</desc2>
@@ -507,11 +436,9 @@
 			<desc2>Totalement couverte</desc2>
 		</element>
 		<element name="gestiondesconnaissances" title="Gestion des Connaissances">
-			<desc></desc>
 		</element>
 	</section>
 	<section name="caracteristiquestechniques" title="Caractéristiques techniques">
-		<desc></desc>
 		<element name="administration" title="Administration">
 			<desc>gestion des comptes, des profils, des groupes, etc.</desc>
 		</element>
@@ -522,57 +449,46 @@
 			<desc>MySQL, Oracle, PostgreSQL, XML, etc.</desc>
 		</element>
 		<element name="internationalisation" title="Internationalisation">
-			<desc></desc>
 			<desc0>1 seule langue</desc0>
-			<desc1>Internationalisation possible, quelques
-				langues disponibles</desc1>
+			<desc1>Internationalisation possible, quelques langues disponibles</desc1>
 			<desc2>disponible dans de nombreuses langues</desc2>
 		</element>
 		<element name="importexport" title="Import/Export">
-			<desc>Possibilité de migration depuis d'autres solutions
-				logicielles</desc>
+			<desc>Possibilité de migration depuis d'autres solutions logicielles</desc>
 			<desc0>Non couverte</desc0>
 			<desc1>Partiellement couverte</desc1>
 			<desc2>Totalement couverte</desc2>
 		</element>
 		<element name="installation" title="Installation">
-			<desc></desc>
 			<element name="facilite" title="Facilité">
-				<desc></desc>
 				<desc0>Installation complexe</desc0>
 				<desc1>Installation abordable</desc1>
 				<desc2>Installation quasi-automatique</desc2>
 			</element>
 			<element name="configuration" title="Configuration">
-				<desc></desc>
 				<desc0>longue et fastidieuse</desc0>
 				<desc1>indispensable mais pas trop lourde</desc1>
 				<desc2>automatique, outils fonctionnel clef en main</desc2>
 			</element>
 		</element>
 		<element name="utilisation" title="Utilisation">
-			<desc></desc>
 			<element name="priseenmain" title="Prise en main">
-				<desc></desc>
 				<desc0>très lentes, plusieurs jours</desc0>
 				<desc1>moyennne quelques heures</desc1>
 				<desc2>rapide (-1 heure)</desc2>
 			</element>
 			<element name="ergonomie" title="Ergonomie">
-				<desc></desc>
 				<desc0>on ne s'y retrouve pas sans mode d'emploi</desc0>
 				<desc1>correcte</desc1>
 				<desc2>très intuitif, quasi aucune doc nécessaire</desc2>
 			</element>
 			<element name="interfacegraphique" title="Interface graphique">
-				<desc></desc>
 				<desc0>peu esthétique, fouilli</desc0>
 				<desc1>correcte</desc1>
 				<desc2>claire, belle, plusieurs thèmes disponibles</desc2>
 			</element>
 		</element>
 		<element name="codesource" title="Code source">
-			<desc></desc>
 			<element name="briqueproprietaire" title="Brique propriétaire">
 				<desc>langage ou brique logicielle utilisée propriétaire</desc>
 				<desc0>présence incontournable</desc0>

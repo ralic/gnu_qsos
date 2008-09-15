@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<qsostemplate xmlns="http://qsos.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"	xsi:schemaLocation="http://qsos.org ../XSD/QSOS-Template.xsd ">
+<qsostemplate xmlns="http://qsos.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://qsos.org ../XSD/QSOS-Template.xsd ">
 	<header>
 		<authors>
 			<author>
@@ -20,7 +20,7 @@
 		<url>http://www.postgresql.org</url>
 		<desc>Relational Database Management System</desc>
 		<demourl>Not applicable</demourl>
-		<qsosformat>1.7</qsosformat>
+		<qsosformat>2.0</qsosformat>
 		<qsosappname>postgresql</qsosappname>
 		<qsosspecificformat></qsosspecificformat>
 		<qsosappfamilies>

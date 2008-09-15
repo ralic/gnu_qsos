@@ -3,18 +3,20 @@
 	<header>
 		<authors>
 			<author>
-				<email></email>
-				<name></name>
+				<email>goneri@rulezlan.org</email>
+				<name>Goneri Le Bouder</name>
 			</author>
 		</authors>
-		<dates></dates>
+		<dates>
+			<creation>2007-02-20</creation>
+		</dates>
 	</header>
-	<section name="IRC" title="Internet Chat Relay">		
-			<element name="irc" title="Internet Relay Chat">
-				<desc>Form of instant communication over the Internet</desc>
-				<desc0>Not Supported</desc0>
-				<desc1>Limited support. Some major IRC features are not supported (e.g: op, kick, voice)</desc1>
-				<desc2>Supported and works properly</desc2>
-			</element>
+	<section name="IRC" title="Internet Chat Relay">
+		<element name="irc" title="Internet Relay Chat">
+			<desc>Form of instant communication over the Internet</desc>
+			<desc0>Not Supported</desc0>
+			<desc1>Limited support. Some major IRC features are not supported (e.g: op, kick, voice)</desc1>
+			<desc2>Supported and works properly</desc2>
+		</element>
 	</section>
 </qsosappfamily>

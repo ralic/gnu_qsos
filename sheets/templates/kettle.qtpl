@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<qsostemplate xmlns="http://qsos.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"	xsi:schemaLocation="http://qsos.org ../XSD/QSOS-Template.xsd ">
+<qsostemplate xmlns="http://qsos.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://qsos.org ../XSD/QSOS-Template.xsd ">
 	<header>
 		<authors>
 			<author>
@@ -8,7 +8,7 @@
 			</author>
 		</authors>
 		<dates>
-			<creation>2007-01-01</creation>
+			<creation>2007-02-06</creation>
 		</dates>
 	</header>
 	<template>
@@ -20,7 +20,7 @@
 		<url>http://kettle.pentaho.org/index.php</url>
 		<desc></desc>
 		<demourl></demourl>
-		<qsosformat>1.6</qsosformat>
+		<qsosformat>2.0</qsosformat>
 		<qsosappname>kettle</qsosappname>
 		<qsosappfamilies>
 			<qsosappfamily>etl</qsosappfamily>

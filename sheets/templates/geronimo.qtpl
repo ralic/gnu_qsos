@@ -1,29 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <qsostemplate xmlns="http://qsos.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://qsos.org ../XSD/QSOS-Template.xsd ">
-  <header>
-    <authors>
-      <author>
-        <email>raphael.semeteys@atosorigin.com</email>
-        <name>Raphael Semeteys</name>
-      </author>
-    </authors>
-    <dates>
-      <creation>2005-10-26</creation>
-    </dates>
-  </header>
-  <template>
-    <language>fr</language>
-    <appname>Geronimo</appname>
-    <release>1.1.1</release>
-    <licenseid>59</licenseid>
-    <licensedesc>The Apache License 2.0</licensedesc>
-    <url>http://geronimo.apache.org/</url>
-    <desc>Serveur d'applications J2EE</desc>
-    <demourl>Non applicable</demourl>
-    <qsosformat>2.0</qsosformat>
-    <qsosappname>geronimo</qsosappname>
-    <qsosappfamilies>
-      <qsosappfamily>j2ee-application-server</qsosappfamily>
-    </qsosappfamilies>
-  </template>
+	<header>
+		<authors>
+			<author>
+				<email>raphael.semeteys@atosorigin.com</email>
+				<name>Raphael Semeteys</name>
+			</author>
+		</authors>
+		<dates>
+			<creation>2005-10-26</creation>
+		</dates>
+	</header>
+	<template>
+		<language>fr</language>
+		<appname>Geronimo</appname>
+		<release>1.1.1</release>
+		<licenseid>59</licenseid>
+		<licensedesc>The Apache License 2.0</licensedesc>
+		<url>http://geronimo.apache.org/</url>
+		<desc>Serveur d'applications J2EE</desc>
+		<demourl>Non applicable</demourl>
+		<qsosformat>2.0</qsosformat>
+		<qsosappname>geronimo</qsosappname>
+		<qsosappfamilies>
+			<qsosappfamily>j2ee-application-server</qsosappfamily>
+		</qsosappfamilies>
+	</template>
 </qsostemplate>

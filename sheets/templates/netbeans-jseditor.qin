@@ -1,29 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <qsostemplate xmlns="http://qsos.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://qsos.org ../XSD/QSOS-Template.xsd ">
-  <header>
-    <authors>
-         <author>
-            <email>raphael.semeteys@atosorigin.com</email>
-            <name>Raphaël Semeteys</name>
-         </author>
-    </authors>
-    <dates>
-      <creation>2007-11-12</creation>
-    </dates>
-  </header>
-  <template>
-      <language>en</language>
-      <appname>NetBeans JavaScript Editor</appname>
-      <release>0.2</release>
-      <licenseid>10</licenseid>
-      <licensedesc>Free but Restricted</licensedesc>
-      <url>http://www.liguorien.org/javascripteditor/</url>
-      <desc>The goal of this project is to provide JavaScript support to NetBeans IDE 5.0.</desc>
-      <demourl></demourl>
-    <qsosformat>2.0</qsosformat>
-    <qsosappname>netbeans-jseditor</qsosappname>
-    <qsosappfamilies>
-      <qsosappfamily>javascript-ide</qsosappfamily>
-    </qsosappfamilies>
-  </template>
+	<header>
+		<authors>
+			<author>
+				<email>raphael.semeteys@atosorigin.com</email>
+				<name>Raphaël Semeteys</name>
+			</author>
+		</authors>
+		<dates>
+			<creation>2007-11-12</creation>
+		</dates>
+	</header>
+	<template>
+		<language>en</language>
+		<appname>NetBeans JavaScript Editor</appname>
+		<release>0.2</release>
+		<licenseid>10</licenseid>
+		<licensedesc>Free but Restricted</licensedesc>
+		<url>http://www.liguorien.org/javascripteditor/</url>
+		<desc>The goal of this project is to provide JavaScript support to NetBeans IDE 5.0.</desc>
+		<demourl></demourl>
+		<qsosformat>2.0</qsosformat>
+		<qsosappname>netbeans-jseditor</qsosappname>
+		<qsosappfamilies>
+			<qsosappfamily>javascript-ide</qsosappfamily>
+		</qsosappfamilies>
+	</template>
 </qsostemplate>

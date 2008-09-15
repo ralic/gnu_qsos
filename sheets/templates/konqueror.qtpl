@@ -1,31 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <qsostemplate xmlns="http://qsos.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://qsos.org ../XSD/QSOS-Template.xsd ">
-  <header>
-    <authors>
-      <author>
-        <email>raphael@semeteys.org</email>
-        <name>Raphaël Semeteys</name>
-      </author>
-    </authors>
-    <dates>
-      <creation>2001-01-01</creation>
-      <validation>2001-01-01</validation>
-    </dates>
-  </header>
-  <template>
-    <language>en</language>
-    <appname>Konqueror</appname>
-    <release>3.5.5</release>
-    <licenseid>31</licenseid>
-    <licensedesc>GNU GPL</licensedesc>
-    <url>http://www.konqueror.org</url>
-    <desc>KDE Web Browser</desc>
-    <demourl>http://tempuri.org</demourl>
-    <qsosformat>1.7</qsosformat>
-    <qsosappname>konqueror</qsosappname>
-    <qsosspecificformat>1.0</qsosspecificformat>
-    <qsosappfamilies>
-      <qsosappfamily>webbrowser</qsosappfamily>
-    </qsosappfamilies>
-  </template>
+	<header>
+		<authors>
+			<author>
+				<email>raphael@semeteys.org</email>
+				<name>Raphaël Semeteys</name>
+			</author>
+		</authors>
+		<dates>
+			<creation>2006-12-09</creation>
+		</dates>
+	</header>
+	<template>
+		<language>en</language>
+		<appname>Konqueror</appname>
+		<release>3.5.5</release>
+		<licenseid>31</licenseid>
+		<licensedesc>GNU GPL</licensedesc>
+		<url>http://www.konqueror.org</url>
+		<desc>KDE Web Browser</desc>
+		<demourl>http://tempuri.org</demourl>
+		<qsosformat>2.0</qsosformat>
+		<qsosappname>konqueror</qsosappname>
+		<qsosappfamilies>
+			<qsosappfamily>webbrowser</qsosappfamily>
+		</qsosappfamilies>
+	</template>
 </qsostemplate>

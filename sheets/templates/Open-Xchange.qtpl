@@ -1,33 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <qsostemplate xmlns="http://qsos.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://qsos.org ../XSD/QSOS-Template.xsd ">
-  <header>
-    <authors>
-      <author>
-        <email>goneri.lebouder@atosorigin.com</email>
-        <name>Gonéri Le Bouder</name>
-      </author>
-      <author>
-        <email>olivier.andreotti@atosorigin.com</email>
-        <name>Olivier Andreotti</name>
-      </author>
-    </authors>
-    <dates>
-      <creation>2006-05-05</creation>
-    </dates>
-  </header>
-  <template>
-    <language>en</language>
-    <appname>OpenXchange</appname>
-    <release>0.8</release>
-    <licenseid></licenseid>
-    <licensedesc></licensedesc>
-    <url>http://mirror.open-xchange.org/ox/EN/community/</url>
-    <desc></desc>
-    <demourl>http://mirror.open-xchange.org/ox/EN/community/online.htm</demourl>
-    <qsosformat>2.0</qsosformat>
-    <qsosappname>Open-Xchange</qsosappname>
-    <qsosappfamilies>
-      <qsosappfamily>groupware</qsosappfamily>
-    </qsosappfamilies>
-  </template>
+	<header>
+		<authors>
+			<author>
+				<email>goneri.lebouder@atosorigin.com</email>
+				<name>Gonéri Le Bouder</name>
+			</author>
+			<author>
+				<email>olivier.andreotti@atosorigin.com</email>
+				<name>Olivier Andreotti</name>
+			</author>
+		</authors>
+		<dates>
+			<creation>2006-05-05</creation>
+		</dates>
+	</header>
+	<template>
+		<language>en</language>
+		<appname>OpenXchange</appname>
+		<release>0.8</release>
+		<licenseid></licenseid>
+		<licensedesc></licensedesc>
+		<url>http://mirror.open-xchange.org/ox/EN/community/</url>
+		<desc></desc>
+		<demourl>http://mirror.open-xchange.org/ox/EN/community/online.htm</demourl>
+		<qsosformat>2.0</qsosformat>
+		<qsosappname>Open-Xchange</qsosappname>
+		<qsosappfamilies>
+			<qsosappfamily>groupware</qsosappfamily>
+		</qsosappfamilies>
+	</template>
 </qsostemplate>

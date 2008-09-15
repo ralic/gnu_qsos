@@ -19,8 +19,7 @@
 		<licensedesc>OSI Approved</licensedesc>
 		<url>http://mule.codehaus.org/display/MULE/Home</url>
 		<desc></desc>
-		<demourl></demourl>
-		<qsosformat>1.7</qsosformat>
+		<qsosformat>2.0</qsosformat>
 		<qsosappname>Mule</qsosappname>
 		<qsosappfamilies>
 			<qsosappfamily>esb</qsosappfamily>

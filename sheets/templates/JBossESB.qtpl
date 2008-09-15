@@ -19,8 +19,7 @@
 		<licensedesc>GNU LGPL</licensedesc>
 		<url>http://labs.jboss.com/jbossesb/</url>
 		<desc></desc>
-		<demourl></demourl>
-		<qsosformat>1.7</qsosformat>
+		<qsosformat>2.0</qsosformat>
 		<qsosappname>JBossESB</qsosappname>
 		<qsosappfamilies>
 			<qsosappfamily>esb</qsosappfamily>

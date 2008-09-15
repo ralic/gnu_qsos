@@ -1,29 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <qsostemplate xmlns="http://qsos.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://qsos.org ../XSD/QSOS-Template.xsd ">
-  <header>
-    <authors>
-      <author>
-        <email>raphael.semeteys@atosorigin.com</email>
-        <name>Raphael Semeteys</name>
-      </author>
-    </authors>
-    <dates>
-      <creation>2005-10-26</creation>
-    </dates>
-  </header>
-  <template>
-    <language>fr</language>
-    <appname>JOnAS</appname>
-    <release>4.3</release>
-    <licenseid>32</licenseid>
-    <licensedesc>GNU LGPL</licensedesc>
-    <url>http://jonas.objectweb.org</url>
-    <desc>Serveur d'applications certifié J2EE 1.4</desc>
-    <demourl>http://jonas.objectweb.org/demos/demo1/JOnASDemo.htm</demourl>
-    <qsosformat>2.0</qsosformat>
-    <qsosappname>geronimo</qsosappname>
-    <qsosappfamilies>
-      <qsosappfamily>j2ee-application-server</qsosappfamily>
-    </qsosappfamilies>
-  </template>
+	<header>
+		<authors>
+			<author>
+				<email>raphael.semeteys@atosorigin.com</email>
+				<name>Raphael Semeteys</name>
+			</author>
+		</authors>
+		<dates>
+			<creation>2005-10-26</creation>
+		</dates>
+	</header>
+	<template>
+		<language>fr</language>
+		<appname>JOnAS</appname>
+		<release>4.3</release>
+		<licenseid>32</licenseid>
+		<licensedesc>GNU LGPL</licensedesc>
+		<url>http://jonas.objectweb.org</url>
+		<desc>Serveur d'applications certifié J2EE 1.4</desc>
+		<demourl>http://jonas.objectweb.org/demos/demo1/JOnASDemo.htm</demourl>
+		<qsosformat>2.0</qsosformat>
+		<qsosappname>geronimo</qsosappname>
+		<qsosappfamilies>
+			<qsosappfamily>j2ee-application-server</qsosappfamily>
+		</qsosappfamilies>
+	</template>
 </qsostemplate>

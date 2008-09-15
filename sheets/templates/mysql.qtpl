@@ -1,30 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <qsostemplate xmlns="http://qsos.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://qsos.org ../XSD/QSOS-Template.xsd ">
-  <header>
-    <authors>
-      <author>
-        <email>raphael.semeteys@atosorigin.com</email>
-        <name>Raphael Semeteys</name>
-      </author>
-    </authors>
-    <dates>
-      <creation>2005-04-11</creation>
-    </dates>
-  </header>
-  <template>
-    <language>en</language>
-    <appname>MySQL Server</appname>
-    <release></release>
-    <licenseid>31</licenseid>
-    <licensedesc>GNU GPL</licensedesc>
-    <url>http://www.mysql.com</url>
-    <desc>Relational Database Management System available under a dual license (GPL or proprietary)</desc>
-    <demourl>Not applicable</demourl>
-    <qsosformat>1.7</qsosformat>
-    <qsosappname>mysql</qsosappname>
-    <qsosspecificformat>1</qsosspecificformat>
-    <qsosappfamilies>
-      <qsosappfamily>relational-database-management</qsosappfamily>
-    </qsosappfamilies>
-  </template>
+	<header>
+		<authors>
+			<author>
+				<email>raphael.semeteys@atosorigin.com</email>
+				<name>Raphael Semeteys</name>
+			</author>
+		</authors>
+		<dates>
+			<creation>2005-04-11</creation>
+		</dates>
+	</header>
+	<template>
+		<language>en</language>
+		<appname>MySQL Server</appname>
+		<release></release>
+		<licenseid>31</licenseid>
+		<licensedesc>GNU GPL</licensedesc>
+		<url>http://www.mysql.com</url>
+		<desc>Relational Database Management System available under a dual license (GPL or proprietary)</desc>
+		<demourl>Not applicable</demourl>
+		<qsosformat>2.0</qsosformat>
+		<qsosappname>mysql</qsosappname>
+		<qsosappfamilies>
+			<qsosappfamily>relational-database-management</qsosappfamily>
+		</qsosappfamilies>
+	</template>
 </qsostemplate>

@@ -3,8 +3,8 @@
 	<header>
 		<authors>
 			<author>
-            <email>odile.vandenberghe@atosorigin.com</email>
-            <name>Odile Vandenberghe</name>
+				<email>odile.vandenberghe@atosorigin.com</email>
+				<name>Odile Vandenberghe</name>
 			</author>
 		</authors>
 		<dates>
@@ -15,8 +15,7 @@
 		<desc>Connections available</desc>
 		<element name="jdbc" title="JDBC">
 			<desc0>No JDBC connection possible</desc0>
-			<desc1>Some JDBC drivers in some very specific version available
-				or limited available</desc1>
+			<desc1>Some JDBC drivers in some very specific version available or limited available</desc1>
 			<desc2>JDBC Connection is the rule </desc2>
 		</element>
 		<element name="others" title="Others">
@@ -68,8 +67,7 @@
 	<section name="databasebrowser" title="Browsing functionalities">
 		<element name="objectbrowser" title="Possibility to browse through database objects">
 			<desc0>Browser limited or unfriendly</desc0>
-			<desc1>Browser available but limited to small number of object
-				types</desc1>
+			<desc1>Browser available but limited to small number of object types</desc1>
 			<desc2>Available browser is complete</desc2>
 		</element>
 		<element name="datagrid" title="Possibility to edit data through grid">
@@ -87,8 +85,7 @@
 			<desc1>Details Indexes, but not completely</desc1>
 			<desc2>Details Indexes</desc2>
 		</element>
-		<element name="constraints"
-			title="Possibility to browse through all kind of constrainsts">
+		<element name="constraints" title="Possibility to browse through all kind of constrainsts">
 			<desc0>Doesn't detail Constraints</desc0>
 			<desc1>Details Constraints, but not completely</desc1>
 			<desc2>Details Constraints</desc2>
@@ -108,20 +105,17 @@
 			<desc1>Editor exists, but is limited</desc1>
 			<desc2>Editor exists</desc2>
 		</element>
-		<element name="snapshots"
-			title="Possibility to browse through Materialized Views (when existing)">
+		<element name="snapshots" title="Possibility to browse through Materialized Views (when existing)">
 			<desc0>Doesn't detail object</desc0>
 			<desc1>Details Object, but not completely</desc1>
 			<desc2>Details Object</desc2>
 		</element>
-		<element name="synonyms"
-			title="Possibility to browse through Synonyms (when existing)">
+		<element name="synonyms" title="Possibility to browse through Synonyms (when existing)">
 			<desc0>Doesn't detail object</desc0>
 			<desc1>Details Object, but not completely</desc1>
 			<desc2>Details Object</desc2>
 		</element>
-		<element name="dblinks"
-			title="Possibility to browse through Database Links(when existing)">
+		<element name="dblinks" title="Possibility to browse through Database Links(when existing)">
 			<desc0>Doesn't detail object</desc0>
 			<desc1>Details Object, but not completely</desc1>
 			<desc2>Details Object</desc2>
@@ -146,8 +140,7 @@
 			<desc1>Exists but is limited</desc1>
 			<desc2>Exists</desc2>
 		</element>
-		<element name="resultsaving"
-			title="Possibility to save results (table format or others)">
+		<element name="resultsaving" title="Possibility to save results (table format or others)">
 			<desc0>Doesn't exist</desc0>
 			<desc1>Exists but is limited</desc1>
 			<desc2>Exists</desc2>
@@ -158,8 +151,7 @@
 			<desc2>Support Totally SQL 2003 Standard</desc2>
 		</element>
 		<element name="advancedfeatures" title="Other features offered by Query Tool">
-			<desc>Detail the features (Syntax help, Snippets, Debug,
-				Explain Plan, Timing...)</desc>
+			<desc>Detail the features (Syntax help, Snippets, Debug, Explain Plan, Timing...)</desc>
 		</element>
 	</section>
 	<section name="miscelleanousoptions" title="Other features">
@@ -169,8 +161,7 @@
 			<desc2>Available options are complete</desc2>
 		</element>
 		<element name="adminfeatures" title="Features offered by Admin Tools">
-			<desc>Detail the features (Security management, Space
-				Management, Monitoring)</desc>
+			<desc>Detail the features (Security management, Space Management, Monitoring)</desc>
 		</element>
 		<element name="migrationtool" title="Migration tool">
 			<desc0>No tool available</desc0>

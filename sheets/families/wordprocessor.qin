@@ -7,10 +7,7 @@
 				<name>Raphael Semeteys</name>
 			</author>
 		</authors>
-		<dates>
-			<creation>2001-01-01</creation>
-			<validation>2001-01-01</validation>
-		</dates>
+		<dates />
 	</header>
 	<section name="standardfunctionalities" title="Standard functionalities">
 		<desc>Basic functionalities of a word processor</desc>
@@ -18,69 +15,49 @@
 			<desc>Basic transversal features not specific to word processors</desc>
 			<comment></comment>
 			<element name="officesuite" title="Integration in a Office suite">
-				<desc0>The word processor is a standalone application not
-					integrated in an office suite</desc0>
-				<desc1>The word processor is part of a larger suite but ther is
-					integration between the components</desc1>
-				<desc2>The word processor is fully integrated into a larger
-					Office suite</desc2>
+				<desc0>The word processor is a standalone application not integrated in an office suite</desc0>
+				<desc1>The word processor is part of a larger suite but ther is integration between the components</desc1>
+				<desc2>The word processor is fully integrated into a larger Office suite</desc2>
 			</element>
 			<element name="otherofficecomponents" title="Other components in the Office suite">
 				<desc>Other components provided by the Office suite</desc>
 			</element>
 			<element name="levelofintegration" title="Office components integration">
-				<desc0>There is not integration between the components of the
-					suite. Or there is no suite at all.</desc0>
-				<desc1>Different components of the suite are integrated but
-					it is limited</desc1>
-				<desc2>Differents components used shared code and
-					libraries and /or use a specific framework to exchange and
-					communicate</desc2>
+				<desc0>There is not integration between the components of the suite. Or there is no suite at all.</desc0>
+				<desc1>Different components of the suite are integrated but it is limited</desc1>
+				<desc2>Differents components used shared code and libraries and /or use a specific framework to exchange and communicate</desc2>
 			</element>
 			<element name="i18n" title="i18n">
 				<desc0>No localisation possible.</desc0>
-				<desc1>Localisation is possible but limited (no or poor
-					documentation translation for instance) with very few existing
-					locale</desc1>
-				<desc2>Localisation is fully implemented, with several
-					locale, UNICODE and bi-directionnal language support</desc2>
+				<desc1>Localisation is possible but limited (no or poor documentation translation for instance) with very few existing locale</desc1>
+				<desc2>Localisation is fully implemented, with several locale, UNICODE and bi-directionnal language support</desc2>
 			</element>
 			<element name="accessibility" title="Accessibility">
 				<desc0>No accessibility features supported.</desc0>
-				<desc1>Few accessibility features but limited and not compliant
-					with accessibility standards</desc1>
-				<desc2>Accessibility is really integrated in the
-					software and it complies with standards</desc2>
+				<desc1>Few accessibility features but limited and not compliant with accessibility standards</desc1>
+				<desc2>Accessibility is really integrated in the software and it complies with standards</desc2>
 			</element>
 			<element name="docrecovery" title="Document recovery">
 				<desc0>No corrupt document recovery feature</desc0>
-				<desc1>Feature is available but limited and/or not really
-					efficient</desc1>
+				<desc1>Feature is available but limited and/or not really efficient</desc1>
 				<desc2>Feature fully implemented and usable</desc2>
 			</element>
 			<element name="customization" title="Customization">
 				<desc0>Software is not customizable</desc0>
-				<desc1>Software is customizable but it is limited to few
-					elements</desc1>
-				<desc2>Software is fully customizable (menus, toolbars,
-					shortcuts, ...)</desc2>
+				<desc1>Software is customizable but it is limited to few elements</desc1>
+				<desc2>Software is fully customizable (menus, toolbars, shortcuts, ...)</desc2>
 			</element>
 			<element name="help" title="Help">
-				<desc0>No Help features or of very poor quality which make them
-					not usable</desc0>
-				<desc1>Some Help feature but not very user friendly and limited
-					in coverage or in quality</desc1>
-				<desc2>Help features of good quality and very intuitive
-					(contextual help, searchable help, ...)</desc2>
+				<desc0>No Help features or of very poor quality which make them not usable</desc0>
+				<desc1>Some Help feature but not very user friendly and limited in coverage or in quality</desc1>
+				<desc2>Help features of good quality and very intuitive (contextual help, searchable help, ...)</desc2>
 			</element>
 		</element>
 		<element name="wordprocessing" title="Word processing">
 			<desc>Standard word processing features</desc>
 			<element name="modificationtracking" title="Modification tracking">
 				<desc0>Feature not implemented</desc0>
-				<desc1>Feature implemented but not for all elements of a
-					document (for instance table, headers/footers, ...) or not really
-					usable</desc1>
+				<desc1>Feature implemented but not for all elements of a document (for instance table, headers/footers, ...) or not really usable</desc1>
 				<desc2>Feature fully implemented and usable</desc2>
 			</element>
 			<element name="docversioning" title="Document versioning">
@@ -99,8 +76,7 @@
 				<desc2>Feature fully implemented and usable</desc2>
 			</element>
 			<element name="objectsnavigator" title="Objects navigator">
-				<desc0>No way to navigate through the different objects of a
-					document</desc0>
+				<desc0>No way to navigate through the different objects of a document</desc0>
 				<desc1>Feature implemented but limited or not reallu usable</desc1>
 				<desc2>Feature fully implemented and usable</desc2>
 			</element>
@@ -110,123 +86,101 @@
 			<element name="fieldsinsertion" title="Field insertion">
 				<desc0>No possibility to insert any field in a document</desc0>
 				<desc1>Few fields can be inserted but it is limited</desc1>
-				<desc2>Meta-data, custom fields and variable, statistics,
-					... can be inserted anywhere in the document</desc2>
+				<desc2>Meta-data, custom fields and variable, statistics, ... can be inserted anywhere in the document</desc2>
 			</element>
 			<element name="referenceshorcuts" title="Reference shortcuts">
-				<desc0>No feature available to insert shortcuts to other part of
-					the document or to external documents</desc0>
-				<desc1>Feature available but limited to some part or object
-					of the document only</desc1>
-				<desc2>Feature fully implemented to all part or objects of a
-					document</desc2>
+				<desc0>No feature available to insert shortcuts to other part of the document or to external documents</desc0>
+				<desc1>Feature available but limited to some part or object of the document only</desc1>
+				<desc2>Feature fully implemented to all part or objects of a document</desc2>
 			</element>
 			<element name="hyperlinks" title="Hyperlinks">
 				<desc0>Feature not implemented</desc0>
-				<desc1>Feature is available but limited and/or not really
-					efficient</desc1>
+				<desc1>Feature is available but limited and/or not really efficient</desc1>
 				<desc2>Feature fully implemented and usable</desc2>
 			</element>
 			<element name="commentnote" title="Comment note">
 				<desc0>Feature not implemented</desc0>
-				<desc1>Feature is available but limited and/or not really
-					efficient</desc1>
+				<desc1>Feature is available but limited and/or not really efficient</desc1>
 				<desc2>Feature fully implemented and usable</desc2>
 			</element>
 			<element name="headerfooter" title="Header/Footer">
 				<desc0>Feature not implemented</desc0>
-				<desc1>Feature is available but limited and/or not really
-					efficient</desc1>
+				<desc1>Feature is available but limited and/or not really efficient</desc1>
 				<desc2>Feature fully implemented and usable</desc2>
 			</element>
 			<element name="sections" title="Sections">
 				<desc0>Feature not implemented</desc0>
-				<desc1>Feature is available but limited and/or not really
-					efficient</desc1>
+				<desc1>Feature is available but limited and/or not really efficient</desc1>
 				<desc2>Feature fully implemented and usable</desc2>
 			</element>
 			<element name="indexes" title="Indexes">
 				<desc0>Feature not implemented</desc0>
-				<desc1>Feature is available but limited, for instance the
-					index is not fully editable or customizable</desc1>
+				<desc1>Feature is available but limited, for instance the index is not fully editable or customizable</desc1>
 				<desc2>Feature fully implemented and usable</desc2>
 			</element>
 			<element name="styles" title="Styles management">
 				<desc0>Feature not implemented</desc0>
-				<desc1>Feature is available but not for all objects of the
-					document</desc1>
+				<desc1>Feature is available but not for all objects of the document</desc1>
 				<desc2>Feature fully implemented and usable</desc2>
 			</element>
 			<element name="template" title="Document template">
 				<desc0>Feature not implemented</desc0>
-				<desc1>Feature is available but limited and/or not really
-					efficient</desc1>
+				<desc1>Feature is available but limited and/or not really efficient</desc1>
 				<desc2>Feature fully implemented and usable</desc2>
 			</element>
 			<element name="spellcheck" title="Spellcheck">
 				<desc0>Feature not implemented</desc0>
-				<desc1>Feature is available but limited and/or not really
-					efficient</desc1>
+				<desc1>Feature is available but limited and/or not really efficient</desc1>
 				<desc2>Feature fully implemented and usable</desc2>
 			</element>
 			<element name="grammarchek" title="Grammar check">
 				<desc0>Feature not implemented</desc0>
-				<desc1>Feature is available but limited to few languages
-					and/or is not really efficient</desc1>
+				<desc1>Feature is available but limited to few languages and/or is not really efficient</desc1>
 				<desc2>Feature fully implemented and usable</desc2>
 			</element>
 			<element name="dictionnary" title="Integrated dictionnary">
 				<desc0>Feature not implemented</desc0>
-				<desc1>Feature is available but limited and/or not really
-					efficient</desc1>
+				<desc1>Feature is available but limited and/or not really efficient</desc1>
 				<desc2>Feature fully implemented and usable</desc2>
 			</element>
 			<element name="thesaurus" title="Thesaurus">
 				<desc0>Feature not implemented</desc0>
-				<desc1>Feature is available but limited and/or not really
-					efficient</desc1>
+				<desc1>Feature is available but limited and/or not really efficient</desc1>
 				<desc2>Feature fully implemented and usable</desc2>
 			</element>
 			<element name="autocompletion" title="Word autocompletion">
 				<desc0>Feature not implemented</desc0>
-				<desc1>Feature is available but limited, for instance the
-					list is not editable</desc1>
+				<desc1>Feature is available but limited, for instance the list is not editable</desc1>
 				<desc2>Feature fully implemented and usable</desc2>
 			</element>
 			<element name="autocorrect" title="Autocorrect">
 				<desc0>Feature not implemented</desc0>
-				<desc1>Feature is available but limited, for instance the
-					list is not editable</desc1>
+				<desc1>Feature is available but limited, for instance the list is not editable</desc1>
 				<desc2>Feature fully implemented and usable</desc2>
 			</element>
 			<element name="nestedtables" title="Nested tables">
 				<desc0>Feature not implemented</desc0>
-				<desc1>Feature is available but limited and/or not really
-					efficient</desc1>
+				<desc1>Feature is available but limited and/or not really efficient</desc1>
 				<desc2>Feature fully implemented and usable</desc2>
 			</element>
 			<element name="tableautoformat" title="Table autoformat">
 				<desc0>Feature not implemented</desc0>
-				<desc1>Feature is available but limited and/or not really
-					efficient</desc1>
+				<desc1>Feature is available but limited and/or not really efficient</desc1>
 				<desc2>Feature fully implemented and usable</desc2>
 			</element>
 			<element name="tablesortformula" title="Table sorting and formulas">
 				<desc0>Feature not implemented</desc0>
-				<desc1>Feature is available but limited and/or not really
-					efficient</desc1>
+				<desc1>Feature is available but limited and/or not really efficient</desc1>
 				<desc2>Feature fully implemented and usable</desc2>
 			</element>
 			<element name="textableconv" title="Text/Table convertion">
 				<desc0>Feature not implemented</desc0>
-				<desc1>Feature is available but limited and/or not really
-					efficient</desc1>
+				<desc1>Feature is available but limited and/or not really efficient</desc1>
 				<desc2>Feature fully implemented and usable</desc2>
 			</element>
 			<element name="docsecurity" title="Document security">
 				<desc0>Feature not implemented</desc0>
-				<desc1>Feature is available but limited and/or not really
-					efficient</desc1>
+				<desc1>Feature is available but limited and/or not really efficient</desc1>
 				<desc2>Feature fully implemented and usable</desc2>
 			</element>
 		</element>
@@ -234,170 +188,122 @@
 	<section name="formatsmacrosapis" title="Formats, Macros &amp; APIs">
 		<desc>Supported document formats, macros features &amp; supported APIs</desc>
     <element name="formats" title="Formats">
-      <desc></desc>
-      
       <element name="supportedformats" title="Supported Formats">
         <desc>List of document formats supported by the word processor</desc>
-        
       </element>
       <element name="opendocument" title="OpenDocument format support">
         <desc0>OpenDocument format is not supported</desc0>
         <desc1>OpenDocument format is not supported for all objects inside a document</desc1>
         <desc2>OpenDocument format is fully supported</desc2>
-        
-        
       </element>
       <element name="pdfexport" title="PDF export">
         <desc0>Feature not implemented</desc0>
         <desc1>Feature is available but limited</desc1>
         <desc2>Feature fully implemented and usable</desc2>
-        
-        
       </element>
       <element name="docbookexport" title="DocBook export">
         <desc0>Feature not implemented</desc0>
         <desc1>Feature is available but limited</desc1>
         <desc2>Feature fully implemented and usable</desc2>
-        
-        
       </element>
       <element name="latexexport" title="LaTeX export">
         <desc0>Feature not implemented</desc0>
         <desc1>Feature is available but limited</desc1>
         <desc2>Feature fully implemented and usable</desc2>
-        
-        
       </element>
       <element name="xsltsupport" title="XSLT support">
         <desc0>Feature not implemented</desc0>
         <desc1>Feature is available but limited</desc1>
         <desc2>Feature fully implemented and usable</desc2>
-        
-        
       </element>
     </element>
     <element name="macrosapis" title="Macros &amp; APIs">
-      <desc></desc>
-      
       <element name="macrosupport" title="Macros support">
         <desc0>Macros are not supported</desc0>
         <desc1>Macros features are very limited, for instance not all document's objects are managed</desc1>
         <desc2>Macros features are fully implemented</desc2>
-        
-        
       </element>
       <element name="macrolanguages" title="Macro languages supported">
         <desc>List of supported macro languages</desc>
-        
       </element>
       <element name="macrorecord" title="Macro record">
         <desc0>Feature not implemented</desc0>
         <desc1>Feature is limited and not easy to reuse</desc1>
         <desc2>Feature fully implemented</desc2>
-        
-        
       </element>
       <element name="ide" title="IDE">
         <desc0>No IDE available for macro editing</desc0>
         <desc1>An IDE is available but is limited and/or not user-friendly</desc1>
         <desc2>Complete and user-friendly IDE available</desc2>
-        
-        
       </element>
       <element name="macrosdeployment" title="Macros deployment">
         <desc0>No macro deployment features implemented</desc0>
         <desc1>Limited deployment features available</desc1>
         <desc2>Complete deployment features available</desc2>
-        
-        
       </element>
       <element name="macrossecurity" title="Macros security">
         <desc0>No security features implemented for macros</desc0>
         <desc1>Limited security features available</desc1>
         <desc2>Complete securtity features available</desc2>
-        
-        
       </element>
       <element name="apis" title="APIs supported">
         <desc>List of available scripting and/or programming languages bindings</desc>
-        
       </element>
     </element>
   </section>
   <section name="advancedfunctionalities" title="Advanced Functionalities">
-    <desc></desc>
     <element name="mailing" title="Mailing">
       <desc>Mailing (mail merge) features</desc>
-      
       <element name="mailingengine" title="Mailing engine">
         <desc0>No mailing features implemented</desc0>
         <desc1>Mailing engine is limited or unstable</desc1>
         <desc2>Mailing engine is complete and stable</desc2>
-        
-        
       </element>
       <element name="datasources" title="Datasources">
         <desc0>Feature not implemented</desc0>
         <desc1>Very few types of datasources available</desc1>
         <desc2>Many types of datasources available</desc2>
-        
-        
       </element>
       <element name="imagesmailing" title="Images mailing">
         <desc0>Feature not implemented</desc0>
         <desc1>Feature is available but limited and/or not really efficient</desc1>
         <desc2>Feature fully implemented and usable</desc2>
-        
-        
       </element>
     </element>
     <element name="mathsformulas" title="Math formulas">
       <desc0>Feature not implemented</desc0>
       <desc1>Feature is available but limited and/or not really efficient</desc1>
       <desc2>Feature fully implemented and usable</desc2>
-      
-      
     </element>
     <element name="docviews" title="Documents views">
       <desc0>No possibility to define different views of a same document</desc0>
       <desc1>Limited features available</desc1>
       <desc2>Feature fully implemented</desc2>
-      
-      
     </element>
     <element name="stylescopypaste" title="Styles Copy/Paste">
       <desc0>Feature not implemented</desc0>
       <desc1>Feature is available but limited and/or not really efficient</desc1>
       <desc2>Feature fully implemented and usable</desc2>
-      
-      
     </element>
     <element name="conditionaltext" title="Conditional text">
       <desc0>No possibility to generate conditional text</desc0>
       <desc1>Conditional text is implemenetd but limited to basic conditions</desc1>
       <desc2>Conditional text is fully implemented</desc2>
-      
-      
     </element>
     <element name="masterslavedocus" title="Document composition">
       <desc0>No feature available to include slave documents in a master one</desc0>
       <desc1>Document composition is possible but limited and/or unstable</desc1>
       <desc2>Document composition is stable and fully implemented</desc2>
-      
-      
     </element>
     <element name="drawingtools" title="Drawing tools">
       <desc0>No drawing tools available</desc0>
       <desc1>Few drawing features available</desc1>
       <desc2>Complete set of drawing features available</desc2>
-      
-      
     </element>
     <element name="groupware" title="Groupware features">
       <desc0>No groupware features available</desc0>
       <desc1>Limited or experimental groupware features available</desc1>
       <desc2>Complete set of groupware features available</desc2>
-      
     </element>
   </section>
 </qsosappfamily>

@@ -18,41 +18,10 @@
 		<licenseid>31</licenseid>
 		<licensedesc>GNU GPL</licensedesc>
 		<url>http://plone.org</url>
-		<desc> Plone is powerful and flexible. It is ideal as an intranet and
-			extranet server, as a document publishing system, a portal server and
-			as a groupware tool for collaboration between separately located
-			entities. Plone is easy to use. The Plone Team includes usability
-			experts who have made Plone easy and attractive for content managers
-			to add, update, and maintain content. Plone is easy to install. You
-			can install Plone with a click-and-run installer, and have a content
-			management system running on your computer in just a few minutes.
-			Plone is international. The Plone interface has been translated into
-			over 40 languages, and tools exist for managing multilingual content.
-			Plone is standard. Plone carefully follows standards for usability
-			and accessibility. Plone pages are compliant with US Section 508, and
-			the W3C's AA rating for accessibility, in addition to using
-			best-practice web standards like XHTML and CSS. Plone is Open Source.
-			Plone is licensed under the GNU General Public License, the same
-			license Linux uses. This gives you the right to use Plone without a
-			license fee, and to improve upon the product. Plone is supported.
-			There are close to a hundred developers in the Plone Development Team
-			around the world, and a multitude of companies specializing in Plone
-			development and support. Plone is extensible. There are many add-on
-			products for Plone that add new features and content types. In
-			addition, Plone can be scripted using web standard solutions and Open
-			Source languages. Plone is technology neutral. Plone can interoperate
-			with most relational database systems, open source and commercial,
-			and runs on a vast array of platforms, including Linux, Windows, Mac
-			OS X, Solaris and BSD. Plone is protected. The nonprofit Plone
-			Foundation was formed in 2004 to promote the use of Plone around the
-			world and protect the Plone IP and trademarks. Plone is built using
-			Zope, an object oriented application server. The language that drives
-			Zope and Plone is Python - the agile language preferred by Google,
-			NASA, Industrial Light and Magic and many others. Why? Because Python
-			offers unprecedented programmer productivity.</desc>
+		<desc> Plone is powerful and flexible. It is ideal as an intranet and extranet server, as a document publishing system, a portal server and as a groupware tool for collaboration between separately located entities. Plone is easy to use. The Plone Team includes usability experts who have made Plone easy and attractive for content managers to add, update, and maintain content. Plone is easy to install. You can install Plone with a click-and-run installer, and have a content management system running on your computer in just a few minutes. Plone is international. The Plone interface has been translated into over 40 languages, and tools exist for managing multilingual content. Plone is standard. Plone carefully follows standards for usability and accessibility. Plone pages are compliant with US Section 508, and the W3C's AA rating for accessibility, in addition to using best-practice web standards like XHTML and CSS. Plone is Open Source. Plone is licensed under the GNU General Public License, the same license Linux uses. This gives you the right to use Plone without a license fee, and to improve upon the product. Plone is supported. There are close to a hundred developers in the Plone Development Team around the world, and a multitude of companies specializing in Plone development and support. Plone is extensible. There are many add-on products for Plone that add new features and content types. In addition, Plone can be scripted using web standard solutions and Open Source languages. Plone is technology neutral. Plone can interoperate with most relational database systems, open source and commercial, and runs on a vast array of platforms, including Linux, Windows, Mac OS X, Solaris and BSD. Plone is protected. The nonprofit Plone Foundation was formed in 2004 to promote the use of Plone around the world and protect the Plone IP and trademarks. Plone is built using Zope, an object oriented application server. The language that drives Zope and Plone is Python - the agile language preferred by Google, NASA, Industrial Light and Magic and many others. Why? Because Python offers unprecedented programmer productivity.</desc>
 		<demourl>http://plone.org</demourl>
-		<qsosformat>1.7</qsosformat>
-		<qsosappname></qsosappname>
+		<qsosformat>2.0</qsosformat>
+		<qsosappname>plone</qsosappname>
 		<qsosspecificformat></qsosspecificformat>
 		<qsosappfamilies>
 			<qsosappfamily>cms</qsosappfamily>

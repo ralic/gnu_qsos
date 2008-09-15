@@ -1,442 +1,323 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <qsosappfamily xmlns="http://qsos.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://qsos.org ../XSD/QSOS-Family.xsd ">
-  <header>
-    <authors>
-      <author>
-        <email>raphael@semeteys.org</email>
-        <name>Raphaël Semeteys</name>
-      </author>
-    </authors>
-    <dates>
-      <creation>2001-01-01</creation>
-      <validation>2001-01-01</validation>
-    </dates>
-  </header>
-  
-   <section name="browserfeatures" title="Browser features">
-      <desc>Native browser features</desc>
-      <element name="bookmarkmanaging" title="Bookmark managing">
-         <desc></desc>
-         <desc0>No bookmark features</desc0>
-         <desc1>Limited bookmark features</desc1>
-         <desc2>Comprehensive bookmark features (creation, edition, management, ...).</desc2>
-         
-         
-      </element>
-      <element name="downloadmanaging" title="Download managing">
-         <desc></desc>
-         <desc0>No download management</desc0>
-         <desc1>Limited download manager</desc1>
-         <desc2>Comprehensive and configurable download manager</desc2>
-         
-         
-      </element>
-      <element name="passwordmanaging" title="Password managing">
-         <desc></desc>
-         <desc0>No password management features</desc0>
-         <desc1>Limited features</desc1>
-         <desc2>Comprehensive password management features (storage, master password, ...)</desc2>
-         
-         
-      </element>
-      <element name="formmanaging" title="Form managing">
-         <desc></desc>
-         <desc0>No form management features</desc0>
-         <desc1>Limited form management features (for instance non persistent storage of user entries)</desc1>
-         <desc2>Comprehensive features (persistent storage, behaviour configuration, ...)</desc2>
-         
-         
-      </element>
-      <element name="spellchecking" title="Spell checking">
-         <desc></desc>
-         <desc0>No spell cheking</desc0>
-         <desc1>Limited spell checking (in number of languages or dictionnary enhancement)</desc1>
-         <desc2>Features based on a complete and extensible spell checking framework</desc2>
-         
-         
-      </element>
-      <element name="searchenginetoolbar" title="Search engine toolbar">
-         <desc></desc>
-         <desc0>No search toolbar</desc0>
-         <desc1>Limited search features (for instance no choice in search engines)</desc1>
-         <desc2>Full search framework with ability to define and plug easily new search engines</desc2>
-         
-         
-      </element>
-   </section>
-   <section name="accessibilityfeatures" title="Accessibility features">
-      <desc>Native accessibility features</desc>
-      <element name="tabbedbrowsing" title="Tabbed browsing">
-         <desc></desc>
-         <desc0>Single window browsing</desc0>
-         <desc1>Limited tab browsing features (no tab relocation, no global view)</desc1>
-         <desc2>Full tab browsing features with tab relocation and global view of opened tabs</desc2>
-         
-         
-      </element>
-      <element name="pop-upblocking" title="Pop-up blocking">
-         <desc></desc>
-         <desc0>No pop-up blocking features</desc0>
-         <desc1>Limited features (for instance no ability to configure behaviour depending on websites)</desc1>
-         <desc2>Configurable pop-up blocking strategy</desc2>
-         
-         
-      </element>
-      <element name="incrementalfinding" title="Incremental finding">
-         <desc>Find-as-you-type feature in non modal Search windows</desc>
-         <desc0>No incremental finding features</desc0>
-         <desc1>Limited incremental findind features (no highlight or previous/next features for instance)</desc1>
-         <desc2>Comprehensive incremental finding features</desc2>
-         
-         
-      </element>
-      <element name="adfiltering" title="Ad filtering">
-         <desc>Advertisement filtering (content or images)</desc>
-         <desc0>No ad filtering</desc0>
-         <desc1>Limited ad filtering or depending on a third party product</desc1>
-         <desc2>Full ad filtering features</desc2>
-         
-         
-      </element>
-      <element name="pagezooming" title="Page zooming">
-         <desc></desc>
-         <desc0>No possibility to zoom browsed pages</desc0>
-         <desc1>Limited zooming features (limited to text resizing)</desc1>
-         <desc2>Full browsing features (all page is zoomed in/ou)</desc2>
-         
-         
-      </element>
-      <element name="navigationmodesupport" title="Navigation mode support">
-         <desc>Supported navigation modes</desc>
-         
-         <element name="htmlaccesskey" title="HTML access key">
-            <desc>Ability to select HTML elemnst (links, input fields, ...) from keyboard shortcuts</desc>
-            <desc0>No HTML access key features</desc0>
-            <desc1>Limited HTML access key features</desc1>
-            <desc2>HTML access key features natively available</desc2>
-            
-            
-         </element>
-         <element name="tabbingnavigation" title="Tabbing navigation">
-            <desc>Ability to navigate with TAB key</desc>
-            <desc0>No tabbing navigation features</desc0>
-            <desc1>Limited tabbing navigation features or with a third party product</desc1>
-            <desc2>Tabbing navigation features natively available</desc2>
-            
-            
-         </element>
-         <element name="spatialnavigation" title="Spatial navigation">
-            <desc>Ability to navigate between focusable elements according to the spatial location</desc>
-            <desc0>No spatial navigation features</desc0>
-            <desc1>Limited spatial navigation features or with a third party product</desc1>
-            <desc2>Spatial navigation features natively available</desc2>
-            
-            
-         </element>
-         <element name="caretnavigation" title="Caret navigation">
-            <desc>Ability to move a cursor in browsed pages</desc>
-            <desc0>No caret navigation available</desc0>
-            <desc1>Limited caret navigation feature</desc1>
-            <desc2>Carte navigation mode natively available</desc2>
-            
-            
-         </element>
-         <element name="mousegesture" title="Mouse gesture">
-            <desc>Combination of mouse movements and clicks to trigger commands</desc>
-            <desc0>No mouse gesture features</desc0>
-            <desc1>Limited features or with third party product</desc1>
-            <desc2>Mouse gesture mode natively available</desc2>
-            
-            
-         </element>
-      </element>
-      <element name="voicefeatures" title="Voice features">
-         <desc></desc>
-         
-         <element name="text-to-speech" title="Text-to-speech">
-            <desc>Conversion of language text into speech</desc>
-            <desc0>No text-to-speech features</desc0>
-            <desc1>Limited features or with third party product</desc1>
-            <desc2>Text-to-speech mode natively available</desc2>
-            
-            
-         </element>
-         <element name="voicecontrol" title="Voice control">
-            <desc>Speech recognition features</desc>
-            <desc0>No voice control features</desc0>
-            <desc1>Limited features or with third party product</desc1>
-            <desc2>Voice control mode natively available</desc2>
-            
-            
-         </element>
-      </element>
-   </section>
-   <section name="webtechnologysupport" title="Web technology support">
-      <desc>Web standards and technologies supported (except Javascript)</desc>
-      <element name="css" title="CSS">
-         <desc>Cascading StyleSheet support</desc>
-         <desc0>No CSS support</desc0>
-         <desc1>Old or limited CSS support</desc1>
-         <desc2>Full CSS2.1 support</desc2>
-         
-         
-      </element>
-      <element name="frames" title="Frames">
-         <desc></desc>
-         <desc0>No frame support</desc0>
-         <desc1>Limited frame support</desc1>
-         <desc2>Full frame support</desc2>
-         
-         
-      </element>
-      <element name="java" title="Java">
-         <desc></desc>
-         <desc0>No Java support</desc0>
-         <desc1>Limited Java support (for instance no possibility to change JRE)</desc1>
-         <desc2>Full Java support</desc2>
-         
-         
-      </element>
-      <element name="xslt" title="XSLT">
-         <desc>Extensible Stylesheet Language Transformations</desc>
-         <desc0>No XSLT support</desc0>
-         <desc1>Limited XSLT support or with third party product</desc1>
-         <desc2>Full and native XSLT support</desc2>
-         
-         
-      </element>
-      <element name="xhtml" title="XHTML">
-         <desc>Extensible HyperText Markup Language</desc>
-         <desc0>No XHTML support</desc0>
-         <desc1>Limited or old XHTML (1.0) support</desc1>
-         <desc2>Full XHTML 1.1 support</desc2>
-         
-         
-      </element>
-      <element name="mathml" title="MathML">
-         <desc></desc>
-         <desc0>No MathML support</desc0>
-         <desc1>Limited support or via third party product</desc1>
-         <desc2>Full native MathML support</desc2>
-         
-         
-      </element>
-      <element name="xforms" title="XForms">
-         <desc></desc>
-         <desc0>No XForms support</desc0>
-         <desc1>Limited XForms support</desc1>
-         <desc2>Full XForms support</desc2>
-         
-         
-      </element>
-      <element name="rss" title="RSS">
-         <desc></desc>
-         <desc0>No RSS support</desc0>
-         <desc1>Limited or old RSS (0.91 or 1.0) support</desc1>
-         <desc2>Full RSS 2.0 support</desc2>
-         
-         
-      </element>
-      <element name="atom" title="Atom">
-         <desc></desc>
-         <desc0>No Atom support</desc0>
-         <desc1>Limited or old Atom (0.91 or 1.0) support</desc1>
-         <desc2>Full Atom 1.0 support</desc2>
-         
-         
-      </element>
-      <element name="svg" title="SVG">
-         <desc>Scalable Vector Graphics</desc>
-         <desc0>No SVG support</desc0>
-         <desc1>Old (1.1), limited SVG support or via third party product</desc1>
-         <desc2>Full SVG 1.1 support</desc2>
-         
-         
-      </element>
-      <element name="voicexml" title="VoiceXML">
-         <desc></desc>
-         <desc0>No VoiceXML support</desc0>
-         <desc1>Limited VoiceXML support (for iunstance only for recognition or synthesis)</desc1>
-         <desc2>Full VoiceXML support</desc2>
-         
-         
-      </element>
-      <element name="wml" title="WML">
-         <desc>Wireless Markup Language</desc>
-         <desc0>No WML support</desc0>
-         <desc1>Limited WML support or via third party product</desc1>
-         <desc2>Full native WML support</desc2>
-         
-         
-      </element>
-   </section>
-   <section name="javascriptsupport" title="JavaScript support">
-      <desc>Supported JavaScript technologies </desc>
-      <element name="javascript" title="JavaScript">
-         <desc></desc>
-         <desc0>No JavaScript support</desc0>
-         <desc1>Partial JavaScript support</desc1>
-         <desc2>Full JavaScript support</desc2>
-         
-         
-      </element>
-      <element name="ecmascript" title="ECMAScript">
-         <desc>ECMA-262 specification compliance</desc>
-         <desc0>No ECMAScript compliance</desc0>
-         <desc1>Partial or old ECMAScript (1 or 2) compliance </desc1>
-         <desc2>Full ECMAScript 3 compliance</desc2>
-         
-         
-      </element>
-      <element name="dom1" title="DOM 1">
-         <desc>Document Object Model Level 1 support</desc>
-         <desc0>DOM 1 not supported</desc0>
-         <desc1>DOM 1 partially supported</desc1>
-         <desc2>Full DOM 1 support</desc2>
-         
-         
-      </element>
-      <element name="dom2" title="DOM 2">
-         <desc>Document Object Model Level 2 support</desc>
-         <desc0>DOM 2 not supported</desc0>
-         <desc1>DOM 2 partially supported</desc1>
-         <desc2>Full DOM2 support</desc2>
-         
-         
-      </element>
-      <element name="dom3" title="DOM 3">
-         <desc>Document Object Model Level 3 support (except XPath)</desc>
-         <desc0>DOM 3 not supported</desc0>
-         <desc1>DOM 3 partially supported</desc1>
-         <desc2>Full DOM 3 support</desc2>
-         
-         
-      </element>
-      <element name="xpath" title="XPath">
-         <desc>XML Path Language support</desc>
-         <desc0>No XPath support</desc0>
-         <desc1>LImited or old XPath support</desc1>
-         <desc2>Full XPath support</desc2>
-         
-         
-      </element>
-      <element name="xmlhttprequest" title="XMLHttpRequest">
-         <desc>XMLHttpRequest Object support</desc>
-         <desc0>No XMLHttpRequest Object available</desc0>
-         <desc1>XMLHttpRequest Object available but with limitations (for instance no UNICODE support)</desc1>
-         <desc2>XMLHttpRequest Object available</desc2>
-         
-         
-      </element>
-   </section>
-   <section name="protocolsupport" title="Protocol support">
-      <desc>Supported Internet protocols</desc>
-      <element name="http" title="HTTP">
-         <desc>Hypertext Transfer Protocol</desc>
-         <desc0>No HTTP support</desc0>
-         <desc1>Old (1.0) or limited HTTP support</desc1>
-         <desc2>HTTP 1.1 support</desc2>
-         
-         
-      </element>
-      <element name="ftp" title="FTP">
-         <desc>File Transfer Protocol</desc>
-         <desc0>No FTP support</desc0>
-         <desc1>Partial FTP support</desc1>
-         <desc2>Full FTP support</desc2>
-         
-         
-      </element>
-      <element name="nntp" title="NNTP">
-         <desc>Network News Transfer Protocol</desc>
-         <desc0>No NNTP support</desc0>
-         <desc1>Partial NNTP support</desc1>
-         <desc2>Full NNTP support</desc2>
-         
-         
-      </element>
-      <element name="ssl" title="SSL/TLS">
-         <desc>Secure Sockets Layer / Transport Layer Security support</desc>
-         <desc0>No SSL or TLS support</desc0>
-         <desc1>Partial or old SSL/TLS support</desc1>
-         <desc2>TLS 1.1 support</desc2>
-         
-         
-      </element>
-      <element name="idn" title="IDN">
-         <desc>Internationalized domain name</desc>
-         <desc0>No IDN support</desc0>
-         <desc1>Partial IDN support</desc1>
-         <desc2>Full IDN support</desc2>
-         
-         
-      </element>
-      <element name="dataurl" title="data: URI scheme">
-         <desc>RFC 2397 support: inclusion of small data items inline</desc>
-         <desc0>data: URI scheme not supported</desc0>
-         <desc1>data: URI scheme partially supported</desc1>
-         <desc2>data: URI scheme fully supported</desc2>
-         
-         
-      </element>
-      <element name="bittorrent" title="BitTorrent">
-         <desc></desc>
-         <desc0>No BitTorrent support</desc0>
-         <desc1>Partial BitTorrent support or via third party product</desc1>
-         <desc2>Full native BitTorrent support</desc2>
-         
-         
-      </element>
-   </section>
-   <section name="imageformatsupport" title="Image format support">
-      <desc>Supported image formats</desc>
-      <element name="jpeg" title="JPEG">
-         <desc>Joint Photographic Experts Group image format </desc>
-         <desc0>JPEG not supported</desc0>
-         <desc1>JPEG partially supported</desc1>
-         <desc2>JPEG fully supported</desc2>
-         
-         
-      </element>
-      <element name="gif" title="GIF">
-         <desc>Graphics Interchange Format</desc>
-         <desc0>GIF not supported</desc0>
-         <desc1>GIF partially supported</desc1>
-         <desc2>GIF fully supported</desc2>
-         
-         
-      </element>
-      <element name="png" title="PNG">
-         <desc>Portable Network Graphics</desc>
-         <desc0>PNG not supported</desc0>
-         <desc1>PNG partially supported</desc1>
-         <desc2>PNG fully supported</desc2>
-         
-         
-      </element>
-      <element name="mng" title="MNG">
-         <desc>Multiple-image Network Graphics</desc>
-         <desc0>MNG not supported</desc0>
-         <desc1>MNG partially supported</desc1>
-         <desc2>MNG fully supported</desc2>
-         
-         
-      </element>
-      <element name="tiff" title="TIFF">
-         <desc>Tagged Image File Format</desc>
-         <desc0>TIFF not supported</desc0>
-         <desc1>TIFF partially supported</desc1>
-         <desc2>TIFF fully supported</desc2>
-         
-         
-      </element>
-      <element name="twodcanvas" title="2D Canvas">
-         <desc>Canvas element support (HTML extention standardized by the Web Hypertext Application Technology Working Group)</desc>
-         <desc0>Canvas element not supported</desc0>
-         <desc1>Canvas element partially supported</desc1>
-         <desc2>Canvas element fully supported</desc2>
-         
-         
-      </element>
-   </section>
+	<header>
+		<authors>
+			<author>
+				<email>raphael@semeteys.org</email>
+				<name>Raphaël Semeteys</name>
+			</author>
+			<author>
+				<email>goneri@rulezlan.org</email>
+				<name>Goneri Le Bouder</name>
+			</author>
+		</authors>
+		<dates>
+			<creation>2006-12-05</creation>
+		</dates>
+	</header>
+	<section name="browserfeatures" title="Browser features">
+		<desc>Native browser features</desc>
+		<element name="bookmarkmanaging" title="Bookmark managing">
+			<desc0>No bookmark features</desc0>
+			<desc1>Limited bookmark features</desc1>
+			<desc2>Comprehensive bookmark features (creation, edition, management, ...).</desc2>
+		</element>
+		<element name="downloadmanaging" title="Download managing">
+			<desc0>No download management</desc0>
+			<desc1>Limited download manager</desc1>
+			<desc2>Comprehensive and configurable download manager</desc2>
+		</element>
+		<element name="passwordmanaging" title="Password managing">
+			<desc0>No password management features</desc0>
+			<desc1>Limited features</desc1>
+			<desc2>Comprehensive password management features (storage, master password, ...)</desc2>
+		</element>
+		<element name="formmanaging" title="Form managing">
+			<desc0>No form management features</desc0>
+			<desc1>Limited form management features (for instance non persistent storage of user entries)</desc1>
+			<desc2>Comprehensive features (persistent storage, behaviour configuration, ...)</desc2>
+		</element>
+		<element name="spellchecking" title="Spell checking">
+			<desc0>No spell cheking</desc0>
+			<desc1>Limited spell checking (in number of languages or dictionnary enhancement)</desc1>
+			<desc2>Features based on a complete and extensible spell checking framework</desc2>
+		</element>
+		<element name="searchenginetoolbar" title="Search engine toolbar">
+			<desc0>No search toolbar</desc0>
+			<desc1>Limited search features (for instance no choice in search engines)</desc1>
+			<desc2>Full search framework with ability to define and plug easily new search engines</desc2>
+		</element>
+	</section>
+	<section name="accessibilityfeatures" title="Accessibility features">
+		<desc>Native accessibility features</desc>
+		<element name="tabbedbrowsing" title="Tabbed browsing">
+			<desc0>Single window browsing</desc0>
+			<desc1>Limited tab browsing features (no tab relocation, no global view)</desc1>
+			<desc2>Full tab browsing features with tab relocation and global view of opened tabs</desc2>
+		</element>
+		<element name="pop-upblocking" title="Pop-up blocking">
+			<desc0>No pop-up blocking features</desc0>
+			<desc1>Limited features (for instance no ability to configure behaviour depending on websites)</desc1>
+			<desc2>Configurable pop-up blocking strategy</desc2>
+		</element>
+		<element name="incrementalfinding" title="Incremental finding">
+			<desc>Find-as-you-type feature in non modal Search windows</desc>
+			<desc0>No incremental finding features</desc0>
+			<desc1>Limited incremental findind features (no highlight or previous/next features for instance)</desc1>
+			<desc2>Comprehensive incremental finding features</desc2>
+		</element>
+		<element name="adfiltering" title="Ad filtering">
+			<desc>Advertisement filtering (content or images)</desc>
+			<desc0>No ad filtering</desc0>
+			<desc1>Limited ad filtering or depending on a third party product</desc1>
+			<desc2>Full ad filtering features</desc2>
+		</element>
+		<element name="pagezooming" title="Page zooming">
+			<desc0>No possibility to zoom browsed pages</desc0>
+			<desc1>Limited zooming features (limited to text resizing)</desc1>
+			<desc2>Full browsing features (all page is zoomed in/ou)</desc2>
+		</element>
+		<element name="navigationmodesupport" title="Navigation mode support">
+			<desc>Supported navigation modes</desc>
+			<element name="htmlaccesskey" title="HTML access key">
+				<desc>Ability to select HTML elemnst (links, input fields, ...) from keyboard shortcuts</desc>
+				<desc0>No HTML access key features</desc0>
+				<desc1>Limited HTML access key features</desc1>
+				<desc2>HTML access key features natively available</desc2>
+			</element>
+			<element name="tabbingnavigation" title="Tabbing navigation">
+				<desc>Ability to navigate with TAB key</desc>
+				<desc0>No tabbing navigation features</desc0>
+				<desc1>Limited tabbing navigation features or with a third party product</desc1>
+				<desc2>Tabbing navigation features natively available</desc2>
+			</element>
+			<element name="spatialnavigation" title="Spatial navigation">
+				<desc>Ability to navigate between focusable elements according to the spatial location</desc>
+				<desc0>No spatial navigation features</desc0>
+				<desc1>Limited spatial navigation features or with a third party product</desc1>
+				<desc2>Spatial navigation features natively available</desc2>
+			</element>
+			<element name="caretnavigation" title="Caret navigation">
+				<desc>Ability to move a cursor in browsed pages</desc>
+				<desc0>No caret navigation available</desc0>
+				<desc1>Limited caret navigation feature</desc1>
+				<desc2>Carte navigation mode natively available</desc2>
+			</element>
+			<element name="mousegesture" title="Mouse gesture">
+				<desc>Combination of mouse movements and clicks to trigger commands</desc>
+				<desc0>No mouse gesture features</desc0>
+				<desc1>Limited features or with third party product</desc1>
+				<desc2>Mouse gesture mode natively available</desc2>
+			</element>
+		</element>
+		<element name="voicefeatures" title="Voice features">
+			<element name="text-to-speech" title="Text-to-speech">
+				<desc>Conversion of language text into speech</desc>
+				<desc0>No text-to-speech features</desc0>
+				<desc1>Limited features or with third party product</desc1>
+				<desc2>Text-to-speech mode natively available</desc2>
+			</element>
+			<element name="voicecontrol" title="Voice control">
+				<desc>Speech recognition features</desc>
+				<desc0>No voice control features</desc0>
+				<desc1>Limited features or with third party product</desc1>
+				<desc2>Voice control mode natively available</desc2>
+			</element>
+		</element>
+	</section>
+	<section name="webtechnologysupport" title="Web technology support">
+		<desc>Web standards and technologies supported (except Javascript)</desc>
+		<element name="css" title="CSS">
+			<desc>Cascading StyleSheet support</desc>
+			<desc0>No CSS support</desc0>
+			<desc1>Old or limited CSS support</desc1>
+			<desc2>Full CSS2.1 support</desc2>
+		</element>
+		<element name="frames" title="Frames">
+			<desc0>No frame support</desc0>
+			<desc1>Limited frame support</desc1>
+			<desc2>Full frame support</desc2>
+		</element>
+		<element name="java" title="Java">
+			<desc0>No Java support</desc0>
+			<desc1>Limited Java support (for instance no possibility to change JRE)</desc1>
+			<desc2>Full Java support</desc2>
+		</element>
+		<element name="xslt" title="XSLT">
+			<desc>Extensible Stylesheet Language Transformations</desc>
+			<desc0>No XSLT support</desc0>
+			<desc1>Limited XSLT support or with third party product</desc1>
+			<desc2>Full and native XSLT support</desc2>
+		</element>
+		<element name="xhtml" title="XHTML">
+			<desc>Extensible HyperText Markup Language</desc>
+			<desc0>No XHTML support</desc0>
+			<desc1>Limited or old XHTML (1.0) support</desc1>
+			<desc2>Full XHTML 1.1 support</desc2>
+		</element>
+		<element name="mathml" title="MathML">
+			<desc0>No MathML support</desc0>
+			<desc1>Limited support or via third party product</desc1>
+			<desc2>Full native MathML support</desc2>
+		</element>
+		<element name="xforms" title="XForms">
+			<desc0>No XForms support</desc0>
+			<desc1>Limited XForms support</desc1>
+			<desc2>Full XForms support</desc2>
+		</element>
+		<element name="rss" title="RSS">
+			<desc0>No RSS support</desc0>
+			<desc1>Limited or old RSS (0.91 or 1.0) support</desc1>
+			<desc2>Full RSS 2.0 support</desc2>
+		</element>
+		<element name="atom" title="Atom">
+			<desc0>No Atom support</desc0>
+			<desc1>Limited or old Atom (0.91 or 1.0) support</desc1>
+			<desc2>Full Atom 1.0 support</desc2>
+		</element>
+		<element name="svg" title="SVG">
+			<desc>Scalable Vector Graphics</desc>
+			<desc0>No SVG support</desc0>
+			<desc1>Old (1.1), limited SVG support or via third party product</desc1>
+			<desc2>Full SVG 1.1 support</desc2>
+		</element>
+		<element name="voicexml" title="VoiceXML">
+			<desc0>No VoiceXML support</desc0>
+			<desc1>Limited VoiceXML support (for iunstance only for recognition or synthesis)</desc1>
+			<desc2>Full VoiceXML support</desc2>
+		</element>
+		<element name="wml" title="WML">
+			<desc>Wireless Markup Language</desc>
+			<desc0>No WML support</desc0>
+			<desc1>Limited WML support or via third party product</desc1>
+			<desc2>Full native WML support</desc2>
+		</element>
+	</section>
+	<section name="javascriptsupport" title="JavaScript support">
+		<desc>Supported JavaScript technologies </desc>
+		<element name="javascript" title="JavaScript">
+			<desc0>No JavaScript support</desc0>
+			<desc1>Partial JavaScript support</desc1>
+			<desc2>Full JavaScript support</desc2>
+		</element>
+		<element name="ecmascript" title="ECMAScript">
+			<desc>ECMA-262 specification compliance</desc>
+			<desc0>No ECMAScript compliance</desc0>
+			<desc1>Partial or old ECMAScript (1 or 2) compliance </desc1>
+			<desc2>Full ECMAScript 3 compliance</desc2>
+		</element>
+		<element name="dom1" title="DOM 1">
+			<desc>Document Object Model Level 1 support</desc>
+			<desc0>DOM 1 not supported</desc0>
+			<desc1>DOM 1 partially supported</desc1>
+			<desc2>Full DOM 1 support</desc2>
+		</element>
+		<element name="dom2" title="DOM 2">
+			<desc>Document Object Model Level 2 support</desc>
+			<desc0>DOM 2 not supported</desc0>
+			<desc1>DOM 2 partially supported</desc1>
+			<desc2>Full DOM2 support</desc2>
+		</element>
+		<element name="dom3" title="DOM 3">
+			<desc>Document Object Model Level 3 support (except XPath)</desc>
+			<desc0>DOM 3 not supported</desc0>
+			<desc1>DOM 3 partially supported</desc1>
+			<desc2>Full DOM 3 support</desc2>
+		</element>
+		<element name="xpath" title="XPath">
+			<desc>XML Path Language support</desc>
+			<desc0>No XPath support</desc0>
+			<desc1>LImited or old XPath support</desc1>
+			<desc2>Full XPath support</desc2>
+		</element>
+		<element name="xmlhttprequest" title="XMLHttpRequest">
+			<desc>XMLHttpRequest Object support</desc>
+			<desc0>No XMLHttpRequest Object available</desc0>
+			<desc1>XMLHttpRequest Object available but with limitations (for instance no UNICODE support)</desc1>
+			<desc2>XMLHttpRequest Object available</desc2>
+		</element>
+	</section>
+	<section name="protocolsupport" title="Protocol support">
+		<desc>Supported Internet protocols</desc>
+		<element name="http" title="HTTP">
+			<desc>Hypertext Transfer Protocol</desc>
+			<desc0>No HTTP support</desc0>
+			<desc1>Old (1.0) or limited HTTP support</desc1>
+			<desc2>HTTP 1.1 support</desc2>
+		</element>
+		<element name="ftp" title="FTP">
+			<desc>File Transfer Protocol</desc>
+			<desc0>No FTP support</desc0>
+			<desc1>Partial FTP support</desc1>
+			<desc2>Full FTP support</desc2>
+		</element>
+		<element name="nntp" title="NNTP">
+			<desc>Network News Transfer Protocol</desc>
+			<desc0>No NNTP support</desc0>
+			<desc1>Partial NNTP support</desc1>
+			<desc2>Full NNTP support</desc2>
+		</element>
+		<element name="ssl" title="SSL/TLS">
+			<desc>Secure Sockets Layer / Transport Layer Security support</desc>
+			<desc0>No SSL or TLS support</desc0>
+			<desc1>Partial or old SSL/TLS support</desc1>
+			<desc2>TLS 1.1 support</desc2>
+		</element>
+		<element name="idn" title="IDN">
+			<desc>Internationalized domain name</desc>
+			<desc0>No IDN support</desc0>
+			<desc1>Partial IDN support</desc1>
+			<desc2>Full IDN support</desc2>
+		</element>
+		<element name="dataurl" title="data: URI scheme">
+			<desc>RFC 2397 support: inclusion of small data items inline</desc>
+			<desc0>data: URI scheme not supported</desc0>
+			<desc1>data: URI scheme partially supported</desc1>
+			<desc2>data: URI scheme fully supported</desc2>
+		</element>
+		<element name="bittorrent" title="BitTorrent">
+			<desc0>No BitTorrent support</desc0>
+			<desc1>Partial BitTorrent support or via third party product</desc1>
+			<desc2>Full native BitTorrent support</desc2>
+		</element>
+	</section>
+	<section name="imageformatsupport" title="Image format support">
+		<desc>Supported image formats</desc>
+		<element name="jpeg" title="JPEG">
+			<desc>Joint Photographic Experts Group image format </desc>
+			<desc0>JPEG not supported</desc0>
+			<desc1>JPEG partially supported</desc1>
+			<desc2>JPEG fully supported</desc2>
+		</element>
+		<element name="gif" title="GIF">
+			<desc>Graphics Interchange Format</desc>
+			<desc0>GIF not supported</desc0>
+			<desc1>GIF partially supported</desc1>
+			<desc2>GIF fully supported</desc2>
+		</element>
+		<element name="png" title="PNG">
+			<desc>Portable Network Graphics</desc>
+			<desc0>PNG not supported</desc0>
+			<desc1>PNG partially supported</desc1>
+			<desc2>PNG fully supported</desc2>
+		</element>
+		<element name="mng" title="MNG">
+			<desc>Multiple-image Network Graphics</desc>
+			<desc0>MNG not supported</desc0>
+			<desc1>MNG partially supported</desc1>
+			<desc2>MNG fully supported</desc2>
+		</element>
+		<element name="tiff" title="TIFF">
+			<desc>Tagged Image File Format</desc>
+			<desc0>TIFF not supported</desc0>
+			<desc1>TIFF partially supported</desc1>
+			<desc2>TIFF fully supported</desc2>
+		</element>
+		<element name="twodcanvas" title="2D Canvas">
+			<desc>Canvas element support (HTML extention standardized by the Web Hypertext Application Technology Working Group)</desc>
+			<desc0>Canvas element not supported</desc0>
+			<desc1>Canvas element partially supported</desc1>
+			<desc2>Canvas element fully supported</desc2>
+		</element>
+	</section>
 </qsosappfamily>

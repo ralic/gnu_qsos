@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<qsostemplate xmlns="http://qsos.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"	xsi:schemaLocation="http://qsos.org ../XSD/QSOS-Template.xsd ">
+<qsostemplate xmlns="http://qsos.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://qsos.org ../XSD/QSOS-Template.xsd ">
 	<header>
 		<authors>
 			<author>
@@ -12,16 +12,16 @@
 		</dates>
 	</header>
 	<template>
-    <language>fr</language>
-    <appname>CloverETL</appname>
-    <release>1.3</release>
-    <licenseid></licenseid>
-    <licensedesc>LGPL</licensedesc>
-    <url></url>
-    <desc></desc>
-    <demourl></demourl>
-    <qsosformat>1.7</qsosformat>
-    <qsosappname>cloverEtl</qsosappname>
+		<language>fr</language>
+		<appname>CloverETL</appname>
+		<release>1.3</release>
+		<licenseid></licenseid>
+		<licensedesc>LGPL</licensedesc>
+		<url></url>
+		<desc></desc>
+		<demourl></demourl>
+		<qsosformat>2.0</qsosformat>
+		<qsosappname>cloverEtl</qsosappname>
 		<qsosappfamilies>
 			<qsosappfamily>etl</qsosappfamily>
 		</qsosappfamilies>

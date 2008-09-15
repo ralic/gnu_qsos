@@ -1,33 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <qsosscore xmlns="http://qsos.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://qsos.org ../../../XSD/QSOS-Score.xsd ">
-		<element name="accountaccess">
-			<score>
-				2
-			</score>
-		</element>
-		<element name="plugins">
-			<score>
-				0
-			</score>
-		</element>
-		<element name="bandwidth">
-			<score>
-				2
-			</score>
-		</element>
-		<element name="accountdeleting">
-			<score>
-				2
-			</score>
-		</element>
-		<element name="accountcreation">
-			<score>
-				2
-			</score>
-		</element>
-		<element name="skins">
-			<comment>
-				List of other clients using the same skin constituent:List of other clients using the same skin constituent:
-			</comment>
-		</element>
+	<element name="accountaccess">
+		<score> 2 </score>
+	</element>
+	<element name="plugins">
+		<score> 0 </score>
+	</element>
+	<element name="bandwidth">
+		<score> 2 </score>
+	</element>
+	<element name="accountdeleting">
+		<score> 2 </score>
+	</element>
+	<element name="accountcreation">
+		<score> 2 </score>
+	</element>
+	<element name="skins">
+		<comment> List of other clients using the same skin constituent:List of other clients using the same skin constituent: </comment>
+	</element>
 </qsosscore>

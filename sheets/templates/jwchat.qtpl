@@ -1,34 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <qsostemplate xmlns="http://qsos.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://qsos.org ../XSD/QSOS-Template.xsd ">
-  <header>
-    <authors>
-      <author>
-        <email>walid.nouh@atosorigin.com</email>
-        <name>Walid Nouh</name>
-      </author>
-      <author>
-        <email>nicolas.verite@atosorigin.com</email>
-        <name>Nicolas Vérité</name>
-      </author>
-    </authors>
-    <dates>
-      <creation>2007-01-29</creation>
-    </dates>
-  </header>
-  <template>
-    <language>en</language>
-    <appname>JWChat</appname>
-    <release>1.0beta2</release>
-    <licenseid>31</licenseid>
-    <licensedesc>GNU GPL</licensedesc>
-    <url>http://jwchat.sf.net/</url>
-    <desc>JWChat (Jabber Web Chat) is a full-featured AJAX Jabber client</desc>
-    <demourl></demourl>
-    <qsosformat>2.0</qsosformat>
-    <qsosappname>jwchat</qsosappname>
-    <qsosappfamilies>
-      <qsosappfamily>im-client-gui</qsosappfamily>
-      <qsosappfamily>im-protocol-jabber</qsosappfamily>
-    </qsosappfamilies>
-  </template>
+	<header>
+		<authors>
+			<author>
+				<email>walid.nouh@atosorigin.com</email>
+				<name>Walid Nouh</name>
+			</author>
+			<author>
+				<email>nicolas.verite@atosorigin.com</email>
+				<name>Nicolas Vérité</name>
+			</author>
+		</authors>
+		<dates>
+			<creation>2007-01-29</creation>
+		</dates>
+	</header>
+	<template>
+		<language>en</language>
+		<appname>JWChat</appname>
+		<release>1.0beta2</release>
+		<licenseid>31</licenseid>
+		<licensedesc>GNU GPL</licensedesc>
+		<url>http://jwchat.sf.net/</url>
+		<desc>JWChat (Jabber Web Chat) is a full-featured AJAX Jabber client</desc>
+		<demourl></demourl>
+		<qsosformat>2.0</qsosformat>
+		<qsosappname>jwchat</qsosappname>
+		<qsosappfamilies>
+			<qsosappfamily>im-client-gui</qsosappfamily>
+			<qsosappfamily>im-protocol-jabber</qsosappfamily>
+		</qsosappfamilies>
+	</template>
 </qsostemplate>

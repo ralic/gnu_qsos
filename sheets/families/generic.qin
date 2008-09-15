@@ -7,99 +7,99 @@
 				<name></name>
 			</author>
 		</authors>
-		<dates/>
+		<dates />
 	</header>
-   <section name="generic" title="Generic section">
-      <desc>Generic criteria from QSOS version 1.6</desc>
-      <element name="intrinsicdurability" title="Intrinsic durability">
-         <desc>Intrinsic durability</desc>
-         <element name="maturity" title="Maturity">
-            <desc>Maturity</desc>
-            <element name="age" title="Age">
-               <desc0>less than 3 months</desc0>
-               <desc1>if between 3 months and 3 years</desc1>
-               <desc2>after 3 years</desc2>
-            </element>
-            <element name="stability" title="Stability">
-               <desc0>Unstable software with numerous releases or patches generating side effects</desc0>
-               <desc1>Stabilized production release existing but old. Difficulties to stabilize development releases</desc1>
-               <desc2>Stabilized software. Releases provide bug fixes corrections but mainly new functionalities</desc2>
-            </element>
-            <element name="historyknownproblems" title="History, known problems">
-               <desc0>Software knows several problems which can be prohibitive</desc0>
-               <desc1>No know major problem or crisis</desc1>
-               <desc2>History of good management of crisis situations</desc2>
-            </element>
-            <element name="forkprobability" title="Fork probability, source of Forking">
-               <desc0>Software is very likely to be forked in the future</desc0>
-               <desc1>Software comes from a fork but has very few chances of being forked in the future</desc1>
-               <desc2>Software has very little chance of being forked. It does not come from a fork either</desc2>
-            </element>
-    </element>
-         <element name="adoption" title="Adoption">
-            <desc>Adoption by community and industry</desc>
-            <element name="popularity" title="Popularity (related to: general public, niche, ...)">
-               <desc0>Very few users identified</desc0>
-               <desc1>Detectable use on Internet</desc1>
-               <desc2>Numerous users, numerous references</desc2>
-            </element>
-            <element name="references" title="References">
-               <desc0>None</desc0>
-               <desc1>Few refences, non critical usages</desc1>
-               <desc2>Often implemented for critical applications</desc2>
-		       </element>
-            <element name="contributingcommunity" title="Contributing Community">
-               <desc0>No community or without real activity (forum, mailing list, ...)</desc0>
-               <desc1>Existing community with a notable activity</desc1>
-               <desc2>Strong community: big activity on forums, numerous contributors and advocates</desc2>
-            </element>
-            <element name="books" title="books">
-               <desc0>No book about the software</desc0>
-               <desc1>Less than 5 books about the software are available</desc1>
-               <desc2>More than 5 books about software are available, in several languages</desc2>
-            </element>
-         </element>
-	 <element name="developmentleadership" title="Development leadership">
-            <desc>Organisation and leadership of developments</desc>
-            <element name="leadingteam" title="Leading team">
-               <desc0>1 to 2 individuals involved, not clearly identified</desc0>
-               <desc1>Between 2 and 5 independent people</desc1>
-               <desc2>More than 5 people</desc2>
-            </element>
-            <element name="managementstyle" title="Management style">
-               <desc0>Complete dictatorship</desc0>
-               <desc1>Enlightened despotism</desc1>
-               <desc2>Council of architects with identified leader (e.g: KDE)</desc2>
-            </element>
-         </element>
-         <element name="activity" title="Activity">
-            <desc>Activity of the project and around the software</desc>
-            <element name="developersidentificationturnover" title="Developers, identification, turnover">
-               <desc0>Less than 3 developers, not clearly identified</desc0>
-               <desc1>Between 4 and 7 developers, or more unidentified developers with important turnover</desc1>
-               <desc2>More than 7 developers, very stable team</desc2>
-            </element>
-            <element name="activityonbugs" title="Activity on bugs">
-               <desc0>Slow reactivity in forum or on mailing list, or nothing regarding bug fixes in releases note</desc0>
-               <desc1>Detectable activity but without process clearly exposed, long reaction/resolution time</desc1>
-               <desc2>Strong reactivity based on roles and tasks assignment</desc2>
-            </element>
-            <element name="activityonfunctionalities" title="Activity on functionalities">
-               <desc0>No or few new functionalities</desc0>
-               <desc1>Evolution of the product driven by the core team or by user's request without any clearly explained process</desc1>
-               <desc2>Tool(s) to manage feature requests, strong interaction with roadmap</desc2>
-            </element>
-            <element name="activityonreleases" title="Activity on releases">
-               <desc0>Very weak activity on both production and development releases</desc0>
-               <desc1>Activity on production and development releases. Frequent minor releases (bug fixes)</desc1>
-               <desc2>Important activity with frequent minor releases (bugs fixes) and planned major releases relating to the roadmap forcast</desc2>
-            </element>
-         </element>
-      </element>
-      <element name="industrializedsolution" title="Industrialized solution">
-         <desc>Industrialization level of the project</desc>
-         <element name="independenceofdevelopments" title="Independence of developments">
-            <desc0>Developments realized at 100% by employees of a single company</desc0>
+	<section name="generic" title="Generic section">
+		<desc>Generic criteria from QSOS version 1.6</desc>
+		<element name="intrinsicdurability" title="Intrinsic durability">
+			<desc>Intrinsic durability</desc>
+			<element name="maturity" title="Maturity">
+				<desc>Maturity</desc>
+				<element name="age" title="Age">
+					<desc0>less than 3 months</desc0>
+					<desc1>if between 3 months and 3 years</desc1>
+					<desc2>after 3 years</desc2>
+				</element>
+				<element name="stability" title="Stability">
+					<desc0>Unstable software with numerous releases or patches generating side effects</desc0>
+					<desc1>Stabilized production release existing but old. Difficulties to stabilize development releases</desc1>
+					<desc2>Stabilized software. Releases provide bug fixes corrections but mainly new functionalities</desc2>
+				</element>
+				<element name="historyknownproblems" title="History, known problems">
+					<desc0>Software knows several problems which can be prohibitive</desc0>
+					<desc1>No know major problem or crisis</desc1>
+					<desc2>History of good management of crisis situations</desc2>
+				</element>
+				<element name="forkprobability" title="Fork probability, source of Forking">
+					<desc0>Software is very likely to be forked in the future</desc0>
+					<desc1>Software comes from a fork but has very few chances of being forked in the future</desc1>
+					<desc2>Software has very little chance of being forked. It does not come from a fork either</desc2>
+				</element>
+			</element>
+			<element name="adoption" title="Adoption">
+				<desc>Adoption by community and industry</desc>
+				<element name="popularity" title="Popularity (related to: general public, niche, ...)">
+					<desc0>Very few users identified</desc0>
+					<desc1>Detectable use on Internet</desc1>
+					<desc2>Numerous users, numerous references</desc2>
+				</element>
+				<element name="references" title="References">
+					<desc0>None</desc0>
+					<desc1>Few refences, non critical usages</desc1>
+					<desc2>Often implemented for critical applications</desc2>
+				</element>
+				<element name="contributingcommunity" title="Contributing Community">
+					<desc0>No community or without real activity (forum, mailing list, ...)</desc0>
+					<desc1>Existing community with a notable activity</desc1>
+					<desc2>Strong community: big activity on forums, numerous contributors and advocates</desc2>
+				</element>
+				<element name="books" title="books">
+					<desc0>No book about the software</desc0>
+					<desc1>Less than 5 books about the software are available</desc1>
+					<desc2>More than 5 books about software are available, in several languages</desc2>
+				</element>
+			</element>
+			<element name="developmentleadership" title="Development leadership">
+				<desc>Organisation and leadership of developments</desc>
+				<element name="leadingteam" title="Leading team">
+					<desc0>1 to 2 individuals involved, not clearly identified</desc0>
+					<desc1>Between 2 and 5 independent people</desc1>
+					<desc2>More than 5 people</desc2>
+				</element>
+				<element name="managementstyle" title="Management style">
+					<desc0>Complete dictatorship</desc0>
+					<desc1>Enlightened despotism</desc1>
+					<desc2>Council of architects with identified leader (e.g: KDE)</desc2>
+				</element>
+			</element>
+			<element name="activity" title="Activity">
+				<desc>Activity of the project and around the software</desc>
+				<element name="developersidentificationturnover" title="Developers, identification, turnover">
+					<desc0>Less than 3 developers, not clearly identified</desc0>
+					<desc1>Between 4 and 7 developers, or more unidentified developers with important turnover</desc1>
+					<desc2>More than 7 developers, very stable team</desc2>
+				</element>
+				<element name="activityonbugs" title="Activity on bugs">
+					<desc0>Slow reactivity in forum or on mailing list, or nothing regarding bug fixes in releases note</desc0>
+					<desc1>Detectable activity but without process clearly exposed, long reaction/resolution time</desc1>
+					<desc2>Strong reactivity based on roles and tasks assignment</desc2>
+				</element>
+				<element name="activityonfunctionalities" title="Activity on functionalities">
+					<desc0>No or few new functionalities</desc0>
+					<desc1>Evolution of the product driven by the core team or by user's request without any clearly explained process</desc1>
+					<desc2>Tool(s) to manage feature requests, strong interaction with roadmap</desc2>
+				</element>
+				<element name="activityonreleases" title="Activity on releases">
+					<desc0>Very weak activity on both production and development releases</desc0>
+					<desc1>Activity on production and development releases. Frequent minor releases (bug fixes)</desc1>
+					<desc2>Important activity with frequent minor releases (bugs fixes) and planned major releases relating to the roadmap forcast</desc2>
+				</element>
+			</element>
+		</element>
+		<element name="industrializedsolution" title="Industrialized solution">
+			<desc>Industrialization level of the project</desc>
+			<element name="independenceofdevelopments" title="Independence of developments">
+				<desc0>Developments realized at 100% by employees of a single company</desc0>
             <desc1>60% maximum</desc1>
             <desc2>20% maximum</desc2>
          </element>

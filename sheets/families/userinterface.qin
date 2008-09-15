@@ -1,30 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <qsosappfamily xmlns="http://qsos.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://qsos.org ../XSD/QSOS-Family.xsd ">
-  <header>
-    <authors>
-      <author>
-        <email>email</email>
-        <name>name</name>
-      </author>
-    </authors>
-    <dates>
-      <creation>2001-01-01</creation>
-      <validation>2001-01-01</validation>
-    </dates>
-  </header>
-<section name="UI" title="User interface">
-    <element name="i18nUI" title="Internationalisation support">
-        <desc>Is the whole user interface internationalizable? Is Unicode supported? Are Right-to-Left languages supported (as for Hebrew and Arabic)?</desc>
-        <desc0>The feature doesn't exist</desc0>
-        <desc1>Limited support</desc1>
-        <desc2>Fully supported</desc2>
-    </element>
-    <element name="skinableUI" title="Skin-ability">
-        <desc>Does the UI have a complete skin system? (a User/UserGroup customizable interface for instance)</desc>
-        <desc0>The feature doesn't exist</desc0>
-        <desc1>Limited support</desc1>
-        <desc2>Fully supported</desc2>
-    </element>
-</section>
-
+	<header>
+		<authors>
+			<author>
+				<email>francois.le.droff@gmail.com</email>
+				<name>Francois Le Droff</name>
+			</author>
+			<author>
+				<email>nicolas.verite@gmail.com</email>
+				<name>Nicolas Vérité</name>
+			</author>
+		</authors>
+		<dates>
+			<creation>2006-10-24</creation>
+		</dates>
+	</header>
+	<section name="UI" title="User interface">
+		<element name="i18nUI" title="Internationalisation support">
+			<desc>Is the whole user interface internationalizable? Is Unicode supported? Are Right-to-Left languages supported (as for Hebrew and Arabic)?</desc>
+			<desc0>The feature doesn't exist</desc0>
+			<desc1>Limited support</desc1>
+			<desc2>Fully supported</desc2>
+		</element>
+		<element name="skinableUI" title="Skin-ability">
+			<desc>Does the UI have a complete skin system? (a User/UserGroup customizable interface for instance)</desc>
+			<desc0>The feature doesn't exist</desc0>
+			<desc1>Limited support</desc1>
+			<desc2>Fully supported</desc2>
+		</element>
+	</section>
 </qsosappfamily>

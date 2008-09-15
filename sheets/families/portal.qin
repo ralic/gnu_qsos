@@ -3,8 +3,8 @@
 	<header>
 		<authors>
 			<author>
-        <email>tojo.randrianaivojaona@atosorigin.com</email>
-        <name>Tojo Randrianaivojaona</name>
+				<email>tojo.randrianaivojaona@atosorigin.com</email>
+				<name>Tojo Randrianaivojaona</name>
 			</author>
 		</authors>
 		<dates>
@@ -18,25 +18,19 @@
 				<desc0>Using no standard specification</desc0>
 				<desc1>Specification portal is not indentified</desc1>
 				<desc2>Using specification JSR-168</desc2>
-				<comment>It is entirely standards-based and supports the JSR-168
-					portlet specification, which allows you to easily plug-in
-					standards-compliant portlets to meet your specific portal needs. It
-					suports too JSR-170 (Content Repository) </comment>
+				<comment>It is entirely standards-based and supports the JSR-168 portlet specification, which allows you to easily plug-in standards-compliant portlets to meet your specific portal needs. It suports too JSR-170 (Content Repository) </comment>
 			</element>
 			<element name="technologysupported" title="technology supported">
 				<desc0>Not supporting any technologies</desc0>
-				<desc1>likely supporting any technologies but not identified
-					or don't work correctly</desc1>
+				<desc1>likely supporting any technologies but not identified or don't work correctly</desc1>
 				<desc2>support numerous technologies like Struts,JSF,Webdav</desc2>
-				<comment> The technologies supported are Struts, JSF(1.2 version),
-					WebDAV(supported by JBoss2.0 and 2.4) </comment>
+				<comment> The technologies supported are Struts, JSF(1.2 version), WebDAV(supported by JBoss2.0 and 2.4) </comment>
 			</element>
 		</element>
 		<element name="generaladministration" title="general administration">
 			<element name="administrationsprotocol" title="protocol of administration">
 				<desc0>no protocol supported</desc0>
-				<desc1>protocol HTTP/HTTPs doesn't work correctly or
-					supports only thin heavy (client lourd???)</desc1>
+				<desc1>protocol HTTP/HTTPs doesn't work correctly or supports only thin heavy (client lourd???)</desc1>
 				<desc2>administration via thin light is performing</desc2>
 			</element>
 			<element name="webapplicationadministration" title="web application s administration">
@@ -46,11 +40,9 @@
 			</element>
 			<element name="commandline" title="command line">
 				<desc0>Administration via commandline impossible</desc0>
-				<desc1>Administration via commandline is difficult or
-					isn't performing </desc1>
+				<desc1>Administration via commandline is difficult or isn't performing </desc1>
 				<desc2>Administration via command line work very well</desc2>
-				<comment>Do JBoss Portal come with script or can be managed from a
-					console? </comment>
+				<comment>Do JBoss Portal come with script or can be managed from a console? </comment>
 			</element>
 		</element>
 		<element name="fonctionaladministration" title="fonctionaladministration">
@@ -58,18 +50,13 @@
 				<desc0>No user's management</desc0>
 				<desc1>User's management doesn't work correctly</desc1>
 				<desc2>User's management is performing</desc2>
-				<comment>Auto recording user management, user's creation by
-					admin, information's update </comment>
+				<comment>Auto recording user management, user's creation by admin, information's update </comment>
 			</element>
 			<element name="sitestructuresmanagement" title="site structure s management">
 				<desc0>No site structure's management</desc0>
-				<desc1>site structure's management doesn't work correctly 
-				</desc1>
-				<desc2> Site structure's management by Portal Object Management and
-					by XML scripts</desc2>
-				<comment>Assignment of themes and pages on the portal from
-					Portal Object Management, reference of themes and layouts by XML
-					scripts </comment>
+				<desc1>site structure's management doesn't work correctly </desc1>
+				<desc2> Site structure's management by Portal Object Management and by XML scripts</desc2>
+				<comment>Assignment of themes and pages on the portal from Portal Object Management, reference of themes and layouts by XML scripts </comment>
 			</element>
 			<element name="rulesmanagement" title="rules management">
 				<desc0>No rules'management </desc0>
@@ -84,33 +71,27 @@
 		</element>
 		<element name="technicaladministration" title="technical administration">
 			<desc0>No technical administration </desc0>
-			<desc1>Technical administration is partial.Especially for
-				JBoss AS </desc1>
+			<desc1>Technical administration is partial.Especially for JBoss AS </desc1>
 			<desc2>Technical administration performing </desc2>
 		</element>
 		<element name="administrationsdelegation" title="administration s delegation">
 			<desc0>No administration's delegation</desc0>
-			<desc1>administration's delegation doesn't work
-				correctly</desc1>
+			<desc1>administration's delegation doesn't work correctly</desc1>
 			<desc2>administration's delegation is performing</desc2>
 		</element>
 		<element name="utilisationsstatistics" title="utilisation s statistics">
 			<desc0>No utilisation's statistics</desc0>
-			<desc1>No utilisation's statistics, but any statistics by Webalizer
-				or AW AWStats can be supplied </desc1>
+			<desc1>No utilisation's statistics, but any statistics by Webalizer or AW AWStats can be supplied </desc1>
 			<desc2>utilisation's statistics integrated </desc2>
 		</element>
 		<element name="monitoring" title="monitoring">
 			<desc0>Don't generate any monitoring file</desc0>
-			<desc1>monitoring file generation doesn't work correctly 
-			</desc1>
-			<desc2>generate partially JMX support including information
-				of deployment view and its administration </desc2>
+			<desc1>monitoring file generation doesn't work correctly </desc1>
+			<desc2>generate partially JMX support including information of deployment view and its administration </desc2>
 		</element>
 		<element name="companymailingsupport" title="company mailing support">
 			<desc0>No mailing support </desc0>
-			<desc1>standard mailing support doesn't work correctly 
-			</desc1>
+			<desc1>standard mailing support doesn't work correctly </desc1>
 			<desc2>SMTP and SMTPS integrated</desc2>
 		</element>
 		<element name="safety" title="safety">
@@ -120,10 +101,8 @@
 		</element>
 		<element name="installation" title="installation">
 			<desc0>complicated installation</desc0>
-			<desc1>installation with a little assistance by website
-				only</desc1>
-			<desc2>assisted installation by manual and website,
-				possibility to unzip a copy (don't need to install) </desc2>
+			<desc1>installation with a little assistance by website only</desc1>
+			<desc2>assisted installation by manual and website, possibility to unzip a copy (don't need to install) </desc2>
 		</element>
 		<element name="deployment" title="deployment">
 			<element name="portaldeployment" title="portal deployment">
@@ -133,42 +112,31 @@
 			</element>
 			<element name="simplifieddeploymentonacluster" title="simplified deployment on a cluster">
 				<desc0>simplified deployment on a cluster is impossible</desc0>
-				<desc1>deployment on a cluster is possible but not
-					simplified</desc1>
+				<desc1>deployment on a cluster is possible but not simplified</desc1>
 				<desc2>simplified deployment on a cluster is performing</desc2>
 			</element>
 		</element>
 		<element name="modifyingadministrationlanguage" title="modifying administration language">
 			<desc0>impossible to modify administration language</desc0>
-			<desc1>possibility to add more administration language 
-			</desc1>
-			<desc2>administration languages exist and can be
-				updated</desc2>
+			<desc1>possibility to add more administration language </desc1>
+			<desc2>administration languages exist and can be updated</desc2>
 		</element>
 		<element name="contentsmanagement" title="contents management">
 			<element name="contentsmanagementintegrated" title="contents management integrated">
 				<desc0>no contents management</desc0>
 				<desc1>contents management doesn't work correctly </desc1>
-				<desc2>contents management integrated, based on
-					JackRabbit(Apache), implementation of JSR-170</desc2>
-				<comment>contents management integrated with contents
-					versioning support, without conntents validation circuit </comment>
+				<desc2>contents management integrated, based on JackRabbit(Apache), implementation of JSR-170</desc2>
+				<comment>contents management integrated with contents versioning support, without conntents validation circuit </comment>
 			</element>
-			<element name="contentsprevisualisationfunctionexceptportalcontext"
-				title="contents previsualisation function except portal context">
+			<element name="contentsprevisualisationfunctionexceptportalcontext" title="contents previsualisation function except portal context">
 				<desc0>no contents previsualisation function</desc0>
-				<desc1>contents previsualisation function don't work
-					correctly</desc1>
-				<desc2>contents previsualisation function except portal
-					context disponible: WYSIWYG contents </desc2>
+				<desc1>contents previsualisation function don't work correctly</desc1>
+				<desc2>contents previsualisation function except portal context disponible: WYSIWYG contents </desc2>
 			</element>
-			<element name="contentsprevisualisationfunctionintheportalcontext"
-				title="contents previsualisation function in the portal context">
+			<element name="contentsprevisualisationfunctionintheportalcontext" title="contents previsualisation function in the portal context">
 				<desc0>no contents previsualisation function </desc0>
-				<desc1>contents previsualisation function in the portal
-					context is partial </desc1>
-				<desc2>contents previsualisation function in the portal
-					context is integrated</desc2>
+				<desc1>contents previsualisation function in the portal context is partial </desc1>
+				<desc2>contents previsualisation function in the portal context is integrated</desc2>
 			</element>
 			<element name="separationofcontentsandform" title="separation of contents and form">
 				<desc0>no separation of contents and form </desc0>
@@ -185,48 +153,39 @@
 			<element name="LDAPauthentification" title="LDAP authentification">
 				<desc0>don't support LDAP authentification</desc0>
 				<desc1>LDAP authentification doesn't work correctly</desc1>
-				<desc2>LDAP authentification is performing and bring a real
-					advantage for the tools</desc2>
+				<desc2>LDAP authentification is performing and bring a real advantage for the tools</desc2>
 			</element>
 			<element name="NTLMauthentification" title="NTLM authentification">
 				<desc0>No NTLM authentification</desc0>
-				<desc1>NTLM authentification is partial or doesn't work
-					correctly</desc1>
+				<desc1>NTLM authentification is partial or doesn't work correctly</desc1>
 				<desc2>NTLM authentification is performing </desc2>
 			</element>
 			<element name="X.509authentification" title="X.509 authentification">
 				<desc0>No X.509 authentification</desc0>
 				<desc1>X.509 authentification doesn't work correctly</desc1>
-				<desc2>X.509 authentification is performing and bring a real
-					advantage for the tools</desc2>
+				<desc2>X.509 authentification is performing and bring a real advantage for the tools</desc2>
 			</element>
 			<element name="Kerberosauthentification" title="Kerberos authentification">
 				<desc0>No Kerberos authentification </desc0>
-				<desc1>Kerberos authentification is partial or doesn't work
-					correctly</desc1>
-				<desc2>Kerberos authentification is performing and brings a
-					real advantage for the tools</desc2>
+				<desc1>Kerberos authentification is partial or doesn't work correctly</desc1>
+				<desc2>Kerberos authentification is performing and brings a real advantage for the tools</desc2>
 			</element>
 			<element name="JAASauth" title="JAAS authentification">
 				<desc0>No JAAS authentification </desc0>
-				<desc1>JAAS authentification is partial or doesn't work
-					correctly</desc1>
-				<desc2>JAAS authentification is performing and brings a real
-					advantage for the tools</desc2>
+				<desc1>JAAS authentification is partial or doesn't work correctly</desc1>
+				<desc2>JAAS authentification is performing and brings a real advantage for the tools</desc2>
 			</element>
 		</element>
 		<element name="storage" title="storage">
 			<element name="LDAPstorage" title="LDAPstorage">
 				<desc0>No LDAP storage</desc0>
 				<desc1>LDAP storage is partial or doesn't work correctly</desc1>
-				<desc2>LDAP storage is performing and brings a real advantage
-					for the tools</desc2>
+				<desc2>LDAP storage is performing and brings a real advantage for the tools</desc2>
 			</element>
 			<element name="SGBDstorage" title="SGBD storage">
 				<desc0>No SGBD storage</desc0>
 				<desc1>SGBD storage is partial or doesn't work corectly</desc1>
-				<desc2>SGBD storage is performing and brings a real advantage
-					for the tools</desc2>
+				<desc2>SGBD storage is performing and brings a real advantage for the tools</desc2>
 			</element>
 		</element>
 		<element name="development" title="development">
@@ -237,8 +196,7 @@
 			</element>
 			<element name="developmentssplit" title="development s split ">
 				<desc0>No development split autorized</desc0>
-				<desc1>Development split is partial or doesn't work
-					correctly</desc1>
+				<desc1>Development split is partial or doesn't work correctly</desc1>
 				<desc2>Possibility to sub-contract portlets</desc2>
 			</element>
 		</element>

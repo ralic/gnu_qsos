@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<qsosappfamily xmlns="http://qsos.org"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://qsos.org ../XSD/QSOS-Family.xsd ">
+<qsosappfamily xmlns="http://qsos.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://qsos.org ../XSD/QSOS-Family.xsd ">
 	<header>
 		<authors>
 			<author>
@@ -33,16 +31,13 @@
 		</element>
 		<element name="commandline" title="Console mode">
 			<desc0>Nothing</desc0>
-			<desc1>Some tools exists, but limited. No text based
-				configuration file or not human readable (e.g: complexe XML)</desc1>
-			<desc2>Total access to the server configuration with powerful
-				tools and well designer text configuration file</desc2>
+			<desc1>Some tools exists, but limited. No text based configuration file or not human readable (e.g: complexe XML)</desc1>
+			<desc2>Total access to the server configuration with powerful tools and well designer text configuration file</desc2>
 		</element>
 		<element name="standaloneadmintool" title="Stand alone admin tool">
 			<desc0>Nothing</desc0>
 			<desc1>A limited tool exist allow user to do specific operation</desc1>
-			<desc2>A powerful tool give access to every major features of the
-				server</desc2>
+			<desc2>A powerful tool give access to every major features of the server</desc2>
 		</element>
 	</section>
 	<section name="groupwarecomposant" title="Supported groupware composant">
@@ -92,14 +87,12 @@
 	<section name="supportedclients" title="Supported client">
 		<element name="web" title="Web client">
 			<desc0>Web interface doesn't exist</desc0>
-			<desc1>Web interface is provided but limited or need some work for
-				its integration</desc1>
+			<desc1>Web interface is provided but limited or need some work for its integration</desc1>
 			<desc2>Web interface directly provided with the project</desc2>
 		</element>
 		<element name="outlook" title="Microsoft Outlook">
 			<desc0>Microsoft Outlook not supported</desc0>
-			<desc1>Microsoft Outlook connector is provided but have some
-				limitation</desc1>
+			<desc1>Microsoft Outlook connector is provided but have some limitation</desc1>
 			<desc2>a free Microsoft Outlook connector</desc2>
 		</element>
 		<element name="evolution" title="Novell Evolution">
@@ -108,8 +101,7 @@
 			<desc2>Novell Evolution fully supported</desc2>
 		</element>
 		<element name="kde" title="KDE">
-			<desc0>KDE PIM (Korganizer, kmail, ...) can't be used with this
-				groupware</desc0>
+			<desc0>KDE PIM (Korganizer, kmail, ...) can't be used with this groupware</desc0>
 			<desc1>KDE can be used but with some limitation </desc1>
 			<desc2>Fully support of KDE</desc2>
 		</element>
@@ -123,21 +115,18 @@
 		<element name="loadbalancing" title="Load balancing">
 			<desc>Can the load be splited between different computer?</desc>
 			<desc0>This software can't be loadbalancer</desc0>
-			<desc1>Part of the installation can be splited but it keeps
-				important bottleneck</desc1>
+			<desc1>Part of the installation can be splited but it keeps important bottleneck</desc1>
 			<desc2>Loadblalancing just works</desc2>
 		</element>
 	</section>
 	<section name="codequality" title="Code quality">
 		<element name="remoteapi" title="Remote access API">
 			<desc0>No remote remote API</desc0>
-			<desc1>remote API (SOAP, XML/RPC, REST) exists but is limited
-				or buggy</desc1>
+			<desc1>remote API (SOAP, XML/RPC, REST) exists but is limited or buggy</desc1>
 			<desc2>powerful remote API (SOAP, XML/RPC, REST) provided</desc2>
 		</element>
 		<element name="api" title="unified API">
-			<desc0>No API provided to extend the server, or very limited and
-				not documented</desc0>
+			<desc0>No API provided to extend the server, or very limited and not documented</desc0>
 			<desc1>An API is provided but limited of not fully documented</desc1>
 			<desc2>Well documented and complet API</desc2>
 		</element>

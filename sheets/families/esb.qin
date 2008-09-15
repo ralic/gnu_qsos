@@ -110,8 +110,7 @@
 					</element>
 				</element>
 				<element name="nonxml" title="Non XML formats">
-					<desc>Transformation features available to transform
-						non XML messages</desc>
+					<desc>Transformation features available to transform non XML messages</desc>
 					<desc0>No features available</desc0>
 					<desc1>Very few features available</desc1>
 					<desc2>Comprehensive features available</desc2>
@@ -193,8 +192,7 @@
 				<desc>Adapters for proprietary MOMs (like Websphere MQ, ...)</desc>
 				<desc0>No adapters available</desc0>
 				<desc1>Limited adapters available</desc1>
-				<desc2>Fully functional adapters available for the most known
-					proprietary MOMs</desc2>
+				<desc2>Fully functional adapters available for the most known proprietary MOMs</desc2>
 			</element>
 		</element>
 		<element name="functionaladapters" title="Functional Adapters">
@@ -203,15 +201,13 @@
 				<desc>Adapters for ERP software</desc>
 				<desc0>No adapter available</desc0>
 				<desc1>Few or poor adapters</desc1>
-				<desc2>Fully functional adapters for the most known ERP
-					software</desc2>
+				<desc2>Fully functional adapters for the most known ERP software</desc2>
 			</element>
 			<element name="crm" title="CRM">
 				<desc>Adapters for CRM software</desc>
 				<desc0>No adapter available</desc0>
 				<desc1>Few or poor adapters</desc1>
-				<desc2>Fully functional adapters for the most known CRM
-					software</desc2>
+				<desc2>Fully functional adapters for the most known CRM software</desc2>
 			</element>
 		</element>
 		<element name="datadapters" title="Data adapters">
@@ -220,8 +216,7 @@
 				<desc>Adapters available for database systems</desc>
 				<desc0>No adapter available</desc0>
 				<desc1>Few or poor adapters</desc1>
-				<desc2>Fully functional adapters for the most known DBMS
-					software</desc2>
+				<desc2>Fully functional adapters for the most known DBMS software</desc2>
 			</element>
 			<element name="file" title="File">
 				<desc>Filesystem adapters</desc>
@@ -232,9 +227,7 @@
 		</element>
 	</section>
 	<section name="advancedfeatures" title="Advanced features">
-		<desc></desc>
 		<element name="orchestration" title="Orchestration">
-			<desc></desc>
 			<element name="businessrules" title="Business rules">
 				<desc>Ability to define and apply business rules</desc>
 				<desc0>Not supported</desc0>
@@ -242,7 +235,6 @@
 				<desc2>Fully supported</desc2>
 			</element>
 			<element name="bpel" title="BPEL support">
-				<desc></desc>
 				<desc0>Not supported</desc0>
 				<desc1>Supported but with limitation</desc1>
 				<desc2>Fully supported</desc2>
@@ -251,15 +243,12 @@
 		<element name="security" title="Security">
 			<desc>Security features</desc>
 			<element name="authentication" title="Authentication">
-				<desc></desc>
 				<element name="jaas" title="JAAS support">
-					<desc></desc>
 					<desc0>Not supported</desc0>
 					<desc1>Supported but with limitation</desc1>
 					<desc2>Fully supported</desc2>
 				</element>
 				<element name="saml" title="SAML support">
-					<desc></desc>
 					<desc0>Not supported</desc0>
 					<desc1>Supported but with limitation</desc1>
 					<desc2>Fully supported</desc2>
@@ -272,46 +261,37 @@
 				<desc2>Fully functional features, with SAML support</desc2>
 			</element>
 			<element name="dataencryption" title="Data encryption">
-				<desc></desc>
 				<desc0>Not supported</desc0>
-				<desc1>Supported but with limitation (on encryption
-					algorithms for instance)</desc1>
+				<desc1>Supported but with limitation (on encryption algorithms for instance)</desc1>
 				<desc2>Fully supported</desc2>
 			</element>
 			<element name="dataintegrity" title="Data integrity">
-				<desc>Available features to check data integrity (cheksums,
-					...)</desc>
+				<desc>Available features to check data integrity (cheksums, ...)</desc>
 				<desc0>Not supported</desc0>
 				<desc1>Supported but with limitation</desc1>
 				<desc2>Fully supported</desc2>
 			</element>
 			<element name="pkisupport" title="PKI support">
-				<desc></desc>
 				<desc0>Not supported</desc0>
-				<desc1>Supported but with limitation (no revocation list
-					support for instance)</desc1>
+				<desc1>Supported but with limitation (no revocation list support for instance)</desc1>
 				<desc2>Fully supported</desc2>
 			</element>
 		</element>
 		<element name="administration" title="Administration">
 			<desc>Administration features</desc>
 			<element name="monitoring" title="Monitoring">
-				<desc></desc>
 				<element name="snmp" title="SNMP support">
-					<desc></desc>
 					<desc0>Not supported</desc0>
 					<desc1>Supported but with limitation</desc1>
 					<desc2>Fully supported</desc2>
 				</element>
 				<element name="jmx" title="JMX support">
-					<desc></desc>
 					<desc0>Not supported</desc0>
 					<desc1>Supported but with limitation</desc1>
 					<desc2>Fully supported</desc2>
 				</element>
 				<element name="supportedems" title="Supported management software">
-					<desc>Supported Entreprise management software (like
-						Nagios, Tivoli, OpenView, ...)</desc>
+					<desc>Supported Entreprise management software (like Nagios, Tivoli, OpenView, ...)</desc>
 					<desc0>Not supported</desc0>
 					<desc1>Few or limited software supported</desc1>
 					<desc2>Full integration with most known management software</desc2>
@@ -326,7 +306,6 @@
 					<desc2>Fully supported</desc2>
 				</element>
 				<element name="delivery" title="Guaranteed delivery">
-					<desc></desc>
 					<desc0>Not supported</desc0>
 					<desc1>Supported but with limitation</desc1>
 					<desc2>Fully supported</desc2>
@@ -345,7 +324,6 @@
 				</element>
 			</element>
 			<element name="processcontrol" title="Process control">
-				<desc></desc>
 				<element name="bam" title="BAM">
 					<desc>Business Activity Monitoring</desc>
 					<desc0>Not supported</desc0>
@@ -353,19 +331,16 @@
 					<desc2>Fully functional features</desc2>
 				</element>
 				<element name="exceptionhandling" title="Exception handling">
-					<desc></desc>
 					<desc0>Not supported</desc0>
 					<desc1>Limited features</desc1>
 					<desc2>Fully supported</desc2>
 				</element>
 			</element>
 			<element name="admintools" title="Administration tools">
-				<desc>Available tools for configuration, management,
-					deployment</desc>
+				<desc>Available tools for configuration, management, deployment</desc>
 				<desc0>No tools available</desc0>
 				<desc1>Toolset available but with limited functional coverage</desc1>
-				<desc2>Fully functional toolset available, in both GUI and CLI
-					modes</desc2>
+				<desc2>Fully functional toolset available, in both GUI and CLI modes</desc2>
 			</element>
 			<element name="servicedisco" title="Service discovery">
 				<desc>Automatic service discovery</desc>
@@ -382,11 +357,8 @@
 		</element>
 	</section>
 	<section name="integration" title="Integration">
-		<desc></desc>
 		<element name="supportedstandards" title="Supported standards">
-			<desc></desc>
 			<element name="bpelsupport" title="BPEL">
-				<desc></desc>
 				<desc0>Not supported</desc0>
 				<desc1>Supported, but with limitations</desc1>
 				<desc2>Fully supported</desc2>
@@ -394,56 +366,47 @@
 			<element name="webservices" title="Web Services">
 				<desc>Web Services standards</desc>
 				<element name="wsdl" title="WSDL">
-					<desc></desc>
 					<desc0>Not supported</desc0>
 					<desc1>Supported, but with limitations</desc1>
 					<desc2>Fully supported</desc2>
 				</element>
 				<element name="soapsupport" title="SOAP">
-					<desc></desc>
 					<desc0>Not supported</desc0>
 					<desc1>Supported, but with limitations</desc1>
 					<desc2>Fully supported</desc2>
 				</element>
 				<element name="uddi" title="UDDI">
-					<desc></desc>
 					<desc0>Not supported</desc0>
 					<desc1>Supported, but with limitations</desc1>
 					<desc2>Fully supported</desc2>
 				</element>
 				<element name="wstransaction" title="WS-Transaction">
-					<desc></desc>
 					<desc0>Not supported</desc0>
 					<desc1>Supported, but with limitations</desc1>
 					<desc2>Fully supported</desc2>
 				</element>
 				<element name="wscoordination" title="WS-Coordination">
-					<desc></desc>
 					<desc0>Not supported</desc0>
 					<desc1>Supported, but with limitations</desc1>
 					<desc2>Fully supported</desc2>
 				</element>
 				<element name="wssecurity" title="WS-Security">
-					<desc></desc>
 					<desc0>Not supported</desc0>
 					<desc1>Supported, but with limitations</desc1>
 					<desc2>Fully supported</desc2>
 				</element>
 				<element name="wsreliability" title="WS-Reliability">
-					<desc></desc>
 					<desc0>Not supported</desc0>
 					<desc1>Supported, but with limitations</desc1>
 					<desc2>Fully supported</desc2>
 				</element>
 				<element name="wschoreography" title="WS-Choreography">
-					<desc></desc>
 					<desc0>Not supported</desc0>
 					<desc1>Supported, but with limitations</desc1>
 					<desc2>Fully supported</desc2>
 				</element>
 			</element>
 			<element name="javastandards" title="Java standards">
-				<desc></desc>
 				<element name="jca" title="JCA">
 					<desc>Java Connector Architecture support</desc>
 					<desc0>Not supported</desc0>
@@ -458,21 +421,17 @@
 				</element>
 			</element>
 			<element name="xmlsupport" title="XML standards">
-				<desc></desc>
 				<element name="xsltsupport" title="XSLT">
-					<desc></desc>
 					<desc0>Not supported</desc0>
 					<desc1>Supported, but with limitations</desc1>
 					<desc2>Fully supported</desc2>
 				</element>
 				<element name="xquerysupport" title="XQuery">
-					<desc></desc>
 					<desc0>Not supported</desc0>
 					<desc1>Supported, but with limitations</desc1>
 					<desc2>Fully supported</desc2>
 				</element>
 				<element name="xsd" title="XSD">
-					<desc></desc>
 					<desc0>Not supported</desc0>
 					<desc1>Supported, but with limitations</desc1>
 					<desc2>Fully supported</desc2>
@@ -480,47 +439,35 @@
 			</element>
 			<element name="sca" title="SCA">
 				<desc>Service Component Architecture support</desc>
-				<element name="scavesrion" title="SCA supported version">
-					<desc></desc>
-				</element>
-				<element name="scastimpl" title="Supported service type implementations">
-					<desc></desc>
-				</element>
+				<element name="scavesrion" title="SCA supported version" />
+				<element name="scastimpl" title="Supported service type implementations" />
 				<element name="scdl" title="SCDL support">
-					<desc></desc>
 					<desc0>Not supported</desc0>
 					<desc1>Supported, but with limitations</desc1>
 					<desc2>Fully supported</desc2>
 				</element>
-				<element name="scacimpl" title="Supported component implementation types">
-					<desc></desc>
-				</element>
+				<element name="scacimpl" title="Supported component implementation types"/>
 			</element>
 			<element name="sdo" title="SDO">
 				<desc>Service Data Objects support</desc>
 				<element name="sdoversion" title="Supported version">
-					<desc></desc>
 				</element>
 				<element name="businessobject" title="Business Object">
-					<desc></desc>
 					<desc0>Not supported</desc0>
 					<desc1>Supported, but with limitations</desc1>
 					<desc2>Fully supported</desc2>
 				</element>
 				<element name="businessgraph" title="Business Graph">
-					<desc></desc>
 					<desc0>Not supported</desc0>
 					<desc1>Supported, but with limitations</desc1>
 					<desc2>Fully supported</desc2>
 				</element>
 				<element name="botypemeta" title="Business Object Type Metadata">
-					<desc></desc>
 					<desc0>Not supported</desc0>
 					<desc1>Supported, but with limitations</desc1>
 					<desc2>Fully supported</desc2>
 				</element>
 				<element name="boservices" title="Business Object Services">
-					<desc></desc>
 					<desc0>Not supported</desc0>
 					<desc1>Supported, but with limitations</desc1>
 					<desc2>Fully supported</desc2>
@@ -530,20 +477,16 @@
 		<element name="pluginarchitecture" title="Plugin architecture">
 			<desc>ESB is designed to admit plugins or extensions</desc>
 			<desc0>No plugins support</desc0>
-			<desc1>Available plugin architecture but limited (in
-				features or in number of plugins)</desc1>
+			<desc1>Available plugin architecture but limited (in features or in number of plugins)</desc1>
 			<desc2>Comprehensice plugin architecture</desc2>
 		</element>
 		<element name="extapis" title="Extensiblity APIs">
-			<desc></desc>
 			<element name="adapterapi" title="Adapter API">
-				<desc></desc>
 				<desc0>No API available</desc0>
 				<desc1>API provided but with limitation</desc1>
 				<desc2>Comprehensive APIs available</desc2>
 			</element>
 			<element name="transportapi" title="Transport API">
-				<desc></desc>
 				<desc0>No API available</desc0>
 				<desc1>API provided but with limitation</desc1>
 				<desc2>Comprehensive APIs available</desc2>

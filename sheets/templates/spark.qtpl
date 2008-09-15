@@ -1,30 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <qsostemplate xmlns="http://qsos.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://qsos.org ../XSD/QSOS-Template.xsd ">
-  <header>
-    <authors>
-      <author>
-        <email>walid.nouh@atosorigin.com</email>
-        <name>Walid Nouh</name>
-      </author>
-    </authors>
-    <dates>
-      <creation>2007-01-29</creation>
-    </dates>
-  </header>
-  <template>
-    <language>en</language>
-    <appname>Spark</appname>
-    <release>2.0.6</release>
-    <licenseid>31</licenseid>
-    <licensedesc>GNU GPL</licensedesc>
-    <url>http://www.jivesoftware.org/spark/</url>
-    <desc>Spark is a Jabber client</desc>
-    <demourl></demourl>
-    <qsosformat>2.0</qsosformat>
-    <qsosappname>spark</qsosappname>
-    <qsosappfamilies>
-      <qsosappfamily>im-client-gui</qsosappfamily>
-      <qsosappfamily>im-protocol-jabber</qsosappfamily>
-    </qsosappfamilies>
-  </template>
+	<header>
+		<authors>
+			<author>
+				<email>walid.nouh@atosorigin.com</email>
+				<name>Walid Nouh</name>
+			</author>
+		</authors>
+		<dates>
+			<creation>2007-01-29</creation>
+		</dates>
+	</header>
+	<template>
+		<language>en</language>
+		<appname>Spark</appname>
+		<release>2.0.6</release>
+		<licenseid>31</licenseid>
+		<licensedesc>GNU GPL</licensedesc>
+		<url>http://www.jivesoftware.org/spark/</url>
+		<desc>Spark is a Jabber client</desc>
+		<demourl></demourl>
+		<qsosformat>2.0</qsosformat>
+		<qsosappname>spark</qsosappname>
+		<qsosappfamilies>
+			<qsosappfamily>im-client-gui</qsosappfamily>
+			<qsosappfamily>im-protocol-jabber</qsosappfamily>
+		</qsosappfamilies>
+	</template>
 </qsostemplate>
