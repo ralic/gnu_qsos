@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<qsostemplate xmlns="http://qsos.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://qsos.org ../XSD/QSOS-Template.xsd ">
+  <header>
+    <authors>
+      <author>
+        <email>francois.ledroff@atosorigin.com</email>
+        <name>Francois Le Drof</name>
+      </author>
+    </authors>
+    <dates>
+      <creation>2001-01-01</creation>
+      <validation>2001-01-01</validation>
+    </dates>
+  </header>
+  <template>
+    <language>en</language>
+    <appname>xwiki</appname>
+    <release>0.9.840</release>
+    <licenseid>32</licenseid>
+    <licensedesc>GNU LGPL</licensedesc>
+    <url>http://www.xwiki.org</url>
+    <desc>No Description provided</desc>
+    <demourl>http://www.xwiki.org</demourl>
+    <qsosformat>1.7</qsosformat>
+    <qsosappname>xwiki</qsosappname>
+    <qsosspecificformat>No specific Format</qsosspecificformat>
+    <qsosappfamilies>
+      <qsosappfamily>webappprerequisite</qsosappfamily>
+      <qsosappfamily>websecurity</qsosappfamily>
+      <qsosappfamily>webcompatibility</qsosappfamily>
+      <qsosappfamily>webcontentmanagement</qsosappfamily>
+      <qsosappfamily>storagesupport</qsosappfamily>
+      <qsosappfamily>userinterface</qsosappfamily>
+      <qsosappfamily>wikifunctionnalities</qsosappfamily>
+    </qsosappfamilies>
+  </template>
+</qsostemplate>

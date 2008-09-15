@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<qsosappfamily xmlns="http://qsos.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://qsos.org ../XSD/QSOS-Family.xsd ">
+	<header>
+		<authors>
+			<author>
+				<email>francois.ledroff@atosorigin.com</email>
+				<name>Francois Le Droff</name>
+			</author>
+		</authors>
+		<dates>
+			<creation>2001-01-01</creation>
+			<validation>2001-01-01</validation>
+		</dates>
+	</header>
+	<section name="wikipagelinks"
+		title="wiki page creating, naming, linking, listing and statistics">
+		<element name="pagenaming" title="page creation/naming and linking">
+			<desc> the wiki pages (or documents) can be viewed, created or edited
+				at anytime by anyone from a web browser (with certain limitations
+				for protected areas cf. the websecurity section ). </desc>
+			<desc0>The wiki page are only created and accessible through
+				CamelCase links</desc0>
+			<desc1>the wiki supports free links</desc1>
+			<desc2>the wiki supports free links and image links</desc2>
+		</element>
+		<element name="discussion" title="Each pages has a comments/discussions area">
+			<desc0>Not supported</desc0>
+			<desc1>supported : access to a discussion/comment area
+				particular to that page</desc1>
+			<desc2>fine grained discussion supported : possible to comment
+				the page by section</desc2>
+		</element>
+		<element name="pagelists" title="wiki pages administration and navigation lists">
+			<element name="availablepageslisting" title="list of all available pages">
+				<desc> list of all the existing pages (and pages within the
+					hierarchy, if the hierarchy is supported, cf. webcontentmanagement
+					section) </desc>
+				<desc0>The features does not exists</desc0>
+				<desc1>The feature exists but is limited</desc1>
+				<desc2>The feature exists and is complete</desc2>
+			</element>
+			<element name="backlinks"
+				title="Backlinks: list of all the pages linking back to the current one">
+				<desc0>The features does not exists</desc0>
+				<desc1>The feature exists but is limited</desc1>
+				<desc2>The feature exists and is complete</desc2>
+			</element>
+			<element name="undefinedpages"
+				title="Undefined Pages : pages that are referred to, but not yet created">
+				<desc0>The features does not exists</desc0>
+				<desc1>The feature exists but is limited</desc1>
+				<desc2>The feature exists and is complete</desc2>
+			</element>
+			<element name="orphanedpages"
+				title="Orphaned Pages : not currently referred to by any other page, thus meaning they are inaccessible through any other means">
+				<desc0>The features does not exists</desc0>
+				<desc1>The feature exists but is limited</desc1>
+				<desc2>The feature exists and is complete</desc2>
+			</element>
+			<element name="lockedpages"
+				title="Lock pages: currently hold for editing pages, if the Lock is supported, cf. webcontentmanagement section">
+				<desc0>The features does not exists</desc0>
+				<desc1>The feature exists but is limited</desc1>
+				<desc2>The feature exists and is complete</desc2>
+			</element>
+			<element name="wantedpages"
+				title="Wanted Pages: list of all the pages wanted for creation by the users">
+				<desc0>The features does not exists</desc0>
+				<desc1>The feature exists but is limited</desc1>
+				<desc2>The feature exists and is complete</desc2>
+			</element>
+			<element name="mostleastpopularpages" title="Most/Least Popular pages">
+				<desc0>The features does not exists</desc0>
+				<desc1>The feature exists but is limited</desc1>
+				<desc2>The feature exists and is complete</desc2>
+			</element>
+			<element name="recentlyvisitedpages" title="Recently visited pages">
+				<desc0>The features does not exists</desc0>
+				<desc1>The feature exists but is limited</desc1>
+				<desc2>The feature exists and is complete</desc2>
+			</element>
+		</element>
+	</section>
+	<section name="pageediting" title="page editing features">
+		<element name="onlinepageediting" title="online page editing">
+			<desc> All the pages (or documents) can edited at anytime by anyone
+				from a web browser, (with certain limitations for protected areas
+				cf. the websecurity section ). The following element details the
+				editing features. </desc>
+			<desc0>Not supported, it's not a wiki</desc0>
+			<desc1>n.a. </desc1>
+			<desc2>supported</desc2>
+		</element>
+		<element name="i18nofdocuments"
+			title="i18n of documents : Internationalization and Multilingual capability for documents">
+			<desc0>Not supported</desc0>
+			<desc1>limited support: unicode, nor Right-to-Left Support (as
+				for Hebrew and Arabic) are supported </desc1>
+			<desc2>fully implemented</desc2>
+		</element>
+		<element name="wikisyntax" title="wiki syntax or wikitext features">
+			<desc> The following features list is supposed to show the ease of
+				learning and using: writing, reading and modifying wiki pages 
+			</desc>
+			<element name="lightweightmarkuplanguage" title="light weight markup language support">
+				<desc> the most known light weight markup language are : CREOLE
+					(http://www.wikicreole.org/wiki/Home), BBCode
+					(http://en.wikipedia.org/wiki/BBCode), Textile
+					(http://en.wikipedia.org/wiki/Textile_%28markup_language%29), Markdown
+                    (http://en.wikipedia.org/wiki/Markdown), BBCode
+                    (http://en.wikipedia.org/wiki/BBCode), Radeox API
+                    (http://radeox.org/space/start) </desc>
+                <desc0>this wiki has a very specific or very poor syntax</desc0>
+                <desc1>this wiki has a uncommon or poor syntax </desc1>
+                <desc2>this wiki support a standard and rich light weight markup language</desc2>
+		</element>
+            <element name="tableedition"
+                title="Tables edition ease: simple and complex (colspan and rowspan) table support">
+                <desc0>not implemented</desc0>
+                <desc1>implemented but with a limited API, simple tables only</desc1>
+                <desc2>implemented exhaustively, simple and complex (colspan and rowspan) table
+                    support</desc2>
+                
+                
+            </element>
+            <element name="htmltags" title="HTML Tags allowed">
+                <desc0>not allowed</desc0>
+                <desc1>limited support</desc1>
+                <desc2>supported</desc2>
+                
+                
+            </element>
+            <element name="toc" title="TOC (Table of content) Auto-generation">
+                <desc0>not implemented</desc0>
+                <desc1>implemented but with a poor API</desc1>
+                <desc2>implemented exhaustively</desc2>
+                
+                
+            </element>
+            <element name="wikicomments" title="Internal Comments / comments in the wiki page code">
+                <desc0>not supported</desc0>
+                <desc1>n.a.</desc1>
+                <desc2>supported</desc2>
+                
+                
+            </element>
+            <element name="otherspecialsyntax" title="other specialized wiki syntax">
+                <desc> support for footnotes, quote, interwiki links, emoticon and other icon rendering
+                    through syntax. Do list in the comment section. </desc>
+                <desc0>No such feature</desc0>
+                <desc1>a few other syntax/editing plugin </desc1>
+                <desc2>many others</desc2>
+            </element>
+        </element>
+        <element name="pageeditingusability" title="page editing Usability">
+            <desc> Does the wiki provides the following features: Preview before saving; Section
+                Editing or whole page only editing; Double-Click on the text to Edit; access Keys
+                (to save, edit, quit ...) ; different editor are supported (some with editing
+                Toolbar); a fully WYSIWYG editor is available. Do detail the available features in
+                the comment section. </desc>
+            <desc0>very limited features</desc0>
+            <desc1>a few of those features are available</desc1>
+            <desc2>all those features are available</desc2>
+        </element>
+        <element name="spellchecker" title="spell checker">
+            <desc>Useless feature if you use a decent browser like firefox2 that contains an inline spell checking: 
+            a built-in spell checker enables users to quickly check the spelling of text entered into Web forms 
+            (like this one) without having to use a seperate application.
+            </desc>
+            <desc0>no spell checker availble or it's just based on a too limited dictionary that make it
+                being a wast of time</desc0>
+            <desc1>working dictionnary but limited (e.g: grammar not included, false positive, hard to
+                extend)</desc1>
+            <desc2>Powerful dictionary</desc2>
+        </element>
+        <element name="contentincludes"
+            title="Content Includes : Inclusion of pages inside another wiki page">
+            <desc0>Not supported</desc0>
+            <desc1>limited support</desc1>
+            <desc2>supported</desc2>
+        </element>
+        <element name="flagging"
+            title="editing flags features : meta data added by the commiters when editing">
+            <desc> Those features are not that usefull when the pagesversioncontrol is well
+                designed, they can be things like: "Minor Changes flagging" feature, or "Change
+                Summary" features </desc>
+            <desc0>No such feature</desc0>
+            <desc1>limited features</desc1>
+            <desc2>exhaustive features</desc2>
+        </element>
+        <element name="advancededitingfeatures" title="Advanced editing features">
+            <element name="templating" title="MetaData Form and templating ability">
+                <desc> Design Engine for Meta-Data and Forms, allowing to design custom forms with
+                    text fields, textarea fields, number fields, static select fields API to display
+                    meta-data in view and edit mode inside the Wiki page. (to create custom forms
+                    and templates and In-place (inline) editing of form information in pages). </desc>
+                <desc0>No such feature</desc0>
+                <desc1>limited features</desc1>
+                <desc2>exhaustive features with a rich API</desc2>
+            </element>
+            <element name="codesyntaxhighlighting" title="Code Syntax Highlighting">
+                <desc> hightlight (colorize) source code snippets when added to a wikipage </desc>
+                <desc0>No such feature</desc0>
+                <desc1>present but minimal</desc1>
+                <desc2>very well supported: colorize according to code/language specifications</desc2>
+            </element>
+            <element name="mathformulas" title="support for Math formulas edition and display">
+                <desc0>No such feature</desc0>
+                <desc1>partially or poorly implemented </desc1>
+                <desc2>fully supported and standard : LaTeX syntac support: to edit mathematical
+                    formulas in Latex syntax directly in the Wiki and display them as images</desc2>
+            </element>
+            <element name="tableplugins" title="plugins associated with wiki table syntax">
+                <element name="tablesorting" title="Table sorting plugin">
+                    <desc0>No such feature</desc0>
+                    <desc1>partially or poorly implemented </desc1>
+                    <desc2>well done</desc2>
+                </element>
+                <element name="spreadsheet"
+                    title="Add spreadsheet formulae like $SUM($ABOVE()) to tables">
+                    <desc0>No such feature</desc0>
+                    <desc1>partially or poorly implemented </desc1>
+                    <desc2>well done</desc2>
+                </element>
+                <element name="chartplugin" title="ChartPlugin : charts creation from wiki tables">
+                    <desc0>No such feature</desc0>
+                    <desc1>partially or poorly implemented </desc1>
+                    <desc2>well done</desc2>
+                </element>
+            </element>
+            <element name="media" title="media editing features">
+                <desc> support for Image Editing (applet for instance) or other media in-line editor
+                    (SVG, MindMap ...) </desc>
+                <desc0>No such feature</desc0>
+                <desc1>one or two editing capabilities like these </desc1>
+                <desc2>many capabilities</desc2>
+            </element>
+        </element>
+        <element name="wikiscripting"
+            title="scripting/programming ability within the wiki page code">
+            <desc> programming API to create custom dynamic web applications only using the Wiki
+                interface. Do detail in the comment section the supported wiki scripting languages. </desc>
+            <desc0>No such feature</desc0>
+            <desc1>limited API </desc1>
+            <desc2>rich API</desc2>
+        </element>
+    </section>
+    <section name="pagesexport" title="wiki pages exports">
+        <desc> RSS feeds are already described in the webcontentmanagement include/section. Here we list the other export kinds. </desc>
+        <element name="rawexport" title="raw export: wiki page as coded">
+            <desc0>No such feature</desc0>
+            <desc1>limited support </desc1>
+            <desc2>fully supported</desc2>
+        </element>
+        <element name="htmlexport" title="page HTML Export (without the wiki navigation element)">
+            <desc0>No such feature</desc0>
+            <desc1>limited support </desc1>
+            <desc2>fully supported</desc2>
+        </element>
+        <element name="xmlexport" title="page XML export">
+            <desc0>No such feature</desc0>
+            <desc1>limited support </desc1>
+            <desc2>fully supported</desc2>
+        </element>
+        <element name="pdfexport" title="page PDF export">
+            <desc0>No such feature</desc0>
+            <desc1>limited support </desc1>
+            <desc2>fully supported</desc2>
+        </element>
+        <element name="customoutput" title="custom output plugin-ability (RSS, FOAF)">
+            <desc0>No such feature</desc0>
+            <desc1>limited support </desc1>
+            <desc2>fully supported</desc2>
+        </element>
+    </section>
+</qsosappfamily>
