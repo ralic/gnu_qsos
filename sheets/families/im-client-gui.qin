@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<qsosappfamily>
+<qsosappfamily xmlns="http://qsos.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://qsos.org ../XSD/QSOS-Family.xsd ">
 	<header>
 		<authors>
 			<author>
@@ -12,8 +12,6 @@
 			</author>
 		</authors>
 		<dates>
-			<creation />
-			<validation />
 		</dates>
 	</header>
 	<section name="hmi" title="Human/Machine Interface and other features">
@@ -23,9 +21,6 @@
 				Custumizable skin but needs complicated manipulation
 			</desc1>
 			<desc2>User friendly skin support</desc2>
-			<comment>
-				List of other clients using the same skin constituent:
-			</comment>
 		</element>
 		<element name="accounts" title="Accounts management">
 			<element name="accountcreation" title="Creation">

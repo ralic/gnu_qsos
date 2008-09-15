@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<qsostemplate>
+<qsostemplate
+	xmlns="http://qsos.org" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://qsos.org ../XSD/QSOS-Template.xsd ">
 	<header>
 		<authors>
 			<author>
@@ -12,8 +15,6 @@
 			</author>
 		</authors>
 		<dates>
-			<creation></creation>
-			<validation></validation>
 		</dates>
 	</header>
 	<template>
@@ -30,10 +31,10 @@
 			For more information on jabber, see www.jabber.org (or the
 			jabber package which contains the jabber server software).
 		</desc>
-		<demourl> </demourl>
+		<demourl>http://psi-im.org</demourl>
 		<qsosformat>2.0</qsosformat>
 		<qsosappname>psi</qsosappname>
-		<qsosspecificformat> </qsosspecificformat>
+		<qsosspecificformat>No specific Format</qsosspecificformat>
 		<qsosappfamilies>
 			<qsosappfamily>im-client-gui</qsosappfamily>
 			<qsosappfamily>im-protocol-jabber</qsosappfamily>

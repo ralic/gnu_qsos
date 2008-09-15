@@ -1,13 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<qsosappfamily name="im-protocol-irc">
+<qsosappfamily xmlns="http://qsos.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://qsos.org ../XSD/QSOS-Family.xsd ">
+	<header>
+		<authors>
+			<author>
+				<email></email>
+				<name></name>
+			</author>
+		</authors>
+		<dates></dates>
+	</header>
 	<section name="IRC" title="Internet Chat Relay">		
 			<element name="irc" title="Internet Relay Chat">
 				<desc>Form of instant communication over the Internet</desc>
 				<desc0>Not Supported</desc0>
 				<desc1>Limited support. Some major IRC features are not supported (e.g: op, kick, voice)</desc1>
 				<desc2>Supported and works properly</desc2>
-				<score></score>
-				<comment></comment>
 			</element>
 	</section>
 </qsosappfamily>

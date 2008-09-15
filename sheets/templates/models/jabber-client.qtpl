@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<qsostemplate xmlns="http://qsos.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://qsos.org ../XSD/QSOS-Template.xsd ">
+  <header>
+    <authors>
+      <author>
+        <email>walid.nouh@atosorigin.com</email>
+        <name>Walid Nouh</name>
+      </author>
+      <author>
+        <email>nicolas.verite@atosorigin.com</email>
+        <name>Nicolas Vérité</name>
+      </author>
+    </authors>
+    <dates>
+      <creation>2007-01-29</creation>
+    </dates>
+  </header>
+  <template>
+    <language>language</language>
+    <appname>appname</appname>
+    <release>release</release>
+    <licenseid>licenseid</licenseid>
+    <licensedesc>licensedesc</licensedesc>
+    <url>http://tempuri.org</url>
+    <desc>desc</desc>
+    <demourl>http://tempuri.org</demourl>
+    <qsosformat>2.0</qsosformat>
+    <qsosappname>qsosappname</qsosappname>
+    <qsosappfamilies>
+      <qsosappfamily>im-client-gui</qsosappfamily>
+      <qsosappfamily>im-protocol-jabber</qsosappfamily>
+    </qsosappfamilies>
+  </template>
+</qsostemplate>
