@@ -1,0 +1,352 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<qsosappfamily xmlns="http://qsos.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://qsos.org QSOS-Family.xsd ">
+  <header>
+    <authors>
+      <author>
+        <email>raphael.semeteys@atosorigin.com</email>
+        <name>Raphael Semeteys</name>
+      </author>
+    </authors>
+    <dates>
+      <creation>2005-04-01</creation>
+    </dates>
+  </header>
+   <section name="fonctionnalitesj2eestandards" title="Fonctionnalités J2EE standards">
+      <desc></desc>
+      <element name="conformitej2ee" title="Conformité J2EE">
+         <desc></desc>
+         <comment></comment>
+         <element name="licencej2ee" title="Licence J2EE">
+            <desc>Le serveur d'applications est-il compatible J2EE ?</desc>
+            <desc0>Serveur non compatible J2EE</desc0>
+            <desc1>Serveur partiellement compatible J2EE</desc1>
+            <desc2>Serveur compatible J2EE</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="certificationj2ee" title="Certification J2EE">
+            <desc>Le serveur d'applications est-il certifié J2EE par SUN ?</desc>
+            <desc0>Serveur non certifié</desc0>
+            <desc1>Serveur en cours de certification</desc1>
+            <desc2>Serveur certifié</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+      </element>
+      <element name="web/ejb" title="Web/EJB">
+         <desc></desc>
+         <comment></comment>
+         <element name="serveurhttpintegre" title="Serveur HTTP intégré">
+            <desc></desc>
+            <desc0>Pas de serveur HTTP intégré</desc0>
+            <desc1>Serveur HTTP intégré mais limité en fonctionnalités</desc1>
+            <desc2>Serveur HTTP intégré complet</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="httptiers" title="Intégration serveur HTTP">
+            <desc></desc>
+            <desc0>Pas d'intégration possible</desc0>
+            <desc1>Intégration possible via un produit tiers</desc1>
+            <desc2>Intégration native avec des serveurs HHTP tiers</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="jsp" title="JSP">
+            <desc>Java Server Pages</desc>
+            <desc0>JSP est non supporté</desc0>
+            <desc1>Le serveur supporte une ancienne version de JSP ou le support est incomplet</desc1>
+            <desc2>Support complet de JSP</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="servlet" title="Servlet">
+            <desc></desc>
+            <desc0>Les servlets ne sont pas supportées</desc0>
+            <desc1>Le serveur supporte une ancienne version de servelt ou le support est incomplet</desc1>
+            <desc2>Support complet des servlets</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="jsf" title="JSF">
+            <desc>Java Server Faces</desc>
+            <desc0>JSF est non supporté</desc0>
+            <desc1>Le serveur supporte une ancienne version de JSF ou le support est incomplet</desc1>
+            <desc2>Support complet de JSF</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="ejb" title="EJB">
+            <desc>Enterprise Java Beans</desc>
+            <desc0>EJB n'est pas supporté</desc0>
+            <desc1>Support ancien ou limité d'EJB</desc1>
+            <desc2>Support complet d'EJB</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+      </element>
+      <element name="connecteurs" title="Connecteurs">
+         <desc></desc>
+         <comment></comment>
+         <element name="jdbc" title="JDBC">
+            <desc>Java Database Connectivity</desc>
+            <desc0>JDBC est non supporté</desc0>
+            <desc1>Support ancien ou limité de JDBC</desc1>
+            <desc2>Support complet de JDBC</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="jca" title="JCA">
+            <desc>J2EE Connector Architecture</desc>
+            <desc0>JCA est on supporté</desc0>
+            <desc1>Support ancien ou limité de JCA</desc1>
+            <desc2>JCA est complétement supporté</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+      </element>
+      <element name="autresservicesdebase" title="Autres services de base">
+         <desc></desc>
+         <comment></comment>
+         <element name="jndi" title="JNDI">
+            <desc>Java Naming and Directory Interface</desc>
+            <desc0>JNDI est non supporté</desc0>
+            <desc1>Support ancien ou limité de JNDI</desc1>
+            <desc2>JNDI est complétement supporté</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="jta" title="JTA">
+            <desc>Java Transaction API</desc>
+            <desc0>JTA est non supporté</desc0>
+            <desc1>Support ancien ou limité de JTA</desc1>
+            <desc2>JTA est complétement supporté</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="jms" title="JMS">
+            <desc>Java Messaging Service</desc>
+            <desc0>JMS est non supporté</desc0>
+            <desc1>Support ancien ou limité de JMS</desc1>
+            <desc2>JMS est complétement supporté</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="jaf" title="JAF">
+            <desc>JavaBeans Activation Framework</desc>
+            <desc0>JAF est non supporté</desc0>
+            <desc1>Support ancien ou limité de JAF</desc1>
+            <desc2>JAF est complétement supporté</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="javamail" title="JavaMail">
+            <desc></desc>
+            <desc0>JavaMail est non supporté</desc0>
+            <desc1>Support ancien ou limité de JavaMail</desc1>
+            <desc2>JavaMail est complétement supporté</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="corba" title="CORBA">
+            <desc>Common Object Request Broker Architecture</desc>
+            <desc0>CORBA est non supporté</desc0>
+            <desc1>Support ancien ou limité de CORBA</desc1>
+            <desc2>CORBA est complétement supporté</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+      </element>
+   </section>
+   <section name="servicedadministration" title="Service d'administration">
+      <desc></desc>
+      <element name="jmx" title="JMX">
+         <desc>Java Management Extension</desc>
+         <desc0>JMX est non supporté</desc0>
+         <desc1>Support ancien ou limité de JMX</desc1>
+         <desc2>JMX est complétement supporté</desc2>
+         <score></score>
+         <comment></comment>
+      </element>
+      <element name="jmxremoting" title="JMX Remoting">
+         <desc></desc>
+         <desc0>JMX Remoting est non supporté</desc0>
+         <desc1>Support ancien ou limité de JMX Remoting</desc1>
+         <desc2>JMX Remoting est complétement supporté</desc2>
+         <score></score>
+         <comment></comment>
+      </element>
+      <element name="j2eemanagementapi" title="J2EE Management API">
+         <desc></desc>
+         <desc0>API non supportée</desc0>
+         <desc1>API supportée de manière limitée</desc1>
+         <desc2>API complétement supportée</desc2>
+         <score></score>
+         <comment></comment>
+      </element>
+      <element name="j2eedeploymentapi" title="J2EE Deployment API">
+         <desc></desc>
+         <desc0>API non supportée</desc0>
+         <desc1>API supportée de manière limitée</desc1>
+         <desc2>API complétement supportée</desc2>
+         <score></score>
+         <comment></comment>
+      </element>
+      <element name="consoledadministration" title="Console d'administration">
+         <desc></desc>
+         <desc0>Aucune console d'administration n'est disponible</desc0>
+         <desc1>Console d'administration limitée et incomplète</desc1>
+         <desc2>Console d'administration complète</desc2>
+         <score></score>
+         <comment></comment>
+      </element>
+   </section>
+   <section name="fonctionnalitesavancees" title="Fonctionnalités avancées">
+      <desc></desc>
+      <element name="servicesweb" title="Services Web">
+         <desc></desc>
+         <comment></comment>
+         <element name="protocolesdebase" title="Protocoles de base">
+            <desc>Support de SOAP, WSDL, WS-I Basic Profile</desc>
+            <desc0>Pas de support SOAP, WSDL, WS-I Basic Profile</desc0>
+            <desc1>Support partiel de SOAP, WSDL, WS-I Basic Profile</desc1>
+            <desc2>Support complet de SOAP, WSDL, WS-I Basic Profile</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="jax-rpc" title="JAX-RPC">
+            <desc>Java API for XML-based RPC</desc>
+            <desc0>JAX-RPC est non supporté</desc0>
+            <desc1>Support ancien ou limité de JAX-RPC</desc1>
+            <desc2>JAX-RPC est complétement supporté</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="saaj" title="SAAJ">
+            <desc>SOAP with Attachments API for Java</desc>
+            <desc0>SAAJ est non supporté</desc0>
+            <desc1>Support ancien ou limité de SAAJ</desc1>
+            <desc2>SAAJ est complétement supporté</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+      </element>
+      <element name="xml" title="XML">
+         <desc>eXtended Markup Language</desc>
+         <comment></comment>
+         <element name="jaxp" title="JAXP">
+            <desc>Java API for XML Processing</desc>
+            <desc0>JAXP est non supporté</desc0>
+            <desc1>Support ancien ou limité de JAXP</desc1>
+            <desc2>JAXP est complétement supporté</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="jaxr" title="JAXR">
+            <desc>Java API for XML Registries</desc>
+            <desc0>JAXR est non supporté</desc0>
+            <desc1>Support ancien ou limité de JAXR</desc1>
+            <desc2>JAXR est complétement supporté</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="jaxb" title="JAXB">
+            <desc>Java API for XML Binding</desc>
+            <desc0>JAXB est non supporté</desc0>
+            <desc1>Support ancien ou limité de JAXB</desc1>
+            <desc2>JAXB est complétement supporté</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+      </element>
+      <element name="securite" title="Sécurité">
+         <desc></desc>
+         <comment></comment>
+         <element name="jaas" title="JAAS">
+            <desc>Java Authentication and Authorization Service</desc>
+            <desc0>JAAS est non supporté</desc0>
+            <desc1>Support ancien ou limité de JAAS</desc1>
+            <desc2>JAAS est complétement supporté</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="authentificationexterne" title="Authentification externe">
+            <desc>Intégration de modules d'authentification externes</desc>
+            <desc0>Aucune intégration avec des modules d'authentification externes</desc0>
+            <desc1>Intégration limitée avec des modules d'authentification externes (en fonctionnalités ou en nombre de modules)</desc1>
+            <desc2>Intégration complète avec les pricipaux types d'authentification (LDAP, SGBD, fichiers plats, ...)</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="jacc" title="JACC">
+            <desc>Java Authorization Service Provider Contract for Containers</desc>
+            <desc0>JACC est non supporté</desc0>
+            <desc1>Support ancien ou limité de JACC</desc1>
+            <desc2>JACC est complétement supporté</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+      </element>
+      <element name="hautedisponibilite" title="Haute disponibilité">
+         <desc>Mécanismes disponibles de sécurisation du fonctionnement</desc>
+         <comment></comment>
+         <element name="equilibragedecharge" title="Equilibrage de charge">
+            <desc>Disponibilité de mécanismes de répartition de charge</desc>
+            <desc0>Aucun mécanisme de répartition de charge</desc0>
+            <desc1>Mécanisme de répartition de charge peu fiable ou limité</desc1>
+            <desc2>Mécanisme de répartition de charge disponible et fonctionnel</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="reprisesurincident" title="Reprise sur incident">
+            <desc>Disponibilité de mécanismes de failover</desc>
+            <desc0>Aucun mécanisme de reprise sur incident</desc0>
+            <desc1>Mécanisme de reprise sur incident peu fiable ou limité</desc1>
+            <desc2>Mécanisme de reprise sur incident disponible et fonctionnel</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="sessionhttp" title="Session HTTP">
+            <desc>Réplication des sessions HTTP</desc>
+            <desc0>Pas de réplication des sessions HTTP</desc0>
+            <desc1>Réplication limitée des sessions HTTP</desc1>
+            <desc2>Réplication complète des sessions HTTP</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="ejbsession" title="EJB session">
+            <desc>Réplication des EJB session</desc>
+            <desc0>Pas de réplication des EJB session</desc0>
+            <desc1>Réplication limitée des EJB session</desc1>
+            <desc2>Réplication complète des EJB session</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="ejbentite" title="EJB entité">
+            <desc>Réplication des EJB entité</desc>
+            <desc0>Pas de réplication des EJB entité</desc0>
+            <desc1>Réplication limitée des EJB entité</desc1>
+            <desc2>Réplication complète des EJB entité</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="ha-jms" title="JMS">
+            <desc>Réplication des noeud ou files d'attentes JMS</desc>
+            <desc0>Pas de réplication JMS</desc0>
+            <desc1>Réplication JMS limitée</desc1>
+            <desc2>Réplication JMS complète</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+      </element>
+      <element name="integrationide" title="Intégration IDE">
+         <desc>Intégration avec des outils de développement</desc>
+         <desc0>Pas d'intégration IDE possible</desc0>
+         <desc1>Intégration limitée avec les IDE (en termes de fonctionnalités ou de nombre d'IDE)</desc1>
+         <desc2>Intégration complète avec la plupart des IDE du marché</desc2>
+         <score></score>
+         <comment></comment>
+      </element>
+   </section>
+
+</qsosappfamily>
