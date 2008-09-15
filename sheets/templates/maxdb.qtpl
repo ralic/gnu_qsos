@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<qsostemplate xmlns="http://qsos.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://qsos.org ../XSD/QSOS-Template.xsd ">
+  <header>
+    <authors>
+      <author>
+        <email>olivier.andreotti@atosorigin.com</email>
+        <name>Olivier Andreotti</name>
+      </author>
+    </authors>
+    <dates>
+      <creation>2005-11-07</creation>
+    </dates>
+  </header>
+  <template>
+    <language>en</language>
+    <appname>Max DB</appname>
+    <release>7.6</release>
+    <licenseid>31</licenseid>
+    <licensedesc>GNU GPL</licensedesc>
+    <url>http://www.mysql.com/products/maxdb/</url>
+    <desc>RDBMS under dual licenses (GPL and commercial)</desc>
+    <demourl></demourl>
+    <qsosformat>1.7</qsosformat>
+    <qsosappname>maxdb</qsosappname>
+    <qsosspecificformat></qsosspecificformat>
+    <qsosappfamilies>
+      <qsosappfamily>qsosappfamily</qsosappfamily>
+    </qsosappfamilies>
+  </template>
+</qsostemplate>
