@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<qsostemplate xmlns="http://qsos.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://qsos.org ../XSD/QSOS-Template.xsd ">
+	<header>
+		<authors>
+			<author>
+				<email>odile.vandenberghe@atosorigin.com</email>
+				<name>Odile Vandenberghe</name>
+			</author>
+		</authors>
+		<dates>
+			<creation>2008-03-03</creation>
+		</dates>
+	</header>
+	<template>
+		<language>en</language>
+		<appname>TOra</appname>
+		<release>1.3.21</release>
+		<licenseid>31</licenseid>
+		<licensedesc>GNU GPL</licensedesc>
+		<url>http://tora.sourceforge.net/</url>
+		<desc>Get help developing database applications. </desc>
+		<demourl></demourl>
+		<qsosformat>1.7</qsosformat>
+		<qsosappname>Tora</qsosappname>
+		<qsosspecificformat>1.0</qsosspecificformat>
+		<qsosappfamilies>
+			<qsosappfamily>database-tools</qsosappfamily>
+		</qsosappfamilies>
+	</template>
+</qsostemplate>

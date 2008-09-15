@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<qsosappfamily xmlns="http://qsos.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://qsos.org ../XSD/QSOS-Family.xsd ">
+	<header>
+		<authors>
+			<author>
+            <name>Odile Vandenberghe</name>
+            <email>odile.vandenberghe@atosorigin.com</email>
+			</author>
+		</authors>
+		<dates>
+			<creation>2008-03-03</creation>
+		</dates>
+	</header>
+	<section name="connecting" title="Connection">
+		<desc>Connections available</desc>
+		<element name="jdbc" title="JDBC">
+			<desc0>No JDBC connection possible</desc0>
+			<desc1>Some JDBC drivers in some very specific version available
+				or limited available</desc1>
+			<desc2>JDBC Connection is the rule </desc2>
+		</element>
+		<element name="others" title="Others">
+			<desc>Others way of connecting to RDBMS</desc>
+		</element>
+		<element name="connectablerdbms" title="Existing RDBMS Driver">
+			<element name="coracle" title="Oracle">
+				<desc0>Driver doesn't exist</desc0>
+				<desc1>Driver Exists but is limited in functionalities</desc1>
+				<desc2>Driver Exists</desc2>
+			</element>
+			<element name="csqlserver" title="SQL Server">
+				<desc0>Driver doesn't exist</desc0>
+				<desc1>Driver Exists but is limited in functionalities</desc1>
+				<desc2>Driver Exists</desc2>
+			</element>
+			<element name="csybase" title="Sybase">
+				<desc0>Driver doesn't exist</desc0>
+				<desc1>Driver Exists but is limited in functionalities</desc1>
+				<desc2>Driver Exists</desc2>
+			</element>
+			<element name="cdb2" title="DB2">
+				<desc0>Driver doesn't exist</desc0>
+				<desc1>Driver Exists but is limited in functionalities</desc1>
+				<desc2>Driver Exists</desc2>
+			</element>
+			<element name="cmysql" title="MySQL">
+				<desc0>Driver doesn't exist</desc0>
+				<desc1>Driver Exists but is limited in functionalities</desc1>
+				<desc2>Driver Exists</desc2>
+			</element>
+			<element name="cpostgres" title="PostgreSQL">
+				<desc0>Driver doesn't exist</desc0>
+				<desc1>Driver Exists but is limited in functionalities</desc1>
+				<desc2>Driver Exists</desc2>
+			</element>
+			<element name="cingres" title="Ingres">
+				<desc0>Driver doesn't exist</desc0>
+				<desc1>Driver Exists but is limited in functionalities</desc1>
+				<desc2>Driver Exists</desc2>
+			</element>
+			<element name="cinformix" title="Informix">
+				<desc0>Driver doesn't exist</desc0>
+				<desc1>Driver Exists but is limited in functionalities</desc1>
+				<desc2>Driver Exists</desc2>
+			</element>
+		</element>
+	</section>
+	<section name="databasebrowser" title="Browsing functionalities">
+		<element name="objectbrowser" title="Possibility to browse through database objects">
+			<desc0>Browser limited or unfriendly</desc0>
+			<desc1>Browser available but limited to small number of object
+				types</desc1>
+			<desc2>Available browser is complete</desc2>
+		</element>
+		<element name="datagrid" title="Possibility to edit data through grid">
+			<desc0>Doesn't edit data</desc0>
+			<desc1>Data is edited, but not completely</desc1>
+			<desc2>Data is edited</desc2>
+		</element>
+		<element name="views" title="Possibility to browse through Views">
+			<desc0>Doesn't detail Views</desc0>
+			<desc1>Details Views, but not completely</desc1>
+			<desc2>Details Views</desc2>
+		</element>
+		<element name="indexes" title="Possibility to browse through Indexes">
+			<desc0>Doesn't detail Indexes</desc0>
+			<desc1>Details Indexes, but not completely</desc1>
+			<desc2>Details Indexes</desc2>
+		</element>
+		<element name="constraints"
+			title="Possibility to browse through all kind of constrainsts">
+			<desc0>Doesn't detail Constraints</desc0>
+			<desc1>Details Constraints, but not completely</desc1>
+			<desc2>Details Constraints</desc2>
+		</element>
+		<element name="procedures" title="Possibility to edit Procedures">
+			<desc0>Editor doesn't exist</desc0>
+			<desc1>Editor exists, but is limited</desc1>
+			<desc2>Editor exists</desc2>
+		</element>
+		<element name="triggersedit" title="Possibility to edit Triggers">
+			<desc0>Editor doesn't exist</desc0>
+			<desc1>Editor exists, but is limited</desc1>
+			<desc2>Editor exists</desc2>
+		</element>
+		<element name="sequencesedit" title="Possibility to edit Sequences">
+			<desc0>Editor doesn't exist</desc0>
+			<desc1>Editor exists, but is limited</desc1>
+			<desc2>Editor exists</desc2>
+		</element>
+		<element name="snapshots"
+			title="Possibility to browse through Materialized Views (when existing)">
+			<desc0>Doesn't detail object</desc0>
+			<desc1>Details Object, but not completely</desc1>
+			<desc2>Details Object</desc2>
+		</element>
+		<element name="synonyms"
+			title="Possibility to browse through Synonyms (when existing)">
+			<desc0>Doesn't detail object</desc0>
+			<desc1>Details Object, but not completely</desc1>
+			<desc2>Details Object</desc2>
+		</element>
+		<element name="dblinks"
+			title="Possibility to browse through Database Links(when existing)">
+			<desc0>Doesn't detail object</desc0>
+			<desc1>Details Object, but not completely</desc1>
+			<desc2>Details Object</desc2>
+		</element>
+		<element name="scriptgenerator" title="Possibility to generate scripts">
+			<desc0>No script generator</desc0>
+			<desc1>Exists but simple</desc1>
+			<desc2>Exists and is complete</desc2>
+		</element>
+		<element name="otheradvancedfeatures" title="Other features offered by browser">
+			<desc>Detail the other features not mentionned above</desc>
+		</element>
+	</section>
+	<section name="queryfeatures" title="Query features">
+		<element name="querytool" title="Possibility to query data">
+			<desc0>No tool available</desc0>
+			<desc1>Tool available but limited </desc1>
+			<desc2>Available tool is complete</desc2>
+		</element>
+		<element name="scriptsaving" title="Possibility to save instructions">
+			<desc0>No Save Script Feature</desc0>
+			<desc1>Exists but is limited</desc1>
+			<desc2>Exists</desc2>
+		</element>
+		<element name="resultsaving"
+			title="Possibility to save results (table format or others)">
+			<desc0>Doesn't exist</desc0>
+			<desc1>Exists but is limited</desc1>
+			<desc2>Exists</desc2>
+		</element>
+		<element name="standardsupport" title="SQL standard support">
+			<desc0>Doesn't Support SQL 2003 Standard at all</desc0>
+			<desc1>Supports partially SQL 2003 Standard</desc1>
+			<desc2>Support Totally SQL 2003 Standard</desc2>
+		</element>
+		<element name="advancedfeatures" title="Other features offered by Query Tool">
+			<desc>Detail the features (Syntax help, Snippets, Debug,
+				Explain Plan, Timing...)</desc>
+		</element>
+	</section>
+	<section name="miscelleanousoptions" title="Other features">
+		<element name="adminoptions" title="Administration tools">
+			<desc0>No option available</desc0>
+			<desc1>Options available but limited</desc1>
+			<desc2>Available options are complete</desc2>
+		</element>
+		<element name="adminfeatures" title="Features offered by Admin Tools">
+			<desc>Detail the features (Security management, Space
+				Management, Monitoring)</desc>
+		</element>
+		<element name="migrationtool" title="Migration tool">
+			<desc0>No tool available</desc0>
+			<desc1>Tool available but limited</desc1>
+			<desc2>Available tool</desc2>
+		</element>
+		<element name="optimizetool" title="Optimization tool">
+			<desc0>No tool available</desc0>
+			<desc1>Tool available but limited</desc1>
+			<desc2>Available tool is complete</desc2>
+		</element>
+	</section>
+</qsosappfamily>

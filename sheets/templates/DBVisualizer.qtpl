@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<qsostemplate xmlns="http://qsos.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://qsos.org ../XSD/QSOS-Template.xsd ">
+	<header>
+		<authors>
+			<author>
+				<email>odile.vandenberghe@atosorigin.com</email>
+				<name>Odile Vandenberghe</name>
+			</author>
+		</authors>
+		<dates>
+			<creation>2008-03-03</creation>
+		</dates>
+	</header>
+	<template>
+		<language>en</language>
+		<appname>DbVisualizer Free</appname>
+		<release>6.0.7</release>
+		<licenseid>12</licenseid>
+		<licensedesc>Freeware</licensedesc>
+		<url>http://www.minq.se/products/dbvis/</url>
+		<desc>Cross platform database independent visual browsing and
+			editing tool</desc>
+		<demourl>http://www.minq.se/products/dbvis/tour/tour.html</demourl>
+		<qsosformat>1.7</qsosformat>
+		<qsosappname>DBVisualizer</qsosappname>
+		<qsosspecificformat>1.0</qsosspecificformat>
+		<qsosappfamilies>
+			<qsosappfamily>database-tools</qsosappfamily>
+		</qsosappfamilies>
+	</template>
+</qsostemplate>

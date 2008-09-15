@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<qsostemplate xmlns="http://qsos.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://qsos.org QSOS-Template.xsd ">
+	<header>
+		<authors>
+			<author>
+				<email>odile.vandenberghe@atosorigin.com</email>
+				<name>Odile Vandenberghe</name>
+			</author>
+		</authors>
+		<dates>
+			<creation>2008-03-03</creation>
+		</dates>
+	</header>
+	<template>
+		<language>en</language>
+		<appname>sqldevelopper</appname>
+		<release>1.2.1</release>
+		<licenseid>12</licenseid>
+		<licensedesc>Freeware</licensedesc>
+		<url>http://www.oracle.com/technology/products/database/sql_developer/index.html</url>
+		<desc>Oracle SQL Developer is a free graphical tool for database
+			development.</desc>
+		<demourl></demourl>
+		<qsosformat>1.7</qsosformat>
+		<qsosappname>SqlDevelopper</qsosappname>
+		<qsosspecificformat>1.0</qsosspecificformat>
+		<qsosappfamilies>
+			<qsosappfamily>database-tools</qsosappfamily>
+		</qsosappfamilies>
+	</template>
+</qsostemplate>

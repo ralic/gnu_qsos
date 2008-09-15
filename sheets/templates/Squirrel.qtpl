@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<qsostemplate xmlns="http://qsos.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://qsos.org ../XSD/QSOS-Template.xsd ">
+  <header>
+    <authors>
+      <author>
+            <email>odile.vandenberghe@atosorigin.com</email>
+            <name>Odile Vandenberghe</name>
+         </author>
+    </authors>
+    <dates>
+      <creation>2008-03-03</creation>
+    </dates>
+  </header>
+  <template>
+      <appname>Squirrel SQL Client</appname>
+      <release>2.6.4</release>
+      <licenseid>12</licenseid>
+      <licensedesc>Freeware</licensedesc>
+      <url>http://www.squirrelsql.org/</url>
+      <desc>SQuirreL SQL is an open-source Java SQL Client program for any JDBC compliant database.</desc>
+      <demourl></demourl>
+      <qsosformat>1.7</qsosformat>
+      <qsosappname>squirrel</qsosappname>
+      <qsosspecificformat>1.0</qsosspecificformat>
+    <qsosappfamilies>
+      <qsosappfamily>database-tools</qsosappfamily>
+    </qsosappfamilies>
+  </template>
+</qsostemplate>
