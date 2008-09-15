@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<qsostemplate xmlns="http://qsos.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://qsos.org ../XSD/QSOS-Template.xsd ">
+  <header>
+    <authors>
+         <author>
+            <email>raphael.semeteys@atosorigin.com</email>
+            <name>Raphaël Semeteys</name>
+         </author>
+    </authors>
+    <dates>
+      <creation>2007-11-12</creation>
+    </dates>
+  </header>
+  <template>
+      <language>en</language>
+      <appname>JSide</appname>
+      <release>1.0</release>
+      <licenseid>33</licenseid>
+      <licensedesc>BSD</licensedesc>
+      <url>https://jside.dev.java.net/</url>
+      <desc>JSide  short for JavaScript Integrated Development Environment, is a simple yet efficient JavaScript IDE</desc>
+      <demourl></demourl>
+    <qsosformat>2.0</qsosformat>
+    <qsosappname>jside</qsosappname>
+    <qsosappfamilies>
+      <qsosappfamily>javascript-ide</qsosappfamily>
+    </qsosappfamilies>
+  </template>
+</qsostemplate>
