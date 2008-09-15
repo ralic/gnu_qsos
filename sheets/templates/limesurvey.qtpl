@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<qsostemplate xmlns="http://qsos.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://qsos.org ../XSD/QSOS-Template.xsd ">
+	<header>
+		<authors>
+			<author>
+				<email>olivier.portier@finances.gouv.fr</email>
+				<name>Olivier PORTIER</name>
+			</author>
+		</authors>
+		<dates>
+			<creation>2001-01-01</creation>
+			<validation>2001-01-01</validation>
+		</dates>
+	</header>
+	<template>
+		<language>fr</language>
+		<appname>LimeSurvey</appname>
+		<release>1.5</release>
+		<licenseid>31</licenseid>
+		<licensedesc>GNU GPL</licensedesc>
+		<url>http://www.limesurvey.org/</url>
+		<desc>LimeSurvey est le nouveau nom de PhpSurveyor un des
+			principaux outils Open Source de questionnaires en ligne écrit en
+			PHP. LimeSurvey vous permet de développer, publier et collecter les
+			réponses à des questionnaires. PHPSurveyor inclut un large éventail
+			de types de questions et de nombreuses options.</desc>
+		<demourl>http://demo.limesurvey.org/admin/admin.php</demourl>
+		<qsosformat>1.7</qsosformat>
+		<qsosappname>survey-tool</qsosappname>
+		<qsosspecificformat>1.0</qsosspecificformat>
+		<qsosappfamilies>
+			<qsosappfamily>survey-tool</qsosappfamily>
+		</qsosappfamilies>
+	</template>
+</qsostemplate>
