@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<qsostemplate xmlns="http://qsos.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://qsos.org ../XSD/QSOS-Template.xsd ">
+  <header>
+    <authors>
+      <author>
+        <email>nicolas.verite@gmail.com</email>
+        <name>Nicolas Verité</name>
+      </author>
+    </authors>
+    <dates>
+      <creation>2007-03-08</creation>
+    </dates>
+  </header>
+  <template>
+    <language>fr</language>
+    <appname>Trac</appname>
+    <release>0.10</release>
+    <licenseid>105</licenseid>
+    <licensedesc>BSD</licensedesc>
+    <url>http://trac.edgewall.org/</url>
+    <desc>Trac est une forge libre légère centrée sur Subversion, un système de suivi et un wiki (timeline et roadmap) écrite en Python, se reposant sur SQLite, MySQL et PostgreSQL et publiée sous licence BSD modifiée</desc>
+    <demourl>http://www.hosted-projects.com/trac/TracDemo/Demo</demourl>
+    <qsosformat>2.0</qsosformat>
+    <qsosappname>trac</qsosappname>
+    <qsosappfamilies>
+    <qsosappfamily> section="webappprerequisite"</qsosappfamily>
+    <qsosappfamily> section="websecurity"</qsosappfamily>
+    <qsosappfamily> section="storagesupport"</qsosappfamily>
+    <qsosappfamily> section="webcompatibility"</qsosappfamily>
+    <qsosappfamily> section="userinterface"</qsosappfamily>
+    <qsosappfamily> section="webcontentmanagement"</qsosappfamily>
+    <qsosappfamily> section="prerequisite"</qsosappfamily>
+    </qsosappfamilies>
+  </template>
+</qsostemplate>

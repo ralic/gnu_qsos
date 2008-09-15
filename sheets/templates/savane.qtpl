@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<qsostemplate xmlns="http://qsos.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://qsos.org ../XSD/QSOS-Template.xsd ">
+  <header>
+    <authors>
+      <author>
+        <email>nicolas.verite@gmail.com</email>
+        <name>Nicolas Verité</name>
+      </author>
+    </authors>
+    <dates>
+      <creation>2008-03-08</creation>
+    </dates>
+  </header>
+  <template>
+    <language>fr</language>
+    <appname>Savane</appname>
+    <release>3.0</release>
+    <licenseid>67</licenseid>
+    <licensedesc>GNU GPL</licensedesc>
+    <url>https://gna.org/projects/savane/</url>
+    <desc>Savane est une forge libre utilisée et développée pour les hébergeurs de projets libres Gna! et Savannah, issue du fork de SourceForge, écrite en PHP et Perl et reposant sur le SGBDR MySQL</desc>
+    <demourl></demourl>
+    <qsosformat>2.0</qsosformat>
+    <qsosappname>savane</qsosappname>
+    <qsosappfamilies>
+    <qsosappfamily> section="webappprerequisite"</qsosappfamily>
+    <qsosappfamily> section="websecurity"</qsosappfamily>
+    <qsosappfamily> section="storagesupport"</qsosappfamily>
+    <qsosappfamily> section="webcompatibility"</qsosappfamily>
+    <qsosappfamily> section="userinterface"</qsosappfamily>
+    <qsosappfamily> section="webcontentmanagement"</qsosappfamily>
+    <qsosappfamily> section="prerequisite"</qsosappfamily>
+    </qsosappfamilies>
+  </template>
+</qsostemplate>

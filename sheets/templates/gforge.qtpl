@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<qsostemplate xmlns="http://qsos.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://qsos.org ../XSD/QSOS-Template.xsd ">
+  <header>
+    <authors>
+      <author>
+        <email>nicolas.verite@gmail.com</email>
+        <name>Nicolas Verité</name>
+      </author>
+    </authors>
+    <dates>
+      <creation>2007-03-08</creation>
+    </dates>
+  </header>
+  <template>
+    <language>fr</language>
+    <appname>GForge</appname>
+    <release>4.5</release>
+    <licenseid>31</licenseid>
+    <licensedesc>GNU GPL</licensedesc>
+    <url>http://gforge.org/projects/gforge/</url>
+    <desc>GForge est la forge libre la plus connue, écrite en PHP et fonctionnant sur le SGBDR libre PostgreSQL</desc>
+    <demourl></demourl>
+    <qsosformat>2.0</qsosformat>
+    <qsosappname>gforge</qsosappname>
+    <qsosappfamilies>
+    <qsosappfamily> section="webappprerequisite"</qsosappfamily>
+    <qsosappfamily> section="websecurity"</qsosappfamily>
+    <qsosappfamily> section="storagesupport"</qsosappfamily>
+    <qsosappfamily> section="webcompatibility"</qsosappfamily>
+    <qsosappfamily> section="userinterface"</qsosappfamily>
+    <qsosappfamily> section="webcontentmanagement"</qsosappfamily>
+    <qsosappfamily> section="prerequisite"</qsosappfamily>
+    </qsosappfamilies>
+  </template>
+</qsostemplate>
