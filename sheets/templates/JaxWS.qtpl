@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<qsostemplate xmlns="http://qsos.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://qsos.org ../XSD/QSOS-Template.xsd ">
+  <header>
+    <authors>
+         <author>
+            <email>alexis.mp@sun.com</email>
+            <name>Alexis Moussine-Pouchkine</name>
+         </author>
+         <author>
+            <name>Olivier Pasquin</name>
+            <email>olivier.pasquin@capgemini.com</email>
+         </author>
+         <author>
+            <name>Laurent Le Grandois</name>
+            <email>Laurent.LeGrandois@atosorigin.com</email>
+         </author>
+    </authors>
+    <dates>
+      <creation>2006-11-20</creation>
+      <validation>2006-12-05</validation>
+    </dates>
+  </header>
+  <template>
+      <language>fr</language>
+      <appname>JAX-WS</appname>
+      <release>2.1.1</release>
+      <licenseid>15</licenseid>
+      <licensedesc>Open Source CDDL 1.0 (Common Development and Distribution License).</licensedesc>
+      <url>http://jax-ws.dev.java.net</url>
+      <desc>Framework de développement, déploiement et consommation de web services en environnement Java EE. Il s'agit de l'implémentation de référence du standard JAX-WS désormais requis pour Java EE 5. Cette technologie est développées dans le cadre du projet GlassFish (serveur Java EE 5 Open Source)</desc>
+      <demourl></demourl>
+    <qsosformat>2.0</qsosformat>
+    <qsosappname>JaxWS</qsosappname>
+    <qsosappfamilies>
+      <qsosappfamily>j2ee-ws-stack</qsosappfamily>
+    </qsosappfamilies>
+  </template>
+</qsostemplate>

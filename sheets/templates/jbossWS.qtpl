@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<qsostemplate xmlns="http://qsos.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://qsos.org ../XSD/QSOS-Template.xsd ">
+  <header>
+    <authors>
+         <author>
+            <email>noel.rocher@jboss.com</email>
+            <name>Noel Rocher</name>
+         </author>
+         <author>
+            <email>Laurent.LeGrandois@atosorigin.com</email>
+            <name>Laurent Le Grandois</name>
+         </author>
+         <author>
+            <email>Francois.ledroff@atosorigin.com</email>
+            <name>Francois Le Droff</name>
+         </author>
+    </authors>
+    <dates>
+      <creation>2006-11-06</creation>
+    </dates>
+  </header>
+  <template>
+      <language>fr</language>
+      <appname>JBoss WS</appname>
+      <release>2.0.GA</release>
+      <licenseid>32</licenseid>
+      <licensedesc>GNU LGPL</licensedesc>
+      <url>http://labs.jboss.com/portal/jbossws/</url>
+      <desc>Framework de développement, déploiement et consommation de web services en environnement J2EE (partie Web)</desc>
+      <demourl></demourl>
+    <qsosformat>2.0</qsosformat>
+    <qsosappname>jBossWS</qsosappname>
+    <qsosappfamilies>
+      <qsosappfamily>j2ee-ws-stack</qsosappfamily>
+    </qsosappfamilies>
+  </template>
+</qsostemplate>
