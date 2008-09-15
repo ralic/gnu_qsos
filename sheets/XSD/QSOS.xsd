@@ -6,27 +6,27 @@
 
 	<complexType name="Authors">
 		<sequence>
-			<element ref="qsos:author"></element>
+			<element ref="qsos:author" maxOccurs="unbounded" minOccurs="1"></element>
 		</sequence>
 	</complexType>
 
 	<complexType name="Dates">
 		<sequence>
-			<element ref="qsos:creation"></element>
-			<element ref="qsos:validation"></element>
+			<element ref="qsos:creation" maxOccurs="1" minOccurs="0"></element>
+			<element ref="qsos:validation" maxOccurs="1" minOccurs="0"></element>
 		</sequence>
 	</complexType>
 
 	<element name="author">
 		<complexType>
 			<sequence>
-				<element ref="qsos:name"></element>
-				<element ref="qsos:e-mail"></element>
+                <element ref="qsos:email"></element>
+                <element ref="qsos:name"></element>
 			</sequence>
 		</complexType>
 	</element>
 
-	<element name="e-mail" type="string"></element>
+	<element name="email" type="string"></element>
 
 	<element name="creation" type="date"></element>
 

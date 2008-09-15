@@ -1,67 +1,61 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<xsd:schema elementFormDefault="qualified" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:qsos="http://qsos.org" targetNamespace="http://qsos.org">
-	<xsd:include schemaLocation="http://git.savannah.gnu.org/gitweb/?p=qsos.git;a=blob_plain;f=dev/XSD/QSOS.xsd;hb=1352ae82f1b0f1514f6fe83f6218de50614eb098"></xsd:include>
-
-	<xsd:element name="header">
-		<xsd:complexType>
-			<xsd:sequence>
-				<xsd:element name="authors" type="qsos:Authors"></xsd:element>
-				<xsd:element name="dates" type="qsos:Dates"></xsd:element>
-			</xsd:sequence>
-		</xsd:complexType>
-	</xsd:element>
-
-    <xsd:element name="language" type="xsd:string"></xsd:element>
-
-    <xsd:element name="appname" type="xsd:string"></xsd:element>
-
-    <xsd:element name="release" type="xsd:string"></xsd:element>
-
-    <xsd:element name="licenseid" type="xsd:string"></xsd:element>
-
-    <xsd:element name="licensedesc" type="xsd:string"></xsd:element>
-
-    <xsd:element name="url" type="xsd:anyURI"></xsd:element>
-
-    <xsd:element name="desc" type="xsd:string"></xsd:element>
-
-    <xsd:element name="demourl" type="xsd:anyURI"></xsd:element>
-
-    <xsd:element name="qsosformat" type="xsd:string"></xsd:element>
-
-    <xsd:element name="qsosappname" type="xsd:string"></xsd:element>
-
-    <xsd:element name="qsosspecificformat" type="xsd:string"></xsd:element>
-
-    <xsd:element name="qsosappfamilies">
-    	<xsd:complexType>
-    		<xsd:sequence>
-    			<xsd:element ref="qsos:qsosappfamily" maxOccurs="unbounded" minOccurs="1"></xsd:element>
-    		</xsd:sequence>
-    	</xsd:complexType>
-    </xsd:element>
-
-    <xsd:element name="qsosappfamily" type="xsd:string"></xsd:element>
-
-    <xsd:element name="template">
-    	<xsd:complexType>
-    		<xsd:sequence>
-    			<xsd:element ref="qsos:language"></xsd:element>
-    			<xsd:element ref="qsos:appname"></xsd:element>
-    			<xsd:element ref="qsos:release"></xsd:element>
-    			<xsd:element ref="qsos:licenseid"></xsd:element>
-    			<xsd:element ref="qsos:licensedesc"></xsd:element>
-    			<xsd:element ref="qsos:url"></xsd:element>
-    			<xsd:element ref="qsos:desc"></xsd:element>
-    			<xsd:element ref="qsos:demourl"></xsd:element>
-    			<xsd:element ref="qsos:qsosformat"></xsd:element>
-    			<xsd:element ref="qsos:qsosappfamilies"></xsd:element>
-    			<xsd:element ref="qsos:qsosappname"></xsd:element>
-    			<xsd:element ref="qsos:appname"></xsd:element>
-    		</xsd:sequence>
-    	</xsd:complexType>
-    </xsd:element>
-
-
-
-</xsd:schema>
+<schema elementFormDefault="qualified"
+	xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://qsos.org"
+	xmlns:qsos="http://qsos.org">
+	<include schemaLocation="QSOS.xsd"></include>
+	<element name="header">
+		<complexType>
+			<sequence>
+				<element name="authors" type="qsos:Authors"></element>
+				<element name="dates" type="qsos:Dates"></element>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="language" type="string"></element>
+	<element name="appname" type="string"></element>
+	<element name="release" type="string"></element>
+	<element name="licenseid" type="string"></element>
+	<element name="licensedesc" type="string"></element>
+	<element name="url" type="anyURI"></element>
+	<element name="desc" type="string"></element>
+	<element name="demourl" type="anyURI"></element>
+	<element name="qsosformat" type="string"></element>
+	<element name="qsosappname" type="string"></element>
+	<element name="qsosspecificformat" type="string"></element>
+	<element name="qsosappfamilies">
+		<complexType>
+			<sequence>
+				<element ref="qsos:qsosappfamily" maxOccurs="unbounded"
+					minOccurs="1"></element>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="qsosappfamily" type="string"></element>
+	<element name="template">
+		<complexType>
+			<sequence>
+				<element ref="qsos:language"></element>
+				<element ref="qsos:appname"></element>
+				<element ref="qsos:release"></element>
+				<element ref="qsos:licenseid"></element>
+				<element ref="qsos:licensedesc"></element>
+				<element ref="qsos:url"></element>
+				<element ref="qsos:desc"></element>
+				<element ref="qsos:demourl" maxOccurs="1" minOccurs="0"></element>
+				<element ref="qsos:qsosformat"></element>
+				<element ref="qsos:qsosappname"></element>
+				<element name="qsosspecificformat" type="string"
+					maxOccurs="1" minOccurs="0"></element>
+				<element ref="qsos:qsosappfamilies"></element>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="qsostemplate">
+		<complexType>
+			<sequence>
+				<element ref="qsos:header"></element>
+				<element ref="qsos:template"></element>
+			</sequence>
+		</complexType>
+	</element>
+</schema>

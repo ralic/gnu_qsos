@@ -2,15 +2,14 @@
 <schema targetNamespace="http://qsos.org" elementFormDefault="qualified"
 	xmlns="http://www.w3.org/2001/XMLSchema"
 	xmlns:qsos="http://qsos.org">
-	<include schemaLocation="http://git.savannah.gnu.org/gitweb/?p=qsos.git;a=blob_plain;f=dev/XSD/QSOS.xsd;hb=1352ae82f1b0f1514f6fe83f6218de50614eb098"></include>
+	<include schemaLocation="QSOS.xsd"></include>
 
 	<element name="qsosappfamily">
 		<complexType>
 			<sequence>
-				<element ref="qsos:header"></element>
+				<element ref="qsos:header" maxOccurs="1" minOccurs="1"></element>
 				<element ref="qsos:section" maxOccurs="unbounded" minOccurs="1"></element>
 			</sequence>
-			<attribute ref="qsos:name"></attribute>
 		</complexType>
 	</element>
 
@@ -31,34 +30,51 @@
     <element name="section">
     	<complexType>
     		<sequence>
-                <element name="element" type="qsos:Elements" maxOccurs="unbounded" minOccurs="1">
-    				<xsd:element></xsd:element>
+                <element ref="qsos:desc" maxOccurs="1" minOccurs="0">
+                </element>
+                <element name="element" type="qsos:Elements"
+    				maxOccurs="unbounded" minOccurs="1">
     			</element>
-            </sequence>
-    		<attribute name="name" type="ID">
-    			</xsd:attribute>
-    			<attribute name="title" type="xsd:string">
-    				</xsd:attribute>
-    			</attribute>
-    		</attribute>
-    		<attribute name="title" type="string"></attribute>
+    		</sequence>
+    		<attribute name="name" type="ID"></attribute>
+   			<attribute name="title" type="string"></attribute>
     	</complexType>
     </element>
 
     <complexType name="Elements">
     	<sequence>
-    		<element name="desc" type="string" maxOccurs="1" minOccurs="0"></element>
-    		<choice>
+    		<sequence>
+	    		<element name="desc" type="string" maxOccurs="1"
+	    			minOccurs="0">
+	    		</element>
+	    		<element name="comment" type="string" maxOccurs="1"
+	    			minOccurs="0">
+	    		</element>
+    		</sequence>
+            <choice>
     			<sequence>
-    				<element name="desc0" type="string" maxOccurs="1" minOccurs="1"></element>
-    				<element name="desc1" type="string" maxOccurs="1" minOccurs="1"></element>
-    				<element name="desc2" type="string" maxOccurs="1" minOccurs="1"></element>
+    				<element name="desc0" type="string" maxOccurs="1"
+    					minOccurs="1">
+    				</element>
+    				<element name="desc1" type="string" maxOccurs="1"
+    					minOccurs="1">
+    				</element>
+    				<element name="desc2" type="string" maxOccurs="1"
+    					minOccurs="1">
+    				</element>
+    				<element name="comment" type="string" maxOccurs="1"
+    					minOccurs="0">
+    				</element>
     			</sequence>
-    			<element name="element" type="qsos:Elements" maxOccurs="unbounded" minOccurs="1"></element>
+    			<element name="element" type="qsos:Elements"
+    				maxOccurs="unbounded" minOccurs="0">
+    			</element>
     		</choice>
     	</sequence>
     	<attribute name="name" type="ID"></attribute>
     	<attribute name="title" type="string"></attribute>
     </complexType>
 
+
+    <element name="desc" type="string"></element>
 </schema>
