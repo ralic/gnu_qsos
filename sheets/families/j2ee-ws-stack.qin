@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<qsosappfamily xmlns="http://qsos.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://qsos.org QSOS-Family.xsd ">
+<qsosappfamily xmlns="http://qsos.org"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://qsos.org ../XSD/QSOS-Family.xsd ">
 	<header>
 		<authors>
 			<author>
-            <email>Laurent.LeGrandois@atosorigin.com</email>
-            <name>Laurent Le Grandois</name>
+				<email>Laurent.LeGrandois@atosorigin.com</email>
+				<name>Laurent Le Grandois</name>
 			</author>
 		</authors>
 		<dates>
@@ -194,7 +196,7 @@
 	<section name="interop" title="Interopérabilité">
 		<element name="ws-i" title="WS-I Basic Profile 1.1">
 			<desc>Ensemble de spécifications et de règles facilitant
-				l'intéropérabilité entre services web régis par les protocoles SOAP
+				l'intéropérabilité entre services web régis par les protocoles SOAP 
 			</desc>
 			<desc0>non supporté</desc0>
 			<desc1>support limité</desc1>
@@ -252,8 +254,6 @@
 			<desc0>non supporté</desc0>
 			<desc1>support limité</desc1>
 			<desc2>supporté</desc2>
-			<comment></comment>
-			<score></score>
 		</element>
 		<element name="ebXML" title="ebXML">
 			<desc>abréviation de l'anglais Electronic Business using
@@ -267,8 +267,6 @@
 			<desc0>non supporté</desc0>
 			<desc1>support limité</desc1>
 			<desc2>supporté</desc2>
-			<comment></comment>
-			<score></score>
 		</element>
 	</section>
 	<section name="metaData" title="Meta-données">
@@ -284,7 +282,7 @@
 		</element>
 		<element name="wsdl-2_0" title="support de WSDL 2.0">
 			<desc>La version 1.1 n'est pas approuvée par le W3C, la version 2.0
-				a pour ambition de devenir un standard officiel approuvé par le W3C.
+				a pour ambition de devenir un standard officiel approuvé par le W3C. 
 			</desc>
 			<desc0>non supporté</desc0>
 			<desc1>support limité</desc1>
@@ -305,11 +303,11 @@
 				<desc>"WS-MEX" permet d'obtenir les informations décrivant
 					le service (WSDL, XSD et policies) Il vise la standardisation des
 					opérations de récupération des "policies d’un endpoint" mais aussi
-					son WSDL et son schéma de données (GetPolicy, GetWSDL, GetSchema).
+					son WSDL et son schéma de données (GetPolicy, GetWSDL, GetSchema). 
 				</desc>
 				<desc0>non supporté</desc0>
 				<desc1>support limité</desc1>
-				<desc2>supporté: exposition des WSDLs, XSDs et policies
+				<desc2>supporté: exposition des WSDLs, XSDs et policies 
 				</desc2>
 			</element>
 		</element>
@@ -372,7 +370,7 @@
 			<element name="ws-atomic-transaction" title="WS-AtomicTransaction">
 				<desc> WS-AtomicTransaction : Prise en charge du "commit à deux
 					phases". Toutes les opérations participant à une transaction
-					atomique sont toutes exécutées avec succès ou toutes annulées.
+					atomique sont toutes exécutées avec succès ou toutes annulées. 
 				</desc>
 				<desc0>non supporté</desc0>
 				<desc1>support limité</desc1>
@@ -410,23 +408,23 @@
 		<element name="IDE-support" title="supports IDE">
 			<desc>Fourniture de plugins pour les environnements de
 				développement intégrés (IDEs) (plugins intégrant les fonctionnalités
-				de génération de code et la création de livrables ou archives).
+				de génération de code et la création de livrables ou archives). 
 			</desc>
 			<element name="idea-support" title="support IDEA">
 				<desc0>aucun plugin</desc0>
-				<desc1>plugin aux fonctionnalités limitées ou défectueuses
+				<desc1>plugin aux fonctionnalités limitées ou défectueuses 
 				</desc1>
 				<desc2>bon plugin, bonne ergonomie</desc2>
 			</element>
 			<element name="eclipse-support" title="support Eclipse">
 				<desc0>aucun plugin</desc0>
-				<desc1>plugin aux fonctionnalités limitées ou défectueuses
+				<desc1>plugin aux fonctionnalités limitées ou défectueuses 
 				</desc1>
 				<desc2>bon plugin, bonne ergonomie</desc2>
 			</element>
 			<element name="netbeans-support" title="support NetBeans">
 				<desc0>aucun plugin</desc0>
-				<desc1>plugin aux fonctionnalités limitées ou défectueuses
+				<desc1>plugin aux fonctionnalités limitées ou défectueuses 
 				</desc1>
 				<desc2>bon plugin, bonne ergonomie</desc2>
 			</element>
@@ -486,15 +484,14 @@
 				handler/end-point". Cette fonctionnalité est intégrée à JAX-WS 2.0.
 				Les notions dérivées de session et conversation sont contenues dans
 				la spécification WS-Addressing.</desc2>
-			Polling et Callbacks supportés
-			<score></score>
+			<comment>Polling et Callbacks supportés</comment>
 		</element>
 	</section>
 	<section name="ws_admin"
 		title="Fonctionnalités d'administration des web-services">
 		<element name="deploy" title="Déploiement de nouveaux services">
 			<desc0>Déploiement difficile, ou nécessitant un outillage
-				non standard, ou de nombreuses étapes ou un reboot du serveur
+				non standard, ou de nombreuses étapes ou un reboot du serveur 
 			</desc0>
 			<desc1>Déploiement aisé, mais nécessitant un arrêt du
 				service</desc1>

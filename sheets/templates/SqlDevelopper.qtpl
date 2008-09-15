@@ -1,31 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<qsostemplate xmlns="http://qsos.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://qsos.org QSOS-Template.xsd ">
-	<header>
-		<authors>
-			<author>
-				<email>odile.vandenberghe@atosorigin.com</email>
-				<name>Odile Vandenberghe</name>
-			</author>
-		</authors>
-		<dates>
-			<creation>2008-03-03</creation>
-		</dates>
-	</header>
-	<template>
-		<language>en</language>
-		<appname>sqldevelopper</appname>
-		<release>1.2.1</release>
-		<licenseid>12</licenseid>
-		<licensedesc>Freeware</licensedesc>
-		<url>http://www.oracle.com/technology/products/database/sql_developer/index.html</url>
-		<desc>Oracle SQL Developer is a free graphical tool for database
-			development.</desc>
-		<demourl></demourl>
-		<qsosformat>1.7</qsosformat>
-		<qsosappname>SqlDevelopper</qsosappname>
-		<qsosspecificformat>1.0</qsosspecificformat>
-		<qsosappfamilies>
-			<qsosappfamily>database-tools</qsosappfamily>
-		</qsosappfamilies>
-	</template>
-</qsostemplate>
+<qsos:qsostemplate xmlns:qsos="http://qsos.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://qsos.org ../XSD/QSOS-Template.xsd ">
+	<qsos:header>
+		<qsos:authors>
+			<qsos:author>
+				<qsos:email>odile.vandenberghe@atosorigin.com</qsos:email>
+				<qsos:name>Odile Vandenberghe</qsos:name>
+			</qsos:author>
+		</qsos:authors>
+		<qsos:dates>
+			<qsos:creation>2008-03-03</qsos:creation>
+		</qsos:dates>
+	</qsos:header>
+	<qsos:template>
+		<qsos:language>en</qsos:language>
+		<qsos:appname>sqldevelopper</qsos:appname>
+		<qsos:release>1.2.1</qsos:release>
+		<qsos:licenseid>12</qsos:licenseid>
+		<qsos:licensedesc>Freeware</qsos:licensedesc>
+		<qsos:url>http://www.oracle.com/technology/products/database/sql_developer/index.html</qsos:url>
+		<qsos:desc>Oracle SQL Developer is a free graphical tool for database
+			development.</qsos:desc>
+		<qsos:demourl></qsos:demourl>
+		<qsos:qsosformat>1.7</qsos:qsosformat>
+		<qsos:qsosappname>SqlDevelopper</qsos:qsosappname>
+		<qsos:qsosspecificformat>1.0</qsos:qsosspecificformat>
+		<qsos:qsosappfamilies>
+			<qsos:qsosappfamily>database-tools</qsos:qsosappfamily>
+		</qsos:qsosappfamilies>
+	</qsos:template>
+</qsos:qsostemplate>

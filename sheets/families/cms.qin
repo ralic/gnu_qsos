@@ -217,8 +217,6 @@
 	</section>
 	<section name="webcontentmanagement" title="Web content management">
 		<desc>this section describe how the application manage web page</desc>
-		<comment>This feature will be implemented in september 2007 in the
-			Nuxeo EP 5.2</comment>
 		<element name="blog" title="Blog">
 			<desc0>The feature doesn't exist</desc0>
 			<desc1>Work fine for at last odt files</desc1>
@@ -598,21 +596,21 @@
 			<element name="tablepsitioning" title="Table Positioning">
 				<desc>html tables should not be used for layout/positioning, css
 					is there to help.</desc>
-				<desc2>html tables are not used for layout/positioning</desc2>
-				<desc1>not too much used</desc1>
 				<desc0>systematically, too much used</desc0>
+				<desc1>not too much used</desc1>
+				<desc2>html tables are not used for layout/positioning</desc2>
 			</element>
 			<element name="frameuse" title="Frame use">
 				<desc>Frame use </desc>
-				<desc2>frame are not used</desc2>
-				<desc1>frame are rarely used</desc1>
 				<desc0>systematically, too much used</desc0>
+				<desc1>frame are rarely used</desc1>
+				<desc2>frame are not used</desc2>
 			</element>
 			<element name="iframeuse" title="iFrame use">
 				<desc>iFrame use </desc>
-				<desc2>iframe are not used</desc2>
-				<desc1>iframe are rarely used</desc1>
 				<desc0>systematically, too much used</desc0>
+				<desc1>iframe are rarely used</desc1>
+				<desc2>iframe are not used</desc2>
 			</element>
 			<element name="cssdesignedforprintout" title="css designed for printout">
 				<desc>css designed for printout</desc>

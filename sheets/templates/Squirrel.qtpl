@@ -12,6 +12,7 @@
     </dates>
   </header>
   <template>
+  	<language>en</language>
       <appname>Squirrel SQL Client</appname>
       <release>2.6.4</release>
       <licenseid>12</licenseid>
