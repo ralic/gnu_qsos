@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<qsostemplate xmlns="http://qsos.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://qsos.org ../XSD/QSOS-Template.xsd ">
+  <header>
+    <authors>
+      <author>
+        <email>raphael.semeteys@atosorigin.com</email>
+        <name>Raphael Semeteys</name>
+      </author>
+    </authors>
+    <dates>
+      <creation>2001-01-01</creation>
+      <validation>2001-01-01</validation>
+    </dates>
+  </header>
+  <template>
+    <language>en</language>
+    <appname>KWord</appname>
+    <release>1.4</release>
+    <licenseid>32</licenseid>
+    <licensedesc>GNU LGPL</licensedesc>
+    <url>http://www.koffice.org/kword/</url>
+    <desc>Word processor from the KDE Office suite (KOffice)</desc>
+    <demourl>http://ktown.kde.org/~binner/klax/ (Klax Live CD)</demourl>
+    <qsosformat>1.7</qsosformat>
+    <qsosappname>kword</qsosappname>
+    <qsosspecificformat>1</qsosspecificformat>
+    <qsosappfamilies>
+      <qsosappfamily>wordprocessor</qsosappfamily>
+    </qsosappfamilies>
+  </template>
+</qsostemplate>
