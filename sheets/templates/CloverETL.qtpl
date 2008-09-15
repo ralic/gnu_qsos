@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<qsostemplate xmlns="http://qsos.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"	xsi:schemaLocation="http://qsos.org ../XSD/QSOS-Template.xsd ">
+	<header>
+		<authors>
+			<author>
+				<email>stephane.pincemail@atosorigin.com</email>
+				<name>PINCEMAIL Stéphane</name>
+			</author>
+		</authors>
+		<dates>
+			<creation>2007-01-01</creation>
+		</dates>
+	</header>
+	<template>
+    <language>fr</language>
+    <appname>CloverETL</appname>
+    <release>1.3</release>
+    <licenseid></licenseid>
+    <licensedesc>LGPL</licensedesc>
+    <url></url>
+    <desc></desc>
+    <demourl></demourl>
+    <qsosformat>1.7</qsosformat>
+    <qsosappname>cloverEtl</qsosappname>
+		<qsosappfamilies>
+			<qsosappfamily>etl</qsosappfamily>
+		</qsosappfamilies>
+	</template>
+</qsostemplate>
