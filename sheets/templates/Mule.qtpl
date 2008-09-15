@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<qsostemplate xmlns="http://qsos.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://qsos.org ../XSD/QSOS-Template.xsd ">
+	<header>
+		<authors>
+			<author>
+				<email>mohamed_amine.m_rad@telecomint.eu</email>
+				<name>M.A.M'RAD</name>
+			</author>
+		</authors>
+		<dates>
+			<creation>2008-05-07</creation>
+		</dates>
+	</header>
+	<template>
+		<language>en</language>
+		<appname>Mule</appname>
+		<release>1.4.1</release>
+		<licenseid>15</licenseid>
+		<licensedesc>OSI Approved</licensedesc>
+		<url>http://mule.codehaus.org/display/MULE/Home</url>
+		<desc></desc>
+		<demourl></demourl>
+		<qsosformat>1.7</qsosformat>
+		<qsosappname>Mule</qsosappname>
+		<qsosappfamilies>
+			<qsosappfamily>esb</qsosappfamily>
+		</qsosappfamilies>
+	</template>
+</qsostemplate>
