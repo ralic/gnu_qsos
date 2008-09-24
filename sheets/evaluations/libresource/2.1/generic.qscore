@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="utf-8"?>
+<qsosscore>
+	<element name="consulting">
+		<score>
+			1
+		</score>
+		<comment>
+			Artenum, avec LibreSource Enterprise et Express (offre d'hébergement)
+		</comment>
+	</element>
+	<element name="documentation">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="activityonreleases">
+		<score>
+			1
+		</score>
+	</element>
+	<element name="administrationmonitoring">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="independenceofdevelopments">
+		<score>
+			1
+		</score>
+		<comment>
+			Développements répartie entre INRIA et Artenum
+		</comment>
+	</element>
+	<element name="packaginghpux">
+		<score>
+			2
+		</score>
+		<comment>
+			Java
+		</comment>
+	</element>
+	<element name="stability">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="activityonfunctionalities">
+		<score>
+			2
+		</score>
+		<comment>
+			Roadmap et wishlist, et besoins clients
+		</comment>
+	</element>
+	<element name="leadingteam">
+		<score>
+			1
+		</score>
+	</element>
+	<element name="books">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="references">
+		<score>
+			1
+		</score>
+	</element>
+	<element name="sponsor">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="packagingmandriva">
+		<score>
+			2
+		</score>
+		<comment>
+			Java
+		</comment>
+	</element>
+	<element name="strategicalindependence">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="tools">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="packagingsolaris">
+		<score>
+			2
+		</score>
+		<comment>
+			Java
+		</comment>
+	</element>
+	<element name="permissiveness">
+		<score>
+			0
+		</score>
+		<comment>
+			QPL impose de redistribuer les contributions sous forme de patches
+		</comment>
+	</element>
+	<element name="quality">
+		<score>
+			1
+		</score>
+	</element>
+	<element name="support">
+		<score>
+			1
+		</score>
+		<comment>
+			Artenum, avec LibreSource Enterprise et Express (offre d'hébergement)
+		</comment>
+	</element>
+	<element name="contributingcommunity">
+		<score>
+			1
+		</score>
+		<comment>
+			Beaucoup de contacts directs via Artenum et consortium :  INRIA Lorraine, Denis Diderot- Paris 7 University, Henri Poincaré- Nancy 1 University 
+		</comment>
+	</element>
+	<element name="packagingwindows">
+		<score>
+			2
+		</score>
+		<comment>
+			Java
+		</comment>
+	</element>
+	<element name="codeextension">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="managementstyle">
+		<score>
+			2
+		</score>
+		<comment>
+			LibreSource Design Committee
+		</comment>
+	</element>
+	<element name="easeofuseergonomics">
+		<score>
+			2
+		</score>
+		<comment>
+			Interface simple et claire, peu d'aide mais de la documentation utilisateur
+		</comment>
+	</element>
+	<element name="packagingsuse">
+		<score>
+			2
+		</score>
+		<comment>
+			Java
+		</comment>
+	</element>
+	<element name="packagingmacosx">
+		<score>
+			2
+		</score>
+		<comment>
+			Java
+		</comment>
+	</element>
+	<element name="packagingredhat">
+		<score>
+			2
+		</score>
+		<comment>
+			Java
+		</comment>
+	</element>
+	<element name="protectionagainstproprietaryforks">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="packagingsource">
+		<score>
+			2
+		</score>
+		<comment>
+			Java
+		</comment>
+	</element>
+	<element name="developersidentificationturnover">
+		<score>
+			1
+		</score>
+	</element>
+	<element name="packagingfreebsd">
+		<score>
+			2
+		</score>
+		<comment>
+			Java
+		</comment>
+	</element>
+	<element name="roadmap">
+		<score>
+			1
+		</score>
+		<comment>
+			Roadmap et wishlist, et besoins clients
+		</comment>
+	</element>
+	<element name="packagingdebian">
+		<score>
+			1
+		</score>
+		<comment>
+			Java
+		</comment>
+	</element>
+	<element name="modificationofsourcecode">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="copyrightowners">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="training">
+		<score>
+			1
+		</score>
+		<comment>
+			Artenum, avec LibreSource Enterprise et Express (offre d'hébergement)
+		</comment>
+	</element>
+	<element name="packagingnet">
+		<score>
+			1
+		</score>
+		<comment>
+			Java
+		</comment>
+	</element>
+	<element name="age">
+		<score>
+			1
+		</score>
+		<comment>
+			Juin 2005 mais première mise en prod en octobre 2004
+		</comment>
+	</element>
+	<element name="popularity">
+		<score>
+			1
+		</score>
+		<comment>
+			Quelques entreprises et communautés
+		</comment>
+	</element>
+	<element name="modularity">
+		<score>
+			1
+		</score>
+		<comment>
+			Composants J2EE, « services » indépendants
+		</comment>
+	</element>
+	<element name="activityonbugs">
+		<score>
+			1
+		</score>
+	</element>
+	<element name="packagingopen">
+		<score>
+			1
+		</score>
+		<comment>
+			Java
+		</comment>
+	</element>
+	<element name="forkprobability">
+		<score>
+			2
+		</score>
+		<comment>
+			Entreprise et consortium
+		</comment>
+	</element>
+</qsosscore>
