@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<qsosscore>
+	<element name="customizablepresence">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="gtalkim">
+		<score>
+			1
+		</score>
+		<comment>
+			Spark is not yet compatible with Google talk's file transfer
+		</comment>
+	</element>
+	<element name="AECvoip">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="h323">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="kopeteim">
+		<score>
+			2
+		</score>
+		<comment>
+			Compatible via XMPP/Jabber account
+		</comment>
+	</element>
+	<element name="vms">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="sip">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="nudge">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="billing">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="wengophonevoip">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="encryption">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="away">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="ekigaim">
+		<score>
+			0
+		</score>
+		<comment>
+			Ekiga does not provide instant messaging service
+		</comment>
+	</element>
+	<element name="integration">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="psivoip">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="ekigavoip">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="ekigavisio">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="muc">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="presencestatus">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="gtalkvoip">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="kopetevoip">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="ivrasr">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="Specific">
+		<score>
+			2
+		</score>
+		<comment>
+			Client use only XMPP/Jabber protocol
+		</comment>
+	</element>
+	<element name="psiim">
+		<score>
+			2
+		</score>
+		<comment>
+			Fully compatible with Psi
+		</comment>
+	</element>
+	<element name="gaimvoip">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="wengophoneim">
+		<score>
+			1
+		</score>
+		<comment>
+			Compatible via XMPP/Jabber account, not with OpenWengo account
+		</comment>
+	</element>
+	<element name="vcard">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="whiteboard">
+		<score>
+			0
+		</score>
+		<comment>
+			No witheboard support now
+		</comment>
+	</element>
+	<element name="smileys">
+		<score>
+			1
+		</score>
+	</element>
+	<element name="games">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="gaimim">
+		<score>
+			2
+		</score>
+		<comment>
+			Compatible via XMPP/Jabber account
+		</comment>
+	</element>
+	<element name="p2pencryption">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="wengophonevisio">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="psivisio">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="libjingle">
+		<score>
+			0
+		</score>
+	</element>
+</qsosscore>
