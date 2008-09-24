@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8"?>
+<qsosscore>
+	<element name="consulting">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="documentation">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="activityonreleases">
+		<score>
+			1
+		</score>
+	</element>
+	<element name="administrationmonitoring">
+		<score>
+			1
+		</score>
+	</element>
+	<element name="independenceofdevelopments">
+		<score>
+			1
+		</score>
+		<comment>
+			Edgewall Software
+		</comment>
+	</element>
+	<element name="roadmap">
+		<score>
+			1
+		</score>
+		<comment>
+			Pas de planning, mais taux d'avancement
+		</comment>
+	</element>
+	<element name="stability">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="activityonfunctionalities">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="leadingteam">
+		<score>
+			1
+		</score>
+	</element>
+	<element name="books">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="references">
+		<score>
+			1
+		</score>
+	</element>
+	<element name="sponsor">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="packagingmandriva">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="strategicalindependence">
+		<score>
+			1
+		</score>
+	</element>
+	<element name="tools">
+		<score>
+			1
+		</score>
+	</element>
+	<element name="permissiveness">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="quality">
+		<score>
+			1
+		</score>
+	</element>
+	<element name="support">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="contributingcommunity">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="packagingwindows">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="codeextension">
+		<score>
+			1
+		</score>
+	</element>
+	<element name="managementstyle">
+		<score>
+			1
+		</score>
+		<comment>
+			Discussions informaelles et consensus
+		</comment>
+	</element>
+	<element name="easeofuseergonomics">
+		<score>
+			2
+		</score>
+		<comment>
+			Simplet in tuitive, façon wiki, mais parfois aspect desordonné
+		</comment>
+	</element>
+	<element name="packagingsuse">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="packagingredhat">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="codemodification">
+		<score>
+			1
+		</score>
+	</element>
+	<element name="protectionagainstproprietaryforks">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="packagingsource">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="developersidentificationturnover">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="packagingfreebsd">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="packagingdebian">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="modificationofsourcecode">
+		<score>
+			1
+		</score>
+	</element>
+	<element name="copyrightowners">
+		<score>
+			1
+		</score>
+	</element>
+	<element name="training">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="age">
+		<score>
+			1
+		</score>
+	</element>
+	<element name="popularity">
+		<score>
+			2
+		</score>
+		<comment>
+			Beryl, Haiku, Ark Linux, Adium, Fire IM, Ruby on Rails, DotClear, OpenWengo, YouOS, MythTV, AlternC
+		</comment>
+	</element>
+	<element name="modularity">
+		<score>
+			1
+		</score>
+	</element>
+	<element name="activityonbugs">
+		<score>
+			1
+		</score>
+	</element>
+	<element name="forkprobability">
+		<score>
+			0
+		</score>
+		<comment>
+			Projet qui communique beaucoup et se base sur le consensus
+		</comment>
+	</element>
+</qsosscore>
