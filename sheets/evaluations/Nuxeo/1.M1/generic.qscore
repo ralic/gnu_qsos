@@ -1,0 +1,360 @@
+<?xml version="1.0" encoding="utf-8"?>
+<qsosscore>
+	<element name="consulting">
+		<score>
+			2
+		</score>
+		<comment>
+			http://www.nuxeo.com/offre/conseil/ and the collaboration of the IT consultants e.g (CapGemini, Unilog, ...)
+		</comment>
+	</element>
+	<element name="documentation">
+		<score>
+			1
+		</score>
+		<comment>
+			Only user and developer Documentations are available in english (no exploitation documentation). A Wiki is also available (http://svn.nuxeo.org/trac/nuxeo/wiki/).
+		</comment>
+	</element>
+	<element name="activityonreleases">
+		<score>
+			2
+		</score>
+		<comment>
+			Before each official release, several milestones are available on Nuxeo website.nightly builds are also availables : http://svn.nuxeo.org/snapshots/
+		</comment>
+	</element>
+	<element name="administrationmonitoring">
+		<score>
+			2
+		</score>
+		<comment>
+			As all Nuxeo components are deployed as MBean, they can be administred via the JBoss JMX Console
+		</comment>
+	</element>
+	<element name="independenceofdevelopments">
+		<score>
+			0
+		</score>
+		<comment>
+			The Nuxeo company employs 100% of core developpers.
+		</comment>
+	</element>
+	<element name="packaginghpux">
+		<score>
+			0
+		</score>
+		<comment>
+			A package is not available but the installer works on all platforms.
+		</comment>
+	</element>
+	<element name="stability">
+		<score>
+			2
+		</score>
+		<comment>
+			Although it is quite young, Nuxeo 5 is stable. No major bugs.
+		</comment>
+	</element>
+	<element name="activityonfunctionalities">
+		<score>
+			2
+		</score>
+		<comment>
+			JIRA is available and a mailing list is also provided.
+		</comment>
+	</element>
+	<element name="leadingteam">
+		<score>
+			2
+		</score>
+		<comment>
+			The Nuxeo company is composed of 22 collaborators.
+		</comment>
+	</element>
+	<element name="books">
+		<score>
+			0
+		</score>
+		<comment>
+			Only white papers are availble : http://www.nuxeo.com/publications/
+		</comment>
+	</element>
+	<element name="references">
+		<score>
+			1
+		</score>
+		<comment>
+			http://www.nuxeo.com/clientsWinner of the Red Herring price (http://www.neteco.com/71335-nuxeo-recompense-prix-red-herring.html)
+		</comment>
+	</element>
+	<element name="sponsor">
+		<score>
+			1
+		</score>
+		<comment>
+			Nuxeo SAS has IT partners : http://www.nuxeo.com/nuxeo/partenaires/
+		</comment>
+	</element>
+	<element name="packagingmandriva">
+		<score>
+			0
+		</score>
+		<comment>
+			A package is not available but the installer works on all platforms.
+		</comment>
+	</element>
+	<element name="strategicalindependence">
+		<score>
+			0
+		</score>
+		<comment>
+			links with Eclipse Foundation, JBoss
+		</comment>
+	</element>
+	<element name="tools">
+		<score>
+			2
+		</score>
+		<comment>
+			JIRA (http://jira.nuxeo.org/secure/Dashboard.jspa). A mailing-list is also available (ecm-checkins@lists.nuxeo.com).and for continuous integration  http://hudson.nuxeo.org/
+		</comment>
+	</element>
+	<element name="packagingsolaris">
+		<score>
+			0
+		</score>
+		<comment>
+			A package is not available but the installer works on all platforms.
+		</comment>
+	</element>
+	<element name="permissiveness">
+		<score>
+			1
+		</score>
+		<comment>
+			GNU LGPL licence / EPL . Latter can be linked to a non LGPL program without changing the licence. 
+		</comment>
+	</element>
+	<element name="quality">
+		<score>
+			2
+		</score>
+		<comment>
+			Modules are managed via Maven, more than 3000 tests are implemented. Continuous Integration is not settled down yet.
+		</comment>
+	</element>
+	<element name="support">
+		<score>
+			1
+		</score>
+		<comment>
+			http://www.nuxeo.com/offre/support/
+		</comment>
+	</element>
+	<element name="historyknownproblems">
+		<score>
+			1
+		</score>
+		<comment>
+			The purpose of the transition from zope to java technologies (J2EE, OSGi) is to have an extensible framework. For more details for the transition http://www.nuxeo.com/en/java-switch/
+		</comment>
+	</element>
+	<element name="contributingcommunity">
+		<score>
+			1
+		</score>
+		<comment>
+			Active community on CPS (former version of Nuxeo in Python/Zope technologies), a SVN is provided to centralize release and patch for bugs.
+		</comment>
+	</element>
+	<element name="packagingwindows">
+		<score>
+			2
+		</score>
+		<comment>
+			A package is not available but the installer works on all platforms.
+		</comment>
+	</element>
+	<element name="codeextension">
+		<score>
+			2
+		</score>
+		<comment>
+			Nuxeo has with several extenstion points, based on OSGi.
+		</comment>
+	</element>
+	<element name="managementstyle">
+		<score>
+			1
+		</score>
+		<comment>
+			All decision are taken by the lead team of Nuxeo 
+		</comment>
+	</element>
+	<element name="easeofuseergonomics">
+		<score>
+			2
+		</score>
+		<comment>
+			AJAX technologies are available in the Web client (integrated with JSF/JBoss Seam). User dashboard can be modified by the engine creator.
+		</comment>
+	</element>
+	<element name="packagingsuse">
+		<score>
+			0
+		</score>
+		<comment>
+			A package is not available but the installer works on all platforms.
+		</comment>
+	</element>
+	<element name="packagingmacosx">
+		<score>
+			0
+		</score>
+		<comment>
+			A package is not available but the installer works on all platforms.
+		</comment>
+	</element>
+	<element name="packagingredhat">
+		<score>
+			0
+		</score>
+		<comment>
+			A package is not available but the installer works on all platforms.
+		</comment>
+	</element>
+	<element name="codemodification">
+		<score>
+			2
+		</score>
+		<comment>
+			Technical documentation is provided, deployment can be done with Maven2.
+		</comment>
+	</element>
+	<element name="protectionagainstproprietaryforks">
+		<score>
+			1
+		</score>
+	</element>
+	<element name="packagingsource">
+		<score>
+			2
+		</score>
+		<comment>
+			They intend to use maven to simplify build and deployment .it is a Java/J2EE architecture easy to deploy,  it does not depend on the Operating System.
+		</comment>
+	</element>
+	<element name="developersidentificationturnover">
+		<score>
+			2
+		</score>
+		<comment>
+			The are about 13 devlopers and Nuxeo intend to recruit more.
+		</comment>
+	</element>
+	<element name="packagingfreebsd">
+		<score>
+			0
+		</score>
+		<comment>
+			A package is not available but the installer works on all platforms.
+		</comment>
+	</element>
+	<element name="roadmap">
+		<score>
+			2
+		</score>
+		<comment>
+			http://www.nuxeo.org/sections/about/roadmap/
+		</comment>
+	</element>
+	<element name="packagingdebian">
+		<score>
+			0
+		</score>
+		<comment>
+			A package is not available but the installer works on all platforms.
+		</comment>
+	</element>
+	<element name="modificationofsourcecode">
+		<score>
+			2
+		</score>
+		<comment>
+			Eclipse installation and configuration procedure detailed (including ANT, Maven plugins, ...). http://svn.nuxeo.org/trac/nuxeo
+		</comment>
+	</element>
+	<element name="copyrightowners">
+		<score>
+			0
+		</score>
+		<comment>
+			Rights owned by Nuxeo SAS (french company)
+		</comment>
+	</element>
+	<element name="training">
+		<score>
+			0
+		</score>
+		<comment>
+			Training offer exists http://www.nuxeo.com/offre/form/
+		</comment>
+	</element>
+	<element name="packagingnet">
+		<score>
+			0
+		</score>
+		<comment>
+			A package is not available but the installer works on all platforms.
+		</comment>
+	</element>
+	<element name="age">
+		<score>
+			1
+		</score>
+		<comment>
+			Nuxeo 5 is the next release of Nuxeo CPS ( Collabaritive Portal Server ) 
+		</comment>
+	</element>
+	<element name="popularity">
+		<score>
+			1
+		</score>
+		<comment>
+			Nuxeo is one of the european leaders in the open source CMS market, numerous references and active collaboration with I.T consultants (cf. http://www.nuxeo.com/clients/)
+		</comment>
+	</element>
+	<element name="modularity">
+		<score>
+			2
+		</score>
+		<comment>
+			Nuxeo is a modular framework, API are provided to extend the application with pluggable projects. 
+		</comment>
+	</element>
+	<element name="activityonbugs">
+		<score>
+			2
+		</score>
+		<comment>
+			JIRA is used to track bugs : http://jira.nuxeo.org/secure/Dashboard.jspaalso a mailing list is provided .
+		</comment>
+	</element>
+	<element name="packagingopen">
+		<score>
+			0
+		</score>
+		<comment>
+			A package is not available but the installer works on all platforms.
+		</comment>
+	</element>
+	<element name="forkprobability">
+		<score>
+			2
+		</score>
+		<comment>
+			Rights owned by Nuxeo SAS (french company)
+		</comment>
+	</element>
+</qsosscore>
