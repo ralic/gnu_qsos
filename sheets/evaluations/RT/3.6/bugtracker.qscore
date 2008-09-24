@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<qsosscore>
+	<element name="rightsmanagement">
+		<score>
+			2
+		</score>
+		<comment>
+			Oui. Gestion détaillé des droits (utilisateurs, groupes, associations avec les files d'attentes de tickets).
+		</comment>
+	</element>
+</qsosscore>
