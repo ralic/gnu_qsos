@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="utf-8"?>
+<qsosscore>
+	<element name="consulting">
+		<score>
+			1
+		</score>
+		<comment>
+			http://www.alfresco.com/services/consulting/
+		</comment>
+	</element>
+	<element name="documentation">
+		<score>
+			2
+		</score>
+		<comment>
+			Documentation nearly always up to date , correctly detailed , and adapted to different target readers ( admin , end user ... )
+		</comment>
+	</element>
+	<element name="activityonreleases">
+		<score>
+			2
+		</score>
+		<comment>
+			Major releases planned and displayed on the roadmap . Minor releases reserved for enterprise version
+		</comment>
+	</element>
+	<element name="administrationmonitoring">
+		<score>
+			2
+		</score>
+		<comment>
+			Integrated user rights management , full repository import / export , numerous API for integration with external tools .  
+		</comment>
+	</element>
+	<element name="independenceofdevelopments">
+		<score>
+			0
+		</score>
+		<comment>
+			All developers are from Alfresco . Some extensions can be integrated into the core product . 
+		</comment>
+	</element>
+	<element name="packaginghpux">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="stability">
+		<score>
+			2
+		</score>
+		<comment>
+			Very active project . A lot of new functionnalities are implemented in each release . 
+		</comment>
+	</element>
+	<element name="activityonfunctionalities">
+		<score>
+			2
+		</score>
+		<comment>
+			JIRA allows external users to ask for feature improvements . Numerous discussions on the forums regarding functionnalities .
+		</comment>
+	</element>
+	<element name="leadingteam">
+		<score>
+			2
+		</score>
+		<comment>
+			Founders are former managers of Business Objects and Documentum . Core developers are identifiable on the forums . 
+		</comment>
+	</element>
+	<element name="books">
+		<score>
+			1
+		</score>
+	</element>
+	<element name="references">
+		<score>
+			1
+		</score>
+		<comment>
+			http://www.alfresco.com/customers/
+		</comment>
+	</element>
+	<element name="sponsor">
+		<score>
+			1
+		</score>
+		<comment>
+			core team paid by Alfresco
+		</comment>
+	</element>
+	<element name="packagingmandriva">
+		<score>
+			2
+		</score>
+		<comment>
+			Strange configuration defaults for MySQL on this distribution
+		</comment>
+	</element>
+	<element name="strategicalindependence">
+		<score>
+			1
+		</score>
+		<comment>
+			respect of multiple standards
+		</comment>
+	</element>
+	<element name="tools">
+		<score>
+			2
+		</score>
+		<comment>
+			Active JIRA . Centralizes  bug handling / improvements / feature requests ...
+		</comment>
+	</element>
+	<element name="packagingsolaris">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="permissiveness">
+		<score>
+			1
+		</score>
+		<comment>
+			Mozilla Public License v. 1.1
+		</comment>
+	</element>
+	<element name="quality">
+		<score>
+			1
+		</score>
+		<comment>
+			Identified QA Manager . tests results publication seem to be absent . 
+		</comment>
+	</element>
+	<element name="support">
+		<score>
+			1
+		</score>
+		<comment>
+			Bugs raised by the community are fixed by the dev team , according to their priority , (no guaranteed resolution time ) .Minor releases reserved for the Enterprise version . 
+		</comment>
+	</element>
+	<element name="contributingcommunity">
+		<score>
+			2
+		</score>
+		<comment>
+			Strong activity on the forums . Core developers often respond to messages . A &quot;forge&quot; centralizes the various extensions contributed by the community
+		</comment>
+	</element>
+	<element name="packagingwindows">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="codeextension">
+		<score>
+			2
+		</score>
+		<comment>
+			Most extensions can be done by modifying XML configuration files . More extensive modifications will need recompilation . 
+		</comment>
+	</element>
+	<element name="easeofuseergonomics">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="packagingsuse">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="packagingmacosx">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="packagingredhat">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="codemodification">
+		<score>
+			2
+		</score>
+		<comment>
+			 Ant scripts , supplied documentation . 
+		</comment>
+	</element>
+	<element name="protectionagainstproprietaryforks">
+		<score>
+			1
+		</score>
+	</element>
+	<element name="packagingsource">
+		<score>
+			2
+		</score>
+		<comment>
+			Installation from source is easy . However , the public SVN is not tagged , so it is not possible to access a particular version of the software  . This functionnality is reserved for users with an enterprise account . 
+		</comment>
+	</element>
+	<element name="developersidentificationturnover">
+		<score>
+			2
+		</score>
+		<comment>
+			Approximately 10 are regularly posting on the forums . 
+		</comment>
+	</element>
+	<element name="packagingfreebsd">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="roadmap">
+		<score>
+			2
+		</score>
+		<comment>
+			Roadmap tres detaill� , avec des objectifs et delais clairsdetailed roadmap , with clear and detailed objectives
+		</comment>
+	</element>
+	<element name="packagingdebian">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="modificationofsourcecode">
+		<score>
+			2
+		</score>
+		<comment>
+			http://wiki.alfresco.com/wiki/Source_Code
+		</comment>
+	</element>
+	<element name="copyrightowners">
+		<score>
+			0
+		</score>
+		<comment>
+			Rights belong to Alfresco.
+		</comment>
+	</element>
+	<element name="training">
+		<score>
+			2
+		</score>
+		<comment>
+			http://www.alfresco.com/services/training/ : several languages, several end-user profile ( users , developpers , administrators ) 
+		</comment>
+	</element>
+	<element name="packagingnet">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="age">
+		<score>
+			1
+		</score>
+		<comment>
+			Young Product .
+		</comment>
+	</element>
+	<element name="popularity">
+		<score>
+			1
+		</score>
+	</element>
+	<element name="modularity">
+		<score>
+			2
+		</score>
+		<comment>
+			Very modular solution , easily customizable and extensible .
+		</comment>
+	</element>
+	<element name="activityonbugs">
+		<score>
+			2
+		</score>
+		<comment>
+			Active JIRA . Anybody can raise bugs or feature improvement . However , bugfix releases are reserved for the enterprise version . 
+		</comment>
+	</element>
+	<element name="packagingopen">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="forkprobability">
+		<score>
+			2
+		</score>
+		<comment>
+			Company founded by former managers of Documentum and Business Objects
+		</comment>
+	</element>
+</qsosscore>
