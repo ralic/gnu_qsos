@@ -20,7 +20,7 @@
 		<url>http://labs.jboss.com/jbossesb/</url>
 		<desc></desc>
 		<qsosformat>2.0</qsosformat>
-		<qsosappname>JBossESB</qsosappname>
+		<qsosappname>jBossESB</qsosappname>
 		<qsosappfamilies>
 			<qsosappfamily>esb</qsosappfamily>
 		</qsosappfamilies>

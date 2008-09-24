@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<qsosappfamily xmlns="http://qsos.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://qsos.org ../XSD/QSOS-Family.xsd ">
+	<header>
+		<authors>
+			<author>
+				<email>tojo.randrianaivojaona@atosorigin.com</email>
+				<name>Tojo Randrianaivojaona</name>
+			</author>
+		</authors>
+		<dates>
+			<creation>2006-03-31</creation>
+		</dates>
+	</header>
+	<section name="bugTrackercomposant" title="bug tracker Composant">
+		<desc></desc>
+		<element name="ticketHistoric" title="ticket Historic">
+			<desc0>Journalised detail badly defined,not accessible</desc0>
+			<desc1>Journalised detail doesn't work correctly</desc1>
+			<desc2>Journalised detail is well performing</desc2>
+			<comment> detail of actions realised during the treatment of a ticket. </comment>
+		</element>
+		<element name="ticketUserView" title="ticket User View">
+			<desc0>It cannot only restrict the visibility of a customer to his tickets</desc0>
+			<desc1>Eestricting the visibility of a customer to his tickets by changing the source code doesn't work very well</desc1>
+			<desc2>Possibility of restricting the visibility of a customer to his tickets by web interface</desc2>
+			<comment> Possibility of only restricting the visibility of a customer to his tickets. </comment>
+		</element>
+		<element name="controlledAssignment" title="controlled Assignment">
+			<desc0>The customers assign themselves their tickets </desc0>
+			<desc1>It can customize customer assignment, Customers can assign themselves their tickets to a member of support team</desc1>
+			<desc2>Customers can't assign themselves their tickets to a member of support team</desc2>
+			<comment> Customers can't assign themselves their tickets to a member of support team. </comment>
+		</element>
+		<element name="delegationOfCreation" title="Delegation of creation">
+			<desc0>Administrator can't create ticket with an user's name</desc0>
+			<desc1>It's difficult for an administrator to create a ticket with an user's name,or it doesn't work correctly</desc1>
+			<desc2>Easy for an administrator to create a ticket with an user's name</desc2>
+			<comment> Possibility for an administrator to create a ticket with an user's name </comment>
+		</element>
+		<element name="personalizedFields" title="personalized fields">
+			<desc0>No personalized fields</desc0>
+			<desc1>Personalized fields don't work very well</desc1>
+			<desc2>Personalized fields is carried out by a modification in files DTL(like HTML language), easy to manage</desc2>
+			<comment> Possibility to add fields in the ticket's features </comment>
+		</element>
+		<element name="enclosingFiles" title="Enclosing files">
+			<desc0>A ticket can't enclose a file</desc0>
+			<desc1>Enclosed files don't work correctly</desc1>
+			<desc2>Easy to enclose a file to a ticket</desc2>
+			<comment> Possibility to enclose files to a un ticket. </comment>
+		</element>
+		<element name="Reminder" title="Reminder">
+			<desc0>Reminder is not supported</desc0>
+			<desc1>Reminder required externe module or don't work correctly</desc1>
+			<desc2>Reminder is included on this tools, easy to manage</desc2>
+			<comment> Automatic recall after a certain amount of time of inactivity on a ticket. </comment>
+		</element>
+		<element name="notificationEmail" title="Notification Email">
+			<desc0>No Configuration of notification email </desc0>
+			<desc1>Configuration of notification email doesn't work correctly</desc1>
+			<desc2>Configuration notification email is managed by web interface</desc2>
+			<comment> Possibility to configure notification email when there are a modification of a ticket </comment>
+		</element>
+		<element name="enteringChannelEmail " title="entering channel email ">
+			<desc0>Impossible to interact OTRS via email</desc0>
+			<desc1>The interaction with OTRS via email doesn't work correctly</desc1>
+			<desc2>It can interact (eg:create tickets) in an immediate way</desc2>
+			<comment> Possibility to interact with OTRS via email (eg. ticket's creation via email). </comment>
+		</element>
+		<element name="full-textResearch" title="full-text research">
+			<desc0>We can't carry out a research on the whole tickets </desc0>
+			<desc1>The research function doesn't include comments and notices</desc1>
+			<desc2>Easy to research information on the whole tickets (including comments or notices)</desc2>
+			<comment> Possibility to research on the whole tickets (including comments or notices). </comment>
+		</element>
+		<element name="rightsmanagement" title="Rights management">
+			<desc0>Impossible to manage users rights</desc0>
+			<desc1>Rules and rights ' management via source code or don't work correctly </desc1>
+			<desc2>Rules and rights ' management via source code by web interface, very easy</desc2>
+			<comment> Integrated management of rules and rights </comment>
+		</element>
+		<element name="publicPrivateManagement" title="public/private management">
+			<desc0>Information for customers and support team are not separated</desc0>
+			<desc1>Separations betwen information that consummers can see and those that are only available for are possible but difficult to do or don't work correctly </desc1>
+			<desc2>Tools supply information visible by customers separated with those available only for the support team</desc2>
+			<comment> Separations beetwen information that consumers can see and those that are only available for </comment>
+		</element>
+		<element name="timesmanagement" title="time's management">
+			<desc0>No management regarding ticket's time</desc0>
+			<desc1>Time is initialized during the creation of ticket and impossible to update it</desc1>
+			<desc2>Possibility to update and follow the time in every ticket</desc2>
+			<comment> Possibility to update and follow the time past in every ticket </comment>
+		</element>
+		<element name="Statistics" title="Statistics">
+			<desc0>No statistic's module</desc0>
+			<desc1>statistic's module not covering only one number of limited cases or not functioning correctly</desc1>
+			<desc2>statistic's module fonctionnal bringing a real advantage to the application</desc2>
+			<comment> Possibility of generation of statistics about activity of support (bugs number, reactivity) </comment>
+		</element>
+	</section>
+	<section name="authentificationExternalBackend " title="authentification external backend">
+		<element name="LDAPBackend" title="LDAP Backend">
+			<desc0>Authentification LDAP impossible</desc0>
+			<desc1>Authentification LDAP don't work correctly</desc1>
+			<desc2>Authentification LDAP is performing and bring a real advantage to application</desc2>
+		</element>
+		<element name="databaseBackend" title="Database Backend">
+			<desc0>Authentification DB Backend impossible</desc0>
+			<desc1>Authentification DB Backend doesn't work correctly</desc1>
+			<desc2>Authentification LDAP is performing and bring a real advantage to application</desc2>
+		</element>
+	</section>
+	<section name="customerAuthentificationBackendAndStorage" title="Customer authentification backend and storage">
+		<element name="Database" title="Database">
+			<desc0>Authentification/storage of Customer group impossible</desc0>
+			<desc1>Authentification/storage of Customer group isn't performing</desc1>
+			<desc2>Authentification/storage of Customer group works very well</desc2>
+		</element>
+		<element name="LDAP" title="LDAP">
+			<desc0>Authentification/storage of Customer group impossible</desc0>
+			<desc1>Authentification of Customer group is performing but update data via web interface is impossible</desc1>
+			<desc2>Authentification/storage of Customer group works very well</desc2>
+		</element>
+		<element name="HTTPBasic" title="HTTPBasic">
+			<desc0>Authentification of Customer group impossible</desc0>
+			<desc1>Authentification of Customer group doesn't work very well</desc1>
+			<desc2>Authentification of Customer group is performing</desc2>
+		</element>
+		<element name="RADIUS" title="RADIUS">
+			<desc0>Authentification of Customer group impossible</desc0>
+			<desc1>Authentification of Customer group doesn't work very well</desc1>
+			<desc2>Authentification of Customer group is performing</desc2>
+		</element>
+	</section>
+	<section name="administration" title="administration">
+		<element name="webinterface" title="web interface">
+			<desc0>No administration via Web interface </desc0>
+			<desc1>Administration via web interface requires a modification in the source code or doesn't work well</desc1>
+			<desc2>Administration via web interface work very well</desc2>
+		</element>
+		<element name="commandline" title="command line">
+			<desc0>Administration via commandline impossible</desc0>
+			<desc1>Administration via commandline is difficult or isn't performing </desc1>
+			<desc2>Administration via command line work very well</desc2>
+		</element>
+		<element name="installationcomplexity" title="installation complexity">
+			<desc0>OTRS installation requires much time and complex configuration 's scripts</desc0>
+			<desc1>OTRS installation requires much time, no scripts to develop and the readme is detailed</desc1>
+			<desc2>OTRS installation is done by one clic</desc2>
+		</element>
+	</section>
+</qsosappfamily>

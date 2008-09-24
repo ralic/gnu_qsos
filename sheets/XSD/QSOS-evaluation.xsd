@@ -1,148 +1,126 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xsd:schema elementFormDefault="qualified"
-	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
-	targetNamespace="http://qsos.org" xmlns:qsos="http://qsos.org">
-	<xsd:element name="header">
-		<xsd:complexType>
-			<xsd:sequence>
-				<xsd:element ref="qsos:authors" />
-				<xsd:element ref="qsos:dates" />
-				<xsd:element ref="qsos:language" />
-				<xsd:element ref="qsos:appname" />
-				<xsd:element ref="qsos:release" />
-				<xsd:element ref="qsos:licenseid" />
-				<xsd:element ref="qsos:licensedesc" />
-				<xsd:element ref="qsos:url" />
-				<xsd:element ref="qsos:desc" />
-				<xsd:element ref="qsos:demourl" />
-				<xsd:element ref="qsos:qsosformat" />
-				<xsd:element ref="qsos:qsosappfamily" />
-				<xsd:element ref="qsos:qsosspecificformat" />
-				<xsd:element ref="qsos:qsosappname" />
-			</xsd:sequence>
-		</xsd:complexType>
-	</xsd:element>
-	<xsd:element name="authors">
-		<xsd:complexType>
-			<xsd:sequence>
-				<xsd:element ref="qsos:author" />
-			</xsd:sequence>
-		</xsd:complexType>
-	</xsd:element>
-	<xsd:element name="author">
-		<xsd:complexType>
-			<xsd:sequence>
-				<xsd:element ref="qsos:email" />
-				<xsd:element ref="qsos:name" />
-			</xsd:sequence>
-		</xsd:complexType>
-	</xsd:element>
-	<xsd:element name="email" type="xsd:string" />
-	<xsd:element name="name" type="xsd:string" />
-	<xsd:element name="dates">
-		<xsd:complexType>
-			<xsd:sequence>
-				<xsd:element ref="qsos:creation" />
-				<xsd:element ref="qsos:validation" />
-			</xsd:sequence>
-		</xsd:complexType>
-	</xsd:element>
-	<xsd:element name="creation">
-		<xsd:simpleType>
-			<xsd:restriction base="xsd:string">
-				<xsd:pattern
-					value="([0-9][0-9][0-9][0-9]-[0-9][0-9]-[0-9]|)" />
-			</xsd:restriction>
-		</xsd:simpleType>
-	</xsd:element>
-	<xsd:element name="validation">
-		<xsd:simpleType>
-			<xsd:restriction base="xsd:string">
-				<xsd:pattern
-					value="([0-9][0-9][0-9][0-9]-[0-9][0-9]-[0-9]|)" />
-			</xsd:restriction>
-		</xsd:simpleType>
-	</xsd:element>
-	<xsd:element name="desc" type="xsd:string" />
-	<xsd:element name="language" type="xsd:language" />
-	<xsd:element name="appname" type="xsd:string" />
-	<xsd:element name="release" type="xsd:string" />
-	<xsd:element name="licenseid" type="xsd:integer" />
-	<xsd:element name="licensedesc" type="xsd:string" />
-	<xsd:element name="url" type="xsd:anyURI" />
-	<xsd:element name="demourl" type="xsd:string" />
-	<xsd:element name="qsosformat" type="xsd:string" />
-	<xsd:element name="qsosappfamily" type="xsd:string" />
-	<xsd:element name="qsosspecificformat" type="xsd:string" />
-	<xsd:element name="qsosappname" type="xsd:string" />
-
-	<xsd:element name="section">
-		<xsd:complexType>
-			<xsd:sequence>
-				<xsd:element ref="qsos:desc" />
-				<xsd:element maxOccurs="unbounded" ref="qsos:element" />
-			</xsd:sequence>
-			<xsd:attribute name="name" use="required" type="xsd:ID" />
-			<xsd:attribute name="title" use="required"
-				type="xsd:string" />
-		</xsd:complexType>
-	</xsd:element>
-
-
-	<xsd:element name="comment" type="xsd:string" />
-	<xsd:element name="desc0" type="xsd:string" />
-	<xsd:element name="desc1" type="xsd:string" />
-	<xsd:element name="desc2" type="xsd:string" />
-
-	<xsd:element name="score">
-		<xsd:simpleType>
-			<!--
-				<xsd:restriction base="xsd:integer">
-				<xsd:enumeration value="0"/>
-				<xsd:enumeration value="1"/>
-				<xsd:enumeration value="2"/>
-				</xsd:restriction>
-			-->
-			<xsd:restriction base="xsd:string">
-				<xsd:pattern value="(^$|0|1|2)" />
-			</xsd:restriction>
-		</xsd:simpleType>
-	</xsd:element>
-
-	<xsd:element name="element">
-		<xsd:complexType>
-			<xsd:sequence>
-				<xsd:element ref="qsos:desc" minOccurs="0"
-					maxOccurs="1" />
-				<xsd:element ref="qsos:element" minOccurs="0"
-					maxOccurs="unbounded" />
-				<xsd:element ref="qsos:desc0" minOccurs="0"
-					maxOccurs="1" />
-				<xsd:element ref="qsos:desc1" minOccurs="0"
-					maxOccurs="1" />
-				<xsd:element ref="qsos:desc2" minOccurs="0"
-					maxOccurs="1" />
-				<xsd:element ref="qsos:score" minOccurs="0"
-					maxOccurs="1" />
-				<xsd:element ref="qsos:comment" minOccurs="0"
-					maxOccurs="1" />
-			</xsd:sequence>
-			<xsd:attribute name="name" use="required" type="xsd:ID" />
-			<xsd:attribute name="title" use="required"
-				type="xsd:string" />
-		</xsd:complexType>
-	</xsd:element>
-
-
-
-	<xsd:element name="document">
-		<xsd:complexType>
-			<xsd:sequence>
-				<xsd:element ref="qsos:header" />
-				<xsd:element minOccurs="1" maxOccurs="unbounded"
-					ref="qsos:section" />
-			</xsd:sequence>
-		</xsd:complexType>
-	</xsd:element>
-
-</xsd:schema>
+<schema elementFormDefault="qualified" xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://qsos.org" xmlns:qsos="http://qsos.org">
+	<element name="header">
+		<complexType>
+			<sequence>
+				<element ref="qsos:authors" />
+				<element ref="qsos:dates" maxOccurs="1" minOccurs="0" />
+				<choice maxOccurs="unbounded" minOccurs="1">
+					<element ref="qsos:licenseid" maxOccurs="1" minOccurs="0" />
+					<element ref="qsos:appname" maxOccurs="1" minOccurs="0" />
+					<element ref="qsos:release" maxOccurs="1" minOccurs="1" />
+					<element ref="qsos:licensedesc" maxOccurs="1" minOccurs="1" />
+					<element ref="qsos:language" maxOccurs="1" minOccurs="1" />
+					<element ref="qsos:url" maxOccurs="1" minOccurs="0" />
+					<element ref="qsos:desc" maxOccurs="1" minOccurs="0" />
+					<element ref="qsos:demourl" maxOccurs="1" minOccurs="0" />
+					<element ref="qsos:qsosformat" maxOccurs="1" minOccurs="1" />
+					<element ref="qsos:qsosspecificformat" maxOccurs="1" minOccurs="0" />
+					<element ref="qsos:qsosappname" maxOccurs="1" minOccurs="1" />
+				</choice>
+				<element ref="qsos:qsosappfamilies" />
+			</sequence>
+		</complexType>
+	</element>
+	<element name="authors">
+		<complexType>
+			<sequence>
+				<element ref="qsos:author" maxOccurs="unbounded" minOccurs="1" />
+			</sequence>
+		</complexType>
+	</element>
+	<element name="author">
+		<complexType>
+			<sequence>
+				<element ref="qsos:email" />
+				<element ref="qsos:name" />
+			</sequence>
+		</complexType>
+	</element>
+	<element name="email" type="string" />
+	<element name="name" type="string" />
+	<element name="dates">
+		<complexType>
+			<sequence>
+				<element ref="qsos:creation" />
+				<element ref="qsos:validation" />
+			</sequence>
+		</complexType>
+	</element>
+	<element name="creation">
+		<simpleType>
+			<restriction base="string">
+				<pattern value="([0-9][0-9][0-9][0-9]-[0-9][0-9]-[0-9]|)" />
+			</restriction>
+		</simpleType>
+	</element>
+	<element name="validation">
+		<simpleType>
+			<restriction base="string">
+				<pattern value="([0-9][0-9][0-9][0-9]-[0-9][0-9]-[0-9]|)" />
+			</restriction>
+		</simpleType>
+	</element>
+	<element name="desc" type="string" />
+	<element name="language" type="language" />
+	<element name="appname" type="string" />
+	<element name="release" type="string" />
+	<element name="licenseid" type="integer" />
+	<element name="licensedesc" type="string" />
+	<element name="url" type="anyURI" />
+	<element name="demourl" type="string" />
+	<element name="qsosformat" type="string" />
+	<element name="qsosappfamilies">
+		<complexType>
+			<sequence>
+				<element name="qsosappfamily" type="string" maxOccurs="unbounded" minOccurs="1"></element>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="qsosspecificformat" type="string" />
+	<element name="qsosappname" type="string" />
+	<element name="section">
+		<complexType>
+			<sequence>
+				<element ref="qsos:desc" maxOccurs="1" minOccurs="0"/>
+				<element maxOccurs="unbounded" ref="qsos:element" />
+			</sequence>
+			<attribute name="name" use="required" type="ID" />
+			<attribute name="title" use="required" type="string" />
+		</complexType>
+	</element>
+	<element name="comment" type="string" />
+	<element name="desc0" type="string" />
+	<element name="desc1" type="string" />
+	<element name="desc2" type="string" />
+	<element name="score">
+		<simpleType>
+			<restriction base="string">
+				<whiteSpace value="collapse"/>
+				<pattern value="(^$|0|1|2)" />
+			</restriction>
+		</simpleType>
+	</element>
+	<element name="element">
+		<complexType>
+			<sequence>
+				<element ref="qsos:desc" minOccurs="0" maxOccurs="1" />
+				<element ref="qsos:element" minOccurs="0" maxOccurs="unbounded" />
+				<element ref="qsos:desc0" minOccurs="0" maxOccurs="1" />
+				<element ref="qsos:desc1" minOccurs="0" maxOccurs="1" />
+				<element ref="qsos:desc2" minOccurs="0" maxOccurs="1" />
+				<choice maxOccurs="unbounded" minOccurs="1"><element ref="qsos:score" minOccurs="0" maxOccurs="1" /><element ref="qsos:comment" minOccurs="0" maxOccurs="1" /></choice>
+			</sequence>
+			<attribute name="name" use="required" type="ID" />
+			<attribute name="title" use="required" type="string" />
+		</complexType>
+	</element>
+	<element name="document">
+		<complexType>
+			<sequence>
+				<element ref="qsos:header" />
+				<element minOccurs="1" maxOccurs="unbounded" ref="qsos:section" />
+			</sequence>
+		</complexType>
+	</element>
+</schema>

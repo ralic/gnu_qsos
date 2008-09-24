@@ -29,7 +29,7 @@
 		<url>Http://ws.apache.org/axis2/</url>
 		<desc>Framework de développement, déploiement et consommation de web services en environnement J2EE (partie Web)</desc>
 		<qsosformat>2.0</qsosformat>
-		<qsosappname>JaxWS</qsosappname>
+		<qsosappname>Axis</qsosappname>
 		<qsosappfamilies>
 			<qsosappfamily>j2ee-ws-stack</qsosappfamily>
 		</qsosappfamilies>
