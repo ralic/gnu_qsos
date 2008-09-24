@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="utf-8"?>
+<qsosscore>
+	<element name="consulting">
+		<score>
+			1
+		</score>
+		<comment>
+			http://www.alfresco.com/services/consulting/
+		</comment>
+	</element>
+	<element name="documentation">
+		<score>
+			2
+		</score>
+		<comment>
+			Forum :http://forums.alfresco.com/Wiki :http://wiki.alfresco.com/wiki/Main_Pageare provided.
+		</comment>
+	</element>
+	<element name="activityonreleases">
+		<score>
+			1
+		</score>
+		<comment>
+			Major releases planned and displayed on the roadmap .Minor releases reserved for enterprise version.
+		</comment>
+	</element>
+	<element name="administrationmonitoring">
+		<score>
+			1
+		</score>
+		<comment>
+			With the version bundled with Jboss AS we can use the JMX console, to administrate MBeans .Repository can be imported / exported via an admin console , and these actions can be scheduled . 
+		</comment>
+	</element>
+	<element name="independenceofdevelopments">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="packaginghpux">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="stability">
+		<score>
+			2
+		</score>
+		<comment>
+			Stabilized project with active community for bug reports and corrections .
+		</comment>
+	</element>
+	<element name="activityonfunctionalities">
+		<score>
+			2
+		</score>
+		<comment>
+			Jira: http://issues.alfresco.com/secure/Dashboard.jspaForum: http://forums.alfresco.com/
+		</comment>
+	</element>
+	<element name="leadingteam">
+		<score>
+			2
+		</score>
+		<comment>
+			Founders are former managers of Business Objects and Documentum . Core developers are identifiable on the forums
+		</comment>
+	</element>
+	<element name="books">
+		<score>
+			1
+		</score>
+		<comment>
+			http://www.amazon.fr/Alfresco-Enterprise-Content-Management-Implementation/dp/1904811116/ref=pd_bbs_sr_1/171-5230348-4250656?ie=UTF8&amp;s=english-books&amp;qid=1180949051&amp;sr=8-1
+		</comment>
+	</element>
+	<element name="references">
+		<score>
+			1
+		</score>
+		<comment>
+			http://www.alfresco.com/customers/
+		</comment>
+	</element>
+	<element name="sponsor">
+		<score>
+			1
+		</score>
+		<comment>
+			core team paid by Alfresco
+		</comment>
+	</element>
+	<element name="packagingmandriva">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="strategicalindependence">
+		<score>
+			1
+		</score>
+		<comment>
+			Integration with others Open Source projects :JBoss AS, Tomcat, Apache Myfaces.Uses of standars like JCR170 
+		</comment>
+	</element>
+	<element name="tools">
+		<score>
+			2
+		</score>
+		<comment>
+			Jira provided with roles/tasks assignement and progress monitoring .
+		</comment>
+	</element>
+	<element name="packagingsolaris">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="permissiveness">
+		<score>
+			0
+		</score>
+		<comment>
+			alfresco2.0 is under GNU GPL with FLOSS Exception (http://wiki.alfresco.com/wiki/Open_Source_Licensing ) 
+		</comment>
+	</element>
+	<element name="quality">
+		<score>
+			2
+		</score>
+		<comment>
+			http://wiki.alfresco.com/wiki/Qa_test_plan
+		</comment>
+	</element>
+	<element name="support">
+		<score>
+			2
+		</score>
+		<comment>
+			Two types of support provided Gold and Platinium with different level http://www.alfresco.com/services/support/
+		</comment>
+	</element>
+	<element name="historyknownproblems">
+		<score>
+			1
+		</score>
+	</element>
+	<element name="contributingcommunity">
+		<score>
+			2
+		</score>
+		<comment>
+			Strong activity for the community a wiki, forum, forge and blogs are provided 
+		</comment>
+	</element>
+	<element name="packagingwindows">
+		<score>
+			2
+		</score>
+		<comment>
+			http://sourceforge.net/project/showfiles.php?group_id=143373&amp;package_id=157460&amp;release_id=488010
+		</comment>
+	</element>
+	<element name="codeextension">
+		<score>
+			2
+		</score>
+		<comment>
+			Most extensions can be done by modifying XML configuration files . More extensive modifications will need recompilation .
+		</comment>
+	</element>
+	<element name="managementstyle">
+		<score>
+			2
+		</score>
+		<comment>
+			Identified roadmap, can evoluate with due to costumer request.
+		</comment>
+	</element>
+	<element name="easeofuseergonomics">
+		<score>
+			2
+		</score>
+		<comment>
+			A module is provided to customize the web UI, and changes can also be made by creating template by using the Freemarker langage.
+		</comment>
+	</element>
+	<element name="packagingsuse">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="packagingmacosx">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="packagingredhat">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="codemodification">
+		<score>
+			2
+		</score>
+		<comment>
+			Ant scripts , supplied documentation .
+		</comment>
+	</element>
+	<element name="protectionagainstproprietaryforks">
+		<score>
+			1
+		</score>
+	</element>
+	<element name="packagingsource">
+		<score>
+			2
+		</score>
+		<comment>
+			A zipped war and a bundle war with Tomcat are provided .it is a Java/J2EE architecture easy to deploy,  it does not depend on the Operating System.
+		</comment>
+	</element>
+	<element name="developersidentificationturnover">
+		<score>
+			2
+		</score>
+		<comment>
+			http://www.alfresco.com/about/people/
+		</comment>
+	</element>
+	<element name="packagingfreebsd">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="roadmap">
+		<score>
+			2
+		</score>
+		<comment>
+			Raodmap clearly detailed: http://wiki.alfresco.com/wiki/Roadmap
+		</comment>
+	</element>
+	<element name="packagingdebian">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="modificationofsourcecode">
+		<score>
+			2
+		</score>
+		<comment>
+			http://wiki.alfresco.com/wiki/Source_Code
+		</comment>
+	</element>
+	<element name="copyrightowners">
+		<score>
+			0
+		</score>
+		<comment>
+			Rights held by Alfresco.
+		</comment>
+	</element>
+	<element name="training">
+		<score>
+			2
+		</score>
+		<comment>
+			Several module courses are provided in several langage and several contrieshttp://www.alfresco.com/services/training/
+		</comment>
+	</element>
+	<element name="packagingnet">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="age">
+		<score>
+			1
+		</score>
+	</element>
+	<element name="popularity">
+		<score>
+			2
+		</score>
+		<comment>
+			alfresco has few customers in different branch of industry like Financial, Government, Education etc...http://www.alfresco.com/customers/
+		</comment>
+	</element>
+	<element name="modularity">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="activityonbugs">
+		<score>
+			2
+		</score>
+		<comment>
+			Tools  provided; jira for bug  reports and issues and forums for discussions regarding functionalities :Jira: http://issues.alfresco.com/secure/Dashboard.jspaForum: http://forums.alfresco.com/
+		</comment>
+	</element>
+	<element name="packagingopen">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="forkprobability">
+		<score>
+			2
+		</score>
+	</element>
+</qsosscore>
