@@ -23,7 +23,7 @@
 		<qsosformat>2.0</qsosformat>
 		<qsosappname>mysql</qsosappname>
 		<qsosappfamilies>
-			<qsosappfamily>relational-database-management</qsosappfamily>
+			<qsosappfamily>relational-database-management-system</qsosappfamily>
 		</qsosappfamilies>
 	</template>
 </qsostemplate>

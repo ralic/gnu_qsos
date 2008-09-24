@@ -48,7 +48,7 @@ def UpgradeEvaluationSheet(sheet, outDir, Repo):
     release = evaluation.firstChild.getElementsByTagName("release")[0].firstChild.data
     version = output.createElement("release")
     version.appendChild(output.createTextNode(release))
-    header.appendChild(format)
+    header.appendChild(version)
     
     #Add appfamilies
     header.appendChild(template.firstChild.getElementsByTagName("template")[0].getElementsByTagName("qsosappfamilies")[0])
@@ -102,8 +102,8 @@ def CommitRepository(inDir, Repo):
                 #Extract information from qsos file
                 CleanWhiteSpaces(inDir + "/" + filename)
                 evaluation = minidom.parse(inDir + "/" + filename)
-                email = evaluation.firstChild.firstChild.firstChild.firstChild.firstChild.firstChild.data
-                name = evaluation.firstChild.firstChild.firstChild.firstChild.lastChild.firstChild.data
+                email = evaluation.firstChild.firstChild.firstChild.firstChild.getElementsByTagName("email")[0].firstChild.data
+                name = evaluation.firstChild.firstChild.firstChild.firstChild.getElementsByTagName("name")[0].firstChild.data
                 message = "Auto-uplodaded file : " + filename
                 eval = FileObject(file(inDir + "/" + filename), filename)
             except Exception, inst :
