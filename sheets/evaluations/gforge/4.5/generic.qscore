@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="utf-8"?>
+<qsosscore>
+	<element name="consulting">
+		<score>
+			1
+		</score>
+		<comment>
+			Une PME aux USA, un indépendant en France, quelques SSiI fournissent du service, mais pas d'offre au catalogue
+		</comment>
+	</element>
+	<element name="documentation">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="activityonreleases">
+		<score>
+			0
+		</score>
+		<comment>
+			Une version 4.6 est en préparation
+		</comment>
+	</element>
+	<element name="administrationmonitoring">
+		<score>
+			1
+		</score>
+		<comment>
+			Faiblesses sur l'exploitation de la journalisation
+		</comment>
+	</element>
+	<element name="independenceofdevelopments">
+		<score>
+			2
+		</score>
+		<comment>
+			Contributions de GForgeGroup ? Des contributions d'entreprises utilisatrices ?
+		</comment>
+	</element>
+	<element name="roadmap">
+		<score>
+			1
+		</score>
+	</element>
+	<element name="stability">
+		<score>
+			1
+		</score>
+		<comment>
+			La version 4.6 semble prendre du temps à se finaliser
+		</comment>
+	</element>
+	<element name="activityonfunctionalities">
+		<score>
+			0
+		</score>
+		<comment>
+			Depuis quelques mois
+		</comment>
+	</element>
+	<element name="leadingteam">
+		<score>
+			1
+		</score>
+		<comment>
+			Tim Perdue (GForgeGroup) et Christian Bayle (impliqué dans forges NG)
+		</comment>
+	</element>
+	<element name="books">
+		<score>
+			0
+		</score>
+		<comment>
+			Rien sur Amazon, LMET, Fnac
+		</comment>
+	</element>
+	<element name="references">
+		<score>
+			1
+		</score>
+		<comment>
+			Les usages de GForge sont faits en entreprise, d'où rien ne filtre
+		</comment>
+	</element>
+	<element name="sponsor">
+		<score>
+			0
+		</score>
+		<comment>
+			Pas de sponsor en tant que tel, mais des contributeurs salariés sur des missions ponctuelles
+		</comment>
+	</element>
+	<element name="packagingmandriva">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="strategicalindependence">
+		<score>
+			1
+		</score>
+	</element>
+	<element name="tools">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="permissiveness">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="quality">
+		<score>
+			1
+		</score>
+		<comment>
+			Processus de peer-review par la core-team
+		</comment>
+	</element>
+	<element name="support">
+		<score>
+			1
+		</score>
+		<comment>
+			Une PME aux USA, un indépendant en France, quelques SSiI fournissent du service, mais pas d'offre au catalogue
+		</comment>
+	</element>
+	<element name="contributingcommunity">
+		<score>
+			1
+		</score>
+		<comment>
+			Communauté de développeurs récemment devenue inactive (6mois), et communauté d'utilisateurs active
+		</comment>
+	</element>
+	<element name="packagingwindows">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="managementstyle">
+		<score>
+			2
+		</score>
+		<comment>
+			Deux décideurs et une core-team
+		</comment>
+	</element>
+	<element name="easeofuseergonomics">
+		<score>
+			1
+		</score>
+		<comment>
+			Toutes les options, fonctionnalités, possibiiltés de ne sont pas visibles ni lisibles d'un seul coup d'oeil
+		</comment>
+	</element>
+	<element name="codemodification">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="protectionagainstproprietaryforks">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="packagingsource">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="developersidentificationturnover">
+		<score>
+			2
+		</score>
+		<comment>
+			Activité réduite ces derniers mois
+		</comment>
+	</element>
+	<element name="packagingdebian">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="modificationofsourcecode">
+		<score>
+			2
+		</score>
+		<comment>
+			La documentation est très bien faite à ce niveau
+		</comment>
+	</element>
+	<element name="copyrightowners">
+		<score>
+			1
+		</score>
+	</element>
+	<element name="training">
+		<score>
+			1
+		</score>
+		<comment>
+			Une PME aux USA, un indépendant en France, quelques SSiI fournissent du service, mais pas d'offre au catalogue
+		</comment>
+	</element>
+	<element name="age">
+		<score>
+			2
+		</score>
+		<comment>
+			Fork né en 2003
+		</comment>
+	</element>
+	<element name="popularity">
+		<score>
+			2
+		</score>
+		<comment>
+			Référence publiques (PGFoundry, RubyForge, Helix Community) et privées (donc confidentielles)http://gforge.org/docman/view.php/1/52/gforge-sites.html
+		</comment>
+	</element>
+	<element name="modularity">
+		<score>
+			2
+		</score>
+		<comment>
+			Système de greffons (plugins) et quelques greffon disponibles
+		</comment>
+	</element>
+	<element name="activityonbugs">
+		<score>
+			0
+		</score>
+		<comment>
+			Depuis quelques mois
+		</comment>
+	</element>
+	<element name="forkprobability">
+		<score>
+			1
+		</score>
+		<comment>
+			GForge était un fork de SourceForge (voir GForge AS du GForgeGroup, ré-écriture complète ou partielle ?)
+		</comment>
+	</element>
+</qsosscore>
