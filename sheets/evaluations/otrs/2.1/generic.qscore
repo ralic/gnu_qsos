@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="utf-8"?>
+<qsosscore>
+	<element name="consulting">
+		<score>
+			1
+		</score>
+		<comment>
+			OTRS GmbH et Atos Origin offrent des services de consulting sur OTRS.
+		</comment>
+	</element>
+	<element name="documentation">
+		<score>
+			2
+		</score>
+		<comment>
+			Manuel administrateur (en anglais et en allemand) et guide du développeur (en anglais).
+		</comment>
+	</element>
+	<element name="activityonreleases">
+		<score>
+			2
+		</score>
+		<comment>
+			Nouvelles versions régulières (de l'ordre de 3 à 4 par an).
+		</comment>
+	</element>
+	<element name="administrationmonitoring">
+		<score>
+			1
+		</score>
+		<comment>
+			OTRS intègre une interface Web spécifique qui permet de réaliser toutes les opérations d'administration (y compris l'édition des fichiers de configuration). Pas d'intégration avec des outils de supervision externe ou via SNMP.
+		</comment>
+	</element>
+	<element name="independenceofdevelopments">
+		<score>
+			0
+		</score>
+		<comment>
+			La grande majorité des développements sont réalisés par des employés de la société OTRS GmbH.
+		</comment>
+	</element>
+	<element name="roadmap">
+		<score>
+			1
+		</score>
+		<comment>
+			Disponibilité d'une « TODO list » dans CVS (http://cvs.otrs.org/viewcvs.cgi/otrs/TODO) sans précisions sur les dates prévues pour les prochaines versions.
+		</comment>
+	</element>
+	<element name="stability">
+		<score>
+			2
+		</score>
+		<comment>
+			Le logiciel est stabilisé. Les nouvelles versions concerne surtout l'ajout de fonctionnalités.
+		</comment>
+	</element>
+	<element name="activityonfunctionalities">
+		<score>
+			1
+		</score>
+		<comment>
+			Nouvelles fonctionnalités décidées par l'équipe coeur, pas de suivi formalisé des demandes en provenance des utilisateurs.
+		</comment>
+	</element>
+	<element name="leadingteam">
+		<score>
+			1
+		</score>
+		<comment>
+			L'équipe dirigeante semble limitée à quelques personnes.
+		</comment>
+	</element>
+	<element name="books">
+		<score>
+			2
+		</score>
+		<comment>
+			Aucun livre publié sur OTRS.
+		</comment>
+	</element>
+	<element name="references">
+		<score>
+			2
+		</score>
+		<comment>
+			Nombreuses références, telles que : NASA, General Motors, l'université internationale de Breme, Balfour Beatty Rail GmbH ou l'association Allemande de sauvetage. Le plus gros déploiement est de 20 000 tickets par jour.
+		</comment>
+	</element>
+	<element name="sponsor">
+		<score>
+			1
+		</score>
+		<comment>
+			OTRS GmbH embauche les développeurs coeur du projet.
+		</comment>
+	</element>
+	<element name="strategicalindependence">
+		<score>
+			0
+		</score>
+		<comment>
+			La stratégie d'OTRS est très liée à celle de la société OTRS GmbH.
+		</comment>
+	</element>
+	<element name="tools">
+		<score>
+			2
+		</score>
+		<comment>
+			Utilisation de bugzilla pour la gestion des bogues et des demandes de fonctionnalités.
+		</comment>
+	</element>
+	<element name="permissiveness">
+		<score>
+			0
+		</score>
+		<comment>
+			Licence GPL v2
+		</comment>
+	</element>
+	<element name="quality">
+		<score>
+			0
+		</score>
+		<comment>
+			Pas de processus public d'assurance qualité ou d'intégration continue identifié.
+		</comment>
+	</element>
+	<element name="support">
+		<score>
+			1
+		</score>
+		<comment>
+			OTRS GmbH offre du support sur OTRS (http://www.otrs.de/en/support/).
+		</comment>
+	</element>
+	<element name="contributingcommunity">
+		<score>
+			1
+		</score>
+		<comment>
+			Activité décelable sur les listes de discussion, cependant la communauté des contributeurs n'est pas très importante.
+		</comment>
+	</element>
+	<element name="codeextension">
+		<score>
+			2
+		</score>
+		<comment>
+			Le code Perl n'est pas compilé et le code peut être étendu par l'ajout de nouveaux modules Perl.
+		</comment>
+	</element>
+	<element name="managementstyle">
+		<score>
+			1
+		</score>
+		<comment>
+			Despote éclairé.
+		</comment>
+	</element>
+	<element name="easeofuseergonomics">
+		<score>
+			2
+		</score>
+		<comment>
+			OTRS est facile d'utilisation et la séparation entre interface utilisateur du support et technicien du support est opportune.
+		</comment>
+	</element>
+	<element name="codemodification">
+		<score>
+			2
+		</score>
+		<comment>
+			La clarté du code source et la documentation des API permet de facilement modifier le logiciel.
+		</comment>
+	</element>
+	<element name="protectionagainstproprietaryforks">
+		<score>
+			2
+		</score>
+		<comment>
+			Licence GPL v2
+		</comment>
+	</element>
+	<element name="developersidentificationturnover">
+		<score>
+			1
+		</score>
+		<comment>
+			4 développeurs identifiés via l'outil de gestion de bogues. La majorité des contributions sont des traductions.
+		</comment>
+	</element>
+	<element name="modificationofsourcecode">
+		<score>
+			1
+		</score>
+	</element>
+	<element name="copyrightowners">
+		<score>
+			0
+		</score>
+		<comment>
+			OTRS GmbH possède la quasi intégralité des droits sur le code source.
+		</comment>
+	</element>
+	<element name="training">
+		<score>
+			1
+		</score>
+		<comment>
+			OTRS GmbH offre des formations avancées sur OTRS.
+		</comment>
+	</element>
+	<element name="age">
+		<score>
+			2
+		</score>
+		<comment>
+			La première version officielle d'OTRS a été disponible en 2002.
+		</comment>
+	</element>
+	<element name="popularity">
+		<score>
+			2
+		</score>
+		<comment>
+			Produit reconnu avec 12 000 installations estimées.
+		</comment>
+	</element>
+	<element name="modularity">
+		<score>
+			2
+		</score>
+		<comment>
+			Le code d'OTRS est très modulaire (utilisation intensive de « Perl modules ») et organisé de manière claire.
+		</comment>
+	</element>
+	<element name="activityonbugs">
+		<score>
+			2
+		</score>
+		<comment>
+			Activité importante décelable via l'outil de gestion de bogues (http://bugs.otrs.org).
+		</comment>
+	</element>
+	<element name="forkprobability">
+		<score>
+			2
+		</score>
+		<comment>
+			Le projet a peu de chances d'être forké.
+		</comment>
+	</element>
+</qsosscore>
