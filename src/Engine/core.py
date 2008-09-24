@@ -48,7 +48,6 @@ def setup(path=".."):
 
     
 def submit(data):#, author, email, comment):
-    
     """
     Submit an evaluation.
     
@@ -71,7 +70,7 @@ def submit(data):#, author, email, comment):
         raise StandardError("Not a valid e-mail adress")
     
     #Open and update the repository
-    repository = git.open('core', os.path.join(PATH, ".git"))
+    repository = git.open('Migration', os.path.join(PATH, ".git"))
     repository.git('pull')
     
     #Put contribution on the correct location

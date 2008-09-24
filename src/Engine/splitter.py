@@ -97,7 +97,7 @@ def createDocument(evaluation,familypath="../sheets/families"):
     
     authors = [(item.firstChild.firstChild.data, item.lastChild.firstChild.data)
                for item in header[0].childNodes]
-    dates = (header[1].firstChild.firstChild.data, header[1].lastChild.firstChild.data)
+#    dates = (header[1].firstChild.firstChild.data, header[1].lastChild.firstChild.data)
     families = [node.firstChild.data for node in header[-1].childNodes]
     families.insert(0,"generic")
 
@@ -122,7 +122,7 @@ def createDocument(evaluation,familypath="../sheets/families"):
                                     getElementsByTagName("score").              \
                                     item(0).firstChild.data
             except AttributeError :
-                print "No score found for element %s" % (name,)
+#                print "No score found for element %s" % (name,)
                 pass    
             try :
                 f.comments[name] = rawDocument.                                 \
@@ -130,7 +130,8 @@ def createDocument(evaluation,familypath="../sheets/families"):
                                     getElementsByTagName("comment")             \
                                     .item(0).firstChild.data
             except AttributeError :
-                print "No comment found for element %s" % (name,)
+#                print "No comment found for element %s" % (name,)
+                pass
         #End of iteration, just add the family in document object
         qsos.families[include] = f
     return qsos

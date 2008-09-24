@@ -19,7 +19,7 @@ import os
 ##
 #    @ingroup builder
 #
-def build(id, repositoryroot):
+def build(evaluation, repositoryroot):
     """
     Builds name-version's qsos evaluation document
     
@@ -31,6 +31,7 @@ def build(id, repositoryroot):
         Builded Document object of name-version's qsos evaluation
     """
     print "Builder invoked"
+    (id,version)=evaluation
     #Read the template of requested evaluation from repository
     template = os.path.join(repositoryroot,"sheets","templates", id + ".qtpl")
     template = "".join(line.strip() for line in file(template).readlines())
@@ -40,6 +41,8 @@ def build(id, repositoryroot):
     
     #Extract properties from template contents
     properties = dict((node.tagName,node.firstChild.data) for node in content[0:-2])
+    properties["release"]=version
+    properties["qsosappname"]=id
     
     #Build families object according to families declared from template
     #generic *family* must also be added to families
@@ -50,7 +53,7 @@ def build(id, repositoryroot):
     for include in includes :
         #parse family .qin file
         relPath = os.path.join("sheets","evaluations",
-                             properties["qsosappname"],properties["release"],
+                             id,version,
                              include + ".qscore")
         absPath = os.path.join(repositoryroot, relPath)
         sheet = "".join(line.strip() for line in file(absPath).readlines())
@@ -106,9 +109,17 @@ def assembleSheet(document, repositoryroot):
         tag.appendChild(sheet.createTextNode(document["properties"][item]))
         header.appendChild(tag)
     
+    appfamilies = sheet.createElement("qsosappfamilies")
+    header.appendChild(appfamilies)
+    
     auths = {}
     #Add blank qsos evaluation of families
     for item in document["families"] :
+        if item != "generic":
+            app = sheet.createElement("qsosappfamily")
+            app.appendChild(sheet.createTextNode(item))
+            appfamilies.appendChild(app)
+        
         (name, mail) = document[item]['author']
         auths[name] = mail
         include = os.path.join(repositoryroot,"sheets","families",item + ".qin")
@@ -119,11 +130,11 @@ def assembleSheet(document, repositoryroot):
     #Fill-in authors tag with data extracted 
     for k, v in auths.iteritems() :
         tag = sheet.createElement('author')
-        leaf = sheet.createElement("name")
-        leaf.appendChild(sheet.createTextNode(k))
-        tag.appendChild(leaf)
         leaf = sheet.createElement("email")
         leaf.appendChild(sheet.createTextNode(v))
+        tag.appendChild(leaf)
+        leaf = sheet.createElement("name")
+        leaf.appendChild(sheet.createTextNode(k))
         tag.appendChild(leaf)
         authors.appendChild(tag)
         
