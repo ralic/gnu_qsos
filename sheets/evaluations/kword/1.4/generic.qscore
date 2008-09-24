@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="utf-8"?>
+<qsosscore>
+	<element name="consulting">
+		<score>
+			1
+		</score>
+		<comment>
+			Around 60 offers referenced on the project's website.
+		</comment>
+	</element>
+	<element name="documentation">
+		<score>
+			2
+		</score>
+		<comment>
+			Documentation is been translated in 23 languages (9 are complete). API are described via Doxygen.
+		</comment>
+	</element>
+	<element name="activityonreleases">
+		<score>
+			2
+		</score>
+		<comment>
+			Planned released, with freeze of new features before each new release (even minor ones).
+		</comment>
+	</element>
+	<element name="administrationmonitoring">
+		<score>
+			0
+		</score>
+		<comment>
+			NA
+		</comment>
+	</element>
+	<element name="independenceofdevelopments">
+		<score>
+			1
+		</score>
+		<comment>
+			Kwork, like KOffice and KDE, is thighly linked with Qt, developed by Trolltech and under a dual license (open source and proprietary). Otherwise, developments are independents.
+		</comment>
+	</element>
+	<element name="packaginghpux">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="stability">
+		<score>
+			1
+		</score>
+	</element>
+	<element name="activityonfunctionalities">
+		<score>
+			1
+		</score>
+		<comment>
+			Feature requests can be entered in the bug tracker.
+		</comment>
+	</element>
+	<element name="leadingteam">
+		<score>
+			1
+		</score>
+		<comment>
+			The project's maintainer is clearly identified.
+		</comment>
+	</element>
+	<element name="books">
+		<score>
+			1
+		</score>
+		<comment>
+			&quot;Mastering KOffice for Linux&quot; was released in 2000. No other books seem to have been published since.
+		</comment>
+	</element>
+	<element name="references">
+		<score>
+			1
+		</score>
+		<comment>
+			Few references in the industry.
+		</comment>
+	</element>
+	<element name="packagingmandriva">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="strategicalindependence">
+		<score>
+			2
+		</score>
+		<comment>
+			The non-profit German association KDE e.V. exists to represent legally and financially the project.
+		</comment>
+	</element>
+	<element name="tools">
+		<score>
+			2
+		</score>
+		<comment>
+			Central bug tracker and feature request tool. Tools to survey contributors activity (Commit-Digest, CommitFilter). No automatic test suite.
+		</comment>
+	</element>
+	<element name="packagingsolaris">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="permissiveness">
+		<score>
+			1
+		</score>
+	</element>
+	<element name="quality">
+		<score>
+			1
+		</score>
+		<comment>
+			Respect of KDE QA: planned releases, freeze of new features before each release.
+		</comment>
+	</element>
+	<element name="support">
+		<score>
+			1
+		</score>
+		<comment>
+			Around 50 offers referenced on the project's website. Commercial Linux distribution like Mandiva ou SuSE also provide support services.
+		</comment>
+	</element>
+	<element name="contributingcommunity">
+		<score>
+			1
+		</score>
+		<comment>
+			No very large community but an active mailing list.
+		</comment>
+	</element>
+	<element name="packagingwindows">
+		<score>
+			0
+		</score>
+		<comment>
+			New versions of Qt are ported to Windows. Wait and see...
+		</comment>
+	</element>
+	<element name="codeextension">
+		<score>
+			1
+		</score>
+		<comment>
+			Recompilation required. Identified extention area: document format filters.
+		</comment>
+	</element>
+	<element name="managementstyle">
+		<score>
+			1
+		</score>
+		<comment>
+			Kword follow KDE rules: it is managed by a maintainer but important decisions are voted by all contributors.
+		</comment>
+	</element>
+	<element name="easeofuseergonomics">
+		<score>
+			2
+		</score>
+		<comment>
+			User-friendly GUI, coherent with KDE.
+		</comment>
+	</element>
+	<element name="packagingsuse">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="packagingmacosx">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="packagingredhat">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="codemodification">
+		<score>
+			1
+		</score>
+		<comment>
+			Relatively complex code. Compilation is documented.
+		</comment>
+	</element>
+	<element name="protectionagainstproprietaryforks">
+		<score>
+			1
+		</score>
+		<comment>
+			Qt (provided by Trolltech) is under a dual license. However a deal between Torlltech and KDE e.V. guarantees that Qt will stay open source, and will become BSD code in case of end of development.
+		</comment>
+	</element>
+	<element name="packagingsource">
+		<score>
+			1
+		</score>
+		<comment>
+			Qt 3.3, kdelibs 3.3
+		</comment>
+	</element>
+	<element name="developersidentificationturnover">
+		<score>
+			1
+		</score>
+		<comment>
+			7 identified developers. Stable team, which still includes project's creator.
+		</comment>
+	</element>
+	<element name="packagingfreebsd">
+		<score>
+			2
+		</score>
+		<comment>
+			http://freebsd.kde.org/
+		</comment>
+	</element>
+	<element name="roadmap">
+		<score>
+			1
+		</score>
+		<comment>
+			Macroscopic roadmap.
+		</comment>
+	</element>
+	<element name="packagingdebian">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="modificationofsourcecode">
+		<score>
+			1
+		</score>
+		<comment>
+			Source code available with a large development guide (more than 1000 pages).
+		</comment>
+	</element>
+	<element name="copyrightowners">
+		<score>
+			1
+		</score>
+	</element>
+	<element name="training">
+		<score>
+			1
+		</score>
+		<comment>
+			Generally included in Koffice or even KDE training.
+		</comment>
+	</element>
+	<element name="packagingnet">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="age">
+		<score>
+			2
+		</score>
+		<comment>
+			Porject started in 1997. In 2000 a new maintainer redisigned the architecture and fixed a lot of bugs.
+		</comment>
+	</element>
+	<element name="popularity">
+		<score>
+			1
+		</score>
+		<comment>
+			Kword popularity is linked to KDE's. For now it's used is forbidden to Widows users.
+		</comment>
+	</element>
+	<element name="modularity">
+		<score>
+			2
+		</score>
+		<comment>
+			C++ modular code. Kword is independent from other components of KOffice.
+		</comment>
+	</element>
+	<element name="activityonbugs">
+		<score>
+			2
+		</score>
+		<comment>
+			Bug tracking tool used, with weekly statistics generation.
+		</comment>
+	</element>
+	<element name="packagingopen">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="forkprobability">
+		<score>
+			2
+		</score>
+		<comment>
+			Risk is reduced by the LGPL license and the fact that copyrigths are owned by contributors.
+		</comment>
+	</element>
+</qsosscore>
