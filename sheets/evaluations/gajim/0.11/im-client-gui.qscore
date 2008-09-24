@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<qsosscore>
+	<element name="accountaccess">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="accountcreation">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="plugins">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="accountdeleting">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="bandwidth">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="skins">
+		<score>
+			0
+		</score>
+		<comment>
+			Can only modify iconsets and colors
+		</comment>
+	</element>
+</qsosscore>
