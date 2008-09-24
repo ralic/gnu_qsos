@@ -23,8 +23,8 @@
 		<qsosappname>savane</qsosappname>
 		<qsosappfamilies>
 			<qsosappfamily>webappprerequisite</qsosappfamily>
-			<qsosappfamily>websecurity"</qsosappfamily>
-			<qsosappfamily>storagesupport"</qsosappfamily>
+			<qsosappfamily>websecurity</qsosappfamily>
+			<qsosappfamily>storagesupport</qsosappfamily>
 			<qsosappfamily>webcompatibility</qsosappfamily>
 			<qsosappfamily>userinterface</qsosappfamily>
 			<qsosappfamily>webcontentmanagement</qsosappfamily>
