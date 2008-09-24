@@ -1,0 +1,2729 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document>
+   <header>
+      <authors>
+    </authors>
+      <dates>
+         <creation></creation>
+         <validation></validation>
+      </dates>
+      <language>en</language>
+      <appname></appname>
+      <release></release>
+      <licenseid></licenseid>
+      <licensedesc></licensedesc>
+      <url></url>
+      <desc></desc>
+      <demourl></demourl>
+      <qsosformat>1.6</qsosformat>
+      <qsosappfamily>Messaging and collaboration</qsosappfamily>
+      <qsosspecificformat>1.0</qsosspecificformat>
+   </header>
+   <include section="generic"></include>
+   <section name="interoperability" title="Interoperability">
+      <desc></desc>
+      <element name="webbrowsers" title="Web browsers">
+         <desc>Supported web browsers for the webmail</desc>
+         <comment></comment>
+         <element name="internetexplorer" title="Internet Explorer">
+            <desc>Does Internet Explorer support the webmail client ?</desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment>Majoritairement</comment>
+         </element>
+         <element name="Firefox" title="Firefox">
+            <desc>Does Firefox support the webmail client ?</desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment>Majoritairement</comment>
+         </element>
+         <element name="Safari" title="Safari">
+            <desc>Does Safari support the webmail client ?</desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment>Non prioritaire</comment>
+         </element>
+         <element name="Opera" title="Opera">
+            <desc>Does Opera support the webmail client ?</desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment>Non prioritaire</comment>
+         </element>
+      </element>
+      <element name="necessaryplug-ins" title="Necessary plug-ins">
+         <desc>List of necessary plung ins into the webmail</desc>
+         <comment></comment>
+         <element name="flash" title="Flash">
+            <desc>Flash plug in is required/supported</desc>
+            <desc0>Flash plug in is not required/supported</desc0>
+            <desc1>Flash plug in is optionnaly required/supported</desc1>
+            <desc2>Flash plug in is required/supported</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="java" title="Java">
+            <desc>Java plug in is required/supported</desc>
+            <desc0>Java plug in is not required/supported</desc0>
+            <desc1>Java plug in is optionnaly required/supported</desc1>
+            <desc2>Java plug in is required/supported</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="ActiveX" title="ActiveX">
+            <desc>ActiveX plug in is required/supported</desc>
+            <desc0>ActiveX plug in is not required/supported</desc0>
+            <desc1>ActiveX plug in is optionnaly required/supported</desc1>
+            <desc2>ActiveX plug in is required/supported</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="Silverlight" title="Silverlight">
+            <desc>Silverlight plug in is required/supported</desc>
+            <desc0>Silverlight plug in is not required/supported</desc0>
+            <desc1>Silverlight plug in is optionnaly required/supported</desc1>
+            <desc2>Silverlight plug in is required/supported</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="flex" title="Flex">
+            <desc>Flex plug in is required/supported</desc>
+            <desc0>Flex plug in is not required/supported</desc0>
+            <desc1>Flex plug in is optionnaly required/supported</desc1>
+            <desc2>Flex plug in is required/supported</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="otherplugins" title="Other Plug ins">
+            <desc>Please annotate all other required/supported plug-ins for webmail/rich client compatibility</desc>
+            <comment></comment>
+         </element>
+      </element>
+      <element name="supportedmailclients" title="Supported Mail Clients">
+         <desc>For each mail client, please indicate if the solution provides native or emulated interface.</desc>
+         <comment></comment>
+         <element name="outlook" title="Outlook">
+            <desc>Doest the server software provide a MAPI interface ?</desc>
+            <desc0>No MAPI interface provided</desc0>
+            <desc1>Emulated MAPI interface, partial support of functionnalities</desc1>
+            <desc2>Full MAPI support</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="novell_evolution" title="Novell Evolution">
+            <desc>Doest the server software provide a Novell Evolution interface ?</desc>
+            <desc0>No Novell Evolution interface provided</desc0>
+            <desc1>Emulated Novell Evolution interface, partial support of functionnalities</desc1>
+            <desc2>Full Novell Evolution support</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="thunderbird" title="Mozilla Thunderbird">
+            <desc>Doest the server software provide a Mozilla Thunderbird/Sunbird interface ?</desc>
+            <desc0>No Thunderbird/Sunbird specific interface provided</desc0>
+            <desc1>Emulated Thunderbird/Sunbird interface, partial support of functionnalities</desc1>
+            <desc2>Full Thunderbird/Sunbird support</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="apple-mail" title="Apple Mail">
+            <desc>Doest the server software provide a Apple Mail App. interface ?</desc>
+            <desc0>No Apple Mail App. interface provided</desc0>
+            <desc1>Emulated Apple Mail App. interface, partial support of functionnalities</desc1>
+            <desc2>Full Apple Mail App. support</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="othersupportedclients" title="Other Supported Clients">
+            <desc>Please annotate all other rich client interface provided for messaging and collaboration (exluding regular protocols tools, such as POP/IMAP client)</desc>
+            <comment></comment>
+         </element>
+      </element>
+      <element name="mobile_clients" title="Mobile Clients / PDA">
+         <desc>Supported mobile clients for the server software</desc>
+         <comment></comment>
+         <element name="palmos" title="Palm OS">
+            <desc>Does the server software provide Palm OS compatible interface ?</desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="windows_mobile" title="Windows Mobile">
+            <desc>Does the server software provide Windows Mobile/Pocket PC compatible interface ?</desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="symbian" title="Symbian">
+            <desc>Does the server software provide Symbian compatible interface ?</desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="blackberry" title="Blackberry">
+            <desc>Does the server software provide Blackberry BES compatible interface ?</desc>
+            <desc0>Not covered</desc0>
+            <desc1>BES Comptaible interface</desc1>
+            <desc2>Native BES interface</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+      </element>
+      <element name="supported_protocols" title="Supported Protocols / PDA">
+         <desc>Extra protocols that are supported on the server side ?</desc>
+         <comment></comment>
+         <element name="xhtml" title="Web – XHTML">
+            <desc>Does the server software support Web – XHTML protocol ?</desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully support of Web – XHTML protocol</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="css" title="Web - CSS">
+            <desc>Does the server software provide Web - CSS protocol ?</desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully compatible with CSS</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="smtps" title="Mail - Secure SMTP">
+            <desc>Does the server software provide a secure SMTP protocol support ?</desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Full Secure SMTP support</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="pop" title="Mail - POP">
+            <desc>Does the server software provide POP  support ?</desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Full POP support</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="POPS" title="Mail - Secure POP3">
+            <desc>Does the server software provide Secure POP support ?</desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Secure POP3 Fully covered</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="imap4" title="MAil - IMAP4">
+            <desc>Does the server software support  IMAP protocol ?</desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>IMAP4 fully covered</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="imap4s" title="MAil - Secure IMAP4">
+            <desc>Does the server software support Secure IMAP protocol ?</desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Secure IMAP4 fully covered</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="icalendar" title="Agenda - iCalendar">
+            <desc>Does the server software support iCal exchange protocol ?</desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>iCalendar fully supported</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="caldav" title="Agenda- CalDAV">
+            <desc>Does the server software support CalDAV interface ?</desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>CalDAV Fully supported</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="webdav" title="Files - Webdav">
+            <desc>Does the server software support WebDAV interface ?</desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Webdav fully covered</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="samba" title="Files - Samba">
+            <desc>Does the server software provide a Samba like compatible interface ?</desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Samba fully covered</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="ftp" title="Files - FTP">
+            <desc>Does the server software support an FTP interface ?</desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>FTP fully covered</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="vcard" title="Contacts - VCard">
+            <desc>Does the server software provide vCard interface (import/export/transfer) ?</desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="ldap_synchronisation" title=" Synchronization with external  LDAP directory">
+            <desc>Does the server software support synchronization with external  LDAP directories ?</desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="ad_synchronisation" title=" Synchronization with external AD directory">
+            <desc>Does the server software support synchronization with external Active Directory directories ?</desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="syncml" title="Mobile - SyncML compatible">
+            <desc>SyncML - Synchronization of  contacts, Calendar and (optional) email (push-email) ?</desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+      </element>
+   </section>
+   <section name="deployment" title="Deployment">
+      <desc></desc>
+      <element name="installation" title="Types of deployment">
+         <desc></desc>
+         <desc0>Installation is difficult, poorly documented or requires many patches</desc0>
+         <desc1>Installation is tough but fair</desc1>
+         <desc2>Installation is easy, well documented</desc2>
+         <score></score>
+         <comment></comment>
+      </element>
+      <element name="Possible types of deployment" title="Possible types of deployment">
+         <desc></desc>
+         <desc0>High granularity architecture (as many servers as there are sites)</desc0>
+         <desc1>Adaptable Architecture (Centralization is an option)</desc1>
+         <desc2>Monolithic architecture (all servers are located on the same site)</desc2>
+         <score></score>
+         <comment></comment>
+      </element>
+      <element name="Replications" title="Replications">
+         <desc></desc>
+         <desc0>No replication</desc0>
+         <desc1>Partial replication or no duplication</desc1>
+         <desc2>System of data replication</desc2>
+         <score></score>
+         <comment></comment>
+      </element>
+      <element name="IMAP Migration toward new solution" title="IMAP Migration toward new solution">
+         <desc></desc>
+         <desc0>No IMAP Migration Possible</desc0>
+         <desc1>IMAP Migration Possible through specific development</desc1>
+         <desc2>Migration tools are provided with software</desc2>
+         <score></score>
+         <comment></comment>
+      </element>
+      <element name="Multi-domain management" title="Multi-domain management">
+         <desc></desc>
+         <desc0>No possible migration from an IMAP solution </desc0>
+         <desc1>conceivable Migration via third tools or specific development</desc1>
+         <desc2>Migration and cover tools are provided, good functional cover</desc2>
+         <score></score>
+         <comment></comment>
+      </element>
+      <element name="High availability" title="High availability">
+         <desc></desc>
+         <comment></comment>
+         <element name="Work with a Architecture including load balancing" title="Work with a Architecture including load balancing">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="Support clustering(with replication and synchronization of Back offcie data)" title="Support clustering(with replication and synchronization of Back offcie data)">
+            <desc></desc>
+            <desc0>Not present</desc0>
+            <desc1>Cluster (load balancing or fail over) with weighing but without automatic return</desc1>
+            <desc2>Resumption of service function when the principal node becomes available</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+      </element>
+      <element name="Cache management" title="Cache management">
+         <desc></desc>
+         <comment></comment>
+         <element name="Proxy type" title="Proxy type">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="Page caching type" title="Page caching type">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="Component  or object caching" title="Component  or object caching">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+      </element>
+   </section>
+   <section name="Performances" title="Performances">
+      <desc></desc>
+      <element name="Required Bandwith per user" title="Required Bandwith per user">
+         <desc>Pour un trafic email en pointe de 166 Mb/s pour 120.000 utilisateurs (hors protocole web), nous avons une bande passante consommée de 1,41 Kb/s</desc>
+         <desc0>More than 2 Kb/s</desc0>
+         <desc1>Between 2 Kb/s and 5 Kb/s</desc1>
+         <desc2>Less than 2 Kb/s</desc2>
+         <score></score>
+         <comment></comment>
+      </element>
+      <element name="Memory usage per connected user" title="Memory usage per connected user">
+         <desc>Memory required on a per connected user basis, on the server side.</desc>
+         <desc0>5 Mo and more</desc0>
+         <desc1>Less than 5 Mo</desc1>
+         <desc2>Less than 2 Mo</desc2>
+         <score></score>
+         <comment></comment>
+      </element>
+      <element name="Number of user per server(standard)" title="Number of user per server(standard)">
+         <desc>On a Quadcore 32 bits server, 4Gb RAM</desc>
+         <desc0> Less than 5.000 users</desc0>
+         <desc1> More than 5.000 users</desc1>
+         <desc2> More than 10.000 users</desc2>
+         <score></score>
+         <comment>For a quadcore 32 bits, 4Go RAM, server -   memory usage per server (if possible).</comment>
+      </element>
+      <element name="Response time" title="Response time">
+         <desc>Estimated User response time </desc>
+         <desc0>More than 100 ms</desc0>
+         <desc1>between 50ms &amp; 100 ms</desc1>
+         <desc2>Less than 50 ms</desc2>
+         <score></score>
+         <comment></comment>
+      </element>
+      <element name="Export of static contents" title="Export of static contents">
+         <desc></desc>
+         <desc0>Not covered</desc0>
+         <desc1>Partially covered</desc1>
+         <desc2>Fully covered</desc2>
+         <score></score>
+         <comment></comment>
+      </element>
+   </section>
+   <section name="Integration" title="Integration">
+      <desc></desc>
+      <element name="Multi-language server" title="Multi-language server">
+         <desc></desc>
+         <desc0>Not covered</desc0>
+         <desc1>Partially covered</desc1>
+         <desc2>Fully covered</desc2>
+         <score></score>
+         <comment>Management of several languages and localization in server side</comment>
+      </element>
+      <element name="Locale" title="Locale">
+         <desc></desc>
+         <desc0>Not covered</desc0>
+         <desc1>Partially covered</desc1>
+         <desc2>Fully covered</desc2>
+         <score></score>
+         <comment>The software entirely translated into French</comment>
+      </element>
+      <element name="Accessibility for blind people" title="Accessibility for blind people">
+         <desc></desc>
+         <desc0>No available option</desc0>
+         <desc1>Integration of the standard options of the Operating System</desc1>
+         <desc2>Wide accessibility functions for blind peoples</desc2>
+         <score></score>
+         <comment></comment>
+      </element>
+      <element name="DevelopmentAPI" title="Development API">
+         <desc></desc>
+         <comment></comment>
+         <element name="PHP" title="PHP">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="C / C++ / C#" title="C / C++ / C#">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="ASP / .NET" title="ASP / .NET">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="JSP / Java" title="JSP / Java">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="Autres" title="Autres">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+      </element>
+      <element name="API To access services" title="API To access services">
+         <desc></desc>
+         <comment></comment>
+         <element name="SOAP" title="SOAP">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="XML-RPC" title="XML-RPC">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="Autres" title="Autres">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+      </element>
+      <element name="ExtensibleObjects" title="Extensible Objects">
+         <desc>Possibility to extend managed objects with the solution</desc>
+         <comment></comment>
+         <element name="Users" title="Users">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="ExtensibleObjectMessages" title="Messages">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="Contacts/users" title="Contacts/users">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="Ressources" title="Ressources">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="ExtensibleObjectsOthers" title="Others">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+      </element>
+      <element name="IntegrationOthers" title="Others">
+         <desc></desc>
+         <comment></comment>
+         <element name="CGI-Like support" title="CGI-Like support">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="Metadata" title="Metadata">
+            <desc>From  the SOA point of view</desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="URL rewriting" title="URL rewriting">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="Wiki-like function" title="Wiki-like function">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+      </element>
+   </section>
+   <section name="Security" title="Security">
+      <desc></desc>
+      <element name="Authentification" title="Authentification">
+         <desc></desc>
+         <comment></comment>
+         <element name="SSO" title="SSO">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="Kerberos Method" title="Kerberos Method">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="LDAP Method" title="LDAP Method">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="NIS/NIS+ Method" title="NIS/NIS+ Method">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="NTLM  Method" title="NTLM  Method">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="PAM Method" title="PAM Method">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment>Pluggable Authentication Module (Sun)</comment>
+         </element>
+         <element name="SMB Method" title="SMB Method">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+      </element>
+      <element name="Logging" title="Logging">
+         <desc></desc>
+         <comment></comment>
+         <element name="Access and Session" title="Access and Session">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="System" title="System">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="Software" title="Software">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+      </element>
+      <element name="Access/administrative rights" title="Access/administrative rights">
+         <desc></desc>
+         <comment></comment>
+         <element name="Groups" title="Groups">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="Permissions" title="Permissions">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+      </element>
+      <element name="Encryption" title="Encryption">
+         <desc></desc>
+         <comment></comment>
+         <element name="Message encryption" title="Message encryption">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment>Client side and protocol encryption</comment>
+         </element>
+         <element name="Document encryption" title="Document encryption">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="Encrypted SSL Web data" title="Encrypted SSL Web data">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="Encrypted replication data" title="Encrypted replication data">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+      </element>
+      <element name="Signed Objects" title="Signed Objects">
+         <desc></desc>
+         <comment></comment>
+         <element name="Message signature" title="Message signature">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="Document signature" title="Document signature">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+      </element>
+      <element name="PKI Integration" title="PKI Integration">
+         <desc></desc>
+         <desc0>Not covered</desc0>
+         <desc1>Partially covered</desc1>
+         <desc2>Fully covered</desc2>
+         <score></score>
+         <comment>La poste uses  Open Trust. Additional details required (might require custom development)</comment>
+      </element>
+      <element name="Antivirus" title="Antivirus">
+         <desc></desc>
+         <comment></comment>
+         <element name="AntivirusIntegration" title="Integration">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="Trend micro plug-in" title="Trend micro plug-in">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+      </element>
+      <element name="SecurityOthers" title="Others">
+         <desc></desc>
+         <comment></comment>
+         <element name="Session Management" title="Session Management">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="Possibility of adding Postscript(disclaimer)" title="Possibility of adding Postscript(disclaimer)">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment>Fonction Disclaimer</comment>
+         </element>
+      </element>
+   </section>
+   <section name="Message Management" title="Message Management">
+      <desc></desc>
+      <element name="Rules for messages server-side" title="Rules for messages server-side">
+         <desc></desc>
+         <comment></comment>
+         <element name="Maintenance Rules" title="Maintenance Rules">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment>Archives, Deletion,...</comment>
+         </element>
+         <element name="Routing Rules" title="Routing Rules">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment>Reroutage personnel, par groupe ou global.</comment>
+         </element>
+         <element name="Absence indicator" title="Absence indicator">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+      </element>
+      <element name="Return receipt(received/delivered)" title="Return receipt(received/delivered)">
+         <desc></desc>
+         <desc0>Not covered</desc0>
+         <desc1>Partially covered</desc1>
+         <desc2>Fully covered</desc2>
+         <score></score>
+         <comment></comment>
+      </element>
+      <element name="Return receipt(read)" title="Return receipt(read)">
+         <desc></desc>
+         <desc0>Not covered</desc0>
+         <desc1>Partially covered</desc1>
+         <desc2>Fully covered</desc2>
+         <score></score>
+         <comment></comment>
+      </element>
+      <element name="Read delegation" title="Read delegation">
+         <desc></desc>
+         <desc0>Not covered</desc0>
+         <desc1>mailbox</desc1>
+         <desc2>folder of a mailbox</desc2>
+         <score></score>
+         <comment></comment>
+      </element>
+      <element name="Quota management" title="Quota management">
+         <desc></desc>
+         <desc0>Not covered</desc0>
+         <desc1>Partially covered</desc1>
+         <desc2>Fully covered</desc2>
+         <score></score>
+         <comment></comment>
+      </element>
+      <element name="Simultaneous access to mailboxes" title="Simultaneous access to mailboxes">
+         <desc></desc>
+         <desc0>Not covered</desc0>
+         <desc1>Partially covered</desc1>
+         <desc2>Fully covered</desc2>
+         <score></score>
+         <comment></comment>
+      </element>
+      <element name="Global message diffusion(eg. Warning message)" title="Global message diffusion(eg. Warning message)">
+         <desc></desc>
+         <desc0>Not covered</desc0>
+         <desc1>Partially covered</desc1>
+         <desc2>Fully covered</desc2>
+         <score></score>
+         <comment>For example alert report</comment>
+      </element>
+   </section>
+   <section name="Contact management" title="Contact management">
+      <desc></desc>
+      <element name="Shared contacts" title="Shared contacts">
+         <desc></desc>
+         <comment></comment>
+         <element name="Storage" title="Storage">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment>Storage methods and servers are supported</comment>
+         </element>
+         <element name="Contact groups and lists" title="Contact groups and lists">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="Delegation" title="Delegation">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially if architecture requirements</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+      </element>
+      <element name="Personal adress directory" title="Personal adress directory">
+         <desc></desc>
+         <comment></comment>
+         <element name="Storage" title="Storage">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment>Storage methods and servers are supported</comment>
+         </element>
+         <element name="Contact groups and lists" title="Contact groups and lists">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="Delegation" title="Delegation">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially if architecture requirements</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="import/export by user" title="import/export by user">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+      </element>
+   </section>
+   <section name="Calendar management" title="Calendar management">
+      <desc></desc>
+      <element name="Personal Calendar" title="Personal Calendar">
+         <desc></desc>
+         <comment></comment>
+         <element name="Private appointment" title="Private appointment">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+      </element>
+      <element name="Shared calendar" title="Shared calendar">
+         <desc></desc>
+         <desc0>Not covered</desc0>
+         <desc1>Partially if architecture requirements</desc1>
+         <desc2>Fully covered</desc2>
+         <score></score>
+         <comment></comment>
+      </element>
+      <element name="Write delegation" title="Write delegation">
+         <desc></desc>
+         <desc0>Not covered</desc0>
+         <desc1>Partially covered</desc1>
+         <desc2>Fully covered</desc2>
+         <score></score>
+         <comment></comment>
+      </element>
+      <element name="Possibility to export calendar" title="Possibility to export calendar">
+         <desc></desc>
+         <desc0>Not covered</desc0>
+         <desc1>Partially covered</desc1>
+         <desc2>Fully covered</desc2>
+         <score></score>
+         <comment></comment>
+      </element>
+      <element name="Holiday integration" title="Holiday integration">
+         <desc></desc>
+         <desc0>Not covered</desc0>
+         <desc1>Partially covered</desc1>
+         <desc2>Fully covered</desc2>
+         <score></score>
+         <comment></comment>
+      </element>
+      <element name="Meeting management" title="Meeting management">
+         <desc></desc>
+         <comment></comment>
+         <element name="Guest/participants follow up" title="Guest/participants follow up">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="attachements" title="attachements">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="possibility of entering repetitive events" title="possibility of entering repetitive events">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="re-planning of events" title="re-planning of events">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="search for disponibility" title="search for disponibility">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Free time search (visual indicator of availibilities) </desc1>
+            <desc2>Availibility proposal</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="notification integrated into the mail system" title="notification integrated into the mail system">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="validation integrated into the mail system" title="validation integrated into the mail system">
+            <desc></desc>
+            <desc0></desc0>
+            <desc1></desc1>
+            <desc2></desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+      </element>
+   </section>
+   <section name="Task management" title="Task management">
+      <desc></desc>
+      <element name="personal tasks" title="personal tasks">
+         <desc></desc>
+         <desc0>Not covered</desc0>
+         <desc1>Partially covered</desc1>
+         <desc2>Fully covered</desc2>
+         <score></score>
+         <comment></comment>
+      </element>
+      <element name="shared tasks" title="shared tasks">
+         <desc></desc>
+         <desc0>Not covered</desc0>
+         <desc1>Partially covered</desc1>
+         <desc2>Fully covered</desc2>
+         <score></score>
+         <comment></comment>
+      </element>
+      <element name="tracking of statistics" title="tracking of statistics">
+         <desc></desc>
+         <desc0>Not covered</desc0>
+         <desc1>Partially covered</desc1>
+         <desc2>Fully covered</desc2>
+         <score></score>
+         <comment></comment>
+      </element>
+      <element name="attachements" title="attachements">
+         <desc></desc>
+         <desc0>Not covered</desc0>
+         <desc1>Partially covered</desc1>
+         <desc2>Fully covered</desc2>
+         <score></score>
+         <comment></comment>
+      </element>
+      <element name="integration into the mail system" title="integration into the mail system">
+         <desc></desc>
+         <desc0>Not covered</desc0>
+         <desc1>Partially covered</desc1>
+         <desc2>Fully covered</desc2>
+         <score></score>
+         <comment></comment>
+      </element>
+      <element name="integration into the calendars" title="integration into the calendars">
+         <desc></desc>
+         <desc0>Not covered</desc0>
+         <desc1>Partially covered</desc1>
+         <desc2>Fully covered</desc2>
+         <score></score>
+         <comment></comment>
+      </element>
+      <element name="workflow" title="workflow">
+         <desc></desc>
+         <desc0>Not covered</desc0>
+         <desc1>Partially covered</desc1>
+         <desc2>Fully covered</desc2>
+         <score></score>
+         <comment></comment>
+      </element>
+   </section>
+   <section name="Web client functions" title="Web client functions">
+      <desc></desc>
+      <element name="General ergonomics" title="General ergonomics">
+         <desc></desc>
+         <comment></comment>
+         <element name="Coherence of various tools" title="Coherence of various tools">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment>Coherence of different tools or web browser components from the ergonomics point of view.</comment>
+         </element>
+         <element name="Objects visualization" title="Objects visualization">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment>General ergonomics of the web browser when viewing  different functional objects </comment>
+         </element>
+         <element name="drag and drop" title="drag and drop">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="multiple-attachements" title="multiple-attachements">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment>Possibility to attach many documents (in one action) to a functional object ( message, calendar, meeting...)</comment>
+         </element>
+         <element name="object printing" title="object printing">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment>General ergonomics of the web browser when viewing  different functional objects</comment>
+         </element>
+         <element name="Bookmarks/Favorites" title="Bookmarks/Favorites">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment>Possibility to store some URL related to objects in the favourite (of web browser of the client)</comment>
+         </element>
+         <element name="Help in French" title="Help in French">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="Customization - User templates" title="customization - User templates">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="Custormization - Assistant style" title="Custormization - Assistant style">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="Use of right clic" title="Use of right clic">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="User-friendly URL" title="User-friendly URL">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="Pictures manager" title="Pictures manager">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="Creation of Macros" title="Creation of Macros">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="Integration of functionalities into a Portal" title="Integration of functionalities into a Portal">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="Subscription" title="Subscription">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="Customization of user Interface" title="Customization of user Interface">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="Undo" title="Undo">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="WYSIWYG Editor" title="WYSIWYG Editor">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="Management of Compressed Archives" title="Management of Compressed Archives">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="Disconnection mode supported" title="Disconnection mode supported">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="Possibility of adding signatures" title="Possibility of adding signatures">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="Downloading of plug-ings when establing first connection" title="Downloading of plug-ings when establing first connection">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+      </element>
+      <element name="Multi-language client" title="Multi-language client">
+         <desc></desc>
+         <desc0>Not covered</desc0>
+         <desc1>Partially covered</desc1>
+         <desc2>Fully covered</desc2>
+         <score></score>
+         <comment>Management of several languages and localization in client side</comment>
+      </element>
+      <element name="WebClientMessages" title="Messages">
+         <desc></desc>
+         <comment></comment>
+         <element name="Server functionalities" title="Server functionalities">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="Filtering rules for automatic classification" title="Filtering rules for automatic classification">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="Possibility of following up a message history( receipts included)" title="Possibility of following up a message history( receipts included)">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="Automatic compression(ZIP) of messages" title="Automatic compression(ZIP) of messages">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="Spell Checker" title="Spell Checker">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="Grammar checker" title="Grammar checker">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="HTML format" title="HTML format">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="Search for messages within a folder" title="Search for messages within a folder">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment>With filter dedinition</comment>
+         </element>
+         <element name="Signatures" title="Signatures">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Management of multiple signatures</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="Virtual folders" title="Virtual folders">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Feeding virtual folders is done according to simple criteria</desc1>
+            <desc2>Uses of regular expression to feed virtual folders on rules basis</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="Verification of folder size (server and local)" title="Verification of folder size (server and local)">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="Indication on the number of unread messages for each folder" title="Indication on the number of unread messages for each folder">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Complementary development to plan</desc1>
+            <desc2>Available on the Web</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="Import/export of messages" title="Import/export of messages">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Export is limited on the perimeter</desc1>
+            <desc2>Export of a message or message selection into file, including the attachments and the formatting</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="Import/export of filters/rules" title="Import/export of filters/rules">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="Import/export of folders" title="Import/export of folders">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="Messages publication" title="Messages publication">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="Disconnection mode supported for client" title="Disconnection mode supported for client">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="Storage of messages in local folders" title="Storage of messages in local folders">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="Automatic archival" title="Automatic archival">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="Automatic subscription to shared folders" title="Automatic subscription to shared folders">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="Warning in case of reaching quota limit" title="Warning in case of reaching quota limit">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="Possibility for the user to indicate his/her (in/out of office) status" title="Possibility for the user to indicate his/her (in/out of office) status">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="Possibility of activating or cancelling rerouting messages to another account, individually" title="Possibility of activating or cancelling rerouting messages to another account, individually">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="Possibility of activating or cancelling rerouting messages to another account, by group" title="Possibility of activating or cancelling rerouting messages to another account, by group">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="Possibility of activating or cancelling rerouting messages to another account, globally" title="Possibility of activating or cancelling rerouting messages to another account, globally">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="Possibility of exporting messages to a USB Flash memory key in order to view them" title="Possibility of exporting messages to a USB Flash memory key in order to view them">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="Message diffusion using the publication/broadcasting tool" title="Message diffusion using the publication/broadcasting tool">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+      </element>
+      <element name="Contacts" title="Contacts">
+         <desc></desc>
+         <comment></comment>
+         <element name="ContactsServerFunctionalities" title="Server Functionalities">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="ContactsMulti-source search" title="Multi-source search">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="ContactsAutomatic completion of addresses when writing messages" title="Automatic completion of addresses when writing messages">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="ContactsAccess to directories" title="Access to directories is integrated into mail functionalities">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="Directories are accessible using a tree like structure" title="Directories are accessible using a tree like structure">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="Possibility of accessing a personal directory" title="Possibility of accessing a personal directory">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="Creation of personal mailing list" title="Creation of personal mailing list">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="Creation of messages from directories" title="Creation of messages from directories">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="Exportation of Adress Book" title="Exportation of Adress Book">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="Possibility of sharing Adress Book" title="Possibility of sharing Adress Book">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="Possibility of send a contact card by email" title="Possibility of send a contact card by email">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+      </element>
+      <element name="Calendars" title="Calendars">
+         <desc></desc>
+         <comment></comment>
+         <element name="Server functionalities" title="Server Functionalities">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="Reminder option" title="Reminder option">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="Subscription to public calendars" title="Subscription to public calendars">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="Possibility of viewing and adding elements" title="Possibility of viewing and adding elements">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="Possibility of defining private appointments" title="Possibility of defining private appointments">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="PlanningOfMeetings" title="Planning of meetings">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="Aknowledgement of a meeting proposal, acceptation or refusal, then notification sent to the organizer" title="Aknowledgement of a meeting proposal, acceptation or refusal, then notification sent to the organizer">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="Possibility of viewing the list of persons having accepted/refused the meeting proposal when clicking on the object(meeting)" title="Possibility of viewing the list of persons having accepted/refused the meeting proposal when clicking on the object(meeting)">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="Possibility of printing the list" title="Possibility of printing the list">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="Possibility of viewing other people s agenda" title="Possibility of viewing other people s agenda">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="Possibility of viewing several calendars in the same windows" title="Possibility of viewing several calendars in the same windows">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="Possibility of printing a list,  weekly, monthly events" title="Possibility of printing a list,  weekly, monthly events">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="Possibility of exporting or veiwing when disconnected" title="Possibility of exporting or veiwing when disconnected">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="Appointements by drag and drop" title="Appointements by drag and drop">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+      </element>
+      <element name="Tasks assignment" title="Tasks assignment">
+         <desc></desc>
+         <comment></comment>
+         <element name="Server functionalites" title="Server Functionalities">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="Reminder by message or visual/musical warning" title="Reminder by message or visual/musical warning">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="Tasks assignments" title="Tasks assignments">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+      </element>
+   </section>
+   <section name="Instant Messaging" title="Instant Messaging">
+      <desc></desc>
+      <element name="HM interface" title="HM interface">
+         <desc></desc>
+         <comment></comment>
+         <element name="Account creation" title="Account creation">
+            <desc></desc>
+            <desc0>Account creation is not possible from the client</desc0>
+            <desc1>Account creation is possible for only part of the supported protocols</desc1>
+            <desc2>Account creation is possivle for all supported protcols</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="Access to accounts" title="Access to accounts">
+            <desc></desc>
+            <desc0>No accounts  management interface provided by the client</desc0>
+            <desc1>Link to a page dedicated to accounts managment for all or some of the supported protocals</desc1>
+            <desc2>Native interface for editing/managing accounts</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="Account deletion" title="Account deletion">
+            <desc></desc>
+            <desc0>It is not possible to delate accoubts from the client</desc0>
+            <desc1>Link to a page from where you can delete accounts</desc1>
+            <desc2>Native interface to delete accounts (without using a browser)</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="Plug-ins" title="Plug-ins">
+            <desc></desc>
+            <desc0>no plug-in</desc0>
+            <desc1>plug-in with limted functionnalities</desc1>
+            <desc2>plug-in with adavanced functionalities</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="Bandwith" title="Bandwith">
+            <desc></desc>
+            <desc0>512 ko/s</desc0>
+            <desc1>128 ko/s</desc1>
+            <desc2>64 ko/s</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+      </element>
+      <element name="Protocols" title="Protocols">
+         <desc></desc>
+         <comment></comment>
+         <element name="XMPP protocol supported" title="XMPP protocol supported">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="Standard protocols for Instant messaging supported" title="Standard protocols for Instant messaging supported">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="Proprietary protocol" title="Proprietary protocol">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="Multi-users dialog, multin conversation" title="Multi-users dialog, multin conversation">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="vCard support" title="vCard support">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="Avatar" title="Avatar">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+      </element>
+      <element name="Presence(on line/off line) management" title="Presence(on line/off line) management">
+         <desc></desc>
+         <comment></comment>
+         <element name="Visual indicator of presence" title="Visual indicator of presence">
+            <desc></desc>
+            <desc0>none</desc0>
+            <desc1>basic presence indicator</desc1>
+            <desc2>presence indicator that can be customized</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="Auto absence" title="Auto absence">
+            <desc></desc>
+            <desc0>None</desc0>
+            <desc1>Basic</desc1>
+            <desc2>Advanced (message can be customized )</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="Indicator of presence that  can be customized" title="Indicator of presence that  can be customized">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment>When inmulti-account environment,  possibility of using different presence indicators = 2</comment>
+         </element>
+      </element>
+      <element name="Multimdedia support" title="Multimdedia support">
+         <desc></desc>
+         <comment></comment>
+         <desc0>Not covered</desc0>
+         <desc1>Partially covered</desc1>
+         <desc2>Fully covered</desc2>
+         <score></score>
+      </element>
+      <element name="Other functionalities" title="Other functionalities">
+         <desc></desc>
+         <comment></comment>
+         <element name="Acoustic Echo Cancellation supported (AEC)" title="Acoustic Echo Cancellation supported (AEC)">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="Voice recognition IVR/ASR supported" title="Voice recognition IVR/ASR supported">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="Voice message supported (VMS)" title="Voice message supported (VMS)">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+      </element>
+      <element name="Viso/Web conferencing" title="Viso/Web conferencing">
+         <desc></desc>
+         <comment></comment>
+         <element name="supported OS for the  web conferencing module" title="supported OS for the  web conferencing module">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="Audio stream compression" title="Audio stream compression">
+            <desc></desc>
+            <desc0>telephone quality  (8khz)</desc0>
+            <desc1>FM quality (16 khz)</desc1>
+            <desc2>HIFI quality (24 khz)</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="Video stream compression" title="Video stream compression">
+            <desc></desc>
+            <desc0>Codecs formats are compatible with low bandwith and mobile networks</desc0>
+            <desc1>Codecs formats are compatible with large bandwith network</desc1>
+            <desc2>Codecs formats are compatible with broadband connection networks</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="Use of proprietary code" title="Use of proprietary code">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment>If the solution is only compatible with proprietary codes = 0</comment>
+         </element>
+         <element name="Multipoint conferencing" title="Multipoint conferencing">
+            <desc></desc>
+            <desc0>Support only point-to-point conference</desc0>
+            <desc1>Possibility to make multipoint conferences using ad hoc infrastructure</desc1>
+            <desc2>The dedicated infrastructure allows to make multipoint conferences</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+      </element>
+      <element name="Compatibility with other clients" title="Compatibility with other clients">
+         <desc></desc>
+         <comment></comment>
+         <element name="Compatible with Jabber" title="Compatible with Jabber">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="Compatible with WengoPhone" title="Compatible with WengoPhone">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="Compatible with Ekiga" title="Compatible with Ekiga">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="Compatible with Psi" title="Compatible with Psi">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="Compatible with Kopete" title="Compatible with Kopete">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="Compatible with Gaim" title="Compatible with Gaim">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="Compatible with Talk" title="Compatible with Talk">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+      </element>
+   </section>
+   <section name="Web conferencing" title="Web conferencing">
+      <desc></desc>
+      <element name="possibility of having different kind of access for animators/moderators  and guests" title="possibility of having different kind of access for animators/moderators  and guests">
+         <desc></desc>
+         <comment>The solution proposes differentiated access between participants and organizers</comment>
+         <desc0>Not covered</desc0>
+         <desc1>Partially covered</desc1>
+         <desc2>Fully covered</desc2>
+         <score></score>
+      </element>
+      <element name="Planning of meetings" title="Planning of meetings">
+         <desc></desc>
+         <comment></comment>
+         <element name="Integrated into calendar" title="Integrated into calendar">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment>The planned meetings are integrated in the participants electronic calendar</comment>
+         </element>
+         <element name="Possibility of sending invitation via email" title="Possibility of sending invitation via email">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment>The planned meetings are sent to participants as an invitation</comment>
+         </element>
+         <element name="Recording of meetings" title="Recording of meetings">
+            <desc></desc>
+            <desc0>NO</desc0>
+            <desc1>proprietary format</desc1>
+            <desc2>Mpeg, avi etc..</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="Anonymous meeting" title="Anonymous meeting">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment>Possibility to make open meetings without the necessity to log in form the participants</comment>
+         </element>
+      </element>
+      <element name="Web conferencing tools" title="Web conferencing tools">
+         <desc></desc>
+         <comment></comment>
+         <element name="White board" title="White board">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="Possibility of external presentations" title="Possibility of external presentations">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment>Standard  Formats (PPT, DOC, XLS, PDF, Images)</comment>
+         </element>
+         <element name="Screen Sharing" title="Screen Sharing">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="Possibility for some guest to control the shared screen" title="Possibility for some guest to control the shared screen">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="Chat between guests" title="Chat between guests">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="Voting system" title="Voting system">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="Possibility of pushing a web page on the guest s computer" title="Possibility of pushing a web page on the guest s computer">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="On line poll" title="On line poll">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="Possibility of blocking data streaming for a guest" title="Possibility of blocking data streaming for a guest">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+      </element>
+      <element name="Adminitration Tools" title="Adminitration Tools">
+         <desc></desc>
+         <comment></comment>
+         <element name="Automatic reconnection system" title="Automatic reconnection system">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment>The solution supports automatic reconnection in case of lose connection</comment>
+         </element>
+         <element name="Meeting monitoring" title="Meeting monitoring">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment>Possibility to have a view on current meetings with their participants</comment>
+         </element>
+      </element>
+   </section>
+   <section name="Administration and exploitation" title="Administration and exploitation">
+      <desc></desc>
+      <element name="Tools" title="Tools">
+         <desc></desc>
+         <comment></comment>
+         <element name="Centralised  console" title="Centralised  console">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="Unified administration console" title="Unified administration console">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="Graphic tools" title="Graphic tools">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="Command line Interface" title="Command line Interface">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment>batch treatment</comment>
+         </element>
+      </element>
+      <element name="Architecture" title="Architecture">
+         <desc></desc>
+         <comment></comment>
+         <element name="Centralised Administration" title="Centralised Administration">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="Distributed administration with delegation" title="Distributed administration with delegation">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="Database replication" title="Database replication">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="Delegation administration" title="Delegation administration">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+      </element>
+      <element name="Supervision" title="Supervision">
+         <desc></desc>
+         <comment></comment>
+         <element name="Accounts supervision" title="Accounts supervision">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="Server supervision" title="Server supervision">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="Flow supervision" title="Flow supervision">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="Statistics" title="Statistics">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="Alert mechanism according to the problem criticality" title="Alert mechanism according to the problem criticality">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="Several levels of criticability that can be customized for each supervised element" title="Several levels of criticability that can be customized for each supervised element">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+      </element>
+      <element name="Import/Export" title="Import/Export">
+         <desc></desc>
+         <comment></comment>
+         <element name="Imported/exported Objects" title="Imported/exported Objects">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="Import/Export formats" title="Import/Export formats">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="Possibility of importing/Exporting accounts(totally or parttially)" title="Possibility of importing/Exporting accounts(totally or parttially)">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="Available import/export formats for accounts" title="Available import/export formats for accounts">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="Possibility of Importing/Exporting mailboxes (totally or partially)" title="Possibility of Importing/Exporting mailboxes (totally or partially)">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="Available import/export formats for mailboxes" title="Available import/export formats for mailboxes">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="Possibility of importing/exporting Calendars( totally or partially)" title="Possibility of importing/exporting Calendars( totally or partially)">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="Available import/export formats for Calendars" title="Available import/export formats for Calendars">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+      </element>
+      <element name="Backup management" title="Backup management">
+         <desc></desc>
+         <comment></comment>
+         <element name="Total partial backup of a user account" title="Total partial backup of a user account">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="Total or partial backup of a user group" title="Total or partial backup of a user group">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+      </element>
+   </section>
+   <section name="Other functionalities" title="Other functionalities">
+      <desc></desc>
+      <element name="Resource Management" title="Resource Management">
+         <desc></desc>
+         <comment></comment>
+         <element name="Management of resources( Rooms, Vehicules, Equipment)" title="Management of resources( Rooms, Vehicules, Equipment)">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="Possibility of extension of resources" title="Possibility of extension of resources">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="Notification/reminder" title="Notification/reminder">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+      </element>
+      <element name="Document management" title="Document management">
+         <desc></desc>
+         <comment></comment>
+         <element name="Checkin/Checkout" title="Checkin/Checkout">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="Management of the various versions" title="Management of the various versions">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="Past history" title="Past history">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="Metadata" title="Metadata">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="Full-text search" title="Full-text search">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="Workflow" title="Workflow">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="Integrated into the mail system" title="Integrated into the mail system">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+      </element>
+      <element name="Management of the Web contents" title="Management of the Web contents">
+         <desc></desc>
+         <comment></comment>
+         <element name="Possibility of re-using content" title="Possibility of re-using content">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="Multilingual content that can be integrated" title="Multilingual content that can be integrated">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="Online Editing" title="Online Editing">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="Online management content of translations" title="Online management content of translations">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="Centralized management of content" title="Centralized management of content">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="Pictures management" title="Pictures management">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="Possibility of programming content" title="Possibility of programming content">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="Inter-sites deployment of content" title="Inter-sites deployment of content">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="Management of sub-sites using a tree like architecture" title="Management of sub-sites using a tree like architecture">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+      </element>
+      <element name="Additional tools" title="Additional tools">
+         <desc></desc>
+         <comment></comment>
+         <element name="Management of static mailing lists" title="Management of static mailing lists">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment>Mailing lists management tools. The static mailing lists are enumerated</comment>
+         </element>
+         <element name="Management of dynamic mailing lists" title="Management of dynamic mailing lists">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment>Directory research made basis subscription or in the data bases</comment>
+         </element>
+         <element name="Documents sharing" title="Documents sharing">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="Forum" title="Forum">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="Web feeds /RSS" title="Web feeds /RSS">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="Web feeds / Ato" title="Web feeds / Ato">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="Reuters Data Feed - RDF" title="Reuters Data Feed - RDF">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="Not applicable" title="Not applicable">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="Chat between guests" title="Chat between guests">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="Polling tool" title="Polling tool">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="Personal web page" title="Personal web page">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="Blog" title="Blog">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="Wiki" title="Wiki">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="Project management" title="Project management">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="Problem management" title="Problem management">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="Other tools" title="Other tools">
+            <desc></desc>
+            <desc0>Not covered</desc0>
+            <desc1>Partially covered</desc1>
+            <desc2>Fully covered</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+      </element>
+   </section>
+</document>
