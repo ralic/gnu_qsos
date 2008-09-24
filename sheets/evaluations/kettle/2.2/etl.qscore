@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="utf-8"?>
+<qsosscore>
+	<element name="jobmaquette">
+		<score>
+			1
+		</score>
+	</element>
+	<element name="utilisationdefichierinterne">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="oracleapplication">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="parallelisationdesfluxdedonnees">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="sqlserver">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="depuisbasededonnees">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="oracle">
+		<score>
+			0
+		</score>
+		<comment>
+			Générateur de fichier ctl pour SQLLoader
+		</comment>
+	</element>
+	<element name="executionpasapas">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="filtre">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="informix">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="mysql">
+		<score>
+			0
+		</score>
+		<comment>
+			Générateur de fichier pour chargement de masse
+		</comment>
+	</element>
+	<element name="pivot">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="sap">
+		<score>
+			1
+		</score>
+		<comment>
+			Connexion spécifique a SAP
+		</comment>
+	</element>
+	<element name="xml">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="ftp">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="fichierplat">
+		<score>
+			2
+		</score>
+		<comment>
+			Interfaçage CVS
+		</comment>
+	</element>
+	<element name="visualisationgraphique">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="sgbd">
+		<score>
+			2
+		</score>
+		<comment>
+			Référentiel MySQL
+		</comment>
+	</element>
+	<element name="commandessql">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="lookup">
+		<score>
+			1
+		</score>
+	</element>
+	<element name="commandessysteme">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="ordonnanceurintegre">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="tacheselementaires">
+		<score>
+			2
+		</score>
+		<comment>
+			Ordonnancement, alerte envoi de mail
+		</comment>
+	</element>
+	<element name="parametragedestraitements">
+		<score>
+			1
+		</score>
+		<comment>
+			Limité a dix paramètres par tâche élémentaire
+		</comment>
+	</element>
+	<element name="parametragedumoteur">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="expressionreguliere">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="outildegestiondeconfiguration">
+		<score>
+			1
+		</score>
+	</element>
+	<element name="concatenation">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="chainedecaracteres">
+		<score>
+			1
+		</score>
+	</element>
+	<element name="richessedesjournaux">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="jointure">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="nombre">
+		<score>
+			1
+		</score>
+	</element>
+	<element name="date">
+		<score>
+			1
+		</score>
+	</element>
+	<element name="postgresql">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="db2">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="depuisfichierplat">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="tri">
+		<score>
+			2
+		</score>
+		<comment>
+			Performance inférieur à CloverETL et a datastage server
+		</comment>
+	</element>
+	<element name="generationdejeuxdetest">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="fonctionsdecalcul">
+		<score>
+			1
+		</score>
+	</element>
+	<element name="lignedecommande">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="fichiercompresse">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="outildedeveloppement">
+		<score>
+			1
+		</score>
+		<comment>
+			2
+		</comment>
+	</element>
+	<element name="cledesubstitution">
+		<score>
+			1
+		</score>
+		<comment>
+			Possibilité d'ajouter une séquence
+		</comment>
+	</element>
+	<element name="comparaisondefichiers">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="dedoublonnage">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="connexionjdbc">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="teradata">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="portabilite">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="lecturedesrepertoires">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="journalisation">
+		<score>
+			2
+		</score>
+		<comment>
+			Log de bonne qualité concernant les performances 
+		</comment>
+	</element>
+	<element name="agregation">
+		<score>
+			2
+		</score>
+	</element>
+</qsosscore>
