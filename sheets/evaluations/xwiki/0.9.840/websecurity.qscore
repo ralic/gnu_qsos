@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<qsosscore>
+	<element name="spaceaccessrights">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="mailencryption">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="robotscontrol">
+		<score>
+			1
+		</score>
+		<comment>
+			easily do-able
+		</comment>
+	</element>
+	<element name="authenbackenddb">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="hostblocking">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="captcha">
+		<score>
+			1
+		</score>
+		<comment>
+			captcha is available through a plugin
+		</comment>
+	</element>
+	<element name="signaturemechansim">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="accessrights">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="blacklist">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="digitalwatermarking">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="DRM">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="authenbackendldap">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="authenbackendad">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="usersgroups">
+		<score>
+			2
+		</score>
+	</element>
+</qsosscore>

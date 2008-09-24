@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<qsosscore>
+	<element name="codesyntaxhighlighting">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="undefinedpages">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="pagenaming">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="templating">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="contentincludes">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="xmlexport">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="tablesorting">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="i18nofdocuments">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="flagging">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="otherspecialsyntax">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="wantedpages">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="backlinks">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="wikicomments">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="media">
+		<score>
+			1
+		</score>
+		<comment>
+			svg and mindmap in progress
+		</comment>
+	</element>
+	<element name="discussion">
+		<score>
+			1
+		</score>
+	</element>
+	<element name="spreadsheet">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="wikiscripting">
+		<score>
+			2
+		</score>
+		<comment>
+			groovy and velocity script ability
+		</comment>
+	</element>
+	<element name="toc">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="lightweightmarkuplanguage">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="pdfexport">
+		<score>
+			1
+		</score>
+		<comment>
+			a bit buggy
+		</comment>
+	</element>
+	<element name="htmltags">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="rawexport">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="tableedition">
+		<score>
+			1
+		</score>
+	</element>
+	<element name="lockedpages">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="mostleastpopularpages">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="recentlyvisitedpages">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="onlinepageediting">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="htmlexport">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="availablepageslisting">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="chartplugin">
+		<score>
+			1
+		</score>
+		<comment>
+			not officially released yet
+		</comment>
+	</element>
+	<element name="spellchecker">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="pageeditingusability">
+		<score>
+			1
+		</score>
+	</element>
+	<element name="orphanedpages">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="mathformulas">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="customoutput">
+		<score>
+			1
+		</score>
+		<comment>
+			in progress
+		</comment>
+	</element>
+</qsosscore>
