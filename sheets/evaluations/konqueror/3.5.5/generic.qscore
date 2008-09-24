@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="utf-8"?>
+<qsosscore>
+	<element name="consulting">
+		<score>
+			2
+		</score>
+		<comment>
+			Konqueror, as part of KDE,  is often included in professional Linux expertise offers (like RedHat, SuSE, Mandriva, ...)
+		</comment>
+	</element>
+	<element name="documentation">
+		<score>
+			2
+		</score>
+		<comment>
+			Documentation about Konqueror is very complete (user guide, developer guide) and translated in several languages
+		</comment>
+	</element>
+	<element name="activityonreleases">
+		<score>
+			2
+		</score>
+		<comment>
+			Konqueror is released as part of KDE (KDEbase and KDElibs packages)
+		</comment>
+	</element>
+	<element name="administrationmonitoring">
+		<score>
+			0
+		</score>
+		<comment>
+			Not applicable
+		</comment>
+	</element>
+	<element name="independenceofdevelopments">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="packaginghpux">
+		<score>
+			1
+		</score>
+		<comment>
+			Some user have ported parts of KDE on HP-UX but it seems to be buggy and unsupported
+		</comment>
+	</element>
+	<element name="stability">
+		<score>
+			2
+		</score>
+		<comment>
+			Konqueor is known to be stable as a Web Browser but also as a file manager
+		</comment>
+	</element>
+	<element name="activityonfunctionalities">
+		<score>
+			2
+		</score>
+		<comment>
+			http://bugs.kde.org
+		</comment>
+	</element>
+	<element name="leadingteam">
+		<score>
+			2
+		</score>
+		<comment>
+			14 membres of the core team are well identified, as well as David Faure the current maintainer.
+		</comment>
+	</element>
+	<element name="books">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="references">
+		<score>
+			1
+		</score>
+		<comment>
+			Konqueror engine, khtml is used by Apple Computer for Safari and by Nokia for Nokia Web Browser used on S60 serie phones.
+		</comment>
+	</element>
+	<element name="sponsor">
+		<score>
+			2
+		</score>
+		<comment>
+			Konqueror, as part of the KDS project, is sponsord by the community. KDE e.V the legal entity representing the KDE project has also a patron program (cf. http://ev.kde.org/supporting-members.php)
+		</comment>
+	</element>
+	<element name="packagingmandriva">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="strategicalindependence">
+		<score>
+			2
+		</score>
+		<comment>
+			The non-profit German association KDE e.V. exists to represent legally and financially the project.
+		</comment>
+	</element>
+	<element name="tools">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="packagingsolaris">
+		<score>
+			2
+		</score>
+		<comment>
+			http://solaris.kde.org/
+		</comment>
+	</element>
+	<element name="permissiveness">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="quality">
+		<score>
+			2
+		</score>
+		<comment>
+			Konqueror benefits from KDE quality process (cf. http://quality.kde.org) and policies. Different porcesses are well documented.
+		</comment>
+	</element>
+	<element name="support">
+		<score>
+			2
+		</score>
+		<comment>
+			Konqueror is often included in professional Linux support offers (like RedHat, SuSE, Mandriva, ...)
+		</comment>
+	</element>
+	<element name="contributingcommunity">
+		<score>
+			2
+		</score>
+		<comment>
+			As part of KDE base package, Konqueror has a very strong community and 33 identified contributors.
+		</comment>
+	</element>
+	<element name="packagingwindows">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="codeextension">
+		<score>
+			2
+		</score>
+		<comment>
+			Konqueror is designed as a pluggable architecture. A extention system is also available even if very few extentions are available today.
+		</comment>
+	</element>
+	<element name="managementstyle">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="easeofuseergonomics">
+		<score>
+			2
+		</score>
+		<comment>
+			Global and contextual user help
+		</comment>
+	</element>
+	<element name="packagingsuse">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="packagingmacosx">
+		<score>
+			1
+		</score>
+		<comment>
+			Unsupported port : http://ranger.users.finkproject.org/kde/index.php/Home
+		</comment>
+	</element>
+	<element name="packagingredhat">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="codemodification">
+		<score>
+			2
+		</score>
+		<comment>
+			KDE compilation process is well tooled and documented
+		</comment>
+	</element>
+	<element name="protectionagainstproprietaryforks">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="packagingsource">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="developersidentificationturnover">
+		<score>
+			2
+		</score>
+		<comment>
+			33 contributors
+		</comment>
+	</element>
+	<element name="packagingfreebsd">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="roadmap">
+		<score>
+			1
+		</score>
+		<comment>
+			Konqueror is included in the global KDE macroscopic roadmap
+		</comment>
+	</element>
+	<element name="packagingdebian">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="modificationofsourcecode">
+		<score>
+			2
+		</score>
+		<comment>
+			Code modification is rules by well documented policies
+		</comment>
+	</element>
+	<element name="copyrightowners">
+		<score>
+			1
+		</score>
+	</element>
+	<element name="training">
+		<score>
+			1
+		</score>
+		<comment>
+			Konqueror is often included in Linux trainings
+		</comment>
+	</element>
+	<element name="packagingnet">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="age">
+		<score>
+			2
+		</score>
+		<comment>
+			The first stable release was on october 2000 for KDE 2.0 release. Konqueror is derivated from kfm, KDE 1.x file/web browser.
+		</comment>
+	</element>
+	<element name="popularity">
+		<score>
+			1
+		</score>
+		<comment>
+			Konqueror is very popular among KDE users. Because of its unavailability on Windows platforms its popularity is not so wide as Mozilla or Opera.
+		</comment>
+	</element>
+	<element name="modularity">
+		<score>
+			2
+		</score>
+		<comment>
+			Konqueror is code in C++ and is thus modular and extensible
+		</comment>
+	</element>
+	<element name="activityonbugs">
+		<score>
+			2
+		</score>
+		<comment>
+			http://bugs.kde.org
+		</comment>
+	</element>
+	<element name="packagingopen">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="forkprobability">
+		<score>
+			2
+		</score>
+		<comment>
+			KHTML, Konqueror's engine was forked by Apple to createWebkit, Safari's engine. Initialy Apple did nothing to help KDEdevelopers to backport changes. Today things changed and Webkitwill provably be the default HTML engine of KDE4.
+		</comment>
+	</element>
+</qsosscore>
