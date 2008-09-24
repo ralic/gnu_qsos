@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="utf-8"?>
+<qsosscore>
+	<element name="consulting">
+		<score>
+			1
+		</score>
+		<comment>
+			Certains développeurs coeur propose de services d'installation distante et de personnalisation de Mantis (cf. http://www.mantisbugtracker.com/consulting.php)
+		</comment>
+	</element>
+	<element name="documentation">
+		<score>
+			1
+		</score>
+		<comment>
+			Manuel détaillé en anglais, à jour, non différentié entre utilisateur, administrateur et développeur.
+		</comment>
+	</element>
+	<element name="activityonreleases">
+		<score>
+			2
+		</score>
+		<comment>
+			Nouvelles versions fréquentes.
+		</comment>
+	</element>
+	<element name="administrationmonitoring">
+		<score>
+			1
+		</score>
+		<comment>
+			Mantis est configurable par les administrateurs via l'interface Web. Hormis la possibilité de journal stocké sur disques, il n'existe pas de moyen de superviser le système. Pas d'intégration avec des outils de supervision ou via SNMP.
+		</comment>
+	</element>
+	<element name="independenceofdevelopments">
+		<score>
+			2
+		</score>
+		<comment>
+			Les développeurs coeurs et les contributeurs sont bénévoles et indépendants.
+		</comment>
+	</element>
+	<element name="roadmap">
+		<score>
+			1
+		</score>
+		<comment>
+			Roadmap disponible (http://www.mantisbugtracker.com/roadmap.php) sans précisions sur les dates prévues pour les prochaines versions.
+		</comment>
+	</element>
+	<element name="stability">
+		<score>
+			2
+		</score>
+		<comment>
+			Le logiciel est stabilisé.
+		</comment>
+	</element>
+	<element name="activityonfunctionalities">
+		<score>
+			2
+		</score>
+		<comment>
+			Demandes de nouvelles fonctionnalités tracée dans l'outil de gestion des bogues, avec un système de donation pour motiver les développeurs.
+		</comment>
+	</element>
+	<element name="leadingteam">
+		<score>
+			2
+		</score>
+		<comment>
+			Equipe coeur de 5 personnes indépendantes.
+		</comment>
+	</element>
+	<element name="books">
+		<score>
+			0
+		</score>
+		<comment>
+			Aucun livre publié sur Mantis.
+		</comment>
+	</element>
+	<element name="references">
+		<score>
+			1
+		</score>
+		<comment>
+			La site du projet liste environ 150 installations enregistrées (cf. http://www.mantisbugtracker.com/directory.php)
+		</comment>
+	</element>
+	<element name="sponsor">
+		<score>
+			1
+		</score>
+		<comment>
+			25 entreprises de taille moyenne ont sponsorisé le site Web du projet.
+		</comment>
+	</element>
+	<element name="strategicalindependence">
+		<score>
+			2
+		</score>
+		<comment>
+			L'équipe projet est indépendante de tout sponsor ou entreprise.
+		</comment>
+	</element>
+	<element name="tools">
+		<score>
+			2
+		</score>
+		<comment>
+			Utilisation de Mantis pour la gestion des bogues et des demandes de fonctionnalités.
+		</comment>
+	</element>
+	<element name="permissiveness">
+		<score>
+			0
+		</score>
+		<comment>
+			Licence GPL v2
+		</comment>
+	</element>
+	<element name="quality">
+		<score>
+			0
+		</score>
+		<comment>
+			Pas de processus public d'assurance qualité ou d'intégration continue identifié.
+		</comment>
+	</element>
+	<element name="support">
+		<score>
+			0
+		</score>
+		<comment>
+			Aucune offre de support détectée.
+		</comment>
+	</element>
+	<element name="contributingcommunity">
+		<score>
+			2
+		</score>
+		<comment>
+			Forte activité dans les forums et les listes de discussion, nombreuses contributions.
+		</comment>
+	</element>
+	<element name="codeextension">
+		<score>
+			2
+		</score>
+		<comment>
+			Le code PHP n'est pas compilé et le code peut facilement être étendu. Des « hooks » sont prévus pour intercaler des fonctions personnalisés lors de certains comportements de Mantis.
+		</comment>
+	</element>
+	<element name="managementstyle">
+		<score>
+			2
+		</score>
+		<comment>
+			Equipe coeur de 5 personnes indépendantes.
+		</comment>
+	</element>
+	<element name="easeofuseergonomics">
+		<score>
+			2
+		</score>
+		<comment>
+			Mantis est facile d'utilisation et son interface est apprécié par les utilisateurs pour son ergonomie.
+		</comment>
+	</element>
+	<element name="codemodification">
+		<score>
+			2
+		</score>
+		<comment>
+			La clarté du code source et la documentation des API permet de facilement modifier le logiciel.
+		</comment>
+	</element>
+	<element name="protectionagainstproprietaryforks">
+		<score>
+			2
+		</score>
+		<comment>
+			Licence GPL v2
+		</comment>
+	</element>
+	<element name="developersidentificationturnover">
+		<score>
+			2
+		</score>
+		<comment>
+			4 développeurs dans l'équipe coeur identifiés et de nombreux contributeurs.
+		</comment>
+	</element>
+	<element name="modificationofsourcecode">
+		<score>
+			1
+		</score>
+	</element>
+	<element name="copyrightowners">
+		<score>
+			1
+		</score>
+		<comment>
+			Les droits sont détenus par les différents contributeurs, la note de copyright se réfère à « Mantis Team » qui n'est pas une entité légale.
+		</comment>
+	</element>
+	<element name="training">
+		<score>
+			0
+		</score>
+		<comment>
+			Aucune offre de formation détectée.
+		</comment>
+	</element>
+	<element name="age">
+		<score>
+			2
+		</score>
+		<comment>
+			Mantis a été débuté en 2000 puis ré écrit en 2002.
+		</comment>
+	</element>
+	<element name="popularity">
+		<score>
+			2
+		</score>
+		<comment>
+			Activité décelable sur sourceforge.net. Mantis est aujourd'hui une solution reconnue et très répandue.
+		</comment>
+	</element>
+	<element name="modularity">
+		<score>
+			2
+		</score>
+		<comment>
+			Le code de Mantis est clair et modulaire (utilisation intensive de « Perl modules »).
+		</comment>
+	</element>
+	<element name="activityonbugs">
+		<score>
+			2
+		</score>
+		<comment>
+			Activité importante décelable via l'outil de gestion de bogues (http://www.mantisbugtracker.com/bugs/).
+		</comment>
+	</element>
+	<element name="forkprobability">
+		<score>
+			2
+		</score>
+		<comment>
+			Le projet a peu de chances d'être forké.
+		</comment>
+	</element>
+</qsosscore>
