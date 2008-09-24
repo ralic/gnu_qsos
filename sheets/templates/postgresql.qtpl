@@ -24,7 +24,7 @@
 		<qsosappname>postgresql</qsosappname>
 		<qsosspecificformat></qsosspecificformat>
 		<qsosappfamilies>
-			<qsosappfamily>qsosappfamily</qsosappfamily>
+			<qsosappfamily>relational-database-management-system</qsosappfamily>
 		</qsosappfamilies>
 	</template>
 </qsostemplate>

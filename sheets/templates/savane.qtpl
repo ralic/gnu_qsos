@@ -22,13 +22,12 @@
 		<qsosformat>2.0</qsosformat>
 		<qsosappname>savane</qsosappname>
 		<qsosappfamilies>
-			<qsosappfamily>webappprerequisite"</qsosappfamily>
+			<qsosappfamily>webappprerequisite</qsosappfamily>
 			<qsosappfamily>websecurity"</qsosappfamily>
 			<qsosappfamily>storagesupport"</qsosappfamily>
 			<qsosappfamily>webcompatibility</qsosappfamily>
 			<qsosappfamily>userinterface</qsosappfamily>
 			<qsosappfamily>webcontentmanagement</qsosappfamily>
-			<qsosappfamily>prerequisite</qsosappfamily>
 		</qsosappfamilies>
 	</template>
 </qsostemplate>

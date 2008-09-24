@@ -29,7 +29,6 @@
 			<qsosappfamily>webcompatibility</qsosappfamily>
 			<qsosappfamily>userinterface</qsosappfamily>
 			<qsosappfamily>webcontentmanagement</qsosappfamily>
-			<qsosappfamily>prerequisite</qsosappfamily>
 		</qsosappfamilies>
 	</template>
 </qsostemplate>

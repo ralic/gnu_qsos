@@ -23,13 +23,12 @@
     <qsosformat>2.0</qsosformat>
     <qsosappname>forge</qsosappname>
     <qsosappfamilies>
-    <qsosappfamily> section="webappprerequisite"</qsosappfamily>
-    <qsosappfamily> section="websecurity"</qsosappfamily>
-    <qsosappfamily> section="storagesupport"</qsosappfamily>
-    <qsosappfamily> section="webcompatibility"</qsosappfamily>
-    <qsosappfamily> section="userinterface"</qsosappfamily>
-    <qsosappfamily> section="webcontentmanagement"</qsosappfamily>
-    <qsosappfamily> section="prerequisite"</qsosappfamily>
+    <qsosappfamily>webappprerequisite</qsosappfamily>
+    <qsosappfamily>websecurity</qsosappfamily>
+    <qsosappfamily>storagesupport</qsosappfamily>
+    <qsosappfamily>webcompatibility</qsosappfamily>
+    <qsosappfamily>userinterface</qsosappfamily>
+    <qsosappfamily>webcontentmanagement</qsosappfamily>
     </qsosappfamilies>
   </template>
 </qsostemplate>

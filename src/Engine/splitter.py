@@ -81,7 +81,13 @@ def createDocument(evaluation,familypath="../sheets/families"):
     #the first, second and last tag of header are ignored
     #as they are not document properties but part of families contents
     header = rawDocument.firstChild.firstChild.childNodes
-    properties = dict((n.tagName,n.firstChild.data) for n in header[2:-1])
+    properties = {}
+    for n in header[2:-1]:
+        try :
+            properties[n.tagName] = n.firstChild.data
+        except AttributeError :
+            properties[n.tagName] = "N/A"
+                            
     
     #Instantiate a QSOS-Document object initiated with the properties extracted
     #from XML evaluation and empty family dictionnary
