@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<qsosscore>
+	<element name="tableconstraints">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="migrationtools">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="xacompliance">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="querytools">
+		<score>
+			2
+		</score>
+		<comment>
+			PGAdmin III, PhpPgAdmin (Web client)
+		</comment>
+	</element>
+	<element name="xmlfeatures">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="columnconstraints">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="sql2003">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="subselects">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="replication">
+		<score>
+			1
+		</score>
+		<comment>
+			Via third party products (Slony or eRServer)
+		</comment>
+	</element>
+	<element name="unicode">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="optimizetools">
+		<score>
+			2
+		</score>
+		<comment>
+			EXPLAIN and EXPLAIN ANALYZE functions, RedHat Visual Explain
+		</comment>
+	</element>
+	<element name="admintools">
+		<score>
+			2
+		</score>
+		<comment>
+			PGAdmin III, PhpPgAdmin (Web client), RedHat Administrator  and Control Center
+		</comment>
+	</element>
+	<element name="namedconstraints">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="storedprocedures">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="columndefaultvalues">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="nullconstraints">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="schemas">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="clustering">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="tablespaces">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="gis">
+		<score>
+			1
+		</score>
+		<comment>
+			PostGIS adds spatial features. Not yet OpenGIS compliant.
+		</comment>
+	</element>
+	<element name="triggers">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="transactionalengine">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="views">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="locking">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="functionsdefaultvalues">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="fkupdates">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="olap">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="sql99">
+		<score>
+			1
+		</score>
+		<comment>
+			OO concepts are implemented (heritance between tables, ...)
+		</comment>
+	</element>
+	<element name="sql92">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="sslsupport">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="foreignkeys">
+		<score>
+			2
+		</score>
+	</element>
+</qsosscore>
