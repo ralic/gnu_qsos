@@ -159,8 +159,7 @@
                     <desc1>partially or poorly implemented </desc1>
                     <desc2>well done</desc2>
                 </element>
-                <element name="spreadsheet"
-                    title="Add spreadsheet formulae like $SUM($ABOVE()) to tables">
+                <element name="spreadsheet" title="Add spreadsheet formulae like $SUM($ABOVE()) to tables">
                     <desc0>No such feature</desc0>
                     <desc1>partially or poorly implemented </desc1>
                     <desc2>well done</desc2>
