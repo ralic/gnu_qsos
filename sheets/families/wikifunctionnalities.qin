@@ -85,8 +85,7 @@
                 <desc1>this wiki has a uncommon or poor syntax </desc1>
                 <desc2>this wiki support a standard and rich light weight markup language</desc2>
 		</element>
-            <element name="tableedition"
-                title="Tables edition ease: simple and complex (colspan and rowspan) table support">
+            <element name="tableedition" title="Tables edition ease: simple and complex (colspan and rowspan) table support">
                 <desc0>not implemented</desc0>
                 <desc1>implemented but with a limited API, simple tables only</desc1>
                 <desc2>implemented exhaustively, simple and complex (colspan and rowspan) table support</desc2>
@@ -125,14 +124,12 @@
             <desc1>working dictionnary but limited (e.g: grammar not included, false positive, hard to extend)</desc1>
             <desc2>Powerful dictionary</desc2>
         </element>
-        <element name="contentincludes"
-            title="Content Includes : Inclusion of pages inside another wiki page">
+        <element name="contentincludes" title="Content Includes : Inclusion of pages inside another wiki page">
             <desc0>Not supported</desc0>
             <desc1>limited support</desc1>
             <desc2>supported</desc2>
         </element>
-        <element name="flagging"
-            title="editing flags features : meta data added by the commiters when editing">
+        <element name="flagging" title="editing flags features : meta data added by the commiters when editing">
             <desc> Those features are not that usefull when the pagesversioncontrol is well designed, they can be things like: "Minor Changes flagging" feature, or "Change Summary" features </desc>
             <desc0>No such feature</desc0>
             <desc1>limited features</desc1>
@@ -162,8 +159,7 @@
                     <desc1>partially or poorly implemented </desc1>
                     <desc2>well done</desc2>
                 </element>
-                <element name="spreadsheet"
-                    title="Add spreadsheet formulae like $SUM($ABOVE()) to tables">
+                <element name="spreadsheet" title="Add spreadsheet formulae like $SUM($ABOVE()) to tables">
                     <desc0>No such feature</desc0>
                     <desc1>partially or poorly implemented </desc1>
                     <desc2>well done</desc2>
@@ -181,8 +177,7 @@
                 <desc2>many capabilities</desc2>
             </element>
         </element>
-        <element name="wikiscripting"
-            title="scripting/programming ability within the wiki page code">
+        <element name="wikiscripting" title="scripting/programming ability within the wiki page code">
             <desc> programming API to create custom dynamic web applications only using the Wiki interface. Do detail in the comment section the supported wiki scripting languages. </desc>
             <desc0>No such feature</desc0>
             <desc1>limited API </desc1>
