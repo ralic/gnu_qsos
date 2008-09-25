@@ -40,7 +40,13 @@ def build(evaluation, repositoryroot):
     content = minidom.parseString(template).firstChild.lastChild.childNodes
     
     #Extract properties from template contents
-    properties = dict((node.tagName,node.firstChild.data) for node in content[0:-2])
+    properties = {}
+    for node in content[0:-1] :
+        try :
+            properties[node.tagName] = node.firstChild.data
+        except AttributeError:
+            properties[node.tagName] = "N/A"
+     
     properties["release"]=version
     properties["qsosappname"]=id
     
@@ -119,7 +125,6 @@ def assembleSheet(document, repositoryroot):
             app = sheet.createElement("qsosappfamily")
             app.appendChild(sheet.createTextNode(item))
             appfamilies.appendChild(app)
-        
         (name, mail) = document[item]['author']
         auths[name] = mail
         include = os.path.join(repositoryroot,"sheets","families",item + ".qin")
@@ -134,10 +139,9 @@ def assembleSheet(document, repositoryroot):
         leaf.appendChild(sheet.createTextNode(v))
         tag.appendChild(leaf)
         leaf = sheet.createElement("name")
-        leaf.appendChild(sheet.createTextNode(k))
+        leaf.appendChild(sheet.createTextNode(k.decode('utf-8')))
         tag.appendChild(leaf)
         authors.appendChild(tag)
-        
     #Finalize the document
     sheet.appendChild(root)
     return sheet.toxml('utf-8')
