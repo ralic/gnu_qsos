@@ -124,14 +124,12 @@
             <desc1>working dictionnary but limited (e.g: grammar not included, false positive, hard to extend)</desc1>
             <desc2>Powerful dictionary</desc2>
         </element>
-        <element name="contentincludes"
-            title="Content Includes : Inclusion of pages inside another wiki page">
+        <element name="contentincludes" title="Content Includes : Inclusion of pages inside another wiki page">
             <desc0>Not supported</desc0>
             <desc1>limited support</desc1>
             <desc2>supported</desc2>
         </element>
-        <element name="flagging"
-            title="editing flags features : meta data added by the commiters when editing">
+        <element name="flagging" title="editing flags features : meta data added by the commiters when editing">
             <desc> Those features are not that usefull when the pagesversioncontrol is well designed, they can be things like: "Minor Changes flagging" feature, or "Change Summary" features </desc>
             <desc0>No such feature</desc0>
             <desc1>limited features</desc1>
@@ -180,8 +178,7 @@
                 <desc2>many capabilities</desc2>
             </element>
         </element>
-        <element name="wikiscripting"
-            title="scripting/programming ability within the wiki page code">
+        <element name="wikiscripting" title="scripting/programming ability within the wiki page code">
             <desc> programming API to create custom dynamic web applications only using the Wiki interface. Do detail in the comment section the supported wiki scripting languages. </desc>
             <desc0>No such feature</desc0>
             <desc1>limited API </desc1>
