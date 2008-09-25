@@ -85,8 +85,7 @@
                 <desc1>this wiki has a uncommon or poor syntax </desc1>
                 <desc2>this wiki support a standard and rich light weight markup language</desc2>
 		</element>
-            <element name="tableedition"
-                title="Tables edition ease: simple and complex (colspan and rowspan) table support">
+            <element name="tableedition" title="Tables edition ease: simple and complex (colspan and rowspan) table support">
                 <desc0>not implemented</desc0>
                 <desc1>implemented but with a limited API, simple tables only</desc1>
                 <desc2>implemented exhaustively, simple and complex (colspan and rowspan) table support</desc2>

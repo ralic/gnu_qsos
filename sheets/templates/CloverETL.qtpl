@@ -21,7 +21,7 @@
 		<desc></desc>
 		<demourl></demourl>
 		<qsosformat>2.0</qsosformat>
-		<qsosappname>cloverEtl</qsosappname>
+		<qsosappname>CloverETL</qsosappname>
 		<qsosappfamilies>
 			<qsosappfamily>etl</qsosappfamily>
 		</qsosappfamilies>
