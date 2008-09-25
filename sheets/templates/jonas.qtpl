@@ -21,7 +21,7 @@
 		<desc>Serveur d'applications certifié J2EE 1.4</desc>
 		<demourl>http://jonas.objectweb.org/demos/demo1/JOnASDemo.htm</demourl>
 		<qsosformat>2.0</qsosformat>
-		<qsosappname>geronimo</qsosappname>
+		<qsosappname>jonas</qsosappname>
 		<qsosappfamilies>
 			<qsosappfamily>j2ee-application-server</qsosappfamily>
 		</qsosappfamilies>

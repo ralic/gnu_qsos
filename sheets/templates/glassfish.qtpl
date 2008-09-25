@@ -20,7 +20,7 @@
 		<url>http://glassfish.dev.java.net</url>
 		<desc>Serveur d'applications certifié Java EE 5.0</desc>
 		<qsosformat>2.0</qsosformat>
-		<qsosappname>geronimo</qsosappname>
+		<qsosappname>glassfish</qsosappname>
 		<qsosappfamilies>
 			<qsosappfamily>j2ee-application-server</qsosappfamily>
 		</qsosappfamilies>
