@@ -88,7 +88,6 @@ class EvaluationPage ( QSOSPage ):
     
     def locateChild ( self, ctx, segments ):
         "Locate and generate the evaluation page"
-        print segments
 #        id= "-".join(segments)
         if not "-".join(segments) :
             return (self, ())

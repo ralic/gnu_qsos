@@ -30,44 +30,51 @@ def build(evaluation, repositoryroot):
     @return
         Builded Document object of name-version's qsos evaluation
     """
-    print "Builder invoked"
+    
+    #Unpack evaluation parameter and build base path
     (id,version)=evaluation
-    #Read the template of requested evaluation from repository
-    template = os.path.join(repositoryroot,"sheets","templates", id + ".qtpl")
-    template = "".join(line.strip() for line in file(template).readlines())
+    base = os.path.join(repositoryroot,"sheets")
+    
+    #Read the header of requested evaluation from repository
+    header = os.path.join(base,"evaluations", id, version, "header.qscore")
+    header = "".join(line.strip() for line in file(header).readlines())
     
     #Extract template content
-    content = minidom.parseString(template).firstChild.lastChild.childNodes
+    content = minidom.parseString(header).firstChild
     
-    #Extract properties from template contents
+    #Extract properties from header contents
     properties = {}
-    for node in content[0:-1] :
+    for node in content.firstChild.childNodes :
         try :
             properties[node.tagName] = node.firstChild.data
         except AttributeError:
             properties[node.tagName] = "N/A"
-     
+            
+    #Set appname and release properties from evaluation parameter
     properties["release"]=version
     properties["qsosappname"]=id
     
-    #Build families object according to families declared from template
-    #generic *family* must also be added to families
-    includes = [node.firstChild.data for node in content[-1].childNodes]
-    includes.insert(0,"generic")
-    families ={}
+    #Read includes of families from header. generic include must also be added
+    families = [node.firstChild.data for node in content.lastChild.childNodes]
+    includes = ["generic"]
+    for f in families :
+        xml = os.path.join(base, "families", f + ".qtpl")
+        xml = "".join(line.strip() for line in file(xml).readlines())
+        xml = minidom.parseString(xml).firstChild
+        for node in xml.childNodes :
+            includes.append(node.firstChild.data)
+    
     #Handle each family to be included
+    tree = {}
+    authors = {}
     for include in includes :
-        #parse family .qin file
-        relPath = os.path.join("sheets","evaluations",
-                             id,version,
-                             include + ".qscore")
-        absPath = os.path.join(repositoryroot, relPath)
+        #parse .qscore file
+        relPath = os.path.join("evaluations" ,id, version, include + ".qscore")
+        absPath = os.path.join(base, relPath)
         sheet = "".join(line.strip() for line in file(absPath).readlines())
         xml = minidom.parseString(sheet).firstChild
-        
-        
-        author = getAuthor(repositoryroot, relPath)
-        
+        (name,email) = getAuthor(repositoryroot, os.path.join("sheets" ,relPath))
+        authors[email]=name
         #Scores and comments extraction loop
         scores = {}
         comments = {}
@@ -79,10 +86,10 @@ def build(evaluation, repositoryroot):
             if v : comments[n] = v[0].firstChild.data
             
         #Add the family into family list for the document 
-        families[include]=family.family(author, scores, comments)
+        tree[include]=family.include(authors, scores, comments)
         
     #Create and return the expected documents
-    return document.Document(properties,families)
+    return document.Document(properties,families, tree)
     
 ##
 #    @ingroup builder
@@ -121,13 +128,15 @@ def assembleSheet(document, repositoryroot):
     auths = {}
     #Add blank qsos evaluation of families
     for item in document["families"] :
-        if item != "generic":
-            app = sheet.createElement("qsosappfamily")
-            app.appendChild(sheet.createTextNode(item))
-            appfamilies.appendChild(app)
-        (name, mail) = document[item]['author']
-        auths[name] = mail
-        include = os.path.join(repositoryroot,"sheets","families",item + ".qin")
+        app = sheet.createElement("qsosappfamily")
+        app.appendChild(sheet.createTextNode(item))
+        appfamilies.appendChild(app)
+        
+    for item in document["includes"] :
+        for mail,name in document[item]['authors'].iteritems() :
+            auths[name] = mail
+                    
+        include = os.path.join(repositoryroot,"sheets","includes",item + ".qin")
         include = "".join(line.strip() for line in file(include).readlines())
         include = minidom.parseString(include).firstChild
         for section in include.childNodes[1:] : root.appendChild(section)
@@ -168,7 +177,7 @@ def fillSheet(document, sheet, repositoryroot):
     for e in sheet.getElementsByTagName("element") : e.setIdAttribute("name")
     
     #Fill-in evaluations' section with families data
-    for item in document["families"] :
+    for item in document["includes"] :
         scores = document[item].scores.copy()
         comments = document[item].comments.copy()
         

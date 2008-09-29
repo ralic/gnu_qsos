@@ -47,7 +47,7 @@ def parse(document,repositoryroot):
                         document["properties"]["qsosappname"],
                         document["properties"]["release"]
                         )
-    tree = dict((base+"/"+f+".qscore", createScore(document[f])) for f in document.families)
+    tree = dict((base+"/"+f+".qscore", createScore(document["includes"][f])) for f in document["includes"])
     tree[base+"/"+"header.qscore"] = createHeader(document)
     
     return tree
@@ -56,7 +56,7 @@ def parse(document,repositoryroot):
 ##
 #    @ingroup splitter
 #
-def createDocument(evaluation,familypath="../sheets/families"):
+def createDocument(evaluation,repository="../sheets/"):
     """
     Creates a document object  from qsos raw evaluation. Relevant elements are
     extracted from families modelsheets (elements with sub-elements are skipped
@@ -70,7 +70,7 @@ def createDocument(evaluation,familypath="../sheets/families"):
     
     @param familypath
             Path to families model sheets.
-            Default value is ../sheets/families
+            Default value is ../sheets/
         
     @return
         Evaluation's representation's document object
@@ -94,7 +94,7 @@ def createDocument(evaluation,familypath="../sheets/families"):
     
     #Instantiate a QSOS-Document object initiated with the properties extracted
     #from XML evaluation and empty family dictionnary
-    qsos = document.Document(properties,{})
+    qsos = document.Document(properties,{},{})
     
     #Extract  relevant information from the raw evaluation:
     #    - authors
@@ -106,20 +106,27 @@ def createDocument(evaluation,familypath="../sheets/families"):
     
     authors = [(item.firstChild.firstChild.data, item.lastChild.firstChild.data)
                for item in header[0].childNodes]
-#    dates = (header[1].firstChild.firstChild.data, header[1].lastChild.firstChild.data)
+
     families = [node.firstChild.data for node in header[-1].childNodes]
-    families.insert(0,"generic")
+    qsos.families = families
+    includes = ["generic"]
+    for f in families :
+        xml = os.path.join(repository, "families", f + ".qtpl")
+        xml = "".join(line.strip() for line in file(xml).readlines())
+        xml = minidom.parseString(xml).firstChild
+        for node in xml.childNodes :
+            includes.append(node.firstChild.data)
 
     #Build the Family object for each family component of the evaluation :
     #    - Extract from repository the family sheet (.qin files)
     #    - Read the scores and comments from evaluation
     #    - Update entry in family object
-    for include in families :
-        template = minidom.parse("/".join([familypath,".".join([include,"qin"])]))
+    for include in includes :
+        template = minidom.parse("/".join([repository,"includes",".".join([include,"qin"])]))
         #Initiate the family object : 
         #    -same authors and dates for all families of the same evaluation
         #    -empty score and comments dictionnary
-        f = family.family(authors, {}, {})
+        f = family.include(authors, {}, {})
         for element in template.getElementsByTagName("desc0"):
             name = element.parentNode.getAttribute("name")
             
@@ -142,17 +149,42 @@ def createDocument(evaluation,familypath="../sheets/families"):
 #                print "No comment found for element %s" % (name,)
                 pass
         #End of iteration, just add the family in document object
-        qsos.families[include] = f
+        qsos.includes[include] = f
     return qsos
 
 def createHeader(document):
-    document = minidom.Document()
-    root = document.createElement("qsosheader")
-    document.appendChild(root)
+    """
+    Creates the header of the evaluation to be stored on the repository.
+    
+    @param document 
+            The document object of evaluation
+    
+    @return
+        XML formatted header sheet
+    """
+    #Create structure of documet
+    header = minidom.Document()
+    root = header.createElement("qsosheader")
+    header.appendChild(root)
+    
+    #Create and fill-in properties tag
+    properties = header.createElement("properties")
+    root.appendChild(properties)
     for element in document["properties"]:
-        tag = document.createElement(element)
-        tag.appendChild(document.createElement(document["properties"][element]))
-    return document.toprettyxml("\t", "\n", "utf-8")
+        tag = header.createElement(element)
+        tag.appendChild(header.createTextNode(document["properties"][element]))
+        properties.appendChild(tag)
+    
+    #Create and fill in families tag
+    families = header.createElement("families")
+    root.appendChild(families)
+    for element in document["families"]:
+        tag = header.createElement("family")
+        tag.appendChild(header.createTextNode(element))
+        families.appendChild(tag)
+    
+    #Pretty format output XML
+    return header.toprettyxml("\t", "\n", "utf-8")
 
 ##
 #    @ingroup splitter

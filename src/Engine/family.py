@@ -20,7 +20,7 @@ class family:
     """
     
     
-    def __init__(self,author, scores,comments):
+    def __init__(self, familyname):
         """
         Initializer
         
@@ -36,9 +36,7 @@ class family:
                 Comments' dictionnary
                 Key entry is the element id from qsos xml
         """
-        self.author = author
-        self.scores = scores
-        self.comments = comments
+        self.familyname = familyname
     
     def __getitem__(self, item) :
         """
@@ -57,9 +55,20 @@ class family:
                     - element.comment
             
         """
-        #First case : Authors
-        if item == "author" :
-            return self.author
+        #First case : Family name
+        if item == "familyname" :
+            return self.familyname
+            
+class include:
+    def __init__(self, authors, scores, comments):
+        self.authors = authors
+        self.scores = scores
+        self.comments = comments
+    
+    def __getitem__(self, item):
+        #Second case : Authors
+        if item == "authors" :
+            return self.authors
         #Default case : any item
         else :
             [key, what] = item.split(".")
@@ -67,3 +76,4 @@ class family:
                 return self.scores[key]
             elif what == "comment" :
                 return self.comments[key]
+    

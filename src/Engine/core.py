@@ -81,7 +81,7 @@ def submit(data):#, author, email, comment):
         #Create document object and add/update it in STORE
         #Key of STORE's item is appname-version_language
         document = splitter.createDocument(evaluation,
-                                           os.path.join(PATH,"sheets","families"))
+                                           os.path.join(PATH,"sheets"))
         
         #Generate .qscore files into repository
         scores = splitter.parse(document, PATH)
