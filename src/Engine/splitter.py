@@ -47,7 +47,10 @@ def parse(document,repositoryroot):
                         document["properties"]["qsosappname"],
                         document["properties"]["release"]
                         )
-    return dict((base+"/"+f+".qscore", createScore(document[f])) for f in document.families)
+    tree = dict((base+"/"+f+".qscore", createScore(document[f])) for f in document.families)
+    tree[base+"/"+"header.qscore"] = createHeader(document)
+    
+    return tree
         
     
 ##
@@ -141,6 +144,15 @@ def createDocument(evaluation,familypath="../sheets/families"):
         #End of iteration, just add the family in document object
         qsos.families[include] = f
     return qsos
+
+def createHeader(document):
+    document = minidom.Document()
+    root = document.createElement("qsosheader")
+    document.appendChild(root)
+    for element in document["properties"]:
+        tag = document.createElement(element)
+        tag.appendChild(document.createElement(document["properties"][element]))
+    return document.toprettyxml("\t", "\n", "utf-8")
 
 ##
 #    @ingroup splitter
