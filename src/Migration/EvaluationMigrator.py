@@ -55,6 +55,9 @@ def UpgradeEvaluationSheet(sheet, family, tmpDir):
         appname = evaluation.firstChild.getElementsByTagName("qsosappname")[0].firstChild.data
     except Exception :
         appname = evaluation.firstChild.getElementsByTagName("appname")[0].firstChild.data.lower()
+        tag = output.createElement("qsosappname")
+        tag.appendChild(output.createTextNode(appname))
+        header.appendChild(tag)
     properties = ["language", "appname", "licenseid", "licensedesc","url",
                   "desc", "demourl", "qsosappname", "qsosspecificformat"]
     for node in properties :
@@ -82,8 +85,8 @@ def UpgradeEvaluationSheet(sheet, family, tmpDir):
     header.appendChild(appfamilies)
     
     #Write-out new evaluation sheet
-    file = open(tmpDir + appname + "-" + release + ".qsos", 'w')
-    file.write(output.toprettyxml('\t', '\n','utf-8'))
+    file = open(tmpDir + "/" + appname + "-" + release + ".qsos", 'w')
+    file.write(output.toxml('utf-8'))
     file.close()
 
 def UpgradeRepository(inDir, tmpDir):
