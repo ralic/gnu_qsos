@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="utf-8"?>
+<qsosscore>
+	<element name="jobmaquette">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="utilisationdefichierinterne">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="oracleapplication">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="parallelisationdesfluxdedonnees">
+		<score>
+			0
+		</score>
+		<comment>
+			A noter que Talend est plus rapide que DataStage Server (en moyenne 3 fois) sur le traitement de fichiers plats  (concaténation, filtre, tri,look up, ...).
+		</comment>
+	</element>
+	<element name="sqlserver">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="depuisbasededonnees">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="oracle">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="executionpasapas">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="filtre">
+		<score>
+			1
+		</score>
+		<comment>
+			Module non intuitif. C'est en fait à partir du composant &quot;Map&quot; que l'on redirige les flux en sortie en fonction d'un critère de filtre.
+		</comment>
+	</element>
+	<element name="informix">
+		<score>
+			0
+		</score>
+		<comment>
+			BDD non supportée.
+		</comment>
+	</element>
+	<element name="mysql">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="pivot">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="sap">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="xml">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="ftp">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="fichierplat">
+		<score>
+			1
+		</score>
+	</element>
+	<element name="visualisationgraphique">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="commandessql">
+		<score>
+			1
+		</score>
+		<comment>
+			Les commandes SQL sont lancées à partir des stages des bases de données.
+		</comment>
+	</element>
+	<element name="sybase">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="lookup">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="commandessysteme">
+		<score>
+			2
+		</score>
+		<comment>
+			Existe mais non testé.
+		</comment>
+	</element>
+	<element name="ordonnanceurintegre">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="tacheselementaires">
+		<score>
+			1
+		</score>
+		<comment>
+			L'ordonnancement s'effectue via des conditions (run before, run after, run if...)
+		</comment>
+	</element>
+	<element name="parametragedestraitements">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="parametragedumoteur">
+		<score>
+			1
+		</score>
+	</element>
+	<element name="expressionreguliere">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="concatenation">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="chainedecaracteres">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="richessedesjournaux">
+		<score>
+			2
+		</score>
+		<comment>
+			Possibilité de le paramétrer (basé sur Log4j).
+		</comment>
+	</element>
+	<element name="jointure">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="nombre">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="date">
+		<score>
+			1
+		</score>
+		<comment>
+			Pour des transformations complexes, il est necessaire de créer sa propre fonction (java ou perl) de reformatage de date.
+		</comment>
+	</element>
+	<element name="postgresql">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="db2">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="depuisfichierplat">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="tri">
+		<score>
+			1
+		</score>
+		<comment>
+			Pour les flux d'entrée trop volumineux, nécessité de passer par un algorithme externe à Talend que l'on charge dans le module &quot;ExternalSortRow&quot;.
+		</comment>
+	</element>
+	<element name="generationdejeuxdetest">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="fonctionsdecalcul">
+		<score>
+			1
+		</score>
+		<comment>
+			Des fonctions peuvent être créées et utilisées via les routines.
+		</comment>
+	</element>
+	<element name="lignedecommande">
+		<score>
+			2
+		</score>
+		<comment>
+			Génération de fichier .ksh
+		</comment>
+	</element>
+	<element name="fichiercompresse">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="outildedeveloppement">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="cledesubstitution">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="comparaisondefichiers">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="dedoublonnage">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="connexionjdbc">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="teradata">
+		<score>
+			0
+		</score>
+		<comment>
+			BDD non supportée.
+		</comment>
+	</element>
+	<element name="lecturedesrepertoires">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="journalisation">
+		<score>
+			1
+		</score>
+		<comment>
+			Fichiers log créés à partir de la librairie Log4j et donc paramétrable à souhait pour celui qui connaît Java.
+		</comment>
+	</element>
+	<element name="agregation">
+		<score>
+			2
+		</score>
+	</element>
+</qsosscore>
