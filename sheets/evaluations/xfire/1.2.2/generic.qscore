@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="utf-8"?>
+<qsosscore>
+	<element name="consulting">
+		<score>
+			1
+		</score>
+		<comment>
+			1 seule offre référencée
+		</comment>
+	</element>
+	<element name="documentation">
+		<score>
+			2
+		</score>
+		<comment>
+			Nombreux guides disponibles sur le site
+		</comment>
+	</element>
+	<element name="activityonreleases">
+		<score>
+			1
+		</score>
+		<comment>
+			Pas de visibilité
+		</comment>
+	</element>
+	<element name="administrationmonitoring">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="independenceofdevelopments">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="roadmap">
+		<score>
+			1
+		</score>
+		<comment>
+			Roadmap pas très bien définie (Fusion avec Celtix)
+		</comment>
+	</element>
+	<element name="stability">
+		<score>
+			0
+		</score>
+		<comment>
+			Version 1.2.2 sortie le 03/10/2006. Les projets Xfire et Celtix ont décidé le 22/07/2006 de fusionner. Le nouveau projet s'appellera Apache CeltiXfire
+		</comment>
+	</element>
+	<element name="activityonfunctionalities">
+		<score>
+			2
+		</score>
+		<comment>
+			Désir clairement exprimé d'obtenir une intéropérabilité maximale
+		</comment>
+	</element>
+	<element name="leadingteam">
+		<score>
+			1
+		</score>
+		<comment>
+			Un développeur semble être le gardien du projet
+		</comment>
+	</element>
+	<element name="books">
+		<score>
+			0
+		</score>
+		<comment>
+			Aucune publication trouvée
+		</comment>
+	</element>
+	<element name="references">
+		<score>
+			1
+		</score>
+		<comment>
+			Peu de références ( inf 10)
+		</comment>
+	</element>
+	<element name="sponsor">
+		<score>
+			1
+		</score>
+		<comment>
+			1 Société référencée
+		</comment>
+	</element>
+	<element name="strategicalindependence">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="tools">
+		<score>
+			1
+		</score>
+		<comment>
+			Pas de méthodologie référencée
+		</comment>
+	</element>
+	<element name="permissiveness">
+		<score>
+			2
+		</score>
+		<comment>
+			MIT licence
+		</comment>
+	</element>
+	<element name="quality">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="support">
+		<score>
+			1
+		</score>
+		<comment>
+			1 offre de support commercial : http://envoisolutions.com
+		</comment>
+	</element>
+	<element name="contributingcommunity">
+		<score>
+			1
+		</score>
+		<comment>
+			13 Commiters sur Xfire, mais communauté CodeHaus
+		</comment>
+	</element>
+	<element name="codeextension">
+		<score>
+			2
+		</score>
+		<comment>
+			Possibilité de définir des handlers
+		</comment>
+	</element>
+	<element name="managementstyle">
+		<score>
+			1
+		</score>
+		<comment>
+			Communauté
+		</comment>
+	</element>
+	<element name="easeofuseergonomics">
+		<score>
+			1
+		</score>
+	</element>
+	<element name="codemodification">
+		<score>
+			1
+		</score>
+		<comment>
+			Scripts Ant et Maven2
+		</comment>
+	</element>
+	<element name="protectionagainstproprietaryforks">
+		<score>
+			0
+		</score>
+		<comment>
+			MIT licence
+		</comment>
+	</element>
+	<element name="developersidentificationturnover">
+		<score>
+			1
+		</score>
+		<comment>
+			Peu de développeurs référencés
+		</comment>
+	</element>
+	<element name="modificationofsourcecode">
+		<score>
+			2
+		</score>
+		<comment>
+			Code placé sous SVN/CVS
+		</comment>
+	</element>
+	<element name="copyrightowners">
+		<score>
+			1
+		</score>
+		<comment>
+			Quelques individus
+		</comment>
+	</element>
+	<element name="training">
+		<score>
+			0
+		</score>
+		<comment>
+			Pas de formations référencées
+		</comment>
+	</element>
+	<element name="age">
+		<score>
+			1
+		</score>
+		<comment>
+			Projet démarré en 2004 (CVS Créé le 2004-03-14)
+		</comment>
+	</element>
+	<element name="popularity">
+		<score>
+			1
+		</score>
+		<comment>
+			Peu connu
+		</comment>
+	</element>
+	<element name="modularity">
+		<score>
+			2
+		</score>
+		<comment>
+			Fonctionnalités gérées par modules
+		</comment>
+	</element>
+	<element name="activityonbugs">
+		<score>
+			1
+		</score>
+		<comment>
+			A ce jour, 200 bugs ouverts
+		</comment>
+	</element>
+	<element name="forkprobability">
+		<score>
+			0
+		</score>
+		<comment>
+			Possibilité de changer la license
+		</comment>
+	</element>
+</qsosscore>

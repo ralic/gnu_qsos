@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="utf-8"?>
+<qsosscore>
+	<element name="jsr181">
+		<score>
+			2
+		</score>
+		<comment>
+			Supporté sur JDK1.4 et JDK5
+		</comment>
+	</element>
+	<element name="ws-security-policy">
+		<score>
+			0
+		</score>
+		<comment>
+			Prevu pour version 2.0
+		</comment>
+	</element>
+	<element name="xmpp">
+		<score>
+			1
+		</score>
+		<comment>
+			Experimental
+		</comment>
+	</element>
+	<element name="jsr222">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="asynchronous-callback">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="tcp">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="mtom-xop">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="wsdl-1_1">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="jsr101-jee5">
+		<score>
+			0
+		</score>
+		<comment>
+			Non supporté. 
+		</comment>
+	</element>
+	<element name="eclipse-support">
+		<score>
+			1
+		</score>
+		<comment>
+			Plugin Eclipse permettant la génération de code à partir d »un WSDL
+		</comment>
+	</element>
+	<element name="jaxr">
+		<score>
+			2
+		</score>
+		<comment>
+			Possibilité d'accès annuaires UDDI 2.0 via JAXR
+		</comment>
+	</element>
+	<element name="soap-1_2">
+		<score>
+			2
+		</score>
+		<comment>
+			Support complet
+		</comment>
+	</element>
+	<element name="soap-1_1">
+		<score>
+			2
+		</score>
+		<comment>
+			Support complet
+		</comment>
+	</element>
+	<element name="jsr67_saaj-1_3">
+		<score>
+			0
+		</score>
+		<comment>
+			Support prévu pour la version 2.0
+		</comment>
+	</element>
+	<element name="jsr67_saaj-1_2">
+		<score>
+			0
+		</score>
+		<comment>
+			Support prévu pour la version 2.0
+		</comment>
+	</element>
+	<element name="ws-i">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="ftp">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="ws-atomic-transaction">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="stats">
+		<score>
+			1
+		</score>
+		<comment>
+			Via la console d'admin du serveur d'applications
+		</comment>
+	</element>
+	<element name="ws-secure-conversation">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="ws-trust">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="swa">
+		<score>
+			0
+		</score>
+		<comment>
+			Support prévu pour la version 2.0
+		</comment>
+	</element>
+	<element name="jaxr1_0">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="wsdl2java">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="ws-metadata-exchange">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="ws-coordination">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="jsr224">
+		<score>
+			1
+		</score>
+		<comment>
+			Incomplet
+		</comment>
+	</element>
+	<element name="java2wsdl">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="jsr921-109">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="ws-reliable-messaging">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="http">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="deploy">
+		<score>
+			2
+		</score>
+		<comment>
+			Déploiement de webapps via console du serveur d'Applicatiosn J2EE
+		</comment>
+	</element>
+	<element name="netbeans-support">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="jms">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="ws-security">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="vm">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="uddi">
+		<score>
+			2
+		</score>
+		<comment>
+			Possibilité d'accès annuaires UDDI 2.0 via JAXR
+		</comment>
+	</element>
+	<element name="soap-header-parameter-implicit-explicit-contexts-support">
+		<score>
+			1
+		</score>
+	</element>
+	<element name="ebXML">
+		<score>
+			2
+		</score>
+		<comment>
+			Possibilité d'accès annuaires UDDI 2.0 via JAXR
+		</comment>
+	</element>
+	<element name="lifecycleManagement">
+		<score>
+			1
+		</score>
+		<comment>
+			Via la console d'admin du serveur d'applications
+		</comment>
+	</element>
+	<element name="marshalling-unmarshalling-java-soap">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="idea-support">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="handlers">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="build-integration">
+		<score>
+			1
+		</score>
+	</element>
+	<element name="ws-addressing">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="jsr109">
+		<score>
+			0
+		</score>
+		<comment>
+			Non supporté.
+		</comment>
+	</element>
+	<element name="ws-policy">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="wsdl-2_0">
+		<score>
+			0
+		</score>
+		<comment>
+			Support prévu pour la version 2.0
+		</comment>
+	</element>
+	<element name="jsr101">
+		<score>
+			0
+		</score>
+		<comment>
+			Non supporté. Possibilité de d'utiliser des clients Spring avec JaxRpcPortProxyFactoryBean
+		</comment>
+	</element>
+	<element name="xml-rpc">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="basic-profile">
+		<score>
+			0
+		</score>
+	</element>
+</qsosscore>
