@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<qsosscore>
+	<element name="coracle">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="views">
+		<score>
+			1
+		</score>
+		<comment>
+			Doesn't display the query
+		</comment>
+	</element>
+	<element name="csybase">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="resultsaving">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="scriptgenerator">
+		<score>
+			1
+		</score>
+		<comment>
+			Very limited
+		</comment>
+	</element>
+	<element name="snapshots">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="triggersedit">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="datagrid">
+		<score>
+			1
+		</score>
+		<comment>
+			No change possible
+		</comment>
+	</element>
+	<element name="synonyms">
+		<score>
+			1
+		</score>
+		<comment>
+			The public synonyms are inaccessible
+		</comment>
+	</element>
+	<element name="querytool">
+		<score>
+			1
+		</score>
+	</element>
+	<element name="dblinks">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="standardsupport">
+		<score>
+			1
+		</score>
+	</element>
+	<element name="cingres">
+		<score>
+			1
+		</score>
+		<comment>
+			Connection possible
+		</comment>
+	</element>
+	<element name="indexes">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="procedures">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="constraints">
+		<score>
+			1
+		</score>
+		<comment>
+			Doesn't detail unique or foreign keys, just buil graphical shows
+		</comment>
+	</element>
+	<element name="sequencesedit">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="jdbc">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="migrationtool">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="csqlserver">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="objectbrowser">
+		<score>
+			1
+		</score>
+		<comment>
+			No creation possible
+		</comment>
+	</element>
+	<element name="cinformix">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="optimizetool">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="cmysql">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="cdb2">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="scriptsaving">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="adminoptions">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="cpostgres">
+		<score>
+			2
+		</score>
+	</element>
+</qsosscore>

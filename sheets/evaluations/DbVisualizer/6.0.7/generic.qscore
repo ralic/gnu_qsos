@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<qsosscore>
+	<element name="historyknownproblems">
+		<score>
+			1
+		</score>
+	</element>
+	<element name="training">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="age">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="popularity">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="independenceofdevelopments">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="stability">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="books">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="references">
+		<score>
+			1
+		</score>
+	</element>
+	<element name="support">
+		<score>
+			1
+		</score>
+	</element>
+	<element name="forkprobability">
+		<score>
+			1
+		</score>
+	</element>
+	<element name="leadingteam">
+		<comment>
+			Not Applicable
+		</comment>
+	</element>
+	<element name="managementstyle">
+		<comment>
+			Not Applicable
+		</comment>
+	</element>
+</qsosscore>
