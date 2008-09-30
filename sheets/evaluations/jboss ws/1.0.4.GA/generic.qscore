@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="utf-8"?>
+<qsosscore>
+	<element name="consulting">
+		<score>
+			2
+		</score>
+		<comment>
+			Plus de 40 offres réparties sur le globe et certifiées par Red Hat Inc. (via JBoss AS) 
+		</comment>
+	</element>
+	<element name="documentation">
+		<score>
+			2
+		</score>
+		<comment>
+			La documentation fait partie du processus de release. Avec le rachat de Redhat, la traduction est assurée.
+		</comment>
+	</element>
+	<element name="activityonreleases">
+		<score>
+			2
+		</score>
+		<comment>
+			Utilisation des Roadmaps JIRA
+		</comment>
+	</element>
+	<element name="administrationmonitoring">
+		<score>
+			1
+		</score>
+		<comment>
+			Des fonctions de déploiement, arrêt, redémarrage, production de statistiques sont présentes mais manquent d'ergonomie
+		</comment>
+	</element>
+	<element name="independenceofdevelopments">
+		<score>
+			0
+		</score>
+		<comment>
+			La majorité du code est réalisé par les développeurs de JBoss
+		</comment>
+	</element>
+	<element name="roadmap">
+		<score>
+			2
+		</score>
+		<comment>
+			Utilisation de la fonction de Roadmap dans JIRA
+		</comment>
+	</element>
+	<element name="stability">
+		<score>
+			2
+		</score>
+		<comment>
+			Trop jeune pour évaluer la stabilité. Beaucoup de versions depuis la 1.0.0 mais beaucoup d'évolutions
+		</comment>
+	</element>
+	<element name="activityonfunctionalities">
+		<score>
+			2
+		</score>
+		<comment>
+			Désir clairement exprimé d'obtenir une intéropérabilité maximale ainsi qu'une conformité aux standards
+		</comment>
+	</element>
+	<element name="leadingteam">
+		<score>
+			2
+		</score>
+		<comment>
+			Les membres et les fonctions de l'équipe dirigeante sont connus et clairement définis. L'équipe assignée au développemment estconstituée de 4 développeurs à plein temps. L'équipe est renforcée par des développeurs JBoss occasionnels sur les outils, l'intégrationdans JBoss AS, les tests d'assurance qualité, ainsi que sur les projets connexes (par ex: WS-Transaction, EJB3, Seam). Plus quelques contributionsde la communauté.
+		</comment>
+	</element>
+	<element name="books">
+		<score>
+			1
+		</score>
+		<comment>
+			Toutes les publications autour de JBoss AS 4
+		</comment>
+	</element>
+	<element name="references">
+		<score>
+			2
+		</score>
+		<comment>
+			De par la popularité de JBoss AS
+		</comment>
+	</element>
+	<element name="sponsor">
+		<score>
+			1
+		</score>
+		<comment>
+			Red Hat Inc.
+		</comment>
+	</element>
+	<element name="strategicalindependence">
+		<score>
+			1
+		</score>
+		<comment>
+			Forte dépendance à JBoss, mais réelle volonté de suivre les standards
+		</comment>
+	</element>
+	<element name="tools">
+		<score>
+			2
+		</score>
+		<comment>
+			Utilisation intensive de l'automatisation des tâches à chaque étape du projet
+		</comment>
+	</element>
+	<element name="permissiveness">
+		<score>
+			0
+		</score>
+		<comment>
+			LGPL
+		</comment>
+	</element>
+	<element name="quality">
+		<score>
+			2
+		</score>
+		<comment>
+			Tests unitaires déclenchés pluri-quotidiennement (cruise-control). Plus processus de qualification pour chaque release incluant les tests de certification et d'intéropérabilité
+		</comment>
+	</element>
+	<element name="support">
+		<score>
+			2
+		</score>
+		<comment>
+			Plus de 40 offres réparties sur le globe et certifiées par Red Hat Inc. (via JBoss AS) 
+		</comment>
+	</element>
+	<element name="contributingcommunity">
+		<score>
+			2
+		</score>
+		<comment>
+			Fort traffic sur le forum des developpeurs
+		</comment>
+	</element>
+	<element name="codeextension">
+		<score>
+			2
+		</score>
+		<comment>
+			De part les spécifications
+		</comment>
+	</element>
+	<element name="managementstyle">
+		<score>
+			2
+		</score>
+		<comment>
+			L'équipe coeur du projet décide de manière collégiale. Fonctionnement chapeauté par la division JBoss de Red Hat Inc. 
+		</comment>
+	</element>
+	<element name="easeofuseergonomics">
+		<score>
+			1
+		</score>
+		<comment>
+			Les outils sont plutôt en ligne de commande.
+		</comment>
+	</element>
+	<element name="codemodification">
+		<score>
+			2
+		</score>
+		<comment>
+			Tâches Ant
+		</comment>
+	</element>
+	<element name="protectionagainstproprietaryforks">
+		<score>
+			2
+		</score>
+		<comment>
+			LGPL
+		</comment>
+	</element>
+	<element name="developersidentificationturnover">
+		<score>
+			2
+		</score>
+		<comment>
+			Nombreux développeurs. L'équipe coeur est stable et parfaitement identifiée
+		</comment>
+	</element>
+	<element name="modificationofsourcecode">
+		<score>
+			2
+		</score>
+		<comment>
+			le code est disponible via SVN/CVS. Les committers sont tous identifiés.
+		</comment>
+	</element>
+	<element name="copyrightowners">
+		<score>
+			2
+		</score>
+		<comment>
+			Red Hat Inc.
+		</comment>
+	</element>
+	<element name="training">
+		<score>
+			2
+		</score>
+		<comment>
+			Une douzaine de partenaires habilités par Red Hat Inc. 4 cursus officiels en plusieurs langues (via JBoss AS)
+		</comment>
+	</element>
+	<element name="age">
+		<score>
+			1
+		</score>
+		<comment>
+			Première release GA le 31 mars 2006. Cette version mineure est datée du 15 novembre 2006.Une version 2 est prévue pour la couche de service web du serveur JEE5 (JBoss AS 5, implémentation totale de JAX-WS2.0)dont la sortie est prévue au cours du premier semestre 2007. JBoss AS 5.0.0 Beta1 est sorti le 20 novembre 2006.
+		</comment>
+	</element>
+	<element name="popularity">
+		<score>
+			2
+		</score>
+		<comment>
+			De par la popularité de JBoss AS
+		</comment>
+	</element>
+	<element name="modularity">
+		<score>
+			2
+		</score>
+		<comment>
+			Conçu à base de briques communicantes via le Bus JMX
+		</comment>
+	</element>
+	<element name="activityonbugs">
+		<score>
+			2
+		</score>
+		<comment>
+			Forte utilisation de JIRA (http://jira.jboss.com, projet JBWS). De plus, il y a un gros traffic sur le forum des utilisateurs
+		</comment>
+	</element>
+	<element name="forkprobability">
+		<score>
+			2
+		</score>
+		<comment>
+			Protection par une licence LGPL
+		</comment>
+	</element>
+</qsosscore>
