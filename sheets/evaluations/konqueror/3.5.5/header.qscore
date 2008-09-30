@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<qsosheader>
+	<properties>
+		<licensedesc>
+			GNU GPL
+		</licensedesc>
+		<language>
+			en
+		</language>
+		<appname>
+			Konqueror
+		</appname>
+		<url>
+			http://www.konqueror.org
+		</url>
+		<qsosspecificformat>
+			1.0
+		</qsosspecificformat>
+		<demourl>
+			N/A
+		</demourl>
+		<qsosappname>
+			konqueror
+		</qsosappname>
+		<licenseid>
+			31
+		</licenseid>
+		<release>
+			3.5.5
+		</release>
+		<qsosformat>
+			2.0
+		</qsosformat>
+		<desc>
+			KDE Web Browser
+		</desc>
+	</properties>
+	<families>
+		<family>
+			Webbrowser
+		</family>
+	</families>
+</qsosheader>
