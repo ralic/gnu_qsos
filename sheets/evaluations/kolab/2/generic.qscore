@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<qsosscore>
+	<element name="consulting">
+		<score>
+			1
+		</score>
+	</element>
+	<element name="popularity">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="activityonreleases">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="independenceofdevelopments">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="stability">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="leadingteam">
+		<score>
+			1
+		</score>
+	</element>
+	<element name="books">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="references">
+		<score>
+			1
+		</score>
+		<comment>
+			Kolab is know to be use in some important organisation. But they doesn't give information for &quot;security&quot; raison
+		</comment>
+	</element>
+	<element name="developersidentificationturnover">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="quality">
+		<score>
+			1
+		</score>
+	</element>
+	<element name="age">
+		<score>
+			2
+		</score>
+		<comment>
+			Kolab.org domain was created the 29th of Oct 2002
+		</comment>
+	</element>
+	<element name="documentation">
+		<score>
+			1
+		</score>
+	</element>
+	<element name="contributingcommunity">
+		<score>
+			1
+		</score>
+	</element>
+	<element name="managementstyle">
+		<score>
+			1
+		</score>
+	</element>
+	<element name="support">
+		<score>
+			1
+		</score>
+	</element>
+	<element name="forkprobability">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="tools">
+		<comment>
+			1
+		</comment>
+	</element>
+</qsosscore>
