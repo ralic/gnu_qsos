@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<qsosscore>
+	<element name="consulting">
+		<score>
+			1
+		</score>
+	</element>
+	<element name="popularity">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="activityonreleases">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="independenceofdevelopments">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="stability">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="developersidentificationturnover">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="leadingteam">
+		<score>
+			1
+		</score>
+	</element>
+	<element name="books">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="references">
+		<score>
+			1
+		</score>
+		<comment>
+			OTRS is known to be use in some important organisation.version 2.0.4 is known by its high level of security
+		</comment>
+	</element>
+	<element name="activityonfunctionalities">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="tools">
+		<score>
+			1
+		</score>
+	</element>
+	<element name="packagingdebian">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="training">
+		<score>
+			1
+		</score>
+	</element>
+	<element name="quality">
+		<score>
+			1
+		</score>
+	</element>
+	<element name="age">
+		<score>
+			2
+		</score>
+		<comment>
+			Otrs.org domain was created in ? 2001 
+		</comment>
+	</element>
+	<element name="documentation">
+		<score>
+			1
+		</score>
+	</element>
+	<element name="contributingcommunity">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="activityonbugs">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="managementstyle">
+		<score>
+			1
+		</score>
+	</element>
+	<element name="support">
+		<score>
+			1
+		</score>
+	</element>
+</qsosscore>
