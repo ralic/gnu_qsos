@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<qsosheader>
+	<properties>
+		<licensedesc>
+			N/A
+		</licensedesc>
+		<language>
+			en
+		</language>
+		<appname>
+			OpenXchange
+		</appname>
+		<url>
+			http://mirror.open-xchange.org/ox/EN/community/
+		</url>
+		<qsosspecificformat>
+			N/A
+		</qsosspecificformat>
+		<demourl>
+			http://mirror.open-xchange.org/ox/EN/community/online.htm
+		</demourl>
+		<qsosappname>
+			open-xchange
+		</qsosappname>
+		<licenseid>
+			N/A
+		</licenseid>
+		<release>
+			0.8
+		</release>
+		<qsosformat>
+			2.0
+		</qsosformat>
+		<desc>
+			N/A
+		</desc>
+	</properties>
+	<families>
+		<family>
+			Groupware
+		</family>
+	</families>
+</qsosheader>
