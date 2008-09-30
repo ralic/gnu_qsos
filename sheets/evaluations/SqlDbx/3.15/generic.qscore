@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8"?>
+<qsosscore>
+	<element name="consulting">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="documentation">
+		<score>
+			1
+		</score>
+		<comment>
+			Online Help  exists and is correct and efficient.
+		</comment>
+	</element>
+	<element name="strategicalindependence">
+		<score>
+			0
+		</score>
+		<comment>
+			Not Applicable
+		</comment>
+	</element>
+	<element name="administrationmonitoring">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="independenceofdevelopments">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="packaginghpux">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="stability">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="books">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="references">
+		<score>
+			1
+		</score>
+	</element>
+	<element name="packagingmandriva">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="quality">
+		<score>
+			1
+		</score>
+		<comment>
+			Editor's Product
+		</comment>
+	</element>
+	<element name="packagingsolaris">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="support">
+		<score>
+			1
+		</score>
+		<comment>
+			support@sqldbx.com
+		</comment>
+	</element>
+	<element name="contributingcommunity">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="packagingwindows">
+		<score>
+			2
+		</score>
+		<comment>
+			Windows2000,WinXP,Windows2003
+		</comment>
+	</element>
+	<element name="easeofuseergonomics">
+		<score>
+			1
+		</score>
+		<comment>
+			For exemple no limit to number of retrieved data rowsBut typing help is OK
+		</comment>
+	</element>
+	<element name="packagingsuse">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="packagingmacosx">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="packagingredhat">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="packagingsource">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="activityonfunctionalities">
+		<score>
+			0
+		</score>
+		<comment>
+			Not Applicable
+		</comment>
+	</element>
+	<element name="packagingfreebsd">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="roadmap">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="packagingdebian">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="modificationofsourcecode">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="training">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="packagingnet">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="age">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="popularity">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="modularity">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="packagingopen">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="forkprobability">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="activityonreleases">
+		<comment>
+			Not Applicable
+		</comment>
+	</element>
+	<element name="developersidentificationturnover">
+		<comment>
+			Not Applicable
+		</comment>
+	</element>
+	<element name="copyrightowners">
+		<comment>
+			Not Applicable
+		</comment>
+	</element>
+	<element name="protectionagainstproprietaryforks">
+		<comment>
+			Not Applicable
+		</comment>
+	</element>
+	<element name="leadingteam">
+		<comment>
+			Not Applicable
+		</comment>
+	</element>
+	<element name="sponsor">
+		<comment>
+			Not Applicable
+		</comment>
+	</element>
+	<element name="historyknownproblems">
+		<comment>
+			Unknown
+		</comment>
+	</element>
+	<element name="permissiveness">
+		<comment>
+			Not Applicable
+		</comment>
+	</element>
+	<element name="activityonbugs">
+		<comment>
+			Not Applicable
+		</comment>
+	</element>
+	<element name="managementstyle">
+		<comment>
+			Not Applicable
+		</comment>
+	</element>
+</qsosscore>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<qsosheader>
+	<properties>
+		<licensedesc>
+			Freeware
+		</licensedesc>
+		<language>
+			en
+		</language>
+		<appname>
+			SqlDbx Personnal Edition
+		</appname>
+		<url>
+			www.sqldbx.com
+		</url>
+		<qsosspecificformat>
+			1.0
+		</qsosspecificformat>
+		<demourl>
+			N/A
+		</demourl>
+		<qsosappname>
+			SqlDbx
+		</qsosappname>
+		<licenseid>
+			12
+		</licenseid>
+		<release>
+			3.15
+		</release>
+		<qsosformat>
+			2.0
+		</qsosformat>
+		<desc>
+			ACS Technologies, Inc
+		</desc>
+	</properties>
+	<families>
+		<family>
+			Dbtools
+		</family>
+	</families>
+</qsosheader>
