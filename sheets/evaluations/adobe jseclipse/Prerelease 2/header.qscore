@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<qsosheader>
+	<properties>
+		<licensedesc>
+			N/A
+		</licensedesc>
+		<language>
+			en
+		</language>
+		<appname>
+			Adobe JSEclipse
+		</appname>
+		<url>
+			http://labs.adobe.com/technologies/jseclipse/
+		</url>
+		<qsosspecificformat>
+			1
+		</qsosspecificformat>
+		<demourl>
+			N/A
+		</demourl>
+		<qsosappname>
+			adobe jseclipse
+		</qsosappname>
+		<licenseid>
+			N/A
+		</licenseid>
+		<release>
+			Prerelease 2
+		</release>
+		<qsosformat>
+			2.0
+		</qsosformat>
+		<desc>
+			JSEclipse is a new plugin provided by Adobe for the Eclipse environment that helps developers code JavaScript
+		</desc>
+	</properties>
+	<families>
+		<family>
+			Javascript-Ide
+		</family>
+	</families>
+</qsosheader>
