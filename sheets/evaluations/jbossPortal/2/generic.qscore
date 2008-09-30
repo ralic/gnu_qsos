@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<qsosscore>
+	<element name="activityonfunctionalities">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="consulting">
+		<score>
+			1
+		</score>
+	</element>
+	<element name="documentation">
+		<score>
+			1
+		</score>
+	</element>
+	<element name="activityonreleases">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="packagingmacosx">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="independenceofdevelopments">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="packagingredhat">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="packaginghpux">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="stability">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="packagingmandriva">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="leadingteam">
+		<score>
+			1
+		</score>
+	</element>
+	<element name="books">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="references">
+		<score>
+			1
+		</score>
+		<comment>
+			???
+		</comment>
+	</element>
+	<element name="developersidentificationturnover">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="packagingsuse">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="packagingfreebsd">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="tools">
+		<score>
+			1
+		</score>
+	</element>
+	<element name="packagingdebian">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="packagingopen">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="training">
+		<score>
+			1
+		</score>
+	</element>
+	<element name="packagingsolaris">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="packagingnet">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="quality">
+		<score>
+			1
+		</score>
+	</element>
+	<element name="support">
+		<score>
+			1
+		</score>
+	</element>
+	<element name="popularity">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="contributingcommunity">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="activityonbugs">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="packagingwindows">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="managementstyle">
+		<score>
+			1
+		</score>
+	</element>
+	<element name="age">
+		<score>
+			2
+		</score>
+		<comment>
+			www.jboss.com/products/jbossportal domain was created in ??? 2001 
+		</comment>
+	</element>
+</qsosscore>

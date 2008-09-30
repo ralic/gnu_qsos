@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<qsosheader>
+	<properties>
+		<licensedesc>
+			GNU Lesser General Public License (LGPL)
+		</licensedesc>
+		<language>
+			en
+		</language>
+		<appname>
+			jBossPortal
+		</appname>
+		<url>
+			http://www.jboss.com/products/jbossportal
+		</url>
+		<qsosspecificformat>
+			1
+		</qsosspecificformat>
+		<demourl>
+			http://portal.demo.jboss.com/
+		</demourl>
+		<qsosappname>
+			jbossPortal
+		</qsosappname>
+		<licenseid>
+			31
+		</licenseid>
+		<release>
+			2
+		</release>
+		<qsosformat>
+			2.0
+		</qsosformat>
+		<desc>
+			JBoss Portal provides an open source and standards-based environment for hosting and serving a portal's Web interface, publishing and managing its content, and customizing its experience
+		</desc>
+	</properties>
+	<families>
+		<family>
+			Portal
+		</family>
+	</families>
+</qsosheader>
