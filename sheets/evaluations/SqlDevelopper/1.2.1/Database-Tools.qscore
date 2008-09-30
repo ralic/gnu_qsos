@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<qsosscore>
+	<element name="coracle">
+		<score>
+			2
+		</score>
+		<comment>
+			From 9i (9.2) on
+		</comment>
+	</element>
+	<element name="views">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="csybase">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="resultsaving">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="scriptgenerator">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="snapshots">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="triggersedit">
+		<score>
+			1
+		</score>
+		<comment>
+			Exists but doen't show in the in dedicated tab
+		</comment>
+	</element>
+	<element name="datagrid">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="synonyms">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="querytool">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="dblinks">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="standardsupport">
+		<score>
+			1
+		</score>
+	</element>
+	<element name="cingres">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="indexes">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="procedures">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="constraints">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="sequencesedit">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="jdbc">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="migrationtool">
+		<score>
+			1
+		</score>
+	</element>
+	<element name="csqlserver">
+		<score>
+			2
+		</score>
+		<comment>
+			SQL Server 7, 2000, 2005
+		</comment>
+	</element>
+	<element name="objectbrowser">
+		<score>
+			2
+		</score>
+		<comment>
+			Very detailed an Oracle oriented, creation, update and demlete  of objects possible
+		</comment>
+	</element>
+	<element name="cinformix">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="optimizetool">
+		<score>
+			1
+		</score>
+	</element>
+	<element name="cmysql">
+		<score>
+			2
+		</score>
+		<comment>
+			Mysql 3.x, 4.x, 5.x
+		</comment>
+	</element>
+	<element name="cdb2">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="scriptsaving">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="adminoptions">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="cpostgres">
+		<score>
+			0
+		</score>
+	</element>
+</qsosscore>
