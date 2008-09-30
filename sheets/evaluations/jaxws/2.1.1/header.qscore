@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<qsosheader>
+	<properties>
+		<licensedesc>
+			Open Source CDDL 1.0 (Common Development and Distribution License).
+		</licensedesc>
+		<language>
+			fr
+		</language>
+		<appname>
+			JAX-WS
+		</appname>
+		<url>
+			http://jax-ws.dev.java.net
+		</url>
+		<qsosspecificformat>
+			N/A
+		</qsosspecificformat>
+		<demourl>
+			N/A
+		</demourl>
+		<qsosappname>
+			jaxws
+		</qsosappname>
+		<licenseid>
+			15
+		</licenseid>
+		<release>
+			2.1.1
+		</release>
+		<qsosformat>
+			2.0
+		</qsosformat>
+		<desc>
+			Framework de développement, déploiement et consommation de web services en environnement Java EE. Il s'agit de l'implémentation de référence du standard JAX-WS désormais requis pour Java EE 5. Cette technologie est développées dans le cadre du projet GlassFish (serveur Java EE 5 Open Source)
+		</desc>
+	</properties>
+	<families>
+		<family>
+			J2Ee-Ws-Stack
+		</family>
+	</families>
+</qsosheader>
