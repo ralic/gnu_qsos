@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<qsosheader>
+	<properties>
+		<licensedesc>
+			BSD
+		</licensedesc>
+		<language>
+			en
+		</language>
+		<appname>
+			JSide
+		</appname>
+		<url>
+			https://jside.dev.java.net/
+		</url>
+		<qsosspecificformat>
+			1
+		</qsosspecificformat>
+		<demourl>
+			N/A
+		</demourl>
+		<qsosappname>
+			jside
+		</qsosappname>
+		<licenseid>
+			33
+		</licenseid>
+		<release>
+			1.0
+		</release>
+		<qsosformat>
+			2.0
+		</qsosformat>
+		<desc>
+			JSide  short for JavaScript Integrated Development Environment, is a simple yet efficient JavaScript IDE
+		</desc>
+	</properties>
+	<families>
+		<family>
+			Javascript-Ide
+		</family>
+	</families>
+</qsosheader>
