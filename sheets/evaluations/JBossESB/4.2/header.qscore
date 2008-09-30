@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<qsosheader>
+	<properties>
+		<licensedesc>
+			GNU LGPL
+		</licensedesc>
+		<language>
+			en
+		</language>
+		<appname>
+			JBossESB
+		</appname>
+		<url>
+			http://labs.jboss.com/jbossesb/
+		</url>
+		<qsosspecificformat>
+			N/A
+		</qsosspecificformat>
+		<demourl>
+			N/A
+		</demourl>
+		<qsosappname>
+			JBossESB
+		</qsosappname>
+		<licenseid>
+			32
+		</licenseid>
+		<release>
+			4.2
+		</release>
+		<qsosformat>
+			2.0
+		</qsosformat>
+		<desc>
+			N/A
+		</desc>
+	</properties>
+	<families>
+		<family>
+			Esb
+		</family>
+	</families>
+</qsosheader>
