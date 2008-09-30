@@ -9,9 +9,13 @@ from xml.dom import Node
 
 from Engine import core 
 
+from Tools import FileObject
+from Tools import report
+from Tools import readAndCleanXML
+
 import os
 
-def UpgradeEvaluationSheet(sheet, outDir, Repo):
+def UpgradeEvaluationSheet(sheet, family, tmpDir):
     """
     Upgrades a QSOS evaluation sheet from old format to 2.0 format
     
@@ -47,13 +51,15 @@ def UpgradeEvaluationSheet(sheet, outDir, Repo):
 
 
     #Re-build header properties from repository's template
-    appname = evaluation.firstChild.getElementsByTagName("qsosappname")[0].firstChild.data
-    template = readAndCleanXML(os.path.join(Repo, "sheets", "templates", appname + ".qtpl"))
+    try :
+        appname = evaluation.firstChild.getElementsByTagName("qsosappname")[0].firstChild.data
+    except Exception :
+        appname = evaluation.firstChild.getElementsByTagName("appname")[0].firstChild.data.lower()
     properties = ["language", "appname", "licenseid", "licensedesc","url",
                   "desc", "demourl", "qsosappname", "qsosspecificformat"]
     for node in properties :
         try :
-            header.appendChild(template.firstChild.getElementsByTagName(node)[0])
+            header.appendChild(evaluation.firstChild.getElementsByTagName(node)[0])
         except IndexError :
             pass
     
@@ -69,14 +75,18 @@ def UpgradeEvaluationSheet(sheet, outDir, Repo):
     header.appendChild(version)
     
     #Add appfamilies
-    header.appendChild(template.firstChild.getElementsByTagName("template")[0].getElementsByTagName("qsosappfamilies")[0])
+    appfamilies = output.createElement("qsosappfamilies")
+    appfamily = output.createElement("qsosappfamily")
+    appfamily.appendChild(output.createTextNode(family))
+    appfamilies.appendChild(appfamily)
+    header.appendChild(appfamilies)
     
     #Write-out new evaluation sheet
-    file = open(outDir + "/" + appname + "-" + release + ".qsos", 'w')
-    file.write(output.toxml("utf-8"))
+    file = open(tmpDir + appname + "-" + release + ".qsos", 'w')
+    file.write(output.toprettyxml('\t', '\n','utf-8'))
     file.close()
 
-def UpgradeRepository(inDir, outDir, Repo):
+def UpgradeRepository(inDir, tmpDir):
     """
     Upgrades a collection of QSOS evaluation sheets from old format to 2.0 format
     
@@ -93,23 +103,27 @@ def UpgradeRepository(inDir, outDir, Repo):
     #Statistics vars
     Errors = []
     Upgraded = 0
-    Processed = 0
-    Ignored = 0
     
-    #Main loop : skip not qsos file and upgrade qsos files
-    for filename in os.listdir(inDir):
-        if not filename.split(".")[ - 1] == "qsos" : Ignored = Ignored + 1
-        #Upgrade qsos files
-        else :
-            try: 
-                UpgradeEvaluationSheet(inDir + "/" + filename, outDir, Repo)
-                Upgraded += 1
-            except Exception, inst :
-                Errors.append("Error occured when upgrading " + filename + ":" + str(inst))
-        Processed += 1
+    #Main loop : scan repository for app families
+    for item in os.listdir(inDir):
+        #Ignore CVS directory, includes directory and regular files
+        if item != "CVS" and item != "include" and os.path.isdir(os.path.join(inDir, item)) :
+            fitem = os.path.join(inDir, item)
+            for evaluation in os.listdir(fitem) :
+                #Ignore CVS directory
+                eitem = os.path.join(fitem, evaluation)
+                if evaluation != "CVS" and evaluation != "template" and evaluation != ".project" and os.path.isdir(eitem):
+                    for sheet in os.listdir(eitem) :
+                        if sheet != "CVS" :
+                            sitem = os.path.join(eitem, sheet)
+                            try :
+                                UpgradeEvaluationSheet(sitem, item.title(), tmpDir)
+                            except Exception, inst :
+                                Errors.append("Error occured when upgrading " + filename + ":" + str(inst))
+                            Upgraded += 1
 
     #Write a report on output
-    report(Errors, Upgraded, Processed, Ignored)
+    report(Errors, Upgraded)
     
 def CommitRepository(inDir, Repo):
     """
@@ -126,16 +140,13 @@ def CommitRepository(inDir, Repo):
     #Statistics vars    
     Errors = []
     Submitted = 0
-    Processed = 0
-    Ignored = 0
     
     #Setup git repository
     core.setup(Repo)
     
     #Main loop : prepare data for auto-commit and proceed
     for filename in os.listdir(inDir) :
-        if not filename.split(".")[ - 1] == "qsos" : Ignored += 1
-        else :
+        if filename.split(".")[ - 1] == "qsos" :
             #Extract information from qsos file
             try: 
                 evaluation = readAndCleanXML(inDir + "/" + filename)
@@ -152,72 +163,9 @@ def CommitRepository(inDir, Repo):
                 Submitted += 1
             except Exception, inst :
                 Errors.append("Error occured when submitting " + filename + ":" + str(inst))
-        Processed = Processed + 1
     
     #Write a report on output
-    report(Errors, Submitted, Processed, Ignored)
+    report(Errors, Submitted)
 
 
-    
-def removeWhitespaceNodes(parent):
-    """
-    Remove whitespaces children nodes of an XML tree
-    
-    Side effect :
-            Whitespaces children (TextNodes which are combination of \n, \t or space) are
-            removed from subtree of the parent node
-            
-    @param parent
-            Parent node of subtree to clean
-    """
-    #Recursive function
-    for child in list(parent.childNodes):
-        #Terminal case : current child is a text node and it needs cleaning
-        if child.nodeType == child.TEXT_NODE and child.data.strip() == '' :
-            parent.removeChild(child)
-        #Non terminal case : proceed on subtree
-        else: removeWhitespaceNodes(child)
-
-def readAndCleanXML(xml):
-    """
-    Read and clean XML file from whitespaces
-    
-    @param xml
-            Path to XML file
-    @return
-            Minidom parsed xml with no whitespaces
-    """
-    clean = minidom.parse(xml)
-    removeWhitespaceNodes(clean.firstChild)
-    return clean
-
-def report(errors, success, processed, ignored):
-    """
-    Write a report on standard output 
-    
-    @param errors
-            List of encountered errors
-    @param success
-            Number of successful operations
-    @param processed
-            Total number of processed items
-    @param ignored
-            Number of ignored items
-    """
-    for e in errors : print e
-    print """
-    Failed %s files
-    Upgraded %s files
-    Processed %s files
-    Ignored %s files
-    """ % (len(errors), success, processed, ignored)
-    
-class FileObject ():
-    """
-    File wrapper for auto-commit data
-    
-    Provide a structure simulating formless's FileUpload object (with file and filename fields)
-    """
-    def __init__(self, content, name):
-        self.file = content
-        self.filename = name 
+ 
