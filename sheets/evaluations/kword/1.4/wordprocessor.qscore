@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="utf-8"?>
+<qsosscore>
+	<element name="styles">
+		<score>
+			2
+		</score>
+		<comment>
+			Managed styles: characters, lists, borders and tables. Style manager allows style creation, modification, copy, import from other document.
+		</comment>
+	</element>
+	<element name="conditionaltext">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="groupware">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="help">
+		<score>
+			2
+		</score>
+		<comment>
+			User help og good quality (it is the official documentation)
+		</comment>
+	</element>
+	<element name="mathsformulas">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="accessibility">
+		<score>
+			1
+		</score>
+		<comment>
+			Keyboard navigation. Accessibility based on KDE features (http://accessibility.kde.org)
+		</comment>
+	</element>
+	<element name="macrorecord">
+		<score>
+			0
+		</score>
+		<comment>
+			NA
+		</comment>
+	</element>
+	<element name="modificationtracking">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="customization">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="opendocument">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="referenceshorcuts">
+		<score>
+			1
+		</score>
+		<comment>
+			Hypertext bookmark/link system. Bookmarks must be defined fisrt.
+		</comment>
+	</element>
+	<element name="autocompletion">
+		<score>
+			2
+		</score>
+		<comment>
+			Predefined and editable list + list based on words already present in the document
+		</comment>
+	</element>
+	<element name="docsecurity">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="indexes">
+		<score>
+			1
+		</score>
+		<comment>
+			Editable table of contents (format).
+		</comment>
+	</element>
+	<element name="autocorrect">
+		<score>
+			2
+		</score>
+		<comment>
+			Predefined and editable list.
+		</comment>
+	</element>
+	<element name="tablesortformula">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="levelofintegration">
+		<score>
+			2
+		</score>
+		<comment>
+			Idenpendents modules sharing the same basic libraries (Qt, kdelibs) and communication mecanism (DCOP scipts, Kparts)
+		</comment>
+	</element>
+	<element name="hyperlinks">
+		<score>
+			2
+		</score>
+		<comment>
+			Internal and external links.
+		</comment>
+	</element>
+	<element name="grammarchek">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="template">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="officesuite">
+		<score>
+			2
+		</score>
+		<comment>
+			KOffice
+		</comment>
+	</element>
+	<element name="doccomparison">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="dictionnary">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="headerfooter">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="sections">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="fieldsinsertion">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="imagesmailing">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="searchreplace">
+		<score>
+			2
+		</score>
+		<comment>
+			Search on word, regex, formats (font, color, ...)
+		</comment>
+	</element>
+	<element name="nestedtables">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="docviews">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="pdfexport">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="mailingengine">
+		<score>
+			1
+		</score>
+	</element>
+	<element name="docversioning">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="thesaurus">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="tableautoformat">
+		<score>
+			1
+		</score>
+	</element>
+	<element name="textableconv">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="macrosupport">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="i18n">
+		<score>
+			2
+		</score>
+		<comment>
+			UNICODE and bi-directional language support. No vertical language support. Translations under way in 66 languages (22 are complete) cf.http://i18n.kde.org/stats/gui/stable/koffice/index.php
+		</comment>
+	</element>
+	<element name="stylescopypaste">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="docbookexport">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="masterslavedocus">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="commentnote">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="latexexport">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="drawingtools">
+		<score>
+			1
+		</score>
+		<comment>
+			Integrated with KOffice deawing tools.
+		</comment>
+	</element>
+	<element name="macrosdeployment">
+		<score>
+			0
+		</score>
+		<comment>
+			NA
+		</comment>
+	</element>
+	<element name="xsltsupport">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="objectsnavigator">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="docrecovery">
+		<score>
+			0
+		</score>
+		<comment>
+			This leaves the option to manually  tweak XML files 
+		</comment>
+	</element>
+	<element name="ide">
+		<score>
+			0
+		</score>
+		<comment>
+			NA
+		</comment>
+	</element>
+	<element name="datasources">
+		<comment>
+			SQLServer, MySQL, PostgreSQL, UnixODBC, internal storage
+		</comment>
+	</element>
+</qsosscore>
