@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<qsosscore>
+	<element name="customizablepresence">
+		<score>
+			1
+		</score>
+	</element>
+	<element name="gtalkim">
+		<score>
+			2
+		</score>
+		<comment>
+			does not support gtalk's file transfert
+		</comment>
+	</element>
+	<element name="AECvoip">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="h323">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="kopeteim">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="interplateform">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="AECvisio">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="vms">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="sip">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="nudge">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="billing">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="encryption">
+		<score>
+			1
+		</score>
+		<comment>
+			Support SSL and TLS encryption
+		</comment>
+	</element>
+	<element name="away">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="ekigaim">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="integration">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="psivoip">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="priority">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="ekigavoip">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="ekigavisio">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="muc">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="presencestatus">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="kopetevoip">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="ivrasr">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="Specific">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="psiim">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="gaimvoip">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="wengophoneim">
+		<score>
+			1
+		</score>
+	</element>
+	<element name="vcard">
+		<score>
+			1
+		</score>
+		<comment>
+			Gajim supports XEP 54
+		</comment>
+	</element>
+	<element name="whiteboard">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="smileys">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="games">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="avatar">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="gaimim">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="p2pencryption">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="psivisio">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="libjingle">
+		<score>
+			0
+		</score>
+	</element>
+</qsosscore>
