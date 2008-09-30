@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<qsosheader>
+	<properties>
+		<licensedesc>
+			GNU LGPL
+		</licensedesc>
+		<language>
+			fr
+		</language>
+		<appname>
+			JOnAS
+		</appname>
+		<url>
+			http://jonas.objectweb.org
+		</url>
+		<qsosspecificformat>
+			1.0
+		</qsosspecificformat>
+		<demourl>
+			http://jonas.objectweb.org/demos/demo1/JOnASDemo.htm
+		</demourl>
+		<qsosappname>
+			jonas
+		</qsosappname>
+		<licenseid>
+			32
+		</licenseid>
+		<release>
+			4.3
+		</release>
+		<qsosformat>
+			2.0
+		</qsosformat>
+		<desc>
+			Serveur d'applications certifié J2EE 1.4
+		</desc>
+	</properties>
+	<families>
+		<family>
+			J2Ee-Application-Server
+		</family>
+	</families>
+</qsosheader>

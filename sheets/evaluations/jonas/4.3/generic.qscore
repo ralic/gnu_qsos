@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="utf-8"?>
+<qsosscore>
+	<element name="consulting">
+		<score>
+			1
+		</score>
+		<comment>
+			Offres spécifiques peu nombreuses. Les autres sont souvent intégrées dans des offres d'expertise Java/J2EE plus globales
+		</comment>
+	</element>
+	<element name="documentation">
+		<score>
+			1
+		</score>
+		<comment>
+			Documentation officielle téléchargeable et gratuite sur le site, en anglais. La version française n'est pas à jour.
+		</comment>
+	</element>
+	<element name="activityonreleases">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="administrationmonitoring">
+		<score>
+			2
+		</score>
+		<comment>
+			Console Web/Struts 
+		</comment>
+	</element>
+	<element name="independenceofdevelopments">
+		<score>
+			1
+		</score>
+		<comment>
+			Bien qu'une bonne partie des développeurs provienne de Bull, les contributions externes sont nombreuses.
+		</comment>
+	</element>
+	<element name="roadmap">
+		<score>
+			1
+		</score>
+		<comment>
+			Roadmap macroscopique pas très détaillée
+		</comment>
+	</element>
+	<element name="stability">
+		<score>
+			1
+		</score>
+		<comment>
+			Logiciel utilisé en production
+		</comment>
+	</element>
+	<element name="activityonfunctionalities">
+		<score>
+			2
+		</score>
+		<comment>
+			Outil Gforge
+		</comment>
+	</element>
+	<element name="leadingteam">
+		<score>
+			1
+		</score>
+		<comment>
+			Les membres de l'équipe dirigeante sont connus mais leurs rôles pas clairement définis
+		</comment>
+	</element>
+	<element name="books">
+		<score>
+			0
+		</score>
+		<comment>
+			Un livre à paraître en anglais chez SourceBeat
+		</comment>
+	</element>
+	<element name="references">
+		<score>
+			1
+		</score>
+		<comment>
+			Pas très nombreuses (cf. http://jonas.objectweb.org/success.html)
+		</comment>
+	</element>
+	<element name="sponsor">
+		<score>
+			2
+		</score>
+		<comment>
+			Bull  emploie une grande partie de  l'équipe coeur. Obkectwebest une organisation à but non lucratif fondée par Bull, l'INRIA, et France Telecom. Elle regroupe des entreprise (comme RedHat) et des individus.
+		</comment>
+	</element>
+	<element name="strategicalindependence">
+		<score>
+			1
+		</score>
+		<comment>
+			Objectweb possède la force et les moyens d'être indépendant au niveau stratégique. Cependant le recent rapprochement avec Apache Foundation rend  cette  stratégie peu claire.
+		</comment>
+	</element>
+	<element name="tools">
+		<score>
+			2
+		</score>
+		<comment>
+			Testsuite, Gforge
+		</comment>
+	</element>
+	<element name="permissiveness">
+		<score>
+			1
+		</score>
+		<comment>
+			LGPL
+		</comment>
+	</element>
+	<element name="quality">
+		<score>
+			1
+		</score>
+		<comment>
+			Existence d'une Test suite mais les tests ne sont pas systématiques et donc pas à jour par rapport aux versions de JOnAS
+		</comment>
+	</element>
+	<element name="support">
+		<score>
+			1
+		</score>
+		<comment>
+			2 offres principales : Bull et RedHat
+		</comment>
+	</element>
+	<element name="contributingcommunity">
+		<score>
+			2
+		</score>
+		<comment>
+			Une cinquantaine de contributeurs remerciés sur le site  d'Objectweb
+		</comment>
+	</element>
+	<element name="codeextension">
+		<score>
+			1
+		</score>
+		<comment>
+			Possibilité de création des nouveaux services
+		</comment>
+	</element>
+	<element name="managementstyle">
+		<score>
+			2
+		</score>
+		<comment>
+			L'équipe coeur du projet décide de manière collégiale sur la mailing list en échangeant avec les contributeurs
+		</comment>
+	</element>
+	<element name="easeofuseergonomics">
+		<score>
+			1
+		</score>
+	</element>
+	<element name="codemodification">
+		<score>
+			2
+		</score>
+		<comment>
+			Ant très utilisé. Bonne documentation du code (Doxygen et Javadoc).
+		</comment>
+	</element>
+	<element name="protectionagainstproprietaryforks">
+		<score>
+			2
+		</score>
+		<comment>
+			Protégé par la licence LGPL et la distribution des droits de copyritgth entre les différents développeurs.
+		</comment>
+	</element>
+	<element name="developersidentificationturnover">
+		<score>
+			2
+		</score>
+		<comment>
+			Equipe coeur : 19 développeurs. L'équipe est stabilisée par le fait qu'une grande partie est employée par Bull.
+		</comment>
+	</element>
+	<element name="modificationofsourcecode">
+		<score>
+			2
+		</score>
+		<comment>
+			Code placé sous CVS d'accès public (Gforge Objectweb)
+		</comment>
+	</element>
+	<element name="copyrightowners">
+		<score>
+			1
+		</score>
+		<comment>
+			Le code est « possédé » par les individus. Nombreux « commiters »,  les plus importants (en terme de comtribution) étant employés par Bull et le copyright posé au nom de la société
+		</comment>
+	</element>
+	<element name="training">
+		<score>
+			1
+		</score>
+		<comment>
+			Moins d'une dizaine d'offres en français. Quasiment aucune en anglais.
+		</comment>
+	</element>
+	<element name="age">
+		<score>
+			2
+		</score>
+		<comment>
+			Depuis 1999
+		</comment>
+	</element>
+	<element name="popularity">
+		<score>
+			1
+		</score>
+		<comment>
+			JonAS est peu connu en dehors de la France.
+		</comment>
+	</element>
+	<element name="modularity">
+		<score>
+			2
+		</score>
+		<comment>
+			JonAS est architecturé en services
+		</comment>
+	</element>
+	<element name="activityonbugs">
+		<score>
+			2
+		</score>
+		<comment>
+			Outil Gforge
+		</comment>
+	</element>
+	<element name="forkprobability">
+		<score>
+			2
+		</score>
+		<comment>
+			La licence est sous LGPL. Les contributeurs sont nombreux
+		</comment>
+	</element>
+</qsosscore>
