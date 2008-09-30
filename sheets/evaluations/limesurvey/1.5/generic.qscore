@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="utf-8"?>
+<qsosscore>
+	<element name="consulting">
+		<score>
+			0
+		</score>
+		<comment>
+			Aucune offre de conseil détectée en dehors de l'aide dans les forums, ou l'aide offert par Carsten Schmitz.Prix libre sous forme de don.http://www.limesurvey.org/content/view/39/85/lang,fr/
+		</comment>
+	</element>
+	<element name="documentation">
+		<score>
+			2
+		</score>
+		<comment>
+			Manuel détaillé multilangue, à jour et en mode de contribution par un Wiki.http://docs.limesurvey.org/tiki-index.php
+		</comment>
+	</element>
+	<element name="activityonreleases">
+		<score>
+			2
+		</score>
+		<comment>
+			Nouvelles versions tout les 3 mois, tracable sur les stats de subversion de sourceforge :http://sourceforge.net/project/stats/detail.php?group_id=74605&amp;ugn=limesurvey&amp;type=svnet sur la listes des versions disponibles :http://limesurvey.svn.sourceforge.net/viewvc/limesurvey/
+		</comment>
+	</element>
+	<element name="administrationmonitoring">
+		<score>
+			2
+		</score>
+		<comment>
+			LimeSurvey est configurable par les administrateurs via l'interface Web.Gestion des modèles de questionnaire et édition en ligne.Exportation partielle ou totale, et réparation de la base de données.
+		</comment>
+	</element>
+	<element name="independenceofdevelopments">
+		<score>
+			2
+		</score>
+		<comment>
+			Les développeurs coeurs et les contributeurs sont bénévoles et indépendants.
+		</comment>
+	</element>
+	<element name="packaginghpux">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="stability">
+		<score>
+			2
+		</score>
+		<comment>
+			Le logiciel est stabilisé sur la version 1.52  mais il y a de nombreuses contributions du fait de l'engouementde la nouvelle version de LimeSurvey.
+		</comment>
+	</element>
+	<element name="activityonfunctionalities">
+		<score>
+			2
+		</score>
+		<comment>
+			Demandes de nouvelles fonctionnalités tracée dans l'outil de gestion des bogues,avec un système de donation pour motiver les développeurs.
+		</comment>
+	</element>
+	<element name="leadingteam">
+		<score>
+			1
+		</score>
+		<comment>
+			L'équipe des Core développeurs à grandie, il y a toujours 2 personnes stables :Jason Cleeland et Carsten SchmitzMais elle rèste de taille modèste, une vingtaine de contributeurs :http://sourceforge.net/project/memberlist.php?group_id=74605
+		</comment>
+	</element>
+	<element name="books">
+		<score>
+			0
+		</score>
+		<comment>
+			Aucun livre publié sur PhpSurveyor
+		</comment>
+	</element>
+	<element name="references">
+		<score>
+			1
+		</score>
+		<comment>
+			Pas de liste publiée mais une utilisation interressante par une association americaine :http://www.verifiedvoting.org/
+		</comment>
+	</element>
+	<element name="sponsor">
+		<score>
+			0
+		</score>
+		<comment>
+			Pas de sponsors connu mais des donateurs sur sourceforge ou le site limesurvey.org.
+		</comment>
+	</element>
+	<element name="packagingmandriva">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="strategicalindependence">
+		<score>
+			2
+		</score>
+		<comment>
+			L'équipe projet est indépendante de tout sponsor ou entreprise.
+		</comment>
+	</element>
+	<element name="tools">
+		<score>
+			2
+		</score>
+		<comment>
+			Utilisation de Mantis pour la gestion des bogues et des demandes de fonctionnalités.Sourceforge et Subversion pour la distribution et le suivi des version et du code sourceWiki pour les docs,Forum, IRC pour la discussion
+		</comment>
+	</element>
+	<element name="packagingsolaris">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="permissiveness">
+		<score>
+			0
+		</score>
+		<comment>
+			Licence GPL v2
+		</comment>
+	</element>
+	<element name="quality">
+		<score>
+			0
+		</score>
+		<comment>
+			Pas de processus public d'assurance qualité ou d'intégration continue identifié.
+		</comment>
+	</element>
+	<element name="support">
+		<score>
+			0
+		</score>
+		<comment>
+			Aucune offre de support détectée en dehors de l'aide dans les forums, ou l'aide offert par Carsten Schmitz.Prix libre sous forme de don.http://www.limesurvey.org/content/view/39/85/lang,fr/
+		</comment>
+	</element>
+	<element name="contributingcommunity">
+		<score>
+			2
+		</score>
+		<comment>
+			Nombreux posts sur le forum de de LimeSurvey.org :http://www.limesurvey.org/component/option,com_fireboard/Itemid,86/lang,fr/
+		</comment>
+	</element>
+	<element name="packagingwindows">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="codeextension">
+		<score>
+			0
+		</score>
+		<comment>
+			Le code PHP n'est pas compilé et le code peut facilement être étendu.A ANALYSER
+		</comment>
+	</element>
+	<element name="managementstyle">
+		<score>
+			2
+		</score>
+		<comment>
+			Equipe coeur de 2 personnes indépendantes.
+		</comment>
+	</element>
+	<element name="easeofuseergonomics">
+		<score>
+			2
+		</score>
+		<comment>
+			PhpSurveyor est simple d'utilisation. L'interface est bien mieux que l'ancienne version de PhpSurveyor. Les utilisateurs ont été appelés à contribuer à l'interface pour proposer leur thèmes.
+		</comment>
+	</element>
+	<element name="packagingsuse">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="packagingmacosx">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="packagingredhat">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="codemodification">
+		<score>
+			0
+		</score>
+		<comment>
+			A ANALYSER
+		</comment>
+	</element>
+	<element name="protectionagainstproprietaryforks">
+		<score>
+			2
+		</score>
+		<comment>
+			Licence GPL v2
+		</comment>
+	</element>
+	<element name="packagingsource">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="developersidentificationturnover">
+		<score>
+			2
+		</score>
+		<comment>
+			Equipe coeur de 2 développeurs,25 développeurs référencés sur sourceforge,Plusieurs traducteursVoir http://sourceforge.net/project/memberlist.php?group_id=74605Plus de 50 contributeurs et développeurs référencés sur le site de limesurvey.orghttp://www.limesurvey.org/content/view/20/37/lang,fr/
+		</comment>
+	</element>
+	<element name="packagingfreebsd">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="roadmap">
+		<score>
+			1
+		</score>
+		<comment>
+			Prévisions disponible (http://docs.limesurvey.org/tiki-index.php?page=LimeSurvey+Roadmap) sans précisions sur les dates prévues pour les prochaines versions.
+		</comment>
+	</element>
+	<element name="packagingdebian">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="modificationofsourcecode">
+		<score>
+			1
+		</score>
+		<comment>
+			Utilisation du subversion de Sourceforge
+		</comment>
+	</element>
+	<element name="copyrightowners">
+		<score>
+			1
+		</score>
+		<comment>
+			Les droits sont détenus par les différents contributeurs :/*3 * LimeSurvey4 * Copyright (C) 2007 The LimeSurvey Project Team / Carsten Schmitz5 * All rights reserved.6 * License: GNU/GPL License v2 or later, see LICENSE.php7 * LimeSurvey is free software. This version may have been modified pursuant8 * to the GNU General Public License, and as distributed it includes or9 * is derivative of works licensed under the GNU General Public License or10 * other free or open source software licenses.11 * See COPYRIGHT.php for copyright notices and details.12 */13 
+		</comment>
+	</element>
+	<element name="training">
+		<score>
+			0
+		</score>
+		<comment>
+			Aucune offre de formation détectée en dehors de l'aide dans les forums, ou l'aide offert par Carsten Schmitz.Prix libre sous forme de don.http://www.limesurvey.org/content/view/39/85/lang,fr/
+		</comment>
+	</element>
+	<element name="packagingnet">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="age">
+		<score>
+			2
+		</score>
+		<comment>
+			Projet qui a débuté en 2003 (20/02/2003 date de la création du projet sur Sourceforge).
+		</comment>
+	</element>
+	<element name="popularity">
+		<score>
+			2
+		</score>
+		<comment>
+			Activité décelable sur sourceforge.net : plus de 5000 téléchargement depuis le lancement de la version 1.50 (activité d'août, sptembre, octobre 2007)http://sourceforge.net/project/stats/detail.php?group_id=74605&amp;ugn=limesurvey&amp;type=prdownload
+		</comment>
+	</element>
+	<element name="modularity">
+		<score>
+			1
+		</score>
+		<comment>
+			Basé sur la couche ADODB de PEAR, PHPGetText, PHPMailer ...
+		</comment>
+	</element>
+	<element name="activityonbugs">
+		<score>
+			2
+		</score>
+		<comment>
+			Activité importante décelable via l'outil de gestion de bogues :http://www.limesurvey.org/content/view/18/34/lang,fr/
+		</comment>
+	</element>
+	<element name="packagingopen">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="forkprobability">
+		<score>
+			2
+		</score>
+	</element>
+</qsosscore>

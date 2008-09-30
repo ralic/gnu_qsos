@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<qsosheader>
+	<properties>
+		<licensedesc>
+			GNU GPL
+		</licensedesc>
+		<language>
+			fr
+		</language>
+		<appname>
+			LimeSurvey
+		</appname>
+		<url>
+			http://www.limesurvey.org/
+		</url>
+		<qsosspecificformat>
+			1.0
+		</qsosspecificformat>
+		<demourl>
+			http://demo.limesurvey.org/admin/admin.php
+		</demourl>
+		<qsosappname>
+			limesurvey
+		</qsosappname>
+		<licenseid>
+			31
+		</licenseid>
+		<release>
+			1.5
+		</release>
+		<qsosformat>
+			2.0
+		</qsosformat>
+		<desc>
+			LimeSurvey est le nouveau nom de PhpSurveyor un des principaux outils Open Source de questionnaires en ligne écrit en PHP.LimeSurvey vous permet de développer, publier et collecter les réponses à des questionnaires. PHPSurveyor inclut un large éventail de types de questions et de nombreuses options.
+		</desc>
+	</properties>
+	<families>
+		<family>
+			Survey-Tool
+		</family>
+	</families>
+</qsosheader>
