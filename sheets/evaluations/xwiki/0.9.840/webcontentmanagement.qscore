@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<qsosscore>
+	<element name="searchAPI">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="commonpictureformat">
+		<score>
+			1
+		</score>
+	</element>
+	<element name="mergetools">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="othernotifications">
+		<score>
+			1
+		</score>
+		<comment>
+			easily do-able but not out of the bow
+		</comment>
+	</element>
+	<element name="diff">
+		<score>
+			2
+		</score>
+		<comment>
+			on wiki texts only
+		</comment>
+	</element>
+	<element name="txt">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="importformatrtf">
+		<score>
+			1
+		</score>
+	</element>
+	<element name="pluginability">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="vectorialformat">
+		<score>
+			1
+		</score>
+	</element>
+	<element name="searchengine">
+		<score>
+			2
+		</score>
+		<comment>
+			the non fully supported format are not parsed in the search
+		</comment>
+	</element>
+	<element name="otherplugins">
+		<score>
+			2
+		</score>
+		<comment>
+			flickr, googlemap, etc...
+		</comment>
+	</element>
+	<element name="slideshows">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="msofficesupport">
+		<score>
+			1
+		</score>
+	</element>
+	<element name="importformatcsv">
+		<score>
+			1
+		</score>
+	</element>
+	<element name="rollback">
+		<score>
+			2
+		</score>
+		<comment>
+			on wiki pages only
+		</comment>
+	</element>
+	<element name="workflow">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="photoalbums">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="calendars">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="importformathtml">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="commercialpictureformat">
+		<score>
+			1
+		</score>
+	</element>
+	<element name="opendocumentsupport">
+		<score>
+			1
+		</score>
+	</element>
+	<element name="hierarchicalclassification">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="bugtrackingintegration">
+		<score>
+			1
+		</score>
+		<comment>
+			easily do-able but not out of the box
+		</comment>
+	</element>
+	<element name="rss">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="recentchanges">
+		<score>
+			1
+		</score>
+	</element>
+	<element name="keyword">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="webserviceplugin">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="blogs">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="polls">
+		<score>
+			1
+		</score>
+		<comment>
+			easily do-able but not out of the box
+		</comment>
+	</element>
+	<element name="remoteAPI">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="importformatxml">
+		<score>
+			1
+		</score>
+	</element>
+	<element name="feedagregation">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="simpleLock">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="history">
+		<score>
+			2
+		</score>
+		<comment>
+			on wiki texts and attached docs
+		</comment>
+	</element>
+</qsosscore>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<qsosheader>
+	<properties>
+		<licensedesc>
+			GNU LGPL
+		</licensedesc>
+		<language>
+			en
+		</language>
+		<appname>
+			xwiki
+		</appname>
+		<url>
+			http://www.xwiki.org
+		</url>
+		<qsosspecificformat>
+			N/A
+		</qsosspecificformat>
+		<demourl>
+			http://www.xwiki.org
+		</demourl>
+		<qsosappname>
+			xwiki
+		</qsosappname>
+		<licenseid>
+			32
+		</licenseid>
+		<release>
+			0.9.840
+		</release>
+		<qsosformat>
+			2.0
+		</qsosformat>
+		<desc>
+			N/A
+		</desc>
+	</properties>
+	<families>
+		<family>
+			Wiki
+		</family>
+	</families>
+</qsosheader>
