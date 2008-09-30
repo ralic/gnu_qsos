@@ -1,0 +1,334 @@
+<?xml version="1.0" encoding="utf-8"?>
+<qsosscore>
+	<element name="consulting">
+		<score>
+			1
+		</score>
+		<comment>
+			Offrer by MySQL AB or SAP AG
+		</comment>
+	</element>
+	<element name="documentation">
+		<score>
+			1
+		</score>
+		<comment>
+			Poor online documentation en ligne in english and german
+		</comment>
+	</element>
+	<element name="activityonreleases">
+		<score>
+			1
+		</score>
+		<comment>
+			Frequent minor releases
+		</comment>
+	</element>
+	<element name="administrationmonitoring">
+		<score>
+			2
+		</score>
+		<comment>
+			Optimization/Administration tools available with the database
+		</comment>
+	</element>
+	<element name="independenceofdevelopments">
+		<score>
+			0
+		</score>
+		<comment>
+			SAP AG realizes100% of developments
+		</comment>
+	</element>
+	<element name="packaginghpux">
+		<score>
+			1
+		</score>
+		<comment>
+			Provided by MySQL AB
+		</comment>
+	</element>
+	<element name="stability">
+		<score>
+			2
+		</score>
+		<comment>
+			Used for years in SAP systems with several TB of data in 24/7 environments
+		</comment>
+	</element>
+	<element name="activityonfunctionalities">
+		<score>
+			1
+		</score>
+		<comment>
+			Features requests are made/announced through forum et maling list only
+		</comment>
+	</element>
+	<element name="leadingteam">
+		<score>
+			1
+		</score>
+		<comment>
+			Delopment done by SAP AG
+		</comment>
+	</element>
+	<element name="books">
+		<score>
+			1
+		</score>
+		<comment>
+			Few books about MaxDB
+		</comment>
+	</element>
+	<element name="references">
+		<score>
+			2
+		</score>
+		<comment>
+			6000 customers including big players like Toyota, Intel, DaimlerChrysler, Braun-Gillette, Bayer, Colgate, Yamaha, or Deutsche Post
+		</comment>
+	</element>
+	<element name="sponsor">
+		<score>
+			2
+		</score>
+		<comment>
+			MySQL AB and SAP AG
+		</comment>
+	</element>
+	<element name="packagingmandriva">
+		<score>
+			0
+		</score>
+		<comment>
+			A generic rpm is available for Linux distros
+		</comment>
+	</element>
+	<element name="strategicalindependence">
+		<score>
+			0
+		</score>
+		<comment>
+			Strong dependance towards MySQL AB oand SAP AG
+		</comment>
+	</element>
+	<element name="tools">
+		<score>
+			2
+		</score>
+		<comment>
+			Bug tracker hosted by SAP AG
+		</comment>
+	</element>
+	<element name="packagingsolaris">
+		<score>
+			1
+		</score>
+		<comment>
+			Provided by MySQL AB
+		</comment>
+	</element>
+	<element name="permissiveness">
+		<score>
+			0
+		</score>
+		<comment>
+			GPL with a dual mode (possible to by a commercial license also)
+		</comment>
+	</element>
+	<element name="quality">
+		<score>
+			1
+		</score>
+	</element>
+	<element name="support">
+		<score>
+			1
+		</score>
+		<comment>
+			Offrer by MySQL AB or SAP AG
+		</comment>
+	</element>
+	<element name="contributingcommunity">
+		<score>
+			2
+		</score>
+		<comment>
+			Contibutors are members of SAP AG development team collaborating with MySQL devlopment team
+		</comment>
+	</element>
+	<element name="packagingwindows">
+		<score>
+			2
+		</score>
+		<comment>
+			Both 32 and 64 bits, provided by MySQL AB
+		</comment>
+	</element>
+	<element name="codeextension">
+		<score>
+			1
+		</score>
+		<comment>
+			Few documentation available on this subject
+		</comment>
+	</element>
+	<element name="managementstyle">
+		<score>
+			1
+		</score>
+		<comment>
+			SAP AG decide the orientation of developments
+		</comment>
+	</element>
+	<element name="easeofuseergonomics">
+		<score>
+			2
+		</score>
+		<comment>
+			Management tool provided by SAP with graphic/web interface
+		</comment>
+	</element>
+	<element name="packagingsuse">
+		<score>
+			0
+		</score>
+		<comment>
+			A generic rpm is available for Linux distros
+		</comment>
+	</element>
+	<element name="packagingmacosx">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="packagingredhat">
+		<score>
+			0
+		</score>
+		<comment>
+			A generic rpm is available for Linux distros
+		</comment>
+	</element>
+	<element name="codemodification">
+		<score>
+			2
+		</score>
+		<comment>
+			Development environment is tooled and documented
+		</comment>
+	</element>
+	<element name="protectionagainstproprietaryforks">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="packagingsource">
+		<score>
+			2
+		</score>
+		<comment>
+			Provided by MySQL AB
+		</comment>
+	</element>
+	<element name="developersidentificationturnover">
+		<score>
+			2
+		</score>
+		<comment>
+			Around a hundred devloppers employed by SAP AG
+		</comment>
+	</element>
+	<element name="packagingfreebsd">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="roadmap">
+		<score>
+			0
+		</score>
+		<comment>
+			No roadmap available
+		</comment>
+	</element>
+	<element name="packagingdebian">
+		<score>
+			2
+		</score>
+		<comment>
+			maxdb packages exist in debian
+		</comment>
+	</element>
+	<element name="modificationofsourcecode">
+		<score>
+			1
+		</score>
+		<comment>
+			Source code is code available through CVS repository. No clearly identified way to submit contributions. 
+		</comment>
+	</element>
+	<element name="copyrightowners">
+		<score>
+			0
+		</score>
+		<comment>
+			Copyrights owned by SAP AG
+		</comment>
+	</element>
+	<element name="training">
+		<score>
+			1
+		</score>
+		<comment>
+			Offrer by MySQL AB or SAP AG
+		</comment>
+	</element>
+	<element name="packagingnet">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="age">
+		<score>
+			2
+		</score>
+		<comment>
+			Project initiated in 1977 betewen the University of Berlin and Nixdorf Computer AG
+		</comment>
+	</element>
+	<element name="popularity">
+		<score>
+			1
+		</score>
+		<comment>
+			Mostly used in SAP installations. No identified marketing targer since its association with MySQL AB
+		</comment>
+	</element>
+	<element name="modularity">
+		<score>
+			1
+		</score>
+	</element>
+	<element name="activityonbugs">
+		<score>
+			2
+		</score>
+		<comment>
+			Bug tracking tool available
+		</comment>
+	</element>
+	<element name="packagingopen">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="forkprobability">
+		<score>
+			2
+		</score>
+		<comment>
+			MaxDB has been bought and rebranded several times before becoming open source. No known fork.
+		</comment>
+	</element>
+</qsosscore>
