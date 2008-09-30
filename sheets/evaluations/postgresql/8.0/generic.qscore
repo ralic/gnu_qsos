@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="utf-8"?>
+<qsosscore>
+	<element name="consulting">
+		<score>
+			2
+		</score>
+		<comment>
+			Serveral offers exist like Persuasive Postgres (http://www.pervasive-postgres.com)
+		</comment>
+	</element>
+	<element name="documentation">
+		<score>
+			1
+		</score>
+		<comment>
+			Official english documentation is freely available in SGML, PDF or HTML formats. Numerous technical documents are also available (tutorials, howtos,  installation and migration guides). French documentation is available on the official french site.
+		</comment>
+	</element>
+	<element name="activityonreleases">
+		<score>
+			2
+		</score>
+		<comment>
+			Regular releases, almost always including new major features
+		</comment>
+	</element>
+	<element name="administrationmonitoring">
+		<score>
+			1
+		</score>
+		<comment>
+			Administration console (PgAdmin III) is intuitive and can manage several servers, but doesn't include monitoring features.
+		</comment>
+	</element>
+	<element name="independenceofdevelopments">
+		<score>
+			2
+		</score>
+		<comment>
+			Project based on volonteers work only
+		</comment>
+	</element>
+	<element name="packaginghpux">
+		<score>
+			0
+		</score>
+		<comment>
+			You need to build from sources.
+		</comment>
+	</element>
+	<element name="stability">
+		<score>
+			2
+		</score>
+		<comment>
+			Branch 6 has known stability issues fixed since branch 7
+		</comment>
+	</element>
+	<element name="activityonfunctionalities">
+		<score>
+			1
+		</score>
+		<comment>
+			No fatures request tool and thus no global view and statictics. Everything passes via the mailing list.
+		</comment>
+	</element>
+	<element name="leadingteam">
+		<score>
+			1
+		</score>
+		<comment>
+			The 5 members of the leading team are known and respected
+		</comment>
+	</element>
+	<element name="books">
+		<score>
+			2
+		</score>
+		<comment>
+			Several books related to PostgreSQL, in several languages
+		</comment>
+	</element>
+	<element name="references">
+		<score>
+			1
+		</score>
+		<comment>
+			Numerous references
+		</comment>
+	</element>
+	<element name="sponsor">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="packagingmandriva">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="strategicalindependence">
+		<score>
+			2
+		</score>
+		<comment>
+			Project team is really independent. Its strategy is to stick the as possible to standards.
+		</comment>
+	</element>
+	<element name="tools">
+		<score>
+			1
+		</score>
+		<comment>
+			No central tool available. A test suite is provided (make check).
+		</comment>
+	</element>
+	<element name="packagingsolaris">
+		<score>
+			2
+		</score>
+		<comment>
+			Sun fully supports PostgreSQL on Solaris.
+		</comment>
+	</element>
+	<element name="permissiveness">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="quality">
+		<score>
+			1
+		</score>
+		<comment>
+			No clearly defined process. Code verification scripts are used before each release. There is a build farm where one can publish build results (http://www.pgbuildfarm.org)
+		</comment>
+	</element>
+	<element name="support">
+		<score>
+			2
+		</score>
+		<comment>
+			Many offers references on the project's website:  http://www.postgresql.org/support/professional_support or on http://www.opensourcexperts.com/Index/index_html/PostgreSQL 
+		</comment>
+	</element>
+	<element name="contributingcommunity">
+		<score>
+			2
+		</score>
+		<comment>
+			Around 200  worldwide contributors
+		</comment>
+	</element>
+	<element name="packagingwindows">
+		<score>
+			2
+		</score>
+		<comment>
+			An installer is provided
+		</comment>
+	</element>
+	<element name="codeextension">
+		<score>
+			2
+		</score>
+		<comment>
+			Possibility to add new functions, data types, operators, aggregators as shared libraries that can be dynamiocally loaded by PostgreSQL.
+		</comment>
+	</element>
+	<element name="managementstyle">
+		<score>
+			1
+		</score>
+		<comment>
+			Team of 5 leaders which decide dates and strategy based on members opinions
+		</comment>
+	</element>
+	<element name="easeofuseergonomics">
+		<score>
+			1
+		</score>
+		<comment>
+			Advanced installation requires DBA skills. Graphical tools are user-friendly (specially those provided by Red Hat).
+		</comment>
+	</element>
+	<element name="packagingsuse">
+		<score>
+			0
+		</score>
+		<comment>
+			Project provides no package for SuSE. Novell supports only 7.4 version.
+		</comment>
+	</element>
+	<element name="packagingmacosx">
+		<score>
+			1
+		</score>
+		<comment>
+			Packages are available through the FINK project (http://fink.sourceforge.net)
+		</comment>
+	</element>
+	<element name="packagingredhat">
+		<score>
+			1
+		</score>
+		<comment>
+			Project provides RPM for Red Hat Entreprise Linux, but only version 7.4 is officially supported by Red Hat.
+		</comment>
+	</element>
+	<element name="codemodification">
+		<score>
+			1
+		</score>
+		<comment>
+			Relatively complex C code source
+		</comment>
+	</element>
+	<element name="protectionagainstproprietaryforks">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="packagingsource">
+		<score>
+			2
+		</score>
+		<comment>
+			Installation from source  is well documented
+		</comment>
+	</element>
+	<element name="developersidentificationturnover">
+		<score>
+			2
+		</score>
+		<comment>
+			200 developpers. Real open source project: few have write access to the code repository, it is acquired by meritocracy. However everybody can submit a patch.
+		</comment>
+	</element>
+	<element name="packagingfreebsd">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="roadmap">
+		<score>
+			0
+		</score>
+		<comment>
+			No roadmap published, just a TODO list.
+		</comment>
+	</element>
+	<element name="packagingdebian">
+		<score>
+			1
+		</score>
+		<comment>
+			A package exists in the &quot;testing&quot; distribution
+		</comment>
+	</element>
+	<element name="modificationofsourcecode">
+		<score>
+			1
+		</score>
+		<comment>
+			Source code available but no development guide or architecture document
+		</comment>
+	</element>
+	<element name="copyrightowners">
+		<score>
+			1
+		</score>
+	</element>
+	<element name="training">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="packagingnet">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="age">
+		<score>
+			2
+		</score>
+		<comment>
+			POSTGRES was started as an Berkeley University project in 1986 (based on Ingres started in 1977 and bougth by CA).  A SQL interpretor was added in 1994 and the whole code was open sourced first under the name of Postgres95 and then PostgreSQL in 1996. 
+		</comment>
+	</element>
+	<element name="popularity">
+		<score>
+			1
+		</score>
+		<comment>
+			PostgreSQL is popular among DBA, it hasn't been really adopted by all users yet. It's recent port on Windows should improve its adoption.
+		</comment>
+	</element>
+	<element name="modularity">
+		<score>
+			1
+		</score>
+	</element>
+	<element name="activityonbugs">
+		<score>
+			1
+		</score>
+		<comment>
+			No bug tracking tool and thus no global view and statictics. Everything passes via the mailing list.
+		</comment>
+	</element>
+	<element name="packagingopen">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="forkprobability">
+		<score>
+			1
+		</score>
+		<comment>
+			The BSD license theorically allows proprietary forks, however the large community existing around PostgreSQL reduces this risk
+		</comment>
+	</element>
+</qsosscore>
