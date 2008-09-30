@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="utf-8"?>
+<qsosscore>
+	<element name="consulting">
+		<score>
+			1
+		</score>
+		<comment>
+			Best Practical offre des services d'expertise (développement, installation) et d'hébergement.
+		</comment>
+	</element>
+	<element name="documentation">
+		<score>
+			1
+		</score>
+		<comment>
+			Documentation disponible sur le Wiki en anglais, avec séparation du public visé (installation, utilisation, administration).
+		</comment>
+	</element>
+	<element name="activityonreleases">
+		<score>
+			2
+		</score>
+		<comment>
+			Versions régulières (1 tous les 2 ou 3 mois), avec évolutions des branches 3.4 et 3.6 et développement de la branche 3.7.
+		</comment>
+	</element>
+	<element name="administrationmonitoring">
+		<score>
+			1
+		</score>
+		<comment>
+			Fonctionnalités d'administration disponible via l'interface Web. Pas de fonctionnalités de supervision et d'intégration avec des outils externes ou via SNMP.
+		</comment>
+	</element>
+	<element name="independenceofdevelopments">
+		<score>
+			0
+		</score>
+		<comment>
+			Les développeurs coeurs sont tous employés par la société « Best Practical ».
+		</comment>
+	</element>
+	<element name="roadmap">
+		<score>
+			1
+		</score>
+		<comment>
+			Présence d'une « Whishlist »dans le wiki (http://wiki.bestpractical.com/index.cgi?WishList), sans indication de dates.
+		</comment>
+	</element>
+	<element name="stability">
+		<score>
+			2
+		</score>
+		<comment>
+			Le logiciel est stabilisé.
+		</comment>
+	</element>
+	<element name="activityonfunctionalities">
+		<score>
+			1
+		</score>
+		<comment>
+			Activité décelable dans les listes de discussions, mais pas de suivi centralisé via un outil visible par la communauté.
+		</comment>
+	</element>
+	<element name="leadingteam">
+		<score>
+			2
+		</score>
+		<comment>
+			L'équipe dirigeante est constituée de plusieurs personnes toutes employées de la société « Best Practical » crée par le leader du projet RT.
+		</comment>
+	</element>
+	<element name="books">
+		<score>
+			1
+		</score>
+		<comment>
+			Il existe un livre publié chez O'Reilly.
+		</comment>
+	</element>
+	<element name="references">
+		<score>
+			2
+		</score>
+		<comment>
+			Nombreuses références, dont certaines prestigieuses comme le MIT, la NASA, le projet Perl. (cf. http://bestpractical.com/rt/praise.html)
+		</comment>
+	</element>
+	<element name="sponsor">
+		<score>
+			1
+		</score>
+		<comment>
+			Best Practical est le sponsor principal du projet qu'il développe.
+		</comment>
+	</element>
+	<element name="strategicalindependence">
+		<score>
+			0
+		</score>
+		<comment>
+			La stratégie de RT est intimement liée à celle de « Best Practical ».
+		</comment>
+	</element>
+	<element name="tools">
+		<score>
+			0
+		</score>
+		<comment>
+			Pas d'outil identifié pour la gestion de bogues.
+		</comment>
+	</element>
+	<element name="permissiveness">
+		<score>
+			0
+		</score>
+		<comment>
+			Licence GPL v2
+		</comment>
+	</element>
+	<element name="quality">
+		<score>
+			1
+		</score>
+		<comment>
+			Best Practical recommande de contribuer du code avec les tests de non régression adéquats. Pas de processus d'intégration continue identifié
+		</comment>
+	</element>
+	<element name="support">
+		<score>
+			1
+		</score>
+		<comment>
+			Best Practical propose du support sur RT.
+		</comment>
+	</element>
+	<element name="contributingcommunity">
+		<score>
+			2
+		</score>
+		<comment>
+			Forte activité sur les listes de discussion, nombreux articles et guides didactiques, nombreux outils, scripts ou templates complémentaires contribués par la communauté.
+		</comment>
+	</element>
+	<element name="codeextension">
+		<score>
+			2
+		</score>
+		<comment>
+			RT propose des fonctions de « callback » pour pouvoir modifier/étendre l'IHM sans toucher au code HTML d'origine. En outre il existe un système d' « Overlays » qui permet de surcharger des fonctions de base de RT, ainsi que la notion de « scrips » qui permet d'associer des templates et des actions à des évènements.
+		</comment>
+	</element>
+	<element name="managementstyle">
+		<score>
+			1
+		</score>
+		<comment>
+			Best Practical fait office de despote éclairé.
+		</comment>
+	</element>
+	<element name="easeofuseergonomics">
+		<score>
+			1
+		</score>
+		<comment>
+			Une fois l'installation passée, l'utilisation de RT est simple et intuitive.
+		</comment>
+	</element>
+	<element name="codemodification">
+		<score>
+			2
+		</score>
+		<comment>
+			La clarté du code source et la documentation des API permet de facilement modifier le logiciel.
+		</comment>
+	</element>
+	<element name="protectionagainstproprietaryforks">
+		<score>
+			2
+		</score>
+		<comment>
+			Licence GPL v2
+		</comment>
+	</element>
+	<element name="developersidentificationturnover">
+		<score>
+			2
+		</score>
+		<comment>
+			Une dizaine de développeurs identifiés via le SVN ou la liste « rt-commit ».
+		</comment>
+	</element>
+	<element name="modificationofsourcecode">
+		<score>
+			1
+		</score>
+	</element>
+	<element name="copyrightowners">
+		<score>
+			0
+		</score>
+		<comment>
+			Pour pouvoir contribuer du code, il faut accepter d'également donner les droits à l'entreprise « Best Practical ».
+		</comment>
+	</element>
+	<element name="training">
+		<score>
+			1
+		</score>
+		<comment>
+			Best Practical propose des formations en anglais aux états-unis comme en Europe.
+		</comment>
+	</element>
+	<element name="age">
+		<score>
+			2
+		</score>
+		<comment>
+			RT existe de puis 1996.
+		</comment>
+	</element>
+	<element name="popularity">
+		<score>
+			2
+		</score>
+		<comment>
+			Solution très populaire dans le monde Linux/Unix.
+		</comment>
+	</element>
+	<element name="modularity">
+		<score>
+			2
+		</score>
+		<comment>
+			Le code de RT est clair et modulaire (utilisation intensive de « Perl modules »).
+		</comment>
+	</element>
+	<element name="activityonbugs">
+		<score>
+			1
+		</score>
+		<comment>
+			Activité décelable dans les listes de discussions, mais pas de suivi centralisé via un outil visible par la communauté.
+		</comment>
+	</element>
+	<element name="forkprobability">
+		<score>
+			2
+		</score>
+		<comment>
+			Le projet a peu de chances d'être forké.
+		</comment>
+	</element>
+</qsosscore>
