@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<qsosheader>
+	<properties>
+		<licensedesc>
+			GNU GPL
+		</licensedesc>
+		<language>
+			fr
+		</language>
+		<appname>
+			OTRS
+		</appname>
+		<url>
+			http://www.otrs.org
+		</url>
+		<qsosspecificformat>
+			1.0
+		</qsosspecificformat>
+		<demourl>
+			http://otrs.org/demo/
+		</demourl>
+		<qsosappname>
+			otrs
+		</qsosappname>
+		<licenseid>
+			67
+		</licenseid>
+		<release>
+			2.1
+		</release>
+		<qsosformat>
+			2.0
+		</qsosformat>
+		<desc>
+			Solution de gestion de gestion d'incidents dans le cadre d'un support technique de type hotline
+		</desc>
+	</properties>
+	<families>
+		<family>
+			Bugtracker
+		</family>
+	</families>
+</qsosheader>
