@@ -1,0 +1,381 @@
+<?xml version="1.0" encoding="utf-8"?>
+<qsosscore>
+	<element name="jsr181">
+		<score>
+			0
+		</score>
+		<comment>
+			En cours (Extension Projet BeeHive). Prévue pour version 1.2
+		</comment>
+	</element>
+	<element name="ws-security-policy">
+		<score>
+			2
+		</score>
+		<comment>
+			Module WSS4J project
+		</comment>
+	</element>
+	<element name="xmpp">
+		<score>
+			0
+		</score>
+		<comment>
+			Non
+		</comment>
+	</element>
+	<element name="ws-reliable-messaging">
+		<score>
+			2
+		</score>
+		<comment>
+			Supporté (Module Apache-Sandesha2)
+		</comment>
+	</element>
+	<element name="asynchronous-callback">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="tcp">
+		<score>
+			2
+		</score>
+		<comment>
+			Supporté
+		</comment>
+	</element>
+	<element name="mtom-xop">
+		<score>
+			2
+		</score>
+		<comment>
+			Support complet de MTOM
+		</comment>
+	</element>
+	<element name="wsdl-1_1">
+		<score>
+			2
+		</score>
+		<comment>
+			Supporté
+		</comment>
+	</element>
+	<element name="jsr101-jee5">
+		<score>
+			0
+		</score>
+		<comment>
+			Non supporté
+		</comment>
+	</element>
+	<element name="eclipse-support">
+		<score>
+			2
+		</score>
+		<comment>
+			Plugin Eclipse (WSDL2JAVA/JAVA2WSDL), Création d'archives
+		</comment>
+	</element>
+	<element name="jaxr">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="soap-1_2">
+		<score>
+			2
+		</score>
+		<comment>
+			Supporté
+		</comment>
+	</element>
+	<element name="soap-1_1">
+		<score>
+			2
+		</score>
+		<comment>
+			Supporté
+		</comment>
+	</element>
+	<element name="jsr67_saaj-1_3">
+		<score>
+			1
+		</score>
+		<comment>
+			Support incomplet (SAAJ 1.1)
+		</comment>
+	</element>
+	<element name="jsr67_saaj-1_2">
+		<score>
+			1
+		</score>
+		<comment>
+			Support incomplet (SAAJ 1.1)
+		</comment>
+	</element>
+	<element name="ws-i">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="ftp">
+		<score>
+			0
+		</score>
+		<comment>
+			Non supporté
+		</comment>
+	</element>
+	<element name="ws-atomic-transaction">
+		<score>
+			2
+		</score>
+		<comment>
+			Supporté (Module Apache-Kandula2)
+		</comment>
+	</element>
+	<element name="stats">
+		<score>
+			1
+		</score>
+		<comment>
+			Via la console d'admin du serveur d'applications
+		</comment>
+	</element>
+	<element name="ws-secure-conversation">
+		<score>
+			1
+		</score>
+		<comment>
+			En cours de développement (Module Apache Rahas)
+		</comment>
+	</element>
+	<element name="ws-trust">
+		<score>
+			1
+		</score>
+		<comment>
+			En cours de développement (Module Apache Rahas)
+		</comment>
+	</element>
+	<element name="swa">
+		<score>
+			2
+		</score>
+		<comment>
+			Supporté
+		</comment>
+	</element>
+	<element name="jaxr1_0">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="wsdl2java">
+		<score>
+			2
+		</score>
+		<comment>
+			Génération client et serveur
+		</comment>
+	</element>
+	<element name="ws-metadata-exchange">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="ws-coordination">
+		<score>
+			2
+		</score>
+		<comment>
+			Supporté (Module Apache-Kandula2)
+		</comment>
+	</element>
+	<element name="jsr224">
+		<score>
+			1
+		</score>
+		<comment>
+			Incomplet
+		</comment>
+	</element>
+	<element name="java2wsdl">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="jsr921-109">
+		<score>
+			0
+		</score>
+		<comment>
+			Non supporté
+		</comment>
+	</element>
+	<element name="http">
+		<score>
+			2
+		</score>
+		<comment>
+			Supporté
+		</comment>
+	</element>
+	<element name="deploy">
+		<score>
+			2
+		</score>
+		<comment>
+			Déploiement à chaud
+		</comment>
+	</element>
+	<element name="netbeans-support">
+		<score>
+			1
+		</score>
+		<comment>
+			Non supporté
+		</comment>
+	</element>
+	<element name="jms">
+		<score>
+			2
+		</score>
+		<comment>
+			Supporté
+		</comment>
+	</element>
+	<element name="ws-security">
+		<score>
+			2
+		</score>
+		<comment>
+			Module WSS4J project
+		</comment>
+	</element>
+	<element name="vm">
+		<score>
+			0
+		</score>
+		<comment>
+			Très simple à ecrire
+		</comment>
+	</element>
+	<element name="uddi">
+		<score>
+			2
+		</score>
+		<comment>
+			Possibilité d'accès annuaires UDDI 2.0 via JAXR
+		</comment>
+	</element>
+	<element name="soap-header-parameter-implicit-explicit-contexts-support">
+		<score>
+			1
+		</score>
+	</element>
+	<element name="ebXML">
+		<score>
+			2
+		</score>
+		<comment>
+			Possibilité d'accès à des annuaires UDDI 2.0 via JAXR
+		</comment>
+	</element>
+	<element name="lifecycleManagement">
+		<score>
+			2
+		</score>
+		<comment>
+			Console d'admin : arrêt/démarrage, activation/désactivation, ajout de modules
+		</comment>
+	</element>
+	<element name="marshalling-unmarshalling-java-soap">
+		<score>
+			2
+		</score>
+		<comment>
+			ADB, JIBX, XMLBeans
+		</comment>
+	</element>
+	<element name="idea-support">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="handlers">
+		<score>
+			2
+		</score>
+		<comment>
+			Intercepteurs
+		</comment>
+	</element>
+	<element name="build-integration">
+		<score>
+			2
+		</score>
+		<comment>
+			Ligne de commande (Ant), Plugin Maven2
+		</comment>
+	</element>
+	<element name="ws-addressing">
+		<score>
+			2
+		</score>
+		<comment>
+			Oui par module
+		</comment>
+	</element>
+	<element name="jsr109">
+		<score>
+			1
+		</score>
+		<comment>
+			Incomplet
+		</comment>
+	</element>
+	<element name="ws-policy">
+		<score>
+			2
+		</score>
+		<comment>
+			Utilise WS-Commons/Neethi framework
+		</comment>
+	</element>
+	<element name="wsdl-2_0">
+		<score>
+			2
+		</score>
+		<comment>
+			Supporté
+		</comment>
+	</element>
+	<element name="jsr101">
+		<score>
+			0
+		</score>
+		<comment>
+			Non supporté
+		</comment>
+	</element>
+	<element name="xml-rpc">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="basic-profile">
+		<score>
+			2
+		</score>
+		<comment>
+			Support complet
+		</comment>
+	</element>
+	<element name="jsr222">
+		<comment>
+			1
+		</comment>
+	</element>
+</qsosscore>
