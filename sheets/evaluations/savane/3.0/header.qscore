@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<qsosheader>
+	<properties>
+		<licensedesc>
+			GNU GPL
+		</licensedesc>
+		<language>
+			fr
+		</language>
+		<appname>
+			Savane
+		</appname>
+		<url>
+			https://gna.org/projects/savane/
+		</url>
+		<qsosspecificformat>
+			N/A
+		</qsosspecificformat>
+		<demourl>
+			N/A
+		</demourl>
+		<qsosappname>
+			savane
+		</qsosappname>
+		<licenseid>
+			67
+		</licenseid>
+		<release>
+			3.0
+		</release>
+		<qsosformat>
+			2.0
+		</qsosformat>
+		<desc>
+			Savane est une forge libre utilisée et développée pour les hébergeurs de projets libres Gna! et Savannah, issue du fork de SourceForge, écrite en PHP et Perl et reposant sur le SGBDR MySQL
+		</desc>
+	</properties>
+	<families>
+		<family>
+			Forge
+		</family>
+	</families>
+</qsosheader>
