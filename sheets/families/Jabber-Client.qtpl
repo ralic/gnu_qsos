@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<qsosappfamily>
+	<include>im-client-gui</include>
+	<include>im-protocol-jabber</include>
+</qsosappfamily>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<qsosappfamily>
+	<include>webappprerequisite</include>
+	<include>websecurity</include>
+	<include>storagesupport</include>
+	<include>webcompatibility</include>
+	<include>userinterface</include>
+	<include>webcontentmanagement</include>
+	<include>wikifunctionnalities</include>
+</qsosappfamily>
