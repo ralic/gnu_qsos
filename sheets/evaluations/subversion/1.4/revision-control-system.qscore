@@ -1,0 +1,343 @@
+<?xml version="1.0" encoding="utf-8"?>
+<qsosscore>
+	<element name="linewisehistory">
+		<score>
+			2
+		</score>
+		<comment>
+			svn blame
+		</comment>
+	</element>
+	<element name="repositoryreplication">
+		<score>
+			2
+		</score>
+		<comment>
+			 Via SVN::Mirror script or the svn-push utility
+		</comment>
+	</element>
+	<element name="brachingmerging">
+		<score>
+			1
+		</score>
+		<comment>
+			No automatic conflict resolution
+		</comment>
+	</element>
+	<element name="smtp">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="trackingucommited">
+		<score>
+			2
+		</score>
+		<comment>
+			svn diff
+		</comment>
+	</element>
+	<element name="rpc">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="webinterface">
+		<score>
+			2
+		</score>
+		<comment>
+			Chora, SVN::Web, WebSVN, ViewSVN, mod svn view, SVN::RaWeb::Light, SVN Browser, Insurrection
+		</comment>
+	</element>
+	<element name="preeventtriggers">
+		<score>
+			1
+		</score>
+		<comment>
+			start-commit, pre-commit, pre-revprop-change, 
+		</comment>
+	</element>
+	<element name="file">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="sshtunneling">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="webdav">
+		<score>
+			2
+		</score>
+		<comment>
+			With Apache httpd-2.0 and mod_dav_svn module the following WebDAV/DeltaV commands are supported: OPTIONS, PROPFIND, GET, REPORT, MKACTIVITY, PROPPATCH, PUT, CHECKOUT, MKCOL, MOVE, COPY, DELETE, LOCK, UNLOCK, MERGE
+		</comment>
+	</element>
+	<element name="ftp">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="repositorysync">
+		<score>
+			2
+		</score>
+		<comment>
+			 Via SVN::Mirror script or the svn-push utility
+		</comment>
+	</element>
+	<element name="rdbms">
+		<score>
+			2
+		</score>
+		<comment>
+			Via Apache 2
+		</comment>
+	</element>
+	<element name="bugtrackersintegration">
+		<score>
+			2
+		</score>
+		<comment>
+			Bugzilla, Trac, Scarab, Subissue, Scmbug, Collaboa, Mantis, RT3, ...
+		</comment>
+	</element>
+	<element name="posteventtriggers">
+		<score>
+			1
+		</score>
+		<comment>
+			post-commit, post-revprop-change
+		</comment>
+	</element>
+	<element name="visualinterface">
+		<score>
+			1
+		</score>
+		<comment>
+			SVNManager (PHP frontend, http://svnmanager.sourceforge.net)
+		</comment>
+	</element>
+	<element name="filemanager">
+		<score>
+			2
+		</score>
+		<comment>
+			KSvn, KdeSVN (Konqueror), NaughtySVN (Gnome nautilus), TurtoiseSVN (WIndows explorer), SCPlugin (Mac OS X Finder).
+		</comment>
+	</element>
+	<element name="repositoryhistory">
+		<score>
+			2
+		</score>
+		<comment>
+			svn log
+		</comment>
+	</element>
+	<element name="perfilemessage">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="fsprotocols">
+		<score>
+			2
+		</score>
+		<comment>
+			Via use of FSFS, an alternative to BerkleyDB backend, repositories can be stored on NFS or SAMBA servers.
+		</comment>
+	</element>
+	<element name="ideintegration">
+		<score>
+			2
+		</score>
+		<comment>
+			Plugins are available for most knowed IDE: Subclipse (Eclipse), VisualSBN (Visual Studio), AnkhSVN (Visual Studio .NET), Svn-Up (IDEA), Oracle JDeveloper, WLW-SVN (Weblogic Workshop 8), NetBeans, Delphi, Dreamweaver, CodeWarrior, ...
+		</comment>
+	</element>
+	<element name="metaproject">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="showdifferences">
+		<score>
+			1
+		</score>
+		<comment>
+			svn diff
+		</comment>
+	</element>
+	<element name="ldap">
+		<score>
+			2
+		</score>
+		<comment>
+			Via Apache 2
+		</comment>
+	</element>
+	<element name="graphicalclients">
+		<score>
+			2
+		</score>
+		<comment>
+			There are many available GUIs: RapidSVN (cross-platform), TortoiseSVN (Windows Explorer plug-in), JSVN (Java), Kdesvn, ... (cf. http://svnbook.red-bean.com/en/1.1/apd.html)
+		</comment>
+	</element>
+	<element name="notifications">
+		<score>
+			1
+		</score>
+		<comment>
+			Email, RSS (SVNFeed), Jabber, svnlog
+		</comment>
+	</element>
+	<element name="atomiccommits">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="http">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="distributedversioncontrol">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="officesuite">
+		<score>
+			0
+		</score>
+		<comment>
+			Une project plans to work on Microsoft Office integration (http://officesvn.tigris.org)
+		</comment>
+	</element>
+	<element name="changemanagement">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="directorycheckout">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="versionmerging">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="copy">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="disconnectedmode">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="tagging">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="propprotocol">
+		<score>
+			2
+		</score>
+		<comment>
+			When svnserve is configured
+		</comment>
+	</element>
+	<element name="changesets">
+		<score>
+			1
+		</score>
+		<comment>
+			Partial support. There are implicit changesets that are generated on each commit.
+		</comment>
+	</element>
+	<element name="tcpsocket">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="filehistory">
+		<score>
+			2
+		</score>
+		<comment>
+			svn log filename
+		</comment>
+	</element>
+	<element name="availableapis">
+		<score>
+			2
+		</score>
+		<comment>
+			Native C API with C++, Python, Ruby, Perl, Java, PHP, C# language bindings 
+		</comment>
+	</element>
+	<element name="forgeintegration">
+		<score>
+			2
+		</score>
+		<comment>
+			GForge, Savane, LibreSource, PicoForge, JBoss Forge, JIRA, SourceForge, Rational Build Forge
+		</comment>
+	</element>
+	<element name="filelocking">
+		<score>
+			1
+		</score>
+		<comment>
+			Reserved check-out are available since 1.2 release
+		</comment>
+	</element>
+	<element name="audittrail">
+		<score>
+			1
+		</score>
+		<comment>
+			Statistics (Scmstat, CVSAnalY), svnlook, scmwatch, JBoss provides a Java portlet to monitor Subversion (http://labs.jboss.com/portal/kosmos)
+		</comment>
+	</element>
+	<element name="moveorrename">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="cli">
+		<score>
+			2
+		</score>
+		<comment>
+			svnlook, svnadmin
+		</comment>
+	</element>
+	<element name="repopermissions">
+		<score>
+			1
+		</score>
+		<comment>
+			With mod_authz_svn Apache module
+		</comment>
+	</element>
+	<element name="sslsupport">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="delete">
+		<score>
+			2
+		</score>
+	</element>
+</qsosscore>
