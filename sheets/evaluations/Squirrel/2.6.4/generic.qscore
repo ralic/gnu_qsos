@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<qsosscore>
+	<element name="consulting">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="documentation">
+		<score>
+			1
+		</score>
+		<comment>
+			Very poor
+		</comment>
+	</element>
+	<element name="activityonreleases">
+		<score>
+			1
+		</score>
+	</element>
+	<element name="packaginghpux">
+		<score>
+			2
+		</score>
+		<comment>
+			Plateform Independant
+		</comment>
+	</element>
+	<element name="stability">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="activityonfunctionalities">
+		<score>
+			1
+		</score>
+	</element>
+	<element name="leadingteam">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="books">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="references">
+		<score>
+			1
+		</score>
+	</element>
+	<element name="packagingmandriva">
+		<score>
+			2
+		</score>
+		<comment>
+			Plateform Independant
+		</comment>
+	</element>
+	<element name="packagingsolaris">
+		<score>
+			2
+		</score>
+		<comment>
+			Plateform Independant
+		</comment>
+	</element>
+	<element name="support">
+		<score>
+			1
+		</score>
+	</element>
+	<element name="contributingcommunity">
+		<score>
+			1
+		</score>
+	</element>
+	<element name="packagingwindows">
+		<score>
+			2
+		</score>
+		<comment>
+			Plateform Independant
+		</comment>
+	</element>
+	<element name="easeofuseergonomics">
+		<score>
+			1
+		</score>
+	</element>
+	<element name="packagingsuse">
+		<score>
+			2
+		</score>
+		<comment>
+			Plateform Independant
+		</comment>
+	</element>
+	<element name="packagingmacosx">
+		<score>
+			2
+		</score>
+		<comment>
+			Plateform Independant
+		</comment>
+	</element>
+	<element name="packagingredhat">
+		<score>
+			2
+		</score>
+		<comment>
+			Plateform Independant
+		</comment>
+	</element>
+	<element name="packagingsource">
+		<score>
+			2
+		</score>
+		<comment>
+			Plateform Independant
+		</comment>
+	</element>
+	<element name="developersidentificationturnover">
+		<score>
+			2
+		</score>
+		<comment>
+			26 developpers
+		</comment>
+	</element>
+	<element name="packagingfreebsd">
+		<score>
+			2
+		</score>
+		<comment>
+			Plateform Independant
+		</comment>
+	</element>
+	<element name="roadmap">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="packagingdebian">
+		<score>
+			2
+		</score>
+		<comment>
+			Plateform Independant
+		</comment>
+	</element>
+	<element name="modificationofsourcecode">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="historyknownproblems">
+		<score>
+			1
+		</score>
+	</element>
+	<element name="training">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="packagingnet">
+		<score>
+			2
+		</score>
+		<comment>
+			Plateform Independant
+		</comment>
+	</element>
+	<element name="age">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="popularity">
+		<score>
+			1
+		</score>
+	</element>
+	<element name="activityonbugs">
+		<score>
+			1
+		</score>
+	</element>
+	<element name="packagingopen">
+		<score>
+			2
+		</score>
+		<comment>
+			Plateform Independant
+		</comment>
+	</element>
+	<element name="forkprobability">
+		<score>
+			1
+		</score>
+	</element>
+</qsosscore>
