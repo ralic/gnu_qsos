@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<qsosscore>
+	<element name="activityonfunctionalities">
+		<score>
+			1
+		</score>
+	</element>
+	<element name="consulting">
+		<score>
+			1
+		</score>
+	</element>
+	<element name="easeofuseergonomics">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="activityonreleases">
+		<score>
+			1
+		</score>
+	</element>
+	<element name="administrationmonitoring">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="independenceofdevelopments">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="roadmap">
+		<score>
+			1
+		</score>
+		<comment>
+			http://community.pentaho.org/roadmap/
+		</comment>
+	</element>
+	<element name="stability">
+		<score>
+			2
+		</score>
+		<comment>
+			Projet ayant été intégré a Pentaho sous le nom Pentaho Data Integration
+		</comment>
+	</element>
+	<element name="protectionagainstproprietaryforks">
+		<score>
+			0
+		</score>
+		<comment>
+			Faible du fait de l'appartenance au projet Pentaho
+		</comment>
+	</element>
+	<element name="leadingteam">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="books">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="references">
+		<score>
+			1
+		</score>
+		<comment>
+			Seulement deux références commercailes
+		</comment>
+	</element>
+	<element name="sponsor">
+		<score>
+			1
+		</score>
+		<comment>
+			Projet intégré dans Pentaho
+		</comment>
+	</element>
+	<element name="developersidentificationturnover">
+		<score>
+			0
+		</score>
+		<comment>
+			1 personne clairement identifiée, réactive
+		</comment>
+	</element>
+	<element name="strategicalindependence">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="codemodification">
+		<score>
+			1
+		</score>
+	</element>
+	<element name="tools">
+		<score>
+			1
+		</score>
+	</element>
+	<element name="documentation">
+		<score>
+			2
+		</score>
+		<comment>
+			Documentation électronique en plusieurs langues (en,it,es,cn,pt), quelques &quot;Technical Whitepapers&quot;
+		</comment>
+	</element>
+	<element name="modificationofsourcecode">
+		<score>
+			0
+		</score>
+		<comment>
+			Pas de documentation UML hors communauté
+		</comment>
+	</element>
+	<element name="copyrightowners">
+		<score>
+			0
+		</score>
+		<comment>
+			Droit d'auteur détenu par Pentaho Corporation http://community.pentaho.org/contributors/contributor_agreement.php
+		</comment>
+	</element>
+	<element name="training">
+		<score>
+			1
+		</score>
+		<comment>
+			Formations proposées aux US, Allemagne
+		</comment>
+	</element>
+	<element name="permissiveness">
+		<score>
+			1
+		</score>
+		<comment>
+			Mozilla Public License version 1.1
+		</comment>
+	</element>
+	<element name="quality">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="support">
+		<score>
+			1
+		</score>
+		<comment>
+			Support téléphonique proposé
+		</comment>
+	</element>
+	<element name="popularity">
+		<score>
+			1
+		</score>
+		<comment>
+			Communauté d'utilisateurs active mais proportionnelle aux nombres d'utilisateurs d' outils ETL propriétaires, c a d faible, cependant l'intégration au projet Pentaho lui donne une forte visibilité
+		</comment>
+	</element>
+	<element name="contributingcommunity">
+		<score>
+			1
+		</score>
+		<comment>
+			Communauté d'utilisateurs uniquement
+		</comment>
+	</element>
+	<element name="activityonbugs">
+		<score>
+			1
+		</score>
+		<comment>
+			Bonne réactivité générale
+		</comment>
+	</element>
+	<element name="managementstyle">
+		<score>
+			1
+		</score>
+	</element>
+	<element name="age">
+		<score>
+			2
+		</score>
+		<comment>
+			Age exact non documenté
+		</comment>
+	</element>
+	<element name="forkprobability">
+		<score>
+			2
+		</score>
+		<comment>
+			Logiciel intégré dans la suite Pentaho, projet développé par une société
+		</comment>
+	</element>
+	<element name="modularity">
+		<comment>
+			Non testée
+		</comment>
+	</element>
+	<element name="codeextension">
+		<comment>
+			Non testée
+		</comment>
+	</element>
+</qsosscore>
