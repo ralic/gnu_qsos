@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<qsosheader>
+	<properties>
+		<licensedesc>
+			GNU GPL
+		</licensedesc>
+		<language>
+			en
+		</language>
+		<appname>
+			TOra
+		</appname>
+		<url>
+			http://tora.sourceforge.net/
+		</url>
+		<qsosspecificformat>
+			1.0
+		</qsosspecificformat>
+		<demourl>
+			N/A
+		</demourl>
+		<qsosappname>
+			Tora
+		</qsosappname>
+		<licenseid>
+			31
+		</licenseid>
+		<release>
+			1.3.21
+		</release>
+		<qsosformat>
+			2.0
+		</qsosformat>
+		<desc>
+			Get help developing database applications.
+		</desc>
+	</properties>
+	<families>
+		<family>
+			Dbtools
+		</family>
+	</families>
+</qsosheader>

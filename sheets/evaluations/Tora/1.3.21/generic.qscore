@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<qsosscore>
+	<element name="consulting">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="documentation">
+		<score>
+			1
+		</score>
+		<comment>
+			on-line help unavailable
+		</comment>
+	</element>
+	<element name="activityonreleases">
+		<score>
+			1
+		</score>
+	</element>
+	<element name="administrationmonitoring">
+		<score>
+			1
+		</score>
+	</element>
+	<element name="independenceofdevelopments">
+		<score>
+			1
+		</score>
+		<comment>
+			Quest Software Inc at the beginning
+		</comment>
+	</element>
+	<element name="packaginghpux">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="stability">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="leadingteam">
+		<score>
+			1
+		</score>
+	</element>
+	<element name="books">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="references">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="packagingmandriva">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="packagingsolaris">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="support">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="contributingcommunity">
+		<score>
+			1
+		</score>
+	</element>
+	<element name="packagingwindows">
+		<score>
+			2
+		</score>
+		<comment>
+			All 32 bit Windows only 
+		</comment>
+	</element>
+	<element name="easeofuseergonomics">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="packagingsuse">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="packagingmacosx">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="packagingredhat">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="packagingsource">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="activityonfunctionalities">
+		<score>
+			1
+		</score>
+	</element>
+	<element name="packagingfreebsd">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="packagingdebian">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="historyknownproblems">
+		<score>
+			1
+		</score>
+	</element>
+	<element name="training">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="packagingnet">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="age">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="popularity">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="modularity">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="activityonbugs">
+		<score>
+			1
+		</score>
+	</element>
+	<element name="packagingopen">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="forkprobability">
+		<score>
+			1
+		</score>
+	</element>
+</qsosscore>

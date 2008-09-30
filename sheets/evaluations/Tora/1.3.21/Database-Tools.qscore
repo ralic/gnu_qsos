@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<qsosscore>
+	<element name="coracle">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="views">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="csybase">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="resultsaving">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="scriptgenerator">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="snapshots">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="triggersedit">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="datagrid">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="synonyms">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="dblinks">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="standardsupport">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="cingres">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="indexes">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="procedures">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="constraints">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="sequencesedit">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="querytool">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="migrationtool">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="csqlserver">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="objectbrowser">
+		<score>
+			2
+		</score>
+		<comment>
+			Creation, Update and Deletion of objects are possible
+		</comment>
+	</element>
+	<element name="optimizetool">
+		<score>
+			1
+		</score>
+		<comment>
+			Explain plan, tuning, statistics
+		</comment>
+	</element>
+	<element name="cmysql">
+		<score>
+			1
+		</score>
+	</element>
+	<element name="cdb2">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="cpostgres">
+		<score>
+			1
+		</score>
+	</element>
+	<element name="adminoptions">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="scriptsaving">
+		<score>
+			2
+		</score>
+	</element>
+</qsosscore>
