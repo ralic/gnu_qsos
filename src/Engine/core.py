@@ -85,9 +85,10 @@ def submit(data):#, author, email, comment):
         
         #Generate .qscore files into repository
         scores = splitter.parse(document, PATH)
-        
+        print scores
         for file in scores :
             repository[file] = scores[file]
+            
     
     #Make a commit with proper parameters
     repository.commit("%s added %s into %s.\n%s" % (Author, data['File'].filename, data['Type'], data['Description']),
