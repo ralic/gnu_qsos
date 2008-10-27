@@ -8,7 +8,7 @@
          </author>
       </authors>
       <dates>
-         <creation>2008-10-24</creation>
+         <creation>2008-10-15</creation>
          <validation></validation>
       </dates>
       <language>en</language>
@@ -700,7 +700,7 @@ http://www.openldap.org/foundation/sponsors.html</comment>
                <desc0>Not implemented</desc0>
                <desc1>Partially implemented</desc1>
                <desc2>Fully implemented</desc2>
-               <score></score>
+               <score>2</score>
                <comment></comment>
             </element>
             <element name="rfc4527implementation" title="RFC 4527 implementation">
@@ -886,7 +886,7 @@ http://www.openldap.org/foundation/sponsors.html</comment>
          <desc0>No console of administration is available</desc0>
          <desc1>Limited and incomplete administration console</desc1>
          <desc2>Complete administration console</desc2>
-         <score></score>
+         <score>0</score>
          <comment></comment>
       </element>
       <element name="scriptsadministration" title="Administration scripts">

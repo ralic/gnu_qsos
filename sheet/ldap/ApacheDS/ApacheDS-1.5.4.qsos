@@ -8,7 +8,7 @@
          </author>
       </authors>
       <dates>
-         <creation>2008-10-24</creation>
+         <creation>2008-10-15</creation>
          <validation></validation>
       </dates>
       <language>en</language>
@@ -684,7 +684,7 @@
                <desc0>Not implemented</desc0>
                <desc1>Partially implemented</desc1>
                <desc2>Fully implemented</desc2>
-               <score></score>
+               <score>1</score>
                <comment>Supported</comment>
             </element>
             <element name="rfc2247implementation" title="RFC 2247 implementation">
@@ -692,7 +692,7 @@
                <desc0>Not implemented</desc0>
                <desc1>Partially implemented</desc1>
                <desc2>Fully implemented</desc2>
-               <score></score>
+               <score>2</score>
                <comment></comment>
             </element>
             <element name="rfc4527implementation" title="RFC 4527 implementation">
