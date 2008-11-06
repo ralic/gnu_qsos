@@ -72,7 +72,7 @@
                <desc0>None</desc0>
                <desc1>Few refences, non critical usages</desc1>
                <desc2>Often implemented for critical applications</desc2>
-               <score>2</score>
+               <score>1</score>
                <comment></comment>
             </element>
             <element name="contributingcommunity" title="Contributing Community">
@@ -176,7 +176,7 @@
             <desc0>No user documentation</desc0>
             <desc1>Documentation exists but shifted in time, is restricted to one language or is poorly detailed</desc1>
             <desc2>Documentation always up to date, translated and possibly adapted to different target readers (end user, sysadmin, manager, ...)</desc2>
-            <score>2</score>
+            <score>1</score>
             <comment></comment>
          </element>
          <element name="qualityassurance" title="Quality Assurance">
@@ -307,7 +307,7 @@
             <desc0>Monolithic software</desc0>
             <desc1>Presence of hight level modules allowing a first level of software adaptation</desc1>
             <desc2>Modular conception, allowing easy adaptation of the software by selecting or creating modules</desc2>
-            <score>2</score>
+            <score>1</score>
             <comment></comment>
          </element>
          <element name="codemodification" title="Code modification">
@@ -877,7 +877,7 @@
          <desc0>No console of administration is available</desc0>
          <desc1>Limited and incomplete administration console</desc1>
          <desc2>Complete administration console</desc2>
-         <score>2</score>
+         <score>1</score>
          <comment></comment>
       </element>
       <element name="scriptsadministration" title="Administration scripts">
@@ -923,7 +923,7 @@
                <desc0>No configuration of the password template</desc0>
                <desc1>Some rules are implemented</desc1>
                <desc2>All rules are implemented</desc2>
-               <score>2</score>
+               <score>1</score>
                <comment></comment>
             </element>
          </element>
@@ -953,7 +953,7 @@
          <desc0>Don't generate any monitoring file</desc0>
          <desc1>Monitoring file generation doesn't work correctly</desc1>
          <desc2>Many options are available to define monitoring</desc2>
-         <score>2</score>
+         <score>1</score>
          <comment>http://directory.fedoraproject.org/wiki/Performance_Tuning</comment>
       </element>
       <element name="integrationdevelopmentenvironment" title="Integration Development Environment">
@@ -980,7 +980,7 @@
             <desc0>No port management</desc0>
             <desc1>Some ports are configurable</desc1>
             <desc2>All ports are configurable</desc2>
-            <score>2</score>
+            <score>1</score>
             <comment></comment>
          </element>
          <element name="partitionmanagement" title="Partition management">
@@ -988,7 +988,7 @@
             <desc0>Standard installation available</desc0>
             <desc1>Configurable installation available</desc1>
             <desc2>Powerful installation and architecture available</desc2>
-            <score>2</score>
+            <score>1</score>
             <comment></comment>
          </element>
       </element>
