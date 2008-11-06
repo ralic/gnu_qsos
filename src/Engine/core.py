@@ -85,9 +85,17 @@ def submit(data):#, author, email, comment):
         
         #Generate .qscore files into repository
         scores = splitter.parse(document, PATH)
-        print scores
         for file in scores :
             repository[file] = scores[file]
+            target = os.path.join(PATH, file)
+            targetParent = "/".join(target.split("/")[0:-1])
+            if not os.path.exists(targetParent) :
+                os.mkdir(targetParent)
+            qscore = open(target,'w')
+            qscore.write(scores[file])
+            qscore.close()
+            
+
             
     
     #Make a commit with proper parameters
