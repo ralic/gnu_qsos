@@ -1,0 +1,357 @@
+<?xml version="1.0" encoding="utf-8"?>
+<qsosscore>
+	<element name="jsr181">
+		<score>
+			1
+		</score>
+		<comment>
+			Le support est annoncé sur beehive (WSM) par exemple
+		</comment>
+	</element>
+	<element name="ws-security-policy">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="xmpp">
+		<score>
+			1
+		</score>
+		<comment>
+			expérimental
+		</comment>
+	</element>
+	<element name="jsr222">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="asynchronous-callback">
+		<score>
+			0
+		</score>
+		<comment>
+			 Bien que les sessions soient supportées, les appels asynchrones ne le sont pas. 
+		</comment>
+	</element>
+	<element name="tcp">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="mtom-xop">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="wsdl-1_1">
+		<score>
+			2
+		</score>
+		<comment>
+			 Le WSDL est exposé (en utilisant ?wsdl&quot; à la fin de l'url).
+		</comment>
+	</element>
+	<element name="jsr101-jee5">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="eclipse-support">
+		<score>
+			2
+		</score>
+		<comment>
+			De nombreux plugins existent pour Eclipse. Ils sont très complets :de la génération de code et wsdl jusqu'à la validation WS-I et le contrôle de traffique SOAP.cf. http://wiki.apache.org/ws/FrontPage/Axis/IDEIntegration
+		</comment>
+	</element>
+	<element name="jaxr">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="soap-1_2">
+		<score>
+			2
+		</score>
+		<comment>
+			Axis 1.4 est annoncé comme étant un moteur &quot;SOAP 1.1/1.2 compliant&quot;, mais bien que supportant SOAP 1.2, il a été principalement prévu/conçu pour être utilisé avec SOAP 1.1  (ce qui est requis pour le support de WS-I BP).
+		</comment>
+	</element>
+	<element name="soap-1_1">
+		<score>
+			2
+		</score>
+		<comment>
+			Axis 1.4 est annoncé comme étant un moteur &quot;SOAP 1.1/1.2 compliant&quot;, mais bien que supportant SOAP 1.2, il a été principalement prévu/conçu pour être utilisé avec SOAP 1.1  (ce qui est requis pour le support de WS-I BP).
+		</comment>
+	</element>
+	<element name="jsr67_saaj-1_3">
+		<score>
+			1
+		</score>
+		<comment>
+			Seul les tests SAAJ 1.1 ont été passés
+		</comment>
+	</element>
+	<element name="jsr67_saaj-1_2">
+		<score>
+			1
+		</score>
+		<comment>
+			Les tests SAAJ TCK (Technology Compatibility Kit) 1.1 ont été complétés.cf. http://wiki.apache.org/ws/FrontPage/Axis/StandardsSupported
+		</comment>
+	</element>
+	<element name="ws-i">
+		<score>
+			2
+		</score>
+		<comment>
+			Cela permet entre autre à Axis de gérer les sessions par cookies http.
+		</comment>
+	</element>
+	<element name="ftp">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="ws-atomic-transaction">
+		<score>
+			1
+		</score>
+		<comment>
+			Implémenté dans le plugin Kandula (http://ws.apache.org/kandula/). Kandula est une brique open-source qui implémente cette spécification, et est basé sur axis1.X
+		</comment>
+	</element>
+	<element name="stats">
+		<score>
+			1
+		</score>
+		<comment>
+			Un utilitaire nommé tcpmon est disponible dans le paquetage org.apache.axis.utils, il permet de mettre en place un proxy et de suivre/debugger/rejouer les requêtes SOAP http.De plus un autre outil de contrôle pur: SOAP Monitor permet de contrôler les requêtes et les réponses à travers une  applet.
+		</comment>
+	</element>
+	<element name="ws-secure-conversation">
+		<score>
+			1
+		</score>
+		<comment>
+			Pas de documentation trouvée, mais la javadoc indique que ConversationServerHandler implémente WS-Secure Conversation pour Axis. Implémentation WSS4J ?
+		</comment>
+	</element>
+	<element name="ws-trust">
+		<score>
+			1
+		</score>
+		<comment>
+			Le support serait en cours de développement. Implémentation WSS4J ?
+		</comment>
+	</element>
+	<element name="swa">
+		<score>
+			2
+		</score>
+		<comment>
+			DIME est également supporté
+		</comment>
+	</element>
+	<element name="jaxr1_0">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="wsdl2java">
+		<score>
+			2
+		</score>
+		<comment>
+			Bonne granularité dans les outils de génération.
+		</comment>
+	</element>
+	<element name="ws-metadata-exchange">
+		<score>
+			0
+		</score>
+		<comment>
+			Seul le WSDL est exposé.
+		</comment>
+	</element>
+	<element name="ws-coordination">
+		<score>
+			1
+		</score>
+		<comment>
+			Implémenté dans le plugin Kandula (http://ws.apache.org/kandula/). Kandula est une brique open-source qui implémente cette spécification, et est basé sur axis1.X
+		</comment>
+	</element>
+	<element name="jsr224">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="java2wsdl">
+		<score>
+			2
+		</score>
+		<comment>
+			Bon niveau de configuration de l'outil.
+		</comment>
+	</element>
+	<element name="jsr921-109">
+		<score>
+			0
+		</score>
+		<comment>
+			Axis1.4 affiche clairement sa non-compatibilité JSR 109.
+		</comment>
+	</element>
+	<element name="ws-reliable-messaging">
+		<score>
+			2
+		</score>
+		<comment>
+			Implémenté dans le plugin Sandesha (http://ws.apache.org/ws-sandesha/)
+		</comment>
+	</element>
+	<element name="http">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="deploy">
+		<score>
+			1
+		</score>
+		<comment>
+			 2 politiques de déploiement possibles : déploiement instantané et automatisépar JWS (Java Web Service)ou déploiement personnalisé par WSDD (Web Service Deployment Descriptor) 
+		</comment>
+	</element>
+	<element name="netbeans-support">
+		<score>
+			1
+		</score>
+		<comment>
+			Fonctionnalités limitées.
+		</comment>
+	</element>
+	<element name="jms">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="ws-security">
+		<score>
+			2
+		</score>
+		<comment>
+			Implémenté par WSS4J (http://ws.apache.org/wss4j/). La documentation sécurité est particulièrement riche :cf. http://ws.apache.org/axis/java/security.html .
+		</comment>
+	</element>
+	<element name="vm">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="uddi">
+		<score>
+			2
+		</score>
+		<comment>
+			Possibilité d'accès annuaires UDDI 2.0 via JAXR
+		</comment>
+	</element>
+	<element name="soap-header-parameter-implicit-explicit-contexts-support">
+		<score>
+			2
+		</score>
+		<comment>
+			La classe org.apache.axis.MessageContext permet d'accéder à tout ce qu'Axis connait du contexte du message 
+		</comment>
+	</element>
+	<element name="ebXML">
+		<score>
+			2
+		</score>
+		<comment>
+			Possibilité d'accès annuaires UDDI 2.0 via JAXR
+		</comment>
+	</element>
+	<element name="lifecycleManagement">
+		<score>
+			1
+		</score>
+	</element>
+	<element name="marshalling-unmarshalling-java-soap">
+		<score>
+			2
+		</score>
+		<comment>
+			Un ensemble de sérialiseurs ou encodeurs et désérialiseurs ou décodeurs sont proposés en standard (Array, Bean, Date, Map, Element ...), ils étendent les  interfaces standards définies par JAX-RPC.Axis 1.4 définit en plus un mécanisme   d'extension pour définir vos propres mapping. (Castor, XMLBeans et JAXB sont par exemple tous supportés). 
+		</comment>
+	</element>
+	<element name="idea-support">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="handlers">
+		<score>
+			2
+		</score>
+		<comment>
+			 Le support des handlers est un des premiers arguments d'architecture avancé par la documentation projet. 
+		</comment>
+	</element>
+	<element name="build-integration">
+		<score>
+			2
+		</score>
+		<comment>
+			Axis est fourni avec un ensemble de tâche ant pour automatiser le build (les tâches sont axis-wsdl2java, axis-java2wsdl et axis-admin). cf.http://ws.apache.org/axis/java/ant/ant.html.Ils existent également des projets (indépendants) de plugins axis pour maven1 et maven2, ainsi que pour xdoclet.
+		</comment>
+	</element>
+	<element name="ws-addressing">
+		<score>
+			2
+		</score>
+		<comment>
+			Axis 1.4 gère les sessions, notamment à travers la classe org.apache.axis.handlers. SimpleSessionHandlercf. http://wiki.apache.org/ws/FrontPage/Axis/SessionSupport 
+		</comment>
+	</element>
+	<element name="jsr109">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="ws-policy">
+		<score>
+			1
+		</score>
+		<comment>
+			Le support serait en cours de développement
+		</comment>
+	</element>
+	<element name="wsdl-2_0">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="jsr101">
+		<score>
+			2
+		</score>
+		<comment>
+			Les tests JAX-RPC TCK (Technology Compatibility Kit) ont été complétés.cf. http://wiki.apache.org/ws/FrontPage/Axis/StandardsSupported
+		</comment>
+	</element>
+	<element name="xml-rpc">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="basic-profile">
+		<score>
+			0
+		</score>
+	</element>
+</qsosscore>

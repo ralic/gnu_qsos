@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<qsosheader>
+	<properties>
+		<licensedesc>
+			The Apache License 2.0
+		</licensedesc>
+		<language>
+			en
+		</language>
+		<appname>
+			ServiceMix
+		</appname>
+		<url>
+			http://incubator.apache.org/servicemix/home.html
+		</url>
+		<qsosspecificformat>
+			N/A
+		</qsosspecificformat>
+		<demourl>
+			N/A
+		</demourl>
+		<qsosappname>
+			ServiceMix
+		</qsosappname>
+		<licenseid>
+			23
+		</licenseid>
+		<release>
+			3.1.1
+		</release>
+		<qsosformat>
+			2.0
+		</qsosformat>
+		<desc>
+			N/A
+		</desc>
+	</properties>
+	<families>
+		<family>
+			Esb
+		</family>
+	</families>
+</qsosheader>

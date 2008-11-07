@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<qsosappfamily xmlns="http://qsos.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://qsos.org ../XSD/QSOS-Family.xsd ">
+	<header>
+		<authors>
+			<author>
+				<email>goneri@rulezlan.org</email>
+				<name>Goneri Le Bouder</name>
+			</author>
+		</authors>
+		<dates>
+			<creation>2007-02-20</creation>
+		</dates>
+	</header>
+	<section name="AOL" title="OSCAR/TOP Protocol">
+		<element name="aol" title="OSCAR/TOP Protocol">
+			<desc>Protocols in use with ICQ and AIM </desc>
+			<element name="aolbasicim" title="Basic Instant Messaging">
+				<desc0>Not Supported</desc0>
+				<desc1>Partially supported</desc1>
+				<desc2>Full support of MSNP basic instant messaging</desc2>
+			</element>
+			<element name="aolfilesharing" title="File sharing">
+				<desc0>Not Supported</desc0>
+				<desc1>Partially supported</desc1>
+				<desc2>Fully supported</desc2>
+			</element>
+			<element name="aolmuc" title="Multi User Conversation">
+				<desc0>Not Supported</desc0>
+				<desc1>Partially supported</desc1>
+				<desc2>Fully supported</desc2>
+			</element>
+			<element name="aolavatar" title="Avatar support for AIM/ICQ">
+				<desc0>Not Supported</desc0>
+				<desc1>Partially supported</desc1>
+				<desc2>Fully supported</desc2>
+			</element>
+			<element name="aoluserinfo" title="User information support">
+				<desc0>Not Supported</desc0>
+				<desc1>Partially supported</desc1>
+				<desc2>Fully supported</desc2>
+			</element>
+			<element name="aoladvanced" title="Advanced AIM/ICQ features supported">
+				<desc>List of advanced instant messaging features of Yahoo! Messenger supported (smileys...)</desc>
+			</element>
+		</element>
+	</section>
+	<section name="aolcompatibility" title="Compatibility with other clients">
+		<element name="gaimaolcompatibility" title="Gaim">
+			<desc> Gaim is a multi-protocol instant messaging (IM) client for Linux, BSD, MacOS X, and Windows. It is compatible with AIM and ICQ (Oscar protocol), MSN Messenger, Yahoo!, IRC, Jabber, Gadu-Gadu, SILC, Novell GroupWise Messenger, Lotus Sametime, and Zephyr networks. Website: http://gaim.sourceforge.net/</desc>
+			<element name="gaimimaolcompatibility" title="Instant messaging module">
+				<desc0>Not compatible</desc0>
+				<desc1>Partially compatible</desc1>
+				<desc2>Fully comlpatible</desc2>
+			</element>
+			<element name="gaimvoipaolcompatibility" title="Voice over IP module">
+				<desc0>Not compatible</desc0>
+				<desc1>Partially compatible</desc1>
+				<desc2>Fully comlpatible</desc2>
+			</element>
+		</element>
+	</section>
+</qsosappfamily>

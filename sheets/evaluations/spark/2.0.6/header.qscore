@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<qsosheader>
+	<properties>
+		<licensedesc>
+			GNU GPL
+		</licensedesc>
+		<language>
+			en
+		</language>
+		<appname>
+			Spark
+		</appname>
+		<url>
+			http://www.jivesoftware.org/spark/
+		</url>
+		<qsosspecificformat>
+			N/A
+		</qsosspecificformat>
+		<demourl>
+			N/A
+		</demourl>
+		<qsosappname>
+			spark
+		</qsosappname>
+		<licenseid>
+			31
+		</licenseid>
+		<release>
+			2.0.6
+		</release>
+		<qsosformat>
+			2.0
+		</qsosformat>
+		<desc>
+			Spark is a Jabber client
+		</desc>
+	</properties>
+	<families>
+		<family>
+			Jabber-Client
+		</family>
+	</families>
+</qsosheader>

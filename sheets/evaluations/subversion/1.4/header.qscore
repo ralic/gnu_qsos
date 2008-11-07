@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<qsosheader>
+	<properties>
+		<licensedesc>
+			BSD
+		</licensedesc>
+		<language>
+			en
+		</language>
+		<appname>
+			Subversion
+		</appname>
+		<url>
+			http://subversion.tigris.org
+		</url>
+		<qsosspecificformat>
+			1.0
+		</qsosspecificformat>
+		<demourl>
+			N/A
+		</demourl>
+		<qsosappname>
+			subversion
+		</qsosappname>
+		<licenseid>
+			33
+		</licenseid>
+		<release>
+			1.4
+		</release>
+		<qsosformat>
+			2.0
+		</qsosformat>
+		<desc>
+			Version control system released under an Apache/BSD-style license
+		</desc>
+	</properties>
+	<families>
+		<family>
+			Revision-Control-System
+		</family>
+	</families>
+</qsosheader>

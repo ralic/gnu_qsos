@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="utf-8"?>
+<qsosscore>
+	<element name="consulting">
+		<score>
+			1
+		</score>
+		<comment>
+			Oracle Consulting, with strong committement, if paid for
+		</comment>
+	</element>
+	<element name="easeofuseergonomics">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="packagingsuse">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="packagingmacosx">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="administrationmonitoring">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="packagingopen">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="independenceofdevelopments">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="packagingredhat">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="packaginghpux">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="stability">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="books">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="references">
+		<score>
+			1
+		</score>
+	</element>
+	<element name="packagingsource">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="packagingmandriva">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="packagingfreebsd">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="roadmap">
+		<score>
+			1
+		</score>
+		<comment>
+			Not Applicable
+		</comment>
+	</element>
+	<element name="tools">
+		<score>
+			1
+		</score>
+	</element>
+	<element name="packagingdebian">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="documentation">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="copyrightowners">
+		<score>
+			0
+		</score>
+		<comment>
+			Not Applicable
+		</comment>
+	</element>
+	<element name="training">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="packagingsolaris">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="packagingnet">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="quality">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="support">
+		<score>
+			1
+		</score>
+		<comment>
+			Oracle Support Services, with strong committement, if paid for
+		</comment>
+	</element>
+	<element name="popularity">
+		<score>
+			1
+		</score>
+	</element>
+	<element name="modularity">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="packagingwindows">
+		<score>
+			2
+		</score>
+		<comment>
+			Windows 2000, XP, 2003
+		</comment>
+	</element>
+	<element name="historyknownproblems">
+		<score>
+			1
+		</score>
+	</element>
+	<element name="age">
+		<score>
+			1
+		</score>
+	</element>
+	<element name="forkprobability">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="activityonreleases">
+		<comment>
+			Not Applicable
+		</comment>
+	</element>
+	<element name="developersidentificationturnover">
+		<comment>
+			Not Applicable
+		</comment>
+	</element>
+	<element name="codemodification">
+		<comment>
+			Not Applicable
+		</comment>
+	</element>
+	<element name="protectionagainstproprietaryforks">
+		<comment>
+			Not Applicable
+		</comment>
+	</element>
+	<element name="leadingteam">
+		<comment>
+			Not Applicable
+		</comment>
+	</element>
+	<element name="sponsor">
+		<comment>
+			Not Applicable
+		</comment>
+	</element>
+	<element name="activityonfunctionalities">
+		<comment>
+			Not Applicable
+		</comment>
+	</element>
+	<element name="strategicalindependence">
+		<comment>
+			Not Applicable
+		</comment>
+	</element>
+	<element name="modificationofsourcecode">
+		<comment>
+			Not Applicable
+		</comment>
+	</element>
+	<element name="permissiveness">
+		<comment>
+			Not Applicable
+		</comment>
+	</element>
+	<element name="contributingcommunity">
+		<comment>
+			Not Applicable
+		</comment>
+	</element>
+	<element name="activityonbugs">
+		<comment>
+			Not Applicable
+		</comment>
+	</element>
+	<element name="codeextension">
+		<comment>
+			Not Applicable
+		</comment>
+	</element>
+	<element name="managementstyle">
+		<comment>
+			Not Applicable
+		</comment>
+	</element>
+</qsosscore>

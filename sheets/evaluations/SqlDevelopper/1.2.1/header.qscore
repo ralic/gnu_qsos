@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<qsosheader>
+	<properties>
+		<licensedesc>
+			Freeware
+		</licensedesc>
+		<language>
+			en
+		</language>
+		<appname>
+			sqldevelopper
+		</appname>
+		<url>
+			http://www.oracle.com/technology/products/database/sql_developer/index.html
+		</url>
+		<qsosspecificformat>
+			1.0
+		</qsosspecificformat>
+		<demourl>
+			N/A
+		</demourl>
+		<qsosappname>
+			SqlDevelopper
+		</qsosappname>
+		<licenseid>
+			12
+		</licenseid>
+		<release>
+			1.2.1
+		</release>
+		<qsosformat>
+			2.0
+		</qsosformat>
+		<desc>
+			Oracle SQL Developer is a free graphical tool for database development.
+		</desc>
+	</properties>
+	<families>
+		<family>
+			Dbtools
+		</family>
+	</families>
+</qsosheader>

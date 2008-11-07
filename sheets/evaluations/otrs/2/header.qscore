@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<qsosheader>
+	<properties>
+		<licensedesc>
+			GNU General Public License
+		</licensedesc>
+		<language>
+			en
+		</language>
+		<appname>
+			otrs
+		</appname>
+		<url>
+			http://www.otrs.org
+		</url>
+		<qsosspecificformat>
+			1
+		</qsosspecificformat>
+		<demourl>
+			http://otrs.org/demo/
+		</demourl>
+		<qsosappname>
+			otrs
+		</qsosappname>
+		<licenseid>
+			31
+		</licenseid>
+		<release>
+			2
+		</release>
+		<qsosformat>
+			2.0
+		</qsosformat>
+		<desc>
+			OTRS is an Open source Ticket Request System (also well known as trouble ticket system) with many features to manage customer telephone calls and e-mails
+		</desc>
+	</properties>
+	<families>
+		<family>
+			Bugtracker
+		</family>
+	</families>
+</qsosheader>

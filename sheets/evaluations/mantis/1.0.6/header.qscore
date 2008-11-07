@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<qsosheader>
+	<properties>
+		<licensedesc>
+			GNU GPL
+		</licensedesc>
+		<language>
+			fr
+		</language>
+		<appname>
+			Mantis Bug Tracker
+		</appname>
+		<url>
+			http://www.mantisbt.org 
+		</url>
+		<qsosspecificformat>
+			1.0
+		</qsosspecificformat>
+		<demourl>
+			http://www.futureware.biz/mantisdemo/ 
+		</demourl>
+		<qsosappname>
+			mantis
+		</qsosappname>
+		<licenseid>
+			31
+		</licenseid>
+		<release>
+			1.0.6
+		</release>
+		<qsosformat>
+			2.0
+		</qsosformat>
+		<desc>
+			Solution de gestion de gestion d'incidents dans le cadre d'un support technique de type hotline
+		</desc>
+	</properties>
+	<families>
+		<family>
+			Bugtracker
+		</family>
+	</families>
+</qsosheader>

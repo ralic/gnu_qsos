@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<qsosheader>
+	<properties>
+		<licensedesc>
+			GNU GPL
+		</licensedesc>
+		<language>
+			en
+		</language>
+		<appname>
+			Aptana Studio Community Edition
+		</appname>
+		<url>
+			http://www.aptana.com
+		</url>
+		<qsosspecificformat>
+			1
+		</qsosspecificformat>
+		<demourl>
+			N/A
+		</demourl>
+		<qsosappname>
+			aptana studio community edition
+		</qsosappname>
+		<licenseid>
+			31
+		</licenseid>
+		<release>
+			1.0.0
+		</release>
+		<qsosformat>
+			2.0
+		</qsosformat>
+		<desc>
+			Web development environment with  JavaScript features and based on Eclipse
+		</desc>
+	</properties>
+	<families>
+		<family>
+			Javascript-Ide
+		</family>
+	</families>
+</qsosheader>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<qsosheader>
+	<properties>
+		<licensedesc>
+			BSD
+		</licensedesc>
+		<language>
+			fr
+		</language>
+		<appname>
+			Trac
+		</appname>
+		<url>
+			http://trac.edgewall.org/
+		</url>
+		<qsosspecificformat>
+			N/A
+		</qsosspecificformat>
+		<demourl>
+			http://www.hosted-projects.com/trac/TracDemo/Demo
+		</demourl>
+		<qsosappname>
+			trac
+		</qsosappname>
+		<licenseid>
+			105
+		</licenseid>
+		<release>
+			0.10
+		</release>
+		<qsosformat>
+			2.0
+		</qsosformat>
+		<desc>
+			Trac est une forge libre légère centrée sur Subversion, un système de suivi et un wiki (timeline et roadmap) écrite en Python, se reposant sur SQLite, MySQL et PostgreSQL et publiée sous licence BSD modifiée
+		</desc>
+	</properties>
+	<families>
+		<family>
+			Forge
+		</family>
+	</families>
+</qsosheader>

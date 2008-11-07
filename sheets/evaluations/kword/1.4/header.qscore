@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<qsosheader>
+	<properties>
+		<licensedesc>
+			GNU LGPL
+		</licensedesc>
+		<language>
+			en
+		</language>
+		<appname>
+			KWord
+		</appname>
+		<url>
+			http://www.koffice.org/kword/
+		</url>
+		<qsosspecificformat>
+			1
+		</qsosspecificformat>
+		<demourl>
+			http://ktown.kde.org/~binner/klax/ (Klax Live CD)
+		</demourl>
+		<qsosappname>
+			kword
+		</qsosappname>
+		<licenseid>
+			32
+		</licenseid>
+		<release>
+			1.4
+		</release>
+		<qsosformat>
+			2.0
+		</qsosformat>
+		<desc>
+			Word processor from the KDE Office suite (KOffice)
+		</desc>
+	</properties>
+	<families>
+		<family>
+			Wordprocessor
+		</family>
+	</families>
+</qsosheader>

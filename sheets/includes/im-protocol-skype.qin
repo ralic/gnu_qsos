@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<qsosappfamily xmlns="http://qsos.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://qsos.org ../XSD/QSOS-Family.xsd ">
+	<header>
+		<authors>
+			<author>
+				<email>goneri@rulezlan.org</email>
+				<name>Goneri Le Bouder</name>
+			</author>
+		</authors>
+		<dates>
+			<creation>2007-02-20</creation>
+		</dates>
+	</header>
+	<section name="skypecompatibility" title="Compatibility with Skype protocle">
+		<desc>Skype is a proprietary peer-to-peer Internet telephony (VoIP) network founded by the entrepreneurs Niklas Zennstrom and Janus Friis, also founders of the file sharing application Kazaa. It competes against existing open VoIP protocols such as SIP, IAX, and H.323. Website: http://www.skype.com/</desc>
+		<element name="skypeclient" title="Skype">
+			<element name="skypeim" title="Instant messaging module">
+				<desc0>Not compatible</desc0>
+				<desc1>Partially compatible</desc1>
+				<desc2>Fully compatible</desc2>
+			</element>
+			<element name="skypevoip" title="Voice over IP module">
+				<desc0>Not compatible</desc0>
+				<desc1>Partially compatible</desc1>
+				<desc2>Fully compatible</desc2>
+			</element>
+			<element name="skypevisio" title="Videoconferencing module">
+				<desc0>Not compatible</desc0>
+				<desc1>Partially compatible</desc1>
+				<desc2>Fully compatible</desc2>
+			</element>
+		</element>
+	</section>
+</qsosappfamily>

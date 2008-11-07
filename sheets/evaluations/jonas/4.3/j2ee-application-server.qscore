@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="utf-8"?>
+<qsosscore>
+	<element name="j2eemanagementapi">
+		<score>
+			2
+		</score>
+		<comment>
+			J2EE Management API 1.0
+		</comment>
+	</element>
+	<element name="licencej2ee">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="jsf">
+		<score>
+			1
+		</score>
+		<comment>
+			Possible via MyFaces mais pas intégré dans la distribution
+		</comment>
+	</element>
+	<element name="ejbsession">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="jmxremoting">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="ha-jms">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="equilibragedecharge">
+		<score>
+			2
+		</score>
+		<comment>
+			Répartition de charge possible au niveau session via l'utilisation d'Apache mod_jk et au niveau EJB
+		</comment>
+	</element>
+	<element name="corba">
+		<score>
+			2
+		</score>
+		<comment>
+			Via JacORB intégré
+		</comment>
+	</element>
+	<element name="jdbc">
+		<score>
+			2
+		</score>
+		<comment>
+			JDBC 3.0
+		</comment>
+	</element>
+	<element name="reprisesurincident">
+		<score>
+			1
+		</score>
+		<comment>
+			Possibilité de gestion du failover au niveau de l'accès aux données via C-JDBC
+		</comment>
+	</element>
+	<element name="httptiers">
+		<score>
+			1
+		</score>
+		<comment>
+			Avec Apache via mod_jk
+		</comment>
+	</element>
+	<element name="consoledadministration">
+		<score>
+			2
+		</score>
+		<comment>
+			Console JSP/Struts
+		</comment>
+	</element>
+	<element name="jca">
+		<score>
+			2
+		</score>
+		<comment>
+			JCA 1.5
+		</comment>
+	</element>
+	<element name="jms">
+		<score>
+			2
+		</score>
+		<comment>
+			JMS 1.1
+		</comment>
+	</element>
+	<element name="jaf">
+		<score>
+			2
+		</score>
+		<comment>
+			JAF 1.0
+		</comment>
+	</element>
+	<element name="certificationj2ee">
+		<score>
+			2
+		</score>
+		<comment>
+			Certifié J2EE 1.4 par SUN
+		</comment>
+	</element>
+	<element name="jta">
+		<score>
+			2
+		</score>
+		<comment>
+			JTA 1.0.1
+		</comment>
+	</element>
+	<element name="ejb">
+		<score>
+			2
+		</score>
+		<comment>
+			EJB 2.1
+		</comment>
+	</element>
+	<element name="jmx">
+		<score>
+			1
+		</score>
+		<comment>
+			Via intégration de MX4J
+		</comment>
+	</element>
+	<element name="jaas">
+		<score>
+			2
+		</score>
+		<comment>
+			JAAS 1.0
+		</comment>
+	</element>
+	<element name="ejbentite">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="jaxb">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="j2eedeploymentapi">
+		<score>
+			2
+		</score>
+		<comment>
+			J2EE Deployment API 1.1
+		</comment>
+	</element>
+	<element name="jndi">
+		<score>
+			2
+		</score>
+		<comment>
+			JNDI 1.2.1
+		</comment>
+	</element>
+	<element name="jsp">
+		<score>
+			2
+		</score>
+		<comment>
+			JSP 2.0
+		</comment>
+	</element>
+	<element name="javamail">
+		<score>
+			2
+		</score>
+		<comment>
+			JavaMail 1.3
+		</comment>
+	</element>
+	<element name="jaxr">
+		<score>
+			2
+		</score>
+		<comment>
+			JAXR 1.0
+		</comment>
+	</element>
+	<element name="jaxp">
+		<score>
+			2
+		</score>
+		<comment>
+			JAXP 1.2
+		</comment>
+	</element>
+	<element name="servlet">
+		<score>
+			2
+		</score>
+		<comment>
+			Servlet 2.4
+		</comment>
+	</element>
+	<element name="jacc">
+		<score>
+			2
+		</score>
+		<comment>
+			JACC 1.0
+		</comment>
+	</element>
+	<element name="jax-rpc">
+		<score>
+			2
+		</score>
+		<comment>
+			JAX-RPC 1.1
+		</comment>
+	</element>
+	<element name="protocolesdebase">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="serveurhttpintegre">
+		<score>
+			2
+		</score>
+		<comment>
+			Via intégration de Tomcat 5 ou de Jetty
+		</comment>
+	</element>
+	<element name="saaj">
+		<score>
+			2
+		</score>
+		<comment>
+			SAAJ 1.2
+		</comment>
+	</element>
+	<element name="integrationide">
+		<score>
+			1
+		</score>
+		<comment>
+			Il existe un plugin pour Eclipse v2. Le projet est inactif depuis plusieurs mois et n'est pas disponible pour Eclipse v3. Mauvaise intégration avec certains outils tiers tels que XDoclet et Ant
+		</comment>
+	</element>
+	<element name="authentificationexterne">
+		<score>
+			2
+		</score>
+		<comment>
+			Modules de login: SGBD, fichiers textes, LDAP.
+		</comment>
+	</element>
+	<element name="sessionhttp">
+		<score>
+			2
+		</score>
+	</element>
+</qsosscore>

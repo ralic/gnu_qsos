@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<qsosheader>
+	<properties>
+		<licensedesc>
+			GNU GPL
+		</licensedesc>
+		<language>
+			en
+		</language>
+		<appname>
+			CVS
+		</appname>
+		<url>
+			http://www.nongnu.org/cvs/
+		</url>
+		<qsosspecificformat>
+			1.0
+		</qsosspecificformat>
+		<demourl>
+			N/A
+		</demourl>
+		<qsosappname>
+			cvs
+		</qsosappname>
+		<licenseid>
+			31
+		</licenseid>
+		<release>
+			1.11
+		</release>
+		<qsosformat>
+			2.0
+		</qsosformat>
+		<desc>
+			Wellknown revision control system
+		</desc>
+	</properties>
+	<families>
+		<family>
+			Revision-Control-System
+		</family>
+	</families>
+</qsosheader>

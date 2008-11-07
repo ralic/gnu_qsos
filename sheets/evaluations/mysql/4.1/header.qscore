@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<qsosheader>
+	<properties>
+		<licensedesc>
+			GNU GPL
+		</licensedesc>
+		<language>
+			en
+		</language>
+		<appname>
+			MySQL Server
+		</appname>
+		<url>
+			http://www.mysql.com
+		</url>
+		<qsosspecificformat>
+			1
+		</qsosspecificformat>
+		<demourl>
+			Not applicable
+		</demourl>
+		<qsosappname>
+			mysql
+		</qsosappname>
+		<licenseid>
+			31
+		</licenseid>
+		<release>
+			4.1
+		</release>
+		<qsosformat>
+			2.0
+		</qsosformat>
+		<desc>
+			Relational Database Management System available under a dual license (GPL or proprietary)
+		</desc>
+	</properties>
+	<families>
+		<family>
+			Rdbms
+		</family>
+	</families>
+</qsosheader>

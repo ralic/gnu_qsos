@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<qsosheader>
+	<properties>
+		<licensedesc>
+			GNU General Public License
+		</licensedesc>
+		<language>
+			en
+		</language>
+		<appname>
+			Kolab
+		</appname>
+		<url>
+			http://www.kolab.org
+		</url>
+		<qsosspecificformat>
+			1
+		</qsosspecificformat>
+		<demourl>
+			http://kolab.org/screenshots.html
+		</demourl>
+		<qsosappname>
+			kolab
+		</qsosappname>
+		<licenseid>
+			31
+		</licenseid>
+		<release>
+			2
+		</release>
+		<qsosformat>
+			2.0
+		</qsosformat>
+		<desc>
+			Kolab is a groupware used in the german administration
+		</desc>
+	</properties>
+	<families>
+		<family>
+			Groupware
+		</family>
+	</families>
+</qsosheader>

@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="utf-8"?>
+<qsosscore>
+	<element name="consulting">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="documentation">
+		<score>
+			2
+		</score>
+		<comment>
+			Possibilité de télécharger le pdf d'installation ou de fonctionnement (relativement complète), tutoriels,forum, blog...
+		</comment>
+	</element>
+	<element name="activityonreleases">
+		<score>
+			1
+		</score>
+		<comment>
+			Les mises à jour apparaissent en moyenne tout les mois. Bonne activité.
+		</comment>
+	</element>
+	<element name="administrationmonitoring">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="independenceofdevelopments">
+		<score>
+			0
+		</score>
+		<comment>
+			Seuls les développeurs de Talend participent au développement des versions.
+		</comment>
+	</element>
+	<element name="packaginghpux">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="stability">
+		<score>
+			2
+		</score>
+		<comment>
+			De nombreux bugs sont encore recensés mais la fréquence des mises à jour est importanteet elles corrigent efficacement ces bugs résiduels. 
+		</comment>
+	</element>
+	<element name="activityonfunctionalities">
+		<score>
+			1
+		</score>
+		<comment>
+			De nouvelles fonctionnalités sont implémentées à chaque nouvelle version mais aucune roadmap n'estclairement identifiée.
+		</comment>
+	</element>
+	<element name="leadingteam">
+		<score>
+			2
+		</score>
+		<comment>
+			http://www.talend.com/management/management.php
+		</comment>
+	</element>
+	<element name="books">
+		<score>
+			0
+		</score>
+		<comment>
+			Pas de référence trouvée sur Talend.
+		</comment>
+	</element>
+	<element name="references">
+		<score>
+			1
+		</score>
+		<comment>
+			Aucune référence clairement détectée mis à part la SNCF :http://www.talendforge.org/blog/(news sur le blog datant du 9/07/07)
+		</comment>
+	</element>
+	<element name="sponsor">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="packagingmandriva">
+		<score>
+			2
+		</score>
+		<comment>
+			Oui, si la distribution est basée sur le GTK.
+		</comment>
+	</element>
+	<element name="strategicalindependence">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="tools">
+		<score>
+			0
+		</score>
+		<comment>
+			Aucun outil de gestion de bugs ne semble être fourni avec Talend.
+		</comment>
+	</element>
+	<element name="packagingsolaris">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="permissiveness">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="quality">
+		<score>
+			0
+		</score>
+		<comment>
+			Aucune référence sur l'existence d'un processus de qualité. 
+		</comment>
+	</element>
+	<element name="support">
+		<score>
+			1
+		</score>
+		<comment>
+			Deux choix sont possibles : formule &quot;or&quot; ou &quot;argent&quot;.http://www.talend.com/professional-support/support.php
+		</comment>
+	</element>
+	<element name="contributingcommunity">
+		<score>
+			1
+		</score>
+		<comment>
+			Seuls les développeurs de Talend contribuent au développement de ce produit mais les utilisateurs via le forum peuvent donner leur avis sur le produit et sur les innovations qu'ils souhaiteraient voir apparaître  sur les futures versions. 
+		</comment>
+	</element>
+	<element name="packagingwindows">
+		<score>
+			2
+		</score>
+		<comment>
+			Nécessite une machine virtuelle java
+		</comment>
+	</element>
+	<element name="codeextension">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="managementstyle">
+		<score>
+			1
+		</score>
+		<comment>
+			L'équipe dirigeante est composée de plusieurs personnes.
+		</comment>
+	</element>
+	<element name="easeofuseergonomics">
+		<score>
+			2
+		</score>
+		<comment>
+			Belle ergonomie qui est en fait un plug-in d'Eclipse. Les stages sont bien modélisés et différentiables.
+		</comment>
+	</element>
+	<element name="packagingsuse">
+		<score>
+			2
+		</score>
+		<comment>
+			Oui, si la distribution est basée sur le GTK.
+		</comment>
+	</element>
+	<element name="packagingmacosx">
+		<score>
+			2
+		</score>
+		<comment>
+			Talend n'a pas pu être testé sur cet OS.
+		</comment>
+	</element>
+	<element name="packagingredhat">
+		<score>
+			2
+		</score>
+		<comment>
+			Oui, si la distribution est basée sur le GTK.
+		</comment>
+	</element>
+	<element name="codemodification">
+		<score>
+			1
+		</score>
+		<comment>
+			Réservée aux développeurs confirmés.
+		</comment>
+	</element>
+	<element name="protectionagainstproprietaryforks">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="packagingsource">
+		<score>
+			1
+		</score>
+	</element>
+	<element name="developersidentificationturnover">
+		<score>
+			2
+		</score>
+		<comment>
+			De nombreux développeurs contribuent au projet à en croire les réponses sur le forum provenant d'eux ainsi que leurs affectations dans la rubrique &quot;bugtracker&quot;.Cependant, présence importante de turnover ???
+		</comment>
+	</element>
+	<element name="packagingfreebsd">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="roadmap">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="packagingdebian">
+		<score>
+			2
+		</score>
+		<comment>
+			Oui, si la distribution est basée sur le GTK.
+		</comment>
+	</element>
+	<element name="modificationofsourcecode">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="training">
+		<score>
+			1
+		</score>
+	</element>
+	<element name="packagingnet">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="age">
+		<score>
+			1
+		</score>
+		<comment>
+			Un an après sa création, Talend sort la première version de son ETL.http://www.progilibre.com/TALEND-MET-EN-LIGNE-LA-BETA-PUBLIQUE-DE-SON-OUTIL-D-ETL-OPEN-SOURCE_a370.html?PHPSESSID=073fc5e6e1433a964dbe23bcadfa8c54
+		</comment>
+	</element>
+	<element name="popularity">
+		<score>
+			0
+		</score>
+		<comment>
+			Marché des ETL par définition limité en nombre d'utilisateurs.Ce produit a moins d'un an et donc possède peu de clients.Cependant, certaines sociétés commencent à s'y intéresser.
+		</comment>
+	</element>
+	<element name="activityonbugs">
+		<score>
+			2
+		</score>
+		<comment>
+			Tous les bugs connus sont recensés sur leur site web et un développeur est assigné sur chaque bug.Voir la rubrique &quot;bugtracker&quot; :http://www.talendforge.org/bugs/my_view_page.php
+		</comment>
+	</element>
+	<element name="packagingopen">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="forkprobability">
+		<score>
+			2
+		</score>
+		<comment>
+			Aucune information sur le sujet. Très faible risque de fork car le logiciel est développé par une société.
+		</comment>
+	</element>
+</qsosscore>

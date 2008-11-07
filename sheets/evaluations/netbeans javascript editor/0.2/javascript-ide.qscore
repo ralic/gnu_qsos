@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<qsosscore>
+	<element name="codegeneration">
+		<score>
+			1
+		</score>
+		<comment>
+			JavaScript class (with prototype heritage), AJAX callback template
+		</comment>
+	</element>
+	<element name="codeexecutioninide">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="debugger">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="draganddrop">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="cssautocompletion">
+		<score>
+			1
+		</score>
+	</element>
+	<element name="refactoring">
+		<score>
+			0
+		</score>
+		<comment>
+			Available for Java only.
+		</comment>
+	</element>
+	<element name="profiling">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="jserrorwarningmanagement">
+		<score>
+			0
+		</score>
+		<comment>
+			Available for Java but not for JavaScript, HTML and CSS
+		</comment>
+	</element>
+	<element name="stepping">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="webpreview">
+		<score>
+			1
+		</score>
+	</element>
+	<element name="csssyntaxhighlighting">
+		<score>
+			1
+		</score>
+	</element>
+	<element name="contextualhelp">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="statemanagement">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="htmlautocompletion">
+		<score>
+			1
+		</score>
+	</element>
+	<element name="csserrorwarningmanagement">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="logging">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="pre-packagedjavascriptlibraries">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="jssyntaxhighlighting">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="breaking">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="comments">
+		<score>
+			0
+		</score>
+		<comment>
+			Available for Java but note for JavaScript, HTML or CSS
+		</comment>
+	</element>
+	<element name="referenceguides">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="htmlsyntaxhighlighting">
+		<score>
+			1
+		</score>
+	</element>
+	<element name="htmlerrorwarningmanagement">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="documentationgeneration">
+		<score>
+			0
+		</score>
+		<comment>
+			For Java only (JavaDoc)
+		</comment>
+	</element>
+	<element name="linenumbering">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="jsintellisense">
+		<score>
+			0
+		</score>
+		<comment>
+			Available for HTML and Java but not for JavaScript
+		</comment>
+	</element>
+	<element name="tutorials">
+		<score>
+			0
+		</score>
+		<comment>
+			Online tutorials are java oriented Java
+		</comment>
+	</element>
+	<element name="wordwrap">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="codenavigation">
+		<score>
+			0
+		</score>
+		<comment>
+			Navigator is only available for CSS and Java.&quot;Go to Source/Declaration&quot; are only available for Java
+		</comment>
+	</element>
+	<element name="jsautocompletion">
+		<score>
+			1
+		</score>
+	</element>
+</qsosscore>

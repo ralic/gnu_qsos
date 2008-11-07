@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<qsosheader>
+	<properties>
+		<licensedesc>
+			Freeware
+		</licensedesc>
+		<language>
+			en
+		</language>
+		<appname>
+			Squirrel SQL Client
+		</appname>
+		<url>
+			http://www.squirrelsql.org/
+		</url>
+		<qsosspecificformat>
+			1.0
+		</qsosspecificformat>
+		<demourl>
+			N/A
+		</demourl>
+		<qsosappname>
+			Squirrel
+		</qsosappname>
+		<licenseid>
+			12
+		</licenseid>
+		<release>
+			2.6.4
+		</release>
+		<qsosformat>
+			2.0
+		</qsosformat>
+		<desc>
+			SQuirreL SQL is an open-source Java SQL Client program for any JDBC compliant database.
+		</desc>
+	</properties>
+	<families>
+		<family>
+			Dbtools
+		</family>
+	</families>
+</qsosheader>

@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<qsosscore>
+	<element name="tableconstraints">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="migrationtools">
+		<score>
+			2
+		</score>
+		<comment>
+			MySQL Migration Suite
+		</comment>
+	</element>
+	<element name="xacompliance">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="querytools">
+		<score>
+			2
+		</score>
+		<comment>
+			MySQL Query (desktop client), phpMyAdmin (web client)
+		</comment>
+	</element>
+	<element name="xmlfeatures">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="columnconstraints">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="sql2003">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="subselects">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="replication">
+		<score>
+			1
+		</score>
+	</element>
+	<element name="unicode">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="optimizetools">
+		<score>
+			0
+		</score>
+		<comment>
+			The EXPLAIN function is limited
+		</comment>
+	</element>
+	<element name="admintools">
+		<score>
+			2
+		</score>
+		<comment>
+			MySQL Administrator (desktop client), phpMyAdmin (web client). Proprietary tools like MySQLFront or Navicat also exist.
+		</comment>
+	</element>
+	<element name="namedconstraints">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="storedprocedures">
+		<score>
+			0
+		</score>
+		<comment>
+			Implemented in MySQL 5
+		</comment>
+	</element>
+	<element name="columndefaultvalues">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="nullconstraints">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="schemas">
+		<score>
+			0
+		</score>
+		<comment>
+			Implemented in MySQL 5
+		</comment>
+	</element>
+	<element name="clustering">
+		<score>
+			1
+		</score>
+		<comment>
+			There is a specific storage engine dedicated to clustering (NDB)
+		</comment>
+	</element>
+	<element name="tablespaces">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="gis">
+		<score>
+			1
+		</score>
+		<comment>
+			Only with MyISAM tables, not OpenGIS compliant
+		</comment>
+	</element>
+	<element name="triggers">
+		<score>
+			0
+		</score>
+		<comment>
+			Implemented in MySQL 5
+		</comment>
+	</element>
+	<element name="transactionalengine">
+		<score>
+			1
+		</score>
+		<comment>
+			Only with InnoDB tables
+		</comment>
+	</element>
+	<element name="views">
+		<score>
+			0
+		</score>
+		<comment>
+			Implemented in MySQL 5
+		</comment>
+	</element>
+	<element name="locking">
+		<score>
+			1
+		</score>
+		<comment>
+			Table locks on MyISAM tables, row lock on InnoDB tables
+		</comment>
+	</element>
+	<element name="functionsdefaultvalues">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="fkupdates">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="olap">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="sql99">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="sql92">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="sslsupport">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="foreignkeys">
+		<score>
+			1
+		</score>
+		<comment>
+			Only on InnoDB tables
+		</comment>
+	</element>
+</qsosscore>

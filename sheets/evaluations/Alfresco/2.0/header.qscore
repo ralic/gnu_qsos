@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<qsosheader>
+	<properties>
+		<licensedesc>
+			GNU LGPL
+		</licensedesc>
+		<language>
+			en
+		</language>
+		<appname>
+			Alfresco-2.0
+		</appname>
+		<url>
+			www.alfresco.org
+		</url>
+		<qsosspecificformat>
+			N/A
+		</qsosspecificformat>
+		<demourl>
+			www.alfresco.com 
+		</demourl>
+		<qsosappname>
+			Alfresco
+		</qsosappname>
+		<licenseid>
+			32
+		</licenseid>
+		<release>
+			2.0
+		</release>
+		<qsosformat>
+			2.0
+		</qsosformat>
+		<desc>
+			ECM ( Entreprise Content Management )
+		</desc>
+	</properties>
+	<families>
+		<family>
+			Cms
+		</family>
+	</families>
+</qsosheader>

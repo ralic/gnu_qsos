@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<qsosheader>
+	<properties>
+		<licensedesc>
+			GNU GPL
+		</licensedesc>
+		<language>
+			en
+		</language>
+		<appname>
+			Psi
+		</appname>
+		<url>
+			http://psi-im.org
+		</url>
+		<qsosspecificformat>
+			N/A
+		</qsosspecificformat>
+		<demourl>
+			N/A
+		</demourl>
+		<qsosappname>
+			psi
+		</qsosappname>
+		<licenseid>
+			31
+		</licenseid>
+		<release>
+			0.10
+		</release>
+		<qsosformat>
+			2.0
+		</qsosformat>
+		<desc>
+			Psi is a Jabber client looking (by design) like licq. Besides basic instant messaging services, it provides support for features like groupchat and multiple accounts.For more information on jabber, see www.jabber.org (or the jabber package which contains the jabber server software).
+		</desc>
+	</properties>
+	<families>
+		<family>
+			Jabber-Client
+		</family>
+	</families>
+</qsosheader>

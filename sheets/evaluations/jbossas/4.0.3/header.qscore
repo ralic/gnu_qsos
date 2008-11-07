@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<qsosheader>
+	<properties>
+		<licensedesc>
+			GNU LGPL
+		</licensedesc>
+		<language>
+			fr
+		</language>
+		<appname>
+			JBoss Application Server
+		</appname>
+		<url>
+			http://www.jboss.org
+		</url>
+		<qsosspecificformat>
+			1.0
+		</qsosspecificformat>
+		<demourl>
+			Non applicable
+		</demourl>
+		<qsosappname>
+			jbossas
+		</qsosappname>
+		<licenseid>
+			32
+		</licenseid>
+		<release>
+			4.0.3
+		</release>
+		<qsosformat>
+			2.0
+		</qsosformat>
+		<desc>
+			Serveur d'applications J2EE
+		</desc>
+	</properties>
+	<families>
+		<family>
+			J2Ee-Application-Server
+		</family>
+	</families>
+</qsosheader>

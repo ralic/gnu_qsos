@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<qsosheader>
+	<properties>
+		<licensedesc>
+			GNU GPL
+		</licensedesc>
+		<language>
+			fr
+		</language>
+		<appname>
+			Talend_v2
+		</appname>
+		<url>
+			www.talend.com
+		</url>
+		<qsosspecificformat>
+			N/A
+		</qsosspecificformat>
+		<demourl>
+			http://www.talend.com/tos/tutorials/menu.php
+		</demourl>
+		<qsosappname>
+			Talend
+		</qsosappname>
+		<licenseid>
+			31
+		</licenseid>
+		<release>
+			2.0.4
+		</release>
+		<qsosformat>
+			2.0
+		</qsosformat>
+		<desc>
+			ETL open source 100% français.Possibilité de coder les jobs en Java ou en Perl.
+		</desc>
+	</properties>
+	<families>
+		<family>
+			Etl
+		</family>
+	</families>
+</qsosheader>

@@ -1,11 +1,14 @@
 from twisted.application import service, internet
 from nevow import appserver
-from Services import homepage, browse
+from Services import homepage
+from Engine import core
+import os
 
 
-application = service.Application ( "nevowdemo" )
+application = service.Application ( "QSOS Engine" )
 port        = 8080
-res         = homepage.MainPage()
+repository  = '/absolute/path/to/repository'
+res         = homepage.MainPage(repository)
 site        = appserver.NevowSite ( res )
 webService  = internet.TCPServer ( port, site )
 webService.setServiceParent ( application )

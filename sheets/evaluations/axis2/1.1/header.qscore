@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<qsosheader>
+	<properties>
+		<licensedesc>
+			N/A
+		</licensedesc>
+		<language>
+			fr
+		</language>
+		<appname>
+			Axis2
+		</appname>
+		<url>
+			Http://ws.apache.org/axis2/
+		</url>
+		<qsosspecificformat>
+			N/A
+		</qsosspecificformat>
+		<demourl>
+			none
+		</demourl>
+		<qsosappname>
+			axis2
+		</qsosappname>
+		<licenseid>
+			Apache License, Version 2.0
+		</licenseid>
+		<release>
+			1.1
+		</release>
+		<qsosformat>
+			2.0
+		</qsosformat>
+		<desc>
+			Framework de développement, déploiement et consommation de web services en environnement J2EE (partie Web)
+		</desc>
+	</properties>
+	<families>
+		<family>
+			J2Ee-Ws-Stack
+		</family>
+	</families>
+</qsosheader>

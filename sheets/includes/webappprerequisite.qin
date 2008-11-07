@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<qsosappfamily xmlns="http://qsos.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://qsos.org ../XSD/QSOS-Family.xsd ">
+	<header>
+		<authors>
+			<author>
+				<email>francois.le.droff@gmail.com</email>
+				<name>Francois Le Droff</name>
+			</author>
+			<author>
+				<email>nicolas.verite@gmail.com</email>
+				<name>Nicolas Vérité</name>
+			</author>
+		</authors>
+		<dates>
+			<creation>2006-10-25</creation>
+		</dates>
+	</header>
+	<section name="webappprerequisite" title="Web application platform prerequisites">
+		<desc>Detail here the platform details and implementation language(s) and its(their) version</desc>
+		<element name="j2eeplatform" title="J2EE">
+			<desc>Detail in the comment section the J2EE or JavaEE specifications used an their versions as well as the supported servers.</desc>
+			<desc0>The web app is not running on this platform</desc0>
+			<desc1>Support for a limited number of servers</desc1>
+			<desc2>May run on many servers, respects platform standards</desc2>
+		</element>
+		<element name="phpplatform" title="PHP">
+			<desc>Detail in the comment section PHP versions and the supported servers.</desc>
+			<desc0>The web app is not running on this platform</desc0>
+			<desc1>Support for a limited number of servers</desc1>
+			<desc2>May run on many servers, respects platform standards</desc2>
+		</element>
+		<element name="cgiplatform" title="CGI">
+			<desc>Detail in the comment section CGI versions and the supported servers.</desc>
+			<desc0>The web app is not running on this platform</desc0>
+			<desc1>Support for a limited number of servers</desc1>
+			<desc2>May run on many servers, respects platform standards</desc2>
+		</element>
+		<element name="mod_perlplatform" title="mod_perl">
+			<desc>Detail in the comment section mod_perl versions and the supported servers.</desc>
+			<desc0>The web app is not running on this platform</desc0>
+			<desc1>Support for a limited number of servers</desc1>
+			<desc2>May run on many servers, respects platform standards</desc2>
+		</element>
+	</section>
+</qsosappfamily>

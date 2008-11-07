@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<qsosheader>
+	<properties>
+		<licensedesc>
+			Freeware
+		</licensedesc>
+		<language>
+			en
+		</language>
+		<appname>
+			DbVisualizer Free
+		</appname>
+		<url>
+			http://www.minq.se/products/dbvis/
+		</url>
+		<qsosspecificformat>
+			1.0
+		</qsosspecificformat>
+		<demourl>
+			http://www.minq.se/products/dbvis/tour/tour.html
+		</demourl>
+		<qsosappname>
+			DbVisualizer
+		</qsosappname>
+		<licenseid>
+			12
+		</licenseid>
+		<release>
+			6.0.7
+		</release>
+		<qsosformat>
+			2.0
+		</qsosformat>
+		<desc>
+			Cross platform database independent visual browsing and editing tool
+		</desc>
+	</properties>
+	<families>
+		<family>
+			Dbtools
+		</family>
+	</families>
+</qsosheader>

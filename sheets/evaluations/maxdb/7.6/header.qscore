@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<qsosheader>
+	<properties>
+		<licensedesc>
+			GNU GPL
+		</licensedesc>
+		<language>
+			en
+		</language>
+		<appname>
+			Max DB
+		</appname>
+		<url>
+			http://www.mysql.com/products/maxdb/
+		</url>
+		<qsosspecificformat>
+			N/A
+		</qsosspecificformat>
+		<demourl>
+			N/A
+		</demourl>
+		<qsosappname>
+			maxdb
+		</qsosappname>
+		<licenseid>
+			31
+		</licenseid>
+		<release>
+			7.6
+		</release>
+		<qsosformat>
+			2.0
+		</qsosformat>
+		<desc>
+			RDBMS under dual licenses (GPL and commercial)
+		</desc>
+	</properties>
+	<families>
+		<family>
+			Rdbms
+		</family>
+	</families>
+</qsosheader>

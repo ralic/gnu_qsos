@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<qsosheader>
+	<properties>
+		<licensedesc>
+			OSI Approved
+		</licensedesc>
+		<language>
+			fr
+		</language>
+		<appname>
+			GlassFish
+		</appname>
+		<url>
+			http://glassfish.dev.java.net
+		</url>
+		<qsosspecificformat>
+			1.0
+		</qsosspecificformat>
+		<demourl>
+			N/A
+		</demourl>
+		<qsosappname>
+			glassfish
+		</qsosappname>
+		<licenseid>
+			15
+		</licenseid>
+		<release>
+			2.0
+		</release>
+		<qsosformat>
+			2.0
+		</qsosformat>
+		<desc>
+			Serveur d'applications certifié Java EE 5.0
+		</desc>
+	</properties>
+	<families>
+		<family>
+			J2Ee-Application-Server
+		</family>
+	</families>
+</qsosheader>

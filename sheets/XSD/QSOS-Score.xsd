@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema targetNamespace="http://qsos.org" elementFormDefault="qualified"
+	xmlns="http://www.w3.org/2001/XMLSchema"
+	xmlns:qsos="http://qsos.org">
+	<include schemaLocation="http://git.savannah.gnu.org/gitweb/?p=qsos.git;a=blob_plain;f=dev/XSD/QSOS.xsd;hb=1352ae82f1b0f1514f6fe83f6218de50614eb098"></include>
+
+	<element name="element">
+		<complexType>
+			<sequence>
+				<element ref="qsos:score" maxOccurs="1" minOccurs="0"></element>
+				<element ref="qsos:comment" maxOccurs="1" minOccurs="0"></element>
+			</sequence>
+			<attribute name="name" type="ID"></attribute>
+		</complexType>
+	</element>
+
+    <element name="comment" type="string"></element>
+
+    <element name="score">
+    	<simpleType>
+    		<restriction base="int">
+    			<enumeration value="0"></enumeration>
+    			<enumeration value="1"></enumeration>
+    			<enumeration value="2"></enumeration>
+    		</restriction>
+    	</simpleType>
+    </element>
+
+    <element name="qsosscore">
+    	<complexType>
+    		<sequence>
+    			<element ref="qsos:element" maxOccurs="unbounded" minOccurs="1"></element>
+    		</sequence>
+    	</complexType>
+    </element>
+</schema>

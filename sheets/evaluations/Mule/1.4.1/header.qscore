@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<qsosheader>
+	<properties>
+		<licensedesc>
+			OSI Approved
+		</licensedesc>
+		<language>
+			en
+		</language>
+		<appname>
+			Mule
+		</appname>
+		<url>
+			http://mule.codehaus.org/display/MULE/Home
+		</url>
+		<qsosspecificformat>
+			N/A
+		</qsosspecificformat>
+		<demourl>
+			N/A
+		</demourl>
+		<qsosappname>
+			Mule
+		</qsosappname>
+		<licenseid>
+			15
+		</licenseid>
+		<release>
+			1.4.1
+		</release>
+		<qsosformat>
+			2.0
+		</qsosformat>
+		<desc>
+			N/A
+		</desc>
+	</properties>
+	<families>
+		<family>
+			Esb
+		</family>
+	</families>
+</qsosheader>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<schema elementFormDefault="qualified"
+	xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://qsos.org"
+	xmlns:qsos="http://qsos.org">
+	<include schemaLocation="QSOS.xsd"></include>
+	<element name="header">
+		<complexType>
+			<sequence>
+				<element name="authors" type="qsos:Authors"></element>
+				<element name="dates" type="qsos:Dates"></element>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="language" type="string"></element>
+	<element name="appname" type="string"></element>
+	<element name="release" type="string"></element>
+	<element name="licenseid" type="string"></element>
+	<element name="licensedesc" type="string"></element>
+	<element name="url" type="anyURI"></element>
+	<element name="desc" type="string"></element>
+	<element name="demourl" type="anyURI"></element>
+	<element name="qsosformat" type="string"></element>
+	<element name="qsosappname" type="string"></element>
+	<element name="qsosspecificformat" type="string"></element>
+	<element name="qsosappfamilies">
+		<complexType>
+			<sequence>
+				<element ref="qsos:qsosappfamily" maxOccurs="unbounded"
+					minOccurs="1"></element>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="qsosappfamily" type="string"></element>
+	<element name="template">
+		<complexType>
+			<sequence>
+				<element ref="qsos:language"></element>
+				<element ref="qsos:appname"></element>
+				<element ref="qsos:release"></element>
+				<element ref="qsos:licenseid"></element>
+				<element ref="qsos:licensedesc"></element>
+				<element ref="qsos:url"></element>
+				<element ref="qsos:desc"></element>
+				<element ref="qsos:demourl" maxOccurs="1" minOccurs="0"></element>
+				<element ref="qsos:qsosformat"></element>
+				<element ref="qsos:qsosappname"></element>
+				<element name="qsosspecificformat" type="string"
+					maxOccurs="1" minOccurs="0"></element>
+				<element ref="qsos:qsosappfamilies"></element>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="qsostemplate">
+		<complexType>
+			<sequence>
+				<element ref="qsos:header"></element>
+				<element ref="qsos:template"></element>
+			</sequence>
+		</complexType>
+	</element>
+</schema>

@@ -20,7 +20,7 @@ class family:
     """
     
     
-    def __init__(self,authors, dates, scores,comments):
+    def __init__(self, familyname):
         """
         Initializer
         
@@ -29,9 +29,6 @@ class family:
         @param authors
                 A list of family's evaluation authors.
                 Each entry is a couple of string (name, e-mail)
-        @param dates
-                Family's evaluation dates.
-                dates must be a couple of string (creation,validation)
         @param scores
                 Scores' dictionnary
                 Key entry is the element id from qsos xml
@@ -39,10 +36,7 @@ class family:
                 Comments' dictionnary
                 Key entry is the element id from qsos xml
         """
-        self.authors = authors
-        self.dates = dates
-        self.scores = scores
-        self.comments = comments
+        self.familyname = familyname
     
     def __getitem__(self, item) :
         """
@@ -61,14 +55,19 @@ class family:
                     - element.comment
             
         """
-        #First case : dates
-        if item.startswith("date") :
-            if item.endswith("creation") :
-                return self.dates[0]
-            else :
-                return self.dates[1]
-        #Second case : authors
-        elif item == "authors" :
+        #First case : Family name
+        if item == "familyname" :
+            return self.familyname
+            
+class include:
+    def __init__(self, authors, scores, comments):
+        self.authors = authors
+        self.scores = scores
+        self.comments = comments
+    
+    def __getitem__(self, item):
+        #Second case : Authors
+        if item == "authors" :
             return self.authors
         #Default case : any item
         else :
@@ -77,3 +76,4 @@ class family:
                 return self.scores[key]
             elif what == "comment" :
                 return self.comments[key]
+    

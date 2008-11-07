@@ -12,75 +12,73 @@ splitted repository's qscore, qin and qtpl files
 from Engine import document
 from Engine import family
 from xml.dom import minidom
+from Repository import gitshelve as git
+import re
 import os
 
 ##
 #    @ingroup builder
 #
-def build(name, version, repositoryroot=".."):
+def build(evaluation, repositoryroot):
     """
     Builds name-version's qsos evaluation document
     
-    @param name
-            Application name.
-    @param version
-            Application version.
+    @param id
+            Evaluation identifier
     @param repositoryroot
             Path to local repository's root.
-            Default value is ..
     @return
         Builded Document object of name-version's qsos evaluation
     """
-    #Read the template of requested evaluation from repository
-    template = "-".join([name,version])
-    template = ".".join([template,"qtpl"])
-    template = os.path.join(repositoryroot,"sheets","templates",template)
-    template = file(template).read()
-    template = "".join([line.strip() for line in (template.splitlines())])
     
-    #Extract template contents
-    content = minidom.parseString(template).firstChild.lastChild.childNodes
+    #Unpack evaluation parameter and build base path
+    (id,version)=evaluation
+    base = os.path.join(repositoryroot,"sheets")
     
-    #Extract properties from template contents
-    properties = dict([(node.tagName,node.firstChild.data) for node in content[0:-2]])
+    #Read the header of requested evaluation from repository
+    header = os.path.join(base,"evaluations", id, version, "header.qscore")
+    header = "".join(line.strip() for line in file(header).readlines())
     
-    #Build families object according to families declared from template
-    #generic *family* must also be added to families
-    includes = [node.firstChild.data for node in content[-1].childNodes]
-    includes.insert(0,"generic")
-    families ={}
+    #Extract template content
+    content = minidom.parseString(header).firstChild
+    
+    #Extract properties from header contents
+    properties = {}
+    for node in content.firstChild.childNodes :
+        try :
+            properties[node.tagName] = node.firstChild.data
+        except AttributeError:
+            properties[node.tagName] = "N/A"
+            
+    #Set appname and release properties from evaluation parameter
+    properties["release"]=version
+    properties["qsosappname"]=id
+    
+    #Read includes of families from header. generic include must also be added
+    families = [node.firstChild.data for node in content.lastChild.childNodes]
+    includes = ["generic"]
+    for f in families :
+        xml = os.path.join(base, "families", f + ".qtpl")
+        xml = "".join(line.strip() for line in file(xml).readlines())
+        xml = minidom.parseString(xml).firstChild
+        for node in xml.childNodes :
+            includes.append(node.firstChild.data)
+    
     #Handle each family to be included
+    tree = {}
+    authors = {}
     for include in includes :
-        #parse family .qin file
-        familySheet = ".".join([include,"qscore"])
-        familySheet = os.path.join(repositoryroot,
-                                   "sheets",
-                                   "evaluations",
-                                   name,
-                                   version,
-                                   familySheet
-                                   )
-        familySheet = file(familySheet).read()
-        familySheet = "".join([line.strip() for line in familySheet.splitlines()])
-        xml = minidom.parseString(familySheet).firstChild
-        
-        #extract directly interesting information :
-        #    - authors
-        #    - dates
-        [h, elt] = xml.childNodes
-        [a,d]=h.childNodes
-        
-        authors =[(n.firstChild.data,e.firstChild.data) 
-                  for [n,e] in [i.childNodes for i in a.childNodes]]
-        #Dates can be not provided on .qin files, in which case, empty string
-        #is assumed to be date value
-        value = lambda x : (x and [x.data] or [""])[0]
-        dates = (value(d.firstChild.firstChild),value(d.lastChild.firstChild))
-        
+        #parse .qscore file
+        relPath = os.path.join("evaluations" ,id, version, include + ".qscore")
+        absPath = os.path.join(base, relPath)
+        sheet = "".join(line.strip() for line in file(absPath).readlines())
+        xml = minidom.parseString(sheet).firstChild
+        (name,email) = getAuthor(repositoryroot, os.path.join("sheets" ,relPath))
+        authors[email]=name
         #Scores and comments extraction loop
         scores = {}
         comments = {}
-        for node in elt.childNodes :
+        for node in xml.childNodes :
             n = node.getAttribute("name")
             v = node.getElementsByTagName("score")
             if v : scores[n] = v[0].firstChild.data 
@@ -88,24 +86,23 @@ def build(name, version, repositoryroot=".."):
             if v : comments[n] = v[0].firstChild.data
             
         #Add the family into family list for the document 
-        families[include]=family.family(authors, dates, scores, comments)
+        tree[include]=family.include(authors, scores, comments)
         
     #Create and return the expected documents
-    return document.Document(properties,families)
+    return document.Document(properties,families, tree)
     
 ##
 #    @ingroup builder
 #
-def assembleSheet(document, repositoryroot=".."):
+def assembleSheet(document, repositoryroot):
     """
-    Generate the qsos XML file corresponding to givent document object
+    Generate the qsos XML file corresponding to given document object
     
     @param document
         Evaluation's document object.
         
     @param repositoryroot
         Path to repository's root.
-        Defalut value is ..
     @return
         qsos XML string flow of document's content
     """
@@ -114,55 +111,73 @@ def assembleSheet(document, repositoryroot=".."):
     root = sheet.createElement("document")
     header = sheet.createElement("header")
     authors = sheet.createElement("authors")
-    dates = sheet.createElement("dates")
     header.appendChild(authors)
-    header.appendChild(dates)
     root.appendChild(header)
     
-    #Lambda fucntions :
-    #    * add a text node in an element
-    #    * check if the element has the child node and create it if not
-    
-    addTextNode = lambda element,tag,text :                                     \
-                    element.                                                    \
-                        getElementsByTagName(tag).item(0).                      \
-                        appendChild(sheet.createTextNode(text))
-                        
-    checkChildNode = lambda element,tag :                                       \
-                    element.                                                    \
-                            getElementsByTagName(tag)                           \
-                        or                                                      \
-                            element.appendChild(sheet.createElement(tag))
+ 
     
     #Fill in header with properties
     for item in document["properties"] :
         tag = sheet.createElement(item)
         tag.appendChild(sheet.createTextNode(document["properties"][item]))
         header.appendChild(tag)
-    families = document["families"].keys()
     
+    appfamilies = sheet.createElement("qsosappfamilies")
+    header.appendChild(appfamilies)
+    
+    auths = {}
     #Add blank qsos evaluation of families
-    for item in families :
-        include = ".".join([item, "qin"])
-        include = os.path.join(repositoryroot,"sheets","families",include)
-        include = file(include).read()
-        include = "".join([line.strip() for line in include.splitlines()])
+    for item in document["families"] :
+        app = sheet.createElement("qsosappfamily")
+        app.appendChild(sheet.createTextNode(item))
+        appfamilies.appendChild(app)
+        
+    for item in document["includes"] :
+        for mail,name in document[item]['authors'].iteritems() :
+            auths[name] = mail
+                    
+        include = os.path.join(repositoryroot,"sheets","includes",item + ".qin")
+        include = "".join(line.strip() for line in file(include).readlines())
         include = minidom.parseString(include).firstChild
-        for section in include.childNodes[1:]:
-            root.appendChild(section)
+        for section in include.childNodes[1:] : root.appendChild(section)
     
-    #Finalize the blank  document
+    #Fill-in authors tag with data extracted 
+    for k, v in auths.iteritems() :
+        tag = sheet.createElement('author')
+        leaf = sheet.createElement("email")
+        leaf.appendChild(sheet.createTextNode(v))
+        tag.appendChild(leaf)
+        leaf = sheet.createElement("name")
+        leaf.appendChild(sheet.createTextNode(k.decode('utf-8')))
+        tag.appendChild(leaf)
+        authors.appendChild(tag)
+    #Finalize the document
     sheet.appendChild(root)
+    return sheet.toxml('utf-8')
+
+##
+#    @ingroup builder
+#
+def fillSheet(document, sheet, repositoryroot):   
+    #Lambda fucntions :
+    #    * add a text node in an element
+    #    * check if the element has the child node and create it if not
     
-            
-    sheet = minidom.parseString(sheet.toxml())
+    addTextNode = lambda element,tag,text : element.getElementsByTagName(tag).  \
+                                item(0).appendChild(sheet.createTextNode(text))
+                        
+    checkChildNode = lambda element,tag :                                       \
+                            element.getElementsByTagName(tag)                   \
+                        or                                                      \
+                            element.appendChild(sheet.createElement(tag))
+                            
+    sheet = minidom.parseString(sheet)
     
     #Define ID tag for the document
-    for elements in sheet.getElementsByTagName("element") :
-        elements.setIdAttribute("name")
+    for e in sheet.getElementsByTagName("element") : e.setIdAttribute("name")
     
     #Fill-in evaluations' section with families data
-    for item in document["families"] :
+    for item in document["includes"] :
         scores = document[item].scores.copy()
         comments = document[item].comments.copy()
         
@@ -195,3 +210,13 @@ def assembleSheet(document, repositoryroot=".."):
             addTextNode(e,"comment",comment)
             
     return sheet.toprettyxml("\t", "\n", "utf-8")
+
+
+def getAuthor(repository, file):
+    log = git.git('log', file)
+    result = re.compile('Author: (.*)<(.+@.+)>').search(log)
+    if result :
+        return result.group(1), result.group(2)
+    else :
+        raise StandardError("No author found for " + file + " in " + repository)
+    

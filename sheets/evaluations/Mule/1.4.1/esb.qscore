@@ -1,0 +1,363 @@
+<?xml version="1.0" encoding="utf-8"?>
+<qsosscore>
+	<element name="boservices">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="xmpp">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="synchronous">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="admintools">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="botypemeta">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="businessrules">
+		<score>
+			1
+		</score>
+	</element>
+	<element name="schemavalidation">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="sgbd">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="transactionsupport">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="snmp">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="businessobject">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="addressbasedrouting">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="authorization">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="propmoms">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="jmx">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="metadatebasedrouting">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="publishsubscribe">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="jms">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="xquerysupport">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="wssecurity">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="dataintegrity">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="uddi">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="xquery">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="erp">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="dataencryption">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="wstransaction">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="soapsupport">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="wschoreography">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="xsltsupport">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="pluginarchitecture">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="supportedems">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="scriptbasedtransformation">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="xsd">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="exceptionhandling">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="bam">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="nonxml">
+		<score>
+			1
+		</score>
+	</element>
+	<element name="crm">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="smtp">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="asynchronous">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="file">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="fireandforget">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="devtools">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="rmi">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="bpel">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="ftp">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="corba">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="businessgraph">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="adapterapi">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="saml">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="contentbasedrouting">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="jca">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="soap">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="servicedisco">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="jaas">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="http">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="integratedmom">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="xslt">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="bpelsupport">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="scalability">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="faulttolerance">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="wsdl">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="wsreliability">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="delivery">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="logging">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="wscoordination">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="pkisupport">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="transportapi">
+		<score>
+			1
+		</score>
+	</element>
+	<element name="scriptbased">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="scdl">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="rulebasedtransformation">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="pointtopoint">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="jbi">
+		<score>
+			2
+		</score>
+	</element>
+</qsosscore>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<qsosheader>
+	<properties>
+		<licensedesc>
+			GNU GPL
+		</licensedesc>
+		<language>
+			fr
+		</language>
+		<appname>
+			GForge
+		</appname>
+		<url>
+			http://gforge.org/projects/gforge/
+		</url>
+		<qsosspecificformat>
+			N/A
+		</qsosspecificformat>
+		<demourl>
+			N/A
+		</demourl>
+		<qsosappname>
+			gforge
+		</qsosappname>
+		<licenseid>
+			31
+		</licenseid>
+		<release>
+			4.5
+		</release>
+		<qsosformat>
+			2.0
+		</qsosformat>
+		<desc>
+			GForge est la forge libre la plus connue, écrite en PHP et fonctionnant sur le SGBDR libre PostgreSQL
+		</desc>
+	</properties>
+	<families>
+		<family>
+			Forge
+		</family>
+	</families>
+</qsosheader>

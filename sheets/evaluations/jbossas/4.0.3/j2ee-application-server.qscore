@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="utf-8"?>
+<qsosscore>
+	<element name="j2eemanagementapi">
+		<score>
+			2
+		</score>
+		<comment>
+			J2EE Management API 1.0
+		</comment>
+	</element>
+	<element name="licencej2ee">
+		<score>
+			2
+		</score>
+		<comment>
+			Oui
+		</comment>
+	</element>
+	<element name="jsf">
+		<score>
+			1
+		</score>
+		<comment>
+			Possible via MyFaces, intégré dans la distribution
+		</comment>
+	</element>
+	<element name="ejbsession">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="jmxremoting">
+		<score>
+			1
+		</score>
+		<comment>
+			Solution non standard : Une version de Jboss Remoting implémentant une partie de JMX Remoting est intégrée. Pour le reste il faut passer par le RmiAdaptor propre à Jboss. La version complète de JMX Remoting est attendue pour Jboss AS 5
+		</comment>
+	</element>
+	<element name="ha-jms">
+		<score>
+			2
+		</score>
+		<comment>
+			A un instant T, seul un noeud du cluster est actif au niveau JMS
+		</comment>
+	</element>
+	<element name="equilibragedecharge">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="corba">
+		<score>
+			2
+		</score>
+		<comment>
+			Via JacORB intégré
+		</comment>
+	</element>
+	<element name="jdbc">
+		<score>
+			2
+		</score>
+		<comment>
+			JDBC 3.0
+		</comment>
+	</element>
+	<element name="reprisesurincident">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="httptiers">
+		<score>
+			1
+		</score>
+		<comment>
+			Avec Apache et Microsoft IIS via mod_jk. Partenariat avec Microsoft pour améliorer intégration avec IIS
+		</comment>
+	</element>
+	<element name="consoledadministration">
+		<score>
+			1
+		</score>
+		<comment>
+			Console pas très riche : assez technique surtout orientée bus JMX.Une véritable console d'administration a vu le jour, mais est vendue sous la forme de services (Jboss Network).
+		</comment>
+	</element>
+	<element name="jca">
+		<score>
+			2
+		</score>
+		<comment>
+			JCA 1.5
+		</comment>
+	</element>
+	<element name="jms">
+		<score>
+			2
+		</score>
+		<comment>
+			JMS 1.1
+		</comment>
+	</element>
+	<element name="jaf">
+		<score>
+			2
+		</score>
+		<comment>
+			JAF 1.0
+		</comment>
+	</element>
+	<element name="certificationj2ee">
+		<score>
+			2
+		</score>
+		<comment>
+			Premier serveur d'applications open source à obtenir la certification J2EE 1.4 de SUN
+		</comment>
+	</element>
+	<element name="jta">
+		<score>
+			2
+		</score>
+		<comment>
+			JTA 1.0.1 B
+		</comment>
+	</element>
+	<element name="ejb">
+		<score>
+			2
+		</score>
+		<comment>
+			EJB 2.1, EJB 3 Preview
+		</comment>
+	</element>
+	<element name="jmx">
+		<score>
+			2
+		</score>
+		<comment>
+			JMX 1.2 est au coeur de l'architecture du serveur
+		</comment>
+	</element>
+	<element name="jaas">
+		<score>
+			2
+		</score>
+		<comment>
+			JAAS 1.0
+		</comment>
+	</element>
+	<element name="ejbentite">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="jaxb">
+		<score>
+			0
+		</score>
+		<comment>
+			Fonctionnalité en cours de développement. Sera intégré à Jboss WS 1.0 pour Jboss AS 5
+		</comment>
+	</element>
+	<element name="j2eedeploymentapi">
+		<score>
+			2
+		</score>
+		<comment>
+			J2EE Deployment API 1.1
+		</comment>
+	</element>
+	<element name="jndi">
+		<score>
+			2
+		</score>
+		<comment>
+			JNDI 1.2.1
+		</comment>
+	</element>
+	<element name="jsp">
+		<score>
+			2
+		</score>
+		<comment>
+			JSP 2.0
+		</comment>
+	</element>
+	<element name="javamail">
+		<score>
+			2
+		</score>
+		<comment>
+			JavaMail 1.3
+		</comment>
+	</element>
+	<element name="jaxr">
+		<score>
+			2
+		</score>
+		<comment>
+			JAXR 1.0. Remplacement de l'implémentation du registry (ebXMLRR est remplacé par Apache Scout/jUDDI)
+		</comment>
+	</element>
+	<element name="jaxp">
+		<score>
+			2
+		</score>
+		<comment>
+			JAXP 1.2
+		</comment>
+	</element>
+	<element name="servlet">
+		<score>
+			2
+		</score>
+		<comment>
+			Servlet 2.4
+		</comment>
+	</element>
+	<element name="jacc">
+		<score>
+			2
+		</score>
+		<comment>
+			JACC 1.0
+		</comment>
+	</element>
+	<element name="jax-rpc">
+		<score>
+			2
+		</score>
+		<comment>
+			JAX-RPC 1.1
+		</comment>
+	</element>
+	<element name="protocolesdebase">
+		<score>
+			2
+		</score>
+		<comment>
+			WS-I Basic Profile 1.0, SOAP 1.1, WSDL 1.1
+		</comment>
+	</element>
+	<element name="serveurhttpintegre">
+		<score>
+			2
+		</score>
+		<comment>
+			Via l'intégration native de Tomcat 5.5
+		</comment>
+	</element>
+	<element name="saaj">
+		<score>
+			2
+		</score>
+		<comment>
+			SAAJ 1.2
+		</comment>
+	</element>
+	<element name="integrationide">
+		<score>
+			2
+		</score>
+		<comment>
+			Forte intégration avec Eclipse via Jboss IDE, existence d'extensions pour netBeans, Borland Jbuilder et IDEA IntelliJ
+		</comment>
+	</element>
+	<element name="authentificationexterne">
+		<score>
+			2
+		</score>
+		<comment>
+			JBossAS propose plusieurs PAM (dont LDAP, base de données, système, etc…)
+		</comment>
+	</element>
+	<element name="sessionhttp">
+		<score>
+			2
+		</score>
+	</element>
+</qsosscore>

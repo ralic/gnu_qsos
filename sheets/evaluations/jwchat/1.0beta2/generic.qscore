@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<qsosscore>
+	<element name="consulting">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="easeofuseergonomics">
+		<score>
+			1
+		</score>
+	</element>
+	<element name="administrationmonitoring">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="independenceofdevelopments">
+		<score>
+			2
+		</score>
+		<comment>
+			JWchat is a communautary project.
+		</comment>
+	</element>
+	<element name="codemodification">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="protectionagainstproprietaryforks">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="leadingteam">
+		<score>
+			1
+		</score>
+	</element>
+	<element name="books">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="references">
+		<score>
+			1
+		</score>
+		<comment>
+			One production reference is given on the website : CortexPro
+		</comment>
+	</element>
+	<element name="packagingsource">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="developersidentificationturnover">
+		<score>
+			0
+		</score>
+		<comment>
+			JWchat is developped by 3 developpers.
+		</comment>
+	</element>
+	<element name="quality">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="documentation">
+		<score>
+			1
+		</score>
+	</element>
+	<element name="training">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="permissiveness">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="support">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="popularity">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="modularity">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="contributingcommunity">
+		<score>
+			1
+		</score>
+		<comment>
+			Jwchat use forum and mailing lists from sourceforge
+		</comment>
+	</element>
+	<element name="codeextension">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="age">
+		<score>
+			1
+		</score>
+		<comment>
+			Project was initiated in 2004/06
+		</comment>
+	</element>
+	<element name="forkprobability">
+		<score>
+			2
+		</score>
+	</element>
+</qsosscore>

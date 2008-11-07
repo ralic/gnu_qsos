@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8"?>
+<qsosscore>
+	<element name="invitesending">
+		<score>
+			1
+		</score>
+		<comment>
+			Les invitations sont toutes envoyées au lancement de l'enquête. Mais il est possible d'effectuer des invitation unitaire et des relances unitaire ou groupées.
+		</comment>
+	</element>
+	<element name="conditionalquestions">
+		<score>
+			2
+		</score>
+		<comment>
+			Il manque toutefois la notion de critère d'appariton d'un groupe en fonction d'une question. Notion plus globalisante et dans un récent questionnaire elle nous aurait servi.
+		</comment>
+	</element>
+	<element name="predefinedquestions">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="inviteemailtemplate">
+		<score>
+			2
+		</score>
+		<comment>
+			Format paramétrable dans les propriétés du questionnaire
+		</comment>
+	</element>
+	<element name="gobalguicustom">
+		<score>
+			1
+		</score>
+	</element>
+	<element name="answerviz">
+		<score>
+			2
+		</score>
+		<comment>
+			Visualisation très simplifiée
+		</comment>
+	</element>
+	<element name="admintools">
+		<score>
+			1
+		</score>
+	</element>
+	<element name="persistantanswers">
+		<score>
+			2
+		</score>
+		<comment>
+			Possibilité de paramétrer ou non la persistance des réponses dans les propriétés du questionnaire
+		</comment>
+	</element>
+	<element name="questiontypes">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="importexportformats">
+		<score>
+			1
+		</score>
+		<comment>
+			Format SQL pour l'export des questionnairesFormat CSV pour les résultats des enquêtes ou la liste des invités
+		</comment>
+	</element>
+	<element name="invitesrecall">
+		<score>
+			1
+		</score>
+		<comment>
+			Il est possible d'effectuer des invitation unitaire et des relances unitaire ou groupées.
+		</comment>
+	</element>
+	<element name="storage">
+		<score>
+			0
+		</score>
+		<comment>
+			MySQL uniquement.Le support multi-base est en cours de développement. Cela apportera surement pas mal de choses.
+		</comment>
+	</element>
+	<element name="authentication">
+		<score>
+			0
+		</score>
+		<comment>
+			Authentification par le module htaccess d'apache. L'application permet d'administrer en ligne le .htaccess
+		</comment>
+	</element>
+	<element name="loadbalancing">
+		<score>
+			1
+		</score>
+	</element>
+	<element name="invitesupportedchannels">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="syrveystatemgmt">
+		<score>
+			1
+		</score>
+	</element>
+	<element name="importexportgrains">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="failover">
+		<score>
+			1
+		</score>
+	</element>
+	<element name="displaymodes">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="presentationmodels">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="questionsorting">
+		<score>
+			1
+		</score>
+		<comment>
+			Tri des questions par le champ ID de la question. Complèxe et surtout ce champ ID apparait sur certains modèle de questionnaire.
+		</comment>
+	</element>
+	<element name="resultsexport">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="nbrofsurveys">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="resultsimport">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="surveypubdate">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="invitescontrol">
+		<score>
+			1
+		</score>
+		<comment>
+			Il manque tout de même un peu d'ergonomie pour améliorer le module d'invitation.
+		</comment>
+	</element>
+	<element name="globalstats">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="reportcustom">
+		<score>
+			2
+		</score>
+		<comment>
+			Modification fastidieuse, le module d'administration est pas mal buggé
+		</comment>
+	</element>
+	<element name="surveyexpdate">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="questiontypecustom">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="reports">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="graphicalviz">
+		<score>
+			1
+		</score>
+	</element>
+	<element name="questiongrouping">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="answervalisation">
+		<score>
+			1
+		</score>
+	</element>
+	<element name="rightsmanagement">
+		<score>
+			0
+		</score>
+		<comment>
+			Le système basé sur htaccess permet de distribuer des comptes d'accès mais les droits sont identiques pour tous. Tout le monde administrer tous les questionnaires.
+		</comment>
+	</element>
+	<element name="distributedarch">
+		<score>
+			1
+		</score>
+	</element>
+	<element name="sqlrequests">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="answerunicity">
+		<comment>
+			Revoir la notion &quot;d'unicité&quot; qui n'est pas claire.
+		</comment>
+	</element>
+	<element name="groupsorting">
+		<comment>
+			Tri des groupes se fait  par le champ Titre du groupe. Très très peu de souplesse dans le tri.
+		</comment>
+	</element>
+</qsosscore>

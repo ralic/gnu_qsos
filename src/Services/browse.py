@@ -15,159 +15,57 @@ This module handles the repository browse page.
 
 from twisted.application import service, internet
 
-from nevow               import rend
-from nevow               import loaders
-from nevow               import tags as T
-from nevow               import inevow
-from nevow               import static
+from nevow  import rend
+from nevow  import loaders
+from nevow  import tags as T
+from nevow  import inevow
+from nevow  import static
 
-from Engine import builder
-import os
+from os     import listdir
+from os import path
 
-##
-#    @ingroup browse
-#
-class Page404 ( rend.Page ):
-    """
-    Handles Error 404
-    
-    Renders Page not found Error
-    """
-    
-    def render_title ( self, ctx, data ):
-        "Renders page's title"
-        request = inevow.IRequest ( ctx )
-        return "Currently browsing  %s" % ( "/".join(request.prepath[1:]), )
+from Engine import core
+from QSOSpage import QSOSPage
 
-    def render_body ( self, ctx, data ):
-        "Renders page's body"
-        return "Not Found"
 
-    docFactory = loaders.stan (
-        T.html [ T.head [ T.title [ render_title ] ],
-                 T.body [ render_body ]
-        ]
-    ) 
-
-##
-#    @ingroup browse
-#
-class RenderEvaluation ( rend.Page ):
-    """
-    Handles Evaluations' subpages
-    
-    This class renders QSOS evaluation sheets from files located on local 
-    copy of repository
-    """
-    
-    def getName ( self, ctx ):
-        """
-        Extract evaluation's name and version from request.
-        
-        These informations are extracted from the request's context and are 
-        returned in a list [name, version]
-        
-        @param self
-                Pointer to the object
-        @param ctx
-                Invocation Context from which informations are extracted
-        @return
-            The list [name, version]
-        """ 
-        return inevow.IRequest ( ctx ).path.split("/")[-2:]
-    
-    ##
-    #    @todo Extract evaluation name from request
-    #
-    def render_title ( self, ctx, data ):
-        "Renders page's title"
-        [name,version]= self.getName ( ctx )
-        return "Evaluation of "+name+"-"+version
-    
-    ##
-    #    @todo
-    #        A true page's structure!
-    def render_body ( self, ctx, data ):
-        "Renders page's body"
-        [name,version]= self.getName ( ctx )
-        document = builder.build(name, version,"..")
-        return builder.assembleSheet(document,"..")
-    
-    docFactory = loaders.stan (
-        T.html [ T.head [ T.title [ render_title ] ],
-                 T.body [ render_body ]
-        ]
-    )  
-
-##
-#    @ingroup browse
-#
-class ReportsPage ( rend.Page ):
-    """Handles unbinded pages
-    
-    This class provides a handler for any page's requested not handled"""
-
-    def locateChild ( self, ctx, segments ):
-        "Generate a 404 Page"
-        return ( Page404(), () )
- 
-##
-#    @ingroup browse
-#    
-class ReportEvaluation ( rend.Page ):
-    """
-    Report Evaluation page
-    
-    This class locates evaluation page of requested qsos sheet
-    """
-    def locateChild ( self, ctx, segments ):
-#        "Locate and generate the evaluation page"
-         [name,version]= inevow.IRequest ( ctx ).path.split("/")[-2:]
-         document = builder.build(name, version,"..")
-         tmp = "/".join(["","tmp","-".join([name,version])])+".xml"
-         file = open(tmp,'w')
-         file.write(builder.assembleSheet(document,".."))
-         file.close()
-         return (static.File(tmp), ())
-#    def locateChild ( self, ctx, segments ):
-#        "Locate and generate the evaluation page"
-#        return ( RenderEvaluation(), () )
- 
 ##
 #    @ingroup browse
 #   
-class SubPage ( rend.Page ):
+
+
+class SubPage ( QSOSPage ):
     """
     Handles repository subpages
     
     This class renders a page for any location on the repository that is not
     explicitly binded to a handler
     """
-    
-    def render_title ( self, ctx, data ):
-        "Renders page's title"
-        request = inevow.IRequest ( ctx )
-        return "Currently browsing  %s" % ( "/".join(request.prepath[1:]), )
-    
-    def body ( self, ctx, data ):
+    def renderList ( self, ctx, data ):
         "Renders page's content"
-        request = inevow.IRequest ( ctx )
-        path = "/".join(request.prepath[1:])
-        body = [ T.h1 [path] ]
-        body.extend([T.p [ T.a ( href = 'repository/'+path+'/'+dir ) [ dir.split(".")[:-1] ] ] for dir in os.listdir("../sheets/"+path)])
-        return body
-    
-    docFactory = loaders.stan (
-        T.html [  T.head [ T.title [ render_title ] ], 
-                  body
-                 ]
-        )
+        location = "/".join([self.repository, 'sheets']+inevow.IRequest(ctx).prepath[1:])
+        return [ self.renderItem(item, location)  for item in listdir(location) ]
+        
+    def renderItem (self, item, location):
+        if path.isdir(location+item) :
+            return T.li ( class_ = 'folder' ) [ T.a (href=item) [item] ]
+        elif path.isfile(location+item) :
+            return T.li ( class_ = item.split(".")[-1] ) [ T.a (href=item) [item.split(".")[:-1]] ]
+        
+    def childFactory (self, ctx, name):
+        "Locate and generate the evaluation page"
+        location = "/".join([self.repository, 'sheets'] + inevow.IRequest(ctx).prepath[1:]+[name])
+        if path.isfile(location): 
+            return static.File(location, defaultType='xml')
+        elif path.isdir(location):
+            return SubPage(self.repository)
+        else :
+            return None
     
   
 ##
 #    @ingroup browse
 #  
-class EvaluationPage ( rend.Page ):
+class EvaluationPage ( QSOSPage ):
     """
     Renders Evaluation pages content
     
@@ -175,54 +73,53 @@ class EvaluationPage ( rend.Page ):
     content.
     """
     
-    def render_title ( self, ctx, data ):
-        "Renders page's title"
-        request = inevow.IRequest ( ctx )
-        return "Currently browsing  %s" % ( "/".join(request.prepath[1:]), )
-    
-    def body ( self, ctx, data ):
+    def renderList (self, ctx, data):
         "Renders page's body"
-        request = inevow.IRequest ( ctx )
-        path = "/".join(request.prepath[1:])
-        body = [ T.h1 [path] ]
-        body.extend([ [ T.p [
-                             T.a ( href = "/".join(["evaluations",dir,version]) )
-                             [ dir + "-" + version ]
-                             ] for version in os.listdir("../sheets/"+path+'/'+dir)]
-                      for dir in os.listdir("../sheets/"+path)])
-        return body
+        path = "/".join([self.repository, "sheets"]+
+                        inevow.IRequest(ctx).prepath[1:])
+        return [ T.li (class_='sheet') [
+                       T.a (href = "/".join([dir, version]))
+                       [ dir + "-" + version ]
+                    ] for dir in listdir(path)
+                      for version in listdir(path + '/' + dir) ]
+        
     
-    docFactory = loaders.stan (
-        T.html [  T.head [ T.title [ render_title ] ], 
-                  body
-                 ]
-        )
+
     
-    def childFactory ( self, ctx, name ):
-        "Locate and redirect to the evalution sheet requested"
-        return ReportEvaluation()
+    def locateChild ( self, ctx, segments ):
+        "Locate and generate the evaluation page"
+#        id= "-".join(segments)
+        if not "-".join(segments) :
+            return (self, ())
+        tmp =  "/tmp/" + "-".join(segments) + "." + "qsos"
+        file = open(tmp,'w')
+        file.write(core.request(segments))
+        file.close()
+        return (static.File(tmp, defaultType='xml'), ())
 
 ##
 #    @ingroup browse
 #
-class MainPage ( rend.Page ):
+class MainPage ( QSOSPage ):
     """
     Renders repository home page
     
     This class renders the main page when browse request is handled
     """
     
-    body = [ T.h1 ["/"] ]
-    body.extend([T.p [ T.a ( href = 'repository/'+dir ) [ dir ] ]for dir in os.listdir("../sheets")])
-    docFactory = loaders.stan (
-        T.html [ T.head ( title = 'Main Page' ),
-                 T.body [ body ]
-                 ]
-        )
+    def renderList (self, ctx, data):
+        return [T.li (class_='folder')[
+                    T.a(href= dir)[dir]
+                    ] for dir in listdir(self.repository + "/sheets") ]
+                    
     
-    
-    def childFactory ( self, ctx, name ):
+    def childFactory (self, ctx, name):
         "Handles children with no explicit renderer"
-        return SubPage()
+        if name :
+            return SubPage(self.repository)
+        else :
+            return None
+    
+    def child_evaluations (self, ctx):
+        return EvaluationPage(self.repository)
 
-    children = { 'evaluations' : EvaluationPage() }

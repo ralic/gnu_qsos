@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<qsosheader>
+	<properties>
+		<licensedesc>
+			GNU LGPL
+		</licensedesc>
+		<language>
+			fr
+		</language>
+		<appname>
+			JBoss WS
+		</appname>
+		<url>
+			http://labs.jboss.com/portal/jbossws/
+		</url>
+		<qsosspecificformat>
+			N/A
+		</qsosspecificformat>
+		<demourl>
+			N/A
+		</demourl>
+		<qsosappname>
+			jboss ws
+		</qsosappname>
+		<licenseid>
+			32
+		</licenseid>
+		<release>
+			2.0.GA
+		</release>
+		<qsosformat>
+			2.0
+		</qsosformat>
+		<desc>
+			Framework de développement, déploiement et consommation de web services en environnement J2EE (partie Web)
+		</desc>
+	</properties>
+	<families>
+		<family>
+			J2Ee-Ws-Stack
+		</family>
+	</families>
+</qsosheader>

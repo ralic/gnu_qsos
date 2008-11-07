@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<qsosheader>
+	<properties>
+		<licensedesc>
+			LGPL
+		</licensedesc>
+		<language>
+			fr
+		</language>
+		<appname>
+			CloverETL
+		</appname>
+		<url>
+			N/A
+		</url>
+		<qsosspecificformat>
+			N/A
+		</qsosspecificformat>
+		<demourl>
+			N/A
+		</demourl>
+		<qsosappname>
+			cloverEtl
+		</qsosappname>
+		<licenseid>
+			N/A
+		</licenseid>
+		<release>
+			1.3
+		</release>
+		<qsosformat>
+			2.0
+		</qsosformat>
+		<desc>
+			N/A
+		</desc>
+	</properties>
+	<families>
+		<family>
+			Etl
+		</family>
+	</families>
+</qsosheader>

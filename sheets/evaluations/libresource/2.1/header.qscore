@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<qsosheader>
+	<properties>
+		<licensedesc>
+			OSI Approved
+		</licensedesc>
+		<language>
+			fr
+		</language>
+		<appname>
+			LibreSource
+		</appname>
+		<url>
+			http://dev.libresource.org/
+		</url>
+		<qsosspecificformat>
+			N/A
+		</qsosspecificformat>
+		<demourl>
+			N/A
+		</demourl>
+		<qsosappname>
+			libresource
+		</qsosappname>
+		<licenseid>
+			15
+		</licenseid>
+		<release>
+			2.1
+		</release>
+		<qsosformat>
+			2.0
+		</qsosformat>
+		<desc>
+			LibreSource est une forge libre sous licence QPL écrite en Java par Artenum et un consortium (recherche et université), nécessitant le SGBDR PostgreSQL
+		</desc>
+	</properties>
+	<families>
+		<family>
+			Forge
+		</family>
+	</families>
+</qsosheader>

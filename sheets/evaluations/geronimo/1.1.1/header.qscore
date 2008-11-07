@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<qsosheader>
+	<properties>
+		<licensedesc>
+			The Apache License 2.0
+		</licensedesc>
+		<language>
+			fr
+		</language>
+		<appname>
+			Geronimo
+		</appname>
+		<url>
+			http://geronimo.apache.org/
+		</url>
+		<qsosspecificformat>
+			1.0
+		</qsosspecificformat>
+		<demourl>
+			Non applicable
+		</demourl>
+		<qsosappname>
+			geronimo
+		</qsosappname>
+		<licenseid>
+			59
+		</licenseid>
+		<release>
+			1.1.1
+		</release>
+		<qsosformat>
+			2.0
+		</qsosformat>
+		<desc>
+			Serveur d'applications J2EE
+		</desc>
+	</properties>
+	<families>
+		<family>
+			J2Ee-Application-Server
+		</family>
+	</families>
+</qsosheader>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<qsosheader>
+	<properties>
+		<licensedesc>
+			BSD
+		</licensedesc>
+		<language>
+			en
+		</language>
+		<appname>
+			PostgreSQL
+		</appname>
+		<url>
+			http://www.postgresql.org
+		</url>
+		<qsosspecificformat>
+			N/A
+		</qsosspecificformat>
+		<demourl>
+			Not applicable
+		</demourl>
+		<qsosappname>
+			postgresql
+		</qsosappname>
+		<licenseid>
+			33
+		</licenseid>
+		<release>
+			8.0
+		</release>
+		<qsosformat>
+			2.0
+		</qsosformat>
+		<desc>
+			Relational Database Management System
+		</desc>
+	</properties>
+	<families>
+		<family>
+			Rdbms
+		</family>
+	</families>
+</qsosheader>

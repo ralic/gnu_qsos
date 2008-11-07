@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<qsosheader>
+	<properties>
+		<licensedesc>
+			GNU GPL
+		</licensedesc>
+		<language>
+			en
+		</language>
+		<appname>
+			JWChat
+		</appname>
+		<url>
+			http://jwchat.sf.net/
+		</url>
+		<qsosspecificformat>
+			N/A
+		</qsosspecificformat>
+		<demourl>
+			N/A
+		</demourl>
+		<qsosappname>
+			jwchat
+		</qsosappname>
+		<licenseid>
+			31
+		</licenseid>
+		<release>
+			1.0beta2
+		</release>
+		<qsosformat>
+			2.0
+		</qsosformat>
+		<desc>
+			JWChat (Jabber Web Chat) is a full-featured AJAX Jabber client
+		</desc>
+	</properties>
+	<families>
+		<family>
+			Jabber-Client
+		</family>
+	</families>
+</qsosheader>

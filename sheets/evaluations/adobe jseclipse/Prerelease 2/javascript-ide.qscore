@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<qsosscore>
+	<element name="codegeneration">
+		<score>
+			1
+		</score>
+		<comment>
+			JSEclipse allows to create and reuse code templates
+		</comment>
+	</element>
+	<element name="codeexecutioninide">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="debugger">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="draganddrop">
+		<score>
+			2
+		</score>
+		<comment>
+			It can also be disabled by configuration
+		</comment>
+	</element>
+	<element name="cssautocompletion">
+		<score>
+			1
+		</score>
+	</element>
+	<element name="refactoring">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="profiling">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="jserrorwarningmanagement">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="stepping">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="webpreview">
+		<score>
+			1
+		</score>
+	</element>
+	<element name="csssyntaxhighlighting">
+		<score>
+			1
+		</score>
+	</element>
+	<element name="contextualhelp">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="statemanagement">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="htmlautocompletion">
+		<score>
+			1
+		</score>
+	</element>
+	<element name="csserrorwarningmanagement">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="logging">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="pre-packagedjavascriptlibraries">
+		<score>
+			1
+		</score>
+		<comment>
+			External libraries must be individually added to each project and parsed for autocompletion
+		</comment>
+	</element>
+	<element name="jssyntaxhighlighting">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="breaking">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="comments">
+		<score>
+			1
+		</score>
+		<comment>
+			Limited to the HTML View, not available for JavaScript files
+		</comment>
+	</element>
+	<element name="referenceguides">
+		<score>
+			1
+		</score>
+		<comment>
+			JSEditor embeds JavaScript 1.5 reference library 
+		</comment>
+	</element>
+	<element name="htmlsyntaxhighlighting">
+		<score>
+			1
+		</score>
+		<comment>
+			Embedded scripts can be edited in a temporary file to benefits from JavaScript editing features, but not JavaScripts included in HTML attributes
+		</comment>
+	</element>
+	<element name="htmlerrorwarningmanagement">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="documentationgeneration">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="linenumbering">
+		<score>
+			2
+		</score>
+	</element>
+	<element name="jsintellisense">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="tutorials">
+		<score>
+			0
+		</score>
+	</element>
+	<element name="wordwrap">
+		<score>
+			1
+		</score>
+		<comment>
+			A configurable print margin can be shown
+		</comment>
+	</element>
+	<element name="codenavigation">
+		<score>
+			2
+		</score>
+		<comment>
+			There is an Outline view and an &quot;Open Declaration&quot; feature
+		</comment>
+	</element>
+	<element name="jsautocompletion">
+		<score>
+			2
+		</score>
+		<comment>
+			Might need a refresh of code completion library. It is also available for JavaDoc/JSDoc tags.
+		</comment>
+	</element>
+</qsosscore>
