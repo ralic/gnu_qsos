@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<qsosheader>
+	<properties>
+		<licensedesc>
+			GNU GPL
+		</licensedesc>
+		<language>
+			en
+		</language>
+		<appname>
+			FedoraDS
+		</appname>
+		<url>
+			http://directory.fedoraproject.org/
+		</url>
+		<demourl>
+			N/A
+		</demourl>
+		<qsosappname>
+			FedoraDS
+		</qsosappname>
+		<licenseid>
+			31
+		</licenseid>
+		<release>
+			1.1.3
+		</release>
+		<qsosformat>
+			2.0
+		</qsosformat>
+		<qsosappfamilies>
+			N/A
+		</qsosappfamilies>
+		<desc>
+			N/A
+		</desc>
+	</properties>
+	<families/>
+</qsosheader>
