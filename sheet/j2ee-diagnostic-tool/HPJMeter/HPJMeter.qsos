@@ -1,0 +1,770 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document>
+   <header>
+      <authors>
+         <author>
+            <name>Fort Jérôme</name>
+            <email></email>
+         </author>
+         <author>
+            <name>Amine Bakari</name>
+            <email>Amine.Bakari@atosorigin.com</email>
+         </author>
+      </authors>
+      <dates>
+         <creation></creation>
+         <validation></validation>
+      </dates>
+      <language>en</language>
+      <appname>(HP)JMeter</appname>
+      <release>3.1</release>
+      <licenseid>31</licenseid>
+      <licensedesc>GNU GPL</licensedesc>
+      <url>http://h20392.www2.hp.com/portal/swdepot/displayProductInfo.do?productNumber=HPJMETER</url>
+      <desc>Analyse les fichiers heap dump produit par une JVM HP s'exécutant avec l'option -Xrunhprof</desc>
+      <demourl></demourl>
+      <qsosformat>1.6</qsosformat>
+      <qsosappfamily>Outil de diagnostic Java/J2EE</qsosappfamily>
+      <qsosspecificformat>1.0</qsosspecificformat>
+   </header>
+   <section name="generic" title="Section générique">
+      <desc>Les critères génériques de la méthode QSOS version 1.6</desc>
+      <element name="intrinsicdurability" title="Pérennité">
+         <desc>Pérennité</desc>
+         <element name="maturity" title="Maturité">
+            <desc>Maturité</desc>
+            <element name="age" title="Âge">
+               <desc0>Moins de 3 mois</desc0>
+               <desc1>Entre 3 mois et 3 ans</desc1>
+               <desc2>Plus de 3 ans</desc2>
+               <score>1</score>
+               <comment>La premiere version du produit est sortie en mars 2006.</comment>
+            </element>
+            <element name="stability" title="Stabilité">
+               <desc0>Logiciel instable avec de nombreuses versions et patches générant des effets de bords</desc0>
+               <desc1>Version de production stabilisée mais un peu vieille. Quelques difficultés à stabiliser les versions de développement</desc1>
+               <desc2>Logiciel stable. Les nouvelles versions corrigent des bugs, mais apportent de façon prépondérante de nouvelles fonctionnalités</desc2>
+               <score>2</score>
+               <comment>2 versions soties en 2008.</comment>
+            </element>
+            <element name="historyknowproblems" title="Historique">
+               <desc0>Le logiciel connaît de nombreux problèmes qui peuvent être rédhibitoires</desc0>
+               <desc1>Pas de problèmes majeurs, ni de crise</desc1>
+               <desc2>Bon historique de gestion de projet et de crise</desc2>
+               <score>1</score>
+               <comment>Aucune crise détectable.</comment>
+            </element>
+            <element name="forkprobability" title="Fork">
+               <desc0>Forte probabilité de fork dans un futur proche</desc0>
+               <desc1>Le logiciel provient d'un fork mais a très peu de chances d'être forké dans un futur proche</desc1>
+               <desc2>Très faible probabilité de fork. Le logiciel ne provient pas d'un fork</desc2>
+               <score>2</score>
+               <comment>Produit par HP et destiné à la jvm HP.</comment>
+            </element>
+         </element>
+         <element name="adoption" title="Adoption">
+            <desc>Adoption par la communauté et l'industrie</desc>
+            <element name="popularity" title="Popularité">
+               <desc0>Très peu d'utilisateurs identifiés</desc0>
+               <desc1>Usage détectable sur Internet</desc1>
+               <desc2>Nombreux utilisateurs et références</desc2>
+               <score>1</score>
+               <comment>Nombreux utilisateurs sur internet</comment>
+            </element>
+            <element name="references" title="Références">
+               <desc0>Aucune</desc0>
+               <desc1>Peu de références, pas d'usage critique</desc1>
+               <desc2>Souvent implémenté sur des applications critiques</desc2>
+               <score>1</score>
+               <comment></comment>
+            </element>
+            <element name="contributingcommunity" title="Communauté des contributeurs">
+               <desc0>Pas de communauté ou de réelle activité (forum, liste de diffusion…)</desc0>
+               <desc1>Communauté existante avec une activité notable</desc1>
+               <desc2>Communauté forte : grosse activité sur les forums, de nombreux contributeurs et défenseurs</desc2>
+               <score>0</score>
+               <comment>Aucun forum dédié.</comment>
+            </element>
+            <element name="books" title="Livres, publications">
+               <desc0>Aucun livre sur ce logiciel</desc0>
+               <desc1>Moins de cinq livres publiés sur ce logiciel</desc1>
+               <desc2>Plus de cinq livres publiés sur ce logiciel et dans différentes langues</desc2>
+               <score>0</score>
+               <comment></comment>
+            </element>
+         </element>
+         <element name="developmentleadership" title="Direction des développements">
+            <desc>Organisation et direction des développements</desc>
+            <element name="leadingteam" title="Équipe dirigeante">
+               <desc0>Un ou deux individus engagés, pas clairement identifiés</desc0>
+               <desc1>Entre deux et cinq personnes indépendantes</desc1>
+               <desc2>Plus de cinq personnes</desc2>
+               <score></score>
+               <comment>Information indisponible.</comment>
+            </element>
+            <element name="managementstyle" title="Mode de direction">
+               <desc0>Dictature complète</desc0>
+               <desc1>Despotisme éclairé</desc1>
+               <desc2>Conseil d'architectes avec un leader identifié (ex : KDE)</desc2>
+               <score></score>
+               <comment>Information indisponible.</comment>
+            </element>
+         </element>
+         <element name="activity" title="Activité">
+            <desc>Activité du et autour du projet</desc>
+            <element name="developersidentificationturnover" title="Nombre de développeurs, identification, turnover">
+               <desc0>Moins de trois développeurs, pas clairement identifiés</desc0>
+               <desc1>Entre quatre et sept développeurs ou plus, non identifiés, avec un turnover important</desc1>
+               <desc2>Plus de sept développeurs, équipe très simple</desc2>
+               <score></score>
+               <comment>Information indisponible.</comment>
+            </element>
+            <element name="activityonbugs" title="Activité autour des bugs">
+               <desc0>Réactivité faible sur le forum ou sur la liste de diffusion, ou rien au sujet des corrections de bugs dans les notes de versions</desc0>
+               <desc1>Activité détectable mais sans processus clairement exposé, temps de résolution long</desc1>
+               <desc2>Forte réactivité, basée sur des rôles et des assignations de tâches</desc2>
+               <score>0</score>
+               <comment>Information indisponible.</comment>
+            </element>
+            <element name="activityonfunctionalities" title="Activité autour des fonctionnalités">
+               <desc0>Pas ou peu de nouvelles fonctionnalités</desc0>
+               <desc1>Évolution du produit conduite par une équipe dédiée ou par des utilisateurs, mais sans processus clairement exposé</desc1>
+               <desc2>Les requêtes pour les nouvelles fonctionnalités sont clairement outillées, feuille de route disponible</desc2>
+               <score>1</score>
+               <comment></comment>
+            </element>
+            <element name="activityonreleases" title="Activité sur les releases/versions">
+               <desc0>Très faible activité que ce soit sur les versions de production ou de développement (alpha, beta)</desc0>
+               <desc1>Activité que ce soit sur les versions de production ou de développement (alpha, beta), avec des versions correctives mineures fréquentes</desc1>
+               <desc2>Activité importante avec des versions correctives fréquentes et des versions majeures planifiées liées aux prévisions de la feuille de route</desc2>
+               <score>1</score>
+               <comment>2 versions / an en moyenne.</comment>
+            </element>
+         </element>
+      </element>
+      <element name="industrializedsolution" title="Industrialisation">
+         <desc>Niveau d'industrialisation du projet</desc>
+         <element name="independenceofdevelopments" title="Indépendance des développements">
+            <desc0>Développements réalisés à plus de 60% par des employés d'une seule société</desc0>
+            <desc1>Développements réalisés à 60% maximum par des employés d'une seule société</desc1>
+            <desc2>Développements réalisés à 20% maximum par des employés d'une seule société</desc2>
+            <score>0</score>
+            <comment>Développé par HP.</comment>
+         </element>
+         <element name="services" title="Services">
+            <desc>Offres de services</desc>
+            <element name="training" title="Formation">
+               <desc0>Pas d'offre de formation identifiée</desc0>
+               <desc1>Offre existante mais restreinte géographiquement ou en une seule langue ou fournie par un seul fournisseur</desc1>
+               <desc2>Offre riche, plusieurs fournisseurs, plusieurs langages, divisée en modules et en niveaux</desc2>
+               <score>0</score>
+               <comment></comment>
+            </element>
+            <element name="support" title="Support">
+               <desc0>Pas d'offre de support identifiée</desc0>
+               <desc1>Offre existante mais restreinte géographiquement ou en une seule langue ou fournie par un seul fournisseur ou sans garantie</desc1>
+               <desc2>Offre riche, plusieurs fournisseurs, avec des garanties (sur les temps de résolution)</desc2>
+               <score>1</score>
+               <comment>Support assuré par HP.</comment>
+            </element>
+            <element name="consulting" title="Conseil">
+               <desc0>Pas d'offres de conseil identifiées</desc0>
+               <desc1>Offre existante mais restreinte géographiquement ou à un seul langage ou fournie par un seul fournisseur</desc1>
+               <desc2>Offre riche, plusieurs fournisseurs, plusieurs langages</desc2>
+               <score>0</score>
+               <comment></comment>
+            </element>
+         </element>
+         <element name="documentation" title="Documentation">
+            <desc0>Pas de documentation utilisateur</desc0>
+            <desc1>La documentation existe mais est en partie obsolète ou restreinte à une seule langue ou peu détaillée</desc1>
+            <desc2>Documentation à jour, traduite et éventuellement adaptée à différentes cibles de lecteurs (end-user, sysadmin, manager…)</desc2>
+            <score>1</score>
+            <comment>Un guide d'installation et d'utilisation est fournie.</comment>
+         </element>
+         <element name="qualityassurance" title="Méthode qualité">
+            <desc>Processus et méthode qualité</desc>
+            <element name="quality" title="Assurance qualité">
+               <desc0>Pas de processus qualité identifié</desc0>
+               <desc1>Processus qualité existant, mais non formalisé ou non outillé</desc1>
+               <desc2>Processus automatique de tests dans le cycle de vie du code et publication des résultats</desc2>
+               <score>1</score>
+               <comment></comment>
+            </element>
+            <element name="tools" title="Outillage">
+               <desc0>Pas d'outils de gestion de bugs, ni d'outils de gestion de tickets</desc0>
+               <desc1>Outils standards fournis (une forge par exemple) mais peu utilisés</desc1>
+               <desc2>Utilisation très active d'outils standards</desc2>
+               <score>0</score>
+               <comment>Un centre de support HP reçoit les remontées d'anomalie.</comment>
+            </element>
+         </element>
+      </element>
+      <include section="packaging"></include>
+      <element name="exploitability" title="Exploitabilité">
+         <desc>Niveau d'exploitabilité</desc>
+         <element name="easeofuseergonomics" title="Facilité d'utilisation, ergonomie">
+            <desc0>Difficulté d'utilisation, demande une connaissance approfondie des fonctionnalités du logiciel</desc0>
+            <desc1>Ergonomie austère et très technique</desc1>
+            <desc2>Ergonomie élaborée et IHM comprenant des fonctions d'aide</desc2>
+            <score>1</score>
+            <comment></comment>
+         </element>
+         <element name="administrationmonitoring" title="Administration et supervision">
+            <desc0>Pas de fonctionnalités de contrôle, ni d'administration</desc0>
+            <desc1>Fonctionnalités présentes mais incomplètes ou à améliorer</desc1>
+            <desc2>Fonctionnalités complètes et faciles de contrôle et d'administration. Intégration possible avec des outils tiers (ex : SNMP, syslog…)</desc2>
+            <score></score>
+            <comment>Non applicable.</comment>
+         </element>
+      </element>
+      <element name="technicaladaptability" title="Adaptabilité">
+         <desc>Adaptabilité technique</desc>
+         <element name="modularity" title="Modularité">
+            <desc0>Logiciel monolithique</desc0>
+            <desc1>Présence de modules haut niveau permettant un premier niveau d'adaptation</desc1>
+            <desc2>Conception modulaire, permettant des adaptations faciles par sélection et/ou création de modules</desc2>
+            <score></score>
+            <comment>Information indisponible</comment>
+         </element>
+         <element name="codemodification" title="Facilité technique de modification du code existant">
+            <desc0>Tout à la main</desc0>
+            <desc1>Recompilation possible mais complexe, sans outils, ni documentation</desc1>
+            <desc2>Recompilation facile, outillée (ex : make, ANT, Maven…) et documentée</desc2>
+            <score></score>
+            <comment>Information indisponible</comment>
+         </element>
+         <element name="codeextension" title="Facilité d'extension du code">
+            <desc0>Toute modification demande une recompilation du code</desc0>
+            <desc1>Architecture conçue pour des extensions statiques mais exige une recompilation</desc1>
+            <desc2>Architecture de plugins, conçue pour des extensions dynamiques et sans recompilation</desc2>
+            <score></score>
+            <comment>Information indisponible</comment>
+         </element>
+      </element>
+      <element name="strategy" title="Stratégie">
+         <desc>Stratégie du projet</desc>
+         <element name="license" title="Licence">
+            <desc>Licence, à pondérer uniquement si le client désire un jour devenir propriétaire du code</desc>
+            <element name="permissiveness" title="Permissivité">
+               <desc0>Licence très stricte, comme la GPL</desc0>
+               <desc1>Licence modérée entre les deux extrêmes (GPL et BSD), licence duale dépendante du type d'utilisateur (personne, société…) ou de leur activité</desc1>
+               <desc2>Licence très permissive comme BSD et Apache</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="protectionagainstproprietaryforks" title="Protection contre des forks commerciaux">
+               <desc0>Licence très permissive comme BSD et Apache</desc0>
+               <desc1>Licence modérée entre les deux extrêmes (GPL et BSD), licence duale dépendante du type d'utilisateur (personne, société…) ou de leur activité</desc1>
+               <desc2>Licence très stricte, comme la GPL</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+         </element>
+         <element name="copyrightowners" title="Détenteur des droits">
+            <desc0>Les droits sont détenus par quelques individus ou entités commerciales, facilitant le changement de licence</desc0>
+            <desc1>Les droits sont détenus par de nombreux individus de façon homogène, rendant le changement de licence très difficile</desc1>
+            <desc2>Les droits sont détenus par une entité légale, une fondation dans laquelle la communauté a confiance (ex: FSF, Apache, ObjectWeb)</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="modificationofsourcecode" title="Modification du code">
+            <desc0>Pas de moyen pratique de proposer des modifications de code</desc0>
+            <desc1>Des outils sont fournis pour accéder et modifier le code (ex : CVS, SVN) mais ne sont pas vraiment utilisés pour développer le produit</desc1>
+            <desc2>Le processus de modification de code est bien défini, exposé et respecté, basé sur des rôles bien définis</desc2>
+            <score>0</score>
+            <comment></comment>
+         </element>
+         <element name="roadmap" title="Feuille de route">
+            <desc0>Pas de feuille de route publiée</desc0>
+            <desc1>Feuille de route sans planning</desc1>
+            <desc2>Feuille de route versionnée, avec planning et mesures de retard</desc2>
+            <score>0</score>
+            <comment></comment>
+         </element>
+         <element name="sponsor" title="Sponsor">
+            <desc0>Le logiciel n'a pas de sponsors, l'équipe principale n'est pas rémunérée</desc0>
+            <desc1>Le logiciel a un sponsor unique qui détermine sa stratégie</desc1>
+            <desc2>Le logiciel est sponsorisé par l'industrie</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="strategicalindependence" title="Indépendance stratégique">
+            <desc0>Pas de stratégie détectable ou forte dépendance à un acteur unique (individu, société, sponsor)</desc0>
+            <desc1>Vision stratégique partagée avec plusieurs autres projets open-source mais sans engagement fort des propriétaires des droits</desc1>
+            <desc2>Indépendance forte de l'équipe de développement, droits détenus par une entité, fort engagement dans un processus de standardisation</desc2>
+            <score>0</score>
+            <comment>Fortement lié à HP</comment>
+         </element>
+      </element>
+   </section>
+   <section name="fonctionnalitesdediagnostic" title="Fonctionnalités de diagnostic">
+      <desc>Fonctionnalités de diagnostic</desc>
+      <element name="typesdanalyses" title="Types d'analyses">
+         <desc>Types d'analyses réalisées par l'outil</desc>
+         <comment></comment>
+         <element name="collecteavecdumps" title="Collecte avec dumps">
+            <desc>L’analyse nécessite-t-elle de générer un dump et de quel type : thread dump, heap dump ?</desc>
+            <desc0>Pas d'analyse de dump.</desc0>
+            <desc1>Analyse de dumps limitée.</desc1>
+            <desc2>Analyse de différents types de dumps : thread dump, heap dump, ...</desc2>
+            <score>1</score>
+            <comment>heap dumps</comment>
+         </element>
+         <element name="collectestatique" title="Collecte statique">
+            <desc>L’outil effectue-t-il une photographie à un instant t du ou des éléments dont il permet l’analyse ?</desc>
+            <desc0>Pas d'analyse statique.</desc0>
+            <desc1>Analyse statique disponible mais limitée.</desc1>
+            <desc2>Analyse statique disponible.</desc2>
+            <score>2</score>
+            <comment></comment>
+         </element>
+         <element name="collectedynamique" title="Collecte dynamique">
+            <desc>L’outil permet-il de collecter des informations sur une période de temps, de les stocker et de représenter graphiquement l’évolution de ces données?</desc>
+            <desc0>Pas de collecte dynamique dans le temps.</desc0>
+            <desc1>Collecte dynamique dans le temps disponible mais limitée : pas toutes les données, pas de représentation graphique, ...</desc1>
+            <desc2>Collecte dynamique dans le temps disponible, avec possibilité de collecter des informations sur une période de temps, de les stocker et de représenter graphiquement leur évolution.</desc2>
+            <score>1</score>
+            <comment>possibilité d'effectuer des comparaisons entre des fichiers de résultats</comment>
+         </element>
+         <element name="collecteavecdeclenchement" title="Collecte avec déclenchement">
+            <desc>Est-il possible de paramétrer des seuils ou d’autres critères dont la réalisation induit automatiquement le déclenchement d’une analyse par l’outil</desc>
+            <desc0>Pas de déclenchement automatique de l'outil</desc0>
+            <desc1>Déclenchement automatique sur un seul seuil ou un seul critère</desc1>
+            <desc2>Possibilité de déclenchement automatique sur une combinaison de critères</desc2>
+            <score>0</score>
+            <comment></comment>
+         </element>
+         <element name="collecteavecpre-analysesymptomatique" title="Collecte avec pré-analyse symptomatique">
+            <desc>L’outil permet-il de procéder à un pré-diagnostic à partir des informations collectées, en effectuant, par exemple, des corrélations entre deux collectes ?</desc>
+            <desc0>L'outil ne permet pas de faire de pré-diagnostic</desc0>
+            <desc1>L'outil détecte un comportement anormal sans proposer d'éléments facilitant sa résolution</desc1>
+            <desc2>L'outil détecte un comportement anormal et suggère une ou des pistes de solution</desc2>
+            <score>0</score>
+            <comment></comment>
+         </element>
+      </element>
+      <element name="analysejvm" title="Analyse JVM">
+         <desc></desc>
+         <comment></comment>
+         <element name="analysestatiquedelamemoire" title="Analyse statique de la mémoire">
+            <desc>Analyse des objets en mémoire et l’activité du garbage collector</desc>
+            <comment></comment>
+            <element name="analysedesobjetsenmemoire" title="Analyse des objets en mémoire">
+               <desc></desc>
+               <comment></comment>
+               <element name="tailledesobjetsenmemoire" title="Taille des objets en mémoire">
+                  <desc>L’outil indique-t-il la taille globale des objets en mémoire ?</desc>
+                  <desc0>L'outil ne fournit pas cette information</desc0>
+                  <desc1>L'outil permet de calculer manuellement cette information</desc1>
+                  <desc2>L'outil calcule cette information</desc2>
+                  <score>1</score>
+                  <comment></comment>
+               </element>
+               <element name="repartitiondesobjetsenmemoire" title="Répartition des objets en mémoire">
+                  <desc>L’outil permet-il de chiffrer l’occupation de chacune des zones mémoires connues de la JVM (taille des zones new, tenured et perm) ?</desc>
+                  <desc0>L'outil ne fournit pas cette information</desc0>
+                  <desc1>L'outil fournit l'information pour certaines des zones</desc1>
+                  <desc2>L'outil fournit la taille de la mémoire occupée pour chacune des zones</desc2>
+                  <score>0</score>
+                  <comment></comment>
+               </element>
+               <element name="referencesentreobjets" title="Références entre objets">
+                  <desc>Est-il possible de connaitre le nombre de références existant sur un objet et leur détail, ceci  permettant d’expliquer la non dé allocation d’objets par le garbage collector ?</desc>
+                  <desc0>Information non fournie</desc0>
+                  <desc1>Information fourni partiellement : uniquement pour certains objets ou certaines références</desc1>
+                  <desc2>Information fournie complètement</desc2>
+                  <score>2</score>
+                  <comment></comment>
+               </element>
+               <element name="notiondeconteneurs" title="Notion de conteneurs ">
+                  <desc>Prise en compte de la notion de conteneurs : dans le décompte des références entre objets, l’outil considère-t-il aussi les conteneurs d’objets (listes, maps …) ?</desc>
+                  <desc0>information inexistante</desc0>
+                  <desc1>information fournie pour certains types de conteneurs</desc1>
+                  <desc2>information fournie pour tous les types de conteneurs</desc2>
+                  <score>2</score>
+                  <comment></comment>
+               </element>
+            </element>
+            <element name="activitedugarbagecollector" title="Activité du garbage collector ">
+               <desc></desc>
+               <comment></comment>
+               <element name="typesdecollectes" title="Types de collectes">
+                  <desc>L’outil fournit-il des informations sur chaque type de collecte (collecte mineure et collecte majeure)</desc>
+                  <desc0>informations non fournies</desc0>
+                  <desc1>les informations ne sont fournies que pour un type de collecte</desc1>
+                  <desc2>les informations sont fournies pour tous les types de collecte</desc2>
+                  <score>2</score>
+                  <comment></comment>
+               </element>
+               <element name="frequencedescollectes" title="Fréquence des collectes">
+                  <desc>Est-il possible de connaitre la fréquence de chaque collecte ?</desc>
+                  <desc0>information non fournie</desc0>
+                  <desc1>information incomplète : toutes les collectes de tous les types ne sont pas répertoriées</desc1>
+                  <desc2>toutes les collectes, de tous types sont répertoriées</desc2>
+                  <score>2</score>
+                  <comment></comment>
+               </element>
+               <element name="tailledescollectes" title="Taille des collectes">
+                  <desc>Pour chaque type de zone mémoire de la JVM et pour chaque type de collecte, l’outil permet-il de connaitre la taille de la mémoire libérée ?</desc>
+                  <desc0>Information non fournie</desc0>
+                  <desc1>information incomplète : certaines collectes ne sont pas répertoriées, la quantité de mémoire libérée doit être calculée</desc1>
+                  <desc2>information complète et fournie directement par l'outil</desc2>
+                  <score>1</score>
+                  <comment></comment>
+               </element>
+               <element name="dureedescollectes" title="Durée des collectes">
+                  <desc>Pour chaque type de collecte (et plus particulièrement la collecte majeure qui suspend l’activité de l’applicatif) est-il indiqué sa durée ?</desc>
+                  <desc0>information  non fournie</desc0>
+                  <desc1>information non fournie pour tous les types de collecte</desc1>
+                  <desc2>information fournie pour tous les types</desc2>
+                  <score>2</score>
+                  <comment></comment>
+               </element>
+               <element name="ratiotempscollecteexecution" title="Ratio temps collecte/exécution">
+                  <desc>Ratio temps passé par la JVM en collecte rapporté au temps d’exécution de l’applicatif : ce ratio est-il fourni par l’outil ?</desc>
+                  <desc0>Information non fournie</desc0>
+                  <desc1>Donnée à calculer depuis les informations fournies par l'outil</desc1>
+                  <desc2>Information calculée directement par l'outil</desc2>
+                  <score>1</score>
+                  <comment></comment>
+               </element>
+            </element>
+         </element>
+         <element name="analysedesthreads" title="Analyse des threads">
+            <desc></desc>
+            <comment></comment>
+            <element name="threads actifs" title="Threads actifs">
+               <desc>L’outil fournit-il une liste de tous les threads actifs ?</desc>
+               <desc0>Liste non fournie</desc0>
+               <desc1>Liste partielle fournie</desc1>
+               <desc2>Liste complète fournie</desc2>
+               <score>2</score>
+               <comment></comment>
+            </element>
+            <element name="etatdesthreads" title="Etat des threads">
+               <desc>L’outil indique-t-il pour chaque thread son état actuel (runnable, waiting on condition, sleeping …)</desc>
+               <desc0>Information non fournie</desc0>
+               <desc1>Information incomplète : certains états ou certains threads ne sont pas répertoriés</desc1>
+               <desc2>Etat fourni pour tous les threads actifs</desc2>
+               <score>2</score>
+               <comment></comment>
+            </element>
+            <element name="piled’appeldechaquethread" title="Pile d’appel de chaque thread">
+               <desc>Pour chaque thread l’outil permet-il de connaitre la pile des méthodes appelées ?</desc>
+               <desc0>Information non fournie</desc0>
+               <desc1>Information fournie partiellement :  pour certains  threads,  pour certaines méthodes</desc1>
+               <desc2>Information fournie complètement</desc2>
+               <score>2</score>
+               <comment></comment>
+            </element>
+            <element name="detectiondesinterblocages" title="Détection des interblocages">
+               <desc>L’outil est-il capable de détecter des situations où deux threads concurrents s’attendent mutuellement ?</desc>
+               <desc0>Non détectés</desc0>
+               <desc1></desc1>
+               <desc2>Détectés</desc2>
+               <score>2</score>
+               <comment></comment>
+            </element>
+            <element name="analysedeslocks" title="Analyse des locks">
+               <desc>Pour un thread l’outil peut-il indiquer les ressources bloquées par ce thread et les ressources dont ce thread attend la libération ?</desc>
+               <desc0>Information non disponible</desc0>
+               <desc1>Information partielle : fournie pour certains threads ou sans indication du thread bloquant la ressource</desc1>
+               <desc2>Information complètement fournie</desc2>
+               <score>1</score>
+               <comment></comment>
+            </element>
+            <element name="fuitesdethreads" title="Fuites de threads">
+               <desc>L’outil permet-il de détecter les situations de création successive de threads sans destruction de ceux-ci ?</desc>
+               <desc0>Information non fournie</desc0>
+               <desc1>Information fournie mais incomplète</desc1>
+               <desc2>Information totalement fournie</desc2>
+               <score>0</score>
+               <comment></comment>
+            </element>
+         </element>
+         <element name="detectiondesfuitesmemoire" title="Détection des fuites mémoire">
+            <desc>Savoir si l’outil offre une aide supplémentaire à la détection de fuites mémoire par rapport à la simple analyse manuelle de la mémoire entre deux passages successifs du garbage collector.</desc>
+            <comment></comment>
+            <element name="strategiededetection" title="Stratégie de détection">
+               <desc>L’outil propose-t-il et implémente-t-il une méthode facilitant la détection de fuites mémoire ?</desc>
+               <desc0>L'outil ne permet pas de détecter des fuites mémoire</desc0>
+               <desc1>L'outil fournit des indications mais partielles</desc1>
+               <desc2>L''outil indique l'existence de fuites mémoire</desc2>
+               <score>1</score>
+               <comment></comment>
+            </element>
+            <element name="elementssurveilles" title="Eléments surveillés">
+               <desc>Des fuites mémoire peuvent facilement résulter du référencement d’objets à courte durée de vie par des objets à longue objet de vie. Il s’agit ici de savoir si l’outil permet d’analyser les références portées par ce type d’objet, c'est-à-dire : des variables statiques, des objets enregistrant d’autres objets pour des callbacks. Ce critère doit aussi d’indiquer si l’outil permet d’analyser les objets dont le cycle de vie est géré par le serveur d’application (les différents pools).</desc>
+               <desc0>L'outil ne propose pas une liste d'objets à surveiller</desc0>
+               <desc1>L'outil propose une liste d'objets mais insuffisante</desc1>
+               <desc2>L'outil propose une liste à priori suffisante d'objets à surveiller</desc2>
+               <score>2</score>
+               <comment></comment>
+            </element>
+            <element name="personnalisationdeselementssurveilles" title="Personnalisation des éléments surveillés">
+               <desc>Est-il possible de personnaliser la surveillance de certains éléments (et avec quel type de granularité : classe, package …). </desc>
+               <desc0>Impossible</desc0>
+               <desc1>Personnalisation limitée</desc1>
+               <desc2>Personnalisation complète</desc2>
+               <score>0</score>
+               <comment></comment>
+            </element>
+         </element>
+         <element name="activitedelacpu" title="Activité de la CPU ">
+            <desc></desc>
+            <comment></comment>
+            <element name="detectiondesmethodesconsommantleplusdetempscpu" title="Détection des méthodes consommant le plus de temps CPU">
+               <desc>Détection des méthodes consommant le plus de temps CPU</desc>
+               <desc0>Information non fournie</desc0>
+               <desc1>Certaines méthodes ne sont pas répertoriées</desc1>
+               <desc2>Toutes les méthodes peuvent être répertoriées</desc2>
+               <score>2</score>
+               <comment></comment>
+            </element>
+            <element name="arbred’appeldesmethodes" title="Arbre d’appel des méthodes">
+               <desc>Possibilité de remonter la pile d’appel d’une méthode, avec pour chaque méthode appelante l’indication du temps CPU consommé</desc>
+               <desc0>Information non fournie</desc0>
+               <desc1>La totalité de l'arbre d'appel n'est pas toujours fournie ou le temps CPU n'est pas toujorus indiqué</desc1>
+               <desc2>Information complètement fournie</desc2>
+               <score>2</score>
+               <comment></comment>
+            </element>
+            <element name="detectiondesmethodesallouantlevolumeleplusimporta" title="Détection des méthodes allouant le volume le plus important d’objets">
+               <desc>Les méthodes allouant le volume d'objet le plus important sont indiquées</desc>
+               <desc0>Information non fournie</desc0>
+               <desc1>Le détail des allocations par type d'objet n'est pas fourni</desc1>
+               <desc2>Information totalement fournie</desc2>
+               <score>0</score>
+               <comment></comment>
+            </element>
+         </element>
+      </element>
+      <element name="analyseduserveurd’applicationsj2ee" title="Analyse du serveur d’applications J2EE">
+         <desc></desc>
+         <comment></comment>
+         <element name="queuetcpdesouverturesdeconnexion" title="Queue TCP des ouvertures de connexion">
+            <desc>Ces critères concernent l’accès aux informations sur l’activité de la pile TCP/IP du système d’exploitation.</desc>
+            <comment></comment>
+            <element name="nombredeconnexionsetablies" title="Nombre de connexions établies">
+               <desc>Nombre de connexions TCP établies</desc>
+               <desc0>Information non fournie</desc0>
+               <desc1>Information incomplètement fournie</desc1>
+               <desc2>Information fournie</desc2>
+               <score>0</score>
+               <comment></comment>
+            </element>
+            <element name="nombredeconnexionsayantechouees" title="Nombre de connexions ayant échouées">
+               <desc>Nombre de connexions TCP ayant échouées</desc>
+               <desc0>Information non fournie</desc0>
+               <desc1>Information incomplète</desc1>
+               <desc2>Information fournie</desc2>
+               <score>0</score>
+               <comment></comment>
+            </element>
+            <element name="nombredeconnexionsreinitialisees" title="Nombre de connexions réinitialisées">
+               <desc>Nombre de connexions TCP réinitialisées</desc>
+               <desc0>Information non fournie</desc0>
+               <desc1>Information fournie incomplètement</desc1>
+               <desc2>Information fournie</desc2>
+               <score>0</score>
+               <comment></comment>
+            </element>
+         </element>
+         <element name="sessionshttp" title="Sessions HTTP">
+            <desc>Ces critères permettent de connaître le nombre d’utilisateurs connectés ainsi que le volume des informations sauvegardées en mémoire pour persister entre chacune de leurs interactions.</desc>
+            <comment></comment>
+            <element name="nombredesessionsactives" title="Nombre de sessions actives">
+               <desc>Nombre de sessions HTTP actives</desc>
+               <desc0>Information non fournie</desc0>
+               <desc1></desc1>
+               <desc2>Information fournie</desc2>
+               <score>0</score>
+               <comment></comment>
+            </element>
+            <element name="nombredesessionsayanteterejetees" title="Nombre de sessions ayant été rejetées">
+               <desc>Nombre de sessions HTTP ayant été rejetées</desc>
+               <desc0>Information non fournie</desc0>
+               <desc1></desc1>
+               <desc2>Information fournie</desc2>
+               <score>0</score>
+               <comment></comment>
+            </element>
+            <element name="taillememoiredessessions" title="Taille mémoire des sessions">
+               <desc>Taille mémoire des informations stockées en session HTTP</desc>
+               <desc0>Information non fournie</desc0>
+               <desc1>Volume global indiqué</desc1>
+               <desc2>Détail par session utilisateur fourni</desc2>
+               <score>0</score>
+               <comment></comment>
+            </element>
+         </element>
+         <element name="poolsdeconnexion" title="Pools de connexion">
+            <desc>Critères permettant de vérifier que le dimensionnement des pools est compatible avec son utilisation réelle.</desc>
+            <comment></comment>
+            <element name="saturationdupooldeconnexionjdbc" title="Saturation du pool de connexion JDBC">
+               <desc>L’outil détecte-t-il les demandes de l’application qui n’ont pu être satisfaites par le pool ?</desc>
+               <desc0>Information non fournie</desc0>
+               <desc1>Information incomplète</desc1>
+               <desc2>Information fournie</desc2>
+               <score>0</score>
+               <comment></comment>
+            </element>
+            <element name="saturationdespoolsdethreads" title="Saturation des pools de threads">
+               <desc>Il s’agit du pool de threads pour les connexions HTTP (et éventuellement des pools concernant les connexions HTTPS et AJP si celles-ci sont actives). L’outil indique-t-il le nombre de threads créés et le nombre de threads en attente d’une requête ?</desc>
+               <desc0>Informations non fournies</desc0>
+               <desc1>Informations incomplètes : information indisponible pour certains pools ou pour certains threads(en attente ou créés)</desc1>
+               <desc2>Informations complètes</desc2>
+               <score>0</score>
+               <comment></comment>
+            </element>
+            <element name="saturationdupooldeconnexionldap" title="Saturation du pool de connexion LDAP">
+               <desc>L’outil informe-t-il sur le nombre de connexion LDAP actives et sur le nombre de connexions rejetées suite à un timeout ?</desc>
+               <desc0>Information non fournie</desc0>
+               <desc1>Information incomplète</desc1>
+               <desc2>Information fournie</desc2>
+               <score>0</score>
+               <comment></comment>
+            </element>
+            <element name="saturationdesfilesd’attentejms" title="Saturation des files d’attente JMS">
+               <desc>L’outil permet-il de connaitre le nombre de messages stockés dans chaque file d’attente JMS et en particulier dans la file d’attente DLQ qui reçoit les messages n’ayant pu être consommés après plusieurs tentatives ?</desc>
+               <desc0>Information non fournie</desc0>
+               <desc1>Information non fournie pour certaines filles d'attente</desc1>
+               <desc2>Information fournie</desc2>
+               <score>0</score>
+               <comment></comment>
+            </element>
+         </element>
+         <element name="transactionsjta" title="Transactions JTA">
+            <desc>Informations sur l’état des transactions gérées par le serveur J2EE.</desc>
+            <comment></comment>
+            <element name="nombredetransactions« rollbackees »" title="Nombre de transactions « rollbackées »">
+               <desc>L’outil indique-t-il le nombre de transactions"rollbackées"  et le  nombre de transactions « commitées » (permettant d’apprécier le rapport entre « rollbacks » et « commits »)?</desc>
+               <desc0>Information non fournie</desc0>
+               <desc1>Information incomplète</desc1>
+               <desc2>Information complète</desc2>
+               <score>0</score>
+               <comment></comment>
+            </element>
+         </element>
+         <element name="ejbs" title="EJBs">
+            <desc>Activité du pool d’EJBs et sur l’utilisation des caches (pour les EJBs statefuls).</desc>
+            <comment></comment>
+            <element name="saturationdupoold’ejbs" title="Saturation du pool d’EJBs">
+               <desc>L’outil permet-il de connaitre la taille courante du pool d’EJBs et sa taille maximale ?</desc>
+               <desc0>Information non fournies</desc0>
+               <desc1>Information incomplète : non fournie pour certains types d'ejbs par exemple</desc1>
+               <desc2>Information complète</desc2>
+               <score>0</score>
+               <comment></comment>
+            </element>
+            <element name="saturationducache" title="Saturation du cache">
+               <desc>L’outil indique-t-il la taille courante du cache et le nombre d’EJBs « passivés », c'est-à-dire le nombre d’instances d’EJBs stockées sur disque ?</desc>
+               <desc0>Information non fournie</desc0>
+               <desc1>Information incomplète : le nombre d'EJBs passivés n'est pas indiqué par exemple</desc1>
+               <desc2>Information complète</desc2>
+               <score>0</score>
+               <comment></comment>
+            </element>
+         </element>
+      </element>
+      <element name="facilitedutilisation" title="Facilité d'utilisation">
+         <desc>Ces critères visent à qualifier l’utilisabilité des outils.</desc>
+         <comment></comment>
+         <element name="existencederapports" title="Existence de rapports">
+            <desc>L’outil génère-t-il des rapports et dans quel format</desc>
+            <desc0>L'outil ne génère pas de rapports</desc0>
+            <desc1>Rapports insuffisants par le nombre,la qualité ou le format</desc1>
+            <desc2>Rapports complets générés</desc2>
+            <score>0</score>
+            <comment></comment>
+         </element>
+         <element name="personnalisationdesrapports" title="Personnalisation des rapports">
+            <desc>Est-il possible de paramétrer ces rapports afin de les personnaliser ?</desc>
+            <desc0>Fonctionnalité non offerte</desc0>
+            <desc1>Fonctionnalité offerte partiellement</desc1>
+            <desc2>Fonctionnalité offerte</desc2>
+            <score>0</score>
+            <comment></comment>
+         </element>
+         <element name="interfaceutilisateur" title="Interface utilisateur">
+            <desc>Existe-t-il une interface graphique avec l’utilisateur ou l’outil n’offre-t-il qu’un accès via des lignes de commandes ?</desc>
+            <desc0>Absence d'interface graphique</desc0>
+            <desc1>Interface graphique absent pour certaines fonctionnalités</desc1>
+            <desc2>Toutes les fonctionnalités offrent un interface graphique</desc2>
+            <score>2</score>
+            <comment></comment>
+         </element>
+         <element name="facilited’installation" title="Facilité d’installation">
+            <desc>L’outil possède-t-il une procédure d’installation automatisée ?</desc>
+            <desc0>Installation totalement manuelle</desc0>
+            <desc1>Une partie importante de l'installation est manuelle</desc1>
+            <desc2>Installation entièrement automatisée</desc2>
+            <score>0</score>
+            <comment></comment>
+         </element>
+         <element name="facilited’utilisation" title="Facilité d’utilisation">
+            <desc>Existence de manuels d’utilisation, d’aides en ligne, éventuels pré-requis à l’utilisation de l’outil.</desc>
+            <desc0>Aucune de ces fonctionnalités n'est offerte</desc0>
+            <desc1>Certaines de ces fonctionnalités ne sont pas offertes</desc1>
+            <desc2>Présence de manuels d'utilisation, de pré-requis et d'aides en ligne</desc2>
+            <score>1</score>
+            <comment>Existence d'un manuel d'utilisation</comment>
+         </element>
+      </element>
+      <element name="populationvisee" title="Population visée">
+         <desc>Profil d’utilisateur requis pour utiliser l'outil. Doit-il doit posséder ou non une expertise et éventuellement dans quel domaine ?
+      </desc>
+         <comment>Connaissance programmation Java</comment>
+      </element>
+   </section>
+   <section name="contraintesdutilisation" title="Contraintes d'utilisation">
+      <desc>Contraintes techniques d'utilisation</desc>
+      <element name="pre-requistechniques" title="Pre-requis techniques">
+         <desc>Pre-requis techniques</desc>
+         <comment></comment>
+         <element name="systemesdexploitation" title="Systèmes d'exploitation (outil)">
+            <desc>Systèmes d’exploitation sur lesquels fonctionne l’outil</desc>
+            <comment>l'agent s'exécute sur HP et la console peut s'executer sur HP-UX, Linux, et Windows</comment>
+         </element>
+         <element name="jvm(outil)" title="JVM (outil)">
+            <desc>Versions de JVM utilisées par l’outil ( numéro de version et fournisseur de la JVM : Sun, IBM etc)</desc>
+            <comment></comment>
+         </element>
+         <element name="systemesdexploitationsupportes" title="Systèmes d'exploitation supportés">
+            <desc>Systèmes d’exploitation sur lesquels doit s’exécuter l’application à analyser
+        </desc>
+            <desc0></desc0>
+            <desc1></desc1>
+            <desc2></desc2>
+            <score></score>
+            <comment>analyse des JVM HP</comment>
+         </element>
+         <element name="jvm" title="JVM supportées">
+            <desc>Versions de JVM supportées</desc>
+            <desc0>Les versions 1.4 et 1.5 de la JVM de Sun ne sont pas supportées</desc0>
+            <desc1>Seule une version parmi la 1.4 et la 1.5 de la JVM Sun est supportée</desc1>
+            <desc2>Les versions 1.4 et 1.5 de la JVM de Sun sont toutes les deux supportées</desc2>
+            <score>0</score>
+            <comment>JRE HP 1.4.2 1.5 et au dela 
+Certaines fonctions existent qu'en 1.5</comment>
+         </element>
+         <element name="serveursdapplicationssupportes" title="Serveurs d'applications supportés">
+            <desc>Versions de serveurs d’applications analysée</desc>
+            <desc0>JBossAS n'est pas supporté</desc0>
+            <desc1>Seule une version de JBossAS parmi 3.2.5 et 4.0.4 est supportée, ou le suppor tde JBoss n'est pas complet.</desc1>
+            <desc2>JBossAS est supporté (au moins pour les versions 3.2.5 et 4.0.4), ainsi que d'autres serveurs d'applications.</desc2>
+            <score>0</score>
+            <comment>Ce critère ne s'applique pas</comment>
+         </element>
+      </element>
+      <element name="integrationide" title="Intégration IDE">
+         <desc>Intégration avec les environnements de développement intégrés</desc>
+         <desc0>Aucune intgération avec les IDE n'est disponible.</desc0>
+         <desc1>L'intégration avec Eclipse est partielle.</desc1>
+         <desc2>L'intégration avec Eclipse est totale, ainsi qu'avec d'autres IDE du marché.</desc2>
+         <score></score>
+         <comment></comment>
+      </element>
+   </section>
+</document>
