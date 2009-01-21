@@ -1,0 +1,413 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document>
+   <header>
+      <authors>
+    </authors>
+      <dates>
+         <creation></creation>
+         <validation></validation>
+      </dates>
+      <language>en</language>
+      <appname></appname>
+      <release></release>
+      <licenseid></licenseid>
+      <licensedesc></licensedesc>
+      <url></url>
+      <desc></desc>
+      <demourl></demourl>
+      <qsosformat>1.6</qsosformat>
+      <qsosappfamily>ria-framework</qsosappfamily>
+      <qsosappname>Framework de développement RIA</qsosappname>
+      <qsosspecificformat>1.0</qsosspecificformat>
+   </header>
+   <include section="generic_fr"/>
+   <section name="innovationderuptureavecleweb" title="Innovation de rupture avec le web">
+      <desc></desc>
+      <element name="supportaudio" title="Support audio">
+         <desc></desc>
+         <desc0>non</desc0>
+         <desc1>partiel : 1 seul format</desc1>
+         <desc2>plusieurs formats (dont mp3)</desc2>
+         <score></score>
+         <comment></comment>
+      </element>
+      <element name="supportvideo" title="Support video">
+         <desc></desc>
+         <desc0>non</desc0>
+         <desc1>oui mais pas HD ou pas fullscreen</desc1>
+         <desc2>oui avec HD et fullscreen</desc2>
+         <score></score>
+         <comment></comment>
+      </element>
+      <element name="dessin2d" title="Dessin 2D">
+         <desc></desc>
+         <desc0></desc0>
+         <desc1></desc1>
+         <desc2></desc2>
+         <score></score>
+         <comment></comment>
+      </element>
+      <element name="support3d" title="Gestion de la 3D">
+         <desc></desc>
+         <desc0>non</desc0>
+         <desc1>partiel</desc1>
+         <desc2>oui</desc2>
+         <score></score>
+         <comment></comment>
+      </element>
+      <element name="bilbliothequedecomposantsdeformulairesriches" title="Bilbliothéque de composants de formulaires riches">
+         <desc>drag and drop, datagrid, list,  calendar</desc>
+         <desc0>très peu</desc0>
+         <desc1>oui mais difficilement extensible</desc1>
+         <desc2>riche personalisable, et extensible</desc2>
+         <score></score>
+         <comment></comment>
+      </element>
+      <element name="bibliothequedecomposantsdecharting" title="Bibliothéque de composants de charting">
+         <desc></desc>
+         <desc0>non</desc0>
+         <desc1>oui mais limité</desc1>
+         <desc2>oui</desc2>
+         <score></score>
+         <comment></comment>
+      </element>
+      <element name="gestionrichesdesfontesettypographie" title="Gestion avancées des fontes et de la typographie">
+         <desc></desc>
+         <desc0>très limité</desc0>
+         <desc1>oui mais pas complète</desc1>
+         <desc2>ouin complète : right to left et nombreuses fontes et alphabet (arable, hébreux, japonais, indie...)</desc2>
+         <score></score>
+         <comment></comment>
+      </element>
+      <element name="accesauressourcelocale" title="Accès aux ressources locales ">
+         <desc>et interaction avec le desktop</desc>
+         <desc0>aucun</desc0>
+         <desc1>oui mais limité</desc1>
+         <desc2>oui </desc2>
+         <score></score>
+         <comment></comment>
+      </element>
+      <element name="gestionfinedeskinning" title="Gestion fine de skinning">
+         <desc></desc>
+         <desc0>non</desc0>
+         <desc1>limitée</desc1>
+         <desc2>bonne</desc2>
+         <score></score>
+         <comment></comment>
+      </element>
+      <element name="reductiondeconsommationdelabandepassante" title="Reduction de consommation de la bande passante">
+         <desc></desc>
+         <desc0>par requête asynchrone XML sur http uniquement</desc0>
+         <desc1>oui mais pas de compression binaire des données</desc1>
+         <desc2>oui : compression binaire forte</desc2>
+         <score></score>
+         <comment></comment>
+      </element>
+      <element name="fonctionnementoffline" title="Fonctionnement Offline">
+         <desc></desc>
+         <desc0>non</desc0>
+         <desc1>oui à travers un autre runtime/plugin</desc1>
+         <desc2>oui</desc2>
+         <score></score>
+         <comment></comment>
+      </element>
+      <element name="connexiontcp/ipsocket" title="Connexion socket tcp/ip ">
+         <desc></desc>
+         <desc0>non</desc0>
+         <desc1></desc1>
+         <desc2>oui: permet de faire du push et du temps réel</desc2>
+         <score></score>
+         <comment></comment>
+      </element>
+   </section>
+   <section name="viabiliteetinteroperabilite" title="Viabilité et interopérabilité avec le web">
+      <desc>Viabilité: interopérabilité et ubiquité de la solution</desc>
+      <element name="supportweb" title="Intégration et/ou support des formats, languages et standards du web">
+         <desc></desc>
+         <comment></comment>
+         <element name="w3c" title="W3C">
+            <desc></desc>
+            <comment></comment>
+            <element name="supporthtml" title="HTML">
+               <desc>intégration et support de document HTML 4</desc>
+               <desc0>pas de support</desc0>
+               <desc1>le framework permet d'intégrer un subset de HTML</desc1>
+               <desc2>le framework permet d'intégrer du HTML</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="supportcss" title="CSS">
+               <desc>intégration et support de document CSS</desc>
+               <desc0>oui</desc0>
+               <desc1>partiel</desc1>
+               <desc2>non</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="supportsvg" title="SVG">
+               <desc>intégration et support des formats SVG</desc>
+               <desc0>non</desc0>
+               <desc1>partiel</desc1>
+               <desc2>oui</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="png" title="PNG">
+               <desc>intégration et support des fichiers PNG</desc>
+               <desc0>non</desc0>
+               <desc1>partiel</desc1>
+               <desc2>oui</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="xpath" title="XPath">
+               <desc></desc>
+               <desc0>non</desc0>
+               <desc1>partiel</desc1>
+               <desc2>oui</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="xslxslt" title="XSL XSLT">
+               <desc></desc>
+               <desc0>non</desc0>
+               <desc1>partiel</desc1>
+               <desc2>oui</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="mathml" title="MathML">
+               <desc></desc>
+               <desc0>non</desc0>
+               <desc1>limité</desc1>
+               <desc2>oui</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+         </element>
+         <element name="ecma" title="ECMA">
+            <desc></desc>
+            <comment></comment>
+            <element name="ecma-262version3" title="ECMAScript">
+               <desc>la solution fournit une implémentation compatible ECMA-262 version3</desc>
+               <desc0>non</desc0>
+               <desc1>partiel</desc1>
+               <desc2>oui</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="e4x" title="E4X">
+               <desc>la solution fournit une implémentation compatible ECMA-357</desc>
+               <desc0>non</desc0>
+               <desc1>partiel</desc1>
+               <desc2>oui</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+         </element>
+      </element>
+      <element name="ubiquitedelaplateforme" title="Ubiquité de la plateforme">
+         <desc></desc>
+         <comment></comment>
+         <element name="installationdunruntimerequis" title="Installation d'un runtime est nécessaire">
+            <desc></desc>
+            <desc0>Installation d'un runtime requise</desc0>
+            <desc1>oui, mais très forte pénétration du marché plus de 70% des utilisateurs on déja le runtime installé</desc1>
+            <desc2>non, géré par la majorité des navigateurs</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="poidsduruntime" title="Poids du runtime">
+            <desc></desc>
+            <desc0>&gt;10M</desc0>
+            <desc1>&lt;10M</desc1>
+            <desc2>pas de runtime</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="facilitedinstallation" title="Facilité d'installation">
+            <desc></desc>
+            <desc0>rédémarrer la machine et droit d'admin</desc0>
+            <desc1>rédémarrerdu navigateur et/ou droit d'admin</desc1>
+            <desc2>pas de redémarrage du navigateur et pas besoin des droits d'admin.</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="compatibilitenavigateurs" title="Compatibilité navigateurs">
+            <desc>Les RIAs produites sont-elles compatibles sur la majorité des navigateurs du marché</desc>
+            <desc0>compatibilité limitée à quelques navigateurs</desc0>
+            <desc1>oui mais le comportement peut différer</desc1>
+            <desc2>oui et le comportement est quasi identique</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="compatibiliteos" title="Compatibilité OS">
+            <desc></desc>
+            <desc0>1 seul</desc0>
+            <desc1>2</desc1>
+            <desc2>WIN, MAX et Linux</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+      </element>
+      <element name="interoperabiliteaveclesformats,languageetstandard" title="Intéropérabilité avec les formats, language et standards du web">
+         <desc></desc>
+         <comment></comment>
+         <element name="javascript" title="JavaScript">
+            <desc></desc>
+            <desc0>non</desc0>
+            <desc1>partiel</desc1>
+            <desc2>oui : communication possible dans les 2 sens</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="dom" title="DOM">
+            <desc></desc>
+            <desc0>non</desc0>
+            <desc1>partiel</desc1>
+            <desc2>oui</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+      </element>
+      <element name="indexationetaccessibilite1" title="Indexation et accessibilité">
+         <desc></desc>
+         <comment></comment>
+         <element name="lesriaproduitessontindexablesparlesmoteursdereche" title="indexables par les moteurs de recherches ">
+            <desc></desc>
+            <desc0> de façon très limité </desc0>
+            <desc1>oui mais  demande beaucoup d'effort</desc1>
+            <desc2>oui </desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="accessibilite" title="accessibilité">
+            <desc></desc>
+            <desc0>mauvaise</desc0>
+            <desc1>moyenne </desc1>
+            <desc2>bonne </desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="lienfin/deeplinking" title="lien fin / deeplinking">
+            <desc></desc>
+            <desc0>oui</desc0>
+            <desc1>limité à quelques navigateurs</desc1>
+            <desc2>oui</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+      </element>
+   </section>
+   <section name="viabiliteetinteroperabiliteaveclewebserver" title="Viabilité et interopérabilité avec les serveurs web">
+      <desc></desc>
+      <element name="serveursjee" title="Java">
+         <desc>du coup groovy, jruby...</desc>
+         <desc0>non (uniquement XML)</desc0>
+         <desc1>appel de service et sérialisation / désérialisation d'object possible par produit tiers</desc1>
+         <desc2>appel de service et sérialisation / désérialisation d'object en standard</desc2>
+         <score></score>
+         <comment></comment>
+      </element>
+      <element name="php" title="PHP">
+         <desc></desc>
+         <desc0>non (uniquement en XML)</desc0>
+         <desc1>appel de service et sérialisation / désérialisation d'object possible par produit tiers</desc1>
+         <desc2>appel de service et sérialisation / désérialisation d'object en standard</desc2>
+         <score></score>
+         <comment></comment>
+      </element>
+      <element name=".net" title=".Net">
+         <desc></desc>
+         <desc0>non (uniquement en XML)</desc0>
+         <desc1>appel de service et sérialisation / désérialisation d'object possible par produit tiers</desc1>
+         <desc2>appel de service et sérialisation / désérialisation d'object en standard</desc2>
+         <score></score>
+         <comment></comment>
+      </element>
+      <element name="ruby" title="Ruby">
+         <desc></desc>
+         <desc0></desc0>
+         <desc1></desc1>
+         <desc2></desc2>
+         <score></score>
+         <comment></comment>
+      </element>
+      <element name="perl" title="Perl">
+         <desc></desc>
+         <desc0></desc0>
+         <desc1></desc1>
+         <desc2></desc2>
+         <score></score>
+         <comment></comment>
+      </element>
+      <element name="soap" title="SOAP">
+         <desc></desc>
+         <desc0>support très limité</desc0>
+         <desc1>bon support</desc1>
+         <desc2>support avec introspection des services (support wsdl)</desc2>
+         <score></score>
+         <comment></comment>
+      </element>
+      <element name="datamanagement" title="DataManagement">
+         <desc>support datamangament sql et/ou JPA par exemple
+paging, lazy loading, conflict handling...</desc>
+         <desc0></desc0>
+         <desc1></desc1>
+         <desc2></desc2>
+         <score></score>
+         <comment></comment>
+      </element>
+      <element name="cgi" title="Others">
+         <desc></desc>
+         <desc0></desc0>
+         <desc1></desc1>
+         <desc2></desc2>
+         <score></score>
+         <comment></comment>
+      </element>
+   </section>
+   <section name="industrialisationdesdeveloppements" title="Industrialisation des développements">
+      <desc></desc>
+      <element name="ide" title="IDE">
+         <desc></desc>
+         <desc0>pas ou peu d'IDE</desc0>
+         <desc1>IDE complet</desc1>
+         <desc2>de nombreux IDE</desc2>
+         <score></score>
+         <comment></comment>
+      </element>
+      <element name="outildebuildetcc" title="Outil de Build et CC">
+         <desc></desc>
+         <desc0></desc0>
+         <desc1></desc1>
+         <desc2></desc2>
+         <score></score>
+         <comment></comment>
+      </element>
+      <element name="outilsdetest" title="Outils de Test">
+         <desc>unitaire, fonctionnel, integration, charge, stress</desc>
+         <desc0></desc0>
+         <desc1></desc1>
+         <desc2></desc2>
+         <score></score>
+         <comment></comment>
+      </element>
+      <element name="outilgraphiquededeveloppements" title="Outil graphique de développements d'interface">
+         <desc></desc>
+         <desc0></desc0>
+         <desc1></desc1>
+         <desc2></desc2>
+         <score></score>
+         <comment></comment>
+      </element>
+      <element name="integrationdes" title="Intégration dans le workflow créa">
+         <desc></desc>
+         <desc0>oui</desc0>
+         <desc1>partiel : uniquement des outils créa vers l'IDE</desc1>
+         <desc2>round trip possible entre les outils créa et l'IDE</desc2>
+         <score></score>
+         <comment></comment>
+      </element>
+   </section>
+</document>
