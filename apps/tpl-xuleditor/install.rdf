@@ -1,22 +1,22 @@
 <?xml version="1.0"?>
-<RDF xmlns="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-     xmlns:em="http://www.mozilla.org/2004/em-rdf#">
-	<Description about="urn:mozilla:install-manifest">
-		<em:id>tpl-xuleditor@qsos.org</em:id>
-		<em:version>0.3</em:version>
-		<em:type>2</em:type>
-		<em:targetApplication>
-			<Description>
-				<em:id>{ec8030f7-c20a-464f-9b0e-13a3a9e97384}</em:id>
-				<em:minVersion>1.5</em:minVersion>
-				<em:maxVersion>2.*</em:maxVersion>
-			</Description>
-		</em:targetApplication>
-		<em:name>QSOS Template XUL Editor</em:name>
-		<em:creator>Raphael Semeteys</em:creator>
-		<em:iconURL>chrome://qsos-tpl-xuled/content/logo32.png</em:iconURL>
-		<em:homepageURL>http://www.qsos.org/</em:homepageURL>
-		<em:aboutURL>chrome://qsos-tpl-xuled/content/about.xul</em:aboutURL>
-		<em:updateURL>http://www.qsos.org/tools/tpl-xuleditor-update.rdf</em:updateURL>
-	</Description>
-</RDF>
+<RDF:RDF xmlns:em="http://www.mozilla.org/2004/em-rdf#"
+         xmlns:NC="http://home.netscape.com/NC-rdf#"
+         xmlns:RDF="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+  <RDF:Description RDF:about="rdf:#$rd86Q"
+                   em:id="{ec8030f7-c20a-464f-9b0e-13a3a9e97384}"
+                   em:minVersion="1.5"
+                   em:maxVersion="3.0.*" />
+  <RDF:Description RDF:about="urn:mozilla:install-manifest"
+                   em:id="tpl-xuleditor@qsos.org"
+                   em:version="0.3"
+                   em:type="2"
+                   em:name="QSOS Template XUL Editor"
+                   em:creator="Raphael Semeteys"
+                   em:iconURL="chrome://qsos-tpl-xuled/content/logo32.png"
+                   em:homepageURL="http://www.qsos.org/"
+                   em:aboutURL="chrome://qsos-tpl-xuled/content/about.xul"
+                   em:updateURL="http://www.qsos.org/tools/tpl-xuleditor-update.rdf"
+                   em:updateKey="MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDE3d7tLs+4Yh0/i8MSSYqGTZXa/Wj0DVcmf7YdczpTKRgAbokJxjVIkQOlU52bGqwweluCl/VoVZQOa9yEt9VWVapNNptPrKseNvXFdYEZNXfT0bLoDPZW3VpfxGYo0DitDbw9GzGxwg+feC8pKjsaEmv2zVZBTkMmVeVKUayhrQIDAQAB">
+    <em:targetApplication RDF:resource="rdf:#$rd86Q"/>
+  </RDF:Description>
+</RDF:RDF>
