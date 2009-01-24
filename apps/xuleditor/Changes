@@ -33,3 +33,6 @@ Revision history for QSOS XUL Editor
       - XUL Editor is now XMPP oriented: user can connect a QSOS chatroom
       - bugfix on author's list after remote evaluation loading
       - better synchronization between hierchical and graph views
+
+0.8  2008/06/26
+      - Repackaging for Firefox 3
