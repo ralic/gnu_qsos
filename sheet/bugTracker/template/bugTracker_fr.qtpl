@@ -18,10 +18,10 @@
       <qsosformat>1.7</qsosformat>
       <qsosappfamily>bugTracker</qsosappfamily>
       <qsosappname></qsosappname>
-      <qsosspecificformat>1.0</qsosspecificformat>
+      <qsosspecificformat>1.1</qsosspecificformat>
    </header>
-   <include section="generic"/>
-    <section name="ticketmanagement" title="Gestion de tickets">
+   <include section="generic"></include>
+   <section name="ticketmanagement" title="Gestion de tickets">
       <desc>Gestion de tickets de support</desc>
       <element name="basicfeatures" title="Fonctionnalités de base">
          <desc></desc>
@@ -65,10 +65,34 @@
          <element name="assignation" title="Assignation contrôlée">
             <desc>Possibilité de contrôler la visibilité de l'assignation d'un ticket à un technicien. Ré-assignation.</desc>
             <desc0>Les utilisateurs peuvent eux-mêmes assigner leurs tickets aux techniciens</desc0>
-            <desc1>Les utilisateurs ne peuvent pas savoir à qui est assigné un ticket. Il est impossible de réassigenr un ticket déjà assigné.</desc1>
-            <desc2>Les utilisateurs ne peuvent pas savoir à qui est assigné un ticket. Il possible de réassigenr un ticket déjà assigné.</desc2>
+            <desc1>Les utilisateurs peuvent savoir à qui est assigné un ticket mais ne peuvent assigner eux-même leurs ticket aux techniciens.</desc1>
+            <desc2>Les utilisateurs ne peuvent pas savoir à qui est assigné un ticket.</desc2>
+            <score></score>
+            <comment>En fait les utilisateurs savent à quel technicien est assigné le ticket, mais ne peuvent pas assigner eux même le ticket aux techniciens</comment>
+         </element>
+         <element name="reassignation" title="Ré-Assignation des tickets">
+            <desc>Possibilité de ré-assigner un ticket</desc>
+            <desc0>Les utilisateurs peuvent eux-même assigner leurs tickets aux techniciens</desc0>
+            <desc1>Les utilisateurs ne peuvent pas assigner/ré-assigner leurs tickets aux techniciens. Il est impossible de réassigner un ticket déjà assigné.</desc1>
+            <desc2>Les utilisateurs ne peuvent pas assigner/ré-assigner leurs tickets aux techniciens. Il possible de réassigner un ticket déjà assigné.</desc2>
             <score></score>
             <comment></comment>
+         </element>
+         <element name="teams" title="Attribution des tickets">
+            <desc>Possibilité pour un technicien d'attribuer un ticket à quelqu'un ou à une équipe</desc>
+            <desc0>Pas d'attribution par un technicien possible</desc0>
+            <desc1>Attribution possible à un technicien</desc1>
+            <desc2>Attribution possible à une équipe de techniciens</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="validation" title="Validation des réponses">
+            <desc>Possibilité de valider la réponse d'un technicien avant envoie</desc>
+            <desc0>Pas de validation des réponses possible</desc0>
+            <desc1>Fonction de validation disponible partiellement</desc1>
+            <desc2>Fonction de validation disponible</desc2>
+            <score>0</score>
+            <comment>Possibilité de définir un workflow pour les demandes</comment>
          </element>
          <element name="delegation" title="Délégation de création">
             <desc>Possibilité de créer un ticket au nom d'un autre utilisateur</desc>
@@ -114,11 +138,11 @@
             <score></score>
             <comment></comment>
          </element>
-         <element name="privatespaces" title="Espaves privés">
+         <element name="privatespaces" title="Espaces privés">
             <desc>Possibilité de cacher des notes internes sur un ticket à l'utilisateur</desc>
             <desc0>Les utilisateurs ont une visibilité sur l'intégralité des données des tickets</desc0>
             <desc1>Il est possible de cacher certaines données des tickets aux utilisateurs</desc1>
-            <desc2>Il est possible de créer rdes notes privées, automatiquement invisibles des utilisateurs</desc2>
+            <desc2>Il est possible de créer des notes privées, automatiquement invisibles des utilisateurs</desc2>
             <score></score>
             <comment></comment>
          </element>
