@@ -20,33 +20,517 @@
       <qsosappname></qsosappname>
       <qsosspecificformat></qsosspecificformat>
    </header>
-   <include section="generic_fr"></include>
+	<section name="generic" title="Section générique">
+		<desc>Les critères génériques de la méthode QSOS version 1.6</desc>
+		<element name="intrinsicdurability" title="Pérennité">
+			<desc>Pérennité</desc>
+			<element name="maturity" title="Maturité">
+				<desc>Maturité</desc>
+				<element name="age" title="Âge">
+					<desc0>Moins de 3 mois</desc0>
+					<desc1>Entre 3 mois et 3 ans</desc1>
+					<desc2>Plus de 3 ans</desc2>
+					<score></score>
+					<comment></comment>
+				</element>
+				<element name="stability" title="Stabilité">
+					<desc0>Logiciel instable avec de nombreuses versions et
+						patches générant des effets de bords</desc0>
+					<desc1>Version de production stabilisée mais un peu vieille.
+						Quelques difficultés à stabiliser les versions de développement
+					</desc1>
+					<desc2>Logiciel stable. Les nouvelles versions corrigent
+						des bugs, mais apportent de façon prépondérante de nouvelles
+						fonctionnalités</desc2>
+					<score></score>
+					<comment></comment>
+				</element>
+				<element name="historyknowproblems" title="Historique">
+					<desc0>Le logiciel connaît de nombreux problèmes qui peuvent être
+						rédhibitoires</desc0>
+					<desc1>Pas de problèmes majeurs, ni de crise</desc1>
+					<desc2>Bon historique de gestion de projet et de crise</desc2>
+					<score></score>
+					<comment></comment>
+				</element>
+				<element name="forkprobability" title="Fork">
+					<desc0>Forte probabilité de fork dans un futur proche</desc0>
+					<desc1>Le logiciel provient d'un fork mais a très peu de chances
+						d'être forké dans un futur proche</desc1>
+					<desc2>Très faible probabilité de fork. Le logiciel ne provient
+						pas d'un fork</desc2>
+					<score></score>
+					<comment></comment>
+				</element>
+			</element>
+			<element name="adoption" title="Adoption">
+				<desc>Adoption par la communauté et l'industrie</desc>
+				<element name="popularity" title="Popularité">
+					<desc0>Très peu d'utilisateurs identifiés</desc0>
+					<desc1>Usage détectable sur Internet</desc1>
+					<desc2>Nombreux utilisateurs et références</desc2>
+					<score></score>
+					<comment></comment>
+				</element>
+				<element name="references" title="Références">
+					<desc0>Aucune</desc0>
+					<desc1>Peu de références, pas d'usage critique</desc1>
+					<desc2>Souvent implémenté sur des applications critiques
+					</desc2>
+					<score></score>
+					<comment></comment>
+				</element>
+				<element name="contributingcommunity" title="Communauté des contributeurs">
+					<desc0>Pas de communauté ou de réelle activité (forum, liste de
+						diffusion…)</desc0>
+					<desc1>Communauté existante avec une activité notable
+					</desc1>
+					<desc2>Communauté forte : grosse activité sur les forums,
+						de nombreux contributeurs et défenseurs</desc2>
+					<score></score>
+					<comment></comment>
+				</element>
+				<element name="books" title="Livres, publications">
+					<desc0>Aucun livre sur ce logiciel</desc0>
+					<desc1>Moins de cinq livres publiés sur ce logiciel</desc1>
+					<desc2>Plus de cinq livres publiés sur ce logiciel et dans
+						différentes langues</desc2>
+					<score></score>
+					<comment></comment>
+				</element>
+			</element>
+			<element name="developmentleadership" title="Direction des développements">
+				<desc>Organisation et direction des développements
+				</desc>
+				<element name="leadingteam" title="Équipe dirigeante">
+					<desc0>Un ou deux individus engagés, pas clairement identifiés
+					</desc0>
+					<desc1>Entre deux et cinq personnes indépendantes</desc1>
+					<desc2>Plus de cinq personnes</desc2>
+					<score></score>
+					<comment></comment>
+				</element>
+				<element name="managementstyle" title="Mode de direction">
+					<desc0>Dictature complète</desc0>
+					<desc1>Despotisme éclairé</desc1>
+					<desc2>Conseil d'architectes avec un leader identifié (ex :
+						KDE)</desc2>
+					<score></score>
+					<comment></comment>
+				</element>
+			</element>
+			<element name="activity" title="Activité">
+				<desc>Activité du et autour du projet</desc>
+				<element name="developersidentificationturnover"
+					title="Nombre de développeurs, identification, turnover">
+					<desc0>Moins de trois développeurs, pas clairement identifiés
+					</desc0>
+					<desc1>Entre quatre et sept développeurs ou plus, non
+						identifiés, avec un turnover important</desc1>
+					<desc2>Plus de sept développeurs, équipe très simple</desc2>
+					<score></score>
+					<comment></comment>
+				</element>
+				<element name="activityonbugs" title="Activité autour des bugs">
+					<desc0>Réactivité faible sur le forum ou sur la liste de
+						diffusion, ou rien au sujet des corrections de bugs dans les notes
+						de versions</desc0>
+					<desc1>Activité détectable mais sans processus clairement
+						exposé, temps de résolution long</desc1>
+					<desc2>Forte réactivité, basée sur des rôles et des
+						assignations de tâches</desc2>
+					<score></score>
+					<comment></comment>
+				</element>
+				<element name="activityonfunctionalities" title="Activité autour des fonctionnalités">
+					<desc0>Pas ou peu de nouvelles fonctionnalités</desc0>
+					<desc1>Évolution du produit conduite par une équipe dédiée
+						ou par des utilisateurs, mais sans processus clairement exposé
+					</desc1>
+					<desc2>Les requêtes pour les nouvelles fonctionnalités sont
+						clairement outillées, feuille de route disponible</desc2>
+					<score></score>
+					<comment></comment>
+				</element>
+				<element name="activityonreleases" title="Activité sur les releases/versions">
+					<desc0>Très faible activité que ce soit sur les versions de
+						production ou de développement (alpha, beta)</desc0>
+					<desc1>Activité que ce soit sur les versions de production
+						ou de développement (alpha, beta), avec des versions correctives
+						mineures fréquentes</desc1>
+					<desc2>Activité importante avec des versions correctives
+						fréquentes et des versions majeures planifiées liées aux
+						prévisions de la feuille de route</desc2>
+					<score></score>
+					<comment></comment>
+				</element>
+			</element>
+		</element>
+		<element name="industrializedsolution" title="Industrialisation">
+			<desc>Niveau d'industrialisation du projet</desc>
+			<element name="independenceofdevelopments" title="Indépendance des développements">
+				<desc0>Développements réalisés à plus de 60% par des employés d'une seule société</desc0>
+            <desc1>Développements réalisés à 60% maximum par des employés d'une seule société</desc1>
+            <desc2>Développements réalisés à 20% maximum par des employés d'une seule société</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="services" title="Services">
+            <desc>Offres de services</desc>
+            <element name="training" title="Formation">
+               <desc0>Pas d'offre de formation identifiée</desc0>
+               <desc1>Offre existante mais restreinte géographiquement ou en une seule langue ou fournie par un seul fournisseur</desc1>
+               <desc2>Offre riche, plusieurs fournisseurs, plusieurs langages, divisée en modules et en niveaux</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="support" title="Support">
+               <desc0>Pas d'offre de support identifiée</desc0>
+               <desc1>Offre existante mais restreinte géographiquement ou en une seule langue ou fournie par un seul fournisseur ou sans garantie</desc1>
+               <desc2>Offre riche, plusieurs fournisseurs, avec des garanties (sur les temps de résolution)</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="consulting" title="Conseil">
+               <desc0>Pas d'offres de conseil identifiées</desc0>
+               <desc1>Offre existante mais restreinte géographiquement ou à un seul langage ou fournie par un seul fournisseur</desc1>
+               <desc2>Offre riche, plusieurs fournisseurs, plusieurs langages</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+         </element>
+         <element name="documentation" title="Documentation">
+            <desc0>Pas de documentation utilisateur</desc0>
+            <desc1>La documentation existe mais est en partie obsolète ou restreinte à une seule langue ou peu détaillée</desc1>
+            <desc2>Documentation à jour, traduite et éventuellement adaptée à différentes cibles de lecteurs (end-user, sysadmin, manager…)</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="qualityassurance" title="Méthode qualité">
+            <desc>Processus et méthode qualité</desc>
+            <element name="quality" title="Assurance qualité">
+               <desc0>Pas de processus qualité identifié</desc0>
+               <desc1>Processus qualité existant, mais non formalisé ou non outillé</desc1>
+               <desc2>Processus automatique de tests dans le cycle de vie du code et publication des résultats</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="tools" title="Outillage">
+               <desc0>Pas d'outils de gestion de bugs, ni d'outils de gestion de tickets</desc0>
+               <desc1>Outils standards fournis (une forge par exemple) mais peu utilisés</desc1>
+               <desc2>Utilisation très active d'outils standards</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+         </element>
+      </element>
+      <element name="packaging" title="Packaging">
+         <desc>Packaging pour les différents systèmes d'exploitation</desc>
+         <element name="packagingbsd" title="BSD">
+            <desc>BSD</desc>
+            <element name="packagingfreebsd" title="FreeBSD">
+               <desc0>Le logiciel n'est pas packagé pour ce système d'exploitation</desc0>
+               <desc1>Le packaging existe, mais est buggé ou n'a pas de support officiel</desc1>
+               <desc2>Le logiciel est correctement packagé pour ce système d'exploitation</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="packagingmacosx" title="Mac OS X">
+               <desc0>Le logiciel n'est pas packagé pour ce système d'exploitation</desc0>
+               <desc1>Le packaging existe, mais est buggé ou n'a pas de support officiel</desc1>
+               <desc2>Le logiciel est correctement packagé pour ce système d'exploitation</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="packagingnet" title="NetBSD">
+               <desc0>Le logiciel n'est pas packagé pour ce système d'exploitation</desc0>
+               <desc1>Le packaging existe, mais est buggé ou n'a pas de support officiel</desc1>
+               <desc2>Le logiciel est correctement packagé pour ce système d'exploitation</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="packagingopen" title="OpenBSD">
+               <desc0>Le logiciel n'est pas packagé pour ce système d'exploitation</desc0>
+               <desc1>Le packaging existe, mais est buggé ou n'a pas de support officiel</desc1>
+               <desc2>Le logiciel est correctement packagé pour ce système d'exploitation</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+         </element>
+         <element name="packaginglinux" title="Linux">
+            <desc>Linux</desc>
+            <element name="packagingdebian" title="Debian">
+               <desc0>Le logiciel n'est pas packagé pour ce système d'exploitation</desc0>
+               <desc1>Le packaging existe, mais est buggé ou n'a pas de support officiel</desc1>
+               <desc2>Le logiciel est correctement packagé pour ce système d'exploitation</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="packagingmandriva" title="Mandriva">
+               <desc0>Le logiciel n'est pas packagé pour ce système d'exploitation</desc0>
+               <desc1>Le packaging existe, mais est buggé ou n'a pas de support officiel</desc1>
+               <desc2>Le logiciel est correctement packagé pour ce système d'exploitation</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="packagingredhat" title="Red Hat">
+               <desc0>Le logiciel n'est pas packagé pour ce système d'exploitation</desc0>
+               <desc1>Le packaging existe, mais est buggé ou n'a pas de support officiel</desc1>
+               <desc2>Le logiciel est correctement packagé pour ce système d'exploitation</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="packagingsuse" title="SuSE">
+               <desc0>Le logiciel n'est pas packagé pour ce système d'exploitation</desc0>
+               <desc1>Le packaging existe, mais est buggé ou n'a pas de support officiel</desc1>
+               <desc2>Le logiciel est correctement packagé pour ce système d'exploitation</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+         </element>
+         <element name="packagingsource" title="Source">
+            <desc0>Le logiciel ne peut être facilement installé depuis les sources, cela demande beaucoup de travail</desc0>
+            <desc1>L'installation depuis les sources est limitée ou dépend des conditions (OS, arch, lib…)</desc1>
+            <desc2>L'installation depuis les sources est facile</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="packagingunix" title="Unix">
+            <desc>Unix</desc>
+            <element name="packagingaix" title="AIX">
+               <desc0>Le logiciel n'est pas packagé pour ce système d'exploitation</desc0>
+               <desc1>Le packaging existe, mais est buggé ou n'a pas de support officiel</desc1>
+               <desc2>Le logiciel est correctement packagé pour ce système d'exploitation</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="packaginghpux" title="HP-UX">
+               <desc0>Le logiciel n'est pas packagé pour ce système d'exploitation</desc0>
+               <desc1>Le packaging existe, mais est buggé ou n'a pas de support officiel</desc1>
+               <desc2>Le logiciel est correctement packagé pour ce système d'exploitation</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="packagingsolaris" title="Solaris">
+               <desc0>Le logiciel n'est pas packagé pour ce système d'exploitation</desc0>
+               <desc1>Le packaging existe, mais est buggé ou n'a pas de support officiel</desc1>
+               <desc2>Le logiciel est correctement packagé pour ce système d'exploitation</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+         </element>
+         <element name="packagingwindows" title="Windows">
+            <desc0>Le logiciel n'est pas packagé pour ce système d'exploitation</desc0>
+            <desc1>Le packaging existe, mais est buggé ou n'a pas de support officiel</desc1>
+            <desc2>Le logiciel est correctement packagé pour ce système d'exploitation</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+      </element>
+      <element name="exploitability" title="Exploitabilité">
+         <desc>Niveau d'exploitabilité</desc>
+         <element name="easeofuseergonomics" title="Facilité d'utilisation, ergonomie">
+            <desc0>Difficulté d'utilisation, demande une connaissance approfondie des fonctionnalités du logiciel</desc0>
+            <desc1>Ergonomie austère et très technique</desc1>
+            <desc2>Ergonomie élaborée et IHM comprenant des fonctions d'aide</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="administrationmonitoring" title="Administration et supervision">
+            <desc0>Pas de fonctionnalités de contrôle, ni d'administration</desc0>
+            <desc1>Fonctionnalités présentes mais incomplètes ou à améliorer</desc1>
+            <desc2>Fonctionnalités complètes et faciles de contrôle et d'administration. Intégration possible avec des outils tiers (ex : SNMP, syslog…)</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+      </element>
+      <element name="technicaladaptability" title="Adaptabilité">
+         <desc>Adaptabilité technique</desc>
+         <element name="modularity" title="Modularité">
+            <desc0>Logiciel monolithique</desc0>
+            <desc1>Présence de modules haut niveau permettant un premier niveau d'adaptation</desc1>
+            <desc2>Conception modulaire, permettant des adaptations faciles par sélection et/ou création de modules</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="codemodification" title="Facilité technique de modification du code existant">
+            <desc0>Tout à la main</desc0>
+            <desc1>Recompilation possible mais complexe, sans outils, ni documentation</desc1>
+            <desc2>Recompilation facile, outillée (ex : make, ANT, Maven…) et documentée</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="codeextension" title="Facilité d'extension du code">
+            <desc0>Toute modification demande une recompilation du code</desc0>
+            <desc1>Architecture conçue pour des extensions statiques mais exige une recompilation</desc1>
+            <desc2>Architecture de plugins, conçue pour des extensions dynamiques et sans recompilation</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+      </element>
+      <element name="strategy" title="Stratégie">
+         <desc>Stratégie du projet</desc>
+         <element name="license" title="Licence">
+            <desc>Licence, à pondérer uniquement si le client désire un jour devenir propriétaire du code</desc>
+            <element name="permissiveness" title="Permissivité">
+               <desc0>Licence très stricte, comme la GPL</desc0>
+               <desc1>Licence modérée entre les deux extrêmes (GPL et BSD), licence duale dépendante du type d'utilisateur (personne, société…) ou de leur activité</desc1>
+               <desc2>Licence très permissive comme BSD et Apache</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="protectionagainstproprietaryforks" title="Protection contre des forks commerciaux">
+               <desc0>Licence très permissive comme BSD et Apache</desc0>
+               <desc1>Licence modérée entre les deux extrêmes (GPL et BSD), licence duale dépendante du type d'utilisateur (personne, société…) ou de leur activité</desc1>
+               <desc2>Licence très stricte, comme la GPL</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+         </element>
+         <element name="copyrightowners" title="Détenteur des droits">
+            <desc0>Les droits sont détenus par quelques individus ou entités commerciales, facilitant le changement de licence</desc0>
+            <desc1>Les droits sont détenus par de nombreux individus de façon homogène, rendant le changement de licence très difficile</desc1>
+            <desc2>Les droits sont détenus par une entité légale, une fondation dans laquelle la communauté a confiance (ex: FSF, Apache, ObjectWeb)</desc2>
+            <score></score>
+            <comment>
+</comment>
+         </element>
+         <element name="modificationofsourcecode" title="Modification du code">
+            <desc0>Pas de moyen pratique de proposer des modifications de code</desc0>
+            <desc1>Des outils sont fournis pour accéder et modifier le code (ex : CVS, SVN) mais ne sont pas vraiment utilisés pour développer le produit</desc1>
+            <desc2>Le processus de modification de code est bien défini, exposé et respecté, basé sur des rôles bien définis</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="roadmap" title="Feuille de route">
+            <desc0>Pas de feuille de route publiée</desc0>
+            <desc1>Feuille de route sans planning</desc1>
+            <desc2>Feuille de route versionnée, avec planning et mesures de retard</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="sponsor" title="Sponsor">
+            <desc0>Le logiciel n'a pas de sponsors, l'équipe principale n'est pas rémunérée</desc0>
+            <desc1>Le logiciel a un sponsor unique qui détermine sa stratégie</desc1>
+            <desc2>Le logiciel est sponsorisé par l'industrie</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="strategicalindependence" title="Indépendance stratégique">
+            <desc0>Pas de stratégie détectable ou forte dépendance à un acteur unique (individu, société, sponsor)</desc0>
+            <desc1>Vision stratégique partagée avec plusieurs autres projets open-source mais sans engagement fort des propriétaires des droits</desc1>
+            <desc2>Indépendance forte de l'équipe de développement, droits détenus par une entité, fort engagement dans un processus de standardisation</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+      </element>
+   </section>
    <section name="meta-donnees" title="Récupération des Meta-données">
-      <desc></desc>
-      <element name="depuisfichierplat" title="Depuis fichier plat">
-         <desc>Récupération des meta-données depuis un fichier plat (longueurs fixes, séparateurs)</desc>
-         <desc0>Non disponible</desc0>
-         <desc1>Partiellement disponible</desc1>
-         <desc2>Disponible</desc2>
+      <desc>Définition ou importation des méta-données des sources et des cibles dans l'ETL</desc>
+      <element name="depuiscsv" title="Depuis fichier texte CSV">
+         <desc>Définition de la structure des champs des fichiers de données délimités</desc>
+         <desc0>Définition Manuelle</desc0>
+         <desc1>Définition Manuelle et validation</desc1>
+         <desc2>Import semi-automatique par assistant</desc2>
          <score></score>
          <comment></comment>
       </element>
-      <element name="depuisbasededonnees" title="Depuis Base de données">
-         <desc>Récupération de structure de tables depuis la base de données</desc>
+      <element name="depuistextefixe" title="Depuis fichier texte Fixe">
+         <desc>Définition de la structure des champs des fichiers de données à champs fixes</desc>
+         <desc0>Définition Manuelle</desc0>
+         <desc1>Définition Manuelle et validation</desc1>
+         <desc2>Import semi-automatique par assistant</desc2>
+         <score></score>
+         <comment></comment>
+      </element>
+      <element name="depuiscobol" title="Depuis fichier Cobol">
+         <desc>Définition de la structure des champs des fichiers de données Cobol</desc>
          <desc0>Non disponible</desc0>
-         <desc1>Partiellement disponible</desc1>
-         <desc2>Disponible</desc2>
+         <desc1>Définition Manuelle</desc1>
+         <desc2>Import automatique des copy cobol</desc2>
+         <score></score>
+         <comment></comment>
+      </element>
+      <element name="depuisxsam" title="Depuis fichier xSam">
+         <desc>Définition de la structure des champs des fichiers de données ISAM/VSAM</desc>
+         <desc0>Non disponible</desc0>
+         <desc1>Définition Manuelle</desc1>
+         <desc2>Import semi-automatique par assistant</desc2>
+         <score></score>
+         <comment></comment>
+      </element>
+      <element name="depuisbinairefixe" title="Depuis fichier binaire fixe">
+         <desc>Définition de la structure des champs des fichiers de données binaires à champs fixes</desc>
+         <desc0>Non disponible</desc0>
+         <desc1>Définition Manuelle</desc1>
+         <desc2>Import semi-automatique par assistant</desc2>
+         <score></score>
+         <comment></comment>
+      </element>
+       <element name="depuisschemaxml" title="Depuis fichier Description XML">
+         <desc>Définition de la structure des champs des fichiers de données à partir d'une description XML (DTD, XSD)</desc>
+         <desc0>Non disponible</desc0>
+         <desc1>Import de structures XML simples (style tables/colonnes)</desc1>
+         <desc2>Import de toute structure XML</desc2>
+         <score></score>
+         <comment></comment>
+      </element>
+       <element name="depuisxml" title="Depuis fichier XML">
+         <desc>Définition de la structure des champs des fichiers de données XML à partir du fichier de données lui-même</desc>
+         <desc0>Non disponible</desc0>
+         <desc1>Définition Manuelle ou import semi-automatique par assistant</desc1>
+         <desc2>Import automatique d'une structure XML simple</desc2>
+         <score></score>
+         <comment></comment>
+      </element>
+       <element name="depuiscwm" title="Depuis CWM">
+         <desc>Définition de la structure des champs par import CWM</desc>
+         <desc0>Non disponible</desc0>
+         <desc1>Limité aux Méta données nécessaires à l'ETL</desc1>
+         <desc2>Tout types de méta données  CWM (métiers, autres logiciels)</desc2>
+         <score></score>
+         <comment></comment>
+      </element>
+       <element name="depuisbasededonnées" title="Depuis Base de données">
+         <desc>Définition de la structure des champs des tables depuis une connexion à un SGBD</desc>
+         <desc0>Non disponible</desc0>
+         <desc1>Via connexion générique (odbc, jdbc) ou limité à certaines plates-formes</desc1>
+         <desc2>Accès natif depuis toutes plates-formes de disponibilité de l'ETL</desc2>
+         <score></score>
+         <comment></comment>
+      </element>
+       <element name="versionningmetadonnees" title="Versionning des méta-données">
+         <desc>Mémorisation des évolutions des méta-données et identification de la version courante</desc>
+         <desc0>Non disponible (uniquement la version courante mise à jour)</desc0>
+         <desc1>Versionning d'un jeu de méta-données</desc1>
+         <desc2>Versionning de chaque méta-donnée</desc2>
+         <score></score>
+         <comment></comment>
+      </element>
+       <element name="referentielmultiustilisateurs" title="Référentiel multi-utilisateurs">
+         <desc>Accès partagé à un référentiel unique</desc>
+         <desc0>Non disponible</desc0>
+         <desc1>Partage d'un fichie de méta-données</desc1>
+         <desc2>Plein support</desc2>
+         <score></score>
+         <comment></comment>
+      </element>
+       <element name="extionsionmetadonnees" title="Extension des méta-données">
+         <desc>Extension de l'inventaire des méta-données à d'autres méta-données que celles nécessaires à l'ETL</desc>
+         <desc0>Non disponible</desc0>
+         <desc1>Nécessite un développement et une montée de version de l'ETL (référentiel non extensible)</desc1>
+         <desc2>Paramétrage du référentiel</desc2>
          <score></score>
          <comment></comment>
       </element>
    </section>
    <section name="connectivite" title="Connectivité">
       <desc></desc>
-      <element name="ftp" title="FTP">
+      <element name="ftp" title="Protocoles de transfers">
          <desc></desc>
-         <desc0>FTP non supporté</desc0>
-         <desc1>FTP partiellement supporté (exemple : limité à l'input ou l'output)</desc1>
-         <desc2>FTP est supporté</desc2>
+         <desc0>Externe à l'ETL</desc0>
+         <desc1>En pré ou post commande ou en personnalisant un composant</desc1>
+         <desc2>Composant natif disponible</desc2>
          <score></score>
          <comment></comment>
       </element>
@@ -80,7 +564,7 @@
          <element name="fichiercompresse" title="Fichier compressé">
             <desc>Possibilité de se connecter à une archive</desc>
             <desc0>Non disponible</desc0>
-            <desc1>Partiellement disponible (par exemple limité en taille ou au niveau de l'argorithme de compression)</desc1>
+            <desc1>Partiellement disponible (par exemple limité en taille ou au niveau de l'algorithme de compression)</desc1>
             <desc2>Complètement disponible</desc2>
             <score></score>
             <comment></comment>
@@ -102,71 +586,198 @@
             <comment></comment>
             <element name="oracle" title="Oracle">
                <desc>Connexion native à Oracle</desc>
-               <desc0>Impossible</desc0>
-               <desc1>Possible mais limitée en termes de versions ou de possibilités</desc1>
-               <desc2>Possible</desc2>
-               <score></score>
-               <comment></comment>
+			       <element name="oraclesql" title="Oracle SQL">
+			         <desc></desc>
+			         <desc0>Non disponible</desc0>
+			         <desc1>Via une connexion générique</desc1>
+			         <desc2>Accès natif depuis toutes plates-formes de disponibilité de l'ETL</desc2>
+			         <score></score>
+			         <comment></comment>
+			      </element>
+			       <element name="oraclesqlload" title="Oracle SQL*LOAD">
+			         <desc></desc>
+			         <desc0>Non disponible</desc0>
+			         <desc1>Basique</desc1>
+			         <desc2>Paramétrage complet du chargeur</desc2>
+			         <score></score>
+			         <comment></comment>
+			      </element>
+			       <element name="oracledatapump" title="Oracle Data Pump">
+			         <desc></desc>
+			         <desc0>Non disponible</desc0>
+			         <desc1>Via une connexion générique</desc1>
+			         <desc2>Paramétrage complet du chargeur</desc2>
+			         <score></score>
+			         <comment></comment>
+			      </element>
             </element>
             <element name="teradata" title="Teradata">
                <desc>Connexion native à Teradata</desc>
-               <desc0>Impossible</desc0>
-               <desc1>Possible mais limitée en termes de versions ou de possibilités</desc1>
-               <desc2>Possible</desc2>
-               <score></score>
-               <comment></comment>
+			       <element name="teradatasql" title="Teradata SQL">
+			         <desc></desc>
+			         <desc0>Non disponible</desc0>
+			         <desc1>Via une connexion générique</desc1>
+			         <desc2>Accès natif depuis toutes plates-formes de disponibilité de l'ETL</desc2>
+			         <score></score>
+			         <comment></comment>
+			      </element>
+			       <element name="teradatachargeur" title="Teradata Chargeur">
+			         <desc></desc>
+			         <desc0>Non disponible</desc0>
+			         <desc1>Basique</desc1>
+			         <desc2>Paramétrage complet du chargeur</desc2>
+			         <score></score>
+			         <comment></comment>
+			      </element>
             </element>
-            <element name="db2" title="DB2">
+            <element name="db2" title="DB 2">
                <desc>Connexion native à DB2</desc>
-               <desc0>Impossible</desc0>
-               <desc1>Possible mais limitée en termes de versions ou de possibilités</desc1>
-               <desc2>Possible</desc2>
-               <score></score>
-               <comment></comment>
+			       <element name="db2sql" title="DB2 SQL">
+			         <desc></desc>
+			         <desc0>Non disponible</desc0>
+			         <desc1>Via une connexion générique</desc1>
+			         <desc2>Accès natif depuis toutes plates-formes de disponibilité de l'ETL</desc2>
+			         <score></score>
+			         <comment></comment>
+			      </element>
+			       <element name="db2chargeur" title="DB2 Chargeur">
+			         <desc></desc>
+			         <desc0>Non disponible</desc0>
+			         <desc1>Basique</desc1>
+			         <desc2>Paramétrage complet du chargeur</desc2>
+			         <score></score>
+			         <comment></comment>
+			      </element>
             </element>
-            <element name="sqlserver" title="SQLServer">
-               <desc>Connexion native à SQLServer</desc>
-               <desc0>Impossible</desc0>
-               <desc1>Possible mais limitée en termes de versions ou de possibilités</desc1>
-               <desc2>Possible</desc2>
-               <score></score>
-               <comment></comment>
+            <element name="sqlserver" title="SQL Server ">
+               <desc>Connexion native à SQL Server</desc>
+			       <element name="sqlserversql" title="SQL Server SQL">
+			         <desc></desc>
+			         <desc0>Non disponible</desc0>
+			         <desc1>Via une connexion générique</desc1>
+			         <desc2>Accès natif depuis toutes plates-formes de disponibilité de l'ETL</desc2>
+			         <score></score>
+			         <comment></comment>
+			      </element>
+			       <element name="sqlserverchargeur" title="SQL Server Chargeur">
+			         <desc></desc>
+			         <desc0>Non disponible</desc0>
+			         <desc1>Basique</desc1>
+			         <desc2>Paramétrage complet du chargeur</desc2>
+			         <score></score>
+			         <comment></comment>
+			      </element>
             </element>
             <element name="informix" title="Informix">
                <desc>Connexion native à Informix</desc>
-               <desc0>Impossible</desc0>
-               <desc1>Possible mais limitée en termes de versions ou de possibilités</desc1>
-               <desc2>Possible</desc2>
-               <score></score>
-               <comment></comment>
+			       <element name="informixsql" title="Informix SQL">
+			         <desc></desc>
+			         <desc0>Non disponible</desc0>
+			         <desc1>Via une connexion générique</desc1>
+			         <desc2>Accès natif depuis toutes plates-formes de disponibilité de l'ETL</desc2>
+			         <score></score>
+			         <comment></comment>
+			      </element>
+			       <element name="informixchargeur" title="Informix Chargeur">
+			         <desc></desc>
+			         <desc0>Non disponible</desc0>
+			         <desc1>Basique</desc1>
+			         <desc2>Paramétrage complet du chargeur</desc2>
+			         <score></score>
+			         <comment></comment>
+			      </element>
             </element>
             <element name="sybase" title="Sybase">
                <desc>Connexion native à Sybase</desc>
-               <desc0>Impossible</desc0>
-               <desc1>Possible mais limitée en termes de versions ou de possibilités</desc1>
-               <desc2>Possible</desc2>
-               <score></score>
-               <comment></comment>
+			       <element name="sybaseasesql" title="Sybase ASE SQL">
+			         <desc></desc>
+			         <desc0>Non disponible</desc0>
+			         <desc1>Via une connexion générique</desc1>
+			         <desc2>Accès natif depuis toutes plates-formes de disponibilité de l'ETL</desc2>
+			         <score></score>
+			         <comment></comment>
+			      </element>
+			       <element name="sybaseasechargeur" title="Sybase ASE Chargeur">
+			         <desc></desc>
+			         <desc0>Non disponible</desc0>
+			         <desc1>Basique</desc1>
+			         <desc2>Paramétrage complet du chargeur</desc2>
+			         <score></score>
+			         <comment></comment>
+			      </element>
+			       <element name="sybaseiqsql" title="Sybase IQ SQL">
+			         <desc></desc>
+			         <desc0>Non disponible</desc0>
+			         <desc1>Via une connexion générique</desc1>
+			         <desc2>Accès natif depuis toutes plates-formes de disponibilité de l'ETL</desc2>
+			         <score></score>
+			         <comment></comment>
+			      </element>
+			       <element name="sybaseiqchargeur" title="Sybase IQ Chargeur">
+			         <desc></desc>
+			         <desc0>Non disponible</desc0>
+			         <desc1>Basique</desc1>
+			         <desc2>Paramétrage complet du chargeur</desc2>
+			         <score></score>
+			         <comment></comment>
+			      </element>
             </element>
             <element name="mysql" title="MySQL">
                <desc>Connexion native à MySQL</desc>
-               <desc0>Impossible</desc0>
-               <desc1>Possible mais limitée en termes de versions ou de possibilités</desc1>
-               <desc2>Possible</desc2>
-               <score></score>
-               <comment></comment>
+			       <element name="mysqlsql" title="MySQL SQL">
+			         <desc></desc>
+			         <desc0>Non disponible</desc0>
+			         <desc1>Via une connexion générique</desc1>
+			         <desc2>Accès natif depuis toutes plates-formes de disponibilité de l'ETL</desc2>
+			         <score></score>
+			         <comment></comment>
+			      </element>
+			       <element name="mysqlchargeur" title="MySQL Chargeur">
+			         <desc></desc>
+			         <desc0>Non disponible</desc0>
+			         <desc1>Basique</desc1>
+			         <desc2>Paramétrage complet du chargeur</desc2>
+			         <score></score>
+			         <comment></comment>
+			      </element>
+            </element>
+            <element name="greenplum" title="Greenplulm">
+               <desc>Connexion native à Greenplum</desc>
+			       <element name="greenplumsql" title="Greenplum SQL">
+			         <desc></desc>
+			         <desc0>Non disponible</desc0>
+			         <desc1>Via une connexion générique</desc1>
+			         <desc2>Accès natif depuis toutes plates-formes de disponibilité de l'ETL</desc2>
+			         <score></score>
+			         <comment></comment>
+			      </element>
+			       <element name="greenplumchargeur" title="Greenplum Chargeur">
+			         <desc></desc>
+			         <desc0>Non disponible</desc0>
+			         <desc1>Basique</desc1>
+			         <desc2>Paramétrage complet du chargeur</desc2>
+			         <score></score>
+			         <comment></comment>
+			      </element>
             </element>
             <element name="postgresql" title="PostgreSQL">
                <desc>Connexion native à PostgreSQL</desc>
-               <desc0>Impossible</desc0>
-               <desc1>Possible mais limitée en termes de versions ou de possibilités</desc1>
-               <desc2>Possible</desc2>
-               <score></score>
-               <comment></comment>
-            </element>
-            <element name="autressgbd" title="Autres SGBD">
-               <desc>Liste des autres SGBD auxquels l'ETL se connecte nativement</desc>
-               <comment></comment>
+			       <element name="postgresqlsql" title="PostgreSQL SQL">
+			         <desc></desc>
+			         <desc0>Non disponible</desc0>
+			         <desc1>Via une connexion générique</desc1>
+			         <desc2>Accès natif depuis toutes plates-formes de disponibilité de l'ETL</desc2>
+			         <score></score>
+			         <comment></comment>
+			      </element>
+			       <element name="postgresqlchargeur" title="PostgreSQL Chargeur">
+			         <desc></desc>
+			         <desc0>Non disponible</desc0>
+			         <desc1>Basique</desc1>
+			         <desc2>Paramétrage complet du chargeur</desc2>
+			         <score></score>
+			         <comment></comment>
+			      </element>
             </element>
          </element>
       </element>
@@ -190,13 +801,29 @@
             <comment></comment>
          </element>
       </element>
+      <element name="optimisationdesacces" title="Optimisation des accès">
+      	<desc>Fonction d'optimisation des accès aux données intégrées aux composants de connectivité</desc>
+      	<desc0>Objets SGBD</desc0>
+      	<desc1>Scripts SQL</desc1>
+      	<desc2>Constructeur graphique (incluant script SQL)</desc2>
+      	<comment></comment>
+      	<score></score>
+      </element>
+      <element name="prechargementdesdonnees" title="Préchargement des données en mémoire">
+      	<desc>Fonction de préchargement des données en mémoire pour ne pas avoir à solliciceter la connexion à chaque accès en lecture</desc>
+      	<desc0>Non disponible</desc0>
+      	<desc1>En lecture seule</desc1>
+      	<desc2>Gestion d'un cache de données (lecture/écriture)</desc2>
+      	<comment></comment>
+      	<score></score>
+      </element>
    </section>
    <section name="transformation" title="Transformation">
       <desc>Fonctionnalités de transformation des données</desc>
       <element name="tri" title="Tri">
          <desc>Fonctionnalités de tri</desc>
          <desc0>Non disponible</desc0>
-         <desc1>Partiellement disponible</desc1>
+         <desc1>À développer (personnalisation de l'ETL)</desc1>
          <desc2>Disponible</desc2>
          <score></score>
          <comment></comment>
@@ -204,7 +831,7 @@
       <element name="dedoublonnage" title="Dédoublonnage">
          <desc>Suppression des doublons</desc>
          <desc0>Non disponible</desc0>
-         <desc1>Partiellement disponible</desc1>
+         <desc1>À développer (personnalisation de l'ETL)</desc1>
          <desc2>Disponible</desc2>
          <score></score>
          <comment></comment>
@@ -212,78 +839,146 @@
       <element name="filtre" title="Filtre">
          <desc>Fonctionnalités de filtre</desc>
          <desc0>Non disponible</desc0>
-         <desc1>Partiellement disponible</desc1>
+         <desc1>À développer (personnalisation de l'ETL)</desc1>
          <desc2>Disponible</desc2>
          <score></score>
          <comment></comment>
       </element>
       <element name="concatenation" title="Concaténation">
-         <desc>Fonctionnalités de concaténation</desc>
+         <desc>Mise bout à bout de plusieurs fichiers de même structure</desc>
          <desc0>Non disponible</desc0>
-         <desc1>Partiellement disponible</desc1>
+         <desc1>À développer (personnalisation de l'ETL)</desc1>
          <desc2>Disponible</desc2>
          <score></score>
          <comment></comment>
       </element>
       <element name="lookup" title="Look up">
-         <desc></desc>
+         <desc>Composant de transcodage</desc>
          <desc0>Non disponible</desc0>
-         <desc1>Partiellement disponible</desc1>
+         <desc1>À développer (personnalisation de l'ETL)</desc1>
          <desc2>Disponible</desc2>
          <score></score>
          <comment></comment>
       </element>
       <element name="jointure" title="Jointure">
-         <desc></desc>
+         <desc>Jointure faite par l'ETL</desc>
          <desc0>Non disponible</desc0>
-         <desc1>Partiellement disponible</desc1>
+         <desc1>À développer (personnalisation de l'ETL)</desc1>
          <desc2>Disponible</desc2>
          <score></score>
          <comment></comment>
       </element>
+      <element name="enrichissement" title="Enrichissement">
+      	<desc>Ajout de colonnes de plusieurs sources</desc>
+      	<desc0>Non disponible</desc0>
+      	<desc1>À développer (personnalisation de l'ETL)</desc1>
+      	<desc2>Disponible</desc2>
+      	<comment></comment>
+      	<score></score></element>
+      <element name="distribution" title="Distribution">
+      	<desc>Une entrée vers plusieurs sorties différentes en colonnes ou en filtrage</desc>
+      	<desc0>Non disponible</desc0>
+      	<desc1>À développer (personnalisation de l'ETL)</desc1>
+      	<desc2>Disponible</desc2>
+      	<comment></comment>
+      	<score></score></element>
       <element name="reformatagedesdonnees" title="Reformatage des données">
          <desc>Fonctionnalités de reformatage</desc>
          <comment></comment>
          <element name="chainedecaracteres" title="Chaîne de caractères">
             <desc>Reformatage de chaînes de caractères</desc>
-            <desc0>Pas de reformatage possible</desc0>
-            <desc1>Reformatage possible mais limité</desc1>
-            <desc2>Reformatage possible</desc2>
+            <desc0>Formule dans un champ</desc0>
+            <desc1>Transtypage : Fonctions/procédures en langage interne (ex: Basic, java ...) + typage des champs</desc1>
+            <desc2>Personnalisation de composants</desc2>
             <score></score>
             <comment></comment>
          </element>
          <element name="date" title="Date">
             <desc>Reformatage de chaînes de dates</desc>
-            <desc0>Pas de reformatage possible</desc0>
-            <desc1>Reformatage possible mais limité</desc1>
-            <desc2>Reformatage possible</desc2>
+            <desc0>Formule dans un champ</desc0>
+            <desc1>Transtypage : Fonctions/procédures en langage interne (ex: Basic, java ...) + typage des champs</desc1>
+            <desc2>Personnalisation de composants</desc2>
             <score></score>
             <comment></comment>
          </element>
          <element name="nombre" title="Nombre">
             <desc>Reformatage de chaînes des nombres</desc>
-            <desc0>Pas de reformatage possible</desc0>
-            <desc1>Reformatage possible mais limité</desc1>
-            <desc2>Reformatage possible</desc2>
+            <desc0>Formule dans un champ</desc0>
+            <desc1>Transtypage : Fonctions/procédures en langage interne (ex: Basic, java ...) + typage des champs</desc1>
+            <desc2>Personnalisation de composants</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="typesutilisateur" title="Types utilisateur">
+            <desc>Définition de types spécifiques (classes, types, métiers, ...)</desc>
+            <desc0>Non disponible</desc0>
+            <desc1>Paramétrage d'un type existant (listes de valeurs, plages...)</desc1>
+            <desc2>Définition de nouveaux types dans le référentiel</desc2>
             <score></score>
             <comment></comment>
          </element>
          <element name="fonctionsdecalcul" title="Fonctions de calcul">
             <desc></desc>
-            <desc0>Aucune fonction de calcul disponible</desc0>
-            <desc1>Quelques fonctions disponibles</desc1>
-            <desc2>Jeu complet de fonctions de calcul disponibles</desc2>
+            <desc0>Formules dans un champ</desc0>
+            <desc1>Langage interne procudéral</desc1>
+            <desc2>Langage standard (Basic, Java, Cobol) + lien aux objets du référentiel + extension par bibliothèques</desc2>
             <score></score>
-            <comment></comment>
+            <comment>Différence ici entre un moteur d'exécutoion et un générateur de code. ex. quand on définit un type, une fonction transforme une donnée en une autre, et une procédure transforme un type en un autre (la procédure appelle la fonction) ensuite, un mapping lie une procédure à des sources et des cibles.</comment>
          </element>
       </element>
-      <element name="comparaisondefichiers" title="Comparaison de fichiers">
+      <element name="extractiondedifférentiels" title="Extraction de différentiels">
          <desc></desc>
-         <desc0>Non disponible</desc0>
-         <desc1>Partiellement disponible</desc1>
-         <desc2>Disponible</desc2>
-         <score></score>
-         <comment></comment>
+         <element name="edd_fonctions" title="Fonctions">
+	         <desc>Ex : Checksum</desc>
+	         <desc0>Non disponible</desc0>
+	         <desc1>À développer (personnalisation de l'ETL)</desc1>
+	         <desc2>Disponible</desc2>
+	         <score></score>
+	         <comment></comment>
+         </element>
+         <element name="edd_analyseursdelogs" title="Analyseurs de logs">
+	         <desc></desc>
+	         <desc0>Non disponible</desc0>
+	         <desc1>Partiellement disponible</desc1>
+	         <desc2>Disponible</desc2>
+	         <score></score>
+	         <comment></comment>
+         </element>
+         <element name="edd_logsanalysees" title="Logs Analysées">
+	         <desc></desc>
+	         <element name="edd_la_oracle" title="Oracle">
+		         <desc></desc>
+		         <desc0>Non disponible</desc0>
+		         <desc1>Partiellement disponible</desc1>
+		         <desc2>Disponible</desc2>
+		         <score></score>
+		         <comment></comment>
+	         </element>
+	         <element name="edd_la_db2" title="DB2">
+		         <desc></desc>
+		         <desc0>Non disponible</desc0>
+		         <desc1>Partiellement disponible</desc1>
+		         <desc2>Disponible</desc2>
+		         <score></score>
+		         <comment></comment>
+	         </element>
+	         <element name="edd_la_sybase" title="Sybase">
+		         <desc></desc>
+		         <desc0>Non disponible</desc0>
+		         <desc1>Partiellement disponible</desc1>
+		         <desc2>Disponible</desc2>
+		         <score></score>
+		         <comment></comment>
+	         </element>
+	         <element name="edd_la_mssql" title="MS SQL Server">
+		         <desc></desc>
+		         <desc0>Non disponible</desc0>
+		         <desc1>Partiellement disponible</desc1>
+		         <desc2>Disponible</desc2>
+		         <score></score>
+		         <comment></comment>
+	         </element>
+         </element>
       </element>
       <element name="agregation" title="Agrégation">
          <desc></desc>
@@ -309,9 +1004,100 @@
          <score></score>
          <comment></comment>
       </element>
+      <element name="generationdedonnees" title="Génération de données">
+         <desc></desc>
+         <desc0>Non disponible</desc0>
+         <desc1>Partiellement disponible</desc1>
+         <desc2>Disponible</desc2>
+         <score></score>
+         <comment></comment>
+      </element>
+      <element name="composantsdetest" title="Composants de test">
+         <desc></desc>
+         <desc0>Non disponible</desc0>
+         <desc1>Partiellement disponible</desc1>
+         <desc2>Disponible</desc2>
+         <score></score>
+         <comment></comment>
+      </element>
+      <element name="composantdeworkflow" title="Composant de workflow">
+         <desc></desc>
+         <desc0>Non disponible</desc0>
+         <desc1>Script</desc1>
+         <desc2>Composants</desc2>
+         <score></score>
+         <comment></comment>
+      </element>
+      <element name="gestiondesscd" title="Gestion des SCD">
+         <desc>Spécifique BI</desc>
+         <desc0>Non disponible</desc0>
+         <desc1>Partiellement disponible</desc1>
+         <desc2>Disponible</desc2>
+         <score></score>
+         <comment></comment>
+      </element>
+      <element name="soa" title="SOA">
+         <desc></desc>
+	      <element name="soa_composantdappelsoa" title="Composant d'appel SOA">
+	         <desc></desc>
+	         <desc0>Non disponible</desc0>
+	         <desc1>Partiellement disponible</desc1>
+	         <desc2>Disponible</desc2>
+	         <score></score>
+	         <comment></comment>
+	      </element>
+	      <element name="soa_expositiondappelsoa" title="Exposition d'appel SOA">
+	         <desc></desc>
+	         <desc0>Non disponible</desc0>
+	         <desc1>Partiellement disponible</desc1>
+	         <desc2>Disponible</desc2>
+	         <score></score>
+	         <comment></comment>
+	      </element>
+      </element>
       <element name="appeldecommandesexternes" title="Appel de commandes externes">
          <desc></desc>
          <comment></comment>
+	      <element name="ace_prepostcomposant" title="Commande Pré/Post composant">
+	         <desc></desc>
+	         <desc0>Non disponible</desc0>
+	         <desc1>Partiellement disponible</desc1>
+	         <desc2>Disponible</desc2>
+	         <score></score>
+	         <comment></comment>
+	      </element>
+	      <element name="ace_prepostjob" title="Commande Pré/Post job">
+	         <desc></desc>
+	         <desc0>Non disponible</desc0>
+	         <desc1>Partiellement disponible</desc1>
+	         <desc2>Disponible</desc2>
+	         <score></score>
+	         <comment></comment>
+	      </element>
+	      <element name="ace_developpementfonctioninterne" title="Développement d'une fonction interne">
+	         <desc></desc>
+	         <desc0>Non disponible</desc0>
+	         <desc1>Partiellement disponible</desc1>
+	         <desc2>Disponible</desc2>
+	         <score></score>
+	         <comment></comment>
+	      </element>
+	      <element name="ace_personnalisationcomposantgenerique" title="Personnalisation de composant générique">
+	         <desc></desc>
+	         <desc0>Non disponible</desc0>
+	         <desc1>Partiellement disponible</desc1>
+	         <desc2>Disponible</desc2>
+	         <score></score>
+	         <comment>Appel d'une fonction de traitement d'une colonne cible pour un enregistrement de donnée (1 cellule cible) via une API</comment>
+	      </element>
+	      <element name="ace_developpementcomposant" title="Développement de composant">
+	         <desc></desc>
+	         <desc0>Non disponible</desc0>
+	         <desc1>Partiellement disponible</desc1>
+	         <desc2>Disponible</desc2>
+	         <score></score>
+	         <comment></comment>
+	      </element>
          <element name="commandessysteme" title="Commandes système">
             <desc></desc>
             <desc0>Non disponible</desc0>
@@ -332,38 +1118,189 @@
    </section>
    <section name="parametrage" title="Paramétrage">
       <desc></desc>
-      <element name="jobmaquette" title="Job maquette">
-         <desc>Templates</desc>
+      <element name="jobmaquette" title="Job modèle">
+         <desc>Classe de job réutilisables</desc>
+         <desc0>Non disponible</desc0>
+         <desc1>Partiellement disponible</desc1>
+         <desc2>Disponible</desc2>
+         <score></score>
+         <comment>Différents des jobs paramétrés
+</comment>
+      </element>
+      <element name="p_fragmentjobmodele" title="Fragement de jobs modèle">
+         <desc>Classe de fonctions de transformations réutilisables</desc>
+         <desc0>Non disponible</desc0>
+         <desc1>Partiellement disponible</desc1>
+         <desc2>Disponible</desc2>
+         <score></score>
+         <comment>Différent des fonctions de transformation paramétrées.
+</comment>
+      </element>
+      <element name="parametragedestraitements" title="Paramétrage des traitements">
+         <desc></desc>
+         <desc0>En fichier</desc0>
+         <desc1>En variables aux types standards (nombres, texte, dates)</desc1>
+         <desc2>Tous types de variables (y compris des jobs ou des composants)</desc2>
+         <score></score>
+         <comment></comment>
+      </element>
+      <element name="parametragedumoteur" title="Paramétrage du moteur">
+         <desc></desc>
          <desc0>Non disponible</desc0>
          <desc1>Partiellement disponible</desc1>
          <desc2>Disponible</desc2>
          <score></score>
          <comment></comment>
       </element>
-      <element name="parametragedestraitements" title="Paramétrage des traitements">
+      <element name="p_parametragedumoteur" title="Paramétrage du moteur">
          <desc></desc>
          <desc0>Non disponible</desc0>
-         <desc1>Limité</desc1>
-         <desc2>Illimité</desc2>
+         <desc1>Partiellement disponible</desc1>
+         <desc2>Disponible</desc2>
          <score></score>
          <comment></comment>
       </element>
-      <element name="parametragedumoteur" title="Paramétrage du moteur">
+      <element name="p_parametragedesconnexions" title="Paramétrage des connexions">
+         <desc>Pour le déploiement</desc>
+         <desc0>En dur</desc0>
+         <desc1>En paramètre</desc1>
+         <desc2>En "session"</desc2>
+         <score></score>
+         <comment></comment>
+      </element>
+      <element name="p_instaciationduntraitement" title="Instanciation d'un traitement">
+         <desc>Facon Jcl/Cobol, sytle session Infomatica</desc>
+         <desc0>Non disponible</desc0>
+         <desc1>Partiellement disponible</desc1>
+         <desc2>Disponible</desc2>
+         <score></score>
+         <comment>La session (style Informatica) est une structure de paramétrage de déploiement indépendante du traitement fonctionnel du job (meilleure qualité des développements)
+</comment>
+      </element>
+      <element name="p_api" title="API">
          <desc></desc>
-         <desc0>Disponible</desc0>
+         <desc0>Non disponible</desc0>
+         <desc1>Limité (ex. aux composants workflow et données)</desc1>
+         <desc2>API complet (y compris la gestion du référentiel, des exécutions, du log, du développement...)</desc2>
+         <score></score>
+         <comment></comment>
+      </element>
+   </section>
+   <section name="workflow" title="Workflow">
+   	<desc></desc>
+      <element name="w_developpementduworkflow" title="Développement du workflow">
+         <desc></desc>
+         <desc0>Non disponible (mise en exploitation du code généré dans un ordonnanceur externe)</desc0>
+         <desc1>Script intégré</desc1>
+         <desc2>Workflow graphique intégré</desc2>
+         <score></score>
+         <comment></comment>
+      </element>
+      <element name="w_richesseduworkflow" title="Richesse du workflow">
+         <desc></desc>
+         <desc0>Non disponible</desc0>
          <desc1>Partiellement disponible</desc1>
          <desc2>Disponible</desc2>
          <score></score>
          <comment></comment>
       </element>
    </section>
+   <section name="moteurdetraitement" title="Moteur de traitement">
+   	<desc></desc>
+      <element name="mdt_qualitedumoteur" title="Qualité du moteur">
+         <desc></desc>
+         <desc0>Pas de moteur (génération de code)</desc0>
+         <desc1>Lié à l'OS (même partiellement)</desc1>
+         <desc2>Avancé / Kernel complet(gestion mémoire, gestion process, gestion des I/O)</desc2>
+         <score></score>
+         <comment></comment>
+      </element>
+   </section>
+   <section name="generationdecode" title="Génération de code">
+   	<desc></desc>
+      <element name="gdc_integrationdeslangages" title="Intégration des langages">
+         <desc></desc>
+         <desc0>Pas de génération</desc0>
+         <desc1>Langages fixes</desc1>
+         <desc2>Langages interchangeables</desc2>
+         <score></score>
+         <comment></comment>
+      </element>
+      <element name="gdc_langages" title="Langages">
+         <desc></desc>
+		      <element name="gdc_l_java" title="Java">
+		         <desc></desc>
+		         <desc0>Non disponible</desc0>
+		         <desc1>Partiellement disponible</desc1>
+		         <desc2>Disponible</desc2>
+		         <score></score>
+		         <comment></comment>
+		      </element>
+		      <element name="gdc_l_perl" title="Perl">
+		         <desc></desc>
+		         <desc0>Non disponible</desc0>
+		         <desc1>Partiellement disponible</desc1>
+		         <desc2>Disponible</desc2>
+		         <score></score>
+		         <comment></comment>
+		      </element>
+		      <element name="gdc_l_c" title="C">
+		         <desc></desc>
+		         <desc0>Non disponible</desc0>
+		         <desc1>Partiellement disponible</desc1>
+		         <desc2>Disponible</desc2>
+		         <score></score>
+		         <comment></comment>
+		      </element>
+		      <element name="gdc_l_cobol" title="Cobol">
+		         <desc></desc>
+		         <desc0>Non disponible</desc0>
+		         <desc1>Partiellement disponible</desc1>
+		         <desc2>Disponible</desc2>
+		         <score></score>
+		         <comment></comment>
+		      </element>
+		      <element name="gdc_l_plsql" title="PL/SQL">
+		         <desc></desc>
+		         <desc0>Non disponible</desc0>
+		         <desc1>Partiellement disponible</desc1>
+		         <desc2>Disponible</desc2>
+		         <score></score>
+		         <comment></comment>
+		      </element>
+		      <element name="gdc_l_autres" title="Autres scripts">
+		         <desc></desc>
+		         <desc0>Non disponible</desc0>
+		         <desc1>Partiellement disponible</desc1>
+		         <desc2>Disponible</desc2>
+		         <score></score>
+		         <comment></comment>
+		      </element>
+      </element>
+      <element name="gdc_portabilite" title="Portabilité">
+         <desc></desc>
+         <desc0>Pas de portabilité</desc0>
+         <desc1>VM Standard</desc1>
+         <desc2>VM avancé</desc2>
+         <score></score>
+         <comment></comment>
+      </element>
+      <element name="gdc_packaging" title="Packaging du code">
+         <desc></desc>
+         <desc0>Fichiers de codes sources</desc0>
+         <desc1>Archive code + workflow</desc1>
+         <desc2>Packaging OS (ex: rpm) ou serveur d'application (ex : beans, package, pl/sql)</desc2>
+         <score></score>
+         <comment></comment>
+      </element>
+     </section>
    <section name="deboguage" title="Déboguage">
       <desc></desc>
       <element name="executionpasapas" title="Exécution pas à pas">
          <desc></desc>
          <desc0>Non disponible</desc0>
-         <desc1>Partiellement disponible</desc1>
-         <desc2>Disponible</desc2>
+         <desc1>Traitements</desc1>
+         <desc2>Traitements + données</desc2>
          <score></score>
          <comment></comment>
       </element>
@@ -383,44 +1320,27 @@
          <score></score>
          <comment></comment>
       </element>
-      <element name="journalisation" title="Journalisation">
-         <desc></desc>
-         <desc0>Non disponible</desc0>
-         <desc1>Partiellement disponible</desc1>
-         <desc2>Disponible</desc2>
-         <score></score>
-         <comment></comment>
-      </element>
    </section>
    <section name="performance" title="Performance">
       <desc></desc>
-      <element name="utilisationdefichierinterne" title="Utilisation de fichier interne">
+      <element name="parallelisationdesfluxdedonnees" title="Parallélisation des flux de données">
          <desc></desc>
-         <desc0>Pas de fichier interne</desc0>
-         <desc1>Utilisation limitée</desc1>
-         <desc2>Disponible</desc2>
+         <desc0>Par le fonctionnel (ex: lancement concurrent des mêmes jobs avec des paramètres de filtrage différents)</desc0>
+         <desc1>SMP fixe d'un composant (ex: Pour Informatica, process lecteur / transform / écrivain pour chaque composant)</desc1>
+         <desc2>Parallélise mautomatique (partitionnement des données d'un composant)</desc2>
          <score></score>
          <comment></comment>
       </element>
-      <element name="parallelisationdesfluxdedonnees" title="Parallélisation des flux de données">
+      <element name="distributiondestraitements" title="Distribution des traitements">
          <desc></desc>
-         <desc0>Pas de parallélisation</desc0>
-         <desc1>Fonctionnalité disponible mais limitée</desc1>
-         <desc2>Fonctionnalité disponible</desc2>
+         <desc0>Pas de cluster (distribution manuelle des traitements sur le(s) serveur(s), ex : générateur de code)</desc0>
+         <desc1>Cluster maître/esclave</desc1>
+         <desc2>Grid computing (référentiel d'éxécution partagé par plusieurs serveurs administrés dynamiquement)</desc2>
          <score></score>
          <comment></comment>
       </element>
    </section>
    <section name="exploitabilite" title="Exploitabilité">
-      <desc>TBD</desc>
-      <element name="portabilite" title="Portabilité">
-         <desc>TBD</desc>
-         <desc0>TBD</desc0>
-         <desc1>TBD</desc1>
-         <desc2>TBD</desc2>
-         <score></score>
-         <comment></comment>
-      </element>
       <element name="ordonnancement" title="Ordonnancement">
          <desc></desc>
          <comment></comment>
@@ -445,15 +1365,23 @@
          <desc>Lancement de tâches en ligne de commande</desc>
          <desc0>Aucun outil en ligne de commande disponible</desc0>
          <desc1>Existence d'un outil en ligne de commande mais à l'utilisation limitée</desc1>
-         <desc2>Outil en ligne de commande disponible et complet</desc2>
+         <desc2>Outil en ligne de commande disponible et complet (y compris extraction de log)</desc2>
          <score></score>
          <comment></comment>
       </element>
       <element name="richessedesjournaux" title="Richesse des journaux">
          <desc>Richesse des journaux de traitement</desc>
          <desc0>Aucun journal de traitement disponible</desc0>
-         <desc1>Journal de traitement existant mais très pauvre</desc1>
-         <desc2>Journal de traitement très riche</desc2>
+         <desc1>Journal de traitement statique</desc1>
+         <desc2>Journal de traitement personnalisable depuis les jobs</desc2>
+         <score></score>
+         <comment></comment>
+      </element>
+      <element name="journalisationrequetable" title="Journalisation requêtable">
+         <desc></desc>
+         <desc0>Non disponible (uniquement log texte non structuré)</desc0>
+         <desc1>Partiel (tout n'es pas requêtable, ex : log texte Informatica)</desc1>
+         <desc2>Total (y compris les logs personnalisés)</desc2>
          <score></score>
          <comment></comment>
       </element>
@@ -471,8 +1399,8 @@
          <element name="sgbd" title="SGBD">
             <desc></desc>
             <desc0>Pas de référentiel SGBD</desc0>
-            <desc1>Référentiel disponible mais limité</desc1>
-            <desc2>Disponible</desc2>
+            <desc1>Mono utilisateur</desc1>
+            <desc2>Multi utilisateur</desc2>
             <score></score>
             <comment></comment>
          </element>
@@ -488,11 +1416,19 @@
          <score></score>
          <comment></comment>
       </element>
+      <element name="outildexploitation" title="Outil d'exploitation">
+         <desc></desc>
+         <desc0>Aucun outil fourni (exploitation dasn un outil tiers, par exemple, Oracle OWB, ou dans une autre version)</desc0>
+         <desc1>Interne</desc1>
+         <desc2>Interne / Tiers</desc2>
+         <score></score>
+         <comment></comment>
+      </element>
       <element name="outildegestiondeconfiguration" title="Outil de gestion de configuration">
          <desc></desc>
          <desc0>Aucun outil fourni</desc0>
          <desc1>Outillage via des produits tiers</desc1>
-         <desc2>Outil de gestion de confoguration fourni</desc2>
+         <desc2>Outil de gestion de configuration fourni</desc2>
          <score></score>
          <comment></comment>
       </element>
