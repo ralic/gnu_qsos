@@ -1,0 +1,2000 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document>
+	<header>
+		<authors>
+		</authors>
+		<dates>
+			<creation></creation>
+			<validation></validation>
+		</dates>
+		<language>fr</language>
+		<appname></appname>
+		<release></release>
+		<licenseid></licenseid>
+		<licensedesc></licensedesc>
+		<url></url>
+		<desc></desc>
+		<demourl></demourl>
+		<qsosformat>1.7</qsosformat>
+		<qsosappfamily>BI</qsosappfamily>
+		<qsosappname></qsosappname>
+		<qsosspecificformat></qsosspecificformat>
+	</header>
+   <include section="generic"></include>
+   <section name="Reporting" title="Création de Rapports">
+	      <desc></desc>
+		<element name="interfacemetier" title="Construction de l'interface métier">
+			<element name="interfacemetier_liensautomatiques" title="Liens automatiques entre tables">
+				<desc0>Impossible (liens manuels)</desc0>
+				<desc1>Semi automatique basé sur les FK/PK</desc1>
+				<desc2>Automatique en s'appuyant sur des FK/PK et des valeurs dans les champs</desc2>
+				<comment></comment>
+				<score></score>
+			</element>
+		</element>
+      <element name="rapportsadhoc" title="Rapport Adhoc via Interface métier">
+         <desc>L'utilisateur novice peut créer simplement(en quelques clics)un rapport fonctionnel (listing,graphique,etc...)</desc>
+         <element name="rapportsadhoc_interfacegraphique" title="Interface graphique de construction de rapports">
+            <desc0>Non disponible </desc0>
+            <desc1>Constructeur de requêtes à partir du modèle de données</desc1>
+            <desc2>Vue métier pour non informaticien</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="rapportsadhoc_glisserdeposer" title="Interface graphique permet le glisser/deposer">
+            <desc0>Indisponible</desc0>
+            <desc1>Partiellement disponible </desc1>
+            <desc2>Disponible</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="rapportsadhoc_operateursensemblistes" title="Opérateurs ensemblistes">
+            <desc>Quels sont les opérateurs ensemblistes supportés?</desc>
+            <element name="rapportsadhoc_operateursensemblistes_union" title="Union">
+               <desc0>Indisponible</desc0>
+               <desc1>Partiellement disponible </desc1>
+               <desc2>Disponible</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="rapportsadhoc_operateursensemblistes_intersection" title="Intersection">
+               <desc0>Indisponible</desc0>
+               <desc1>Partiellement disponible </desc1>
+               <desc2>Disponible</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="rapportsadhoc_operateursensemblistes_exclusion" title="Exclusion">
+               <desc0>Indisponible</desc0>
+               <desc1>Partiellement disponible </desc1>
+               <desc2>Disponible</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+         </element>
+         <element name="rapportsadhoc_verificationsyntaxerequêtes" title="Vérification de la syntaxe des requêtes construites">
+            <desc0>Indisponible</desc0>
+            <desc1>Partiellement disponible </desc1>
+            <desc2>Disponible</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="rapportsadhoc_visibilitecodegenere" title="Visibilité sur le code généré">
+            <desc0>Impossible</desc0>
+            <desc1>Partiellement possible </desc1>
+            <desc2>Possible</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="rapportsadhoc_modifiercodegenere" title="Modifier le code généré">
+            <desc0>Impossible</desc0>
+            <desc1>Partiellement possible </desc1>
+            <desc2>Possible</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="rapportsadhoc_estimationlignesrequete" title="Estimation de lignes avant exécution">
+            <desc0>Impossible d'estimer le nombre de lignes de la requête avant exécution</desc0>
+            <desc1>Partiellement possible </desc1>
+            <desc2>Possible</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="rapportsadhoc_fonctionsdecalculs" title="Fonctions de calculs">
+            <desc></desc>
+            <element name="rapportsadhoc_fonctionsdecalculs_fonctionsstatistiques" title="Fonctions statistiques standards">
+               <desc>La solution dispose-t-elle des fonctions statistiques standards suivantes?</desc>
+               <element name="rapportsadhoc_fonctionsdecalculs_fonctionsstatistiques_moyenne" title="Moyenne">
+                  <desc0>Non disponible </desc0>
+                  <desc1>Partiellement disponible </desc1>
+                  <desc2>Disponible</desc2>
+                  <score></score>
+                  <comment></comment>
+               </element>
+               <element name="rapportsadhoc_fonctionsdecalculs_fonctionsstatistiques_variance" title="Variance">
+                  <desc0>Non disponible </desc0>
+                  <desc1>Partiellement disponible </desc1>
+                  <desc2>Disponible</desc2>
+                  <score></score>
+                  <comment></comment>
+               </element>
+               <element name="rapportsadhoc_fonctionsdecalculs_fonctionsstatistiques_ecarttype" title="Ecart type">
+                  <desc0>Non disponible </desc0>
+                  <desc1>Partiellement disponible </desc1>
+                  <desc2>Disponible</desc2>
+                  <score></score>
+                  <comment></comment>
+               </element>
+               <element name="rapportsadhoc_fonctionsdecalculs_fonctionsstatistiques_frequence" title="Fréquence">
+                  <desc0>Non disponible </desc0>
+                  <desc1>Partiellement disponible </desc1>
+                  <desc2>Disponible</desc2>
+                  <score></score>
+                  <comment></comment>
+               </element>
+               <element name="rapportsadhoc_fonctionsdecalculs_fonctionsstatistiques_autres" title="Autres">
+                  <desc0>aucun</desc0>
+                  <desc1>un </desc1>
+                  <desc2>plus</desc2>
+                  <score></score>
+                  <comment></comment>
+               </element>
+            </element>
+            <element name="rapportsadhoc_fonctionsdecalculs_indicateurssynthetiques" title="Indicateurs synthétiques">
+               <desc>A-t-on des indicateurs synthétiques associable à chaque niveau de rupture?</desc>
+               <element name="rapportsadhoc_indicateurssynthetiques_somme" title="Somme">
+                  <desc0>Non disponible </desc0>
+                  <desc1>Partiellement disponible </desc1>
+                  <desc2>Disponible</desc2>
+                  <score></score>
+                  <comment></comment>
+               </element>
+               <element name="rapportsadhoc_fonctionsdecalculs_indicateurssynthetiques_moyenne" title="Moyenne">
+                  <desc0>Non disponible </desc0>
+                  <desc1>Partiellement disponible </desc1>
+                  <desc2>Disponible</desc2>
+                  <score></score>
+                  <comment></comment>
+               </element>
+               <element name="rapportsadhoc_fonctionsdecalculs_indicateurssynthetiques_lenombre" title="Dénombrement">
+                  <desc0>Non disponible </desc0>
+                  <desc1>Partiellement disponible </desc1>
+                  <desc2>Disponible</desc2>
+                  <score></score>
+                  <comment></comment>
+               </element>
+               <element name="rapportsadhoc_fonctionsdecalculs_indicateurssynthetiques_autres" title="Autres">
+                  <desc0>aucun</desc0>
+                  <desc1>un </desc1>
+                  <desc2>plus</desc2>
+                  <score></score>
+                  <comment></comment>
+               </element>
+            </element>
+            <element name="rapportsadhoc_fonctionsdecalculs_fonctionsolap" title="Fonctions OLAP">
+            	<element name="rapportsadhoc_fonctionsdecalculs_fonctionsolap_navigationhierarchique" title="Navigation hiérarchique">
+                  <desc0>Non disponible </desc0>
+                  <desc1>Partiellement disponible </desc1>
+                  <desc2>Disponible</desc2>
+                  <score></score>
+                  <comment></comment>
+            	</element>
+            	<element name="rapportsadhoc_fonctionsdecalculs_fonctionsolap_sliceanddice" title="Slice and Dice">
+                  <desc0>Non disponible </desc0>
+                  <desc1>Partiellement disponible </desc1>
+                  <desc2>Disponible</desc2>
+                  <score></score>
+                  <comment></comment>
+            	</element>
+            	<element name="rapportsadhoc_fonctionsdecalculs_fonctionsolap_topbottom" title="Top/Bottom">
+                  <desc0>Non disponible </desc0>
+                  <desc1>Partiellement disponible </desc1>
+                  <desc2>Disponible</desc2>
+                  <score></score>
+                  <comment></comment>
+            	</element>
+            	<element name="rapportsadhoc_fonctionsdecalculs_fonctionsolap_filtragemulticube" title="Filtrage Multi-Cube">
+                  <desc0>Non disponible </desc0>
+                  <desc1>Partiellement disponible </desc1>
+                  <desc2>Disponible</desc2>
+                  <score></score>
+                  <comment></comment>
+            	</element>
+            	<element name="rapportsadhoc_fonctionsdecalculs_fonctionsolap_whatif" title="What-if">
+                  <desc0>Non disponible </desc0>
+                  <desc1>Partiellement disponible </desc1>
+                  <desc2>Disponible</desc2>
+                  <score></score>
+                  <comment></comment>
+            	</element>
+            	<element name="rapportsadhoc_fonctionsdecalculs_fonctionsolap_statistiques glissantes" title="Statistiques glissantes">
+                  <desc0>Non disponible </desc0>
+                  <desc1>Partiellement disponible </desc1>
+                  <desc2>Disponible</desc2>
+                  <score></score>
+                  <comment></comment>
+            	</element>
+            </element>
+         </element>
+         <element name="rapportsadhoc_sourcesdonneessupportees" title="Sources de données supportées">
+            <desc></desc>
+            <element name="rapportsadhoc_sourcesdonneessupportees_basededonnees" title="Base de données">
+               <desc0>Non disponible </desc0>
+               <desc1>Partiellement disponible </desc1>
+               <desc2>Disponible</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="rapportsadhoc_sourcesdonneessupportees_cubeolap" title="Cube OLAP">
+               <desc0>Non disponible </desc0>
+               <desc1>Partiellement disponible </desc1>
+               <desc2>Disponible</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="rapportsadhoc_sourcesdonneessupportees_fichiersplats" title="Fichiers plats">
+               <desc0>Non disponible </desc0>
+               <desc1>Partiellement disponible </desc1>
+               <desc2>Disponible</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="rapportsadhoc_sourcesdonneessupportees_autres" title="Autres">
+               <desc0>aucun</desc0>
+               <desc1>un </desc1>
+               <desc2>plus</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+         </element>
+         <element name="rapportsadhoc_integrationdansrapports" title="Integration d'éléments dans les rapports">
+            <desc>Est-il possible d'intégrer dans les rapports les éléments suivants?</desc>
+            <element name="rapportsadhoc_integrationdansrapports_tableaux" title="Tableaux">
+               <desc0>Non disponible </desc0>
+               <desc1>Partiellement disponible </desc1>
+               <desc2>Disponible</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="rapportsadhoc_integrationdansrapports_courbesgraphiques" title="Courbes/graphiques">
+               <desc0>Non disponible </desc0>
+               <desc1>Partiellement disponible </desc1>
+               <desc2>Disponible</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="rapportsadhoc_integrationdansrapports_elementscartographiques" title="Eléments cartographiques">
+               <desc0>Non disponible </desc0>
+               <desc1>Partiellement disponible </desc1>
+               <desc2>Disponible</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="rapportsadhoc_integrationdansrapports_zonesredactionnelles" title="Zones rédactionnelles">
+               <desc0>Non disponible </desc0>
+               <desc1>Partiellement disponible </desc1>
+               <desc2>Disponible</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="rapportsadhoc_integrationdansrapports_autres" title="Autres">
+               <desc0>aucun</desc0>
+               <desc1>un </desc1>
+               <desc2>plus</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+         </element>
+         <element name="rapportsadhoc_modedejointure" title="Modes de jointures">
+	         <element name="rapportsadhoc_modedejointure_multirequetes" title="Rapport Multi-Requêtes">
+	            <desc0>Non disponible</desc0>
+	            <desc1>Partiellement disponible </desc1>
+	            <desc2>Disponible</desc2>
+	            <score></score>
+	            <comment></comment>
+	         </element>
+	         <element name="rapportsadhoc_modedejointure_mulitunivers" title="Rapport Multi-Univers">
+	            <desc0>Non disponible</desc0>
+	            <desc1>Partiellement disponible </desc1>
+	            <desc2>Disponible</desc2>
+	            <score></score>
+	            <comment></comment>
+	         </element>
+	         <element name="rapportsadhoc_modedejointure_jointureexterne" title="Jointure externe">
+	            <desc0>Non disponible</desc0>
+	            <desc1>Partiellement disponible </desc1>
+	            <desc2>Disponible</desc2>
+	            <score></score>
+	            <comment></comment>
+	         </element>
+         </element>
+         <element name="rapportsadhoc_changertypegraphique" title="Changer le type des graphiques après leur mise en place ">
+            <desc0>Impossible </desc0>
+            <desc1>Partiellement possible </desc1>
+            <desc2>Possible</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="rapportsadhoc_apercuavantimpression" title="Aperçu avant impression">
+            <desc0>Non disponible </desc0>
+            <desc1>Partiellement disponible </desc1>
+            <desc2>Disponible</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="rapportsadhoc_exportpixelready" title="Export Pixel Ready">
+            <desc0>Non disponible </desc0>
+            <desc1>Partiellement disponible </desc1>
+            <desc2>Disponible</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+      </element>
+      <element name="sqlalacarte" title="Requêtes SQL à la carte">
+      	<element name="sqlalacarte_editionsql" title="Édition du SQL">
+      		<desc0>Non disponible</desc0>
+      		<desc1>Édition de texte seule</desc1>
+      		<desc2>Constructeur graphique et édition de texte</desc2>
+      		<score></score>
+      		<comment></comment>
+      	</element>
+      	<element name="sqlalacarte_verificationsyntaxerequêtes" title="Vérification de la syntaxe des requêtes construites">
+      		<desc0>Non disponible</desc0>
+      		<desc1>Vérification du SQL générique</desc1>
+      		<desc2>Vérification de la syntaxe spécifique à la base</desc2>
+      		<score></score>
+      		<comment></comment>
+      	</element>
+      </element>
+      <element name="rapportspreetabli" title="Rapport pré-établi">
+         <desc>L'utilisateur est un developpeur avancé et réalise un rapport complexe (utilisation d'invite de filtre,d'agregats,requêtes sql,utilisation d'expression et de fonctions ...)qu'il met à la disposition d'utilisateur final (consommateur) qui se contente de le consulter.</desc>
+         <element name="rapportspreetabli_constructionrequete" title="Construction des requêtes">
+         	<element name="rapportspreetabli_constructionrequete_inivtes" title="Invites">
+               <desc0>Non disponible</desc0>
+               <desc1>Basiques</desc1>
+               <desc2>Avancées</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="rapportspreetabli_constructionrequete_enregistrementdesdonnees" title="Enregistrement des données">
+	         	<element name="rapportspreetabli_constructionrequete_enregistrementdesdonnees_avec" title="Enregistrement avec données">
+	               <desc0>Non disponible</desc0>
+	               <desc1>Partiellement possible </desc1>
+	               <desc2>Possible</desc2>
+	               <score></score>
+	               <comment></comment>
+	            </element>
+	         	<element name="rapportspreetabli_constructionrequete_enregistrementdesdonnees_" title="Enregistrement sans données">
+	               <desc0>Non disponible</desc0>
+	               <desc1>Partiellement possible </desc1>
+	               <desc2>Possible</desc2>
+	               <score></score>
+	               <comment></comment>
+	            </element>
+            </element>
+         	<element name="rapportspreetabli_constructionrequete_modeexploration" title="Mode exploration">
+               <desc0>Non disponible</desc0>
+               <desc1>Partiellement possible </desc1>
+               <desc2>Possible</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+         	<element name="rapportspreetabli_constructionrequete_emepcherlerafraichissement" title="Empecher le rafraichissement">
+               <desc0>Non disponible</desc0>
+               <desc1>Partiellement possible </desc1>
+               <desc2>Possible</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+         </element>
+         <element name="rapportspreetabli_planification" title="Planification">
+            <element name="rapportspreetabli_constructionrequete_lancementenmodediffere" title="Lancer la requête en mode différé">
+               <desc></desc>
+               <element name="rapportspreetabli_constructionrequete_lancementenmodediffere_programmationjourheure" title="Programmation du jour et de l'heure">
+                  <desc0>Impossible </desc0>
+                  <desc1>Partiellement possible </desc1>
+                  <desc2>Possible</desc2>
+                  <score></score>
+                  <comment></comment>
+               </element>
+               <element name="rapportspreetabli_constructionrequete_lancementenmodediffere_surevenement" title="Sur événement">
+                  <desc0>Impossible </desc0>
+                  <desc1>Partiellement possible </desc1>
+                  <desc2>Possible</desc2>
+                  <score></score>
+                  <comment></comment>
+               </element>
+               <element name="rapportspreetabli_constructionrequete_lancementenmodediffere_autres" title="Autres">
+                  <desc0>aucun</desc0>
+                  <desc1>un </desc1>
+                  <desc2>plus</desc2>
+                  <score></score>
+                  <comment></comment>
+               </element>
+            </element>
+            <element name="rapportspreetabli_constructionrequete_annulerrequeteencours" title="Annuler requête en cours de traitement">
+               <desc0>Impossible </desc0>
+               <desc1>Partiellement possible </desc1>
+               <desc2>Possible</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+         </element>
+         <element name="rapportspreetabli_accesnatifs" title="Accès natif aux ERP">
+            <desc>Accès natifs aux ERP ou autres progiciels du marché</desc>
+            <element name="rapportspreetabli_accesnatifs_accesdirecterp" title="Accès direct à des ERP">
+               <desc> </desc>
+               <element name="rapportspreetabli_accesnatifs_accesdirecterp_sap" title="SAP">
+                  <desc0>Impossible </desc0>
+                  <desc1>Partiellement possible </desc1>
+                  <desc2>Possible</desc2>
+                  <score></score>
+                  <comment></comment>
+               </element>
+               <element name="rapportspreetabli_accesnatifs_accesdirecterp_oracleapplication" title="Oracle Application">
+                  <desc0>Impossible </desc0>
+                  <desc1>Partiellement possible </desc1>
+                  <desc2>Possible</desc2>
+                  <score></score>
+                  <comment></comment>
+               </element>
+               <element name="rapportspreetabli_accesnatifs_accesdirecterp_peoplesoft" title="Peoplesoft">
+                  <desc0>Impossible </desc0>
+                  <desc1>Partiellement possible </desc1>
+                  <desc2>Possible</desc2>
+                  <score></score>
+                  <comment></comment>
+               </element>
+               <element name="rapportspreetabli_accesnatifs_accesdirecterp_navision" title="Navision">
+                  <desc0>Impossible </desc0>
+                  <desc1>Partiellement possible </desc1>
+                  <desc2>Possible</desc2>
+                  <score></score>
+                  <comment></comment>
+               </element>
+               <element name="rapportspreetabli_accesnatifs_accesdirecterp_baan" title="Baan">
+                  <desc0>Impossible </desc0>
+                  <desc1>Partiellement possible </desc1>
+                  <desc2>Possible</desc2>
+                  <score></score>
+                  <comment></comment>
+               </element>
+               <element name="rapportspreetabli_accesnatifs_accesdirecterp_jdedwards" title="JD. Edwards">
+                  <desc0>Impossible </desc0>
+                  <desc1>Partiellement possible </desc1>
+                  <desc2>Possible</desc2>
+                  <score></score>
+                  <comment></comment>
+               </element>
+               <element name="rapportspreetabli_accesnatifs_accesdirecterp_autres" title="Autres">
+                  <desc0>aucun</desc0>
+                  <desc1>un </desc1>
+                  <desc2>plus</desc2>
+                  <score></score>
+                  <comment></comment>
+               </element>
+            </element>
+            <element name="rapportspreetabli_accesnatifs_accesautreprogiciel" title="Accéder à d'autres progiciels du marché">
+               <desc0>Aucun</desc0>
+               <desc1>Un</desc1>
+               <desc2>Plus</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="rapportspreetabli_accesnatifs_garantiparlediteur" title="Accès à ces progiciels garanti par l'editeur">
+               <desc0>Non </desc0>
+               <desc1>Partiellement  </desc1>
+               <desc2>Complétement</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="rapportspreetabli_accesnatifs_surdonneesdeproduction" title="Données de production">
+               <desc0>On passe par un entrepôt intermédiaire </desc0>
+               <desc1>Partiellement possible de passer directement par les données de production</desc1>
+               <desc2>On passe directement sur les données de production</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="rapportspreetabli_accesnatifs_accesnecessiteauthentification" title="Accès nécessite une nouvelle authentification">
+               <desc0>Non </desc0>
+               <desc1>Partiellement</desc1>
+               <desc2>Obligatoirement</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+         </element>
+         <element name="rapportspreetabli_ergonomie" title="Ergonomie">
+            <element name="rapportspreetabli_fonctionsdenrichissement" title="Fonctions d'enrichissement">
+               <desc>D'enrichissement graphique et de mise en page</desc>
+               <element name="rapportspreetabli_ergonomie_fonctionsdenrichissement_feuillesdestyles" title="Feuilles de styles">
+                  <desc0>Non disponible </desc0>
+                  <desc1>Partiellement disponible </desc1>
+                  <desc2>Disponible</desc2>
+                  <score></score>
+                  <comment></comment>
+               </element>
+               <element name="rapportspreetabli_ergonomie_fonctionsdenrichissement_rapportsstandard" title="Rapports standard">
+                  <desc0>Non disponible </desc0>
+                  <desc1>Partiellement disponible </desc1>
+                  <desc2>Disponible</desc2>
+                  <score></score>
+                  <comment></comment>
+               </element>
+            </element>
+            <element name="rapportspreetabli_ergonomie_gerermisesenformes" title="Gérer les mises en formes">
+               <desc></desc>
+               <element name="rapportspreetabli_ergonomie_gerermisesenformes_surlespolicescaracteres" title="Sur les polices de caractères">
+                  <desc0>Non disponible </desc0>
+                  <desc1>Partiellement disponible </desc1>
+                  <desc2>Disponible</desc2>
+                  <score></score>
+                  <comment></comment>
+               </element>
+               <element name="rapportspreetabli_ergonomie_gerermisesenformes_surcellulesdestableaux" title="Sur les cellules des tableaux">
+                  <desc0>Non disponible </desc0>
+                  <desc1>Partiellement disponible </desc1>
+                  <desc2>Disponible</desc2>
+                  <score></score>
+                  <comment></comment>
+               </element>
+               <element name="rapportspreetabli_ergonomie_gerermisesenformes_tableauxgraphiques" title="Sur les tableaux / graphiques">
+                  <desc0>Non disponible </desc0>
+                  <desc1>Partiellement disponible </desc1>
+                  <desc2>Disponible</desc2>
+                  <score></score>
+                  <comment></comment>
+               </element>
+            </element>
+            <element name="rapportspreetabli_ergonomie_ajoutnotes" title="Ajout de notes liées à des états ou à des règles de calculs">
+               <desc0>Non disponible </desc0>
+               <desc1>Partiellement disponible </desc1>
+               <desc2>Disponible</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="rapportspreetabli_ergonomie_creerformatdaffichage" title="Créer formats d'affichage réutilisables pour les numériques">
+               <desc0>Non disponible </desc0>
+               <desc1>Partiellement disponible </desc1>
+               <desc2>Disponible</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="rapportspreetabli_ergonomie_inserertextelibrerapport" title="Insérer du texte libre dans les rapports">
+               <desc0>Non disponible </desc0>
+               <desc1>Partiellement disponible </desc1>
+               <desc2>Disponible</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="rapportspreetabli_ergonomie_creeretparametrerentetepied" title="Créer et paramétrer des entêtes et pieds de page">
+               <desc0>Non disponible </desc0>
+               <desc1>Partiellement disponible </desc1>
+               <desc2>Disponible</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+         </element>
+      </element>
+      <element name="rapportspreetabli_diffusiondesrapports" title="Diffusion des rapports">
+         <desc></desc>
+         <element name="rapportspreetabli_diffusiondesrapports_diffusiondistribution" title="Diffusion/distribution automatique des rapports">
+            <desc></desc>
+            <element name="rapportspreetabli_diffusiondesrapports_diffusiondistribution_email" title="Email">
+               <desc0>Non disponible </desc0>
+               <desc1>Partiellement disponible </desc1>
+               <desc2>Disponible</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="rapportspreetabli_diffusiondesrapports_diffusiondistribution_html" title="HTML">
+               <desc0>Non disponible </desc0>
+               <desc1>Partiellement disponible </desc1>
+               <desc2>Disponible</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="rapportspreetabli_diffusiondesrapports_diffusiondistribution_sms" title="SMS">
+               <desc0>Non disponible </desc0>
+               <desc1>Partiellement disponible </desc1>
+               <desc2>Disponible</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="rapportspreetabli_diffusiondesrapports_diffusiondistribution_fax" title="Fax">
+               <desc0>Non disponible </desc0>
+               <desc1>Partiellement disponible </desc1>
+               <desc2>Disponible</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="rapportspreetabli_diffusiondesrapports_diffusiondistribution_impression" title="Impression">
+               <desc0>Non disponible </desc0>
+               <desc1>Partiellement disponible </desc1>
+               <desc2>Disponible</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="rapportspreetabli_diffusiondesrapports_diffusiondistribution_autres" title="Autres">
+               <desc0>aucun</desc0>
+               <desc1>un </desc1>
+               <desc2>plus</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+         </element>
+         <element name="rapportspreetabli_diffusiondesrapports_liassesrapports" title="Liasses de rapports automatiques">
+            <desc>génération de liasses de rapports automatiques </desc>
+            <element name="rapportspreetabli_liassesrapports_surunpostedetravail" title="Sur un poste de travail">
+               <desc0>Non disponible </desc0>
+               <desc1>Partiellement disponible </desc1>
+               <desc2>Disponible</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="rapportspreetabli_diffusiondesrapports_liassesrapports_surunserveurcentralise" title="Sur un serveur centralisé">
+               <desc0>Non disponible </desc0>
+               <desc1>Partiellement disponible </desc1>
+               <desc2>Disponible</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="rapportspreetabli_diffusiondesrapports_liassesrapports_versunportail" title="Vers un portail">
+               <desc0>Non disponible </desc0>
+               <desc1>Partiellement disponible </desc1>
+               <desc2>Disponible</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+         </element>
+         <element name="rapportspreetabli_diffusiondesrapports_enfonctiondroitsutilisateurs" title="En fonction des droits utilisateurs">
+            <desc0>Non disponible </desc0>
+            <desc1>Partiellement disponible </desc1>
+            <desc2>Disponible</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="rapportspreetabli_diffusiondesrapports_modegenerationautomatique" title="Mode de génération automatiques">
+            <desc>Mode de génération de liasses de rapports automatiques </desc>
+            <element name="rapportspreetabli_diffusiondesrapports_modegenerationautomatique_surdatepredefinie" title="Sur date prédéfinie">
+               <desc0>Non disponible </desc0>
+               <desc1>Partiellement disponible </desc1>
+               <desc2>Disponible</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="rapportspreetabli_diffusiondesrapports_modegenerationautomatique_surevenement" title="Sur événement">
+               <desc0>Non disponible </desc0>
+               <desc1>Partiellement disponible </desc1>
+               <desc2>Disponible</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="rapportspreetabli_diffusiondesrapports_modegenerationautomatique_recurrent" title="Récurrent">
+               <desc0>Non disponible </desc0>
+               <desc1>Partiellement disponible </desc1>
+               <desc2>Disponible</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+         </element>
+         <element name="rapportspreetabli_diffusiondesrapports_generationdansunechainedetraitement" title="Génération dans une chaîne de traitement">
+            <desc0>Non disponible </desc0>
+            <desc1>Partiellement disponible </desc1>
+            <desc2>Disponible</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+      </element>
+   </section>
+   <section name="OLAP" title="Analyse OLAP">
+      <desc>fonctionnalités OLAP </desc>
+      <element name="OLAP_constructiondescubes" title="Construction des cubes">
+         <desc></desc>
+         <element name="OLAP_constructiondescubes_assistantscreationdecubes" title="Assistants pour la creation de cube">
+            <desc0>Non disponible</desc0>
+            <desc1>Partiellement disponible</desc1>
+            <desc2>Disponible</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="OLAP_constructiondescubes_sourcesdedonneesacceptes" title="Source de donnees acceptés ">
+            <desc>Sources de données acceptés en entrée</desc>
+            <element name="OLAP_constructiondescubes_sourcesdedonneesacceptes_basesdedonnees" title="Bases de données">
+               <desc0>Non accepte</desc0>
+               <desc1>Partiellement accepte</desc1>
+               <desc2>Accepte</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="OLAP_constructiondescubes_sourcesdedonneesacceptes_texte" title="Texte">
+               <desc0>Non accepte</desc0>
+               <desc1>Partiellement accepte</desc1>
+               <desc2>Accepte</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="OLAP_constructiondescubes_sourcesdedonneesacceptes_xml" title="XML">
+               <desc0>Non accepte</desc0>
+               <desc1>Partiellement accepte</desc1>
+               <desc2>Accepte</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="OLAP_constructiondescubes_sourcesdedonneesacceptes_autres" title="Autres">
+               <desc0>aucun</desc0>
+               <desc1>un </desc1>
+               <desc2>plus</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+         </element>
+         <element name="OLAP_constructiondescubes_modelesdedonneessupportes" title="Modeles de données supportés">
+            <desc>Modeles de données supportés en entrée</desc>
+            <element name="OLAP_modelesdedonneessupportes_enetoile" title="modèle en etoile">
+               <desc0>Non supporte</desc0>
+               <desc1>Partiellement supporte</desc1>
+               <desc2>Supporte</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="OLAP_constructiondescubes_modelesdedonneessupportes_enflocon" title="Modèle en flocon">
+               <desc0>Non supporte</desc0>
+               <desc1>Partiellement supporte</desc1>
+               <desc2>Supporte</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="OLAP_constructiondescubes_modelesdedonneessupportes_tabledenormalisee" title="Table denormalisée">
+               <desc0>Non supporte</desc0>
+               <desc1>Partiellement supporte</desc1>
+               <desc2>Supporte</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+         </element>
+         <element name="OLAP_constructiondescubes_definirplusieurshierarchies" title="Definir plusieurs hierarchies pour un même axe">
+            <desc0>Impossible de definir plusieurs hierarchies pour un même axe</desc0>
+            <desc1>Partiellement possible</desc1>
+            <desc2>Possible</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="OLAP_constructiondescubes_categories" title="Categories d'une dimension en diagramme">
+            <desc0>Pas possible de visualiser les categories sous forme de diagramme</desc0>
+            <desc1>Partiellement possible</desc1>
+            <desc2>Possible</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="OLAP_constructiondescubes_creationcubeparjeuxessai" title="Creation d'un cube par jeux d'essai">
+            <desc0>Non disponible</desc0>
+            <desc1>Partiellement disponible</desc1>
+            <desc2>Disponible</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="OLAP_constructiondescubes_definitionmodecalcul" title="Definition du mode de calcul des agregats">
+            <desc>mode de definition disponible ROLAP?MOLAP?HOLAP?</desc>
+            <element name="OLAP_definitionmodecalcul_rolap" title="ROLAP">
+               <desc0>Non disponible</desc0>
+               <desc1>Partiellement disponible</desc1>
+               <desc2>Disponible</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="OLAP_constructiondescubes_definitionmodecalcul_molap" title="MOLAP">
+               <desc0>Non disponible</desc0>
+               <desc1>Partiellement disponible</desc1>
+               <desc2>Disponible</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="OLAP_constructiondescubes_definitionmodecalcul_holap" title="HOLAP">
+               <desc0>Non disponible</desc0>
+               <desc1>Partiellement disponible</desc1>
+               <desc2>Disponible</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+         </element>
+         <element name="OLAP_constructiondescubes_definitionmodecalcul_dolap" title="DOLAP">
+            <desc0>Non recquis</desc0>
+            <desc1>Partiellement recquis</desc1>
+            <desc2>Recquis</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="OLAP_constructiondescubes_constructioncubelogique" title="Construction de cube logique">
+            <desc0>il n'est pas possible de creer un cube logique comprenant plusieurs cubes physiques</desc0>
+            <desc1>il est possible de creer un cube logique comprenant deux cubes physiques</desc1>
+            <desc2>il est possible de creer un cube logique avec plus de deux cubes physiques</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="OLAP_constructiondescubes_creationcubeparlignedecommande" title="Créer des cubes par lignes de commande">
+            <desc0>Impossible</desc0>
+            <desc1>Partiellement possible </desc1>
+            <desc2>Possible</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="OLAP_constructiondescubes_validationsdecubes" title="Fonction de validation de cubes">
+            <desc0>Impossible</desc0>
+            <desc1>Partiellement possible </desc1>
+            <desc2>Possible</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+      </element>
+      <element name="OLAP_fonctiondecalul" title="Fonctions de calculs">
+         <desc></desc>
+         <element name="OLAP_fonctiondecalul_reglesdegestion" title="Création de règles de gestion">
+            <desc0>Pas d'assistants de création disponible</desc0>
+            <desc1>Partiellement disponible </desc1>
+            <desc2>Assistants de creation disponible pour créer des règles de gestion</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="OLAP_fonctiondecalul_axetemps" title="Découverte automatique de l'axe temps">
+            <desc0>Impossible</desc0>
+            <desc1>Partiellement possible </desc1>
+            <desc2>Possible</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="OLAP_fonctiondecalul_formuledecalculautomatique" title="Formules de calculs automatiques">
+            <desc></desc>
+            <element name="OLAP_fonctiondecalul_formuledecalculautomatique_calculdefindemois" title="Calcul automatique de fin de mois">
+               <desc0>Indisponible</desc0>
+               <desc1>Partiellement disponible </desc1>
+               <desc2>Disponible</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="OLAP_fonctiondecalul_formuledecalculautomatique_periodevariable" title="Périodes variables">
+               <desc0>Indisponible</desc0>
+               <desc1>Partiellement disponible </desc1>
+               <desc2>Disponible</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+         </element>
+         <element name="OLAP_fonctiondecalul_tablesdecorrespondance" title="Tables de correspondace">
+            <desc0>le logiciel ne gère pas les tables de correspondances</desc0>
+            <desc1>elles sont gérées partiellement </desc1>
+            <desc2>elles sont complétement gérées</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="OLAP_fonctiondecalul_conversionmonetaire" title="Conversions monétaires">
+            <desc0>Indisponible</desc0>
+            <desc1>Partiellement disponible </desc1>
+            <desc2>Complétement disponible</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="OLAP_fonctiondecalul_langagecomplementaire" title="Langages de programmations complémentaires">
+            <desc></desc>
+            <element name="OLAP_fonctiondecalul_langagecomplementaire_l4gproprietaire" title="L4G propriétaire">
+               <desc0>Indisponible</desc0>
+               <desc1>Partiellement disponible </desc1>
+               <desc2>Complétement disponible</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="OLAP_fonctiondecalul_langagecomplementaire_sql" title="SQL">
+               <desc0>Indisponible</desc0>
+               <desc1>Partiellement disponible </desc1>
+               <desc2>Complétement disponible</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="OLAP_fonctiondecalul_langagecomplementaire_vba" title="VBA">
+               <desc0>Indisponible</desc0>
+               <desc1>Partiellement disponible </desc1>
+               <desc2>Complétement disponible</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="OLAP_fonctiondecalul_langagecomplementaire_autres" title="Autres">
+               <desc0>aucun</desc0>
+               <desc1>un </desc1>
+               <desc2>plus</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+         </element>
+         <element name="OLAP_fonctiondecalul_fonctionsexternes" title="Fonctions externes à intégrer">
+            <desc>peut-on intégrer des fonctions externes développés dans les langages suivant?</desc>
+            <element name="OLAP_fonctiondecalul_fonctionsexternes_c++" title="C++">
+               <desc0>Indisponible</desc0>
+               <desc1>Partiellement disponible </desc1>
+               <desc2>Complétement disponible</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="OLAP_fonctiondecalul_fonctionsexternes_java" title="Java">
+               <desc0>Indisponible</desc0>
+               <desc1>Partiellement disponible </desc1>
+               <desc2>Complétement disponible</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="OLAP_fonctiondecalul_fonctionsexternes_autres" title="Autres">
+               <desc0>aucun</desc0>
+               <desc1>un </desc1>
+               <desc2>plus</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+         </element>
+      </element>
+      <element name="OLAP_navigationdanscube" title="Navigations dans les cubes">
+         <desc></desc>
+         <element name="OLAP_navigationdanscube_capacitesdezoom" title="Capacités de drill">
+            <desc>Quelles sont les possibilités de zoomer dans un cube offertes par le logiciel?</desc>
+            <element name="OLAP_navigationdanscube_capacitesdezoom_drilldown" title="Drill down">
+               <desc0>Indisponible</desc0>
+               <desc1>Partiellement disponible </desc1>
+               <desc2>Disponible</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="OLAP_navigationdanscube_capacitesdezoom_drillup" title="Drill up">
+               <desc0>Indisponible</desc0>
+               <desc1>Partiellement disponible </desc1>
+               <desc2>Disponible</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="OLAP_navigationdanscube_capacitesdezoom_lignescolonnes" title="Drill sur les lignes ou les colonnes">
+               <desc0>Indisponible</desc0>
+               <desc1>Partiellement disponible</desc1>
+               <desc2>Disponible</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="OLAP_navigationdanscube_capacitesdezoom_tableau" title="Drill sur un tableau">
+               <desc0>Indisponible</desc0>
+               <desc1>Partiellement disponible</desc1>
+               <desc2>Disponible</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="OLAP_navigationdanscube_capacitesdezoom_graphique" title="Drill sur un graphique">
+               <desc0>Indisponible</desc0>
+               <desc1>Partiellement disponible</desc1>
+               <desc2>Disponible</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+         </element>
+         <element name="OLAP_navigationdanscube_triposition" title="Tri des positions d'un axe">
+            <desc>Quelles sont les possibilités de tri des positions d'un axe?</desc>
+               <desc0>Indisponible</desc0>
+               <desc1>Partiellement disponible </desc1>
+               <desc2>Disponible</desc2>
+               <score></score>
+               <comment></comment>
+         </element>
+         <element name="OLAP_navigationdanscube_rotationimbricationdaxe" title="Rotation ou imbrication d'axe par glisser déposer">
+            <desc0>Indisponible</desc0>
+            <desc1>Partiellement disponible </desc1>
+            <desc2>Disponible</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="OLAP_navigationdanscube_parametragedesfiltres" title="Paramétrages des filtres">
+            <desc0>Indisponible</desc0>
+            <desc1>Partiellement disponible </desc1>
+            <desc2>Disponible</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="OLAP_navigationdanscube_enregistrervues" title="Enregistrer des filtres personnalisés">
+            <desc0>Indisponible</desc0>
+            <desc1>Partiellement disponible </desc1>
+            <desc2>Disponible</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="OLAP_navigationdanscube_rappelervue" title="Rappeler un filtre enregistré par un autre utilisateur">
+            <desc0>Indisponible</desc0>
+            <desc1>Partiellement disponible </desc1>
+            <desc2>Disponible</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="OLAP_navigationdanscube_exporterresultat" title="Exporter le résultat obtenu">
+            <desc>Dans quels formats est-il possible d'exporter le résultat obtenu?</desc>
+            <element name="OLAP_navigationdanscube_exporterresultat_excel" title="Excel">
+               <desc0>Indisponible</desc0>
+               <desc1>Partiellement disponible </desc1>
+               <desc2>Disponible</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="OLAP_navigationdanscube_exporterresultat_html" title="HTML">
+               <desc0>Indisponible</desc0>
+               <desc1>Partiellement disponible </desc1>
+               <desc2>Disponible</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="OLAP_navigationdanscube_exporterresultat_fichierstexte" title="Fichiers texte">
+               <desc0>Indisponible</desc0>
+               <desc1>Partiellement disponible </desc1>
+               <desc2>Disponible</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="OLAP_navigationdanscube_exporterresultat_xml" title="XML">
+               <desc0>Indisponible</desc0>
+               <desc1>Partiellement disponible </desc1>
+               <desc2>Disponible</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+         </element>
+         <element name="OLAP_navigationdanscube_indicateurscarte" title="Indicateurs sur une carte géographique">
+            <desc0>Indisponible</desc0>
+            <desc1>Partiellement disponible </desc1>
+            <desc2>Disponible</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="OLAP_navigationdanscube_typesdegraphiques" title="Types de graphiques proposés">
+            <desc>Quels sont les types de graphiques proposés en standard?</desc>
+            <element name="OLAP_navigationdanscube_typesdegraphiques_histogramme2d" title="Histogramme 2D">
+               <desc0>Indisponible</desc0>
+               <desc1>Partiellement disponible </desc1>
+               <desc2>Disponible</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="OLAP_navigationdanscube_typesdegraphiques_histogramme3d" title="Histogramme 3D">
+               <desc0>Indisponible</desc0>
+               <desc1>Partiellement disponible </desc1>
+               <desc2>Disponible</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="OLAP_navigationdanscube_typesdegraphiques_camembert2d" title="Camembert 2D">
+               <desc0>Indisponible</desc0>
+               <desc1>Partiellement disponible </desc1>
+               <desc2>Disponible</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="OLAP_navigationdanscube_typesdegraphiques_camembert3d" title="Camembert 3D">
+               <desc0>Indisponible</desc0>
+               <desc1>Partiellement disponible </desc1>
+               <desc2>Disponible</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="OLAP_navigationdanscube_typesdegraphiques_courbedepoints" title="Courbes de points">
+               <desc0>Indisponible</desc0>
+               <desc1>Partiellement disponible </desc1>
+               <desc2>Disponible</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="OLAP_navigationdanscube_typesdegraphiques_nuagedepoints" title="Nuage de points">
+               <desc0>Indisponible</desc0>
+               <desc1>Partiellement disponible </desc1>
+               <desc2>Disponible</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+         </element>
+         <element name="OLAP_navigationdanscube_exportgraphiques" title="Exporter des graphiques">
+            <desc>Dans quel format peut-on exporter des graphiques lorsqu'on exporte les resultats obtenu?</desc>
+            <element name="OLAP_navigationdanscube_exportgraphiques_image" title="Image">
+               <desc0>Indisponible</desc0>
+               <desc1>Partiellement disponible </desc1>
+               <desc2>Disponible</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="OLAP_navigationdanscube_exportgraphiques_graphiqueexcel" title="Graphique Excel">
+               <desc0>Indisponible</desc0>
+               <desc1>Partiellement disponible </desc1>
+               <desc2>Disponible</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="OLAP_navigationdanscube_exportgraphiques_powerpoint" title="Présentation PowerPoint">
+               <desc0>Indisponible</desc0>
+               <desc1>Partiellement disponible </desc1>
+               <desc2>Disponible</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="OLAP_navigationdanscube_exportgraphiques_pixelready" title="Export Pixel Ready">
+               <desc0>Indisponible</desc0>
+               <desc1>Partiellement disponible </desc1>
+               <desc2>Disponible</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+         </element>
+         <element name="OLAP_navigationdanscube_interfaceutilisateur" title="Interface Utilisateurs">
+            <desc>Quel interface utilisateur a-t-on pour saisir de nouvelles valeurs?</desc>
+            <element name="OLAP_navigationdanscube_interfaceutilisateur_interfaceweb" title="Interfaces Web">
+               <desc0>Indisponible</desc0>
+               <desc1>Partiellement disponible </desc1>
+               <desc2>Disponible</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="OLAP_navigationdanscube_interfaceutilisateur_excel" title="Add-in Excel">
+               <desc0>Indisponible</desc0>
+               <desc1>Partiellement disponible </desc1>
+               <desc2>Disponible</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="OLAP_navigationdanscube_interfaceutilisateur_clientlourd" title="Client Lourd">
+               <desc0>Indisponible</desc0>
+               <desc1>Partiellement disponible </desc1>
+               <desc2>Disponible</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="OLAP_navigationdanscube_interfaceutilisateur_clienttiers" title="Client tiers">
+               <desc0>Indisponible</desc0>
+               <desc1>Partiellement disponible </desc1>
+               <desc2>Disponible</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+         </element>
+         <element name="OLAP_navigationdanscube_lignescalculees" title="Lignes calculées supplémentaires">
+            <desc0>Indisponible</desc0>
+            <desc1>Partiellement disponible </desc1>
+            <desc2>Disponible</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="OLAP_navigationdanscube_colonnescalculees" title="Colonnes calculées supplémentaires">
+            <desc0>Indisponible</desc0>
+            <desc1>Partiellement disponible </desc1>
+            <desc2>Disponible</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="OLAP_navigationdanscube_normexmla" title="Norme XMLA">
+            <desc0>Indisponible</desc0>
+            <desc1>Partiellement disponible </desc1>
+            <desc2>Disponible</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="OLAP_navigationdanscube_normemdx" title="Norme MDX">
+            <desc0>Indisponible</desc0>
+            <desc1>Partiellement disponible </desc1>
+            <desc2>Disponible</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+      </element>
+   </section>
+   <section name="OLAP_dataminingintegrees" title="Datamining intégrées">
+         <desc></desc>
+         <element name="OLAP_dataminingintegrees_moteurdatamining" title="Moteur Datamining intégré">
+            <desc0>Non disponible </desc0>
+            <desc1>Partiellement disponible </desc1>
+            <desc2>Disponible</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="OLAP_dataminingintegrees_parametrageparnonstatisticien" title="Paramétrage par des non statisticiens">
+            <desc0>Impossible </desc0>
+            <desc1>Partiellement possible </desc1>
+            <desc2>Possible</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="OLAP_dataminingintegrees_fairedesclassification" title="Faire des classifications">
+            <desc0>Non disponible </desc0>
+            <desc1>Partiellement disponible </desc1>
+            <desc2>Disponible</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="OLAP_dataminingintegrees_faireprediction" title="Faire de la prédiction">
+            <desc0>Non disponible </desc0>
+            <desc1>Partiellement disponible </desc1>
+            <desc2>Disponible</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="OLAP_dataminingintegrees_faireacquisitionconnaissance" title="Faire de l'acquisition de connaissances">
+            <desc0>Non disponible </desc0>
+            <desc1>Partiellement disponible </desc1>
+            <desc2>Disponible</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="OLAP_dataminingintegrees_modedapprentissage" title="Modes d'apprentissage supportés ">
+            <desc>Modes d'apprentissage supportés par le moteur Datamining</desc>
+            <element name="OLAP_dataminingintegrees_modedapprentissage_reseauxdeneurones" title="Réseaux de neurones">
+               <desc0>Non disponible </desc0>
+               <desc1>Partiellement disponible </desc1>
+               <desc2>Disponible</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="OLAP_dataminingintegrees_modedapprentissage_algorithmesgenetiques" title="Algorithmes génétiques">
+               <desc0>Non disponible </desc0>
+               <desc1>Partiellement disponible </desc1>
+               <desc2>Disponible</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="OLAP_dataminingintegrees_modedapprentissage_similarite" title="Similarité">
+               <desc0>Non disponible </desc0>
+               <desc1>Partiellement disponible </desc1>
+               <desc2>Disponible</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="OLAP_dataminingintegrees_modedapprentissage_analogie" title="Analogie">
+               <desc0>Non disponible </desc0>
+               <desc1>Partiellement disponible </desc1>
+               <desc2>Disponible</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="OLAP_dataminingintegrees_modedapprentissage_operationsstatistiques" title="Opérations statistiques">
+               <desc0>Non disponible </desc0>
+               <desc1>Partiellement disponible </desc1>
+               <desc2>Disponible</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="OLAP_dataminingintegrees_modedapprentissage_autres" title="Autres">
+               <desc0>aucun</desc0>
+               <desc1>un </desc1>
+               <desc2>plus</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+         </element>
+      </section>
+   <section name="tableaudebord" title="Tableaux de bord">
+      <desc></desc>
+      <element name="tableaudebord_multifenetragedansrestitution" title="Multi fenêtrage dans l'application de restitution">
+         <desc0>Non disponible </desc0>
+         <desc1>Partiellement disponible </desc1>
+         <desc2>Disponible</desc2>
+         <score></score>
+         <comment></comment>
+      </element>
+      <element name="tableaudebord_positionnerlibrementobjet" title="Positionner librement des objets dans le tableau de bord">
+         <desc0>Non disponible </desc0>
+         <desc1>Partiellement disponible </desc1>
+         <desc2>Disponible</desc2>
+         <score></score>
+         <comment></comment>
+      </element>
+      <element name="tableaudebord_enrichissementstableauxdebord" title="Enrichissements des tableaux de bord">
+         <desc0>Non disponible </desc0>
+         <desc1>Partiellement disponible </desc1>
+         <desc2>Disponible</desc2>
+         <score></score>
+         <comment></comment>
+      </element>
+      <element name="tableaudebord_gestiondesstyles" title="Gestion des styles">
+         <desc0>Non disponible </desc0>
+         <desc1>Partiellement disponible </desc1>
+         <desc2>Disponible</desc2>
+         <score></score>
+         <comment></comment>
+      </element>
+      <element name="tableaudebord_modifiertypedegraphique" title="Modifier le type de graphique">
+         <desc0>Non disponible </desc0>
+         <desc1>Partiellement disponible </desc1>
+         <desc2>Disponible</desc2>
+         <score></score>
+         <comment></comment>
+      </element>
+      <element name="tableaudebord_exportation" title="Exportation des Tableaux de Bords">
+         <element name="tableaudebord_impression_pdf" title="PDF">
+            <desc0>Non disponible </desc0>
+            <desc1>Partiellement disponible </desc1>
+            <desc2>Disponible</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="tableaudebord_impression_office" title="MS Office">
+            <desc0>Non disponible </desc0>
+            <desc1>Partiellement disponible </desc1>
+            <desc2>Disponible</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="tableaudebord_impression_ooo" title="OpenOffice.org">
+            <desc0>Non disponible </desc0>
+            <desc1>Partiellement disponible </desc1>
+            <desc2>Disponible</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="tableaudebord_impression_pixelready" title="Pixel Ready">
+            <desc0>Non disponible </desc0>
+            <desc1>Partiellement disponible </desc1>
+            <desc2>Disponible</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+      </element>
+      <element name="tableaudebord_impression" title="Imprimer les tableaux de bords">
+         <desc0>Non disponible </desc0>
+         <desc1>Partiellement disponible </desc1>
+         <desc2>Disponible</desc2>
+         <score></score>
+         <comment></comment>
+      </element>
+      <element name="tableaudebord_gestionalertes" title="Gestions des alertes">
+         <desc></desc>
+         <element name="tableaudebord_gestionalertes_gererstockerindicateur" title="Gerer et stocker des indicateurs d'alertes">
+            <desc0>Indisponible</desc0>
+            <desc1>Partiellement disponible </desc1>
+            <desc2>Complétement disponible</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="tableaudebord_gestionalertes_regledegestion" title="Règles de gestion d'alertes">
+            <desc0>Indisponible</desc0>
+            <desc1>Partiellement disponible </desc1>
+            <desc2>Complétement disponible</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="tableaudebord_gestionalertes_signaletiquedesalertes" title="Gérer la signalétique des alertes">
+            <desc></desc>
+            <element name="tableaudebord_gestionalertes_signaletiquedesalertes_messages" title="Messages">
+               <desc0>Indisponible</desc0>
+               <desc1>Partiellement disponible </desc1>
+               <desc2>Complétement disponible</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="tableaudebord_gestionalertes_signaletiquedesalertes_colorcoding" title="Color-coding">
+               <desc0>Indisponible</desc0>
+               <desc1>Partiellement disponible </desc1>
+               <desc2>Complétement disponible</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="tableaudebord_gestionalertes_signaletiquedesalertes_widgetsspecifiques" title="Widgets spécifiques">
+               <desc0>Indisponible</desc0>
+               <desc1>Partiellement disponible </desc1>
+               <desc2>Complétement disponible</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+         </element>
+         <element name="tableaudebord_gestionalertes_associerimage" title="Associer images aux alertes">
+            <desc> où sont stocker les liens vers ces images?</desc>
+            <element name="tableaudebord_gestionalertes_associerimage_basededonnees" title="Bases de données">
+               <desc0>Indisponible</desc0>
+               <desc1>Partiellement disponible </desc1>
+               <desc2>Complétement disponible</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="tableaudebord_gestionalertes_associerimage_fichierdeparametrage" title="Fichier de paramétrage">
+               <desc0>Indisponible</desc0>
+               <desc1>Partiellement disponible </desc1>
+               <desc2>Complétement disponible</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="tableaudebord_gestionalertes_associerimage_directementdanscubes" title="Directement dans les cubes">
+               <desc0>Indisponible</desc0>
+               <desc1>Partiellement disponible </desc1>
+               <desc2>Complétement disponible</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+         </element>
+         <element name="tableaudebord_gestionalertes_envoidalertes" title="Envoyer des alertes">
+            <desc> Comment peut-on envoyer des alertes?</desc>
+            <element name="tableaudebord_gestionalertes_envoidalertes_mail" title="Par mail">
+               <desc0>Indisponible</desc0>
+               <desc1>Partiellement disponible </desc1>
+               <desc2>Complétement disponible</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="tableaudebord_gestionalertes_envoidalertes_fax" title="Par fax">
+               <desc0>Indisponible</desc0>
+               <desc1>Partiellement disponible </desc1>
+               <desc2>Complétement disponible</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="tableaudebord_gestionalertes_envoidalertes_sms" title="Par SMS/MMS">
+               <desc0>Indisponible</desc0>
+               <desc1>Partiellement disponible </desc1>
+               <desc2>Complétement disponible</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="tableaudebord_gestionalertes_envoidalertes_imprimante" title="Vers une imprimante">
+               <desc0>Indisponible</desc0>
+               <desc1>Partiellement disponible </desc1>
+               <desc2>Complétement disponible</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="tableaudebord_gestionalertes_envoidalertes_autres" title="Autres">
+               <desc0>aucun</desc0>
+               <desc1>un </desc1>
+               <desc2>plus</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+         </element>
+         <element name="tableaudebord_gestionalertes_fluxrss" title="Diffuser via des flux RSS">
+            <desc0>Indisponible</desc0>
+            <desc1>Partiellement disponible </desc1>
+            <desc2>Complétement disponible</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+      </element>
+   </section>
+   <section name="exploitationetadministration" title="Exploitation,administration et architecture">
+      <desc></desc>
+      <element name="exploitationetadministration_securite" title="Sécurité">
+         <desc></desc>
+         <element name="exploitationetadministration_securite_utilisateurmotdepasse" title="Accès à l'application de restitution par utilisateur et mot de passe">
+            <desc0>Non disponible </desc0>
+            <desc1>Partiellement disponible </desc1>
+            <desc2>Disponible</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="exploitationetadministration_securite_modesupportgestionutilisateur" title="Mode de support de gestion des utilisateurs">
+            <desc> </desc>
+            <element name="exploitationetadministration_securite_modesupportgestionutilisateur_annuaireldap" title="Annuaire LDAP">
+               <desc0>Non disponible </desc0>
+               <desc1>Partiellement disponible </desc1>
+               <desc2>Disponible</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="exploitationetadministration_securite_modesupportgestionutilisateur_systeme" title="Système d'éxploitation">
+               <desc0>Non disponible </desc0>
+               <desc1>Partiellement disponible </desc1>
+               <desc2>Disponible</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="exploitationetadministration_securite_modesupportgestionutilisateur_autres" title="Systèmes spécifiques">
+               <desc0>Non disponible</desc0>
+               <desc1>Partiellement disponible</desc1>
+               <desc2>Disponible</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+         </element>
+         <element name="exploitationetadministration_securite_gestiongroupes" title="Gestion des groupes">
+            <desc0>Non disponible </desc0>
+            <desc1>Partiellement disponible </desc1>
+            <desc2>Disponible</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="exploitationetadministration_securite_attacherutilisateuraplusieursgroupes" title="Attacher un utilisateur à plusieurs groupes">
+            <desc0>Non disponible </desc0>
+            <desc1>Partiellement disponible </desc1>
+            <desc2>Disponible</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="exploitationetadministration_securite_sinterfaceravecannuaireexterne" title="S'interfacer avec un annuaire externe">
+            <desc>Avec quels annuaires ?</desc>
+            <element name="exploitationetadministration_securite_sinterfaceravecannuaireexterne_microsoftactivedirectoryserver" title="Microsoft Active Directory Server">
+               <desc0>Non disponible </desc0>
+               <desc1>Partiellement disponible </desc1>
+               <desc2>Disponible</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="exploitationetadministration_securite_sinterfaceravecannuaireexterne_netscapedirectoryserver" title="Netscape Directory Server">
+               <desc0>Non disponible </desc0>
+               <desc1>Partiellement disponible </desc1>
+               <desc2>Disponible</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="exploitationetadministration_securite_sinterfaceravecannuaireexterne_novelldirectoryservices" title="Novell Directory Services">
+               <desc0>Non disponible </desc0>
+               <desc1>Partiellement disponible </desc1>
+               <desc2>Disponible</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="exploitationetadministration_securite_sinterfaceravecannuaireexterne_sunnetscapeiplanetdirectory" title="Sun Netscape iPlanet Directory">
+               <desc0>Non disponible </desc0>
+               <desc1>Partiellement disponible </desc1>
+               <desc2>Disponible</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="exploitationetadministration_securite_sinterfaceravecannuaireexterne_autres" title="OpenLDAP">
+               <desc0>Non disponible</desc0>
+               <desc1>Partiellement disponible</desc1>
+               <desc2>Disponible</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+         </element>
+         <element name="exploitationetadministration_securite_administrationdesmotsdepasse" title="Administration des mots de passe">
+            <desc> Quelles fonctionnalités d'administration des mots de passe sont disponible?</desc>
+            <desc0>Non disponible</desc0>
+            <desc1>Basique</desc1>
+            <desc2>Avancées</desc2>
+            <comment></comment>
+            <score></score>
+         </element>
+         <element name="exploitationetadministration_securite_mecanismesynchronisationsystemelogiciel" title="Mécanisme de synchronisation entre le système et le logiciel">
+            <desc0>Non disponible </desc0>
+            <desc1>Partiellement disponible </desc1>
+            <desc2>Disponible</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="exploitationetadministration_securite_mecanismedesso" title="Mécanisme de Single Sign On (SSO)">
+            <desc0>Non disponible </desc0>
+            <desc1>Partiellement disponible </desc1>
+            <desc2>Disponible</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="exploitationetadministration_securite_niveauxgranularitehabilitations" title="Niveaux de granularité des habilitations">
+            <desc> </desc>
+            <element name="exploitationetadministration_securite_niveauxgranularitehabilitations_axes" title="Axes">
+               <desc0>Non disponible </desc0>
+               <desc1>Partiellement disponible </desc1>
+               <desc2>Disponible</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="exploitationetadministration_securite_niveauxgranularitehabilitations_colonnes" title="Colonnes">
+               <desc0>Non disponible </desc0>
+               <desc1>Partiellement disponible </desc1>
+               <desc2>Disponible</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="exploitationetadministration_securite_niveauxgranularitehabilitations_cellules" title="Cellules">
+               <desc0>Non disponible </desc0>
+               <desc1>Partiellement disponible </desc1>
+               <desc2>Disponible</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="exploitationetadministration_securite_niveauxgranularitehabilitations_autres" title="Cubes / Tables">
+               <desc0>Non disponible</desc0>
+               <desc1>Partiellement disponible</desc1>
+               <desc2>Disponible</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+         </element>
+         <element name="exploitationetadministration_securite_cryptagedonneeserveurclient" title="Cryptage des données entre le serveur et le client">
+            <desc0>Non disponible </desc0>
+            <desc1>Partiellement disponible </desc1>
+            <desc2>Disponible</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="exploitationetadministration_securite_creermettreajourenmodebatch" title="Créer et/ou mettre à jour les sécurités en mode batch ">
+            <desc0>Non disponible </desc0>
+            <desc1>Partiellement disponible </desc1>
+            <desc2>Disponible</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+      </element>
+      <element name="exploitationetadministration_sauvegardedesdonnees" title="Sauvegarde des données">
+         <desc></desc>
+         <element name="exploitationetadministration_sauvegardedesdonnees_sauvegarderdonneesachaud" title="Sauvegarder des données à chaud">
+            <desc0>Non disponible </desc0>
+            <desc1>Partiellement disponible </desc1>
+            <desc2>Disponible</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="exploitationetadministration_sauvegardedesdonnees_elementspouvantetresauvegarder" title="Eléments pouvant être sauvegarder">
+            <desc></desc>
+            <element name="exploitationetadministration_sauvegardedesdonnees_elementspouvantetresauvegarder_lereferentiel" title="Référentiel">
+               <desc0>Non disponible </desc0>
+               <desc1>Partiellement disponible </desc1>
+               <desc2>Disponible</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="exploitationetadministration_sauvegardedesdonnees_elementspouvantetresauvegarder_lerapport" title="Rapport">
+               <desc0>Non disponible </desc0>
+               <desc1>Partiellement disponible </desc1>
+               <desc2>Disponible</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="exploitationetadministration_sauvegardedesdonnees_elementspouvantetresauvegarder_lasecurite" title="Sécurité">
+               <desc0>Non disponible </desc0>
+               <desc1>Partiellement disponible </desc1>
+               <desc2>Disponible</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+         </element>
+         <element name="exploitationetadministration_sauvegardedesdonnees_ordonnancertraitementssauvegarde" title="Ordonnancer des traitements de sauvegarde">
+            <desc0>Non disponible </desc0>
+            <desc1>Partiellement disponible </desc1>
+            <desc2>Disponible</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         
+         <element name="exploitationetadministration_sauvegardedesdonnees_integreravecoutildordonancement" title="Intégrer avec un outil d'ordonancement du marché">
+            <desc></desc>
+            <element name="exploitationetadministration_sauvegardedesdonnees_integreravecoutildordonancement_dollaruniverse" title="Dollar Universe">
+               <desc0>Non disponible </desc0>
+               <desc1>Partiellement disponible </desc1>
+               <desc2>Disponible</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="exploitationetadministration_sauvegardedesdonnees_integreravecoutildordonancement_caunicenter" title="CA-Unicenter">
+               <desc0>Non disponible </desc0>
+               <desc1>Partiellement disponible </desc1>
+               <desc2>Disponible</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="exploitationetadministration_sauvegardedesdonnees_integreravecoutildordonancement_autres" title="Autres">
+               <desc0>aucun</desc0>
+               <desc1>un </desc1>
+               <desc2>plus</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+         </element>
+      </element>
+      <element name="exploitationetadministration_tracabilite" title="Traçabilité">
+         <desc></desc>
+         <element name="exploitationetadministration_tracabilite_fonctiondevisualisationtraitementsencours" title="Visualisation des traitements en cours via la console d'administration">
+            <desc0>Non disponible </desc0>
+            <desc1>Partiellement disponible </desc1>
+            <desc2>Disponible</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="exploitationetadministration_tracabilite_arreterrequeteencoursdetraitement" title="Arrêter requête en cours de traitement via la console d'administration">
+            <desc0>Impossible </desc0>
+            <desc1>Partiellement possible </desc1>
+            <desc2>Possible</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="exploitationetadministration_tracabilite_logsgenerees" title="Logs générées">
+         	<desc0>Non disponibles</desc0>
+         	<desc1>Textuelle</desc1>
+         	<desc2>Requêtable</desc2>
+         	<comment></comment>
+         	<score></score>
+         </element>
+         <element name="exploitationetadministration_tracabilite_interfaceravecoutilsdesupervision" title="Interfacer avec des outils de supervision">
+            <desc></desc>
+            <element name="exploitationetadministration_tracabilite_interfaceravecoutilsdesupervision_patrol" title="Patrol">
+               <desc0>Non disponible </desc0>
+               <desc1>Partiellement disponible </desc1>
+               <desc2>Disponible</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="exploitationetadministration_tracabilite_interfaceravecoutilsdesupervision_computerassociatestng" title="Computer Associates TNG">
+               <desc0>Non disponible </desc0>
+               <desc1>Partiellement disponible </desc1>
+               <desc2>Disponible</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="exploitationetadministration_tracabilite_interfaceravecoutilsdesupervision_tivoli" title="Tivoli">
+               <desc0>Non disponible </desc0>
+               <desc1>Partiellement disponible </desc1>
+               <desc2>Disponible</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="exploitationetadministration_tracabilite_interfaceravecoutilsdesupervision_hpopenview" title="HP Open View">
+               <desc0>Non disponible </desc0>
+               <desc1>Partiellement disponible </desc1>
+               <desc2>Disponible</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+         </element>
+         <element name="exploitationetadministration_tracabilite_limiterpourchaquerequete" title="Limiter pour chaque requête lancée par l'utilisateur">
+            <desc></desc>
+            <element name="exploitationetadministration_tracabilite_limiterpourchaquerequete_nombrelignes" title="Nombre de lignes à ramener">
+               <desc0>Impossible </desc0>
+               <desc1>Partiellement possible </desc1>
+               <desc2>Possible</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="exploitationetadministration_tracabilite_limiterpourchaquerequete_tempscpu" title="Temps CPU utilisé">
+               <desc0>Impossible </desc0>
+               <desc1>Partiellement possible </desc1>
+               <desc2>Possible</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+         </element>
+         <element name="exploitationetadministration_tracabilite_serveurspecifique" title="la console d'administration nécessite un serveur spécifique">
+            <desc0>Non</desc0>
+            <desc1> </desc1>
+            <desc2>Oui</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="exploitationetadministration_tracabilite_prisedemainadistance" title="Prise de main de la console à distance">
+            <desc></desc>
+            <element name="exploitationetadministration_tracabilite_prisedemainadistance_proprietaire" title="Propriétaire">
+               <desc0>Non disponible </desc0>
+               <desc1>Partiellement disponible </desc1>
+               <desc2>Disponible</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="exploitationetadministration_tracabilite_prisedemainadistance_typeweb" title="Type Web">
+               <desc0>Non disponible </desc0>
+               <desc1>Partiellement disponible </desc1>
+               <desc2>Disponible</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="exploitationetadministration_tracabilite_prisedemainadistance_autres" title="Types Web">
+               <desc0>Non disponible</desc0>
+               <desc1>Partiellement disponible</desc1>
+               <desc2>Disponible</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+         </element>
+      </element>
+      <element name="exploitationetadministration_architecture" title="Architecture">
+         <desc></desc>
+         <element name="exploitationetadministration_architecture_gestionreprisesapresincident" title="Gestion des reprises après incident">
+            <desc></desc>
+            <element name="exploitationetadministration_architecture_gestionreprisesapresincident_notificationsurincident" title="Notification sur incident">
+            	<desc0>Non Diponible</desc0>
+            	<desc1>Standard</desc1>
+            	<desc2>Personnalisable</desc2>
+            	<comment></comment>
+            	<score></score>
+            </element>
+            <element name="exploitationetadministration_architecture_gestionreprisesapresincident_scriptsrelancepredefinis" title="Scripts de relance prédéfinis en cas d'incident">
+               <desc0>Non disponible </desc0>
+               <desc1>Partiellement disponible </desc1>
+               <desc2>Disponible</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="exploitationetadministration_architecture_gestionreprisesapresincident_traitementencoursrepris" title="Traitements en cours de l'incident sont repris automatiquement ">
+               <desc0>Non disponible </desc0>
+               <desc1>Partiellement disponible </desc1>
+               <desc2>Disponible</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="exploitationetadministration_architecture_gestionreprisesapresincident_reveniretat" title="Revenir sur l'état précédent l'incident">
+               <desc0>Non disponible </desc0>
+               <desc1>Partiellement disponible </desc1>
+               <desc2>Disponible</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+         </element>
+         <element name="exploitationetadministration_architecture_interfacedadministration" title="Technologie d'interface d'administration">
+            <desc></desc>
+            <element name="exploitationetadministration_architecture_interfacedadministration_clientserveur" title="Client-serveur">
+               <desc0>Non disponible </desc0>
+               <desc1>Partiellement disponible </desc1>
+               <desc2>Disponible</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="exploitationetadministration_architecture_interfacedadministration_web" title="Web">
+               <desc0>Non disponible </desc0>
+               <desc1>Partiellement disponible </desc1>
+               <desc2>Disponible</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+         </element>
+         <element name="exploitationetadministration_architecture_navigateurs" title="Navigateurs supportés">
+            <desc></desc>
+            <element name="exploitationetadministration_architecture_navigateurs_internetexplorer" title="Internet Explorer">
+               <desc0>Non disponible </desc0>
+               <desc1>Partiellement disponible </desc1>
+               <desc2>Disponible</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="exploitationetadministration_architecture_navigateurs_mozillafirefox" title="Mozilla Firefox">
+               <desc0>Non disponible </desc0>
+               <desc1>Partiellement disponible </desc1>
+               <desc2>Disponible</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="exploitationetadministration_architecture_navigateurs_autres" title="Autres">
+               <desc0>aucun</desc0>
+               <desc1>un </desc1>
+               <desc2>plus</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+         </element>
+         <element name="exploitationetadministration_architecture_jdksupportes" title="JDK supportés(versions)">
+            <desc0>Non disponible </desc0>
+            <desc1>Partiellement disponible </desc1>
+            <desc2>Disponible</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="exploitationetadministration_architecture_https" title="Protocole sécurisé HTTPS ">
+            <desc0>Non disponible </desc0>
+            <desc1>Partiellement disponible </desc1>
+            <desc2>Disponible</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="exploitationetadministration_architecture_serveursdapplicationpourwebj2ee" title="Serveurs d'applications pour les applications Web J2EE">
+            <desc></desc>
+            <element name="exploitationetadministration_architecture_serveursdapplicationpourwebj2ee_ibmwebsphere" title="IBM Websphere">
+               <desc0>Non disponible </desc0>
+               <desc1>Partiellement disponible </desc1>
+               <desc2>Disponible</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="exploitationetadministration_architecture_serveursdapplicationpourwebj2ee_beaweblogic" title="BEA WebLogic">
+               <desc0>Non disponible </desc0>
+               <desc1>Partiellement disponible </desc1>
+               <desc2>Disponible</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="exploitationetadministration_architecture_serveursdapplicationpourwebj2ee_suniplanet" title="Sun iPlanet">
+               <desc0>Non disponible </desc0>
+               <desc1>Partiellement disponible </desc1>
+               <desc2>Disponible</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="exploitationetadministration_architecture_serveursdapplicationpourwebj2ee_jakartatomcat" title="Jakarta Tomcat">
+               <desc0>Non disponible </desc0>
+               <desc1>Partiellement disponible </desc1>
+               <desc2>Disponible</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="exploitationetadministration_architecture_serveursdapplicationpourwebj2ee_autres" title="Autres">
+               <desc0>aucun</desc0>
+               <desc1>un </desc1>
+               <desc2>plus</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+         </element>
+         <element name="exploitationetadministration_architecture_gererrepartiondecharge" title="Gérer la répartition de charge">
+            <desc0>Non disponible </desc0>
+            <desc1>Partiellement disponible </desc1>
+            <desc2>Disponible</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="exploitationetadministration_architecture_architecturesmultiprocesseurs" title="Architectures multiprocesseurs">
+            <desc0>Non disponible </desc0>
+            <desc1>Partiellement disponible </desc1>
+            <desc2>Disponible</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="exploitationetadministration_architecture_reglesdimensionnement" title="Règles de dimensionnement">
+            <desc></desc>
+            <element name="exploitationetadministration_architecture_reglesdimensionnement_delacpu" title="De la CPU">
+               <desc0>Non disponible </desc0>
+               <desc1>Partiellement disponible </desc1>
+               <desc2>Disponible</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="exploitationetadministration_architecture_reglesdimensionnement_delespacedisque" title="De l'espace disque">
+               <desc0>Non disponible </desc0>
+               <desc1>Partiellement disponible </desc1>
+               <desc2>Disponible</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="exploitationetadministration_architecture_reglesdimensionnement_dudebitreseau" title="Du débit réseau">
+               <desc0>Non disponible </desc0>
+               <desc1>Partiellement disponible </desc1>
+               <desc2>Disponible</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="exploitationetadministration_architecture_reglesdimensionnement_desutilisateursconnectes" title="Des utilisateurs connectés">
+               <desc0>Non disponible </desc0>
+               <desc1>Partiellement disponible </desc1>
+               <desc2>Disponible</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+         </element>
+         <element name="exploitationetadministration_architecture_portaildentreprise" title="S'integrer dans un portail d'entreprise">
+            <desc>Portail supporté</desc>
+            <element name="exploitationetadministration_architecture_portaildentreprise_beaweblogicportal" title="BEA Weblogic portal">
+               <desc0>Non disponible </desc0>
+               <desc1>Partiellement disponible </desc1>
+               <desc2>Disponible</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="exploitationetadministration_architecture_portaildentreprise_ibmwebsphereportalserver" title="IBM Websphere Portal Server">
+               <desc0>Non disponible </desc0>
+               <desc1>Partiellement disponible </desc1>
+               <desc2>Disponible</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="exploitationetadministration_architecture_portaildentreprise_jboss" title="JBoss">
+               <desc0>Non disponible </desc0>
+               <desc1>Partiellement disponible </desc1>
+               <desc2>Disponible</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="exploitationetadministration_architecture_portaildentreprise_microsoftsharepointportalserver" title="Microsoft Sharepoint  Portal Server">
+               <desc0>Non disponible </desc0>
+               <desc1>Partiellement disponible </desc1>
+               <desc2>Disponible</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="exploitationetadministration_architecture_portaildentreprise_plumtreecorporateportal" title="Plumtree Corporate Portal (BEA)">
+               <desc0>Non disponible </desc0>
+               <desc1>Partiellement disponible </desc1>
+               <desc2>Disponible</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="exploitationetadministration_architecture_portaildentreprise_vignetteportalsolution" title="Vignette Portal Solution">
+               <desc0>Non disponible </desc0>
+               <desc1>Partiellement disponible </desc1>
+               <desc2>Disponible</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="exploitationetadministration_architecture_portaildentreprise_autres" title="Autres">
+               <desc0>aucun</desc0>
+               <desc1>un </desc1>
+               <desc2>plus</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+         </element>
+      </element>
+   </section>
+</document>
