@@ -14,13 +14,21 @@
             <name>Raphaël SEMETEYS</name>
             <email>raphael.semeteys@atosorigin.com</email>
          </author>
+         <author>
+            <name>Hery Njato RANDRIAMANAMIHAGA</name>
+            <email>hery.randriamanamihaga@atosorigin.com</email>
+         </author>
+         <author>
+            <name>Julien HEYMAN</name>
+            <email>julien.heyman@atosorigin.com</email>
+         </author>
       </authors>
       <dates>
          <creation></creation>
          <validation></validation>
       </dates>
       <language>fr</language>
-      <appname>Talend_OpenStudio_v3_0</appname>
+      <appname>Talend OpenStudio 3.0</appname>
       <release>3.0.2</release>
       <licenseid>31</licenseid>
       <licensedesc>GNU GPL</licensedesc>
