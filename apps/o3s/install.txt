@@ -13,3 +13,15 @@ Installation instructions
 * Modify config.php accordingly to comments included in the file itself
 
 * Make sure the account running your webserver owner od the o3s folder (Debian: chown -R www-data:www-data o3s)
+
+* The folder containing the QSOS evaluation ($sheet in config.php) must be organized in this way:
+[Family F1]
+  [Software F1S1]
+    [evaluation F1S1 v1.3].qsos
+    [evaluation F1S1 v2.4].qsos
+  [Software F1S2]
+    [evaluation F1S2 v1].qsos
+[Family F2]
+  [Software F2S2]
+    [evaluation F2S2 v1].qsos
+and so on...
