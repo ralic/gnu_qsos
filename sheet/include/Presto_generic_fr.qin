@@ -1,0 +1,191 @@
+   <section name="generic" title="Section générique">
+      <desc>Les critères génériques de l'évaluation Presto de QSOS</desc>
+      <element name="intrinsicdurability" title="Pérennité">
+         <desc>Pérennité</desc>
+         <element name="maturite" title="Maturité">
+            <desc></desc>
+            <desc0>Logiciel provenant d'un fork ou avec une forte probabilité de fork dans un futur proche.</desc0>
+            <desc1>Projet jeune (moins de 3 ans) ou connaissant des difficultés à stabiliser les versions de développement.</desc1>
+            <desc2>Projet stable ou ayant un bon historique de gestion de crise. Les nouvelles versions apportent de façon prépondérante de nouvelles fonctionnalités.</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="adoption1" title="Adoption">
+            <desc></desc>
+            <desc0>Usage détectable sur Internet sans véritable activité communautaire</desc0>
+            <desc1>Utilisation communautaire prépondérante</desc1>
+            <desc2>Nombreuse références industrielles</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="developpement" title="Développement">
+            <desc></desc>
+            <desc0>Deux ou moins de deux développeurs clairement identifiés.</desc0>
+            <desc1>Équipe de développement réduite avec un turn-over important ou sans équipe de direction identifiée.</desc1>
+            <desc2>Équipe de développement structurée comportant plus de 5 développeurs actifs.</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="activite" title="Activité">
+            <desc></desc>
+            <desc0>Très faible activité, que ce soit sur les résolutions de bugs, les releases, l'ajout de nouvelles fonctions ou sur les espaces communautaires (wiki, forum, mailing list...)</desc0>
+            <desc1>Activité détectable mais anarchique (pas feuille de route accessible facilement, pas de prévisions de nouvelles fonctionnalités ou de prévisions de nouvelles versions visible)</desc1>
+            <desc2>Activité importante et visible via la mise en place de feuilles de routes traçant les requêtes de nouvelles fonctionnalités et/ou les prévisions de sortie des nouvelles version</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="strategicalindependence" title="Indépendance stratégique">
+            <desc0>Pas de stratégie détectable ou stratégie dictée par une société commerciale, un sponsor ou un individu unique.</desc0>
+            <desc1>Stratégie décidée par l'équipe de developpement.</desc1>
+            <desc2>Indépendance forte de l'équipe de développement, fort engagement du projet dans un processus de standardisation.</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="copyrightowners" title="Détenteur des droits">
+            <desc0>Les droits sont détenus par quelques individus ou entités commerciales, facilitant le changement de licence</desc0>
+            <desc1>Les droits sont détenus par de nombreux individus de façon homogène, rendant le changement de licence très difficile</desc1>
+            <desc2>Les droits sont détenus par une entité légale, une fondation dans laquelle la communauté a confiance (ex: FSF, Apache, ObjectWeb)</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="license" title="Licence">
+            <desc>Licence, à pondérer uniquement si le client désire un jour devenir propriétaire du code</desc>
+            <element name="permissiveness" title="Permissivité">
+               <desc0>Licence très stricte, comme la GPL</desc0>
+               <desc1>Licence modérée entre les deux extrêmes (GPL et BSD), licence duale dépendante du type d'utilisateur (personne, société…) ou de leur activité</desc1>
+               <desc2>Licence très permissive comme BSD et Apache</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="protectionagainstproprietaryforks" title="Protection contre des forks commerciaux">
+               <desc0>Licence très permissive comme BSD et Apache</desc0>
+               <desc1>Licence modérée entre les deux extrêmes (GPL et BSD), licence duale dépendante du type d'utilisateur (personne, société…) ou de leur activité</desc1>
+               <desc2>Licence très stricte, comme la GPL</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+         </element>
+      </element>
+      <element name="industrializedsolution" title="Industrialisation">
+         <desc>Niveau d'industrialisation du projet</desc>
+         <element name="independenceofdevelopments" title="Indépendance des développements">
+            <desc0>Développements réalisés à plus de 60% par des employés d'une seule société</desc0>
+            <desc1>Développements réalisés à 60% maximum par des employés d'une seule société</desc1>
+            <desc2>Développements réalisés à 20% maximum par des employés d'une seule société</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="services1" title="Services">
+            <desc></desc>
+            <desc0>Pas d'offres de services identifiée</desc0>
+            <desc1>Offre existante mais restreinte géographiquement ou en une seule langue ou fournie par un seul fournisseur</desc1>
+            <desc2>Offre riche : plusieurs fournisseurs ou plusieurs langages</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="documentation" title="Documentation">
+            <desc0>Pas de documentation utilisateur</desc0>
+            <desc1>La documentation existe mais est en partie obsolète ou restreinte à une seule langue ou peu détaillée</desc1>
+            <desc2>Documentation à jour, traduite et éventuellement adaptée à différentes cibles de lecteurs (end-user, sysadmin, manager…)</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="methodequalite" title="Méthode qualité">
+            <desc></desc>
+            <desc0>Pas de processus de qualité identifié ni d'outils de gestions de bugs</desc0>
+            <desc1>Processus qualité non formalisé ou non outillé ou comportant des outils qui sont très peu utilisés</desc1>
+            <desc2>Utilisation très active d'outils standards (tests unitaires, outils de gestion de build, outils de mesure de qualité du code)</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+      </element>
+      <element name="packaging" title="Packaging">
+         <desc>Packaging pour les différents systèmes d'exploitation</desc>
+         <element name="packagingbsd" title="BSD">
+            <desc></desc>
+            <desc0>Pas de packaging officiel pour la famille BSD</desc0>
+            <desc1>Packaging existant pour quelques distributions de la famille BSD</desc1>
+            <desc2>Packaging complet pour les distributions de la famille BSD suivantes : FreeBSD, OpenBSD, NetBSD et Mac OS X</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="packaginglinux" title="GNU/Linux">
+            <desc></desc>
+            <desc0>Pas de packaging officiel pour les systèmes d'exploitations GNU/Linux</desc0>
+            <desc1>Packaging existant pour quelques distributions GNU/Linux</desc1>
+            <desc2>Packaging complet les systèmes de packaging .deb et .rpm</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="unix" title="Unix">
+            <desc></desc>
+            <desc0>Pas de packaging officiel pour les systèmes de la famille Unix</desc0>
+            <desc1>Packaging existant sur quelques systèmes de la famille Unix</desc1>
+            <desc2>Packaging existant sur au moins ces 3 systèmes : AIX, HP-UX, Solaris</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="packagingwindows" title="Windows">
+            <desc0>Le logiciel n'est pas disponible sur un système Windows.</desc0>
+            <desc1>Le logiciel existe sous forme d'archive tout en un.</desc1>
+            <desc2>Le logiciel dispose d'un installeur.</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="packagingsource" title="Sources">
+            <desc0>L'installation depuis les sources est hasardeuse et risquée</desc0>
+            <desc1>L'installation depuis les sources est difficile ou limité (seulement à un OS, une architecture, la résolution de l'écran...)</desc1>
+            <desc2>L'installation depuis les sources est outillée (vérification des dépencances, verification de l'installation, gestion de build)</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="packagingtar" title="Archive compressée">
+            <desc0>Pas d'archive disponible</desc0>
+            <desc1>Archive globale</desc1>
+            <desc2>Archive séparée pour chaque module installable</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+      </element>
+      <element name="exploitability" title="Exploitabilité">
+         <desc>Niveau d'exploitabilité</desc>
+         <element name="easeofuseergonomics" title="Facilité d'utilisation, ergonomie">
+            <desc0>Difficulté d'utilisation, demande une connaissance approfondie des fonctionnalités du logiciel</desc0>
+            <desc1>Ergonomie austère et très technique</desc1>
+            <desc2>Ergonomie élaborée et IHM comprenant des fonctions d'aide</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="administrationmonitoring" title="Administration et supervision">
+            <desc0>Pas de fonctionnalités de contrôle, ni d'administration</desc0>
+            <desc1>Fonctionnalités présentes mais incomplètes ou à améliorer</desc1>
+            <desc2>Fonctionnalités complètes et faciles de contrôle et d'administration. Intégration possible avec des outils tiers (ex : SNMP, syslog…)</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+      </element>
+      <element name="technicaladaptability" title="Adaptabilité">
+         <desc>Adaptabilité technique</desc>
+         <element name="modularity" title="Modularité">
+            <desc0>Logiciel monolithique</desc0>
+            <desc1>Présence de modules haut niveau permettant un premier niveau d'adaptation</desc1>
+            <desc2>Conception modulaire, permettant des adaptations faciles par sélection et/ou création de modules</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="codemodification" title="Facilité technique de modification du code existant">
+            <desc0>Tout à la main</desc0>
+            <desc1>Recompilation possible mais complexe, sans outils, ni documentation</desc1>
+            <desc2>Recompilation facile, outillée (ex : make, ANT, Maven…) et documentée</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="codeextension" title="Facilité d'extension du code">
+            <desc0>Toute modification demande une recompilation du code</desc0>
+            <desc1>Architecture conçue pour des extensions statiques mais exige une recompilation</desc1>
+            <desc2>Architecture de plugins, conçue pour des extensions dynamiques et sans recompilation</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+      </element>
+   </section>
