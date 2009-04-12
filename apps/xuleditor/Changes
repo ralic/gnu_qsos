@@ -36,3 +36,10 @@ Revision history for QSOS XUL Editor
 
 0.8  2008/06/26
       - Repackaging for Firefox 3
+
+0.9  2009/10/13
+      - .qsos file can now be passed as parameter in command line. This allow to configure file association in desktop environments (a sample .desktop for KDE is provided)
+      - Description field for all criteria
+      - Software name is included in window's title
+      - Bugfix: all comments are now saved even when the <comment> tag does not exist
+      - Bugfix: no more double text in SVG radar

@@ -1,4 +1,4 @@
-#  Copyright (C) 2006, 2007 Atos Origin 
+#  Copyright (C) 2006-2009 Atos Origin 
 #
 #  This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -16,7 +16,7 @@
 #
 #
 # QSOS XUL Editor Makefile
-# $Id: Makefile,v 1.12 2009/01/24 18:30:21 rsemeteys Exp $
+# $Id: Makefile,v 1.13 2009/04/12 22:28:39 rsemeteys Exp $
 
 APPPACK=application.ini Changes chrome.manifest LICENSE README xuleditor xuleditor.bat
 
@@ -36,7 +36,7 @@ PREFS=defaults/preferences/qsos-xuled.js
 
 PREFS_XULRUNNER=defaults/preferences/qsos-xuled-xulrunner.js
 
-VERSION=0.8
+VERSION=0.9
 
 ext:
 	rm -f xuleditor-firefox-${VERSION}.xpi
