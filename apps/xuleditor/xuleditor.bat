@@ -7,7 +7,7 @@ echo "usage: xuleditor [debug]"
 GOTO END
 
 :NODEBUG
-start xulrunner.exe application.ini
+start xulrunner.exe application.ini /file:"%1"
 GOTO END
 
 :DEBUG

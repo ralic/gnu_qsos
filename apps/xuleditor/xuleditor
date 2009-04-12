@@ -7,6 +7,6 @@ case ${1} in
 		echo "usage: xuleditor [debug]"
 		;;
 	*)
-		xulrunner application.ini
+		xulrunner application.ini -file ${1}
 		;;
 esac
