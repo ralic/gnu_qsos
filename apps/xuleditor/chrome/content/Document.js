@@ -403,7 +403,7 @@ function Document(name) {
     function setkey(element, value) {
         var nodes = sheet.evaluate("//"+element, sheet, null, XPathResult.ANY_TYPE,null);
         var node = nodes.iterateNext();
-	    if (node) node.textContent = value;
+	if (node) node.textContent = value;
     }
 
     //Get the value of a specific element's subelement in the QSOS XML file
@@ -429,7 +429,16 @@ function Document(name) {
     function setgeneric(element, subelement, value) {
         var nodes = sheet.evaluate("//*[@name='"+element+"']/"+subelement, sheet, null, XPathResult.ANY_TYPE,null);
         var node = nodes.iterateNext();
-        if (node) node.textContent = value;
+        if (node) {
+          node.textContent = value; 
+        } else {
+          //if subelement doesn't exist, create it
+          nodes = sheet.evaluate("//*[@name='"+element+"']", sheet, null, XPathResult.ANY_TYPE,null);
+          node = nodes.iterateNext();
+          var newsubelement = sheet.createElement(subelement);
+          newsubelement.appendChild(document.createTextNode(value));
+          node.appendChild(newsubelement);
+        }
     }
 
     ////////////////////////////////////////////////////////////////////
