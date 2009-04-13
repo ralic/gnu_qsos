@@ -116,20 +116,19 @@
           </tree>
           <splitter/>
           <vbox flex = "1">
-            <deck id="f-c-deck" selectedIndex="1">
-              <groupbox>
-                <caption><label value="&label1.value;"/></caption>
-                <label id="f-c-desc"/>
-              </groupbox>
-              <groupbox>
-                <caption><label value="&label2.value;"/></caption>
-                <radiogroup id="f-c-score">
-                  <radio id="f-c-desc0" label="&f-c-desc0.label;" oncommand="changeScore(0);"/>
-                  <radio id="f-c-desc1" label="&f-c-desc1.label;" oncommand="changeScore(1);"/>
-                  <radio id="f-c-desc2" label="&f-c-desc2.label;" oncommand="changeScore(2);"/>
-                </radiogroup>
-              </groupbox>
-            </deck>
+            <groupbox>
+              <caption><label value="&label1.value;"/></caption>
+              <!--label id="f-c-desc"/-->
+              <textbox id="f-c-desc" multiline="true" readonly="true" class="plain"/>
+            </groupbox>
+            <groupbox id="f-g-score">
+              <caption><label value="&label2.value;"/></caption>
+              <radiogroup id="f-c-score">
+                <radio id="f-c-desc0" label="&f-c-desc0.label;" oncommand="changeScore(0);"/>
+                <radio id="f-c-desc1" label="&f-c-desc1.label;" oncommand="changeScore(1);"/>
+                <radio id="f-c-desc2" label="&f-c-desc2.label;" oncommand="changeScore(2);"/>
+              </radiogroup>
+            </groupbox>
             <label control="f-c-comments" value="&f-c-comments.value;"/>
             <textbox id="f-c-comments" multiline="true" rows="5" onchange="changeComments(this);"/>
           </vbox>
