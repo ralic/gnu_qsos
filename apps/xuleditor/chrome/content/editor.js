@@ -1,5 +1,5 @@
 /*
-**  Copyright (C) 2006, 2007 Atos Origin 
+**  Copyright (C) 2006-2009 Atos Origin 
 **
 **  Author: Raphael Semeteys <raphael.semeteys@atosorigin.com>
 **
@@ -52,10 +52,20 @@ function init() {
   document.getElementById("file-saveas").setAttribute("disabled", "true");
   document.getElementById("file-close").setAttribute("disabled", "true");
 
-  //Case of a .qsos browsing redirection (cf. qsos-overlay.js)
-  var url = window.arguments[1];
-  if (url) {
-    openRemoteFile(url)
+  //Parameters management
+  var urlFirefox = window.arguments[1];
+  if (urlFirefox) {
+    //Case of a .qsos browsing redirection (cf. qsos-overlay.js)
+    openRemoteFile(urlFirefox);
+  } else {
+    var cmdLine = window.arguments[0];
+    cmdLine = cmdLine.QueryInterface(Components.interfaces.nsICommandLine);
+    var uri = cmdLine.handleFlagWithParam("file", false);
+    if (uri) {
+      //Case of a .qsos file passed in parameter through commandline (xuleditor -file filename)
+      uri = cmdLine.resolveURI(uri);
+      openRemoteFile(uri.spec);
+    }
   }
 }
 
@@ -339,7 +349,7 @@ function openFile() {
     myDoc.load();
     
     //Window's title
-    document.getElementById("QSOS").setAttribute("title", strbundle.getString("QSOSEvaluation")+"  "+myDoc.getappname());
+    document.title =  strbundle.getString("QSOSEvaluation")+"  "+myDoc.getappname();
     
     //Tree population
     var tree = document.getElementById("mytree");
@@ -419,7 +429,7 @@ function openRemoteFile(url) {
   myDoc.loadremote(url);
 
   //Window's title
-  document.getElementById("QSOS").setAttribute("title", strbundle.getString("QSOSEvaluation")+"  "+myDoc.getappname());
+  document.title =  strbundle.getString("QSOSEvaluation")+"  "+myDoc.getappname();
   
   //Tree population
   var tree = document.getElementById("mytree");
@@ -670,7 +680,7 @@ function aboutDialog() {
 ////////////////////////////////////////////////////////////////////
 
 //Generic call to a confirmation dialog window in modal mode
-//content: question to be asked ti the user
+//content: question to be asked to the user
 //doaction: callback function to trigger if user answers "yes" to the question
 function confirmDialog(content, doaction) {
   try {
@@ -727,13 +737,13 @@ function treeselect(tree) {
     document.getElementById("f-c-desc2").setAttribute("label", "2: "+myDoc.getkeydesc2(id));
     var score = myDoc.getkeyscore(id);
     
+    document.getElementById("f-c-desc").value = myDoc.getkeydesc(id);
     if (score == "-1") {
-      document.getElementById("f-c-deck").selectedIndex = "0";
-      document.getElementById("f-c-desc").value = myDoc.getkeydesc(id);
+      document.getElementById("f-g-score").collapsed = true;
       freezeScore("true");
     } else {
+      document.getElementById("f-g-score").collapsed = false;
       document.getElementById("f-c-score").selectedIndex = score;
-      document.getElementById("f-c-deck").selectedIndex = "1";
       freezeScore("");
     }
   
@@ -1030,39 +1040,16 @@ function drawText(x, y, myScore) {
   myText.setAttribute("font-size", FONT_SIZE);
 
   if (myScore.score) {
-    myText.setAttribute("font-size", FONT_SIZE);
-  
-    if (myScore.score) {
-      myText.setAttribute("fill", "green");
-    } else {
-      myText.setAttribute("fill", "red");
-    }
-    
-    if (myScore.children) {
-      myText.setAttribute("onclick", "selectItem(\"" + myScore.name + "\"); drawChart(\"" + myScore.name + "\")");	
-    } else {
-      myText.setAttribute("onclick", "selectItem(\"" + myScore.name + "\"); document.getElementById('t-s').selectedIndex = 1");
-    }	
-    myText.style.cursor = "pointer";
-  
-    myText.appendChild(document.createTextNode(myScore.title));
-    myChart.appendChild(myText);
-    
-    //text position is ajusted to be outside the circle shape
-    myTextLength = myText.getComputedTextLength();
-    myX = (Math.abs(x)==x)?x:x-myTextLength;
-    myY = (Math.abs(y)==y)?y+FONT_SIZE:y;
-    myText.setAttribute("x", myX);
-    myText.setAttribute("y", myY);myText.setAttribute("fill", "green");
+    myText.setAttribute("fill", "green");
   } else {
     myText.setAttribute("fill", "red");
   }
   
   if (myScore.children) {
-    myText.setAttribute("onclick", "selectItem(\"" + myScore.name + "\"); drawChart(\"" + myScore.name + "\")");	
+    myText.setAttribute("onclick", "selectItem(\"" + myScore.name + "\"); drawChart(\"" + myScore.name + "\")");
   } else {
     myText.setAttribute("onclick", "selectItem(\"" + myScore.name + "\"); document.getElementById('t-s').selectedIndex = 1");
-  }	
+  }
   myText.style.cursor = "pointer";
 
   myText.appendChild(document.createTextNode(myScore.title));
