@@ -42,8 +42,9 @@ class QSOSDocument {
 	var $doc;
 	var $xpath;
 
-    //$file: filename of the QSOS document to load
+    //$file: filename (or URI) of the QSOS document to load
 	function __construct($file) {
+		//if (file_exists($file) || (strpos(current(get_headers($file)), "OK"))) {
 		if (file_exists($file)) {
 			$this->doc = new DOMDocument();
 			$this->doc->load($file);
@@ -262,6 +263,7 @@ class QSOSDocument {
 		for ($i=0; $i < count($tree); $i++) {
 			$name = $tree[$i]->name;
 			$weight = $weights[$name];
+      if (!isset($weight)) $weight = 1;
 			$totalWeight = $totalWeight + $weight;
 			if ($tree[$i]->score == null) {
 				$isRenderable = false;
@@ -269,9 +271,22 @@ class QSOSDocument {
 			$sum += round(($tree[$i]->score)*$weight, 2);
 		}
 
-		$score = round(($sum/$totalWeight), 2);
+		if ($totalWeight == 0) return 0;
+    $score = round(($sum/$totalWeight), 2);
 		
 		return $score;
+	}
+
+        //$element: name of the XML element to count
+        //Returns: number of XML element occurences
+	public function getcountkey($element) {
+		return $this->xpath->evaluate("count(//$element)");
+	}
+
+        //$element: name of the XML element to count
+        //Returns: number of XML element occurences
+	public function getdeep() {
+		return $this->xpath->evaluate("count(element/element)");
 	}
 }
 ?>
