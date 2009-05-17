@@ -1,6 +1,6 @@
 <?php
 /*
-**  Copyright (C) 2007 Atos Origin 
+**  Copyright (C) 2009 Atos Origin 
 **
 **  Author: Raphael Semeteys <raphael.semeteys@atosorigin.com>
 **
@@ -23,14 +23,17 @@
 ** index.php: lists software families and shows search box
 **
 */
+session_start();
+$_SESSION = array();
 
 include("config.php");
-include("fs.functions.php");
-include("locales/$lang.php");
+include("lang.php");
+$$lang = 'checked';
 
 echo "<html>\n";
 echo "<head>\n";
 echo "<LINK REL=StyleSheet HREF='skins/$skin/o3s.css' TYPE='text/css'/>\n";
+echo "<script>function changeLang(lang) { window.location = 'index.php?lang='+lang }</script>";
 echo "</head>\n";
 
 echo "<body>\n";
@@ -38,35 +41,45 @@ echo "<center>\n";
 echo "<img src='skins/$skin/o3s.png'/>\n";
 echo "<br/><br/>\n";
 
-echo "<div style='font-weight: bold'>".$msg['s1_title']."<br/><br/>\n";
+echo "<div style='font-weight: bold'>".$msg['s1_title']."<br/><br/></div>\n";
 
-echo "<table style='border-collapse: collapse'>\n";
+echo "<div>";
+foreach($supported_lang as $l) {
+  $checked = $$l;
+  echo "<input type='radio' onclick=\"changeLang('$l')\" $checked/> $l";
+}
+echo "<br/><br/></div>";
 
-$tree = retrieveLocalizedTree($sheet, $locale);
-if (count($tree)) {
-	echo "<tr class='title'>\n";
-	echo "<td>".$msg['s1_table_title']."</td>\n";
-	echo "</tr>\n";
-	
-	$families = array_keys(retrieveLocalizedTree($sheet, $locale));
-	for ($i=0; $i<count($families); $i++) {
-		echo "<tr class='level1' 
-			onmouseover=\"this.setAttribute('class','highlight')\" 
-			onmouseout=\"this.setAttribute('class','level1')\">\n";
-		echo "<td><a href='set_weighting.php?family=$families[$i]'>$families[$i]</a></td>\n";
-		echo "</tr>\n";
-	}
-} else {
-	echo "<tr class='title'>\n";
-	echo "<td>".$msg['s1_no_evaluations']."</td>\n";
-	echo "</tr>\n";
+echo "<table>\n";
+echo "<tr class='title'>\n";
+echo "<td>".$msg['s1_table_title']."</td>\n";
+echo "<td style='width: 100px; text-align: center'>".$msg['s1_table_templateversion']."</td>\n";
+echo "<td style='width: 100px; text-align: center'>".$msg['s1_table_nbeval']."</td>\n";
+echo "</tr>\n";
+
+$IdDB = mysql_connect($db_host ,$db_user, $db_pwd);
+mysql_select_db($db_db);
+$query = "SELECT qsosappfamily, qsosspecificformat, count(*) FROM evaluations WHERE appname <> '' AND language = '$lang' GROUP BY qsosappfamily, qsosspecificformat ORDER BY qsosappfamily, qsosspecificformat";
+$IdReq = mysql_query($query, $IdDB);
+while($row = mysql_fetch_row($IdReq)) {
+  $link = "list.php?lang=$lang&family=$row[0]&qsosspecificformat=$row[1]";
+  $over0 =  "onmouseover=\"this.setAttribute('class','highlight')\" 
+    onmouseout=\"this.setAttribute('class','level0')\"";
+  $over1 =  "onmouseover=\"this.setAttribute('class','highlight')\" 
+    onmouseout=\"this.setAttribute('class','level1')\"";
+  echo "<tr>\n";
+  echo "<td class='level0' $over0><a href='$link'><b>$row[0]</b></a</td>\n";
+  echo "<td align='center' class='level1' style='width: 100px; text-align: center' $over1><a href='$link'>$row[1]</a</td>\n";
+  echo "<td align='center' class='level1' style='width: 1O0px; text-align: center' $over1><a href='$link'>$row[2]</a></td>\n";
+  echo "</tr>\n";
 }
 
 echo "</table>\n";
 
-echo "<p>".$msg['s1_search']."<br/><form action='search.php' method='post'>
-	<input type='text' name='s' size='20' maxlength='30'/>
-	<input type='submit' value='".$msg['s1_button']."'/>
+echo "<p>".$msg['s1_search']."<br/><form action='search.php'>
+  <input type='text' name='s' size='20' maxlength='30'/>
+  <input type='hidden' name='lang' value='$lang'/>
+  <input type='submit' value='".$msg['s1_button']."'/>
 </form></p>";
 echo "</div>\n";
 
