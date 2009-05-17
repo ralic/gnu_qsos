@@ -1,6 +1,6 @@
 <?php
 /*
-**  Copyright (C) 2007 Atos Origin 
+**  Copyright (C) 2007-2009 Atos Origin 
 **
 **  Author: Raphael Semeteys <raphael.semeteys@atosorigin.com>
 **
@@ -23,16 +23,15 @@
 ** config.php: configuration file
 **
 */
-
 //Local and web paths to QSOS sheets and templates
-$sheet = "../sheets";
-$sheet_web = "http://qsos/sheets";
-$template = "../templates";
-$template_web = "http://qsos/templates";
+$sheet = "sheets";
+$sheet_web = "http://localhost:88/o3s/sheets";
+$template = "template";
+$template_web = "http://localhost:88/o3s/template";
 $delim = "/";
 
 //Path to jpgraph library (for PNG graphs)
-$jpgraph_path = "/home/raph/qsos/web/o3s/libs/jpgraph-2.2/src/";
+$jpgraph_path = "libs/jpgraph-2.1.3/src/";
 
 //Temp directory, with trailing slash
 $temp = "/tmp/";
@@ -43,7 +42,12 @@ $cache = "off";
 //Skin to use (CSS are stored in skins/ subdirectory)
 $skin = "default";
 
-//Locale to use (locale files are stored i, locales/ subdirectory)
-$lang = "fr-FR";
-$locale = "fr";
+//Locale to use (locale files are stored in locales/ subdirectory)
+$default_lang = "fr"; //Default locale
+$supported_lang = array('fr', 'en'); //Supported locale
+
+$db_host = "localhost";
+$db_user = "qsos";
+$db_pwd = "qsos";
+$db_db = "qsos";
 ?>
