@@ -35,11 +35,11 @@ $document->appendChild($header);
 
 $weighting = $output->createElement('weighting');
 while (list($name, $value) = each($_POST)) { 
-	if ($name != 'family') {
-		$weight = $output->createElement('weight', $value);
-		$weight->setAttribute("id", $name);
-		$weighting->appendChild($weight);
-	}
+  if ($name != 'family') {
+    $weight = $output->createElement('weight', $value);
+    $weight->setAttribute("id", $name);
+    $weighting->appendChild($weight);
+  }
 }
 
 $document->appendChild($weighting);
