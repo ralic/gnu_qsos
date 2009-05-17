@@ -24,66 +24,76 @@
 */
 
 function matchStart(target, pattern) {
-	var pos = target.indexOf(pattern);
-	if (pos == 0) {
-		return true;
-	} else {
-		return false;
-	}
+  var pos = target.indexOf(pattern);
+  if (pos == 0) {
+    return true;
+  } else {
+    return false;
+  }
 }
 
 function expand(div) {
-	var rows = document.getElementsByTagName("tr");
-	var id = div.parentNode.parentNode.id + "-";
-	for (var i = 0; i < rows.length; i++) {
-		var r = rows[i];
-		if (matchStart(r.id, id)) {
-			if (document.all) r.style.display = "block"; //IE4+ specific code
-    			else r.style.display = "table-row"; //Netscape and Mozilla
-		}
-	}
-	div.className = "expanded";
-	div.onclick = function () {
-		collapse(this);
-	}
+  var rows = document.getElementsByTagName("tr");
+  var id = div.parentNode.parentNode.id + "-";
+  for (var i = 0; i < rows.length; i++) {
+    var r = rows[i];
+    if (matchStart(r.id, id)) {
+      if (document.all) r.style.display = "block"; //IE4+ specific code
+          else r.style.display = "table-row"; //Netscape and Mozilla
+    }
+  }
+  div.className = "expanded";
+  div.onclick = function () {
+    collapse(this);
+  }
 }
 
 function collapse(div) {
-	var rows = document.getElementsByTagName("tr");
-	var id = div.parentNode.parentNode.id + "-";
-	for (var i = 0; i < rows.length; i++) {
-		var r = rows[i];
-		if (matchStart(r.id, id)) {
-			r.style.display = "none";
-		}
-	}
-	div.className = "collapsed";
-	div.onclick = function () {
-		expand(this);
-	}
+  var rows = document.getElementsByTagName("tr");
+  var id = div.parentNode.parentNode.id + "-";
+  for (var i = 0; i < rows.length; i++) {
+    var r = rows[i];
+    if (matchStart(r.id, id)) {
+      r.style.display = "none";
+    }
+  }
+  div.className = "collapsed";
+  div.onclick = function () {
+    expand(this);
+  }
 }
 
 function collapseAll() {
-	var rows = document.getElementsByTagName("TR");
-		for (var j = 0; j < rows.length; j++) {
-		var r = rows[j];
-		if (r.id.indexOf("-") >= 0) {
-			r.style.display = "none";
-		}
-	}
-	document.getElementById("all_selector").href = "javascript:expandAll();";
-	document.getElementById("all_selector").firstChild.nodeValue = "Expand All";
+  var rows = document.getElementsByTagName("TR");
+  for (var j = 0; j < rows.length; j++) {
+    var r = rows[j];
+    if (r.id.indexOf("-") >= 0) {
+      r.style.display = "none";
+      /*var div = r.childNodes[1].childNodes[1];
+      div.className = "collapsed";
+      div.onclick = function () {
+        expand(this);
+      }*/
+    }
+  }
+  document.getElementById("all_selector").href = "javascript:expandAll();";
+  document.getElementById("all_selector").firstChild.nodeValue = "Expand All";
 }
 
 function expandAll() {
-	var rows = document.getElementsByTagName("TR");
-		for (var j = 0; j < rows.length; j++) {
-		var r = rows[j];
-		if (r.id.indexOf("-") >= 0) {
-			if (document.all) r.style.display = "block"; //IE4+ specific code
-    			else r.style.display = "table-row"; //Netscape and Mozilla
-		}
-	}
-	document.getElementById("all_selector").href = "javascript:collapseAll();";
-	document.getElementById("all_selector").firstChild.nodeValue = "Collapse All";
+  var rows = document.getElementsByTagName("TR");
+  for (var j = 0; j < rows.length; j++) {
+    var r = rows[j];
+    if (r.id.indexOf("-") >= 0) {
+      if (document.all) r.style.display = "block"; //IE4+ specific code
+          else r.style.display = "table-row"; //Netscape and Mozilla
+      /*var div = r.childNodes[1].childNodes[1];
+      div.className = "expanded";
+      div.onclick = function () {
+        collapse(this);
+      }*/
+    }
+  }
+  document.getElementById("all_selector").href = "javascript:collapseAll();";
+  document.getElementById("all_selector").firstChild.nodeValue = "Collapse All";
 }
