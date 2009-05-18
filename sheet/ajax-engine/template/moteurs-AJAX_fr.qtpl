@@ -1,0 +1,873 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document>
+   <header>
+      <authors>
+    </authors>
+      <dates>
+         <creation></creation>
+         <validation></validation>
+      </dates>
+      <language>fr</language>
+      <appname></appname>
+      <release></release>
+      <licenseid></licenseid>
+      <licensedesc></licensedesc>
+      <url></url>
+      <desc></desc>
+      <demourl></demourl>
+      <qsosformat>1.6</qsosformat>
+      <qsosappfamily>Moteur AJAX</qsosappfamily>
+      <qsosspecificformat>1.0</qsosspecificformat>
+      <qsosappname></qsosappname>
+   </header>
+   <include section="Presto_generic"></include>
+   <section name="ergonomie" title="Ergonomie">
+      <desc>Fonctionnalités liées à l'ergonomie des applications Web</desc>
+      <element name="composantsgraphiques" title="Composants IHM">
+         <desc>Composants graphiques (widgets)</desc>
+         <comment></comment>
+         <element name="saisie" title="Saisie">
+            <desc>Composants de saisie de données</desc>
+            <comment></comment>
+            <element name="texte" title="Texte">
+               <desc>Composants pour la saisie de type texte</desc>
+               <comment></comment>
+               <element name="textesimple" title="Texte simple">
+                  <desc>Champ de saisie de texte simple (Text box ou Edit Field)</desc>
+                  <desc0>Composant indisponible</desc0>
+                  <desc1>Composant disponible mais limité, pas documenté ou difficile à utiliser</desc1>
+                  <desc2>Composant disponible, bien documenté et facile à mettre en oeuvre</desc2>
+                  <score></score>
+                  <comment></comment>
+               </element>
+               <element name="motdepasse" title="Mot de passe">
+                  <desc>Champ de saisie de mot de passe</desc>
+                  <desc0>Composant indisponible</desc0>
+                  <desc1>Composant disponible mais limité, pas documenté ou difficile à utiliser</desc1>
+                  <desc2>Composant disponible, bien documenté et facile à mettre en oeuvre</desc2>
+                  <score></score>
+                  <comment></comment>
+               </element>
+               <element name="zonedetexte" title="Zone de texte">
+                  <desc>Champ de saisie du texte sur plusieurs lignes (textarea)</desc>
+                  <desc0>Composant indisponible</desc0>
+                  <desc1>Composant disponible mais limité, pas documenté ou difficile à utiliser</desc1>
+                  <desc2>Composant disponible, bien documenté et facile à mettre en oeuvre</desc2>
+                  <score></score>
+                  <comment></comment>
+               </element>
+               <element name="texteformatte" title="Texte formatté">
+                  <desc>Zone de saisie de texte formatté (Riche Text Editor)</desc>
+                  <desc0>Composant indisponible</desc0>
+                  <desc1>Composant disponible mais limité, pas documenté ou difficile à utiliser</desc1>
+                  <desc2>Composant disponible, bien documenté et facile à mettre en oeuvre</desc2>
+                  <score></score>
+                  <comment></comment>
+               </element>
+            </element>
+            <element name="listes" title="Listes">
+               <desc>Composants pour la saisie dans des listes</desc>
+               <comment></comment>
+               <element name="listesimple" title="Liste simple">
+                  <desc>Sélection dans une liste simple (List box)</desc>
+                  <desc0>Composant indisponible</desc0>
+                  <desc1>Composant disponible mais limité, pas documenté ou difficile à utiliser</desc1>
+                  <desc2>Composant disponible, bien documenté et facile à mettre en oeuvre</desc2>
+                  <score></score>
+                  <comment></comment>
+               </element>
+               <element name="listederoulante" title="Liste déroulante">
+                  <desc>Sélection dans une liste déroulante (Drop-down list)</desc>
+                  <desc0>Composant indisponible</desc0>
+                  <desc1>Composant disponible mais limité, pas documenté ou difficile à utiliser</desc1>
+                  <desc2>Composant disponible, bien documenté et facile à mettre en oeuvre</desc2>
+                  <score></score>
+                  <comment></comment>
+               </element>
+               <element name="boitecombinee" title="Boîte combinée">
+                  <desc>Champ de texte avec un menu de choix attaché (Combo box)</desc>
+                  <desc0>Composant indisponible</desc0>
+                  <desc1>Composant disponible mais limité, pas documenté ou difficile à utiliser</desc1>
+                  <desc2>Composant disponible, bien documenté et facile à mettre en oeuvre</desc2>
+                  <score></score>
+                  <comment></comment>
+               </element>
+               <element name="listeavecsuggestion" title="Liste avec suggestion">
+                  <desc>Champ texte avec suggestion via une liste prédéfinie (Suggest Box)</desc>
+                  <desc0>Composant indisponible</desc0>
+                  <desc1>Composant disponible mais limité, pas documenté ou difficile à utiliser</desc1>
+                  <desc2>Composant disponible, bien documenté et facile à mettre en oeuvre</desc2>
+                  <score></score>
+                  <comment></comment>
+               </element>
+            </element>
+            <element name="champstypes" title="Champs typés">
+               <desc>Composants spécialisés en fonction du type de donnée à saisir</desc>
+               <comment></comment>
+               <element name="nombres" title="Nombres">
+                  <desc>Composants pour la saisie des nombres : curseur (slider) ou increment/décrement (spin box)</desc>
+                  <desc0>Auncun composant disponible</desc0>
+                  <desc1>Seul un slider (ou une spin box) est disponible</desc1>
+                  <desc2>Slider et spin box sont disponibles</desc2>
+                  <score></score>
+                  <comment></comment>
+               </element>
+               <element name="montants" title="Montants">
+                  <desc>Composants pour la saisie des montants monétaires</desc>
+                  <desc0>Composant indisponible</desc0>
+                  <desc1>Composant disponible mais limité, pas documenté ou difficile à utiliser</desc1>
+                  <desc2>Composant disponible, bien documenté et facile à mettre en oeuvre</desc2>
+                  <score></score>
+                  <comment></comment>
+               </element>
+               <element name="temps" title="Temps">
+                  <desc>Composants pour la saisie de dates et heures</desc>
+                  <desc0>Aucun composant disponible</desc0>
+                  <desc1>Pas de calendrier ou de saisie assistée d'heure en fonction de la localisation</desc1>
+                  <desc2>Calendrier et saisie assistée de l'heure en fonction de la localisation</desc2>
+                  <score></score>
+                  <comment></comment>
+               </element>
+            </element>
+            <element name="validation" title="Validation">
+               <desc>Mécanismes intégrés de validation de la saisie</desc>
+               <desc0>Aucun mécanisme de validation disponible</desc0>
+               <desc1>Validation limitée à certains type de saisie (email, URL, ...)</desc1>
+               <desc2>Validation possible via des modèles ou des expressions régulières</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+         </element>
+         <element name="collections" title="Collections">
+            <desc>Composants de restitution et de saisie de collections</desc>
+            <comment></comment>
+            <element name="boutons" title="Boutons">
+               <desc></desc>
+               <comment></comment>
+               <element name="caseacocher" title="Case à cocher">
+                  <desc>Case à cocher (Check box)</desc>
+                  <desc0>Composant indisponible</desc0>
+                  <desc1>Composant disponible mais limité, pas documenté ou difficile à utiliser</desc1>
+                  <desc2>Composant disponible, bien documenté et facile à mettre en oeuvre</desc2>
+                  <score></score>
+                  <comment></comment>
+               </element>
+               <element name="boutonradio" title="Bouton radio">
+                  <desc>Bouton radio (Radio button)</desc>
+                  <desc0>Composant indisponible</desc0>
+                  <desc1>Composant disponible mais limité, pas documenté ou difficile à utiliser</desc1>
+                  <desc2>Composant disponible, bien documenté et facile à mettre en oeuvre</desc2>
+                  <score></score>
+                  <comment></comment>
+               </element>
+               <element name="boutonbascule" title="Bouton bascule">
+                  <desc>Bouton bascule (Toggle button)</desc>
+                  <desc0>Composant indisponible</desc0>
+                  <desc1>Composant disponible mais limité, pas documenté ou difficile à utiliser</desc1>
+                  <desc2>Composant disponible, bien documenté et facile à mettre en oeuvre</desc2>
+                  <score></score>
+                  <comment></comment>
+               </element>
+            </element>
+            <element name="menus" title="Menus">
+               <desc></desc>
+               <comment></comment>
+               <element name="menudecommande" title="Menu de commande">
+                  <desc>Menu de commande (Command menu)</desc>
+                  <desc0>Composant indisponible</desc0>
+                  <desc1>Composant disponible mais limité, pas documenté ou difficile à utiliser</desc1>
+                  <desc2>Composant disponible, bien documenté et facile à mettre en oeuvre</desc2>
+                  <score></score>
+                  <comment></comment>
+               </element>
+               <element name="menucontextuel" title="Menu contextuel">
+                  <desc>Menu contextuel (Context menu)</desc>
+                  <desc0>Composant indisponible</desc0>
+                  <desc1>Composant disponible mais limité, pas documenté ou difficile à utiliser</desc1>
+                  <desc2>Composant disponible, bien documenté et facile à mettre en oeuvre</desc2>
+                  <score></score>
+                  <comment></comment>
+               </element>
+               <element name="menucirculaire" title="Menu circulaire">
+                  <desc>Menu circulaire (Pie menu)</desc>
+                  <desc0>Composant indisponible</desc0>
+                  <desc1>Composant disponible mais limité, pas documenté ou difficile à utiliser</desc1>
+                  <desc2>Composant disponible, bien documenté et facile à mettre en oeuvre</desc2>
+                  <score></score>
+                  <comment></comment>
+               </element>
+            </element>
+            <element name="listesstructurees" title="Listes structurées">
+               <desc></desc>
+               <comment></comment>
+               <element name="listearborescente" title="Liste arborescente">
+                  <desc>Liste arborescente (Tree view)</desc>
+                  <desc0>Composant non disponible</desc0>
+                  <desc1>Composant disponible mais sans chargement par partie (lazy loading)</desc1>
+                  <desc2>Composant disponible avec chargement par partie (lazy loading)</desc2>
+                  <score></score>
+                  <comment></comment>
+               </element>
+               <element name="vuetabulaire" title="Vue tabulaire">
+                  <desc>Vue tabulaire (Grid view)</desc>
+                  <desc0>Composant non disponible</desc0>
+                  <desc1>Composant disponible mais sans chargement par partie (lazy loading)</desc1>
+                  <desc2>Composant disponible avec chargement par partie (lazy loading)</desc2>
+                  <score></score>
+                  <comment></comment>
+               </element>
+            </element>
+         </element>
+         <element name="retourutilisateur" title="Retour utilisateur">
+            <desc>Composants d'aide au retour utilisateur</desc>
+            <comment></comment>
+            <element name="arredeprogressionb" title="Barre de progression">
+               <desc>Barre de progression (Progress bar)</desc>
+               <desc0>Composant indisponible</desc0>
+               <desc1>Composant disponible mais limité, pas documenté ou difficile à utiliser</desc1>
+               <desc2>Composant disponible, bien documenté et facile à mettre en oeuvre</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="barredetat(statusbar)" title="Barre d'état">
+               <desc>Barre d'état (Status bar)</desc>
+               <desc0>Composant indisponible</desc0>
+               <desc1>Composant disponible mais limité, pas documenté ou difficile à utiliser</desc1>
+               <desc2>Composant disponible, bien documenté et facile à mettre en oeuvre</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="bulledaide" title="Bulle d'aide">
+               <desc>Bulle d'aide (Tooltip)</desc>
+               <desc0>Composant indisponible</desc0>
+               <desc1>Composant disponible mais limité, pas documenté ou difficile à utiliser</desc1>
+               <desc2>Composant disponible, bien documenté et facile à mettre en oeuvre</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="notificationglissante" title="Zone de notification">
+               <desc>Zone de notification apparaissant uniquement lorsque nécessaire, en général au dessus de la barre de statut (Toaster)</desc>
+               <desc0>Composant indisponible</desc0>
+               <desc1>Composant disponible mais limité, pas documenté ou difficile à utiliser</desc1>
+               <desc2>Composant disponible, bien documenté et facile à mettre en oeuvre</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+         </element>
+         <element name="conteneurs" title="Conteneurs">
+            <desc>Composants de regroupement d'autres composants</desc>
+            <comment></comment>
+            <element name="cadres" title="Cadres">
+               <desc>Cadres (Frame ou Panel)</desc>
+               <comment></comment>
+               <element name="cadredecoratif" title="Cadre décoratif">
+                  <desc>Cadre décoratif (Decorator Panel)</desc>
+                  <desc0>Composant indisponible</desc0>
+                  <desc1>Composant disponible mais limité, pas documenté ou difficile à utiliser</desc1>
+                  <desc2>Composant disponible, bien documenté et facile à mettre en oeuvre</desc2>
+                  <score></score>
+                  <comment></comment>
+               </element>
+               <element name="cadresdepositionnement" title="Cadres de positionnement">
+                  <desc>Cadres de positionnement : horizontal, vertical, continu, orienté (dock), avec règlette (split)</desc>
+                  <desc0>Pas de cadres de positionnement</desc0>
+                  <desc1>Seuls quelques cadres de positionnement sont disponibles</desc1>
+                  <desc2>Cadres de positionnement  horizontal, vertical, continu, orienté (dock), avec règlette (split)</desc2>
+                  <score></score>
+                  <comment></comment>
+               </element>
+               <element name="cadreempile" title="Cadre empilé">
+                  <desc>Cadre empilé (Stack Panel ou Accordion)</desc>
+                  <desc0>Composant indisponible</desc0>
+                  <desc1>Composant disponible mais limité, pas documenté ou difficile à utiliser</desc1>
+                  <desc2>Composant disponible, bien documenté et facile à mettre en oeuvre</desc2>
+                  <score></score>
+                  <comment></comment>
+               </element>
+            </element>
+            <element name="onglet" title="Onglet">
+               <desc>Onglet (Tab)</desc>
+               <desc0>Composant indisponible</desc0>
+               <desc1>Composant disponible mais limité, pas documenté ou difficile à utiliser</desc1>
+               <desc2>Composant disponible, bien documenté et facile à mettre en oeuvre</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="fenetres" title="Fenêtres">
+               <desc></desc>
+               <comment></comment>
+               <element name="fenetresimple" title="Fenêtre simple">
+                  <desc></desc>
+                  <desc0>Composant indisponible</desc0>
+                  <desc1>Composant disponible mais limité, pas documenté ou difficile à utiliser</desc1>
+                  <desc2>Composant disponible, bien documenté et facile à mettre en oeuvre</desc2>
+                  <score></score>
+                  <comment></comment>
+               </element>
+               <element name="fenetremodale" title="Fenêtre modale">
+                  <desc>Fenêtre modale (Modal window)</desc>
+                  <desc0>Composant indisponible</desc0>
+                  <desc1>Composant disponible mais limité, pas documenté ou difficile à utiliser</desc1>
+                  <desc2>Composant disponible, bien documenté et facile à mettre en oeuvre</desc2>
+                  <score></score>
+                  <comment></comment>
+               </element>
+               <element name="boitededialogue" title="Boîte de dialogue">
+                  <desc>Boîte de dialogue (Dialog box)</desc>
+                  <desc0>Composant indisponible</desc0>
+                  <desc1>Composant disponible mais limité, pas documenté ou difficile à utiliser</desc1>
+                  <desc2>Composant disponible, bien documenté et facile à mettre en oeuvre</desc2>
+                  <score></score>
+                  <comment></comment>
+               </element>
+               <element name="paletteflottante" title="Palette flottante">
+                  <desc>Palette flottante (Utility window)</desc>
+                  <desc0>Composant indisponible</desc0>
+                  <desc1>Composant disponible mais limité, pas documenté ou difficile à utiliser</desc1>
+                  <desc2>Composant disponible, bien documenté et facile à mettre en oeuvre</desc2>
+                  <score></score>
+                  <comment></comment>
+               </element>
+            </element>
+         </element>
+         <element name="composantsevolues" title="Composants évolués">
+            <desc>Gallerie d'images, Graphes, Sélectionneur de couleur, ...</desc>
+            <desc0>Aucun composant évolué n'est disponible</desc0>
+            <desc1>Seul un nombre restreint de composants évolués est disponible</desc1>
+            <desc2>De nombreux composants évolués sont disponibles</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+      </element>
+      <element name="effetsanimes" title="Effets animés">
+         <desc>Effets d'animations disponibles</desc>
+         <comment></comment>
+         <element name="effetsdebase" title="Effets de base">
+            <desc>Montrer/Show, cacher/Hide, agrandir/slide, estomper/fade</desc>
+            <desc0>Aucun effet de base n'est disponible</desc0>
+            <desc1>Seule une partie des effets de base est disponible</desc1>
+            <desc2>Tous les effets de base sont disponibles</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="effetsavances" title="Effets avancés">
+            <desc>Rebondissement/Bounce, explosion/Explode, replier/Fold, surbrillance/Highlight, eclatement/Puff, pulsation/Pulsate, Tremblement/Shake, ...</desc>
+            <desc0>Aucun effet avancé n'est disponible</desc0>
+            <desc1>Seuls quelque effets sont disponibles</desc1>
+            <desc2>De nombreux effets sont disponibles</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="animations" title="Animations">
+            <desc>Animations gérées par le moteur</desc>
+            <desc0>Pas d'animation</desc0>
+            <desc1>Animation via l'évolution graduelle d'un attribut CSS</desc1>
+            <desc2>Possibilité de composer les animations CSS</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="interactionsutilisateur" title="Interactions utilisateur">
+            <desc>Possibilité d'interaction de l'utilisateur avec l'IHM</desc>
+            <comment></comment>
+            <element name="glisser/deposer" title="Glisser/Déposer">
+               <desc>Gestion du Glisser/Déposer (Grag&amp;Drop)</desc>
+               <desc0>Pas de gestion du Glisser/Déposer</desc0>
+               <desc1>Glisser/Déposer disponible mais pas sur tous les éléments graphiques</desc1>
+               <desc2>Glisser/Déposer disponible sur tous les éléments graphiques</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="resimensionner" title="Redimensionner">
+               <desc>L'utilisateur peu redimensionner un élément</desc>
+               <desc0>Pas de redimensionnement possible</desc0>
+               <desc1>Redimensionnement possible mais limité à certains usages</desc1>
+               <desc2>Redimenionnement possible sans limitation d'usage</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="selectionner" title="Sélectionner">
+               <desc>L'utilisateur peut sélectionner un élément ou un cadre</desc>
+               <desc0>Pas de sélection possible</desc0>
+               <desc1>Sélection possible mais limitée en termes d'usage</desc1>
+               <desc2>Sélection possible sans limitation en termes d'usages</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+         </element>
+      </element>
+      <element name="multimediaetflux" title="Multimédia">
+         <desc>Possibilité d'intégrer des médias (audio / vidéo / dessin )</desc>
+         <comment></comment>
+         <element name="audio" title="Audio">
+            <desc>Intégration de flux audio</desc>
+            <desc0>Fonctionnalité non présente</desc0>
+            <desc1>Fonctionnalité limitée ou difficile à mettre en oeuvre</desc1>
+            <desc2>Fonctionnalité présente et facile à mettre en oeuvre</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="video" title="Vidéo">
+            <desc>Intégration de flux vidéo</desc>
+            <desc0>Fonctionnalité non présente</desc0>
+            <desc1>Fonctionnalité limitée ou difficile à mettre en oeuvre</desc1>
+            <desc2>Fonctionnalité présente et facile à mettre en oeuvre</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="dessin2d" title="Dessin 2D">
+            <desc>Intégration de dessin 2D</desc>
+            <desc0>Fonctionnalité non présente</desc0>
+            <desc1>Fonctionnalité limitée ou difficile à mettre en oeuvre</desc1>
+            <desc2>Fonctionnalité présente et facile à mettre en oeuvre</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="dessin3d" title="Dessin 3D">
+            <desc>Intégration de dessin 3D</desc>
+            <desc0>Fonctionnalité non présente</desc0>
+            <desc1>Fonctionnalité limitée ou difficile à mettre en oeuvre</desc1>
+            <desc2>Fonctionnalité présente et facile à mettre en oeuvre</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+      </element>
+      <element name="manipulationdelapage" title="Manipulation de la page">
+         <desc>Fonctionnalités de sélection (query) et de modification d'objets dans la page HTML</desc>
+         <comment></comment>
+         <element name="selection" title="Sélection">
+            <desc>Sélection d'objets dans la page HTML</desc>
+            <comment></comment>
+            <element name="paridentifiant" title="Par identifiant">
+               <desc>Sélection d'objets par leurs identifiants HTML</desc>
+               <desc0>Pas de sélection par identifiant HTML</desc0>
+               <desc1>Sélection possible mais limitée ou difficile à mettre en oeuvre</desc1>
+               <desc2>Sélection possible et facile à mettre en oeuvre</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="parcss" title="Par CSS">
+               <desc>Sélection d'objets par classe CSS</desc>
+               <desc0>Pas de sélection par classe CSS</desc0>
+               <desc1>Sélection possible mais limitée ou difficile à mettre en oeuvre</desc1>
+               <desc2>Sélection possible et facile à mettre en oeuvre</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="parnavigationdom" title="Par navigation DOM">
+               <desc>Sélection d'objets par navigation DOM</desc>
+               <desc0>Pas de sélection par navigation dans l'arbre DOM</desc0>
+               <desc1>Sélection possible mais limitée ou difficile à mettre en oeuvre</desc1>
+               <desc2>Sélection possible et facile à mettre en oeuvre</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="parposition" title="Par position">
+               <desc>Sélection d'objets par leurs positions dans la page (index)</desc>
+               <desc0>Pas de sélection par position dans la page</desc0>
+               <desc1>Sélection possible mais limitée ou difficile à mettre en oeuvre</desc1>
+               <desc2>Sélection possible et facile à mettre en oeuvre</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="parfiltrage" title="Par filtrage">
+               <desc>Sélection d'objets via un filtre (expression ou résultat de fonction JavaScript)</desc>
+               <desc0>Pas de sélection par filtrage</desc0>
+               <desc1>Sélection possible mais limitée ou difficile à mettre en oeuvre</desc1>
+               <desc2>Filtrage possible via la vérification d'une expression ou le résultat d'une fonction</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+         </element>
+         <element name="modification" title="Modification">
+            <desc>Modification d'objet dans la page HTML</desc>
+            <comment></comment>
+            <element name="valeur" title="Valeur">
+               <desc>Modification de valeurs (InnerHTML)</desc>
+               <desc0>Pas de modification possible de la valeur d'un élément HTML</desc0>
+               <desc1>Modification possible mais limitée ou difficile à mettre en oeuvre</desc1>
+               <desc2>Modification possible et facile à mettre en oeuvre</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="classecss" title="Classe CSS">
+               <desc>Modification de la classe CSS d'un élément de la page</desc>
+               <desc0>Pas de modification possible de la classe CSS d'un élément HTML</desc0>
+               <desc1>Modification possible mais limitée ou difficile à mettre en oeuvre</desc1>
+               <desc2>Modification possible et facile à mettre en oeuvre</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="attribut" title="Attribut">
+               <desc>Modification des attributs d'un élément HTML</desc>
+               <desc0>Pas de modification possible d'un attributHTML</desc0>
+               <desc1>Modification possible mais limitée ou difficile à mettre en oeuvre</desc1>
+               <desc2>Modification possible et facile à mettre en oeuvre</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="dom" title="DOM">
+               <desc>Modification de l'arbre DOM</desc>
+               <desc0>Pas de modification de l'arbre DOM possible</desc0>
+               <desc1>Insertion et suppression d'éléments de l'arbre DOM</desc1>
+               <desc2>Modifications avancées. De type : insérer avant, insérer après, insérer autour d'un élément</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+         </element>
+      </element>
+      <element name="themes" title="Thèmes">
+         <desc>Possibilité d'utiliser des thèmes</desc>
+         <desc0>Pas de thème possible</desc0>
+         <desc1>Seuls des thèmes pré-définis sont utilisables</desc1>
+         <desc2>Il est possible de définir ses propres thèmes ou un outil d'aide à la génération de thème est disponible</desc2>
+         <score></score>
+         <comment></comment>
+      </element>
+   </section>
+   <section name="fonctionnalitesnongraphiques" title="Fonctionnalités non graphiques">
+      <desc>Fonctionnalités non graphiques offertes par le moteur</desc>
+      <element name="evenements" title="Evènements">
+         <desc>Gestion des évènements</desc>
+         <comment></comment>
+         <element name="evenementsnavigateur" title="Evènements navigateur">
+            <desc>Abstraction des évènements des navigateurs</desc>
+            <desc0>Pas d'abstraction des évènements des navigateurs</desc0>
+            <desc1>Il existe une couche d'abstraction des évènements des navigateurs</desc1>
+            <desc2>Il existe une couche d'abstraction des évènements des navigateurs et le moteur permet de déclencher ces évènement de manière programmatique</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="evenementsnongraphiques" title="Evènements non graphiques">
+            <desc>Capacité du moteur à gérer d'autres évènements que ceux du navigateur</desc>
+            <desc0>Pas de gestion d'évènements autres que ceux du navigateur</desc0>
+            <desc1>Quelques évènements hors navigateur sont géré</desc1>
+            <desc2>La notion d'évènement est généralisée à tout appel de fonction</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="comportementsrepetitifs" title="Comportements répétitifs">
+            <desc>Possibilité de définir un comportement par défaut à un évènement</desc>
+            <desc0>Fonctionnalité non disponible</desc0>
+            <desc1>Fonctionnalité disponible mais limitée ou complexe à mettre en oeuvre</desc1>
+            <desc2>Possibilité de définir un comportement par défaut à un évènement</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="abonnement" title="Abonnement">
+            <desc>Publish/Subscribe : échange de messages par abonnement à un topic</desc>
+            <desc0>Pas de fonctionnalité d'abonnement de type Publish/Subscribe</desc0>
+            <desc1>Fonctionnalité de type Publish/Subscribe mais limitée ou complexe à mettre en oeuvre</desc1>
+            <desc2>Echange de messages par abonnement à un topic</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="chainageetinterception" title="Chaînage et interception">
+            <desc>Chaînage et interception d'évènements</desc>
+            <desc0>Pas de possibilité de chaîner ou d'intercepter des évènements</desc0>
+            <desc1>Chaînage d'évènements possible, mais pas de fonctionnalité d'interception d'évènements</desc1>
+            <desc2>Possibilité de chaîner et d'intercepter des évènements</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+      </element>
+      <element name="communication" title="Communication">
+         <desc>Modes de communication supportés avec le serveur</desc>
+         <comment></comment>
+         <element name="modeasynchrone" title="Mode asynchrone">
+            <desc>Communication asynchrone avec le serveur</desc>
+            <comment></comment>
+            <element name="asynchronismebasniveau" title="Asynchronisme bas niveau">
+               <desc>Communication asynchrone de bas niveau avec le serveur</desc>
+               <desc0>Pas de communication asynchrone possible</desc0>
+               <desc1>Communication asynchrone impossible avec d'autres serveurs</desc1>
+               <desc2>Communication asynchrone possible avec d'autres serveurs (proxy)</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="appelsrpc" title="Appels RPC">
+               <desc>Encapsulation et simplification des appels distants via une couche de type RPC</desc>
+               <desc0>Pas d'appels type RPC</desc0>
+               <desc1>Communication de type RPC disponible mais limitée ou complexe à utiliser</desc1>
+               <desc2>Couche de haut niveau de type RPC disponible</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+         </element>
+         <element name="modedeconnecte" title="Mode déconnecté">
+            <desc>Possibilité de gérer le mode déconnecté</desc>
+            <desc0>Pas de mode déconnecté possible en standard</desc0>
+            <desc1>Mode déconnecté possible mais pas véritablement intégré au moteur</desc1>
+            <desc2>Mode déconnecté complètement intégré au moteur</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="modepush" title="Mode Push">
+            <desc>Possibilité de gérer une communication bi-directionnelle avec le serveur, notamment des appels initiés par le serveur</desc>
+            <desc0>Pas de communication bi-directionnelle avec le serveur</desc0>
+            <desc1>Mode Push possible mais limité et complexe à utiliser</desc1>
+            <desc2>Mode Push complétement intégré dans le moteur</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+      </element>
+      <element name="accesauxdonnees" title="Accès aux données">
+         <desc>Fonctionnalités offertes pour accéder à des données locales ou distantes</desc>
+         <comment></comment>
+         <element name="donneeslocales" title="Données locales">
+            <desc>Fonctionnaliés de stockage et d'accès aux données locales du poste de travail</desc>
+            <desc0>Pas de stockage ni d'accès aux données locales </desc0>
+            <desc1>Simple surcouche à l'utilisation des cookies HTTP</desc1>
+            <desc2>Possibilité de stocker et d'accéder à des données plus volumineuses que les cookies</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="donneesdistantes" title="Données distantes">
+            <desc>Fonctionnaliés d'accès aux données distantes</desc>
+            <desc0>Pas d'accès à des données distantes </desc0>
+            <desc1>Accès limité à celui offert par XmlHTTPRequest : non typé</desc1>
+            <desc2>Accès possible à des données typées comme JSON, RSS, ...</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+      </element>
+      <element name="programmationjavascript" title="Programmation JavaScript">
+         <desc>Extensions au langage JavaScript facilitant la programmation</desc>
+         <comment></comment>
+         <element name="espacesdenoms" title="Espaces de noms">
+            <desc>Espaces de noms (namespaces)</desc>
+            <desc0>Le moteur n'est pas isolé dans un namespace dédié</desc0>
+            <desc1>Le moteur possède son namespace mais ne permet pas d'en créer de nouveaux</desc1>
+            <desc2>Le moteur possède son namespace et permet d'en créer de nouveaux</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="classes" title="Classes">
+            <desc>Extension de JavaScript pour implémenter un modèle d'héritage par classes</desc>
+            <comment></comment>
+            <element name="declarartiondeclasse" title="Déclaration de classe">
+               <desc></desc>
+               <desc0>Pas de modèle de classe</desc0>
+               <desc1>Déclaration de classe complexe</desc1>
+               <desc2>Déclaration de classe utilisable comme une fonctionnalité de base du langage</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="classesstatiques" title="Classes statiques">
+               <desc>Possibilité de déclarer des classes statiques</desc>
+               <desc0>Pas de classes statiques</desc0>
+               <desc1>Classes statiques disponibles mais limitées ou complexes à utiliser</desc1>
+               <desc2>Classes statiques disponibles</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+         </element>
+         <element name="heritage" title="Héritage">
+            <desc>Héritage selon le modèle de classes</desc>
+            <desc0>Pas d'héritage de classes</desc0>
+            <desc1>Héritage de classes simple</desc1>
+            <desc2>Héritage de classes mixte : possibilité de mixer plusieurs classes dans l'héritage</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="fonctionsutilitaires" title="Fonctions utilitaires">
+            <desc>Fonctions utilitaires mises à disposition par le moteur</desc>
+            <desc0>Aucune fonction utilitaire disponible</desc0>
+            <desc1>Quelques fonctions utilitaires disponibles mais limitées à un domaine</desc1>
+            <desc2>Nombreuses fonctions utilitaires disponibles dans différents domaines (types, sécurité, etc...)</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+      </element>
+   </section>
+   <section name="utilisabilite" title="Utilisabilité">
+      <desc>Fonctionnalité facilitant l'utilisation du moteur ou des applications développées avec</desc>
+      <element name="extensibilite" title="Extensibilité">
+         <desc>Capacité du moteur a être étendu</desc>
+         <comment></comment>
+         <element name="composantsgraphiques1" title="Composants graphiques">
+            <desc>Possibilité d'étendre les composants graphiques du moteur (widgets)</desc>
+            <desc0>Pas d'extension de composants graphiques</desc0>
+            <desc1>Possibilité d'étendre les composants graphiques</desc1>
+            <desc2>Possibilité d'étendre les composants graphiques et d'utiliser des templates</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="pointsdextension" title="Moteur">
+            <desc>Présence de points d'extension de traitements du moteur</desc>
+            <desc0>Pas d'extension des traitements du moteur</desc0>
+            <desc1>Quelques points d'extension des traitements du moteur mais complexes à utiliser</desc1>
+            <desc2>Le moteur est véritablement ouvert et possède de nombreux points d'extension</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="codeexterne" title="Code externe">
+            <desc>Possibilité d'intégrer du code externe au moteur dans le moteur</desc>
+            <desc0>Impossible d'intégrer du code externe</desc0>
+            <desc1>Intégration de code externe possible mais limitée ou complexe</desc1>
+            <desc2>Le moteur prévoit d'intégrer du code externe et de le gérer comme ses propres modules</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+      </element>
+      <element name="portabilite" title="Portabilité">
+         <desc>Portabilité du code</desc>
+         <comment></comment>
+         <element name="navigateurssupportes" title="Navigateurs supportés">
+            <desc>Moteur de rendu HTML supportés</desc>
+            <comment></comment>
+            <element name="gecko" title="Gecko">
+               <desc>Iceweasel, epiphany, firefox</desc>
+               <desc0>Non supporté</desc0>
+               <desc1>Supporté pour les dernières versions (Gecko 2.0)</desc1>
+               <desc2>Toutes les versions sont supportées</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="khtml/webkit" title="KHTML / WebKit">
+               <desc>Konqueror, webcore (safari, chrome)</desc>
+               <desc0>Non supporté</desc0>
+               <desc1>WebKit est supporté</desc1>
+               <desc2>KHTML et WebKitsont  supportés</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="tasman" title="Tasman">
+               <desc>IE sous Mac</desc>
+               <desc0>Non supporté</desc0>
+               <desc1>Partiellement supporté</desc1>
+               <desc2>Supporté</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="trident" title="Trident">
+               <desc>IE sous windows</desc>
+               <desc0>Non supporté</desc0>
+               <desc1>Seul IE7 ou seul IE6 est supporté</desc1>
+               <desc2>IE6 et IE7 supportés</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="presto" title="Presto">
+               <desc>Opéra</desc>
+               <desc0>Non supporté</desc0>
+               <desc1>Opéra supporté à partir de la version 9.1</desc1>
+               <desc2>Opéra supporté à partir de la version 8.5</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+         </element>
+         <element name="accessibilite" title="Accessibilité">
+            <desc>Fonctionnalités prévues pour gérer l'accessibilité</desc>
+            <desc0>Aucune fonctionnalité d'accessibilité</desc0>
+            <desc1>Quelques fonctionnalités disponibles</desc1>
+            <desc2>Véritable stratégie de gestion de l'accessibilité visant le support des recommendations WAI du W3C</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="internationalisation" title="Internationalisation">
+            <desc>Fonctionnalité permettant de gérer l'internationalisation</desc>
+            <desc0>Pas de fonctionnalité d'internationalisation</desc0>
+            <desc1>Fonctionnaliés d'internationalisation disponibles mais limitées</desc1>
+            <desc2>Fonctionnaliés avancées d'internationalisation comme les locales</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="multiclient" title="Multi cibles">
+            <desc>Capacité du moteur à s'adapter à des clients de types différents (PC, terminaux mobiles, ...)</desc>
+            <desc0>Seuls les navigateurs de PC sont supportés</desc0>
+            <desc1>Quelques fonctionnalités facilitent l'adaptation à d'autres cibles que PC</desc1>
+            <desc2>Le moteur est conçu pour gérer l'hétérogénéité des cibles</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="modenonajax" title="Mode non AJAX">
+            <desc>Possibilité de disposer d'un mode non AJAX</desc>
+            <desc0>Seul le mode AJAX est possible</desc0>
+            <desc1>Certaines alternatives non AJAX sont disponibles</desc1>
+            <desc2>Le moteur permet de générer des versions non AJAX du code</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+      </element>
+      <element name="securite" title="Sécurité">
+         <desc>Mécanismes de protection disponibles contre les attaques de type XSS ou CSRF</desc>
+         <comment></comment>
+         <element name="protectionxss" title="Protection XSS">
+            <desc>Protection coté client contre le XSS (Cross-site Scripting)</desc>
+            <desc0>Pas de protection contre le XSS</desc0>
+            <desc1>La protection contre le XSS est limitée et complexe à mettre en oeuvre</desc1>
+            <desc2>Le moteur propose des solutions pour se protéger du XSS</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="protectioncsrf" title="Protection CSRF">
+            <desc>Protection coté client contre le CSRF (Cross-site request forgery) : éviter que l'utilisation d'un cookie encore actif ne puisse être détournée à l'insu de l'utilisateur</desc>
+            <desc0>Pas de protection contre le CSRF</desc0>
+            <desc1>La protection contre le CSRF est limitée et complexe à mettre en oeuvre</desc1>
+            <desc2>Le moteur propose des solutions pour se protéger du CSRF</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+      </element>
+      <element name="empaquetage" title="Empaquetage">
+         <desc>Fonctionnalité liés à l'empaquetage du moteur lui-même</desc>
+         <comment></comment>
+         <element name="tailledumoteur" title="Taille du moteur">
+            <desc>Taille en Ko du moteur de base</desc>
+            <comment></comment>
+         </element>
+         <element name="modularite" title="Modularité">
+            <desc>Modularité de l'empaquetage du moteur</desc>
+            <desc0>Empaquetage monolithique</desc0>
+            <desc1>Empaquetage légèrement modulaire</desc1>
+            <desc2>Empaquetage extrêmement modulaire</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="chargementparparties" title="Chargement par parties">
+            <desc>Possibilité de chargement paresseux du moteur </desc>
+            <desc0>Pas de chargement paresseux des modules</desc0>
+            <desc1>Les modules peuvent être chargés séparemment</desc1>
+            <desc2>Les modules peuvent être chargés de manière asynchrone et uniquement quand cela est nécessaires</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="empaquetagepersonnalise" title="Empaquetage personnalisé">
+            <desc>Possibilité de générer son propre empaquetage du moteur</desc>
+            <desc0>Impossible de générer son propre empaquetage du moteur</desc0>
+            <desc1>Empaquetage personnalisé possible</desc1>
+            <desc2>Empaquetage personnalisé  avec possibilité d'intégrer des libraries externes</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+      </element>
+      <element name="outillage" title="Outillage">
+         <desc>Outils de développement disponibles</desc>
+         <comment></comment>
+         <element name="outildeveloppement" title="Développement">
+            <desc>Outils adaptés au développement avec le moteur</desc>
+            <desc0>Aucun outil adapté disponible</desc0>
+            <desc1>Uniquement des outils propriétaires sont disponibles</desc1>
+            <desc2>Des outils libres sont disponibles </desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="deboguage" title="Déboguage">
+            <desc>Outils adaptés au déboguage de l'utilisation du moteur</desc>
+            <desc0>Aucun outil adapté disponible</desc0>
+            <desc1>Uniquement des outils propriétaires sont disponibles</desc1>
+            <desc2>Des outils libres sont disponibles </desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="testsunitaires" title="Tests unitaires">
+            <desc>Tests unitaires intégrés au moteur</desc>
+            <desc0>Pas d'environnement de tests unitaires disponible</desc0>
+            <desc1>Quelques fonctionnalités de tests unitaires sont disponibles mais restent limitées ou complexes à utiliser</desc1>
+            <desc2>Environnement complet de tests unitaires disponible</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+      </element>
+   </section>
+</document>
