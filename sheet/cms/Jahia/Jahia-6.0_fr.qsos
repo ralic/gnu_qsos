@@ -1,0 +1,836 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document>
+   <header>
+      <authors>
+         <author>
+            <email>florian.olivier@atosorigin.com</email>
+            <name>Florian Olivier-Koehret</name>
+         </author>
+      </authors>
+      <dates>
+         <creation></creation>
+         <validation></validation>
+      </dates>
+      <language>fr</language>
+      <appname>Jahia</appname>
+      <release>6.0</release>
+      <licenseid>31</licenseid>
+      <licensedesc>GNU GPL</licensedesc>
+      <url>http://www.jahia.com/jahia/Jahia</url>
+      <desc>Jahai est une solution réunissant portail J2EE et système de gestion de contenu. Il est à noter que cette solution utilise un système de licences particulier.</desc>
+      <demourl>http://demo.jahia.org/cms</demourl>
+      <qsosformat>1.6</qsosformat>
+      <qsosappfamily>CMS</qsosappfamily>
+      <qsosappname></qsosappname>
+      <qsosspecificformat>0.1</qsosspecificformat>
+   </header>
+   <section name="generic" title="Section générique">
+      <desc>Les critères génériques de l'évaluation Presto de QSOS</desc>
+      <element name="intrinsicdurability" title="Pérennité">
+         <desc>Pérennité</desc>
+         <element name="maturite" title="Maturité">
+            <desc></desc>
+            <desc0>Logiciel provenant d'un fork ou avec une forte probabilité de fork dans un futur proche.</desc0>
+            <desc1>Projet jeune (moins de 3 ans) ou connaissant des difficultés à stabiliser les versions de développement.</desc1>
+            <desc2>Projet stable ou ayant un bon historique de gestion de crise. Les nouvelles versions apportent de façon prépondérante de nouvelles fonctionnalités.</desc2>
+            <score>2</score>
+            <comment>Jahia 4 (utilisé par l'université de Lausanne) est utilisé depuis 2003. </comment>
+         </element>
+         <element name="adoption1" title="Adoption">
+            <desc></desc>
+            <desc0>Usage détectable sur Internet sans véritable activité communautaire</desc0>
+            <desc1>Utilisation communautaire prépondérante</desc1>
+            <desc2>Nombreuse références industrielles</desc2>
+            <score>2</score>
+            <comment>Système utilisé par Alsthom, l'université de Lausanne</comment>
+         </element>
+         <element name="developpement" title="Développement">
+            <desc></desc>
+            <desc0>Deux ou moins de deux développeurs clairement identifiés.</desc0>
+            <desc1>Équipe de développement réduite avec un turn-over important ou sans équipe de direction identifiée.</desc1>
+            <desc2>Équipe de développement structurée comportant plus de 5 développeurs actifs.</desc2>
+            <score>2</score>
+            <comment>Jahia est aussi une société commerciale.</comment>
+         </element>
+         <element name="activite" title="Activité">
+            <desc></desc>
+            <desc0>Très faible activité, que ce soit sur les résolutions de bugs, les releases, l'ajout de nouvelles fonctions ou sur les espaces communautaires (wiki, forum, mailing list...)</desc0>
+            <desc1>Activité détectable mais anarchique (pas feuille de route accessible facilement, pas de prévisions de nouvelles fonctionnalités ou de prévisions de nouvelles versions visible)</desc1>
+            <desc2>Activité importante et visible via la mise en place de feuilles de routes traçant les requêtes de nouvelles fonctionnalités et/ou les prévisions de sortie des nouvelles version</desc2>
+            <score>2</score>
+            <comment>Smile (l'une des entreprises partenaires de Jahia donne des informations sur les prochains développements / prochaines fonctionnalités de Jahia)</comment>
+         </element>
+         <element name="strategicalindependence" title="Indépendance stratégique">
+            <desc0>Pas de stratégie détectable ou stratégie dictée par une société commerciale, un sponsor ou un individu unique.</desc0>
+            <desc1>Stratégie décidée par l'équipe de developpement.</desc1>
+            <desc2>Indépendance forte de l'équipe de développement, fort engagement du projet dans un processus de standardisation.</desc2>
+            <score>0</score>
+            <comment>L'équipe Jahia choisi parmis les développements réalisés par la communauté et ses partenaires, ce qui permet une évolution dans la direction qu'ils ont choisi. Malgré ce point, l'intégration de nouveaux JSR est planifiée et organisée.</comment>
+         </element>
+         <element name="copyrightowners" title="Détenteur des droits">
+            <desc0>Les droits sont détenus par quelques individus ou entités commerciales, facilitant le changement de licence</desc0>
+            <desc1>Les droits sont détenus par de nombreux individus de façon homogène, rendant le changement de licence très difficile</desc1>
+            <desc2>Les droits sont détenus par une entité légale, une fondation dans laquelle la communauté a confiance (ex: FSF, Apache, ObjectWeb)</desc2>
+            <score>0</score>
+            <comment></comment>
+         </element>
+         <element name="license" title="Licence">
+            <desc>Licence, à pondérer uniquement si le client désire un jour devenir propriétaire du code</desc>
+            <element name="permissiveness" title="Permissivité">
+               <desc0>Licence très stricte, comme la GPL</desc0>
+               <desc1>Licence modérée entre les deux extrêmes (GPL et BSD), licence duale dépendante du type d'utilisateur (personne, société…) ou de leur activité</desc1>
+               <desc2>Licence très permissive comme BSD et Apache</desc2>
+               <score>0</score>
+               <comment>Jahia a mis en place deux licences différentes selon l'usage fait de sa solution : 
+- GPL pour les développeurs et membres de la communauté,
+- JSEL (pour Jahia Sustainable Enterprise License) pour les entreprises, cette licence commerciale apporte support et service. Son montant est lié au nombre d'utilisateurs authentifiés sur le service, ainsi qu'à l'implication du client dans le projet.</comment>
+            </element>
+            <element name="protectionagainstproprietaryforks" title="Protection contre des forks commerciaux">
+               <desc0>Licence très permissive comme BSD et Apache</desc0>
+               <desc1>Licence modérée entre les deux extrêmes (GPL et BSD), licence duale dépendante du type d'utilisateur (personne, société…) ou de leur activité</desc1>
+               <desc2>Licence très stricte, comme la GPL</desc2>
+               <score>2</score>
+               <comment>Jahia a mis en place deux licences différentes selon l'usage fait de sa solution : 
+- GPL pour les développeurs et membres de la communauté,
+- JSEL (pour Jahia Sustainable Enterprise License) pour les entreprises, cette licence commerciale apporte support et service. Son montant est lié au nombre d'utilisateurs authentifiés sur le service, ainsi qu'à l'implication du client dans le projet.</comment>
+            </element>
+         </element>
+      </element>
+      <element name="industrializedsolution" title="Industrialisation">
+         <desc>Niveau d'industrialisation du projet</desc>
+         <element name="independenceofdevelopments" title="Indépendance des développements">
+            <desc0>Développements réalisés à plus de 60% par des employés d'une seule société</desc0>
+            <desc1>Développements réalisés à 60% maximum par des employés d'une seule société</desc1>
+            <desc2>Développements réalisés à 20% maximum par des employés d'une seule société</desc2>
+            <score>1</score>
+            <comment>L'équipe Jahia est associée à d'autres entreprises telles que Smile.</comment>
+         </element>
+         <element name="services1" title="Services">
+            <desc></desc>
+            <desc0>Pas d'offres de services identifiée</desc0>
+            <desc1>Offre existante mais restreinte géographiquement ou en une seule langue ou fournie par un seul fournisseur</desc1>
+            <desc2>Offre riche : plusieurs fournisseurs ou plusieurs langages</desc2>
+            <score>2</score>
+            <comment>La license JSEL de Jahia propose des services de support, un réseau de partenaires. En version GPL, un forum est mis à disposition, ce forum est disponible en Allemand, Anglais et Français.</comment>
+         </element>
+         <element name="documentation" title="Documentation">
+            <desc0>Pas de documentation utilisateur</desc0>
+            <desc1>La documentation existe mais est en partie obsolète ou restreinte à une seule langue ou peu détaillée</desc1>
+            <desc2>Documentation à jour, traduite et éventuellement adaptée à différentes cibles de lecteurs (end-user, sysadmin, manager…)</desc2>
+            <score>0</score>
+            <comment>La documentation est principalement disponible en Anglais.</comment>
+         </element>
+         <element name="methodequalite" title="Méthode qualité">
+            <desc></desc>
+            <desc0>Pas de processus de qualité identifié ni d'outils de gestions de bugs</desc0>
+            <desc1>Processus qualité non formalisé ou non outillé ou comportant des outils qui sont très peu utilisés</desc1>
+            <desc2>Utilisation très active d'outils standards (tests unitaires, outils de gestion de build, outils de mesure de qualité du code)</desc2>
+            <score>2</score>
+            <comment>http://jira.jahia.org/secure/Dashboard.jspa</comment>
+         </element>
+      </element>
+      <element name="packaging" title="Packaging">
+         <desc>Packaging pour les différents systèmes d'exploitation</desc>
+         <element name="packagingbsd" title="BSD">
+            <desc></desc>
+            <desc0>Pas de packaging officiel pour la famille BSD</desc0>
+            <desc1>Packaging existant pour quelques distributions de la famille BSD</desc1>
+            <desc2>Packaging complet pour les distributions de la famille BSD suivantes : FreeBSD, OpenBSD, NetBSD et Mac OS X</desc2>
+            <score>0</score>
+            <comment></comment>
+         </element>
+         <element name="packaginglinux" title="GNU/Linux">
+            <desc></desc>
+            <desc0>Pas de packaging officiel pour les systèmes d'exploitations GNU/Linux</desc0>
+            <desc1>Packaging existant pour quelques distributions GNU/Linux</desc1>
+            <desc2>Packaging complet les systèmes de packaging .deb et .rpm</desc2>
+            <score>0</score>
+            <comment></comment>
+         </element>
+         <element name="unix" title="Unix">
+            <desc></desc>
+            <desc0>Pas de packaging officiel pour les systèmes de la famille Unix</desc0>
+            <desc1>Packaging existant sur quelques systèmes de la famille Unix</desc1>
+            <desc2>Packaging existant sur au moins ces 3 systèmes : AIX, HP-UX, Solaris</desc2>
+            <score>0</score>
+            <comment></comment>
+         </element>
+         <element name="packagingwindows" title="Windows">
+            <desc0>Le logiciel n'est pas disponible sur un système Windows.</desc0>
+            <desc1>Le logiciel existe sous forme d'archive tout en un.</desc1>
+            <desc2>Le logiciel dispose d'un installeur.</desc2>
+            <score>1</score>
+            <comment></comment>
+         </element>
+         <element name="packagingsource" title="Sources">
+            <desc0>L'installation depuis les sources est hasardeuse et risquée</desc0>
+            <desc1>L'installation depuis les sources est difficile ou limité (seulement à un OS, une architecture, la résolution de l'écran...)</desc1>
+            <desc2>L'installation depuis les sources est outillée (vérification des dépencances, verification de l'installation, gestion de build)</desc2>
+            <score>1</score>
+            <comment></comment>
+         </element>
+         <element name="packagingtar" title="Archive compressée">
+            <desc0>Pas d'archive disponible</desc0>
+            <desc1>Archive globale</desc1>
+            <desc2>Archive séparée pour chaque module installable</desc2>
+            <score>1</score>
+            <comment>L'archive permet l'installation sur toutes les plateformes, un fichier Readme y est associé afin d'apporter des indications à l'utilisateur quant à l'installation, informations complétées par le site web de Jahia</comment>
+         </element>
+      </element>
+      <element name="exploitability" title="Exploitabilité">
+         <desc>Niveau d'exploitabilité</desc>
+         <element name="easeofuseergonomics" title="Facilité d'utilisation, ergonomie">
+            <desc0>Difficulté d'utilisation, demande une connaissance approfondie des fonctionnalités du logiciel</desc0>
+            <desc1>Ergonomie austère et très technique</desc1>
+            <desc2>Ergonomie élaborée et IHM comprenant des fonctions d'aide</desc2>
+            <score>2</score>
+            <comment>L'ensemble des modifications est gérée depuis une interface dans le navigateur. Des modèles sont disponibles au lancement, avec plusieurs mises en pages prédéfinies.</comment>
+         </element>
+         <element name="administrationmonitoring" title="Administration et supervision">
+            <desc0>Pas de fonctionnalités de contrôle, ni d'administration</desc0>
+            <desc1>Fonctionnalités présentes mais incomplètes ou à améliorer</desc1>
+            <desc2>Fonctionnalités complètes et faciles de contrôle et d'administration. Intégration possible avec des outils tiers (ex : SNMP, syslog…)</desc2>
+            <score>2</score>
+            <comment>log4j</comment>
+         </element>
+      </element>
+      <element name="technicaladaptability" title="Adaptabilité">
+         <desc>Adaptabilité technique</desc>
+         <element name="modularity" title="Modularité">
+            <desc0>Logiciel monolithique</desc0>
+            <desc1>Présence de modules haut niveau permettant un premier niveau d'adaptation</desc1>
+            <desc2>Conception modulaire, permettant des adaptations faciles par sélection et/ou création de modules</desc2>
+            <score>0</score>
+            <comment></comment>
+         </element>
+         <element name="codemodification" title="Facilité technique de modification du code existant">
+            <desc0>Tout à la main</desc0>
+            <desc1>Recompilation possible mais complexe, sans outils, ni documentation</desc1>
+            <desc2>Recompilation facile, outillée (ex : make, ANT, Maven…) et documentée</desc2>
+            <score>2</score>
+            <comment>utilisation de ANT</comment>
+         </element>
+         <element name="codeextension" title="Facilité d'extension du code">
+            <desc0>Toute modification demande une recompilation du code</desc0>
+            <desc1>Architecture conçue pour des extensions statiques mais exige une recompilation</desc1>
+            <desc2>Architecture de plugins, conçue pour des extensions dynamiques et sans recompilation</desc2>
+            <score>0</score>
+            <comment></comment>
+         </element>
+      </element>
+   </section>
+   <section name="multi-site" title="Gestion de sous-sites">
+      <desc>Capacité à gérer des sous-sites partageant des éléments (thèmes, templates utilisateurs)  mais dont la gestion opérationnelle est décentralisée (contenu, droits, etc)</desc>
+      <element name="gestioncentraliseedesressources" title="Gestion centralisée des ressources">
+         <desc>Mutualisation des ressources</desc>
+         <comment></comment>
+         <element name="creationdenouveausous-site" title="Sous-sites">
+            <desc>Création de nouveaux sous-sites</desc>
+            <desc0>La création de sous-sites relève de manipulations hasardeuses et complexes (nécessite la création de bases de données, modification de fichiers de configurations à la main, etc).</desc0>
+            <desc1>Création de sous-sites facilités par des extensions. Des manipulations complexes peuvent toutefois être nécessaires.</desc1>
+            <desc2>Création de nouveaux sous-sites en natif et dont la mise en oeuvre ne nécessite pas des manipulations complexes</desc2>
+            <score>2</score>
+            <comment>Un assistant de création de sous-sites (appelés ici sites virtuels) réalise la création du sous-site après avoir reccueilli les informations nécessaires à la création.</comment>
+         </element>
+         <element name="administrationdesthemes" title="Thèmes">
+            <desc>Administration des thèmes</desc>
+            <desc0>Un seul thème imposé pour tout le monde</desc0>
+            <desc1>Possibilité de définir ses thèmes mais le partage d'un même thème entre plusieurs sites n'est pas trivial</desc1>
+            <desc2>La création et la mutualisation des thèmes est prévue et outillée.</desc2>
+            <score>2</score>
+            <comment>Lors de la création d'un sous-site, il est possible de choisir parmis les thèmes existants.</comment>
+         </element>
+         <element name="administrationdesextensions" title="Extensions">
+            <desc>Administration des extensions</desc>
+            <desc0>Tous les sous-sites partagent les mêmes extensions</desc0>
+            <desc1>Gestion par manipulation de bases de donnée, système de fichier et fichiers de configuration</desc1>
+            <desc2>Une interface utilisateur existe pour la gestion par sous-site d'extensions</desc2>
+            <score>0</score>
+            <comment>N/A pas d'extensions</comment>
+         </element>
+         <element name="administrationdestemplates" title="Modèles">
+            <desc>Administration des modèles et gabarits</desc>
+            <desc0>Tous les sites partagent le même modèle</desc0>
+            <desc1>Gestion par manipulation de bases de donnée, système de fichier et fichiers de configuration</desc1>
+            <desc2>Une interface utilisateur existe pour la gestion par sous-site de modèles</desc2>
+            <score>2</score>
+            <comment>Après ajout des nouveaux modèles par chargement du template, celui-ci est applicable vie un menu déroulant à l'ensemble des sous-sites.</comment>
+         </element>
+         <element name="feuillesdestyle" title="Feuilles de style">
+            <desc>Gestion séparée des feuilles de style de contenu au niveau des sous-sites -&gt; Plus haut</desc>
+            <desc0>Les feuilles de styles ne peuvent pas être gérés au niveau des sous-sites</desc0>
+            <desc1>Gestion possible mais compliquée des feuilles de styles au niveau des sous-sites</desc1>
+            <desc2>Gestion outillée des feuilles de styles au niveau des sous-sites</desc2>
+            <score>1</score>
+            <comment>Les feuilles de styles sont crées avec les template, elles peuvent être modifiée après création du template, puis sélectionnée par l'administrateur du site (onglet thème par défaut)</comment>
+         </element>
+      </element>
+      <element name="gestiondumulti-site" title="Gestion du multi-site">
+         <desc>Création de sites multiples à partir du même déployement de l'outil</desc>
+         <comment></comment>
+         <element name="clonagedesite" title="Clonage de site">
+            <desc>Capacité à dupliquer un site pour en créer un nouveau</desc>
+            <desc0>La duplication d'un site n'est pas possible</desc0>
+            <desc1>La duplication d'un site peut être effectuée mais nécessite des manipulations hasardeuses ou ne permet pas un clonage complet.</desc1>
+            <desc2>Le produit supporte nativement la duplication de sites. Tous les outils nécessaires à sa mise en oeuvre sont livrés avec le produit</desc2>
+            <score>2</score>
+            <comment>Pour réaliser un clone, il est possible d'exporter puis charger le site au format .zip, il est également possible de créer un template générique qui sera utilisé par les sous-sites de son choix.</comment>
+         </element>
+         <element name="liensentresous-sites" title="Liens entre sous-sites">
+            <desc>Possibilités de créer des références internes entre sous-sites</desc>
+            <desc0>Pas de références possibles entre sous-sites (lien externe obligatoire).</desc0>
+            <desc1>Fonctionnalité implémentée dans le produit mais peu ou pas outillée.</desc1>
+            <desc2>La création de références est implémentée et peut être mis en oeuvre facilement (au travers d'une liste déroulante par exemple).</desc2>
+            <score>2</score>
+            <comment>Lors de la création d'un lien, l'administrateur choisi si ce lien se fera sur une page externe, ou s'il pointe vers ne nouvelle page, ou encore vers un autre site virtuel.</comment>
+         </element>
+         <element name="heritagedesproprietes" title="Héritage des propriétés">
+            <desc>Possibilité de définir des sous-sites en héritant des propriétés d'un autre site/ d'un "modèle"</desc>
+            <desc0>L'héritage de propriétés d'un autre contenu déjà existant n'est pas possible.</desc0>
+            <desc1>L'héritage de propriétés d'un autre contenu déjà existant est possible mais relève de manipulations complexes ou hasardeuses</desc1>
+            <desc2>L'héritage de propriétés est une fonctionnalité native du produit dont la mise en oeuvre reste simple</desc2>
+            <score>1</score>
+            <comment>http://www.jahia.org/cms/home/jahiapedia/Template_Developer_Guide/Architecture_Overview#p284
+
+Inheritance mechanism : in order to avoid having to copy all the templates into a new set just to make a few changes, templates can benefit from an inheritance mechanism that is quite similar to the Java language inheritance. Only the templates that need customizing need to be overridden, all the others can be inherited as such.</comment>
+         </element>
+         <element name="menusetnavigation" title="Menu global">
+            <desc>Gestion séparée des menus et des barres de navigation au niveau des sous-sités</desc>
+            <desc0>Les menus et barres de navigations sont communs à tous les sites.</desc0>
+            <desc1>Les menus et barres de navigations sont propres à chaque sous site.</desc1>
+            <desc2>Un menu global et un menu propre aux sous-sites sont disponibles. La séparation entre ces deux menus est outillée (pour l'administrateur) et transparente (pour l'utilisateur)</desc2>
+            <score>1</score>
+            <comment>Il est possible de récupérer un menu provenant d'un site choisi comme référence, ou alors de rendre l'ensemble des sites isolés.</comment>
+         </element>
+      </element>
+      <element name="facilitedemiseenoeuvre" title="Facilité de mise en oeuvre">
+         <desc>Evaluation de la difficulté de gestion de plusieurs sites/sous-sites</desc>
+         <desc0>Le produit n'a pas été conçu pour gérer des sous-sites. La mise en oeuvre est difficile voire impossible.</desc0>
+         <desc1>Le produit n'a pas été conçu pour gérer les sous-sites mais est suffisament extensible pour supporter la fonctionnalité ou le produit a été concu pour gérer les sous-sites mais le fait mal.</desc1>
+         <desc2>Le produit  a été concu pour gérer plusieurs sites et permet de le faire sans difficultés.</desc2>
+         <score>2</score>
+         <comment></comment>
+      </element>
+   </section>
+   <section name="facilitesdutilisation" title="Facilité d'utilisation">
+      <desc>Facilités d'utilisation mises à disposition par le produit</desc>
+      <element name="mediaetbureautique" title="Média et bureautique">
+         <desc></desc>
+         <comment></comment>
+         <element name="librairiemedia" title="Librairie média">
+            <desc>Intégration d'une librairie media dans l'éditeur WYSIWYG</desc>
+            <desc0>Pas de librairie média intégré à l'outil</desc0>
+            <desc1>Librairie média disponible mais sa mise en place ou son alimentation sont contraignants</desc1>
+            <desc2>Librairie média performant et flexible disponible et accessible via une interface interactive.</desc2>
+            <score>1</score>
+            <comment>Il est possible de faire embarquer des vidéos .flv, par exemple, ces fonctionnalités sont assistées.</comment>
+         </element>
+         <element name="integrationbureautique" title="Intégration bureautique">
+            <desc>Possibilité de création d'articles à partir de fichiers au format bureautique</desc>
+            <desc0>Pas de prise en charge de création d'articles à partir d'un document de bureautique.</desc0>
+            <desc1>Prise en charge limité des documents bureautiques (un seul format, importation defectueuse, etc)</desc1>
+            <desc2>Supporte les formats bureautique les plus courants : MS Office, OpenOffice.org, etc.</desc2>
+            <score>1</score>
+            <comment>FCK propose un outil permettant de coller depuis word, mais nécessite d'avoir le fichier ouvert en local. </comment>
+         </element>
+         <element name="lecteurmultimedia" title="Lecteur multimédia">
+            <desc>Intégration d'un lecteur multimédia</desc>
+            <desc0>Pas de lecteur multimédia intégré à l'outil</desc0>
+            <desc1>Lecteur multimédia disponible mais très limité (format, codec...)</desc1>
+            <desc2>Lecteur multimédia performant et flexible.</desc2>
+            <score>1</score>
+            <comment>Flash est proposé en natif, le support d'autre format se fait par l'utilisation de portlet.</comment>
+         </element>
+      </element>
+      <element name="creationdecontenu" title="Création de contenu">
+         <desc></desc>
+         <comment></comment>
+         <element name="editeurwysiwyg1" title="Éditeur WYSIWYG">
+            <desc>Intégration d'un éditeur visuel de publications</desc>
+            <desc0>Pas d'éditeur visuel disponible : la création d'articles se fait par l'intermédiaire d'un langage spécifié par le CMS (balises Wiki, HTML, etc)</desc0>
+            <desc1>Editeur visuel disponible sous-forme d'extension</desc1>
+            <desc2>Editeur visuel fourni nativement</desc2>
+            <score>2</score>
+            <comment>L'éditeur visuel permet de comparer, enregistrer des modfications en attentes, ainsi que d'envoyer les nouveaux ajout à un moment choisi par les administrateurs ou publishers.</comment>
+         </element>
+         <element name="editeurwysiwym" title="Editeur WYSIWYM">
+            <desc>Intégration d'un éditeur visuel de contenu structuré</desc>
+            <desc0>Pas de gestion de contenu structuré</desc0>
+            <desc1>Editeur de contenu structuré rudimentaire</desc1>
+            <desc2>Editeur de contenu structuré avancé ou possibilité d'intégration avec un éditeur spécialisé</desc2>
+            <score>1</score>
+            <comment>Possibilité de passer à un éditeur WYSIWYM pour les éditions d'articles.</comment>
+         </element>
+         <element name="previsualisation" title="Prévisualisation">
+            <desc>Module de prévisualisation</desc>
+            <desc0>Non disponible</desc0>
+            <desc1>Avec une extension</desc1>
+            <desc2>Implémenté nativement</desc2>
+            <score>2</score>
+            <comment>la prévisualisation est mise à jour à chaque modification.</comment>
+         </element>
+         <element name="brouillon" title="Brouillon">
+            <desc>Possibilité de sauvegarder un contenu sans le publier</desc>
+            <desc0>Pas de brouillon</desc0>
+            <desc1>Brouillon possible</desc1>
+            <desc2>Sauvegarde automatique du contenu en cours d'édition</desc2>
+            <score>2</score>
+            <comment>Le brouillon est sauvegardé à chaque modification, il faut après le publier pour pouvoir le rendre visible à toute personne.</comment>
+         </element>
+         <element name="correcteurorthographique" title="Correcteur orthographique">
+            <desc>Existence d'un correcteur d'orthographes</desc>
+            <desc0>Pas de correcteur orthographique disponible</desc0>
+            <desc1>Correcteur orthographique limité (langue imposée, dictionnaire non extensible)</desc1>
+            <desc2>Correcteur orthographique performant et personnablisable (enrichissement par les utilisateurs, internationalization disponible, etc.)</desc2>
+            <score>0</score>
+            <comment></comment>
+         </element>
+      </element>
+      <element name="organisationducontenu" title="Organisation du contenu">
+         <desc></desc>
+         <comment></comment>
+         <element name="tabledesmatieres" title="Table des matières">
+            <desc>Génération automatique de table des matières</desc>
+            <desc0>Pas de génération automatique des tables de matières</desc0>
+            <desc1>Génération limitée des tables de matières</desc1>
+            <desc2>Personnalisation possible des tables de matières (granularité, etc)</desc2>
+            <score>0</score>
+            <comment></comment>
+         </element>
+         <element name="menusderoulants" title="Menus déroulants">
+            <desc>Possibilité d'agrégation des menus</desc>
+            <desc0>Pas de regroupement possible des menus</desc0>
+            <desc1>Agrégation possible des menus moyennant des manipulations compliquées (manipulation de fichiers de configurations, interface non intuitive...)</desc1>
+            <desc2>Agrégation dynamique des menus outillée</desc2>
+            <score>1</score>
+            <comment></comment>
+         </element>
+         <element name="reorganisationdespages" title="Reorganisation du contenu">
+            <desc>Outils facilitants la réorganisation du contenu</desc>
+            <desc0>La réorganisation du contenu n'est pas possible</desc0>
+            <desc1>La réorganisation du contenu nécessite des manipulations complexes ou hasardeuses (modification à la main du système de fichiers, des fichiers de configurations ou des bases de données)</desc1>
+            <desc2>Réorganisation du contenu outillée et accessible à des utilisateurs non techniciens (drag'n'drop, workflows...)</desc2>
+            <score>2</score>
+            <comment>La réorganisation du contenu est prévue, les modifications peuvent être prévisualisées.</comment>
+         </element>
+      </element>
+      <element name="ergonomieglobale" title="Ergonomie globale">
+         <desc>Ergonomie de l'outil et facilité de prise en main de l'interface</desc>
+         <desc0>Logiciel peu intuitif et difficile à prendre en main.</desc0>
+         <desc1>Interface globalement intuitive et facile à prendre en main mais pouvant être amélioré</desc1>
+         <desc2>Interface cohérente, homogène et rapide à prendre en main et très satisfaisante pour les utilisateurs</desc2>
+         <score>2</score>
+         <comment></comment>
+      </element>
+   </section>
+   <section name="gestiondecontenu" title="Gestion de Contenu">
+      <desc>Fonctionnalités de gestion de contenu</desc>
+      <element name="typedecontenu" title="Type de contenu">
+         <desc>Types de contenus gérés par le CMS</desc>
+         <comment></comment>
+         <element name="structure" title="Structuré">
+            <desc>Capacité à gérer du contenu structuré tel que XML</desc>
+            <desc0>Pas de gestion de contenu structuré</desc0>
+            <desc1>Gestion de structures simples s'appuyant sur une base de données</desc1>
+            <desc2>Gestion structurée complète reposant sur XML</desc2>
+            <score>1</score>
+            <comment></comment>
+         </element>
+         <element name="objet" title="Objet">
+            <desc>Un objet est un type de contenu abstrait possedant des attributs</desc>
+            <desc0>Ne gère pas les objets</desc0>
+            <desc1>Gère les objets mais difficilement</desc1>
+            <desc2>Gère les objets nativement et leur manipulation est intuitive</desc2>
+            <score>1</score>
+            <comment></comment>
+         </element>
+         <element name="pages" title="Pages">
+            <desc>Page au sens page HTML</desc>
+            <desc0>Gère un seul type de page</desc0>
+            <desc1>Permet de définir différents types de pages</desc1>
+            <desc2>Permet de définir différents types de pages de manière intuitive</desc2>
+            <score>2</score>
+            <comment>Les pages sont choisies après leur définition dans le template. Ainsi, avec le template proposé par défaut, différent types de pages sont proposés.</comment>
+         </element>
+         <element name="modeles" title="Modèles">
+            <desc>Type d'objets ou de pages préconfigurés (attributs pré-remplis...)</desc>
+            <desc0>La notion de modèles/gabarits n'est pas disponible dans l'outil ou leur mise en place nécessite des manipulations compliquées au niveau de fichiers de configuration.</desc0>
+            <desc1>Il est possible de gérer simplement des modèles</desc1>
+            <desc2>Un éditeur visuel de modèles est disponible nativement ou avec un plug-in</desc2>
+            <score>0</score>
+            <comment>Les modèles sont choisi à la création de nouvelle page.</comment>
+         </element>
+      </element>
+      <element name="modulesadditionnels" title="Modules additionnels">
+         <desc></desc>
+         <comment></comment>
+         <element name="forums" title="Forums">
+            <desc>Existence d'un forum de discussion</desc>
+            <desc0>Pas de forum disponible.</desc0>
+            <desc1>Module de forum imposée par le produit. Il s'agit d'un forum peu performant et dont le remplacement est difficile à mettre en oeuvre.</desc1>
+            <desc2>Forum disponible et hautement personnalisable.
+Le forum embarqué avec le produit est performant ou peut être facilement remplacé.</desc2>
+            <score>2</score>
+            <comment>forum Jforum disponible via un portlet.</comment>
+         </element>
+         <element name="gestiondeqcm" title="Questionnaires">
+            <desc>Possibilité de mettre en place des articles sous forme de QCM</desc>
+            <desc0>Pas de module de QCM disponible.</desc0>
+            <desc1>Quelques modèles de questionnaires disponibles. Il est difficile de créer de nouveaux modèles ou de modifier ceux par défaut.</desc1>
+            <desc2>Création ou modification facilitée de questionnaires.</desc2>
+            <score>1</score>
+            <comment>via portlet</comment>
+         </element>
+         <element name="sondage" title="Sondage">
+            <desc>Possibilité de publier des sondages</desc>
+            <desc0>Pas de module de sondage disponible.</desc0>
+            <desc1>Quelques modèles de sondages disponibles. Il est difficile de créer de nouveaux modèles ou de modifier ceux par défaut.</desc1>
+            <desc2>Création ou modification facilitée des modèles de sondages.</desc2>
+            <score>2</score>
+            <comment>via portlet</comment>
+         </element>
+         <element name="statistiques" title="Statistiques">
+            <desc>Accès aux statistiques d'utilisation/d'accès des sites</desc>
+            <desc0>Aucune statistique n'est disponible</desc0>
+            <desc1>Quelques statistiques sont disponibles. Il est difficile de les modifier ou d'en ajouter de nouvelles</desc1>
+            <desc2>Module extensible de statistiques disponible</desc2>
+            <score>0</score>
+            <comment>Mais intégration google analytics possible</comment>
+         </element>
+         <element name="gestiondagenda" title="Agenda">
+            <desc>Disponibilité d'agendas publics/privés</desc>
+            <desc0>Pas de module d'agenda disponible.</desc0>
+            <desc1>Module d'agenda imposée par le produit. Il s'agit d'un agenda peu performant et dont le remplacement est difficile à mettre en oeuvre.</desc1>
+            <desc2>Agenda disponible et hautement personnalisable.
+L'agenda embarqué avec le produit est performant ou peut être facilement remplacé.</desc2>
+            <score>2</score>
+            <comment>via portlet</comment>
+         </element>
+         <element name="mashup" title="Mashup">
+            <desc>Capacité à intégrer du contenu externe (ex: vidéo)</desc>
+            <desc0>impossible</desc0>
+            <desc1>Possible mais requière des compétences informatique.</desc1>
+            <desc2>Possible et facile à mettre en oeuvre.</desc2>
+            <score>2</score>
+            <comment>l'ajout de portlet permet l'intégration de tout type de contenu.</comment>
+         </element>
+      </element>
+      <element name="publications" title="Fonctionnalités de base">
+         <desc></desc>
+         <comment></comment>
+         <element name="planificationdespublications" title="Planification des publications">
+            <desc></desc>
+            <desc0>Indisponible</desc0>
+            <desc1>Possibilité de planifier la publication d'un contenu</desc1>
+            <desc2>Planification du début et de la fin de publication</desc2>
+            <score>2</score>
+            <comment>La planification est disponible à la création de la publication, et peut être revue à tout moment.</comment>
+         </element>
+         <element name="attachementdedocument" title="Attachement de document">
+            <desc>Attachement de document aux contenus publiés</desc>
+            <desc0>Pas d'attachement de fichiers possible</desc0>
+            <desc1>Attachement de documents uniquement</desc1>
+            <desc2>Attachement de documents avec fonctionnalités avancées (versionning, gestion de droits, etc)</desc2>
+            <score>2</score>
+            <comment>Il est possible d'attacher un document à la publication d'un article, celui-ci étant soumis, soit aux droits hérités soit à des droits particuliers.</comment>
+         </element>
+         <element name="moderationdecontenu" title="Modération de contenu">
+            <desc>Granularité de la modération sur le contenu</desc>
+            <desc0>Modération à posteriori uniquement (censure du contenu une fois qu'il est publié)</desc0>
+            <desc1>Possibilité de modération à priori (les contributions d'utilisateurs sans permissions suffisantes sont automatiquement soumis à la modération)</desc1>
+            <desc2>Système de modération finement paramétrable</desc2>
+            <score>2</score>
+            <comment>Les contenus peuvent être placé en attente de relecture et validation par une publisher. e système de modération peut être choisi parmis plusieurs possibilités : à posteriori, après une ou plusieurs relectures.</comment>
+         </element>
+         <element name="gestiondeworkflow" title="Workflow">
+            <desc>Mécanismes de workflow</desc>
+            <desc0>Pas de mécanisme de workflow disponible</desc0>
+            <desc1>Mécanismes de workflow limité (pas de notion de verrous, pas de workflow pas à pas, pas de support BPEL, etc)</desc1>
+            <desc2>Mécanisme complet de gestion de workflow</desc2>
+            <score>2</score>
+            <comment>le workflow est nativement intégré.</comment>
+         </element>
+         <element name="moteurderecherche" title="Moteur de recherche">
+            <desc>Intégration d'un moteur de recherche sur le contenu publié</desc>
+            <desc0>Pas de moteur de recherche embarqué</desc0>
+            <desc1>Moteur de recherche disponible</desc1>
+            <desc2>Moteur de recherche avancé avec gestion des droits</desc2>
+            <score>2</score>
+            <comment>Le moteur de recherche est disponible d'origine. Un index est créé et mis à jour par le super administrateur. Ce moteur de recherche gère les droits donné aux groupes identifiés.</comment>
+         </element>
+         <element name="versionnalisation" title="Gestion de versions">
+            <desc>Gestion des versions sur les contenus</desc>
+            <desc0>Pas de système de gestion de versions</desc0>
+            <desc1>Système de gestion de version avec limitations</desc1>
+            <desc2>Système de gestion de versions performant (affichage de différences, retour en arrière)</desc2>
+            <score>2</score>
+            <comment>Jahia propose une gestion des versions intégrale. (source : http://portail-open-source.smile.fr/solutions-de-portails-open-source/jahia)</comment>
+         </element>
+         <element name="import/export" title="Import/export">
+            <desc></desc>
+            <comment></comment>
+            <element name="import1" title="Import">
+               <desc>Capacité à importer du contenu</desc>
+               <desc0>Fonctionnalité non disponible</desc0>
+               <desc1>Import par programmation en passant par un format propriétaire</desc1>
+               <desc2>Import intégré à l'IHM supportant des formats (RSS, bureautique, ...)</desc2>
+               <score>2</score>
+               <comment>L'import de fichier se fait vie une interface, il est réalisé indépendamment du format</comment>
+            </element>
+            <element name="export" title="Export">
+               <desc>Capacité à exporter du contenu</desc>
+               <desc0>Fonctionnalité non disponible</desc0>
+               <desc1>Export par programmation dans un format unique.</desc1>
+               <desc2>Support de nombreux formats d'export (RSS, PDF, Bureautique, ...)</desc2>
+               <score>2</score>
+               <comment>L'export de fichiers se fait indépendamment du format</comment>
+            </element>
+            <element name="traitementdemasse" title="Traitement de masse">
+               <desc>Capacité à importer/exporter plusieurs contenus en une seule opération</desc>
+               <desc0>Fonctionnalité non disponible</desc0>
+               <desc1>Possible mais uniquement en import ou en export</desc1>
+               <desc2>Possible dans les deux sens</desc2>
+               <score>1</score>
+               <comment>l'import de fichiers se fait via l'utilisation d'un explorateur, plusieurs fichiers peuvent être sélectionnés</comment>
+            </element>
+         </element>
+      </element>
+      <element name="gestiondesutilisateurs" title="Gestion des utilisateurs">
+         <desc>Facilités de gestion des utilisateurs relatifs au multi-site</desc>
+         <comment></comment>
+         <element name="delegationdautorisations" title="Délégation d'autorisations">
+            <desc>Support de la délégation d'autorisations</desc>
+            <desc0>Les autorisations ne peuvent être délégués. Seuls les administrateurs peuvent définir les autorisations.</desc0>
+            <desc1>La délégation d'autorisations nécessite la mise en oeuvre de manipulations complexes/hasardeuses.</desc1>
+            <desc2>Support natif de la délégation d'autorisation ou à l'aide d'une extension. Mise en oeuvre facilement accessible.</desc2>
+            <score>2</score>
+            <comment>Le super-utilisateur peu délégué des droits aux administrateurs, de même pour les administrateurs... Autant de groupe que souhaité peuvent être créés, avec autant d'autorisation différentes.</comment>
+         </element>
+         <element name="profilutilisateur" title="Profil utilisateur">
+            <desc>Gestion de profil utilisateur</desc>
+            <comment></comment>
+            <element name="pagepersonnelle" title="Page personnelle">
+               <desc>Disponibilité d'une page personnelle par utilisateur</desc>
+               <desc0>Notion inexistante</desc0>
+               <desc1>Page personnelle non configurable</desc1>
+               <desc2>Page personnelle configurable</desc2>
+               <score>2</score>
+               <comment>l'ajout de tous les portlet intégrés, ainsi qu'en natif de quelques applications google est possible, paramétrable par l'administrateur du site virtuel.</comment>
+            </element>
+            <element name="contenufavori" title="Contenu favori">
+               <desc>Gestion du contenu favori</desc>
+               <desc0>Pas de gestion de contenu favori</desc0>
+               <desc1>Système de signets statique à alimenter par l'utilisateur</desc1>
+               <desc2>Système de signets dynamiques basé sur les statistiques</desc2>
+               <score>2</score>
+               <comment>Les portlet peuvent apporter la gestion de signets.</comment>
+            </element>
+         </element>
+         <element name="roles1" title="Rôles">
+            <desc>Pour permettre la gestion des droits</desc>
+            <comment></comment>
+            <element name="rolevisiteur" title="Rôle visiteur">
+               <desc></desc>
+               <desc0>N'existe pas</desc0>
+               <desc1>Peut être facilement rajouté</desc1>
+               <desc2>Disponible nativement</desc2>
+               <score>2</score>
+               <comment>Deux types de visiteurs sont disponibles : authentifié ou non, les deux existe nativement.</comment>
+            </element>
+            <element name="rolecontributeur" title="Rôle Contributeur">
+               <desc></desc>
+               <desc0>N'existe pas</desc0>
+               <desc1>Peut être facilement rajouté</desc1>
+               <desc2>Disponible nativement</desc2>
+               <score>2</score>
+               <comment>Appelé ici Author</comment>
+            </element>
+            <element name="rolemoderateur" title="Rôle Modérateur">
+               <desc></desc>
+               <desc0>N'existe pas</desc0>
+               <desc1>Peut être facilement rajouté</desc1>
+               <desc2>Disponible nativement</desc2>
+               <score>2</score>
+               <comment>Appelé ici publisher</comment>
+            </element>
+            <element name="roleadmin" title="Rôle Administrateur">
+               <desc></desc>
+               <desc0>N'existe pas</desc0>
+               <desc1>Peut être facilement rajouté</desc1>
+               <desc2>Disponible nativement</desc2>
+               <score>2</score>
+               <comment></comment>
+            </element>
+            <element name="rolespersonnalises" title="Rôles personnalisés">
+               <desc></desc>
+               <desc0>Pas de création de nouveau rôle possible. Les seuls rôles disponibles sont les rôles créés par l'application lors de l'installation.</desc0>
+               <desc1>Création possible de nouveaux rôles moyennant des manipulations complexes et/ou hasardeuses.</desc1>
+               <desc2>Création de nouveaux rôles possible en natif dans la console d'administration du site.</desc2>
+               <score>2</score>
+               <comment>Il est possible de créer de nouveaux groupes grâce à des outils intégrés.</comment>
+            </element>
+         </element>
+         <element name="accesalacontribution" title="Accès à la contribution">
+            <desc>Facilités d'accès au rôle de Contributeur</desc>
+            <desc0>L'accès à la contribution n'est possible qu'auprès de l'administrateur</desc0>
+            <desc1>L'accès à la contribution nécessite l'intervention d'un administrateur (Activation du compte par exemple)</desc1>
+            <desc2>L'accès à la contribution est possible de manière autonome (mail d'activation, par exemple)</desc2>
+            <score>1</score>
+            <comment>un Contributeur est un utilisateur enregistré, donc ajouté par un administrateur du sous-site (il est possible d'ouvrir des pages à toutes les contributions)</comment>
+         </element>
+      </element>
+   </section>
+   <section name="aspectstehniques" title="Aspects techniques">
+      <desc>Aspects techniques de l'outil</desc>
+      <element name="perfs" title="Performances">
+         <desc>Mise en place d'un cache pour la répartition de charge</desc>
+         <element name="miseencachedespages" title="Mise en cache des pages">
+            <desc>Mécanisme de mise en cache des pages</desc>
+            <desc0>Non disponible</desc0>
+            <desc1>Fonctionnalité limité</desc1>
+            <desc2>Cache paramétrable</desc2>
+            <score>2</score>
+            <comment>source : http://www.jahia.org/cms/home/jahiapedia/Template_Developer_Guide/Architecture_Overview
+Voir schéma du système</comment>
+         </element>
+         <element name="cachededonnees" title="Cache de données">
+            <desc>Mécanismes de mise en caches pour minimiser les accès aux bases de données</desc>
+            <desc0>Non disponible</desc0>
+            <desc1>Fonctionnalité limité</desc1>
+            <desc2>Cache paramétrable</desc2>
+            <score>2</score>
+            <comment>source : http://www.jahia.org/cms/home/jahiapedia/Template_Developer_Guide/Architecture_Overview
+Voir schéma du système</comment>
+         </element>
+         <element name="exportstatique" title="Export statique">
+            <desc>Mécanisme d'export statique des pages HTML</desc>
+            <desc0>Non disponible</desc0>
+            <desc1>Fonctionnalité limité</desc1>
+            <desc2>Export paramétrable</desc2>
+            <score>2</score>
+            <comment>Fonction accessible via l'interface du super administrateur.</comment>
+         </element>
+      </element>
+      <element name="securite" title="Sécurité">
+         <desc>Aspects techniques relatives à la sécurité</desc>
+         <comment></comment>
+         <element name="authentification" title="Authentification">
+            <desc>Méthodes d'authentification pris en charge</desc>
+            <comment></comment>
+            <element name="annuairedentreprise" title="Annuaire d'entreprise">
+               <desc>Authentification des utilisateurs depuis une annuaire de type LDAP</desc>
+               <desc0>Interfaçage avec une annuaire impossible</desc0>
+               <desc1>L'annuaire sert uniquement pour gérer l'authentification</desc1>
+               <desc2>L'annuaire permet l'authentification et contient des données supplémentaires sur l'utilisateur</desc2>
+               <score>2</score>
+               <comment>L'ajout des fonctionnalités LDAP se fait via la modification de fichiers XML.</comment>
+            </element>
+            <element name="typesdauthentifications" title="Types d'authentifications">
+               <desc></desc>
+               <desc0>L'authentification n'est gérée qu'en interne par le produit</desc0>
+               <desc1>Peut s'interfacer avec un seul système externe (LDAP, ...)</desc1>
+               <desc2>Supporte plusieurs types d'authentifications (LDAP, Kerberos, bases de données ...)</desc2>
+               <score>2</score>
+               <comment>Support natif de LDAP, NTLM, mais pas de Kerberos ni NIS.</comment>
+            </element>
+         </element>
+         <element name="ssl" title="SSL">
+            <desc>Pris en charge du cryptage SSL</desc>
+            <desc0>Pas de prise en charge possible de SSL</desc0>
+            <desc1>Implementation partielle du cryptage SSL</desc1>
+            <desc2>La spécification de la norme SSL est implémentée dans son intégralité</desc2>
+            <score>2</score>
+            <comment>support du SLL dans Jahia. (source : http://www.mail-archive.com/french_list@jahia.org/msg00854.html)</comment>
+         </element>
+      </element>
+      <element name="standards" title="Respect des standards">
+         <desc>Publication des contenus selon les standards du w3c</desc>
+         <comment></comment>
+         <element name="html" title="HTML">
+            <desc>Respect du standard HTML</desc>
+            <desc0>Les pages générées ne sont pas valides (sortie en erreur)</desc0>
+            <desc1>Les pages générées ne contiennent pas des erreurs importants (encodage, etc)</desc1>
+            <desc2>Les pages générées sont valides au sens du W3C ou contiennent des erreurs mineurs (attributs manquants...)</desc2>
+            <score>1</score>
+            <comment></comment>
+         </element>
+         <element name="xhtml" title="XHTML">
+            <desc>Respect du standard XHTML</desc>
+            <desc0>Les pages générées ne sont pas valides (sortie en erreur)</desc0>
+            <desc1>Les pages générées ne contiennent pas des erreurs importants (encodage, etc)</desc1>
+            <desc2>Les pages générées sont valides au sens du W3C ou contiennent des erreurs mineurs (attributs manquants...)</desc2>
+            <score>1</score>
+            <comment>quelques erreurs par page : end  tag, undefined element...</comment>
+         </element>
+         <element name="css" title="CSS">
+            <desc>Respect du standard CSS</desc>
+            <desc0>Les pages générées ne sont pas valides (sortie en erreur)</desc0>
+            <desc1>Les pages générées ne contiennent pas des erreurs importants (encodage, etc)</desc1>
+            <desc2>Les pages générées sont valides au sens du W3C ou contiennent des erreurs mineurs (attributs manquants...)</desc2>
+            <score>1</score>
+            <comment></comment>
+         </element>
+         <element name="wai" title="WAI (Accessibilité)">
+            <desc>Normes d'accessibilités</desc>
+            <desc0>Les pages générées ne sont pas valides (sortie en erreur)</desc0>
+            <desc1>Les pages générées ne contiennent pas des erreurs importants (encodage, etc)</desc1>
+            <desc2>Les pages générées sont valides au sens du W3C ou contiennent des erreurs mineurs (attributs manquants...)</desc2>
+            <score>1</score>
+            <comment></comment>
+         </element>
+      </element>
+      <element name="navigateurssupportes" title="Navigateurs supportés">
+         <desc></desc>
+         <desc0>Fonctionne sur une verson spécifique d'un navigateur</desc0>
+         <desc1>Fonctionne sur les principaux navigateurs avec différents niveaux de performances</desc1>
+         <desc2>Fonctionne de manière optimale sur un grand nombre de navigateurs</desc2>
+         <score>2</score>
+         <comment>IE, Firefox, Safari, Opéra, et quelques navigateurs mobiles sont supporté. Dans le cadre des navigateurs mobiles, il est possible de les détecter et d'afficher un style différent.</comment>
+      </element>
+      <element name="architecture" title="Architecture">
+         <desc></desc>
+         <comment></comment>
+         <element name="modularite" title="Modularité">
+            <desc></desc>
+            <desc0>Le logiciel monolithique et non extensible.</desc0>
+            <desc1>Le logiciel supporte les extensions</desc1>
+            <desc2>Le logiciel a été pensé de manière extensible</desc2>
+            <score>0</score>
+            <comment>Il est possible d'ajouter des portlet à Jahia, ceux-ci seront disponibles our l'ensemble des sites virtuels.</comment>
+         </element>
+         <element name="capacitedevolution" title="Capacité d'évolution">
+            <desc>Capacité de l'outil à prendre en compte de nouveaux besoins</desc>
+            <desc0>La modification de l'outil pour prendre en compte de nouveaux besoins demande énormément d'efforts et de maitrise de l'outil.</desc0>
+            <desc1>L'outil peut être étendu à de nouveaux besoins à l'aide de modules additionnels. Peut présenter des limites lorsqu'utilisé pour des besoins pour lesquels il n'a pas été conçu</desc1>
+            <desc2>Conçu de manière à s'adapter facilement à de nouveaux besoins</desc2>
+            <score>1</score>
+            <comment>L'architecture en portlet permet une intégration de nouvelles fonctionnalités à Jahia, néanmoins, elles ne peuvent être appliquées qu'au rendu, le core ne bénéficie de nouveauté qu'à chaque évolution du système.</comment>
+         </element>
+         <element name="hautedispo" title="Haute disponibilité">
+            <desc></desc>
+            <desc0>Produit ne permettant pas de mettre en oeuvre la haute disponibilité</desc0>
+            <desc1>Produit permettant de mettre en oeuvre difficielement la haute disponibilité</desc1>
+            <desc2>Produit permettant de mettre en oeuvre facilement la haute disponibilité</desc2>
+            <score>2</score>
+            <comment>Solution basée sur le serveur d'applications Tomcat, c'est sur ce serveur qu'est mis en place la haute disponibilité. La base de donnée sera alors externe (choisie parmis MySQL, PostgreSQL...)</comment>
+         </element>
+         <element name="separationdelagestiondecontenuetdelapublication" title="Séparation de la gestion de contenu et de la publication">
+            <desc></desc>
+            <desc0>Non</desc0>
+            <desc1>-</desc1>
+            <desc2>Oui</desc2>
+            <score>2</score>
+            <comment>Il est possible d'uploader un contenu, rendu publique à postériori.</comment>
+         </element>
+         <element name="publicationdynamique" title="Publication dynamique">
+            <desc></desc>
+            <desc0>Non</desc0>
+            <desc1>-</desc1>
+            <desc2>Oui
+</desc2>
+            <score>0</score>
+            <comment></comment>
+         </element>
+      </element>
+   </section>
+</document>
