@@ -7,21 +7,21 @@
 #
 #@section installation Installation Guide
 #@subsection configuration Workspace Configuration
-#- Python : install it using the distrib package manager
-#    (for debian, apt-get install python)
-#- Twisted  (twisted is required to run nevow web application framework) :
-#    - Use distrib package manager twisted
+#Running QSOS Engine requires the following softwares installed :
+#- Python
+#- Twisted  (required to run nevow web application framework)
 #- Nevow (web application framework)
-#    - Download sources from Nevow wiki : http://divmod.org/trac/attachment/wiki/SoftwareReleases/Nevow-0.9.31.tar.gz?format=raw
-#    - Uncompress tarball
-#    - Run installation script from uncompressed tarball: python setup.py install
-#- Doxygen (for automatic documentation generation)
-#    - Install using distrib package manager : apt-get install doxygen
+#- Doxygen (for automatic documentation generation, requires graphviz)
+#
+#All of these software are avalaible on recent GNU/Linux distribution on their package repository. 
+#Therefore, the distrib package manager will be used to install them, for example on Ubuntu/Debian  :
+#    aptitude install python twisted python-nevow doxygen graphviz
 #@subsection clone Clone the repository
 #- Clone the git repository :
 #    - git clone git://git.savannah.nongnu.org/qsos.git
 #@subsection run Run web application
 #- Go into src dir
+#- Update the twisted configuration file to point to your repository (Services/presentation.tac, line 11)
 #- Run presentation twisted application
 #    - twistd -noy Services/presentation.tac
 #@subsection Generate Generate Documentation
