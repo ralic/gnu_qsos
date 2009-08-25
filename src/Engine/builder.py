@@ -58,7 +58,7 @@ def build(evaluation, repositoryroot):
     families = [node.firstChild.data for node in content.lastChild.childNodes]
     includes = ["generic"]
     for f in families :
-        xml = os.path.join(base, "families", f + ".qtpl")
+        xml = os.path.join(base, "templates", f + ".qtpl")
         xml = "".join(line.strip() for line in file(xml).readlines())
         xml = minidom.parseString(xml).firstChild
         for node in xml.childNodes :
@@ -136,7 +136,7 @@ def assembleSheet(document, repositoryroot):
         for mail,name in document[item]['authors'].iteritems() :
             auths[name] = mail
                     
-        include = os.path.join(repositoryroot,"sheets","includes",item + ".qin")
+        include = os.path.join(repositoryroot,"sheets","families",item + ".qin")
         include = "".join(line.strip() for line in file(include).readlines())
         include = minidom.parseString(include).firstChild
         for section in include.childNodes[1:] : root.appendChild(section)

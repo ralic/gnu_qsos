@@ -12,10 +12,9 @@ does not uses it yet.
 
 
 from Engine import document, splitter, builder
-
+from Repository import vfs
 import os
 import re
-from Repository import gitshelve as git
 
 ##
 #    @ingroup core
@@ -41,13 +40,12 @@ def setup(path=".."):
     @todo Scan repository and build tree on initialization?
     """
     global PATH
-    global STORE
     
     PATH = path
     os.chdir(PATH)
 
     
-def submit(data):#, author, email, comment):
+def submit(data):
     """
     Submit an evaluation.
     
@@ -70,8 +68,7 @@ def submit(data):#, author, email, comment):
         raise StandardError("Not a valid e-mail adress")
     
     #Open and update the repository
-    repository = git.open('Migration', os.path.join(PATH, ".git"))
-    repository.git('pull')
+    vfs.init()
     
     #Put contribution on the correct location
     if data["Type"] == "Evaluation" :
@@ -85,25 +82,18 @@ def submit(data):#, author, email, comment):
         
         #Generate .qscore files into repository
         scores = splitter.parse(document, PATH)
-        for file in scores :
-            repository[file] = scores[file]
-            target = os.path.join(PATH, file)
-            targetParent = "/".join(target.split("/")[0:-1])
-            if not os.path.exists(targetParent) :
-                os.mkdir(targetParent)
-            qscore = open(target,'w')
-            qscore.write(scores[file])
-            qscore.close()
-            
+        for file in scores : vfs.add(scores[file], [PATH, file])
+    else :
+        if data["Type"] == "Template" :
+            target = ["sheets", "templates", data['File'].filename]
+            #TODO : validate the template using XSD schema
+        elif data["Type"] == "Family" :
+            target = ["sheets", "families", data['File'].filename]
+        vfs.add(data["File"].file.read(), target)
 
-            
     
     #Make a commit with proper parameters
-    repository.commit("%s added %s into %s.\n%s" % (Author, data['File'].filename, data['Type'], data['Description']),
-                      (data['Author'], data['E-mail'])
-                    )
-    repository.git('push')
-    repository.close()     
+    vfs.commit("%s added %s into %s.\n\n%s" % (Author, data['File'].filename, data['Type'], data['Description']))
        
 def show (str):
     print str

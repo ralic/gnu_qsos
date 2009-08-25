@@ -48,10 +48,9 @@ class QSOSPage (DefaultPage):
 
 class ErrorPage(QSOSPage):
     """
-    Renders confirmation page.
+    Renders error page.
     
-    Handles the confirmation page of a successful evaluation upload.
-    Return to root page or submit another evaluation are suggested.
+    Handles the error page when an evaluation upload fails.
     """
     def __init__ (self, repository, errorList):
         QSOSPage.__init__(self, repository)

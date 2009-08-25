@@ -111,7 +111,7 @@ def createDocument(evaluation,repository="../sheets/"):
     qsos.families = families
     includes = ["generic"]
     for f in families :
-        xml = os.path.join(repository, "families", f + ".qtpl")
+        xml = os.path.join(repository, "templates", f + ".qtpl")
         xml = "".join(line.strip() for line in file(xml).readlines())
         xml = minidom.parseString(xml).firstChild
         for node in xml.childNodes :
@@ -122,7 +122,7 @@ def createDocument(evaluation,repository="../sheets/"):
     #    - Read the scores and comments from evaluation
     #    - Update entry in family object
     for include in includes :
-        template = minidom.parse("/".join([repository,"includes",".".join([include,"qin"])]))
+        template = minidom.parse("/".join([repository,"families",".".join([include,"qin"])]))
         #Initiate the family object : 
         #    -same authors and dates for all families of the same evaluation
         #    -empty score and comments dictionnary

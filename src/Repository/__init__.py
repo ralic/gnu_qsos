@@ -3,6 +3,6 @@ QSOS Repository
 """
 
 ##
-#   @defgroup Engine Engine
+#   @defgroup Repository Repository
 #   @author Hery Randriamanamihaga
 #

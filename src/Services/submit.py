@@ -29,6 +29,7 @@ from Engine                 import splitter
 from Engine import  core
 from QSOSpage import QSOSPage
 from QSOSpage import DefaultPage
+from QSOSpage import ErrorPage
 
 ##
 #    @ingroup submit
@@ -68,8 +69,13 @@ class UploadPage(DefaultPage):
 
     def submitYourContribution(self, **formData):
         "Put the uploaded evaluation into the local repository"
-        core.submit(formData)
-        return url.here.child('confirmation')
+        try :
+            core.submit(formData)
+        except :
+            child = 'error'
+        else :
+            child = 'confirmation'
+        return url.here.child(child)
 
     def bind_submitYourContribution(self, ctx):
         "Bind the proper action to perform when submit action is invoked"
@@ -82,4 +88,7 @@ class UploadPage(DefaultPage):
                         ]
     def child_confirmation(self, ctx):
         return ConfirmationPage(self.repository)
+    
+    def child_error(self, ctx):
+        return ErrorPage(self.repository, [('Unexpected error happenned','tar')])
 
