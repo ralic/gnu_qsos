@@ -47,3 +47,16 @@ def add(item, target):
 
     """
     git.add(item, target)
+    
+def log(item=""):
+    """
+    Show the history log of an item
+    
+    @param item
+        the item to be show the log. If not provided, the complete history of the
+        repository will be shown
+        
+    @return
+        The history of the item
+    """
+    return git.log(item)

@@ -9,10 +9,9 @@ splitted repository's qscore, qin and qtpl files
 #    @ingroup Engine 
 #    @author Hery Randriamanamihaga
 
-from Engine import document
-from Engine import family
+from Engine import document, family
+from Repository import vfs
 from xml.dom import minidom
-from Repository import gitshelve as git
 import re
 import os
 
@@ -28,7 +27,7 @@ def build(evaluation, repositoryroot):
     @param repositoryroot
             Path to local repository's root.
     @return
-        Builded Document object of name-version's qsos evaluation
+        Built Document object of name-version's qsos evaluation
     """
     
     #Unpack evaluation parameter and build base path
@@ -73,7 +72,7 @@ def build(evaluation, repositoryroot):
         absPath = os.path.join(base, relPath)
         sheet = "".join(line.strip() for line in file(absPath).readlines())
         xml = minidom.parseString(sheet).firstChild
-        (name,email) = getAuthor(repositoryroot, os.path.join("sheets" ,relPath))
+        (name,email) = getAuthor(os.path.join("sheets" ,relPath))
         authors[email]=name
         #Scores and comments extraction loop
         scores = {}
@@ -212,11 +211,11 @@ def fillSheet(document, sheet, repositoryroot):
     return sheet.toprettyxml("\t", "\n", "utf-8")
 
 
-def getAuthor(repository, file):
-    log = git.git('log', file)
+def getAuthor(file):
+    log = vfs.log(file)
     result = re.compile('Author: (.*)<(.+@.+)>').search(log)
     if result :
         return result.group(1), result.group(2)
     else :
-        raise StandardError("No author found for " + file + " in " + repository)
+        raise StandardError("No author found for " + file + " in  repository")
     

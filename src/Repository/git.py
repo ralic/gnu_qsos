@@ -32,3 +32,6 @@ def add(content, target):
     file.write(content)
     file.close()
     os.popen("git add %s" % path)
+
+def log(file=""):
+    return os.popen("git log %s" % (file, )).read()
