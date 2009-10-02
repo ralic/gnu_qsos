@@ -1,222 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document>
    <header>
-      <authors>
-         <author>
-            <email>florian.olivier@atosorigin.com</email>
-            <name>Florian Olivier-Koehret</name>
-         </author>
-      </authors>
+      <authors></authors>
       <dates>
          <creation></creation>
          <validation></validation>
       </dates>
       <language>fr</language>
-      <appname>KOHA</appname>
+      <appname></appname>
       <desc></desc>
-      <release>3.0</release>
-      <licenseid>31</licenseid>
-      <licensedesc>GNU GPL</licensedesc>
-      <url>www.koha-fr.org</url>
-      <demourl>http://demo.koha-fr.org/</demourl>
+      <release></release>
+      <licenseid></licenseid>
+      <licensedesc></licensedesc>
+      <url></url>
+      <demourl></demourl>
       <qsosformat>1.7</qsosformat>
       <qsosappfamily>SIGB</qsosappfamily>
       <qsosappname></qsosappname>
       <qsosspecificformat>1.0</qsosspecificformat>
    </header>
-   <section name="generic" title="Section générique">
-      <desc>Les critères génériques de l'évaluation Presto de QSOS</desc>
-      <element name="intrinsicdurability" title="Pérennité">
-         <desc>Pérennité</desc>
-         <element name="maturite" title="Maturité">
-            <desc></desc>
-            <desc0>Logiciel provenant d'un fork ou avec une forte probabilité de fork dans un futur proche.</desc0>
-            <desc1>Projet jeune (moins de 3 ans) ou connaissant des difficultés à stabiliser les versions de développement.</desc1>
-            <desc2>Projet stable ou ayant un bon historique de gestion de crise. Les nouvelles versions apportent de façon prépondérante de nouvelles fonctionnalités.</desc2>
-            <score>2</score>
-            <comment>Source : http://www.ohloh.net/p/1541/commits</comment>
-         </element>
-         <element name="adoption1" title="Adoption">
-            <desc></desc>
-            <desc0>Usage détectable sur Internet sans véritable activité communautaire</desc0>
-            <desc1>Utilisation communautaire prépondérante</desc1>
-            <desc2>Nombreuse références industrielles</desc2>
-            <score>2</score>
-            <comment>Source : http://koha.org/showcase</comment>
-         </element>
-         <element name="developpement" title="Développement">
-            <desc></desc>
-            <desc0>Deux ou moins de deux développeurs clairement identifiés.</desc0>
-            <desc1>Équipe de développement réduite avec un turn-over important ou sans équipe de direction identifiée.</desc1>
-            <desc2>Équipe de développement structurée comportant plus de 5 développeurs actifs.</desc2>
-            <score>2</score>
-            <comment>Source : http://koha.org/about/get-involved</comment>
-         </element>
-         <element name="activite" title="Activité">
-            <desc></desc>
-            <desc0>Très faible activité, que ce soit sur les résolutions de bugs, les releases, l'ajout de nouvelles fonctions ou sur les espaces communautaires (wiki, forum, mailing list...)</desc0>
-            <desc1>Activité détectable mais anarchique (pas feuille de route accessible facilement, pas de prévisions de nouvelles fonctionnalités ou de prévisions de nouvelles versions visible)</desc1>
-            <desc2>Activité importante et visible via la mise en place de feuilles de routes traçant les requêtes de nouvelles fonctionnalités et/ou les prévisions de sortie des nouvelles version</desc2>
-            <score>2</score>
-            <comment>Source : http://koha.org/about/get-involved</comment>
-         </element>
-         <element name="strategicalindependence" title="Indépendance stratégique">
-            <desc0>Pas de stratégie détectable ou stratégie dictée par une société commerciale, un sponsor ou un individu unique.</desc0>
-            <desc1>Stratégie décidée par l'équipe de developpement.</desc1>
-            <desc2>Indépendance forte de l'équipe de développement, fort engagement du projet dans un processus de standardisation.</desc2>
-            <score>2</score>
-            <comment>Source : http://fr.wikipedia.org/wiki/Koha</comment>
-         </element>
-         <element name="copyrightowners" title="Détenteur des droits">
-            <desc0>Les droits sont détenus par quelques individus ou entités commerciales, facilitant le changement de licence</desc0>
-            <desc1>Les droits sont détenus par de nombreux individus de façon homogène, rendant le changement de licence très difficile</desc1>
-            <desc2>Les droits sont détenus par une entité légale, une fondation dans laquelle la communauté a confiance (ex: FSF, Apache, ObjectWeb)</desc2>
-            <score>1</score>
-            <comment>Mis à part le nom et le logo, qui sont des marques déposées de LibLime et BibLibre, les sources de Koha sont soumis aux termes de la GPL sans termes de cession des droits (du moins, facilement visible) sur les contributions : les droits sont donc détenus par les différents développeurs et contributeurs du projet.</comment>
-         </element>
-         <element name="license" title="Licence">
-            <desc>Licence, à pondérer uniquement si le client désire un jour devenir propriétaire du code</desc>
-            <element name="permissiveness" title="Permissivité">
-               <desc0>Licence très stricte, comme la GPL</desc0>
-               <desc1>Licence modérée entre les deux extrêmes (GPL et BSD), licence duale dépendante du type d'utilisateur (personne, société…) ou de leur activité</desc1>
-               <desc2>Licence très permissive comme BSD et Apache</desc2>
-               <score>0</score>
-               <comment>GNU GPL 2.0.</comment>
-            </element>
-            <element name="protectionagainstproprietaryforks" title="Protection contre des forks commerciaux">
-               <desc0>Licence très permissive comme BSD et Apache</desc0>
-               <desc1>Licence modérée entre les deux extrêmes (GPL et BSD), licence duale dépendante du type d'utilisateur (personne, société…) ou de leur activité</desc1>
-               <desc2>Licence très stricte, comme la GPL</desc2>
-               <score>2</score>
-               <comment>GNU GPL 2.0.</comment>
-            </element>
-         </element>
-      </element>
-      <element name="industrializedsolution" title="Industrialisation">
-         <desc>Niveau d'industrialisation du projet</desc>
-         <element name="independenceofdevelopments" title="Indépendance des développements">
-            <desc0>Développements réalisés à plus de 60% par des employés d'une seule société</desc0>
-            <desc1>Développements réalisés à 60% maximum par des employés d'une seule société</desc1>
-            <desc2>Développements réalisés à 20% maximum par des employés d'une seule société</desc2>
-            <score>2</score>
-            <comment>Plusieurs entreprises participent au projet : liblime, biblibre...</comment>
-         </element>
-         <element name="services1" title="Services">
-            <desc></desc>
-            <desc0>Pas d'offres de services identifiée</desc0>
-            <desc1>Offre existante mais restreinte géographiquement ou en une seule langue ou fournie par un seul fournisseur</desc1>
-            <desc2>Offre riche : plusieurs fournisseurs ou plusieurs langages</desc2>
-            <score>2</score>
-            <comment>En France, 2 entreprises : biblibre et tamil.</comment>
-         </element>
-         <element name="documentation" title="Documentation">
-            <desc0>Pas de documentation utilisateur</desc0>
-            <desc1>La documentation existe mais est en partie obsolète ou restreinte à une seule langue ou peu détaillée</desc1>
-            <desc2>Documentation à jour, traduite et éventuellement adaptée à différentes cibles de lecteurs (end-user, sysadmin, manager…)</desc2>
-            <score>2</score>
-            <comment>Site internet officiel en 6 langues.</comment>
-         </element>
-         <element name="methodequalite" title="Méthode qualité">
-            <desc></desc>
-            <desc0>Pas de processus de qualité identifié ni d'outils de gestions de bugs</desc0>
-            <desc1>Processus qualité non formalisé ou non outillé ou comportant des outils qui sont très peu utilisés</desc1>
-            <desc2>Utilisation très active d'outils standards (tests unitaires, outils de gestion de build, outils de mesure de qualité du code)</desc2>
-            <score>2</score>
-            <comment></comment>
-         </element>
-      </element>
-      <element name="packaging" title="Packaging">
-         <desc>Packaging pour les différents systèmes d'exploitation</desc>
-         <element name="packagingbsd" title="BSD">
-            <desc></desc>
-            <desc0>Pas de packaging officiel pour la famille BSD</desc0>
-            <desc1>Packaging existant pour quelques distributions de la famille BSD</desc1>
-            <desc2>Packaging complet pour les distributions de la famille BSD suivantes : FreeBSD, OpenBSD, NetBSD et Mac OS X</desc2>
-            <score>0</score>
-            <comment>N/A : technologies web / perl.</comment>
-         </element>
-         <element name="packaginglinux" title="GNU/Linux">
-            <desc></desc>
-            <desc0>Pas de packaging officiel pour les systèmes d'exploitations GNU/Linux</desc0>
-            <desc1>Packaging existant pour quelques distributions GNU/Linux</desc1>
-            <desc2>Packaging complet les systèmes de packaging .deb et .rpm</desc2>
-            <score>0</score>
-            <comment>N/A : technologies web / perl.</comment>
-         </element>
-         <element name="unix" title="Unix">
-            <desc></desc>
-            <desc0>Pas de packaging officiel pour les systèmes de la famille Unix</desc0>
-            <desc1>Packaging existant sur quelques systèmes de la famille Unix</desc1>
-            <desc2>Packaging existant sur au moins ces 3 systèmes : AIX, HP-UX, Solaris</desc2>
-            <score>0</score>
-            <comment>N/A : technologies web / perl.</comment>
-         </element>
-         <element name="packagingwindows" title="Windows">
-            <desc0>Le logiciel n'est pas disponible sur un système Windows.</desc0>
-            <desc1>Le logiciel existe sous forme d'archive tout en un.</desc1>
-            <desc2>Le logiciel dispose d'un installeur.</desc2>
-            <score>1</score>
-            <comment>Source : http://www.koha.rwjr.com/</comment>
-         </element>
-         <element name="packagingsource" title="Sources">
-            <desc0>L'installation depuis les sources est hasardeuse et risquée</desc0>
-            <desc1>L'installation depuis les sources est difficile ou limité (seulement à un OS, une architecture, la résolution de l'écran...)</desc1>
-            <desc2>L'installation depuis les sources est outillée (vérification des dépencances, verification de l'installation, gestion de build)</desc2>
-            <score>1</score>
-            <comment></comment>
-         </element>
-         <element name="packagingtar" title="Archive compressée">
-            <desc0>Pas d'archive disponible</desc0>
-            <desc1>Archive globale</desc1>
-            <desc2>Archive séparée pour chaque module installable</desc2>
-            <score>2</score>
-            <comment></comment>
-         </element>
-      </element>
-      <element name="exploitability" title="Exploitabilité">
-         <desc>Niveau d'exploitabilité</desc>
-         <element name="easeofuseergonomics" title="Facilité d'utilisation, ergonomie">
-            <desc0>Difficulté d'utilisation, demande une connaissance approfondie des fonctionnalités du logiciel</desc0>
-            <desc1>Ergonomie austère et très technique</desc1>
-            <desc2>Ergonomie élaborée et IHM comprenant des fonctions d'aide</desc2>
-            <score>2</score>
-            <comment>Source : http://demo.koha-fr.org/</comment>
-         </element>
-         <element name="administrationmonitoring" title="Administration et supervision">
-            <desc0>Pas de fonctionnalités de contrôle, ni d'administration</desc0>
-            <desc1>Fonctionnalités présentes mais incomplètes ou à améliorer</desc1>
-            <desc2>Fonctionnalités complètes et faciles de contrôle et d'administration. Intégration possible avec des outils tiers (ex : SNMP, syslog…)</desc2>
-            <score>2</score>
-            <comment>Source : http://demo.koha-fr.org/</comment>
-         </element>
-      </element>
-      <element name="technicaladaptability" title="Adaptabilité">
-         <desc>Adaptabilité technique</desc>
-         <element name="modularity" title="Modularité">
-            <desc0>Logiciel monolithique</desc0>
-            <desc1>Présence de modules haut niveau permettant un premier niveau d'adaptation</desc1>
-            <desc2>Conception modulaire, permettant des adaptations faciles par sélection et/ou création de modules</desc2>
-            <score>2</score>
-            <comment>Source : http://contribs.koha.org/</comment>
-         </element>
-         <element name="codemodification" title="Facilité technique de modification du code existant">
-            <desc0>Tout à la main</desc0>
-            <desc1>Recompilation possible mais complexe, sans outils, ni documentation</desc1>
-            <desc2>Recompilation facile, outillée (ex : make, ANT, Maven…) et documentée</desc2>
-            <score>2</score>
-            <comment>Recompilation documentée.</comment>
-         </element>
-         <element name="codeextension" title="Facilité d'extension du code">
-            <desc0>Toute modification demande une recompilation du code</desc0>
-            <desc1>Architecture conçue pour des extensions statiques mais exige une recompilation</desc1>
-            <desc2>Architecture de plugins, conçue pour des extensions dynamiques et sans recompilation</desc2>
-            <score>2</score>
-            <comment>Source : http://contribs.koha.org/</comment>
-         </element>
-      </element>
-   </section>
+   <include section="Presto_generic_fr"></include>
    <section name="couverturefonctionnelle" title="Fonctionnalités métiers">
-      <desc></desc>
+      <desc>
+		</desc>
       <element name="acquisitions" title="Acquisitions">
          <desc> </desc>
          <comment></comment>
@@ -225,23 +31,23 @@
             <desc0>Pas de suggestion d'achats possible</desc0>
             <desc1>Suggestions disponibles seulement en intranet (utilisateurs internes seulement)</desc1>
             <desc2>Suggestions disponibles au travers de l'interface Web (utilisateurs internes via Intranet et lecteurs via l'OPAC)</desc2>
-            <score>2</score>
-            <comment>Source : http://opacdemo.koha-fr.org/cgi-bin/koha/opac-suggestions.pl</comment>
+            <score></score>
+            <comment></comment>
          </element>
          <element name="creationdesbonsdecommande" title="Création des bons de commande">
             <desc>Fonctionnalité de création de bons de commande.</desc>
             <desc0>Non couverte</desc0>
             <desc1>Partiellement couverte (pas d'édition de bons automatiques, un seul modèle, non modifiable...)</desc1>
             <desc2>Totalement couverte</desc2>
-            <score>2</score>
-            <comment>Les bons de commandes sont créés et suivis, avec gestion des retards.</comment>
+            <score></score>
+            <comment></comment>
          </element>
          <element name="receptiondesdocumentset/oufactures" title="Réception des documents et/ou factures">
             <desc>Possibilité d'enregistrer des factures, documents...</desc>
             <desc0>Non couverte</desc0>
             <desc1>Partiellement couverte</desc1>
             <desc2>Totalement couverte</desc2>
-            <score>2</score>
+            <score></score>
             <comment></comment>
          </element>
          <element name="reclamation/annulationdecommande" title="Réclamation/annulation de commande">
@@ -249,7 +55,7 @@
             <desc0>Non couverte</desc0>
             <desc1>Partiellement couverte</desc1>
             <desc2>Totalement couverte</desc2>
-            <score>0</score>
+            <score></score>
             <comment></comment>
          </element>
          <element name="gestiondesfournisseurs" title="Gestion des fournisseurs">
@@ -257,16 +63,16 @@
             <desc0>Non couverte</desc0>
             <desc1>Partiellement couverte</desc1>
             <desc2>Totalement couverte</desc2>
-            <score>1</score>
-            <comment>Les fournisseurs sont gérés via une interface. Néanmoins, cette interface est alimentée manuellement et ne crée aucun lien avec le catalogue du fournisseur par exemple.</comment>
+            <score></score>
+            <comment></comment>
          </element>
          <element name="gestionfinanciere" title="Gestion financière">
             <desc>Gestion des ressources financières d'une bibliothèque : calcul des revenus, dépenses...</desc>
             <desc0>Non couverte</desc0>
             <desc1>Partiellement couverte</desc1>
             <desc2>Totalement couverte</desc2>
-            <score>1</score>
-            <comment>Au sein de la page Postes et budgets. Uniquement à titre indicatif.</comment>
+            <score></score>
+            <comment></comment>
          </element>
       </element>
       <element name="gestionbibliographique" title="Bibliothéconomie">
@@ -280,15 +86,15 @@
                <desc0>Non couverte</desc0>
                <desc1>Partiellement couverte</desc1>
                <desc2>Totalement couverte</desc2>
-               <score>2</score>
-               <comment>La commande d'un livre permet le précatalogage d'un document.</comment>
+               <score></score>
+               <comment></comment>
             </element>
             <element name="catalogagedesdocuments" title="Catalogage des documents">
                <desc> Les documents peuvent être répertoriés sous forme de catalogues.</desc>
                <desc0>Non couverte</desc0>
                <desc1>Partiellement couverte</desc1>
                <desc2>Totalement couverte</desc2>
-               <score>2</score>
+               <score></score>
                <comment></comment>
             </element>
             <element name="cataloguepartypededocument" title="Catalogue par type de document">
@@ -296,23 +102,23 @@
                <desc0>Non couverte</desc0>
                <desc1>Partiellement couverte</desc1>
                <desc2>Totalement couverte</desc2>
-               <score>2</score>
-               <comment>Les catalogues sont typés. Bande dessinées...</comment>
+               <score></score>
+               <comment></comment>
             </element>
             <element name="catalogagepartage" title="Catalogage partagé">
                <desc> Fonctionnalité permettant d'avoir un catalogue partagé avec une autre entité (bibliothèques complémentaire...)</desc>
                <desc0>Non couverte</desc0>
                <desc1>Partiellement couverte</desc1>
                <desc2>Totalement couverte</desc2>
-               <score>2</score>
-               <comment>Accès, entre autre au catalogue de la BNF.</comment>
+               <score></score>
+               <comment></comment>
             </element>
             <element name="editiondecatalogue" title="Édition de catalogue">
                <desc>Création et édition automatisée de catalogues.</desc>
                <desc0>Non couverte</desc0>
                <desc1>Partiellement couverte</desc1>
                <desc2>Totalement couverte</desc2>
-               <score>1</score>
+               <score></score>
                <comment></comment>
             </element>
             <element name="listedesnouveautes" title="Liste des nouveautés">
@@ -320,8 +126,8 @@
                <desc0>Pas de liste de nouveautés</desc0>
                <desc1>Liste avec mise à jour manuelle</desc1>
                <desc2>Liste avec mise à jour automatique</desc2>
-               <score>0</score>
-               <comment>Non supporté.</comment>
+               <score></score>
+               <comment></comment>
             </element>
             <element name="dsi" title="DSI">
                <desc>Diffusion sélective d'informations</desc>
@@ -331,7 +137,7 @@
                   <desc0>Non couverte</desc0>
                   <desc1>Partiellement couverte</desc1>
                   <desc2>Totalement couverte</desc2>
-                  <score>0</score>
+                  <score></score>
                   <comment></comment>
                </element>
                <element name="courrierelectronique" title="Courrier électronique">
@@ -339,7 +145,7 @@
                   <desc0>Non couverte</desc0>
                   <desc1>Partiellement couverte</desc1>
                   <desc2>Totalement couverte</desc2>
-                  <score>0</score>
+                  <score></score>
                   <comment></comment>
                </element>
                <element name="rss" title="RSS">
@@ -347,7 +153,7 @@
                   <desc0>Non couverte</desc0>
                   <desc1>Partiellement couverte</desc1>
                   <desc2>Totalement couverte</desc2>
-                  <score>2</score>
+                  <score></score>
                   <comment></comment>
                </element>
                <element name="personnalisationdelapagedaccueil" title="Personnalisation de la page d'accueil">
@@ -355,21 +161,20 @@
                   <desc0>Non couverte</desc0>
                   <desc1>Partiellement couverte</desc1>
                   <desc2>Totalement couverte</desc2>
-                  <score>0</score>
+                  <score></score>
                   <comment></comment>
                </element>
             </element>
          </element>
          <element name="gestiondestypesdedocument" title="Types de document">
             <desc></desc>
-            <comment>Les documents sont typés à l'insertion : Livres, DVD...
-</comment>
+            <comment></comment>
             <element name="livres" title="Livres">
                <desc></desc>
                <desc0>Interface de gestion de livre peu ou pas intuitive</desc0>
                <desc1>Gestion intuitive et efficace des documents de type livres</desc1>
                <desc2>Gestion intuitive et efficace des livres avec possibilité de fonctionnalités plus avancés</desc2>
-               <score>2</score>
+               <score></score>
                <comment></comment>
             </element>
             <element name="revues" title="Revues">
@@ -377,7 +182,7 @@
                <desc0>Ne prend pas en charge les revues</desc0>
                <desc1>Prise en charge basique des revues (pas de notion d'articles de revues)</desc1>
                <desc2>Notion d'articles de revues prise en charge</desc2>
-               <score>2</score>
+               <score></score>
                <comment></comment>
             </element>
             <element name="documentsnumeriques" title="Numériques">
@@ -385,7 +190,7 @@
                <desc0>Pas de prise en charge des documents sur support numérique</desc0>
                <desc1>Liste pré-définie du type de support numérique des documents</desc1>
                <desc2>Type de support de document numérique générique/extensible</desc2>
-               <score>2</score>
+               <score></score>
                <comment></comment>
             </element>
             <element name="typespersonnalises" title="Types personnalisés">
@@ -405,27 +210,24 @@
                <desc0>Non couverte</desc0>
                <desc1>Partiellement couverte</desc1>
                <desc2>Totalement couverte</desc2>
-               <score>2</score>
-               <comment>Via l'installation d'un module
-Source : http://listes.koha-fr.org/pipermail/infos/Week-of-Mon-20090309/002909.html</comment>
+               <score></score>
+               <comment></comment>
             </element>
             <element name="thesaurusmultiples" title="Thésaurus multiples">
                <desc>La solution supporte plusieurs thésaurus indépendants</desc>
                <desc0>Non couverte</desc0>
                <desc1>Partiellement couverte</desc1>
                <desc2>Totalement couverte</desc2>
-               <score>1</score>
-               <comment>Via l'installation d'un module
-Source : http://listes.koha-fr.org/pipermail/infos/Week-of-Mon-20090309/002909.html</comment>
+               <score></score>
+               <comment></comment>
             </element>
             <element name="controles" title="Assistance">
                <desc>Assistance à l'utilisation du thésaurus.</desc>
                <desc0>Pas de contrôle à la saisie sur le thésaurus</desc0>
                <desc1>Aide à la saisie lors de la recherche (auto-complétion...)</desc1>
                <desc2>Suggestion des termes associés lors de la saisie d'une entrée dans le thésaurus</desc2>
-               <score>1</score>
-               <comment>Pas d'auto-completion, mais une proposition de recherche via l'installation d'un module
-Source : http://listes.koha-fr.org/pipermail/infos/Week-of-Mon-20090309/002909.html</comment>
+               <score></score>
+               <comment></comment>
             </element>
             <element name="elementsduthesaurus" title="Éléments du Thésaurus">
                <desc>Informations du thésaurus supporté par l'application.
@@ -441,7 +243,7 @@ Un thésaurus est composé de cinq éléments:
                <desc0>Ces éléments ne sont pas supportés par le thésaurus</desc0>
                <desc1>Seule une partie de ces éléments sont supportés</desc1>
                <desc2>Ces 5 éléments sont totalement supportés</desc2>
-               <score>2</score>
+               <score></score>
                <comment></comment>
             </element>
          </element>
@@ -453,24 +255,24 @@ Un thésaurus est composé de cinq éléments:
                <desc0>Non couverte</desc0>
                <desc1>Partiellement couverte</desc1>
                <desc2>Totalement couverte</desc2>
-               <score>2</score>
-               <comment>Outil intégré d'inventaire et de récolement.</comment>
+               <score></score>
+               <comment></comment>
             </element>
             <element name="recolement" title="Récolement">
                <desc>Contrôle de la présence de documents dans la bibliothèque.</desc>
                <desc0>Non couverte</desc0>
                <desc1>Partiellement couverte</desc1>
                <desc2>Totalement couverte</desc2>
-               <score>2</score>
-               <comment>Outil intégré d'inventaire et de récolement.</comment>
+               <score></score>
+               <comment></comment>
             </element>
             <element name="misaupilon(sortiedescollections)" title="Mis au pilon (sortie des collections)">
                <desc>Destruction d'exemplaires non utilisés/obsolètes.</desc>
                <desc0>Non couverte</desc0>
                <desc1>Partiellement couverte</desc1>
                <desc2>Totalement couverte</desc2>
-               <score>2</score>
-               <comment>le statut permet de retirer un exemplaire.</comment>
+               <score></score>
+               <comment></comment>
             </element>
          </element>
          <element name="organisation" title="Organisation">
@@ -481,32 +283,31 @@ Un thésaurus est composé de cinq éléments:
                <desc0>Non couverte</desc0>
                <desc1>Partiellement couverte</desc1>
                <desc2>Totalement couverte</desc2>
-               <score>2</score>
-               <comment>les exemplaires nombre d'exemplaires est détaillé, ainsi que le nombre d'exemplaires disponibles à un moment donné.</comment>
+               <score></score>
+               <comment></comment>
             </element>
             <element name="gestiondenoticesliees" title="Gestion de notices liées">
                <desc>Fonctionnalité de gestion des annotations liées aux documents.</desc>
                <desc0>Non couverte</desc0>
                <desc1>Partiellement couverte</desc1>
                <desc2>Totalement couverte</desc2>
-               <score>2</score>
-               <comment>description standard, notes de l'administrateur, des lecteurs et des acheteurs d'amazon pour chaque ouvrage.+
-</comment>
+               <score></score>
+               <comment></comment>
             </element>
             <element name="controledesaisie" title="Contrôle de saisie">
                <desc>Contrôle des données utilisées pour la gestion lors de la saisie</desc>
                <desc0>Non couverte</desc0>
                <desc1>Partiellement couverte</desc1>
                <desc2>Totalement couverte</desc2>
-               <score>1</score>
-               <comment>Se fie aux résultats des recherches sur amazon</comment>
+               <score></score>
+               <comment></comment>
             </element>
             <element name="gestiondesalias" title="Gestion des autorités">
                <desc>Gestion de l'identité civile des auteurs</desc>
                <desc0>Non couverte </desc0>
                <desc1>Partiellement couverte</desc1>
                <desc2>Totalement couverte</desc2>
-               <score>0</score>
+               <score></score>
                <comment></comment>
             </element>
             <element name="import/exportdedocument" title="Import/Export de document">
@@ -514,7 +315,7 @@ Un thésaurus est composé de cinq éléments:
                <desc0>Non couverte</desc0>
                <desc1>Partiellement couverte</desc1>
                <desc2>Totalement couverte</desc2>
-               <score>2</score>
+               <score></score>
                <comment></comment>
             </element>
          </element>
@@ -527,15 +328,15 @@ Un thésaurus est composé de cinq éléments:
             <desc0>Non couverte</desc0>
             <desc1>Partiellement couverte</desc1>
             <desc2>Totalement couverte</desc2>
-            <score>2</score>
-            <comment>Interface de gestion des abonnements en cours.</comment>
+            <score></score>
+            <comment></comment>
          </element>
          <element name="relance" title="Relance">
             <desc>Envoie de rappels liés aux périodiques</desc>
             <desc0>Non couverte</desc0>
             <desc1>Partiellement couverte</desc1>
             <desc2>Totalement couverte</desc2>
-            <score>2</score>
+            <score></score>
             <comment></comment>
          </element>
          <element name="renouvellement" title="Renouvellement">
@@ -543,7 +344,7 @@ Un thésaurus est composé de cinq éléments:
             <desc0>Non couverte</desc0>
             <desc1>Partiellement couverte</desc1>
             <desc2>Totalement couverte</desc2>
-            <score>2</score>
+            <score></score>
             <comment></comment>
          </element>
          <element name="suivibudgetaire" title="Suivi budgétaire">
@@ -551,7 +352,7 @@ Un thésaurus est composé de cinq éléments:
             <desc0>Non couverte</desc0>
             <desc1>Partiellement couverte</desc1>
             <desc2>Totalement couverte</desc2>
-            <score>1</score>
+            <score></score>
             <comment></comment>
          </element>
          <element name="calendrierprevisionnel" title="Calendrier prévisionnel">
@@ -559,7 +360,7 @@ Un thésaurus est composé de cinq éléments:
             <desc0>Non couverte</desc0>
             <desc1>Partiellement couverte</desc1>
             <desc2>Totalement couverte</desc2>
-            <score>1</score>
+            <score></score>
             <comment></comment>
          </element>
          <element name="bulletinage" title="Bulletinage">
@@ -567,23 +368,23 @@ Un thésaurus est composé de cinq éléments:
             <desc0>Non couverte</desc0>
             <desc1>Partiellement couverte</desc1>
             <desc2>Totalement couverte</desc2>
-            <score>2</score>
-            <comment>Un menu permet d'effectuer le bulletinage à l'arrivée du périodique.</comment>
+            <score></score>
+            <comment></comment>
          </element>
          <element name="depouillement" title="Dépouillement">
             <desc>Détection et classification des thèmes et sujets abordés par une périodique.</desc>
             <desc0>Pas de dépouillement possible</desc0>
             <desc1>Dépouillement manuel</desc1>
             <desc2>Dépouillement automatique</desc2>
-            <score>1</score>
-            <comment>Les thèmes sont remplis lors du bulletinage ou de la commande du périodique. Ils sont affichés lorsque l'état du périodique passe à arrivé.</comment>
+            <score></score>
+            <comment></comment>
          </element>
          <element name="circulation" title="Circulation">
             <desc>Mesure de la circulation des périodiques.</desc>
             <desc0>Non couverte</desc0>
             <desc1>Partiellement couverte</desc1>
             <desc2>Totalement couverte</desc2>
-            <score>2</score>
+            <score></score>
             <comment></comment>
          </element>
       </element>
@@ -595,7 +396,7 @@ Un thésaurus est composé de cinq éléments:
             <desc0>Non couverte</desc0>
             <desc1>Partiellement couverte</desc1>
             <desc2>Totalement couverte</desc2>
-            <score>2</score>
+            <score></score>
             <comment></comment>
          </element>
          <element name="retour" title="Retour">
@@ -603,7 +404,7 @@ Un thésaurus est composé de cinq éléments:
             <desc0>Non couverte</desc0>
             <desc1>Partiellement couverte</desc1>
             <desc2>Totalement couverte</desc2>
-            <score>2</score>
+            <score></score>
             <comment></comment>
          </element>
          <element name="prolongation" title="Prolongation">
@@ -611,23 +412,23 @@ Un thésaurus est composé de cinq éléments:
             <desc0>Non couverte</desc0>
             <desc1>Partiellement couverte</desc1>
             <desc2>Totalement couverte</desc2>
-            <score>2</score>
-            <comment>Les prêts peuvent être prolongés.</comment>
+            <score></score>
+            <comment></comment>
          </element>
          <element name="reservation" title="Réservation">
             <desc>Prise en charge des réservations</desc>
             <desc0>Non couverte</desc0>
             <desc1>Partiellement couverte</desc1>
             <desc2>Totalement couverte</desc2>
-            <score>2</score>
-            <comment>L'utilisateur peut réserver depuis l'OPAC.</comment>
+            <score></score>
+            <comment></comment>
          </element>
          <element name="consultationsurplace" title="Consultation sur place">
             <desc>Gestion de document consultés sur place (document archivés...)</desc>
             <desc0>Non couverte</desc0>
             <desc1>Partiellement couverte</desc1>
             <desc2>Totalement couverte</desc2>
-            <score>0</score>
+            <score></score>
             <comment></comment>
          </element>
          <element name="droitsdepretsdifferentsselonlescategoriesdemprunt" title="Droits de prêt différents selon les catégories d'emprunteurs">
@@ -635,7 +436,7 @@ Un thésaurus est composé de cinq éléments:
             <desc0>Non couverte</desc0>
             <desc1>Partiellement couverte</desc1>
             <desc2>Totalement couverte</desc2>
-            <score>2</score>
+            <score></score>
             <comment></comment>
          </element>
          <element name="droitsdepretdifferentsselonlestypesdedocument" title="Droits de prêt différents selon les types de document">
@@ -643,7 +444,7 @@ Un thésaurus est composé de cinq éléments:
             <desc0>Non couverte</desc0>
             <desc1>Partiellement couverte</desc1>
             <desc2>Totalement couverte</desc2>
-            <score>2</score>
+            <score></score>
             <comment></comment>
          </element>
          <element name="lettrederappel" title="Lettre de rappel">
@@ -654,7 +455,7 @@ Un thésaurus est composé de cinq éléments:
                <desc0>Non couverte</desc0>
                <desc1>Partiellement couverte</desc1>
                <desc2>Totalement couverte</desc2>
-               <score>0</score>
+               <score></score>
                <comment></comment>
             </element>
             <element name="parcourierelectronique" title="Par courrier électronique">
@@ -662,8 +463,8 @@ Un thésaurus est composé de cinq éléments:
                <desc0>Non couverte</desc0>
                <desc1>Partiellement couverte</desc1>
                <desc2>Totalement couverte</desc2>
-               <score>1</score>
-               <comment>Lien mailto sans modèle de texte.</comment>
+               <score></score>
+               <comment></comment>
             </element>
          </element>
          <element name="editiondelettredereservationalavolee" title="Édition de lettre de réservation à la volée">
@@ -671,7 +472,7 @@ Un thésaurus est composé de cinq éléments:
             <desc0>Non couverte</desc0>
             <desc1>Partiellement couverte</desc1>
             <desc2>Totalement couverte</desc2>
-            <score>2</score>
+            <score></score>
             <comment></comment>
          </element>
          <element name="gestiondefichierslecteur" title="Gestion de fichiers lecteur">
@@ -679,7 +480,7 @@ Un thésaurus est composé de cinq éléments:
             <desc0>Non couverte</desc0>
             <desc1>Partiellement couverte</desc1>
             <desc2>Totalement couverte</desc2>
-            <score>2</score>
+            <score></score>
             <comment></comment>
          </element>
          <element name="gestionfinancieredesprets" title="Gestion financière des prêts">
@@ -687,15 +488,15 @@ Un thésaurus est composé de cinq éléments:
             <desc0>Non couverte</desc0>
             <desc1>Partiellement couverte</desc1>
             <desc2>Totalement couverte</desc2>
-            <score>2</score>
-            <comment>Posssibilité de définir les règles financières liées aux retards.</comment>
+            <score></score>
+            <comment></comment>
          </element>
          <element name="historiquedespretsparlecteur" title="Historique des prêts par lecteur">
             <desc>Possibilité de suivi de l'historique des prêts pour chaque lecteur</desc>
             <desc0>Non couverte</desc0>
             <desc1>Partiellement couverte</desc1>
             <desc2>Totalement couverte</desc2>
-            <score>2</score>
+            <score></score>
             <comment></comment>
          </element>
       </element>
@@ -710,7 +511,7 @@ Un thésaurus est composé de cinq éléments:
                <desc0>Non couverte</desc0>
                <desc1>Partiellement couverte</desc1>
                <desc2>Totalement couverte</desc2>
-               <score>2</score>
+               <score></score>
                <comment></comment>
             </element>
             <element name="historiquedesrecherches" title="Historique des recherches">
@@ -718,7 +519,7 @@ Un thésaurus est composé de cinq éléments:
                <desc0>Non couverte</desc0>
                <desc1>Partiellement couverte</desc1>
                <desc2>Totalement couverte</desc2>
-               <score>0</score>
+               <score></score>
                <comment></comment>
             </element>
             <element name="enregistrementdelarecherche" title="Enregistrement de la requête">
@@ -726,7 +527,7 @@ Un thésaurus est composé de cinq éléments:
                <desc0>Non couverte</desc0>
                <desc1>Partiellement couverte</desc1>
                <desc2>Totalement couverte</desc2>
-               <score>0</score>
+               <score></score>
                <comment></comment>
             </element>
             <element name="presentationdesresultats" title="Présentation des résultats">
@@ -734,7 +535,7 @@ Un thésaurus est composé de cinq éléments:
                <desc0>Non couverte</desc0>
                <desc1>Partiellement couverte</desc1>
                <desc2>Totalement couverte</desc2>
-               <score>2</score>
+               <score></score>
                <comment></comment>
             </element>
             <element name="openurl" title="OpenURL">
@@ -742,7 +543,7 @@ Un thésaurus est composé de cinq éléments:
                <desc0>Non couverte</desc0>
                <desc1>Partiellement couverte</desc1>
                <desc2>Totalement couverte</desc2>
-               <score>2</score>
+               <score></score>
                <comment></comment>
             </element>
          </element>
@@ -757,7 +558,7 @@ Un thésaurus est composé de cinq éléments:
                   <desc0>Non couverte</desc0>
                   <desc1>Partiellement couverte</desc1>
                   <desc2>Totalement couverte</desc2>
-                  <score>2</score>
+                  <score></score>
                   <comment></comment>
                </element>
                <element name="recherchemulti-criteres" title="Recherche multi-critères">
@@ -765,7 +566,7 @@ Un thésaurus est composé de cinq éléments:
                   <desc0>Non couverte</desc0>
                   <desc1>Partiellement couverte</desc1>
                   <desc2>Totalement couverte</desc2>
-                  <score>2</score>
+                  <score></score>
                   <comment></comment>
                </element>
                <element name="recherchemulti-champs" title="Recherche multi-champs">
@@ -773,7 +574,7 @@ Un thésaurus est composé de cinq éléments:
                   <desc0>Non couverte</desc0>
                   <desc1>Partiellement couverte</desc1>
                   <desc2>Totalement couverte</desc2>
-                  <score>2</score>
+                  <score></score>
                   <comment></comment>
                </element>
                <element name="rechercheparequation" title="Recherche par équation">
@@ -781,7 +582,7 @@ Un thésaurus est composé de cinq éléments:
                   <desc0>Non couverte</desc0>
                   <desc1>Partiellement couverte</desc1>
                   <desc2>Totalement couverte</desc2>
-                  <score>0</score>
+                  <score></score>
                   <comment></comment>
                </element>
                <element name="aidealarecherche" title="Aide à la Recherche">
@@ -789,7 +590,7 @@ Un thésaurus est composé de cinq éléments:
                   <desc0>Non couverte</desc0>
                   <desc1> Partiellement couverte</desc1>
                   <desc2>Totalement couverte</desc2>
-                  <score>0</score>
+                  <score></score>
                   <comment></comment>
                </element>
             </element>
@@ -801,7 +602,7 @@ Un thésaurus est composé de cinq éléments:
                   <desc0>Non couverte</desc0>
                   <desc1>Partiellement couverte</desc1>
                   <desc2>Totalement couverte</desc2>
-                  <score>0</score>
+                  <score></score>
                   <comment></comment>
                </element>
                <element name="troncature" title="Troncature">
@@ -809,7 +610,7 @@ Un thésaurus est composé de cinq éléments:
                   <desc0>Non supporté</desc0>
                   <desc1>Troncature à gauche ou à droite seulement</desc1>
                   <desc2>Support complet (troncature à gauche et/ou à droite)</desc2>
-                  <score>2</score>
+                  <score></score>
                   <comment></comment>
                </element>
                <element name="expressionexacte" title="Expression exacte">
@@ -817,7 +618,7 @@ Un thésaurus est composé de cinq éléments:
                   <desc0>Non couverte</desc0>
                   <desc1>Partiellement couverte</desc1>
                   <desc2>Totalement couverte</desc2>
-                  <score>2</score>
+                  <score></score>
                   <comment></comment>
                </element>
             </element>
@@ -829,24 +630,24 @@ Un thésaurus est composé de cinq éléments:
                   <desc0>Pas de support des lexèmes</desc0>
                   <desc1>Intégration limitée des lexèmes</desc1>
                   <desc2>Intégration avancée des lexèmes</desc2>
-                  <score>2</score>
-                  <comment>Support des formes fléchies dans une grande majorité des langues européennes.</comment>
+                  <score></score>
+                  <comment></comment>
                </element>
                <element name="lemmatisation" title="Lemmatisation">
                   <desc>Analyse lexicale du contenu d'un texte regroupant les mots d'une même famille</desc>
                   <desc0>Pas de lemmatisation</desc0>
                   <desc1>Support limité de la lemmatisation</desc1>
                   <desc2>Lemmatisation pleinement supportée</desc2>
-                  <score>0</score>
-                  <comment>Non implémenté selon la communauté.</comment>
+                  <score></score>
+                  <comment></comment>
                </element>
                <element name="autopostage" title="Étiquetage par l'utilisateur">
                   <desc>Possibilité à l'utilisateur d'apposer des étiquettes sur le contenu et de les utiliser/importer</desc>
                   <desc0>Non couverte</desc0>
                   <desc1>Partiellement couverte</desc1>
                   <desc2>Totalement couverte</desc2>
-                  <score>2</score>
-                  <comment>L'utilisateur peut définir des tags.</comment>
+                  <score></score>
+                  <comment></comment>
                </element>
             </element>
             <element name="recherchesurlethesaurus" title="Recherche sur le Thésaurus">
@@ -857,24 +658,24 @@ Un thésaurus est composé de cinq éléments:
                   <desc0>Non implémenté</desc0>
                   <desc1>Partiellement implémentée</desc1>
                   <desc2>Totalement implémentée</desc2>
-                  <score>2</score>
-                  <comment>La navigation dans la hiérarchie du thésaurus est possible une fois sur une notice.</comment>
+                  <score></score>
+                  <comment></comment>
                </element>
                <element name="synonymie" title="Synonymie">
                   <desc>Support de la synonymie dans le Thésaurus avec les notions de termes préférentiels/non préférentiels, termes standards/termes rejetés</desc>
                   <desc0>Non implémenté</desc0>
                   <desc1>Partiellement implémenté </desc1>
                   <desc2>Recherche par synonymie riche et complet</desc2>
-                  <score>1</score>
-                  <comment>Pas de champ de recherche direct mais possibilité de naviguer dans les synonymes.</comment>
+                  <score></score>
+                  <comment></comment>
                </element>
                <element name="rechercheparassociation" title="Recherche par association">
                   <desc>Le thesaurus permet l'association réciproque ou non réciproque de termes ("voir aussi")</desc>
                   <desc0>Impossible</desc0>
                   <desc1>Partiellement possible</desc1>
                   <desc2>Implémenté et outillé dans l'application</desc2>
-                  <score>1</score>
-                  <comment>Pas de champ de recherche direct mais possibilité de naviguer dans les termes associés.</comment>
+                  <score></score>
+                  <comment></comment>
                </element>
             </element>
             <element name="recherchefederee" title="Recherche fédérée">
@@ -882,7 +683,7 @@ Un thésaurus est composé de cinq éléments:
                <desc0>Non couverte</desc0>
                <desc1>Partiellement couverte</desc1>
                <desc2>Totalement couverte</desc2>
-               <score>2</score>
+               <score></score>
                <comment></comment>
             </element>
          </element>
@@ -894,7 +695,7 @@ Un thésaurus est composé de cinq éléments:
                <desc0>Non couverte</desc0>
                <desc1>Partiellement couverte</desc1>
                <desc2>Totalement couverte</desc2>
-               <score>0</score>
+               <score></score>
                <comment></comment>
             </element>
             <element name="oai" title="Support du protocole OAI">
@@ -902,7 +703,7 @@ Un thésaurus est composé de cinq éléments:
                <desc0>Non couverte</desc0>
                <desc1>Partiellement couverte</desc1>
                <desc2>Totalement couverte</desc2>
-               <score>2</score>
+               <score></score>
                <comment></comment>
             </element>
             <element name="commande" title="Commande">
@@ -910,23 +711,23 @@ Un thésaurus est composé de cinq éléments:
                <desc0>Non couverte</desc0>
                <desc1>Partiellement couverte</desc1>
                <desc2>Totalement couverte</desc2>
-               <score>2</score>
-               <comment>Via amazon, l'utilisateur peut commander un livre ne étant redirigé sur la page de l'ouvrage de la boutique en ligne Amazon.</comment>
+               <score></score>
+               <comment></comment>
             </element>
             <element name="facturation" title="Facturation">
                <desc>Fonctionnalité de facturation accessible en ligne. </desc>
                <desc0>Non couverte</desc0>
                <desc1>Partiellement couverte</desc1>
                <desc2>Totalement couverte</desc2>
-               <score>1</score>
-               <comment>Les lecteurs sont informés des frais en cours, mais ne peuvent les régler en ligne.</comment>
+               <score></score>
+               <comment></comment>
             </element>
             <element name="historiquedesreproductions" title="Historique des reproductions">
                <desc>Un historique conserve les données liées au document numérisé.</desc>
                <desc0>Non couverte</desc0>
                <desc1>Partiellement couverte</desc1>
                <desc2>Totalement couverte</desc2>
-               <score>0</score>
+               <score></score>
                <comment></comment>
             </element>
          </element>
@@ -942,7 +743,7 @@ Un thésaurus est composé de cinq éléments:
             <desc0>très lentes, plusieurs jours</desc0>
             <desc1>moyenne quelques heures</desc1>
             <desc2>rapide (-1 heure)</desc2>
-            <score>2</score>
+            <score></score>
             <comment></comment>
          </element>
          <element name="ergonomie" title="Ergonomie de l'interface graphique">
@@ -950,7 +751,7 @@ Un thésaurus est composé de cinq éléments:
             <desc0>on ne s'y retrouve pas sans mode d'emploi</desc0>
             <desc1>correcte</desc1>
             <desc2>très intuitif, quasi aucune doc nécessaire</desc2>
-            <score>1</score>
+            <score></score>
             <comment></comment>
          </element>
          <element name="interfacegraphique" title="Qualité de l'interface graphique">
@@ -958,7 +759,7 @@ Un thésaurus est composé de cinq éléments:
             <desc0>Peu esthétique, fouillis</desc0>
             <desc1>Correcte</desc1>
             <desc2>Claire, belle, plusieurs thèmes disponibles</desc2>
-            <score>1</score>
+            <score></score>
             <comment></comment>
          </element>
       </element>
@@ -967,8 +768,8 @@ Un thésaurus est composé de cinq éléments:
          <desc0>Non couverte</desc0>
          <desc1>Partiellement couverte</desc1>
          <desc2>Totalement couverte</desc2>
-         <score>2</score>
-         <comment>Source : http://listes.koha-fr.org/pipermail/infos/Week-of-Mon-20080324/002455.html</comment>
+         <score></score>
+         <comment></comment>
       </element>
       <element name="edition" title="Fonctions d'éditions">
          <desc>Édition</desc>
@@ -978,7 +779,7 @@ Un thésaurus est composé de cinq éléments:
             <desc0>Non couverte</desc0>
             <desc1>Partiellement couverte</desc1>
             <desc2>Totalement couverte</desc2>
-            <score>0</score>
+            <score></score>
             <comment></comment>
          </element>
          <element name="relancelecteur" title="Fonctions de courriers-types de relance lecteur">
@@ -986,7 +787,7 @@ Un thésaurus est composé de cinq éléments:
             <desc0>Non couverte</desc0>
             <desc1>Partiellement couverte</desc1>
             <desc2>Totalement couverte</desc2>
-            <score>0</score>
+            <score></score>
             <comment></comment>
          </element>
          <element name="relancefournisseur" title="Fonctions de relance fournisseur">
@@ -994,15 +795,15 @@ Un thésaurus est composé de cinq éléments:
             <desc0>Non couverte</desc0>
             <desc1>Partiellement couverte</desc1>
             <desc2>Totalement couverte</desc2>
-            <score>1</score>
-            <comment>Rappels pour les administrateurs mais pas d'interactions avec les fournisseurs.</comment>
+            <score></score>
+            <comment></comment>
          </element>
          <element name="fonctionsdenotices" title="Édition des feuilles de notices">
             <desc>Interface de création ou de modification des feuilles de notices</desc>
             <desc0>Non couverte</desc0>
             <desc1>Partiellement couverte</desc1>
             <desc2>Totalement couverte</desc2>
-            <score>2</score>
+            <score></score>
             <comment></comment>
          </element>
       </element>
@@ -1014,7 +815,7 @@ Un thésaurus est composé de cinq éléments:
             <desc0>Non couverte</desc0>
             <desc1>Partiellement couverte</desc1>
             <desc2>Totalement couverte</desc2>
-            <score>1</score>
+            <score></score>
             <comment></comment>
          </element>
          <element name="gestiondesdroitsdaccespourlesutilisateurs" title="Gestion des droits d'accès pour les utilisateurs">
@@ -1022,7 +823,7 @@ Un thésaurus est composé de cinq éléments:
             <desc0>Non couverte</desc0>
             <desc1>Partiellement couverte</desc1>
             <desc2>Totalement couverte</desc2>
-            <score>2</score>
+            <score></score>
             <comment></comment>
          </element>
       </element>
@@ -1038,7 +839,7 @@ Un thésaurus est composé de cinq éléments:
             <desc0>Non couverte</desc0>
             <desc1>Partiellement couverte</desc1>
             <desc2>Totalement couverte</desc2>
-            <score>2</score>
+            <score></score>
             <comment></comment>
          </element>
          <element name="gestiondescodesbarres" title="Gestion des codes barres">
@@ -1046,7 +847,7 @@ Un thésaurus est composé de cinq éléments:
             <desc0>Non couverte</desc0>
             <desc1>Partiellement couverte</desc1>
             <desc2>Totalement couverte</desc2>
-            <score>2</score>
+            <score></score>
             <comment></comment>
          </element>
          <element name="rfid" title="RFID">
@@ -1054,16 +855,16 @@ Un thésaurus est composé de cinq éléments:
             <desc0>Pas de prise en charge des RFID</desc0>
             <desc1>Utilisation des RFID comme code barre classique</desc1>
             <desc2>Utilisation des fonctionnalités avancés des RFID (Armoires intelligentes...)</desc2>
-            <score>1</score>
-            <comment>Placés dans le champ code barre, les informations du tags sont utilisés comme celles d'un code barre.</comment>
+            <score></score>
+            <comment></comment>
          </element>
          <element name="statistiques" title="Statistiques">
             <desc> </desc>
             <desc0>Non couverte</desc0>
             <desc1>Partiellement couverte</desc1>
             <desc2>Totalement couverte</desc2>
-            <score>0</score>
-            <comment>Statistiques adhérents seulement...</comment>
+            <score></score>
+            <comment></comment>
          </element>
       </element>
       <element name="internationalisation" title="Internationalisation">
@@ -1074,7 +875,7 @@ Un thésaurus est composé de cinq éléments:
             <desc0>Non couverte</desc0>
             <desc1>Partiellement couverte</desc1>
             <desc2>Totalement couverte</desc2>
-            <score>2</score>
+            <score></score>
             <comment></comment>
          </element>
          <element name="fondsmultilingue" title="Fonds multilingue">
@@ -1082,8 +883,8 @@ Un thésaurus est composé de cinq éléments:
             <desc0>Non couverte</desc0>
             <desc1>Partiellement couverte</desc1>
             <desc2>Totalement couverte</desc2>
-            <score>1</score>
-            <comment>Les langues des documents sont données dans les détails des ouvrages.</comment>
+            <score></score>
+            <comment></comment>
          </element>
       </element>
       <element name="normesinternationalessupportees" title="Normes supportées">
@@ -1097,7 +898,7 @@ Un thésaurus est composé de cinq éléments:
                <desc0>Non couverte</desc0>
                <desc1>Partiellement couverte</desc1>
                <desc2>Totalement couverte</desc2>
-               <score>2</score>
+               <score></score>
                <comment></comment>
             </element>
             <element name="sru-srw" title="SRU-SRW">
@@ -1105,7 +906,7 @@ Un thésaurus est composé de cinq éléments:
                <desc0>Non couverte</desc0>
                <desc1>Partiellement couverte</desc1>
                <desc2>Totalement couverte</desc2>
-               <score>2</score>
+               <score></score>
                <comment></comment>
             </element>
          </element>
@@ -1114,8 +915,8 @@ Un thésaurus est composé de cinq éléments:
             <desc0>Non implémenté</desc0>
             <desc1>Partiellement implémenté</desc1>
             <desc2>Implémenté et pleinement exploité</desc2>
-            <score>2</score>
-            <comment>Une vue permet d'afficher des notices au format ISBD.</comment>
+            <score></score>
+            <comment></comment>
          </element>
          <element name="requetage" title="Stockage MARC">
             <desc>Respects des formats de stockage MARC issus de la norme ISO 2709</desc>
@@ -1125,7 +926,7 @@ Un thésaurus est composé de cinq éléments:
                <desc0>Non couverte</desc0>
                <desc1>Partiellement couverte</desc1>
                <desc2>Totalement couverte</desc2>
-               <score>2</score>
+               <score></score>
                <comment></comment>
             </element>
             <element name="unimarc" title="Unimarc">
@@ -1133,7 +934,7 @@ Un thésaurus est composé de cinq éléments:
                <desc0>Non couverte</desc0>
                <desc1>Partiellement couverte</desc1>
                <desc2>Totalement couverte</desc2>
-               <score>2</score>
+               <score></score>
                <comment></comment>
             </element>
             <element name="xmlmarc" title="XML Marc">
@@ -1141,7 +942,7 @@ Un thésaurus est composé de cinq éléments:
                <desc0>Non couverte</desc0>
                <desc1>Partiellement couverte</desc1>
                <desc2>Totalement couverte</desc2>
-               <score>2</score>
+               <score></score>
                <comment></comment>
             </element>
          </element>
