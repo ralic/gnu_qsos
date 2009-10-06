@@ -14,10 +14,10 @@
       <language>en</language>
       <appname>Firebird</appname>
       <release>1.5</release>
-      <licenseid>13</licenseid>
-      <licensedesc>NPL (Netscape)</licensedesc>
+      <licenseid>31</licenseid>
+      <licensedesc>GNU GPL</licensedesc>
       <url>http://www.firebirdsql.org/</url>
-      <desc>Firebird RDBMS offers many ANSI SQL features &amp; runs on Linux, Windows &amp; several Unix platforms. Features excellent concurrency &amp; performance &amp; powerful stored procedure &amp; trigger language</desc>
+      <desc>Firebird RDBMS offers many ANSI SQL features &amp; runs on Linux, Windows &amp; several Unix platforms. Features excellent concurrency &amp; performance &amp; powerful stored procedure &amp; trigger language.</desc>
       <demourl>http://tracker.firebirdsql.org</demourl>
       <qsosformat>1.7</qsosformat>
       <qsosappfamily>RDBMS</qsosappfamily>
@@ -404,7 +404,7 @@
             <desc0>Features implemented far from SQL:2003 core compliance</desc0>
             <desc1>Most of SQL:2003 core features are implemented and compliant</desc1>
             <desc2>SQL:2003 core compliant and most of options in packages (SQL/Framework, SQL/Foundation, SQL/CLI, SQL/PSM, SQL/MED, SQL/OLB, SQL/Schemata, SQL/JRT, SQL/XML) are implemented</desc2>
-            <score></score>
+            <score>1</score>
             <comment></comment>
          </element>
       </element>
@@ -473,17 +473,17 @@
          <comment></comment>
          <element name="accesscontrol" title="Access control levels">
             <desc>Levels of access control supported (usaername, table, base, etc...)</desc>
-            <comment>nenhum</comment>
+            <comment>none</comment>
          </element>
          <element name="authenticationmethods" title="Authentication methods">
             <desc>Authentication methods supported</desc>
-            <comment>não observado</comment>
+            <comment>unobserved</comment>
          </element>
          <element name="sslsupport" title="SSL support">
             <desc0>Not implemented</desc0>
             <desc1>Partially implemented</desc1>
             <desc2>Fully implemented</desc2>
-            <score>0</score>
+            <score>1</score>
             <comment></comment>
          </element>
       </element>
@@ -499,20 +499,20 @@
          </element>
          <element name="transactionmodes" title="Transactional modes">
             <desc>Transactional modes (or isolation level) supported</desc>
-            <comment>SERIALIZABLE, READ-COMMITTED, READ-REPEATABLE, FORCED REPEATABLE READ</comment>
+            <comment>READ-COMMITTED, READ-REPEATABLE, FORCED REPEATABLE READ</comment>
          </element>
          <element name="locking" title="Locking granularity">
             <desc0>Table locks only</desc0>
             <desc1>Pages locks</desc1>
             <desc2>Row locks</desc2>
-            <score></score>
+            <score>1</score>
             <comment></comment>
          </element>
          <element name="xacompliance" title="XA compliance">
             <desc0>Not implemented</desc0>
             <desc1>Partially implemented</desc1>
             <desc2>Fully implemented</desc2>
-            <score></score>
+            <score>0</score>
             <comment></comment>
          </element>
       </element>
@@ -587,8 +587,8 @@
          <desc0>No replication features</desc0>
          <desc1>Master/Slave replication</desc1>
          <desc2>Mutli-master replication</desc2>
-         <score>0</score>
-         <comment></comment>
+         <score>1</score>
+         <comment>plugin comercial</comment>
       </element>
       <element name="olap" title="OLAP">
          <desc0>Not supported</desc0>
@@ -608,7 +608,7 @@
          <desc0>No spatial features</desc0>
          <desc1>Few and limited spatial features</desc1>
          <desc2>Full OpenGIS compliance</desc2>
-         <score>1</score>
+         <score>0</score>
          <comment></comment>
       </element>
    </section>
@@ -618,28 +618,28 @@
          <desc0>No tool available</desc0>
          <desc1>Tool(s) available but limited (features or plateforms)</desc1>
          <desc2>Available tool(s) is(are) complete and easily integrable (scripts, API, ...)</desc2>
-         <score></score>
+         <score>2</score>
          <comment></comment>
       </element>
       <element name="querytools" title="Query tools">
          <desc0>No tool available</desc0>
          <desc1>Tool(s) available but limited (features or plateforms)</desc1>
          <desc2>Available tool(s) is(are) complete and easily integrable (scripts, API, ...)</desc2>
-         <score></score>
+         <score>2</score>
          <comment></comment>
       </element>
       <element name="migrationtools" title="Migration tools">
          <desc0>No tool available</desc0>
          <desc1>Tool(s) available but limited (features or plateforms)</desc1>
          <desc2>Available tool(s) is(are) complete and easily integrable (scripts, API, ...)</desc2>
-         <score></score>
+         <score>1</score>
          <comment></comment>
       </element>
       <element name="optimizetools" title="Optimization tools">
          <desc0>No tool available</desc0>
          <desc1>Tool(s) available but limited (features or plateforms)</desc1>
          <desc2>Available tool(s) is(are) complete and easily integrable (scripts, API, ...)</desc2>
-         <score></score>
+         <score>1</score>
          <comment></comment>
       </element>
       <comment>IB Expert, FlameRobin, IBOConsole, Firebird Workbench</comment>
