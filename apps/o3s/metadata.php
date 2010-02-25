@@ -25,14 +25,11 @@
 */
 
 include("config.php");
-include("locales/$lang.php");
-
-echo "<html>\n";
-echo "<head>\n";
-echo "<LINK REL=StyleSheet HREF='skins/$skin/o3s.css' TYPE='text/css'/>\n";
-echo "</head>\n";
-
+include("lang.php");
 include("libs/QSOSDocument.php");
+
+$IdDB = mysql_connect($db_host ,$db_user, $db_pwd);
+mysql_select_db($db_db);
 
 //$file: filename (or URI) of the QSOS document to load
 //Returns: array with metadata
@@ -67,47 +64,54 @@ function getmetadata($file) {
 
 $array = array();
 function retrieveTree($path, $parent)  {
-	global $delim;
-        global $array;
-	
-	if ($dir=@opendir($path)) {
-	while (($element=readdir($dir))!== false) {
-		if (is_dir($path.$delim.$element) 
-		&& $element != "." 
-		&& $element != ".." 
-		&& $element != "CVS" 
-		&& $element != "template" 
-		&& $element != "templates" 
-		&& $element != ".svn") {
-			retrieveTree($path.$delim.$element, $parent.$delim.$element);
-		} elseif (substr($element, -5) == ".qsos") {
-			array_push($array, $parent.$delim.$element);
-		}
-	}
-	closedir($dir);
-	}
-	return (isset($array) ? $array : false);
+  global $delim;
+  global $array;
+  
+  if ($dir=@opendir($path)) {
+  while (($element=readdir($dir))!== false) {
+    if (is_dir($path.$delim.$element) 
+    && $element != "." 
+    && $element != ".." 
+    && $element != "CVS" 
+    && $element != "template" 
+    && $element != "templates" 
+    && $element != ".svn") {
+      retrieveTree($path.$delim.$element, $parent.$delim.$element);
+    } elseif (substr($element, -5) == ".qsos") {
+      array_push($array, $parent.$delim.$element);
+    }
+  }
+  closedir($dir);
+  }
+  return (isset($array) ? $array : false);
+}
+
+echo "<html>\n";
+echo "<head>\n";
+echo "<LINK REL=StyleSheet HREF='skins/$skin/o3s.css' TYPE='text/css'/>\n";
+echo "</head>\n";
+
+echo "<body>\n";
+echo "<center>\n";
+echo "<img src='skins/$skin/o3s.png'/>\n";
+echo "<br/><br/>\n";
+
+echo "<div style='font-weight: bold'>Metadata repository update<br/><br/></div>\n";
+
+echo "Output: <div style='font-size: small; text-align: left; width: 50%; background-color: lightgrey'>";
+$query = "TRUNCATE TABLE evaluations";
+if ($IdReq = mysql_query($query, $IdDB)) {
+  echo "Metadata deleted.<br/>";
+} else {
+  echo "Error while deleting metadata...<br/>";
 }
 
 $evaluations = retrieveTree($sheet, $sheet);
 
-$IdDB = mysql_connect($db_host ,$db_user, $db_pwd);
-mysql_select_db($db_db);
-
-$query = "TRUNCATE TABLE evaluations";
-if ($IdReq = mysql_query($query, $IdDB)) {
-  echo "Meta données supprimées<br/>";
-} else {
-  echo "Erreur lors de la suppression des meta données...<br/>";
-}
-  
 foreach ($evaluations as $evaluation) {
   $id = end(explode($delim, $evaluation));
-
   $m = getmetadata($evaluation);
-//   echo "<pre>";
-//   print_r($m);
-//   echo "</pre>";
+  
   $query = "INSERT INTO evaluations VALUES (\"$id\", 
   \"".$m['qsosappfamily']."\",
   \"".$m['qsosspecificformat']."\",
@@ -129,9 +133,17 @@ foreach ($evaluations as $evaluation) {
   ".$m['comments']['notcommented'].")";
   
   if ($IdReq = mysql_query($query, $IdDB)) {
-    echo $m['appname']." enregistré en base<br/>";
+    echo $m['appname']." proceeded.<br/>";
   } else {
-    echo "Erreur d'écriture dans la base...<br/>";
+    echo "Error while inserting in database...<br/>";
   }
 }
+
+echo "</div>";
+echo "<br/><input type='button' value='Back to o3s' onclick=\"window.location='index.php'\">";
+echo " <input type='button' value='Upload evaluations' onclick=\"window.location='upload.php'\">";
+
+echo "</center>\n";
+echo "</body>\n";
+echo "</html>\n";
 ?>

@@ -66,6 +66,7 @@ $msg['s3_table_view'] = "View";
 $msg['s3_format_html'] = "HTML";
 $msg['s3_format_xml'] = "XML";
 $msg['s3_set_weights'] = "Change weightings";
+$msg['s3_show_mindmap'] = "Visualize template";
 $msg['s3_format_odf'] = "ODF comparison";
 $msg['s3_format_html_tooltip'] = "View in HTML format";
 $msg['s3_format_xml_tooltip'] = "View in QSOS native XML format";
@@ -73,6 +74,7 @@ $msg['s3_format_odf_tooltip'] = "View in OpenDocument Format (spreadsheet)";
 $msg['s3_table_compare'] = "Compare";
 $msg['s3_button_next'] = "Online comparison";
 $msg['s3_graph'] = "Graphic comparison";
+$msg['s3_quadrant'] = "Quadrant";
 $msg['s3_check_svg'] = "My browser supports SVG";
 $msg['s3_err_js_no_file'] = "At least one product must be checked";
 $msg['s3_err_no_family'] = " not in repository!";
@@ -99,6 +101,7 @@ $msg['ods_softwarefamily'] = "Software family";
 $msg['ods_qsosversion'] = "QSOS version";
 $msg['ods_templateversion'] = "Template version";
 $msg['ods_criterion'] = "Criterion";
+$msg['ods_desc'] = "Description";
 $msg['ods_score0'] = "Score 0";
 $msg['ods_score1'] = "Score 1";
 $msg['ods_score2'] = "Score 2";
@@ -113,6 +116,19 @@ $msg['ods_validationdate'] = "Validation date";
 $msg['ods_comment'] = "Comment";
 $msg['ods_score'] = "Score";
 $msg['ods_weight'] = "Weight";
+$msg['ods_header'] = "QSOS analysis";
 $msg['ods_synthesis'] = "Synthesis";
+$msg['ods_synthesis_title'] = "Synthesis and dynamic comparison";
+$msg['ods_citeria_title'] = "Description of used criteria";
+$msg['ods_evaluation_title'] = "Evaluation of ";
+$msg['ods_val_title'] = "Modify weight";
+$msg['ods_val_error'] = "Error";
+$msg['ods_val_helpmsg'] = "Enter an integer value";
+$msg['ods_val_errormsg'] = "Only integer values are allowed";
+$msg['ods_note_weight'] = "You can modify weights of criteria in column B (Weight)";
+
+//QSOS quadrant
+$msg['qq_maturity'] = "Maturity";
+$msg['qq_funccoverage'] = "Functional coverage";
 
 ?>

@@ -75,6 +75,11 @@ function submitForm() {
   }
 }
 
+function showFreeMind() {
+    myForm.action = "freemind.php";
+    myForm.submit();
+}
+
 function exportODS() {
   if (checkboxes() == true) {
     myForm.action = "export_oo.php";
@@ -87,6 +92,15 @@ function exportODS() {
 function showGraph() {
   if (checkboxes() == true) {
     myForm.action = "radar.php";
+    myForm.submit();
+  } else {
+    alert("<? echo $msg['s3_err_js_no_file']; ?>");
+  }
+}
+
+function showQuadrant() {
+  if (checkboxes() == true) {
+    myForm.action = "quadrant.php";
     myForm.submit();
   } else {
     alert("<? echo $msg['s3_err_js_no_file']; ?>");
@@ -142,6 +156,7 @@ echo "<tr class='title'>
 
 $query = "SELECT DISTINCT appname FROM evaluations WHERE qsosappfamily = \"$family\" AND qsosspecificformat = '$qsosspecificformat' ORDER BY appname";
 $IdReq = mysql_query($query, $IdDB);
+
 while($appname = mysql_fetch_row($IdReq)) {
   echo "<tr class='level0'><td colspan='7'>$appname[0]</td></tr>\n";
   $query2 = "SELECT id, e.release, qsosspecificformat, licensedesc,  criteria_scored/criteria_scorable, criteria_commented/comments, file FROM evaluations e WHERE appname = \"$appname[0]\" ORDER BY e.release";
@@ -168,13 +183,16 @@ while($appname = mysql_fetch_row($IdReq)) {
 echo "</table><br/>";
 echo "<input type='button' value='".$msg['s3_set_weights']."' onclick='setWeights()'>";
 echo "&nbsp;";
+echo "<input type='button' value='".$msg['s3_show_mindmap']."' onclick='showFreeMind()'>";
+echo "<br/><br/>";
 echo "<input type='button' value='".$msg['s3_format_odf']."' onclick='exportODS()'>";
 echo "&nbsp;";
 echo "<input type='button' value='".$msg['s3_button_next']."' onclick='submitForm()'>";
 echo "<br/><br/>";
 echo $msg['s3_check_svg'].
   " <input id='check' type='checkbox' name='svg' value='yes' onclick='toggleSVG()' svg='on' checked><br/><br/>";
-echo "<input type='button' value='".$msg['s3_graph']."' onclick='showGraph()'>";
+echo "<input type='button' value='".$msg['s3_graph']."' onclick='showGraph()'><br/><br/>";
+echo "<input type='button' value='".$msg['s3_quadrant']."' onclick='showQuadrant()'>";
 echo "</form></div>\n";
 
 echo "</center>\n";

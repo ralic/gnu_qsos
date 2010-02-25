@@ -51,7 +51,7 @@ function getTableName($id) {
   return str_replace(".", "-", $output);
 }
 
-function createCell($style, $type, $value, $formula=false) {
+function createCell($style, $type, $value, $formula=false, $validator=false) {
   global $output;
 
   //HACK: & caracter causes an error because of HTML entities
@@ -67,6 +67,10 @@ function createCell($style, $type, $value, $formula=false) {
   } else {
     $cell->setAttribute("table:formula",$formula);
   }
+  if ($validator) {
+    $cell->setAttribute("table:content-validation-name",$validator);
+  }
+
   return $cell;
 }
 
@@ -132,7 +136,8 @@ function createTreeCriteria($tree, $table0, $depth) {
     //Criterion
     $row->appendChild(createCell($style_title, "string", $title));
 
-    //Desc0, 1 and 2
+    //Desc, Desc0, 1 and 2
+    $row->appendChild(createCell($style_title, "string", $input->getgeneric($name, "desc")));
     $row->appendChild(createCell($style_title, "string", $input->getgeneric($name, "desc0")));
     $row->appendChild(createCell($style_title, "string", $input->getgeneric($name, "desc1")));
     $row->appendChild(createCell($style_title, "string", $input->getgeneric($name, "desc2")));
@@ -211,11 +216,11 @@ function createTreeSynthesis($tree, $table0, $depth) {
     $table0->appendChild($row);
     //Weight
     $weight = isset($_SESSION[$name])?$_SESSION[$name]:1;
-    $row->appendChild(createCell($style_weight, "float", $weight));
+    $row->appendChild(createCell($style_weight, "float", $weight, false, "val1"));
     //Scores
     foreach($ids as $id) {
       $name = getTableName($id);
-      $num = $numrow + 6;
+      $num = $numrow + 7;
       $row->appendChild(createCell($style_score, "string", null, "oooc:=['$name'.C$num]"));
       $table0->appendChild($row);
     }
@@ -297,7 +302,7 @@ function createTreeEval($tree, $table1, $depth) {
     $score = createCell($style_score, "float", $element->score);
     $row->appendChild($score);
     //Weight
-    $num = $numrow - 6;
+    $num = $numrow - 7;
     $row->appendChild(createCell($style_weight, "float", null, "oooc:=['".$msg['ods_synthesis']."'.B$num]"));
     $table1->appendChild($row);
 
@@ -326,7 +331,6 @@ function createSimpleRow() {
   global $output;
   $row = $output->createElement('table:table-row');
   $row->setAttribute("table:style-name","ro1");
-  $row->setAttribute("table:number-rows-repeated","2");
   $cell = $output->createElement('table:table-cell');
   $cell->setAttribute("table:style-name","Default");
   $cell->setAttribute("table:number-columns-repeated","4");
@@ -355,6 +359,84 @@ function createHeaderRow($title,$value) {
   $cell->setAttribute("table:number-columns-repeated","2");
   $row->appendChild($cell);
   return $row;
+}
+
+function createTitleRow1() {
+  global $output;
+  global $msg;
+  
+  $row = $output->createElement('table:table-row');
+  $row->setAttribute("table:style-name","ro1");
+  $cell = $output->createElement('table:table-cell');
+  $cell->setAttribute("table:style-name","ce15");
+  $cell->setAttribute("office:value-type","string");
+  $text = $output->createElement('text:p',$msg['ods_header']);
+  $cell->appendChild($text);
+  $row->appendChild($cell);
+  
+  return $row;
+}
+
+function createTitleRow2($title) {
+  global $output;
+  
+  $row = $output->createElement('table:table-row');
+  $row->setAttribute("table:style-name","ro1");
+  $cell = $output->createElement('table:table-cell');
+  $cell->setAttribute("table:style-name","ce14");
+  $cell->setAttribute("office:value-type","string");
+  $text = $output->createElement('text:p',$title);
+  $cell->appendChild($text);
+  $row->appendChild($cell);
+  
+  return $row;
+}
+
+function createTitleRow3($title) {
+  global $output;
+  
+  $row = $output->createElement('table:table-row');
+  $row->setAttribute("table:style-name","ro1");
+  $cell = $output->createElement('table:table-cell');
+  $cell->setAttribute("table:style-name","ce13");
+  $cell->setAttribute("office:value-type","string");
+  $text = $output->createElement('text:p',$title);
+  $cell->appendChild($text);
+  $row->appendChild($cell);
+  
+  return $row;
+}
+
+function createValidator() {
+  global $output;
+  global $msg;
+  
+  $validators = $output->createElement('table:content-validations');
+  
+  $validator = $output->createElement('table:content-validation');
+  $validator->setAttribute("table:name","val1");
+  $validator->setAttribute("table:condition","oooc:cell-content-is-whole-number() and cell-content()>=0");
+  $validator->setAttribute("table:allow-empty-cell","false");
+  $validator->setAttribute("table:base-cell-address",$msg['ods_synthesis']."B6");
+  
+  $help = $output->createElement('table:help-message');
+  $help->setAttribute("table:title",$msg['ods_val_title']);
+  $help->setAttribute("table:display","true");
+  $text = $output->createElement('text:p',$msg['ods_val_helpmsg']);
+  $help->appendChild($text);
+  $validator->appendChild($help);
+  
+  $error = $output->createElement('table:error-message');
+  $error->setAttribute("table:message-type","stop");
+  $error->setAttribute("table:title",$msg['ods_val_error']);
+  $error->setAttribute("table:display","true");
+  $text = $output->createElement('text:p',$msg['ods_val_errormsg']);
+  $error->appendChild($text);
+  $validator->appendChild($error);
+
+  $validators->appendChild($validator);
+
+  return $validators;
 }
 
 function createFont($fontFamily) {
@@ -391,7 +473,7 @@ function createRowStyle($name,$height) {
   return $style;
 }
 
-function createCellStyle($name, $wrap, $backgroundColor, $textAlignSource, $repeatContent, $verticalALign, $textAlign, $marginLeft, $fontColor, $fontWeight, $border) {
+function createCellStyle($name, $wrap, $backgroundColor, $textAlignSource, $repeatContent, $verticalALign, $textAlign, $marginLeft, $fontColor, $fontWeight, $border, $fontSize, $fontStyle) {
   global $output;
   $style = $output->createElement('style:style');
   $style->setAttribute("style:name",$name);
@@ -416,10 +498,12 @@ function createCellStyle($name, $wrap, $backgroundColor, $textAlignSource, $repe
     $style->appendChild($substyle);
   }
 
-  if (isset($fontColor) || isset($fontWeight)) {
+  if (isset($fontColor) || isset($fontWeight) || isset($fontSize) || isset($fontStyle)) {
     $substyle = $output->createElement('style:text-properties');
     if (isset($fontColor)) $substyle->setAttribute("fo:color",$fontColor);
     if (isset($fontWeight)) $substyle->setAttribute("fo:font-weight",$fontWeight);
+    if (isset($fontSize)) $substyle->setAttribute("fo:font-size",$fontSize."pt");
+    if (isset($fontStyle)) $substyle->setAttribute("fo:font-style",$fontStyle);
     $style->appendChild($substyle);
   }
 
@@ -445,24 +529,31 @@ function initSynthesisSheet() {
     $table0->appendChild(createColumn("co0","ce7"));
   }
 
+  //Title
+  $table0->appendChild(createTitleRow1());
+  $table0->appendChild(createTitleRow2($input->getkey("qsosappfamily")));
+  $table0->appendChild(createTitleRow3($msg['ods_synthesis_title']));
+
   $table0->appendChild(createSimpleRow());
-
-  //Software family
-  $table0->appendChild(createHeaderRow($msg['ods_softwarefamily'],$input->getkey("qsosappfamily")));
-
-  //QSOS version
-  $table0->appendChild(createHeaderRow($msg['ods_qsosversion'],$input->getkey("qsosformat")));
-
-  //Template version
-  $table0->appendChild(createHeaderRow($msg['ods_templateversion'],$input->getkey("qsosspecificformat")));
-
+  
+  //Note on weight modification
+  $row = $output->createElement('table:table-row');
+  $row->setAttribute("table:style-name","ro1");
+  $cell = $output->createElement('table:table-cell');
+  $cell->setAttribute("table:style-name","ce16");
+  $cell->setAttribute("office:value-type","string");
+  $text = $output->createElement('text:p',$msg['ods_note_weight']);
+  $cell->appendChild($text);
+  $row->appendChild($cell);
+  $table0->appendChild($row);
+  
   $table0->appendChild(createSimpleRow());
 
   //Criteria
   $row = $output->createElement('table:table-row');
   $row->setAttribute("table:style-name","ro1");
   $cell = $output->createElement('table:table-cell');
-  $cell->setAttribute("table:style-name","ce2");
+  $cell->setAttribute("table:style-name","ce11");
   $cell->setAttribute("office:value-type","string");
   $text = $output->createElement('text:p',$msg['ods_criterion']);
   $cell->appendChild($text);
@@ -470,7 +561,7 @@ function initSynthesisSheet() {
   
   //Weight
   $cell = $output->createElement('table:table-cell');
-  $cell->setAttribute("table:style-name","ce5");
+  $cell->setAttribute("table:style-name","ce12");
   $cell->setAttribute("office:value-type","string");
   $text = $output->createElement('text:p',$msg['ods_weight']);
   $cell->appendChild($text);
@@ -480,7 +571,7 @@ function initSynthesisSheet() {
   foreach($ids as $id) {
     $name = getTableName($id);
     $cell = $output->createElement('table:table-cell');
-    $cell->setAttribute("table:style-name","ce5");
+    $cell->setAttribute("table:style-name","ce12");
     $cell->setAttribute("office:value-type","string");
     $text = $output->createElement('text:p',$name);
     $cell->appendChild($text);
@@ -506,11 +597,14 @@ function initCriteriaSheet() {
   $table0->appendChild(createColumn("co0","ce4"));
   $table0->appendChild(createColumn("co0","ce4"));
   $table0->appendChild(createColumn("co0","ce4"));
+  $table0->appendChild(createColumn("co0","ce4"));
+
+  //Title
+  $table0->appendChild(createTitleRow1());
+  $table0->appendChild(createTitleRow2($input->getkey("qsosappfamily")));
+  $table0->appendChild(createTitleRow3($msg['ods_citeria_title']));
 
   $table0->appendChild(createSimpleRow());
-
-  //Software family
-  $table0->appendChild(createHeaderRow($msg['ods_softwarefamily'],$input->getkey("qsosappfamily")));
 
   //QSOS version
   $table0->appendChild(createHeaderRow($msg['ods_qsosversion'],$input->getkey("qsosformat")));
@@ -524,25 +618,31 @@ function initCriteriaSheet() {
   $row = $output->createElement('table:table-row');
   $row->setAttribute("table:style-name","ro1");
   $cell = $output->createElement('table:table-cell');
-  $cell->setAttribute("table:style-name","ce2");
+  $cell->setAttribute("table:style-name","ce11");
   $cell->setAttribute("office:value-type","string");
   $text = $output->createElement('text:p',$msg['ods_criterion']);
   $cell->appendChild($text);
   $row->appendChild($cell);
   $cell = $output->createElement('table:table-cell');
-  $cell->setAttribute("table:style-name","ce2");
+  $cell->setAttribute("table:style-name","ce11");
+  $cell->setAttribute("office:value-type","string");
+  $text = $output->createElement('text:p',$msg['ods_desc']);
+  $cell->appendChild($text);
+  $row->appendChild($cell);
+  $cell = $output->createElement('table:table-cell');
+  $cell->setAttribute("table:style-name","ce12");
   $cell->setAttribute("office:value-type","string");
   $text = $output->createElement('text:p',$msg['ods_score0']);
   $cell->appendChild($text);
   $row->appendChild($cell);
   $cell = $output->createElement('table:table-cell');
-  $cell->setAttribute("table:style-name","ce2");
+  $cell->setAttribute("table:style-name","ce12");
   $cell->setAttribute("office:value-type","string");
   $text = $output->createElement('text:p',$msg['ods_score1']);
   $cell->appendChild($text);
   $row->appendChild($cell);
   $cell = $output->createElement('table:table-cell');
-  $cell->setAttribute("table:style-name","ce2");
+  $cell->setAttribute("table:style-name","ce12");
   $cell->setAttribute("office:value-type","string");
   $text = $output->createElement('text:p',$msg['ods_score2']);
   $cell->appendChild($text);
@@ -567,6 +667,12 @@ function initEvaluationSheet($title) {
   $table1->appendChild(createColumn("co3","ce7"));
   $table1->appendChild(createColumn("co4","ce7"));
 
+  //Title
+  $header = $msg['ods_evaluation_title'].$input->getkey("appname")." ".$input->getkey("release");
+  $table1->appendChild(createTitleRow1());
+  $table1->appendChild(createTitleRow2($input->getkey("qsosappfamily")));
+  $table1->appendChild(createTitleRow3($header));
+
   $table1->appendChild(createSimpleRow());
 
   //Header
@@ -575,9 +681,6 @@ function initEvaluationSheet($title) {
 
   //Release
   $table1->appendChild(createHeaderRow($msg['ods_release'],$input->getkey("release")));
-
-  //Software family
-  $table1->appendChild(createHeaderRow($msg['ods_softwarefamily'],$input->getkey("qsosappfamily")));
 
   //License
   $table1->appendChild(createHeaderRow($msg['ods_license'],$input->getkey("licensedesc")));
@@ -611,25 +714,25 @@ function initEvaluationSheet($title) {
   $row = $output->createElement('table:table-row');
   $row->setAttribute("table:style-name","ro1");
   $cell = $output->createElement('table:table-cell');
-  $cell->setAttribute("table:style-name","ce2");
+  $cell->setAttribute("table:style-name","ce11");
   $cell->setAttribute("office:value-type","string");
   $text = $output->createElement('text:p',$msg['ods_criterion']);
   $cell->appendChild($text);
   $row->appendChild($cell);
   $cell = $output->createElement('table:table-cell');
-  $cell->setAttribute("table:style-name","ce2");
+  $cell->setAttribute("table:style-name","ce11");
   $cell->setAttribute("office:value-type","string");
   $text = $output->createElement('text:p',$msg['ods_comment']);
   $cell->appendChild($text);
   $row->appendChild($cell);
   $cell = $output->createElement('table:table-cell');
-  $cell->setAttribute("table:style-name","ce5");
+  $cell->setAttribute("table:style-name","ce12");
   $cell->setAttribute("office:value-type","string");
   $text = $output->createElement('text:p',$msg['ods_score']);
   $cell->appendChild($text);
   $row->appendChild($cell);
   $cell = $output->createElement('table:table-cell');
-  $cell->setAttribute("table:style-name","ce5");
+  $cell->setAttribute("table:style-name","ce12");
   $cell->setAttribute("office:value-type","string");
   $text = $output->createElement('text:p',$msg['ods_weight']);
   $cell->appendChild($text);
@@ -696,16 +799,22 @@ function initDocument() {
   $style->appendChild($substyle);
   $styles->appendChild($style);
   //Cell styles
-  $styles->appendChild(createCellStyle("ce1", "wrap", null, null, null, "middle", null, null, "#ffffff", null, null));
-  $styles->appendChild(createCellStyle("ce2", "wrap", "#2323dc", null, null, "middle", null, null, "#ffffff", "bold", true));
-  $styles->appendChild(createCellStyle("ce3", "wrap", "#99ccff", null, null, "middle", null, null, null, null, true));
-  $styles->appendChild(createCellStyle("ce4","wrap","#ccffff", null, null,"middle", null, null, null, null, true));
-  $styles->appendChild(createCellStyle("ce5", null, "#2323dc", "fix", "false", "middle", "center", "0cm", "#ffffff", "bold", true));
-  $styles->appendChild(createCellStyle("ce6", null, "#99ccff", "fix", "false", "middle", "center", "0cm", null, null, true));
-  $styles->appendChild(createCellStyle("ce7", null, "#ccffff", "fix", "false", "middle", "center", "0cm", null, null, true));
-  $styles->appendChild(createCellStyle("ce8", "wrap", null, "fix", "false", "middle", null, null, null, null, true));
-  $styles->appendChild(createCellStyle("ce9", null, null, "fix", "false", "middle", "center", "0cm", null, null, true));
-  $styles->appendChild(createCellStyle("ce10", "wrap", null, "fix", "false", "middle", null, null, null, null, null));
+  $styles->appendChild(createCellStyle("ce1", "wrap", null, null, null, "middle", null, null, "#ffffff", null, null, null, null));
+  $styles->appendChild(createCellStyle("ce2", "wrap", "#2323dc", null, null, "middle", null, null, "#ffffff", "bold", true, null, null));
+  $styles->appendChild(createCellStyle("ce3", "wrap", "#99ccff", null, null, "middle", null, null, null, null, true, null, null));
+  $styles->appendChild(createCellStyle("ce4","wrap","#ccffff", null, null,"middle", null, null, null, null, true, null, null));
+  $styles->appendChild(createCellStyle("ce5", null, "#2323dc", "fix", "false", "middle", "center", "0cm", "#ffffff", "bold", true, null, null));
+  $styles->appendChild(createCellStyle("ce6", null, "#99ccff", "fix", "false", "middle", "center", "0cm", null, null, true, null, null));
+  $styles->appendChild(createCellStyle("ce7", null, "#ccffff", "fix", "false", "middle", "center", "0cm", null, null, true, null, null));
+  $styles->appendChild(createCellStyle("ce8", "wrap", null, "fix", "false", "middle", null, null, null, null, true, null, null));
+  $styles->appendChild(createCellStyle("ce9", null, null, "fix", "false", "middle", "center", "0cm", null, null, true, null, null));
+  $styles->appendChild(createCellStyle("ce10", "wrap", null, "fix", "false", "middle", null, null, null, null, null, null, null));
+  $styles->appendChild(createCellStyle("ce11", "wrap", "#000000", null, null, "middle", null, null, "#ffffff", "bold", true, null, null));
+  $styles->appendChild(createCellStyle("ce12", "wrap", "#000000", null, null, "middle", "center", null, "#ffffff", "bold", true, null, null));
+  $styles->appendChild(createCellStyle("ce13", null, null, null, null, "middle", null, null, "#000000", "bold", null, null, null));
+  $styles->appendChild(createCellStyle("ce14", null, null, null, null, "middle", null, null, "#000000", "bold", null, 12, null));
+  $styles->appendChild(createCellStyle("ce15", null, null, null, null, "middle", null, null, "#000000", "bold", null, 14, null));
+  $styles->appendChild(createCellStyle("ce16", null, null, null, null, "middle", null, null, "#000000", null, null, null, "italic"));
   $document->appendChild($styles);
   
   return $document;
@@ -734,6 +843,9 @@ function createODS() {
   $body = $output->createElement('office:body');
   $spreadsheet = $output->createElement('office:spreadsheet');
   
+  //Validator for weight values
+  $spreadsheet->appendChild(createValidator());
+  
   $IdDB = mysql_connect($db_host ,$db_user, $db_pwd);
   mysql_select_db($db_db);
   $query = "SELECT file FROM evaluations WHERE id = \"$ids[0]\"";
@@ -744,7 +856,7 @@ function createODS() {
   //Synthesis Sheet
   $input = new QSOSDocument("$file");
   initSynthesisSheet();
-  $numrow = 8; //Reinit row counter
+  $numrow = 7; //Reinit row counter
   createTreeSynthesis($input->getTree(), $table0, 0);
   $spreadsheet->appendChild($table0);
   

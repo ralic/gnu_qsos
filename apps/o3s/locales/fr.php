@@ -66,6 +66,7 @@ $msg['s3_table_view'] = "Visualiser";
 $msg['s3_format_html'] = "HTML";
 $msg['s3_format_xml'] = "XML";
 $msg['s3_set_weights'] = "Pondérer la grille";
+$msg['s3_show_mindmap'] = "Visualiser la grille";
 $msg['s3_format_odf'] = "Comparatif ODF";
 $msg['s3_format_html_tooltip'] = "Voir au format HTML";
 $msg['s3_format_xml_tooltip'] = "Voir au format XML natif de QSOS";
@@ -73,6 +74,7 @@ $msg['s3_format_odf_tooltip'] = "Voir au format OpenDocument (tableur)";
 $msg['s3_table_compare'] = "Comparer";
 $msg['s3_button_next'] = "Comparatif en ligne";
 $msg['s3_graph'] = "Comparatif graphique";
+$msg['s3_quadrant'] = "Quadrant";
 $msg['s3_check_svg'] = "Mon navigateur supporte SVG";
 $msg['s3_err_js_no_file'] = "Au moins un logiciel doit être coché";
 $msg['s3_err_no_family'] = " non trouvée dans le référentiel";
@@ -99,6 +101,7 @@ $msg['ods_softwarefamily'] = "Domaine logiciel";
 $msg['ods_qsosversion'] = "Version de QSOS";
 $msg['ods_templateversion'] = "Version de la grille";
 $msg['ods_criterion'] = "Critère";
+$msg['ods_desc'] = "Description";
 $msg['ods_score0'] = "Score 0";
 $msg['ods_score1'] = "Score 1";
 $msg['ods_score2'] = "Score 2";
@@ -113,6 +116,19 @@ $msg['ods_validationdate'] = "Date de validation";
 $msg['ods_comment'] = "Commentaires";
 $msg['ods_score'] = "Score";
 $msg['ods_weight'] = "Poids";
+$msg['ods_header'] = "Analyse QSOS";
 $msg['ods_synthesis'] = "Synthèse";
+$msg['ods_synthesis_title'] = "Synthèse et comparatif dynamique";
+$msg['ods_citeria_title'] = "Explications des critères utilisés";
+$msg['ods_evaluation_title'] = "Évaluation de ";
+$msg['ods_val_title'] = "Modifier le poids";
+$msg['ods_val_error'] = "Erreur";
+$msg['ods_val_helpmsg'] = "Saisir un nombre entier";
+$msg['ods_val_errormsg'] = "Seules les valeurs nulles ou entières sont autorisées";
+$msg['ods_note_weight'] = "Vous pouvez modifier le poids des critères dans la colonne B (Poids)";
+
+//QSOS quadrant
+$msg['qq_maturity'] = "Maturité";
+$msg['qq_funccoverage'] = "Couverture fonctionnelle";
 
 ?>
