@@ -5,10 +5,10 @@
   <RDF:Description RDF:about="rdf:#$rd86Q"
                    em:id="{ec8030f7-c20a-464f-9b0e-13a3a9e97384}"
                    em:minVersion="1.5"
-                   em:maxVersion="3.0.*" />
+                   em:maxVersion="3.*" />
   <RDF:Description RDF:about="urn:mozilla:install-manifest"
                    em:id="tpl-xuleditor@qsos.org"
-                   em:version="0.3"
+                   em:version="0.4"
                    em:type="2"
                    em:name="QSOS Template XUL Editor"
                    em:creator="Raphael Semeteys"
@@ -16,7 +16,7 @@
                    em:homepageURL="http://www.qsos.org/"
                    em:aboutURL="chrome://qsos-tpl-xuled/content/about.xul"
                    em:updateURL="http://www.qsos.org/tools/tpl-xuleditor-update.rdf"
-                   em:updateKey="MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDE3d7tLs+4Yh0/i8MSSYqGTZXa/Wj0DVcmf7YdczpTKRgAbokJxjVIkQOlU52bGqwweluCl/VoVZQOa9yEt9VWVapNNptPrKseNvXFdYEZNXfT0bLoDPZW3VpfxGYo0DitDbw9GzGxwg+feC8pKjsaEmv2zVZBTkMmVeVKUayhrQIDAQAB">
+                   em:updateKey="MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQC29BJz2E2pkZnYQIhqOVm4U1dv0zkIhli9s9QzscUhYdk380WpMA87ZN86DqMtBgvYAdR/QmXww5aujHHaR9vM7FgtxSeeGI5k9BUFBgzFe/XKstui9yZczf/sSJxLq2wU9wlOULJnFRW1U8rj5RjTJSA1AksbzXsOmKUyLMXB3QIDAQAB">
     <em:targetApplication RDF:resource="rdf:#$rd86Q"/>
   </RDF:Description>
 </RDF:RDF>

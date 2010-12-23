@@ -11,3 +11,6 @@ Revision history for QSOS XUL Template Editor
         - German version
         - Default extension .qtpl
         - Repackaging for Forefox 3
+
+0.3  2010/12/23
+	- Support for Firefox 3.* and xulrunner 1.9.*

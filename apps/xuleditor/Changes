@@ -1,5 +1,8 @@
 Revision history for QSOS XUL Editor
 
+1.0  2010/12/23
+      - Support for Firefox 3.* and xulrunner 1.9.*
+
 0.9  2009/10/13
       - .qsos file can now be passed as parameter in command line. This allow to configure file association in desktop environments (a sample .desktop for KDE is provided)
       - .qsos file browsed by Firefox/Iceweasel is now opened only after user confirmation

@@ -2,22 +2,22 @@
 <RDF:RDF xmlns:NS1="http://www.mozilla.org/2004/em-rdf#"
          xmlns:NC="http://home.netscape.com/NC-rdf#"
          xmlns:RDF="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+  <RDF:Description RDF:about="urn:mozilla:extension:xuleditor@qsos.org"
+                   NS1:version="1.0"
+                   NS1:updateLink="http://www.qsos.org/tools/xuleditor-firefox-1.0.xpi"
+                   NS1:signature="MIGTMA0GCSqGSIb3DQEBDQUAA4GBACCTi75e+7cfgG2MM8ksDEDqMm8e5uMbeV8e502f0CCRvd1QaoOAU/0gBeVZEiehlIhHaeoZZpJfM1tjXSy7uf/QszmTSNz/eJD2fAcILtfTHk2p7GIk3dTJvdXPUul2aU2mHurCdssheALioLBttbxbomzxmMmgzybrDGFD1Wxo">
+    <NS1:updates RDF:resource="rdf:#$LNYy83"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="rdf:#$MNYy83"
+                   NS1:version="01.0">
+    <NS1:targetApplication RDF:resource="rdf:#$PNYy83"/>
+  </RDF:Description>
   <RDF:Seq RDF:about="rdf:#$LNYy83">
     <RDF:li RDF:resource="rdf:#$MNYy83"/>
   </RDF:Seq>
   <RDF:Description RDF:about="rdf:#$PNYy83"
                    NS1:id="{ec8030f7-c20a-464f-9b0e-13a3a9e97384}"
                    NS1:minVersion="1.5"
-                   NS1:maxVersion="3.0.*"
-                   NS1:updateLink="http://www.qsos.org/tools/xuleditor-firefox-0.9.xpi" />
-  <RDF:Description RDF:about="rdf:#$MNYy83"
-                   NS1:version="0.9">
-    <NS1:targetApplication RDF:resource="rdf:#$PNYy83"/>
-  </RDF:Description>
-  <RDF:Description RDF:about="urn:mozilla:extension:xuleditor@qsos.org"
-                   NS1:version="0.9"
-                   NS1:updateLink="http://www.qsos.org/tools/xuleditor-firefox-0.9.xpi"
-                   NS1:signature="MIGTMA0GCSqGSIb3DQEBDQUAA4GBAEtwGF204dJBrAJWrp16Ml94cLYwDhg9LGCWuKHbA/jDFgv9C9OB4NT1v+X1elgGwdbm/7x4nOGVMXWvXcb4DuJRwJJJt9J9SLDGf7C9tVusiX3RWYZdmt5uwKP/b3jERkgXDVT0soDUILcKjHc4ZBsv5scqa6OuM2SAgFfBoyrj">
-    <NS1:updates RDF:resource="rdf:#$LNYy83"/>
-  </RDF:Description>
+                   NS1:maxVersion="3.*"
+                   NS1:updateLink="http://www.qsos.org/tools/xuleditor-firefox-1.0.xpi" />
 </RDF:RDF>
