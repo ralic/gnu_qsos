@@ -1,0 +1,921 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document>
+  <header>
+    <authors>
+      <author>
+        <email>alexis.mp@sun.com</email>
+        <name>Alexis Moussine-Pouchkine</name>
+      </author>
+    </authors>
+    <dates>
+      <creation>2006/11/20</creation>
+      <validation>2006/12/05</validation>
+    </dates>
+    <language>fr</language>
+    <appname>JAX-WS</appname>
+    <release>2.1</release>
+    <licenseid>15</licenseid>
+    <licensedesc>OSI Approved</licensedesc>
+    <url>http://jax-ws.dev.java.net</url>
+    <desc>Framework de développement, déploiement et consommation de web services en environnement Java EE. Il s'agit de l'implémentation de référence du standard JAX-WS désormais requis pour Java EE 5. Cette technologie est développées dans le cadre du projet GlassFish (serveur Java EE 5 Open Source)</desc>
+    <demourl></demourl>
+    <qsosformat>1.7</qsosformat>
+    <qsosappfamily>j2ee-ws-stack</qsosappfamily>
+    <qsosappname>jaxws</qsosappname>
+    <qsosspecificformat></qsosspecificformat>
+  </header>
+  <section name="generic" title="Section générique">
+    <desc>Les critères génériques de la méthode QSOS version 1.6</desc>
+    <element name="intrinsicdurability" title="Pérennité">
+      <desc>Pérennité</desc>
+      <element name="maturity" title="Maturité">
+        <desc>Maturité</desc>
+        <element name="age" title="Âge">
+          <desc0>Moins de 3 mois</desc0>
+          <desc1>Entre 3 mois et 3 ans</desc1>
+          <desc2>Plus de 3 ans</desc2>
+          <score>2</score>
+          <comment> Depuis 2002, héritier de Java WSDP (Web Services Developer Pack) et JAX-RPC</comment>
+        </element>
+        <element name="stability" title="Stabilité">
+          <desc0>Logiciel instable avec de nombreuses versions et patches générant des effets de bords</desc0>
+          <desc1>Version de production stabilisée mais un peu vieille. Quelques difficultés à stabiliser les versions de développement</desc1>
+          <desc2>Logiciel stable. Les nouvelles versions corrigent des bugs, mais apportent de façon prépondérante de nouvelles fonctionnalités</desc2>
+          <score>2</score>
+          <comment>JAX-WS 2.1 date de Février 2007. Il fait suite aux version JAX-WS 2.0 et 2.0.1.</comment>
+        </element>
+        <element name="historyknowproblems" title="Historique">
+          <desc0>Le logiciel connaît de nombreux problèmes qui peuvent être rédhibitoires</desc0>
+          <desc1>Pas de problèmes majeurs, ni de crise</desc1>
+          <desc2>Bon historique de gestion de projet et de crise</desc2>
+          <score>2</score>
+          <comment>Pas de controverse et nombreuses utilisations en production de JAX-RPC et maintenant de JAX-WS</comment>
+        </element>
+        <element name="forkprobability" title="Fork">
+          <desc0>Forte probabilité de fork dans un futur proche</desc0>
+          <desc1>Le logiciel provient d'un fork mais a très peu de chances d'être forké dans un futur proche</desc1>
+          <desc2>Très faible probabilité de fork. Le logiciel ne provient pas d'un fork</desc2>
+          <score>2</score>
+          <comment>JAX-WS est l'implémentation de référence du standard conçu par le JCP (Java Community Process).
+Plutôt que de forker, BEA par exemple a décidé de reprendre tel quel le code pour son produit Weblogic 10. Il y a plus de collaboration que de compétition entre acteurs Java EE.</comment>
+        </element>
+      </element>
+      <element name="adoption" title="Adoption">
+        <desc>Adoption par la communauté et l'industrie</desc>
+        <element name="popularity" title="Popularité">
+          <desc0>Très peu d'utilisateurs identifiés</desc0>
+          <desc1>Usage détectable sur Internet</desc1>
+          <desc2>Nombreux utilisateurs et références</desc2>
+          <score>2</score>
+          <comment>JAX-WS est le modèle de programmation standard de Java EE. Il est repris par tous les éditeurs de serveurs d'application dont BEA qui reprend directement JAX-WS RI.</comment>
+        </element>
+        <element name="references" title="Références">
+          <desc0>Aucune</desc0>
+          <desc1>Peu de références, pas d'usage critique</desc1>
+          <desc2>Souvent implémenté sur des applications critiques</desc2>
+          <score>2</score>
+          <comment>De par son statut de standard</comment>
+        </element>
+        <element name="contributingcommunity" title="Communauté des contributeurs">
+          <desc0>Pas de communauté ou de réelle activité (forum, liste de diffusion…)</desc0>
+          <desc1>Communauté existante avec une activité notable</desc1>
+          <desc2>Communauté forte : grosse activité sur les forums, de nombreux contributeurs et défenseurs</desc2>
+          <score>2</score>
+          <comment>JAX-WS et son sous-ensemble JAXB sont très actifs (forums, mailing lists)</comment>
+        </element>
+        <element name="books" title="Livres, publications">
+          <desc0>Aucun livre sur ce logiciel</desc0>
+          <desc1>Moins de cinq livres publiés sur ce logiciel</desc1>
+          <desc2>Plus de cinq livres publiés sur ce logiciel et dans différentes langues</desc2>
+          <score>2</score>
+          <comment>Plus de 5 rien que sur Java EE 5. Beaucoup plus encore si l'on considère JAX-RPC.</comment>
+        </element>
+      </element>
+      <element name="developmentleadership" title="Direction des développements">
+        <desc>Organisation et direction des développements</desc>
+        <element name="leadingteam" title="Équipe dirigeante">
+          <desc0>Un ou deux individus engagés, pas clairement identifiés</desc0>
+          <desc1>Entre deux et cinq personnes indépendantes</desc1>
+          <desc2>Plus de cinq personnes</desc2>
+          <score>2</score>
+          <comment>Les membres et les fonctions de l'équipe dirigeante sont connus et définis</comment>
+        </element>
+        <element name="managementstyle" title="Mode de direction">
+          <desc0>Dictature complète</desc0>
+          <desc1>Despotisme éclairé</desc1>
+          <desc2>Conseil d'architectes avec un leader identifié (ex : KDE)</desc2>
+          <score>2</score>
+          <comment>L'équipe coeur du projet décide de manière collégiale. Fonctionnement de la fondation Apache</comment>
+        </element>
+      </element>
+      <element name="activity" title="Activité">
+        <desc>Activité du et autour du projet</desc>
+        <element name="developersidentificationturnover" title="Nombre de développeurs, identification, turnover">
+          <desc0>Moins de trois développeurs, pas clairement identifiés</desc0>
+          <desc1>Entre quatre et sept développeurs ou plus, non identifiés, avec un turnover important</desc1>
+          <desc2>Plus de sept développeurs, équipe très simple</desc2>
+          <score>2</score>
+          <comment>Nombreux développeurs. L'équipe coeur est structurée, stable et identifiée</comment>
+        </element>
+        <element name="activityonbugs" title="Activité autour des bugs">
+          <desc0>Réactivité faible sur le forum ou sur la liste de diffusion, ou rien au sujet des corrections de bugs dans les notes de versions</desc0>
+          <desc1>Activité détectable mais sans processus clairement exposé, temps de résolution long</desc1>
+          <desc2>Forte réactivité, basée sur des rôles et des assignations de tâches</desc2>
+          <score>1</score>
+          <comment></comment>
+        </element>
+        <element name="activityonfunctionalities" title="Activité autour des fonctionnalités">
+          <desc0>Pas ou peu de nouvelles fonctionnalités</desc0>
+          <desc1>Évolution du produit conduite par une équipe dédiée ou par des utilisateurs, mais sans processus clairement exposé</desc1>
+          <desc2>Les requêtes pour les nouvelles fonctionnalités sont clairement outillées, feuille de route disponible</desc2>
+          <score>1</score>
+          <comment>Rebond après une longue période de maintenance</comment>
+        </element>
+        <element name="activityonreleases" title="Activité sur les releases/versions">
+          <desc0>Très faible activité que ce soit sur les versions de production ou de développement (alpha, beta)</desc0>
+          <desc1>Activité que ce soit sur les versions de production ou de développement (alpha, beta), avec des versions correctives mineures fréquentes</desc1>
+          <desc2>Activité importante avec des versions correctives fréquentes et des versions majeures planifiées liées aux prévisions de la feuille de route</desc2>
+          <score>2</score>
+          <comment>JAX-WS 2.0, 2.0.1 et JAX-WS 2.1 en février 2007
+Roadmap: https://glassfish.dev.java.net/public/Roadmap.html</comment>
+        </element>
+      </element>
+    </element>
+    <element name="industrializedsolution" title="Industrialisation">
+      <desc>Niveau d'industrialisation du projet</desc>
+      <element name="independenceofdevelopments" title="Indépendance des développements">
+        <desc0>Développements réalisés à plus de 60% par des employés d'une seule société</desc0>
+        <desc1>Développements réalisés à 60% maximum par des employés d'une seule société</desc1>
+        <desc2>Développements réalisés à 20% maximum par des employés d'une seule société</desc2>
+        <score>1</score>
+        <comment>Bien qu'une bonne partie des développeurs provienne de Sun, les contributions externes sont nombreuses. http://glassfishwiki.org/</comment>
+      </element>
+      <element name="services" title="Services">
+        <desc>Offres de services</desc>
+        <element name="training" title="Formation">
+          <desc0>Pas d'offre de formation identifiée</desc0>
+          <desc1>Offre existante mais restreinte géographiquement ou en une seule langue ou fournie par un seul fournisseur</desc1>
+          <desc2>Offre riche, plusieurs fournisseurs, plusieurs langages, divisée en modules et en niveaux</desc2>
+          <score>2</score>
+          <comment>Java EE est enseigné par de nombreux centres de formation</comment>
+        </element>
+        <element name="support" title="Support">
+          <desc0>Pas d'offre de support identifiée</desc0>
+          <desc1>Offre existante mais restreinte géographiquement ou en une seule langue ou fournie par un seul fournisseur ou sans garantie</desc1>
+          <desc2>Offre riche, plusieurs fournisseurs, avec des garanties (sur les temps de résolution)</desc2>
+          <score>2</score>
+          <comment></comment>
+        </element>
+        <element name="consulting" title="Conseil">
+          <desc0>Pas d'offres de conseil identifiées</desc0>
+          <desc1>Offre existante mais restreinte géographiquement ou à un seul langage ou fournie par un seul fournisseur</desc1>
+          <desc2>Offre riche, plusieurs fournisseurs, plusieurs langages</desc2>
+          <score>2</score>
+          <comment></comment>
+        </element>
+      </element>
+      <element name="documentation" title="Documentation">
+        <desc0>Pas de documentation utilisateur</desc0>
+        <desc1>La documentation existe mais est en partie obsolète ou restreinte à une seule langue ou peu détaillée</desc1>
+        <desc2>Documentation à jour, traduite et éventuellement adaptée à différentes cibles de lecteurs (end-user, sysadmin, manager…)</desc2>
+        <score>2</score>
+        <comment>Documentation à jour (même avec les Milestone): https://jax-ws.dev.java.net/nonav/2.1/docs/index.html
+Pas de version française.</comment>
+      </element>
+      <element name="qualityassurance" title="Méthode qualité">
+        <desc>Processus et méthode qualité</desc>
+        <element name="quality" title="Assurance qualité">
+          <desc0>Pas de processus qualité identifié</desc0>
+          <desc1>Processus qualité existant, mais non formalisé ou non outillé</desc1>
+          <desc2>Processus automatique de tests dans le cycle de vie du code et publication des résultats</desc2>
+          <score>2</score>
+          <comment>Intégré dans le projet GlassFish Quality: http://wiki.java.net/bin/viewauth/Projects/GlassFishQuality</comment>
+        </element>
+        <element name="tools" title="Outillage">
+          <desc0>Pas d'outils de gestion de bugs, ni d'outils de gestion de tickets</desc0>
+          <desc1>Outils standards fournis (une forge par exemple) mais peu utilisés</desc1>
+          <desc2>Utilisation très active d'outils standards</desc2>
+          <score>2</score>
+          <comment>TestNG, QuickLook, FindBugs, ...</comment>
+        </element>
+      </element>
+    </element>
+    <element name="packaging" title="Packaging">
+      <desc>Packaging pour les différents systèmes d'exploitation</desc>
+      <element name="packagingbsd" title="BSD">
+        <desc>BSD</desc>
+        <element name="packagingfreebsd" title="FreeBSD">
+          <desc0>Le logiciel n'est pas packagé pour ce système d'exploitation</desc0>
+          <desc1>Le packaging existe, mais est buggé ou n'a pas de support officiel</desc1>
+          <desc2>Le logiciel est correctement packagé pour ce système d'exploitation</desc2>
+          <score></score>
+          <comment></comment>
+        </element>
+        <element name="packagingmacosx" title="Mac OS X">
+          <desc0>Le logiciel n'est pas packagé pour ce système d'exploitation</desc0>
+          <desc1>Le packaging existe, mais est buggé ou n'a pas de support officiel</desc1>
+          <desc2>Le logiciel est correctement packagé pour ce système d'exploitation</desc2>
+          <score></score>
+          <comment></comment>
+        </element>
+        <element name="packagingnet" title="NetBSD">
+          <desc0>Le logiciel n'est pas packagé pour ce système d'exploitation</desc0>
+          <desc1>Le packaging existe, mais est buggé ou n'a pas de support officiel</desc1>
+          <desc2>Le logiciel est correctement packagé pour ce système d'exploitation</desc2>
+          <score></score>
+          <comment></comment>
+        </element>
+        <element name="packagingopen" title="OpenBSD">
+          <desc0>Le logiciel n'est pas packagé pour ce système d'exploitation</desc0>
+          <desc1>Le packaging existe, mais est buggé ou n'a pas de support officiel</desc1>
+          <desc2>Le logiciel est correctement packagé pour ce système d'exploitation</desc2>
+          <score></score>
+          <comment></comment>
+        </element>
+      </element>
+      <element name="packaginglinux" title="Linux">
+        <desc>Linux</desc>
+        <element name="packagingdebian" title="Debian">
+          <desc0>Le logiciel n'est pas packagé pour ce système d'exploitation</desc0>
+          <desc1>Le packaging existe, mais est buggé ou n'a pas de support officiel</desc1>
+          <desc2>Le logiciel est correctement packagé pour ce système d'exploitation</desc2>
+          <score></score>
+          <comment></comment>
+        </element>
+        <element name="packagingmandriva" title="Mandriva">
+          <desc0>Le logiciel n'est pas packagé pour ce système d'exploitation</desc0>
+          <desc1>Le packaging existe, mais est buggé ou n'a pas de support officiel</desc1>
+          <desc2>Le logiciel est correctement packagé pour ce système d'exploitation</desc2>
+          <score></score>
+          <comment></comment>
+        </element>
+        <element name="packagingredhat" title="Red Hat">
+          <desc0>Le logiciel n'est pas packagé pour ce système d'exploitation</desc0>
+          <desc1>Le packaging existe, mais est buggé ou n'a pas de support officiel</desc1>
+          <desc2>Le logiciel est correctement packagé pour ce système d'exploitation</desc2>
+          <score></score>
+          <comment></comment>
+        </element>
+        <element name="packagingsuse" title="SuSE">
+          <desc0>Le logiciel n'est pas packagé pour ce système d'exploitation</desc0>
+          <desc1>Le packaging existe, mais est buggé ou n'a pas de support officiel</desc1>
+          <desc2>Le logiciel est correctement packagé pour ce système d'exploitation</desc2>
+          <score></score>
+          <comment></comment>
+        </element>
+      </element>
+      <element name="packagingsource" title="Source">
+        <desc0>Le logiciel ne peut être facilement installé depuis les sources, cela demande beaucoup de travail</desc0>
+        <desc1>L'installation depuis les sources est limitée ou dépend des conditions (OS, arch, lib…)</desc1>
+        <desc2>L'installation depuis les sources est facile</desc2>
+        <score></score>
+        <comment></comment>
+      </element>
+      <element name="packagingunix" title="Unix">
+        <desc>Unix</desc>
+        <element name="packagingaix" title="AIX">
+          <desc0>Le logiciel n'est pas packagé pour ce système d'exploitation</desc0>
+          <desc1>Le packaging existe, mais est buggé ou n'a pas de support officiel</desc1>
+          <desc2>Le logiciel est correctement packagé pour ce système d'exploitation</desc2>
+          <score></score>
+          <comment></comment>
+        </element>
+        <element name="packaginghpux" title="HP-UX">
+          <desc0>Le logiciel n'est pas packagé pour ce système d'exploitation</desc0>
+          <desc1>Le packaging existe, mais est buggé ou n'a pas de support officiel</desc1>
+          <desc2>Le logiciel est correctement packagé pour ce système d'exploitation</desc2>
+          <score></score>
+          <comment></comment>
+        </element>
+        <element name="packagingsolaris" title="Solaris">
+          <desc0>Le logiciel n'est pas packagé pour ce système d'exploitation</desc0>
+          <desc1>Le packaging existe, mais est buggé ou n'a pas de support officiel</desc1>
+          <desc2>Le logiciel est correctement packagé pour ce système d'exploitation</desc2>
+          <score></score>
+          <comment></comment>
+        </element>
+      </element>
+      <element name="packagingwindows" title="Windows">
+        <desc0>Le logiciel n'est pas packagé pour ce système d'exploitation</desc0>
+        <desc1>Le packaging existe, mais est buggé ou n'a pas de support officiel</desc1>
+        <desc2>Le logiciel est correctement packagé pour ce système d'exploitation</desc2>
+        <score></score>
+        <comment></comment>
+      </element>
+    </element>
+    <element name="exploitability" title="Exploitabilité">
+      <desc>Niveau d'exploitabilité</desc>
+      <element name="easeofuseergonomics" title="Facilité d'utilisation, ergonomie">
+        <desc0>Difficulté d'utilisation, demande une connaissance approfondie des fonctionnalités du logiciel</desc0>
+        <desc1>Ergonomie austère et très technique</desc1>
+        <desc2>Ergonomie élaborée et IHM comprenant des fonctions d'aide</desc2>
+        <score>2</score>
+        <comment>Aide contextuelle en ligne</comment>
+      </element>
+      <element name="administrationmonitoring" title="Administration et supervision">
+        <desc0>Pas de fonctionnalités de contrôle, ni d'administration</desc0>
+        <desc1>Fonctionnalités présentes mais incomplètes ou à améliorer</desc1>
+        <desc2>Fonctionnalités complètes et faciles de contrôle et d'administration. Intégration possible avec des outils tiers (ex : SNMP, syslog…)</desc2>
+        <score>2</score>
+        <comment>Console JSF/AJAX, logs pour les différents "tubes", transformations XSL, ...</comment>
+      </element>
+    </element>
+    <element name="technicaladaptability" title="Adaptabilité">
+      <desc>Adaptabilité technique</desc>
+      <element name="modularity" title="Modularité">
+        <desc0>Logiciel monolithique</desc0>
+        <desc1>Présence de modules haut niveau permettant un premier niveau d'adaptation</desc1>
+        <desc2>Conception modulaire, permettant des adaptations faciles par sélection et/ou création de modules</desc2>
+        <score>2</score>
+        <comment>Les API d'intégration server ont déjà permis d'intégrer plusieurs autres technologies: https://jax-ws-architecture-document.dev.java.net/nonav/doc21/index.html?com/sun/xml/ws/api/server/package-summary.html</comment>
+      </element>
+      <element name="codemodification" title="Facilité technique de modification du code existant">
+        <desc0>Tout à la main</desc0>
+        <desc1>Recompilation possible mais complexe, sans outils, ni documentation</desc1>
+        <desc2>Recompilation facile, outillée (ex : make, ANT, Maven…) et documentée</desc2>
+        <score>2</score>
+        <comment>Utilisation de ANT et d'un référentiel Maven 2</comment>
+      </element>
+      <element name="codeextension" title="Facilité d'extension du code">
+        <desc0>Toute modification demande une recompilation du code</desc0>
+        <desc1>Architecture conçue pour des extensions statiques mais exige une recompilation</desc1>
+        <desc2>Architecture de plugins, conçue pour des extensions dynamiques et sans recompilation</desc2>
+        <score>2</score>
+        <comment>Principe de "Handlers" au niveau SOAP ou au niveau logique qui peuvent modifier le comportement des web services. Pas de recompilation du Web Service nécessaire.</comment>
+      </element>
+    </element>
+    <element name="strategy" title="Stratégie">
+      <desc>Stratégie du projet</desc>
+      <element name="license" title="Licence">
+        <desc>Licence, à pondérer uniquement si le client désire un jour devenir propriétaire du code</desc>
+        <element name="permissiveness" title="Permissivité">
+          <desc0>Licence très stricte, comme la GPL</desc0>
+          <desc1>Licence modérée entre les deux extrêmes (GPL et BSD), licence duale dépendante du type d'utilisateur (personne, société…) ou de leur activité</desc1>
+          <desc2>Licence très permissive comme BSD et Apache</desc2>
+          <score>2</score>
+          <comment>L'utilisateur a le choix entre CDDL et GPLv2</comment>
+        </element>
+        <element name="protectionagainstproprietaryforks" title="Protection contre des forks commerciaux">
+          <desc0>Licence très permissive comme BSD et Apache</desc0>
+          <desc1>Licence modérée entre les deux extrêmes (GPL et BSD), licence duale dépendante du type d'utilisateur (personne, société…) ou de leur activité</desc1>
+          <desc2>Licence très stricte, comme la GPL</desc2>
+          <score>2</score>
+          <comment>L'utilisateur a le choix entre CDDL et GPLv2</comment>
+        </element>
+      </element>
+      <element name="copyrightowners" title="Détenteur des droits">
+        <desc0>Les droits sont détenus par quelques individus ou entités commerciales, facilitant le changement de licence</desc0>
+        <desc1>Les droits sont détenus par de nombreux individus de façon homogène, rendant le changement de licence très difficile</desc1>
+        <desc2>Les droits sont détenus par une entité légale, une fondation dans laquelle la communauté a confiance (ex: FSF, Apache, ObjectWeb)</desc2>
+        <score>2</score>
+        <comment>Sun capable de fournir de l'indemnification grace à une politique très stricte sur les contributions
+ Le Sun Contributor Agreement (SCA) est en particulier un document indispensable de copyright joint.</comment>
+      </element>
+      <element name="modificationofsourcecode" title="Modification du code">
+        <desc0>Pas de moyen pratique de proposer des modifications de code</desc0>
+        <desc1>Des outils sont fournis pour accéder et modifier le code (ex : CVS, SVN) mais ne sont pas vraiment utilisés pour développer le produit</desc1>
+        <desc2>Le processus de modification de code est bien défini, exposé et respecté, basé sur des rôles bien définis</desc2>
+        <score>2</score>
+        <comment>Code placé sous CVS d'accès public (https://jax-ws.dev.java.net/source/browse/)</comment>
+      </element>
+      <element name="roadmap" title="Feuille de route">
+        <desc0>Pas de feuille de route publiée</desc0>
+        <desc1>Feuille de route sans planning</desc1>
+        <desc2>Feuille de route versionnée, avec planning et mesures de retard</desc2>
+        <score>2</score>
+        <comment>Informations disponibles sur http://glassfishwiki.org/</comment>
+      </element>
+      <element name="sponsor" title="Sponsor">
+        <desc0>Le logiciel n'a pas de sponsors, l'équipe principale n'est pas rémunérée</desc0>
+        <desc1>Le logiciel a un sponsor unique qui détermine sa stratégie</desc1>
+        <desc2>Le logiciel est sponsorisé par l'industrie</desc2>
+        <score>2</score>
+        <comment>Sun est le contibuteur principal. Le statut d'implémentation de référence donne à GlassFish un "intérêt général" de la part de la communauté. BEA a annoncé début 2007 son intention de reprendre tel quel le code JAX-WS pour intégration dans Weblogic 10.</comment>
+      </element>
+      <element name="strategicalindependence" title="Indépendance stratégique">
+        <desc0>Pas de stratégie détectable ou forte dépendance à un acteur unique (individu, société, sponsor)</desc0>
+        <desc1>Vision stratégique partagée avec plusieurs autres projets open-source mais sans engagement fort des propriétaires des droits</desc1>
+        <desc2>Indépendance forte de l'équipe de développement, droits détenus par une entité, fort engagement dans un processus de standardisation</desc2>
+        <score>0</score>
+        <comment>Le status d'implémentation de référence au JCP et le rôle de Sun en font un produit à forte indépendance.</comment>
+      </element>
+    </element>
+  </section>
+  <section name="j2ee1_4" title="respects des standards J2EE1.4">
+    <element name="jsr101" title="JSR 101 Java API for XML-Based RPC (JAX-RPC) 1.1">
+      <desc> JAX-RPC supporte SOAP avec des attachements, vous pouvez employer JAX-RPC APIs pour envoyer des attachements MIME. 
+        Mais les types MIME ne peuvent pas être décrits par l'interface WSDL.
+      </desc>
+      <desc0>JSR/API non implémentée</desc0>
+      <desc1>JSR/API partiellement implémentée, ou implémentation défectueuse</desc1>
+      <desc2>JSR/API implémentée, implémentation stable</desc2>
+      <comment></comment>
+      <score>2</score>
+    </element>
+    <element name="jsr67_saaj-1_2" title="JSR  67 SOAP with Attachments API for Java Specification (SAAJ) 1.2">
+      <desc> SAAJ fournit une manière standard d'envoyer des documents XML par Internet depuis la plateforme Java. 
+      </desc>
+      <desc0>JSR/API non implémentée</desc0>
+      <desc1>JSR/API partiellement implémentée, ou implémentation défectueuse</desc1>
+      <desc2>JSR/API implémentée, implémentation stable</desc2>
+      <comment></comment>
+      <score>2</score>
+    </element>
+    <element name="jsr109" title="JSR 109 Web Services for EE (WS4EE) 1.0">
+      <desc0>JSR/API non implémentée</desc0>
+      <desc1>JSR/API partiellement implémentée, ou implémentation défectueuse</desc1>
+      <desc2>JSR/API implémentée, implémentation stable</desc2>
+      <comment></comment>
+      <score>2</score>
+    </element>
+    <element name="jaxr" title="Java API for XML Registries Specification (JAXR) 1.0">
+      <desc0>JSR/API non implémentée</desc0>
+      <desc1>JSR/API partiellement implémentée, ou implémentation défectueuse</desc1>
+      <desc2>JSR/API implémentée, implémentation stable</desc2>
+      <comment></comment>
+      <score>2</score>
+    </element>
+  </section>
+  <section name="jee5" title="respects des standards JEE5">
+    <element name="jsr101-jee5" title="JSR 101 Java API for XML-Based RPC (JAX-RPC) 1.1">
+      <desc> JAX-RPC supporte SOAP avec des attachements, vous pouvez employer JAX-RPC APIs pour envoyer des attachements MIME. 
+        Mais les types MIME ne peuvent pas être décrits par l'interface WSDL.                
+      </desc>
+      <desc0>JSR/API non implémentée</desc0>
+      <desc1>JSR/API partiellement implémentée, ou implémentation défectueuse</desc1>
+      <desc2>JSR/API implémentée, implémentation stable</desc2>
+      <comment></comment>
+      <score>2</score>
+    </element>
+    <element name="jsr67_saaj-1_3" title="JSR  67 SOAP with Attachments API for Java (SAAJ) 1.3">
+      <desc> SAAJ fournit une manière standard d'envoyer des documents XML par Internet depuis la plateforme de Java.
+        SAAJ 1.3 supporte SOAP 1.2. Pour plus d'informations sur les spécifications de SAAJ. 
+        SAAJ est souvent utilisée par des APIs de plus haut niveau comme JAXR et JAX-RPC.
+        Mais, elle peut tout à fait être utilisée de manière indépendante.                 
+      </desc>
+      <desc0>JSR/API non implémentée</desc0>
+      <desc1>JSR/API partiellement implémentée, ou implémentation défectueuse</desc1>
+      <desc2>JSR/API implémentée, implémentation stable</desc2>
+      <comment></comment>
+      <score>2</score>
+    </element>
+    <element name="jsr921-109" title="JSR 921/109 Implementing Enterprise Web Services (WS4EE 1.1 et 1.2)">
+      <desc0>JSR/API non implémentée</desc0>
+      <desc1>JSR/API partiellement implémentée, ou implémentation défectueuse</desc1>
+      <desc2>JSR/API implémentée, implémentation stable</desc2>
+      <comment></comment>
+      <score>2</score>
+    </element>
+    <element name="jaxr1_0" title="Java API for XML Registries Specification (JAXR) 1.0">
+      <desc> Donne un moyen uniforme d'utiliser les registres basés sur des standards tels que ebXML ou UDDI.
+        Permet l'accès à différents types de registres XML. 
+        Ces registres XML sont une infrastructure permettant la construction, 
+        le déploiement et la découverte de Web services. JAXR permet l'interaction avec plusieurs standards, 
+        dont UDDI (Universal Description, Discovery, and Integration) et ebXML (Registry and Repository standard). 
+      </desc>
+      <desc0>API non implémentée</desc0>
+      <desc1>API partiellement implémentée, ou implémentation défectueuse</desc1>
+      <desc2>API implémentée, implémentation stable</desc2>
+      <comment></comment>
+      <score>2</score>
+    </element>
+    <element name="jsr224" title="JSR 224 Java API for XML-Based Web Services (JAX-WS) 2.0">
+      <desc> JAX-WS est la pièce maitresse de la « pile intégrée » qui inclut JAX-WS 2.0, JAXB 2.0, et SAAJ 1.3.
+        La pile intégrée représente une nouvelle architecture logique de la fonctionnalité des services Web.
+      </desc>
+      <desc0>JSR/API non implémentée</desc0>
+      <desc1>JSR/API partiellement implémentée, ou implémentation défectueuse</desc1>
+      <desc2>JSR/API implémentée, implémentation stable</desc2>
+      <comment></comment>
+      <score>2</score>
+    </element>
+    <element name="jsr181" title="JSR 181 Web Service Metadata for the Java Platform">
+      <desc>La JSR 181 définit un format d'annotations facilitant la définition des services WEB             
+      </desc>
+      <desc0>JSR/API non implémentée</desc0>
+      <desc1>JSR/API partiellement implémentée, ou implémentation défectueuse</desc1>
+      <desc2>JSR/API implémentée, implémentation stable</desc2>
+      <comment></comment>
+      <score>2</score>
+    </element>
+    <element name="jsr222" title="JSR 222 Java Architecture for XML Binding (JAXB) 2.0">
+      <desc>La JSR 222 fournit une manière aisée de lier un schéma XML à une représentation en code Java. 
+        JAXB utilise des schémas (W3C XML Schema) pour faire ces liens.
+        Une fois ce lien créé (grâce à un compilateur qui va générer les packages correspondant à un schéma donné), 
+        vous pouvez facilement sérialiser/desérialiser les objets Java sous un format XML.                
+      </desc>
+      <desc0>JSR/API non implémentée</desc0>
+      <desc1>JSR/API partiellement implémentée, ou implémentation défectueuse</desc1>
+      <desc2>JSR/API implémentée, implémentation stable</desc2>
+      <comment></comment>
+      <score>2</score>
+    </element>
+  </section>
+  <section name="messaging" title="Messaging">
+    <element name="xml-rpc" title="XML-RPC">
+      <desc>XML-RPC est un protocole RPC (Remote procedure call), une spécification simple qui permet à des processus 
+        s'exécutant dans des environnements différents de faire des appels de méthodes à travers un réseau 
+        (protocole HTTP pour le transport des données et la norme XML pour le codage des données). 
+        XML-RPC est conçu pour permettre à des structures de données complexes d'être transmises, exécutées et renvoyées très facilement.
+        XML-RPC est l'ancêtre de SOAP
+      </desc>
+      <desc0>non supporté</desc0>
+      <desc1>support limité</desc1>
+      <desc2>supporté</desc2>
+      <comment></comment>
+      <score>2</score>
+    </element>
+    <element name="soap" title="SOAP">
+      <desc>Simple Object Access Protocol (SOAP): protocole RPC orienté objet bâti sur XML et recommandé par le W3C.
+        Il permet la transmission de messages entre objets distants, ce qui signifie qu'il autorise un objet à invoquer
+        des méthodes d'objets physiquement situés sur une machine distante (par protocole HTTP, SMTP, etc ...)                
+      </desc>
+      <element name="soap-1_1" title="SOAP 1.1">
+        <desc0>non supporté</desc0>
+        <desc1>support limité</desc1>
+        <desc2>supporté</desc2>
+        <comment></comment>
+        <score>2</score>
+      </element>
+      <element name="soap-1_2" title="SOAP 1.2">
+        <desc>La version 1.2 de SOAP présente un certain nombre de modifications dans la syntaxe et
+          fournit de la sémantique supplémentaire (ou clarifiée) par rapport à SOAP 1.1 
+        </desc>
+        <desc0>non supporté</desc0>
+        <desc1>support limité</desc1>
+        <desc2>supporté</desc2>
+        <comment></comment>
+        <score>2</score>
+      </element>
+    </element>
+  </section>
+  <section name="attachements" title="Attachements">
+    <element name="swa" title="SwA: MIME : Multipurpose Internet Mail Extensions">
+      <desc>En 2000, la note du W3C sur SOAP Messages with Attachments (SwA) a expliqué comment continuer à utiliser MIME 
+        (Multipurpose Internet Mail Extensions) pour des attachements référencés dans le header de SOAP.     
+        Si MIME est toujours utilisable, d'autres protocoles ont vu le jour.           
+      </desc>
+      <desc0>non supporté</desc0>
+      <desc1>support limité</desc1>
+      <desc2>supporté</desc2>
+      <comment></comment>
+      <score>2</score>
+    </element>
+    <element name="mtom-xop" title="support de MTOM/XOP  ">
+      <desc>XOP (XML-binary Optimized Packaging) : permet d'inclure dans le fichier XML des données binaires
+        (par exemple pour des fichiers images, son, video) pour « améliorer l'efficacité ».                
+        MTOM (pour Message Transmission Optimization Mechanism) est une description de la façon dont XOP est utilisé dans le transport SOAP HTTP.
+        Il spécifie comment gérer les pièces attachées à un message Soap 1.2.
+        Le message et la pièce attachée sont encapsulés dans une enveloppe  Mime Multipart.
+        MTOM fournit un mécanisme de pointeur logique - l'élément xbinc:Include -, qui permet de créer des références internes aux pièces attachées - 
+        directement dans le message Soap. Cette approche facilite le traitement des messages Soap et favorise leur atomicité.                 
+      </desc>
+      <desc0>non supporté</desc0>
+      <desc1>support limité à XOP</desc1>
+      <desc2>MTOM complètement supporté</desc2>
+      <comment></comment>
+      <score>2</score>
+    </element>
+  </section>
+  <section name="interop" title="Interopérabilité">
+    <element name="ws-i" title="WS-I Basic Profile 1.1">
+      <desc>Ensemble de spécifications et de règles facilitant l'intéropérabilité entre services web régis par les protocoles SOAP         
+      </desc>
+      <desc0>non supporté</desc0>
+      <desc1>support limité</desc1>
+      <desc2>supporté</desc2>
+      <comment></comment>
+      <score>2</score>
+    </element>
+    <element name="basic-profile" title="Attachment Profile 1.0">
+      <desc>Complète Basic Profile 1.1. Fournit le support des messages SOAP à base de pièces jointes.      
+      </desc>
+      <desc0>non supporté</desc0>
+      <desc1>support limité</desc1>
+      <desc2>supporté</desc2>
+      <comment></comment>
+      <score>2</score>
+    </element>
+  </section>
+  <section name="transport" title="transport">
+    <element name="http" title="SOAP over HTTP">
+      <desc0>non supporté</desc0>
+      <desc1>support limité</desc1>
+      <desc2>supporté</desc2>
+      <comment></comment>
+      <score>2</score>
+    </element>
+    <element name="ftp" title="SOAP over FTP">
+      <desc0>non supporté</desc0>
+      <desc1>support limité</desc1>
+      <desc2>supporté</desc2>
+      <comment></comment>
+      <score>1</score>
+    </element>
+    <element name="vm" title="SOAP intra VM">
+      <desc0>non supporté</desc0>
+      <desc1>support limité</desc1>
+      <desc2>supporté</desc2>
+      <comment>in-vm://inVmServerId?portLocalName , mais peu documenté</comment>
+      <score>2</score>
+    </element>
+    <element name="jms" title="SOAP over JMS">
+      <desc0>non supporté</desc0>
+      <desc1>support limité</desc1>
+      <desc2>supporté</desc2>
+      <comment></comment>
+      <score>2</score>
+    </element>
+    <element name="xmpp" title="SOAP over XMPP (jabber)">
+      <desc0>non supporté</desc0>
+      <desc1>support limité</desc1>
+      <desc2>supporté</desc2>
+      <comment></comment>
+      <score>0</score>
+    </element>
+    <element name="tcp" title="SOAP over TCP">
+      <desc0>non supporté</desc0>
+      <desc1>support limité</desc1>
+      <desc2>supporté</desc2>
+      <comment></comment>
+      <score>2</score>
+    </element>
+  </section>
+  <section name="registry" title="Les registres et services de recherche">
+    <element name="uddi" title="le support UDDI">
+      <desc>UDDI : acronyme de Universal Description Discovery and Integration,
+        est une  norme édictée par l'OASIS définissant une technologie d'annuaire basée sur XML 
+        et plus particulièrement destinée aux services Web, 
+        notamment dans le cadre d'architectures de type SOA (Service Oriented Architecture).
+        Un annuaire UDDI permet de localiser sur le réseau le service Web recherché. 
+        Il repose sur le protocole de transport SOAP.
+      </desc>
+      <desc0>non supporté</desc0>
+      <desc1>support limité</desc1>
+      <desc2>supporté</desc2>
+      <comment>Via JAXR</comment>
+      <score>2</score>
+    </element>
+    <element name="ebXML" title="ebXML">
+      <desc>abréviation de l'anglais Electronic Business using eXtensible Markup Language signifiant commerce électronique en utilisant XML,
+        est une suite de spécifications basées sur le langage XML et définissant un standard pour le commerce électronique. 
+        Ce standard est édité par l'OASIS. 
+        ebXML s'adresse aux entreprises de toutes tailles, en permettant de définir les échanges électroniques 
+        entre l'entreprise et ses divers partenaires, comme les catalogues électroniques                
+      </desc>
+      <desc0>non supporté</desc0>
+      <desc1>support limité</desc1>
+      <desc2>supporté</desc2>
+      <comment>Via JAXR</comment>
+      <score>2</score>
+    </element>
+  </section>
+  <section name="metaData" title="Meta-données">
+    <element name="wsdl-1_1" title="support de WSDL 1.1">
+      <desc>Le WSDL décrit une Interface publique d'accès à un Service Web :
+        C'est une description basée sur XML qui indique « comment communiquer pour utiliser le service »; 
+        le protocole de communication, et le format de messages requis pour communiquer avec ce service.                 
+      </desc>
+      <desc0>non supporté</desc0>
+      <desc1>support limité</desc1>
+      <desc2>supporté : le WSDL est exposé automatiquement</desc2>
+      <comment> Le WSDL est exposé (en utilisant ?wsdl" à la fin de l'url).</comment>
+      <score>2</score>
+    </element>
+    <element name="wsdl-2_0" title="support de WSDL 2.0">
+      <desc>La version 1.1 n'est pas approuvée par le W3C, 
+        la version 2.0 a pour ambition de devenir un standard officiel approuvé par le W3C.                
+      </desc>
+      <desc0>non supporté</desc0>
+      <desc1>support limité</desc1>
+      <desc2>supporté : le WSDL est exposé automatiquement</desc2>
+      <comment>WSDL 2.0 n'existe pas....</comment>
+      <score>0</score>
+    </element>
+  </section>
+  <section name="ws-star" title="support des spécifications WS-*">
+    <element name="meta-data" title="Meta-données">
+      <element name="ws-policy" title="WS-Policy">
+        <desc>WS-Policy permet de spécifier et de prendre en charge les pré-requis et
+          capacités des fournisseurs et consommateurs de services web.        
+        </desc>
+        <desc0>non supporté</desc0>
+        <desc1>support limité</desc1>
+        <desc2>supporté</desc2>
+        <comment>via WSIT</comment>
+        <score>2</score>
+      </element>
+      <element name="ws-metadata-exchange" title="WS-MetadataExchange">
+        <desc>"WS-MEX" permet d'obtenir les informations décrivant le service  (WSDL, XSD et policies)   
+          Il vise la standardisation des opérations de récupération des "policies d’un endpoint" 
+          mais aussi son WSDL et son schéma de données (GetPolicy, GetWSDL, GetSchema).
+        </desc>
+        <desc0>non supporté</desc0>
+        <desc1>support limité</desc1>
+        <desc2>supporté: exposition des WSDLs, XSDs et policies</desc2>
+        <comment>via WSIT</comment>
+        <score>2</score>
+      </element>
+    </element>
+    <element name="security" title="sécurité">
+      <element name="ws-security" title="WS-Security">
+        <desc>WS-Security permet d'assurer l'intégrité et la confidentialité du contenu des messages 
+          et ce même en présence d'intermédiaires                   
+        </desc>
+        <desc0>non supporté</desc0>
+        <desc1>support limité</desc1>
+        <desc2>supporté</desc2>
+        <comment></comment>
+        <score>2</score>
+      </element>
+      <element name="ws-security-policy" title="WS-SecurityPolicy">
+        <desc>WS-SecurityPolicy: Définition d'assertions décrivant la manière dont est sécurisé un message.                 
+        </desc>
+        <desc0>non supporté</desc0>
+        <desc1>support limité</desc1>
+        <desc2>supporté</desc2>
+        <comment>via WSIT</comment>
+        <score>2</score>
+      </element>
+      <element name="ws-trust" title="WS-Trust">
+        <desc>WS-Trust: offre des méthodes permettant d'obtenir, de renouveler et de valider les jetons de sécurité utilisés par WS-Security              
+        </desc>
+        <desc0>non supporté</desc0>
+        <desc1>support limité</desc1>
+        <desc2>supporté</desc2>
+        <comment>via WSIT</comment>
+        <score>2</score>
+      </element>
+      <element name="ws-secure-conversation" title="WS-SecureConversation">
+        <desc>WS-SecureConversation: peut être vu comme une optimisation du framework de sécurité.  </desc>
+        <desc0>non supporté</desc0>
+        <desc1>support limité</desc1>
+        <desc2>supporté</desc2>
+        <comment>via WSIT</comment>
+        <score>2</score>
+      </element>
+    </element>
+    <element name="qos" title="Qualité de service">
+      <element name="ws-addressing" title="WS-Addressing">
+        <desc>WS-Addressing : maintient une session entre plusieurs invocations   </desc>
+        <desc0>non supporté</desc0>
+        <desc1>support limité</desc1>
+        <desc2>supporté</desc2>
+        <comment>Oui, y compris dans ses différents versions....</comment>
+        <score>2</score>
+      </element>
+      <element name="ws-reliable-messaging" title="WS-ReliableMessaging">
+        <desc>WS-ReliableMessaging : permet à un système de messages la gestion des pannes et de la perte ou désorganisation des messages.   </desc>
+        <desc0>non supporté</desc0>
+        <desc1>support limité</desc1>
+        <desc2>supporté</desc2>
+        <comment>via WSIT</comment>
+        <score>2</score>
+      </element>
+      <element name="ws-coordination" title="WS-Coordination">
+        <desc>WS-Coordination : Un framework permettant la coordination des actions au sein d'applications distribuées.
+          Utilisé par WS-AtomicTransactions. 
+        </desc>
+        <desc0>non supporté</desc0>
+        <desc1>support limité</desc1>
+        <desc2>supporté</desc2>
+        <comment>via WSIT</comment>
+        <score>2</score>
+      </element>
+      <element name="ws-atomic-transaction" title="WS-AtomicTransaction">
+        <desc> WS-AtomicTransaction : Prise en charge du "commit à deux phases". Toutes les opérations participant à une transaction atomique sont toutes exécutées avec succès ou toutes annulées.
+        </desc>
+        <desc0>non supporté</desc0>
+        <desc1>support limité</desc1>
+        <desc2>supporté</desc2>
+        <comment>via WSIT</comment>
+        <score>2</score>
+      </element>
+    </element>
+  </section>
+  <section name="ws_tools" title="Outillage Web Service">
+    <element name="wsdl2java" title="génération top-down ou WSDL2Java">
+      <desc>Outil permettant de créer automatiquement les classes Java sur la base d'un WSDL.                
+      </desc>
+      <desc0>non supporté</desc0>
+      <desc1>support limité, instable ou incomplet (ne génère que la partie cliente ou serveur)</desc1>
+      <desc2>bon support (client et serveur), l'outil a une granularité fine de génération</desc2>
+      <comment>L'outil est wsimport</comment>
+      <score>2</score>
+    </element>
+    <element name="java2wsdl" title="génération bottom-up ou Java2WSDL">
+      <desc>outil permettant de créer automatiquement les WSDLs correspondant à des classes Java.             
+      </desc>
+      <desc0>non supporté</desc0>
+      <desc1>support limité, instable ou incomplet (ne génère que la partie cliente ou serveur)</desc1>
+      <desc2>bon support (client et serveur), l'outil a une granularité fine de génération</desc2>
+      <comment>l'outil est wsgen</comment>
+      <score>2</score>
+    </element>
+    <element name="build-integration" title="facilité d'intégration au build">
+      <desc>Facilité pour créer des livrables ou archives. Facilité d'intégration au build de génération de code       
+      </desc>
+      <desc0>non supporté: génération en ligne de commande</desc0>
+      <desc1>support limité: tâche ant uniquement</desc1>
+      <desc2>bonne intégration: tâche ant et plugin Maven1 et/ou Maven2</desc2>
+      <comment>Tâches ANT et référentiel Maven 2</comment>
+      <score>2</score>
+    </element>
+    <element name="IDE-support" title="supports IDE">
+      <desc>Fourniture de plugins pour les environnements de développement intégrés (IDEs)
+        (plugins intégrant les fonctionnalités de génération de code et la création de livrables ou archives).    
+      </desc>
+      <element name="idea-support" title="support IDEA">
+        <desc0>aucun plugin</desc0>
+        <desc1>plugin aux fonctionnalités limitées ou défectueuses</desc1>
+        <desc2>bon plugin, bonne ergonomie</desc2>
+        <comment></comment>
+        <score>2</score>
+      </element>
+      <element name="eclipse-support" title="support Eclipse">
+        <desc0>aucun plugin</desc0>
+        <desc1>plugin aux fonctionnalités limitées ou défectueuses</desc1>
+        <desc2>bon plugin, bonne ergonomie</desc2>
+        <comment></comment>
+        <score>2</score>
+      </element>
+      <element name="netbeans-support" title="support NetBeans">
+        <desc0>aucun plugin</desc0>
+        <desc1>plugin aux fonctionnalités limitées ou défectueuses</desc1>
+        <desc2>bon plugin, bonne ergonomie</desc2>
+        <comment></comment>
+        <score>2</score>
+      </element>
+    </element>
+  </section>
+  <section name="programming" title="Programmation et extensibilité">
+    <element name="marshalling-unmarshalling-java-soap" title="Sérialisation/désérialisation automatique d'objets Java depuis et vers des messages SOAP       ">
+      <desc0>non supporté</desc0>
+      <desc1>supporté mais limité ou réalisé par un data binding obsolète ou non standard</desc1>
+      <desc2>supporté et réalisé par un data binding standard et extensible (ex: JAXB)</desc2>
+      <comment>JAXB 2.0</comment>
+      <score>2</score>
+    </element>
+    <element name="handlers" title="support pour intercepteurs (handlers)">
+      <desc>Intercepteurs qui peuvent être facilement branchés dans l'environnement d'exécution du service pour réaliser des tâches avant l'arrivée des messages au service et/ou après le traitement du service, avant le renvoi au client.
+      </desc>
+      <desc0>aucun handler/intercepteur supporté</desc0>
+      <desc1>support pour handlers/intercepteurs logiques uniquement: capables de modifier le message du service</desc1>
+      <desc2>support pour handlers/intercepteurs logiques et protocolaires : 
+        c'est à dire capables de modifier le message mais aussi son enveloppe
+        associée au protocole (ex: SOAPHandler et LogicalHandler de JAX-WS 2.0)
+      </desc2>
+      <comment>Oui, différents types de handlers disponibles</comment>
+      <score>2</score>
+    </element>
+    <element name="soap-header-parameter-implicit-explicit-contexts-support" title="support pour paramètres d'entête SOAP">
+      <desc>Gestion des paramètres en entête de requête SOAP ? 
+        Ces paramètres sont invisibles, par défaut, pour le client ainsi que pour l'implémentation du service. 
+        C'est un contexte implicite pour le service web utilisé par le système de services web ainsi que 
+        les Handlers permettant de gérer des problématiques liées à l'environnement d'exécution du service (la sécurité par exemple).  
+        Si ces paramètres d'entête SOAP sont "bindés" dans la WSDL à une opération, 
+        ils sont ajoutés à la signature de l'opération et seront donc accessibles dans le code du service web. 
+        C'est ce qui forme le contexte explicite. </desc>
+      <desc0>paramètres d'entête non gérés</desc0>
+      <desc1>support pour contexte implicite: les paramètres d'entête peuvent être connus des handlers</desc1>
+      <desc2>support pour contexte implicite et explicite</desc2>
+      <comment>Via Handler specifique</comment>
+      <score>2</score>
+    </element>
+    <element name="asynchronous-callback" title="support pour appels asynchrones et callback"><desc>Cette solution de mise en oeuvre de web-services fournit-elle un moyen de gérer les appels asynchrones ? </desc><desc0>appels asynchrones non supportés</desc0><desc1>les appels asynchrones ont un support limité (au polling). 
+        Le client est capable d'envoyer une requête SOAP sans être bloqué, en attente de réponse. 
+        Mais le callback n'est pas supporté, seul un mécanisme de polling (boucle de rappel basée sur un temporisateur) 
+        est éventuellement prévu.
+      </desc1><desc2>appels asynchrones supportés par les mécanismes de polling mais aussi de callbacks: la conversation est supportée. 
+        Le client fournit une adresse de retour, un intercepteur: un "callback handler/end-point". 
+        Cette fonctionnalité est intégrée à JAX-WS 2.0.
+        Les notions dérivées de session et conversation sont contenues dans la spécification WS-Addressing.
+      </desc2>Polling et Callbacks supportés
+      <comment>via javax.xml.ws.AsyncHandler</comment><score>2</score></element>
+  </section>
+  <section name="ws_admin" title="Fonctionnalités d'administration des web-services">
+    <element name="deploy" title="Déploiement de nouveaux services">
+      <desc0>Déploiement difficile, ou nécessitant un outillage non standard, ou de nombreuses étapes ou un reboot du serveur</desc0>
+      <desc1>Déploiement aisé, mais nécessitant un arrêt du service</desc1>
+      <desc2>Déploiement aisé et à chaud (hot deploy)</desc2>
+      <comment>Déploiement de nouveaux services ou mise à jour de services existants à chaud dans GlassFish (dépend du conteneur)</comment>
+      <score>2</score>
+    </element>
+    <element name="lifecycleManagement" title="Gestion du cycle de vie (arrêt/démarrage/...)">
+      <desc0>pas d'interface ni de fonctionnalité d'administration de gestion du cycle de vie des services</desc0>
+      <desc1>fonctionnalités d'arrêt de redémarrage à chaud des services</desc1>
+      <desc2>fonctionnalités avancées de gestion du cycle de vie des services et/ou interface d'administration associées</desc2>
+      <comment></comment>
+      <score>1</score>
+    </element>
+  </section>
+  <section name="supervision" title="Fonctionnalités de supervision">
+    <element name="stats" title="Module de production de statistiques">
+      <desc0>pas d'interface ni de fonctionnalité de production de statistiques d'accès aux services</desc0>
+      <desc1>statistiques disponibles uniquement en temps réel, en snapshots ou rapports succints</desc1>
+      <desc2>statistiques disponibles sur une période. Génération de rapports évolués</desc2>
+      <comment>Oui, via des compteurs internes.</comment>
+      <score>1</score>
+    </element>
+  </section>
+</document>

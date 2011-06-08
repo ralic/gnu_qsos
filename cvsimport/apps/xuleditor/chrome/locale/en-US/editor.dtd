@@ -1,0 +1,49 @@
+<!ENTITY QSOS.label "QSOS XUL Editor">
+<!ENTITY file-menu.label "File">
+<!ENTITY file-new.label "New file">
+<!ENTITY file-open.label "Open local file">
+<!ENTITY file-open-remote.label "Open remote file">
+<!ENTITY file-save.label "Save">
+<!ENTITY file-saveas.label "Save As">
+<!ENTITY file-save-remote.label "Save on remote server">
+<!ENTITY file-close.label "Close">
+<!ENTITY file-exit.label "Exit">
+<!ENTITY tree-menu.label "Tree">
+<!ENTITY tree-expand.label "Expand all">
+<!ENTITY tree-collapse.label "Collapse all">
+<!ENTITY chat-menu.label "Chat">
+<!ENTITY chat-start.label "Connect">
+<!ENTITY chat-nick.label "Nickname">
+<!ENTITY chat-end.label "Disconnect">
+<!ENTITY help-menu.label "Help">
+<!ENTITY help-about.label "About">
+<!ENTITY name.label "Criteria">
+<!ENTITY g-evaluation.label "Evaluation">
+<!ENTITY t-header.label "Header">
+<!ENTITY t-c-title.label "Criteria">
+<!ENTITY t-chart.label "Chart">
+<!ENTITY g-software.label "Software">
+<!ENTITY f-software.value "Name">
+<!ENTITY f-release.value "Release">
+<!ENTITY f-sotwarefamily.value "Software family">
+<!ENTITY f-license.value "License">
+<!ENTITY f-desc.value "Description">
+<!ENTITY f-url.value "Website">
+<!ENTITY f-demourl.value "Demo site">
+<!ENTITY authors.title "Authors">
+<!ENTITY f-a-name.value "Name">
+<!ENTITY f-a-email.value "Email">
+<!ENTITY button1.label "Add">
+<!ENTITY button2.label "Delete">
+<!ENTITY f-a-list "Authors: ">
+<!ENTITY label1.value "Description">
+<!ENTITY label2.value "Score">
+<!ENTITY f-c-desc0.label "Score 0">
+<!ENTITY f-c-desc1.label "Score 1">
+<!ENTITY f-c-desc2.label "Score 2">
+<!ENTITY f-c-comments.value "Comments">
+<!ENTITY chat-conversation "Conversation">
+<!ENTITY chat-input "Say something">
+<!ENTITY chat-send "Send!">
+<!ENTITY chat-roster "Participants">
+<!ENTITY t-chat.label "Chat">

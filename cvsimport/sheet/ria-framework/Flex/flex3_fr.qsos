@@ -1,0 +1,790 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document>
+   <header>
+      <authors>
+	<author>
+		<email></email>
+		<name>Francois Le Droff</name>
+	</author>
+      </authors>
+      <dates>
+         <creation></creation>
+         <validation></validation>
+      </dates>
+      <language>en</language>
+      <appname>Flex SDK</appname>
+      <release>3</release>
+      <licenseid>22</licenseid>
+      <licensedesc>The Apache License</licensedesc>
+      <url>http://opensource.adobe.com/wiki/display/flexsdk/Flex+SDK</url>
+      <desc>Flex is a highly productive, open source framework for building and maintaining expressive web applications that deploy consistently on all major browsers, desktops and operating systems.</desc>
+      <demourl>http://opensource.adobe.com/wiki/display/flexsdk/Flex+SDK</demourl>
+      <qsosformat>1.6</qsosformat>
+      <qsosappfamily>ria-framework</qsosappfamily>
+      <qsosappname>Framework de développement RIA</qsosappname>
+      <qsosspecificformat>1.0</qsosspecificformat>
+   </header>
+   <section name="generic" title="Section générique">
+      <desc>Les critères génériques de la méthode QSOS version 1.6</desc>
+      <element name="intrinsicdurability" title="Pérennité">
+         <desc>Pérennité</desc>
+         <element name="maturity" title="Maturité">
+            <desc>Maturité</desc>
+            <element name="age" title="Âge">
+               <desc0>Moins de 3 mois</desc0>
+               <desc1>Entre 3 mois et 3 ans</desc1>
+               <desc2>Plus de 3 ans</desc2>
+               <score>2</score>
+               <comment>2004
+http://opensource.adobe.com/wiki/display/flexsdk/History</comment>
+            </element>
+            <element name="stability" title="Stabilité">
+               <desc0>Logiciel instable avec de nombreuses versions et patches générant des effets de bords</desc0>
+               <desc1>Version de production stabilisée mais un peu vieille. Quelques difficultés à stabiliser les versions de développement</desc1>
+               <desc2>Logiciel stable. Les nouvelles versions corrigent des bugs, mais apportent de façon prépondérante de nouvelles fonctionnalités</desc2>
+               <score>2</score>
+               <comment></comment>
+            </element>
+            <element name="historyknowproblems" title="Historique">
+               <desc0>Le logiciel connaît de nombreux problèmes qui peuvent être rédhibitoires</desc0>
+               <desc1>Pas de problèmes majeurs, ni de crise</desc1>
+               <desc2>Bon historique de gestion de projet et de crise</desc2>
+               <score>1</score>
+               <comment></comment>
+            </element>
+            <element name="forkprobability" title="Fork">
+               <desc0>Forte probabilité de fork dans un futur proche</desc0>
+               <desc1>Le logiciel provient d'un fork mais a très peu de chances d'être forké dans un futur proche</desc1>
+               <desc2>Très faible probabilité de fork. Le logiciel ne provient pas d'un fork</desc2>
+               <score>2</score>
+               <comment></comment>
+            </element>
+         </element>
+         <element name="adoption" title="Adoption">
+            <desc>Adoption par la communauté et l'industrie</desc>
+            <element name="popularity" title="Popularité">
+               <desc0>Très peu d'utilisateurs identifiés</desc0>
+               <desc1>Usage détectable sur Internet</desc1>
+               <desc2>Nombreux utilisateurs et références</desc2>
+               <score>2</score>
+               <comment></comment>
+            </element>
+            <element name="references" title="Références">
+               <desc0>Aucune</desc0>
+               <desc1>Peu de références, pas d'usage critique</desc1>
+               <desc2>Souvent implémenté sur des applications critiques</desc2>
+               <score>2</score>
+               <comment></comment>
+            </element>
+            <element name="contributingcommunity" title="Communauté des contributeurs">
+               <desc0>Pas de communauté ou de réelle activité (forum, liste de diffusion…)</desc0>
+               <desc1>Communauté existante avec une activité notable</desc1>
+               <desc2>Communauté forte : grosse activité sur les forums, de nombreux contributeurs et défenseurs</desc2>
+               <score>2</score>
+               <comment></comment>
+            </element>
+            <element name="books" title="Livres, publications">
+               <desc0>Aucun livre sur ce logiciel</desc0>
+               <desc1>Moins de cinq livres publiés sur ce logiciel</desc1>
+               <desc2>Plus de cinq livres publiés sur ce logiciel et dans différentes langues</desc2>
+               <score>2</score>
+               <comment></comment>
+            </element>
+         </element>
+         <element name="developmentleadership" title="Direction des développements">
+            <desc>Organisation et direction des développements</desc>
+            <element name="leadingteam" title="Équipe dirigeante">
+               <desc0>Un ou deux individus engagés, pas clairement identifiés</desc0>
+               <desc1>Entre deux et cinq personnes indépendantes</desc1>
+               <desc2>Plus de cinq personnes</desc2>
+               <score>2</score>
+               <comment></comment>
+            </element>
+            <element name="managementstyle" title="Mode de direction">
+               <desc0>Dictature complète</desc0>
+               <desc1>Despotisme éclairé</desc1>
+               <desc2>Conseil d'architectes avec un leader identifié (ex : KDE)</desc2>
+               <score>0</score>
+               <comment></comment>
+            </element>
+         </element>
+         <element name="activity" title="Activité">
+            <desc>Activité du et autour du projet</desc>
+            <element name="developersidentificationturnover" title="Nombre de développeurs, identification, turnover">
+               <desc0>Moins de trois développeurs, pas clairement identifiés</desc0>
+               <desc1>Entre quatre et sept développeurs ou plus, non identifiés, avec un turnover important</desc1>
+               <desc2>Plus de sept développeurs, équipe très simple</desc2>
+               <score>2</score>
+               <comment></comment>
+            </element>
+            <element name="activityonbugs" title="Activité autour des bugs">
+               <desc0>Réactivité faible sur le forum ou sur la liste de diffusion, ou rien au sujet des corrections de bugs dans les notes de versions</desc0>
+               <desc1>Activité détectable mais sans processus clairement exposé, temps de résolution long</desc1>
+               <desc2>Forte réactivité, basée sur des rôles et des assignations de tâches</desc2>
+               <score>1</score>
+               <comment></comment>
+            </element>
+            <element name="activityonfunctionalities" title="Activité autour des fonctionnalités">
+               <desc0>Pas ou peu de nouvelles fonctionnalités</desc0>
+               <desc1>Évolution du produit conduite par une équipe dédiée ou par des utilisateurs, mais sans processus clairement exposé</desc1>
+               <desc2>Les requêtes pour les nouvelles fonctionnalités sont clairement outillées, feuille de route disponible</desc2>
+               <score>2</score>
+               <comment></comment>
+            </element>
+            <element name="activityonreleases" title="Activité sur les releases/versions">
+               <desc0>Très faible activité que ce soit sur les versions de production ou de développement (alpha, beta)</desc0>
+               <desc1>Activité que ce soit sur les versions de production ou de développement (alpha, beta), avec des versions correctives mineures fréquentes</desc1>
+               <desc2>Activité importante avec des versions correctives fréquentes et des versions majeures planifiées liées aux prévisions de la feuille de route</desc2>
+               <score>2</score>
+               <comment></comment>
+            </element>
+         </element>
+      </element>
+      <element name="industrializedsolution" title="Industrialisation">
+         <desc>Niveau d'industrialisation du projet</desc>
+         <element name="independenceofdevelopments" title="Indépendance des développements">
+            <desc0>Développements réalisés à plus de 60% par des employés d'une seule société</desc0>
+            <desc1>Développements réalisés à 60% maximum par des employés d'une seule société</desc1>
+            <desc2>Développements réalisés à 20% maximum par des employés d'une seule société</desc2>
+            <score>0</score>
+            <comment></comment>
+         </element>
+         <element name="services" title="Services">
+            <desc>Offres de services</desc>
+            <element name="training" title="Formation">
+               <desc0>Pas d'offre de formation identifiée</desc0>
+               <desc1>Offre existante mais restreinte géographiquement ou en une seule langue ou fournie par un seul fournisseur</desc1>
+               <desc2>Offre riche, plusieurs fournisseurs, plusieurs langages, divisée en modules et en niveaux</desc2>
+               <score>2</score>
+               <comment></comment>
+            </element>
+            <element name="support" title="Support">
+               <desc0>Pas d'offre de support identifiée</desc0>
+               <desc1>Offre existante mais restreinte géographiquement ou en une seule langue ou fournie par un seul fournisseur ou sans garantie</desc1>
+               <desc2>Offre riche, plusieurs fournisseurs, avec des garanties (sur les temps de résolution)</desc2>
+               <score>1</score>
+               <comment></comment>
+            </element>
+            <element name="consulting" title="Conseil">
+               <desc0>Pas d'offres de conseil identifiées</desc0>
+               <desc1>Offre existante mais restreinte géographiquement ou à un seul langage ou fournie par un seul fournisseur</desc1>
+               <desc2>Offre riche, plusieurs fournisseurs, plusieurs langages</desc2>
+               <score>2</score>
+               <comment></comment>
+            </element>
+         </element>
+         <element name="documentation" title="Documentation">
+            <desc0>Pas de documentation utilisateur</desc0>
+            <desc1>La documentation existe mais est en partie obsolète ou restreinte à une seule langue ou peu détaillée</desc1>
+            <desc2>Documentation à jour, traduite et éventuellement adaptée à différentes cibles de lecteurs (end-user, sysadmin, manager…)</desc2>
+            <score>2</score>
+            <comment></comment>
+         </element>
+         <element name="qualityassurance" title="Méthode qualité">
+            <desc>Processus et méthode qualité</desc>
+            <element name="quality" title="Assurance qualité">
+               <desc0>Pas de processus qualité identifié</desc0>
+               <desc1>Processus qualité existant, mais non formalisé ou non outillé</desc1>
+               <desc2>Processus automatique de tests dans le cycle de vie du code et publication des résultats</desc2>
+               <score>2</score>
+               <comment></comment>
+            </element>
+            <element name="tools" title="Outillage">
+               <desc0>Pas d'outils de gestion de bugs, ni d'outils de gestion de tickets</desc0>
+               <desc1>Outils standards fournis (une forge par exemple) mais peu utilisés</desc1>
+               <desc2>Utilisation très active d'outils standards</desc2>
+               <score>2</score>
+               <comment></comment>
+            </element>
+         </element>
+      </element>
+      <element name="packaging" title="Packaging">
+         <desc>Packaging pour les différents systèmes d'exploitation</desc>
+         <element name="packagingbsd" title="BSD">
+            <desc>BSD</desc>
+            <element name="packagingfreebsd" title="FreeBSD">
+               <desc0>Le logiciel n'est pas packagé pour ce système d'exploitation</desc0>
+               <desc1>Le packaging existe, mais est buggé ou n'a pas de support officiel</desc1>
+               <desc2>Le logiciel est correctement packagé pour ce système d'exploitation</desc2>
+               <score>0</score>
+               <comment></comment>
+            </element>
+            <element name="packagingmacosx" title="Mac OS X">
+               <desc0>Le logiciel n'est pas packagé pour ce système d'exploitation</desc0>
+               <desc1>Le packaging existe, mais est buggé ou n'a pas de support officiel</desc1>
+               <desc2>Le logiciel est correctement packagé pour ce système d'exploitation</desc2>
+               <score>2</score>
+               <comment></comment>
+            </element>
+            <element name="packagingnet" title="NetBSD">
+               <desc0>Le logiciel n'est pas packagé pour ce système d'exploitation</desc0>
+               <desc1>Le packaging existe, mais est buggé ou n'a pas de support officiel</desc1>
+               <desc2>Le logiciel est correctement packagé pour ce système d'exploitation</desc2>
+               <score>0</score>
+               <comment></comment>
+            </element>
+            <element name="packagingopen" title="OpenBSD">
+               <desc0>Le logiciel n'est pas packagé pour ce système d'exploitation</desc0>
+               <desc1>Le packaging existe, mais est buggé ou n'a pas de support officiel</desc1>
+               <desc2>Le logiciel est correctement packagé pour ce système d'exploitation</desc2>
+               <score>0</score>
+               <comment></comment>
+            </element>
+         </element>
+         <element name="packaginglinux" title="Linux">
+            <desc>Linux</desc>
+            <element name="packagingdebian" title="Debian">
+               <desc0>Le logiciel n'est pas packagé pour ce système d'exploitation</desc0>
+               <desc1>Le packaging existe, mais est buggé ou n'a pas de support officiel</desc1>
+               <desc2>Le logiciel est correctement packagé pour ce système d'exploitation</desc2>
+               <score>2</score>
+               <comment></comment>
+            </element>
+            <element name="packagingmandriva" title="Mandriva">
+               <desc0>Le logiciel n'est pas packagé pour ce système d'exploitation</desc0>
+               <desc1>Le packaging existe, mais est buggé ou n'a pas de support officiel</desc1>
+               <desc2>Le logiciel est correctement packagé pour ce système d'exploitation</desc2>
+               <score>2</score>
+               <comment></comment>
+            </element>
+            <element name="packagingredhat" title="Red Hat">
+               <desc0>Le logiciel n'est pas packagé pour ce système d'exploitation</desc0>
+               <desc1>Le packaging existe, mais est buggé ou n'a pas de support officiel</desc1>
+               <desc2>Le logiciel est correctement packagé pour ce système d'exploitation</desc2>
+               <score>2</score>
+               <comment></comment>
+            </element>
+            <element name="packagingsuse" title="SuSE">
+               <desc0>Le logiciel n'est pas packagé pour ce système d'exploitation</desc0>
+               <desc1>Le packaging existe, mais est buggé ou n'a pas de support officiel</desc1>
+               <desc2>Le logiciel est correctement packagé pour ce système d'exploitation</desc2>
+               <score>2</score>
+               <comment></comment>
+            </element>
+         </element>
+         <element name="packagingsource" title="Source">
+            <desc0>Le logiciel ne peut être facilement installé depuis les sources, cela demande beaucoup de travail</desc0>
+            <desc1>L'installation depuis les sources est limitée ou dépend des conditions (OS, arch, lib…)</desc1>
+            <desc2>L'installation depuis les sources est facile</desc2>
+            <score>2</score>
+            <comment></comment>
+         </element>
+         <element name="packagingunix" title="Unix">
+            <desc>Unix</desc>
+            <element name="packagingaix" title="AIX">
+               <desc0>Le logiciel n'est pas packagé pour ce système d'exploitation</desc0>
+               <desc1>Le packaging existe, mais est buggé ou n'a pas de support officiel</desc1>
+               <desc2>Le logiciel est correctement packagé pour ce système d'exploitation</desc2>
+               <score>0</score>
+               <comment></comment>
+            </element>
+            <element name="packaginghpux" title="HP-UX">
+               <desc0>Le logiciel n'est pas packagé pour ce système d'exploitation</desc0>
+               <desc1>Le packaging existe, mais est buggé ou n'a pas de support officiel</desc1>
+               <desc2>Le logiciel est correctement packagé pour ce système d'exploitation</desc2>
+               <score>0</score>
+               <comment></comment>
+            </element>
+            <element name="packagingsolaris" title="Solaris">
+               <desc0>Le logiciel n'est pas packagé pour ce système d'exploitation</desc0>
+               <desc1>Le packaging existe, mais est buggé ou n'a pas de support officiel</desc1>
+               <desc2>Le logiciel est correctement packagé pour ce système d'exploitation</desc2>
+               <score>0</score>
+               <comment></comment>
+            </element>
+         </element>
+         <element name="packagingwindows" title="Windows">
+            <desc0>Le logiciel n'est pas packagé pour ce système d'exploitation</desc0>
+            <desc1>Le packaging existe, mais est buggé ou n'a pas de support officiel</desc1>
+            <desc2>Le logiciel est correctement packagé pour ce système d'exploitation</desc2>
+            <score>2</score>
+            <comment></comment>
+         </element>
+      </element>
+      <element name="exploitability" title="Exploitabilité">
+         <desc>Niveau d'exploitabilité</desc>
+         <element name="easeofuseergonomics" title="Facilité d'utilisation, ergonomie">
+            <desc0>Difficulté d'utilisation, demande une connaissance approfondie des fonctionnalités du logiciel</desc0>
+            <desc1>Ergonomie austère et très technique</desc1>
+            <desc2>Ergonomie élaborée et IHM comprenant des fonctions d'aide</desc2>
+            <score>2</score>
+            <comment></comment>
+         </element>
+         <element name="administrationmonitoring" title="Administration et supervision">
+            <desc0>Pas de fonctionnalités de contrôle, ni d'administration</desc0>
+            <desc1>Fonctionnalités présentes mais incomplètes ou à améliorer</desc1>
+            <desc2>Fonctionnalités complètes et faciles de contrôle et d'administration. Intégration possible avec des outils tiers (ex : SNMP, syslog…)</desc2>
+            <score>2</score>
+            <comment></comment>
+         </element>
+      </element>
+      <element name="technicaladaptability" title="Adaptabilité">
+         <desc>Adaptabilité technique</desc>
+         <element name="modularity" title="Modularité">
+            <desc0>Logiciel monolithique</desc0>
+            <desc1>Présence de modules haut niveau permettant un premier niveau d'adaptation</desc1>
+            <desc2>Conception modulaire, permettant des adaptations faciles par sélection et/ou création de modules</desc2>
+            <score>2</score>
+            <comment></comment>
+         </element>
+         <element name="codemodification" title="Facilité technique de modification du code existant">
+            <desc0>Tout à la main</desc0>
+            <desc1>Recompilation possible mais complexe, sans outils, ni documentation</desc1>
+            <desc2>Recompilation facile, outillée (ex : make, ANT, Maven…) et documentée</desc2>
+            <score>2</score>
+            <comment></comment>
+         </element>
+         <element name="codeextension" title="Facilité d'extension du code">
+            <desc0>Toute modification demande une recompilation du code</desc0>
+            <desc1>Architecture conçue pour des extensions statiques mais exige une recompilation</desc1>
+            <desc2>Architecture de plugins, conçue pour des extensions dynamiques et sans recompilation</desc2>
+            <score>2</score>
+            <comment></comment>
+         </element>
+      </element>
+      <element name="strategy" title="Stratégie">
+         <desc>Stratégie du projet</desc>
+         <element name="license" title="Licence">
+            <desc>Licence, à pondérer uniquement si le client désire un jour devenir propriétaire du code</desc>
+            <element name="permissiveness" title="Permissivité">
+               <desc0>Licence très stricte, comme la GPL</desc0>
+               <desc1>Licence modérée entre les deux extrêmes (GPL et BSD), licence duale dépendante du type d'utilisateur (personne, société…) ou de leur activité</desc1>
+               <desc2>Licence très permissive comme BSD et Apache</desc2>
+               <score>2</score>
+               <comment></comment>
+            </element>
+            <element name="protectionagainstproprietaryforks" title="Protection contre des forks commerciaux">
+               <desc0>Licence très permissive comme BSD et Apache</desc0>
+               <desc1>Licence modérée entre les deux extrêmes (GPL et BSD), licence duale dépendante du type d'utilisateur (personne, société…) ou de leur activité</desc1>
+               <desc2>Licence très stricte, comme la GPL</desc2>
+               <score>0</score>
+               <comment></comment>
+            </element>
+         </element>
+         <element name="copyrightowners" title="Détenteur des droits">
+            <desc0>Les droits sont détenus par quelques individus ou entités commerciales, facilitant le changement de licence</desc0>
+            <desc1>Les droits sont détenus par de nombreux individus de façon homogène, rendant le changement de licence très difficile</desc1>
+            <desc2>Les droits sont détenus par une entité légale, une fondation dans laquelle la communauté a confiance (ex: FSF, Apache, ObjectWeb)</desc2>
+            <score>0</score>
+            <comment></comment>
+         </element>
+         <element name="modificationofsourcecode" title="Modification du code">
+            <desc0>Pas de moyen pratique de proposer des modifications de code</desc0>
+            <desc1>Des outils sont fournis pour accéder et modifier le code (ex : CVS, SVN) mais ne sont pas vraiment utilisés pour développer le produit</desc1>
+            <desc2>Le processus de modification de code est bien défini, exposé et respecté, basé sur des rôles bien définis</desc2>
+            <score>2</score>
+            <comment></comment>
+         </element>
+         <element name="roadmap" title="Feuille de route">
+            <desc0>Pas de feuille de route publiée</desc0>
+            <desc1>Feuille de route sans planning</desc1>
+            <desc2>Feuille de route versionnée, avec planning et mesures de retard</desc2>
+            <score>1</score>
+            <comment></comment>
+         </element>
+         <element name="sponsor" title="Sponsor">
+            <desc0>Le logiciel n'a pas de sponsors, l'équipe principale n'est pas rémunérée</desc0>
+            <desc1>Le logiciel a un sponsor unique qui détermine sa stratégie</desc1>
+            <desc2>Le logiciel est sponsorisé par l'industrie</desc2>
+            <score>2</score>
+            <comment></comment>
+         </element>
+         <element name="strategicalindependence" title="Indépendance stratégique">
+            <desc0>Pas de stratégie détectable ou forte dépendance à un acteur unique (individu, société, sponsor)</desc0>
+            <desc1>Vision stratégique partagée avec plusieurs autres projets open-source mais sans engagement fort des propriétaires des droits</desc1>
+            <desc2>Indépendance forte de l'équipe de développement, droits détenus par une entité, fort engagement dans un processus de standardisation</desc2>
+            <score>2</score>
+            <comment></comment>
+         </element>
+      </element>
+   </section>
+   <section name="innovationderuptureavecleweb" title="Innovation de rupture avec le web">
+      <desc></desc>
+      <element name="supportaudio" title="Support audio">
+         <desc></desc>
+         <desc0>non</desc0>
+         <desc1>partiel : 1 seul format</desc1>
+         <desc2>plusieurs formats (dont mp3)</desc2>
+         <score>2</score>
+         <comment></comment>
+      </element>
+      <element name="supportvideo" title="Support video">
+         <desc></desc>
+         <desc0>non</desc0>
+         <desc1>oui mais pas HD ou pas fullscreen</desc1>
+         <desc2>oui avec HD et fullscreen</desc2>
+         <score>2</score>
+         <comment></comment>
+      </element>
+      <element name="dessin2d" title="Dessin 2D">
+         <desc></desc>
+         <desc0></desc0>
+         <desc1></desc1>
+         <desc2></desc2>
+         <score>2</score>
+         <comment></comment>
+      </element>
+      <element name="support3d" title="Gestion de la 3D">
+         <desc></desc>
+         <desc0>non</desc0>
+         <desc1>partiel</desc1>
+         <desc2>oui</desc2>
+         <score>2</score>
+         <comment></comment>
+      </element>
+      <element name="bilbliothequedecomposantsdeformulairesriches" title="Bilbliothéque de composants de formulaires riches">
+         <desc>drag and drop, datagrid, list,  calendar</desc>
+         <desc0>très peu</desc0>
+         <desc1>oui mais difficilement extensible</desc1>
+         <desc2>riche personalisable, et extensible</desc2>
+         <score>2</score>
+         <comment></comment>
+      </element>
+      <element name="bibliothequedecomposantsdecharting" title="Bibliothéque de composants de charting">
+         <desc></desc>
+         <desc0>non</desc0>
+         <desc1>oui mais limité</desc1>
+         <desc2>oui</desc2>
+         <score>2</score>
+         <comment></comment>
+      </element>
+      <element name="gestionrichesdesfontesettypographie" title="Gestion avancées des fontes et de la typographie">
+         <desc></desc>
+         <desc0>très limité</desc0>
+         <desc1>oui mais pas complète</desc1>
+         <desc2>ouin complète : right to left et nombreuses fontes et alphabet (arable, hébreux, japonais, indie...)</desc2>
+         <score>2</score>
+         <comment></comment>
+      </element>
+      <element name="accesauressourcelocale" title="Accès aux ressources locales ">
+         <desc>et interaction avec le desktop</desc>
+         <desc0>aucun</desc0>
+         <desc1>oui mais limité</desc1>
+         <desc2>oui </desc2>
+         <score>1</score>
+         <comment></comment>
+      </element>
+      <element name="gestionfinedeskinning" title="Gestion fine de skinning">
+         <desc></desc>
+         <desc0>non</desc0>
+         <desc1>limitée</desc1>
+         <desc2>bonne</desc2>
+         <score>2</score>
+         <comment></comment>
+      </element>
+      <element name="reductiondeconsommationdelabandepassante" title="Reduction de consommation de la bande passante">
+         <desc></desc>
+         <desc0>par requête asynchrone XML sur http uniquement</desc0>
+         <desc1>oui mais pas de compression binaire des données</desc1>
+         <desc2>oui : compression binaire forte</desc2>
+         <score>2</score>
+         <comment></comment>
+      </element>
+      <element name="fonctionnementoffline" title="Fonctionnement Offline">
+         <desc></desc>
+         <desc0>non</desc0>
+         <desc1>oui à travers un autre runtime/plugin</desc1>
+         <desc2>oui</desc2>
+         <score>1</score>
+         <comment></comment>
+      </element>
+      <element name="connexiontcp/ipsocket" title="Connexion socket tcp/ip ">
+         <desc></desc>
+         <desc0>non</desc0>
+         <desc1></desc1>
+         <desc2>oui: permet de faire du push et du temps réel</desc2>
+         <score>2</score>
+         <comment></comment>
+      </element>
+   </section>
+   <section name="viabiliteetinteroperabilite" title="Viabilité et interopérabilité avec le web">
+      <desc>Viabilité: interopérabilité et ubiquité de la solution</desc>
+      <element name="supportweb" title="Intégration et/ou support des formats, languages et standards du web">
+         <desc></desc>
+         <comment></comment>
+         <element name="w3c" title="W3C">
+            <desc></desc>
+            <comment></comment>
+            <element name="supporthtml" title="HTML">
+               <desc>intégration et support de document HTML 4</desc>
+               <desc0>pas de support</desc0>
+               <desc1>le framework permet d'intégrer un subset de HTML</desc1>
+               <desc2>le framework permet d'intégrer du HTML</desc2>
+               <score>2</score>
+               <comment></comment>
+            </element>
+            <element name="supportcss" title="CSS">
+               <desc>intégration et support de document CSS</desc>
+               <desc0>oui</desc0>
+               <desc1>partiel</desc1>
+               <desc2>non</desc2>
+               <score>0</score>
+               <comment></comment>
+            </element>
+            <element name="supportsvg" title="SVG">
+               <desc>intégration et support des formats SVG</desc>
+               <desc0>non</desc0>
+               <desc1>partiel</desc1>
+               <desc2>oui</desc2>
+               <score>1</score>
+               <comment></comment>
+            </element>
+            <element name="png" title="PNG">
+               <desc>intégration et support des fichiers PNG</desc>
+               <desc0>non</desc0>
+               <desc1>partiel</desc1>
+               <desc2>oui</desc2>
+               <score>2</score>
+               <comment></comment>
+            </element>
+            <element name="xpath" title="XPath">
+               <desc></desc>
+               <desc0>non</desc0>
+               <desc1>partiel</desc1>
+               <desc2>oui</desc2>
+               <score>1</score>
+               <comment>par plugin</comment>
+            </element>
+            <element name="xslxslt" title="XSL XSLT">
+               <desc></desc>
+               <desc0>non</desc0>
+               <desc1>partiel</desc1>
+               <desc2>oui</desc2>
+               <score>1</score>
+               <comment></comment>
+            </element>
+            <element name="mathml" title="MathML">
+               <desc></desc>
+               <desc0>non</desc0>
+               <desc1>limité</desc1>
+               <desc2>oui</desc2>
+               <score>0</score>
+               <comment></comment>
+            </element>
+         </element>
+         <element name="ecma" title="ECMA">
+            <desc></desc>
+            <comment></comment>
+            <element name="ecma-262version3" title="ECMAScript">
+               <desc>la solution fournit une implémentation compatible ECMA-262 version3</desc>
+               <desc0>non</desc0>
+               <desc1>partiel</desc1>
+               <desc2>oui</desc2>
+               <score>2</score>
+               <comment></comment>
+            </element>
+            <element name="e4x" title="E4X">
+               <desc>la solution fournit une implémentation compatible ECMA-357</desc>
+               <desc0>non</desc0>
+               <desc1>partiel</desc1>
+               <desc2>oui</desc2>
+               <score>2</score>
+               <comment></comment>
+            </element>
+         </element>
+      </element>
+      <element name="ubiquitedelaplateforme" title="Ubiquité de la plateforme">
+         <desc></desc>
+         <comment></comment>
+         <element name="installationdunruntimerequis" title="Installation d'un runtime est nécessaire">
+            <desc></desc>
+            <desc0>Installation d'un runtime requise</desc0>
+            <desc1>oui, mais très forte pénétration du marché plus de 70% des utilisateurs on déja le runtime installé</desc1>
+            <desc2>non, géré par la majorité des navigateurs</desc2>
+            <score>1</score>
+            <comment></comment>
+         </element>
+         <element name="poidsduruntime" title="Poids du runtime">
+            <desc></desc>
+            <desc0>&gt;10M</desc0>
+            <desc1>&lt;10M</desc1>
+            <desc2>pas de runtime</desc2>
+            <score>1</score>
+            <comment></comment>
+         </element>
+         <element name="facilitedinstallation" title="Facilité d'installation">
+            <desc></desc>
+            <desc0>rédémarrer la machine et droit d'admin</desc0>
+            <desc1>rédémarrerdu navigateur et/ou droit d'admin</desc1>
+            <desc2>pas de redémarrage du navigateur et pas besoin des droits d'admin.</desc2>
+            <score>1</score>
+            <comment></comment>
+         </element>
+         <element name="compatibilitenavigateurs" title="Compatibilité navigateurs">
+            <desc>Les RIAs produites sont-elles compatibles sur la majorité des navigateurs du marché</desc>
+            <desc0>compatibilité limitée à quelques navigateurs</desc0>
+            <desc1>oui mais le comportement peut différer</desc1>
+            <desc2>oui et le comportement est quasi identique</desc2>
+            <score>2</score>
+            <comment></comment>
+         </element>
+         <element name="compatibiliteos" title="Compatibilité OS">
+            <desc></desc>
+            <desc0>1 seul</desc0>
+            <desc1>2</desc1>
+            <desc2>WIN, MAX et Linux</desc2>
+            <score>2</score>
+            <comment></comment>
+         </element>
+      </element>
+      <element name="interoperabiliteaveclesformats,languageetstandard" title="Intéropérabilité avec les formats, language et standards du web">
+         <desc></desc>
+         <comment></comment>
+         <element name="javascript" title="JavaScript">
+            <desc></desc>
+            <desc0>non</desc0>
+            <desc1>partiel</desc1>
+            <desc2>oui : communication possible dans les 2 sens</desc2>
+            <score>2</score>
+            <comment></comment>
+         </element>
+         <element name="dom" title="DOM">
+            <desc></desc>
+            <desc0>non</desc0>
+            <desc1>partiel</desc1>
+            <desc2>oui</desc2>
+            <score>2</score>
+            <comment></comment>
+         </element>
+      </element>
+      <element name="indexationetaccessibilite1" title="Indexation et accessibilité">
+         <desc></desc>
+         <comment></comment>
+         <element name="lesriaproduitessontindexablesparlesmoteursdereche" title="indexables par les moteurs de recherches ">
+            <desc></desc>
+            <desc0> de façon très limité </desc0>
+            <desc1>oui mais  demande beaucoup d'effort</desc1>
+            <desc2>oui </desc2>
+            <score>2</score>
+            <comment></comment>
+         </element>
+         <element name="accessibilite" title="accessibilité">
+            <desc></desc>
+            <desc0>mauvaise</desc0>
+            <desc1>moyenne </desc1>
+            <desc2>bonne </desc2>
+            <score>2</score>
+            <comment></comment>
+         </element>
+         <element name="lienfin/deeplinking" title="lien fin / deeplinking">
+            <desc></desc>
+            <desc0>oui</desc0>
+            <desc1>limité à quelques navigateurs</desc1>
+            <desc2>oui</desc2>
+            <score>2</score>
+            <comment></comment>
+         </element>
+      </element>
+   </section>
+   <section name="viabiliteetinteroperabiliteaveclewebserver" title="Viabilité et interopérabilité avec les serveurs web">
+      <desc></desc>
+      <element name="serveursjee" title="Java">
+         <desc>du coup groovy, jruby...</desc>
+         <desc0>non (uniquement XML)</desc0>
+         <desc1>appel de service et sérialisation / désérialisation d'object possible par produit tiers</desc1>
+         <desc2>appel de service et sérialisation / désérialisation d'object en standard</desc2>
+         <score>2</score>
+         <comment></comment>
+      </element>
+      <element name="php" title="PHP">
+         <desc></desc>
+         <desc0>non (uniquement en XML)</desc0>
+         <desc1>appel de service et sérialisation / désérialisation d'object possible par produit tiers</desc1>
+         <desc2>appel de service et sérialisation / désérialisation d'object en standard</desc2>
+         <score>1</score>
+         <comment>amfphp</comment>
+      </element>
+      <element name=".net" title=".Net">
+         <desc></desc>
+         <desc0>non (uniquement en XML)</desc0>
+         <desc1>appel de service et sérialisation / désérialisation d'object possible par produit tiers</desc1>
+         <desc2>appel de service et sérialisation / désérialisation d'object en standard</desc2>
+         <score>0</score>
+         <comment></comment>
+      </element>
+      <element name="ruby" title="Ruby">
+         <desc></desc>
+         <desc0></desc0>
+         <desc1></desc1>
+         <desc2></desc2>
+         <score>1</score>
+         <comment></comment>
+      </element>
+      <element name="perl" title="Perl">
+         <desc></desc>
+         <desc0></desc0>
+         <desc1></desc1>
+         <desc2></desc2>
+         <score>0</score>
+         <comment></comment>
+      </element>
+      <element name="soap" title="SOAP">
+         <desc></desc>
+         <desc0>support très limité</desc0>
+         <desc1>bon support</desc1>
+         <desc2>support avec introspection des services (support wsdl)</desc2>
+         <score>1</score>
+         <comment></comment>
+      </element>
+      <element name="datamanagement" title="DataManagement">
+         <desc>support datamangament sql et/ou JPA par exemple
+paging, lazy loading, conflict handling...</desc>
+         <desc0></desc0>
+         <desc1></desc1>
+         <desc2></desc2>
+         <score>2</score>
+         <comment></comment>
+      </element>
+      <element name="cgi" title="Others">
+         <desc></desc>
+         <desc0></desc0>
+         <desc1></desc1>
+         <desc2></desc2>
+         <score>1</score>
+         <comment></comment>
+      </element>
+   </section>
+   <section name="industrialisationdesdeveloppements" title="Industrialisation des développements">
+      <desc></desc>
+      <element name="ide" title="IDE">
+         <desc></desc>
+         <desc0>pas ou peu d'IDE</desc0>
+         <desc1>IDE complet</desc1>
+         <desc2>de nombreux IDE</desc2>
+         <score>2</score>
+         <comment></comment>
+      </element>
+      <element name="outildebuildetcc" title="Outil de Build et CC">
+         <desc></desc>
+         <desc0></desc0>
+         <desc1></desc1>
+         <desc2></desc2>
+         <score>2</score>
+         <comment></comment>
+      </element>
+      <element name="outilsdetest" title="Outils de Test">
+         <desc>unitaire, fonctionnel, integration, charge, stress</desc>
+         <desc0></desc0>
+         <desc1></desc1>
+         <desc2></desc2>
+         <score>2</score>
+         <comment></comment>
+      </element>
+      <element name="outilgraphiquededeveloppements" title="Outil graphique de développements d'interface">
+         <desc></desc>
+         <desc0></desc0>
+         <desc1></desc1>
+         <desc2></desc2>
+         <score>2</score>
+         <comment></comment>
+      </element>
+      <element name="integrationdes" title="Intégration dans le workflow créa">
+         <desc></desc>
+         <desc0>oui</desc0>
+         <desc1>partiel : uniquement des outils créa vers l'IDE</desc1>
+         <desc2>round trip possible entre les outils créa et l'IDE</desc2>
+         <score>2</score>
+         <comment></comment>
+      </element>
+   </section>
+</document>

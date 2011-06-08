@@ -1,0 +1,9 @@
+Revision history for Javascript library Document.js
+
+0.01  2006
+      - Initial release
+
+0.02  2006.07.02
+      - new XML serializer
+      - author management: delete function added
+      - chart data management functions added: to be used to generate evaluation graphes	

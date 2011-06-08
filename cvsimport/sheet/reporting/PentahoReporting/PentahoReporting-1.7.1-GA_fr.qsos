@@ -1,0 +1,883 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document>
+   <header>
+      <authors>
+         <author>
+            <email>hery.randriamanamihaga@atosorigin.com</email>
+            <name>Hery Njato Randriamanamihaga</name>
+         </author>
+         <author>
+            <email>michel.kergoat@atosorigin.com</email>
+            <name>Michel Kergoat</name>
+         </author>
+      </authors>
+      <dates>
+         <creation></creation>
+         <validation></validation>
+      </dates>
+      <language>fr</language>
+      <appname>Pentaho BI Reporting</appname>
+      <release>1.7.1 GA</release>
+      <licenseid>31</licenseid>
+      <licensedesc>GNU GPL</licensedesc>
+      <url>http://reporting.pentaho.org/</url>
+      <desc>Pentaho BI Reporting est le module Portail de création de rapports et requêtes de la suite Pentaho. Ce module est issu du projet jFreeReport qui est le moteur java de création de rapport. Pentaho Reporting est complètement intégré à la suite BI Pentaho.
+La version évaluée est la plus récente version stable à ce jour (02/2009).</desc>
+      <demourl>http://demo.pentaho.com/pentaho/Login;jsessionid=0E658C7400E785A4C1B51E33B53FF930</demourl>
+      <qsosformat>1.7</qsosformat>
+      <qsosappfamily>Reporting BI</qsosappfamily>
+      <qsosspecificformat></qsosspecificformat>
+      <qsosappname></qsosappname>
+   </header>
+   <section name="generic" title="Section générique">
+      <desc>Les critères génériques de l'évaluation Presto de QSOS</desc>
+      <element name="intrinsicdurability" title="Pérennité">
+         <desc>Pérennité</desc>
+         <element name="maturite" title="Maturité">
+            <desc></desc>
+            <desc0>Logiciel provenant d'un fork ou avec une forte probabilité de fork dans un futur proche.</desc0>
+            <desc1>Projet jeune (moins de 3 ans) ou connaissant des difficultés à stabiliser les versions de développement.</desc1>
+            <desc2>Projet stable ou ayant un bon historique de gestion de crise. Les nouvelles versions apportent de façon prépondérante de nouvelles fonctionnalités.</desc2>
+            <score>2</score>
+            <comment>Le projet Pentaho Reporting est mature, il fait partie de la plate-forme Pentaho BI Suite. Celle-ci est une application J2EE, livrée avec JBOSS et implémente la librairie de reporting originelle jFreeReport, autour de laquelle un portail est construit et est adaptable aux exigences des entreprises.</comment>
+         </element>
+         <element name="adoption1" title="Adoption">
+            <desc></desc>
+            <desc0>Usage détectable sur Internet sans véritable activité communautaire</desc0>
+            <desc1>Utilisation communautaire prépondérante</desc1>
+            <desc2>Nombreuse références industrielles</desc2>
+            <score>2</score>
+            <comment>Maintenant que le projet est intégré dans la plate-forme décisionnelle Pentaho, ses utilisateurs sont principalement ceux de la plate-forme, qui a en 02/2009 de nombreuses références, dont certaines en France.
+Pentaho Reporting Classic Engine (directement issu de jFreeReport) est également disponible en API, intégrable dans une application jBoss (cette évaluation porte sur le module reporting de Pentaho BI Suite).</comment>
+         </element>
+         <element name="developpement" title="Développement">
+            <desc></desc>
+            <desc0>Deux ou moins de deux développeurs clairement identifiés.</desc0>
+            <desc1>Équipe de développement réduite avec un turn-over important ou sans équipe de direction identifiée.</desc1>
+            <desc2>Équipe de développement structurée comportant plus de 5 développeurs actifs.</desc2>
+            <score>1</score>
+            <comment>Ohloh identifie un seul développeur officiel sur le projet plus 5 contributeurs avec plus de 90 commits récents chacun.</comment>
+         </element>
+         <element name="activite" title="Activité">
+            <desc></desc>
+            <desc0>Très faible activité, que ce soit sur les résolutions de bugs, les releases, l'ajout de nouvelles fonctions ou sur les espaces communautaires (wiki, forum, mailing list...)</desc0>
+            <desc1>Activité détectable mais anarchique (pas feuille de route accessible facilement, pas de prévisions de nouvelles fonctionnalités ou de prévisions de nouvelles versions visible)</desc1>
+            <desc2>Activité importante et visible via la mise en place de feuilles de routes traçant les requêtes de nouvelles fonctionnalités et/ou les prévisions de sortie des nouvelles version</desc2>
+            <score>2</score>
+            <comment>La feuille de route du projet Pentaho Reporting (http://jira.pentaho.com/secure/BrowseProject.jspa?id=10101&amp;subset=-1) fait au 02/2009 état de trois releases mineures 0.8.x planifiées, avec des bugs identifiés associés, et des releases majeures 1.0 et 1.9, ainsi que 14 entrées associées à des releases futures.</comment>
+         </element>
+         <element name="strategicalindependence" title="Indépendance stratégique">
+            <desc0>Pas de stratégie détectable ou stratégie dictée par une société commerciale, un sponsor ou un individu unique.</desc0>
+            <desc1>Stratégie décidée par l'équipe de developpement.</desc1>
+            <desc2>Indépendance forte de l'équipe de développement, fort engagement du projet dans un processus de standardisation.</desc2>
+            <score>0</score>
+            <comment>La stratégie de Pentaho Reporting est adhérente à la stratégie globale de la plateforme décisionnelle englobante, qui est conduite par la société Pentaho Inc.</comment>
+         </element>
+         <element name="copyrightowners" title="Détenteur des droits">
+            <desc0>Les droits sont détenus par quelques individus ou entités commerciales, facilitant le changement de licence</desc0>
+            <desc1>Les droits sont détenus par de nombreux individus de façon homogène, rendant le changement de licence très difficile</desc1>
+            <desc2>Les droits sont détenus par une entité légale, une fondation dans laquelle la communauté a confiance (ex: FSF, Apache, ObjectWeb)</desc2>
+            <score>0</score>
+            <comment>Droits de propriété intellectuelle sont détenus par Pentaho Corporation (comme tout projet inclus dans la plate-forme Pentaho).</comment>
+         </element>
+         <element name="license" title="Licence">
+            <desc>Licence, à pondérer uniquement si le client désire un jour devenir propriétaire du code</desc>
+            <element name="permissiveness" title="Permissivité">
+               <desc0>Licence très stricte, comme la GPL</desc0>
+               <desc1>Licence modérée entre les deux extrêmes (GPL et BSD), licence duale dépendante du type d'utilisateur (personne, société…) ou de leur activité</desc1>
+               <desc2>Licence très permissive comme BSD et Apache</desc2>
+               <score>0</score>
+               <comment></comment>
+            </element>
+            <element name="protectionagainstproprietaryforks" title="Protection contre des forks commerciaux">
+               <desc0>Licence très permissive comme BSD et Apache</desc0>
+               <desc1>Licence modérée entre les deux extrêmes (GPL et BSD), licence duale dépendante du type d'utilisateur (personne, société…) ou de leur activité</desc1>
+               <desc2>Licence très stricte, comme la GPL</desc2>
+               <score>2</score>
+               <comment></comment>
+            </element>
+         </element>
+      </element>
+      <element name="industrializedsolution" title="Industrialisation">
+         <desc>Niveau d'industrialisation du projet</desc>
+         <element name="independenceofdevelopments" title="Indépendance des développements">
+            <desc0>Développements réalisés à plus de 60% par des employés d'une seule société</desc0>
+            <desc1>Développements réalisés à 60% maximum par des employés d'une seule société</desc1>
+            <desc2>Développements réalisés à 20% maximum par des employés d'une seule société</desc2>
+            <score>1</score>
+            <comment></comment>
+         </element>
+         <element name="services1" title="Services">
+            <desc></desc>
+            <desc0>Pas d'offres de services identifiée</desc0>
+            <desc1>Offre existante mais restreinte géographiquement ou en une seule langue ou fournie par un seul fournisseur</desc1>
+            <desc2>Offre riche : plusieurs fournisseurs ou plusieurs langages</desc2>
+            <score>1</score>
+            <comment>Le projet bénéficie des services professionels de Pentaho Corporation : support, formation ou conseil. Une entité commerciale existe en Belgique.</comment>
+         </element>
+         <element name="documentation" title="Documentation">
+            <desc0>Pas de documentation utilisateur</desc0>
+            <desc1>La documentation existe mais est en partie obsolète ou restreinte à une seule langue ou peu détaillée</desc1>
+            <desc2>Documentation à jour, traduite et éventuellement adaptée à différentes cibles de lecteurs (end-user, sysadmin, manager…)</desc2>
+            <score>1</score>
+            <comment>Le wiki du projet constitue la principale source de documentation. La documentation est complète mais uniquement en anglais.
+Il faut distinguer la documentation communautaire de celle de la version Enterprise. La première n'est pas forcément à jour, contrairement à la seconde, mais les deux ne correspondent pas forcément.</comment>
+         </element>
+         <element name="methodequalite" title="Méthode qualité">
+            <desc></desc>
+            <desc0>Pas de processus de qualité identifié ni d'outils de gestions de bugs</desc0>
+            <desc1>Processus qualité non formalisé ou non outillé ou comportant des outils qui sont très peu utilisés</desc1>
+            <desc2>Utilisation très active d'outils standards (tests unitaires, outils de gestion de build, outils de mesure de qualité du code)</desc2>
+            <score>2</score>
+            <comment>Les incidents sont géés par Atlanssian JIRA, un gestionnaire d'événements professionnel.</comment>
+         </element>
+      </element>
+      <element name="packaging" title="Packaging">
+         <desc>Packaging pour les différents systèmes d'exploitation</desc>
+         <element name="packagingbsd" title="BSD">
+            <desc></desc>
+            <desc0>Pas de packaging officiel pour la famille BSD</desc0>
+            <desc1>Packaging existant pour quelques distributions de la famille BSD</desc1>
+            <desc2>Packaging complet pour les distributions de la famille BSD suivantes : FreeBSD, OpenBSD, NetBSD et Mac OS X</desc2>
+            <score>1</score>
+            <comment>Les outils sont distribués sous forme d'archive compressée dont le bon fonctionnement dépend de l'environnement Java/J2EE</comment>
+         </element>
+         <element name="packaginglinux" title="GNU/Linux">
+            <desc></desc>
+            <desc0>Pas de packaging officiel pour les systèmes d'exploitations GNU/Linux</desc0>
+            <desc1>Packaging existant pour quelques distributions GNU/Linux</desc1>
+            <desc2>Packaging complet les systèmes de packaging .deb et .rpm</desc2>
+            <score>1</score>
+            <comment>Les outils sont distribués sous forme d'archive compressée dont le bon fonctionnement dépend de l'environnement Java/J2EE</comment>
+         </element>
+         <element name="unix" title="Unix">
+            <desc></desc>
+            <desc0>Pas de packaging officiel pour les systèmes de la famille Unix</desc0>
+            <desc1>Packaging existant sur quelques systèmes de la famille Unix</desc1>
+            <desc2>Packaging existant sur au moins ces 3 systèmes : AIX, HP-UX, Solaris</desc2>
+            <score>1</score>
+            <comment>Les outils sont distribués sous forme d'archive compressée dont le bon fonctionnement dépend de l'environnement Java/J2EE</comment>
+         </element>
+         <element name="packagingwindows" title="Windows">
+            <desc0>Le logiciel n'est pas disponible sur un système Windows.</desc0>
+            <desc1>Le logiciel existe sous forme d'archive tout en un.</desc1>
+            <desc2>Le logiciel dispose d'un installeur.</desc2>
+            <score>1</score>
+            <comment>Les outils sont distribués sous forme d'archive compressée dont le bon fonctionnement dépend de l'environnement Java/J2EE</comment>
+         </element>
+         <element name="packagingsource" title="Sources">
+            <desc0>L'installation depuis les sources est hasardeuse et risquée</desc0>
+            <desc1>L'installation depuis les sources est difficile ou limité (seulement à un OS, une architecture, la résolution de l'écran...)</desc1>
+            <desc2>L'installation depuis les sources est outillée (vérification des dépencances, verification de l'installation, gestion de build)</desc2>
+            <score>2</score>
+            <comment>Ant devrait faciliter la pré-compilation des sources, sous réserve que les dépendances soient correctement résolues...</comment>
+         </element>
+         <element name="packagingtar" title="Archive compressée">
+            <desc0>Pas d'archive disponible</desc0>
+            <desc1>Archive globale</desc1>
+            <desc2>Archive séparée pour chaque module installable</desc2>
+            <score>2</score>
+            <comment></comment>
+         </element>
+      </element>
+      <element name="exploitability" title="Exploitabilité">
+         <desc>Niveau d'exploitabilité</desc>
+         <element name="easeofuseergonomics" title="Facilité d'utilisation, ergonomie">
+            <desc0>Difficulté d'utilisation, demande une connaissance approfondie des fonctionnalités du logiciel</desc0>
+            <desc1>Ergonomie austère et très technique</desc1>
+            <desc2>Ergonomie élaborée et IHM comprenant des fonctions d'aide</desc2>
+            <score>2</score>
+            <comment>Pentaho BI Reporting est un ensemble d'applications prêts à l'emploi.</comment>
+         </element>
+         <element name="administrationmonitoring" title="Administration et supervision">
+            <desc0>Pas de fonctionnalités de contrôle, ni d'administration</desc0>
+            <desc1>Fonctionnalités présentes mais incomplètes ou à améliorer</desc1>
+            <desc2>Fonctionnalités complètes et faciles de contrôle et d'administration. Intégration possible avec des outils tiers (ex : SNMP, syslog…)</desc2>
+            <score>2</score>
+            <comment>Les fonctionnalités d'administration sont celles de la plate-forme BI Suite.</comment>
+         </element>
+      </element>
+      <element name="technicaladaptability" title="Adaptabilité">
+         <desc>Adaptabilité technique</desc>
+         <element name="modularity" title="Modularité">
+            <desc0>Logiciel monolithique</desc0>
+            <desc1>Présence de modules haut niveau permettant un premier niveau d'adaptation</desc1>
+            <desc2>Conception modulaire, permettant des adaptations faciles par sélection et/ou création de modules</desc2>
+            <score>2</score>
+            <comment>Pentaho Reporting s'intègre dans la plate-forme aux côtés des modules d'analyses OLAP, Data Mining, ETL, et de sous modules transverses de Workflow, de Méta données, etc. qu'il utilise pleinement pour ses propres fonctions.</comment>
+         </element>
+         <element name="codemodification" title="Facilité technique de modification du code existant">
+            <desc0>Tout à la main</desc0>
+            <desc1>Recompilation possible mais complexe, sans outils, ni documentation</desc1>
+            <desc2>Recompilation facile, outillée (ex : make, ANT, Maven…) et documentée</desc2>
+            <score>2</score>
+            <comment>Compilation avec Ant (il s'agit d'une précompilation java).</comment>
+         </element>
+         <element name="codeextension" title="Facilité d'extension du code">
+            <desc0>Toute modification demande une recompilation du code</desc0>
+            <desc1>Architecture conçue pour des extensions statiques mais exige une recompilation</desc1>
+            <desc2>Architecture de plugins, conçue pour des extensions dynamiques et sans recompilation</desc2>
+            <score>1</score>
+            <comment>Globalement, l'architecture de Pentaho Reporting permet l'extension du code, mais sa mise en oeuvre dépend fortement du module concerné. En effet, le portail décisionnel est une application J2EE, par conséquent l'extension du code passe par celle de l'application portail connexe.
+Classic Engine est une application Java "classique" qui nécessite une recompilation systematique à la moindre modification des sources. Enfin, Design Studio est livré comme une application Eclipse disposant de l'extension PDS.</comment>
+         </element>
+      </element>
+   </section>
+   <section name="plate-formereporting" title="Plate-forme de Reporting BI">
+      <desc>Section pour les plates-formes de reporting BI</desc>
+      <element name="sourcesdedonnees" title="Sources de données">
+         <desc></desc>
+         <comment></comment>
+         <element name="sgbdnatif" title="SGBD Natif">
+            <desc>Les requêtes se font sur les middleware natifs des SGBD.</desc>
+            <desc0>Non Disponible</desc0>
+            <desc1>Partiellement Disponible</desc1>
+            <desc2>Disponible</desc2>
+            <score>1</score>
+            <comment>Les pilotes JDBC sont seuls reconnus. Toutefois, les pilotes JDBC des éditeurs comme Oracle utilisent le pilote natif du SGBD, d'où le score 1.</comment>
+         </element>
+         <element name="fichiersnatifs" title="Fichiers Natifs">
+            <desc>Le requêteur supporte nativement (hors générique ODBC) les fichiers comme source.</desc>
+            <desc0>Non Disponible</desc0>
+            <desc1>Un des formats suivants n'est pas supporté : csv, xls, xml</desc1>
+            <desc2>Les formats de fichiers csv, xls et xml sont supportés</desc2>
+            <score>0</score>
+            <comment></comment>
+         </element>
+         <element name="microsoft" title="Générique Microsoft">
+            <desc>Les sources de données Microsoft ODBC, DAO, etc. sont supportés.</desc>
+            <desc0>Non Disponible</desc0>
+            <desc1>Partiellement Disponible</desc1>
+            <desc2>Disponible</desc2>
+            <score>1</score>
+            <comment>Pentaho Reporting peut utiliser des sources de données XML/A (Pentaho Mondrian, MS Analysis Services...) pour générer des rapports sur des bases multidimensionnelles.
+Les sources ODBC peuvent être exploitées via leur connecteur chapeau JDBC.</comment>
+         </element>
+         <element name="java" title="Générique Java">
+            <desc>Les sources de données java génériques jDBC sont supportées.</desc>
+            <desc0>Non Disponible</desc0>
+            <desc1>Partiellement Disponible</desc1>
+            <desc2>Sources génériques personnalisées supportées.</desc2>
+            <score>2</score>
+            <comment>Pentaho Reporting nécessite systématiquement un pilote JDBC.</comment>
+         </element>
+      </element>
+      <element name="structure" title="Architecture">
+         <desc>Critères pour évaluer l'architecture de la plate-forme Reporting BI.</desc>
+         <comment></comment>
+         <element name="portail" title="Portail">
+            <desc>La plate-forme BI est un portail Web implémenté dans un serveur d'application.</desc>
+            <desc0>Non Disponible</desc0>
+            <desc1>Le portail a une architecture monlithique et fermée</desc1>
+            <desc2>Architecture SOA interne : Les fonctionnalités du portail sont accessibles sous forme de services et intégrées au serveur d'applications</desc2>
+            <score>2</score>
+            <comment>Le serveur d'application standard de Pentaho BI Suite est JBOSS. L'architecture interne est structurée en services J2EE.
+Des services technologiques - workflow, méta données, sécurité, etc. - fondés sur des standards ouverts servent de supports aux services applicatifs des modules Pentaho, dont Reporting est un pilier.
+Pentaho BI Suite est conforme à la norme de portlet JSR 168.</comment>
+         </element>
+         <element name="serveurc/s" title="Serveur c/s">
+            <desc>La plate-forme est un serveur c/s avec référentiel partagé.</desc>
+            <desc0>Non Disponible</desc0>
+            <desc1>Référentiel partagé limité</desc1>
+            <desc2>Le référentiel inclut la gestion de rapports publiés</desc2>
+            <score>0</score>
+            <comment></comment>
+         </element>
+         <element name="desktop" title="Desktop">
+            <desc>La plate-forme est un poste de reporting isolé.</desc>
+            <desc0>Non Disponible</desc0>
+            <desc1>Partiellement Disponible</desc1>
+            <desc2>Surcouche métier pour non informaticien disponible</desc2>
+            <score>1</score>
+            <comment>Le module Pentaho Report Designer (PRD) est une application java qui permet de créer un rapport sur une requête SQL, elle-même s'exécutant sur une source de données JNDI. L'éditeur de source de données de PRD est doté d'un constructeur de requête SELECT basé sur du pseudocode graphique. Le rapport est ensuite conçu sur cette requête. La surcouche métier n'est pas disponible dans PRD.
+Le Module Pentaho Design Studio </comment>
+         </element>
+         <element name="agl" title="AGL">
+            <desc>La plate-forme Reporting est intégrable à un environnement de développement : API générateur d'états, requêtes, rapports, etc.</desc>
+            <desc0>Non Disponible</desc0>
+            <desc1>Quelques unes de ces fonctions sont présentes</desc1>
+            <desc2>Toutes ces fonctions sont présentes</desc2>
+            <score>2</score>
+            <comment>Le module Classic Engine fournit les librairies java qui s'installent dans un AGL java pour un serveur d'application J2EE.
+La plate-forme Pentaho BI Reporting s'appuie sur cet API.</comment>
+         </element>
+         <element name="bureautique" title="Bureautique">
+            <desc>La plate-forme Reporting peut s'intégrer dans une suite bureautique (ex. OOo, MS Office).</desc>
+            <desc0>Non Disponible</desc0>
+            <desc1>Intégration basique (OLE, automation, plug in, etc...)</desc1>
+            <desc2>Intégration totale (menu, barre d'outils, bandeau, etc...)</desc2>
+            <score>0</score>
+            <comment>La suite Pentaho BI 1.7.1 en elle-même ne dispose pas d'intégration MS Office ni OOo.
+Elle dispose toutefois de fontions d'export d'un rapport, mais sans correspondance avec le présent critère.</comment>
+         </element>
+         <element name="soa" title="SOA">
+            <desc>La plate-forme expose des services SOA de reporting.</desc>
+            <desc0>Non Disponible</desc0>
+            <desc1>Niveau de services élémentaires</desc1>
+            <desc2>Différents niveaux de services</desc2>
+            <score>0</score>
+            <comment>L'exposition des services n'est pas prévue en standard dans cette version, mais celle-ci est possible : c'est à configurer et développer via JBOSS et l'application J2EE finale.</comment>
+         </element>
+      </element>
+      <element name="referentiel" title="Référentiel">
+         <desc></desc>
+         <comment></comment>
+         <element name="proprietaire" title="Partage">
+            <desc>Le référentiel est un fichier de méta données propriétaire.</desc>
+            <desc0>Non Disponible</desc0>
+            <desc1>Mono utilisateur</desc1>
+            <desc2>Multi utilisateur</desc2>
+            <score>2</score>
+            <comment>La suite BI embarque un référentiel multi-utilisateur dont le module Reporting bénéficie.
+Le module de création de rapport (voir Architecture / Desktop) peut publier un rapport vers la plate-forme Pentaho BI Suite / Reporting.</comment>
+         </element>
+         <element name="sgbd" title="Stockage">
+            <desc>Mode de stockage du référentiel.</desc>
+            <desc0>Fichier</desc0>
+            <desc1>SGBD</desc1>
+            <desc2>Système de fichiers + SGBD (comme BO Xi)</desc2>
+            <score>1</score>
+            <comment>Le "Repository" de Pentaho est structuré en plusieurs bases, certaines pour les technologies "Pentaho" (solution repository, audit repository et data mining repository), et d'autres pour les briques technologiques tierces, comme le workflow et le scheduler (technologies Open Source embarquées dans la plate-forme Pentaho BI Suite).</comment>
+         </element>
+         <element name="metadonnees" title="Méta Données">
+            <desc>Import et export total ou partiel de méta données.</desc>
+            <desc0>Non Disponible</desc0>
+            <desc1>Format propriétaire</desc1>
+            <desc2>CWM</desc2>
+            <score>2</score>
+            <comment>L'import et l'export au format normalisé CWM est disponible et natif pour la suite (il n'y a pas de format propriétaire ni spécifique de méta données).</comment>
+         </element>
+      </element>
+      <element name="mediacible" title="Média Cible">
+         <desc>Média de présentation des rapports.</desc>
+         <comment></comment>
+         <element name="ecran" title="Écran">
+            <desc>Le média cible des rapports est l'écran</desc>
+            <desc0>Non Disponible</desc0>
+            <desc1>Partiellement disponible</desc1>
+            <desc2>Disponible</desc2>
+            <score>2</score>
+            <comment>Pentaho BI Reporting 1.7.1 dispose d'une prévisualisation HTML, PDF, CSV et Tableur (OOo Calc, MS Excel...).</comment>
+         </element>
+         <element name="bureautique1" title="Bureautique">
+            <desc>Les rapports sont générés aux formats bureautique (Suite, pdf...).</desc>
+            <desc0>Non Disponible</desc0>
+            <desc1>Format bureautique imposé par la solution</desc1>
+            <desc2>Nombreux formats supportés (suite, pdf, ...)</desc2>
+            <score>2</score>
+            <comment>La suite Microsoft est supportée. OOo est supporté via les formats Microsoft et les filtres d'importation OOo connexes.</comment>
+         </element>
+         <element name="fichiers" title="Fichiers">
+            <desc>Les Rapports sont des fichiers de données.</desc>
+            <desc0>Non Disponible</desc0>
+            <desc1>Export au format CSV supporté</desc1>
+            <desc2>Autres formats d'exports disponibles : xls, xml, ...</desc2>
+            <score>1</score>
+            <comment>L'export de données sans formatage (CSV) est possible, ce qui est assez rare pour un module de reporting.
+Toutefois, cet export n'est pas un fichier de données brutes issu des requêtes, mais une feuille Excel visualisant le rapport dans les cellules du tableur.</comment>
+         </element>
+         <element name="imprimante" title="Imprimante">
+            <desc>Le rapport peut être imprimé.</desc>
+            <desc0>Non Disponible</desc0>
+            <desc1>Partiellement Disponible</desc1>
+            <desc2>Impression Pixel Ready ou WYSIWYG disponible</desc2>
+            <score>2</score>
+            <comment>Une technologie "Pixel Perfect" de perfection au pixel près est implémentée. Les clients de créations de rapports présentent un fond de papier millimétré.</comment>
+         </element>
+         <element name="impressionprofessionnelle" title="Impression professionnelle">
+            <desc>Format d'impression professionnelle</desc>
+            <desc0>Non Disponible</desc0>
+            <desc1>Format imprimable offset</desc1>
+            <desc2>Format pre-presse</desc2>
+            <score>0</score>
+            <comment>Les formats de sortie orienté pré-presse ne sont pas disponibles. L'utilisation du format pdf dans ce contexte est à valider.</comment>
+         </element>
+         <element name="telephonemobile" title="Téléphone mobile">
+            <desc>Restitution des rapports sur téléphone mobile</desc>
+            <desc0>Pas de prise en charge particulière des terminaux mobiles</desc0>
+            <desc1>Les rapports sont accessibles par les terminaux mobiles via un navigateur et s'adaptent à l'écran</desc1>
+            <desc2>Des applications dédiées destinés aux terminaux mobiles sont disponibles</desc2>
+            <score>2</score>
+            <comment>Pentaho dispose d'une application pour iPhone.</comment>
+         </element>
+      </element>
+      <element name="formatsdedocuments" title="Formats de documents">
+         <desc>Format utilisé pour stocker les descriptions des rapports et eventuellement des données qu'ils contiennent</desc>
+         <comment></comment>
+         <element name="proprietaire1" title="Propriétaire">
+            <desc>Les Rapports sont dans des formats propriétaires.</desc>
+            <desc0>Non Disponible</desc0>
+            <desc1>Partiellement Disponible</desc1>
+            <desc2>Disponible</desc2>
+            <score>2</score>
+            <comment>Les définitions de rapports sont des fichiers XML. Les DTD existent, ce qui rend le format propriétaire.</comment>
+         </element>
+         <element name="xml" title="XML">
+            <desc>Les rapports sont dans des fichiers XML.</desc>
+            <desc0>Non Disponible</desc0>
+            <desc1>Partiellement Disponible</desc1>
+            <desc2>Disponible</desc2>
+            <score>2</score>
+            <comment>Avec PRD, Les définitions de rapports sont des documents XML, régis par des dtd stockées dans le dossier 'ressources' (ex. report-085.dtd).</comment>
+         </element>
+      </element>
+      <element name="diffusion" title="Diffusion">
+         <desc>Critères pour la diffusion des rapports.</desc>
+         <comment></comment>
+         <element name="externe" title="Externe">
+            <desc>Diffusion des fichiers des rapports par envoi externe à la plate-forme (Mail, Fichiers...).</desc>
+            <desc0>Non Disponible</desc0>
+            <desc1>Partiellement Disponible</desc1>
+            <desc2>Disponible</desc2>
+            <score>2</score>
+            <comment>Pentaho Design Studio, la perspective Eclipse dédiée à Pentaho BI Suite, peut diffuser des rapports par mail externe (mail d'entreprise), pour peu que le mail soit configuré sur le poste, en particulier le DNS.</comment>
+         </element>
+         <element name="messagerieintegree" title="Messagerie Intégrée">
+            <desc>La plate-forme intègre un système de messagerie dédié (ex. BAL, BO Infoview).</desc>
+            <desc0>Non Disponible</desc0>
+            <desc1>Messagerie basique</desc1>
+            <desc2>Messagerie incluant des listes et des groupes de diffusion</desc2>
+            <score>0</score>
+            <comment>Pentaho Reporting gère des fonctions complètes de distribution interne de rapports, comme la distribution basée sur les rôles et celle basée sur des règles métiers. Toutefois, cette diffusion passe par la messagerie d'entreprise, et non par une messagerie intégrée à la plate-forme Pentaho.
+La messagerie intégrée à la plate-forme pourrait toutefois être développée.</comment>
+         </element>
+         <element name="dossierspartages" title="Dossiers partagés">
+            <desc>La plate-forme gère des dossiers partagés.</desc>
+            <desc0>Non Disponible</desc0>
+            <desc1>Gestion limitée des habilitations</desc1>
+            <desc2>Gestion fine des habilitations : catégories, groupes, rôles, ...</desc2>
+            <score>2</score>
+            <comment>Pentaho Reporting gère des fonctions complètes de partage de rapports, basé sur les rôles et sur des règles métiers. Toutefois, ce partage de documents se fait hors plate-forme Pentaho (via l'application J2EE du portail).</comment>
+         </element>
+         <element name="planification" title="Planification">
+            <desc>La plate-forme intègre une diffusion de masse planifiée.</desc>
+            <desc0>Non Disponible</desc0>
+            <desc1>Partiellement Disponible</desc1>
+            <desc2>Disponible</desc2>
+            <score>2</score>
+            <comment>Le module de planification s'appuie sur les technologies Scheduler et Workflow embarquées dans la plate-forme Pentaho BI Suite.</comment>
+         </element>
+         <element name="modesdediffusion" title="Modes de Diffusion">
+            <desc>La plate-forme gère la diffusion personnalisée.</desc>
+            <desc0>1 --- 1 : Diffusion individuelle</desc0>
+            <desc1>1 --- n : Même document vers des groupes</desc1>
+            <desc2>n --- m : Document paramétré selon le destinataire</desc2>
+            <score>2</score>
+            <comment>Pentaho Reporting gère des fonctions complètes de distribution interne de rapports, comme la distribution basée sur les rôles et celle basée sur des règles métiers.</comment>
+         </element>
+      </element>
+      <element name="securitehabilitations" title="Sécurité Habilitations">
+         <desc>Critères pour la gestion des droits.</desc>
+         <comment></comment>
+         <element name="annuaire" title="Annuaire">
+            <desc>La plate-forme gère un annuaire des utilisateurs.</desc>
+            <desc0>Non Disponible</desc0>
+            <desc1>Propriétaire</desc1>
+            <desc2>LDAP dédié et synchonisable à un annuaire d'entreprise</desc2>
+            <score>2</score>
+            <comment></comment>
+         </element>
+         <element name="authentification" title="Authentification">
+            <desc>Authentification des utilisateurs dans la plate-forme</desc>
+            <desc0>Non Disponible</desc0>
+            <desc1>Authentification uniquement sur l'annuaire de la plate-forme</desc1>
+            <desc2>Authentification possible sur l'annuaire du portail d'entreprise</desc2>
+            <score>1</score>
+            <comment>L'application J2EE finale pourra gérer l'authentification comme elle le souhaite.
+En standard, Pentaho BI Suite gère son propre annuaire et l'utilise pour l'authetification.</comment>
+         </element>
+         <element name="sso" title="SSO">
+            <desc>La Plate-forme accepte le SSO (Single Sign On).</desc>
+            <desc0>Non Disponible</desc0>
+            <desc1>Partiellement Disponible</desc1>
+            <desc2>Disponible.</desc2>
+            <score>0</score>
+            <comment>La version Enterprise Edition est compatible SSO, mais le version Open Source ne comprend pas de module ni technologie dédiée.</comment>
+         </element>
+         <element name="groupes" title="Groupes">
+            <desc>La plate-forme gère les groupes d'utilisateurs.</desc>
+            <desc0>Non Disponible</desc0>
+            <desc1>Gestion simple de groupes sans notions de rôles</desc1>
+            <desc2>Gestion de rôles</desc2>
+            <score>2</score>
+            <comment></comment>
+         </element>
+         <element name="donnees" title="Données">
+            <desc>La plate-forme gère les habilitations sur les données.</desc>
+            <desc0>Non Disponible</desc0>
+            <desc1>Gestion limité des objets requêtés</desc1>
+            <desc2>Contenu des objets requêtés gérables (visibilité table, colonne, ligne, par utilisateur ou groupe)</desc2>
+            <score>2</score>
+            <comment>La gestion des habilitations sur les données se fait avec les rôles, les groupes, les utilisateurs, et les règles métiers.</comment>
+         </element>
+         <element name="journalisation" title="Journalisation">
+            <desc>Fonctionnalités d'audit ou de traçabilité (sécurité et/ou performances)</desc>
+            <desc0>Non Disponible</desc0>
+            <desc1>Limité à certains évènements</desc1>
+            <desc2>Tout peut être tracé</desc2>
+            <score>2</score>
+            <comment>Pentaho BI Suite embarque un 'Audit Repository' pour la journalisation.</comment>
+         </element>
+      </element>
+      <element name="applicationclient" title="Outillage">
+         <desc>Critères pour les applications des postes de travail.</desc>
+         <comment></comment>
+         <element name="administrateur" title="Administrateur">
+            <desc>La plate-forme comprend une console pour l'administrateur.</desc>
+            <desc0>Non Disponible</desc0>
+            <desc1>Partiellement Disponible</desc1>
+            <desc2>Disponible</desc2>
+            <score>2</score>
+            <comment>La perspective Eclipse Pentaho Design Studio permet la gestion complète de la plate-forme Pentaho Reporting.
+L'application J2EE finale fournira les services applicatifs souhaités via l'interface web.</comment>
+         </element>
+         <element name="planificateur" title="Planificateur">
+            <desc>La plate-forme comprend un outil de diffusion planifiée.</desc>
+            <desc0>Non Disponible</desc0>
+            <desc1>Planification pour chaque utilisateur seulement ou globalement seulement</desc1>
+            <desc2>Planification possible pour chaque utilisateur et globalement</desc2>
+            <score>2</score>
+            <comment>La perspective Eclipse Pentaho Design Studio permet la gestion complète de la plate-forme Pentaho Reporting.
+L'application J2EE finale fournira les services applicatifs souhaités via l'interface web.</comment>
+         </element>
+         <element name="developpementc/s" title="Création c/s">
+            <desc>La plate-forme comprend un outil de création de rapports clients/serveur.</desc>
+            <desc0>Non Disponible</desc0>
+            <desc1>Partiellement Disponible</desc1>
+            <desc2>Disponible</desc2>
+            <score>2</score>
+            <comment>La perspective Eclipse Pentaho Design Studio permet la gestion complète de la plate-forme Pentaho Reporting.
+L'application J2EE finale fournira les services applicatifs souhaités via l'interface web.</comment>
+         </element>
+         <element name="developpementweb" title="Création Web">
+            <desc>La plate-forme comprend un outil de création de rapports web.</desc>
+            <desc0>Non Disponible</desc0>
+            <desc1>Partiellement Disponible</desc1>
+            <desc2>Disponible</desc2>
+            <score>2</score>
+            <comment>La perspective Eclipse Pentaho Design Studio permet la gestion complète de la plate-forme Pentaho Reporting.
+L'application J2EE finale fournira les services applicatifs souhaités via l'interface web.</comment>
+         </element>
+         <element name="surcouchemetier1" title="Surcouche métier">
+            <desc>La plate-forme comprend un outil de création de surcouche métier.</desc>
+            <desc0>Non Disponible</desc0>
+            <desc1>Via accès Client/Serveur seulement ou Web seulement</desc1>
+            <desc2>Via accès Client/Serveur et Web</desc2>
+            <score>2</score>
+            <comment>La perspective Eclipse Pentaho Design Studio permet la gestion complète de la plate-forme Pentaho Reporting.
+L'application J2EE finale fournira les services applicatifs souhaités via l'interface web.</comment>
+         </element>
+         <element name="visionneusec/s" title="Visionneuse c/s">
+            <desc>La plate-forme comprend un outil de visualisation de rapports en client-serveur (central ou local).</desc>
+            <desc0>Non Disponible</desc0>
+            <desc1>Partiellement Disponible</desc1>
+            <desc2>Disponible</desc2>
+            <score>2</score>
+            <comment>La perspective Eclipse Pentaho Design Studio permet la gestion complète de la plate-forme Pentaho Reporting.
+L'application J2EE finale fournira les services applicatifs souhaités via l'interface web.</comment>
+         </element>
+         <element name="navigateurweb" title="Navigateur Web">
+            <desc>La plate-forme permet la visualisation de rapports dans un navigateur.</desc>
+            <desc0>Non Disponible</desc0>
+            <desc1>Partiellement Disponible</desc1>
+            <desc2>Disponible</desc2>
+            <score>2</score>
+            <comment>La perspective Eclipse Pentaho Design Studio permet la gestion complète de la plate-forme Pentaho Reporting.
+L'application J2EE finale fournira les services applicatifs souhaités via l'interface web.</comment>
+         </element>
+      </element>
+   </section>
+   <section name="reportingbi" title="Reporting BI">
+      <desc>Section pour les fonctions liées au formatage et la visualisation des rapports BI.</desc>
+      <element name="miseenforme" title="Mise en Forme c/s">
+         <desc>Section pour les fonctions de mise en forme des informations affichées dans les rapports en client lourd (sur des postes autonomes).</desc>
+         <comment></comment>
+         <element name="statique" title="Statique">
+            <desc>Mise en forme statique (pas de style). Ex. gras, italique, couleurs fond, couleur police, etc.</desc>
+            <desc0>Non Disponible</desc0>
+            <desc1>Possibilités de mise en formes existants mais limités</desc1>
+            <desc2>Possibilités de mise en formes aussi riches que dans une suite bureautique</desc2>
+            <score>2</score>
+            <comment></comment>
+         </element>
+         <element name="style" title="Style">
+            <desc>Mise en forme en nommant des styles réutilisables (document, onglet, section, paragraphe, caractères, listes, puces, etc.)</desc>
+            <desc0>Non Disponible</desc0>
+            <desc1>Partiellement Disponible</desc1>
+            <desc2>Disponible</desc2>
+            <score>2</score>
+            <comment></comment>
+         </element>
+         <element name="colorcoding" title="Color Coding">
+            <desc>Fonction de mise en couleur ou formatage selon des fonctions statiques (seuils). Note : le data coding est évalué à part.</desc>
+            <desc0>Non Disponible</desc0>
+            <desc1>Accès au seuillage imposé ou accès à la mise en forme limité</desc1>
+            <desc2>Plusieurs possiblités de seuillage : nombre de seuils, valeurs de seuils; accès à la mise en forme complète</desc2>
+            <score>2</score>
+            <comment>Le color coding se fait via des fonctions de mise en forme ou de style.</comment>
+         </element>
+         <element name="datacoding" title="Data Coding">
+            <desc>Fonction de mise en couleur ou formatage selon des fonctions dynamiques, calculées sur les données affichées.</desc>
+            <desc0>Non Disponible</desc0>
+            <desc1>Une seule fonction de calcul pour les seuils ou accès limité au formatage</desc1>
+            <desc2>Plusieurs fonctions de calculs pour les seuils et accès au formatage complet</desc2>
+            <score>2</score>
+            <comment>Les champs peuvent être formatés via des formules et des contenus dynamiques.</comment>
+         </element>
+      </element>
+      <element name="miseenformeweb" title="Mise en Forme Web">
+         <desc>Section pour les fonctions de mise en forme des informations affichées dans les rapports en web (dans les navigateurs).</desc>
+         <comment></comment>
+         <element name="statique1" title="Statique">
+            <desc>Mise en forme statique (pas de style). Ex. gras, italique, couleurs fond, couleur police, etc.</desc>
+            <desc0>Non Disponible</desc0>
+            <desc1>Mise en forme existant mais limité</desc1>
+            <desc2>Mise en forme aussi riches que dans une suite bureautique</desc2>
+            <score>2</score>
+            <comment></comment>
+         </element>
+         <element name="styles" title="Styles">
+            <desc>Mise en forme en nommant des styles réutilisables (document, onglet, section, paragraphe, caractères, listes, puces, etc.).</desc>
+            <desc0>Non Disponible</desc0>
+            <desc1>Seules les feuilles CSS sont utilisables</desc1>
+            <desc2>Technologies avancées de chartes graphiques utilisables : CSS, XML, XSL ...</desc2>
+            <score>2</score>
+            <comment></comment>
+         </element>
+         <element name="colorcoding1" title="Color Coding">
+            <desc>Fonction de mise en couleur ou formatage selon des fonctions statiques (seuils). Note : le data coding est évalué à part.</desc>
+            <desc0>Non Disponible</desc0>
+            <desc1>Accès unique au seuillage</desc1>
+            <desc2>Plusieurs accès possible au seuillage : nombre de seuils, valeurs de seuils, accès à la mise en forme complète</desc2>
+            <score>2</score>
+            <comment>Le color coding se fait via des fonctions de mise en forme ou de style.</comment>
+         </element>
+         <element name="datacoding1" title="Data Coding">
+            <desc>Fonction de mise en couleur ou formatage selon des fonctions dynamiques, mais calculées sur les données affichées.</desc>
+            <desc0>Non Disponible</desc0>
+            <desc1>Fonctions de calculs limités ou inexistant pour les seuils ou accès limité/inexistant au formatage complet</desc1>
+            <desc2>Plusieurs fonctions de calculs pour les seuils et accès au formatage complet.</desc2>
+            <score>2</score>
+            <comment>Les champs peuvent être formatés via des formules et des contenus dynamiques.</comment>
+         </element>
+      </element>
+      <element name="uiconception" title="Conception des rapports">
+         <desc>Critères pour la conception des rapports et requêtes.</desc>
+         <comment></comment>
+         <element name="requeteurtechnique" title="IHM Requêteur">
+            <desc>Critères pour les requêteurs en accès directs aux serveurs (ex. Constructeurs SQL)</desc>
+            <comment></comment>
+            <element name="textederequete" title="Texte de requête">
+               <desc>Écriture du texte de requête dans le langage du SGBD.</desc>
+               <desc0>Non Disponible</desc0>
+               <desc1>Partiellement Disponible</desc1>
+               <desc2>Disponible</desc2>
+               <score>2</score>
+               <comment>Dans Pentaho Report Designer, la configuration des sources de données comprend la définition d'une requête SQL sur laquelle est défini le rapport. Une interface SQL texte est disponible.</comment>
+            </element>
+            <element name="constructeurderequete" title="Constructeur de Requête">
+               <desc>Assistant graphique de construction des requêtes d'après les objets techniques du SGBD (ex. MS Access, OOo Base).</desc>
+               <desc0>Non Disponible</desc0>
+               <desc1>Partiellement Disponible</desc1>
+               <desc2>Disponible</desc2>
+               <score>2</score>
+               <comment>Le constructeur de requête propose un paradigme de requête semi structuré dans une arborescence Select ... from where ... incluant l'interface drag and drop qui permet d'une certaine manière de s'affranchir du SQL. Mais les noms des tables et des colonnes devront être documentés pour les non informaticiens. En effet, les noms en production ne sont pas toujours parlants pour un utilisateur métier.</comment>
+            </element>
+            <element name="surcouchemetier" title="Surcouche métier">
+               <desc>Fonction de construction par objets métiers indépendants de la technicité de la base de données, accessible aux utilisateurs non informaticiens.</desc>
+               <desc0>Non Disponible</desc0>
+               <desc1>Partiellement Disponible</desc1>
+               <desc2>Disponible</desc2>
+               <score>2</score>
+               <comment>La surcouche métier est disponible dans Pentaho Design Studio, et peut être présentée dans les applications web.</comment>
+            </element>
+         </element>
+         <element name="requetage" title="Requétage">
+            <desc>Critères évaluant les possibilités de requêtage. (Ne s'applique pas au requêteur texte).</desc>
+            <comment></comment>
+            <element name="requetessimples" title="Requêtes Simples">
+               <desc>Requêtes mettant en œuvre une seule phrase SQL (Select From where ...).</desc>
+               <desc0>Non Dispopnible</desc0>
+               <desc1>Partiellement Disponible</desc1>
+               <desc2>Disponible</desc2>
+               <score>2</score>
+               <comment></comment>
+            </element>
+            <element name="requetesimbriquees" title="Requêtes Imbriquées">
+               <desc>Les rapports font appels à des requêtes imbriquées. (Ne s'applique pas au SQL à la carte).</desc>
+               <desc0>Non Disponible</desc0>
+               <desc1>Partiellement Disponible</desc1>
+               <desc2>Disponible</desc2>
+               <score>1</score>
+               <comment>Les requêtes imbriquées sont possibles dans l'interface texte SQL du constructeur de requête PRD et PDS.
+</comment>
+            </element>
+            <element name="requetagemultiple" title="Requêtage Multiple">
+               <desc>Plusieurs requêtes dans le même rapport.</desc>
+               <desc0>Non Disponible</desc0>
+               <desc1>Requêtes Union ou dans des onglets</desc1>
+               <desc2>Requêtes dans le même écran</desc2>
+               <score>2</score>
+               <comment>Les requêtes union sont possibles dans l'interface du constructeur de requête PRD et PDS.
+Plusieurs requêtes sur le même écran sont possibles en définissant plusieurs data sources.
+Le rapport exemple "top ten main" montre un rapport multi requêtes et multi sources, mixant une source Mondrian (sans possibilité OLAP, toutefois, ce qui nécessiterait un client OLAP) à une source SQL, mais sans faire toutefois de jointure externe entre les deux sources.</comment>
+            </element>
+            <element name="requetagemultisources" title="Requêtage Multi Sources">
+               <desc>Critères pour les requêtes à plusieurs sources.</desc>
+               <comment></comment>
+               <element name="multisourcesrequete" title="Multi Sources Requête">
+                  <desc>Un rapport accepte des requêtes provenant de plusieurs sources de données.</desc>
+                  <desc0>Non Disponible</desc0>
+                  <desc1>Partiellement Disponible</desc1>
+                  <desc2>Disponible</desc2>
+                  <score>2</score>
+                  <comment>Le rapport exemple "top ten main" montre un rapport multi requêtes et multi sources, mixant une source Mondrian (sans possibilité OLAP, toutefois, ce qui nécessiterait un client OLAP) à une source SQL, mais sans faire toutefois de jointure externe entre les deux sources.</comment>
+               </element>
+               <element name="jointureexterne" title="Jointure Externe">
+                  <desc>Le rapport fait une jointure sur plusieurs sources.</desc>
+                  <desc0>Non Disponible</desc0>
+                  <desc1>Partiellement Disponible</desc1>
+                  <desc2>Disponible</desc2>
+                  <score>0</score>
+                  <comment>Les requêtes ne semblent pas pouvoir afficher des données de plusieurs sources de données dans le même tableau ou graphique de manière simple et immédiate (pas de menu "jointure externe").
+Peut-être est-ce possible via des fonctions, ou l'application finale J2EE (développement java).</comment>
+               </element>
+               <element name="multisurcouchemetier" title="Multi Surcouche Métier">
+                  <desc>Le rapport présente des requêtes provenant de plusieurs surcouches métiers.</desc>
+                  <desc0>Non Disponible</desc0>
+                  <desc1>Partiellement Disponible</desc1>
+                  <desc2>Disponible</desc2>
+                  <score>0</score>
+                  <comment>Les requêtes ne semblent pas pouvoir afficher des données de plusieurs surcouches métiers dans le même tableau ou graphique de manière simple et immédiate (pas de menu "multi surcouche métier").
+Peut-être est-ce possible via des fonctions, ou l'application finale J2EE (développement java).</comment>
+               </element>
+            </element>
+         </element>
+      </element>
+      <element name="structuredesrapports" title="Structure des Rapports">
+         <desc>Critères pour la structure des rapports.</desc>
+         <comment></comment>
+         <element name="unedimension" title="Une Dimension">
+            <desc>Rapport simple (Ex. ligne / Colonne)</desc>
+            <desc0>Non Disponible</desc0>
+            <desc1>Partiellement Disponible</desc1>
+            <desc2>Disponible</desc2>
+            <score>2</score>
+            <comment></comment>
+         </element>
+         <element name="tableaucroise" title="Tableau Croisé">
+            <desc>Rapport à deux dimensions (Ex. Matrice).</desc>
+            <desc0>Non Disponible</desc0>
+            <desc1>Interactions limitées</desc1>
+            <desc2>Interactions par glisser/déposer</desc2>
+            <score>0</score>
+            <comment>Les tableaux croisés font leur apparition dans la version 2, aujourd'hui en RC1, et par conséquent pas encore apte à une évaluation.
+Les tableaux croisés sont par ailleurs disponibles dans le module d'analyse OLAP.</comment>
+         </element>
+         <element name="multidimensionnel" title="Multi Dimensionnel">
+            <desc>Rapport multi dimensionnel (ligne, colonnes, pages selon d'autres dimensions).</desc>
+            <desc0>Non Disponible</desc0>
+            <desc1>Interaction par glisser-déposer ou juxtaposition de graphique/tableaux</desc1>
+            <desc2>Interaction par glisser-déposer et juxtaposition de graphique/tableaux</desc2>
+            <score>0</score>
+            <comment>Les tableaux multidimensionnels sont par ailleurs disponibles dans le module d'analyse OLAP.</comment>
+         </element>
+         <element name="groupements" title="Groupements">
+            <desc>Le rapport présente des groupements en diverses sections triées de diverses manières.</desc>
+            <desc0>Non Disponible</desc0>
+            <desc1>Partiellement Disponible</desc1>
+            <desc2>Disponible</desc2>
+            <score>2</score>
+            <comment></comment>
+         </element>
+         <element name="liensentrerapports" title="Liens entre rapports">
+            <desc>Le rapport présente des liens vers d'autres données ou rapports.</desc>
+            <desc0>Non Disponible</desc0>
+            <desc1>Liens statiques vers d'autres rapports</desc1>
+            <desc2>Liens sur des données</desc2>
+            <score>0</score>
+            <comment></comment>
+         </element>
+         <element name="miseenpage" title="Mise en page">
+            <desc>Le rapport présente une structure de mise en page (Modèles de page, entêtes, pieds, etc.).</desc>
+            <desc0>Pas de mise en page</desc0>
+            <desc1>Mise en page global pour le document</desc1>
+            <desc2>Mise en page avancée pour les sections ou groupements</desc2>
+            <score>2</score>
+            <comment></comment>
+         </element>
+      </element>
+      <element name="typologiedesrapports" title="Types de rapport">
+         <desc>Critères pour caractériser le contenu des rapports.</desc>
+         <comment></comment>
+         <element name="rapportpredefini" title="Rapport Prédéfini">
+            <desc>Rapport préparé à l'avance et ouvert par l'utilisateur.</desc>
+            <desc0>Non Disponible</desc0>
+            <desc1>Avec données</desc1>
+            <desc2>Raffraichi à la volée</desc2>
+            <score>2</score>
+            <comment></comment>
+         </element>
+         <element name="rapportadhoc" title="Rapport Ad Hoc">
+            <desc>Rapport dont le contenu est défini par un utilisateur final.</desc>
+            <desc0>Non Disponible</desc0>
+            <desc1>Pour Informaticien (SQL)</desc1>
+            <desc2>Pour non Informaticien</desc2>
+            <score>2</score>
+            <comment></comment>
+         </element>
+         <element name="interactivite" title="Interactivité">
+            <desc>Le rapport présente des possibilités d'interaction.</desc>
+            <desc0>Statique (Sans interactivité).</desc0>
+            <desc1>Explorable (Filtrage à l'aide de boites déroulantes).</desc1>
+            <desc2>Interactif (Exploration en agissant sur les données avec complément de requêtes).</desc2>
+            <score>0</score>
+            <comment></comment>
+         </element>
+         <element name="miseajourdesdonnees" title="Mise à jour des données">
+            <desc>Le rapport permet la mise à jour des données.</desc>
+            <desc0>Non Disponible</desc0>
+            <desc1>Copie utilisateur</desc1>
+            <desc2>Selon sécurité</desc2>
+            <score>0</score>
+            <comment></comment>
+         </element>
+      </element>
+      <element name="affichagedesdonnees" title="Affichage des données">
+         <desc>Critères pour la richesse des possibilités d'affichage des données.</desc>
+         <comment></comment>
+         <element name="tableaux" title="Tableaux">
+            <desc>Le Rapport affiche des tableaux plus ou moins riches.</desc>
+            <desc0>Tableaux simples, eventuellement explorables</desc0>
+            <desc1>Tableaux croisés, regroupement et éventuellement avec calculs partiels, etc.</desc1>
+            <desc2>Regroupements multi tableaux, variables calculées indépendamment, etc.</desc2>
+            <score>2</score>
+            <comment></comment>
+         </element>
+         <element name="graphiques" title="Graphiques">
+            <desc>Le rapport affiche des graphiques plus ou moins riches.</desc>
+            <desc0>Quelques graphiques standards (histogrammes, camemberts, lignes, aires)</desc0>
+            <desc1>Graphiques équivalents à un tableur bureautique</desc1>
+            <desc2>Graphiques propres à l'application (comprend au moins les équivalents des graphiques disponibles dans les tableurs bureautiques)</desc2>
+            <score>1</score>
+            <comment></comment>
+         </element>
+         <element name="graphiquesimprimables" title="Graphiques imprimables">
+            <desc>Les graphiques sont imprimables.</desc>
+            <desc0>Non Disponible</desc0>
+            <desc1>Partiellement Disponible</desc1>
+            <desc2>Tous les graphiques s'impriment</desc2>
+            <score>2</score>
+            <comment></comment>
+         </element>
+         <element name="appeldefonctionsutilisateur" title="Appel de fonctions utilisateur">
+            <desc>Capacité d'appeler du code (externe ou embarqué)</desc>
+            <desc0>Non disponilbe</desc0>
+            <desc1>Code embarqué dans le rapport</desc1>
+            <desc2>Appel de code externe possible en plus du code embarqué</desc2>
+            <score>2</score>
+            <comment>Dans l'application J2EE finale.</comment>
+         </element>
+      </element>
+   </section>
+</document>

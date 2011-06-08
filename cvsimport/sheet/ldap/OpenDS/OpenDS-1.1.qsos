@@ -1,0 +1,996 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document>
+   <header>
+      <authors>
+         <author>
+            <email>david.pillant@hraccess.com</email>
+            <name>David Pillant</name>
+         </author>
+      </authors>
+      <dates>
+         <creation>2008-10-15</creation>
+         <validation></validation>
+      </dates>
+      <language>en</language>
+      <appname>OpenDS 1.1</appname>
+      <release>1.1</release>
+      <licenseid>21</licenseid>
+      <licensedesc>SUN Binary Code License</licensedesc>
+      <url>http://www.opends.org/</url>
+      <desc></desc>
+      <demourl></demourl>
+      <qsosformat>1.7</qsosformat>
+      <qsosappfamily>LDAP</qsosappfamily>
+      <qsosappname></qsosappname>
+      <qsosspecificformat></qsosspecificformat>
+   </header>
+   <section name="generic" title="Generic section">
+      <desc>Generic criteria from QSOS version 1.6</desc>
+      <element name="intrinsicdurability" title="Intrinsic durability">
+         <desc>Intrinsic durability</desc>
+         <element name="maturity" title="Maturity">
+            <desc>Maturity</desc>
+            <element name="age" title="Age">
+               <desc0>less than 3 months</desc0>
+               <desc1>if between 3 months and 3 years</desc1>
+               <desc2>after 3 years</desc2>
+               <score>1</score>
+               <comment>December 2007</comment>
+            </element>
+            <element name="stability" title="Stability">
+               <desc0>Unstable software with numerous releases or patches generating side effects</desc0>
+               <desc1>Stabilized production release existing but old. Difficulties to stabilize development releases</desc1>
+               <desc2>Stabilized software. Releases provide bug fixes corrections but mainly new functionalities</desc2>
+               <score>0</score>
+               <comment>V1.0 (Build 16)</comment>
+            </element>
+            <element name="historyknownproblems" title="History, known problems">
+               <desc0>Software knows several problems which can be prohibitive</desc0>
+               <desc1>No know major problem or crisis</desc1>
+               <desc2>History of good management of crisis situations</desc2>
+               <score>2</score>
+               <comment>https://opends.dev.java.net/issues/reports.cgi</comment>
+            </element>
+            <element name="forkprobability" title="Fork probability, source of Forking">
+               <desc0>Software is very likely to be forked in the future</desc0>
+               <desc1>Software comes from a fork but has very few chances of being forked in the future</desc1>
+               <desc2>Software has very little chance of being forked. It does not come from a fork either</desc2>
+               <score>2</score>
+               <comment></comment>
+            </element>
+         </element>
+         <element name="adoption" title="Adoption">
+            <desc>Adoption by community and industry</desc>
+            <element name="popularity" title="Popularity (related to: general public, niche, ...)">
+               <desc0>Very few users identified</desc0>
+               <desc1>Detectable use on Internet</desc1>
+               <desc2>Numerous users, numerous references</desc2>
+               <score>0</score>
+               <comment></comment>
+            </element>
+            <element name="references" title="References">
+               <desc0>None</desc0>
+               <desc1>Few refences, non critical usages</desc1>
+               <desc2>Often implemented for critical applications</desc2>
+               <score>0</score>
+               <comment></comment>
+            </element>
+            <element name="contributingcommunity" title="Contributing Community">
+               <desc0>No community or without real activity (forum, mailing list, ...)</desc0>
+               <desc1>Existing community with a notable activity</desc1>
+               <desc2>Strong community: big activity on forums, numerous contributors and advocates</desc2>
+               <score>2</score>
+               <comment></comment>
+            </element>
+            <element name="books" title="books">
+               <desc0>No book about the software</desc0>
+               <desc1>Less than 5 books about the software are available</desc1>
+               <desc2>More than 5 books about software are available, in several languages</desc2>
+               <score>0</score>
+               <comment></comment>
+            </element>
+         </element>
+         <element name="developmentleadership" title="Development leadership">
+            <desc>Organisation and leadership of developments</desc>
+            <element name="leadingteam" title="Leading team">
+               <desc0>1 to 2 individuals involved, not clearly identified</desc0>
+               <desc1>Between 2 and 5 independent people</desc1>
+               <desc2>More than 5 people</desc2>
+               <score>1</score>
+               <comment>https://opends.dev.java.net/public/misc/bios.html</comment>
+            </element>
+            <element name="managementstyle" title="Management style">
+               <desc0>Complete dictatorship</desc0>
+               <desc1>Enlightened despotism</desc1>
+               <desc2>Council of architects with identified leader (e.g: KDE)</desc2>
+               <score>2</score>
+               <comment>https://opends.dev.java.net/public/misc/bios.html</comment>
+            </element>
+         </element>
+         <element name="activity" title="Activity">
+            <desc>Activity of the project and around the software</desc>
+            <element name="developersidentificationturnover" title="Developers, identification, turnover">
+               <desc0>Less than 3 developers, not clearly identified</desc0>
+               <desc1>Between 4 and 7 developers, or more unidentified developers with important turnover</desc1>
+               <desc2>More than 7 developers, very stable team</desc2>
+               <score>2</score>
+               <comment>https://opends.dev.java.net/public/misc/bios.html</comment>
+            </element>
+            <element name="activityonbugs" title="Activity on bugs">
+               <desc0>Slow reactivity in forum or on mailing list, or nothing regarding bug fixes in releases note</desc0>
+               <desc1>Detectable activity but without process clearly exposed, long reaction/resolution time</desc1>
+               <desc2>Strong reactivity based on roles and tasks assignment</desc2>
+               <score>2</score>
+               <comment>https://opends.dev.java.net/public/docs/dev-docs/OpenDS-Governance.html</comment>
+            </element>
+            <element name="activityonfunctionalities" title="Activity on functionalities">
+               <desc0>No or few new functionalities</desc0>
+               <desc1>Evolution of the product driven by the core team or by user's request without any clearly explained process</desc1>
+               <desc2>Tool(s) to manage feature requests, strong interaction with roadmap</desc2>
+               <score>2</score>
+               <comment>https://www.opends.org/wiki/page/Roadmap</comment>
+            </element>
+            <element name="activityonreleases" title="Activity on releases">
+               <desc0>Very weak activity on both production and development releases</desc0>
+               <desc1>Activity on production and development releases. Frequent minor releases (bug fixes)</desc1>
+               <desc2>Important activity with frequent minor releases (bugs fixes) and planned major releases relating to the roadmap forcast</desc2>
+               <score>2</score>
+               <comment>https://opends.dev.java.net/issues/query.cgi</comment>
+            </element>
+         </element>
+      </element>
+      <element name="industrializedsolution" title="Industrialized solution">
+         <desc>Industrialization level of the project</desc>
+         <element name="independenceofdevelopments" title="Independence of developments">
+            <desc0>Developments realized at 100% by employees of a single company</desc0>
+            <desc1>60% maximum</desc1>
+            <desc2>20% maximum</desc2>
+            <score>0</score>
+            <comment></comment>
+         </element>
+         <element name="services" title="Services">
+            <desc>Services offering</desc>
+            <element name="training" title="Training">
+               <desc0>No offer of training identified</desc0>
+               <desc1>Offer exists but is restricted geographically and to one language or is provided by a single contractor</desc1>
+               <desc2>Rich offers provided by several contractors, in several languages and split into modules of gradual levels</desc2>
+               <score>0</score>
+               <comment></comment>
+            </element>
+            <element name="support" title="Support">
+               <desc0>No offer of support except via public forums and mailing lists</desc0>
+               <desc1>Offer exists but is provided by a single contractor without strong commitment quality of services</desc1>
+               <desc2>Multiple service providers with strong commitment (e.g: guaranteed resolution time)</desc2>
+               <score>2</score>
+               <comment>http://blogs.sun.com/Ludo/entry/opends_un_annuaire_ldap_en</comment>
+            </element>
+            <element name="consulting" title="Consulting">
+               <desc0>No offer of consulting service</desc0>
+               <desc1>Offer exists but is restricted geographically and to one language or is provided by a single contractor</desc1>
+               <desc2>Consulting services provided by different contractors in several languages</desc2>
+               <score>0</score>
+               <comment></comment>
+            </element>
+         </element>
+         <element name="documentation" title="Documentation">
+            <desc0>No user documentation</desc0>
+            <desc1>Documentation exists but shifted in time, is restricted to one language or is poorly detailed</desc1>
+            <desc2>Documentation always up to date, translated and possibly adapted to different target readers (end user, sysadmin, manager, ...)</desc2>
+            <score>2</score>
+            <comment>https://www.opends.org/wiki/page/OpenDSUserDocumentation</comment>
+         </element>
+         <element name="qualityassurance" title="Quality Assurance">
+            <desc>Quality assurance process</desc>
+            <element name="quality" title="Quality Assurance">
+               <desc0>No QA process</desc0>
+               <desc1>Identifies QA process but not much formalized and with no tool</desc1>
+               <desc2>Automatic testing process included in code's life-cycle with publication of results</desc2>
+               <score>2</score>
+               <comment>https://www.opends.org/wiki/page/MainQualityPage</comment>
+            </element>
+            <element name="tools" title="Tools">
+               <desc0>No bug or feature request management tool</desc0>
+               <desc1>Standard tools provided (for instance by a hosting forge) but poorly used</desc1>
+               <desc2>Very active use of tools for roles/tasks allocation and progress monitoring</desc2>
+               <score>2</score>
+               <comment>https://opends.dev.java.net/servlets/ProjectIssues</comment>
+            </element>
+         </element>
+         <element name="packaging" title="Packaging">
+            <desc>Packaging for various operating systems</desc>
+            <element name="packagingsource" title="Source">
+               <desc0>Software can't be installed from source without lot of work</desc0>
+               <desc1>Installation from source is limited and depends on very strict conditions (OS, arch, lib, ...)</desc1>
+               <desc2>Installation from source is easy</desc2>
+               <score>2</score>
+               <comment>https://www.opends.org/wiki/page/OverviewOfTheQuickSetupTool</comment>
+            </element>
+            <element name="packagingdebian" title="Debian">
+               <desc0>The software is not packaged for Debian</desc0>
+               <desc1>A Debian package exists but it has important issues or it doesn't have official support</desc1>
+               <desc2>The software is packaged in the distribution</desc2>
+               <score>0</score>
+               <comment></comment>
+            </element>
+            <element name="packagingfreebsd" title="FreeBSD">
+               <desc0>The software is not packaged for FreeBSD</desc0>
+               <desc1>A port exists but it has important issues or it doesn't have official support</desc1>
+               <desc2>A official port exists in FreeBSD</desc2>
+               <score>0</score>
+               <comment></comment>
+            </element>
+            <element name="packaginghpux" title="HP-UX">
+               <desc0>The software is not packaged for HP-UX</desc0>
+               <desc1>A package exists but it has important issues or it doesn't have official support</desc1>
+               <desc2>A stable package is provided for HP-UX</desc2>
+               <score>0</score>
+               <comment></comment>
+            </element>
+            <element name="packagingmacosx" title="MacOSX">
+               <desc0>The software is not packaged for MacOSX</desc0>
+               <desc1>A package exists but it has important issues or it doesn't have official support</desc1>
+               <desc2>The software is packaged in the distribution</desc2>
+               <score>2</score>
+               <comment></comment>
+            </element>
+            <element name="packagingmandriva" title="Mandriva">
+               <desc0>The software is not packaged for Mandriva</desc0>
+               <desc1>A package exists but it has important issues or it doesn't have official support</desc1>
+               <desc2>The software is packaged in the distribution</desc2>
+               <score>0</score>
+               <comment></comment>
+            </element>
+            <element name="packagingnet" title="NetBSD">
+               <desc0>The software is not packaged for NetBSD</desc0>
+               <desc1>A port exists but it has important issues or it doesn't have official support</desc1>
+               <desc2>A official port exists in NetBSD</desc2>
+               <score>0</score>
+               <comment></comment>
+            </element>
+            <element name="packagingopen" title="OpenBSD">
+               <desc0>The software is not packaged for OpenBSD</desc0>
+               <desc1>A port exists but it has important issues or it doesn't have official support</desc1>
+               <desc2>A official port exists in OpenBSD</desc2>
+               <score>0</score>
+               <comment></comment>
+            </element>
+            <element name="packagingredhat" title="RedHat">
+               <desc0>The software is not packaged for RedHat/Fedora</desc0>
+               <desc1>A package exists but it has important issues or it doesn't have official support</desc1>
+               <desc2>The software is packaged in the distribution</desc2>
+               <score>2</score>
+               <comment></comment>
+            </element>
+            <element name="packagingsolaris" title="Solaris">
+               <desc0>The software is not packaged for Solaris</desc0>
+               <desc1>A package exists but it has important issues or it doesn't have official support (e.g: SunFreeware.com )</desc1>
+               <desc2>The software is supported by Sun for Solaris</desc2>
+               <score>2</score>
+               <comment></comment>
+            </element>
+            <element name="packagingsuse" title="SuSE">
+               <desc0>The software is not packaged for SuSE</desc0>
+               <desc1>A package exists but it has important issues or it doesn't have official support</desc1>
+               <desc2>The software is packaged in the distribution</desc2>
+               <score>2</score>
+               <comment></comment>
+            </element>
+            <element name="packagingwindows" title="Windows">
+               <desc0>The project can't be installed on Windows</desc0>
+               <desc1>A package exists but it is limited or has important issues or just cover some specific Windows release (e.g: Windows2000 and WindowsXP)</desc1>
+               <desc2>Windows is full supported and a package is provided</desc2>
+               <score>2</score>
+               <comment></comment>
+            </element>
+         </element>
+      </element>
+      <element name="exploitability" title="Exploitability">
+         <desc>Exploitability level</desc>
+         <element name="easeofuseergonomics" title="Ease of use, ergonomics">
+            <desc0>Difficult to use, requires an in depth knowledge of the software functionality</desc0>
+            <desc1>Austere and very technical ergonomics</desc1>
+            <desc2>GUI including help functions and elaborated ergonomics</desc2>
+            <score>1</score>
+            <comment>lot of tools in command line</comment>
+         </element>
+         <element name="administrationmonitoring" title="Administration / Monitoring">
+            <desc0>No administrative or monitoring functionalities</desc0>
+            <desc1>Existing, functionalities but incomplete and or need improvement</desc1>
+            <desc2>Complete and easy-to-use administration and monitoring functionalities. Possible integration with external tools (e.g: SNMP, syslog, ...)</desc2>
+            <score>2</score>
+            <comment>JMX Support </comment>
+         </element>
+      </element>
+      <element name="technicaladaptability" title="Technical adaptability">
+         <desc>Technical adaptability</desc>
+         <element name="modularity" title="Modularity">
+            <desc0>Monolithic software</desc0>
+            <desc1>Presence of hight level modules allowing a first level of software adaptation</desc1>
+            <desc2>Modular conception, allowing easy adaptation of the software by selecting or creating modules</desc2>
+            <score>2</score>
+            <comment></comment>
+         </element>
+         <element name="codemodification" title="Code modification">
+            <desc0>Everything by hand</desc0>
+            <desc1>Recompilation possible but complex without any tools or documentation</desc1>
+            <desc2>Recompilation with tools (e.g: make, ANT, ...) and documentation provided</desc2>
+            <score>2</score>
+            <comment>Use of a tool of update</comment>
+         </element>
+         <element name="codeextension" title="Code extension">
+            <desc0>Any modification requires code recompilation</desc0>
+            <desc1>Architecture designed for static extension but requires recompilation</desc1>
+            <desc2>Principle of plugin, architecture designed for dynamic extension without recompilation</desc2>
+            <score>2</score>
+            <comment>Use of a tool of update</comment>
+         </element>
+      </element>
+      <element name="strategy" title="Strategy">
+         <desc>Project's strategy</desc>
+         <element name="license" title="License">
+            <desc>License</desc>
+            <element name="permissiveness" title="Permissiveness (only if user wants to become owner of code)">
+               <desc0>Very strict license, like GPL</desc0>
+               <desc1>Moderate permissive license located between both extremes (GPL and BSD) dual-licensing depending on the type of user (person, company, ...) or their activities</desc1>
+               <desc2>Very permissive like BSD or Apache licenses</desc2>
+               <score>1</score>
+               <comment>CDDL</comment>
+            </element>
+            <element name="protectionagainstproprietaryforks" title="Protection against proprietary forks">
+               <desc0>Very permissive like BSD or Apache licenses</desc0>
+               <desc1>Moderate permissive license located between both extremes (GPL and BSD), dual-licensing depending on the type of user (person, company, ...) or their activies</desc1>
+               <desc2>Very strict license, like GPL</desc2>
+               <score>1</score>
+               <comment>CDDL</comment>
+            </element>
+         </element>
+         <element name="copyrightowners" title="Copyright owners">
+            <desc0>Rights held by a few individuals or entities, making it easier to change the license</desc0>
+            <desc1>Rights held by numerous individuals owning the code in a homogeneous way, making relicense very difficult</desc1>
+            <desc2>Rights held by a legal entity in whom the community trusts (e.g: FSF or ASF)</desc2>
+            <score>2</score>
+            <comment></comment>
+         </element>
+         <element name="modificationofsourcecode" title="Modification of source code">
+            <desc0>No practical way to propose code modification</desc0>
+            <desc1>Tools provided to access and modify code (like CVS or SVN) but not really used to develop the software</desc1>
+            <desc2>The code modification process is well defined, exposed and respected, based on roles assignment</desc2>
+            <score>2</score>
+            <comment>https://www.opends.org/wiki/page/MainQualityPage</comment>
+         </element>
+         <element name="roadmap" title="Roadmap">
+            <desc0>No published roadmap</desc0>
+            <desc1>Existing roadmap without planning</desc1>
+            <desc2>Versionned roadmap, with planning and measure of delays</desc2>
+            <score>1</score>
+            <comment>https://www.opends.org/wiki/page/Roadmap</comment>
+         </element>
+         <element name="sponsor" title="Sponsor">
+            <desc0>Software has no sponsor, the core team is not paid</desc0>
+            <desc1>Software has an unique sponsor who might determine its strategy</desc1>
+            <desc2>Software is sponsored by industry</desc2>
+            <score>1</score>
+            <comment>Sun Microsystems</comment>
+         </element>
+         <element name="strategicalindependence" title="Strategic independence">
+            <desc0>No detectable strategy or strong dependency on one unique actor(person, company,sponsor)</desc0>
+            <desc1>Strategic vision shared with several other free and open source projects but without strong commitment from copyrights owners</desc1>
+            <desc2>Strong independence of the code team, legal entity holding rights, strong involvement in the standardization process</desc2>
+            <score>2</score>
+            <comment></comment>
+         </element>
+      </element>
+   </section>
+   <section name="technicalsection" title="Technical section">
+      <desc></desc>
+      <element name="rfcimplementation" title="RFC Implementation">
+         <desc></desc>
+         <comment></comment>
+         <element name="ldaprequests" title="LDAP Requests">
+            <desc></desc>
+            <comment></comment>
+            <element name="rfc4510implementation" title="RFC 4510 implementation">
+               <desc>Does the LDAP server implement the RFC 4510?
+(Lightweight Directory Access Protocol (LDAP) Technical Specification Roadmap)</desc>
+               <desc0>Not implemented</desc0>
+               <desc1>Partially implemented</desc1>
+               <desc2>Fully implemented</desc2>
+               <score>2</score>
+               <comment></comment>
+            </element>
+            <element name="rfc4511implementation" title="RFC 4511 implementation">
+               <desc>Does the LDAP server implement the RFC 4511?
+(The Protocol)</desc>
+               <desc0>Not implemented</desc0>
+               <desc1>Partially implemented</desc1>
+               <desc2>Fully implemented</desc2>
+               <score>2</score>
+               <comment></comment>
+            </element>
+            <element name="rfc4512implementation" title="RFC 4512 implementation">
+               <desc>Does the LDAP server implement the RFC 4512?
+( Directory Information Models)</desc>
+               <desc0>Not implemented</desc0>
+               <desc1>Partially implemented</desc1>
+               <desc2>Fully implemented</desc2>
+               <score>2</score>
+               <comment></comment>
+            </element>
+            <element name="rfc4513implementation" title="RFC 4513 implementation">
+               <desc>Does the LDAP server implement the RFC 4513?
+(Authentication Methods and Security Mechanisms)</desc>
+               <desc0>Not implemented</desc0>
+               <desc1>Partially implemented</desc1>
+               <desc2>Fully implemented</desc2>
+               <score>2</score>
+               <comment></comment>
+            </element>
+            <element name="rfc4514implementation" title="RFC 4514 implementation">
+               <desc>Does the LDAP server implement the RFC 4514?
+(String Representation of Distinguished Names)</desc>
+               <desc0>Not implemented</desc0>
+               <desc1>Partially implemented</desc1>
+               <desc2>Fully implemented</desc2>
+               <score>2</score>
+               <comment></comment>
+            </element>
+            <element name="rfc4515implementation" title="RFC 4515 implementation">
+               <desc>Does the LDAP server implement the RFC 4515?
+(String Representation of Search Filters)</desc>
+               <desc0>Not implemented</desc0>
+               <desc1>Partially implemented</desc1>
+               <desc2>Fully implemented</desc2>
+               <score>2</score>
+               <comment></comment>
+            </element>
+            <element name="rfc4516implementation" title="RFC 4516 implementation">
+               <desc>Does the LDAP server implement the RFC 4516?
+(Uniform Resource Locator)</desc>
+               <desc0>Not implemented</desc0>
+               <desc1>Partially implemented</desc1>
+               <desc2>Fully implemented</desc2>
+               <score>2</score>
+               <comment></comment>
+            </element>
+            <element name="rfc4517implementation" title="RFC 4517 implementation">
+               <desc>Does the LDAP server implement the RFC 4517?
+(Syntaxes and Matching Rules)</desc>
+               <desc0>Not implemented</desc0>
+               <desc1>Partially implemented</desc1>
+               <desc2>Fully implemented</desc2>
+               <score>2</score>
+               <comment></comment>
+            </element>
+            <element name="rfc4518implementation" title="RFC 4518 implementation">
+               <desc>Does the LDAP server implement the RFC 4518?
+( Internationalized String Preparation)</desc>
+               <desc0>Not implemented</desc0>
+               <desc1>Partially implemented</desc1>
+               <desc2>Fully implemented</desc2>
+               <score>2</score>
+               <comment></comment>
+            </element>
+            <element name="rfc4519implementation" title="RFC 4519 implementation">
+               <desc>Does the LDAP server implement the RFC 4519?
+(Schema for User Applications)</desc>
+               <desc0>Not implemented</desc0>
+               <desc1>Partially implemented</desc1>
+               <desc2>Fully implemented</desc2>
+               <score>2</score>
+               <comment></comment>
+            </element>
+         </element>
+         <element name="ldapbestpractices" title="LDAP Best Practices">
+            <desc></desc>
+            <comment></comment>
+            <element name="rfc4520implementation" title="RFC 4520 implementation">
+               <desc>Does the LDAP server implement the RFC 4520?
+(Internet Assigned Numbers Authority (IANA) Considerations for the Lightweight Directory Access Protocol (LDAP))</desc>
+               <desc0>Not implemented</desc0>
+               <desc1>Partially implemented</desc1>
+               <desc2>Fully implemented</desc2>
+               <score>1</score>
+               <comment></comment>
+            </element>
+            <element name="rfc4521implementation" title="RFC 4521 implementation">
+               <desc>Does the LDAP server implement the RFC 4521?
+(Considerations for Lightweight Directory Access Protocol (LDAP) Extensions)</desc>
+               <desc0>Not implemented</desc0>
+               <desc1>Partially implemented</desc1>
+               <desc2>Fully implemented</desc2>
+               <score>0</score>
+               <comment></comment>
+            </element>
+         </element>
+         <element name="ldapextensions" title="LDAP Extensions">
+            <desc></desc>
+            <comment></comment>
+            <element name="rfc2247implementation" title="RFC 2247 implementation">
+               <desc>Does the LDAP server implement the RFC 2247?
+	    (Use of DNS domains in distinguished names)</desc>
+               <desc0>Not implemented</desc0>
+               <desc1>Partially implemented</desc1>
+               <desc2>Fully implemented</desc2>
+               <score>2</score>
+               <comment></comment>
+            </element>
+            <element name="rfc2307implementation" title="RFC 2307 implementation">
+               <desc>Does the LDAP server implement the RFC 2307?
+(Using LDAP as a Network Information Service)</desc>
+               <desc0>Not implemented</desc0>
+               <desc1>Partially implemented</desc1>
+               <desc2>Fully implemented</desc2>
+               <score>2</score>
+               <comment></comment>
+            </element>
+            <element name="rfc2589implementation" title="RFC 2589 implementation">
+               <desc>Does the LDAP server implement the RFC 2589?
+(Dynamic Directory Services Extensions)</desc>
+               <desc0>Not implemented</desc0>
+               <desc1>Partially implemented</desc1>
+               <desc2>Fully implemented</desc2>
+               <score>0</score>
+               <comment></comment>
+            </element>
+            <element name="rfc2798implementation" title="RFC 2798 implementation">
+               <desc>Does the LDAP server implement the RFC 2798?
+(inetOrgPerson LDAP Object Class)</desc>
+               <desc0>Not implemented</desc0>
+               <desc1>Partially implemented</desc1>
+               <desc2>Fully implemented</desc2>
+               <score>2</score>
+               <comment></comment>
+            </element>
+            <element name="rfc2849implementation" title="RFC 2849 implementation">
+               <desc>Does the LDAP server implement the RFC 2849?
+(The LDAP Data Interchange Format (LDIF))</desc>
+               <desc0>Not implemented</desc0>
+               <desc1>Partially implemented</desc1>
+               <desc2>Fully implemented</desc2>
+               <score>2</score>
+               <comment></comment>
+            </element>
+            <element name="rfc3062implementation" title="RFC 3062 implementation">
+               <desc>Does the LDAP server implement the RFC 3062?
+( LDAP Password Modify Extended Operation)</desc>
+               <desc0>Not implemented</desc0>
+               <desc1>Partially implemented</desc1>
+               <desc2>Fully implemented</desc2>
+               <score>2</score>
+               <comment></comment>
+            </element>
+            <element name="rfc3296implementation" title="RFC 3296 implementation">
+               <desc>Does the LDAP server implement the RFC 3296?
+(Named Subordinate References in LDAP Directories)</desc>
+               <desc0>Not implemented</desc0>
+               <desc1>Partially implemented</desc1>
+               <desc2>Fully implemented</desc2>
+               <score>1</score>
+               <comment></comment>
+            </element>
+            <element name="rfc3671implementation" title="RFC 3671 implementation">
+               <desc>Does the LDAP server implement the RFC 3671?
+(Collective Attributes in LDAP)
+</desc>
+               <desc0>Not implemented</desc0>
+               <desc1>Partially implemented</desc1>
+               <desc2>Fully implemented</desc2>
+               <score>0</score>
+               <comment></comment>
+            </element>
+            <element name="rfc3672implementation" title="RFC 3672 implementation">
+               <desc>Does the LDAP server implement the RFC 3672?
+(Subentries in LDAP)</desc>
+               <desc0>Not implemented</desc0>
+               <desc1>Partially implemented</desc1>
+               <desc2>Fully implemented</desc2>
+               <score>0</score>
+               <comment></comment>
+            </element>
+            <element name="rfc3687implementation" title="RFC 3687 implementation">
+               <desc>Does the LDAP server implement the RFC 3687?
+(LDAP Component Matching Rules)</desc>
+               <desc0>Not implemented</desc0>
+               <desc1>Partially implemented</desc1>
+               <desc2>Fully implemented</desc2>
+               <score>0</score>
+               <comment></comment>
+            </element>
+            <element name="rfc3698implementation" title="RFC 3698 implementation">
+               <desc>Does the LDAP server implement the RFC 3698?
+(LDAP: Additional Matching Rules)</desc>
+               <desc0>Not implemented</desc0>
+               <desc1>Partially implemented</desc1>
+               <desc2>Fully implemented</desc2>
+               <score>1</score>
+               <comment></comment>
+            </element>
+            <element name="rfc3829implementation" title="RFC 3829 implementation">
+               <desc>Does the LDAP server implement the RFC 3829?
+(LDAP Authorization Identity Controls)</desc>
+               <desc0>Not implemented</desc0>
+               <desc1>Partially implemented</desc1>
+               <desc2>Fully implemented</desc2>
+               <score>2</score>
+               <comment></comment>
+            </element>
+            <element name="rfc3909implementation" title="RFC 3909 implementation">
+               <desc>Does the LDAP server implement the RFC 3909?
+(LDAP Cancel Operation)</desc>
+               <desc0>Not implemented</desc0>
+               <desc1>Partially implemented</desc1>
+               <desc2>Fully implemented</desc2>
+               <score>2</score>
+               <comment></comment>
+            </element>
+            <element name="rfc3928implementation" title="RFC 3928 implementation">
+               <desc>Does the LDAP server implement the RFC 3928?
+(LDAP Client Update Protocol)</desc>
+               <desc0>Not implemented</desc0>
+               <desc1>Partially implemented</desc1>
+               <desc2>Fully implemented</desc2>
+               <score>0</score>
+               <comment></comment>
+            </element>
+            <element name="rfc4370implementation" title="RFC 4370 implementation">
+               <desc>Does the LDAP server implement the RFC 4370?
+(LDAP Proxied Authorization Control)</desc>
+               <desc0>Not implemented</desc0>
+               <desc1>Partially implemented</desc1>
+               <desc2>Fully implemented</desc2>
+               <score>2</score>
+               <comment></comment>
+            </element>
+            <element name="rfc4522implementation" title="RFC 4522 implementation">
+               <desc>Does the LDAP server implement the RFC 4522?
+(LDAP: Binary Encoding Option)</desc>
+               <desc0>Not implemented</desc0>
+               <desc1>Partially implemented</desc1>
+               <desc2>Fully implemented</desc2>
+               <score>0</score>
+               <comment></comment>
+            </element>
+            <element name="rfc4523implementation" title="RFC 4523 implementation">
+               <desc>Does the LDAP server implement the RFC 4523?
+(LDAP: X.509 Certificate Schema)</desc>
+               <desc0>Not implemented</desc0>
+               <desc1>Partially implemented</desc1>
+               <desc2>Fully implemented</desc2>
+               <score>0</score>
+               <comment></comment>
+            </element>
+            <element name="rfc4524implementation" title="RFC 4524 implementation">
+               <desc>Does the LDAP server implement the RFC 4524?
+(LDAP: COSINE Schema)</desc>
+               <desc0>Not implemented</desc0>
+               <desc1>Partially implemented</desc1>
+               <desc2>Fully implemented</desc2>
+               <score>2</score>
+               <comment></comment>
+            </element>
+            <element name="rfc4525implementation" title="RFC 4525 implementation">
+               <desc>Does the LDAP server implement the RFC 4525?
+(LDAP: Modify-Increment Extension)</desc>
+               <desc0>Not implemented</desc0>
+               <desc1>Partially implemented</desc1>
+               <desc2>Fully implemented</desc2>
+               <score>2</score>
+               <comment></comment>
+            </element>
+            <element name="rfc4526implementation" title="RFC 4526 implementation">
+               <desc>Does the LDAP server implement the RFC 4526?
+(LDAP: Absolute True and False Filters)</desc>
+               <desc0>Not implemented</desc0>
+               <desc1>Partially implemented</desc1>
+               <desc2>Fully implemented</desc2>
+               <score>2</score>
+               <comment></comment>
+            </element>
+            <element name="rfc2247implementation" title="RFC 2247 implementation">
+               <desc>Does the LDAP server implement the RFC 2247?</desc>
+               <desc0>Not implemented</desc0>
+               <desc1>Partially implemented</desc1>
+               <desc2>Fully implemented</desc2>
+               <score>2</score>
+               <comment></comment>
+            </element>
+            <element name="rfc4527implementation" title="RFC 4527 implementation">
+               <desc>Does the LDAP server implement the RFC 4527?
+(LDAP: Read Entry Controls)</desc>
+               <desc0>Not implemented</desc0>
+               <desc1>Partially implemented</desc1>
+               <desc2>Fully implemented</desc2>
+               <score>2</score>
+               <comment></comment>
+            </element>
+            <element name="rfc4533implementation" title="RFC 4533 implementation">
+               <desc>Does the LDAP server implement the RFC 4533?
+(LDAP Content Sync Operation)</desc>
+               <desc0>Not implemented</desc0>
+               <desc1>Partially implemented</desc1>
+               <desc2>Fully implemented</desc2>
+               <score>0</score>
+               <comment></comment>
+            </element>
+            <element name="rfc4422implementation" title="RFC 4422 implementation">
+               <desc>Does the LDAP server implement the RFC 4422?
+	    (Simple Authentication and Security Layer (SASL))</desc>
+               <desc0>Not implemented</desc0>
+               <desc1>Partially implemented</desc1>
+               <desc2>Fully implemented</desc2>
+               <score>2</score>
+               <comment></comment>
+            </element>
+            <element name="rfc4752implementation" title="RFC 4752 implementation">
+               <desc>Does the LDAP server implement the RFC 4752?
+	    (The Kerberos V5 ("GSSAPI") Simple Authentication and Security Layer (SASL) Mechanism)</desc>
+               <desc0>Not implemented</desc0>
+               <desc1>Partially implemented</desc1>
+               <desc2>Fully implemented</desc2>
+               <score>1</score>
+               <comment></comment>
+            </element>
+            <element name="rfcBeheraimplementation" title="Draft Behera ldap password policy implementation">
+               <desc>Does the LDAP server implement the Draft behera?
+	    	    (Password policy for LDAP directories)</desc>
+               <desc0>Not implemented</desc0>
+               <desc1>Partially implemented</desc1>
+               <desc2>Fully implemented</desc2>
+               <score>1</score>
+               <comment></comment>
+            </element>
+         </element>
+      </element>
+      <element name="performance" title="Performance">
+         <desc></desc>
+         <comment></comment>
+         <element name="threadpooling" title="Thread pooling">
+            <desc></desc>
+            <desc0>No thread pooling support</desc0>
+            <desc1>Thread pooling is partial or doesn't work correctly</desc1>
+            <desc2>Thread pooling is performing</desc2>
+            <score>2</score>
+            <comment>Work Queue</comment>
+         </element>
+         <element name="proxycachesupport" title="Proxy cache support">
+            <desc></desc>
+            <desc0>No proxy cache  support</desc0>
+            <desc1>Proxy cache is partial or doesn't work correctly</desc1>
+            <desc2>Proxy cache is performing</desc2>
+            <score>2</score>
+            <comment>Entry cache</comment>
+         </element>
+      </element>
+      <element name="applicationserverintegration" title="Application Server integration">
+         <desc></desc>
+         <comment></comment>
+         <element name="websphereintegration" title="WebSphere integration">
+            <desc></desc>
+            <desc0>WebSphere is not supported</desc0>
+            <desc1>WebSphere support documented but not tested</desc1>
+            <desc2>Fully WebSphere support</desc2>
+            <score>2</score>
+            <comment></comment>
+         </element>
+         <element name="tomcatintegration" title="Tomcat integration">
+            <desc></desc>
+            <desc0>Tomcat is not supported</desc0>
+            <desc1>Tomcat support documented but not tested</desc1>
+            <desc2>Fully Tomcat support</desc2>
+            <score>2</score>
+            <comment></comment>
+         </element>
+         <element name="jbossintegration" title="JBoss integration">
+            <desc></desc>
+            <desc0>JBoss is not supported</desc0>
+            <desc1>JBoss support documented but not tested</desc1>
+            <desc2>Fully JBoss support</desc2>
+            <score>2</score>
+            <comment>http://blogs.sun.com/Ludo/entry/jboss_portal_with_opensso_and</comment>
+         </element>
+         <element name="weblogicintegration" title="Weblogic integration">
+            <desc></desc>
+            <desc0>Weblogic is not supported</desc0>
+            <desc1>Weblogic support documented but not tested</desc1>
+            <desc2>Fully Weblogic support</desc2>
+            <score>2</score>
+            <comment></comment>
+         </element>
+         <element name="geronimointegration" title="Geronimo integration">
+            <desc></desc>
+            <desc0>Geronimo is not supported</desc0>
+            <desc1>Geronimo support documented but not tested</desc1>
+            <desc2>Fully Geronimo support</desc2>
+            <score>2</score>
+            <comment></comment>
+         </element>
+         <element name="jonasintegration" title="JOnas integration">
+            <desc></desc>
+            <desc0>JOnas is not supported</desc0>
+            <desc1>JOnas support documented but not tested</desc1>
+            <desc2>Fully JOnas support</desc2>
+            <score>2</score>
+            <comment></comment>
+         </element>
+      </element>
+      <element name="architecture" title="Architecture">
+         <desc></desc>
+         <comment></comment>
+         <element name="loadbalancing" title="Load balancing / Failover">
+            <desc></desc>
+            <desc0>No Load balancing/Failover support</desc0>
+            <desc1>Load balancing/Failover is partial or doesn't work correctly</desc1>
+            <desc2>Load balancing/Failover is performing</desc2>
+            <score>2</score>
+            <comment></comment>
+         </element>
+         <element name="sslsupport" title="SSL Support">
+            <desc></desc>
+            <desc0>No SSL support</desc0>
+            <desc1>Partial SSL support</desc1>
+            <desc2>Fully SSL support and integration</desc2>
+            <score>2</score>
+            <comment></comment>
+         </element>
+         <element name="transactionmanagement" title="Transaction management">
+            <desc></desc>
+            <desc0>No transactional support</desc0>
+            <desc1>Partial transactional support</desc1>
+            <desc2>Full transactional support</desc2>
+            <score>0</score>
+            <comment></comment>
+         </element>
+         <element name="simpleauthentificationandsecuritylayer" title="Simple Authentification and Security Layer">
+            <desc></desc>
+            <desc0>No SASL support</desc0>
+            <desc1>Partial SASL support</desc1>
+            <desc2>Full SASL support</desc2>
+            <score>2</score>
+            <comment></comment>
+         </element>
+         <element name="databasesupport" title="Database support">
+            <desc></desc>
+            <desc0>No database support</desc0>
+            <desc1>Default database support</desc1>
+            <desc2>Database can be changed</desc2>
+            <score>1</score>
+            <comment></comment>
+         </element>
+      </element>
+      <element name="ossupport" title="OS Support">
+         <desc></desc>
+         <comment></comment>
+         <element name="linux-redhat" title="Linux-RedHat">
+            <desc></desc>
+            <desc0>The software is not packaged for RedHat</desc0>
+            <desc1>A package exists but it has important issues or it doesn't have official support</desc1>
+            <desc2>The software is packaged in the distribution</desc2>
+            <score>2</score>
+            <comment></comment>
+         </element>
+      </element>
+   </section>
+   <section name="functionalsection" title="Functional section">
+      <desc></desc>
+      <element name="administrationconsole" title="Administration console">
+         <desc></desc>
+         <desc0>No console of administration is available</desc0>
+         <desc1>Limited and incomplete administration console</desc1>
+         <desc2>Complete administration console</desc2>
+         <score>1</score>
+         <comment></comment>
+      </element>
+      <element name="scriptsadministration" title="Administration scripts">
+         <desc></desc>
+         <desc0>No available script to administrate the server</desc0>
+         <desc1>Some scripts are available (start, stop, update, import/export...)</desc1>
+         <desc2>Available language to write powerful scripts</desc2>
+         <score>1</score>
+         <comment></comment>
+      </element>
+      <element name="attributemanagement" title="Attributes management">
+         <desc>Some attributes required but not in RFC</desc>
+         <comment></comment>
+         <element name="passwordmanagement" title="Password management">
+            <desc>Pre-requisites of management password in HR</desc>
+            <comment></comment>
+            <element name="managementofencryptedpassword" title="Encrypted password management ">
+               <desc></desc>
+               <desc0>No encrypted password option</desc0>
+               <desc1>Encrypted password option is documented but not tested</desc1>
+               <desc2>Encrypted password option is available</desc2>
+               <score>2</score>
+               <comment></comment>
+            </element>
+            <element name="managementof11previouspassword" title="Password history">
+               <desc></desc>
+               <desc0>No Management of 11 previous passwords option</desc0>
+               <desc1>Management of 11 previous passwords option is documented but not tested</desc1>
+               <desc2>Management of 25 previous passwords is available</desc2>
+               <score>2</score>
+               <comment></comment>
+            </element>
+            <element name="wrongpasswordcounter" title="Wrong password counter">
+               <desc></desc>
+               <desc0>No Wrong password counter option</desc0>
+               <desc1>Wrong password counter option is documented but not tested</desc1>
+               <desc2>Wrong password counter option is available</desc2>
+               <score>2</score>
+               <comment></comment>
+            </element>
+            <element name="templatepasswordmanagement" title="Template password management">
+               <desc></desc>
+               <desc0>No configuration of the password template</desc0>
+               <desc1>Some rules are implemented</desc1>
+               <desc2>All rules are implemented</desc2>
+               <score>2</score>
+               <comment></comment>
+            </element>
+         </element>
+         <element name="accountmanagement" title="Account management">
+            <desc></desc>
+            <comment></comment>
+            <element name="lokedattribute" title="Locked attribute">
+               <desc></desc>
+               <desc0>No Locked attribute option</desc0>
+               <desc1>Locked attribute option is documented but not tested</desc1>
+               <desc2>Locked attribute option is available</desc2>
+               <score>2</score>
+               <comment></comment>
+            </element>
+            <element name="firstconnectionattribute1" title="First connection attribute">
+               <desc></desc>
+               <desc0>No First connection option</desc0>
+               <desc1>First connection option is documented but not tested</desc1>
+               <desc2>First connection option is available</desc2>
+               <score>2</score>
+               <comment></comment>
+            </element>
+         </element>
+      </element>
+      <element name="monitoringsystem" title="Monitoring system">
+         <desc></desc>
+         <desc0>Don't generate any monitoring file</desc0>
+         <desc1>Monitoring file generation doesn't work correctly</desc1>
+         <desc2>Many options are available to define monitoring</desc2>
+         <score>2</score>
+         <comment>JMX support</comment>
+      </element>
+      <element name="integrationdevelopmentenvironment" title="Integration Development Environment">
+         <desc></desc>
+         <desc0>No IDE supported</desc0>
+         <desc1>Limited IDE integration</desc1>
+         <desc2>An IDE is delivered with LDAP server</desc2>
+         <score>2</score>
+         <comment>Can be integrated with netbeans</comment>
+      </element>
+      <element name="integratedinassosolution" title="Integrated in a SSO solution">
+         <desc></desc>
+         <desc0>No Identity management solution available with this LDAP server</desc0>
+         <desc1>Possible integration with external Identity management solution</desc1>
+         <desc2>LDAP Server is delivered with an identity management solution</desc2>
+         <score>2</score>
+         <comment>OpenSSO-OpenSource Identity management</comment>
+      </element>
+      <element name="slicemodel" title="Slice model">
+         <desc>Slice model integration</desc>
+         <comment></comment>
+         <element name="portmanagement" title="Port management">
+            <desc></desc>
+            <desc0>No port management</desc0>
+            <desc1>Some ports are configurable</desc1>
+            <desc2>All ports are configurable</desc2>
+            <score>2</score>
+            <comment></comment>
+         </element>
+         <element name="partitionmanagement" title="Partition management">
+            <desc></desc>
+            <desc0>Standard installation available</desc0>
+            <desc1>Configurable installation available</desc1>
+            <desc2>Powerful installation and architecture available</desc2>
+            <score>2</score>
+            <comment></comment>
+         </element>
+      </element>
+   </section>
+</document>

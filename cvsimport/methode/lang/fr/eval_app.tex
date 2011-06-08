@@ -1,0 +1,722 @@
+%Copyright (c) 2004 2005 2006 Atos Origin
+%Permission is granted to copy, distribute and/or modify this
+%document
+%under the terms of the GNU Free Documentation License,
+%      Version 1.2
+%      or any later version published by the Free Software
+%      Foundation;
+%      with no Invariant Sections, no Front-Cover
+%      Texts, and no Back-Cover
+%      Texts.  A copy of the license is
+%      included in the section entitled "GNU
+%      Free Documentation License".
+%
+%$Id: eval_app.tex,v 1.3 2006/04/13 15:11:20 rsemeteys Exp $
+\subsection{Fiche d'évaluation de logiciel}
+Chaque version d'un logiciel est décrite dans une fiche d'évaluation. Cette fiche 
+comporte des informations plus détaillées que la fiche d'identité car elle s'attache
+à identifier, décrire et analyser en détail chaque évolution apportée par la nouvelle
+version.
+\subsubsection{Notation}
+Les critères sont notés de 0 à 2. Ces notes serviront, lors de l'étape de sélection,
+à comparer et filtrer les logiciels en fonction des pondérations précisées lors de
+l'étape de qualification des besoins de l'utilisateur.
+
+
+Les paragraphes suivants décrivent les critères utilisés pour chaque axe d'évaluation.
+Il est à noter que le même critère ou des critères similaires peuvent apparaître sur
+des axes différents.
+
+\subsubsection{Couverture fonctionnelle}
+La grille de couverture fonctionnelle à utiliser est déterminée par le type de logiciel 
+évalué et est issue du référentiel de l'étape « Décrire ». Consultez le site 
+\url{http://www.qsos.org} pour le détail des grilles fonctionnelles par type de logiciel.
+
+
+Pour chaque élément de la grille, la règle de notation est la suivante :
+
+
+\begin{figure}
+\center
+\begin{tabular}{|c|c|c|}
+\hline \TS{fonctionnalité} & \TS{note}\\
+\hline Non couverte & 0\\
+\hline Partiellement couverte & 1\\
+\hline Totalement couverte & 2\\
+\hline
+\end{tabular}
+\end{figure}
+
+
+Dans certains cas il peut être nécessaire d'utiliser plusieurs grilles de couverture
+fonctionnelle pour un même logiciel, lorsque ce dernier se classe dans plusieurs types
+du référentiel. Dans ce cas les critères de couverture sont répartis sur des axes 
+différents de manière à pouvoir évaluer de manière distincte les niveaux de couverture
+par rapport à chaque type de logiciel.
+
+
+
+\subsubsection{Risque de l'Utilisateur}
+
+Cet axe d'évaluation comprend des critères permettant d'estimer les risques encourus
+par un utilisateur lors de l'adoption d'un logiciel Open Source. La notation des critères se fait indépendamment de tout contexte utilisateur particulier (cet aspect est traité dans l'étape « Qualifier »).
+
+
+Les critères sont regroupés en cinq catégories :
+\begin{itemize}
+\item Pérennité intrinsèque
+\item Solution industrialisée 
+\item Intégration
+\item Adaptabilité technique 
+\item Stratégie 
+\end{itemize}
+
+
+Les tableaux suivants détaillent chacune de ces catégories, en précisant pour chaque
+critère la règle de notation.
+
+%%%%%%%%%%%%%%%%%%%%%% Pérennité intrinsèque 
+%%% Debut Maturité
+\begin{figure}
+\center
+\begin{tabular}{|p{2cm}|p{2cm}|p{2.8cm}|p{2.8cm}|p{2.8cm}|}
+\hline \multicolumn{2}{|c|}{\TS{Pérennité intrinsèque}} &
+\multicolumn{3}{|c|}{\TS{Note}}\\
+\cline{3-5} \multicolumn{2}{|c|}{} & \multicolumn{1}{|c|}{\TS{0}} &
+\multicolumn{1}{|c|}{\TS{1}} &\multicolumn{1}{|c|}{\TS{2}}\\
+\hline
+\TS{Maturité}&
+\TS{Âge}&
+Par exemple moins de 3 mois&
+Par exemple entre 3 mois et 3 ans &
+Par exemple plus de 3 ans \\
+\cline{2-5}&
+\TS{Stabilité}&
+Logiciel instable avec de nombreuses releases ou correctifs générant
+des effets de bords&
+Existence d'une version stabilisée pour la production mais ancienne.
+Difficulté à stabiliser la version en cours de développement&
+Logiciel stabilisé. Les releases intègrent toujours des corrections mais
+surtout des nouvelles fonctionnalités \\
+\cline{2-5}&
+\TS{Historique, problèmes connus}&
+Le logiciel connaît plusieurs problèmes qui peuvent être rédhibitoires&
+Aucun problème majeur connu ou historique de mauvaise gestion des situations de
+crise&
+Historique de bonne gestion des situations de crise\\
+\cline{2-5}&
+\TS{Probabilité de FORK, provenance d'un FORK}&
+Le logiciel a beaucoup de chances d'être forké à l'avenir&
+Le logiciel provient d'un fork mais a peu de chances d'être forké à l'avenir&
+Le logiciel a très peu de chance d'être "forké". Il ne provient pas d'un fork
+non plus.\\
+\hline
+\end{tabular}
+\end{figure}
+%%% Fin Maturité
+
+%%% Debut Adoption 
+\begin{figure}
+\center
+\begin{tabular}{|p{2cm}|p{2cm}|p{2.8cm}|p{2.8cm}|p{2.8cm}|}
+\hline \multicolumn{2}{|c|}{\TS{Pérennité intrinsèque}} &
+\multicolumn{3}{|c|}{\TS{Note}}\\
+\cline{3-5} \multicolumn{2}{|c|}{} & \multicolumn{1}{|c|}{\TS{0}} &
+\multicolumn{1}{|c|}{\TS{1}} &\multicolumn{1}{|c|}{\TS{2}}\\
+
+\hline
+\TS{Adoption}&
+\TS{Popularité (à rapporter à la cible visée : grand public, niche, ...)}&
+Très peu d'utilisateurs&
+Utilisation décelable sur Internet (sourceforge, freshmeat, google, ...)&
+Nombreux utilisateurs, nombreuses références\\
+\cline{2-5}&
+\TS{Références}&
+Aucune&
+Quelques références sur des applications non critiques surtout&
+Souvent mis en oeuvre, dans des applications critiques\\
+\cline{2-5}&
+\TS{Co\-mmu\-nau\-té des contributeurs}&
+Pas de communauté ou communauté sans réelle activité (forum, mailing list,...)&
+Communauté existante avec une activité notable&
+Forte communauté : grosse activité sur les forums, nombreuses contributions,
+nombreux articles\\
+\cline{2-5}&
+\TS{Publications}&
+Aucun livre traitant directement du logiciel n'existe sur le marché&
+Moins de 5 livres traitant du logiciel sont disponibles&
+Plus de 5 livres traitant du logiciel sont disponibles dans plusieurs langues\\
+\hline
+\end{tabular}
+\end{figure}
+%%% Fin Adoption 
+
+%%% Debut direction des développements 
+\begin{figure}
+\center
+\begin{tabular}{|p{2cm}|p{2cm}|p{2.8cm}|p{2.8cm}|p{2.8cm}|}
+\hline \multicolumn{2}{|c|}{\TS{Pérennité intrinsèque}} &
+\multicolumn{3}{|c|}{\TS{Note}}\\
+\cline{3-5} \multicolumn{2}{|c|}{} & \multicolumn{1}{|c|}{\TS{0}} &
+\multicolumn{1}{|c|}{\TS{1}} &\multicolumn{1}{|c|}{\TS{2}}\\
+\hline
+\TS{Direction des développements}&
+\TS{équipe dirigeante}&
+1 ou 2 personnes pas clairement identifiées&
+Entre 2 ou 5, indépendants&
+Plus de 5\\
+\cline{2-5}&
+\TS{Mode de direction}&
+Dictature totale&
+Despote éclairé&
+Collège d'architectes avec tête identifiée (type ASF ou autre)\\
+\hline
+\end{tabular}
+\end{figure}
+%%% Fin direction des développements 
+
+%%% Debut Activité 
+\begin{figure}
+\center
+\begin{tabular}{|p{2cm}|p{2cm}|p{2.8cm}|p{2.8cm}|p{2.8cm}|}
+\hline \multicolumn{2}{|c|}{\TS{Pérennité intrinsèque}} &
+\multicolumn{3}{|c|}{\TS{Note}}\\
+\cline{3-5} \multicolumn{2}{|c|}{} & \multicolumn{1}{|c|}{\TS{0}} &
+\multicolumn{1}{|c|}{\TS{1}} &\multicolumn{1}{|c|}{\TS{2}}\\
+\hline
+\TS{Activité}&
+\TS{Nombre de développeurs, identification, turnover}&
+Développeurs < 3, pas clairement identifiés&
+Développeurs entre 4 et 7 ou plus nombreux mais pas clairement identifiés ou avec un
+turnover important&
+Plus de 7 développeurs clairement identifiés, peu de turnover\\
+\cline{2-5}&
+\TS{Activité autour des bugs}&
+Faible réactivité dans le forum ou sur la mailing list, aucune information sur ce sujet
+dans les releases notes&
+Activité décelable mais sans processus clairement expliqué, temps de réaction/résolution
+longs&
+Fore réactivité avec identification de l'état et de l'affection des corrections\\
+\cline{2-5}&
+\TS{Activité autour des fonctionnalités}&
+Peu ou pas de nouvelles fonctionnalités&
+Évolution du produit sur démarche de l'équipe coeur ou sur demande de la part des
+utilisateurs sans démarche clairement exposée&
+Outils de gestion des demandes de nouvelles fonctionnalités, interaction forte avec la
+roadmap\\
+\cline{2-5}&
+\TS{Activité sur les releases}&
+Très peu d'activité que cela soit au niveau des releases de production ou de
+développement&
+Activité existante aussi bien sur les releases de production que de développement. Mises à jours fréquentes des versions mineures (corrections de bugs)&
+Activité importante avec des releases mineures fréquentes (corrections de bugs) et des
+releases majeures planifiées et respectant la roadmap\\
+\hline
+\end{tabular}
+\end{figure}
+%%% Fin Activité 
+
+
+%%% Debut indépendance des développements 
+\begin{figure}
+\center
+\begin{tabular}{|p{2cm}|p{2cm}|p{2.8cm}|p{2.8cm}|p{2.8cm}|}
+\hline \multicolumn{2}{|c|}{\TS{Pérennité intrinsèque}} &
+\multicolumn{3}{|c|}{\TS{Note}}\\
+\cline{3-5} \multicolumn{2}{|c|}{} & \multicolumn{1}{|c|}{\TS{0}} &
+\multicolumn{1}{|c|}{\TS{1}} &\multicolumn{1}{|c|}{\TS{2}}\\
+\hline
+\TS{Indépen\-dance des développements}&
+\TS{Indépen\-dance des développements}&
+Développements à 100\% assurés par des personnes payées par une société&
+60\% maximum&
+20\% maximum\\
+\hline
+\end{tabular}
+\end{figure}
+%%% Fin indépendance des développements
+% Le clearpage impose a Latex de poser les objets flotant qu'il a en memoire
+% ! LaTeX Error: Too many unprocessed floats.
+% TODO : le must serait de ne pas utiliser de float
+\clearpage
+%%%%%%%%%%%%%%%%%%%%%% Solution industrialisée
+%%% Debut Services 
+\begin{figure}
+\center
+\begin{tabular}{|p{2cm}|p{2cm}|p{2.8cm}|p{2.8cm}|p{2.8cm}|}
+\hline \multicolumn{2}{|c|}{\TS{Solution industrialisée}} &
+\multicolumn{3}{|c|}{\TS{Note}}\\
+\cline{3-5} \multicolumn{2}{|c|}{} & \multicolumn{1}{|c|}{\TS{0}} &
+\multicolumn{1}{|c|}{\TS{1}} &\multicolumn{1}{|c|}{\TS{2}}\\
+\hline
+\TS{Services (quel que soit le fournisseur)}&
+\TS{Formation}&
+Aucune offre de formation sur le logiciel&
+Offre existante mais limitée géographiquement, au niveau de la langue ou fournie par un seul
+prestataire&
+Offres étendues, offertes par plusieurs prestataires, dans plusieurs langues et décomposées en
+modules de niveaux graduels\\
+\cline{2-5}&
+\TS{Support}&
+Aucune offre de support hormis les forums et mailing lists&
+Offre existante mais limitée à un seul prestataire sans engagement fort sur les délais
+de résolution d'incident&
+Offre proposée par plusieurs prestataires avec fort engagement\\
+\cline{2-5}&
+\TS{Conseil}&
+Aucun service proposé&
+Service proposé par un seul prestataire, limité au niveau de la langue et de la géographie&
+Services offerts par différents prestataires dans plusieurs langues\\
+\hline
+\end{tabular}
+\end{figure}
+%%% Fin Services 
+
+%%% Debut Documentation 
+\begin{figure}
+\center
+\begin{tabular}{|p{2cm}|p{2cm}|p{2.8cm}|p{2.8cm}|p{2.8cm}|}
+\hline \multicolumn{2}{|c|}{\TS{Solution industrialisée}} &
+\multicolumn{3}{|c|}\TS{{Note}}\\
+\cline{3-5} \multicolumn{2}{|c|}{} & \multicolumn{1}{|c|}{\TS{0}} &
+\multicolumn{1}{|c|}{\TS{1}} &\multicolumn{1}{|c|}{\TS{2}}\\
+\hline
+\TS{Documenta\-tion}&
+\TS{Documenta\-tion}&
+Documentation utilisateur inexistante&
+Documentation existante mais décalée avec le temps, limitée au niveau de la langue ou peu
+détaillée&
+Documentation toujours à jour, traduite et éventuellement adaptée au type d'utilisateur
+(utilisateur final, administrateur, ...)\\
+\hline
+\end{tabular}
+\end{figure}
+%%% Fin Documentation 
+
+%%% Debut méthode qualité 
+\begin{figure}
+\center
+\begin{tabular}{|p{2cm}|p{2cm}|p{2.8cm}|p{2.8cm}|p{2.8cm}|}
+\hline \multicolumn{2}{|c|}{\TS{Solution industrialisée}} &
+\multicolumn{3}{|c|}{\TS{Note}}\\
+\cline{3-5} \multicolumn{2}{|c|}{} & \multicolumn{1}{|c|}{\TS{0}} &
+\multicolumn{1}{|c|}{\TS{1}} &\multicolumn{1}{|c|}{\TS{2}}\\
+
+\hline
+\TS{Méthode qualité}&
+\TS{Assurance qualité}&
+Pas de processus d'assurance qualité autour du logiciel&
+Existence d'une démarche qualité mais peu formalisée et pas outillée&
+Processus de test automatique intégré au cycle de vie du code avec publication des résultats\\
+\cline{2-5}&
+\TS{Outillage}&
+Pas d'outil de gestion de bug ou de gestion des demande de nouvelle fonctionnalités.&
+Outils fournis en standard (exemple : sourceforge) mais peu utilisés.&
+Outils existants et utilisation très active avec basée sur l'affectation de tâches et
+le suivi de leur avancement\\
+\hline
+\end{tabular}
+\end{figure}
+%%% Fin méthode qualité 
+
+%%% Debut Packaging - part 1
+\begin{figure}
+\center
+\begin{tabular}{|p{2cm}|p{2cm}|p{2.8cm}|p{2.8cm}|p{2.8cm}|}
+\hline \multicolumn{2}{|c|}{\TS{Solution industrialisée}} &
+\multicolumn{3}{|c|}{\TS{Note}}\\
+\cline{3-5} \multicolumn{2}{|c|}{} & \multicolumn{1}{|c|}{\TS{0}} &
+\multicolumn{1}{|c|}{\TS{1}} &\multicolumn{1}{|c|}{\TS{2}}\\
+\hline
+\TS{Packaging}&
+\TS{Source}&
+Le logiciel requiert beacoup d'efforts pour être installé depuis le code source&
+L'installation depuis le code source est limitée et fait l'objet de restrictions
+très strictes (OS, architectures, librairies, ...)&
+Installation facile depuis le code source\\
+\cline{2-5}&
+\TS{Debian}&
+Le logiciel n'est pas packagé pour Debian&
+Il existe un paquet Debian mais avec des problèmes importants ou 
+non officiellement supporté&
+Le logiciel est packagé dans la distribution\\
+\cline{2-5}&
+\TS{FreeBSD}&
+Le logiciel n'est pas packagé pour FreeBSD&
+Il existe un portage mais avec des problèmes importants ou 
+non officiellement supporté&
+Un portage officiel existe dans FreeBSD\\
+\cline{2-5}&
+\TS{HP-UX}&
+Le logiciel n'est pas packagé pour HP-UX&
+Il existe un paquet mais avec des problèmes importants ou 
+non officiellement supporté&
+Un paquet testé est fourni pour HP-UX\\
+\cline{2-5}&
+\TS{MacOSX}&
+Le logiciel n'est pas packagé pour MacOSX&
+Il existe un paquet mais avec des problèmes importants ou 
+non officiellement supporté&
+Le logiciel est packagé dans la distribution\\
+\cline{2-5}&
+\TS{Mandriva}&
+Le logiciel n'est pas packagé pour Mandriva&
+Il existe un paquet mais avec des problèmes importants ou 
+non officiellement supporté&
+Le logiciel est packagé dans la distribution\\
+\hline
+\end{tabular}
+\end{figure}
+%%% Fin Packaging - part 1
+
+%%% Debut Packaging - part 2 
+\begin{figure}
+\center
+\begin{tabular}{|p{2cm}|p{2cm}|p{2.8cm}|p{2.8cm}|p{2.8cm}|}
+\hline \multicolumn{2}{|c|}{\TS{Solution industrialisée}} &
+\multicolumn{3}{|c|}{\TS{Note}}\\
+\cline{3-5} \multicolumn{2}{|c|}{} & \multicolumn{1}{|c|}{\TS{0}} &
+\multicolumn{1}{|c|}{\TS{1}} &\multicolumn{1}{|c|}{\TS{2}}\\
+\hline
+\TS{Packaging}&
+\TS{NetBSD}&
+Le logiciel n'est pas packagé pour NetBSD&
+Il existe un portage mais avec des problèmes importants ou 
+non officiellement supporté&
+Un portage officiel existe dans NetBSD\\
+\cline{2-5}&
+\TS{OpenBSD}&
+Le logiciel n'est pas packagé pour OpenBSD&
+Il existe un portage mais avec des problèmes importants ou 
+non officiellement supporté&
+Un portage officiel existe dans OpenBSD\\
+\cline{2-5}&
+\TS{RedHat/Fedora}&
+Le logiciel n'est pas packagé pour RedHat/Fedora&
+Il existe un paquet mais avec des problèmes importants ou 
+non officiellement supporté&
+Le logiciel est packagé dans la distribution\\
+\cline{2-5}&
+\TS{Solaris}&
+Le logiciel n'est pas packagé pour Solaris&
+Il existe un paquet mais avec des problèmes importants ou 
+non officiellement supporté (ex : SunFreeware.com)&
+Le logiciel est supporté par Sun pour Solaris\\
+\cline{2-5}&
+\TS{SuSE}&
+Le logiciel n'est pas packagé pour SuSE&
+Il existe un paquet mais avec des problèmes importants ou 
+non officiellement supporté&
+Le logiciel est packagé dans la distribution\\
+\cline{2-5}&
+\TS{Windows}&
+Le logiciel ne s'installe pas sur Windows&
+Il existe un paquet mais limité, avec des problèmes importants
+ou ne couvrant que ceryaines versions de Windows (ex : Windows2000 et WindowsXP)&
+Windows est complètement supporté et un package est disponible\\
+\hline
+\end{tabular}
+\end{figure}
+%%% Fin Packaging - part 2
+
+%%% Debut exploitablitié 
+\begin{figure}
+\center
+\begin{tabular}{|p{2cm}|p{2cm}|p{2.8cm}|p{2.8cm}|p{2.8cm}|}
+\hline \multicolumn{2}{|c|}{\TS{Solution industrialisée}} &
+\multicolumn{3}{|c|}{\TS{Note}}\\
+\cline{3-5} \multicolumn{2}{|c|}{} & \multicolumn{1}{|c|}{\TS{0}} &
+\multicolumn{1}{|c|}{\TS{1}} &\multicolumn{1}{|c|}{\TS{2}}\\
+
+\hline
+\TS{Exploi\-ta\-bi\-li\-té}&
+\TS{Facilité d'utilisation, ergonomie}&
+Utilisation difficile nécessitant une connaissance approfondie du fonctionnement du logiciel.
+Ergonomie austère et très technique&
+Utilisation facilité par l'existence d'aide à l'utilisateur. Présence d'IHM.&
+Logiciel très orienté utilisateur : aide (contextuelle), IHM attirante et éventuellement
+gestion de skins\\
+\cline{2-5}&
+\TS{Admini\-stra\-tion / Supervision}&
+Absence de fonctionnalités d'administration. Pas d'aspect supervision.&
+Des fonctionnalités d'administration sont proposées mais demandent à être améliorées ou
+complétées.&
+Intégration possible avec d'autres outils (via SNMP, ...)\\
+\hline
+\end{tabular}
+\end{figure}
+%%% Fin exploitabilité 
+
+%%%%%%%%%%%%%%%%%%%%%% Adaptablitié technique 
+%%% Debut Modularité
+\begin{figure}
+\center
+\begin{tabular}{|p{2cm}|p{2cm}|p{2.8cm}|p{2.8cm}|p{2.8cm}|}
+\hline \multicolumn{2}{|c|}{\TS{Adaptabilité technique}} &
+\multicolumn{3}{|c|}{\TS{Note}}\\
+\cline{3-5} \multicolumn{2}{|c|}{} & \multicolumn{1}{|c|}{\TS{0}} &
+\multicolumn{1}{|c|}{\TS{1}} &\multicolumn{1}{|c|}{\TS{2}}\\
+
+\hline
+\TS{Modularité}&
+\TS{Modularité}&
+Logiciel monolithique&
+Existence de modules de haut niveau permettant un premier niveau d'adaptation du logiciel&
+Conception modulaire, permettant d'adapter le logiciel aux besoins, par choix de certains
+modules ou développement de nouveaux\\
+\hline
+\end{tabular}
+\end{figure}
+%%% Fin Modularité
+%%% Debut Travaux dérivés
+\begin{figure}
+\center
+\begin{tabular}{|p{2cm}|p{2cm}|p{2.8cm}|p{2.8cm}|p{2.8cm}|}
+\hline \multicolumn{2}{|c|}{\TS{Adaptabilité technique}} &
+\multicolumn{3}{|c|}{\TS{Note}}\\
+\cline{3-5} \multicolumn{2}{|c|}{} & \multicolumn{1}{|c|}{\TS{0}} &
+\multicolumn{1}{|c|}{\TS{1}} &\multicolumn{1}{|c|}{\TS{2}}\\
+\hline
+\TS{Travaux dérivés}&
+\TS{Facilité technique de modification du code existant}&
+Tout à la main&
+Conception modulaire, permettant d'adapter le logiciel aux besoins, par choix de certains
+modules ou développement de nouveaux&
+Recompilation possible, outillée (ex: make, ANT) et documentée\\
+\cline{2-5}&
+\TS{Facilité d'extension du code}&
+Mode ajout + recompilation&
+Zones prévues pour extension mais recompilation&
+Principe de plug-in, zones d'extension prévues et recompilation non nécessaire\\
+\hline
+\end{tabular}
+\end{figure}
+%%% Fin travaux dérivés
+
+
+%%%%%%%%%%%%%%%%%%%%%% Stratégie 
+%%% Debut Licence 
+\begin{figure}
+\center
+\begin{tabular}{|p{2cm}|p{2cm}|p{2.8cm}|p{2.8cm}|p{2.8cm}|}
+\hline \multicolumn{2}{|c|}{\TS{Stratégie}} & \multicolumn{3}{|c|}{\TS{Note}}\\
+\cline{3-5} \multicolumn{2}{|c|}{} & \multicolumn{1}{|c|}{\TS{0}} &
+\multicolumn{1}{|c|}{\TS{1}} &\multicolumn{1}{|c|}{\TS{2}}\\
+\hline
+\TS{Licence}&
+\TS{Permissivité (NB : à pondérer uniquement si l'utilisateur désire un jour ne pas redistribuer le code)}&
+Licence très stricte type GPL&
+Licence moyennement permissive située entre les deux extrêmes (GPL et BSD), existence
+de modes de licences multiples en fonction du type d'utilisateurs (particulier,
+entreprise, ...) ou de son activité&
+Licence très permissive type licence BSD ou Apache licence\\
+\cline{2-5}&
+\TS{Protection contre des forks commerciaux}&
+Licence très permissive type licence BSD ou Apache licence&
+Licence moyennement permissive
+située entre les deux extrêmes (GPL et BSD), existence de modes de licences multiples
+en fonction du type d'utilisateurs (particulier, entreprise, ...) ou de son activité&
+Licence très stricte type GPL\\
+\hline
+\end{tabular}
+\end{figure}
+%%% Fin Licence 
+
+%%% Debut détenteur des droits 
+\begin{figure}
+\center
+\begin{tabular}{|p{2cm}|p{2cm}|p{2.8cm}|p{2.8cm}|p{2.8cm}|}
+\hline \multicolumn{2}{|c|}{\TS{Stratégie}} & \multicolumn{3}{|c|}{\TS{Note}}\\
+\cline{3-5} \multicolumn{2}{|c|}{} & \multicolumn{1}{|c|}{\TS{0}} &
+\multicolumn{1}{|c|}{\TS{1}} &\multicolumn{1}{|c|}{\TS{2}}\\
+\hline
+\TS{Détenteur des droits}&
+\TS{Détenteur des droits}&
+Les droits sont détenus par des personnes individuelles et peu nombreuses, cela
+facilite le changement du mode de licence&
+Les droits sont détenus par de nombreuses personnes et couvrent de manière homogène
+le code, rendant plus difficile le changement de mode de licence&
+Les droits sont détenus par une entité légale en qui la communauté a confiance
+(type FSF ou ASF)\\
+\hline
+\end{tabular}
+\end{figure}
+%%% Fin détenteur des droits 
+%%% Debut modification du code 
+\begin{figure}
+\center
+\begin{tabular}{|p{2cm}|p{2cm}|p{2.8cm}|p{2.8cm}|p{2.8cm}|}
+\hline \multicolumn{2}{|c|}{\TS{Stratégie}} & \multicolumn{3}{|c|}{\TS{Note}}\\
+\cline{3-5} \multicolumn{2}{|c|}{} & \multicolumn{1}{|c|}{\TS{0}} &
+\multicolumn{1}{|c|}{\TS{1}} &\multicolumn{1}{|c|}{\TS{2}}\\
+\hline
+\TS{Modifica\-tion du code}&
+\TS{Modification du code}&
+Pas de possibilité pratique de proposer une modification de code&
+Modifications du code outillée (type CVS, SVN) mais pas véritablement utilisée
+pour faire évoluer le logiciel&
+Le processus de modification du code est clairement défini et respecté. Basé sur
+l'attribution de rôles.\\
+\hline
+\end{tabular}
+\end{figure}
+%%% Fin modification du code 
+%%% Debut roadmap 
+\begin{figure}
+\center
+\begin{tabular}{|p{2cm}|p{2cm}|p{2.8cm}|p{2.8cm}|p{2.8cm}|}
+\hline \multicolumn{2}{|c|}{\TS{Stratégie}} & \multicolumn{3}{|c|}{\TS{Note}}\\
+\cline{3-5} \multicolumn{2}{|c|}{} & \multicolumn{1}{|c|}{\TS{0}} &
+\multicolumn{1}{|c|}{\TS{1}} &\multicolumn{1}{|c|}{\TS{2}}\\
+\hline
+\TS{Roadmap}&
+\TS{Roadmap}&
+Aucune roadmap publiée.&
+Existence d'une roadmap sans planning prévisionnel ou à très court terme&
+Roadmap versionnée, intégrant un planning prévisionnel et mesure des écarts\\
+\hline
+\end{tabular}
+\end{figure}
+%%% Fin Roadmap
+%%% Debut Sponsor 
+\begin{figure}
+\center
+\begin{tabular}{|p{2cm}|p{2cm}|p{2.8cm}|p{2.8cm}|p{2.8cm}|}
+\hline \multicolumn{2}{|c|}{\TS{Stratégie}} & \multicolumn{3}{|c|}{\TS{Note}}\\
+\cline{3-5} \multicolumn{2}{|c|}{} & \multicolumn{1}{|c|}{\TS{0}} &
+\multicolumn{1}{|c|}{\TS{1}} &\multicolumn{1}{|c|}{\TS{2}}\\
+\hline
+\TS{Sponsor}&
+\TS{Sponsor}&
+Le projet ne dispose d'aucun sponsor, l'équipe coeur n'est pas payée&
+Le logiciel possède un sponsor unique et identifié risquant de faire le jeu de sa stratégie&
+Le logiciel est sponsorisé par l'industrie\\
+\hline
+\end{tabular}
+\end{figure}
+%%% Fin Sponsor 
+%%% Debut indépendance stratégique 
+\begin{figure}
+\center
+\begin{tabular}{|p{2cm}|p{2cm}|p{2.8cm}|p{2.8cm}|p{2.8cm}|}
+\hline \multicolumn{2}{|c|}{\TS{Stratégie}} & \multicolumn{3}{|c|}{\TS{Note}}\\
+\cline{3-5} \multicolumn{2}{|c|}{} & \multicolumn{1}{|c|}{\TS{0}} &
+\multicolumn{1}{|c|}{\TS{1}} &\multicolumn{1}{|c|}{\TS{2}}\\
+\hline
+\TS{Indépen\-dance stratégique}&
+\TS{Indépen\-dance stratégique}&
+Pas de vision stratégique décelable ou forte dépendance vis à vis d'un acteur ou
+sponsor unique&
+Vision stratégique partagée avec plusieurs autres projets Open Source mais sans
+engagement fort de la part des détenteurs des droits&
+Forte indépendance de l'équipe coeur ou de l'entité légale détentrice des droits. Forte présence au niveau des instances de normalisation\\
+\hline
+\end{tabular}
+\end{figure}
+%%% Fin Indépendance stratégique 
+
+\clearpage
+
+\subsubsection{Risque du Prestataire de services}
+Cet axe d'évaluation comprend des critères permettant d'estimer les risques encourus
+par un prestataire en matière de services autour d'un logiciel Open Source (expertise, intégration, développement, support, ...). C'est notamment sur cette base que le niveau d'engagement du prestataire vis à vis de ses clients peut être déterminé.
+
+
+%%%%%%%%%%%%%%%%%%%%%% Support 
+%%% Debut Maintenabilité 
+\begin{figure}
+\center
+\begin{tabular}{|p{2cm}|p{2cm}|p{2.8cm}|p{2.8cm}|p{2.8cm}|}
+\hline \multicolumn{2}{|c|}{\TS{Stratégie}} & \multicolumn{3}{|c|}{\TS{Note}}\\
+\cline{3-5} \multicolumn{2}{|c|}{} & \multicolumn{1}{|c|}{\TS{0}} &
+\multicolumn{1}{|c|}{\TS{1}} &\multicolumn{1}{|c|}{\TS{2}}\\
+\hline
+\TS{Maintena\-bi\-li\-té}&
+\TS{Qualité code}&
+Code peu lisible ou de mauvaise qualité. Pas de cohérence au niveau des styles de codage.&
+Code lisible mais pas commenté de manière détaillée.&
+Code très lisible, commenté et mettant en oeuvre des design patterns classiques. Politique
+de coding cohérente et respectée.\\
+\cline{2-5}&
+\TS{Dispersion technologique}&
+Utilisations de nombreux langages différents&
+Utilisation d'un langage principale avec certains modules codés dans d'autres langages
+pour des besoins précis et limités&
+Langage unique\\
+\cline{2-5}&
+\TS{Complexité intrinsèque}&
+Forte complexité du code nécessitant un haut niveau de maîtrise pour pouvoir effectuer
+des modifications sans générer d'effet de bord&
+Code peu complexe mais nécessitant une bonne maîtrise du langage et des principes
+d'algorithmique&
+Code simple et facile à modifier\\
+\cline{2-5}&
+\TS{Docu\-men\-ta\-tion technique}&
+Documentation inexistante (guide de développement, architecture, ...)&
+Documentation existante mais pas complète ou pas à jour et n'intégrant pas de vision
+architecturale&
+Documentation détaillée et à jour, intégrant les aspects conception/architecture et
+coding style\\
+\hline
+\end{tabular}
+\end{figure}
+%%% Fin Maintenabilité 
+%%% Debut Maîtrise du code 
+\begin{figure}
+\center
+\begin{tabular}{|p{2cm}|p{2cm}|p{2.8cm}|p{2.8cm}|p{2.8cm}|}
+\hline \multicolumn{2}{|c|}{\TS{Stratégie}} & \multicolumn{3}{|c|}{\TS{Note}}\\
+\cline{3-5} \multicolumn{2}{|c|}{} & \multicolumn{1}{|c|}{\TS{0}} &
+\multicolumn{1}{|c|}{\TS{1}} &\multicolumn{1}{|c|}{\TS{2}}\\
+\hline
+\TS{Maîtrise du code}&
+\TS{Directe}&
+Aucune maîtrise directe du code en interne&
+Maîtrise directe du code mais limitée soit au niveau d'une seule personne soit au niveau
+de la couverture du code&
+Existence de plusieurs ressources internes possédant une maîtrise du code\\
+\cline{2-5}&
+\TS{Indirecte}&
+Aucune maîtrise indirecte du code&
+Maîtrise indirecte via un partenariat&
+Partenariat fort avec le détenteur des droits et/ou l'équipe coeur\\
+\hline
+\end{tabular}
+\end{figure}
+%%% Fin Maîtrise du code
+\clearpage
+
+
+\subsubsection{Granularité de la notation}
+Comme indiqué plus haut, il est possible d'appliquer le processus global de manière
+itérative. Au niveau de l'évaluation, cela se traduit par la possibilité de noter les
+critères en trois fois, en calquant le niveau de détail sur celui de l'évaluation
+réalisée. Ainsi il est possible d'évaluer :
+
+\begin{itemize}
+\item Au niveau des cinq catégories principales
+\item Au niveau des sous catégories de chaque catégorie
+\item Au niveau de chaque critère 
+\end{itemize}
+
+Cela permet ainsi de ne pas bloquer le déroulement du processus général lorsque l'on
+ne dispose pas de l'intégralité des notes.
+
+
+Une fois tous les critères évalués, les notes des deux premiers niveaux sont alors
+calculées par moyenne pondérée des notes attribuées ou calculées aux niveaux précédents.
+
+
+\subsection{Outil O3S}
+L'outil O3S permet de saisir les données brutes et d'évaluer le logiciel selon les
+trois axes. Il offre également la possibilité de générer les fiches d'identités des
+logiciels évalués.
+
+
+La granularité de l'évaluation est gérée comme suit : tant que tous les critères
+composant une sous catégorie ne sont pas notés, sa note est laissée à l'appréciation
+de l'utilisateur. Dès que l'intégralité des critères est évaluée, la note de la sous
+catégorie est déduite automatiquement de celles des critères. Il en va de même pour 
+les catégories et les sous catégories.
+
+

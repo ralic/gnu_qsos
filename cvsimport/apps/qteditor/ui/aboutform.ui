@@ -1,0 +1,96 @@
+<!DOCTYPE UI><UI version="3.3" stdsetdef="1">
+<class>Aboutform</class>
+<widget class="QDialog">
+    <property name="name">
+        <cstring>Aboutform</cstring>
+    </property>
+    <property name="geometry">
+        <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>400</width>
+            <height>220</height>
+        </rect>
+    </property>
+    <property name="sizePolicy">
+        <sizepolicy>
+            <hsizetype>2</hsizetype>
+            <vsizetype>2</vsizetype>
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+        </sizepolicy>
+    </property>
+    <property name="minimumSize">
+        <size>
+            <width>400</width>
+            <height>220</height>
+        </size>
+    </property>
+    <property name="maximumSize">
+        <size>
+            <width>400</width>
+            <height>220</height>
+        </size>
+    </property>
+    <property name="baseSize">
+        <size>
+            <width>400</width>
+            <height>200</height>
+        </size>
+    </property>
+    <property name="caption">
+        <string>About QSOS Qt Editor</string>
+    </property>
+    <property name="sizeGripEnabled">
+        <bool>false</bool>
+    </property>
+    <widget class="QPushButton">
+        <property name="name">
+            <cstring>pushButton1</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>200</x>
+                <y>180</y>
+                <width>98</width>
+                <height>25</height>
+            </rect>
+        </property>
+        <property name="text">
+            <string>Ok</string>
+        </property>
+    </widget>
+    <widget class="QLabel">
+        <property name="name">
+            <cstring>textLabel1</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>50</x>
+                <y>10</y>
+                <width>290</width>
+                <height>170</height>
+            </rect>
+        </property>
+        <property name="text">
+            <string>&lt;h1&gt;About QSOS Editor&lt;/h1&gt;
+&lt;p&gt;Authors :
+&lt;ul&gt;
+&lt;li&gt;Gonéri Le Bouder (Atos Origin)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/p&gt;
+&lt;p&gt;Web site : &lt;b&gt;http://www.qsos.org&lt;/b&gt;
+&lt;/p&gt;</string>
+        </property>
+    </widget>
+</widget>
+<connections>
+    <connection>
+        <sender>pushButton1</sender>
+        <signal>clicked()</signal>
+        <receiver>Aboutform</receiver>
+        <slot>close()</slot>
+    </connection>
+</connections>
+<layoutdefaults spacing="6" margin="11"/>
+</UI>

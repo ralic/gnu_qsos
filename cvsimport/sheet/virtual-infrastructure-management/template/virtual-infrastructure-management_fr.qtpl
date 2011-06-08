@@ -1,0 +1,361 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document>
+   <header>
+      <authors>
+    </authors>
+      <dates>
+         <creation></creation>
+         <validation></validation>
+      </dates>
+      <language>fr</language>
+      <appname></appname>
+      <release></release>
+      <licenseid></licenseid>
+      <licensedesc></licensedesc>
+      <url></url>
+      <desc></desc>
+      <demourl></demourl>
+      <qsosformat>1.6</qsosformat>
+      <qsosappfamily>Gestion infrastructure virtuelle</qsosappfamily>
+      <qsosspecificformat>1.0</qsosspecificformat>
+      <qsosappname></qsosappname>
+   </header>
+   <include section="Presto_generic"></include>
+   <section name="objetsgeres" title="Objets gérés">
+      <desc>Elements d'infrastructure gérés par la solution</desc>
+      <element name="imagesvirtuelles" title="Images virtuelles">
+         <desc>Gestion standard des images virtuelles</desc>
+         <comment></comment>
+         <element name="portabilite" title="Portabilité">
+            <desc>Portabilité de la solution de gestion</desc>
+            <comment></comment>
+            <element name="typesdimagessupportees" title="Types d'images supportées">
+               <desc>Solutions de virtualisation supportées.</desc>
+               <desc0>Une seule et unique solution est supportée.</desc0>
+               <desc1>Seules des solutions libres sont supportées (comme Xen, KVM ou OpenVZ par exemple).</desc1>
+               <desc2>Les solutions libres sont supportées ainsi que des solutions propriétaires (telles que celles VMWare ou Microsoft par exemple).</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="compatibilitelibvirt" title="Compatibilité libvirt">
+               <desc>Libvirt est utilisé pour assurer une couche d'abstraction vis-à-vis de certaines solutions de virtualisation.</desc>
+               <desc0>Pas de compatibilité libvirt.</desc0>
+               <desc1>Utilisation restreinte de libvirt.</desc1>
+               <desc2>Utilisation complète de libvirt comme couche d'abstraction vis-à-vis de certaines solutions de virtualisation.</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="systemesdexploitationsupportes" title="Systèmes d'exploitation supportés">
+               <desc>Outre les solutions de virtualisation, la solution peut ne supporter que certains systèmes d'exploitation (en hôtes comme ne invités).</desc>
+               <desc0>Seule une version spécifique d'un système d'exploitation est supportée.</desc0>
+               <desc1>Plusieurs systèmes d'exploitation sont supportés comme hôtes et comme invités mais ce nombre est limité par rapport à ce que les solutions de virtualisation sous-jacentes permettent.</desc1>
+               <desc2>La solution n'impose pas de contraintes autres que celles des solutions de virtualisation avec lesquelles elle est compatible.</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+         </element>
+         <element name="installation" title="Installation">
+            <desc>Installation et déploiement centralisés d'images virtuelles (provisioning).</desc>
+            <desc0>Aucune fonctionnalité de provisioning disponible.</desc0>
+            <desc1>La solution offre la possibilité de déployer les images virtuelles sur le parc de machines physiques.</desc1>
+            <desc2>La solution offre la possibilité de déployer les images virtuelles sur le parc de machines physiques ainsi que des fichiers de configuration dans les machines virtuelles.</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="gestionducycledevie" title="Gestion du cycle de vie">
+            <desc>Fonctionnalité de gestion manuelle du cycle de vie des images virtuelles : démarrage, arrêt, gel, clonage.</desc>
+            <desc0>Pas de gestion du cycle de vie des images.</desc0>
+            <desc1>Gestion manuelle limitée au démarrage et à l'arrêt des images.</desc1>
+            <desc2>Gestion du démarrage, de l'arrêt, du gel et du clonage d'images virtuelles.</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="referentieldimage" title="Référentiel d'images">
+            <desc>Disponibilité d'un référentiel centralisé des images gérées par la solution.</desc>
+            <desc0>Aucun référentiel centralisé des images gérées par la solution n'est disponible.</desc0>
+            <desc1>Référentiel centralisé des images basique.</desc1>
+            <desc2>Référentiel centralisé des images avancé avec notamment des fonctionnalités de recherche avancées.</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="templates" title="Templates">
+            <desc>Modèles configurables et réutilisables pour générer de nouvelles images.</desc>
+            <desc0>Aucune fonctionnalité de gestion de templates.</desc0>
+            <desc1>Possibilité de gérer des modèles mais restant peu configurables et difficiles à gérer de manière simple et centralisée.</desc1>
+            <desc2>Gestion de modèles centralisée dans un référentiel avec possibilité de configurer simplement les templates.</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+      </element>
+      <element name="reseauxvirtuels" title="Réseaux virtuels">
+         <desc>Possibilité de gérer des réseaux virtuels au sein de l'infrastructure.</desc>
+         <comment></comment>
+         <element name="pont" title="Ponts virtuels">
+            <desc>Possibilité de configurer des ponts (bridges) virtuels (couche réseau 2 Liaison de données).</desc>
+            <desc0>Pas de possibilité de configurer des ponts virtuels.</desc0>
+            <desc1>Gestion des ponts virtuels disponible mais limitée et complexe à mettre en oeuvre.</desc1>
+            <desc2>Gestion des ponts virtuels disponible, simple d'utilisation. Possibilité de gérer des ponts entre images virtuelles et machines physiques.</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="routeursvirtuels" title="Routeurs virtuels">
+            <desc>Possibilité de configurer des routeur virtuels (couche réseau 3 Transport).</desc>
+            <desc0>Pas de possibilité de configurer des routeurs ou switches virtuels.</desc0>
+            <desc1>Gestion des routeurs ou switches virtuels disponible mais limitée et complexe à mettre en oeuvre.</desc1>
+            <desc2>Gestion des routeurs ou switches virtuels disponible et simple d'utilisation. Possibilité de gérer des routeurs entre images virtuelles et machines physiques.</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="gestiondevlan" title="Gestion de VLAN">
+            <desc>Fonctionnalités de gestion de réseaux virtuels.</desc>
+            <desc0>Aucune fonctionnalité de gestion de VLAN.</desc0>
+            <desc1>Possibilité de rattacher les images à des réseaux virtuels de manière statique (attribution statique d'adresses MAC et IP).</desc1>
+            <desc2>Possibilité de rattacher les images à des réseaux virtuels de manière dynamique (attribution dynamique d'adresses MAC et IP, via des mécanismes tels que DHCP par exemple).</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+      </element>
+      <element name="stockagevirtuel" title="Stockage virtuel">
+         <desc>Fonctionnalités de virtualisation du stockage dans l'infrastructure.</desc>
+         <comment></comment>
+         <element name="typesdestockagegeres" title="Types de stockage gérés">
+            <desc>Types de stockages physiques supportés pour l'abstraction via virtualisation (réseau, SAN, iSCSI).</desc>
+            <desc0>Uniquement disques locaux des machines hôtes.</desc0>
+            <desc1>Possibilité de virtualiser des espaces de stockage distants mais limitée à un seul type d'attachement (réseau, SAN ou iSCSI).</desc1>
+            <desc2>Virtualisation et abstraction d'espaces de stockages distants indépendamment des types d'attachement (réseau, SAN ou iSCSI).</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="attachementsvirtuels" title="Attachements virtuels">
+            <desc>Association d'espaces de stockage à des images, des pools de serveurs</desc>
+            <desc0>Pas de possibilité d'associer les espaces de stockage à des images ou à des pools d'images.</desc0>
+            <desc1>Possibilité d'associer les espaces de stockage à des images mais pas à des pools d'images.</desc1>
+            <desc2>Possibilité d'associer les espaces de stockage à des images et à des pools d'images.</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="gestiondessnapshots" title="Gestion des snapshots">
+            <desc>Fonctionnalités de gestion des images disques (snapshots).</desc>
+            <desc0>Aucune gestion des snapshots.</desc0>
+            <desc1>Gestion des snapshots existante mais limitée et complexe d'utilisation.</desc1>
+            <desc2>Fonctionnalités avancées de gestion des snapshots (référentiel, planification, etc.).</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+      </element>
+      <element name="utilisateurs" title="Utilisateurs">
+         <desc>Gestion des utilisateurs accédant à l'outil</desc>
+         <comment></comment>
+         <element name="gestiondesdroits" title="Gestion des droits">
+            <desc>Possibilité de configurer les droits des utilisateurs sur la gestion de l'infrastructure virtuelle.</desc>
+            <desc0>Pas de notion d'utilisateur, de rôle ou de gestion de droits.</desc0>
+            <desc1>Il existe un gestion des utilisateurs et des droits requérant une authentification mais la base des utilisateurs est propre à la solution.</desc1>
+            <desc2>Authentification et gestion des droits des utilisateurs externalisable via LDAP ou dans Active Directory.</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="delegation" title="Délégation">
+            <desc>Possibilité de déléguer l'administration d'une partie de l'infrastructure.</desc>
+            <desc0>Délégation d'administration impossible. </desc0>
+            <desc1>Délégation de l'administration possible mais pas sur tous les types d'objets gérés dans l'infrastructure.</desc1>
+            <desc2>Délégation de l'administration sur tous les types d'objets gérés dans l'infrastructure, permet de définir des zones d'administrations séparées.</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="portailutilisateur" title="Portail utilisateur">
+            <desc>Existence d'un portail d'accès dédié aux utilisateurs non administrateurs.</desc>
+            <desc0>Pas de portail utilisateur.</desc0>
+            <desc1>Possibilité de configurer les droits des utilisateurs sur la console d'administration de manière à leur donner une visibilité restreinte sur l'infrastructure.</desc1>
+            <desc2>Existence d'un portail dédié aux utilisateurs non administrateurs leur donnant une vue sur l'infrastructure et éventuellement la possibilité de provisionner leurs images.</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+      </element>
+   </section>
+   <section name="gestiondynamique" title="Gestion dynamique">
+      <desc>Fonctionnalités de gestion dynamique de l'infrastructure virtuelle</desc>
+      <element name="migration" title="Migration">
+         <desc>Possibilités de migrer manuellement des images</desc>
+         <comment></comment>
+         <element name="conversionphysique-virtuel" title="Conversion physique-virtuel">
+            <desc>Conversion de machines physiques en machines virtuelles</desc>
+            <desc0>Pas de conversion possible de machines physiques en machines virtuelles.</desc0>
+            <desc1>Possibilité de conversion de machines physiques en machines virtuelles mais limitée par des contraintes techniques (OS, solution de virtualisation...) et complexe à utiliser.</desc1>
+            <desc2>Conversion de machines physiques en machines virtuelles existente et simple d'utilisation.</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="deplacementdimages" title="Déplacement d'images">
+            <desc>Possibilité de déplacer manuellement des images virtuelles entre machines physiques.</desc>
+            <desc0>Pas de possibilité de déplacer manuellement des images virtuelles entre machines physiques.</desc0>
+            <desc1>Seul le déplacement manuel à froid d'images virtuelles entre machines physiques est possible, cela implique d'arrêter les images avant la migration.</desc1>
+            <desc2>Le déplacement manuel à chaud d'images virtuelles entre machines physiques est possible, cela n'implique pas d'arrêter les images avant la migration.</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="migrationdepoolsdimages" title="Déplacement de pools d'images">
+            <desc>Possibilité de déplacer manuellement des pools d'images virtuelles entre machines physiques.</desc>
+            <desc0>Pas de possibilité de déplacer manuellement des ppols d'images virtuelles entre machines physiques.</desc0>
+            <desc1>Seul le déplacement manuel à froid de pools d'images virtuelles entre machines physiques est possible, cela implique d'arrêter les images avant la migration.</desc1>
+            <desc2>Le déplacement manuel à chaud de pools d'images virtuelles entre machines physiques est possible, cela n'implique pas d'arrêter les images avant la migration.</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="migrationdedisquesvirtuels" title="Migration de disques virtuels">
+            <desc>Possibilité de reconfigurer des zones de stockage virtuelles en migrant les disques.</desc>
+            <desc0>Aucune possibilité de migrer des disques virtuels.</desc0>
+            <desc1>Possibilité de reconfigurer des zones de stockage virtuelles en migrant à froid les disques.</desc1>
+            <desc2>Possibilité de reconfigurer des zones de stockage virtuelles en migrant les disques à chaud</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+      </element>
+      <element name="repartitiondecharge" title="Répartition de charge">
+         <desc>Mécanismes disponibles pour dynamiquement répartir la charge entre images</desc>
+         <comment></comment>
+         <element name="repartitionentreimages" title="Répartition entre images">
+            <desc>Possibilité de répartir la charge entre différentes images virtuelles.</desc>
+            <desc0>Aucun mécanisme de répartition de charge entre images virtuelles n'est disponible.</desc0>
+            <desc1>Possibilité de répartir la charge entre différentes images virtuelles mais avec un nombre restreint d'algorithmes de répartition.</desc1>
+            <desc2>Possibilité de répartir la charge entre différentes images virtuelles avec la possibilité d'utiliser et combiner plusieurs algorithmes de répartition.</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="deplacementdynamiquedimages" title="Déplacement dynamique d'images">
+            <desc>Déplacement dynamique d'images entre machines physiques en fonction de la charge</desc>
+            <desc0>Pas de déplacement dynamique d'images possible.</desc0>
+            <desc1>Déplacement dynamique d'images possible avec utilisations de règles de gestion.</desc1>
+            <desc2>Optimisation de la charge des machines via des scénarios couplés à la supervision des ressources.</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+      </element>
+      <element name="hautedisponibilite" title="Haute disponibilité">
+         <desc>Possibilité de configurer une solution de failover en cas de panne</desc>
+         <desc0>Aucune mécanisme de haute disponibilité n'est disponible.</desc0>
+         <desc1>Failover disponible sur une panne du serveur physique hébergeant l'image virtuelle, avec un impact pour l'utilisateur (indisponibilité, perte possible de données...).</desc1>
+         <desc2>Failover disponible sur une panne du serveur physique hébergeant l'image virtuelle, sans impact pour l'utilisateur.</desc2>
+         <score></score>
+         <comment></comment>
+      </element>
+      <element name="reservationderessources" title="Réservation de ressources">
+         <desc>Possibilité de réserver des ressources auprès du gestionnaire de l'infrastrcture virtuelle.</desc>
+         <desc0>Aucun mécanisme de réservation de ressources n'est disponible.</desc0>
+         <desc1>Mécanisme de réservation de ressources disponible mais limité et complexe à mettre en oeuvre.</desc1>
+         <desc2>Mécanisme de réservation de ressources complet et adaptable, éventuellement, possibilité de s'intégrer avec un gestionnaire de réservation externe.</desc2>
+         <score></score>
+         <comment></comment>
+      </element>
+   </section>
+   <section name="exploitationetsupervision" title="Exploitation et supervision">
+      <desc>Fonctionnalités mises à la disposition des administrateurs et des exploitants.</desc>
+      <element name="exploitation" title="Exploitation">
+         <desc>Fonctionnalités disponibles pour exploiter l'infrastructure virtuelle.</desc>
+         <comment></comment>
+         <element name="connexionauxsystemesinvites" title="Connexion aux systèmes invités">
+            <desc>Possibilités offertes pour se connecter directement aux systèmes invités.</desc>
+            <desc0>Aucune connexion aux systèmes invités possible via l'outil d'administration.</desc0>
+            <desc1>Connexion possible aux systèmes invités en mode console uniquement.</desc1>
+            <desc2>Connexion possible aux systèmes invités en mode graphique uniquement (de type VNC), voire en mode sécurisé.</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="sauvegardeetrestauration" title="Sauvegarde et restauration">
+            <desc></desc>
+            <comment></comment>
+            <element name="sauvegardedesimages" title="Sauvegarde des images">
+               <desc>Possibilité de gérer les sauvegardes et les restaurations d'images virtuelles.</desc>
+               <desc0>Pas de sauvegarde possible.</desc0>
+               <desc1>Sauvegarde et restauration à froid des images est possible via l'outil mais pas à chaud.</desc1>
+               <desc2>Sauvegarde et restauration à chaud des images est possible via l'outil.</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="sauvegardessynchronisees" title="Sauvegardes synchronisées">
+               <desc>Possibilité de sauvegarder/restaurer un ensemble des machines virtuelles à un moment donné pour éviter tout problème de désynchronisation.</desc>
+               <desc0>Aucune fonctionnalité de sauvegardes/restaurations synchronisées de plusieurs machines virtuelles.</desc0>
+               <desc1>Possibilité de sauvegardes/restaurations synchronisées à froid de plusieurs machines virtuelles, mais pas à chaud.</desc1>
+               <desc2>Possibilité de sauvegardes/restaurations synchronisées à chaud de plusieurs machines virtuelles.</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+         </element>
+         <element name="misesajour" title="Mises à jour">
+            <desc>Fonctionnalités de mise à jour des systèmes gérés par la solution.</desc>
+            <desc0>Aucune possibilité de mise à jour des systèmes via l'outil.</desc0>
+            <desc1>Fonctionnalités de mise à jour des images virtuelles gérées par la solution.</desc1>
+            <desc2>Fonctionnalités de mise à jour des images virtuelles et des machines physiques gérées par la solution.</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="automatisationdoperationscomplexes" title="Automatisation d'opérations complexes">
+            <desc>Fonctionnalités permettant d'automatiser des opérations d'exploitation complexes, telles que le scripting ou des workflows.</desc>
+            <desc0>Pas de possibilité d'automatiser des opérations d'exploitation complexes : pas de scripting ni de workflow.</desc0>
+            <desc1>Possibilité d'automatiser des opérations d'exploitation complexes via du scripting et de l'ordonnancement simple.</desc1>
+            <desc2>Possibilité d'automatiser des opérations d'exploitation complexes via du scripting et de le gestion de workflows.</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="recherche" title="Recherche">
+            <desc>Possibilité d'effectuer des recherches dans l'infrastructure via mots-clefs sur les noms des objets gérés par la solution.</desc>
+            <desc0>Aucune fonctionnalité de recherche n'est disponible.</desc0>
+            <desc1>Il est possible de lancer des recherches sur l'infrastructure mais elles sont limitées à certains types d'objets.</desc1>
+            <desc2>Il est possible de lancer des recherches sur l'infrastructure sur tous les types d'objets.</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+      </element>
+      <element name="supervision" title="Supervision">
+         <desc>Fonctionnalités de surveillance et de supervision de l'infrastructure virtuelle.</desc>
+         <comment></comment>
+         <element name="systemesphysiques" title="Systèmes physiques">
+            <desc>Fonctionnalités de supervision des systèmes physiques gérés par la solution.</desc>
+            <desc0>Pas de supervision des systèmes physiques.</desc0>
+            <desc1>Supervision des ressources des systèmes physiques (CPU, RAM, disques locaux, ...).</desc1>
+            <desc2>Supervision des ressources des systèmes physiques (CPU, RAM, disques locaux, ...), d'éléments matériels (ventilateur et température par exemple) ou de la consommation électrique.</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="objetsvirtuels" title="Objets virtuels">
+            <desc>Fonctionnalités de supervision des objets virtuels gérés par la solution.</desc>
+            <desc0>Pas de supervision des systèmes objets virtuels (images, réseaux, stockage).</desc0>
+            <desc1>Supervision des systèmes de certains des objets virtuels gérés par la solution (images, réseaux ou stockage).</desc1>
+            <desc2>Supervision des systèmes de tous des objets virtuels gérés par la solution (images, réseaux ou stockage).</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="notifications" title="Notifications">
+            <desc>Mécanismes de déclenchement de notifications sur certains évènements au sein de l'infrastructure.</desc>
+            <desc0>Aucune mécanisme de notification n'est disponible.</desc0>
+            <desc1>Possibilité de configurer le déclenchement de notification sur un nombre limité d'évènement et via le canal email uniquement.</desc1>
+            <desc2>Possibilité de configurer le déclenchement de notification sur un grand nombre d'évènements, avec conditions et via plusieurs canaux de communication (email, SMS...).</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="journalisationetreporting" title="Journalisation et reporting">
+            <desc>Journalisation des évènements et des opérations au sein de l'infrastructure.</desc>
+            <desc0>Aucune fonctionnalité de journalisation, d'historisation ou de reporting n'est disponible.</desc0>
+            <desc1>Existence de fonctionnalité de journalisation mais limitée à un niveau technique et ne pouvant pas être utilisée à des fins de resporting.</desc1>
+            <desc2>L'outil propose des fonctionnalités de journalisation et de reporting avancées (statistiques, graphes, historiques...).</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="integration" title="Intégration">
+            <desc>Possibilités d'intégration de la solution au niveau de la supervision.</desc>
+            <desc0>La solution ne propose aucune ouverture vers des systèmes de supervision externes.</desc0>
+            <desc1>La solution peut être intégrée avec un système de supervision externe mais ne respecte pas les standard du domaine (SNMP, CIM...).</desc1>
+            <desc2>La solution supporte un ou plusieurs standards de supervision (comme par exemple SNMP ou CIM) et peut facilement être intégrée avec un outil externe.</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+      </element>
+      <element name="encryptagedesflux" title="Encryptage des flux">
+         <desc>Encryptage des flux d'administration</desc>
+         <desc0>Pas d'encryptage des échanges entre la console et les objets gérés.</desc0>
+         <desc1>Possibilité de crypter les flux mais limitée à quelques types d'encryptage.</desc1>
+         <desc2>Présence d'une infrastructure de gestion de la sécurité des flux, supportant plusieurs types d'encryptage. </desc2>
+         <score></score>
+         <comment></comment>
+      </element>
+   </section>
+</document>

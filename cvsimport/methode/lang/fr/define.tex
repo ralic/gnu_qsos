@@ -1,0 +1,100 @@
+%Copyright (c) 2004 2005 2006 Atos Origin
+%Permission is granted to copy, distribute and/or modify this
+%document
+%under the terms of the GNU Free Documentation License,
+%      Version 1.2
+%      or any later version published by the Free Software
+%      Foundation;
+%      with no Invariant Sections, no Front-Cover
+%      Texts, and no Back-Cover
+%      Texts.  A copy of the license is
+%      included in the section entitled "GNU
+%      Free Documentation License".
+%
+%$Id: define.tex,v 1.1 2006/02/16 18:21:09 goneri Exp $
+\section{Définir}
+\begin{figure}
+\center
+\includegraphics[width=10cm]{images/fr/definir}
+\caption{Définir}
+\end{figure}
+
+
+\subsection{Objectif}
+L'objectif de cette étape est de définir différents éléments de typologie réutilisés par les trois étapes suivantes du processus général.
+
+
+Les différents référentiels typologiques concernés sont les suivants :
+\begin{description}
+\item [Types de logiciels :] classification hiérarchique de types de logiciels et description des
+couvertures fonctionnelles associées à chaque type.
+\item [Types de licences :] classification des types de licences libres et Open Source utilisées.
+\item [Types de communautés :] classification des types d'organisations communautaires existant
+autour d'un logiciel Open Source pour en assurer le cycle de vie.
+\end{description}
+
+\subsection{Référentiel des types de logiciels}
+Il s'agit du référentiel qui évolue le plus car, au fur et à mesure que les logiciels 
+évoluent, ils offrent de nouvelles fonctionnalités qu'il est nécessaire d'y ajouter.
+
+\begin{description}
+\item [Propriétarisation :] le code dérivé peut-il être rendu propriétaire ou doit-il rester libre ?
+\item [Viralité :] l'utilisation du code du logiciel à partir d'un autre module se traduit-il ou non par la nécessité que ce module soit placé sous la même licence ?
+\item [Héritage :] le code dérivé hérite-il obligatoirement de la licence où est-il possible
+d'y appliquer des restrictions supplémentaires ? 
+\end{description}
+
+Le tableau~\ref{license-list} liste les licences les plus souvent utilisées en les comparant par rapport aux critères énoncés plus haut.
+
+
+\begin{figure}
+\center
+\begin{tabular}{|c|c|c|c|}
+\hline \TS{Licence} & \TS{Propriétarisation} & \TS{Viralité} & \TS{Héritage}\\
+\hline GPL & Non & Oui & Oui\\
+\hline CeCILL & Non & Oui & Oui\\
+%TODO revenir sur LGPL
+\hline LGPL & Non & Partielle & Oui\\
+\hline BSD & Oui & Non & Non\\
+\hline Artistic & Oui & Non & Non\\
+\hline MIT & Oui & Non & Non\\
+\hline Apache v1.1 & Oui & Non & Non\\
+\hline Apache v2.0 & Oui & Non & Non\\
+\hline MPL v1.1 & Non & Non & Oui\\
+\hline Common Public License v1.1 & Non & Non & Non\\
+\hline Academic Free License v2.1 & Oui & Non & Non\\
+\hline PHP License v3.0 & Oui & Non & Non\\
+\hline Open Software License v2.0 & Non & Non & Non\\
+\hline Zope Public License v2.0 & Oui & Non & Non\\
+%TODO idem
+\hline Python SF License v2.0 & Oui & Non & Non\\
+\hline
+\end{tabular}
+\caption{Liste non exhaustive de licence}
+\label{license-list}
+\end{figure}
+Il convient de noter qu'un même logiciel peut être assujetti à plusieurs licences différentes (y compris propriétaires).
+
+
+\subsection{Référentiel des types de communautés}
+Les types de communautés identifiés à ce jour sont:
+\begin{description}
+\item [Développeur isolé :] le logiciel est développé et géré par une seule personne. 
+\item [Groupe de développeurs :]  plusieurs personnes travaillant ensemble de manière informelle ou pas fortement industrialisées.
+\item [Organisation de développeurs :] il s'agit d'un groupe de développeurs utilisant
+ un mode de gestion du cycle de vie du logiciel formalisé et respecté, généralement basé 
+sur l'attribution de rôles (développeur, validateur, responsable de livraison, ...) et 
+la méritocratie. 
+\item [Entité légale :] une entité légale, en général à but non lucratif, chapeaute 
+la communauté pour généralement prendre en charge la détention des droits d'auteur ou
+gérer le sponsorat et les subventions associées. 
+\item [Entité commerciale :] une entité commerciale emploie les développeurs 
+principaux du projet et se rémunère sur la vente de services ou de versions commerciales du logiciel. 
+\end{description}
+
+
+\subsection{Outil O3S}
+L'outil O3S est conçu de manière à pouvoir facilement saisir et modifier ces différents 
+référentiels et à mesurer les impacts générés par les modifications sur les données 
+déjà saisies lors des autres étapes du processus général.
+

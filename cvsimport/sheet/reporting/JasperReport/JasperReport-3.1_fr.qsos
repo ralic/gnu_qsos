@@ -1,0 +1,891 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document>
+   <header>
+      <authors>
+         <author>
+            <email>hery.randriamanamihaga@atosorigin.com</email>
+            <name>Hery Njato Randriamanamihaga</name>
+         </author>
+         <author>
+            <name>Michel Kergoat</name>
+            <email>michel.kergoat@atosorigin.com</email>
+         </author>
+      </authors>
+      <dates>
+         <creation></creation>
+         <validation></validation>
+      </dates>
+      <language>fr</language>
+      <appname>JasperReport</appname>
+      <release>3.1</release>
+      <licenseid>67</licenseid>
+      <licensedesc>GNU GPL</licensedesc>
+      <url>http://jasperforge.org/plugins/project/project_home.php?group_id=83</url>
+      <desc>La solution de Reporting de JasperSoft repose sur plusieurs composants :
+ * JasperReports constitue l'API java de production de rapports de la solution ;
+ * iReport constitue l'interface graphique de conception d'états, exploitant JasperReports ;
+ * JasperServer : le portail de production et de publication des rapports, ainsi que de production des rapports ad hoc pour non informaticiens.
+Elle supporte la totalité des fonctionnalités de JasperReports et dispose également d'une extension dédiée à l'administration de JasperIntelligence, la plate-forme décisionnelle de JasperSoft.
+JasperSoft propose une version communautaire, destinée selon l'éditeur à l'évaluation et à l'autoformation, et une version commerciale (souscription par CPU ou utilisateur OEM), qui est destinée aux déploiements en entreprise.
+</desc>
+      <demourl></demourl>
+      <qsosformat>1.7</qsosformat>
+      <qsosappfamily>Reporting</qsosappfamily>
+      <qsosspecificformat></qsosspecificformat>
+      <qsosappname></qsosappname>
+   </header>
+   <section name="generic" title="Section générique">
+      <desc>Les critères génériques de l'évaluation Presto de QSOS</desc>
+      <element name="intrinsicdurability" title="Pérennité">
+         <desc>Pérennité</desc>
+         <element name="maturite" title="Maturité">
+            <desc></desc>
+            <desc0>Logiciel provenant d'un fork ou avec une forte probabilité de fork dans un futur proche.</desc0>
+            <desc1>Projet jeune (moins de 3 ans) ou connaissant des difficultés à stabiliser les versions de développement.</desc1>
+            <desc2>Projet stable ou ayant un bon historique de gestion de crise. Les nouvelles versions apportent de façon prépondérante de nouvelles fonctionnalités.</desc2>
+            <score>2</score>
+            <comment>Projet lancé en 2003, la plate-forme Jasper est aujourd'hui complète, stable et industrialisable.</comment>
+         </element>
+         <element name="adoption1" title="Adoption">
+            <desc></desc>
+            <desc0>Usage détectable sur Internet sans véritable activité communautaire</desc0>
+            <desc1>Utilisation communautaire prépondérante</desc1>
+            <desc2>Nombreuse références industrielles</desc2>
+            <score>1</score>
+            <comment>Pas de références industrielles détectables sur le web de la version community.
+Toutefois, le site web de JasperSoft mentionne une petite dizaines d'étude de cas clients ayant déployé la suite BI commerciale.</comment>
+         </element>
+         <element name="developpement" title="Développement">
+            <desc></desc>
+            <desc0>Deux ou moins de deux développeurs clairement identifiés.</desc0>
+            <desc1>Équipe de développement réduite avec un turn-over important ou sans équipe de direction identifiée.</desc1>
+            <desc2>Équipe de développement structurée comportant plus de 5 développeurs actifs.</desc2>
+            <score>1</score>
+            <comment>JasperSoft a déployé sa propre forge, qui héberge 250+ projets publics, dont les projets core de la suite BI, et 80+ projets privés.
+Chaque projet mentionne plusieurs dizaine de membres, mais seul le leader du projet est mentionné.
+- JasperServer 47 membres, leader Sherman Woods
+- JasperReport 15 membres, leader Teodord Danciu
+- iReport 20 membres, leader Giulio Toffoli</comment>
+         </element>
+         <element name="activite" title="Activité">
+            <desc></desc>
+            <desc0>Très faible activité, que ce soit sur les résolutions de bugs, les releases, l'ajout de nouvelles fonctions ou sur les espaces communautaires (wiki, forum, mailing list...)</desc0>
+            <desc1>Activité détectable mais anarchique (pas feuille de route accessible facilement, pas de prévisions de nouvelles fonctionnalités ou de prévisions de nouvelles versions visible)</desc1>
+            <desc2>Activité importante et visible via la mise en place de feuilles de routes traçant les requêtes de nouvelles fonctionnalités et/ou les prévisions de sortie des nouvelles version</desc2>
+            <score>1</score>
+            <comment>Pas de feuille de route identifiée, ainsi que la liste des demandes de fonctions (Feature Requests).
+Le changelog est toutefois inclus dans les packages téléchargeables et dans les annonces des livraisons.
+Il est possible que ceci provienne du fait que JasperSoft est en italie et que les projets sont dirigés dans ce pays, et donc en italien.</comment>
+         </element>
+         <element name="strategicalindependence" title="Indépendance stratégique">
+            <desc0>Pas de stratégie détectable ou stratégie dictée par une société commerciale, un sponsor ou un individu unique.</desc0>
+            <desc1>Stratégie décidée par l'équipe de developpement.</desc1>
+            <desc2>Indépendance forte de l'équipe de développement, fort engagement du projet dans un processus de standardisation.</desc2>
+            <score>0</score>
+            <comment>Stratégie dictée par Jaspersoft, à l'initiative du projet.</comment>
+         </element>
+         <element name="copyrightowners" title="Détenteur des droits">
+            <desc0>Les droits sont détenus par quelques individus ou entités commerciales, facilitant le changement de licence</desc0>
+            <desc1>Les droits sont détenus par de nombreux individus de façon homogène, rendant le changement de licence très difficile</desc1>
+            <desc2>Les droits sont détenus par une entité légale, une fondation dans laquelle la communauté a confiance (ex: FSF, Apache, ObjectWeb)</desc2>
+            <score>0</score>
+            <comment>Droits d'auteurs detenus par Jaspersoft (comme toutes les applications de l'éditeur)</comment>
+         </element>
+         <element name="license" title="Licence">
+            <desc>Licence, à pondérer uniquement si le client désire un jour devenir propriétaire du code</desc>
+            <element name="permissiveness" title="Permissivité">
+               <desc0>Licence très stricte, comme la GPL</desc0>
+               <desc1>Licence modérée entre les deux extrêmes (GPL et BSD), licence duale dépendante du type d'utilisateur (personne, société…) ou de leur activité</desc1>
+               <desc2>Licence très permissive comme BSD et Apache</desc2>
+               <score>0</score>
+               <comment></comment>
+            </element>
+            <element name="protectionagainstproprietaryforks" title="Protection contre des forks commerciaux">
+               <desc0>Licence très permissive comme BSD et Apache</desc0>
+               <desc1>Licence modérée entre les deux extrêmes (GPL et BSD), licence duale dépendante du type d'utilisateur (personne, société…) ou de leur activité</desc1>
+               <desc2>Licence très stricte, comme la GPL</desc2>
+               <score>2</score>
+               <comment></comment>
+            </element>
+         </element>
+      </element>
+      <element name="industrializedsolution" title="Industrialisation">
+         <desc>Niveau d'industrialisation du projet</desc>
+         <element name="independenceofdevelopments" title="Indépendance des développements">
+            <desc0>Développements réalisés à plus de 60% par des employés d'une seule société</desc0>
+            <desc1>Développements réalisés à 60% maximum par des employés d'une seule société</desc1>
+            <desc2>Développements réalisés à 20% maximum par des employés d'une seule société</desc2>
+            <score>1</score>
+            <comment></comment>
+         </element>
+         <element name="services1" title="Services">
+            <desc></desc>
+            <desc0>Pas d'offres de services identifiée</desc0>
+            <desc1>Offre existante mais restreinte géographiquement ou en une seule langue ou fournie par un seul fournisseur</desc1>
+            <desc2>Offre riche : plusieurs fournisseurs ou plusieurs langages</desc2>
+            <score>1</score>
+            <comment>Le projet bénéficie des offres de services de Jaspersoft.</comment>
+         </element>
+         <element name="documentation" title="Documentation">
+            <desc0>Pas de documentation utilisateur</desc0>
+            <desc1>La documentation existe mais est en partie obsolète ou restreinte à une seule langue ou peu détaillée</desc1>
+            <desc2>Documentation à jour, traduite et éventuellement adaptée à différentes cibles de lecteurs (end-user, sysadmin, manager…)</desc2>
+            <score>2</score>
+            <comment>Certains projets (JasperServer) ont des Wiki et des documentations, d'autres (JasperReport) ont seulements des documentations mais celle-ci est constituée de divers documents, webinars et articles pour les différents profils.
+Des livres commerciaux existent également.
+La documentation du site Jasper.com est complète pour la version communautaire courante (les documents ne mentionnent d'ailleurs pas la version).</comment>
+         </element>
+         <element name="methodequalite" title="Méthode qualité">
+            <desc></desc>
+            <desc0>Pas de processus de qualité identifié ni d'outils de gestions de bugs</desc0>
+            <desc1>Processus qualité non formalisé ou non outillé ou comportant des outils qui sont très peu utilisés</desc1>
+            <desc2>Utilisation très active d'outils standards (tests unitaires, outils de gestion de build, outils de mesure de qualité du code)</desc2>
+            <score>2</score>
+            <comment>Le projet utilise la forge (Jasferforge.org) commune aux produits de l'éditeur Jaspersoft</comment>
+         </element>
+      </element>
+      <element name="packaging" title="Packaging">
+         <desc>Packaging pour les différents systèmes d'exploitation</desc>
+         <element name="packagingbsd" title="BSD">
+            <desc></desc>
+            <desc0>Pas de packaging officiel pour la famille BSD</desc0>
+            <desc1>Packaging existant pour quelques distributions de la famille BSD</desc1>
+            <desc2>Packaging complet pour les distributions de la famille BSD suivantes : FreeBSD, OpenBSD, NetBSD et Mac OS X</desc2>
+            <score>1</score>
+            <comment>Les outils sont distribués sous forme d'archive compressée dont le bon fonctionnement dépend de l'environnement Java/J2EE</comment>
+         </element>
+         <element name="packaginglinux" title="GNU/Linux">
+            <desc></desc>
+            <desc0>Pas de packaging officiel pour les systèmes d'exploitations GNU/Linux</desc0>
+            <desc1>Packaging existant pour quelques distributions GNU/Linux</desc1>
+            <desc2>Packaging complet les systèmes de packaging .deb et .rpm</desc2>
+            <score>1</score>
+            <comment>Les outils sont distribués sous forme d'archive compressée dont le bon fonctionnement dépend de l'environnement Java/J2EE</comment>
+         </element>
+         <element name="unix" title="Unix">
+            <desc></desc>
+            <desc0>Pas de packaging officiel pour les systèmes de la famille Unix</desc0>
+            <desc1>Packaging existant sur quelques systèmes de la famille Unix</desc1>
+            <desc2>Packaging existant sur au moins ces 3 systèmes : AIX, HP-UX, Solaris</desc2>
+            <score>1</score>
+            <comment>Les outils sont distribués sous forme d'archive compressée dont le bon fonctionnement dépend de l'environnement Java/J2EE</comment>
+         </element>
+         <element name="packagingwindows" title="Windows">
+            <desc0>Le logiciel n'est pas disponible sur un système Windows.</desc0>
+            <desc1>Le logiciel existe sous forme d'archive tout en un.</desc1>
+            <desc2>Le logiciel dispose d'un installeur.</desc2>
+            <score>2</score>
+            <comment></comment>
+         </element>
+         <element name="packagingsource" title="Sources">
+            <desc0>L'installation depuis les sources est hasardeuse et risquée</desc0>
+            <desc1>L'installation depuis les sources est difficile ou limité (seulement à un OS, une architecture, la résolution de l'écran...)</desc1>
+            <desc2>L'installation depuis les sources est outillée (vérification des dépencances, verification de l'installation, gestion de build)</desc2>
+            <score>2</score>
+            <comment>Compilation assistée par Ant</comment>
+         </element>
+         <element name="packagingtar" title="Archive compressée">
+            <desc0>Pas d'archive disponible</desc0>
+            <desc1>Archive globale</desc1>
+            <desc2>Archive séparée pour chaque module installable</desc2>
+            <score>2</score>
+            <comment></comment>
+         </element>
+      </element>
+      <element name="exploitability" title="Exploitabilité">
+         <desc>Niveau d'exploitabilité</desc>
+         <element name="easeofuseergonomics" title="Facilité d'utilisation, ergonomie">
+            <desc0>Difficulté d'utilisation, demande une connaissance approfondie des fonctionnalités du logiciel</desc0>
+            <desc1>Ergonomie austère et très technique</desc1>
+            <desc2>Ergonomie élaborée et IHM comprenant des fonctions d'aide</desc2>
+            <score>2</score>
+            <comment>IHM élaborée. Le reporting ad hoc est destiné aux utilisateurs métiers non informaticiens.</comment>
+         </element>
+         <element name="administrationmonitoring" title="Administration et supervision">
+            <desc0>Pas de fonctionnalités de contrôle, ni d'administration</desc0>
+            <desc1>Fonctionnalités présentes mais incomplètes ou à améliorer</desc1>
+            <desc2>Fonctionnalités complètes et faciles de contrôle et d'administration. Intégration possible avec des outils tiers (ex : SNMP, syslog…)</desc2>
+            <score>2</score>
+            <comment>JasperServer comprend les outils de configuration et d'administration pour la suite.</comment>
+         </element>
+      </element>
+      <element name="technicaladaptability" title="Adaptabilité">
+         <desc>Adaptabilité technique</desc>
+         <element name="modularity" title="Modularité">
+            <desc0>Logiciel monolithique</desc0>
+            <desc1>Présence de modules haut niveau permettant un premier niveau d'adaptation</desc1>
+            <desc2>Conception modulaire, permettant des adaptations faciles par sélection et/ou création de modules</desc2>
+            <score>2</score>
+            <comment>Le module principal est jasperServer, qui s'intègre dans un serveur J2EE compatible JSR Servlet 168.
+Un serveur d'application open source est fourni.
+Les modules JasperReport et iReport s'intègrent dans JasperServer.
+iReport peut fonctionner intégré dans Eclipse RCP (client riche).</comment>
+         </element>
+         <element name="codemodification" title="Facilité technique de modification du code existant">
+            <desc0>Tout à la main</desc0>
+            <desc1>Recompilation possible mais complexe, sans outils, ni documentation</desc1>
+            <desc2>Recompilation facile, outillée (ex : make, ANT, Maven…) et documentée</desc2>
+            <score>2</score>
+            <comment>Compilation avec Ant (il s'agit d'une précompilation java).</comment>
+         </element>
+         <element name="codeextension" title="Facilité d'extension du code">
+            <desc0>Toute modification demande une recompilation du code</desc0>
+            <desc1>Architecture conçue pour des extensions statiques mais exige une recompilation</desc1>
+            <desc2>Architecture de plugins, conçue pour des extensions dynamiques et sans recompilation</desc2>
+            <score>1</score>
+            <comment>L'architecture globale du projet permet l'extension des fonctionnalités. Les modalités d'extensions dépendent de chaque module, mais une recompilation semble nécessaire pour chacun...</comment>
+         </element>
+      </element>
+   </section>
+   <section name="plate-formereporting" title="Plate-forme de Reporting BI">
+      <desc>Section pour les plates-formes de reporting BI</desc>
+      <element name="sourcesdedonnees" title="Sources de données">
+         <desc></desc>
+         <comment></comment>
+         <element name="sgbdnatif" title="SGBD Natif">
+            <desc>Les requêtes se font sur les middleware natifs des SGBD.</desc>
+            <desc0>Non Disponible</desc0>
+            <desc1>Partiellement Disponible</desc1>
+            <desc2>Disponible</desc2>
+            <score>1</score>
+            <comment>Les pilotes jdbc des éditeurs de SGBD sont utilisables avec Jasper.</comment>
+         </element>
+         <element name="fichiersnatifs" title="Fichiers Natifs">
+            <desc>Le requêteur supporte nativement (hors générique ODBC) les fichiers comme source.</desc>
+            <desc0>Non Disponible</desc0>
+            <desc1>Un des formats suivants n'est pas supporté : csv, xls, xml</desc1>
+            <desc2>Les formats de fichiers csv, xls et xml sont supportés</desc2>
+            <score>0</score>
+            <comment></comment>
+         </element>
+         <element name="microsoft" title="Générique Microsoft">
+            <desc>Les sources de données Microsoft ODBC, DAO, etc. sont supportés.</desc>
+            <desc0>Non Disponible</desc0>
+            <desc1>Partiellement Disponible</desc1>
+            <desc2>Disponible</desc2>
+            <score>1</score>
+            <comment>Les sources ODBC peuvent être utilisées via le bridge JDBC-ODBC, sous réserve que le client ODBC existe sur la plate-forme Jasper.
+Mais ceci est externe à Jasper, d'où le score 1.</comment>
+         </element>
+         <element name="java" title="Générique Java">
+            <desc>Les sources de données java génériques jDBC sont supportées.</desc>
+            <desc0>Non Disponible</desc0>
+            <desc1>Partiellement Disponible</desc1>
+            <desc2>Sources génériques personnalisées supportées.</desc2>
+            <score>2</score>
+            <comment>Les connexions JDBC, EJB, POJO, Hibernate, MDX, XML, et custom data sources sont supportées.</comment>
+         </element>
+      </element>
+      <element name="structure" title="Architecture">
+         <desc>Critères pour évaluer l'architecture de la plate-forme Reporting BI.</desc>
+         <comment></comment>
+         <element name="portail" title="Portail">
+            <desc>La plate-forme BI est un portail Web implémenté dans un serveur d'application.</desc>
+            <desc0>Non Disponible</desc0>
+            <desc1>Le portail a une architecture monlithique et fermée</desc1>
+            <desc2>Architecture SOA interne : Les fonctionnalités du portail sont accessibles sous forme de services et intégrées au serveur d'applications</desc2>
+            <score>2</score>
+            <comment>JasperServer est compatible JSR servlet 168 et Web 2.0.
+Le portail Tomcat/Liferay est fourni pour une utilisation "out of the box".</comment>
+         </element>
+         <element name="serveurc/s" title="Serveur c/s">
+            <desc>La plate-forme est un serveur c/s avec référentiel partagé.</desc>
+            <desc0>Non Disponible</desc0>
+            <desc1>Référentiel partagé limité</desc1>
+            <desc2>Le référentiel inclut la gestion de rapports publiés</desc2>
+            <score>0</score>
+            <comment>iReport permet la publication de rapports, conçus depuis le poste utilisateur via l'application standalone Eclipse RCP, dans le référentiel JasperServer, mais ceci passe par le portail.</comment>
+         </element>
+         <element name="desktop" title="Desktop">
+            <desc>La plate-forme est un poste de reporting isolé.</desc>
+            <desc0>Non Disponible</desc0>
+            <desc1>Partiellement Disponible</desc1>
+            <desc2>Surcouche métier pour non informaticien disponible</desc2>
+            <score>1</score>
+            <comment>iReport fonctionne indépendamment du serveur, mais le reporting ad hoc passe par le portail, dont le référentiel embarque la surcouche métier.
+iReport nécessite des notions informatiques liées à SQL ou le langage de la source de données (MDX pour XMLA, entre autres).</comment>
+         </element>
+         <element name="agl" title="AGL">
+            <desc>La plate-forme Reporting est intégrable à un environnement de développement : API générateur d'états, requêtes, rapports, etc.</desc>
+            <desc0>Non Disponible</desc0>
+            <desc1>Quelques unes de ces fonctions sont présentes</desc1>
+            <desc2>Toutes ces fonctions sont présentes</desc2>
+            <score>2</score>
+            <comment>JasperReport est une API complète de génération de rapports en Java.
+JasperReport peut par conséquent être incorporé dans un environnement de développement java.
+Toutes les fonctions liées au reporting de la suite Jasper sont dans ce module.
+iReport (interface utilisateur sur JasperReport) est également disponible sous forme de java beans (et NetBeans).</comment>
+         </element>
+         <element name="bureautique" title="Bureautique">
+            <desc>La plate-forme Reporting peut s'intégrer dans une suite bureautique (ex. OOo, MS Office).</desc>
+            <desc0>Non Disponible</desc0>
+            <desc1>Intégration basique (OLE, automation, plug in, etc...)</desc1>
+            <desc2>Intégration totale (menu, barre d'outils, bandeau, etc...)</desc2>
+            <score>0</score>
+            <comment>Pas d'intégration bureautique identifié pour l'ensemble des services de Reporting de Jasper. Jasper Analysis semble par contre avoir une bonne intégration de JPivot a Excel.</comment>
+         </element>
+         <element name="soa" title="SOA">
+            <desc>La plate-forme expose des services SOA de reporting.</desc>
+            <desc0>Non Disponible</desc0>
+            <desc1>Niveau de services élémentaires</desc1>
+            <desc2>Différents niveaux de services</desc2>
+            <score>2</score>
+            <comment>Les opérations suivantes sont disponibles : List, Get, Put, Delete, Move, Copy et runReport.
+Sont disponibles les API java publics, les services web SOA, et l'interface HTTP URL. Des encapsuleurs de services web sont également disponibles pour C/C++, PHP et C#/.Net.
+</comment>
+         </element>
+      </element>
+      <element name="referentiel" title="Référentiel">
+         <desc></desc>
+         <comment></comment>
+         <element name="proprietaire" title="Partage">
+            <desc>Le référentiel est un fichier de méta données propriétaire.</desc>
+            <desc0>Non Disponible</desc0>
+            <desc1>Mono utilisateur</desc1>
+            <desc2>Multi utilisateur</desc2>
+            <score>2</score>
+            <comment>Un nom d'utilisateur est requis pour l'accès au portail JasperServer ou l'accès au référentiel depuis iReport. Cette authentification permet de récupérer les droits de chaque utilisateur en fonction du rôle qui lui a été défini.</comment>
+         </element>
+         <element name="sgbd" title="Stockage">
+            <desc>Mode de stockage du référentiel.</desc>
+            <desc0>Fichier</desc0>
+            <desc1>SGBD</desc1>
+            <desc2>Système de fichiers + SGBD (comme BO Xi)</desc2>
+            <score>1</score>
+            <comment>La documentation de Jasper Server mentionne le stockage des méta données en base.
+La base MySQL est fournie avec JasperServer, pour une utilisation "out of the box".</comment>
+         </element>
+         <element name="metadonnees" title="Méta Données">
+            <desc>Import et export total ou partiel de méta données.</desc>
+            <desc0>Non Disponible</desc0>
+            <desc1>Format propriétaire</desc1>
+            <desc2>CWM</desc2>
+            <score>1</score>
+            <comment>Des méta-données existent mais le format utilisé n'est pas précisé dans la documentation.</comment>
+         </element>
+      </element>
+      <element name="mediacible" title="Média Cible">
+         <desc>Média de présentation des rapports.</desc>
+         <comment></comment>
+         <element name="ecran" title="Écran">
+            <desc>Le média cible des rapports est l'écran</desc>
+            <desc0>Non Disponible</desc0>
+            <desc1>Partiellement disponible</desc1>
+            <desc2>Disponible</desc2>
+            <score>2</score>
+            <comment></comment>
+         </element>
+         <element name="bureautique1" title="Bureautique">
+            <desc>Les rapports sont générés aux formats bureautique (Suite, pdf...).</desc>
+            <desc0>Non Disponible</desc0>
+            <desc1>Format bureautique imposé par la solution</desc1>
+            <desc2>Nombreux formats supportés (suite, pdf, ...)</desc2>
+            <score>2</score>
+            <comment>Export possible aux formats PDF, XLS, RTF, ...</comment>
+         </element>
+         <element name="fichiers" title="Fichiers">
+            <desc>Les Rapports sont des fichiers de données.</desc>
+            <desc0>Non Disponible</desc0>
+            <desc1>Export au format CSV supporté</desc1>
+            <desc2>Autres formats d'exports disponibles : xls, xml, ...</desc2>
+            <score>1</score>
+            <comment>Export au format CSV</comment>
+         </element>
+         <element name="imprimante" title="Imprimante">
+            <desc>Le rapport peut être imprimé.</desc>
+            <desc0>Non Disponible</desc0>
+            <desc1>Partiellement Disponible</desc1>
+            <desc2>Impression Pixel Ready ou WYSIWYG disponible</desc2>
+            <score>2</score>
+            <comment>iReport et JasperReport embarquent des technologies d'impression Pixel Perfect et WYSIWYG.</comment>
+         </element>
+         <element name="impressionprofessionnelle" title="Impression professionnelle">
+            <desc>Format d'impression professionnelle</desc>
+            <desc0>Non Disponible</desc0>
+            <desc1>Format imprimable offset</desc1>
+            <desc2>Format pre-presse</desc2>
+            <score>0</score>
+            <comment></comment>
+         </element>
+         <element name="telephonemobile" title="Téléphone mobile">
+            <desc>Restitution des rapports sur téléphone mobile</desc>
+            <desc0>Pas de prise en charge particulière des terminaux mobiles</desc0>
+            <desc1>Les rapports sont accessibles par les terminaux mobiles via un navigateur et s'adaptent à l'écran</desc1>
+            <desc2>Des applications dédiées destinés aux terminaux mobiles sont disponibles</desc2>
+            <score>0</score>
+            <comment></comment>
+         </element>
+      </element>
+      <element name="formatsdedocuments" title="Formats de documents">
+         <desc>Format utilisé pour stocker les descriptions des rapports et eventuellement des données qu'ils contiennent</desc>
+         <comment></comment>
+         <element name="proprietaire1" title="Propriétaire">
+            <desc>Les Rapports sont dans des formats propriétaires.</desc>
+            <desc0>Non Disponible</desc0>
+            <desc1>Partiellement Disponible</desc1>
+            <desc2>Disponible</desc2>
+            <score>2</score>
+            <comment>Les rapports sont définis et enregistrés au format JRXML</comment>
+         </element>
+         <element name="xml" title="XML">
+            <desc>Les rapports sont dans des fichiers XML.</desc>
+            <desc0>Non Disponible</desc0>
+            <desc1>Partiellement Disponible</desc1>
+            <desc2>Disponible</desc2>
+            <score>2</score>
+            <comment>Un fichier JRXML est un fichier XML spécialisé pour JasperServer.
+Les différentes DTD sont disponibles, mais pas spécialement documentées.</comment>
+         </element>
+      </element>
+      <element name="diffusion" title="Diffusion">
+         <desc>Critères pour la diffusion des rapports.</desc>
+         <comment></comment>
+         <element name="externe" title="Externe">
+            <desc>Diffusion des fichiers des rapports par envoi externe à la plate-forme (Mail, Fichiers...).</desc>
+            <desc0>Non Disponible</desc0>
+            <desc1>Partiellement Disponible</desc1>
+            <desc2>Disponible</desc2>
+            <score>2</score>
+            <comment>Les rapports peuvent être exportés dons divers formats pour être envoyés en dehors de la plateforme Jasper.</comment>
+         </element>
+         <element name="messagerieintegree" title="Messagerie Intégrée">
+            <desc>La plate-forme intègre un système de messagerie dédié (ex. BAL, BO Infoview).</desc>
+            <desc0>Non Disponible</desc0>
+            <desc1>Messagerie basique</desc1>
+            <desc2>Messagerie incluant des listes et des groupes de diffusion</desc2>
+            <score>0</score>
+            <comment>JasperServer n'intègre pas de fonctionnalités de messagerie mis à part les entrées du journal (alertes/notification).</comment>
+         </element>
+         <element name="dossierspartages" title="Dossiers partagés">
+            <desc>La plate-forme gère des dossiers partagés.</desc>
+            <desc0>Non Disponible</desc0>
+            <desc1>Gestion limitée des habilitations</desc1>
+            <desc2>Gestion fine des habilitations : catégories, groupes, rôles, ...</desc2>
+            <score>2</score>
+            <comment>Les permissions peuvent être définis soit par rôle soit par utilisateur</comment>
+         </element>
+         <element name="planification" title="Planification">
+            <desc>La plate-forme intègre une diffusion de masse planifiée.</desc>
+            <desc0>Non Disponible</desc0>
+            <desc1>Partiellement Disponible</desc1>
+            <desc2>Disponible</desc2>
+            <score>2</score>
+            <comment>JasperServer comprend un scheduler configurable pour la planification de la génération des rapports en back office. Ce schéduler est accessible depuis le client riche iReport.
+Les fonctions de distributions comprennent : la sélection de fuseaux horaires, dates de début/fin de planning, nombre de récurences, minutes, heures, jours, semaines de récurence, récurence calendaire (jour de la semaine ou du mois, sortie en PDF/HTML/Excel/RTF, notifications par emails avec option lien d'accès ou pièce jointe.</comment>
+         </element>
+         <element name="modesdediffusion" title="Modes de Diffusion">
+            <desc>La plate-forme gère la diffusion personnalisée.</desc>
+            <desc0>1 --- 1 : Diffusion individuelle</desc0>
+            <desc1>1 --- n : Même document vers des groupes</desc1>
+            <desc2>n --- m : Document paramétré selon le destinataire</desc2>
+            <score>2</score>
+            <comment>JasperServer comprend un scheduler configurable pour la planification de la génération des rapports en back office. Ce schéduler est accessible depuis le client riche iReport.</comment>
+         </element>
+      </element>
+      <element name="securitehabilitations" title="Sécurité Habilitations">
+         <desc>Critères pour la gestion des droits.</desc>
+         <comment></comment>
+         <element name="annuaire" title="Annuaire">
+            <desc>La plate-forme gère un annuaire des utilisateurs.</desc>
+            <desc0>Non Disponible</desc0>
+            <desc1>Propriétaire</desc1>
+            <desc2>LDAP dédié et synchonisable à un annuaire d'entreprise</desc2>
+            <score>2</score>
+            <comment>JasperServer comprend un sous-système d'authentification, d'habilitation et de SSO basé sur Spring ACEGI, et peut s'intégrer à des systèmes de sécurités externes comme LDAP ou ADS.</comment>
+         </element>
+         <element name="authentification" title="Authentification">
+            <desc>Authentification des utilisateurs dans la plate-forme</desc>
+            <desc0>Non Disponible</desc0>
+            <desc1>Authentification uniquement sur l'annuaire de la plate-forme</desc1>
+            <desc2>Authentification possible sur l'annuaire du portail d'entreprise</desc2>
+            <score>2</score>
+            <comment>JasperServer peut s'intégrer à des systèmes de sécurités externes comme LDAP ou ADS.</comment>
+         </element>
+         <element name="sso" title="SSO">
+            <desc>La Plate-forme accepte le SSO (Single Sign On).</desc>
+            <desc0>Non Disponible</desc0>
+            <desc1>Partiellement Disponible</desc1>
+            <desc2>Disponible.</desc2>
+            <score>1</score>
+            <comment>Le SSO de JasperServer est implémenté par Acegi, le système de sécurité de Spring</comment>
+         </element>
+         <element name="groupes" title="Groupes">
+            <desc>La plate-forme gère les groupes d'utilisateurs.</desc>
+            <desc0>Non Disponible</desc0>
+            <desc1>Gestion simple de groupes sans notions de rôles</desc1>
+            <desc2>Gestion de rôles</desc2>
+            <score>2</score>
+            <comment>Les habilitations sont basées sur des roles.</comment>
+         </element>
+         <element name="donnees" title="Données">
+            <desc>La plate-forme gère les habilitations sur les données.</desc>
+            <desc0>Non Disponible</desc0>
+            <desc1>Gestion limité des objets requêtés</desc1>
+            <desc2>Contenu des objets requêtés gérables (visibilité table, colonne, ligne, par utilisateur ou groupe)</desc2>
+            <score>2</score>
+            <comment>Pour le reporting, le contrôle d'accès peut se faire sur l'enregistrement, la colonne, le rapport, la source de donnée et les concepts de 'topic' et 'Domain' pour les accès par les utilisateurs métiers.</comment>
+         </element>
+         <element name="journalisation" title="Journalisation">
+            <desc>Fonctionnalités d'audit ou de traçabilité (sécurité et/ou performances)</desc>
+            <desc0>Non Disponible</desc0>
+            <desc1>Limité à certains évènements</desc1>
+            <desc2>Tout peut être tracé</desc2>
+            <score>2</score>
+            <comment>JasperServer dispose d'un système de journalisation basé sur Log4J. La journalisation est donc totalement personnalisable (par défaut seul les erreurs et avertissements sont journalisés).</comment>
+         </element>
+      </element>
+      <element name="applicationclient" title="Outillage">
+         <desc>Critères pour les applications des postes de travail.</desc>
+         <comment></comment>
+         <element name="administrateur" title="Administrateur">
+            <desc>La plate-forme comprend une console pour l'administrateur.</desc>
+            <desc0>Non Disponible</desc0>
+            <desc1>Partiellement Disponible</desc1>
+            <desc2>Disponible</desc2>
+            <score>2</score>
+            <comment>Une console d'administration est disponible dans JasperServer.</comment>
+         </element>
+         <element name="planificateur" title="Planificateur">
+            <desc>La plate-forme comprend un outil de diffusion planifiée.</desc>
+            <desc0>Non Disponible</desc0>
+            <desc1>Planification pour chaque utilisateur seulement ou globalement seulement</desc1>
+            <desc2>Planification possible pour chaque utilisateur et globalement</desc2>
+            <score>2</score>
+            <comment>JasperServer comprend un module de planification.
+iReport comprent un plugin "Massive compilation".</comment>
+         </element>
+         <element name="developpementc/s" title="Création c/s">
+            <desc>La plate-forme comprend un outil de création de rapports clients/serveur.</desc>
+            <desc0>Non Disponible</desc0>
+            <desc1>Partiellement Disponible</desc1>
+            <desc2>Disponible</desc2>
+            <score>2</score>
+            <comment>iReport est l'outil de création de rapports clients/serveur de la solution/</comment>
+         </element>
+         <element name="developpementweb" title="Création Web">
+            <desc>La plate-forme comprend un outil de création de rapports web.</desc>
+            <desc0>Non Disponible</desc0>
+            <desc1>Partiellement Disponible</desc1>
+            <desc2>Disponible</desc2>
+            <score>2</score>
+            <comment>L'interface de création web des rapports est au standard web 2.0 (glisser/déposer).</comment>
+         </element>
+         <element name="surcouchemetier1" title="Surcouche métier">
+            <desc>La plate-forme comprend un outil de création de surcouche métier.</desc>
+            <desc0>Non Disponible</desc0>
+            <desc1>Via accès Client/Serveur seulement ou Web seulement</desc1>
+            <desc2>Via accès Client/Serveur et Web</desc2>
+            <score>1</score>
+            <comment>La surcouche métier (Domains") pour le reporting et le dashboarding est disponible dans JasperServer et le portail web. Une application du portail permet de la gérer.</comment>
+         </element>
+         <element name="visionneusec/s" title="Visionneuse c/s">
+            <desc>La plate-forme comprend un outil de visualisation de rapports en client-serveur (central ou local).</desc>
+            <desc0>Non Disponible</desc0>
+            <desc1>Partiellement Disponible</desc1>
+            <desc2>Disponible</desc2>
+            <score>2</score>
+            <comment>iReport dispose d'une visionneuse interne permettant l'affichage en PDF, HTML, RTF, ODF, CSV...</comment>
+         </element>
+         <element name="navigateurweb" title="Navigateur Web">
+            <desc>La plate-forme permet la visualisation de rapports dans un navigateur.</desc>
+            <desc0>Non Disponible</desc0>
+            <desc1>Partiellement Disponible</desc1>
+            <desc2>Disponible</desc2>
+            <score>2</score>
+            <comment>JasperServer permet de visualiser les rapports directement depuis le portail.</comment>
+         </element>
+      </element>
+   </section>
+   <section name="reportingbi" title="Reporting BI">
+      <desc>Section pour les fonctions liées au formatage et la visualisation des rapports BI.</desc>
+      <element name="miseenforme" title="Mise en Forme c/s">
+         <desc>Section pour les fonctions de mise en forme des informations affichées dans les rapports en client lourd (sur des postes autonomes).</desc>
+         <comment></comment>
+         <element name="statique" title="Statique">
+            <desc>Mise en forme statique (pas de style). Ex. gras, italique, couleurs fond, couleur police, etc.</desc>
+            <desc0>Non Disponible</desc0>
+            <desc1>Possibilités de mise en formes existants mais limités</desc1>
+            <desc2>Possibilités de mise en formes aussi riches que dans une suite bureautique</desc2>
+            <score>2</score>
+            <comment></comment>
+         </element>
+         <element name="style" title="Style">
+            <desc>Mise en forme en nommant des styles réutilisables (document, onglet, section, paragraphe, caractères, listes, puces, etc.)</desc>
+            <desc0>Non Disponible</desc0>
+            <desc1>Partiellement Disponible</desc1>
+            <desc2>Disponible</desc2>
+            <score>2</score>
+            <comment>La notion de style existe dans iReport</comment>
+         </element>
+         <element name="colorcoding" title="Color Coding">
+            <desc>Fonction de mise en couleur ou formatage selon des fonctions statiques (seuils). Note : le data coding est évalué à part.</desc>
+            <desc0>Non Disponible</desc0>
+            <desc1>Accès au seuillage imposé ou accès à la mise en forme limité</desc1>
+            <desc2>Plusieurs possiblités de seuillage : nombre de seuils, valeurs de seuils; accès à la mise en forme complète</desc2>
+            <score>1</score>
+            <comment>La fonctionnalité ne semble pas être présente nativement mais des solutions de contournements existent</comment>
+         </element>
+         <element name="datacoding" title="Data Coding">
+            <desc>Fonction de mise en couleur ou formatage selon des fonctions dynamiques, calculées sur les données affichées.</desc>
+            <desc0>Non Disponible</desc0>
+            <desc1>Une seule fonction de calcul pour les seuils ou accès limité au formatage</desc1>
+            <desc2>Plusieurs fonctions de calculs pour les seuils et accès au formatage complet</desc2>
+            <score>2</score>
+            <comment>Les fonctions de formatages dynamiques sont compatibles avec les sorties vers les formats imprimables.</comment>
+         </element>
+      </element>
+      <element name="miseenformeweb" title="Mise en Forme Web">
+         <desc>Section pour les fonctions de mise en forme des informations affichées dans les rapports en web (dans les navigateurs).</desc>
+         <comment></comment>
+         <element name="statique1" title="Statique">
+            <desc>Mise en forme statique (pas de style). Ex. gras, italique, couleurs fond, couleur police, etc.</desc>
+            <desc0>Non Disponible</desc0>
+            <desc1>Mise en forme existant mais limité</desc1>
+            <desc2>Mise en forme aussi riches que dans une suite bureautique</desc2>
+            <score>2</score>
+            <comment>La mise en forme des rapports définie dans iReport est totalement supportée par l'affichage web.</comment>
+         </element>
+         <element name="styles" title="Styles">
+            <desc>Mise en forme en nommant des styles réutilisables (document, onglet, section, paragraphe, caractères, listes, puces, etc.).</desc>
+            <desc0>Non Disponible</desc0>
+            <desc1>Seules les feuilles CSS sont utilisables</desc1>
+            <desc2>Technologies avancées de chartes graphiques utilisables : CSS, XML, XSL ...</desc2>
+            <score>0</score>
+            <comment>Pas de feuilles de styles disponibles dans JasperServer pour remettre en forme les rapports.
+La mise en forme est exclusivement celle définie dans le fichier jrxml.</comment>
+         </element>
+         <element name="colorcoding1" title="Color Coding">
+            <desc>Fonction de mise en couleur ou formatage selon des fonctions statiques (seuils). Note : le data coding est évalué à part.</desc>
+            <desc0>Non Disponible</desc0>
+            <desc1>Accès unique au seuillage</desc1>
+            <desc2>Plusieurs accès possible au seuillage : nombre de seuils, valeurs de seuils, accès à la mise en forme complète</desc2>
+            <score>1</score>
+            <comment>le color coding est limité à ce qui a été défini lors de la conception du rapport.</comment>
+         </element>
+         <element name="datacoding1" title="Data Coding">
+            <desc>Fonction de mise en couleur ou formatage selon des fonctions dynamiques, mais calculées sur les données affichées.</desc>
+            <desc0>Non Disponible</desc0>
+            <desc1>Fonctions de calculs limités ou inexistant pour les seuils ou accès limité/inexistant au formatage complet</desc1>
+            <desc2>Plusieurs fonctions de calculs pour les seuils et accès au formatage complet.</desc2>
+            <score>1</score>
+            <comment>Le data coding est possible pour les rapports générés pour les sorties web.</comment>
+         </element>
+      </element>
+      <element name="uiconception" title="Conception des rapports">
+         <desc>Critères pour la conception des rapports et requêtes.</desc>
+         <comment></comment>
+         <element name="requeteurtechnique" title="IHM Requêteur">
+            <desc>Critères pour les requêteurs en accès directs aux serveurs (ex. Constructeurs SQL)</desc>
+            <comment></comment>
+            <element name="textederequete" title="Texte de requête">
+               <desc>Écriture du texte de requête dans le langage du SGBD.</desc>
+               <desc0>Non Disponible</desc0>
+               <desc1>Partiellement Disponible</desc1>
+               <desc2>Disponible</desc2>
+               <score>2</score>
+               <comment></comment>
+            </element>
+            <element name="constructeurderequete" title="Constructeur de Requête">
+               <desc>Assistant graphique de construction des requêtes d'après les objets techniques du SGBD (ex. MS Access, OOo Base).</desc>
+               <desc0>Non Disponible</desc0>
+               <desc1>Partiellement Disponible</desc1>
+               <desc2>Disponible</desc2>
+               <score>2</score>
+               <comment>Constructeur de requête disponible </comment>
+            </element>
+            <element name="surcouchemetier" title="Surcouche métier">
+               <desc>Fonction de construction par objets métiers indépendants de la technicité de la base de données, accessible aux utilisateurs non informaticiens.</desc>
+               <desc0>Non Disponible</desc0>
+               <desc1>Partiellement Disponible</desc1>
+               <desc2>Disponible</desc2>
+               <score>2</score>
+               <comment>La surcouche métier destinée aux utilisateurs métiers non informaticiens est disponible dans le portail JasperServer. Le reporting et le dashboarding ad hoc sont tout deux disponibles.</comment>
+            </element>
+         </element>
+         <element name="requetage" title="Requétage">
+            <desc>Critères évaluant les possibilités de requêtage. (Ne s'applique pas au requêteur texte).</desc>
+            <comment></comment>
+            <element name="requetessimples" title="Requêtes Simples">
+               <desc>Requêtes mettant en œuvre une seule phrase SQL (Select From where ...).</desc>
+               <desc0>Non Dispopnible</desc0>
+               <desc1>Partiellement Disponible</desc1>
+               <desc2>Disponible</desc2>
+               <score>2</score>
+               <comment>iReport permet un requêtage par rapport.</comment>
+            </element>
+            <element name="requetesimbriquees" title="Requêtes Imbriquées">
+               <desc>Les rapports font appels à des requêtes imbriquées. (Ne s'applique pas au SQL à la carte).</desc>
+               <desc0>Non Disponible</desc0>
+               <desc1>Partiellement Disponible</desc1>
+               <desc2>Disponible</desc2>
+               <score>1</score>
+               <comment>iReport ne semble pas supporter les requêtes imbriquées</comment>
+            </element>
+            <element name="requetagemultiple" title="Requêtage Multiple">
+               <desc>Plusieurs requêtes dans le même rapport.</desc>
+               <desc0>Non Disponible</desc0>
+               <desc1>Requêtes Union ou dans des onglets</desc1>
+               <desc2>Requêtes dans le même écran</desc2>
+               <score>2</score>
+               <comment>Bien que iReport ne permet qu'une seule requête par rapport, un rapport peut toutefois contenir ou être lié à des "subreports".
+Les rapports multi requêtes peuvent être faits via le dashboarding.
+</comment>
+            </element>
+            <element name="requetagemultisources" title="Requêtage Multi Sources">
+               <desc>Critères pour les requêtes à plusieurs sources.</desc>
+               <comment></comment>
+               <element name="multisourcesrequete" title="Multi Sources Requête">
+                  <desc>Un rapport accepte des requêtes provenant de plusieurs sources de données.</desc>
+                  <desc0>Non Disponible</desc0>
+                  <desc1>Partiellement Disponible</desc1>
+                  <desc2>Disponible</desc2>
+                  <score>2</score>
+                  <comment>L'aspect Multi-sources repose sur le fait que chaque rapport contenu dans un raport global peut executer une requête.</comment>
+               </element>
+               <element name="jointureexterne" title="Jointure Externe">
+                  <desc>Le rapport fait une jointure sur plusieurs sources.</desc>
+                  <desc0>Non Disponible</desc0>
+                  <desc1>Partiellement Disponible</desc1>
+                  <desc2>Disponible</desc2>
+                  <score>1</score>
+                  <comment>iReport permet d'intégrer dans un même rapport les données issues de plusieurs sources de données de différentes sortes.</comment>
+               </element>
+               <element name="multisurcouchemetier" title="Multi Surcouche Métier">
+                  <desc>Le rapport présente des requêtes provenant de plusieurs surcouches métiers.</desc>
+                  <desc0>Non Disponible</desc0>
+                  <desc1>Partiellement Disponible</desc1>
+                  <desc2>Disponible</desc2>
+                  <score>1</score>
+                  <comment>Le dashboarding ad hoc pourrait permettre de mixer dans un même tableau de bord les données de plusieurs domaines.</comment>
+               </element>
+            </element>
+         </element>
+      </element>
+      <element name="structuredesrapports" title="Structure des Rapports">
+         <desc>Critères pour la structure des rapports.</desc>
+         <comment></comment>
+         <element name="unedimension" title="Une Dimension">
+            <desc>Rapport simple (Ex. ligne / Colonne)</desc>
+            <desc0>Non Disponible</desc0>
+            <desc1>Partiellement Disponible</desc1>
+            <desc2>Disponible</desc2>
+            <score>2</score>
+            <comment></comment>
+         </element>
+         <element name="tableaucroise" title="Tableau Croisé">
+            <desc>Rapport à deux dimensions (Ex. Matrice).</desc>
+            <desc0>Non Disponible</desc0>
+            <desc1>Interactions limitées</desc1>
+            <desc2>Interactions par glisser/déposer</desc2>
+            <score>2</score>
+            <comment></comment>
+         </element>
+         <element name="multidimensionnel" title="Multi Dimensionnel">
+            <desc>Rapport multi dimensionnel (ligne, colonnes, pages selon d'autres dimensions).</desc>
+            <desc0>Non Disponible</desc0>
+            <desc1>Interaction par glisser-déposer ou juxtaposition de graphique/tableaux</desc1>
+            <desc2>Interaction par glisser-déposer et juxtaposition de graphique/tableaux</desc2>
+            <score>2</score>
+            <comment></comment>
+         </element>
+         <element name="groupements" title="Groupements">
+            <desc>Le rapport présente des groupements en diverses sections triées de diverses manières.</desc>
+            <desc0>Non Disponible</desc0>
+            <desc1>Partiellement Disponible</desc1>
+            <desc2>Disponible</desc2>
+            <score>2</score>
+            <comment></comment>
+         </element>
+         <element name="liensentrerapports" title="Liens entre rapports">
+            <desc>Le rapport présente des liens vers d'autres données ou rapports.</desc>
+            <desc0>Non Disponible</desc0>
+            <desc1>Liens statiques vers d'autres rapports</desc1>
+            <desc2>Liens sur des données</desc2>
+            <score>1</score>
+            <comment>Un des exemples de rapports fourni avec JasperServer montre la possibilité de créer des liens statiques entre rapports (au moins statiques)</comment>
+         </element>
+         <element name="miseenpage" title="Mise en page">
+            <desc>Le rapport présente une structure de mise en page (Modèles de page, entêtes, pieds, etc.).</desc>
+            <desc0>Pas de mise en page</desc0>
+            <desc1>Mise en page global pour le document</desc1>
+            <desc2>Mise en page avancée pour les sections ou groupements</desc2>
+            <score>2</score>
+            <comment>Chaque élément du rapport peut être formaté séparément</comment>
+         </element>
+      </element>
+      <element name="typologiedesrapports" title="Types de rapport">
+         <desc>Critères pour caractériser le contenu des rapports.</desc>
+         <comment></comment>
+         <element name="rapportpredefini" title="Rapport Prédéfini">
+            <desc>Rapport préparé à l'avance et ouvert par l'utilisateur.</desc>
+            <desc0>Non Disponible</desc0>
+            <desc1>Avec données</desc1>
+            <desc2>Raffraichi à la volée</desc2>
+            <score>2</score>
+            <comment>Les rapports contenus dans le repository sont remplis à la demande.</comment>
+         </element>
+         <element name="rapportadhoc" title="Rapport Ad Hoc">
+            <desc>Rapport dont le contenu est défini par un utilisateur final.</desc>
+            <desc0>Non Disponible</desc0>
+            <desc1>Pour Informaticien (SQL)</desc1>
+            <desc2>Pour non Informaticien</desc2>
+            <score>2</score>
+            <comment>Le reporting et le dashboarding Ad hoc sont disponibles dans le portail.</comment>
+         </element>
+         <element name="interactivite" title="Interactivité">
+            <desc>Le rapport présente des possibilités d'interaction.</desc>
+            <desc0>Statique (Sans interactivité).</desc0>
+            <desc1>Explorable (Filtrage à l'aide de boites déroulantes).</desc1>
+            <desc2>Interactif (Exploration en agissant sur les données avec complément de requêtes).</desc2>
+            <score>1</score>
+            <comment>Une certaine interactivitée est possible via des hyperliens qui permettent une forme de "drill through" (accès à un "subreport" ou un autre rapport, ou bien à une section de rapport.</comment>
+         </element>
+         <element name="miseajourdesdonnees" title="Mise à jour des données">
+            <desc>Le rapport permet la mise à jour des données.</desc>
+            <desc0>Non Disponible</desc0>
+            <desc1>Copie utilisateur</desc1>
+            <desc2>Selon sécurité</desc2>
+            <score>0</score>
+            <comment></comment>
+         </element>
+      </element>
+      <element name="affichagedesdonnees" title="Affichage des données">
+         <desc>Critères pour la richesse des possibilités d'affichage des données.</desc>
+         <comment></comment>
+         <element name="tableaux" title="Tableaux">
+            <desc>Le Rapport affiche des tableaux plus ou moins riches.</desc>
+            <desc0>Tableaux simples, eventuellement explorables</desc0>
+            <desc1>Tableaux croisés, regroupement et éventuellement avec calculs partiels, etc.</desc1>
+            <desc2>Regroupements multi tableaux, variables calculées indépendamment, etc.</desc2>
+            <score>2</score>
+            <comment></comment>
+         </element>
+         <element name="graphiques" title="Graphiques">
+            <desc>Le rapport affiche des graphiques plus ou moins riches.</desc>
+            <desc0>Quelques graphiques standards (histogrammes, camemberts, lignes, aires)</desc0>
+            <desc1>Graphiques équivalents à un tableur bureautique</desc1>
+            <desc2>Graphiques propres à l'application (comprend au moins les équivalents des graphiques disponibles dans les tableurs bureautiques)</desc2>
+            <score>2</score>
+            <comment>Les possibilités graphiques sont avancées et richement personnalisables, et des widgets dédiées au dashboarding (raffraichis en permanence) sont disponibles.</comment>
+         </element>
+         <element name="graphiquesimprimables" title="Graphiques imprimables">
+            <desc>Les graphiques sont imprimables.</desc>
+            <desc0>Non Disponible</desc0>
+            <desc1>Partiellement Disponible</desc1>
+            <desc2>Tous les graphiques s'impriment</desc2>
+            <score>2</score>
+            <comment>Tous les graphiques de iReport s'impriment. 
+Toutefois, certains graphiques de dashboarding ne s'impriment pas, du fait de leur vocation à être raffraichis en permanence.</comment>
+         </element>
+         <element name="appeldefonctionsutilisateur" title="Appel de fonctions utilisateur">
+            <desc>Capacité d'appeler du code (externe ou embarqué)</desc>
+            <desc0>Non disponilbe</desc0>
+            <desc1>Code embarqué dans le rapport</desc1>
+            <desc2>Appel de code externe possible en plus du code embarqué</desc2>
+            <score>1</score>
+            <comment>iReporte embarque un éditeur d'expressions qui peut être utilisé comme source de données.
+Les capacités de iReport à être implémenté dans un AGL plus large rendent possibles les appels externes, mais c'est en dehors de Jasper.</comment>
+         </element>
+      </element>
+   </section>
+</document>

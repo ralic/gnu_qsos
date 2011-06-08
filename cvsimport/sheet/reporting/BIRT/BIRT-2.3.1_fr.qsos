@@ -1,0 +1,875 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document>
+   <header>
+      <authors>
+         <author>
+            <email>hery.randriamanamihaga@atosorigin.com</email>
+            <name>Hery Njato Randriamanamihaga</name>
+         </author>
+         <author>
+            <email>michel.kergoat@atosorigin.com</email>
+            <name>Michel Kergoat</name>
+         </author>
+      </authors>
+      <dates>
+         <creation></creation>
+         <validation></validation>
+      </dates>
+      <language>fr</language>
+      <appname>BIRT</appname>
+      <release>2.3.1</release>
+      <licenseid>5</licenseid>
+      <licensedesc>Eclipse Public License</licensedesc>
+      <url>http://www.eclipse.org/birt/phoenix/</url>
+      <desc>Le projet BIRT, Business Intelligence and Reporting Tools, propose un système de création de rapports pour les applications Web ou java. Comme tous les projets développés dans le cadre de la fondation Eclipse, BIRT est open-source et libre d'utilisation. Initié par la société Actuate, ce projet est particulièrement actif. Les deux principaux composants de BIRT sont un outil de conception de rapports basé sur Eclipse et des moteurs d'exécution installables dans un serveur d'applications J2EE. BIRT fonctionne aussi sur la plate-forme client riche Eclipse RCP (Rich Client Plateform). </desc>
+      <demourl>http://download.eclipse.org/birt/downloads/examples/misc/BIRT2.1Demo/EclipseDemo.html</demourl>
+      <qsosformat>1.7</qsosformat>
+      <qsosappfamily>Reporting</qsosappfamily>
+      <qsosspecificformat></qsosspecificformat>
+      <qsosappname></qsosappname>
+   </header>
+   <section name="generic" title="Section générique">
+      <desc>Les critères génériques de l'évaluation Presto de QSOS</desc>
+      <element name="intrinsicdurability" title="Pérennité">
+         <desc>Pérennité</desc>
+         <element name="maturite" title="Maturité">
+            <desc></desc>
+            <desc0>Logiciel provenant d'un fork ou avec une forte probabilité de fork dans un futur proche.</desc0>
+            <desc1>Projet jeune (moins de 3 ans) ou connaissant des difficultés à stabiliser les versions de développement.</desc1>
+            <desc2>Projet stable ou ayant un bon historique de gestion de crise. Les nouvelles versions apportent de façon prépondérante de nouvelles fonctionnalités.</desc2>
+            <score>2</score>
+            <comment>Projet stable dont la première version date de Mars 2005.</comment>
+         </element>
+         <element name="adoption1" title="Adoption">
+            <desc></desc>
+            <desc0>Usage détectable sur Internet sans véritable activité communautaire</desc0>
+            <desc1>Utilisation communautaire prépondérante</desc1>
+            <desc2>Nombreuse références industrielles</desc2>
+            <score>2</score>
+            <comment>Pas vraiment de réferences industrielles identifiées sur le web.
+Étant donné la richesse fonctionnelle de ce générateur d'états et les différentes installation (Framework Eclipse, API, J2EE, Engines seuls,intégration à des plate-formes décisionnelles...), ainsi que l'activité du projet, il est raisonnable de penser que les utilisations ne sont pas publiées, d'où le score 2.</comment>
+         </element>
+         <element name="developpement" title="Développement">
+            <desc></desc>
+            <desc0>Deux ou moins de deux développeurs clairement identifiés.</desc0>
+            <desc1>Équipe de développement réduite avec un turn-over important ou sans équipe de direction identifiée.</desc1>
+            <desc2>Équipe de développement structurée comportant plus de 5 développeurs actifs.</desc2>
+            <score>2</score>
+            <comment>Projet structuré disposant d'un PMC (Project Management Committee) Eclipse hebdomadaire</comment>
+         </element>
+         <element name="activite" title="Activité">
+            <desc></desc>
+            <desc0>Très faible activité, que ce soit sur les résolutions de bugs, les releases, l'ajout de nouvelles fonctions ou sur les espaces communautaires (wiki, forum, mailing list...)</desc0>
+            <desc1>Activité détectable mais anarchique (pas feuille de route accessible facilement, pas de prévisions de nouvelles fonctionnalités ou de prévisions de nouvelles versions visible)</desc1>
+            <desc2>Activité importante et visible via la mise en place de feuilles de routes traçant les requêtes de nouvelles fonctionnalités et/ou les prévisions de sortie des nouvelles version</desc2>
+            <score>2</score>
+            <comment>La release majeure débugguée 2.3.1 est de ce mois (02/2009), des RC1, Milestones sont prévues, ainsi que des builds nocturnes.</comment>
+         </element>
+         <element name="strategicalindependence" title="Indépendance stratégique">
+            <desc0>Pas de stratégie détectable ou stratégie dictée par une société commerciale, un sponsor ou un individu unique.</desc0>
+            <desc1>Stratégie décidée par l'équipe de developpement.</desc1>
+            <desc2>Indépendance forte de l'équipe de développement, fort engagement du projet dans un processus de standardisation.</desc2>
+            <score>1</score>
+            <comment>Bien qu'initiée par la société Actuate qui la sponsorise (ainsi que IBM), l'équipe de développement est indépendante. Elle est construite suivant le standard Eclipse de gestion de projet, et une université chinoise est également présente.</comment>
+         </element>
+         <element name="copyrightowners" title="Détenteur des droits">
+            <desc0>Les droits sont détenus par quelques individus ou entités commerciales, facilitant le changement de licence</desc0>
+            <desc1>Les droits sont détenus par de nombreux individus de façon homogène, rendant le changement de licence très difficile</desc1>
+            <desc2>Les droits sont détenus par une entité légale, une fondation dans laquelle la communauté a confiance (ex: FSF, Apache, ObjectWeb)</desc2>
+            <score>2</score>
+            <comment>Faisant partie du projet Eclipse, BIRT bénéficie du crédit qu'a la fondation Eclipse vis à vis de la communauté.</comment>
+         </element>
+         <element name="license" title="Licence">
+            <desc>Licence, à pondérer uniquement si le client désire un jour devenir propriétaire du code</desc>
+            <element name="permissiveness" title="Permissivité">
+               <desc0>Licence très stricte, comme la GPL</desc0>
+               <desc1>Licence modérée entre les deux extrêmes (GPL et BSD), licence duale dépendante du type d'utilisateur (personne, société…) ou de leur activité</desc1>
+               <desc2>Licence très permissive comme BSD et Apache</desc2>
+               <score>0</score>
+               <comment></comment>
+            </element>
+            <element name="protectionagainstproprietaryforks" title="Protection contre des forks commerciaux">
+               <desc0>Licence très permissive comme BSD et Apache</desc0>
+               <desc1>Licence modérée entre les deux extrêmes (GPL et BSD), licence duale dépendante du type d'utilisateur (personne, société…) ou de leur activité</desc1>
+               <desc2>Licence très stricte, comme la GPL</desc2>
+               <score>2</score>
+               <comment></comment>
+            </element>
+         </element>
+      </element>
+      <element name="industrializedsolution" title="Industrialisation">
+         <desc>Niveau d'industrialisation du projet</desc>
+         <element name="independenceofdevelopments" title="Indépendance des développements">
+            <desc0>Développements réalisés à plus de 60% par des employés d'une seule société</desc0>
+            <desc1>Développements réalisés à 60% maximum par des employés d'une seule société</desc1>
+            <desc2>Développements réalisés à 20% maximum par des employés d'une seule société</desc2>
+            <score>1</score>
+            <comment></comment>
+         </element>
+         <element name="services1" title="Services">
+            <desc></desc>
+            <desc0>Pas d'offres de services identifiée</desc0>
+            <desc1>Offre existante mais restreinte géographiquement ou en une seule langue ou fournie par un seul fournisseur</desc1>
+            <desc2>Offre riche : plusieurs fournisseurs ou plusieurs langages</desc2>
+            <score>1</score>
+            <comment>Actuate propose des services sur ses logiciels (dont BIRT). Des sociétés par exemple de formation proposent aussi des services.</comment>
+         </element>
+         <element name="documentation" title="Documentation">
+            <desc0>Pas de documentation utilisateur</desc0>
+            <desc1>La documentation existe mais est en partie obsolète ou restreinte à une seule langue ou peu détaillée</desc1>
+            <desc2>Documentation à jour, traduite et éventuellement adaptée à différentes cibles de lecteurs (end-user, sysadmin, manager…)</desc2>
+            <score>2</score>
+            <comment>La documentation est maintenue par la communauté. 
+Deux livres édités commercialement (au moins) permettent aussi d'approfondir son utilisation.</comment>
+         </element>
+         <element name="methodequalite" title="Méthode qualité">
+            <desc></desc>
+            <desc0>Pas de processus de qualité identifié ni d'outils de gestions de bugs</desc0>
+            <desc1>Processus qualité non formalisé ou non outillé ou comportant des outils qui sont très peu utilisés</desc1>
+            <desc2>Utilisation très active d'outils standards (tests unitaires, outils de gestion de build, outils de mesure de qualité du code)</desc2>
+            <score>2</score>
+            <comment>Processus calqué sur les bonnes pratiques de la communauté Eclipse et du développement java.</comment>
+         </element>
+      </element>
+      <element name="packaging" title="Packaging">
+         <desc>Packaging pour les différents systèmes d'exploitation</desc>
+         <element name="packagingbsd" title="BSD">
+            <desc></desc>
+            <desc0>Pas de packaging officiel pour la famille BSD</desc0>
+            <desc1>Packaging existant pour quelques distributions de la famille BSD</desc1>
+            <desc2>Packaging complet pour les distributions de la famille BSD suivantes : FreeBSD, OpenBSD, NetBSD et Mac OS X</desc2>
+            <score>1</score>
+            <comment>Les outils sont distribués sous forme d'archive compressée dont le bon fonctionnement dépend de l'environnement Java/J2EE</comment>
+         </element>
+         <element name="packaginglinux" title="GNU/Linux">
+            <desc></desc>
+            <desc0>Pas de packaging officiel pour les systèmes d'exploitations GNU/Linux</desc0>
+            <desc1>Packaging existant pour quelques distributions GNU/Linux</desc1>
+            <desc2>Packaging complet les systèmes de packaging .deb et .rpm</desc2>
+            <score>1</score>
+            <comment>Les outils sont distribués sous forme d'archive compressée dont le bon fonctionnement dépend de l'environnement Java/J2EE</comment>
+         </element>
+         <element name="unix" title="Unix">
+            <desc></desc>
+            <desc0>Pas de packaging officiel pour les systèmes de la famille Unix</desc0>
+            <desc1>Packaging existant sur quelques systèmes de la famille Unix</desc1>
+            <desc2>Packaging existant sur au moins ces 3 systèmes : AIX, HP-UX, Solaris</desc2>
+            <score>1</score>
+            <comment>Les outils sont distribués sous forme d'archive compressée dont le bon fonctionnement dépend de l'environnement Java/J2EE</comment>
+         </element>
+         <element name="packagingwindows" title="Windows">
+            <desc0>Le logiciel n'est pas disponible sur un système Windows.</desc0>
+            <desc1>Le logiciel existe sous forme d'archive tout en un.</desc1>
+            <desc2>Le logiciel dispose d'un installeur.</desc2>
+            <score>1</score>
+            <comment>L'installation BIRT + Eclipse est disponible pour windows en .zip, incluant un executable ".exe", (contraitement à d'autres suites de reporting BI qui incorporent une seule archive comportant des scripts bat et sh de lancement).</comment>
+         </element>
+         <element name="packagingsource" title="Sources">
+            <desc0>L'installation depuis les sources est hasardeuse et risquée</desc0>
+            <desc1>L'installation depuis les sources est difficile ou limité (seulement à un OS, une architecture, la résolution de l'écran...)</desc1>
+            <desc2>L'installation depuis les sources est outillée (vérification des dépencances, verification de l'installation, gestion de build)</desc2>
+            <score>2</score>
+            <comment>Compilation a priori outillé par Eclipse.</comment>
+         </element>
+         <element name="packagingtar" title="Archive compressée">
+            <desc0>Pas d'archive disponible</desc0>
+            <desc1>Archive globale</desc1>
+            <desc2>Archive séparée pour chaque module installable</desc2>
+            <score>2</score>
+            <comment></comment>
+         </element>
+      </element>
+      <element name="exploitability" title="Exploitabilité">
+         <desc>Niveau d'exploitabilité</desc>
+         <element name="easeofuseergonomics" title="Facilité d'utilisation, ergonomie">
+            <desc0>Difficulté d'utilisation, demande une connaissance approfondie des fonctionnalités du logiciel</desc0>
+            <desc1>Ergonomie austère et très technique</desc1>
+            <desc2>Ergonomie élaborée et IHM comprenant des fonctions d'aide</desc2>
+            <score>2</score>
+            <comment>L'intégration Eclipse est totale et fonctionnelle.
+Une version client Riche Eclipse (RCP), plus légère en espace disque et à l'utilisation, est également disponible.</comment>
+         </element>
+         <element name="administrationmonitoring" title="Administration et supervision">
+            <desc0>Pas de fonctionnalités de contrôle, ni d'administration</desc0>
+            <desc1>Fonctionnalités présentes mais incomplètes ou à améliorer</desc1>
+            <desc2>Fonctionnalités complètes et faciles de contrôle et d'administration. Intégration possible avec des outils tiers (ex : SNMP, syslog…)</desc2>
+            <score>1</score>
+            <comment>BIRT est un concepteur et générateur de rapports, mais ne dispose pas d'outils de gestion centralisé de ses rapports. La notion de ressources partagés et de librairie existe et est administrable depuis chaque poste client.</comment>
+         </element>
+      </element>
+      <element name="technicaladaptability" title="Adaptabilité">
+         <desc>Adaptabilité technique</desc>
+         <element name="modularity" title="Modularité">
+            <desc0>Logiciel monolithique</desc0>
+            <desc1>Présence de modules haut niveau permettant un premier niveau d'adaptation</desc1>
+            <desc2>Conception modulaire, permettant des adaptations faciles par sélection et/ou création de modules</desc2>
+            <score>2</score>
+            <comment>BIRT bénéficie de la structure ultra-modulaire de Eclipse, en terme d'installation. Il pourra donc s'installer à côté d'autres modules d'Eclipse, par Exemple, l'ETL Talend, et le développeur pourra passer de l'iun à l'autre sans fermer Eclipse.</comment>
+         </element>
+         <element name="codemodification" title="Facilité technique de modification du code existant">
+            <desc0>Tout à la main</desc0>
+            <desc1>Recompilation possible mais complexe, sans outils, ni documentation</desc1>
+            <desc2>Recompilation facile, outillée (ex : make, ANT, Maven…) et documentée</desc2>
+            <score>2</score>
+            <comment>Recompilation via Eclipse et les outils embarqués par celui-ci</comment>
+         </element>
+         <element name="codeextension" title="Facilité d'extension du code">
+            <desc0>Toute modification demande une recompilation du code</desc0>
+            <desc1>Architecture conçue pour des extensions statiques mais exige une recompilation</desc1>
+            <desc2>Architecture de plugins, conçue pour des extensions dynamiques et sans recompilation</desc2>
+            <score>2</score>
+            <comment>Projet basé sur une architecture Eclipse.</comment>
+         </element>
+      </element>
+   </section>
+   <section name="plate-formereporting" title="Plate-forme de Reporting BI">
+      <desc>Section pour les plates-formes de reporting BI</desc>
+      <element name="sourcesdedonnees" title="Sources de données">
+         <desc></desc>
+         <comment></comment>
+         <element name="sgbdnatif" title="SGBD Natif">
+            <desc>Les requêtes se font sur les middleware natifs des SGBD.</desc>
+            <desc0>Non Disponible</desc0>
+            <desc1>Partiellement Disponible</desc1>
+            <desc2>Disponible</desc2>
+            <score>2</score>
+            <comment>La connexion de BIRT aux SGBD Natifs est possible via le pilote JDBC de l'éditeur du SGBD.
+L'intérêt d'utiliser les connexions natives est qu'elles sont optimisées, et adhèrent à la version du SGBD, et qu'elles ont plus de chances d'être plus récentes, plus fiables et plus performantes que celles embarquées dans les pilotes génériques.</comment>
+         </element>
+         <element name="fichiersnatifs" title="Fichiers Natifs">
+            <desc>Le requêteur supporte nativement (hors générique ODBC) les fichiers comme source.</desc>
+            <desc0>Non Disponible</desc0>
+            <desc1>Un des formats suivants n'est pas supporté : csv, xls, xml</desc1>
+            <desc2>Les formats de fichiers csv, xls et xml sont supportés</desc2>
+            <score>2</score>
+            <comment>Le format XLS est désormais supporté via la librairie pure java e.Spreadsheet (fonctionne sur toute plate-forme java).
+D'autres fichiers natifs comme des sources de données cryptées sont également supportés.</comment>
+         </element>
+         <element name="microsoft" title="Générique Microsoft">
+            <desc>Les sources de données Microsoft ODBC, DAO, etc. sont supportés.</desc>
+            <desc0>Non Disponible</desc0>
+            <desc1>Partiellement Disponible</desc1>
+            <desc2>Disponible</desc2>
+            <score>0</score>
+            <comment></comment>
+         </element>
+         <element name="java" title="Générique Java">
+            <desc>Les sources de données java génériques jDBC sont supportées.</desc>
+            <desc0>Non Disponible</desc0>
+            <desc1>Partiellement Disponible</desc1>
+            <desc2>Sources génériques personnalisées supportées.</desc2>
+            <score>2</score>
+            <comment>BIRT supporte, au delà des sources génériques, les connexions java (JDBC) personnalisées et spécifiques comme les sources cryptées.</comment>
+         </element>
+      </element>
+      <element name="structure" title="Architecture">
+         <desc>Critères pour évaluer l'architecture de la plate-forme Reporting BI.</desc>
+         <comment></comment>
+         <element name="portail" title="Portail">
+            <desc>La plate-forme BI est un portail Web implémenté dans un serveur d'application.</desc>
+            <desc0>Non Disponible</desc0>
+            <desc1>Le portail a une architecture monlithique et fermée</desc1>
+            <desc2>Architecture SOA interne : Les fonctionnalités du portail sont accessibles sous forme de services et intégrées au serveur d'applications</desc2>
+            <score>0</score>
+            <comment>BIRT est un constructeur de rapports prédéfinis et de requêtes ad hoc, mais ne comprend pas de portail BI.
+Il peut être - et est - incorporé dans un portail BI des suites BI du marché (comme spago BI et Pentaho) ou celles développées dans les entreprises.</comment>
+         </element>
+         <element name="serveurc/s" title="Serveur c/s">
+            <desc>La plate-forme est un serveur c/s avec référentiel partagé.</desc>
+            <desc0>Non Disponible</desc0>
+            <desc1>Référentiel partagé limité</desc1>
+            <desc2>Le référentiel inclut la gestion de rapports publiés</desc2>
+            <score>0</score>
+            <comment>BIRT est un poste de développement de rapports et requêtes. Il n'a pas de référentiel centralisé dans une base de données. Le référentiel est local au poste Eclipse.
+Il peut par contre publier les rapports dans un serveur d'application J2EE en se connectant à son référentiel.</comment>
+         </element>
+         <element name="desktop" title="Desktop">
+            <desc>La plate-forme est un poste de reporting isolé.</desc>
+            <desc0>Non Disponible</desc0>
+            <desc1>Partiellement Disponible</desc1>
+            <desc2>Surcouche métier pour non informaticien disponible</desc2>
+            <score>1</score>
+            <comment>BIRT est un créateur de rapports et requêtes ad hoc sur un poste informatique (Desktop) individuel, mais il n'incorpore que partiellement la surcouche métier qui le destinerait à un non informaticien.
+En effet, celle-ci est possible par le truchement d'une astuce (un informaticien prédéfinira des "dataset" réutilisables) mais n'existe pas en tant que telle.</comment>
+         </element>
+         <element name="agl" title="AGL">
+            <desc>La plate-forme Reporting est intégrable à un environnement de développement : API générateur d'états, requêtes, rapports, etc.</desc>
+            <desc0>Non Disponible</desc0>
+            <desc1>Quelques unes de ces fonctions sont présentes</desc1>
+            <desc2>Toutes ces fonctions sont présentes</desc2>
+            <score>2</score>
+            <comment>L'API de BIRT est complètement publié et documenté.
+Il peut donc être implanté dans une application informatique développé par ou pour les entreprises.
+Certains progiciels ou applications de gestion l'utilisent comme générateur d'états (en dehors des suites BI).
+BIRT implémente e.Spreadsheet, une librairie java d'émulation du tableur Excel, incluant la lecture et l'écriture native et libre de fichiers de ce tableur, même sur d'autres plates-formes ne disposant pas de la librairie du tableur de Microsoft, puisqu'elle est "pure java".</comment>
+         </element>
+         <element name="bureautique" title="Bureautique">
+            <desc>La plate-forme Reporting peut s'intégrer dans une suite bureautique (ex. OOo, MS Office).</desc>
+            <desc0>Non Disponible</desc0>
+            <desc1>Intégration basique (OLE, automation, plug in, etc...)</desc1>
+            <desc2>Intégration totale (menu, barre d'outils, bandeau, etc...)</desc2>
+            <score>0</score>
+            <comment>BIRT ne prévoit pas d'intégration Office, puisqu'il est lui-même un poste utilisateur et qu'il peut exporter les rapports aux formats bureautique.
+Cette fonction est plutôt l'apanage des suites BI centralisées et des portails BI.</comment>
+         </element>
+         <element name="soa" title="SOA">
+            <desc>La plate-forme expose des services SOA de reporting.</desc>
+            <desc0>Non Disponible</desc0>
+            <desc1>Niveau de services élémentaires</desc1>
+            <desc2>Différents niveaux de services</desc2>
+            <score>0</score>
+            <comment>Il est toutefois possible de développer des services SOA implémentant des appels à l'API java BIRT.</comment>
+         </element>
+      </element>
+      <element name="referentiel" title="Référentiel">
+         <desc></desc>
+         <comment></comment>
+         <element name="proprietaire" title="Partage">
+            <desc>Le référentiel est un fichier de méta données propriétaire.</desc>
+            <desc0>Non Disponible</desc0>
+            <desc1>Mono utilisateur</desc1>
+            <desc2>Multi utilisateur</desc2>
+            <score>0</score>
+            <comment>Le référentiel est local au poste Eclipse ou à l'application J2EE.
+Les connexions, requêtes SQL et définitions de rapports (fichiers ".reportdesign") persistent dans le référentiel Eclipse ou J2EE.</comment>
+         </element>
+         <element name="sgbd" title="Stockage">
+            <desc>Mode de stockage du référentiel.</desc>
+            <desc0>Fichier</desc0>
+            <desc1>SGBD</desc1>
+            <desc2>Système de fichiers + SGBD (comme BO Xi)</desc2>
+            <score>0</score>
+            <comment></comment>
+         </element>
+         <element name="metadonnees" title="Méta Données">
+            <desc>Import et export total ou partiel de méta données.</desc>
+            <desc0>Non Disponible</desc0>
+            <desc1>Format propriétaire</desc1>
+            <desc2>CWM</desc2>
+            <score>0</score>
+            <comment>seuls les fichiers de configuration (connexions, requêtes ou report design) peuvent être échangés.
+Il n'y a pas d'outil de packaging de ces méta données dans BIRT.</comment>
+         </element>
+      </element>
+      <element name="mediacible" title="Média Cible">
+         <desc>Média de présentation des rapports.</desc>
+         <comment></comment>
+         <element name="ecran" title="Écran">
+            <desc>Le média cible des rapports est l'écran</desc>
+            <desc0>Non Disponible</desc0>
+            <desc1>Partiellement disponible</desc1>
+            <desc2>Disponible</desc2>
+            <score>2</score>
+            <comment>BIRT permet de prévisualiser un rapport dans Eclipse, RCP ou J2EE, et dispose d'un viewer J2EE pour les utilisateurs qui ne font que consulter les rapports, incluant l'interactivité du rapport.</comment>
+         </element>
+         <element name="bureautique1" title="Bureautique">
+            <desc>Les rapports sont générés aux formats bureautique (Suite, pdf...).</desc>
+            <desc0>Non Disponible</desc0>
+            <desc1>Format bureautique imposé par la solution</desc1>
+            <desc2>Nombreux formats supportés (suite, pdf, ...)</desc2>
+            <score>2</score>
+            <comment>Les sorties au formats Word, Excel, Powerpoint, PDF et Poscript sont disponibles. Les filtres pour suites offices ont été réécrits en 2.2.</comment>
+         </element>
+         <element name="fichiers" title="Fichiers">
+            <desc>Les Rapports sont des fichiers de données.</desc>
+            <desc0>Non Disponible</desc0>
+            <desc1>Export au format CSV supporté</desc1>
+            <desc2>Autres formats d'exports disponibles : xls, xml, ...</desc2>
+            <score>2</score>
+            <comment>CSV en standard, xls via e.Spreadsheet. 
+L'export CSV des données est supporté.</comment>
+         </element>
+         <element name="imprimante" title="Imprimante">
+            <desc>Le rapport peut être imprimé.</desc>
+            <desc0>Non Disponible</desc0>
+            <desc1>Partiellement Disponible</desc1>
+            <desc2>Impression Pixel Ready ou WYSIWYG disponible</desc2>
+            <score>1</score>
+            <comment>L'impression sur le serveur est disponible.
+Le cas échéant, l'export PDF est imprimable aussi.
+BIRT ne mentionne pas de technologie Pixel Ready.</comment>
+         </element>
+         <element name="impressionprofessionnelle" title="Impression professionnelle">
+            <desc>Format d'impression professionnelle</desc>
+            <desc0>Non Disponible</desc0>
+            <desc1>Format imprimable offset</desc1>
+            <desc2>Format pre-presse</desc2>
+            <score>0</score>
+            <comment></comment>
+         </element>
+         <element name="telephonemobile" title="Téléphone mobile">
+            <desc>Restitution des rapports sur téléphone mobile</desc>
+            <desc0>Pas de prise en charge particulière des terminaux mobiles</desc0>
+            <desc1>Les rapports sont accessibles par les terminaux mobiles via un navigateur et s'adaptent à l'écran</desc1>
+            <desc2>Des applications dédiées destinés aux terminaux mobiles sont disponibles</desc2>
+            <score>1</score>
+            <comment>BIRT semble disposer de sorties pour terminaux mobiles, mais la documentation de BIRT 2.3.1 n'en parle pas.</comment>
+         </element>
+      </element>
+      <element name="formatsdedocuments" title="Formats de documents">
+         <desc>Format utilisé pour stocker les descriptions des rapports et eventuellement des données qu'ils contiennent</desc>
+         <comment></comment>
+         <element name="proprietaire1" title="Propriétaire">
+            <desc>Les Rapports sont dans des formats propriétaires.</desc>
+            <desc0>Non Disponible</desc0>
+            <desc1>Partiellement Disponible</desc1>
+            <desc2>Disponible</desc2>
+            <score>2</score>
+            <comment>Les rapports sont enregistrés au format rptdesign.</comment>
+         </element>
+         <element name="xml" title="XML">
+            <desc>Les rapports sont dans des fichiers XML.</desc>
+            <desc0>Non Disponible</desc0>
+            <desc1>Partiellement Disponible</desc1>
+            <desc2>Disponible</desc2>
+            <score>2</score>
+            <comment>Le format rptdesign est un document XML.</comment>
+         </element>
+      </element>
+      <element name="diffusion" title="Diffusion">
+         <desc>Critères pour la diffusion des rapports.</desc>
+         <comment></comment>
+         <element name="externe" title="Externe">
+            <desc>Diffusion des fichiers des rapports par envoi externe à la plate-forme (Mail, Fichiers...).</desc>
+            <desc0>Non Disponible</desc0>
+            <desc1>Partiellement Disponible</desc1>
+            <desc2>Disponible</desc2>
+            <score>2</score>
+            <comment>Les sorties fichiers ".reportdesign" peuvent êtres diffusés en dehors de la plate-forme, tout comme les rapports exportés dans les différents formats.</comment>
+         </element>
+         <element name="messagerieintegree" title="Messagerie Intégrée">
+            <desc>La plate-forme intègre un système de messagerie dédié (ex. BAL, BO Infoview).</desc>
+            <desc0>Non Disponible</desc0>
+            <desc1>Messagerie basique</desc1>
+            <desc2>Messagerie incluant des listes et des groupes de diffusion</desc2>
+            <score>0</score>
+            <comment>Pas de messagerie intégrée à Birt</comment>
+         </element>
+         <element name="dossierspartages" title="Dossiers partagés">
+            <desc>La plate-forme gère des dossiers partagés.</desc>
+            <desc0>Non Disponible</desc0>
+            <desc1>Gestion limitée des habilitations</desc1>
+            <desc2>Gestion fine des habilitations : catégories, groupes, rôles, ...</desc2>
+            <score>0</score>
+            <comment>BIRT n'implémenta pas de dossiers partagés. Ce doit être fait via les partages réseaux ou l'application J2EE.</comment>
+         </element>
+         <element name="planification" title="Planification">
+            <desc>La plate-forme intègre une diffusion de masse planifiée.</desc>
+            <desc0>Non Disponible</desc0>
+            <desc1>Partiellement Disponible</desc1>
+            <desc2>Disponible</desc2>
+            <score>0</score>
+            <comment>BIRT n'implémente pas de planification.</comment>
+         </element>
+         <element name="modesdediffusion" title="Modes de Diffusion">
+            <desc>La plate-forme gère la diffusion personnalisée.</desc>
+            <desc0>1 --- 1 : Diffusion individuelle</desc0>
+            <desc1>1 --- n : Même document vers des groupes</desc1>
+            <desc2>n --- m : Document paramétré selon le destinataire</desc2>
+            <score>0</score>
+            <comment>Les rapports peuvent être consultés par des personnes différentes, avec des paramètres de choix de données, et les fonctions d'interactivité, mais BIRT n'incorpore pas de fonction de diffusion.</comment>
+         </element>
+      </element>
+      <element name="securitehabilitations" title="Sécurité Habilitations">
+         <desc>Critères pour la gestion des droits.</desc>
+         <comment>BIRT n'implémenta pas de sécurité. Eclipse est un poste individuel.
+Celle-ci est gérée par l'application J2EE.</comment>
+         <element name="annuaire" title="Annuaire">
+            <desc>La plate-forme gère un annuaire des utilisateurs.</desc>
+            <desc0>Non Disponible</desc0>
+            <desc1>Propriétaire</desc1>
+            <desc2>LDAP dédié et synchonisable à un annuaire d'entreprise</desc2>
+            <score>0</score>
+            <comment></comment>
+         </element>
+         <element name="authentification" title="Authentification">
+            <desc>Authentification des utilisateurs dans la plate-forme</desc>
+            <desc0>Non Disponible</desc0>
+            <desc1>Authentification uniquement sur l'annuaire de la plate-forme</desc1>
+            <desc2>Authentification possible sur l'annuaire du portail d'entreprise</desc2>
+            <score>0</score>
+            <comment>Une authentification est évidemment nécessaire pour l'accès aux sources de données, mais ceci n'est pas une fonction de BIRT.</comment>
+         </element>
+         <element name="sso" title="SSO">
+            <desc>La Plate-forme accepte le SSO (Single Sign On).</desc>
+            <desc0>Non Disponible</desc0>
+            <desc1>Partiellement Disponible</desc1>
+            <desc2>Disponible.</desc2>
+            <score>0</score>
+            <comment></comment>
+         </element>
+         <element name="groupes" title="Groupes">
+            <desc>La plate-forme gère les groupes d'utilisateurs.</desc>
+            <desc0>Non Disponible</desc0>
+            <desc1>Gestion simple de groupes sans notions de rôles</desc1>
+            <desc2>Gestion de rôles</desc2>
+            <score>0</score>
+            <comment></comment>
+         </element>
+         <element name="donnees" title="Données">
+            <desc>La plate-forme gère les habilitations sur les données.</desc>
+            <desc0>Non Disponible</desc0>
+            <desc1>Gestion limité des objets requêtés</desc1>
+            <desc2>Contenu des objets requêtés gérables (visibilité table, colonne, ligne, par utilisateur ou groupe)</desc2>
+            <score>0</score>
+            <comment></comment>
+         </element>
+         <element name="journalisation" title="Journalisation">
+            <desc>Fonctionnalités d'audit ou de traçabilité (sécurité et/ou performances)</desc>
+            <desc0>Non Disponible</desc0>
+            <desc1>Limité à certains évènements</desc1>
+            <desc2>Tout peut être tracé</desc2>
+            <score>0</score>
+            <comment></comment>
+         </element>
+      </element>
+      <element name="applicationclient" title="Outillage">
+         <desc>Critères pour les applications des postes de travail.</desc>
+         <comment></comment>
+         <element name="administrateur" title="Administrateur">
+            <desc>La plate-forme comprend une console pour l'administrateur.</desc>
+            <desc0>Non Disponible</desc0>
+            <desc1>Partiellement Disponible</desc1>
+            <desc2>Disponible</desc2>
+            <score>0</score>
+            <comment></comment>
+         </element>
+         <element name="planificateur" title="Planificateur">
+            <desc>La plate-forme comprend un outil de diffusion planifiée.</desc>
+            <desc0>Non Disponible</desc0>
+            <desc1>Planification pour chaque utilisateur seulement ou globalement seulement</desc1>
+            <desc2>Planification possible pour chaque utilisateur et globalement</desc2>
+            <score>0</score>
+            <comment></comment>
+         </element>
+         <element name="developpementc/s" title="Création c/s">
+            <desc>La plate-forme comprend un outil de création de rapports clients/serveur.</desc>
+            <desc0>Non Disponible</desc0>
+            <desc1>Partiellement Disponible</desc1>
+            <desc2>Disponible</desc2>
+            <score>2</score>
+            <comment></comment>
+         </element>
+         <element name="developpementweb" title="Création Web">
+            <desc>La plate-forme comprend un outil de création de rapports web.</desc>
+            <desc0>Non Disponible</desc0>
+            <desc1>Partiellement Disponible</desc1>
+            <desc2>Disponible</desc2>
+            <score>1</score>
+            <comment>BIRT Report Designer peut être installé dans un serveur J2EE, ce qui autorise la création de rapports via le Web.</comment>
+         </element>
+         <element name="surcouchemetier1" title="Surcouche métier">
+            <desc>La plate-forme comprend un outil de création de surcouche métier.</desc>
+            <desc0>Non Disponible</desc0>
+            <desc1>Via accès Client/Serveur seulement ou Web seulement</desc1>
+            <desc2>Via accès Client/Serveur et Web</desc2>
+            <score>0</score>
+            <comment>Une surcouche métier peut être implémentée via des datasets prédéfinie, mais elle n'existe pas en tant que telle, et surtout pas au niveau des informations unitaires.</comment>
+         </element>
+         <element name="visionneusec/s" title="Visionneuse c/s">
+            <desc>La plate-forme comprend un outil de visualisation de rapports en client-serveur (central ou local).</desc>
+            <desc0>Non Disponible</desc0>
+            <desc1>Partiellement Disponible</desc1>
+            <desc2>Disponible</desc2>
+            <score>2</score>
+            <comment>La visionneuse c/s RCP ou Report viewer permet l'interactivité dans les rapports.</comment>
+         </element>
+         <element name="navigateurweb" title="Navigateur Web">
+            <desc>La plate-forme permet la visualisation de rapports dans un navigateur.</desc>
+            <desc0>Non Disponible</desc0>
+            <desc1>Partiellement Disponible</desc1>
+            <desc2>Disponible</desc2>
+            <score>2</score>
+            <comment></comment>
+         </element>
+      </element>
+   </section>
+   <section name="reportingbi" title="Reporting BI">
+      <desc>Section pour les fonctions liées au formatage et la visualisation des rapports BI.</desc>
+      <element name="miseenforme" title="Mise en Forme c/s">
+         <desc>Section pour les fonctions de mise en forme des informations affichées dans les rapports en client lourd (sur des postes autonomes).</desc>
+         <comment></comment>
+         <element name="statique" title="Statique">
+            <desc>Mise en forme statique (pas de style). Ex. gras, italique, couleurs fond, couleur police, etc.</desc>
+            <desc0>Non Disponible</desc0>
+            <desc1>Possibilités de mise en formes existants mais limités</desc1>
+            <desc2>Possibilités de mise en formes aussi riches que dans une suite bureautique</desc2>
+            <score>2</score>
+            <comment></comment>
+         </element>
+         <element name="style" title="Style">
+            <desc>Mise en forme en nommant des styles réutilisables (document, onglet, section, paragraphe, caractères, listes, puces, etc.)</desc>
+            <desc0>Non Disponible</desc0>
+            <desc1>Partiellement Disponible</desc1>
+            <desc2>Disponible</desc2>
+            <score>2</score>
+            <comment>La notion de style existe dans le Report Designer</comment>
+         </element>
+         <element name="colorcoding" title="Color Coding">
+            <desc>Fonction de mise en couleur ou formatage selon des fonctions statiques (seuils). Note : le data coding est évalué à part.</desc>
+            <desc0>Non Disponible</desc0>
+            <desc1>Accès au seuillage imposé ou accès à la mise en forme limité</desc1>
+            <desc2>Plusieurs possiblités de seuillage : nombre de seuils, valeurs de seuils; accès à la mise en forme complète</desc2>
+            <score>2</score>
+            <comment></comment>
+         </element>
+         <element name="datacoding" title="Data Coding">
+            <desc>Fonction de mise en couleur ou formatage selon des fonctions dynamiques, calculées sur les données affichées.</desc>
+            <desc0>Non Disponible</desc0>
+            <desc1>Une seule fonction de calcul pour les seuils ou accès limité au formatage</desc1>
+            <desc2>Plusieurs fonctions de calculs pour les seuils et accès au formatage complet</desc2>
+            <score>2</score>
+            <comment>Ceci n'est toutefois pas destiné à un non informaticien.</comment>
+         </element>
+      </element>
+      <element name="miseenformeweb" title="Mise en Forme Web">
+         <desc>Section pour les fonctions de mise en forme des informations affichées dans les rapports en web (dans les navigateurs).</desc>
+         <comment>La partie web de Birt est constitué uniquement d'un viewer</comment>
+         <element name="statique1" title="Statique">
+            <desc>Mise en forme statique (pas de style). Ex. gras, italique, couleurs fond, couleur police, etc.</desc>
+            <desc0>Non Disponible</desc0>
+            <desc1>Mise en forme existant mais limité</desc1>
+            <desc2>Mise en forme aussi riches que dans une suite bureautique</desc2>
+            <score>2</score>
+            <comment></comment>
+         </element>
+         <element name="styles" title="Styles">
+            <desc>Mise en forme en nommant des styles réutilisables (document, onglet, section, paragraphe, caractères, listes, puces, etc.).</desc>
+            <desc0>Non Disponible</desc0>
+            <desc1>Seules les feuilles CSS sont utilisables</desc1>
+            <desc2>Technologies avancées de chartes graphiques utilisables : CSS, XML, XSL ...</desc2>
+            <score>1</score>
+            <comment>Styles limités à ceux définis lors de la création du rapport dans le Designer</comment>
+         </element>
+         <element name="colorcoding1" title="Color Coding">
+            <desc>Fonction de mise en couleur ou formatage selon des fonctions statiques (seuils). Note : le data coding est évalué à part.</desc>
+            <desc0>Non Disponible</desc0>
+            <desc1>Accès unique au seuillage</desc1>
+            <desc2>Plusieurs accès possible au seuillage : nombre de seuils, valeurs de seuils, accès à la mise en forme complète</desc2>
+            <score>2</score>
+            <comment>Accès limité à ceux définis dans le Designer</comment>
+         </element>
+         <element name="datacoding1" title="Data Coding">
+            <desc>Fonction de mise en couleur ou formatage selon des fonctions dynamiques, mais calculées sur les données affichées.</desc>
+            <desc0>Non Disponible</desc0>
+            <desc1>Fonctions de calculs limités ou inexistant pour les seuils ou accès limité/inexistant au formatage complet</desc1>
+            <desc2>Plusieurs fonctions de calculs pour les seuils et accès au formatage complet.</desc2>
+            <score>2</score>
+            <comment></comment>
+         </element>
+      </element>
+      <element name="uiconception" title="Conception des rapports">
+         <desc>Critères pour la conception des rapports et requêtes.</desc>
+         <comment></comment>
+         <element name="requeteurtechnique" title="IHM Requêteur">
+            <desc>Critères pour les requêteurs en accès directs aux serveurs (ex. Constructeurs SQL)</desc>
+            <comment></comment>
+            <element name="textederequete" title="Texte de requête">
+               <desc>Écriture du texte de requête dans le langage du SGBD.</desc>
+               <desc0>Non Disponible</desc0>
+               <desc1>Partiellement Disponible</desc1>
+               <desc2>Disponible</desc2>
+               <score>2</score>
+               <comment></comment>
+            </element>
+            <element name="constructeurderequete" title="Constructeur de Requête">
+               <desc>Assistant graphique de construction des requêtes d'après les objets techniques du SGBD (ex. MS Access, OOo Base).</desc>
+               <desc0>Non Disponible</desc0>
+               <desc1>Partiellement Disponible</desc1>
+               <desc2>Disponible</desc2>
+               <score>2</score>
+               <comment></comment>
+            </element>
+            <element name="surcouchemetier" title="Surcouche métier">
+               <desc>Fonction de construction par objets métiers indépendants de la technicité de la base de données, accessible aux utilisateurs non informaticiens.</desc>
+               <desc0>Non Disponible</desc0>
+               <desc1>Partiellement Disponible</desc1>
+               <desc2>Disponible</desc2>
+               <score>0</score>
+               <comment></comment>
+            </element>
+         </element>
+         <element name="requetage" title="Requétage">
+            <desc>Critères évaluant les possibilités de requêtage. (Ne s'applique pas au requêteur texte).</desc>
+            <comment></comment>
+            <element name="requetessimples" title="Requêtes Simples">
+               <desc>Requêtes mettant en œuvre une seule phrase SQL (Select From where ...).</desc>
+               <desc0>Non Dispopnible</desc0>
+               <desc1>Partiellement Disponible</desc1>
+               <desc2>Disponible</desc2>
+               <score>2</score>
+               <comment></comment>
+            </element>
+            <element name="requetesimbriquees" title="Requêtes Imbriquées">
+               <desc>Les rapports font appels à des requêtes imbriquées. (Ne s'applique pas au SQL à la carte).</desc>
+               <desc0>Non Disponible</desc0>
+               <desc1>Partiellement Disponible</desc1>
+               <desc2>Disponible</desc2>
+               <score>2</score>
+               <comment>Toutefois, cette fonction n'est gérée qu'en mode texte SQL.</comment>
+            </element>
+            <element name="requetagemultiple" title="Requêtage Multiple">
+               <desc>Plusieurs requêtes dans le même rapport.</desc>
+               <desc0>Non Disponible</desc0>
+               <desc1>Requêtes Union ou dans des onglets</desc1>
+               <desc2>Requêtes dans le même écran</desc2>
+               <score>2</score>
+               <comment>Semble possible</comment>
+            </element>
+            <element name="requetagemultisources" title="Requêtage Multi Sources">
+               <desc>Critères pour les requêtes à plusieurs sources.</desc>
+               <comment></comment>
+               <element name="multisourcesrequete" title="Multi Sources Requête">
+                  <desc>Un rapport accepte des requêtes provenant de plusieurs sources de données.</desc>
+                  <desc0>Non Disponible</desc0>
+                  <desc1>Partiellement Disponible</desc1>
+                  <desc2>Disponible</desc2>
+                  <score>2</score>
+                  <comment></comment>
+               </element>
+               <element name="jointureexterne" title="Jointure Externe">
+                  <desc>Le rapport fait une jointure sur plusieurs sources.</desc>
+                  <desc0>Non Disponible</desc0>
+                  <desc1>Partiellement Disponible</desc1>
+                  <desc2>Disponible</desc2>
+                  <score>2</score>
+                  <comment></comment>
+               </element>
+               <element name="multisurcouchemetier" title="Multi Surcouche Métier">
+                  <desc>Le rapport présente des requêtes provenant de plusieurs surcouches métiers.</desc>
+                  <desc0>Non Disponible</desc0>
+                  <desc1>Partiellement Disponible</desc1>
+                  <desc2>Disponible</desc2>
+                  <score>0</score>
+                  <comment></comment>
+               </element>
+            </element>
+         </element>
+      </element>
+      <element name="structuredesrapports" title="Structure des Rapports">
+         <desc>Critères pour la structure des rapports.</desc>
+         <comment></comment>
+         <element name="unedimension" title="Une Dimension">
+            <desc>Rapport simple (Ex. ligne / Colonne)</desc>
+            <desc0>Non Disponible</desc0>
+            <desc1>Partiellement Disponible</desc1>
+            <desc2>Disponible</desc2>
+            <score>2</score>
+            <comment></comment>
+         </element>
+         <element name="tableaucroise" title="Tableau Croisé">
+            <desc>Rapport à deux dimensions (Ex. Matrice).</desc>
+            <desc0>Non Disponible</desc0>
+            <desc1>Interactions limitées</desc1>
+            <desc2>Interactions par glisser/déposer</desc2>
+            <score>1</score>
+            <comment></comment>
+         </element>
+         <element name="multidimensionnel" title="Multi Dimensionnel">
+            <desc>Rapport multi dimensionnel (ligne, colonnes, pages selon d'autres dimensions).</desc>
+            <desc0>Non Disponible</desc0>
+            <desc1>Interaction par glisser-déposer ou juxtaposition de graphique/tableaux</desc1>
+            <desc2>Interaction par glisser-déposer et juxtaposition de graphique/tableaux</desc2>
+            <score>0</score>
+            <comment></comment>
+         </element>
+         <element name="groupements" title="Groupements">
+            <desc>Le rapport présente des groupements en diverses sections triées de diverses manières.</desc>
+            <desc0>Non Disponible</desc0>
+            <desc1>Partiellement Disponible</desc1>
+            <desc2>Disponible</desc2>
+            <score>2</score>
+            <comment></comment>
+         </element>
+         <element name="liensentrerapports" title="Liens entre rapports">
+            <desc>Le rapport présente des liens vers d'autres données ou rapports.</desc>
+            <desc0>Non Disponible</desc0>
+            <desc1>Liens statiques vers d'autres rapports</desc1>
+            <desc2>Liens sur des données</desc2>
+            <score>2</score>
+            <comment>Le lien sur les données se fait en passant la donnée en paramètre aux rapports cible.</comment>
+         </element>
+         <element name="miseenpage" title="Mise en page">
+            <desc>Le rapport présente une structure de mise en page (Modèles de page, entêtes, pieds, etc.).</desc>
+            <desc0>Pas de mise en page</desc0>
+            <desc1>Mise en page global pour le document</desc1>
+            <desc2>Mise en page avancée pour les sections ou groupements</desc2>
+            <score>2</score>
+            <comment></comment>
+         </element>
+      </element>
+      <element name="typologiedesrapports" title="Types de rapport">
+         <desc>Critères pour caractériser le contenu des rapports.</desc>
+         <comment></comment>
+         <element name="rapportpredefini" title="Rapport Prédéfini">
+            <desc>Rapport préparé à l'avance et ouvert par l'utilisateur.</desc>
+            <desc0>Non Disponible</desc0>
+            <desc1>Avec données</desc1>
+            <desc2>Raffraichi à la volée</desc2>
+            <score>2</score>
+            <comment></comment>
+         </element>
+         <element name="rapportadhoc" title="Rapport Ad Hoc">
+            <desc>Rapport dont le contenu est défini par un utilisateur final.</desc>
+            <desc0>Non Disponible</desc0>
+            <desc1>Pour Informaticien (SQL)</desc1>
+            <desc2>Pour non Informaticien</desc2>
+            <score>1</score>
+            <comment></comment>
+         </element>
+         <element name="interactivite" title="Interactivité">
+            <desc>Le rapport présente des possibilités d'interaction.</desc>
+            <desc0>Statique (Sans interactivité).</desc0>
+            <desc1>Explorable (Filtrage à l'aide de boites déroulantes).</desc1>
+            <desc2>Interactif (Exploration en agissant sur les données avec complément de requêtes).</desc2>
+            <score>1</score>
+            <comment></comment>
+         </element>
+         <element name="miseajourdesdonnees" title="Mise à jour des données">
+            <desc>Le rapport permet la mise à jour des données.</desc>
+            <desc0>Non Disponible</desc0>
+            <desc1>Copie utilisateur</desc1>
+            <desc2>Selon sécurité</desc2>
+            <score>0</score>
+            <comment>Les rapports peuvent toutefois embarquer du code java qui pourrait le faire.
+Le code java (classes) est appelé par des gestionnaires d'événements, associés aux éléments d'interface.</comment>
+         </element>
+      </element>
+      <element name="affichagedesdonnees" title="Affichage des données">
+         <desc>Critères pour la richesse des possibilités d'affichage des données.</desc>
+         <comment></comment>
+         <element name="tableaux" title="Tableaux">
+            <desc>Le Rapport affiche des tableaux plus ou moins riches.</desc>
+            <desc0>Tableaux simples, eventuellement explorables</desc0>
+            <desc1>Tableaux croisés, regroupement et éventuellement avec calculs partiels, etc.</desc1>
+            <desc2>Regroupements multi tableaux, variables calculées indépendamment, etc.</desc2>
+            <score>2</score>
+            <comment></comment>
+         </element>
+         <element name="graphiques" title="Graphiques">
+            <desc>Le rapport affiche des graphiques plus ou moins riches.</desc>
+            <desc0>Quelques graphiques standards (histogrammes, camemberts, lignes, aires)</desc0>
+            <desc1>Graphiques équivalents à un tableur bureautique</desc1>
+            <desc2>Graphiques propres à l'application (comprend au moins les équivalents des graphiques disponibles dans les tableurs bureautiques)</desc2>
+            <score>1</score>
+            <comment></comment>
+         </element>
+         <element name="graphiquesimprimables" title="Graphiques imprimables">
+            <desc>Les graphiques sont imprimables.</desc>
+            <desc0>Non Disponible</desc0>
+            <desc1>Partiellement Disponible</desc1>
+            <desc2>Tous les graphiques s'impriment</desc2>
+            <score>2</score>
+            <comment></comment>
+         </element>
+         <element name="appeldefonctionsutilisateur" title="Appel de fonctions utilisateur">
+            <desc>Capacité d'appeler du code (externe ou embarqué)</desc>
+            <desc0>Non disponilbe</desc0>
+            <desc1>Code embarqué dans le rapport</desc1>
+            <desc2>Appel de code externe possible en plus du code embarqué</desc2>
+            <score>2</score>
+            <comment>Dans le cas où BIRT est implémenté dans une application J2EE, l'appel de code externe est possible dans le code java embarqué dans le rapport.</comment>
+         </element>
+      </element>
+   </section>
+</document>

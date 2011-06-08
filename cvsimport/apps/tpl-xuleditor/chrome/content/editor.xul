@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+<?xml-stylesheet href="chrome://qsos-tpl-xuled/skin/classic.css" type="text/css"?>
+<!DOCTYPE window SYSTEM "chrome://qsos-tpl-xuled/locale/editor.dtd">
+
+<window id="QSOS" title="&QSOS.label;" width="800px" height="600px"
+    xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+    onload="init();">
+	
+<script type="application/x-javascript" src="Template.js"></script>
+<script type="application/x-javascript" src="editor.js"></script>
+
+<popup id="element-popup" onpopupshowing="displayPopup();">
+	<menuitem id="element-new-section" label="&popup-new-section.label;" oncommand="openSectionDialog();"/>
+	<menuitem id="element-new-desc" label="&popup-new-desc.label;" oncommand="openDescDialog();"/>
+	<menuitem id="element-new-score" label="&popup-new-score.label;" oncommand="openScoreDialog();"/>
+	<menuitem id="element-moveup" label="&popup-moveup.label;" oncommand="moveUp();"/>
+	<menuitem id="element-movedown" label="&popup-movedown.label;" oncommand="moveDown();"/>
+	<menuitem id="element-delete" label="&popup-delete.label;" oncommand="deleteCriterion();"/>
+</popup>
+
+<stringbundle id="properties" src="chrome://qsos-tpl-xuled/locale/editor.properties"/>
+
+<vbox flex = "1">
+	<toolbox>
+		<menubar id="mymenubar">
+			<menu id="file-menu" label="&file-menu.label;" onclick="document.getElementById('file-menu').focus();">
+				<menupopup id="file-popup">
+					<menuitem id="file-new" label="&file-new.label;" oncommand="checknewFile();"/>
+					<menuitem id="file-open" label="&file-open.label;" oncommand="checkopenFile();"/>
+					<menuitem id="file-save" label="&file-save.label;" oncommand="saveFile();"/>
+					<menuitem id="file-saveas" label="&file-saveas.label;" oncommand="saveFileAs();"/>
+					<menuitem id="file-close" label="&file-close.label;"  oncommand="checkcloseFile();"/>
+					<menuseparator/>
+					<menuitem id="file-exit" label="&file-exit.label;" oncommand="checkexit();"/>
+				</menupopup>
+			</menu>
+			<menu id="tree-menu" label="&tree-menu.label;" onclick="document.getElementById('tree-menu').focus();">
+				<menupopup id="tree-popup">
+					<menuitem id="tree-expand" label="&tree-expand.label;" oncommand="expandTree('true');"/>
+					<menuitem id="tree-collapse" label="&tree-collapse.label;" oncommand="expandTree('false');"/>
+				</menupopup>
+			</menu>
+			<menu id="help-menu" label="&help-menu.label;" onclick="document.getElementById('help-menu').focus();">
+				<menupopup id="help-popup">
+					<menuitem id="help-about" label="&help-about.label;" oncommand="aboutDialog();"/>
+				</menupopup>
+			</menu>
+		</menubar>
+	</toolbox>
+	<hbox flex = "1">
+                
+                  <tree id="mytree" context="element-popup" width="300px" hidecolumnpicker="true"  onselect="treeselect(this);">
+			<treecols>
+				<treecol id="name" label="&name.label;" primary="true" flex="1"/>
+			</treecols>
+		  </tree>
+		
+                <splitter/>
+		<vbox flex = "1">
+			<groupbox id="g-template">
+				<caption><label value="&g-template.label;"/></caption>
+				<vbox>
+					<label control="f-softwarefamily" value="&f-softwarefamily.label;"/>
+					<textbox id="f-softwarefamily" onchange="changeSoftwareFamily(this);"/>
+					<label control="f-version" value="&f-version.label;"/>
+					<textbox id="f-version" onchange="changeVersion(this);"/>
+				</vbox>
+			</groupbox>
+			<groupbox id="g-c-id">
+				<caption><label id="f-c-name" value="&f-c-name.label;"/></caption>
+				<label control="f-c-title" value="&f-c-title.label;"/>
+				<textbox id="f-c-title" onchange="changeTitle(this);"/>
+				<groupbox id="g-c-type">
+					<caption><label value="&g-c-type.label;"/></caption>
+					<radiogroup id="f-c-type" orient="horizontal">
+						<radio id="f-c-info" label="&f-c-info.label;" flex="1" oncommand="changeType('desc');"/>
+						<radio id="f-c-score" label="&f-c-score.label;" flex="1" oncommand="changeType('score');"/>
+					</radiogroup>
+				</groupbox>
+				<groupbox id="g-c-desc">
+					<caption><label value="&g-c-desc.label;"/></caption>
+					<textbox id="f-c-desc" multiline="true" onchange="changeDesc(this);"/>
+				</groupbox>
+				<groupbox id="g-c-scores">
+					<caption><label value="&g-c-scores.label;"/></caption>
+					<label control="f-c-score0" value="&f-c-score0.label;"/>
+					<textbox id="f-c-score0" multiline="true" onchange="changeScore0(this.value);"/>
+					<label control="f-c-score1" value="&f-c-score1.label;"/>
+					<textbox id="f-c-score1" multiline="true" onchange="changeScore1(this.value);"/>
+					<label control="f-c-score2" value="&f-c-score2.label;"/>
+					<textbox id="f-c-score2" multiline="true" onchange="changeScore2(this.value);"/>
+				</groupbox>
+			</groupbox>
+		</vbox>
+	</hbox>
+</vbox>
+</window>

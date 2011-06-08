@@ -1,0 +1,611 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document>
+   <header>
+      <authors>
+    </authors>
+      <dates>
+         <creation></creation>
+         <validation></validation>
+      </dates>
+      <language>fr</language>
+      <appname>OpenJUMP</appname>
+      <release>1.3</release>
+      <licenseid>31</licenseid>
+      <licensedesc>GNU GPL</licensedesc>
+      <url>http://www.openjump.org</url>
+      <desc></desc>
+      <demourl></demourl>
+      <qsosformat>1.6</qsosformat>
+      <qsosappfamily>SIG desktop</qsosappfamily>
+      <qsosappname></qsosappname>
+      <qsosspecificformat>1.0</qsosspecificformat>
+   </header>
+   <section name="generic" title="Section générique">
+      <desc>Les critères génériques de l'évaluation Presto de QSOS</desc>
+      <element name="intrinsicdurability" title="Pérennité">
+         <desc>Pérennité</desc>
+         <element name="maturite" title="Maturité">
+            <desc></desc>
+            <desc0>Logiciel provenant d'un fork ou avec une forte probabilité de fork dans un futur proche.</desc0>
+            <desc1>Projet jeune (moins de 3 ans) ou connaissant des difficultés à stabiliser les versions de développement.</desc1>
+            <desc2>Projet stable ou ayant un bon historique de gestion de crise. Les nouvelles versions apportent de façon prépondérante de nouvelles fonctionnalités.</desc2>
+            <score>2</score>
+            <comment>http://www.openjump.org/wiki/show/OpenJUMP</comment>
+         </element>
+         <element name="adoption1" title="Adoption">
+            <desc></desc>
+            <desc0>Usage détectable sur Internet sans véritable activité communautaire</desc0>
+            <desc1>Utilisation communautaire prépondérante</desc1>
+            <desc2>Nombreuse références industrielles</desc2>
+            <score>2</score>
+            <comment>http://www.openjump.org/wiki/show/OpenJUMP+Users</comment>
+         </element>
+         <element name="developpement" title="Développement">
+            <desc></desc>
+            <desc0>Deux ou moins de deux développeurs clairement identifiés.</desc0>
+            <desc1>Équipe de développement réduite avec un turn-over important ou sans équipe de direction identifiée.</desc1>
+            <desc2>Équipe de développement structurée comportant plus de 5 développeurs actifs.</desc2>
+            <score>2</score>
+            <comment>http://openjump.org:8739/wiki/show/Contributors</comment>
+         </element>
+         <element name="activite" title="Activité">
+            <desc></desc>
+            <desc0>Très faible activité, que ce soit sur les résolutions de bugs, les releases, l'ajout de nouvelles fonctions ou sur les espaces communautaires (wiki, forum, mailing list...)</desc0>
+            <desc1>Activité détectable mais anarchique (pas feuille de route accessible facilement, pas de prévisions de nouvelles fonctionnalités ou de prévisions de nouvelles versions visible)</desc1>
+            <desc2>Activité importante et visible via la mise en place de feuilles de routes traçant les requêtes de nouvelles fonctionnalités et/ou les prévisions de sortie des nouvelles version</desc2>
+            <score>2</score>
+            <comment>http://jump-pilot.svn.sourceforge.net/viewvc/jump-pilot/core/trunk/ChangeLog?view=markup
+http://www.openjump.org/wiki/show/Todo+before+shipping+next+release</comment>
+         </element>
+         <element name="strategicalindependence" title="Indépendance stratégique">
+            <desc0>Pas de stratégie détectable ou stratégie dictée par une société commerciale, un sponsor ou un individu unique.</desc0>
+            <desc1>Stratégie décidée par l'équipe de developpement.</desc1>
+            <desc2>Indépendance forte de l'équipe de développement, fort engagement du projet dans un processus de standardisation.</desc2>
+            <score>2</score>
+            <comment></comment>
+         </element>
+         <element name="copyrightowners" title="Détenteur des droits">
+            <desc0>Les droits sont détenus par quelques individus ou entités commerciales, facilitant le changement de licence</desc0>
+            <desc1>Les droits sont détenus par de nombreux individus de façon homogène, rendant le changement de licence très difficile</desc1>
+            <desc2>Les droits sont détenus par une entité légale, une fondation dans laquelle la communauté a confiance (ex: FSF, Apache, ObjectWeb)</desc2>
+            <score>1</score>
+            <comment></comment>
+         </element>
+         <element name="license" title="Licence">
+            <desc>Licence, à pondérer uniquement si le client désire un jour devenir propriétaire du code</desc>
+            <element name="permissiveness" title="Permissivité">
+               <desc0>Licence très stricte, comme la GPL</desc0>
+               <desc1>Licence modérée entre les deux extrêmes (GPL et BSD), licence duale dépendante du type d'utilisateur (personne, société…) ou de leur activité</desc1>
+               <desc2>Licence très permissive comme BSD et Apache</desc2>
+               <score>0</score>
+               <comment></comment>
+            </element>
+            <element name="protectionagainstproprietaryforks" title="Protection contre des forks commerciaux">
+               <desc0>Licence très permissive comme BSD et Apache</desc0>
+               <desc1>Licence modérée entre les deux extrêmes (GPL et BSD), licence duale dépendante du type d'utilisateur (personne, société…) ou de leur activité</desc1>
+               <desc2>Licence très stricte, comme la GPL</desc2>
+               <score>2</score>
+               <comment></comment>
+            </element>
+         </element>
+      </element>
+      <element name="industrializedsolution" title="Industrialisation">
+         <desc>Niveau d'industrialisation du projet</desc>
+         <element name="independenceofdevelopments" title="Indépendance des développements">
+            <desc0>Développements réalisés à plus de 60% par des employés d'une seule société</desc0>
+            <desc1>Développements réalisés à 60% maximum par des employés d'une seule société</desc1>
+            <desc2>Développements réalisés à 20% maximum par des employés d'une seule société</desc2>
+            <score>1</score>
+            <comment></comment>
+         </element>
+         <element name="services1" title="Services">
+            <desc></desc>
+            <desc0>Pas d'offres de services identifiée</desc0>
+            <desc1>Offre existante mais restreinte géographiquement ou en une seule langue ou fournie par un seul fournisseur</desc1>
+            <desc2>Offre riche : plusieurs fournisseurs ou plusieurs langages</desc2>
+            <score>2</score>
+            <comment>http://www.openjump.org/wiki/show/Professional+Support</comment>
+         </element>
+         <element name="documentation" title="Documentation">
+            <desc0>Pas de documentation utilisateur</desc0>
+            <desc1>La documentation existe mais est en partie obsolète ou restreinte à une seule langue ou peu détaillée</desc1>
+            <desc2>Documentation à jour, traduite et éventuellement adaptée à différentes cibles de lecteurs (end-user, sysadmin, manager…)</desc2>
+            <score>2</score>
+            <comment>http://www.openjump.org/wiki/show/Documentation</comment>
+         </element>
+         <element name="methodequalite" title="Méthode qualité">
+            <desc></desc>
+            <desc0>Pas de processus de qualité identifié ni d'outils de gestions de bugs</desc0>
+            <desc1>Processus qualité non formalisé ou non outillé ou comportant des outils qui sont très peu utilisés</desc1>
+            <desc2>Utilisation très active d'outils standards (tests unitaires, outils de gestion de build, outils de mesure de qualité du code)</desc2>
+            <score>1</score>
+            <comment></comment>
+         </element>
+      </element>
+      <element name="packaging" title="Packaging">
+         <desc>Packaging pour les différents systèmes d'exploitation</desc>
+         <element name="packagingbsd" title="BSD">
+            <desc></desc>
+            <desc0>Pas de packaging officiel pour la famille BSD</desc0>
+            <desc1>Packaging existant pour quelques distributions de la famille BSD</desc1>
+            <desc2>Packaging complet pour les distributions de la famille BSD suivantes : FreeBSD, OpenBSD, NetBSD et Mac OS X</desc2>
+            <score>0</score>
+            <comment></comment>
+         </element>
+         <element name="packaginglinux" title="GNU/Linux">
+            <desc></desc>
+            <desc0>Pas de packaging officiel pour les systèmes d'exploitations GNU/Linux</desc0>
+            <desc1>Packaging existant pour quelques distributions GNU/Linux</desc1>
+            <desc2>Packaging complet les systèmes de packaging .deb et .rpm</desc2>
+            <score>0</score>
+            <comment></comment>
+         </element>
+         <element name="unix" title="Unix">
+            <desc></desc>
+            <desc0>Pas de packaging officiel pour les systèmes de la famille Unix</desc0>
+            <desc1>Packaging existant sur quelques systèmes de la famille Unix</desc1>
+            <desc2>Packaging existant sur au moins ces 3 systèmes : AIX, HP-UX, Solaris</desc2>
+            <score>0</score>
+            <comment></comment>
+         </element>
+         <element name="packagingwindows" title="Windows">
+            <desc0>Le logiciel n'est pas disponible sur un système Windows.</desc0>
+            <desc1>Le logiciel existe sous forme d'archive tout en un.</desc1>
+            <desc2>Le logiciel dispose d'un installeur.</desc2>
+            <score>1</score>
+            <comment></comment>
+         </element>
+         <element name="packagingsource" title="Sources">
+            <desc0>L'installation depuis les sources est hasardeuse et risquée</desc0>
+            <desc1>L'installation depuis les sources est difficile ou limité (seulement à un OS, une architecture, la résolution de l'écran...)</desc1>
+            <desc2>L'installation depuis les sources est outillée (vérification des dépencances, verification de l'installation, gestion de build)</desc2>
+            <score>2</score>
+            <comment></comment>
+         </element>
+         <element name="packagingtar" title="Archive compressée">
+            <desc0>Pas d'archive disponible</desc0>
+            <desc1>Archive globale</desc1>
+            <desc2>Archive séparée pour chaque module installable</desc2>
+            <score>1</score>
+            <comment></comment>
+         </element>
+      </element>
+      <element name="exploitability" title="Exploitabilité">
+         <desc>Niveau d'exploitabilité</desc>
+         <element name="easeofuseergonomics" title="Facilité d'utilisation, ergonomie">
+            <desc0>Difficulté d'utilisation, demande une connaissance approfondie des fonctionnalités du logiciel</desc0>
+            <desc1>Ergonomie austère et très technique</desc1>
+            <desc2>Ergonomie élaborée et IHM comprenant des fonctions d'aide</desc2>
+            <score>1</score>
+            <comment></comment>
+         </element>
+         <element name="administrationmonitoring" title="Administration et supervision">
+            <desc0>Pas de fonctionnalités de contrôle, ni d'administration</desc0>
+            <desc1>Fonctionnalités présentes mais incomplètes ou à améliorer</desc1>
+            <desc2>Fonctionnalités complètes et faciles de contrôle et d'administration. Intégration possible avec des outils tiers (ex : SNMP, syslog…)</desc2>
+            <score>0</score>
+            <comment></comment>
+         </element>
+      </element>
+      <element name="technicaladaptability" title="Adaptabilité">
+         <desc>Adaptabilité technique</desc>
+         <element name="modularity" title="Modularité">
+            <desc0>Logiciel monolithique</desc0>
+            <desc1>Présence de modules haut niveau permettant un premier niveau d'adaptation</desc1>
+            <desc2>Conception modulaire, permettant des adaptations faciles par sélection et/ou création de modules</desc2>
+            <score>1</score>
+            <comment></comment>
+         </element>
+         <element name="codemodification" title="Facilité technique de modification du code existant">
+            <desc0>Tout à la main</desc0>
+            <desc1>Recompilation possible mais complexe, sans outils, ni documentation</desc1>
+            <desc2>Recompilation facile, outillée (ex : make, ANT, Maven…) et documentée</desc2>
+            <score>2</score>
+            <comment></comment>
+         </element>
+         <element name="codeextension" title="Facilité d'extension du code">
+            <desc0>Toute modification demande une recompilation du code</desc0>
+            <desc1>Architecture conçue pour des extensions statiques mais exige une recompilation</desc1>
+            <desc2>Architecture de plugins, conçue pour des extensions dynamiques et sans recompilation</desc2>
+            <score>2</score>
+            <comment></comment>
+         </element>
+      </element>
+   </section>
+   <section name="standardsig" title="Standard SIG">
+      <desc>Fonctions standards d'un SIG Desktop</desc>
+      <element name="fonctionsdintegrationdedonneesgraphiques" title="Fonctions d'intégration de données graphiques">
+         <desc></desc>
+         <comment></comment>
+         <element name="ecriturededonneesvecteur" title="Ecriture de données vecteur">
+            <desc>Fonctionnalité d'écriture de données au format vecteur (shp, mif, dxf, gml, wkt..)</desc>
+            <desc0>La fonctionnalité n'est pas supportée</desc0>
+            <desc1>Supporte quelques formats vecteur</desc1>
+            <desc2>Supporte tous les principaux formats (via la librairie OGR)</desc2>
+            <score>1</score>
+            <comment>Formats supportés : 
+- SHP, GML, WKT
+- DXF, MIF et GEOCONCEPT via des plugin</comment>
+         </element>
+         <element name="gestiondessystemesdeprojectionetdecoordonnees" title="Gestion des systèmes de projection et de coordonnées">
+            <desc>Gestion des systèmes de projection/coordonnées et outils de changement de systèmes de projection/coordonnées</desc>
+            <desc0>La fonctionnalité n'est pas supportée</desc0>
+            <desc1>Support limité</desc1>
+            <desc2>Supporte tous les principaux systèmes</desc2>
+            <score>2</score>
+            <comment>Cette fonctionnalité est disponible via le plugin "CTS extension" </comment>
+         </element>
+         <element name="lecturededonneesraster" title="Lecture de données raster">
+            <desc>Fonctionnalité de lecture de données au format Raster (tif, ecw, jpg, jpeg 2000, bmp..)</desc>
+            <desc0>La fonctionnalité n'est pas supportée</desc0>
+            <desc1>Supporte quelques formats raster</desc1>
+            <desc2>Supporte tous les principaux formats (via la librairie GDAL)</desc2>
+            <score>1</score>
+            <comment>Formats supportés : GIF, PNG, JPG, TIFF, 
+ECW, MrSID via des plugin</comment>
+         </element>
+         <element name="lecturededonneestabulaires" title="Lecture de données tabulaires">
+            <desc>Fonctionnalité de lecture de données tabulaires</desc>
+            <desc0>La fonctionnalité n'est pas supportée</desc0>
+            <desc1>La fonctionnalité est limitée à un format particulier</desc1>
+            <desc2>Supporte les principaux formats (csv,txt,dbf,xls..)</desc2>
+            <score>1</score>
+            <comment>Format supporté : CSV via un plugin</comment>
+         </element>
+         <element name="lecturededonneesvecteur" title="Lecture de données vecteur">
+            <desc>Fonctionnalité de lecture de données au format vecteur (shp, mif, dxf, gml, wkt..)</desc>
+            <desc0>La fonctionnalité n'est pas supportée</desc0>
+            <desc1>Supporte quelques formats vecteur</desc1>
+            <desc2>Supporte tous les principaux formats (via la librairie OGR)</desc2>
+            <score>1</score>
+            <comment>Formats supportés :
+- SHP, GML, WKT
+- DXF, MIF et GEOCONCEPT via des plugin</comment>
+         </element>
+         <element name="outilsdecreationdunecoucheponctuelleapartirdecoor" title="Outils de création d'une couche ponctuelle à partir de coordonnées XY">
+            <desc>Outils permettant de créer une couche ponctuelle à partir d'un fichier contenant des coordonnées XY</desc>
+            <desc0>La fonctionnalité n'est pas supportée</desc0>
+            <desc1>Fonctionnalité supportée par un plugin</desc1>
+            <desc2>Fonctionnalité supportée par le logiciel</desc2>
+            <score>0</score>
+            <comment>L'import d'un fichier contenant une liste de coordonnées n'est pas possible.
+Le logiciel permet toutefois de créer une couche vectorielle de point à partir d'une liste de points au format WKT
+
+Exemple :
+POINT  ( 441418.76500000 2384024.74900000)
+POINT  ( 441431.65900000 2384134.71800000)
+POINT  ( 441506.36800000 2384754.66100000)
+POINT  ( 441772.55900000 2384446.19000000)</comment>
+         </element>
+         <element name="outilsdedigitalisation" title="Outils de digitalisation">
+            <desc>Fonctionnalité de saisie / modification de données géographiques</desc>
+            <desc0>La fonctionnalité n'est pas supportée</desc0>
+            <desc1>Présence d'outils basiques de saisie (création de points, polygones et polylignes)</desc1>
+            <desc2>Présence d'outils avancés de saisie (fonctions de découpe d'objets, de création de trous, de déplacement...)</desc2>
+            <score>2</score>
+            <comment>Outils de digitalisation nombreux et performants. Le logiciel permet de contrôler la validité des géométries dessinées. Il dispose également d'une fonction de snapping</comment>
+         </element>
+         <element name="outilsdegeoreferencementderaster" title="Outils de géoréférencement de raster">
+            <desc>Fonctionnalité de géoréférencement d'une image raster</desc>
+            <desc0>La fonctionnalité n'est pas supportée</desc0>
+            <desc1>Fonctionnalité supportée par un plugin</desc1>
+            <desc2>Fonctionnalité supportée par le logiciel</desc2>
+            <score>0</score>
+            <comment></comment>
+         </element>
+      </element>
+      <element name="fonctionsdemanipulationdesdonnees" title="Fonctions de manipulation des données">
+         <desc></desc>
+         <comment></comment>
+         <element name="calculdestatistiques" title="Calcul de statistiques">
+            <desc>Fonctionnalité de calcul de statistiques sur les données attributaires d'une table</desc>
+            <desc0>La fonctionnalité n'est pas supportée</desc0>
+            <desc1>Possibilité de créer des diagrammes simples</desc1>
+            <desc2>Possibilité de créer des diagrammes complexes et de les ajouter dans une mise en page</desc2>
+            <score>2</score>
+            <comment>Cette fonctionnalité est disponible dans un plugin externe</comment>
+         </element>
+         <element name="gestiondelastructuredestablesattributaires" title="Gestion de la structure des tables attributaires">
+            <desc>Fonctionnalité permettant de modifier la structure de la table attributaire</desc>
+            <desc0>La fonctionnalité n'est pas supportée</desc0>
+            <desc1>Permet d'ajouter / supprimer un champ</desc1>
+            <desc2>Permet d'ajouter, supprimer et modifier le type ou la taille d'un champ existant</desc2>
+            <score>2</score>
+            <comment></comment>
+         </element>
+         <element name="gestiondescouches" title="Gestion des couches">
+            <desc>Les couches géographiques sont superposables et maniables dans un gestionnaire de couches</desc>
+            <desc0>La fonctionnalité n'est pas supportée</desc0>
+            <desc1>Présence d'un gestionnaire de couches</desc1>
+            <desc2>Présence d'un gestionnaire de couche avancé permettant par exemple de zoomer sur toute la couche</desc2>
+            <score>2</score>
+            <comment></comment>
+         </element>
+         <element name="gestiondesdonneesattributaires" title="Gestion des données attributaires">
+            <desc>Fonctionnalité permettant de modifier les données de la table attributaire</desc>
+            <desc0>La fonctionnalité n'est pas supportée</desc0>
+            <desc1>Permet la  saisie  / mise à jour des données</desc1>
+            <desc2>Permet la  saisie  / mise à jour des données et dispose de fonctionnalités avancées pour recalculer les données d'un champ ou d'une sélection d'enregistrement</desc2>
+            <score>1</score>
+            <comment>Présence d'un calculateur d'attributs rudimentaire</comment>
+         </element>
+         <element name="gestiondeworkspace" title="Gestion de workspace">
+            <desc>Le logiciel permet d'enregistrer son projet pour pouvoir le modifier ultérieurement</desc>
+            <desc0>La fonctionnalité n'est pas supportée</desc0>
+            <desc1>Possibilité d'enregistrer les couches sur lesquelles l'utilisateur travaille</desc1>
+            <desc2>Possibilité d'enregistrer les couches et les mises en pages de l'utilisateur</desc2>
+            <score>1</score>
+            <comment>Le logiciel ne gère pas les mise en page</comment>
+         </element>
+         <element name="jointurededonnees" title="Jointure de données">
+            <desc>Fonctionnalité permettant de joindre deux tables de données</desc>
+            <desc0>La fonctionnalité n'est pas supportée</desc0>
+            <desc1>Supporte les jointures attributaires</desc1>
+            <desc2>Supporte les jointures attributaires et les jointures spatiales</desc2>
+            <score>1</score>
+            <comment></comment>
+         </element>
+         <element name="outilsdegeo-traitement" title="Outils de géo-traitement">
+            <desc>Outils permettant la création de nouvelles entités à partir d'entités existantes</desc>
+            <desc0>La fonctionnalité n'est pas supportée</desc0>
+            <desc1>Supporte quelques opérateurs de géo-traitement : Intersect,Dissolve,Union,Clip,Difference...</desc1>
+            <desc2>Supporte les principaux opérateurs de géo-traitement,  permet de créer des zones tampons ou de transformer des polygones  (polygones to polylignes, multipart to singlepart)</desc2>
+            <score>2</score>
+            <comment>Le logiciel possède un grand nombre d'outils de géo-traitement qui peuvent être complétés par les outils du plugin SEXTANTE dédié au géo-traitement</comment>
+         </element>
+         <element name="requetesdeconsultation" title="Requêtes de consultation">
+            <desc>Fonctionnalité permettant d'interroger les données</desc>
+            <desc0>La fonctionnalité n'est pas supportée</desc0>
+            <desc1>Permet de faire uniquement des requêtes attributaires</desc1>
+            <desc2>Permet de faire des requêtes attributaires et des requêtes spatiales</desc2>
+            <score>2</score>
+            <comment></comment>
+         </element>
+      </element>
+      <element name="fonctionsderepresentationdesdonnees" title="Fonctions de représentation des données">
+         <desc></desc>
+         <comment></comment>
+         <element name="exportdecartedansunfichier" title="Export de carte dans un fichier">
+            <desc>Fonctionnalité permettant d'exporter la carte dans un fichier</desc>
+            <desc0>La fonctionnalité n'est pas supportée</desc0>
+            <desc1>Export au format image</desc1>
+            <desc2>Export dans divers formats (image, pdf)</desc2>
+            <score>1</score>
+            <comment>Formats supportés : PNG,JPEG</comment>
+         </element>
+         <element name="methodesdediscretisationdesdonnees" title="Méthodes de discrétisation des données">
+            <desc>Fonctionnalité permettant de découper en classes des données statistiques pour les représenter graphiquement</desc>
+            <desc0>La fonctionnalité n'est pas supportée</desc0>
+            <desc1>Choix limité dans les méthodes de discrétisation (intervalles égaux et/ou quantiles)</desc1>
+            <desc2>Grand choix dans les méthodes de discrétisation (intervalles égaux, quantiles, intervalles naturels..)</desc2>
+            <score>2</score>
+            <comment>Méthodes supportées : intervalles égaux, quantiles, seuils naturels, moyenne/écart type, méthode de Jenks</comment>
+         </element>
+         <element name="outilsdegestiondeslabels" title="Outils de gestion des labels">
+            <desc>Outils permettant d'ajouter des labels sur la carte</desc>
+            <desc0>La fonctionnalité n'est pas supportée</desc0>
+            <desc1>Outils simplifiés</desc1>
+            <desc2>Outils avancés de gestion des étiquettes (modification de l'orientation, variation de la taille selon l'échelle, possibilité de déplacer une étiquette)</desc2>
+            <score>2</score>
+            <comment></comment>
+         </element>
+         <element name="outilsdemiseenpage" title="Outils de mise en page">
+            <desc>Le logiciel dispose d'outils de mise en page de la carte</desc>
+            <desc0>La fonctionnalité n'est pas supportée</desc0>
+            <desc1>Possibilité d'ajouter légende, titre, source, flèche nord</desc1>
+            <desc2>Outils avancés de mise en page : possibilité de modifier la légende, outils d'alignement des différents éléments qui composent la mise en page..</desc2>
+            <score>1</score>
+            <comment>Cette fonctionnalité nécessite l'installation d'un plugin externe</comment>
+         </element>
+         <element name="outilsdenavigation" title="Outils de navigation">
+            <desc>Le logiciel permet de naviguer sur la carte via différents outils</desc>
+            <desc0>La fonctionnalité n'est pas supportée</desc0>
+            <desc1>Outils classiques (zoom +, zoom -, pan..)</desc1>
+            <desc2>Outils avancés (zoom +, zoom -, pan..), zoom sur la couche, zoom sur une sélection d'entités</desc2>
+            <score>2</score>
+            <comment></comment>
+         </element>
+         <element name="outilsdesymbologie" title="Outils de symbologie">
+            <desc>Outils permettant de représenter graphiquement les entités géographiques qui composent la carte</desc>
+            <desc0>La fonctionnalité n'est pas supportée</desc0>
+            <desc1>Outils simplifiés</desc1>
+            <desc2>Outils avancés de symbologie (possibilité de créer des symboles complexes)</desc2>
+            <score>1</score>
+            <comment></comment>
+         </element>
+      </element>
+   </section>
+   <section name="cartographiethematique" title="Cartographie thématique">
+      <desc>Fonctionnalités pour réaliser des cartes traduisant visuellement les relations spatiales entre différentes variables</desc>
+      <element name="preparationdescartes" title="Préparation des cartes">
+         <desc></desc>
+         <comment></comment>
+         <element name="selectiondufonddecarte" title="Sélection du fond de carte">
+            <desc>Fonctionnalité de sélection des fonds de cartes (routes, les fleuves, les contours des zonages administratifs, les mers, les chefs lieux, ...) sur lesquels on va travailler</desc>
+            <desc0>La sélection des fonds de carte est complexe, peu intuitive voire impossible</desc0>
+            <desc1>Une interface utilisateur ergononique permet de facilement choisir un fond de carte</desc1>
+            <desc2>L'interface est ergonomique et propose des fonctionnalités avancées  (prévisualisation, superpositions de plusieurs fonds de cartes ...) </desc2>
+            <score>1</score>
+            <comment></comment>
+         </element>
+         <element name="selectiondesdonneesstatistiques" title="Sélection des données statistiques">
+            <desc>Les données statistiques sont des tables de données, généralement aux formats Dbase4, CSV contenant au moins un identifiant géographique (format texte), puis éventuellement un libellé géographique et enfin les données statistiques</desc>
+            <desc0>La sélection des données statistiques est complexe, peu intuitive voire impossible</desc0>
+            <desc1>Une interface utilisateur ergononique permet de facilement choisir les données statistiques</desc1>
+            <desc2>Très bonne intégration avec tous types de sources de données (base de données géospatials, formats standards et propriétaires, ...)</desc2>
+            <score>1</score>
+            <comment></comment>
+         </element>
+         <element name="selectionducontourdelazone" title="Sélection du contour de la zone">
+            <desc>Le contour de la zone est un fond cartographique qui détermine le contour de la zone d'étude (départements, régions...).</desc>
+            <desc0>La sélection du contour de la zone est complexe, peu intuitif voire impossible</desc0>
+            <desc1>Une interface utilisateur ergononique permet de facilement choisir un contour de zone</desc1>
+            <desc2>L'interface est ergonomique et propose la prévisualisation</desc2>
+            <score>1</score>
+            <comment></comment>
+         </element>
+         <element name="cartespreconfigurees(kitsthematiques)" title="Cartes préconfigurées (Kits thématiques)">
+            <desc>Possibilité de préparamétrer des cartes types qui pourront être réutilisé en indiquant simplement à quel territoire on souhaite les appliquer</desc>
+            <desc0>La fonctionnalité n'existe pas</desc0>
+            <desc1>Il est possible de réaliser ce type de carte à l'aide de développements complémentaire</desc1>
+            <desc2>La fonctionnalitée est intégrée à l'outil et facilement utilisable</desc2>
+            <score>1</score>
+            <comment></comment>
+         </element>
+      </element>
+      <element name="monolocalisees" title="Monolocalisées">
+         <desc></desc>
+         <comment></comment>
+         <element name="cartechoroplethe" title="Carte choroplèthe">
+            <desc>Carte représentant un ratio (densité, évolution, pourcentage, distancemoyenne...) à l'aide d'aplats de couleurs. Les données représentées sont
+discrétisées, c'est-à-dire qu'à chaque classe correspond un palier de valeurs et d'intensité de couleur</desc>
+            <desc0>Non supporté</desc0>
+            <desc1>Support basique de ce type carte</desc1>
+            <desc2>Support avancé de ce type de carte (paramètrage avancé des couleurs et dimensions, différents algorithme de discrétisation)</desc2>
+            <score>2</score>
+            <comment></comment>
+         </element>
+         <element name="cartededensitelissee" title="Carte de densité lissée">
+            <desc>Ce type de carte est une extension des cartes choroplètes. Le lissage est effectuer par l'application SAS ou R auquel le logiciel doit se connecter.</desc>
+            <desc0>Non supporté</desc0>
+            <desc1>Possible mais intégration complexe ou manuel avec SAS ou R</desc1>
+            <desc2>Oui et bonne intégration avec les applications externe</desc2>
+            <score>0</score>
+            <comment></comment>
+         </element>
+         <element name="carteenrond" title="Carte en rond">
+            <desc>Carte représentant des données en valeur absolue (effectif, par exemple), la hiérarchisation des valeurs s'effectue avec des figures de taille croissante. D'une façon générale, les symboles proportionnels sont liés à la variable visuelle taille.
+
+Le rond est la figure qui se prête le mieux aux comparaisons de taille.
+Pour une bonne lisibilité, la totalité de la surface des symboles ne doit pas dépasse</desc>
+            <desc0>Non supporté</desc0>
+            <desc1>Support basique de ce type carte</desc1>
+            <desc2>Support avancé de ce type de carte avec paramètrage des couleurs et dimensions</desc2>
+            <score>2</score>
+            <comment>Cette fonctionnalité nécessite l'installation d'un plugin externe</comment>
+         </element>
+         <element name="carteensymboles" title="Carte en symboles">
+            <desc>Carte proche de la carte en rond. Les ronds de différents diamètres étant remplacés par des symboles</desc>
+            <desc0>Non supporté</desc0>
+            <desc1>Support basique de ce type carte</desc1>
+            <desc2>Support avancé de ce type de carte avec paramètrage des couleurs et dimensions</desc2>
+            <score>0</score>
+            <comment></comment>
+         </element>
+      </element>
+      <element name="bilocalisee" title="Bilocalisée">
+         <desc></desc>
+         <comment></comment>
+         <element name="carteenoursins" title="Carte en oursins">
+            <desc>Une donnée dynamique peut être représentée par des oursins ou par des aires. Dans ce cas on ne tient pas compte des éventuelles variables quantitatives associées au mouvement.</desc>
+            <desc0>Non supporté</desc0>
+            <desc1>Support basique de ce type carte</desc1>
+            <desc2>Support avancé de ce type de carte avec paramètrage des couleurs et dimensions</desc2>
+            <score>0</score>
+            <comment></comment>
+         </element>
+         <element name="flechejoignate" title="Flèches joignantes">
+            <desc>Une donnée dynamique peut être représentée par des flèches joignantes. Dans ce cas on tient compte des variables quantitatives associées au mouvement. Les flèches relient point de départ et point d'arrivée. Leur largeur est proportionnelle au flux représent</desc>
+            <desc0>Non supporté</desc0>
+            <desc1>Support basique de ce type carte</desc1>
+            <desc2>Support avancé de ce type de carte avec paramètrage des couleurs et dimensions</desc2>
+            <score>0</score>
+            <comment></comment>
+         </element>
+         <element name="flechesaphir" title="Flèches saphir">
+            <desc>Une donnée dynamique peut être représentée par des flèches dites « Saphir ». Dans ce cas, on tient compte des variables quantitatives associées au mouvement. La longueur des flèches est fixe, la largeur est proportionnelle à la variable choisie. Dans ce cas les flèches indiquent une direction.</desc>
+            <desc0>Non supporté</desc0>
+            <desc1>Support basique de ce type carte</desc1>
+            <desc2>Support avancé de ce type de carte avec paramètrage des couleurs et dimensions</desc2>
+            <score>0</score>
+            <comment></comment>
+         </element>
+         <element name="resultantes" title="Résultantes vectorielles">
+            <desc>Les résultantes vectorielles joignent chaque point représentant un lieu de départ au point moyen des lieux d'arrivée, ou à l'inverse elles joignent chaque point représentant un lieu d'arrivée au point moyen des lieux de départ. Cette représentation permet une appréciation globale et visuelle de la polarisation. Les résultantes vectorielles sont coloriées en fonction de la taille de la population qu'elle synthétise</desc>
+            <desc0>Non supporté</desc0>
+            <desc1>Support basique de ce type carte</desc1>
+            <desc2>Support avancé de ce type de carte avec paramètrage des couleurs et dimensions</desc2>
+            <score>0</score>
+            <comment></comment>
+         </element>
+      </element>
+      <element name="typologie" title="Typologie">
+         <desc>Ce type d'analyse représente les objets en fonction de valeurs individuelles, il est utile lorsque vous voulez souligner les différences catégorielles dans les données, au lieu de représenter des informations quantitatives (ex : type de structuration du territoire, classification issue par exemple d'une Classsification Ascendante Hiérarchique CAH). La couleur y est significative, mais ne doit donner une idée de hiérarchie qu'uniquement si la donnée s'y prête.</desc>
+         <desc0>Non supporté</desc0>
+         <desc1>Support basique de ce type carte</desc1>
+         <desc2>Support avancé de ce type de carte avec paramètrage des couleurs et dimensions</desc2>
+         <score>2</score>
+         <comment></comment>
+      </element>
+      <element name="apparenceetmiseenforme" title="Apparence et mise en forme">
+         <desc></desc>
+         <comment></comment>
+         <element name="gestiondeslabels" title="Gestion des labels">
+            <desc>Possibilité d'appliquer des labels sur les objets et symboles représenté sur la carte</desc>
+            <desc0>Pas de gestion de labels</desc0>
+            <desc1>Gestion des labels rudimentaire</desc1>
+            <desc2>Gestion avancé des labels: possibilité de déplacer les étiquettes, modifier la police, les représenter automatiquement
+décalées par rapport au point d'ancrage de l'objet géographique</desc2>
+            <score>1</score>
+            <comment>La gestion des étiquettes semble être optimisée pour les entités de type linéaire</comment>
+         </element>
+         <element name="impression" title="impression">
+            <desc>Gestion de l'impression</desc>
+            <desc0>Pas de possibilité d'impression</desc0>
+            <desc1>Fonctionnalité d'impression basique</desc1>
+            <desc2>Support avancé de l'impression (redimensionnement, multi-page,...)</desc2>
+            <score>1</score>
+            <comment>Cette fonctionnalité nécessite l'installation d'un plugin externe</comment>
+         </element>
+         <element name="miseenpage" title="Mise en page">
+            <desc>Possibilité de gérer la mise d'une carte en plaçant les éléments suivants
+
+    * les légendes cartographiques et statistiques
+    * les sources
+    * le copyright
+    * les titres
+</desc>
+            <desc0>Pas de mise en page possible</desc0>
+            <desc1>Mise en page possible de certains éléments et paramétrage limité</desc1>
+            <desc2>Possibilité de mettre en page tous les éléments demandés avec un paramètrage fin</desc2>
+            <score>1</score>
+            <comment>Cette fonctionnalité nécessite l'installation d'un plugin externe</comment>
+         </element>
+      </element>
+   </section>
+   <section name="extensibilite" title="Extensibilité">
+      <desc>Possibilite d'étendre les capacités du produit par des mécanismes d'extension ou un langage de script.</desc>
+      <element name="architecture" title="Architecture">
+         <desc>Capacité de l'architecture du produit à gérer des extensions.</desc>
+         <desc0>Pas de mécanisme d'extension.</desc0>
+         <desc1>Mécanisme d'extension disponible mais peu utilisé</desc1>
+         <desc2>Mécanisme d'extension largement utilisé: bibliothèque d'extension comprenant de nombreuses extensions.</desc2>
+         <score>2</score>
+         <comment></comment>
+      </element>
+      <element name="integration" title="Intégration">
+         <desc>Integration du produit avec d'autres produits comme des bases de données géospatiales ou des systèmes statistiques.</desc>
+         <desc0>Aucune intégration</desc0>
+         <desc1>Intégration avec un ou deux produits.</desc1>
+         <desc2>Intégration avec de nombreux produit dont le projet R pour les statistiques.</desc2>
+         <score>0</score>
+         <comment></comment>
+      </element>
+      <element name="interfaceutilisateur" title="Interface utilisateur">
+         <desc>Possibilité de personnaliser l'interface utilisateur</desc>
+         <desc0>Impossible</desc0>
+         <desc1>Personnalisation limité</desc1>
+         <desc2>L'interface utilisateur est entièrement configurable</desc2>
+         <score>0</score>
+         <comment></comment>
+      </element>
+      <element name="scripting" title="Scripting">
+         <desc>Support d'un langage de script pour enrichir les fonctionnalités du produit</desc>
+         <desc0>Pas de langage de script</desc0>
+         <desc1>Langage de script sommaire</desc1>
+         <desc2>Langage de script très puissant</desc2>
+         <score>2</score>
+         <comment>Beanshell : langage de script totalement intégré dans Java permettant d'exécuter des objets Java compilés ou écrits en BeanShell</comment>
+      </element>
+   </section>
+</document>

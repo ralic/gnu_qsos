@@ -1,0 +1,6 @@
+<!ENTITY authors.title "Auteurs">
+<!ENTITY f-a-name.value "Nom">
+<!ENTITY f-a-email.value "Courriel">
+<!ENTITY button1.label "Ajouter">
+<!ENTITY button2.label "Supprimer">
+<!ENTITY f-a-list "Auteurs : ">

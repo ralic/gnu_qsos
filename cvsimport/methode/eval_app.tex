@@ -1,0 +1,685 @@
+%Copyright (c) 2004 2005 2006 Atos Origin
+%Permission is granted to copy, distribute and/or modify this
+%document
+%under the terms of the GNU Free Documentation License,
+%      Version 1.2
+%      or any later version published by the Free Software
+%      Foundation;
+%      with no Invariant Sections, no Front-Cover
+%      Texts, and no Back-Cover
+%      Texts.  A copy of the license is
+%      included in the section entitled "GNU
+%      Free Documentation License".
+%
+%$Id: eval_app.tex,v 1.5 2006/04/13 15:11:20 rsemeteys Exp $
+\subsection{Evaluation sheet}
+Every software release is described in an evaluation sheet. This document includes more detailed information 
+than the identity card as it focuses on identifying, describing and analyzing in detail each 
+evolution brought by the new release.
+\subsubsection{Scoring}
+Criteria are scored from 0 to 2. These scores will be used in Step 4 - "Selection" 
+to compare and select software according to the weightings, representing the user's requirements 
+specified in Step 3 - "Qualifcation".
+
+The following paragraphs describe the criteria used for each axis of evaluation.
+Note that the same criterion or similar criteria can appear on different axis.
+
+\subsubsection{Functional coverage}
+The functional grid is determined by the software's family and proceeds from the frame 
+of reference of Step 1 - "Definition".
+Consult the site \url{http://www.qsos.org} for details of functional grids by software families.
+
+For each element of the grid, the scoring rule is as follows:
+
+
+\begin{figure}
+\center
+\begin{tabular}{|c|c|c|}
+\hline \TS{Functionality} & \TS{Score}\\
+\hline Not covered & 0\\
+\hline Partially covered & 1\\
+\hline Completely covered & 2\\
+\hline
+\end{tabular}
+\end{figure}
+
+
+In certain cases it is necessary to use several functional grids for a same software, 
+for instance when it belongs to more than one software family. 
+In this case, the functional criteria are distributed on separated axis in order to be 
+able to distinctly evaluate the functional coverage for each family.
+
+
+
+\subsubsection{Risks from the user's perspective}
+
+This axis of evaluation includes criteria to estimate risks incurred by the user when adopting 
+free or open soure software.
+Scoring of criteria is done independently of any particular user's context 
+(the context is considered later in Step 3 - "Qualification").
+
+
+Criteria are split into five categories:
+\begin{itemize}
+\item Intrinsic durability
+\item Industrialized solution
+\item Integration
+\item Technical adaptability
+\item Strategy
+\end{itemize}
+
+
+The following tables detail each one of these categories, by specifying the rule of notation 
+to be used for each criterion.
+
+%%%%%%%%%%%%%%%%%%%%%% Start Intrinsic durability
+%%% Start Maturity
+\begin{figure}
+\center
+\begin{tabular}{|p{2cm}|p{2cm}|p{2.8cm}|p{2.8cm}|p{2.8cm}|}
+\hline \multicolumn{2}{|c|}{\TS{Intrinsic durability}} &
+\multicolumn{3}{|c|}{\TS{Score}}\\
+\cline{3-5} \multicolumn{2}{|c|}{} & \multicolumn{1}{|c|}{\TS{0}} &
+\multicolumn{1}{|c|}{\TS{1}} &\multicolumn{1}{|c|}{\TS{2}}\\
+\hline
+\TS{Maturity}&
+\TS{Age}&
+For instance less than 3 months&
+For instance between 3 months and 3 years &
+For instance more than 3 years \\
+\cline{2-5}&
+\TS{Stability}&
+Unstable software with numerous releases or patches generating side effects&
+Stabilized production release existing but old. Difficulties to stabilize development releases&
+Stabilized software. Releases provide bug fixes corrections but mainly new functionalities \\
+\cline{2-5}&
+\TS{History, known problems}&
+Software knows several problems which can be prohibitive&
+No known major problem or crisis&
+History of good management of crisis situations\\
+\cline{2-5}&
+\TS{Fork probability, source of Forking}&
+Software is very likely to be forked in the future&
+Software comes from a fork but has very few chances of being forked in the future&
+Software has very little chance of being forked. It does not come from a fork either\\
+\hline
+\end{tabular}
+\end{figure}
+%%% End Maturity
+
+%%% Start Adoption 
+\begin{figure}
+\center
+\begin{tabular}{|p{2cm}|p{2cm}|p{2.8cm}|p{2.8cm}|p{2.8cm}|}
+\hline \multicolumn{2}{|c|}{\TS{Intrinsic durability}} &
+\multicolumn{3}{|c|}{\TS{Score}}\\
+\cline{3-5} \multicolumn{2}{|c|}{} & \multicolumn{1}{|c|}{\TS{0}} &
+\multicolumn{1}{|c|}{\TS{1}} &\multicolumn{1}{|c|}{\TS{2}}\\
+\hline
+\TS{Adoption}&
+\TS{Popularity (related to: general public, niche, ...)}&
+Very few users identified&
+Detectable use on Internet (sourceforge, freshmeat, google, ...)&
+Numerous users, numerous references\\
+\cline{2-5}&
+\TS{References}&
+None&
+Few references, non critical usages&
+Often implemented for critical applications\\
+\cline{2-5}&
+\TS{Contributing community}&
+No community or without real activity (forum, mailing list,...)&
+Existing community with a notable activity&
+Strong community: big activity on forums, numerous contributors and advocates\\
+\cline{2-5}&
+\TS{Books}&
+No book about the software&
+Less than 5 books about the software are available&
+More than 5 books about software are available, in several languages\\
+\hline
+\end{tabular}
+\end{figure}
+%%% End Adoption 
+
+%%% Start Development leadership
+\begin{figure}
+\center
+\begin{tabular}{|p{2cm}|p{2cm}|p{2.8cm}|p{2.8cm}|p{2.8cm}|}
+\hline \multicolumn{2}{|c|}{\TS{Intrinsic durability}} &
+\multicolumn{3}{|c|}{\TS{Score}}\\
+\cline{3-5} \multicolumn{2}{|c|}{} & \multicolumn{1}{|c|}{\TS{0}} &
+\multicolumn{1}{|c|}{\TS{1}} &\multicolumn{1}{|c|}{\TS{2}}\\
+\hline
+\TS{Development leadership}&
+\TS{Leading team}&
+1 to 2 individuals involved, not clearly identified&
+Between 2 and 5 independent people&
+More than 5 people\\
+\cline{2-5}&
+\TS{Management style}&
+Complete dictatorship&
+Enlightened despotism&
+Council of architects with identified leader (e.g: ASF, ...)\\
+\hline
+\end{tabular}
+\end{figure}
+%%% End Development leadership
+
+%%% Start Activity
+\begin{figure}
+\center
+\begin{tabular}{|p{2cm}|p{2cm}|p{2.8cm}|p{2.8cm}|p{2.8cm}|}
+\hline \multicolumn{2}{|c|}{\TS{Intrinsic durability}} &
+\multicolumn{3}{|c|}{\TS{Score}}\\
+\cline{3-5} \multicolumn{2}{|c|}{} & \multicolumn{1}{|c|}{\TS{0}} &
+\multicolumn{1}{|c|}{\TS{1}} &\multicolumn{1}{|c|}{\TS{2}}\\
+\hline
+\TS{Activity}&
+\TS{Developers, identification, turnover}&
+Less than 3 developers, not clearly identified&
+Between 4 and 7 developers, or more unidentified developers with important turnover&
+More than 7 developers clearly identified, very stable team\\
+\cline{2-5}&
+\TS{Activity on bugs}&
+Slow reactivity in forum or on mailing list, or nothing regarding bug fixes in release notes&
+Detectable activity but without process clearly exposed, long reaction/resolution time&
+Strong reactivity based on roles and tasks assignment\\
+
+\cline{2-5}&
+\TS{Activity on functionalities}&
+No or few new functionalities&
+Evolution of the product driven by the core team or by user's request without any clearly explained process&
+Tool(s) to manage feature requests, strong interaction with roadmap\\
+\cline{2-5}&
+\TS{Activity on releases}&
+Very weak activity on both production and development releases&
+Activity on production and development releases. Frequent minor releases (bug fixes)&
+Important activity with frequent minor releases (bugs fixes) and planned major 
+releases relating to the roadmap forcast\\
+\hline
+\end{tabular}
+\end{figure}
+%%% End Activity
+
+
+%%% Start Independence of developments 
+\begin{figure}
+\center
+\begin{tabular}{|p{2cm}|p{2cm}|p{2.8cm}|p{2.8cm}|p{2.8cm}|}
+\hline \multicolumn{2}{|c|}{\TS{Intrinsic durability}} &
+\multicolumn{3}{|c|}{\TS{Score}}\\
+\cline{3-5} \multicolumn{2}{|c|}{} & \multicolumn{1}{|c|}{\TS{0}} &
+\multicolumn{1}{|c|}{\TS{1}} &\multicolumn{1}{|c|}{\TS{2}}\\
+\hline
+\TS{Independence of developments}&
+\TS{Independence of developments}&
+Developments realized at 100\% by employees of a single company&
+60\% maximum&
+20\% maximum\\
+\hline
+\end{tabular}
+\end{figure}
+%%% End Independence of developments
+
+% Le clearpage impose a Latex de poser les objets flotant qu'il a en memoire
+% ! LaTeX Error: Too many unprocessed floats.
+% TODO : le must serait de ne pas utiliser de float
+\clearpage
+%%%%%%%%%%%%%%%%%%%%%% End Intrinsic durability
+
+%%%%%%%%%%%%%%%%%%%%%% Start Industrialised solution
+%%% Start Services 
+\begin{figure}
+\center
+\begin{tabular}{|p{2cm}|p{2cm}|p{2.8cm}|p{2.8cm}|p{2.8cm}|}
+\hline \multicolumn{2}{|c|}{\TS{Industrialised solution}} &
+\multicolumn{3}{|c|}{\TS{Score}}\\
+\cline{3-5} \multicolumn{2}{|c|}{} & \multicolumn{1}{|c|}{\TS{0}} &
+\multicolumn{1}{|c|}{\TS{1}} &\multicolumn{1}{|c|}{\TS{2}}\\
+\hline
+\TS{Services}&
+\TS{Training}&
+No offer of training identified&
+Offer exists but is restricted geographically and to one language or is provided by a single contractor&
+Rich offers provided by several contractors, in several languages and split into modules of gradual levels\\
+\cline{2-5}&
+\TS{Support}&
+No offer of support except via public forums and mailing lists&
+Offer exists but is provided by a single contractor without strong commitment quality of services&
+Multiple service providers with strong commitment (e.g: guaranteed resolution time)\\
+\cline{2-5}&
+\TS{Consulting}&
+No offer of consulting service&
+Offer exists but is restricted geographically and to one language or is provided by a single contractor&
+Consulting services provided by different contractors in several languages\\
+\hline
+\end{tabular}
+\end{figure}
+%%% End Services 
+
+%%% Start Documentation 
+\begin{figure}
+\center
+\begin{tabular}{|p{2cm}|p{2cm}|p{2.8cm}|p{2.8cm}|p{2.8cm}|}
+\hline \multicolumn{2}{|c|}{\TS{Industrialised solution}} &
+\multicolumn{3}{|c|}\TS{{Score}}\\
+\cline{3-5} \multicolumn{2}{|c|}{} & \multicolumn{1}{|c|}{\TS{0}} &
+\multicolumn{1}{|c|}{\TS{1}} &\multicolumn{1}{|c|}{\TS{2}}\\
+\hline
+\TS{Documenta\-tion}&
+\TS{Documenta\-tion}&
+No user documentation&
+Documentation exists but shifted in time, is restricted to one language or is poorly detailed&
+Documentation always up to date, translated and possibly adapted to different target readers 
+(end user, sysadmin, manager, ?)\\
+\hline
+\end{tabular}
+\end{figure}
+%%% End Documentation 
+
+%%% Start Quality Assurance
+\begin{figure}
+\center
+\begin{tabular}{|p{2cm}|p{2cm}|p{2.8cm}|p{2.8cm}|p{2.8cm}|}
+\hline \multicolumn{2}{|c|}{\TS{Industrialised solution}} &
+\multicolumn{3}{|c|}{\TS{Score}}\\
+\cline{3-5} \multicolumn{2}{|c|}{} & \multicolumn{1}{|c|}{\TS{0}} &
+\multicolumn{1}{|c|}{\TS{1}} &\multicolumn{1}{|c|}{\TS{2}}\\
+\hline
+\TS{Quality Assurance}&
+\TS{Quality Assurance}&
+No QA process&
+Identifies QA process but not much formalized and with no tool&
+Automatic testing process included in code's life-cycle with publication of results\\
+\cline{2-5}&
+\TS{Tools}&
+No bug or feature request management tool&
+Standard tools provided (for instance by a hosting forge) but poorly used&
+Very active use of tools for roles/tasks allocation and progess monitoring\\
+\hline
+\end{tabular}
+\end{figure}
+%%% End Quality Assurance 
+
+
+%%% Start Packaging - part 1
+\begin{figure}
+\center
+\begin{tabular}{|p{2cm}|p{2cm}|p{2.8cm}|p{2.8cm}|p{2.8cm}|}
+\hline \multicolumn{2}{|c|}{\TS{Industrialised solution}} &
+\multicolumn{3}{|c|}{\TS{Score}}\\
+\cline{3-5} \multicolumn{2}{|c|}{} & \multicolumn{1}{|c|}{\TS{0}} &
+\multicolumn{1}{|c|}{\TS{1}} &\multicolumn{1}{|c|}{\TS{2}}\\
+\hline
+\TS{Packaging}&
+\TS{Source}&
+Software can't be installed from source without a lot of work&
+Installation from source is limited and depends on very strict conditions (OS, arch,
+lib, ...)&
+Installation from source is easy\\
+\cline{2-5}&
+\TS{Debian}&
+The software is not packaged for Debian&
+A Debian package exists but it has important issues or it doesn't have
+official support&
+The software is packaged in the distribution\\
+\cline{2-5}&
+\TS{FreeBSD}&
+The software is not packaged for FreeBSD&
+A port exists but it has important issues or it doesn't have official
+support&
+A official port exists in FreeBSD\\
+\cline{2-5}&
+\TS{HP-UX}&
+The software is not packaged for HP-UX&
+A package exists but it has important issues or it doesn't have official
+support&
+A tested package is provided for HP-UX\\
+\cline{2-5}&
+\TS{MacOSX}&
+The software is not packaged for MacOSX&
+A package exists but it has important issues or it doesn't have official
+support&
+The software is packaged in the distribution\\
+\cline{2-5}&
+\TS{Mandriva}&
+The software is not packaged for Mandriva&
+A package exists but it has important issues or it doesn't have official
+support&
+The software is packaged in the distribution\\
+\hline
+\end{tabular}
+\end{figure}
+%%% End Packaging - part 1
+
+%%% Start Packaging - part 2 
+\begin{figure}
+\center
+\begin{tabular}{|p{2cm}|p{2cm}|p{2.8cm}|p{2.8cm}|p{2.8cm}|}
+\hline \multicolumn{2}{|c|}{\TS{Industrialised solution}} &
+\multicolumn{3}{|c|}{\TS{Score}}\\
+\cline{3-5} \multicolumn{2}{|c|}{} & \multicolumn{1}{|c|}{\TS{0}} &
+\multicolumn{1}{|c|}{\TS{1}} &\multicolumn{1}{|c|}{\TS{2}}\\
+\hline
+\TS{Packaging}&
+\TS{NetBSD}&
+The software is not packaged for NetBSD&
+A port exists but it has important issues or it doesn't have official
+support&
+A official port exists in NetBSD\\
+\cline{2-5}&
+\TS{OpenBSD}&
+The software is not packaged for OpenBSD&
+A port exists but it has important issues or it doesn't have official
+support&
+A official port exists in OpenBSD\\
+\cline{2-5}&
+\TS{RedHat/Fedora}&
+The software is not packaged for RedHat/Fedora&
+A package exists but it has important issues or it doesn't have official
+support&
+The software is packaged in the distribution\\
+\cline{2-5}&
+\TS{Solaris}&
+The software is not packaged for Solaris&
+A package exists but it has important issues or it doesn't have official
+support (e.g: SunFreeware.com)&
+The software is supported by Sun for Solaris\\
+\cline{2-5}&
+\TS{SuSE}&
+The software is not packaged for SuSE&
+A package exists but it has important issues or it doesn't have official
+support&
+The software is packaged in the distribution\\
+\cline{2-5}&
+\TS{Windows}&
+The project can't be installed on Windows&
+A package exists but is limited or has important issues or covers only
+specific Windows releases (e.g: Windows2000 and WindowsXP)&
+Windows is fully supported and a package is provided\\
+\hline
+\end{tabular}
+\end{figure}
+%%% End Packaging - part 2
+
+
+%%% Start Exploitability
+\begin{figure}
+\center
+\begin{tabular}{|p{2cm}|p{2cm}|p{2.8cm}|p{2.8cm}|p{2.8cm}|}
+\hline \multicolumn{2}{|c|}{\TS{Industrialised solution}} &
+\multicolumn{3}{|c|}{\TS{Score}}\\
+\cline{3-5} \multicolumn{2}{|c|}{} & \multicolumn{1}{|c|}{\TS{0}} &
+\multicolumn{1}{|c|}{\TS{1}} &\multicolumn{1}{|c|}{\TS{2}}\\
+\hline
+\TS{Exploitability}&
+\TS{Ease of use, ergonomics}&
+Difficult to use, requires an in depth knowledge of the software functionality&
+Austere and very technical ergonomics&
+GUI including help functions and elaborated ergonomics (e.g: skins/themes management)\\
+\cline{2-5}&
+\TS{Administration / Monitoring}&
+No administrative or monitoring functionalities&
+Existing functionalities but incomplete and in need of improvement&
+Complete and easy-to-use administration and monitoring functionalities. Possible integration with 
+external tools (e.g: via SNMP, ...)\\
+\hline
+\end{tabular}
+\end{figure}
+%%% End Exploitability
+%%%%%%%%%%%%%%%%%%%%%% End Industrialised solution
+
+%%%%%%%%%%%%%%%%%%%%%% Start Technical adaptability
+%%% Start Modularity
+\begin{figure}
+\center
+\begin{tabular}{|p{2cm}|p{2cm}|p{2.8cm}|p{2.8cm}|p{2.8cm}|}
+\hline \multicolumn{2}{|c|}{\TS{Technical adaptability}} &
+\multicolumn{3}{|c|}{\TS{Score}}\\
+\cline{3-5} \multicolumn{2}{|c|}{} & \multicolumn{1}{|c|}{\TS{0}} &
+\multicolumn{1}{|c|}{\TS{1}} &\multicolumn{1}{|c|}{\TS{2}}\\
+\hline
+\TS{Modularity}&
+\TS{Modularity}&
+Monolithic software&
+Presence of high level modules allowing a first level of software adaptation&
+Modular conception, allowing easy adaptation of the software by selecting modules or even developing new ones\\
+\hline
+\end{tabular}
+\end{figure}
+%%% End Modularity
+
+%%% Start By-products
+\begin{figure}
+\center
+\begin{tabular}{|p{2cm}|p{2cm}|p{2.8cm}|p{2.8cm}|p{2.8cm}|}
+\hline \multicolumn{2}{|c|}{\TS{Technical adaptability}} &
+\multicolumn{3}{|c|}{\TS{Score}}\\
+\cline{3-5} \multicolumn{2}{|c|}{} & \multicolumn{1}{|c|}{\TS{0}} &
+\multicolumn{1}{|c|}{\TS{1}} &\multicolumn{1}{|c|}{\TS{2}}\\
+\hline
+\TS{By-products}&
+\TS{Code modification}&
+Everything by hand&
+Recompilation possible but complex without any tools or documentation&
+Recompilation with tools (e.g: make, ANT, ...) and documention provided\\
+\cline{2-5}&
+\TS{Code extension}&
+Any modification requires code recompilation&
+Architecture designed for static extension but requires recompilation&
+Principle of plug-in, architecture designed for dynamic extension without recompilation\\
+\hline
+\end{tabular}
+\end{figure}
+%%% End By-products
+%%%%%%%%%%%%%%%%%%%%%% End Technical adaptability
+
+%%%%%%%%%%%%%%%%%%%%%% Start Strategy 
+%%% Start License 
+\begin{figure}
+\center
+\begin{tabular}{|p{2cm}|p{2cm}|p{2.8cm}|p{2.8cm}|p{2.8cm}|}
+\hline \multicolumn{2}{|c|}{\TS{Strategy}} & \multicolumn{3}{|c|}{\TS{Score}}\\
+\cline{3-5} \multicolumn{2}{|c|}{} & \multicolumn{1}{|c|}{\TS{0}} &
+\multicolumn{1}{|c|}{\TS{1}} &\multicolumn{1}{|c|}{\TS{2}}\\
+\hline
+\TS{License}&
+\TS{Permissiveness (to be weighted only if user wants to become owner of code)}&
+Very strict license, like GPL&
+Moderate permissive license located between both extremes (GPL and BSD), dual-licensing depending on 
+the type of user (person, company, ...) or their activities&
+Very permissive like BSD or Apache licenses\\
+\cline{2-5}&
+\TS{Protection against proprietary forks}&
+Very permissive like BSD or Apache licenses&
+Moderate permissive license located between both extremes (GPL and BSD), dual-licensing depending on 
+the type of user (person, company, ...) or their activities&
+Very strict license, like GPL\\
+\hline
+\end{tabular}
+\end{figure}
+%%% End License 
+
+%%% Start Copyright owners
+\begin{figure}
+\center
+\begin{tabular}{|p{2cm}|p{2cm}|p{2.8cm}|p{2.8cm}|p{2.8cm}|}
+\hline \multicolumn{2}{|c|}{\TS{Strategy}} & \multicolumn{3}{|c|}{\TS{Score}}\\
+\cline{3-5} \multicolumn{2}{|c|}{} & \multicolumn{1}{|c|}{\TS{0}} &
+\multicolumn{1}{|c|}{\TS{1}} &\multicolumn{1}{|c|}{\TS{2}}\\
+\hline
+\TS{Copyright owners}&
+\TS{Copyright owners}&
+Rights held by a few individuals or entities, making it easier to change the license&
+Rights held by numerous individuals owning the code in a homogeneous way, making relicensing very difficult&
+Rights held by a legal entity in whom the community trusts (e.g. FSF or ASF)\\
+\hline
+\end{tabular}
+\end{figure}
+%%% End Copyright owners
+
+%%% Start Modification of source code
+\begin{figure}
+\center
+\begin{tabular}{|p{2cm}|p{2cm}|p{2.8cm}|p{2.8cm}|p{2.8cm}|}
+\hline \multicolumn{2}{|c|}{\TS{Strategy}} & \multicolumn{3}{|c|}{\TS{Score}}\\
+\cline{3-5} \multicolumn{2}{|c|}{} & \multicolumn{1}{|c|}{\TS{0}} &
+\multicolumn{1}{|c|}{\TS{1}} &\multicolumn{1}{|c|}{\TS{2}}\\
+\hline
+\TS{Modification of source code}&
+\TS{Modification of source code}&
+No practical way to propose code modifications&
+Tools provided to access and modify code (like CVS or SVN) but not really used to develop the software&
+The code modification process is well defined, exposed and respected, based on roles assignment\\
+\hline
+\end{tabular}
+\end{figure}
+%%% End Modification of source code
+
+%%% Start roadmap 
+\begin{figure}
+\center
+\begin{tabular}{|p{2cm}|p{2cm}|p{2.8cm}|p{2.8cm}|p{2.8cm}|}
+\hline \multicolumn{2}{|c|}{\TS{Strategy}} & \multicolumn{3}{|c|}{\TS{Score}}\\
+\cline{3-5} \multicolumn{2}{|c|}{} & \multicolumn{1}{|c|}{\TS{0}} &
+\multicolumn{1}{|c|}{\TS{1}} &\multicolumn{1}{|c|}{\TS{2}}\\
+\hline
+\TS{Roadmap}&
+\TS{Roadmap}&
+No published roadmap&
+Existing roadmap without planning&
+Versionned roadmap, with planning and measure of delays\\
+\hline
+\end{tabular}
+\end{figure}
+%%% End Roadmap
+
+%%% Start Sponsor 
+\begin{figure}
+\center
+\begin{tabular}{|p{2cm}|p{2cm}|p{2.8cm}|p{2.8cm}|p{2.8cm}|}
+\hline \multicolumn{2}{|c|}{\TS{Strategy}} & \multicolumn{3}{|c|}{\TS{Score}}\\
+\cline{3-5} \multicolumn{2}{|c|}{} & \multicolumn{1}{|c|}{\TS{0}} &
+\multicolumn{1}{|c|}{\TS{1}} &\multicolumn{1}{|c|}{\TS{2}}\\
+\hline
+\TS{Sponsor}&
+\TS{Sponsor}&
+Software has no sponsor, the core team is not paid&
+Software has an unique sponsor who might determine its strategy&
+Software is sponsored by industry\\
+\hline
+\end{tabular}
+\end{figure}
+%%% Start Sponsor 
+
+%%% Start Strategical independence
+\begin{figure}
+\center
+\begin{tabular}{|p{2cm}|p{2cm}|p{2.8cm}|p{2.8cm}|p{2.8cm}|}
+\hline \multicolumn{2}{|c|}{\TS{Strategy}} & \multicolumn{3}{|c|}{\TS{Score}}\\
+\cline{3-5} \multicolumn{2}{|c|}{} & \multicolumn{1}{|c|}{\TS{0}} &
+\multicolumn{1}{|c|}{\TS{1}} &\multicolumn{1}{|c|}{\TS{2}}\\
+\hline
+\TS{Strategical independence}&
+\TS{Strategical independence}&
+No detectable strategy or strong dependency on one unique actor (person, company, sponsor, ...)&
+Strategical vision shared with several other free and open source projects but without strong 
+commitment from copyrights owners&
+Strong independence of the core team, legal entity holding rights, strong involvement in the standardization process\\
+\hline
+\end{tabular}
+\end{figure}
+%%% End Strategical independence
+%%%%%%%%%%%%%%%%%%%%%% End Strategy 
+
+\clearpage
+
+\subsubsection{Risks from the service provider's perspective}
+This axis of evaluation regroups criteria to estimate risks incurred by a contractor offering services around a free or open source software (expertise, intregration, development, support, ...). It is notably on this basis that its level of commitment can be determined.
+
+%%%%%%%%%%%%%%%%%%%%%% Start Services provinding
+%%% Start Maintenability
+\begin{figure}
+\center
+\begin{tabular}{|p{2cm}|p{2cm}|p{2.8cm}|p{2.8cm}|p{2.8cm}|}
+\hline \multicolumn{2}{|c|}{\TS{Services provinding}} & \multicolumn{3}{|c|}{\TS{Score}}\\
+\cline{3-5} \multicolumn{2}{|c|}{} & \multicolumn{1}{|c|}{\TS{0}} &
+\multicolumn{1}{|c|}{\TS{1}} &\multicolumn{1}{|c|}{\TS{2}}\\
+\hline
+\TS{Maintenability}&
+\TS{Quality of source code}&
+Not very readable code or of poor quality, incoherence in coding styles&
+Readable code but not really commented in detail&
+Readable and commented code, implementing classic design patterns with a coherent and applied coding policy\\
+\cline{2-5}&
+\TS{Technological dispersion}&
+Use of numerous different languages&
+One main language with certain modules coded in other languages for specific and limited requirements&
+One unique language\\
+\cline{2-5}&
+\TS{Intrinsic complexity}&
+Very complex code requiring high level of expertise to perform modifications without generating side effects&
+Not very complex code but still requiring expertise in programming languages and software design&
+Simple code and design, easy to modify\\
+\cline{2-5}&
+\TS{Technical documentation}&
+No documentation (development guide or automatically generated doc like javadoc)&
+Incomplete or old documentation without conception and architectural considerations&
+Detailed and up to date documentation, including conception, architecture design and coding considerations\\
+\hline
+\end{tabular}
+\end{figure}
+%%% Start Maintenability
+
+%%% Start Code mastery
+\begin{figure}
+\center
+\begin{tabular}{|p{2cm}|p{2cm}|p{2.8cm}|p{2.8cm}|p{2.8cm}|}
+\hline \multicolumn{2}{|c|}{\TS{Services provinding}} & \multicolumn{3}{|c|}{\TS{Score}}\\
+\cline{3-5} \multicolumn{2}{|c|}{} & \multicolumn{1}{|c|}{\TS{0}} &
+\multicolumn{1}{|c|}{\TS{1}} &\multicolumn{1}{|c|}{\TS{2}}\\
+\hline
+\TS{Code mastery}&
+\TS{Direct}&
+No direct expertise of the source code&
+Mastery of code but limited to a single person or to only a part of the source&
+Several individuals mastering the code and covering together the totality of the source\\
+\cline{2-5}&
+\TS{Indirect}&
+No indirect expertise on the source code&
+Strong mastery via external expertise provided by partners&
+Partnership with the copyrights owner and/or the core team\\
+\hline
+\end{tabular}
+\end{figure}
+%%% End Code mastery
+%%%%%%%%%%%%%%%%%%%%%% End Services provinding
+\clearpage
+
+
+\subsubsection{Granularity of scores}
+As stated above, it is possible to iterate the QSOS process. 
+At the evaluation step this brings the capacity to score criteria in 
+three passes with different levels of granularity:
+
+\begin{itemize}
+\item First the five main categories
+\item Then the sub categories of each category
+\item Finally every remaining criterion
+\end{itemize}
+
+
+The general process is thus not hindered if not all of the scored criteria are available.
+
+
+Once all criteria have been scored, the score of the firsts two levels is calculated by the weighed average of scores of the direcly inferior level.
+
+\subsection{O3S tool}
+The O3S tool allows the entry of raw data and the evaluation of software on the three majors axis, 
+as well as generation of the identidy cards of evaluated software.
+
+
+The granularity of evaluation is managed as follows: as long as all
+criteria composing a sub category are not scored, its score is not 
+calculated but entered by the user. As soon as all criteria are scored, 
+its score is then automatically calculated.

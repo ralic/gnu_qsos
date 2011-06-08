@@ -1,0 +1,161 @@
+#!/usr/bin/perl -w
+# this script is experimental and will be certainly rewrite
+# It depends on the CVS release of QSOS::Document
+# $Id: syncglobaldesc,v 1.6 2007/07/19 21:27:49 goneri Exp $
+use strict;
+
+use Getopt::Long;
+use Data::Dumper;
+use QSOS::Document;
+
+
+sub _help {
+  my $msg = shift;
+  print $msg."\n" if (defined $msg && $msg);
+  print "Merge template.xml sections description with sheet.qsos\n\n";
+  print "Usage: syncglobaldesc -l -m -s -r -t template.xml -f sheet.qsos\n";
+  print "Option:\n";
+  print "\t--template -t : template\n";
+  print "\t--less -l : don't warn if template.xml have less sections than the sheet\n";
+  print "\t--recreate -d : print on STDOUT a full reformated from template sheet\n";
+  print "\t--save -s : save the processed file\n";
+  print "\t--renew -r : regenerate a sheet from the template and the current sheet\n";
+  print "\t--help -h : this menu\n";
+  exit 1;
+}
+
+sub _isdiff {
+  my ($v1, $v2) = @_;
+
+  $v1 = '' unless (defined $v1 && $v1);
+  $v2 = '' unless (defined $v2 && $v2);
+
+  return 1 if ($v1 ne $v2);
+  return;
+}
+my ($file, $template, $less, $more, $recreate, $save, $help);
+
+GetOptions (
+  'file=s' => \$file,
+  'template=s' => \$template,
+  'less' => \$less,
+  'more' => \$more,
+  'save' => \$save,
+  'recreate' => \$recreate,
+  'help' => \$help,
+);
+
+
+_help("file parameter is missing") unless (defined $file && $file);
+_help("template parameter is missing") unless (defined $template && $template);
+_help("cant't find the QSOS file: $file") unless (-f $file);
+_help("cant't find the template file: $template") unless (-f $template);
+
+
+my $t = new QSOS::Document;
+$t->load($template) or die "Can't load template $template";
+my $qsos = new QSOS::Document;
+$qsos->load($file) or die "Can't load sheet $file";
+
+
+if (!$less) {
+  my $section_doesnt_exist = 0;
+  foreach (keys %{$qsos->{section}}) {
+    if (!(exists $t->{section}->{$_} && $t->{section}->{$_})) {
+      if ($section_doesnt_exist == 0) {
+        print STDERR "Section(s) not found in template $template\n"; 
+        print STDERR "Use the --less flag to ignore this message\n";
+      }
+      print STDERR "\t$_\n";
+      $section_doesnt_exist = 1;
+    }
+  }
+  exit 1 if ($section_doesnt_exist);
+}
+
+if (!$more) {
+  my $section_doesnt_exist = 0;
+  foreach (keys %{$t->{section}}) {
+    if (!(exists $qsos->{section}->{$_} && $qsos->{section}->{$_})) {
+      if ($section_doesnt_exist == 0) {
+        print STDERR "Section(s) not found in file $file";
+        print STDERR "Use the --more flag to hide this message\n";
+      }
+      print STDERR "\t$_\n";
+      $section_doesnt_exist = 1;
+    }
+  }
+  exit 1 if ($section_doesnt_exist);
+}
+
+my $cpt = 0;
+foreach (keys %{$t->{section}}) {
+  # TODO: be able to remove key fro the dest file
+
+  if (_isdiff($t->getkeytitle($_), $qsos->getkeytitle($_))) {
+    $qsos->setkeytitle($_,$t->getkeytitle($_));
+    $cpt++;
+  }
+  if (_isdiff($t->getkeydesc($_), $qsos->getkeydesc($_))) {
+    $qsos->setkeydesc($_,$t->getkeydesc($_));
+    $cpt++;
+  }
+  if (_isdiff($t->getkeydesc($_,"0"), $qsos->getkeydesc($_,"0"))) {
+    $qsos->setkeydesc($_,$t->getkeydesc($_,"0"),"0");
+    $cpt++;
+  }
+  if (_isdiff($t->getkeydesc($_,"1"), $qsos->getkeydesc($_,"1"))) {
+    $qsos->setkeydesc($_,$t->getkeydesc($_,"1"),"1");
+    $cpt++;
+  }
+  if (_isdiff($t->getkeydesc($_,"2"), $qsos->getkeydesc($_,"2"))) {
+    $qsos->setkeydesc($_,$t->getkeydesc($_,"2"),"2");
+    $cpt++;
+  }
+
+}
+
+if ($recreate) { # I synchronise other entreys
+
+  foreach (@{$qsos->getauthors()}) {
+    next unless ($_->{name});
+    $t->addauthor($_->{name}, $_->{email});
+  }
+
+  $t->setappname($qsos->getappname());
+  $t->setlanguage($qsos->getlanguage());
+  $t->setrelease($qsos->getrelease());
+  $t->setlicenseid($qsos->getlicenseid());
+  $t->setlicensedesc($qsos->getlicensedesc());
+  $t->seturl($qsos->geturl());
+  $t->setdesc($qsos->getdesc());
+  $t->setdemourl($qsos->getdemourl());
+  $t->setqsosformat($qsos->getqsosformat());
+  $t->setqsosspecificformat($qsos->getqsosspecificformat());
+  $t->setqsosappfamily($qsos->getqsosappfamily());
+  $t->setqsosappname($qsos->getqsosappname());
+  $t->setdatecreation($qsos->getdatecreation());
+  $t->setdatevalidation($qsos->getdatevalidation());
+
+
+
+  foreach (keys %{$t->{section}}) {
+    $t->setkeycomment($_,$qsos->getkeycomment($_));
+    $t->setkeyscore($_,$qsos->getkeyscore($_));
+  }
+}
+
+
+print $cpt." entry updated\n";
+if ($save) {
+  if ($recreate) {
+    print "Saving recreated sheet...\n";
+    $t->write($file);
+  } else {
+    print "Saving sheet change...\n";
+    $qsos->write();
+  }
+} else {
+  print "no -s switch, i don't save change(s)...\n"
+}
+print "ok\n";

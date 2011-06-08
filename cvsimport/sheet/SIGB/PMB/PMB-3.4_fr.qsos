@@ -1,0 +1,1158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document>
+   <header>
+      <authors>
+         <author>
+            <email>florian.olivier@atosorigin.com</email>
+            <name>Florian Olivier-Koehret</name>
+         </author>
+         <author>
+            <email>hery.randriamanamihaga@atosorigin.com</email>
+            <name>Hery Randriamanamihaga</name>
+         </author>
+      </authors>
+      <dates>
+         <creation></creation>
+         <validation></validation>
+      </dates>
+      <language>fr</language>
+      <appname>PMB</appname>
+      <desc>PMB (pour PhpMyBiblio ) est un projet Open Source initié par un bibliothéquaire en 2002. L'objectif de départ, qui est de proposer aux professionels une solution Open Source compétitive aux logiciels propriétaires dans le domaine des SIGB, est toujours d'actualité pour PMB.</desc>
+      <release>3.2</release>
+      <licenseid>24</licenseid>
+      <licensedesc>CeCILL License (INRIA)</licensedesc>
+      <url>www.sigb.net</url>
+      <demourl>http://pmb.biblio.free.fr</demourl>
+      <qsosformat>1.7</qsosformat>
+      <qsosappfamily>SIGB</qsosappfamily>
+      <qsosappname></qsosappname>
+      <qsosspecificformat>1.0</qsosspecificformat>
+   </header>
+   <section name="generic" title="Section générique">
+      <desc>Les critères génériques de l'évaluation Presto de QSOS</desc>
+      <element name="intrinsicdurability" title="Pérennité">
+         <desc>Pérennité</desc>
+         <element name="maturite" title="Maturité">
+            <desc></desc>
+            <desc0>Logiciel provenant d'un fork ou avec une forte probabilité de fork dans un futur proche.</desc0>
+            <desc1>Projet jeune (moins de 3 ans) ou connaissant des difficultés à stabiliser les versions de développement.</desc1>
+            <desc2>Projet stable ou ayant un bon historique de gestion de crise. Les nouvelles versions apportent de façon prépondérante de nouvelles fonctionnalités.</desc2>
+            <score>2</score>
+            <comment>Sortie régulière de versions majeures ajoutant de nouvelles fonctionnalités à PMB depuis la première sortie en 2004.
+http://www.sigb.net/?page=rubriques&amp;id_rubrique=181&amp;lang=fr</comment>
+         </element>
+         <element name="adoption1" title="Adoption">
+            <desc></desc>
+            <desc0>Usage détectable sur Internet sans véritable activité communautaire</desc0>
+            <desc1>Utilisation communautaire prépondérante</desc1>
+            <desc2>Nombreuse références industrielles</desc2>
+            <score>2</score>
+            <comment>Source : http://www.sigb.net/?page=rubriques&amp;id_rubrique=140&amp;lang=fr</comment>
+         </element>
+         <element name="developpement" title="Développement">
+            <desc></desc>
+            <desc0>Deux ou moins de deux développeurs clairement identifiés.</desc0>
+            <desc1>Équipe de développement réduite avec un turn-over important ou sans équipe de direction identifiée.</desc1>
+            <desc2>Équipe de développement structurée comportant plus de 5 développeurs actifs.</desc2>
+            <score>2</score>
+            <comment>Source : http://www.sigb.net/?page=rubriques&amp;id_rubrique=69&amp;lang=fr</comment>
+         </element>
+         <element name="activite" title="Activité">
+            <desc></desc>
+            <desc0>Très faible activité, que ce soit sur les résolutions de bugs, les releases, l'ajout de nouvelles fonctions ou sur les espaces communautaires (wiki, forum, mailing list...)</desc0>
+            <desc1>Activité détectable mais anarchique (pas feuille de route accessible facilement, pas de prévisions de nouvelles fonctionnalités ou de prévisions de nouvelles versions visible)</desc1>
+            <desc2>Activité importante et visible via la mise en place de feuilles de routes traçant les requêtes de nouvelles fonctionnalités et/ou les prévisions de sortie des nouvelles version</desc2>
+            <score>2</score>
+            <comment>Source : http://www.sigb.net/index.php?page=rubriques&amp;id_rubrique=128&amp;lang=fr</comment>
+         </element>
+         <element name="strategicalindependence" title="Indépendance stratégique">
+            <desc0>Pas de stratégie détectable ou stratégie dictée par une société commerciale, un sponsor ou un individu unique.</desc0>
+            <desc1>Stratégie décidée par l'équipe de developpement.</desc1>
+            <desc2>Indépendance forte de l'équipe de développement, fort engagement du projet dans un processus de standardisation.</desc2>
+            <score>0</score>
+            <comment>Source : http://www.sigb.net/index.php?page=secteurs&amp;id_rubrique=1&amp;lang=fr</comment>
+         </element>
+         <element name="copyrightowners" title="Détenteur des droits">
+            <desc0>Les droits sont détenus par quelques individus ou entités commerciales, facilitant le changement de licence</desc0>
+            <desc1>Les droits sont détenus par de nombreux individus de façon homogène, rendant le changement de licence très difficile</desc1>
+            <desc2>Les droits sont détenus par une entité légale, une fondation dans laquelle la communauté a confiance (ex: FSF, Apache, ObjectWeb)</desc2>
+            <score>0</score>
+            <comment>PMB Services est l'entreprise détentrice des droits.</comment>
+         </element>
+         <element name="license" title="Licence">
+            <desc>Licence, à pondérer uniquement si le client désire un jour devenir propriétaire du code</desc>
+            <element name="permissiveness" title="Permissivité">
+               <desc0>Licence très stricte, comme la GPL</desc0>
+               <desc1>Licence modérée entre les deux extrêmes (GPL et BSD), licence duale dépendante du type d'utilisateur (personne, société…) ou de leur activité</desc1>
+               <desc2>Licence très permissive comme BSD et Apache</desc2>
+               <score>0</score>
+               <comment>Source : http://fr.wikipedia.org/wiki/Licence_CeCILL</comment>
+            </element>
+            <element name="protectionagainstproprietaryforks" title="Protection contre des forks commerciaux">
+               <desc0>Licence très permissive comme BSD et Apache</desc0>
+               <desc1>Licence modérée entre les deux extrêmes (GPL et BSD), licence duale dépendante du type d'utilisateur (personne, société…) ou de leur activité</desc1>
+               <desc2>Licence très stricte, comme la GPL</desc2>
+               <score>2</score>
+               <comment>Source : http://fr.wikipedia.org/wiki/Licence_CeCILL</comment>
+            </element>
+         </element>
+      </element>
+      <element name="industrializedsolution" title="Industrialisation">
+         <desc>Niveau d'industrialisation du projet</desc>
+         <element name="independenceofdevelopments" title="Indépendance des développements">
+            <desc0>Développements réalisés à plus de 60% par des employés d'une seule société</desc0>
+            <desc1>Développements réalisés à 60% maximum par des employés d'une seule société</desc1>
+            <desc2>Développements réalisés à 20% maximum par des employés d'une seule société</desc2>
+            <score>0</score>
+            <comment>Source : http://www.sigb.net/?page=rubriques&amp;id_rubrique=181&amp;lang=fr</comment>
+         </element>
+         <element name="services1" title="Services">
+            <desc></desc>
+            <desc0>Pas d'offres de services identifiée</desc0>
+            <desc1>Offre existante mais restreinte géographiquement ou en une seule langue ou fournie par un seul fournisseur</desc1>
+            <desc2>Offre riche : plusieurs fournisseurs ou plusieurs langages</desc2>
+            <score>2</score>
+            <comment>Source : http://www.sigb.net/index.php?page=secteurs&amp;id_rubrique=1&amp;lang=fr</comment>
+         </element>
+         <element name="documentation" title="Documentation">
+            <desc0>Pas de documentation utilisateur</desc0>
+            <desc1>La documentation existe mais est en partie obsolète ou restreinte à une seule langue ou peu détaillée</desc1>
+            <desc2>Documentation à jour, traduite et éventuellement adaptée à différentes cibles de lecteurs (end-user, sysadmin, manager…)</desc2>
+            <score>2</score>
+            <comment>Source : http://www.sigb.net/index.php?page=secteurs&amp;id_rubrique=1&amp;lang=fr</comment>
+         </element>
+         <element name="methodequalite" title="Méthode qualité">
+            <desc></desc>
+            <desc0>Pas de processus de qualité identifié ni d'outils de gestions de bugs</desc0>
+            <desc1>Processus qualité non formalisé ou non outillé ou comportant des outils qui sont très peu utilisés</desc1>
+            <desc2>Utilisation très active d'outils standards (tests unitaires, outils de gestion de build, outils de mesure de qualité du code)</desc2>
+            <score>2</score>
+            <comment>Source : http://www.sigb.net/index.php?page=secteurs&amp;id_rubrique=1&amp;lang=fr</comment>
+         </element>
+      </element>
+      <element name="packaging" title="Packaging">
+         <desc>Packaging pour les différents systèmes d'exploitation</desc>
+         <element name="packagingbsd" title="BSD">
+            <desc></desc>
+            <desc0>Pas de packaging officiel pour la famille BSD</desc0>
+            <desc1>Packaging existant pour quelques distributions de la famille BSD</desc1>
+            <desc2>Packaging complet pour les distributions de la famille BSD suivantes : FreeBSD, OpenBSD, NetBSD et Mac OS X</desc2>
+            <score>0</score>
+            <comment>N/A technologies web, PHP.</comment>
+         </element>
+         <element name="packaginglinux" title="GNU/Linux">
+            <desc></desc>
+            <desc0>Pas de packaging officiel pour les systèmes d'exploitations GNU/Linux</desc0>
+            <desc1>Packaging existant pour quelques distributions GNU/Linux</desc1>
+            <desc2>Packaging complet les systèmes de packaging .deb et .rpm</desc2>
+            <score>0</score>
+            <comment>N/A technologies web, PHP.</comment>
+         </element>
+         <element name="unix" title="Unix">
+            <desc></desc>
+            <desc0>Pas de packaging officiel pour les systèmes de la famille Unix</desc0>
+            <desc1>Packaging existant sur quelques systèmes de la famille Unix</desc1>
+            <desc2>Packaging existant sur au moins ces 3 systèmes : AIX, HP-UX, Solaris</desc2>
+            <score>0</score>
+            <comment>N/A technologies web, PHP.</comment>
+         </element>
+         <element name="packagingwindows" title="Windows">
+            <desc0>Le logiciel n'est pas disponible sur un système Windows.</desc0>
+            <desc1>Le logiciel existe sous forme d'archive tout en un.</desc1>
+            <desc2>Le logiciel dispose d'un installeur.</desc2>
+            <score>1</score>
+            <comment>N/A technologies web, PHP.</comment>
+         </element>
+         <element name="packagingsource" title="Sources">
+            <desc0>L'installation depuis les sources est hasardeuse et risquée</desc0>
+            <desc1>L'installation depuis les sources est difficile ou limité (seulement à un OS, une architecture, la résolution de l'écran...)</desc1>
+            <desc2>L'installation depuis les sources est outillée (vérification des dépencances, verification de l'installation, gestion de build)</desc2>
+            <score>2</score>
+            <comment>N/A technologies web, PHP.</comment>
+         </element>
+         <element name="packagingtar" title="Archive compressée">
+            <desc0>Pas d'archive disponible</desc0>
+            <desc1>Archive globale</desc1>
+            <desc2>Archive séparée pour chaque module installable</desc2>
+            <score>2</score>
+            <comment>N/A technologies web, PHP.</comment>
+         </element>
+      </element>
+      <element name="exploitability" title="Exploitabilité">
+         <desc>Niveau d'exploitabilité</desc>
+         <element name="easeofuseergonomics" title="Facilité d'utilisation, ergonomie">
+            <desc0>Difficulté d'utilisation, demande une connaissance approfondie des fonctionnalités du logiciel</desc0>
+            <desc1>Ergonomie austère et très technique</desc1>
+            <desc2>Ergonomie élaborée et IHM comprenant des fonctions d'aide</desc2>
+            <score>2</score>
+            <comment>Source : http://pmb.biblio.free.fr</comment>
+         </element>
+         <element name="administrationmonitoring" title="Administration et supervision">
+            <desc0>Pas de fonctionnalités de contrôle, ni d'administration</desc0>
+            <desc1>Fonctionnalités présentes mais incomplètes ou à améliorer</desc1>
+            <desc2>Fonctionnalités complètes et faciles de contrôle et d'administration. Intégration possible avec des outils tiers (ex : SNMP, syslog…)</desc2>
+            <score>2</score>
+            <comment>Source : http://pmb.biblio.free.fr</comment>
+         </element>
+      </element>
+      <element name="technicaladaptability" title="Adaptabilité">
+         <desc>Adaptabilité technique</desc>
+         <element name="modularity" title="Modularité">
+            <desc0>Logiciel monolithique</desc0>
+            <desc1>Présence de modules haut niveau permettant un premier niveau d'adaptation</desc1>
+            <desc2>Conception modulaire, permettant des adaptations faciles par sélection et/ou création de modules</desc2>
+            <score>1</score>
+            <comment>L’interface graphique est entièrement paramétrable. </comment>
+         </element>
+         <element name="codemodification" title="Facilité technique de modification du code existant">
+            <desc0>Tout à la main</desc0>
+            <desc1>Recompilation possible mais complexe, sans outils, ni documentation</desc1>
+            <desc2>Recompilation facile, outillée (ex : make, ANT, Maven…) et documentée</desc2>
+            <score>2</score>
+            <comment>PHP</comment>
+         </element>
+         <element name="codeextension" title="Facilité d'extension du code">
+            <desc0>Toute modification demande une recompilation du code</desc0>
+            <desc1>Architecture conçue pour des extensions statiques mais exige une recompilation</desc1>
+            <desc2>Architecture de plugins, conçue pour des extensions dynamiques et sans recompilation</desc2>
+            <score>2</score>
+            <comment>PHP</comment>
+         </element>
+      </element>
+   </section>
+   <section name="couverturefonctionnelle" title="Fonctionnalités métiers">
+      <desc></desc>
+      <element name="acquisitions" title="Acquisitions">
+         <desc> </desc>
+         <comment></comment>
+         <element name="suggestiondachat" title="Suggestion d'achat">
+            <desc> les lecteurs/usagers suggèrent des achats c'est à dire qu'ils proposent aux documentalistes/bibliothécaires des livres à acheter, et ce soit par le Web, soit par l'Intranet.</desc>
+            <desc0>Pas de suggestion d'achats possible</desc0>
+            <desc1>Suggestions disponibles seulement en intranet (utilisateurs internes seulement)</desc1>
+            <desc2>Suggestions disponibles au travers de l'interface Web (utilisateurs internes via Intranet et lecteurs via l'OPAC)</desc2>
+            <score>2</score>
+            <comment>Nécessite l'activation du module d'acquisitions. L'activation des suggestions pour l'interface OPAC se fait séparément aussi. Cependant, l'acquisition des oeuvres dans la liste de suggestion semble être laborieuse.</comment>
+         </element>
+         <element name="creationdesbonsdecommande" title="Création des bons de commande">
+            <desc>Fonctionnalité de création de bons de commande.</desc>
+            <desc0>Non couverte</desc0>
+            <desc1>Partiellement couverte (pas d'édition de bons automatiques, un seul modèle, non modifiable...)</desc1>
+            <desc2>Totalement couverte</desc2>
+            <score>2</score>
+            <comment></comment>
+         </element>
+         <element name="receptiondesdocumentset/oufactures" title="Réception des documents et/ou factures">
+            <desc>Possibilité d'enregistrer des factures, documents...</desc>
+            <desc0>Non couverte</desc0>
+            <desc1>Partiellement couverte</desc1>
+            <desc2>Totalement couverte</desc2>
+            <score>2</score>
+            <comment></comment>
+         </element>
+         <element name="reclamation/annulationdecommande" title="Réclamation/annulation de commande">
+            <desc> Fonctionnalité permettant d'effectuer des réclamations, d'annuler des commandes.</desc>
+            <desc0>Non couverte</desc0>
+            <desc1>Partiellement couverte</desc1>
+            <desc2>Totalement couverte</desc2>
+            <score>1</score>
+            <comment>Seuls les commandes non validées peuvent être annulées</comment>
+         </element>
+         <element name="gestiondesfournisseurs" title="Gestion des fournisseurs">
+            <desc>Annuaire des fournisseurs détaillant les offres, dernières commandes...</desc>
+            <desc0>Non couverte</desc0>
+            <desc1>Partiellement couverte</desc1>
+            <desc2>Totalement couverte</desc2>
+            <score>1</score>
+            <comment>La notion de fournisseur ne couvre pas les ouvrages disponibles au niveau de ces fournisseurs mais seulement leurs coordonnées.</comment>
+         </element>
+         <element name="gestionfinanciere" title="Gestion financière">
+            <desc>Gestion des ressources financières d'une bibliothèque : calcul des revenus, dépenses...</desc>
+            <desc0>Non couverte</desc0>
+            <desc1>Partiellement couverte</desc1>
+            <desc2>Totalement couverte</desc2>
+            <score>1</score>
+            <comment>Gestion de paiement et de budget disponible mais utilisées à titre indicatif, sans possibilité apparente d'interconnexion avec un circuit financier réel.</comment>
+         </element>
+      </element>
+      <element name="gestionbibliographique" title="Bibliothéconomie">
+         <desc> </desc>
+         <comment></comment>
+         <element name="catalogues" title="Catalogues">
+            <desc>Prise en charge et mise en œuvre des catalogues</desc>
+            <comment></comment>
+            <element name="precatalogage" title="Pré-catalogage">
+               <desc>Préparation du catalogage lors d'une commande.</desc>
+               <desc0>Non couverte</desc0>
+               <desc1>Partiellement couverte</desc1>
+               <desc2>Totalement couverte</desc2>
+               <score>2</score>
+               <comment>La commande d'un livre permet le précatalogage d'un document.</comment>
+            </element>
+            <element name="catalogagedesdocuments" title="Catalogage des documents">
+               <desc> Les documents peuvent être répertoriés sous forme de catalogues.</desc>
+               <desc0>Non couverte</desc0>
+               <desc1>Partiellement couverte</desc1>
+               <desc2>Totalement couverte</desc2>
+               <score>2</score>
+               <comment></comment>
+            </element>
+            <element name="cataloguepartypededocument" title="Catalogue par type de document">
+               <desc>Fonctionnalité de catalogage typé.</desc>
+               <desc0>Non couverte</desc0>
+               <desc1>Partiellement couverte</desc1>
+               <desc2>Totalement couverte</desc2>
+               <score>2</score>
+               <comment>Utilisation des catégories pour classer les ouvrages.</comment>
+            </element>
+            <element name="catalogagepartage" title="Catalogage partagé">
+               <desc> Fonctionnalité permettant d'avoir un catalogue partagé avec une autre entité (bibliothèques complémentaire...)</desc>
+               <desc0>Non couverte</desc0>
+               <desc1>Partiellement couverte</desc1>
+               <desc2>Totalement couverte</desc2>
+               <score>2</score>
+               <comment>Implémentation de la recherche Z39.50 qui permet entre autres d'effectuer des recherches avec les notices de la BnF ou du Library Of Congress, dont les notices sont du domaine public.</comment>
+            </element>
+            <element name="editiondecatalogue" title="Édition de catalogue">
+               <desc>Création et édition automatisée de catalogues.</desc>
+               <desc0>Non couverte</desc0>
+               <desc1>Partiellement couverte</desc1>
+               <desc2>Totalement couverte</desc2>
+               <score>2</score>
+               <comment></comment>
+            </element>
+            <element name="listedesnouveautes" title="Liste des nouveautés">
+               <desc>Fonctionnalité de tenue de journal des nouveautés</desc>
+               <desc0>Pas de liste de nouveautés</desc0>
+               <desc1>Liste avec mise à jour manuelle</desc1>
+               <desc2>Liste avec mise à jour automatique</desc2>
+               <score>1</score>
+               <comment>Une liste de nouveautés existe dans l'interface d'administration de PMB mais son utilisation n'est pas documentée ni utilisable naturellement...</comment>
+            </element>
+            <element name="dsi" title="DSI">
+               <desc>Diffusion sélective d'informations</desc>
+               <comment>Module de DSI utilisant la notion de classement, </comment>
+               <element name="lettre" title="Lettre">
+                  <desc> </desc>
+                  <desc0>Non couverte</desc0>
+                  <desc1>Partiellement couverte</desc1>
+                  <desc2>Totalement couverte</desc2>
+                  <score>0</score>
+                  <comment>Pas de diffusion papier.</comment>
+               </element>
+               <element name="courrierelectronique" title="Courrier électronique">
+                  <desc> </desc>
+                  <desc0>Non couverte</desc0>
+                  <desc1>Partiellement couverte</desc1>
+                  <desc2>Totalement couverte</desc2>
+                  <score>2</score>
+                  <comment></comment>
+               </element>
+               <element name="rss" title="RSS">
+                  <desc> </desc>
+                  <desc0>Non couverte</desc0>
+                  <desc1>Partiellement couverte</desc1>
+                  <desc2>Totalement couverte</desc2>
+                  <score>2</score>
+                  <comment></comment>
+               </element>
+               <element name="personnalisationdelapagedaccueil" title="Personnalisation de la page d'accueil">
+                  <desc> </desc>
+                  <desc0>Non couverte</desc0>
+                  <desc1>Partiellement couverte</desc1>
+                  <desc2>Totalement couverte</desc2>
+                  <score>2</score>
+                  <comment>Tiré de la documentation de PMB : En choisissant un panier dans Diffuser dans un panier, la banette remplira à chaque diffusion le panier choisi. Ceci permet par exemple d'utiliser la DSI pour alimenter un panier qui est repris dans une étagère virtuelle. De cette façon, l'utilisateur peut mettre automatiquement en page d'accueil de son OPAC une liste de nouveautés thématique.</comment>
+               </element>
+            </element>
+         </element>
+         <element name="gestiondestypesdedocument" title="Types de document">
+            <desc></desc>
+            <comment>Tiré de la doc de PMB : La liste des types de documents est configurable dans Administration &gt; Exemplaires &gt; Types de document.</comment>
+            <element name="livres" title="Livres">
+               <desc></desc>
+               <desc0>Interface de gestion de livre peu ou pas intuitive</desc0>
+               <desc1>Gestion intuitive et efficace des documents de type livres</desc1>
+               <desc2>Gestion intuitive et efficace des livres avec possibilité de fonctionnalités plus avancés</desc2>
+               <score>2</score>
+               <comment></comment>
+            </element>
+            <element name="revues" title="Revues">
+               <desc></desc>
+               <desc0>Ne prend pas en charge les revues</desc0>
+               <desc1>Prise en charge basique des revues (pas de notion d'articles de revues)</desc1>
+               <desc2>Notion d'articles de revues prise en charge</desc2>
+               <score>2</score>
+               <comment></comment>
+            </element>
+            <element name="documentsnumeriques" title="Numériques">
+               <desc>Prise en charge des documents sur supports numériques (Disquette, CD, DVD, Blu-Ray...)</desc>
+               <desc0>Pas de prise en charge des documents sur support numérique</desc0>
+               <desc1>Liste pré-définie du type de support numérique des documents</desc1>
+               <desc2>Type de support de document numérique générique/extensible</desc2>
+               <score>2</score>
+               <comment></comment>
+            </element>
+            <element name="typespersonnalises" title="Types personnalisés">
+               <desc>Possibilité de personnalisation des types de documents</desc>
+               <desc0>Impossible</desc0>
+               <desc1>Types personnalisés soumis à contraintes</desc1>
+               <desc2>Personnalisation des types au gré de l'utilisateur.</desc2>
+               <score>2</score>
+               <comment></comment>
+            </element>
+         </element>
+         <element name="thesaurus" title="Thésaurus">
+            <desc></desc>
+            <comment>Tiré du manuel de PMB :
+L'utilisation du mot « catégories » en lieu et place de « thesaurus » dans PMB correspond à une volonté des développeurs. En effet, un thésaurus, même respectant toute les normes de création, peut disposer à tout niveau de sa hiérarchie d'un nombre de termes élevé.
+
+Avec les catégories, et en s'efforçant de promouvoir des thesauri très hiérarchisé affirmée, on peut présenter un OPAC « à la yahoo ».
+
+Cet OPAC « à la Yahoo » offre la possibilité à l'usager de la bibliothèque ou du centre de documentation d'explorer intellectuellement le fond documentaire de la structure, ceci sans même lancer de recherche.
+
+Si tous les thesauri agréables à utiliser possèdent cet aspect hiérarchique avancé, ceux qui présentent trop de termes à un même niveau rendent une navigation directe impossible. On devra alors désactiver dans l'OPAC de PMB le navigateur de catégories. Les catégories seront alors accessibles seulement en recherche. Pour plus d'informations, consulter le Guide de l'Administrateur PMB, chapitre Outils, section Paramètres.</comment>
+            <element name="thesaurushierarchise" title="Thésaurus hiérarchisé">
+               <desc>Le thésaurus est vu comme un arbre hiérarchisé.</desc>
+               <desc0>Non couverte</desc0>
+               <desc1>Partiellement couverte</desc1>
+               <desc2>Totalement couverte</desc2>
+               <score>2</score>
+               <comment></comment>
+            </element>
+            <element name="thesaurusmultiples" title="Thésaurus multiples">
+               <desc>La solution supporte plusieurs thésaurus indépendants</desc>
+               <desc0>Non couverte</desc0>
+               <desc1>Partiellement couverte</desc1>
+               <desc2>Totalement couverte</desc2>
+               <score>2</score>
+               <comment>Tiré du manuel de l'administrateur de PMB permet depuis la version 2.2 une gestion multi-thesaurus.</comment>
+            </element>
+            <element name="controles" title="Assistance">
+               <desc>Assistance à l'utilisation du thésaurus.</desc>
+               <desc0>Pas de contrôle à la saisie sur le thésaurus</desc0>
+               <desc1>Aide à la saisie lors de la recherche (auto-complétion...)</desc1>
+               <desc2>Suggestion des termes associés lors de la saisie d'une entrée dans le thésaurus</desc2>
+               <score>2</score>
+               <comment>La volonté d'utiliser la notion de catégorie en lieu et place du thésaurus résulte de la volonté des développeurs poser plus de contraintes sur le contenu du thésaurus.</comment>
+            </element>
+            <element name="elementsduthesaurus" title="Éléments du Thésaurus">
+               <desc>Informations du thésaurus supporté par l'application.
+
+Un thésaurus est composé de cinq éléments:
+
+   1. des descripteurs (ou termes acceptés);
+   2. des non-descripteurs (ou termes rejetés);
+   3. des relations hiérarchiques
+   4. des relations associatives
+   5. des notes d’application et des définitions.
+(cf. http://www.cdc.qc.ca/eduthes/structure.html)</desc>
+               <desc0>Ces éléments ne sont pas supportés par le thésaurus</desc0>
+               <desc1>Seule une partie de ces éléments sont supportés</desc1>
+               <desc2>Ces 5 éléments sont totalement supportés</desc2>
+               <score>2</score>
+               <comment>Tous les éléments d'un thésaurus semblent être implémentés dans PMB.</comment>
+            </element>
+         </element>
+         <element name="gestiondescollections" title="Gestion des collections">
+            <desc> </desc>
+            <comment></comment>
+            <element name="inventaire" title="Inventaire">
+               <desc> </desc>
+               <desc0>Non couverte</desc0>
+               <desc1>Partiellement couverte</desc1>
+               <desc2>Totalement couverte</desc2>
+               <score>2</score>
+               <comment>L'inventaire des ouvrages détenus par la bibliothèque se fait dans la section Autorité de PMB.</comment>
+            </element>
+            <element name="recolement" title="Récolement">
+               <desc>Contrôle de la présence de documents dans la bibliothèque.</desc>
+               <desc0>Non couverte</desc0>
+               <desc1>Partiellement couverte</desc1>
+               <desc2>Totalement couverte</desc2>
+               <score>2</score>
+               <comment>Un onglet dédié à la circulation des ouvrages est présent dans PMB.</comment>
+            </element>
+            <element name="misaupilon(sortiedescollections)" title="Mis au pilon (sortie des collections)">
+               <desc>Destruction d'exemplaires non utilisés/obsolètes.</desc>
+               <desc0>Non couverte</desc0>
+               <desc1>Partiellement couverte</desc1>
+               <desc2>Totalement couverte</desc2>
+               <score>2</score>
+               <comment>Possibilité d'effacer des entrées des bases de documents de PMB.</comment>
+            </element>
+         </element>
+         <element name="organisation" title="Organisation">
+            <desc>Outillage de l'organisation de la bibliothèque</desc>
+            <comment></comment>
+            <element name="gestiondexemplaires" title="Gestion d'exemplaires">
+               <desc>Décompte du nombre d'exemplaires d'un document.</desc>
+               <desc0>Non couverte</desc0>
+               <desc1>Partiellement couverte</desc1>
+               <desc2>Totalement couverte</desc2>
+               <score>2</score>
+               <comment></comment>
+            </element>
+            <element name="gestiondenoticesliees" title="Gestion de notices liées">
+               <desc>Fonctionnalité de gestion des annotations liées aux documents.</desc>
+               <desc0>Non couverte</desc0>
+               <desc1>Partiellement couverte</desc1>
+               <desc2>Totalement couverte</desc2>
+               <score>2</score>
+               <comment>PMB implémente la notion de notice et permet d'importer les notices mises à dispositions par d'autres organismes (BnF, par exemple) et permet de suivre l'origine de ces notices.</comment>
+            </element>
+            <element name="controledesaisie" title="Contrôle de saisie">
+               <desc>Contrôle des données utilisées pour la gestion lors de la saisie</desc>
+               <desc0>Non couverte</desc0>
+               <desc1>Partiellement couverte</desc1>
+               <desc2>Totalement couverte</desc2>
+               <score>1</score>
+               <comment>PMB se contente de contrôler le strict minimum lors de la création de nouvelle notice...</comment>
+            </element>
+            <element name="gestiondesalias" title="Gestion des autorités">
+               <desc>Gestion de l'identité civile des auteurs</desc>
+               <desc0>Non couverte </desc0>
+               <desc1>Partiellement couverte</desc1>
+               <desc2>Totalement couverte</desc2>
+               <score>2</score>
+               <comment>La section Autorité de PMB regroupe toutes les informations relatives aux individus civils impliquées dans les ouvrages répertoriés dans l'outil (auteurs, éditeurs) en plus des notions utilisés pour leurs catalogages.</comment>
+            </element>
+            <element name="import/exportdedocument" title="Import/Export de document">
+               <desc>Possibilité d'importer/exporter les notices de la bibliothèque</desc>
+               <desc0>Non couverte</desc0>
+               <desc1>Partiellement couverte</desc1>
+               <desc2>Totalement couverte</desc2>
+               <score>2</score>
+               <comment>Import de notices ou d'exemplaires de documents avec UNIMARC et possiblité d'export suivant plusieurs formats les plus courants.</comment>
+            </element>
+         </element>
+      </element>
+      <element name="gestiondesperiodiques" title="Gestion des périodiques">
+         <desc> </desc>
+         <comment></comment>
+         <element name="abonnement" title="Abonnement">
+            <desc>Gestion des abonnements.</desc>
+            <desc0>Non couverte</desc0>
+            <desc1>Partiellement couverte</desc1>
+            <desc2>Totalement couverte</desc2>
+            <score>2</score>
+            <comment>Les abonnements des périodiques peuvent être modifiés seulement lorsque le périodique est créé.</comment>
+         </element>
+         <element name="relance" title="Relance">
+            <desc>Envoie de rappels liés aux périodiques</desc>
+            <desc0>Non couverte</desc0>
+            <desc1>Partiellement couverte</desc1>
+            <desc2>Totalement couverte</desc2>
+            <score>1</score>
+            <comment>Pas de rappels dédiés aux périodiques mais ces relances peuvent être assimilés aux relances des ouvrages classiques.</comment>
+         </element>
+         <element name="renouvellement" title="Renouvellement">
+            <desc>Suivi des échéances des abonnements</desc>
+            <desc0>Non couverte</desc0>
+            <desc1>Partiellement couverte</desc1>
+            <desc2>Totalement couverte</desc2>
+            <score>1</score>
+            <comment>Une fonctionnalité de prolongation semble être prévu par PMB mais son utilisation renvoie sur une page vide sur le site de démo...</comment>
+         </element>
+         <element name="suivibudgetaire" title="Suivi budgétaire">
+            <desc>Suivi et/ou prévision des dépenses liées aux périodiques.</desc>
+            <desc0>Non couverte</desc0>
+            <desc1>Partiellement couverte</desc1>
+            <desc2>Totalement couverte</desc2>
+            <score>1</score>
+            <comment>Pas d'interface d'acquisition dédiée aux périodiques, mais les dépenses liés à ceux-ci peuvent toujours être assimilés aux dépenses liés aux ouvrages classiques</comment>
+         </element>
+         <element name="calendrierprevisionnel" title="Calendrier prévisionnel">
+            <desc>Planification des achats selon la périodicité des ouvrages (quotidiens, hebdomadaires...)</desc>
+            <desc0>Non couverte</desc0>
+            <desc1>Partiellement couverte</desc1>
+            <desc2>Totalement couverte</desc2>
+            <score>1</score>
+            <comment>Pas de planification des achats mais un modèle prévisionnel sur les parutions des ouvrages et leur ajout automatique au catalogue de la bibliothèque.</comment>
+         </element>
+         <element name="bulletinage" title="Bulletinage">
+            <desc>Pointage des périodiques lors de leur arrivée.</desc>
+            <desc0>Non couverte</desc0>
+            <desc1>Partiellement couverte</desc1>
+            <desc2>Totalement couverte</desc2>
+            <score>2</score>
+            <comment>Une page permet de suivre le bulletinage des périodiques.</comment>
+         </element>
+         <element name="depouillement" title="Dépouillement">
+            <desc>Détection et classification des thèmes et sujets abordés par une périodique.</desc>
+            <desc0>Pas de dépouillement possible</desc0>
+            <desc1>Dépouillement manuel</desc1>
+            <desc2>Dépouillement automatique</desc2>
+            <score>2</score>
+            <comment>Chaque numéro dispose d'une notice propre liée à la notice mère du périodique.</comment>
+         </element>
+         <element name="circulation" title="Circulation">
+            <desc>Mesure de la circulation des périodiques.</desc>
+            <desc0>Non couverte</desc0>
+            <desc1>Partiellement couverte</desc1>
+            <desc2>Totalement couverte</desc2>
+            <score>2</score>
+            <comment></comment>
+         </element>
+      </element>
+      <element name="gestiondesprets" title="Gestion des prêts">
+         <desc> </desc>
+         <comment></comment>
+         <element name="pret" title="Prêt">
+            <desc>Prise en charge des prêts dans l'outil</desc>
+            <desc0>Non couverte</desc0>
+            <desc1>Partiellement couverte</desc1>
+            <desc2>Totalement couverte</desc2>
+            <score>2</score>
+            <comment></comment>
+         </element>
+         <element name="retour" title="Retour">
+            <desc>Prise en charge des retours</desc>
+            <desc0>Non couverte</desc0>
+            <desc1>Partiellement couverte</desc1>
+            <desc2>Totalement couverte</desc2>
+            <score>2</score>
+            <comment></comment>
+         </element>
+         <element name="prolongation" title="Prolongation">
+            <desc>Prise en charge de la prolongation des prêts</desc>
+            <desc0>Non couverte</desc0>
+            <desc1>Partiellement couverte</desc1>
+            <desc2>Totalement couverte</desc2>
+            <score>2</score>
+            <comment></comment>
+         </element>
+         <element name="reservation" title="Réservation">
+            <desc>Prise en charge des réservations</desc>
+            <desc0>Non couverte</desc0>
+            <desc1>Partiellement couverte</desc1>
+            <desc2>Totalement couverte</desc2>
+            <score>2</score>
+            <comment></comment>
+         </element>
+         <element name="consultationsurplace" title="Consultation sur place">
+            <desc>Gestion de document consultés sur place (document archivés...)</desc>
+            <desc0>Non couverte</desc0>
+            <desc1>Partiellement couverte</desc1>
+            <desc2>Totalement couverte</desc2>
+            <score>0</score>
+            <comment>Pas d'infos facilement trouvées sur cette fonctionnalité dans l'interface et le manuel de PMB.</comment>
+         </element>
+         <element name="droitsdepretsdifferentsselonlescategoriesdemprunt" title="Droits de prêt différents selon les catégories d'emprunteurs">
+            <desc>Gestion des groupes d'emprunteurs munis de droits.</desc>
+            <desc0>Non couverte</desc0>
+            <desc1>Partiellement couverte</desc1>
+            <desc2>Totalement couverte</desc2>
+            <score>2</score>
+            <comment></comment>
+         </element>
+         <element name="droitsdepretdifferentsselonlestypesdedocument" title="Droits de prêt différents selon les types de document">
+            <desc>Support des groupes de document, sur lesquels, les droits d'emprunts seront modifiés.</desc>
+            <desc0>Non couverte</desc0>
+            <desc1>Partiellement couverte</desc1>
+            <desc2>Totalement couverte</desc2>
+            <score>0</score>
+            <comment></comment>
+         </element>
+         <element name="lettrederappel" title="Lettre de rappel">
+            <desc>Création et envoie de lettres de rappels</desc>
+            <comment></comment>
+            <element name="parcourrier" title="Par courrier">
+               <desc></desc>
+               <desc0>Non couverte</desc0>
+               <desc1>Partiellement couverte</desc1>
+               <desc2>Totalement couverte</desc2>
+               <score>2</score>
+               <comment>Possibilité d'imprimer les lettres de relances.</comment>
+            </element>
+            <element name="parcourierelectronique" title="Par courrier électronique">
+               <desc></desc>
+               <desc0>Non couverte</desc0>
+               <desc1>Partiellement couverte</desc1>
+               <desc2>Totalement couverte</desc2>
+               <score>2</score>
+               <comment></comment>
+            </element>
+         </element>
+         <element name="editiondelettredereservationalavolee" title="Édition de lettre de réservation à la volée">
+            <desc></desc>
+            <desc0>Non couverte</desc0>
+            <desc1>Partiellement couverte</desc1>
+            <desc2>Totalement couverte</desc2>
+            <score>2</score>
+            <comment>Possible dans la section Edition de l'interface interne, mais couplé avec la liste des prêts en cours.</comment>
+         </element>
+         <element name="gestiondefichierslecteur" title="Gestion de fichiers lecteur">
+            <desc>Création de fichiers lecteur.</desc>
+            <desc0>Non couverte</desc0>
+            <desc1>Partiellement couverte</desc1>
+            <desc2>Totalement couverte</desc2>
+            <score>2</score>
+            <comment></comment>
+         </element>
+         <element name="gestionfinancieredesprets" title="Gestion financière des prêts">
+            <desc>Gestion des prêts payants, facturation...</desc>
+            <desc0>Non couverte</desc0>
+            <desc1>Partiellement couverte</desc1>
+            <desc2>Totalement couverte</desc2>
+            <score>2</score>
+            <comment>Posssibilité de définir les règles financières liées aux retards.</comment>
+         </element>
+         <element name="historiquedespretsparlecteur" title="Historique des prêts par lecteur">
+            <desc>Possibilité de suivi de l'historique des prêts pour chaque lecteur</desc>
+            <desc0>Non couverte</desc0>
+            <desc1>Partiellement couverte</desc1>
+            <desc2>Totalement couverte</desc2>
+            <score>1</score>
+            <comment>Le lecteur précédent est affiché dans la notice des ouvrages.</comment>
+         </element>
+      </element>
+      <element name="recherche" title="Portail documentaire">
+         <desc>Fonctionnalités offertes par le module OPAC du SIGB</desc>
+         <comment></comment>
+         <element name="generalites" title="Généralités">
+            <desc> </desc>
+            <comment></comment>
+            <element name="opac" title="OPAC">
+               <desc>Catalogue informatisé en ligne. (Online Public Access Catalog)</desc>
+               <desc0>Non couverte</desc0>
+               <desc1>Partiellement couverte</desc1>
+               <desc2>Totalement couverte</desc2>
+               <score>2</score>
+               <comment></comment>
+            </element>
+            <element name="historiquedesrecherches" title="Historique des recherches">
+               <desc>Mémorisation des recherches effectuées.</desc>
+               <desc0>Non couverte</desc0>
+               <desc1>Partiellement couverte</desc1>
+               <desc2>Totalement couverte</desc2>
+               <score>1</score>
+               <comment>L'historique des recherches existe mais bien caché dans l'OPAC et géré par session.</comment>
+            </element>
+            <element name="enregistrementdelarecherche" title="Enregistrement de la requête">
+               <desc>Enregistrement des requêtes effectués.</desc>
+               <desc0>Non couverte</desc0>
+               <desc1>Partiellement couverte</desc1>
+               <desc2>Totalement couverte</desc2>
+               <score>1</score>
+               <comment>Les résultats des rechechres peuvent être ajoutés au panier des utilisateurs. Les dernières recherches peuvent aussi être rejoués.</comment>
+            </element>
+            <element name="presentationdesresultats" title="Présentation des résultats">
+               <desc>Format de restitution des résultats d'une requête sur le portail</desc>
+               <desc0>Non couverte</desc0>
+               <desc1>Partiellement couverte</desc1>
+               <desc2>Totalement couverte</desc2>
+               <score>2</score>
+               <comment></comment>
+            </element>
+            <element name="openurl" title="OpenURL">
+               <desc>Support d'OpenURL, qui permet de lier les méta-données (par exemple, les références bibliographiques d'un article) à la ressource elle-même (l'article en plein-texte). </desc>
+               <desc0>Non couverte</desc0>
+               <desc1>Partiellement couverte</desc1>
+               <desc2>Totalement couverte</desc2>
+               <score>0</score>
+               <comment></comment>
+            </element>
+         </element>
+         <element name="outilsderecherche" title="Outils de recherche">
+            <desc></desc>
+            <comment></comment>
+            <element name="recherchesurlesmetadonnees" title="Recherche sur les métadonnées">
+               <desc>Possibilités de recherche sur les méta-données associés aux œuvres.</desc>
+               <comment></comment>
+               <element name="recherchesimple" title="Recherche simple">
+                  <desc></desc>
+                  <desc0>Non couverte</desc0>
+                  <desc1>Partiellement couverte</desc1>
+                  <desc2>Totalement couverte</desc2>
+                  <score>2</score>
+                  <comment></comment>
+               </element>
+               <element name="recherchemulti-criteres" title="Recherche multi-critères">
+                  <desc>Plusieurs critères peuvent être sépcifiés dans un champ de recherche</desc>
+                  <desc0>Non couverte</desc0>
+                  <desc1>Partiellement couverte</desc1>
+                  <desc2>Totalement couverte</desc2>
+                  <score>2</score>
+                  <comment></comment>
+               </element>
+               <element name="recherchemulti-champs" title="Recherche multi-champs">
+                  <desc>Possibilité d'effectuer une recherche en utilisant directement plusieurs champs</desc>
+                  <desc0>Non couverte</desc0>
+                  <desc1>Partiellement couverte</desc1>
+                  <desc2>Totalement couverte</desc2>
+                  <score>2</score>
+                  <comment></comment>
+               </element>
+               <element name="rechercheparequation" title="Recherche par équation">
+                  <desc>Fonctionnalité de recherche utilisant des opérateurs logiques (et / ou / sans...)</desc>
+                  <desc0>Non couverte</desc0>
+                  <desc1>Partiellement couverte</desc1>
+                  <desc2>Totalement couverte</desc2>
+                  <score>0</score>
+                  <comment></comment>
+               </element>
+               <element name="aidealarecherche" title="Aide à la Recherche">
+                  <desc>Fonctionnalité d'aide à la recherche, suggestion d'un type de recherche...</desc>
+                  <desc0>Non couverte</desc0>
+                  <desc1> Partiellement couverte</desc1>
+                  <desc2>Totalement couverte</desc2>
+                  <score>1</score>
+                  <comment>Un bouton d'aide permet d'afficher l'aide pour la recherche mais pas d'aide à la saisie des informations</comment>
+               </element>
+            </element>
+            <element name="recherchesurlecontenutextuel" title="Recherche sur le contenu textuel">
+               <desc>Fléxibilité de l'outil de recherche sur le contenu textuel</desc>
+               <comment></comment>
+               <element name="rechercheparproximite" title="Texte plein">
+                  <desc>L'outil de recherche permet d'effectuer une recherche sur le contenu textuel des notices</desc>
+                  <desc0>Non couverte</desc0>
+                  <desc1>Partiellement couverte</desc1>
+                  <desc2>Totalement couverte</desc2>
+                  <score>0</score>
+                  <comment></comment>
+               </element>
+               <element name="troncature" title="Troncature">
+                  <desc>Support de caractères passe-partout lors d'une recherche</desc>
+                  <desc0>Non supporté</desc0>
+                  <desc1>Troncature à gauche ou à droite seulement</desc1>
+                  <desc2>Support complet (troncature à gauche et/ou à droite)</desc2>
+                  <score>1</score>
+                  <comment>Nécessite de présicer qu'il s'agit d'un mot tronqué (avec * dans la requete).</comment>
+               </element>
+               <element name="expressionexacte" title="Expression exacte">
+                  <desc>L'outil de recherche permet l'utilisation d'une expression exacte</desc>
+                  <desc0>Non couverte</desc0>
+                  <desc1>Partiellement couverte</desc1>
+                  <desc2>Totalement couverte</desc2>
+                  <score>2</score>
+                  <comment></comment>
+               </element>
+            </element>
+            <element name="rechechelexicale" title="Recherche sémantique">
+               <desc>Prise en compte des aspects sémantiques lors d'une recherche</desc>
+               <comment></comment>
+               <element name="formesflechies" title="Lexémisation">
+                  <desc>Possibilité d'effectuer des recherches suivant les lexèmes  (stemming)</desc>
+                  <desc0>Pas de support des lexèmes</desc0>
+                  <desc1>Intégration limitée des lexèmes</desc1>
+                  <desc2>Intégration avancée des lexèmes</desc2>
+                  <score>0</score>
+                  <comment>Pas d'informations trouvées à ce sujet dans la documentation.</comment>
+               </element>
+               <element name="lemmatisation" title="Lemmatisation">
+                  <desc>Analyse lexicale du contenu d'un texte regroupant les mots d'une même famille</desc>
+                  <desc0>Pas de lemmatisation</desc0>
+                  <desc1>Support limité de la lemmatisation</desc1>
+                  <desc2>Lemmatisation pleinement supportée</desc2>
+                  <score>0</score>
+                  <comment>Pas d'informations trouvées à ce sujet dans la documentation.</comment>
+               </element>
+               <element name="autopostage" title="Étiquetage par l'utilisateur">
+                  <desc>Possibilité à l'utilisateur d'apposer des étiquettes sur le contenu et de les utiliser/importer</desc>
+                  <desc0>Non couverte</desc0>
+                  <desc1>Partiellement couverte</desc1>
+                  <desc2>Totalement couverte</desc2>
+                  <score>2</score>
+                  <comment></comment>
+               </element>
+            </element>
+            <element name="recherchesurlethesaurus" title="Recherche sur le Thésaurus">
+               <desc>Modes de recherche supportés par le Thésaurus</desc>
+               <comment></comment>
+               <element name="recherchehierarchique" title="Recherche hiérarchique">
+                  <desc>Le Thésaurus implémente la notion de termes génériques et termes spécifiques</desc>
+                  <desc0>Non implémenté</desc0>
+                  <desc1>Partiellement implémentée</desc1>
+                  <desc2>Totalement implémentée</desc2>
+                  <score>2</score>
+                  <comment>Navigation dans la hiérarchie et possibilité de sélectionner directement le noeud de départ de la navigation.
+Possibilité d'effectuer la recherche hiérarchique en sens inverse (en partant d'une feuille).</comment>
+               </element>
+               <element name="synonymie" title="Synonymie">
+                  <desc>Support de la synonymie dans le Thésaurus avec les notions de termes préférentiels/non préférentiels, termes standards/termes rejetés</desc>
+                  <desc0>Non implémenté</desc0>
+                  <desc1>Partiellement implémenté </desc1>
+                  <desc2>Recherche par synonymie riche et complet</desc2>
+                  <score>1</score>
+                  <comment>Pas d'infos trouvés dans l'interface et la documentation de PMB.</comment>
+               </element>
+               <element name="rechercheparassociation" title="Recherche par association">
+                  <desc>Le thesaurus permet l'association réciproque ou non réciproque de termes ("voir aussi")</desc>
+                  <desc0>Impossible</desc0>
+                  <desc1>Partiellement possible</desc1>
+                  <desc2>Implémenté et outillé dans l'application</desc2>
+                  <score>2</score>
+                  <comment>Implémenté dans PMB : les liens "voir" et "voir aussi".</comment>
+               </element>
+            </element>
+            <element name="recherchefederee" title="Recherche fédérée">
+               <desc>Fonctionnalité de recherche sur plusieurs bases de données fédérées, groupes de bibliothèques...</desc>
+               <desc0>Non couverte</desc0>
+               <desc1>Partiellement couverte</desc1>
+               <desc2>Totalement couverte</desc2>
+               <score>1</score>
+               <comment>Pas dans l'interface OPAC.</comment>
+            </element>
+         </element>
+         <element name="e-libraryreproduction" title="e-Library">
+            <desc>Bibliothèque électronique</desc>
+            <comment></comment>
+            <element name="depotdedocumentsenligne" title="Dépôt de documents en ligne">
+               <desc>Fonctionnalité permettant de déposer des documents numérisés en ligne.</desc>
+               <desc0>Non couverte</desc0>
+               <desc1>Partiellement couverte</desc1>
+               <desc2>Totalement couverte</desc2>
+               <score>2</score>
+               <comment></comment>
+            </element>
+            <element name="oai" title="Support du protocole OAI">
+               <desc>Prise en charge de l'OAI-PMH (Open Archives Initiative's Protocol for Metadata Harvestiong), le document est accessible en ligne.</desc>
+               <desc0>Non couverte</desc0>
+               <desc1>Partiellement couverte</desc1>
+               <desc2>Totalement couverte</desc2>
+               <score>2</score>
+               <comment></comment>
+            </element>
+            <element name="commande" title="Commande">
+               <desc>Fonctionnalité de commande de documents en ligne.</desc>
+               <desc0>Non couverte</desc0>
+               <desc1>Partiellement couverte</desc1>
+               <desc2>Totalement couverte</desc2>
+               <score>0</score>
+               <comment>Pas de commande possible à partir d'une notice.</comment>
+            </element>
+            <element name="facturation" title="Facturation">
+               <desc>Fonctionnalité de facturation accessible en ligne. </desc>
+               <desc0>Non couverte</desc0>
+               <desc1>Partiellement couverte</desc1>
+               <desc2>Totalement couverte</desc2>
+               <score>1</score>
+               <comment>Les lecteurs sont informés des frais en cours, mais ne peuvent les régler en ligne.</comment>
+            </element>
+            <element name="historiquedesreproductions" title="Historique des reproductions">
+               <desc>Un historique conserve les données liées au document numérisé.</desc>
+               <desc0>Non couverte</desc0>
+               <desc1>Partiellement couverte</desc1>
+               <desc2>Totalement couverte</desc2>
+               <score>0</score>
+               <comment></comment>
+            </element>
+         </element>
+      </element>
+   </section>
+   <section name="categoriestransverses" title="Facilités d'utilisations">
+      <desc>Fonctionnalités transverses couvertes par le logiciel</desc>
+      <element name="utilisation" title="Ergonomie">
+         <desc></desc>
+         <comment></comment>
+         <element name="priseenmain" title="Prise en main">
+            <desc>Prise en main</desc>
+            <desc0>très lentes, plusieurs jours</desc0>
+            <desc1>moyenne quelques heures</desc1>
+            <desc2>rapide (-1 heure)</desc2>
+            <score>1</score>
+            <comment></comment>
+         </element>
+         <element name="ergonomie" title="Ergonomie de l'interface graphique">
+            <desc>Organisation des différents éléments de l'interface graphique</desc>
+            <desc0>on ne s'y retrouve pas sans mode d'emploi</desc0>
+            <desc1>correcte</desc1>
+            <desc2>très intuitif, quasi aucune doc nécessaire</desc2>
+            <score>1</score>
+            <comment></comment>
+         </element>
+         <element name="interfacegraphique" title="Qualité de l'interface graphique">
+            <desc>Interface graphique</desc>
+            <desc0>Peu esthétique, fouillis</desc0>
+            <desc1>Correcte</desc1>
+            <desc2>Claire, belle, plusieurs thèmes disponibles</desc2>
+            <score>1</score>
+            <comment></comment>
+         </element>
+      </element>
+      <element name="fonctionshandicap" title="Accessibilité">
+         <desc>Prise en charge des normes d'accessibilités</desc>
+         <desc0>Non couverte</desc0>
+         <desc1>Partiellement couverte</desc1>
+         <desc2>Totalement couverte</desc2>
+         <score>1</score>
+         <comment>Pas d'infos trouvés.</comment>
+      </element>
+      <element name="edition" title="Fonctions d'éditions">
+         <desc>Édition</desc>
+         <comment></comment>
+         <element name="fonctionsdimpression" title="Impression">
+            <desc>Fonctions d'impression</desc>
+            <desc0>Non couverte</desc0>
+            <desc1>Partiellement couverte</desc1>
+            <desc2>Totalement couverte</desc2>
+            <score>2</score>
+            <comment></comment>
+         </element>
+         <element name="relancelecteur" title="Fonctions de courriers-types de relance lecteur">
+            <desc>Fonctions de courriers-types de relance lecteur</desc>
+            <desc0>Non couverte</desc0>
+            <desc1>Partiellement couverte</desc1>
+            <desc2>Totalement couverte</desc2>
+            <score>1</score>
+            <comment>Modèles de relances intégrés et plus ou moins configurable.  (pas d'éditeur wysiwyg)</comment>
+         </element>
+         <element name="relancefournisseur" title="Fonctions de relance fournisseur">
+            <desc>Fonctions de relance fournisseur</desc>
+            <desc0>Non couverte</desc0>
+            <desc1>Partiellement couverte</desc1>
+            <desc2>Totalement couverte</desc2>
+            <score>0</score>
+            <comment>Pas d'interconnexion directe avec les fournisseurs dans PMB.</comment>
+         </element>
+         <element name="fonctionsdenotices" title="Édition des feuilles de notices">
+            <desc>Interface de création ou de modification des feuilles de notices</desc>
+            <desc0>Non couverte</desc0>
+            <desc1>Partiellement couverte</desc1>
+            <desc2>Totalement couverte</desc2>
+            <score>2</score>
+            <comment></comment>
+         </element>
+      </element>
+      <element name="gestiondespermissions" title="Gestion des permissions">
+         <desc></desc>
+         <comment></comment>
+         <element name="gestiondesauthorisations" title="Gestion des autorisations">
+            <desc> </desc>
+            <desc0>Non couverte</desc0>
+            <desc1>Partiellement couverte</desc1>
+            <desc2>Totalement couverte</desc2>
+            <score>2</score>
+            <comment>PMB permet une gestion personnalisée des autorisations du côté administration de la bibliothèque.</comment>
+         </element>
+         <element name="gestiondesdroitsdaccespourlesutilisateurs" title="Gestion des droits d'accès pour les utilisateurs">
+            <desc> </desc>
+            <desc0>Non couverte</desc0>
+            <desc1>Partiellement couverte</desc1>
+            <desc2>Totalement couverte</desc2>
+            <score>1</score>
+            <comment>Gestion très basique des droits pour les lecteurs, à savoir, la création d'un compte uniquement. (pas d'utilisateurs avec des droits particuliers...)</comment>
+         </element>
+      </element>
+   </section>
+   <section name="caracteristiquestechniques" title="Aspects techniques">
+      <desc></desc>
+      <comment></comment>
+      <element name="administration" title="Supervision et administration">
+         <desc> </desc>
+         <comment></comment>
+         <element name="parametrage" title="Paramétrage">
+            <desc> </desc>
+            <desc0>Non couverte</desc0>
+            <desc1>Partiellement couverte</desc1>
+            <desc2>Totalement couverte</desc2>
+            <score>1</score>
+            <comment>Les paramètres auraient pu être mieux présentés et intégrés .</comment>
+         </element>
+         <element name="gestiondescodesbarres" title="Gestion des codes barres">
+            <desc></desc>
+            <desc0>Non couverte</desc0>
+            <desc1>Partiellement couverte</desc1>
+            <desc2>Totalement couverte</desc2>
+            <score>2</score>
+            <comment></comment>
+         </element>
+         <element name="rfid" title="RFID">
+            <desc>Utilisation des RFID</desc>
+            <desc0>Pas de prise en charge des RFID</desc0>
+            <desc1>Utilisation des RFID comme code barre classique</desc1>
+            <desc2>Utilisation des fonctionnalités avancés des RFID (Armoires intelligentes...)</desc2>
+            <score>1</score>
+            <comment>Selon le site de PMB, l'interface a été refaite pour prendre en compte l'utilisation des RFID...</comment>
+         </element>
+         <element name="statistiques" title="Statistiques">
+            <desc> </desc>
+            <desc0>Non couverte</desc0>
+            <desc1>Partiellement couverte</desc1>
+            <desc2>Totalement couverte</desc2>
+            <score>2</score>
+            <comment>Statistiques par défaut disponibles dans l'onglet Edition &gt; Etats.</comment>
+         </element>
+      </element>
+      <element name="internationalisation" title="Internationalisation">
+         <desc>Internationalisation</desc>
+         <comment></comment>
+         <element name="interfacemultilingue" title="Interface multilingue">
+            <desc></desc>
+            <desc0>Non couverte</desc0>
+            <desc1>Partiellement couverte</desc1>
+            <desc2>Totalement couverte</desc2>
+            <score>2</score>
+            <comment></comment>
+         </element>
+         <element name="fondsmultilingue" title="Fonds multilingue">
+            <desc> </desc>
+            <desc0>Non couverte</desc0>
+            <desc1>Partiellement couverte</desc1>
+            <desc2>Totalement couverte</desc2>
+            <score>2</score>
+            <comment></comment>
+         </element>
+      </element>
+      <element name="normesinternationalessupportees" title="Normes supportées">
+         <desc>Description des différents normes tirés du Wikipédia</desc>
+         <comment></comment>
+         <element name="formatsdechanges" title="Formats d'échanges">
+            <desc></desc>
+            <comment></comment>
+            <element name="z3950" title="Z39.50">
+               <desc>Le protocole Z39.50 est un protocole de communication informatique client-serveur pour rechercher à travers un réseau informatique des informations dans des bases de données. Il est surtout utilisé par les bibliothèques pour interroger simultanément plusieurs catalogues</desc>
+               <desc0>Non couverte</desc0>
+               <desc1>Partiellement couverte</desc1>
+               <desc2>Totalement couverte</desc2>
+               <score>2</score>
+               <comment></comment>
+            </element>
+            <element name="sru-srw" title="SRU-SRW">
+               <desc> Search/Retrieve via URL (SRU) et Search Retrieve via Web Service (SRW) sont des protocole de recherche standard pour les requêtes de recherches Internet, s'appuyant sur CQL (Common Query Language), basé sur la sémantique définie par Z39.50</desc>
+               <desc0>Non couverte</desc0>
+               <desc1>Partiellement couverte</desc1>
+               <desc2>Totalement couverte</desc2>
+               <score>1</score>
+               <comment>Source : http://lists.pmbservices.fr/pipermail/pmb-user/2008-August/008089.html</comment>
+            </element>
+         </element>
+         <element name="isbd-descriptionbibliographique" title="Description bibliographique ISBD">
+            <desc>La description bibliographique internationale normalisée, élaborée par l’IFLA (Fédération internationale des bibliothécaires et des bibliothèques), est un ensemble normatif de règles validées au niveau international, pour la description bibliographique de toute ressource publiée existant dans les bibliothèques.</desc>
+            <desc0>Non implémenté</desc0>
+            <desc1>Partiellement implémenté</desc1>
+            <desc2>Implémenté et pleinement exploité</desc2>
+            <score>2</score>
+            <comment>L'affichage publique est basée sur le format ISBD.</comment>
+         </element>
+         <element name="requetage" title="Stockage MARC">
+            <desc>Respects des formats de stockage MARC issus de la norme ISO 2709</desc>
+            <comment></comment>
+            <element name="marc21" title="Marc 21">
+               <desc>Fusion d'USMARC, d'AUSMARC, d'UKMARC et de CANMARC, reconnue par l'IFLA comme format d'échange</desc>
+               <desc0>Non couverte</desc0>
+               <desc1>Partiellement couverte</desc1>
+               <desc2>Totalement couverte</desc2>
+               <score>0</score>
+               <comment></comment>
+            </element>
+            <element name="unimarc" title="Unimarc">
+               <desc>Créé par l'IFLA en 1977 et conçu pour être un format d'échange entre les autres formats MARC</desc>
+               <desc0>Non couverte</desc0>
+               <desc1>Partiellement couverte</desc1>
+               <desc2>Totalement couverte</desc2>
+               <score>2</score>
+               <comment></comment>
+            </element>
+            <element name="xmlmarc" title="XML Marc">
+               <desc>MARC XML qui permet de représenter sous forme XML l'ensemble des champs du format MARC</desc>
+               <desc0>Non couverte</desc0>
+               <desc1>Partiellement couverte</desc1>
+               <desc2>Totalement couverte</desc2>
+               <score>2</score>
+               <comment></comment>
+            </element>
+         </element>
+      </element>
+   </section>
+</document>

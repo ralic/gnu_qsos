@@ -1,0 +1,16 @@
+Revision history for QSOS XUL Template Editor
+
+0.1  2006
+	- Initial release
+
+0.2  2006/11/28
+	- Firefox extention packaging
+	- UID are now generated
+
+0.3  2008/06/26
+        - German version
+        - Default extension .qtpl
+        - Repackaging for Forefox 3
+
+0.3  2010/12/23
+	- Support for Firefox 3.* and xulrunner 1.9.*

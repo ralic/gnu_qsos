@@ -1,0 +1,117 @@
+%Copyright (c) 2004 2005 2006 Atos Origin
+%Permission is granted to copy, distribute and/or modify this
+%document
+%under the terms of the GNU Free Documentation License,
+%      Version 1.2
+%      or any later version published by the Free Software
+%      Foundation;
+%      with no Invariant Sections, no Front-Cover
+%      Texts, and no Back-Cover
+%      Texts.  A copy of the license is
+%      included in the section entitled "GNU
+%      Free Documentation License".
+%
+%$Id: select.tex,v 1.1 2006/02/16 18:21:09 goneri Exp $
+\section{Sélectionner}
+\begin{figure}[h]
+\includegraphics[width=13cm]{images/fr/selectionner}
+\caption{Sélectionner}
+\end{figure}
+
+\subsection{Objectif}
+L'objectif de cette étape est de sélectionner le ou les logiciels correspondant aux
+besoins de l'utilisateur, ou plus généralement de comparer des logiciels du même type.
+
+\subsection{Sélection}
+Deux modes sont possibles :
+\begin{itemize}
+\item la sélection stricte
+\item la sélection souple
+\end{itemize}
+
+
+\subsubsection{Sélection stricte}
+La sélection stricte se base sur un processus d'élimination directe dès qu'un logiciel ne
+répond pas aux exigences formulées dans l'étape :
+\begin{itemize}
+\item Élimination des logiciels ne correspondant pas au filtre sur la fiche d'identité
+\item Élimination des logiciels n'offrant pas les fonctionnalité requises par le filtre
+sur la couverture fonctionnelle 
+\item Élimination des logiciels dont les critères de risques Utilisateur ne satisfont pas aux
+pertinences définies par ou avec l'utilisateur :
+\begin{itemize}
+\item La note d'un critère pertinent doit être au moins égale à 1 
+\item La note d'un critère critique doit être au moins égale à 2 
+\end{itemize}
+\end{itemize}
+Cette méthode est très sélective et peut, en fonction du niveau d'exigence de l'utilisateur,
+ne retourner aucun logiciel éligible.
+
+
+Les logiciels ayant passé la sélection sont ensuite affectés d'une note globale déterminée
+par pondération, de la même manière que dans la sélection souple.
+
+\subsubsection{Sélection souple}
+Cette méthode est moins stricte que la précédente car plutôt que d'éliminer les logiciels
+non éligibles au niveau de la couverture fonctionnelle ou des risques Utilisateur, elle
+se contente de les classer tout en mesurant l'écart constaté par rapport aux filtres
+définis précédemment.
+
+
+Elle se base sur des valeurs de pondération dont les règles d'attribution sont détaillées dans les paragraphes suivants.
+
+
+\paragraph{Pondération fonctionnelle}
+La valeur de pondération se base sur le niveau d'exigence de chaque fonctionnalité
+de l'axe de la couverture fonctionnelle.
+\begin{figure}
+\center
+\begin{tabular}{|c|c|}
+\hline \TS{Niveau d'exigence} & \TS{Pondération}\\
+\hline Fonctionnalité requise & +3\\
+\hline Fonctionnalité optionnelle & +1\\
+\hline Fonctionnalité non requise & 0\\
+\hline
+\end{tabular}
+\end{figure}
+
+\paragraph{Pondération des risques Utilisateur}
+La valeur de pondération se base sur le degré de pertinence de chaque critère
+de l'axe des risques Utilisateur.
+\begin{figure}
+\center
+\begin{tabular}{|c|c|}
+\hline \TS{Pertinence du critère} & \TS{Pondération}\\
+\hline Critère non pertinent & 0\\
+\hline Critère pertinent & +1 ou -1\\
+\hline Critère critique & +3 ou -3\\
+\hline
+\end{tabular}
+\end{figure}
+
+Le signe de la pondération est fonction de l'impact positif ou négatif du respect
+du critère sur la capacité au logiciel à répondre aux besoins.
+
+\subsection{Comparaison}
+Les logiciels d'un même domaine peuvent également être comparés entre eux selon
+les notes pondérées obtenues lors des étapes précédentes.
+
+
+La figure~\ref{fig-comparaison} illustre ce qu'il est alors possible d'obtenir en synthèse.
+\begin{figure}
+\includegraphics[height=10cm]{images/fr/comparaison}
+\caption{
+Comparaison de fiches.
+Cette figure est fournie à titre d'exemple, ainsi les
+pondérations des sous-critères utilisées pour calculer les notes sur les différents axes
+représentés, ne sont pas représentatives de tous les contextes d'utilisation d'un SGBDR.
+}
+\label{fig-comparaison}
+\end{figure}
+
+\subsection{Outil O3S}
+Outre les modes de sélection stricte et de sélection souple,
+l'outil O3S permet également les opérations de visualisation simple ou filtrée des
+informations relatives à un logiciel donné (fiche d'identité et critères d'évaluation),
+ainsi que de comparaison intégrale, filtrée ou différentielle de plusieurs logiciels de
+même type.

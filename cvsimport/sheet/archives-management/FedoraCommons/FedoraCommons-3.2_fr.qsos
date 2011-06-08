@@ -1,0 +1,1015 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document>
+   <header>
+      <authors>
+         <author>
+            <name>Sollier Laurent</name>
+            <email>laurent.sollier@atosorigin.com</email>
+         </author>
+      </authors>
+      <dates>
+         <creation></creation>
+         <validation></validation>
+      </dates>
+      <language>fr</language>
+      <appname>Fedora Commons</appname>
+      <release>3.2</release>
+      <licenseid>23</licenseid>
+      <licensedesc>The Apache License 2.0</licensedesc>
+      <url>http://www.fedora-commons.org/</url>
+      <desc>Fedora Commons est un système de gestion d'entrepot de document numériquesbasé sur une architecture flexible et extensible d'objets numériques et d'entrepôt associé (Fedora = Flexible Extensible Digital Object and Repository Architecture). Ce système est construit de tel sorte qu'il se présente comme un socle sur lequel peut être développé et déployé des fonctionnalités spécifiques à chaque institution ou tout autre bilbiothèque numérique accessible et interopérable par le biais d'une inteface WEB. Ce poduit est le fruit d'un développement commun entre l'université de Virginie et l'université de Cornell. Il implémente l'architecture et y ajoute de nombreux utilitaires qui facilite la gestion de l'entrepôt. La version actuelle est en capcité de gérer un volume dépassant le million de documents. Son cycle de développement ajoute sans cesse de nouvelles fonctionnalités et pour ce faire, l'équipe de développement s'associe à d'autres projets communautaires (ex : DSpace, ...) ou à des acteurs du domaine (ex : Sun pour la gestion du stockage).
+Le produit est dorénavant géré par une fondation qui est indépendante et qui bénéficie de nombreux sponsors financiers. De plus, cette foncdation est à même de proposer du support et de l'accompagangment quant au déploiement et à l'installation de cette solution.
+
+Le socle est accessible par trois interfaces de type WEB :
+API-A : cette interface est dédiée à l'accès (Access) aux contenus de l'entrepôt. Elle est donc exploitée par les utilisateurs.
+API-M : cette interface est dédiée à l'administration (Management) de l'entrepôt. Elle est donc exploitée par les administrateurs.
+Une API-A simplifiée pour exploiter facilement les objets hébergés.
+
+Fedora-Commons peut être déployé sans adaptation particulière et donc être exploité sur la base d'un modèle de données de base. Mais, Fedora-Commons offre aussi la possibilité de spécifier un modèle de données plus approprié au contexte du projet. Pour ce faire, Fedora-Commons propose deux modèles (Compound model et Atomistic model). Chacun d'eux ayant leurs propres spécificités, le choix est dépendant du contexte et des besoins en terme d'utilisation, d'exploitation et éventuellement de la volumétrie des objets hébergés.
+
+Pour l'hébergement des objets numérique, Fedora-Commons exploite un mécanisme de stockage basé sur un plan de classement spécifique. Toutefois, il est possible de développer une passerelle spécifique permettant de déterminer la politique de ce plan de classement. 
+Pour les métadonnées associées, Fedora-Commons exploiter la notion de Web sémantique à l'aide du RDF. Pour l'hébergement de ces données, le triplestore Mulgara est exploité. Toutefois, il est possible, par le biais de l'interface SPARQL et le potentiellement développement d'une passerelle spécifique, d'intégrer tout autre triplestore.
+
+Fedora-Commons n'offre par d'interface graphique. Il est donc nécessaire d'y associer soit un modules annexe (ex : Fez) soit d'effectuer un développement spécifique sur la base des services Web publiés. Ces derniers sont de type SOAP ou REST.</desc>
+      <demourl></demourl>
+      <qsosformat>1.6</qsosformat>
+      <qsosappfamily>Archivage Numérique</qsosappfamily>
+      <qsosspecificformat>1.0</qsosspecificformat>
+      <qsosappname></qsosappname>
+   </header>
+   <section name="generic" title="Section générique">
+      <desc>Les critères génériques de l'évaluation Presto de QSOS</desc>
+      <element name="intrinsicdurability" title="Pérennité">
+         <desc>Pérennité</desc>
+         <element name="maturite" title="Maturité">
+            <desc></desc>
+            <desc0>Logiciel provenant d'un fork ou avec une forte probabilité de fork dans un futur proche.</desc0>
+            <desc1>Projet jeune (moins de 3 ans) ou connaissant des difficultés à stabiliser les versions de développement.</desc1>
+            <desc2>Projet stable ou ayant un bon historique de gestion de crise. Les nouvelles versions apportent de façon prépondérante de nouvelles fonctionnalités.</desc2>
+            <score>2</score>
+            <comment>La première version date du 16 Mai 2003</comment>
+         </element>
+         <element name="adoption1" title="Adoption">
+            <desc></desc>
+            <desc0>Usage détectable sur Internet sans véritable activité communautaire</desc0>
+            <desc1>Utilisation communautaire prépondérante</desc1>
+            <desc2>Nombreuse références industrielles</desc2>
+            <score>2</score>
+            <comment>Fedora-Commons dispose d'une centaine de références majoritairement dans les universités et les bibliothèques nationales</comment>
+         </element>
+         <element name="developpement" title="Développement">
+            <desc></desc>
+            <desc0>Deux ou moins de deux développeurs clairement identifiés.</desc0>
+            <desc1>Équipe de développement réduite avec un turn-over important ou sans équipe de direction identifiée.</desc1>
+            <desc2>Équipe de développement structurée comportant plus de 5 développeurs actifs.</desc2>
+            <score>2</score>
+            <comment></comment>
+         </element>
+         <element name="activite" title="Activité">
+            <desc></desc>
+            <desc0>Très faible activité, que ce soit sur les résolutions de bugs, les releases, l'ajout de nouvelles fonctions ou sur les espaces communautaires (wiki, forum, mailing list...)</desc0>
+            <desc1>Activité détectable mais anarchique (pas feuille de route accessible facilement, pas de prévisions de nouvelles fonctionnalités ou de prévisions de nouvelles versions visible)</desc1>
+            <desc2>Activité importante et visible via la mise en place de feuilles de routes traçant les requêtes de nouvelles fonctionnalités et/ou les prévisions de sortie des nouvelles version</desc2>
+            <score>2</score>
+            <comment>http://www.fedora-commons.org/resources/roadmap.php</comment>
+         </element>
+         <element name="strategicalindependence" title="Indépendance stratégique">
+            <desc0>Pas de stratégie détectable ou stratégie dictée par une société commerciale, un sponsor ou un individu unique.</desc0>
+            <desc1>Stratégie décidée par l'équipe de developpement.</desc1>
+            <desc2>Indépendance forte de l'équipe de développement, fort engagement du projet dans un processus de standardisation.</desc2>
+            <score>2</score>
+            <comment>Le projet est géré par une fondation.</comment>
+         </element>
+         <element name="copyrightowners" title="Détenteur des droits">
+            <desc0>Les droits sont détenus par quelques individus ou entités commerciales, facilitant le changement de licence</desc0>
+            <desc1>Les droits sont détenus par de nombreux individus de façon homogène, rendant le changement de licence très difficile</desc1>
+            <desc2>Les droits sont détenus par une entité légale, une fondation dans laquelle la communauté a confiance (ex: FSF, Apache, ObjectWeb)</desc2>
+            <score>2</score>
+            <comment>Les droits sont détenus par la fondation "Fedora Commons™ Inc."</comment>
+         </element>
+         <element name="license" title="Licence">
+            <desc>Licence, à pondérer uniquement si le client désire un jour devenir propriétaire du code</desc>
+            <element name="permissiveness" title="Permissivité">
+               <desc0>Licence très stricte, comme la GPL</desc0>
+               <desc1>Licence modérée entre les deux extrêmes (GPL et BSD), licence duale dépendante du type d'utilisateur (personne, société…) ou de leur activité</desc1>
+               <desc2>Licence très permissive comme BSD et Apache</desc2>
+               <score>2</score>
+               <comment>Apache License, Version 2.0
+cf : http://fedora-commons.org/confluence/display/FCR30/License+and+Copyright</comment>
+            </element>
+            <element name="protectionagainstproprietaryforks" title="Protection contre des forks commerciaux">
+               <desc0>Licence très permissive comme BSD et Apache</desc0>
+               <desc1>Licence modérée entre les deux extrêmes (GPL et BSD), licence duale dépendante du type d'utilisateur (personne, société…) ou de leur activité</desc1>
+               <desc2>Licence très stricte, comme la GPL</desc2>
+               <score>0</score>
+               <comment>Apache License, Version 2.0</comment>
+            </element>
+         </element>
+         <comment>En terme de pérennité, le projet Fedora Commons respecte les bonnes pratiques. Ce faisant, il apparaît indéniable que ce produit est une valeur sûr.</comment>
+      </element>
+      <element name="industrializedsolution" title="Industrialisation">
+         <desc>Niveau d'industrialisation du projet</desc>
+         <element name="independenceofdevelopments" title="Indépendance des développements">
+            <desc0>Développements réalisés à plus de 60% par des employés d'une seule société</desc0>
+            <desc1>Développements réalisés à 60% maximum par des employés d'une seule société</desc1>
+            <desc2>Développements réalisés à 20% maximum par des employés d'une seule société</desc2>
+            <score>1</score>
+            <comment>La fondation souhaite rester maîtresse de l'évolution du produit. Ce faisant les développements sont majoritairement assurés par une équipe gérée par la fondation. Les participations extérieures sont acceptées, mais le cycle de validation est géré par la fondation. Contributeurs : http://www.fedora-commons.org/confluence/browsepeople.action?startIndex=</comment>
+         </element>
+         <element name="services1" title="Services">
+            <desc></desc>
+            <desc0>Pas d'offres de services identifiée</desc0>
+            <desc1>Offre existante mais restreinte géographiquement ou en une seule langue ou fournie par un seul fournisseur</desc1>
+            <desc2>Offre riche : plusieurs fournisseurs ou plusieurs langages</desc2>
+            <score>1</score>
+            <comment>La fondation est constituée de membres qui peuvent accompagner les utilisateurs dans le cadre d'un déploiement de ce produit.
+Il est possible de faire déplacer les intervenants. Toutefois, ces interventions se font majoritairement en langue anglaise.</comment>
+         </element>
+         <element name="documentation" title="Documentation">
+            <desc0>Pas de documentation utilisateur</desc0>
+            <desc1>La documentation existe mais est en partie obsolète ou restreinte à une seule langue ou peu détaillée</desc1>
+            <desc2>Documentation à jour, traduite et éventuellement adaptée à différentes cibles de lecteurs (end-user, sysadmin, manager…)</desc2>
+            <score>1</score>
+            <comment>La documentation est détaillée et est régulièrement mise à jour. Mais elle est uniquement disponible en Anglais.</comment>
+         </element>
+         <element name="methodequalite" title="Méthode qualité">
+            <desc></desc>
+            <desc0>Pas de processus de qualité identifié ni d'outils de gestions de bugs</desc0>
+            <desc1>Processus qualité non formalisé ou non outillé ou comportant des outils qui sont très peu utilisés</desc1>
+            <desc2>Utilisation très active d'outils standards (tests unitaires, outils de gestion de build, outils de mesure de qualité du code)</desc2>
+            <score>2</score>
+            <comment>Le projet est hébergé par sourceforge. Il est possible d'accèder au code source par le biai de SVN. Dans ce code source, il est possible de voir que de nombreux tests unitaires sont réalisés.</comment>
+         </element>
+      </element>
+      <element name="packaging" title="Packaging">
+         <desc>Packaging pour les différents systèmes d'exploitation</desc>
+         <element name="packagingbsd" title="BSD">
+            <desc></desc>
+            <desc0>Pas de packaging officiel pour la famille BSD</desc0>
+            <desc1>Packaging existant pour quelques distributions de la famille BSD</desc1>
+            <desc2>Packaging complet pour les distributions de la famille BSD suivantes : FreeBSD, OpenBSD, NetBSD et Mac OS X</desc2>
+            <score>0</score>
+            <comment></comment>
+         </element>
+         <element name="packaginglinux" title="GNU/Linux">
+            <desc></desc>
+            <desc0>Pas de packaging officiel pour les systèmes d'exploitations GNU/Linux</desc0>
+            <desc1>Packaging existant pour quelques distributions GNU/Linux</desc1>
+            <desc2>Packaging complet les systèmes de packaging .deb et .rpm</desc2>
+            <score>0</score>
+            <comment></comment>
+         </element>
+         <element name="unix" title="Unix">
+            <desc></desc>
+            <desc0>Pas de packaging officiel pour les systèmes de la famille Unix</desc0>
+            <desc1>Packaging existant sur quelques systèmes de la famille Unix</desc1>
+            <desc2>Packaging existant sur au moins ces 3 systèmes : AIX, HP-UX, Solaris</desc2>
+            <score>0</score>
+            <comment></comment>
+         </element>
+         <element name="packagingwindows" title="Windows">
+            <desc0>Le logiciel n'est pas disponible sur un système Windows.</desc0>
+            <desc1>Le logiciel existe sous forme d'archive tout en un.</desc1>
+            <desc2>Le logiciel dispose d'un installeur.</desc2>
+            <score>0</score>
+            <comment></comment>
+         </element>
+         <element name="packagingsource" title="Sources">
+            <desc0>L'installation depuis les sources est hasardeuse et risquée</desc0>
+            <desc1>L'installation depuis les sources est difficile ou limité (seulement à un OS, une architecture, la résolution de l'écran...)</desc1>
+            <desc2>L'installation depuis les sources est outillée (vérification des dépencances, verification de l'installation, gestion de build)</desc2>
+            <score>2</score>
+            <comment>Attention : il est possible que le déploiement du produit sur un serveur d'application autre que Tomcat, puisse entraîner un certain nombre de problèmes.</comment>
+         </element>
+         <element name="packagingtar" title="Archive compressée">
+            <desc0>Pas d'archive disponible</desc0>
+            <desc1>Archive globale</desc1>
+            <desc2>Archive séparée pour chaque module installable</desc2>
+            <score>1</score>
+            <comment></comment>
+         </element>
+         <comment>Fedora se présente comme une application Java devant être déployée dans un moteur de servlet (ex : Tomcat, JBoss AS, ...).</comment>
+      </element>
+      <element name="exploitability" title="Exploitabilité">
+         <desc>Niveau d'exploitabilité</desc>
+         <element name="easeofuseergonomics" title="Facilité d'utilisation, ergonomie">
+            <desc0>Difficulté d'utilisation, demande une connaissance approfondie des fonctionnalités du logiciel</desc0>
+            <desc1>Ergonomie austère et très technique</desc1>
+            <desc2>Ergonomie élaborée et IHM comprenant des fonctions d'aide</desc2>
+            <score>1</score>
+            <comment></comment>
+         </element>
+         <element name="administrationmonitoring" title="Administration et supervision">
+            <desc0>Pas de fonctionnalités de contrôle, ni d'administration</desc0>
+            <desc1>Fonctionnalités présentes mais incomplètes ou à améliorer</desc1>
+            <desc2>Fonctionnalités complètes et faciles de contrôle et d'administration. Intégration possible avec des outils tiers (ex : SNMP, syslog…)</desc2>
+            <score>2</score>
+            <comment></comment>
+         </element>
+         <comment>Fedora Commons est livré avec un client Java permettant de configurer et d'exploiter le produit.</comment>
+      </element>
+      <element name="technicaladaptability" title="Adaptabilité">
+         <desc>Adaptabilité technique</desc>
+         <element name="modularity" title="Modularité">
+            <desc0>Logiciel monolithique</desc0>
+            <desc1>Présence de modules haut niveau permettant un premier niveau d'adaptation</desc1>
+            <desc2>Conception modulaire, permettant des adaptations faciles par sélection et/ou création de modules</desc2>
+            <score>2</score>
+            <comment>Fedora Commons offre un mécanisme de services locaux permettant d'adapter les traitements nécessaires à la diffusion des paquets.
+L'intégration de ces services locaux s'effectue par le biais d'appel HTTP.
+Attention : ce type d'interface peut entraîner des problématiques de performance pour de lourds objets numériques (ex : images TIFF).</comment>
+         </element>
+         <element name="codemodification" title="Facilité technique de modification du code existant">
+            <desc0>Tout à la main</desc0>
+            <desc1>Recompilation possible mais complexe, sans outils, ni documentation</desc1>
+            <desc2>Recompilation facile, outillée (ex : make, ANT, Maven…) et documentée</desc2>
+            <score>2</score>
+            <comment>Le code est accompagné de tous les outils nécessaire à la compilation du produit.</comment>
+         </element>
+         <element name="codeextension" title="Facilité d'extension du code">
+            <desc0>Toute modification demande une recompilation du code</desc0>
+            <desc1>Architecture conçue pour des extensions statiques mais exige une recompilation</desc1>
+            <desc2>Architecture de plugins, conçue pour des extensions dynamiques et sans recompilation</desc2>
+            <score>2</score>
+            <comment></comment>
+         </element>
+      </element>
+      <comment>Le produit Fedora jouit d'une bonne couverture des critères associés à l'aspect Open Source. En effet, il bénéficie d'une maturité honorable, en grande partie assurée par ces originies universitaires. Son ouverture à une large communauté est fiabilisée par la mise en place d'une fondation dédiée, qui veille à l'avenir du produit.
+</comment>
+   </section>
+   <section name="entiteversement" title="Entité Versement">
+      <desc>Cette entité assure les fonctions et services relatifs à l’acceptation des Paquets d’informations à verser (SIP) provenant des Producteurs (ou d’éléments internes sous
+le contrôle de l’Entité «Administration »), et à la préparation de leur contenu en vue du stockage et de la gestion des données au sein de l’Archive. </desc>
+      <element name="recevoirunversement" title="Recevoir un versement">
+         <desc></desc>
+         <comment></comment>
+         <element name="delivrancedunaccusedereception" title="Délivrance d'un accusé de réception">
+            <desc></desc>
+            <desc0>Non délivré</desc0>
+            <desc1>Délivré</desc1>
+            <desc2>Délivré avec fourniture d'éventuels messages d'erreurs</desc2>
+            <score>2</score>
+            <comment></comment>
+         </element>
+      </element>
+      <element name="assurancequalite" title="Assurance qualité">
+         <desc></desc>
+         <comment></comment>
+         <element name="depotdupaquetdansunespaceprovisoiredestockage" title="Dépôt du paquet dans un espace provisoire de stockage">
+            <desc></desc>
+            <desc0>Indisponible</desc0>
+            <desc1>Partiellement disponible</desc1>
+            <desc2>Disponible</desc2>
+            <score>0</score>
+            <comment></comment>
+         </element>
+         <element name="controlesderedondancecycliques(crc)ouchecksumdesf" title="Contrôles de Redondance Cycliques (CRC) ou checksum des fichiers versés">
+            <desc></desc>
+            <desc0>Indisponible</desc0>
+            <desc1>Partiellement disponible</desc1>
+            <desc2>Disponible</desc2>
+            <score>2</score>
+            <comment></comment>
+         </element>
+         <element name="alimenterunjournaldebord" title="Alimenter un journal de bord">
+            <desc></desc>
+            <desc0>Indisponible</desc0>
+            <desc1>Partiellement disponible</desc1>
+            <desc2>Disponible</desc2>
+            <score>2</score>
+            <comment></comment>
+         </element>
+      </element>
+      <element name="genererunaip" title="Générer un AIP">
+         <desc></desc>
+         <comment></comment>
+         <element name="conversionsdeformatdefichier" title="Conversions de format de fichier">
+            <desc></desc>
+            <desc0>Indisponible</desc0>
+            <desc1>Partiellement disponible</desc1>
+            <desc2>Disponible</desc2>
+            <score>0</score>
+            <comment></comment>
+         </element>
+         <element name="conversionsderepresentationdesdonnees" title="Conversions de représentation des données">
+            <desc></desc>
+            <desc0>Indisponible</desc0>
+            <desc1>Partiellement disponible</desc1>
+            <desc2>Disponible</desc2>
+            <score>0</score>
+            <comment></comment>
+         </element>
+         <element name="reorganisationducontenud’informationdessip" title="Réorganisation du Contenu d’information des SIP">
+            <desc></desc>
+            <desc0>Indisponible</desc0>
+            <desc1>Partiellement disponible</desc1>
+            <desc2>Disponible</desc2>
+            <score>0</score>
+            <comment></comment>
+         </element>
+      </element>
+      <element name="genererlinformationdedescription" title="Générer l'information de description">
+         <desc></desc>
+         <comment></comment>
+         <element name="extrairelinformationdedescriptiondesaip" title="Extraire l'Information de description des AIP">
+            <desc></desc>
+            <desc0>Indisponible</desc0>
+            <desc1>Partiellement disponible</desc1>
+            <desc2>Disponible</desc2>
+            <score>1</score>
+            <comment></comment>
+         </element>
+         <element name="recueillirlinformationdedescriptiond’autressources" title="Recueillir l'Information de description d’autres sources">
+            <desc></desc>
+            <desc0>Indisponible</desc0>
+            <desc1>Partiellement disponible</desc1>
+            <desc2>Disponible</desc2>
+            <score>0</score>
+            <comment></comment>
+         </element>
+      </element>
+      <element name="alimenterlesentitesstockageetgestiondesdonnees" title="Alimenter les entités Stockage et Gestion des données">
+         <desc></desc>
+         <comment></comment>
+         <element name="effectuerunedemandedestockage" title="Effectuer une demande de stockage">
+            <desc></desc>
+            <desc0>Indisponible</desc0>
+            <desc1>Partiellement disponible</desc1>
+            <desc2>Disponible</desc2>
+            <score>2</score>
+            <comment></comment>
+         </element>
+         <element name="effectuerdemandedemiseajourdelagestiondesdonnees" title="Effectuer une demande de mise à jour de la gestion des données">
+            <desc></desc>
+            <desc0>Indisponible</desc0>
+            <desc1>Partiellement disponible</desc1>
+            <desc2>Disponible</desc2>
+            <score>2</score>
+            <comment></comment>
+         </element>
+      </element>
+      <comment>Fedora Commons offre peut de fonctionnalité pour l'entité versement. En effet, Fedora attend des objets numériques qui soient déjà compatible avec le modèle de données (CMA). 
+Par conséquent, l'entité Versement est faiblement couverte.</comment>
+   </section>
+   <section name="entitestockage" title="Entité Stockage">
+      <desc>Cette entité assure les fonctions et services relatifs au stockage, à la maintenance et à la récupération des AIP. </desc>
+      <element name="recevoirlesdonnees" title="Recevoir les données">
+         <desc></desc>
+         <comment></comment>
+         <element name="choisirlestockageselonlafrequencedusagedupaquet" title="Choisir le stockage selon la fréquence d'usage du paquet">
+            <desc></desc>
+            <desc0>Indisponible</desc0>
+            <desc1>Partiellement disponible</desc1>
+            <desc2>Disponible</desc2>
+            <score>1</score>
+            <comment>A l'aide de l'interface "Low Level Storage", il est possible de développer une passerelle qui puisse spécifier le stockage selon certaines informations associées à l'objet numérique. 
+La sélection ne peut donc ce faire qu'au moment du versement sur la base des informations connues à cette étape.</comment>
+         </element>
+         <element name="selectionnerlesupportapproprie" title="Sélectionner le support approprié">
+            <desc></desc>
+            <desc0>Indisponible</desc0>
+            <desc1>Partiellement disponible</desc1>
+            <desc2>Disponible</desc2>
+            <score>1</score>
+            <comment>Une fois entrée dans l'interface "Low Level Storage", il est possible de sélectionner un support quleconque à condition qu'il soit exploitable depuis cette interface. Toutefois, cette sélection ne peut se faire que sur la base du faible nombre d'informations présentes dans le plug-in. En effet, à ce niveau les metadonnées de l'objet numérique ne sont pas accessibles, il faut donc exploiter le nom de l'objet.</comment>
+         </element>
+         <element name="fourniruneconfirmationdestockage" title="Fournir une confirmation de stockage">
+            <desc></desc>
+            <desc0>Indisponible</desc0>
+            <desc1>Partiellement disponible</desc1>
+            <desc2>Disponible</desc2>
+            <score>0</score>
+            <comment></comment>
+         </element>
+      </element>
+      <element name="gererlahierarchiedestockage" title="Gérer la hiérarchie de stockage">
+         <desc></desc>
+         <comment></comment>
+         <element name="stockerlespaquetsselondescriterespropresauxaip" title="Stocker les paquets selon des critères propres aux AIP">
+            <desc></desc>
+            <desc0>Indisponible</desc0>
+            <desc1>Partiellement disponible</desc1>
+            <desc2>Disponible</desc2>
+            <score>0</score>
+            <comment></comment>
+         </element>
+         <element name="controlerlintegritedufichierstocke" title="Contrôler l'intégrité du fichier stocké">
+            <desc></desc>
+            <desc0>Indisponible</desc0>
+            <desc1>Partiellement disponible</desc1>
+            <desc2>Disponible</desc2>
+            <score>2</score>
+            <comment>L'utilisation de l'API-M entraîne un contrôle d'intégrité lors de l'ajout ou de la modification d'un train de bits (datastream).</comment>
+         </element>
+         <element name="fournirlesstatistiquesd’exploitation" title="Fournir les statistiques d’exploitation">
+            <desc></desc>
+            <desc0>Indisponible</desc0>
+            <desc1>Partiellement disponible</desc1>
+            <desc2>Disponible</desc2>
+            <score>1</score>
+            <comment>Le système ne fournit pas de statistiques. Toutefois, par l'intermédiaire du journal, il est possible de construire des statistiques.</comment>
+         </element>
+      </element>
+      <element name="renouvelerlessupportsdestockage" title="Renouveler les supports de stockage">
+         <desc></desc>
+         <comment>Le produit Fedora Commons ne couvre pas toutes les fonctionnalités nécessaires au renouvellement des supports de stockage. Il convient de s'appuyer sur un outils tiers (ex : celui dédié à l'abstraction de stockage), pour accomplir ces tâches.</comment>
+         <element name="effectuerunrafraichissementdesupport" title="Effectuer un Rafraîchissement de support">
+            <desc></desc>
+            <desc0>Indisponible</desc0>
+            <desc1>Partiellement disponible</desc1>
+            <desc2>Disponible</desc2>
+            <score>0</score>
+            <comment></comment>
+         </element>
+         <element name="effectueruneduplication" title="Effectuer une Duplication">
+            <desc></desc>
+            <desc0>Indisponible</desc0>
+            <desc1>Partiellement disponible</desc1>
+            <desc2>Disponible</desc2>
+            <score>0</score>
+            <comment></comment>
+         </element>
+         <element name="effectuerunre-empaquetage" title="Effectuer un Ré-empaquetage">
+            <desc></desc>
+            <desc0>Indisponible</desc0>
+            <desc1>Partiellement disponible</desc1>
+            <desc2>Disponible</desc2>
+            <score>1</score>
+            <comment>Il est possible d'effectuer un export d'un objet binaire pour le transférer dans un nouvel entrepôt.</comment>
+         </element>
+      </element>
+      <element name="controlerlintegritedespaquets" title="Contrôler l'intégrité des paquets">
+         <desc></desc>
+         <comment></comment>
+         <element name="controlerlesobjets-donneesdunpaquet" title="Contrôler les objets-données d'un paquet">
+            <desc></desc>
+            <desc0>Indisponible</desc0>
+            <desc1>Partiellement disponible</desc1>
+            <desc2>Disponible</desc2>
+            <score>1</score>
+            <comment>Les paquets sont contrôler au niveau de leur CRC.
+Le contenu du paquet ne bénéficie pas d'un contrôle.</comment>
+         </element>
+      </element>
+      <element name="assurerunplandereprisedactivite" title="Assurer un plan de reprise d'activité">
+         <desc></desc>
+         <comment>Il est possible de mettre en place un plan de reprise d'activité. Totefois, celui-ci ne peut se baser sur la seule exploitation de Fedora Commons. Il convient de mettre en oeuvre une procédure permettant de répliquer les données sur un second site.</comment>
+         <element name="effectuerunecopiedespaquetssurunsupportdesauvegar" title="Effectuer une copie des paquets sur un support de sauvegarde">
+            <desc></desc>
+            <desc0>Indisponible</desc0>
+            <desc1>Partiellement disponible</desc1>
+            <desc2>Disponible</desc2>
+            <score>1</score>
+            <comment>Attention : les données numériques exploitées par Fedora Commons s'appuie sur différents type de stockage (fichier, base de données, triple store). 
+Il apparaît délicat de sauvegarder ces différents éléments de façon synchrone et cohérente les uns par rapport aux autres.
+
+cf http://fedora-commons.org/confluence/display/FCR30/Replication+and+Mirroring</comment>
+         </element>
+      </element>
+      <element name="fournirlesdonneesdemandees" title="Fournir les données demandées">
+         <desc></desc>
+         <comment></comment>
+         <element name="transfererversunespacedestockageprovisoire" title="Transférer vers un espace de stockage provisoire">
+            <desc></desc>
+            <desc0>Indisponible</desc0>
+            <desc1>Partiellement disponible</desc1>
+            <desc2>Disponible</desc2>
+            <score>0</score>
+            <comment></comment>
+         </element>
+         <element name="fournirunavisdetransfertdedonnees" title="Fournir un avis de transfert de données">
+            <desc></desc>
+            <desc0>Indisponible</desc0>
+            <desc1>Partiellement disponible</desc1>
+            <desc2>Disponible</desc2>
+            <score>1</score>
+            <comment>Par l'intermédiaire du journal.</comment>
+         </element>
+      </element>
+      <comment>L'entité "Stockage" est relativement bien couverte par Fedora Commons. Toutefois, le choix d'architecture impose une limitte importante. En effet, le stockage s'effectuant de façon synchrone (en lecture et en écriture), il apparaît impossible d'associer un stockage primaire sur bande à Feodra Commons. 
+Le stockage sur bande est envisageable à condition qu'il soit secondaire et alimenté par un mécanisme autre que Fedora Commons (ex : outil de backup.
+Au delà de cette limitte, Fedora Commons offre un mécanisme d'abstraction de stockage permettant de s'interfacer avec différents type de stockage et d'y exploiter un plan de classement sur mesure.</comment>
+   </section>
+   <section name="entitegestiondesdonnees" title="Entité Gestion des données">
+      <desc>Cette entité assure les fonctions et services relatifs à l'enrichissement, la conservation et l'accès à l'Information de description (qui identifie et documente les fonds de l’Archive) et aux données administratives utilisées pour gérer l’Archive. </desc>
+      <element name="administrerlamoteurdepersistancedesdonnees" title="Administrer la moteur de persistance des données">
+         <desc></desc>
+         <comment></comment>
+         <element name="creertousschemasoudefinitionsdetablesnecessaires" title="Créer tous schémas ou définitions de tables nécessaires">
+            <desc></desc>
+            <desc0>Indisponible</desc0>
+            <desc1>Partiellement disponible</desc1>
+            <desc2>Disponible</desc2>
+            <score>1</score>
+            <comment>cf CMA (Content Model architecture)</comment>
+         </element>
+         <element name="creer,gereretaccederadesvuesutilisateurpersonnali" title="Créer, gérer et accéder à des vues Utilisateur personnalisées">
+            <desc></desc>
+            <desc0>Indisponible</desc0>
+            <desc1>Partiellement disponible</desc1>
+            <desc2>Disponible</desc2>
+            <score>1</score>
+            <comment></comment>
+         </element>
+         <element name="assurerlintegritereferentielle" title="Assurer l'intégrité référentielle">
+            <desc></desc>
+            <desc0>Indisponible</desc0>
+            <desc1>Partiellement disponible</desc1>
+            <desc2>Disponible</desc2>
+            <score>1</score>
+            <comment></comment>
+         </element>
+      </element>
+      <element name="executerlesrequetesderecherchedesdonnees" title="Exécuter les requêtes de recherche des données">
+         <desc></desc>
+         <comment></comment>
+         <element name="executerdesrequetesetfournirunjeuderesultats" title="Exécuter des requêtes et fournir un Jeu de résultats">
+            <desc></desc>
+            <desc0>Indisponible</desc0>
+            <desc1>Partiellement disponible</desc1>
+            <desc2>Disponible</desc2>
+            <score>2</score>
+            <comment>Les requêtes en SPARQL offre une grande liberté.</comment>
+         </element>
+      </element>
+      <element name="produiredesrapports" title="Produire des rapports">
+         <desc></desc>
+         <comment></comment>
+         <element name="produireunrapport" title="Produire un rapport">
+            <desc></desc>
+            <desc0>Indisponible</desc0>
+            <desc1>Partiellement disponible</desc1>
+            <desc2>Disponible</desc2>
+            <score>1</score>
+            <comment>Le rapport n'est pas proposé en tant que tel. Toutefois, le mécanisme de journal peut être exploité pour construire un rapport.</comment>
+         </element>
+         <element name="fournirlinformationdedescriptiondunaipspecifique" title="Fournir l'Information de description d'un AIP spécifique">
+            <desc></desc>
+            <desc0>Indisponible</desc0>
+            <desc1>Partiellement disponible</desc1>
+            <desc2>Disponible</desc2>
+            <score>2</score>
+            <comment>Partant du principe qu'un AIP est un objet  numérique au sens Fedora Commons, chaque AIP bénéficie de son propre fichier d'informations de description. Ce dernier peut être au format FOXML (propre à FEDORA), ou dans un format normalisé tel que le METS.</comment>
+         </element>
+      </element>
+      <element name="mettreajourlesdonnees" title="Mettre à jour les données">
+         <desc></desc>
+         <comment>Les API proposées par Fedora Commons permettent de mettre à jour les données hébergées dans l'entité "Gestion des données".</comment>
+         <element name="ajouter,modifierousupprimerdesinformationsdansles" title="Ajouter, modifier ou supprimer des informations dans le stockage permanent de l’Entité « Gestion de données »">
+            <desc></desc>
+            <desc0>Indisponible</desc0>
+            <desc1>Partiellement disponible</desc1>
+            <desc2>Disponible</desc2>
+            <score>2</score>
+            <comment></comment>
+         </element>
+      </element>
+      <comment>L'entité "Gestion des données" est le point fort du produit Fedora Commons. En effet, cette entité est matérialisée par le CMA (Content Model Architecture). Ce modèle offre la possibilité d'associer des données fortement structurées à chaque objet numérique hébergé.
+Le fait d'avoir mise en oeuvre un stockage de type RDF permet d'effectuer des requêtes adaptées aux besoins de chaque utilisateur.</comment>
+   </section>
+   <section name="entiteadministration" title="Entité Administration">
+      <desc>Cette entité assure les fonctions et services relatifs à l'exploitation d'ensemble du système d'archivage.
+</desc>
+      <element name="gererlaconfigurationdusysteme" title="Gérer la configuration du système">
+         <desc>Gérer la configuration du matériel et des logiciels du système</desc>
+         <comment></comment>
+         <element name="surveillerenpermanencesonfonctionnementglobal" title="Surveiller en permanence son fonctionnement global">
+            <desc></desc>
+            <desc0>Indisponible</desc0>
+            <desc1>Partiellement disponible</desc1>
+            <desc2>Disponible</desc2>
+            <score>0</score>
+            <comment></comment>
+         </element>
+         <element name="controlersystematiquementlesmodificationsdelaconf" title="Contrôler systématiquement les modifications de la configuration">
+            <desc></desc>
+            <desc0>Indisponible</desc0>
+            <desc1>Partiellement disponible</desc1>
+            <desc2>Disponible</desc2>
+            <score>1</score>
+            <comment>La configuration du CMA bénéficie d'un contrôle.</comment>
+         </element>
+         <element name="veilleral’integriteetalatracabilitedelaconfigurat" title="Veiller à l’intégrité et à la traçabilité de la configuration">
+            <desc></desc>
+            <desc0>Indisponible</desc0>
+            <desc1>Partiellement disponible</desc1>
+            <desc2>Disponible</desc2>
+            <score>0</score>
+            <comment></comment>
+         </element>
+         <element name="controlerl’exploitationdusysteme,sesperformances," title="Contrôler l’exploitation du système, ses performances, et son utilisation">
+            <desc></desc>
+            <desc0>Indisponible</desc0>
+            <desc1>Partiellement disponible</desc1>
+            <desc2>Disponible</desc2>
+            <score>0</score>
+            <comment></comment>
+         </element>
+      </element>
+      <element name="mettreajourlinformationarchivee" title="Mettre à jour l'information archivée">
+         <desc>Fournir aussi les moyens techniques pour contrôler et améliorer l'exploitation de l’Archive, ainsi que pour
+inventorier, rendre compte et migrer/mettre à jour les contenus de l'Archive.</desc>
+         <comment></comment>
+         <element name="demanderunaip,letransformerendipetleverser" title="Demander un AIP, le transformer en DIP et le verser">
+            <desc></desc>
+            <desc0>Indisponible</desc0>
+            <desc1>Partiellement disponible</desc1>
+            <desc2>Disponible</desc2>
+            <score>0</score>
+            <comment>Cette action n'est pas proposée par Fedora Commons. Il faudrait développer un composant dédié.</comment>
+         </element>
+      </element>
+      <element name="gererlesnormesetreglesapplicablesal’archive" title="Gérer les normes et règles applicables à l’Archive">
+         <desc></desc>
+         <comment>Fedora Commons s'appuie sur de nombreuses normes concernant l'archive (METS, Dublin Core, ...)</comment>
+         <element name="fournirlesmecanismesderestrictionoud’autorisation" title="Fournir les mécanismes de restriction ou d’autorisation de l’accès physique">
+            <desc></desc>
+            <desc0>Indisponible</desc0>
+            <desc1>Partiellement disponible</desc1>
+            <desc2>Disponible</desc2>
+            <score>2</score>
+            <comment>Pour limitter l'accès physique aux archives, il convient de configurer le système d'exploitation.</comment>
+         </element>
+      </element>
+      <element name="verifierlesversements" title="Vérifier les versements">
+         <desc>Vérifier les versements pour s’assurer de leur conformité aux normes d'archivage</desc>
+         <comment></comment>
+         <element name="auditerunversement" title="Auditer un versement">
+            <desc></desc>
+            <desc0>Indisponible</desc0>
+            <desc1>Partiellement disponible</desc1>
+            <desc2>Disponible</desc2>
+            <score>0</score>
+            <comment></comment>
+         </element>
+      </element>
+      <element name="aiderlutilisateur" title="Aider l'utilisateur">
+         <desc></desc>
+         <comment></comment>
+         <element name="offriruneaideenligne" title="Offrir une aide en ligne">
+            <desc></desc>
+            <desc0>Indisponible</desc0>
+            <desc1>Partiellement disponible</desc1>
+            <desc2>Disponible</desc2>
+            <score>1</score>
+            <comment>Fedora n'offrant une IHM que pour la partie Administration, seule cette interface bénéficie d'une aide en ligne</comment>
+         </element>
+      </element>
+      <comment>Fedora Commons offre un outil graphique permettant d'administrer l'application. En effet, ce produit a été conçu pour être accessible aux non informaticien. Ainsi, le CMA peut être mis en oeuvre par la simple adaptation d'un fichier XML sans nécessiter de développements complémentaires.</comment>
+   </section>
+   <section name="entitepreservation" title="Entité Planification de la pérennisation">
+      <desc>Cette entité assure les fonctions et services relatifs à la surveillance de l'environnement de l'OAIS et à la production de recommandations visant à ce que les informations stockées dans l'OAIS restent accessibles sur le long terme à la Communauté d'utilisateurs cible, même si l'environnement informatique d'origine devient obsolète. </desc>
+      <element name="evaluerlecontenudelarchive" title="Evaluer le contenu de l'archive">
+         <desc></desc>
+         <desc0>Indisponible</desc0>
+         <desc1>Partiellement disponible</desc1>
+         <desc2>Disponible</desc2>
+         <score>0</score>
+         <comment></comment>
+      </element>
+      <element name="elaborerlesplansdemigration" title="Elaborer les plans de migration">
+         <desc></desc>
+         <desc0>Indisponible</desc0>
+         <desc1>Partiellement disponible</desc1>
+         <desc2>Disponible</desc2>
+         <score>0</score>
+         <comment></comment>
+      </element>
+      <element name="elaborerdesplansdetestpourlamigration" title="Elaborer des plans de test pour la migration">
+         <desc></desc>
+         <desc0>Indisponible</desc0>
+         <desc1>Partiellement disponible</desc1>
+         <desc2>Disponible</desc2>
+         <score>0</score>
+         <comment></comment>
+      </element>
+      <comment>Fedora Commons ne traite pas de la notion de pérennisation des archives. </comment>
+   </section>
+   <section name="entiteacces" title="Entité Accès">
+      <desc>Cette entité assure les fonctions et services qui aident l'Utilisateur à déterminer si une information existe ou non dans un OAIS, à trouver sa description, son emplacement si elle est disponible, et à demander et recevoir des produits d'information.</desc>
+      <element name="communiceraveclesutilisateurs" title="Communiquer avec les Utilisateurs">
+         <desc>Communicer avec les Utilisateurs pour recevoir leurs demandes</desc>
+         <comment></comment>
+         <element name="traiterlesdemandesdinterrogation" title="Traiter les demandes d'interrogation">
+            <desc></desc>
+            <desc0>Indisponible</desc0>
+            <desc1>Partiellement disponible</desc1>
+            <desc2>Disponible</desc2>
+            <score>2</score>
+            <comment></comment>
+         </element>
+         <element name="traiterdesdemandesderapport" title="Traiter des demandes de rapport ">
+            <desc></desc>
+            <desc0>Indisponible</desc0>
+            <desc1>Partiellement disponible</desc1>
+            <desc2>Disponible</desc2>
+            <score>0</score>
+            <comment></comment>
+         </element>
+         <element name="traiterdesdemandesdediffusion" title="Traiter des demandes de diffusion">
+            <desc></desc>
+            <desc0>Indisponible</desc0>
+            <desc1>Partiellement disponible</desc1>
+            <desc2>Disponible</desc2>
+            <score>2</score>
+            <comment></comment>
+         </element>
+         <element name="traiteruneunedemanded’assistance(support)" title="Traiter une une demande d’assistance (support)">
+            <desc></desc>
+            <desc0>Indisponible</desc0>
+            <desc1>Partiellement disponible</desc1>
+            <desc2>Disponible</desc2>
+            <score>0</score>
+            <comment>Ce service impose une mise en place organisationnelle dédiée. Fedora Commons n'offre pas de mécanisme de gestion de tickets par exemple.</comment>
+         </element>
+      </element>
+      <element name="controlerlaccesalinformation1" title="Contrôler l'accès à l'information">
+         <desc>Contrôler l'accès à l'information bénéficiant d’une protection particulière.</desc>
+         <comment></comment>
+         <element name="poserdeshabilitationssurlinformation" title="Poser des habilitations sur l'information">
+            <desc></desc>
+            <desc0>Indisponible</desc0>
+            <desc1>Partiellement disponible</desc1>
+            <desc2>Disponible</desc2>
+            <score>1</score>
+            <comment>cf : http://fedora-commons.org/confluence/display/FCR30/Securing+Your+Fedora+Repository
+
+Les habilitations sont posées sur les servlets et non les objets numériques.</comment>
+         </element>
+      </element>
+      <element name="coordonnerlesdemandes" title="Coordonner les demandes">
+         <desc>Coordonner le traitement des demandes jusqu'à leur exécution finale</desc>
+         <comment></comment>
+         <element name="effectuerlesfonctionsstatistiques" title="Effectuer les fonctions statistiques">
+            <desc></desc>
+            <desc0>Indisponible</desc0>
+            <desc1>Partiellement disponible</desc1>
+            <desc2>Disponible</desc2>
+            <score>0</score>
+            <comment></comment>
+         </element>
+         <element name="coordonnerlesappelsauxentitesselonlesdemandes" title="Coordonner les appels aux entités selon les demandes">
+            <desc></desc>
+            <desc0>Indisponible</desc0>
+            <desc1>Partiellement disponible</desc1>
+            <desc2>Disponible</desc2>
+            <score>1</score>
+            <comment></comment>
+         </element>
+      </element>
+      <element name="remettreunereponse" title="Remettre une réponse">
+         <desc>Un système d'archivage numérique doit respecter un certain nombre de critères pour assurer l'accès aux données numériques archivées. La présente fiche reprend les critères spécifiées dans la norme OAIS.</desc>
+         <comment></comment>
+         <element name="repondreensynchrone" title="Répondre en synchrone">
+            <desc></desc>
+            <desc0>Indisponible</desc0>
+            <desc1>Partiellement disponible</desc1>
+            <desc2>Disponible</desc2>
+            <score>2</score>
+            <comment>Toutes la API de Fedora Commons s'appuient sur des services Web de type REST ou SOAP.</comment>
+         </element>
+         <element name="repondreenasynchrone" title="Répondre en asynchrone">
+            <desc></desc>
+            <desc0>Indisponible</desc0>
+            <desc1>Partiellement disponible</desc1>
+            <desc2>Disponible</desc2>
+            <score>0</score>
+            <comment></comment>
+         </element>
+      </element>
+      <element name="genererlesdemandes" title="Générer les demandes">
+         <desc></desc>
+         <comment></comment>
+         <element name="effectuerlesous-echantillonnageentermesdetempsoud" title="Effectuer le sous-échantillonnage en termes de temps ou d'espace">
+            <desc></desc>
+            <desc0>Indisponible</desc0>
+            <desc1>Partiellement disponible</desc1>
+            <desc2>Disponible</desc2>
+            <score>0</score>
+            <comment></comment>
+         </element>
+         <element name="effectuerlesconversionsentredifferentstypesdedonn" title="Effectuer les conversions entre différents types de données ou formats de sortie">
+            <desc></desc>
+            <desc0>Indisponible</desc0>
+            <desc1>Partiellement disponible</desc1>
+            <desc2>Disponible</desc2>
+            <score>1</score>
+            <comment>Trois services de conversion sont proposés :
+- fusion XSLT
+- génération de PDF à partir de fichiers XML
+- manipulation d'images
+
+Il est possible d'en ajouter par la biais de la notion de services locaux.</comment>
+         </element>
+         <element name="effectuerdestraitementscomplementaires(ex:manipul" title="Effectuer des traitements complémentaires (ex : manipulation d'images)">
+            <desc></desc>
+            <desc0>Indisponible</desc0>
+            <desc1>Partiellement disponible</desc1>
+            <desc2>Disponible</desc2>
+            <score>1</score>
+            <comment>Fedora propose un service local de manipulation d'images à l'aide du framework ImageJ.</comment>
+         </element>
+      </element>
+      <comment>Fedora Commons offre un bon respect de l'entité "Accès". En effet, ce produit est conçu pour faciliter la diffusion des objets numériques archivés. Le CMA facilite la recherche de ces objets et l'entité "Accès" est construite pour pouvoir effectuer les traitements facilitant la dissémination des objets souhaités.</comment>
+   </section>
+   <section name="servicesdebase" title="Services de base">
+      <desc>Les applications informatiques modernes, distribuées, sous-entendent un certain nombre de services tels que la communication entre processus, les services de nommage, l'allocation d'espace de stockage temporaire, le traitement d'exceptions, la sécurité, les sauvegardes et la gestion des répertoires. D'excellents travaux ont déjà été réalisés dans le domaine des modèles de référence dans un environnement de systèmes ouverts. Les services décrits dans
+cette sous-section sont basés en partie sur les services décrits dans le Modèle de référence
+IEEE POSIX OSE (référence [5]).
+</desc>
+      <element name="lesservicesdusystemedexploitation" title="Les services du système d'exploitation">
+         <desc>Les services du système d'exploitation fournissent les services fondamentaux nécessaires pour exploiter et administrer la plate-forme d'application et fournir une interface entre le logiciel applicatif et la plate-forme.</desc>
+         <comment></comment>
+         <element name="lenoyauassurelesservicesdebasniveau" title="Le noyau assure les services de bas niveau">
+            <desc>créer et gérer les processus, exécuter les programmes, définir et communiquer des signaux, définir et prendre en charge les opérations de l’horloge système, gérer les fichiers et répertoires et piloter le traitement des entrées/sorties à destination et en provenance de l’environnement extérieur.</desc>
+            <desc0>Indisponible</desc0>
+            <desc1>Partiellement disponible</desc1>
+            <desc2>Disponible</desc2>
+            <score>1</score>
+            <comment>Dépendent des services proposés par le système d'exploitation hébergeant le produit.</comment>
+         </element>
+         <element name="presencedecommandesetdutilitaires" title="Présence de commandes et d'utilitaires">
+            <desc>comparaison, impression et visualisation du contenu de fichiers, édition de fichiers, recherche de chaînes de bits, évaluation d'expressions, enregistrement de messages, déplacement de fichiers d’un répertoire à l'autre, tri de données, exécution de scripts de commandes, et accès à l'information d'environnement.</desc>
+            <desc0>Indisponible</desc0>
+            <desc1>Partiellement disponible</desc1>
+            <desc2>Disponible</desc2>
+            <score>1</score>
+            <comment>Dépendent des services proposés par le système d'exploitation hébergeant le produit.</comment>
+         </element>
+         <element name="lesservicesdesecuritedusystemed’exploitation" title="Les services de sécurité du système d’exploitation">
+            <desc>le contrôle d’accès aux données système, aux fonctions, au matériel et aux ressources logicielles par les utilisateurs et les processus utilisateurs.</desc>
+            <desc0>Indisponible</desc0>
+            <desc1>Partiellement disponible</desc1>
+            <desc2>Disponible</desc2>
+            <score>1</score>
+            <comment>Dépendent des services proposés par le système d'exploitation hébergeant le produit.</comment>
+         </element>
+      </element>
+      <element name="lesservicesreseau" title="Les services réseau">
+         <desc>Les services réseau fournissent les moyens et les mécanismes pour les applications distribuées qui exigent l'accès aux données et l’interopérabilité des applications dans des environnements hétérogènes en réseau. </desc>
+         <comment></comment>
+         <element name="fournitureduneapidecommunication" title="Fourniture d'une API de communication">
+            <desc></desc>
+            <desc0>Indisponible</desc0>
+            <desc1>Partiellement disponible</desc1>
+            <desc2>Disponible</desc2>
+            <score>2</score>
+            <comment>L'ensemble des fonctionnalités de Fedora Commons sont accessible par le biais de services Web.</comment>
+         </element>
+         <element name="offrirunaccesdirectauxfichiersarchives" title="Offrir un accès direct aux fichiers archivés">
+            <desc></desc>
+            <desc0>Indisponible</desc0>
+            <desc1>Partiellement disponible</desc1>
+            <desc2>Disponible</desc2>
+            <score>2</score>
+            <comment>Les fichiers archivés sont accessibe directement sur l'élément de stockage. Toutefois, de part le potentiel alogrithme mis en oeuvre dans le "Low Level Storage", il est possible que l'accès nécessite un calcul du chemin d'accès.</comment>
+         </element>
+         <element name="offrirunaccesvialesordinateurspersonnels" title="Offrir un accès via les ordinateurs personnels">
+            <desc></desc>
+            <desc0>Impossible</desc0>
+            <desc1>Partiellement disponible</desc1>
+            <desc2>Disponible</desc2>
+            <score>1</score>
+            <comment>Il est possible d'exploiter les API-A pour acèder aux objets archivés. Toutefois, cette interface n'est pas optimum pour une utilisation humaine. Il est possible de déployer une interface graphique de type WEB permettant d'accèder à l'entrepôt depuis un ordinateur personnel.</comment>
+         </element>
+         <element name="publierdesservicesdappeladistance" title="Publier des services d'appel à distance">
+            <desc></desc>
+            <desc0>Indisponible</desc0>
+            <desc1>Partiellement disponible</desc1>
+            <desc2>Disponible</desc2>
+            <score>2</score>
+            <comment>Cf : API-A, API-M ...</comment>
+         </element>
+         <element name="securiserlesechanges" title="Sécuriser les échanges">
+            <desc></desc>
+            <desc0>Indisponible</desc0>
+            <desc1>Partiellement disponible</desc1>
+            <desc2>Disponible</desc2>
+            <score>1</score>
+            <comment>Il est possible de déployer une surcouche HTTPS pour sécuriser les échanges.</comment>
+         </element>
+      </element>
+      <element name="lesservicesdesecurite" title="Les services de sécurité">
+         <desc>Les services de sécurité fournissent des moyens et des mécanismes de protection de l’information sensible, et des traitements dans le système d’information. </desc>
+         <comment></comment>
+         <element name="leserviced’identification/authentification" title="Le service d’identification/authentification">
+            <desc></desc>
+            <desc0>Indisponible</desc0>
+            <desc1>Partiellement disponible</desc1>
+            <desc2>Disponible</desc2>
+            <score>2</score>
+            <comment></comment>
+         </element>
+         <element name="leservicedecontroled’acces" title="Le service de contrôle d’accès">
+            <desc></desc>
+            <desc0>Indisponible</desc0>
+            <desc1>Partiellement disponible</desc1>
+            <desc2>Disponible</desc2>
+            <score>2</score>
+            <comment></comment>
+         </element>
+         <element name="leserviced’integritedesdonnees" title="Le service d’intégrité des données">
+            <desc></desc>
+            <desc0>Indisponible</desc0>
+            <desc1>Partiellement disponible</desc1>
+            <desc2>Disponible</desc2>
+            <score>2</score>
+            <comment></comment>
+         </element>
+         <element name="leservicedeconfidentialitedesdonnees" title="Le service de confidentialité des données">
+            <desc></desc>
+            <desc0>Indisponible</desc0>
+            <desc1>Partiellement disponible</desc1>
+            <desc2>Disponible</desc2>
+            <score>1</score>
+            <comment></comment>
+         </element>
+         <element name="leservicedenon-repudiation" title="Le service de non-répudiation">
+            <desc></desc>
+            <desc0>Indisponible</desc0>
+            <desc1>Partiellement disponible</desc1>
+            <desc2>Disponible</desc2>
+            <score>0</score>
+            <comment></comment>
+         </element>
+      </element>
+   </section>
+   <section name="architecture" title="Architecture">
+      <desc>Cette section aborde les différentes vues de l'architecture mise ne place pour l'implémentation du produit</desc>
+      <element name="conceptuelle1" title="Conceptuelle">
+         <desc></desc>
+         <comment></comment>
+         <element name="degredemodularite" title="Degré de modularité">
+            <desc>La norme OAIS spécifie des entités. Celles-ci peuvent être mise en oeuvre au sein d'une application monolithique ou d'une application composée de modules autonomes</desc>
+            <desc0>Faible</desc0>
+            <desc1>Moyen</desc1>
+            <desc2>Fort</desc2>
+            <score>1</score>
+            <comment>Le système n'associe pas un module à chaque entité. Mais certaines d'entre-elles bénéficient de leur propre module.</comment>
+         </element>
+         <element name="respectdenormesetstandards" title="Respect de normes et standards">
+            <desc>La pérénisation du système passe, entre autre, par le respect de normes et standards dans les échanges avec l'extérieur, mais aussi au sein du système </desc>
+            <desc0>Faible</desc0>
+            <desc1>Avec l'extérieur</desc1>
+            <desc2>En interne et avec l'extérieur</desc2>
+            <score>2</score>
+            <comment>Les données sont hébergées, au choix, en 
+    *  FOXML 1.1 (info:fedora/fedora-system:FOXML-1.1)
+    * FOXML 1.0 (info:fedora/fedora-system:FOXML-1.0)
+    * METS 1.1 (info:fedora/fedora-system:METSFedoraExt-1.1)
+    * METS 1.0 (info:fedora/fedora-system:METSFedoraExt-1.0)
+    * ATOM 1.1 (info:fedora/fedora-system:ATOM-1.1)
+    * ATOM Zip 1.1 (info:fedora/fedora-system:ATOMZip-1.1)
+
+L'accès à l'entité "Gestion des données" s'effectue en SPARQL
+Les appels aux différents services s'effectuent en SOAP ou REST.
+...
+</comment>
+         </element>
+      </element>
+      <element name="applicative" title="Applicative">
+         <desc></desc>
+         <comment></comment>
+         <element name="integrationdecomposantsopensource" title="Intégration de composants Open Source">
+            <desc>L'application puet être le fruit de développements spécifiques ou au contraire d'une intégration de nombreux composants ou frameworks Open Source</desc>
+            <desc0>Peu</desc0>
+            <desc1>Moyen</desc1>
+            <desc2>Nombreux</desc2>
+            <score>2</score>
+            <comment></comment>
+         </element>
+      </element>
+      <element name="technique" title="Technique">
+         <desc></desc>
+         <comment>De part son architecture, Fedora Commons présente de nombreuses limittes quant à l'enchaînement de traitements complexes pour générer des DIP. De même, de part la mise en place d'un mécanisme de modules basé sur des requêtes HTTP, il est difficilement envisageable de manipuler des fichiers trop lourds (ex : audio, vidéo, ...)
+</comment>
+         <element name="capacitederepartitiondecharge" title="Capacité de répartition de charge">
+            <desc>Dans le cadre d'une forte monté en charge du système, il convient de qualifier la capcité à mettre en place un système de répartition de charge (Load Balancing)</desc>
+            <desc0>Impossible</desc0>
+            <desc1>Partiellement possible</desc1>
+            <desc2>Possible</desc2>
+            <score>1</score>
+            <comment>Attention, de part la multiplication des types de persitance de données (base de données, triple Store, élément de stockage), la répartition de charge ne peut pas s'effectuer à tous les niveaux. Il peut donc persister un point de faiblesse.</comment>
+         </element>
+         <element name="decouplageentrelesmodules" title="Découplage entre les modules">
+            <desc>Une application, si elle est modulaire, peut s'appuyer sur un couplage faible (nécessite de recompiler pour intégrer les modules) ou un découplage partiel (simple modification de la configuration et redémarrage de l'application) ou encore un découplage complet (simple modification de la configuration et exploitation de canaux de communication normalisés)</desc>
+            <desc0>Inexistant</desc0>
+            <desc1>Partiel</desc1>
+            <desc2>Complet</desc2>
+            <score>1</score>
+            <comment>Certains modules s'appuient sur des protocles ouverts pour les échanges.</comment>
+         </element>
+         <element name="abstractionaveclinfrastructuredestockage" title="Abstraction avec l'infrastructure de stockage">
+            <desc>La couche applicative bénéficie d'un cycle de vie différent de la couche matériel et plus particulièrement de l'infrastructure de stockage.</desc>
+            <desc0>Faible</desc0>
+            <desc1>Correcte</desc1>
+            <desc2>Forte</desc2>
+            <score>1</score>
+            <comment>Fedora s'appuie sur un service d'abstraction de stockage (Low Level Storage).
+Ce faisant, il est possible d'exploiter différents types de stockage (système de fichier, base de données, ...).
+Il existe une intégration native pour le composant Akubra.
+Attention : cette abstraction ne peut pas masquer les temps de latence inhérents à l'exploitation d'un stockage sur bande.</comment>
+         </element>
+      </element>
+   </section>
+</document>

@@ -1,0 +1,88 @@
+#!/bin/sh
+# $Id: checksheet,v 1.6 2007/07/19 21:36:21 goneri Exp $
+# Gonéri Le Bouder
+
+set -e
+
+if [ -f ~/.qsos.conf ]; then
+  . ~/.qsos.conf
+else
+  echo "Please create a ~/.qsos.conf file with this content:"
+  echo "BASEDIR=\$HOME/whereqsosisinstalled"
+  BASEDIR="`pwd`/../../"
+fi
+echo "basedur = $BASEDIR"
+SYNCGLOBALDESC="$BASEDIR/tools/syncglobaldesc/syncglobaldesc"
+CREATEEMPTYSHEET="$BASEDIR/tools/createemptysheet/createemptysheet.pl"
+QSOSLINT="$BASEDIR/tools/qsoslint/qsoslint"
+SHEETDIR="$BASEDIR/sheet"
+INCLUDEDIR="$SHEETDIR/include"
+echo $SHEETDIR
+if [ -z $1 ]; then
+  echo "No parameter!"
+  echo "usage: checksheet sheet.qsos"
+  exit 1
+fi
+sheet=$1
+if [ ! -f $sheet ]; then
+  echo "file: $sheet doesn't exit"
+  echo "usage: ./checksheet sheetname.qsos"
+  exit 1
+fi
+sheetbasename=$(basename $sheet)
+
+echo "checking $sheetbasename"
+
+authors=$(egrep '[\t\ ]*<email>.*</email>' $sheet|sed 's/.*>\(.*\)<.*/\1/')
+if [ "$authors" = "" ]; then
+  echo "There is NO author email for this sheet!"
+  exit 1
+fi
+echo " *author address:"
+for email in $authors; do echo "  $email";done
+
+qsosappname=$(egrep '[\t\ ]*<qsosappname>.*</qsosappname>' $sheet|sed 's/.*>\(.*\)<.*/\1/')
+release=$(egrep '[\t\ ]*<release>.*</release>' $sheet|sed 's/.*>\(.*\)<.*/\1/')
+lang=$(egrep '[\t\ ]*<language>.*</language>' $sheet|sed 's/.*>\(.*\)<.*/\1/')
+echo " *qsosappname: $qsosappname"
+echo " *release: $release"
+echo " *lang: $lang"
+if [ -z $lang ] || [ "$lang" = "en" ];then
+  normalfilename="$qsosappname-$release.qsos"
+else
+  normalfilename=$qsosappname"-"$release"_"$lang".qsos"
+fi
+if [ ! "$normalfilename" = "$sheetbasename"  ]; then
+  echo "the sheet name ($sheetbasename) is malformed. Should be"
+  echo "$normalfilename (qsosappname-release.qsos or" 
+  echo "qsosappname-release_language.qsos)"
+  exit 1
+fi
+
+family=$(egrep '[\t\ ]*<qsosappfamily>.*</qsosappfamily>' $sheet|sed 's/.*>\(.*\)<.*/\1/')
+echo " *family: $family"
+if [ ! -d "$SHEETDIR/$family" ]; then
+  echo "this family doesn't exist yet in the repository"
+  exit 1
+fi
+
+# refreshing .qsostmp file(s)
+  echo " *refreshing template cache"
+for template in `find $SHEETDIR/$family -name '*.qtpl'`;do
+  $CREATEEMPTYSHEET --include $INCLUDEDIR --qtpl $template > $template.qsostmp
+  $QSOSLINT $template.qsostmp || exit 1
+done
+basetpl=$(find "$SHEETDIR/$family" -name '*.qsostmp'| sed 's/.qtpl.qsostmp//'| sed 's/_..$//'| uniq)
+if [ "$lang" = "en" ]; then
+  tpl=`echo $basetpl".qtpl.qsostmp"`
+else
+  tpl=`echo $basetpl"_$lang.qtpl.qsostmp"`
+  if [ ! -f $tpl ]; then
+    tpl=`echo $basetpl".qtpl.qsostmp"`
+  fi
+fi
+if [ ! -f $tpl ]; then
+  echo "I can't find a template ($tpl)"
+fi
+echo " *synchronizing the template with the sheet"
+$SYNCGLOBALDESC --recreate --more --save --template $tpl --file $sheet || exit 1

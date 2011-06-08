@@ -1,0 +1,14 @@
+Source: qsos-qteditor
+Section: editors
+Priority: optional
+Maintainer: Goneri Le Bouder <goneri.lebouder@atosorigin.com>
+Build-Depends: debhelper (>= 4.0.0)
+Standards-Version: 3.6.2
+
+Package: qsos-qteditor
+Architecture: all 
+Depends: ${shlibs:Depends}, ${misc:Depends}, libqsos-document-perl (>= 0.03-1), libqt-perl
+Description: a basic editor for QSOS sheet 
+ a basic editor for QSOS sheet editing
+ .
+  website: https://savannah.nongnu.org/projects/qsos/

@@ -1,0 +1,555 @@
+<document>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+<desc></desc><desc><desc></desc></desc><header>
+    
+
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  <desc></desc><desc><desc></desc></desc><authors>
+
+	
+
+	
+	<desc></desc><desc><desc></desc></desc><author>
+		
+		
+	<desc></desc><desc><desc></desc></desc><email>goneri.lebouder@atosorigin.com<desc></desc><desc><desc></desc></desc></email><name>Goneri Le Bouder<desc></desc><desc><desc></desc></desc></name></author><author>
+		
+		<desc></desc><desc><desc></desc></desc><email>romain.pelisse@atosorigin.com<desc></desc><desc><desc></desc></desc></email><name>Romain PELISSE<desc></desc><desc><desc></desc></desc></name></author></authors><dates>
+    	
+    	
+    <desc></desc><desc><desc></desc></desc><creation>20060307<desc></desc><desc><desc></desc></desc></creation><validation><desc></desc><desc><desc></desc></desc></validation></dates><language>en<desc></desc><desc><desc></desc></desc></language><appname>kolab<desc></desc><desc><desc></desc></desc></appname><release>2<desc></desc><desc><desc></desc></desc></release><licenseid>31<desc></desc><desc><desc></desc></desc></licenseid><licensedesc>GNU General Public License<desc></desc><desc><desc></desc></desc></licensedesc><url>http://www.kolab.org<desc></desc><desc><desc></desc></desc></url><desc>Kolab is a groupware used in the german administration<desc></desc><desc><desc></desc></desc></desc><demourl>http://kolab.org/screenshots.html<desc></desc><desc><desc></desc></desc></demourl><qsosformat>1.6<desc></desc><desc><desc></desc></desc></qsosformat><qsosappfamily>groupware<desc></desc><desc><desc></desc></desc></qsosappfamily><qsosspecificformat>1<desc></desc><desc><desc></desc></desc></qsosspecificformat></header><section name='generic' title='Generic section'>
+    
+    
+    
+    
+    
+    
+  <desc></desc><desc><desc></desc></desc><desc>Generic criteria from QSOS version 1.6<desc></desc><desc><desc></desc></desc></desc><element name='intrinsicdurability' title='Intrinsic durability'>
+      
+      
+      
+      
+      
+    <desc></desc><desc><desc></desc></desc><desc>Intrinsic durability<desc></desc><desc><desc></desc></desc></desc><element name='maturity' title='Maturity'>
+        
+        
+        
+        
+        
+      <desc></desc><desc><desc></desc></desc><desc>Maturity<desc></desc><desc><desc></desc></desc></desc><element name='age' title='Age'>
+          
+          
+          
+          
+          
+        <desc></desc><desc0>less than 3 months</desc0><desc1>if between 3 months and 3 years</desc1><desc2>after 3 years</desc2><comment>Kolab.org domain was created the 29th of Oct 2002</comment><score>2</score><desc><desc></desc></desc></element><element name='stability' title='Stability'>
+          
+          
+          
+          
+          
+        <desc></desc><desc0>Unstable software with numerous releases or patches generating side effects</desc0><desc1>Stabilized production release existing but old. Difficulties to stabilize developpement releases</desc1><desc2>Stabilized software. Releases provide bug fixes corrections but mainly new functionalities</desc2><score>2</score><desc><desc></desc></desc></element><element name='historyknowproblems' title='History, know problems'>
+          
+          
+          
+          
+          
+        <desc></desc><desc0>Software knows several problems which can be prohibitive</desc0><desc1>No know major problem or crisis</desc1><desc2>History of good management of crisis situations</desc2><score>2</score><desc><desc></desc></desc></element><element name='forkprobability' title='Fork probability, source of Forking'>
+          
+          
+          
+          
+          
+        <desc></desc><desc0>Software is very likely to be forked in the future</desc0><desc1>Software comes from a fork but has very few chances of being forked in the future</desc1><desc2>Software has very little chance of being forked. It does not come from a fork either</desc2><score>2</score><desc><desc></desc></desc></element></element><element name='adoption' title='Adoption'>
+        
+        
+        
+        
+        
+      <desc></desc><desc><desc></desc></desc><desc>Adoption by community and industry<desc></desc><desc><desc></desc></desc></desc><element name='popularity' title='Popularity (related to: general public, niche, ...)'>
+          
+          
+          
+          
+          
+        <desc></desc><desc0>Very few users identified</desc0><desc1>Detectable use on Internet</desc1><desc2>Numerous users, numerous references</desc2><score>2</score><desc><desc></desc></desc></element><element name='references' title='References'>
+          
+          
+          
+          
+          
+        <desc></desc><desc0>None</desc0><desc1>Few refences, non critical usages</desc1><desc2>Often implemented for critical applications</desc2><comment>Kolab is know to be use in some important organisation. But they doesn&apos;t give information for &quot;security&quot; raison</comment><score>1</score><desc><desc></desc></desc></element><element name='contributingcommunity' title='Contributing Community'>
+          
+          
+          
+          
+          
+        <desc></desc><desc0>No community or without real activity (forum, mailing list, ...)</desc0><desc1>Existing community with a notable activity</desc1><desc2>Strong community: big activity on forums, numerous contributors and advocates</desc2><score>1</score><desc><desc></desc></desc></element><element name='books' title='books'>
+          
+          
+          
+          
+          
+        <desc></desc><desc0>No book about the software</desc0><desc1>Less than 5 books about the software are available</desc1><desc2>More than 5 books about software are available, in several languages</desc2><score>0</score><desc><desc></desc></desc></element></element><element name='developmentleadership' title='Development leadership'>
+        
+        
+        
+      <desc></desc><desc><desc></desc></desc><desc>Organisation and leadership of developments<desc></desc><desc><desc></desc></desc></desc><element name='leadingteam' title='Leading team'>
+          
+          
+          
+          
+          
+        <desc></desc><desc0>1 to 2 individuals involved, not clearly identified</desc0><desc1>Between 2 and 5 independent people</desc1><desc2>More than 5 people</desc2><score>1</score><desc><desc></desc></desc></element><element name='managementstyle' title='Management style'>
+          
+          
+          
+          
+          
+        <desc></desc><desc0>Complete dictatorship</desc0><desc1>Enlightened despotism</desc1><desc2>Council of architects with identified leader (e.g: KDE)</desc2><score>1</score><desc><desc></desc></desc></element></element><element name='activity' title='Activity'>
+        
+        
+        
+        
+        
+      <desc></desc><desc><desc></desc></desc><desc>Activity of the project and around the software<desc></desc><desc><desc></desc></desc></desc><element name='developersidentificationturnover' title='Developers, identification, turnover'>
+          
+          
+          
+          
+          
+        <desc></desc><desc0>Less than 3 developers, not clearly identified</desc0><desc1>Between 4 and 7 developers, or more unidentified developers with important turnover</desc1><desc2>More than 7 developers, very stable team</desc2><score>2</score><desc><desc></desc></desc></element><element name='activityonbugs' title='Activity on bugs'>
+          
+          
+          
+          
+          
+        <desc></desc><desc0>Slow reactivity in forum or on mailing list, or nothing regarding bug fixes in releases note</desc0><desc1>Detectable activity but without process clearly exposed, loing reaction/resolution time</desc1><desc2>Strong reactivity based on roles and tasks assignment</desc2><desc><desc></desc></desc></element><element name='activityonfunctionalities' title='Activity on functionalities'>
+          
+          
+          
+          
+          
+        <desc></desc><desc0>No or few new functionalities</desc0><desc1>Evolution of the product driven by the core team or by user&apos;s request without any clearly explained process</desc1><desc2>Tool(s) to manage feature requests, strong interaction with roadmap</desc2><desc><desc></desc></desc></element><element name='activityonreleases' title='Activity on releases'>
+          
+          
+          
+          
+          
+        <desc></desc><desc0>Very weak activity on both production and development releases</desc0><desc1>Activity on production and developmenet releases. Frequent minor releases (bug fixes)</desc1><desc2>Important activity with frequent minor releases (bugs fixes) and planned major releases relating to the roadmap forcast</desc2><score>2</score><desc><desc></desc></desc></element></element></element><element name='industrializedsolution' title='Industrialized solution'>
+      
+      
+      
+      
+      
+      
+    <desc></desc><desc><desc></desc></desc><desc>Industrialization level of the project<desc></desc><desc><desc></desc></desc></desc><element name='independenceofdevelopments' title='Independence of developments'>
+        
+        
+        
+        
+        
+      <desc></desc><desc0>Developments realized at 100% by employees of a single company</desc0><desc1>60% maximum</desc1><desc2>20% maximum</desc2><score>2</score><desc><desc></desc></desc></element><element name='services' title='Services'>
+        
+        
+        
+        
+      <desc></desc><desc><desc></desc></desc><desc>Services offering<desc></desc><desc><desc></desc></desc></desc><element name='training' title='Training'>
+          
+          
+          
+          
+          
+        <desc></desc><desc0>No offer of training identified</desc0><desc1>Offer exists but is restricted geographically and to one language or is provided by a single contractor</desc1><desc2>Rich offers provided by several contractors, in serveral languages and split into modules of gradual levels</desc2><desc><desc></desc></desc></element><element name='support' title='Support'>
+          
+          
+          
+          
+          
+        <desc></desc><desc0>No offer of support except via public forums and mailing lists</desc0><desc1>Offer exists but is provided by a single contractor without strong commitment quality of services</desc1><desc2>Multiple service providers with strong commitment (e.g: guaranteed resolution time)</desc2><score>1</score><desc><desc></desc></desc></element><element name='consulting' title='Consulting'>
+          
+          
+          
+          
+          
+        <desc></desc><desc0>No offer of consulting service</desc0><desc1>Offer exists but is restricted geographically and to one language or is provided by a single contractor</desc1><desc2>Consulting services provided by different contractors in serveral languages</desc2><score>1</score><desc><desc></desc></desc></element></element><element name='documentation' title='Documentation'>
+        
+        
+        
+        
+        
+      <desc></desc><desc0>No user documentation</desc0><desc1>Documentation exists but shifted in time, is restricted to one language or is poorly detailed</desc1><desc2>Documentation always up to date, translated and possibly adapted to different target readers (end user, sysadmin, manager, ...)</desc2><score>1</score><desc><desc></desc></desc></element><element name='qualityassurance' title='Quality Assurance'>
+        
+        
+        
+      <desc></desc><desc><desc></desc></desc><desc>Quality assurance process<desc></desc><desc><desc></desc></desc></desc><element name='quality' title='Quality Assurance'>
+          
+          
+          
+          
+          
+        <desc></desc><desc0>No QA process</desc0><desc1>Identifies QA process but not much formalized and with no tool</desc1><desc2>Automatic testing process included in code&apos;s life-cycle with publication of results</desc2><score>1</score><desc><desc></desc></desc></element><element name='tools' title='Tools'>
+          
+          
+          
+          
+          
+        <desc></desc><desc0>No bug or feature request management tool</desc0><desc1>Standard tools provided (for instance by a hosting forge) but poorly used</desc1><desc2>Very active use of tools for roles/tasks allocation and progress monitoring</desc2><comment>1</comment><desc><desc></desc></desc></element></element><element name='packaging' title='Packaging'>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+      <desc></desc><desc><desc></desc></desc><desc>Packaging for various operating systems<desc></desc><desc><desc></desc></desc></desc><element name='packagingsource' title='Source'>
+          
+          
+          
+          
+          
+        <desc></desc><desc0>Software can&apos;t be installed from source without lot of work</desc0><desc1>Installation from source is limited and depends on very strict conditions (OS, arch, lib, ...)</desc1><desc2>Installation from source is easy</desc2><desc><desc></desc></desc></element><element name='packagingdebian' title='Debian'>
+          
+          
+          
+          
+          
+        <desc></desc><desc0>The software is not packaged for Debian</desc0><desc1>A Debian package exists but it has important issues or it doesn&apos;t have official support</desc1><desc2>The software is packaged in the distribution</desc2><desc><desc></desc></desc></element><element name='packagingfreebsd' title='FreeBSD'>
+          
+          
+          
+          
+          
+        <desc></desc><desc0>The software is not packaged for FreeBSD</desc0><desc1>A port exists but it has important issues or it doesn&apos;t have official support</desc1><desc2>A official port exists in FreeBSD</desc2><desc><desc></desc></desc></element><element name='packaginghpux' title='HP-UX'>
+          
+          
+          
+          
+          
+        <desc></desc><desc0>The software is not packaged for HP-UX</desc0><desc1>A package exists but it has important issues or it doesn&apos;t have official support</desc1><desc2>A stable package is provided for HP-UX</desc2><desc><desc></desc></desc></element><element name='packagingmacosx' title='MacOSX'>
+          
+          
+          
+          
+          
+        <desc></desc><desc0>The software is not packaged for MacOSX</desc0><desc1>A package exists but it has important issues or it doesn&apos;t have official support</desc1><desc2>The software is packaged in the distribution</desc2><desc><desc></desc></desc></element><element name='packagingmandriva' title='Mandriva'>
+          
+          
+          
+          
+          
+        <desc></desc><desc0>The software is not packaged for Mandriva</desc0><desc1>A package exists but it has important issues or it doesn&apos;t have official support</desc1><desc2>The software is packaged in the distribution</desc2><desc><desc></desc></desc></element><element name='packagingnet' title='NetBSD'>
+          
+          
+          
+          
+          
+        <desc></desc><desc0>The software is not packaged for NetBSD</desc0><desc1>A port exists but it has important issues or it doesn&apos;t have official support</desc1><desc2>A official port exists in NetBSD</desc2><desc><desc></desc></desc></element><element name='packagingopen' title='OpenBSD'>
+          
+          
+          
+          
+          
+        <desc></desc><desc0>The software is not packaged for OpenBSD</desc0><desc1>A port exists but it has important issues or it doesn&apos;t have official support</desc1><desc2>A official port exists in OpenBSD</desc2><desc><desc></desc></desc></element><element name='packagingredhat' title='RedHat'>
+          
+          
+          
+          
+          
+        <desc></desc><desc0>The software is not packaged for RedHat/Fedora</desc0><desc1>A package exists but it has important issues or it doesn&apos;t have official support</desc1><desc2>The software is packaged in the distribution</desc2><desc><desc></desc></desc></element><element name='packagingsolaris' title='Solaris'>
+          
+          
+          
+          
+          
+        <desc></desc><desc0>The software is not packaged for Solaris</desc0><desc1>A package exists but it has important issues or it doesn&apos;t have official support (e.g: SunFreeware.com )</desc1><desc2>The software is supported by Sun for Solaris</desc2><desc><desc></desc></desc></element><element name='packagingsuse' title='SuSE'>
+          
+          
+          
+          
+          
+        <desc></desc><desc0>The software is not packaged for SuSE</desc0><desc1>A package exists but it has important issues or it doesn&apos;t have official support</desc1><desc2>The software is packaged in the distribution</desc2><desc><desc></desc></desc></element><element name='packagingwindows' title='Windows'>
+          
+          
+          
+          
+          
+        <desc></desc><desc0>The project can&apos;t be installed on Windows</desc0><desc1>A package exists but it is limited or has important issues or just cover some specific Windows release (e.g: Windows2000 and WindowsXP)</desc1><desc2>Windows is full supported and a package is provided</desc2><desc><desc></desc></desc></element></element></element><element name='exploitability' title='Exploitability'>
+      
+      
+      
+    <desc></desc><desc><desc></desc></desc><desc>Exploitability level<desc></desc><desc><desc></desc></desc></desc><element name='easeofuseergonomics' title='Ease of use, ergonomics'>
+        
+        
+        
+        
+        
+      <desc></desc><desc0>Difficult to use, requires an in depth knowledge of the software functionality</desc0><desc1>Austere and very technical ergonomics</desc1><desc2>GUI including help functions and elaborated ergonomics</desc2><desc><desc></desc></desc></element><element name='administrationmonitoring' title='Administration / Monitoring'>
+        
+        
+        
+        
+        
+      <desc></desc><desc0>No administrative or monitoring functionalities</desc0><desc1>Existing, functionalities but uncomplete and or need improvement</desc1><desc2>Complete and easy-to-use administration and monitoring functionalities. Possible integration with external tools (e.g: SNMP, syslog, ...)</desc2><desc><desc></desc></desc></element></element><element name='technicaladaptability' title='Technical adaptability'>
+      
+      
+      
+      
+    <desc></desc><desc><desc></desc></desc><desc>Technical adaptability<desc></desc><desc><desc></desc></desc></desc><element name='modularity' title='Modularity'>
+        
+        
+        
+        
+        
+      <desc></desc><desc0>Monolithic software</desc0><desc1>Presence of hight level modules allowing a first level of software adaptation</desc1><desc2>Modular conception, allowing easy adaptation of the software by selecting or creating modules</desc2><desc><desc></desc></desc></element><element name='codemodification' title='Code modification'>
+        
+        
+        
+        
+        
+      <desc></desc><desc0>Everything by hand</desc0><desc1>Recompilation possible but complex without any tools or documentation</desc1><desc2>Recompilation with tools (e.g: make, ANT, ...) and documentation provided</desc2><desc><desc></desc></desc></element><element name='codeextension' title='Code extention'>
+        
+        
+        
+        
+        
+      <desc></desc><desc0>Any modification requires code recompilation</desc0><desc1>Architecture designed for static extension but requires recompilation</desc1><desc2>Principle of plugin, architecture designed for dynamic extension without recompilation</desc2><desc><desc></desc></desc></element></element><element name='strategy' title='Strategy'>
+      
+      
+      
+      
+      
+      
+      
+    <desc></desc><desc><desc></desc></desc><desc>Project&apos;s strategy<desc></desc><desc><desc></desc></desc></desc><element name='license' title='License'>
+        
+        
+        
+      <desc></desc><desc><desc></desc></desc><desc>License<desc></desc><desc><desc></desc></desc></desc><element name='permissiveness' title='Permissiveness (only if user wants to become owner of code)'>
+          
+          
+          
+          
+          
+        <desc></desc><desc0>Very strict license, like GPL</desc0><desc1>Moderate permissive license located between both extremes (GPL and BSD) dual-licensing depending on the type of user (person, company, ...) or their activities</desc1><desc2>Very permissive like BSD or Apache licenses</desc2><desc><desc></desc></desc></element><element name='protectionagainstproprietaryforks' title='Protection against proprietary forks'>
+          
+          
+          
+          
+          
+        <desc></desc><desc0>Very permissive like BSD or Apache licenses</desc0><desc1>Moderate permissive license located between both extremes (GPL and BSD), dual-licensing depending on the type of user (person, company, ...) or their activies</desc1><desc2>Very strict license, like GPL</desc2><desc><desc></desc></desc></element></element><element name='copyrightowners' title='Copyright owners'>
+        
+        
+        
+        
+        
+      <desc></desc><desc0>Rights held by a few individuals or entities, making it easier to change the license</desc0><desc1>Rights held by numerous individuals owning the code in a homogeneous way, making relicense very difficult</desc1><desc2>Rights held by a legal entity in whom the community trusts (e.g: FSF or ASF)</desc2><desc><desc></desc></desc></element><element name='modificationofsourcecode' title='Modification of source code'>
+        
+        
+        
+        
+        
+      <desc></desc><desc0>No pratical way to propose code modification</desc0><desc1>Tools provided to access and modify code (like CVS or SVN) but not really used to develop the software</desc1><desc2>The code modification process is well defined, exposed and respected, based on roles assignment</desc2><desc><desc></desc></desc></element><element name='roadmap' title='Roadmap'>
+        
+        
+        
+        
+        
+      <desc></desc><desc0>No published roadmap</desc0><desc1>Existing roadmap without planning</desc1><desc2>Versionned roadmap, with planning and measure of delays</desc2><desc><desc></desc></desc></element><element name='sponsor' title='Sponsor'>
+        
+        
+        
+        
+        
+      <desc></desc><desc0>Software has no sponsor, the core team is not paid</desc0><desc1>Software has an unique sponsor who might determine its strategy</desc1><desc2>Software is sponsored by industry</desc2><desc><desc></desc></desc></element><element name='strategicalindependence' title='Strategical independence'>
+        
+        
+        
+        
+        
+      <desc></desc><desc0>No detectable strategy or strong dependency on one unique actor (person, company, sponsor)</desc0><desc1>Strategical vision shared with several other free and open source projects but without strong commitment from copyrights owners</desc1><desc2>Strong independence of the code team, legal entity holding rights, strong involvement in the standardization process</desc2><desc><desc></desc></desc></element></element></section><section name='composant' title='Composants of the project'>
+    
+    
+    
+    
+    
+  <desc></desc><desc><desc></desc></desc><desc>Different composant from the groupware<desc></desc><desc><desc></desc></desc></desc><element name='auth' title='Authentification backend'>
+      
+      
+    <desc></desc><comment>OpenLDAP</comment><desc><desc></desc></desc><desc>Authentification backend (ldap, db, ...)<desc></desc><desc><desc></desc></desc></desc></element><element name='mail' title='Mail'>
+      
+      
+    <desc></desc><comment>Postfix and Cyrus-imap</comment><desc><desc></desc></desc><desc>Mail architecture<desc></desc><desc><desc></desc></desc></desc></element><element name='storage' title='Storage backend'>
+      
+      
+    <desc></desc><comment>Content is stored in IMAP shared folder</comment><desc><desc></desc></desc><desc>Storage backend<desc></desc><desc><desc></desc></desc></desc></element></section><section name='administration' title='Administration GUI'>
+    
+    
+    
+    
+  <desc></desc><desc><desc></desc></desc><element name='webinterface' title='Web interface'>
+      
+      
+      
+      
+      
+    <desc></desc><desc0>No web interface</desc0><desc1>an web interface is provided but limited</desc1><desc2>everything can be completed with the Web interface</desc2><score>2</score><desc><desc></desc></desc></element><element name='commandline' title='Console mode'>
+      
+      
+      
+      
+      
+    <desc></desc><desc0>Nothing</desc0><desc1>Some tools exists, but limited. No text based configuration file or not human readable (e.g: complexe XML)</desc1><desc2>Total access to the server configuration with powerful tools and well designer text configuration file</desc2><desc><desc></desc></desc></element><element name='standaloneadmintool' title='Stand alone admin tool'>
+      
+      
+      
+      
+      
+    <desc></desc><desc0>Nothing</desc0><desc1>A limited tool exist allow user to do specific operation</desc1><desc2>A powerful tool give access to every major features of the server</desc2><desc><desc></desc></desc></element></section><section name='groupwarecomposant' title='Supported groupware composant'>
+    
+    
+    
+    
+    
+  <desc></desc><desc><desc></desc></desc><element name='calendar' title='Calendar'>
+      
+      
+      
+      
+      
+    <desc></desc><desc0>no calendar provided</desc0><desc1>a calendar is provided, but leak some important features</desc1><desc2>a well integrated calendar is provided</desc2><score>2</score><desc><desc></desc></desc></element><element name='taskmanager' title='Taskmanager'>
+      
+      
+      
+      
+      
+    <desc></desc><desc0>no task manager provided</desc0><desc1>a task manager is provided but leak some important features</desc1><desc2>Task manager fully supported</desc2><score>2</score><desc><desc></desc></desc></element><element name='notemanager' title='Notemanager'>
+      
+      
+      
+      
+      
+    <desc></desc><desc0>no note manager provided</desc0><desc1>a limited note manager is provided</desc1><desc2>a well integred note manager is provided</desc2><score>2</score><desc><desc></desc></desc></element><element name='contactmanager' title='Contact manager'>
+      
+      
+      
+      
+      
+    <desc></desc><desc0>can&apos;t add contact in the server</desc0><desc1>contact manager exists but is limited</desc1><desc2>contact manager fully supported</desc2><comment>yes</comment><score>2</score><desc><desc></desc></desc></element></section><section name='standard' title='Standard support'>
+    
+    
+    
+    
+    
+  <desc></desc><desc><desc></desc></desc><element name='icaloverwebdav' title='iCalendar over WebDav'>
+      
+      
+      
+      
+      
+    <desc></desc><desc0>iCalendar over WebDav is not supported</desc0><desc1>iCalendar over WebDav is partially supported</desc1><desc2>iCalendar over WebDav works</desc2><score>1</score><desc><desc></desc></desc></element><element name='caldav' title='CalDav'>
+      
+      
+      
+      
+      
+    <desc></desc><desc0>CalDav is not supported</desc0><desc1>CalDav is partially supported</desc1><desc2>CalDav works</desc2><comment>not supported</comment><score>0</score><desc><desc></desc></desc></element><element name='groupdav' title='Groupdav'>
+      
+      
+      
+      
+      
+    <desc></desc><desc0>Groupdav is not supported</desc0><desc1>Groupdav is partially supported</desc1><desc2>Groupdav works</desc2><comment>not supported</comment><score>0</score><desc><desc></desc></desc></element><element name='syncml' title='SyncML'>
+      
+      
+      
+      
+      
+    <desc></desc><desc0>SyncML is not supported</desc0><desc1>SyncML is partially supported</desc1><desc2>SyncML works</desc2><comment>not supported</comment><score>0</score><desc><desc></desc></desc></element></section><section name='supportedclients' title='Supported client'>
+    
+    
+    
+    
+    
+    
+  <desc></desc><desc><desc></desc></desc><element name='web' title='Web client'>
+      
+      
+      
+      
+      
+    <desc></desc><desc0>Web interface doesn&apos;t exist</desc0><desc1>Web interface is provided but limited or need some work for its integration</desc1><desc2>Web interface directly provided with the project</desc2><comment>eGroupware or Hord can be pluged</comment><score>1</score><desc><desc></desc></desc></element><element name='outlook' title='Microsoft Outlook'>
+      
+      
+      
+      
+      
+    <desc></desc><desc0>Microsoft Outlook not supported</desc0><desc1>Microsoft Outlook connector is provided but have some limitation</desc1><desc2>a free Microsoft Outlook connector</desc2><comment>Two commercial and not free connected exist. The best is Toltec&apos;s one.</comment><score>1</score><desc><desc></desc></desc></element><element name='evolution' title='Novell Evolution'>
+      
+      
+      
+      
+      
+    <desc></desc><desc0>Novell Evolution can&apos;t be used</desc0><desc1>Novell Evolution can be used but with some limitation</desc1><desc2>Novell Evolution fully supported</desc2><score>2</score><desc><desc></desc></desc></element><element name='kde' title='KDE'>
+      
+      
+      
+      
+      
+    <desc></desc><desc0>KDE PIM (Korganizer, kmail, ...) can&apos;t be used with this groupware</desc0><desc1>KDE can be used but with some limitation </desc1><desc2>Fully support of KDE</desc2><comment>KDE PIM was the first supported client</comment><score>2</score><desc><desc></desc></desc></element><element name='ical' title='Apple iCal'>
+      
+      
+      
+      
+      
+    <desc></desc><desc0>Apple&apos;s iCal can&apos;t be used</desc0><desc1>Apple&apos;s iCal works but with some limitation</desc1><desc2>Apple&apos;s iCal fully supported</desc2><score>2</score><desc><desc></desc></desc></element></section><section name='performance' title='Performance'>
+    
+  <desc></desc><desc><desc></desc></desc><element name='loadbalancing' title='Load balancing'>
+      
+      
+      
+      
+      
+      
+    <desc></desc><desc0>This software can&apos;t be loadbalancer</desc0><desc1>Part of the installation can be splited but it keeps important bottleneck</desc1><desc2>Loadblalancing just works</desc2><desc><desc></desc></desc><desc>Can the load be splited between different computer?<desc></desc><desc><desc></desc></desc></desc></element></section><section name='codequality' title='Code quality'>
+    
+    
+  <desc></desc><desc><desc></desc></desc><element name='remoteapi' title='Remote access API'>
+      
+      
+      
+      
+      
+    <desc></desc><desc0>No remote remote API</desc0><desc1>remote API (SOAP, XML/RPC, REST) exists but is limited or buggy</desc1><desc2>powerful remote API (SOAP, XML/RPC, REST) provided</desc2><comment>none for Kolab2, a wish for Kolab3 exists for support of a remote procedure call infrastucture</comment><score>0</score><desc><desc></desc></desc></element><element name='api' title='unified API'>
+      
+      
+      
+      
+      
+    <desc></desc><desc0>No API provided to extend the server, or very limited and not documented</desc0><desc1>An API is provided but limited of not fully documented</desc1><desc2>Well documented and complet API</desc2><comment>A Perl lib is provided but Kolab core can&apos;t be change easily. The best way to extend it, is to provide additional service plugged on the LDAP directory server.</comment><score>1</score><desc><desc></desc></desc></element></section></document>

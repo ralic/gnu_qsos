@@ -1,0 +1,405 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document>
+	<header>
+		<authors></authors>
+		<dates>
+			<creation></creation>
+			<validation></validation>
+		</dates>
+		<language>en</language>
+		<appname></appname>
+		<release></release>
+		<licenseid></licenseid>
+		<licensedesc></licensedesc>
+		<url></url>
+		<desc></desc>
+		<demourl></demourl>
+		<qsosformat>1.7</qsosformat>
+		<qsosappfamily>inventory-system</qsosappfamily>
+		<qsosappname></qsosappname>
+		<qsosspecificformat></qsosspecificformat>
+	</header>
+	<include section="generic"/>
+	<section name="clientfeatures" title="Client features">
+		<element name="agentperoperatingsystem" title="Agent per Operating System">
+			<element name="agentforaix" title="Agent for AIX">
+				<element name="agentforaix" title="AIX">
+					<desc0>not supported</desc0>
+					<desc1>partaly supported</desc1>
+					<desc2>supported</desc2>
+					<comment></comment>
+					<score></score>
+				</element>
+			</element>
+			<element name="agentforhpux" title="Agent for HP-UX">
+				<element name="agentforhpux" title="HP-UX">
+					<desc0>not supported</desc0>
+					<desc1>partaly supported</desc1>
+					<desc2>supported</desc2>
+					<comment></comment>
+					<score></score>
+				</element>
+			</element>
+			<element name="agentforlinux" title="Agent for Linux">
+				<element name="agentforlinux" title="Linux">
+					<desc0>not supported</desc0>
+					<desc1>partaly supported</desc1>
+					<desc2>supported</desc2>
+					<comment></comment>
+					<score></score>
+				</element>
+			</element>
+			<element name="agentformacos" title="Agent for MacOS">
+				<element name="agentformacos" title="MacOS">
+					<desc0>not supported</desc0>
+					<desc1>partaly supported</desc1>
+					<desc2>supported</desc2>
+					<comment></comment>
+					<score></score>
+				</element>
+			</element>
+			<element name="agentforbsd" title="Agent for BSD">
+				<element name="agentforbsd" title="BSD">
+					<desc0>not supported</desc0>
+					<desc1>partaly supported</desc1>
+					<desc2>supported</desc2>
+					<comment></comment>
+					<score></score>
+				</element>
+			</element>
+			<element name="agentforsolaris" title="Agent for Solaris">
+				<element name="agentforsolaris" title="Solaris">
+					<desc0>not supported</desc0>
+					<desc1>partaly supported</desc1>
+					<desc2>supported</desc2>
+					<comment></comment>
+					<score></score>
+				</element>
+			</element>
+			<element name="agentforwindows" title="Agent for Windows">
+				<element name="agentforwindows" title="Windows">
+					<desc0>not supported</desc0>
+					<desc1>partaly supported</desc1>
+					<desc2>supported</desc2>
+					<comment></comment>
+					<score></score>
+				</element>
+			</element>
+		</element>
+        <element name="dataencoding" title="Data encoding">
+            <element name="format" title="Format">
+    			<element name="xml" title="XML">
+    			 	<desc0>not supported</desc0>
+    				<desc1>partaly supported</desc1>
+    				<desc2>supported</desc2>
+    			<comment></comment>
+    			<score></score>
+    			</element>
+    			<element name="text" title="Text">
+    			 	<desc0>not supported</desc0>
+    				<desc1>partaly supported</desc1>
+    				<desc2>supported</desc2>
+    			<comment></comment>
+    			<score></score>
+    			</element>
+    			<element name="csv" title="CSV">
+    			 	<desc0>not supported</desc0>
+    				<desc1>partaly supported</desc1>
+    				<desc2>supported</desc2>
+    			<comment></comment>
+    			<score></score>
+    			</element>
+    			<element name="binary" title="Binary">
+    			 	<desc0>not supported</desc0>
+    				<desc1>partaly supported</desc1>
+    				<desc2>supported</desc2>
+    			<comment></comment>
+    			<score></score>
+    			</element>
+		  </element>
+		  <element name="utf8" title="Utf8">
+			<desc0>Not supported</desc0>
+			<desc1>Partaly supported</desc1>
+			<desc2>Supported</desc2>
+		    <comment></comment>
+			<score></score>
+		   </element>
+          <element name="documentation" title="documentation">
+			 <desc0>Not documented</desc0>
+			 <desc1>Not documented but easy to understand</desc1>
+		  	 <desc2>Documented</desc2>
+		     <comment></comment>
+			 <score></score>
+		   </element>
+		</element>
+		<element name="datacompression" title="Data compression">
+			 	<desc0>not supported</desc0>
+				<desc1>propriatary format</desc1>
+				<desc2>Open source format</desc2>
+			<comment></comment>
+			<score></score>
+		</element>
+		<element name="reportingmanagement" title="Reporting management">
+		        <desc>For example, random reporting, at boot, planned, at administrator command ... </desc>
+			 	<desc0>not possible</desc0>
+				<desc1>Few possibilities</desc1>
+				<desc2>Lot of possiblities</desc2>
+			<comment></comment>
+			<score></score>
+		</element>
+		<element name="inventorycontent" title="Inventory content">
+		  <element name="inventorysize" title="Inventory size">
+                <desc>Send full inventory or differencial?</desc>
+			 	<desc0>Always full inventory</desc0>
+				<desc1></desc1>
+				<desc2>Differencial used</desc2>
+			<comment></comment>
+			<score></score>
+		  </element>
+		  <element name="hardware" title="Hardware">
+		      <element name="hardwareserailid" title="Hardware serial ID">
+			 	<desc0>not supported</desc0>
+				<desc1>partaly supported</desc1>
+				<desc2>supported</desc2>
+			    <comment></comment>
+			    <score></score>
+		      </element>
+		      <element name="biosfirmware" title="Bios or Firmware">
+			 	<desc0>not supported</desc0>
+				<desc1>partaly supported</desc1>
+				<desc2>supported</desc2>
+			    <comment></comment>
+			    <score></score>
+		      </element>
+		      <element name="cpu" title="CPU">
+			 	<desc0>not supported</desc0>
+				<desc1>partaly supported</desc1>
+				<desc2>supported</desc2>
+			    <comment></comment>
+			    <score></score>
+		      </element>
+		      <element name="memory" title="Memory">
+			 	<desc0>not supported</desc0>
+				<desc1>partaly supported</desc1>
+				<desc2>supported</desc2>
+			    <comment></comment>
+			    <score></score>
+		      </element>
+		      <element name="storage" title="Storage">
+			 	 <desc>Hard drive, DVD/CD ROM, Floppy</desc>
+                 <desc0>not supported</desc0>
+				<desc1>partaly supported</desc1>
+				<desc2>supported</desc2>
+			    <comment></comment>
+			    <score></score>
+		      </element>
+		      <element name="port" title="Port">
+		        <desc0>Serial, Printers, USB, PS/2</desc0>
+			 	<desc0>not supported</desc0>
+				<desc1>partaly supported</desc1>
+				<desc2>supported</desc2>
+			    <comment></comment>
+			    <score></score>
+		      </element>
+		      <element name="monitor" title="Monitor">
+			 	<desc0>not supported</desc0>
+				<desc1>partaly supported</desc1>
+				<desc2>supported</desc2>
+			    <comment></comment>
+			    <score></score>
+		      </element>
+		      <element name="printer" title="Printer">
+			 	<desc0>not supported</desc0>
+				<desc1>partaly supported</desc1>
+				<desc2>supported</desc2>
+			    <comment></comment>
+			    <score></score>
+		      </element>
+		  </element>
+		  <element name="software" title="Software">
+		    <desc0>not supported</desc0>
+			<desc1>partaly supported</desc1>
+			<desc2>supported</desc2>
+			<comment></comment>
+			<score></score>
+		  </element>
+		  <element name="network" title="Network">
+		      <element name="network" title="Network">
+		        <desc0>not supported</desc0>
+			    <desc1>partaly supported</desc1>
+			    <desc2>supported</desc2>
+			    <comment></comment>
+			    <score></score>
+		      </element>
+		      <element name="localnetworktopology" title="Local Network topology">
+		        <desc0>not supported</desc0>
+			    <desc1>partaly supported</desc1>
+			    <desc2>supported</desc2>
+			    <comment></comment>
+			    <score></score>
+		      </element>
+		  </element>
+		</element>
+        <element name="serverquestionning" title="Server questionning">
+                <desc>Server can question the agent?</desc>
+		        <desc0>not supported</desc0>
+			    <desc1>partaly supported</desc1>
+			    <desc2>supported</desc2>
+			    <comment></comment>
+			    <score></score>
+		</element>
+		<element name="agentinstallation" title="Agent installation">
+		        <desc0>Recompilation needed</desc0>
+			    <desc1>Scripts</desc1>
+			    <desc2>Packages, RPM, MSI or equivalent</desc2>
+			    <comment></comment>
+			    <score></score>
+		</element>
+		<element name="agentupdate" title="Agent update">
+		        <desc0>not supported</desc0>
+			    <desc1>manual</desc1>
+			    <desc2>automatic</desc2>
+			    <comment></comment>
+			    <score></score>
+		</element>
+	</section>
+	<section name="serverfeatures" title="Server features">
+	   <element name="transportprotocol" title="transportprotocol">
+	       <element name="http" title="HTTP">
+		        <desc0>not supported</desc0>
+				<desc1>partaly supported</desc1>
+				<desc2>supported</desc2>
+			    <comment></comment>
+			    <score></score>
+		  </element>
+		  <element name="xmpp" title="XMPP">
+		        <desc0>not supported</desc0>
+				<desc1>partaly supported</desc1>
+				<desc2>supported</desc2>
+			    <comment></comment>
+			    <score></score>
+		  </element>
+		  <element name="snmp" title="SNMP">
+		        <desc0>not supported</desc0>
+				<desc1>partaly supported</desc1>
+				<desc2>supported</desc2>
+			    <comment></comment>
+			    <score></score>
+		  </element>
+		  <element name="smtp" title="SMTP">
+		        <desc0>not supported</desc0>
+				<desc1>partaly supported</desc1>
+				<desc2>supported</desc2>
+			    <comment></comment>
+			    <score></score>
+		  </element>
+		  <element name="ftp" title="FTP">
+		        <desc0>not supported</desc0>
+				<desc1>partaly supported</desc1>
+				<desc2>supported</desc2>
+			    <comment></comment>
+			    <score></score>
+		  </element>
+		  <element name="sambacifs" title="SMB/CIFS (Windows or Samba shared directory)">
+		        <desc0>not supported</desc0>
+				<desc1>partaly supported</desc1>
+				<desc2>supported</desc2>
+			    <comment></comment>
+			    <score></score>
+		  </element>
+	    </element>
+	    <element name="security" title="Security">
+	        <element name="authentificationclientserver" title="Authentification Client to Server">
+		        <desc0>not supported</desc0>
+				<desc1>partaly supported</desc1>
+				<desc2>supported</desc2>
+			    <comment></comment>
+			    <score></score>
+		   </element>
+		   <element name="authentificationserverclient" title="Authentification Server to client">
+		        <desc0>not supported</desc0>
+				<desc1>partaly supported</desc1>
+				<desc2>supported</desc2>
+			    <comment></comment>
+			    <score></score>
+		   </element>
+		   <element name="streamencryption" title="Stream encryption">
+		        <desc0>not supported</desc0>
+				<desc1>partaly supported</desc1>
+				<desc2>supported</desc2>
+			    <comment></comment>
+			    <score></score>
+		   </element>
+		</element>
+		<element name="datastorage" title="Data Storage">
+		    <element name="databases" title="Databases">
+		        <desc0>not supported</desc0>
+				<desc1>partaly supported</desc1>
+				<desc2>supported</desc2>
+			    <comment></comment>
+			    <score></score>
+		    </element>
+		     <element name="plaintext" title="Plain text files">
+		        <desc0>not supported</desc0>
+				<desc1>partaly supported</desc1>
+				<desc2>supported</desc2>
+			    <comment></comment>
+			    <score></score>
+		    </element>
+		</element>
+		<element name="inventorydisplay" title="Inventoy display">
+		    <element name="search" title="Search">
+		        <desc0>not supported</desc0>
+				<desc1>Simple</desc1>
+				<desc2>Multiple criterions</desc2>
+			    <comment></comment>
+			    <score></score>
+		    </element>
+		    <element name="statistics" title="Statistic">
+		        <desc0>not supported</desc0>
+				<desc1>Simple</desc1>
+				<desc2>Complex</desc2>
+			    <comment></comment>
+			    <score></score>
+		    </element>
+		</element>
+		<element name="inventorymanagement" title="Inventory management">
+		  <element name="duplicatedmanagement" title="Duplicated computers management">
+		        <desc0>not supported</desc0>
+				<desc1>partaly supported</desc1>
+				<desc2>supported</desc2>
+			    <comment></comment>
+			    <score></score>
+		  </element>
+		  <element name="groupedcommands" title="Grouped commands">
+		        <desc>Abitily to launch command on a pool of machines</desc>
+		        <desc0>not supported</desc0>
+				<desc1>partaly supported</desc1>
+				<desc2>supported</desc2>
+			    <comment></comment>
+			    <score></score>
+		  </element>
+		  <element name="dataimport" title="Data import">
+		        <desc0>not supported</desc0>
+				<desc1>partaly supported</desc1>
+				<desc2>supported</desc2>
+			    <comment></comment>
+			    <score></score>
+		  </element>
+		  <element name="dataexport" title="Data export">
+		        <desc0>not supported</desc0>
+				<desc1>partaly supported</desc1>
+				<desc2>supported</desc2>
+			    <comment></comment>
+			    <score></score>
+		  </element>
+		</element>
+		 <element name="interfacapplication" title="Interface with others applications">
+		        <desc0>0</desc0>
+				<desc1>Few applications</desc1>
+				<desc2>Lots of applications</desc2>
+			    <comment></comment>
+			    <score></score>
+		  </element>
+	</section>
+</document>

@@ -1,0 +1,512 @@
+<!DOCTYPE UI><UI version="3.3" stdsetdef="1">
+<class>Qsosform</class>
+<widget class="QMainWindow">
+    <property name="name">
+        <cstring>Qsosform</cstring>
+    </property>
+    <property name="geometry">
+        <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>813</width>
+            <height>525</height>
+        </rect>
+    </property>
+    <property name="sizePolicy">
+        <sizepolicy>
+            <hsizetype>0</hsizetype>
+            <vsizetype>0</vsizetype>
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+        </sizepolicy>
+    </property>
+    <property name="minimumSize">
+        <size>
+            <width>21</width>
+            <height>139</height>
+        </size>
+    </property>
+    <property name="maximumSize">
+        <size>
+            <width>813</width>
+            <height>525</height>
+        </size>
+    </property>
+    <property name="sizeIncrement">
+        <size>
+            <width>0</width>
+            <height>0</height>
+        </size>
+    </property>
+    <property name="baseSize">
+        <size>
+            <width>813</width>
+            <height>525</height>
+        </size>
+    </property>
+    <property name="caption">
+        <string>QT QSOS Editor http://www.qsos.org</string>
+    </property>
+    <widget class="QGroupBox">
+        <property name="name">
+            <cstring>groupBox2</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>270</x>
+                <y>10</y>
+                <width>530</width>
+                <height>460</height>
+            </rect>
+        </property>
+        <property name="title">
+            <string>Comment</string>
+        </property>
+        <widget class="QTextEdit">
+            <property name="name">
+                <cstring>commentBox</cstring>
+            </property>
+            <property name="enabled">
+                <bool>false</bool>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>10</x>
+                    <y>340</y>
+                    <width>510</width>
+                    <height>100</height>
+                </rect>
+            </property>
+        </widget>
+        <widget class="QGroupBox">
+            <property name="name">
+                <cstring>groupBox3</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>10</x>
+                    <y>120</y>
+                    <width>510</width>
+                    <height>210</height>
+                </rect>
+            </property>
+            <property name="title">
+                <string>Eval</string>
+            </property>
+            <widget class="QRadioButton">
+                <property name="name">
+                    <cstring>radioScore1</cstring>
+                </property>
+                <property name="geometry">
+                    <rect>
+                        <x>10</x>
+                        <y>90</y>
+                        <width>16</width>
+                        <height>22</height>
+                    </rect>
+                </property>
+                <property name="text">
+                    <string></string>
+                </property>
+            </widget>
+            <widget class="QLabel">
+                <property name="name">
+                    <cstring>textScore2</cstring>
+                </property>
+                <property name="geometry">
+                    <rect>
+                        <x>30</x>
+                        <y>140</y>
+                        <width>470</width>
+                        <height>50</height>
+                    </rect>
+                </property>
+                <property name="text">
+                    <string>score2</string>
+                </property>
+                <property name="textFormat">
+                    <enum>PlainText</enum>
+                </property>
+                <property name="scaledContents">
+                    <bool>true</bool>
+                </property>
+                <property name="alignment">
+                    <set>WordBreak|AlignVCenter</set>
+                </property>
+            </widget>
+            <widget class="QRadioButton">
+                <property name="name">
+                    <cstring>radioScore0</cstring>
+                </property>
+                <property name="geometry">
+                    <rect>
+                        <x>10</x>
+                        <y>30</y>
+                        <width>20</width>
+                        <height>22</height>
+                    </rect>
+                </property>
+                <property name="text">
+                    <string></string>
+                </property>
+            </widget>
+            <widget class="QLabel">
+                <property name="name">
+                    <cstring>textScore1</cstring>
+                </property>
+                <property name="geometry">
+                    <rect>
+                        <x>30</x>
+                        <y>80</y>
+                        <width>470</width>
+                        <height>50</height>
+                    </rect>
+                </property>
+                <property name="text">
+                    <string>score1</string>
+                </property>
+                <property name="textFormat">
+                    <enum>PlainText</enum>
+                </property>
+                <property name="scaledContents">
+                    <bool>true</bool>
+                </property>
+                <property name="alignment">
+                    <set>WordBreak|AlignVCenter|AlignLeft</set>
+                </property>
+            </widget>
+            <widget class="QLabel">
+                <property name="name">
+                    <cstring>textScore0</cstring>
+                </property>
+                <property name="geometry">
+                    <rect>
+                        <x>30</x>
+                        <y>20</y>
+                        <width>470</width>
+                        <height>50</height>
+                    </rect>
+                </property>
+                <property name="text">
+                    <string>score0</string>
+                </property>
+                <property name="textFormat">
+                    <enum>PlainText</enum>
+                </property>
+                <property name="scaledContents">
+                    <bool>true</bool>
+                </property>
+                <property name="alignment">
+                    <set>WordBreak|AlignVCenter|AlignLeft</set>
+                </property>
+            </widget>
+            <widget class="QRadioButton">
+                <property name="name">
+                    <cstring>radioScore2</cstring>
+                </property>
+                <property name="geometry">
+                    <rect>
+                        <x>10</x>
+                        <y>150</y>
+                        <width>20</width>
+                        <height>22</height>
+                    </rect>
+                </property>
+                <property name="text">
+                    <string></string>
+                </property>
+            </widget>
+        </widget>
+        <widget class="QGroupBox">
+            <property name="name">
+                <cstring>groupBox4</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>10</x>
+                    <y>20</y>
+                    <width>510</width>
+                    <height>100</height>
+                </rect>
+            </property>
+            <property name="title">
+                <string>Comment</string>
+            </property>
+            <widget class="QLabel">
+                <property name="name">
+                    <cstring>descriptionBox</cstring>
+                </property>
+                <property name="geometry">
+                    <rect>
+                        <x>10</x>
+                        <y>20</y>
+                        <width>470</width>
+                        <height>60</height>
+                    </rect>
+                </property>
+                <property name="text">
+                    <string>&lt;p&gt;
+Please open a qsos file.
+&lt;/p&gt;</string>
+                </property>
+            </widget>
+        </widget>
+    </widget>
+    <widget class="QListView">
+        <column>
+            <property name="text">
+                <string>Sections</string>
+            </property>
+            <property name="clickable">
+                <bool>false</bool>
+            </property>
+            <property name="resizable">
+                <bool>false</bool>
+            </property>
+        </column>
+        <column>
+            <property name="text">
+                <string>Id</string>
+            </property>
+            <property name="clickable">
+                <bool>true</bool>
+            </property>
+            <property name="resizable">
+                <bool>true</bool>
+            </property>
+        </column>
+        <property name="name">
+            <cstring>listView</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>10</x>
+                <y>10</y>
+                <width>251</width>
+                <height>461</height>
+            </rect>
+        </property>
+    </widget>
+</widget>
+<menubar>
+    <property name="name">
+        <cstring>MenuBar</cstring>
+    </property>
+    <property name="enabled">
+        <bool>true</bool>
+    </property>
+    <item text="&amp;File" name="fileMenu">
+        <action name="fileOpenAction"/>
+        <action name="fileSaveAction"/>
+        <action name="fileSaveAsAction"/>
+        <separator/>
+        <separator/>
+        <action name="fileExitAction"/>
+    </item>
+    <item text="&amp;Edit" name="editMenu">
+        <separator/>
+        <action name="showProperty"/>
+    </item>
+    <item text="&amp;Help" name="Help">
+        <separator/>
+        <action name="helpAboutAction"/>
+    </item>
+</menubar>
+<toolbars>
+</toolbars>
+<actions>
+    <action>
+        <property name="name">
+            <cstring>fileOpenAction</cstring>
+        </property>
+        <property name="iconSet">
+            <iconset>image0</iconset>
+        </property>
+        <property name="text">
+            <string>Open</string>
+        </property>
+        <property name="menuText">
+            <string>&amp;Open...</string>
+        </property>
+        <property name="accel">
+            <string>Ctrl+O</string>
+        </property>
+    </action>
+    <action>
+        <property name="name">
+            <cstring>fileSaveAction</cstring>
+        </property>
+        <property name="iconSet">
+            <iconset>image1</iconset>
+        </property>
+        <property name="text">
+            <string>Save</string>
+        </property>
+        <property name="menuText">
+            <string>&amp;Save</string>
+        </property>
+        <property name="accel">
+            <string>Ctrl+S</string>
+        </property>
+    </action>
+    <action>
+        <property name="name">
+            <cstring>fileSaveAsAction</cstring>
+        </property>
+        <property name="text">
+            <string>Save As</string>
+        </property>
+        <property name="menuText">
+            <string>Save &amp;As...</string>
+        </property>
+        <property name="accel">
+            <string></string>
+        </property>
+    </action>
+    <action>
+        <property name="name">
+            <cstring>fileExitAction</cstring>
+        </property>
+        <property name="text">
+            <string>Exit</string>
+        </property>
+        <property name="menuText">
+            <string>E&amp;xit</string>
+        </property>
+        <property name="accel">
+            <string></string>
+        </property>
+    </action>
+    <action>
+        <property name="name">
+            <cstring>helpAboutAction</cstring>
+        </property>
+        <property name="text">
+            <string>About</string>
+        </property>
+        <property name="menuText">
+            <string>&amp;About</string>
+        </property>
+        <property name="accel">
+            <string></string>
+        </property>
+    </action>
+    <action>
+        <property name="name">
+            <cstring>showProperty</cstring>
+        </property>
+        <property name="enabled">
+            <bool>false</bool>
+        </property>
+        <property name="text">
+            <string>Property</string>
+        </property>
+        <property name="menuText">
+            <string>Property</string>
+        </property>
+    </action>
+    <action>
+        <property name="name">
+            <cstring>Action</cstring>
+        </property>
+        <property name="text">
+            <string>Action</string>
+        </property>
+    </action>
+</actions>
+<images>
+    <image name="image0">
+        <data format="PNG" length="234">89504e470d0a1a0a0000000d4948445200000016000000160806000000c4b46c3b000000b149444154388ded94bb12022110047b2902d2fb582323cb0f3635b8aa3500140e0e81c2cc499667ef3001f057904cdcd12f0c9de11ea1714d8fe319c73d4dc5fc000a803dd91879492d1e0450d5b82f8022d2cd3d3d683f4de55d7d2729d6479a9bc4f8606dcbd41cf7d5b6aa194f645da89a710abddf60b3f0d8c15978eeedf9e59a45d1803a7f697301d298472820218a754e032877bcc2693a50d5754ea38c0f649dd3ccf14aa70578522bbfdd3ebd008c8091c0848d353e0000000049454e44ae426082</data>
+    </image>
+    <image name="image1">
+        <data format="PNG" length="366">89504e470d0a1a0a0000000d4948445200000016000000160806000000c4b46c3b0000013549444154388db595b16ac33010863f170fd7cd1af31c862e063f51f74ea58490a164ed1305bc74cf337829385b6e10b48322c7b6e2486ed35b743fd2fdf7f3733ec33f45763ebfefcd9bfbece31d3a85d73768f60d8514a82a08a8ea4d5c3e951c3e0fa82a655d02f0e0893b05736e23b970d423e48e2486811efbe853238e1c000b22325236c52bbba2a5a5900280aaae465e8c148b6f3350a65f206a02a56dde5e30b059c36e7b85d808a875b95aa70c0b461e517beab1888cee4524a84ff2b8cd5b2834eaf1b03e50dcf98e33ca66f1b43ec5e3a4e998d6a7789ca2fc9ac77d0fefd1661d8e4e2c76dbd0e3608e8d38f2215e72ce7aec3bff16df54fcfcb2c809e0b26b02e261e79468f68dfb32ad52d5557c8e8da4112f9ee354c58be73855f1e25d91aa38b62bb2c1db7bfd9eb2f8933fc40f2f80180cf314eecb0000000049454e44ae426082</data>
+    </image>
+</images>
+<connections>
+    <connection>
+        <sender>fileOpenAction</sender>
+        <signal>activated()</signal>
+        <receiver>Qsosform</receiver>
+        <slot>fileOpen()</slot>
+    </connection>
+    <connection>
+        <sender>fileSaveAction</sender>
+        <signal>activated()</signal>
+        <receiver>Qsosform</receiver>
+        <slot>fileSave()</slot>
+    </connection>
+    <connection>
+        <sender>fileSaveAsAction</sender>
+        <signal>activated()</signal>
+        <receiver>Qsosform</receiver>
+        <slot>fileSaveAs()</slot>
+    </connection>
+    <connection>
+        <sender>fileExitAction</sender>
+        <signal>activated()</signal>
+        <receiver>Qsosform</receiver>
+        <slot>fileExit()</slot>
+    </connection>
+    <connection>
+        <sender>helpAboutAction</sender>
+        <signal>activated()</signal>
+        <receiver>Qsosform</receiver>
+        <slot>helpAbout()</slot>
+    </connection>
+    <connection>
+        <sender>showProperty</sender>
+        <signal>activated()</signal>
+        <receiver>Qsosform</receiver>
+        <slot>propertyBox()</slot>
+    </connection>
+    <connection>
+        <sender>radioScore2</sender>
+        <signal>clicked()</signal>
+        <receiver>Qsosform</receiver>
+        <slot>setscore2()</slot>
+    </connection>
+    <connection>
+        <sender>radioScore1</sender>
+        <signal>clicked()</signal>
+        <receiver>Qsosform</receiver>
+        <slot>setscore1()</slot>
+    </connection>
+    <connection>
+        <sender>radioScore0</sender>
+        <signal>clicked()</signal>
+        <receiver>Qsosform</receiver>
+        <slot>setscore0()</slot>
+    </connection>
+    <connection>
+        <sender>listView</sender>
+        <signal>clicked(QListViewItem*)</signal>
+        <receiver>Qsosform</receiver>
+        <slot>itemChanged()</slot>
+    </connection>
+</connections>
+<includes>
+    <include location="local" impldecl="in implementation">qsosform.ui.h</include>
+</includes>
+<slots>
+    <slot>fileNew()</slot>
+    <slot>fileOpen()</slot>
+    <slot>fileSave()</slot>
+    <slot>fileSaveAs()</slot>
+    <slot>filePrint()</slot>
+    <slot>fileExit()</slot>
+    <slot>editUndo()</slot>
+    <slot>editRedo()</slot>
+    <slot>editCut()</slot>
+    <slot>setscore2()</slot>
+    <slot>editPaste()</slot>
+    <slot>editFind()</slot>
+    <slot>helpIndex()</slot>
+    <slot>helpContents()</slot>
+    <slot>helpAbout()</slot>
+    <slot>propertyBox()</slot>
+    <slot>setscore1()</slot>
+    <slot>setscore0()</slot>
+    <slot>itemChanged()</slot>
+</slots>
+<layoutdefaults spacing="6" margin="11"/>
+</UI>

@@ -1,0 +1,654 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document>
+  <header>
+    <authors>
+      <author>
+        <email>tojo.randrianaivojaona@atosorigin.com</email>
+        <name>Tojo Randrianaivojaona</name>
+      </author>
+    </authors>
+    <dates>
+      <creation>20060411</creation>
+      <validation></validation>
+    </dates>
+    <language>en</language>
+    <appname>jBossPortal</appname>
+    <release>2</release>
+    <licenseid>31</licenseid>
+    <licensedesc>GNU Lesser General Public License (LGPL)</licensedesc>
+    <url>http://www.jboss.com/products/jbossportal</url>
+    <desc>JBoss Portal provides an open source and standards-based environment for hosting and serving a portal's Web interface, publishing and managing its content, and customizing its experience</desc>
+    <demourl>http://portal.demo.jboss.com/</demourl>
+    <qsosformat>1.7</qsosformat>
+    <qsosappfamily>portal</qsosappfamily>
+    <qsosappname>jbossPortal</qsosappname>
+    <qsosspecificformat>1</qsosspecificformat>
+  </header>
+  <section name="generic" title="Generic section">
+    <desc>Generic criteria from QSOS version 1.6</desc>
+    <element name="intrinsicdurability" title="Intrinsic durability">
+      <desc>Intrinsic durability</desc>
+      <element name="maturity" title="Maturity">
+        <desc>Maturity</desc>
+        <element name="age" title="Age">
+          <desc0>less than 3 months</desc0>
+          <desc1>if between 3 months and 3 years</desc1>
+          <desc2>after 3 years</desc2>
+          <score>2</score>
+          <comment>www.jboss.com/products/jbossportal domain was created in ??? 2001 </comment>
+        </element>
+        <element name="stability" title="Stability">
+          <desc0>Unstable software with numerous releases or patches generating side effects</desc0>
+          <desc1>Stabilized production release existing but old. Difficulties to stabilize developpement releases</desc1>
+          <desc2>Stabilized software. Releases provide bug fixes corrections but mainly new functionalities</desc2>
+          <score>2</score>
+          <comment></comment>
+        </element>
+        <element name="historyknowproblems" title="History">
+          <desc0>Software knows several problems which can be prohibitive</desc0>
+          <desc1>No know major problem or crisis</desc1>
+          <desc2>History of good management of crisis situations</desc2>
+          <score>2</score>
+          <comment></comment>
+        </element>
+        <element name="forkprobability" title="Fork">
+          <desc0>Software is very likely to be forked in the future</desc0>
+          <desc1>Software comes from a fork but has very few chances of being forked in the future</desc1>
+          <desc2>Software has very little chance of being forked. It does not come from a fork either</desc2>
+          <score></score>
+          <comment></comment>
+        </element>
+      </element>
+      <element name="adoption" title="Adoption">
+        <desc>Adoption by community and industry</desc>
+        <element name="popularity" title="Popularity">
+          <desc0>Very few users identified</desc0>
+          <desc1>Detectable use on Internet</desc1>
+          <desc2>Numerous users, numerous references</desc2>
+          <score>2</score>
+          <comment></comment>
+        </element>
+        <element name="references" title="References">
+          <desc0>None</desc0>
+          <desc1>Few refences, non critical usages</desc1>
+          <desc2>Often implemented for critical applications</desc2>
+          <score>1</score>
+          <comment>???</comment>
+        </element>
+        <element name="contributingcommunity" title="Contributing Community">
+          <desc0>No community or without real activity (forum, mailing list, ...)</desc0>
+          <desc1>Existing community with a notable activity</desc1>
+          <desc2>Strong community: big activity on forums, numerous contributors and advocates</desc2>
+          <score>2</score>
+          <comment></comment>
+        </element>
+        <element name="books" title="books">
+          <desc0>No book about the software</desc0>
+          <desc1>Less than 5 books about the software are available</desc1>
+          <desc2>More than 5 books about software are available, in several languages</desc2>
+          <score>0</score>
+          <comment></comment>
+        </element>
+      </element>
+      <element name="developmentleadership" title="Development leadership">
+        <desc>Organisation and leadership of developments</desc>
+        <element name="leadingteam" title="Leading team">
+          <desc0>1 to 2 individuals involved, not clearly identified</desc0>
+          <desc1>Between 2 and 5 independent people</desc1>
+          <desc2>More than 5 people</desc2>
+          <score>1</score>
+          <comment></comment>
+        </element>
+        <element name="managementstyle" title="Management style">
+          <desc0>Complete dictatorship</desc0>
+          <desc1>Enlightened despotism</desc1>
+          <desc2>Council of architects with identified leader (e.g: KDE)</desc2>
+          <score>1</score>
+          <comment></comment>
+        </element>
+      </element>
+      <element name="activity" title="Activity">
+        <desc>Activity of the project and around the software</desc>
+        <element name="developersidentificationturnover" title="Developers, identification, turnover">
+          <desc0>Less than 3 developers, not clearly identified</desc0>
+          <desc1>Between 4 and 7 developers, or more unidentified developers with important turnover</desc1>
+          <desc2>More than 7 developers, very stable team</desc2>
+          <score>2</score>
+          <comment></comment>
+        </element>
+        <element name="activityonbugs" title="Activity on bugs">
+          <desc0>Slow reactivity in forum or on mailing list, or nothing regarding bug fixes in releases note</desc0>
+          <desc1>Detectable activity but without process clearly exposed, loing reaction/resolution time</desc1>
+          <desc2>Strong reactivity based on roles and tasks assignment</desc2>
+          <score>2</score>
+          <comment></comment>
+        </element>
+        <element name="activityonfunctionalities" title="Activity on functionalities">
+          <desc0>No or few new functionalities</desc0>
+          <desc1>Evolution of the product driven by the core team or by user's request without any clearly explained process</desc1>
+          <desc2>Tool(s) to manage feature requests, strong interaction with roadmap</desc2>
+          <score>2</score>
+          <comment></comment>
+        </element>
+        <element name="activityonreleases" title="Activity on releases">
+          <desc0>Very weak activity on both production and development releases</desc0>
+          <desc1>Activity on production and developmenet releases. Frequent minor releases (bug fixes)</desc1>
+          <desc2>Important activity with frequent minor releases (bugs fixes) and planned major releases relating to the roadmap forcast</desc2>
+          <score>2</score>
+          <comment></comment>
+        </element>
+      </element>
+    </element>
+    <element name="industrializedsolution" title="Industrialized solution">
+      <desc>Industrialization level of the project</desc>
+      <element name="independenceofdevelopments" title="Independence of developments">
+        <desc0>Developments realized at 100% by employees of a single company</desc0>
+        <desc1>60% maximum</desc1>
+        <desc2>20% maximum</desc2>
+        <score>2</score>
+        <comment></comment>
+      </element>
+      <element name="services" title="Services">
+        <desc>Services offering</desc>
+        <element name="training" title="Training">
+          <desc0>No offer of training identified</desc0>
+          <desc1>Offer exists but is restricted geographically and to one language or is provided by a single contractor</desc1>
+          <desc2>Rich offers provided by several contractors, in serveral languages and split into modules of gradual levels</desc2>
+          <score>1</score>
+          <comment></comment>
+        </element>
+        <element name="support" title="Support">
+          <desc0>No offer of support except via public forums and mailing lists</desc0>
+          <desc1>Offer exists but is provided by a single contractor without strong commitment quality of services</desc1>
+          <desc2>Multiple service providers with strong commitment (e.g: guaranteed resolution time)</desc2>
+          <score>1</score>
+          <comment></comment>
+        </element>
+        <element name="consulting" title="Consulting">
+          <desc0>No offer of consulting service</desc0>
+          <desc1>Offer exists but is restricted geographically and to one language or is provided by a single contractor</desc1>
+          <desc2>Consulting services provided by different contractors in serveral languages</desc2>
+          <score>1</score>
+          <comment></comment>
+        </element>
+      </element>
+      <element name="documentation" title="Documentation">
+        <desc0>No user documentation</desc0>
+        <desc1>Documentation exists but shifted in time, is restricted to one language or is poorly detailed</desc1>
+        <desc2>Documentation always up to date, translated and possibly adapted to different target readers (end user, sysadmin, manager, ...)</desc2>
+        <score>1</score>
+        <comment></comment>
+      </element>
+      <element name="qualityassurance" title="Quality Assurance">
+        <desc>Quality assurance process</desc>
+        <element name="quality" title="Quality Assurance">
+          <desc0>No QA process</desc0>
+          <desc1>Identifies QA process but not much formalized and with no tool</desc1>
+          <desc2>Automatic testing process included in code's life-cycle with publication of results</desc2>
+          <score>1</score>
+          <comment></comment>
+        </element>
+        <element name="tools" title="Tools">
+          <desc0>No bug or feature request management tool</desc0>
+          <desc1>Standard tools provided (for instance by a hosting forge) but poorly used</desc1>
+          <desc2>Very active use of tools for roles/tasks allocation and progress monitoring</desc2>
+          <score>1</score>
+          <comment></comment>
+        </element>
+      </element>
+    </element>
+    <element name="packaging" title="Packaging">
+      <desc>Packaging for various operating systems</desc>
+      <element name="packagingbsd" title="BSD">
+        <desc>BSD</desc>
+        <element name="packagingfreebsd" title="FreeBSD">
+          <desc0>The software is not packaged for FreeBSD</desc0>
+          <desc1>A port exists but it has important issues or it doesn't have official support</desc1>
+          <desc2>A official port exists in FreeBSD</desc2>
+          <score>0</score>
+          <comment></comment>
+        </element>
+        <element name="packagingmacosx" title="Mac OS X">
+          <desc0>The software is not packaged for Mac OS X</desc0>
+          <desc1>A package exists but it has important issues or it doesn't have official support</desc1>
+          <desc2>The software is packaged in the distribution</desc2>
+          <score>0</score>
+          <comment></comment>
+        </element>
+        <element name="packagingnet" title="NetBSD">
+          <desc0>The software is not packaged for NetBSD</desc0>
+          <desc1>A port exists but it has important issues or it doesn't have official support</desc1>
+          <desc2>A official port exists in NetBSD</desc2>
+          <score>0</score>
+          <comment></comment>
+        </element>
+        <element name="packagingopen" title="OpenBSD">
+          <desc0>The software is not packaged for OpenBSD</desc0>
+          <desc1>A port exists but it has important issues or it doesn't have official support</desc1>
+          <desc2>A official port exists in OpenBSD</desc2>
+          <score>0</score>
+          <comment></comment>
+        </element>
+      </element>
+      <element name="packaginglinux" title="Linux">
+        <desc>Linux</desc>
+        <element name="packagingdebian" title="Debian">
+          <desc0>The software is not packaged for Debian</desc0>
+          <desc1>A Debian package exists but it has important issues or it doesn't have official support</desc1>
+          <desc2>The software is packaged in the distribution</desc2>
+          <score>0</score>
+          <comment></comment>
+        </element>
+        <element name="packagingmandriva" title="Mandriva">
+          <desc0>The software is not packaged for Mandriva</desc0>
+          <desc1>A package exists but it has important issues or it doesn't have official support</desc1>
+          <desc2>The software is packaged in the distribution</desc2>
+          <score>0</score>
+          <comment></comment>
+        </element>
+        <element name="packagingredhat" title="Red Hat">
+          <desc0>The software is not packaged for Red Hat/Fedora</desc0>
+          <desc1>A package exists but it has important issues or it doesn't have official support</desc1>
+          <desc2>The software is packaged in the distribution</desc2>
+          <score>0</score>
+          <comment></comment>
+        </element>
+        <element name="packagingsuse" title="SuSE">
+          <desc0>The software is not packaged for SuSE</desc0>
+          <desc1>A package exists but it has important issues or it doesn't have official support</desc1>
+          <desc2>The software is packaged in the distribution</desc2>
+          <score>0</score>
+          <comment></comment>
+        </element>
+      </element>
+      <element name="packagingsource" title="Source">
+        <desc0>Software can't be installed from source without lot of work</desc0>
+        <desc1>Installation from source is limited and depends on very strict conditions (OS, arch, lib, ...)</desc1>
+        <desc2>Installation from source is easy</desc2>
+        <score></score>
+        <comment></comment>
+      </element>
+      <element name="packagingunix" title="Unix">
+        <desc>Unix</desc>
+        <element name="packagingaix" title="AIX">
+          <desc0>The software is not packaged for AIX</desc0>
+          <desc1>A package exists but it has important issues or it doesn't have official support</desc1>
+          <desc2>A stable package is provided for AIX</desc2>
+          <score></score>
+          <comment></comment>
+        </element>
+        <element name="packaginghpux" title="HP-UX">
+          <desc0>The software is not packaged for HP-UX</desc0>
+          <desc1>A package exists but it has important issues or it doesn't have official support</desc1>
+          <desc2>A stable package is provided for HP-UX</desc2>
+          <score>0</score>
+          <comment></comment>
+        </element>
+        <element name="packagingsolaris" title="Solaris">
+          <desc0>The software is not packaged for Solaris</desc0>
+          <desc1>A package exists but it has important issues or it doesn't have official support (e.g: SunFreeware.com )</desc1>
+          <desc2>The software is supported by Sun for Solaris</desc2>
+          <score>0</score>
+          <comment></comment>
+        </element>
+      </element>
+      <element name="packagingwindows" title="Windows">
+        <desc0>The project can't be installed on Windows</desc0>
+        <desc1>A package exists but it is limited or has important issues or just cover some specific Windows release (e.g: Windows 2000 and Windows XP)</desc1>
+        <desc2>Windows is full supported and a package is provided</desc2>
+        <score>2</score>
+        <comment></comment>
+      </element>
+    </element>
+    <element name="exploitability" title="Exploitability">
+      <desc>Exploitability level</desc>
+      <element name="easeofuseergonomics" title="Ease of use, ergonomics">
+        <desc0>Difficult to use, requires an in depth knowledge of the software functionality</desc0>
+        <desc1>Austere and very technical ergonomics</desc1>
+        <desc2>GUI including help functions and elaborated ergonomics</desc2>
+        <score></score>
+        <comment></comment>
+      </element>
+      <element name="administrationmonitoring" title="Administration / Monitoring">
+        <desc0>No administrative or monitoring functionalities</desc0>
+        <desc1>Existing, functionalities but uncomplete and or need improvement</desc1>
+        <desc2>Complete and easy-to-use administration and monitoring functionalities. Possible integration with external tools (e.g: SNMP, syslog, ...)</desc2>
+        <score></score>
+        <comment></comment>
+      </element>
+    </element>
+    <element name="technicaladaptability" title="Technical adaptability">
+      <desc>Technical adaptability</desc>
+      <element name="modularity" title="Modularity">
+        <desc0>Monolithic software</desc0>
+        <desc1>Presence of hight level modules allowing a first level of software adaptation</desc1>
+        <desc2>Modular conception, allowing easy adaptation of the software by selecting or creating modules</desc2>
+        <score></score>
+        <comment></comment>
+      </element>
+      <element name="codemodification" title="Code modification">
+        <desc0>Everything by hand</desc0>
+        <desc1>Recompilation possible but complex without any tools or documentation</desc1>
+        <desc2>Recompilation with tools (e.g: make, ANT, ...) and documentation provided</desc2>
+        <score></score>
+        <comment></comment>
+      </element>
+      <element name="codeextension" title="Code extension">
+        <desc0>Any modification requires code recompilation</desc0>
+        <desc1>Architecture designed for static extension but requires recompilation</desc1>
+        <desc2>Principle of plugin, architecture designed for dynamic extension without recompilation</desc2>
+        <score></score>
+        <comment></comment>
+      </element>
+    </element>
+    <element name="strategy" title="Strategy">
+      <desc>Project's strategy</desc>
+      <element name="license" title="License">
+        <desc>License, only if user wants to become owner of code</desc>
+        <element name="permissiveness" title="Permissiveness">
+          <desc0>Very strict license, like GPL</desc0>
+          <desc1>Moderate permissive license located between both extremes (GPL and BSD) dual-licensing depending on the type of user (person, company, ...) or their activities</desc1>
+          <desc2>Very permissive like BSD or Apache licenses</desc2>
+          <score></score>
+          <comment></comment>
+        </element>
+        <element name="protectionagainstproprietaryforks" title="Protection against proprietary forks">
+          <desc0>Very permissive like BSD or Apache licenses</desc0>
+          <desc1>Moderate permissive license located between both extremes (GPL and BSD), dual-licensing depending on the type of user (person, company, ...) or their activies</desc1>
+          <desc2>Very strict license, like GPL</desc2>
+          <score></score>
+          <comment></comment>
+        </element>
+      </element>
+      <element name="copyrightowners" title="Copyright owners">
+        <desc0>Rights held by a few individuals or entities, making it easier to change the license</desc0>
+        <desc1>Rights held by numerous individuals owning the code in a homogeneous way, making relicense very difficult</desc1>
+        <desc2>Rights held by a legal entity in whom the community trusts (e.g: FSF or ASF)</desc2>
+        <score></score>
+        <comment></comment>
+      </element>
+      <element name="modificationofsourcecode" title="Modification of source code">
+        <desc0>No pratical way to propose code modification</desc0>
+        <desc1>Tools provided to access and modify code (like CVS or SVN) but not really used to develop the software</desc1>
+        <desc2>The code modification process is well defined, exposed and respected, based on roles assignment</desc2>
+        <score></score>
+        <comment></comment>
+      </element>
+      <element name="roadmap" title="Roadmap">
+        <desc0>No published roadmap</desc0>
+        <desc1>Existing roadmap without planning</desc1>
+        <desc2>Versionned roadmap, with planning and measure of delays</desc2>
+        <score></score>
+        <comment></comment>
+      </element>
+      <element name="sponsor" title="Sponsor">
+        <desc0>Software has no sponsor, the core team is not paid</desc0>
+        <desc1>Software has an unique sponsor who might determine its strategy</desc1>
+        <desc2>Software is sponsored by industry</desc2>
+        <score></score>
+        <comment></comment>
+      </element>
+      <element name="strategicalindependence" title="Strategical independence">
+        <desc0>No detectable strategy or strong dependency on one unique actor (person, company, sponsor)</desc0>
+        <desc1>Strategical vision shared with several other free and open source projects but without strong commitment from copyrights owners</desc1>
+        <desc2>Strong independence of the code team, legal entity holding rights, strong involvement in the standardization process</desc2>
+        <score></score>
+        <comment></comment>
+      </element>
+    </element>
+  </section>
+  <section name="portalComposant" title="Portal Composant">
+    <comment>Specific Portal/CMS tools</comment>
+    <desc></desc>
+    <element name="standards-support" title="standards support">
+      <element name="portletstandard" title="portlet s standard">y  
+        <desc0>Using no standard specification</desc0><desc1>Specification portal is not indentified</desc1><desc2>Using specification JSR-168</desc2><comment>
+				It is entirely standards-based and supports the JSR-168 portlet specification, which allows you to easily plug-in standards-compliant portlets to meet your specific portal needs. It suports too JSR-170 (Content Repository)
+			</comment><score>2</score></element>
+      <element name="technologysupported" title="technology supported">
+        <desc0>Not supporting any technologies</desc0>
+        <desc1>likely supporting any technologies but not identified or don't work correctly</desc1>
+        <desc2>support numerous technologies like Struts,JSF,Webdav</desc2>
+        <comment>
+				The technologies supported are Struts, JSF(1.2 version), WebDAV(supported by JBoss2.0 and 2.4)
+			</comment>
+        <score>2</score>
+      </element>
+    </element>
+    <element name="generaladministration" title="general administration">
+      <element name="administrationsprotocol" title="protocol of administration">
+        <desc0>no protocol supported</desc0>
+        <desc1>protocol HTTP/HTTPs doesn't work correctly or supports only thin heavy (client lourd???)</desc1>
+        <desc2>administration via thin light is performing</desc2>
+        <comment>administration via thin light (HTTP/HTTPs)</comment>
+        <score>2</score>
+      </element>
+      <element name="webapplicationadministration" title="web application s administration">
+        <desc0>no web application administration</desc0>
+        <desc1> web application administration don't work correctly</desc1>
+        <desc2>Three specific portlets about administration </desc2>
+        <comment>Three specific portlets about administration: Portal Object management, User Management Portlet, CMS Admin Portlet</comment>
+        <score>2</score>
+      </element>
+      <element name="commandline" title="command line">
+        <desc0>Administration via commandline  impossible</desc0>
+        <desc1>Administration via commandline is difficult or isn't performing </desc1>
+        <desc2>Administration via command line work very well</desc2>
+        <comment>Do JBoss Portal come with script or can be managed from a console?
+	</comment>
+        <score>0</score>
+      </element>
+    </element>
+    <element name="fonctionaladministration" title="fonctionaladministration">
+      <element name="usersmanagement" title="user s management">
+        <desc0>No user's management</desc0>
+        <desc1>User's management doesn't work correctly</desc1>
+        <desc2>User's management is performing</desc2>
+        <comment>Auto recording user management, user's creation by admin, information's update
+       </comment>
+        <score>2</score>
+      </element>
+      <element name="sitestructuresmanagement" title="site structure s management">
+        <desc0>No site structure's management</desc0>
+        <desc1>site structure's management doesn't work correctly </desc1>
+        <desc2> Site structure's management by Portal Object Management and by XML scripts</desc2>
+        <comment>Assignment of themes and pages on the portal from  Portal Object Management, reference of themes and layouts by XML scripts
+		</comment>
+        <score>2</score>
+      </element>
+      <element name="rulesmanagement" title="rules management">
+        <desc0>No rules'management </desc0>
+        <desc1>Rules'management doesn't work correctly</desc1>
+        <desc2>Possibility to manage rules </desc2>
+        <comment>Possibility to create or delete rules, to make safe portal instance, pages, or portlets according the rules. Assignment rules of users.</comment>
+        <score>2</score>
+      </element>
+      <element name="marketinganimation" title="marketing animation">
+        <desc0>No marketing animation</desc0>
+        <desc1>Marketing animation can be customized</desc1>
+        <desc2>Marketing animation integrated</desc2>
+        <comment>Does JBoss Portal include marketing animation ? </comment>
+        <score>0</score>
+      </element>
+    </element>
+    <element name="technicaladministration" title="technical administration">
+      <desc0>No technical administration </desc0>
+      <desc1>Technical administration is partial.Especially for JBoss AS </desc1>
+      <desc2>Technical administration performing </desc2>
+      <comment>Technical administration for JBoss is managed  via JMX console and from XML scripts(authentication directory configuration, database, hibernate...)</comment>
+      <score>1</score>
+    </element>
+    <element name="administrationsdelegation" title="administration s delegation">
+      <desc0>No administration's delegation</desc0>
+      <desc1>administration's delegation doesn't work correctly</desc1>
+      <desc2>administration's delegation is performing</desc2>
+      <comment>delegation of safe administration about pages or portlets according to action carried out. </comment>
+      <score>0</score>
+    </element>
+    <element name="utilisationsstatistics" title="utilisation s statistics">
+      <desc0>No utilisation's statistics</desc0>
+      <desc1>No utilisation's statistics, but any statistics by Webalizer or AW AWStats can be supplied </desc1>
+      <desc2>utilisation's statistics integrated </desc2>
+      <comment></comment>
+      <score>1</score>
+    </element>
+    <element name="monitoring" title="monitoring">
+      <desc0>Don't generate any monitoring file</desc0>
+      <desc1>monitoring file generation doesn't work correctly </desc1>
+      <desc2>generate partially JMX support including information of deployment view and its administration </desc2>
+      <comment></comment>
+      <score>1</score>
+    </element>
+    <element name="companymailingsupport" title="company mailing support">
+      <desc0>No mailing support </desc0>
+      <desc1>standard mailing support doesn't work correctly </desc1>
+      <desc2>SMTP and SMTPS integrated</desc2>
+      <comment>	Possibility to send mail by using SMTP and via javamail. Possibility to integrate MS Exchange or Lotus Notes by "tierce" portlets compatible JSR-168</comment>
+      <score>1</score>
+    </element>
+    <element name="safety" title="safety">
+      <desc0>No safety</desc0>
+      <desc1>Safety is not strong</desc1>
+      <desc2>support any modules(SSL/TLS, IIS...)</desc2>
+      <comment>SSL/TLS supported, IIS supported via mod_jk1.2, Domino Web Server supported (tested on Domino 5.0.6 with Tomcat6), Apache Web Server supported(only mod_proxy for version 2.x)</comment>
+      <score>1</score>
+    </element>
+    <element name="installation" title="installation">
+      <desc0>complicated installation</desc0>
+      <desc1>installation with a little assistance by website only</desc1>
+      <desc2>assisted installation by manual and website, possibility to unzip a copy (don't need to install) </desc2>
+      <comment></comment>
+      <score></score>
+    </element>
+    <element name="deployment" title="deployment">
+      <element name="portaldeployment" title="portal deployment">
+        <desc0>impossible portal deployment </desc0>
+        <desc1>portal deployment is partial </desc1>
+        <desc2>portal deployment is complete </desc2>
+        <comment>Partial deployment configured in object.xml. Possibility to define if existings objects must be erased or not, possibility to deploy portal, portlets and pages  </comment>
+        <score>1</score>
+      </element>
+      <element name="simplifieddeploymentonacluster" title="simplified deployment on a cluster">
+        <desc0>simplified deployment on a cluster is impossible</desc0>
+        <desc1>deployment on a cluster is possible but not simplified</desc1>
+        <desc2>simplified deployment on a cluster is performing</desc2>
+        <comment></comment>
+        <score>1</score>
+      </element>
+    </element>
+    <element name="modifyingadministrationlanguage" title="modifying administration language">
+      <desc0>impossible to modify administration language</desc0>
+      <desc1>possibility to add more administration language </desc1>
+      <desc2>administration languages exist and can be updated</desc2>
+      <comment></comment>
+      <score>0</score>
+    </element>
+    <element name="contentsmanagement" title="contents management">
+      <element name="contentsmanagementintegrated" title="contents management integrated">
+        <desc0>no contents management</desc0>
+        <desc1>contents management doesn't work correctly </desc1>
+        <desc2>contents management integrated, based on JackRabbit(Apache), implementation of JSR-170</desc2>
+        <comment>contents management integrated with contents versioning support, without conntents validation circuit
+	</comment>
+        <score></score>
+      </element>
+      <element name="contentsprevisualisationfunctionexceptportalcontext" title="contents previsualisation function except portal context">
+        <desc0>no contents previsualisation function</desc0>
+        <desc1>contents previsualisation function don't work correctly</desc1>
+        <desc2>contents previsualisation function except portal context disponible: WYSIWYG contents </desc2>
+        <comment>contents previsualisation function except portal context is disponible</comment>
+        <score>2</score>
+      </element>
+      <element name="contentsprevisualisationfunctionintheportalcontext" title="contents previsualisation function in the portal context">
+        <desc0>no contents previsualisation function </desc0>
+        <desc1>contents previsualisation function in the portal context is partial </desc1>
+        <desc2>contents previsualisation function in the portal context is integrated</desc2>
+        <comment>contents previsualisation function in the portal context is not integrated but it is possible to deploy an instance of portal (of pre-production)</comment>
+        <score>2</score>
+      </element>
+      <element name="separationofcontentsandform" title="separation of contents and form">
+        <desc0>no separation of contents and form </desc0>
+        <desc1>separation of contents and form is partial</desc1>
+        <desc2>possibility to separate contents and form </desc2>
+        <comment>Form can be defined in the theme CSS used. There is an editor WYSIWYG for the data.</comment>
+        <score>2</score>
+      </element>
+    </element>
+    <element name="searchengine" title="search engine">
+      <desc0>no search engine integrated</desc0>
+      <desc1>search engine doesn't work correctly </desc1>
+      <desc2>search engine is performing</desc2>
+      <comment></comment>
+      <score>0</score>
+    </element>
+    <element name="authentification" title="authentification">
+      <element name="LDAPauthentification" title="LDAP authentification">
+        <desc0>don't support LDAP authentification</desc0>
+        <desc1>LDAP authentification doesn't work correctly</desc1>
+        <desc2>LDAP authentification is performing and bring a real advantage for the tools</desc2>
+        <comment>LDAP authentification is performing via JBossAS</comment>
+        <score>2</score>
+      </element>
+      <element name="NTLMauthentification" title="NTLM authentification">
+        <desc0>No NTLM authentification</desc0>
+        <desc1>NTLM authentification is partial or doesn't work correctly</desc1>
+        <desc2>NTLM authentification is performing </desc2>
+        <comment>NTLM authentification is partial via JCFS et JAAS, and in beta version</comment>
+        <score>1</score>
+      </element>
+      <element name="X.509authentification" title="X.509 authentification">
+        <desc0>No X.509 authentification</desc0>
+        <desc1>X.509 authentification doesn't work correctly</desc1>
+        <desc2>X.509 authentification is performing and bring a real advantage for the tools</desc2>
+        <comment></comment>
+        <score>2</score>
+      </element>
+      <element name="Kerberosauthentification" title="Kerberos authentification">
+        <desc0>No Kerberos authentification </desc0>
+        <desc1>Kerberos authentification is partial or doesn't work correctly</desc1>
+        <desc2>Kerberos authentification is performing and brings a real advantage for the tools</desc2>
+        <comment></comment>
+        <score>1</score>
+      </element>
+      <element name="JAASauth" title="JAAS authentification">
+        <desc0>No JAAS authentification </desc0>
+        <desc1>JAAS authentification is partial or doesn't work correctly</desc1>
+        <desc2>JAAS authentification is performing and brings a real advantage for the tools</desc2>
+        <comment></comment>
+        <score>2</score>
+      </element>
+    </element>
+    <section name="storage" title="storage">
+      <element name="LDAPstorage" title="LDAPstorage">
+        <desc0>No LDAP storage</desc0>
+        <desc1>LDAP storage is partial or doesn't work correctly</desc1>
+        <desc2>LDAP storage is performing and brings a real advantage for the tools</desc2>
+        <comment></comment>
+        <score></score>
+      </element>
+      <element name="SGBDstorage" title="SGBD storage">
+        <desc0>No SGBD storage</desc0>
+        <desc1>SGBD storage is partial or doesn't work corectly</desc1>
+        <desc2>SGBD storage is performing and brings a real advantage for the tools</desc2>
+        <comment></comment>
+        <score></score>
+      </element>
+    </section>
+    <element name="development" title="development">
+      <element name="multi-IDEsupport" title="mutli-IDE support">
+        <desc0>No IDE support</desc0>
+        <desc1>IDE support doesn't work correctly </desc1>
+        <desc2>Numerous IDE supports are supported</desc2>
+        <comment></comment>
+        <score>2</score>
+      </element>
+      <element name="developmentssplit" title="development s split ">
+        <desc0>No development split autorized</desc0>
+        <desc1>Development split is partial or doesn't work correctly</desc1>
+        <desc2>Possibility to sub-contract portlets</desc2>
+        <comment>Possibility to define configuration on the level of portlet or administration</comment>
+        <score>2</score>
+      </element>
+    </element>
+  </section>
+</document>

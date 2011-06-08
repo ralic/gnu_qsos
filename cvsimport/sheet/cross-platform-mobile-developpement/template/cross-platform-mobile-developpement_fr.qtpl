@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document>
+   <header>
+      <authors>thilaire@hinnoya.fr</authors>
+      <dates>
+         <creation></creation>
+         <validation></validation>
+      </dates>
+      <language>fr</language>
+      <appname></appname>
+      <release></release>
+      <licenseid></licenseid>
+      <licensedesc></licensedesc>
+      <url></url>
+      <desc></desc>
+      <demourl></demourl>
+      <qsosformat>1.6</qsosformat>
+      <qsosappfamily>Developpement multi-plate-forme mobile</qsosappfamily>
+      <qsosspecificformat>1.0</qsosspecificformat>
+   </header>
+   <section name="perenite" title="Généralité">
+      <desc></desc>
+      <element name="maturite" title="Maturité">
+         <desc></desc>
+         <desc0>Logiciel provenant d'un fork ou avec une forte probabilité de fork dans un futur proche.</desc0>
+         <desc1>Projet jeune (moins de 3 ans) ou connaissant des difficultés à stabiliser les versions de développement.</desc1>
+         <desc2>Projet stable ou ayant un bon historique de gestion de crise. Les nouvelles versions apportent de façon prépondérante de nouvelles fonctionnalités.</desc2>
+         <score></score>
+         <comment></comment>
+      </element>
+      <element name="adoption" title="Adoption">
+         <desc></desc>
+         <desc0>Usage détectable sur Internet sans véritable activité communautaire</desc0>
+         <desc1>Utilisation communautaire prépondérante</desc1>
+         <desc2>Nombreuse références industrielles</desc2>
+         <score></score>
+         <comment></comment>
+      </element>
+      <element name="devellopement" title="Développement">
+         <desc></desc>
+         <desc0>Deux ou moins de deux développeurs clairement identifiés.</desc0>
+         <desc1>Équipe de développement réduite avec un turn-over important ou sans équipe de direction identifiée.</desc1>
+         <desc2>Équipe de développement structurée comportant plus de 5 développeurs actifs.</desc2>
+         <score></score>
+         <comment></comment>
+      </element>
+      <element name="activite" title="Activité">
+         <desc></desc>
+         <desc0>Très faible activité, que ce soit sur les résolutions de bugs, les releases, l'ajout de nouvelles fonctions ou sur les espaces communautaires (wiki, forum, mailing list...)</desc0>
+         <desc1>Activité détectable mais anarchique (pas feuille de route accessible facilement, pas de prévisions de nouvelles fonctionnalités ou de prévisions de nouvelles versions visible)</desc1>
+         <desc2>Activité importante et visible via la mise en place de feuilles de routes traçant les requêtes de nouvelles fonctionnalités et/ou les prévisions de sortie des nouvelles version</desc2>
+         <score></score>
+         <comment></comment>
+      </element>
+      <element name="license" title="License">
+         <desc></desc>
+         <desc0>License payante et restrictive</desc0>
+         <desc1>License gratuite mais bloquante</desc1>
+         <desc2>License gratuite et permissive</desc2>
+         <score></score>
+         <comment></comment>
+      </element>
+      <element name="documentation" title="Documentation">
+         <desc></desc>
+         <desc0>Documentation peu claire ou obsolète</desc0>
+         <desc1>Documentation claire et maintenu</desc1>
+         <desc2>Documentation riche et détaillée, ouvrages existants, ...</desc2>
+         <score></score>
+         <comment></comment>
+      </element>
+   </section>
+   <section name="portabilite" title="Portabilité">
+      <desc>A quel point l'outil respect son titre de "cross-platform".</desc>
+      <element name="plateformesdisponibles" title="Notion 'cross-platform'">
+         <desc>Quels sont les possibilités de déploiement pour les différentes plate-formes.</desc>
+         <desc0>Zéro ou une plate-forme est compatible, l'outil n'est pas "cross-platform".</desc0>
+         <desc1>Au moins deux plate-formes sont compatibles, la notion de "cross-platform" est respecté mais peu large.</desc1>
+         <desc2>L'outil est compatible avec la plupart des plate-formes, il est complètement "cross-platform".</desc2>
+         <score></score>
+         <comment></comment>
+      </element>
+      <element name="uniformiteducomportement" title="Uniformité du comportement">
+         <desc>Es-ce que le comportement est uniforme sur les différents environnements.</desc>
+         <desc0>Le comportement de l'outil est peu uniforme, des adaptations sont souvent nécessaires.</desc0>
+         <desc1>Le comportement de l'outil est uniforme, cependent des anomalies peuvent apparaitre en fonction de l'environnement d'éxecution.</desc1>
+         <desc2>Le comportement de l'outil est complètement uniforme, quelque soit l'environnement d'éxecution.</desc2>
+         <score></score>
+         <comment></comment>
+      </element>
+      <element name="packaging" title="Packaging">
+         <desc></desc>
+         <desc0>Le packaging est manuel, ou par la création de script</desc0>
+         <desc1>Le packaging est simplifié</desc1>
+         <desc2>Le packaging est automatisé</desc2>
+         <score></score>
+         <comment></comment>
+      </element>
+      <element name="distribution" title="Distribution">
+         <desc>Support d'un sytème propre de publication d'application.</desc>
+         <desc0>Aucun procédé de distribution existant.</desc0>
+         <desc1>Procédé de distribution existant mais peu évolué ou peu mature.</desc1>
+         <desc2>Doté d'un procédé de distribution mature.</desc2>
+         <score></score>
+         <comment></comment>
+      </element>
+   </section>
+   <section name="fonctionalite" title="Fonctionalité">
+      <desc>Quels sont les fonctionnalités offertes par l'outil.</desc>
+      <element name="basededonnee" title="Donnée">
+         <desc></desc>
+         <comment></comment>
+         <element name="basededonnee1" title="Base de donnée">
+            <desc></desc>
+            <desc0>Impossible d'utiliser le système de fichier</desc0>
+            <desc1>Utilisable mais avec peu de fonctionnalités</desc1>
+            <desc2>Utilisable et avec certaines fonctionnalités avancées</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="filesystem" title="Filesystem">
+            <desc></desc>
+            <desc0>Impossible d'utiliser le système de fichier</desc0>
+            <desc1>Utilisable mais avec peu de fonctionnalités</desc1>
+            <desc2>Utilisable et avec certaines fonctionnalités avancées</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="soap" title="SOAP">
+            <desc></desc>
+            <desc0>Impossible d'utiliser le protocol SOAP</desc0>
+            <desc1>Ne prend pas en charge le protocol SOAP, mais possible via une librairie tierce</desc1>
+            <desc2>Simplifie l'utilisation du protocol SOAP</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="rest" title="REST">
+            <desc></desc>
+            <desc0>Impossible d'utiliser le protocol REST</desc0>
+            <desc1>Ne prend pas en charge le protocol REST, mais possible via une librairie tierce</desc1>
+            <desc2>Simplifie l'utilisation du protocol REST</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+      </element>
+      <element name="dsfsdf" title="Composant IHM">
+         <desc></desc>
+         <comment></comment>
+         <element name="sdqd" title="Classique">
+            <desc></desc>
+            <desc0>Bibliothèque de composants pauvre</desc0>
+            <desc1>Bibliothèque de composants au moins équivalent aux composants HTML v4</desc1>
+            <desc2>Bibliothèque de composants complète ou facile à construire</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="riche" title="Riche">
+            <desc></desc>
+            <desc0>Bibliothèque de composants évolués inexistante</desc0>
+            <desc1>Bibliothèque de composants évolués assez pauvres ou difficile à faire évoluer</desc1>
+            <desc2>Bibliothèque de composants évolués assez complète ou facile à faire évoluer</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="multi-media" title="Multi-Media">
+            <desc></desc>
+            <desc0>Aucun composant multi-média</desc0>
+            <desc1>Composant multi-média pour le son et vidéo minimum</desc1>
+            <desc2>Composant multi-média avancé</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="conteneur" title="Conteneur">
+            <desc>Existance de "layout" prédéfini</desc>
+            <desc0>Aucune aide à la mise en page</desc0>
+            <desc1>Aide à la mise en page basique</desc1>
+            <desc2>Aide à la mise en page évolué</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+      </element>
+      <element name="annimation" title="Animation">
+         <desc></desc>
+         <desc0>Aucune animation n'existante</desc0>
+         <desc1>Animations simples ou via l'évolution graduelle d'un attribut</desc1>
+         <desc2>Animations riches ou se basant sur les animations natives</desc2>
+         <score></score>
+         <comment></comment>
+      </element>
+      <element name="sms" title="SMS">
+         <desc>La capacité à envoyer des SMS.</desc>
+         <desc0>Impossible d'utiliser une fonction d'envoi de SMS</desc0>
+         <desc1>Fonction d'envoi de SMS à l'aide d'une tierce partie</desc1>
+         <desc2>Fonction d'envoi de SMS intégré</desc2>
+         <score></score>
+         <comment></comment>
+      </element>
+      <element name="appareil" title="Appareil">
+         <desc>Accès aux différentes fonctionnalités dont dispose l'appareil</desc>
+         <desc0>Impossible d'accéder aux fonctionnalités de l'appareil</desc0>
+         <desc1>Accès à la plupart des fonctionnalités de l'appareil possible</desc1>
+         <desc2>Module de haut niveau pour l'accès aux fonctionnalités de l'appareil</desc2>
+         <score></score>
+         <comment></comment>
+      </element>
+   </section>
+   <section name="developement" title="Développement">
+      <desc>Les facilités de développement engendrés par l'outil.</desc>
+      <element name="intrusivite" title="Intrusivité">
+         <desc></desc>
+         <desc0>Vraiment un framework, difficile à faire cohabiter avec d'autres outlis</desc0>
+         <desc1>L'outil est assez intrusif mais laisse une certaine liberté</desc1>
+         <desc2>L'outil est non intrusif, il sert de support</desc2>
+         <score></score>
+         <comment></comment>
+      </element>
+      <element name="rapidite" title="Productivité">
+         <desc>Comment l'outil aide au développement d'application.</desc>
+         <desc0>L'outil est de l'ordre du support, il ne rend pas plus éfficace le développement</desc0>
+         <desc1>L'outil soutient le développement, il offre des solutions pour simplifié le développement</desc1>
+         <desc2>L'outil encadre le développement, son architecture apporte en productivité</desc2>
+         <score></score>
+         <comment></comment>
+      </element>
+      <element name="tests" title="Tests">
+         <desc>Aide à la réalisation de tests fonctionels, unitaires, ...</desc>
+         <desc0>Aucun moyen de tester l'application.</desc0>
+         <desc1>Possibilité de tester l'application par un outil tiers.</desc1>
+         <desc2>Intègre un système de réalisation de test.</desc2>
+         <score></score>
+         <comment></comment>
+      </element>
+      <element name="deboguage" title="Déboguage">
+         <desc></desc>
+         <desc0>Aucun déboguage disponible</desc0>
+         <desc1>Uniquement via des appels explicites dans le code (log, alerte, ...)</desc1>
+         <desc2>Un déboguage pendant l'éxécution est possible</desc2>
+         <score></score>
+         <comment></comment>
+      </element>
+   </section>
+   <section name="experienceutilisateur" title="Expérience Utilisateur">
+      <desc>Le retour d'impression des utilisateurs finaux.</desc>
+      <element name="design" title="Design">
+         <desc></desc>
+         <desc0>Aucun design, ou difficile à réaliser</desc0>
+         <desc1>Bon design mais difficile à personnaliser</desc1>
+         <desc2>Design bien réalisé et facilement personnalisable</desc2>
+         <score></score>
+         <comment></comment>
+      </element>
+      <element name="performance" title="Performance">
+         <desc></desc>
+         <desc0>L'application est longue à la réaction, presque désagréable à l'utilisation</desc0>
+         <desc1>L'application est réactive mais de longs chargements existes</desc1>
+         <desc2>L'application est réactive, les chargements sont courts</desc2>
+         <score></score>
+         <comment></comment>
+      </element>
+      <element name="adaptation" title="Respect de la plate-forme">
+         <desc></desc>
+         <desc0>L'application est atypique ou difficile d'adaptation</desc0>
+         <desc1>L'application s'inscrit bien dans le comportement de la plate-forme malgrès un temps d'adaptation</desc1>
+         <desc2>L'application respecte bien les habitudes d'utilisation de la plate-forme</desc2>
+         <score></score>
+         <comment></comment>
+      </element>
+   </section>
+</document>

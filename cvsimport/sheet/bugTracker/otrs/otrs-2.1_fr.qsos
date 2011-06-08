@@ -1,0 +1,863 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document>
+  <header>
+    <authors>
+      <author>
+        <email>raphael.semeteys@atosorigin.com</email>
+        <name>Raphael Semeteys</name>
+      </author>
+    </authors>
+    <dates>
+      <creation></creation>
+      <validation></validation>
+    </dates>
+    <language>fr</language>
+    <appname>OTRS</appname>
+    <release>2.1</release>
+    <licenseid>67</licenseid>
+    <licensedesc>GNU GPL</licensedesc>
+    <url>http://www.otrs.org</url>
+    <desc>Solution de gestion de gestion d'incidents dans le cadre d'un support technique de type hotline</desc>
+    <demourl>http://otrs.org/demo/</demourl>
+    <qsosformat>1.7</qsosformat>
+    <qsosappfamily>bugTracker</qsosappfamily>
+    <qsosappname>otrs</qsosappname>
+    <qsosspecificformat>1.0</qsosspecificformat>
+  </header>
+  <section name="generic" title="Section générique">
+    <desc>Les critères génériques de la méthode QSOS version 1.6</desc>
+    <element name="intrinsicdurability" title="Pérennité">
+      <desc>Pérennité</desc>
+      <element name="maturity" title="Maturité">
+        <desc>Maturité</desc>
+        <element name="age" title="Âge">
+          <desc0>Moins de 3 mois</desc0>
+          <desc1>Entre 3 mois et 3 ans</desc1>
+          <desc2>Plus de 3 ans</desc2>
+          <score>2</score>
+          <comment>La première version officielle d'OTRS a été disponible en 2002.</comment>
+        </element>
+        <element name="stability" title="Stabilité">
+          <desc0>Logiciel instable avec de nombreuses versions et patches générant des effets de bords</desc0>
+          <desc1>Version de production stabilisée mais un peu vieille. Quelques difficultés à stabiliser les versions de développement</desc1>
+          <desc2>Logiciel stable. Les nouvelles versions corrigent des bugs, mais apportent de façon prépondérante de nouvelles fonctionnalités</desc2>
+          <score>2</score>
+          <comment>Le logiciel est stabilisé. Les nouvelles versions concerne surtout l'ajout de fonctionnalités.</comment>
+        </element>
+        <element name="historyknowproblems" title="Historique">
+          <desc0>Le logiciel connaît de nombreux problèmes qui peuvent être rédhibitoires</desc0>
+          <desc1>Pas de problèmes majeurs, ni de crise</desc1>
+          <desc2>Bon historique de gestion de projet et de crise</desc2>
+          <score>1</score>
+          <comment>Pas de problème majeur connu.</comment>
+        </element>
+        <element name="forkprobability" title="Fork">
+          <desc0>Forte probabilité de fork dans un futur proche</desc0>
+          <desc1>Le logiciel provient d'un fork mais a très peu de chances d'être forké dans un futur proche</desc1>
+          <desc2>Très faible probabilité de fork. Le logiciel ne provient pas d'un fork</desc2>
+          <score>2</score>
+          <comment>Le projet a peu de chances d'être forké.</comment>
+        </element>
+      </element>
+      <element name="adoption" title="Adoption">
+        <desc>Adoption par la communauté et l'industrie</desc>
+        <element name="popularity" title="Popularité">
+          <desc0>Très peu d'utilisateurs identifiés</desc0>
+          <desc1>Usage détectable sur Internet</desc1>
+          <desc2>Nombreux utilisateurs et références</desc2>
+          <score>2</score>
+          <comment>Produit reconnu avec 12 000 installations estimées.</comment>
+        </element>
+        <element name="references" title="Références">
+          <desc0>Aucune</desc0>
+          <desc1>Peu de références, pas d'usage critique</desc1>
+          <desc2>Souvent implémenté sur des applications critiques</desc2>
+          <score>2</score>
+          <comment>Nombreuses références, telles que : NASA, General Motors, l'université internationale de Breme, Balfour Beatty Rail GmbH ou l'association Allemande de sauvetage. Le plus gros déploiement est de 20 000 tickets par jour.</comment>
+        </element>
+        <element name="contributingcommunity" title="Communauté des contributeurs">
+          <desc0>Pas de communauté ou de réelle activité (forum, liste de diffusion…)</desc0>
+          <desc1>Communauté existante avec une activité notable</desc1>
+          <desc2>Communauté forte : grosse activité sur les forums, de nombreux contributeurs et défenseurs</desc2>
+          <score>1</score>
+          <comment>Activité décelable sur les listes de discussion, cependant la communauté des contributeurs n'est pas très importante.</comment>
+        </element>
+        <element name="books" title="Livres, publications">
+          <desc0>Aucun livre sur ce logiciel</desc0>
+          <desc1>Moins de cinq livres publiés sur ce logiciel</desc1>
+          <desc2>Plus de cinq livres publiés sur ce logiciel et dans différentes langues</desc2>
+          <score>2</score>
+          <comment>Aucun livre publié sur OTRS.</comment>
+        </element>
+      </element>
+      <element name="developmentleadership" title="Direction des développements">
+        <desc>Organisation et direction des développements</desc>
+        <element name="leadingteam" title="Équipe dirigeante">
+          <desc0>Un ou deux individus engagés, pas clairement identifiés</desc0>
+          <desc1>Entre deux et cinq personnes indépendantes</desc1>
+          <desc2>Plus de cinq personnes</desc2>
+          <score>1</score>
+          <comment>L'équipe dirigeante semble limitée à quelques personnes.</comment>
+        </element>
+        <element name="managementstyle" title="Mode de direction">
+          <desc0>Dictature complète</desc0>
+          <desc1>Despotisme éclairé</desc1>
+          <desc2>Conseil d'architectes avec un leader identifié (ex : KDE)</desc2>
+          <score>1</score>
+          <comment>Despote éclairé.</comment>
+        </element>
+      </element>
+      <element name="activity" title="Activité">
+        <desc>Activité du et autour du projet</desc>
+        <element name="developersidentificationturnover" title="Nombre de développeurs, identification, turnover">
+          <desc0>Moins de trois développeurs, pas clairement identifiés</desc0>
+          <desc1>Entre quatre et sept développeurs ou plus, non identifiés, avec un turnover important</desc1>
+          <desc2>Plus de sept développeurs, équipe très simple</desc2>
+          <score>1</score>
+          <comment>4 développeurs identifiés via l'outil de gestion de bogues. La majorité des contributions sont des traductions.</comment>
+        </element>
+        <element name="activityonbugs" title="Activité autour des bugs">
+          <desc0>Réactivité faible sur le forum ou sur la liste de diffusion, ou rien au sujet des corrections de bugs dans les notes de versions</desc0>
+          <desc1>Activité détectable mais sans processus clairement exposé, temps de résolution long</desc1>
+          <desc2>Forte réactivité, basée sur des rôles et des assignations de tâches</desc2>
+          <score>2</score>
+          <comment>Activité importante décelable via l'outil de gestion de bogues (http://bugs.otrs.org).</comment>
+        </element>
+        <element name="activityonfunctionalities" title="Activité autour des fonctionnalités">
+          <desc0>Pas ou peu de nouvelles fonctionnalités</desc0>
+          <desc1>Évolution du produit conduite par une équipe dédiée ou par des utilisateurs, mais sans processus clairement exposé</desc1>
+          <desc2>Les requêtes pour les nouvelles fonctionnalités sont clairement outillées, feuille de route disponible</desc2>
+          <score>1</score>
+          <comment>Nouvelles fonctionnalités décidées par l'équipe coeur, pas de suivi formalisé des demandes en provenance des utilisateurs.</comment>
+        </element>
+        <element name="activityonreleases" title="Activité sur les releases/versions">
+          <desc0>Très faible activité que ce soit sur les versions de production ou de développement (alpha, beta)</desc0>
+          <desc1>Activité que ce soit sur les versions de production ou de développement (alpha, beta), avec des versions correctives mineures fréquentes</desc1>
+          <desc2>Activité importante avec des versions correctives fréquentes et des versions majeures planifiées liées aux prévisions de la feuille de route</desc2>
+          <score>2</score>
+          <comment>Nouvelles versions régulières (de l'ordre de 3 à 4 par an).</comment>
+        </element>
+      </element>
+    </element>
+    <element name="industrializedsolution" title="Industrialisation">
+      <desc>Niveau d'industrialisation du projet</desc>
+      <element name="independenceofdevelopments" title="Indépendance des développements">
+        <desc0>Développements réalisés à plus de 60% par des employés d'une seule société</desc0>
+        <desc1>Développements réalisés à 60% maximum par des employés d'une seule société</desc1>
+        <desc2>Développements réalisés à 20% maximum par des employés d'une seule société</desc2>
+        <score>0</score>
+        <comment>La grande majorité des développements sont réalisés par des employés de la société OTRS GmbH.</comment>
+      </element>
+      <element name="services" title="Services">
+        <desc>Offres de services</desc>
+        <element name="training" title="Formation">
+          <desc0>Pas d'offre de formation identifiée</desc0>
+          <desc1>Offre existante mais restreinte géographiquement ou en une seule langue ou fournie par un seul fournisseur</desc1>
+          <desc2>Offre riche, plusieurs fournisseurs, plusieurs langages, divisée en modules et en niveaux</desc2>
+          <score>1</score>
+          <comment>OTRS GmbH offre des formations avancées sur OTRS.</comment>
+        </element>
+        <element name="support" title="Support">
+          <desc0>Pas d'offre de support identifiée</desc0>
+          <desc1>Offre existante mais restreinte géographiquement ou en une seule langue ou fournie par un seul fournisseur ou sans garantie</desc1>
+          <desc2>Offre riche, plusieurs fournisseurs, avec des garanties (sur les temps de résolution)</desc2>
+          <score>1</score>
+          <comment>OTRS GmbH offre du support sur OTRS (http://www.otrs.de/en/support/).</comment>
+        </element>
+        <element name="consulting" title="Conseil">
+          <desc0>Pas d'offres de conseil identifiées</desc0>
+          <desc1>Offre existante mais restreinte géographiquement ou à un seul langage ou fournie par un seul fournisseur</desc1>
+          <desc2>Offre riche, plusieurs fournisseurs, plusieurs langages</desc2>
+          <score>1</score>
+          <comment>OTRS GmbH et Atos Origin offrent des services de consulting sur OTRS.</comment>
+        </element>
+      </element>
+      <element name="documentation" title="Documentation">
+        <desc0>Pas de documentation utilisateur</desc0>
+        <desc1>La documentation existe mais est en partie obsolète ou restreinte à une seule langue ou peu détaillée</desc1>
+        <desc2>Documentation à jour, traduite et éventuellement adaptée à différentes cibles de lecteurs (end-user, sysadmin, manager…)</desc2>
+        <score>2</score>
+        <comment>Manuel administrateur (en anglais et en allemand) et guide du développeur (en anglais).</comment>
+      </element>
+      <element name="qualityassurance" title="Méthode qualité">
+        <desc>Processus et méthode qualité</desc>
+        <element name="quality" title="Assurance qualité">
+          <desc0>Pas de processus qualité identifié</desc0>
+          <desc1>Processus qualité existant, mais non formalisé ou non outillé</desc1>
+          <desc2>Processus automatique de tests dans le cycle de vie du code et publication des résultats</desc2>
+          <score>0</score>
+          <comment>Pas de processus public d'assurance qualité ou d'intégration continue identifié.</comment>
+        </element>
+        <element name="tools" title="Outillage">
+          <desc0>Pas d'outils de gestion de bugs, ni d'outils de gestion de tickets</desc0>
+          <desc1>Outils standards fournis (une forge par exemple) mais peu utilisés</desc1>
+          <desc2>Utilisation très active d'outils standards</desc2>
+          <score>2</score>
+          <comment>Utilisation de bugzilla pour la gestion des bogues et des demandes de fonctionnalités.</comment>
+        </element>
+      </element>
+    </element>
+    <element name="packaging" title="Packaging">
+      <desc>Packaging pour les différents systèmes d'exploitation</desc>
+      <element name="packagingbsd" title="BSD">
+        <desc>BSD</desc>
+        <element name="packagingfreebsd" title="FreeBSD">
+          <desc0>Le logiciel n'est pas packagé pour ce système d'exploitation</desc0>
+          <desc1>Le packaging existe, mais est buggé ou n'a pas de support officiel</desc1>
+          <desc2>Le logiciel est correctement packagé pour ce système d'exploitation</desc2>
+          <score></score>
+          <comment></comment>
+        </element>
+        <element name="packagingmacosx" title="Mac OS X">
+          <desc0>Le logiciel n'est pas packagé pour ce système d'exploitation</desc0>
+          <desc1>Le packaging existe, mais est buggé ou n'a pas de support officiel</desc1>
+          <desc2>Le logiciel est correctement packagé pour ce système d'exploitation</desc2>
+          <score></score>
+          <comment></comment>
+        </element>
+        <element name="packagingnet" title="NetBSD">
+          <desc0>Le logiciel n'est pas packagé pour ce système d'exploitation</desc0>
+          <desc1>Le packaging existe, mais est buggé ou n'a pas de support officiel</desc1>
+          <desc2>Le logiciel est correctement packagé pour ce système d'exploitation</desc2>
+          <score></score>
+          <comment></comment>
+        </element>
+        <element name="packagingopen" title="OpenBSD">
+          <desc0>Le logiciel n'est pas packagé pour ce système d'exploitation</desc0>
+          <desc1>Le packaging existe, mais est buggé ou n'a pas de support officiel</desc1>
+          <desc2>Le logiciel est correctement packagé pour ce système d'exploitation</desc2>
+          <score></score>
+          <comment></comment>
+        </element>
+      </element>
+      <element name="packaginglinux" title="Linux">
+        <desc>Linux</desc>
+        <element name="packagingdebian" title="Debian">
+          <desc0>Le logiciel n'est pas packagé pour ce système d'exploitation</desc0>
+          <desc1>Le packaging existe, mais est buggé ou n'a pas de support officiel</desc1>
+          <desc2>Le logiciel est correctement packagé pour ce système d'exploitation</desc2>
+          <score></score>
+          <comment></comment>
+        </element>
+        <element name="packagingmandriva" title="Mandriva">
+          <desc0>Le logiciel n'est pas packagé pour ce système d'exploitation</desc0>
+          <desc1>Le packaging existe, mais est buggé ou n'a pas de support officiel</desc1>
+          <desc2>Le logiciel est correctement packagé pour ce système d'exploitation</desc2>
+          <score></score>
+          <comment></comment>
+        </element>
+        <element name="packagingredhat" title="Red Hat">
+          <desc0>Le logiciel n'est pas packagé pour ce système d'exploitation</desc0>
+          <desc1>Le packaging existe, mais est buggé ou n'a pas de support officiel</desc1>
+          <desc2>Le logiciel est correctement packagé pour ce système d'exploitation</desc2>
+          <score></score>
+          <comment></comment>
+        </element>
+        <element name="packagingsuse" title="SuSE">
+          <desc0>Le logiciel n'est pas packagé pour ce système d'exploitation</desc0>
+          <desc1>Le packaging existe, mais est buggé ou n'a pas de support officiel</desc1>
+          <desc2>Le logiciel est correctement packagé pour ce système d'exploitation</desc2>
+          <score></score>
+          <comment></comment>
+        </element>
+      </element>
+      <element name="packagingsource" title="Source">
+        <desc0>Le logiciel ne peut être facilement installé depuis les sources, cela demande beaucoup de travail</desc0>
+        <desc1>L'installation depuis les sources est limitée ou dépend des conditions (OS, arch, lib…)</desc1>
+        <desc2>L'installation depuis les sources est facile</desc2>
+        <score></score>
+        <comment></comment>
+      </element>
+      <element name="packagingunix" title="Unix">
+        <desc>Unix</desc>
+        <element name="packagingaix" title="AIX">
+          <desc0>Le logiciel n'est pas packagé pour ce système d'exploitation</desc0>
+          <desc1>Le packaging existe, mais est buggé ou n'a pas de support officiel</desc1>
+          <desc2>Le logiciel est correctement packagé pour ce système d'exploitation</desc2>
+          <score></score>
+          <comment></comment>
+        </element>
+        <element name="packaginghpux" title="HP-UX">
+          <desc0>Le logiciel n'est pas packagé pour ce système d'exploitation</desc0>
+          <desc1>Le packaging existe, mais est buggé ou n'a pas de support officiel</desc1>
+          <desc2>Le logiciel est correctement packagé pour ce système d'exploitation</desc2>
+          <score></score>
+          <comment></comment>
+        </element>
+        <element name="packagingsolaris" title="Solaris">
+          <desc0>Le logiciel n'est pas packagé pour ce système d'exploitation</desc0>
+          <desc1>Le packaging existe, mais est buggé ou n'a pas de support officiel</desc1>
+          <desc2>Le logiciel est correctement packagé pour ce système d'exploitation</desc2>
+          <score></score>
+          <comment></comment>
+        </element>
+      </element>
+      <element name="packagingwindows" title="Windows">
+        <desc0>Le logiciel n'est pas packagé pour ce système d'exploitation</desc0>
+        <desc1>Le packaging existe, mais est buggé ou n'a pas de support officiel</desc1>
+        <desc2>Le logiciel est correctement packagé pour ce système d'exploitation</desc2>
+        <score></score>
+        <comment></comment>
+      </element>
+    </element>
+    <element name="exploitability" title="Exploitabilité">
+      <desc>Niveau d'exploitabilité</desc>
+      <element name="easeofuseergonomics" title="Facilité d'utilisation, ergonomie">
+        <desc0>Difficulté d'utilisation, demande une connaissance approfondie des fonctionnalités du logiciel</desc0>
+        <desc1>Ergonomie austère et très technique</desc1>
+        <desc2>Ergonomie élaborée et IHM comprenant des fonctions d'aide</desc2>
+        <score>2</score>
+        <comment>OTRS est facile d'utilisation et la séparation entre interface utilisateur du support et technicien du support est opportune.</comment>
+      </element>
+      <element name="administrationmonitoring" title="Administration et supervision">
+        <desc0>Pas de fonctionnalités de contrôle, ni d'administration</desc0>
+        <desc1>Fonctionnalités présentes mais incomplètes ou à améliorer</desc1>
+        <desc2>Fonctionnalités complètes et faciles de contrôle et d'administration. Intégration possible avec des outils tiers (ex : SNMP, syslog…)</desc2>
+        <score>1</score>
+        <comment>OTRS intègre une interface Web spécifique qui permet de réaliser toutes les opérations d'administration (y compris l'édition des fichiers de configuration). Pas d'intégration avec des outils de supervision externe ou via SNMP.</comment>
+      </element>
+    </element>
+    <element name="technicaladaptability" title="Adaptabilité">
+      <desc>Adaptabilité technique</desc>
+      <element name="modularity" title="Modularité">
+        <desc0>Logiciel monolithique</desc0>
+        <desc1>Présence de modules haut niveau permettant un premier niveau d'adaptation</desc1>
+        <desc2>Conception modulaire, permettant des adaptations faciles par sélection et/ou création de modules</desc2>
+        <score>2</score>
+        <comment>Le code d'OTRS est très modulaire (utilisation intensive de « Perl modules ») et organisé de manière claire.</comment>
+      </element>
+      <element name="codemodification" title="Facilité technique de modification du code existant">
+        <desc0>Tout à la main</desc0>
+        <desc1>Recompilation possible mais complexe, sans outils, ni documentation</desc1>
+        <desc2>Recompilation facile, outillée (ex : make, ANT, Maven…) et documentée</desc2>
+        <score>2</score>
+        <comment>La clarté du code source et la documentation des API permet de facilement modifier le logiciel.</comment>
+      </element>
+      <element name="codeextension" title="Facilité d'extension du code">
+        <desc0>Toute modification demande une recompilation du code</desc0>
+        <desc1>Architecture conçue pour des extensions statiques mais exige une recompilation</desc1>
+        <desc2>Architecture de plugins, conçue pour des extensions dynamiques et sans recompilation</desc2>
+        <score>2</score>
+        <comment>Le code Perl n'est pas compilé et le code peut être étendu par l'ajout de nouveaux modules Perl.</comment>
+      </element>
+    </element>
+    <element name="strategy" title="Stratégie">
+      <desc>Stratégie du projet</desc>
+      <element name="license" title="Licence">
+        <desc>Licence, à pondérer uniquement si le client désire un jour devenir propriétaire du code</desc>
+        <element name="permissiveness" title="Permissivité">
+          <desc0>Licence très stricte, comme la GPL</desc0>
+          <desc1>Licence modérée entre les deux extrêmes (GPL et BSD), licence duale dépendante du type d'utilisateur (personne, société…) ou de leur activité</desc1>
+          <desc2>Licence très permissive comme BSD et Apache</desc2>
+          <score>0</score>
+          <comment>Licence GPL v2</comment>
+        </element>
+        <element name="protectionagainstproprietaryforks" title="Protection contre des forks commerciaux">
+          <desc0>Licence très permissive comme BSD et Apache</desc0>
+          <desc1>Licence modérée entre les deux extrêmes (GPL et BSD), licence duale dépendante du type d'utilisateur (personne, société…) ou de leur activité</desc1>
+          <desc2>Licence très stricte, comme la GPL</desc2>
+          <score>2</score>
+          <comment>Licence GPL v2</comment>
+        </element>
+      </element>
+      <element name="copyrightowners" title="Détenteur des droits">
+        <desc0>Les droits sont détenus par quelques individus ou entités commerciales, facilitant le changement de licence</desc0>
+        <desc1>Les droits sont détenus par de nombreux individus de façon homogène, rendant le changement de licence très difficile</desc1>
+        <desc2>Les droits sont détenus par une entité légale, une fondation dans laquelle la communauté a confiance (ex: FSF, Apache, ObjectWeb)</desc2>
+        <score>0</score>
+        <comment>OTRS GmbH possède la quasi intégralité des droits sur le code source.</comment>
+      </element>
+      <element name="modificationofsourcecode" title="Modification du code">
+        <desc0>Pas de moyen pratique de proposer des modifications de code</desc0>
+        <desc1>Des outils sont fournis pour accéder et modifier le code (ex : CVS, SVN) mais ne sont pas vraiment utilisés pour développer le produit</desc1>
+        <desc2>Le processus de modification de code est bien défini, exposé et respecté, basé sur des rôles bien définis</desc2>
+        <score>1</score>
+        <comment></comment>
+      </element>
+      <element name="roadmap" title="Feuille de route">
+        <desc0>Pas de feuille de route publiée</desc0>
+        <desc1>Feuille de route sans planning</desc1>
+        <desc2>Feuille de route versionnée, avec planning et mesures de retard</desc2>
+        <score>1</score>
+        <comment>Disponibilité d'une « TODO list » dans CVS (http://cvs.otrs.org/viewcvs.cgi/otrs/TODO) sans précisions sur les dates prévues pour les prochaines versions.</comment>
+      </element>
+      <element name="sponsor" title="Sponsor">
+        <desc0>Le logiciel n'a pas de sponsors, l'équipe principale n'est pas rémunérée</desc0>
+        <desc1>Le logiciel a un sponsor unique qui détermine sa stratégie</desc1>
+        <desc2>Le logiciel est sponsorisé par l'industrie</desc2>
+        <score>1</score>
+        <comment>OTRS GmbH embauche les développeurs coeur du projet.</comment>
+      </element>
+      <element name="strategicalindependence" title="Indépendance stratégique">
+        <desc0>Pas de stratégie détectable ou forte dépendance à un acteur unique (individu, société, sponsor)</desc0>
+        <desc1>Vision stratégique partagée avec plusieurs autres projets open-source mais sans engagement fort des propriétaires des droits</desc1>
+        <desc2>Indépendance forte de l'équipe de développement, droits détenus par une entité, fort engagement dans un processus de standardisation</desc2>
+        <score>0</score>
+        <comment>La stratégie d'OTRS est très liée à celle de la société OTRS GmbH.</comment>
+      </element>
+    </element>
+  </section>
+  <section name="ticketmanagement" title="Gestion de tickets">
+    <desc>Gestion de tickets de support</desc>
+    <element name="basicfeatures" title="Fonctionnalités de base">
+      <desc></desc>
+      <comment></comment>
+      <element name="statemanagement" title="Gestion d'états">
+        <desc>Gestion des états des tickets</desc>
+        <desc0>Les tickets n'ont pas d'état</desc0>
+        <desc1>Les états des tickets sont figés et difficilement modifiables</desc1>
+        <desc2>Les états des tickets sont facilement modifiables</desc2>
+        <score>2</score>
+        <comment>Oui. Avec possibilité par les utilisateurs de modifier l'état d'un ticket. Les administrateurs peuvent également ajouter de nouveaux états. 
+Les états par défaut sont : 'closed successful', 'closed unsuccessful', 'merged', 'new', 'open', 'pending auto close+', 'pending auto close-', 'pending reminder' et 'removed'.</comment>
+      </element>
+      <element name="prioritymanagement" title="Gestion des priorités">
+        <desc>Gestion des priorités des tickets</desc>
+        <desc0>Les tickets n'ont pas de priorités</desc0>
+        <desc1>Les priorités des tickets sont figées et difficilement modifiables</desc1>
+        <desc2>Les priorités des tickets sont facilement modifiables</desc2>
+        <score>2</score>
+        <comment>Oui. Le nombre et les libellés des niveaux de priorité sont configurables.
+Les priorité par défaut sont : '1 very low', '2 low', '3 normal', '4 high' et '5 very high'.</comment>
+      </element>
+      <element name="history" title="Historique">
+        <desc>Disponibilité de l'historique des actions réalisées sur un ticket</desc>
+        <desc0>Aucun historique n'est disponible sur les tickets</desc0>
+        <desc1>Historique des tickets disponible mais ne contenant pas l'intégralité des actions réalisées</desc1>
+        <desc2>Historique complet des tickets disponible</desc2>
+        <score>2</score>
+        <comment>Oui. Historique des échanges pour l'utilisateur du support et historique détaillé de toutes les opérations pour le technicien du support.</comment>
+      </element>
+      <element name="attachements" title="Attachement de fichiers">
+        <desc>Possibilité d'attacher des fichiers à un ticket</desc>
+        <desc0>Pas d'attachement de fichiers possible</desc0>
+        <desc1>Fonction d'attachement de fichiers disponible mais limitée</desc1>
+        <desc2>Fonction d'attachement de fichiers disponible  et complète</desc2>
+        <score>1</score>
+        <comment>Oui. Cependant chaque fichier doit être attaché et soumis individuellement.</comment>
+      </element>
+    </element>
+    <element name="advancedfeatures" title="Fonctionnalités avancées">
+      <desc></desc>
+      <comment></comment>
+      <element name="assignation" title="Assignation contrôlée">
+        <desc>Possibilité de contrôler la visibilité de l'assignation d'un ticket à un technicien. Ré-assignation.</desc>
+        <desc0>Les utilisateurs peuvent eux-mêmes assigner leurs tickets aux techniciens</desc0>
+        <desc1>Les utilisateurs ne peuvent pas savoir à qui est assigné un ticket. Il est impossible de réassigenr un ticket déjà assigné.</desc1>
+        <desc2>Les utilisateurs ne peuvent pas savoir à qui est assigné un ticket. Il possible de réassigenr un ticket déjà assigné.</desc2>
+        <score>2</score>
+        <comment>Oui. Seul un technicien peut voir à qui un ticket a été assigné et s'assigner un nouveau ticket ou un ticket existant.</comment>
+      </element>
+      <element name="delegation" title="Délégation de création">
+        <desc>Possibilité de créer un ticket au nom d'un autre utilisateur</desc>
+        <desc0>Impossible de créer un ticket au nom d'un autre utilisateur</desc0>
+        <desc1>Seul un administrateur peut créer un ticket au nom d'un utilisateur</desc1>
+        <desc2>Tout technicien peut créer un ticket au nom d'un utilisateur ou modifier l'utilisateur associé à un ticket existant</desc2>
+        <score>2</score>
+        <comment>Oui. Un technicien peut créer un ticket au nom d'un utilisateur (cas d'un ticket téléphonique) ou modifier l'utilisateur attaché à un ticket existant.</comment>
+      </element>
+      <element name="fulltextsearch" title="Recherche full-text">
+        <desc>Possibilité d'effectuer des recherches sur mots-clés sur l'intégralité d'un ticket</desc>
+        <desc0>Fonctionnalité de recherche limitée aux meta-données du ticket uniquement</desc0>
+        <desc1>Recherche full-text sur tous le contenu d'un ticket mais pas sur les fichiers attachés</desc1>
+        <desc2>Recherche full-text sur tous le contenu d'un ticket et sur les fichiers attachés</desc2>
+        <score>1</score>
+        <comment>Oui. Recherche dans les meta-données comme dans le texte des tickets. Pas de recherche cependant dans les pièces jointes.</comment>
+      </element>
+      <element name="ticketlinking" title="Liaisons entre tickets">
+        <desc>Possibilité de créer des liens entre tickets (parent, enfant, doublon, ...)</desc>
+        <desc0>Pas de liaison possible entre tickets</desc0>
+        <desc1>Un ticket peut être déclaré comme père ou fils d'un autre.</desc1>
+        <desc2>Un ticket peut être déclaré comme père ou fils d'un autre. Il est également possible de fusionner ou scinder un ticket.</desc2>
+        <score>2</score>
+        <comment>Oui. Possibilité de fusionner des tickets existants, ainsi que de scinder un ticket en deux.</comment>
+      </element>
+      <element name="timemanagement" title="Gestion du temps passé">
+        <desc>Saisie du temps de travail passé par les techniciens à la résolution des tickets</desc>
+        <desc0>Pas de fonctionnalité de suivi du temps passé à la résolution des tickets</desc0>
+        <desc1>Saisie possible du temps passé par les techniciens mais pas sur tous les types d'actions</desc1>
+        <desc2>Saisie du temps passé par les techniciens sur tous les types d'actions</desc2>
+        <score>2</score>
+        <comment>Oui. Lors de la saisie d'une réponse, le technicien peut également préciser le nombre d'unités de temps passées.</comment>
+      </element>
+    </element>
+    <element name="user/techseparation" title="Séparation utilisateur/technicien">
+      <desc>Séparation entre les interfaces graphiques des utilisateurs et des techniciens</desc>
+      <comment></comment>
+      <element name="userihm" title="Vue utilisateur séparée">
+        <desc>La vue des utilisateurs du support est-elle différente de celle des techniciens ?</desc>
+        <desc0>Les utilisateurs et les techniciens utilisent la même vue pour utiliser l'outil</desc0>
+        <desc1>Les utilisateurs et les techniciens utilisent la même vue pour utiliser l'outil, mais elle peut être configurée pour cacher certains champs ou actions aux utilisateurs</desc1>
+        <desc2>Les utilisateurs et les techniciens disposent de vues séparées et adaptées à chaque type d'acteur</desc2>
+        <score>2</score>
+        <comment>Oui. Les utilisateurs et les techniciens du support ont des IHM complètement différentes.</comment>
+      </element>
+      <element name="privatespaces" title="Espaves privés">
+        <desc>Possibilité de cacher des notes internes sur un ticket à l'utilisateur</desc>
+        <desc0>Les utilisateurs ont une visibilité sur l'intégralité des données des tickets</desc0>
+        <desc1>Il est possible de cacher certaines données des tickets aux utilisateurs</desc1>
+        <desc2>Il est possible de créer rdes notes privées, automatiquement invisibles des utilisateurs</desc2>
+        <score>2</score>
+        <comment>Oui. Possibilité de créer des notes internes, attachées à un ticket mais non visible des utilisateurs.</comment>
+      </element>
+    </element>
+    <element name="knowledgemanagement" title="Capitalisation">
+      <desc>Fonctionnalités de capitalisation de la connaissance de l'équipe support</desc>
+      <comment></comment>
+      <element name="knowledgebase" title="Base de connaissance">
+        <desc>Présence ou intégration d'une base de connaissances</desc>
+        <desc0>Pas de possibilité d'utiliser de base de connaissances</desc0>
+        <desc1>Base de connaissance intégrée limitée et impossibilité de s'intégrer avec une solution externe</desc1>
+        <desc2>Base de connaissance intégrée et possibilité de s'intégrer avec une solution externe</desc2>
+        <score>0</score>
+        <comment>Non. </comment>
+      </element>
+      <element name="faq" title="FAQ">
+        <desc>Présence d'une Foire Aux Questions</desc>
+        <desc0>Pas de FAQ disponible</desc0>
+        <desc1>FAQ limitée et impossibilité de s'intégrer avec une solution externe</desc1>
+        <desc2>FAQ intégrée et possibilité de s'intégrer avec une solution externe</desc2>
+        <score>1</score>
+        <comment>Oui. Meta-données gérées : catégorie, langue et visibilité (publique, utilisateur, technicien). Recherche par mot clé ou en full-text.
+Cependant pas de gestion de droits liée à des groupes comme pour les tickets.</comment>
+      </element>
+    </element>
+  </section>
+  <section name="eventmanagement" title="Gestion des évènements">
+    <desc>Gestion des évènements</desc>
+    <element name="creationchannels" title="Canaux de création de tickets">
+      <desc>Canaux disponibles pour la création de tickets</desc>
+      <comment></comment>
+      <element name="webchannel" title="Web">
+        <desc>Création de tickets via un site Web</desc>
+        <desc0>Aucune interface Web disponible</desc0>
+        <desc1>Interface Web disponible mais limitée (peu personnalisable, ou n'offrant pas toutes les fonctionnalités de la solution)</desc1>
+        <desc2>Interface Web complète et personnalisable</desc2>
+        <score>2</score>
+        <comment>Oui.</comment>
+      </element>
+      <element name="mailchannel" title="Email">
+        <desc>Création de ticket via email</desc>
+        <desc0>Impossible de créer des tickets via Email</desc0>
+        <desc1>Possibilité de créer des tickets via email mais le système ne sais pas rattacher des emails à des tickets existants</desc1>
+        <desc2>Possibilité de créer et de completer des tickets via email</desc2>
+        <score>2</score>
+        <comment>Oui. Via système de vérification périodique de boîtes email. </comment>
+      </element>
+      <element name="otherchannels" title="Autres canaux">
+        <desc>Autres canaux supportés pour la création de tickets</desc>
+        <comment>Possibilité d'interfaçage avec Fax, SMS et téléphonie mais qui nécessite des produits ou des développements complémentaires.</comment>
+      </element>
+    </element>
+    <element name="notifications" title="Notifications">
+      <desc>Fonctionnalités de notifications</desc>
+      <comment></comment>
+      <element name="inactivitynotif" title="Notification sur inactivité">
+        <desc></desc>
+        <desc0>Impossible de détecter des tickets en inactivité</desc0>
+        <desc1>Un technicien peut poser une alarme de rappel</desc1>
+        <desc2>Mécanisme configurable de détection d'inactivité</desc2>
+        <score>2</score>
+        <comment>Oui. Mécanisme d'escalade automatique des tickets. Possibilité de pose de rappels automatique par le technicien (exemple : recontacter cet utilisateur dans 1 mois).</comment>
+      </element>
+      <element name="emailnotif" title="Email">
+        <desc></desc>
+        <desc0>Pas de notification par email</desc0>
+        <desc1>Seuls les messages attachés aux tickets peuvent être envoyés par email aux utilisateurs</desc1>
+        <desc2>Le système peut notifier par email les utilisateurs ou les techniciens sur tous types d'évènements</desc2>
+        <score>2</score>
+        <comment>Oui.</comment>
+      </element>
+      <element name="imnotif" title="Messagerie instantanée">
+        <desc></desc>
+        <desc0>Pas de notification par messagerie instantanée</desc0>
+        <desc1>Seuls les messages attachés aux tickets peuvent être envoyés par messagerie instantanée aux utilisateurs</desc1>
+        <desc2>Le système peut notifier par messagerie instantanée les utilisateurs ou les techniciens sur tous types d'évènements</desc2>
+        <score>1</score>
+        <comment>La connexion avec Jabber est possible.</comment>
+      </element>
+      <element name="othernotifs" title="Autres canaux">
+        <desc>Autres canaux disponibles pour les notifications</desc>
+        <comment>Aucun.</comment>
+      </element>
+    </element>
+  </section>
+  <section name="deployment" title="Déploiement">
+    <desc>Fonctionnalités de déploiement</desc>
+    <element name="customization" title="Personnalisation">
+      <desc>Possibilités de personnalisation de la solution</desc>
+      <comment></comment>
+      <element name="reportcustom" title="Personnalisation des états">
+        <desc>Possibilité de renommer, ajouter ou supprimer les états de tickets</desc>
+        <desc0>Les états sont non modifiables</desc0>
+        <desc1>Les états peuvent être renommés mais non ajoutés ou supprimés</desc1>
+        <desc2>Les états peuvent être renommés, ajoutés ou supprimés</desc2>
+        <score>2</score>
+        <comment>Oui.</comment>
+      </element>
+      <element name="prioritycustom" title="Personnalisation des priorités">
+        <desc>Possibilité de renommer, ajouter ou supprimer les priorités de tickets</desc>
+        <desc0>Les priorités sont non modifiables</desc0>
+        <desc1>Les priorités peuvent être renommeés mais non ajoutées ou supprimées</desc1>
+        <desc2>Les priorités peuvent être renommées, ajoutées ou supprimées</desc2>
+        <score>2</score>
+        <comment>Oui.</comment>
+      </element>
+      <element name="customfileds" title="Champs personnalisés">
+        <desc>Possibilité d'ajouter des champs personnalisés dans les formulaires des tickets</desc>
+        <desc0>Impossible d'ajouter de champs personnalisés</desc0>
+        <desc1>L'ajout de champs personnalisés est possible mais limité (faible nombre ou sans domaines de valeurs)</desc1>
+        <desc2>L'ajout de champs personnalisés est possible avec précision des domaines de valeurs</desc2>
+        <score>2</score>
+        <comment>Oui.</comment>
+      </element>
+      <element name="templates" title="Modèles de réponses">
+        <desc>Présence de modèles (templates) configurable pour le création de réponses-types</desc>
+        <desc0>Pas de modèles de réponses</desc0>
+        <desc1>Modèles de réponses disponibles mais peu configurables et sans insertion de champs dynamiques</desc1>
+        <desc2>Modèles de réponses disponibles avec insertion de champs dynamiques</desc2>
+        <score>2</score>
+        <comment>Oui. Des modèles types de réponses sont configurables, en plusieurs langues.</comment>
+      </element>
+      <element name="guicustom" title="Personnalisation de l'IHM">
+        <desc>Possibilités de personnalisation de l'IHM</desc>
+        <desc0>L'IHM n'est pas personnalisable</desc0>
+        <desc1>L'IHM est difficilement personnalisable</desc1>
+        <desc2>La solution intègre un mécanisme de thèmes basé notamment sur l'utilisation de feuilles de styles CSS</desc2>
+        <score>1</score>
+        <comment>Oui, via une gestion de thèmes à base de feuilles de styles CSS et d'un langage de template spécifique à OTRS.</comment>
+      </element>
+    </element>
+    <element name="integration" title="Intégration">
+      <desc>Capacités d'intégration de la solution dans un existant</desc>
+      <comment></comment>
+      <element name="authentication" title="Authentification">
+        <desc>Méthodes d'autentification supportées</desc>
+        <desc0>Seule l'autentification native de la solution est supportée</desc0>
+        <desc1>Autentification via quelques SGBD ou via fichiers plats</desc1>
+        <desc2>Autentification via la plupart des SGBD, LDAP ou fichiers plats</desc2>
+        <score>2</score>
+        <comment>Authentification possible en interne (Base de données) ou en externe (annuaire LDAP, authentification basique HTTP, RADIUS). Active Directory n'est pas supporté.</comment>
+      </element>
+      <element name="storage" title="Stockage">
+        <desc>Types de stockage supportés</desc>
+        <desc0>Seul le stockage natif de la solution est supporté</desc0>
+        <desc1>Stockage dans quelques SGBD ou dans des fichiers plats</desc1>
+        <desc2>Stockage dans la plupart SGBD, support de LDAP et des fichiers plats</desc2>
+        <score>2</score>
+        <comment>Données liées aux utilisateurs : Base de données ou annuaire LDAP, avec possibilité de mélanger les deux types.
+Données liées aux tickets : Base de données (MySQL, PostgreSQL, Oracle, MaxDB, MSQLServer) ou système de fichiers.</comment>
+      </element>
+      <element name="phone" title="CTI">
+        <desc>Possibilités de couplage avec la téléphonie</desc>
+        <desc0>Pas de couplage possible avec la téléphonie</desc0>
+        <desc1>Couplage avec la téléphonie possible mais limité ou via des produits tiers</desc1>
+        <desc2>Couplage avec la téléphonie intégré à la solution</desc2>
+        <score>0</score>
+        <comment>Non.</comment>
+      </element>
+    </element>
+    <element name="architecture" title="Architecture">
+      <desc>Posibilités d'architecture disponibles</desc>
+      <comment></comment>
+      <element name="loadbalancing" title="Répartition de charge">
+        <desc>Mécanismes de répartition de charge disponibles</desc>
+        <desc0>Aucun mécanisme de répartition de charge n'est disponible</desc0>
+        <desc1>Possibilité de répartir la charge entre plusieurs serveurs mais via des produits tiers ou sans affinité de session</desc1>
+        <desc2>Présence d'un mécanisme  de répartition de charge avec affinité de session</desc2>
+        <score>2</score>
+        <comment>Possibilité de monter une ferme de serveurs OTRS avec une répartition de charge au niveau apache. Un mécanisme de verrous applicatifs permet de gérer les accès concurrents à la base de données.</comment>
+      </element>
+      <element name="failover" title="Haute disponibilité">
+        <desc>Mécanismes de haute disponibilité disponibles</desc>
+        <desc0>Aucun mécanisme de haute disponibilité n'est disponible</desc0>
+        <desc1>Sécurisation via un mécanisme de type répartition de charge </desc1>
+        <desc2>Sécurisation via un mécanisme de type cluster avec reprise sur incident</desc2>
+        <score>1</score>
+        <comment>Limitée au mécanisme de répartition de charge décrit ci-dessus, pas de reprise de session sur incident.</comment>
+      </element>
+    </element>
+  </section>
+  <section name="administration" title="Administration">
+    <desc>Fonctionnalités d'administration</desc>
+    <element name="admintools" title="Outils">
+      <desc>Outils d'administration disponibles</desc>
+      <comment></comment>
+      <element name="console" title="Console">
+        <desc>Console(s) d'administration</desc>
+        <desc0>Aucune interface d'administration n'est disponible, la configuration se fait via l'édition de fichiers</desc0>
+        <desc1>Une interface d'administration est disponible mais reste limité (exemple : elle ne couvre pas tout le paramétrage)</desc1>
+        <desc2>Une console d'administration complète est disponible</desc2>
+        <score>2</score>
+        <comment>Console Web, avec possibilité d'éditer en ligne les différents fichiers de configuration.</comment>
+      </element>
+      <element name="cli" title="Ligne de commandes">
+        <desc>Outil(s) en lignes de commandes</desc>
+        <desc0>Pas d'outil en lignes de commandes</desc0>
+        <desc1>Un outil en ligne de commandes est disponible mais reste limité (exemple : ne couvre pas toutes les fonctionnalités)</desc1>
+        <desc2>Un outil en ligne de commandes complet est disponible</desc2>
+        <score>2</score>
+        <comment>Oui. Via l'outil GenericAgent.</comment>
+      </element>
+      <element name="batch" title="Mode batch">
+        <desc>Possibilité d'utilisation en mode batch (traitement par lots)</desc>
+        <desc0>Pas de possibilité de traitement par lots</desc0>
+        <desc1>Traitement pas lots possibles par un administrateur</desc1>
+        <desc2>Traitement pas lots possibles par un administrateur. Possibilité d'action sur des groupes de tickets par les techniciens.</desc2>
+        <score>2</score>
+        <comment>Oui. Administrateur : utilisation de l'outil GenericAgent en ligne de commande ou via l'interface Web). Technicien : possibilité de créer des notes pour des groupes de tickets.</comment>
+      </element>
+    </element>
+    <element name="logs" title="Journalisation">
+      <desc>Mécanismes de journalisation</desc>
+      <desc0>Aucun journal n'est disponible</desc0>
+      <desc1>Un journal est disponible mais est non configurable</desc1>
+      <desc2>Un journal configurable est disponible</desc2>
+      <score>2</score>
+      <comment>Oui. Dans un fichier ou via syslog.</comment>
+    </element>
+    <element name="rightsmanagement" title="Gestion des droits">
+      <desc></desc>
+      <desc0>Pas de véritable gestion de droits</desc0>
+      <desc1>Gestion de droits simple mais n'intégrant pas les notions de rôles et de groupes</desc1>
+      <desc2>Gestion de droits intégrant les notions de rôles et de groupes</desc2>
+      <score>2</score>
+      <comment>Oui. Gestion de groupes, des rôles et des association avec les files d'attentes de tickets.</comment>
+    </element>
+    <element name="reportingtools" title="Suivi d'activité">
+      <desc>Fonctionnalités de suivi de l'activité de support</desc>
+      <comment></comment>
+      <element name="stats" title="Statistiques">
+        <desc></desc>
+        <desc0>Aucune statistique n'est disponible</desc0>
+        <desc1>Quelques statistiques sont disponibles. Il est difficile de les modifier ou d'en ajouter de nouvelles</desc1>
+        <desc2>Module extensible de statistiques disponible</desc2>
+        <score>1</score>
+        <comment>Possibilité de générer des statistiques (graphiques ou fichiers CSV) mais qui restent assez limitées.</comment>
+      </element>
+      <element name="reports" title="Rapports">
+        <desc></desc>
+        <desc0>Aucune génération de rapports n'est possible</desc0>
+        <desc1>Quelqsues rapports sont disponibles. Il est difficile de les modifier ou d'en ajouter de nouveaux</desc1>
+        <desc2>Module extensible de génération de rapports disponible</desc2>
+        <score>0</score>
+        <comment>Non. </comment>
+      </element>
+      <element name="sqlrequests" title="Requêtes libres">
+        <desc>Possibilité d'exécuter des requêtes libres sur la base de tickets</desc>
+        <desc0>Pas de possibilité d'exécuter de requêtes libres</desc0>
+        <desc1>Requêtes libres disponibles mais impossible de les stocker</desc1>
+        <desc2>Requêtes libres disponibles et stockables</desc2>
+        <score>2</score>
+        <comment>Oui. Requêtes SQL possibles via l'interface d'administration.</comment>
+      </element>
+    </element>
+  </section>
+  <section name="itilcompliance" title="Certification ITIL:TISM">
+    <desc>Certification ITIL:TISM</desc>
+    <element name="servicesupport" title="Service support">
+      <desc></desc>
+      <comment></comment>
+      <element name="servicedesk" title="Service Desk">
+        <desc></desc>
+        <desc0>No support planned</desc0>
+        <desc1>No support is planned on the roadmap</desc1>
+        <desc2>The solution is compliant</desc2>
+        <score>1</score>
+        <comment>Prévu pour fin 2006, OTRS::ITSM Phase I</comment>
+      </element>
+      <element name="iceidentmanagement" title="Incident Management">
+        <desc></desc>
+        <desc0>No support planned</desc0>
+        <desc1>No support is planned on the roadmap</desc1>
+        <desc2>The solution is compliant</desc2>
+        <score>1</score>
+        <comment>Prévu pour fin 2006, OTRS::ITSM Phase I</comment>
+      </element>
+      <element name="problemmanagement" title="Problem Management">
+        <desc></desc>
+        <desc0>No support planned</desc0>
+        <desc1>No support is planned on the roadmap</desc1>
+        <desc2>The solution is compliant</desc2>
+        <score>1</score>
+        <comment>Prévu pour fin 2006, OTRS::ITSM Phase I</comment>
+      </element>
+      <element name="configurationmanagement" title="Configuration Management">
+        <desc></desc>
+        <desc0>No support planned</desc0>
+        <desc1>No support is planned on the roadmap</desc1>
+        <desc2>The solution is compliant</desc2>
+        <score>1</score>
+        <comment>Prévu pour fin 2006, OTRS::ITSM Phase II</comment>
+      </element>
+      <element name="changemanagement" title="Change Management">
+        <desc></desc>
+        <desc0>No support planned</desc0>
+        <desc1>No support is planned on the roadmap</desc1>
+        <desc2>The solution is compliant</desc2>
+        <score>1</score>
+        <comment>Prévu pour fin 2006, OTRS::ITSM Phase II</comment>
+      </element>
+      <element name="releasemanagement" title="Release Management">
+        <desc></desc>
+        <desc0>No support planned</desc0>
+        <desc1>No support is planned on the roadmap</desc1>
+        <desc2>The solution is compliant</desc2>
+        <score>1</score>
+        <comment>Prévu pour fin 2006, OTRS::ITSM Phase II</comment>
+      </element>
+    </element>
+    <element name="cmdb" title="CMDB">
+      <desc></desc>
+      <desc0>No support planned</desc0>
+      <desc1>No support is planned on the roadmap</desc1>
+      <desc2>The solution is compliant</desc2>
+      <score>1</score>
+      <comment>Prévu pour fin 2006, OTRS::ITSM Phase I</comment>
+    </element>
+    <element name="servicedelivery" title="Service delivery">
+      <desc></desc>
+      <comment></comment>
+      <element name="servicelevelmanagement" title="Service Level Management">
+        <desc></desc>
+        <desc0>No support planned</desc0>
+        <desc1>No support is planned on the roadmap</desc1>
+        <desc2>The solution is compliant</desc2>
+        <score>1</score>
+        <comment>Prévu pour fin 2006, OTRS::ITSM Phase III</comment>
+      </element>
+      <element name="capacitymanagement" title="Capacity Management">
+        <desc></desc>
+        <desc0>No support planned</desc0>
+        <desc1>No support is planned on the roadmap</desc1>
+        <desc2>The solution is compliant</desc2>
+        <score>1</score>
+        <comment>Prévu pour fin 2006, OTRS::ITSM Phase III</comment>
+      </element>
+      <element name="itservicemanagement" title="IT Service Continuity Management">
+        <desc></desc>
+        <desc0>No support planned</desc0>
+        <desc1>No support is planned on the roadmap</desc1>
+        <desc2>The solution is compliant</desc2>
+        <score>1</score>
+        <comment>Prévu pour fin 2006, OTRS::ITSM Phase III</comment>
+      </element>
+      <element name="availabilitymanagement" title="Availability Management">
+        <desc></desc>
+        <desc0>No support planned</desc0>
+        <desc1>No support is planned on the roadmap</desc1>
+        <desc2>The solution is compliant</desc2>
+        <score>1</score>
+        <comment>Prévu pour fin 2006, OTRS::ITSM Phase III</comment>
+      </element>
+      <element name="financialmanagement" title="Financial Management">
+        <desc></desc>
+        <desc0>No support planned</desc0>
+        <desc1>No support is planned on the roadmap</desc1>
+        <desc2>The solution is compliant</desc2>
+        <score>1</score>
+        <comment>Prévu pour fin 2006, OTRS::ITSM Phase III</comment>
+      </element>
+    </element>
+  </section>
+</document>

@@ -1,0 +1,33 @@
+<!ENTITY QSOS.label "QSOS Template XUL Editor">
+<!ENTITY popup-new-section.label "Neue Sektion">
+<!ENTITY popup-new-desc.label "Neues Informationskriterium">
+<!ENTITY popup-new-score.label "Neues Zielkriterium">
+<!ENTITY popup-moveup.label "Nach oben">
+<!ENTITY popup-movedown.label "Nach unten">
+<!ENTITY popup-delete.label "L&#246;schen">
+<!ENTITY file-menu.label "Datei">
+<!ENTITY file-new.label "Neu">
+<!ENTITY file-open.label "&#214;ffnen">
+<!ENTITY file-save.label "Speichern">
+<!ENTITY file-saveas.label "Speichern unter...">
+<!ENTITY file-close.label "Schlie&#223;en">
+<!ENTITY file-exit.label "Beenden">
+<!ENTITY tree-menu.label "Ansicht">
+<!ENTITY tree-expand.label "Alle &#246;ffnen">
+<!ENTITY tree-collapse.label "Alle schlie&#223;en">
+<!ENTITY help-menu.label "Hilfe">
+<!ENTITY help-about.label "Info">
+<!ENTITY name.label "Kriterium">
+<!ENTITY g-template.label "Template">
+<!ENTITY f-softwarefamily.label "Software Familie: ">
+<!ENTITY f-version.label "Version: ">
+<!ENTITY f-c-name.label "UID">
+<!ENTITY f-c-title.label "Titel">
+<!ENTITY g-c-type.label "Typ">
+<!ENTITY f-c-info.label "Information">
+<!ENTITY f-c-score.label "Ziel">
+<!ENTITY g-c-desc.label "Beschreibung">
+<!ENTITY g-c-scores.label "Ziele">
+<!ENTITY f-c-score0.label "Ziel 0: ">
+<!ENTITY f-c-score1.label "Ziel 1: ">
+<!ENTITY f-c-score2.label "Ziel 2: ">

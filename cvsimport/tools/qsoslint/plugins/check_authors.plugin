@@ -1,0 +1,22 @@
+sub check {
+  my ($file,$qsos) = @_;
+
+  my @err;
+  my @warn;
+  my $format = $qsos->getqsosformat();
+
+  open QSOSFILE,"<".$file or die;
+
+  foreach (<QSOSFILE>) {
+    if (/<email><\/email>/) {
+    push @warn, "author without email address";
+    }
+    if (/<name><\/name>/) {
+    push @err, "author without name";
+    }
+  }
+  close QSOSFILE;
+
+  return { err=> \@err, warn => \@warn  };
+}
+1;

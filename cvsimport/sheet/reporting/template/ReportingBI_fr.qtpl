@@ -1,0 +1,658 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document>
+   <header>
+      <authors>
+    </authors>
+      <dates>
+         <creation></creation>
+         <validation></validation>
+      </dates>
+      <language>fr</language>
+      <appname></appname>
+      <release></release>
+      <licenseid></licenseid>
+      <licensedesc></licensedesc>
+      <url></url>
+      <desc></desc>
+      <demourl></demourl>
+      <qsosformat>1.6</qsosformat>
+      <qsosappfamily>Reporting BI</qsosappfamily>
+      <qsosspecificformat>0.1</qsosspecificformat>
+      <qsosappname></qsosappname>
+   </header>
+   <include section="Presto_generic"></include>
+   <section name="plate-formereporting" title="Plate-forme de Reporting BI">
+      <desc>Section pour les plates-formes de reporting BI</desc>
+      <element name="sourcesdedonnees" title="Sources de données">
+         <desc></desc>
+         <comment></comment>
+         <element name="sgbdnatif" title="SGBD Natif">
+            <desc>Les requêtes se font sur les middleware natifs des SGBD.</desc>
+            <desc0>Non Disponible</desc0>
+            <desc1>Partiellement Disponible</desc1>
+            <desc2>Disponible</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="fichiersnatifs" title="Fichiers Natifs">
+            <desc>Le requêteur supporte nativement (hors générique ODBC) les fichiers comme source.</desc>
+            <desc0>Non Disponible</desc0>
+            <desc1>Un des formats suivants n'est pas supporté : csv, xls, xml</desc1>
+            <desc2>Les formats de fichiers csv, xls et xml sont supportés</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="microsoft" title="Générique Microsoft">
+            <desc>Les sources de données Microsoft ODBC, DAO, etc. sont supportés.</desc>
+            <desc0>Non Disponible</desc0>
+            <desc1>Partiellement Disponible</desc1>
+            <desc2>Disponible</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="java" title="Générique Java">
+            <desc>Les sources de données java génériques jDBC sont supportées.</desc>
+            <desc0>Non Disponible</desc0>
+            <desc1>Partiellement Disponible</desc1>
+            <desc2>Sources génériques personnalisées supportées.</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+      </element>
+      <element name="structure" title="Architecture">
+         <desc>Critères pour évaluer l'architecture de la plate-forme Reporting BI.</desc>
+         <comment></comment>
+         <element name="portail" title="Portail">
+            <desc>La plate-forme BI est un portail Web implémenté dans un serveur d'application.</desc>
+            <desc0>Non Disponible</desc0>
+            <desc1>Le portail a une architecture monlithique et fermée</desc1>
+            <desc2>Architecture SOA interne : Les fonctionnalités du portail sont accessibles sous forme de services et intégrées au serveur d'applications</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="serveurc/s" title="Serveur c/s">
+            <desc>La plate-forme est un serveur c/s avec référentiel partagé.</desc>
+            <desc0>Non Disponible</desc0>
+            <desc1>Référentiel partagé limité</desc1>
+            <desc2>Le référentiel inclut la gestion de rapports publiés</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="desktop" title="Desktop">
+            <desc>La plate-forme est un poste de reporting isolé.</desc>
+            <desc0>Non Disponible</desc0>
+            <desc1>Partiellement Disponible</desc1>
+            <desc2>Surcouche métier pour non informaticien disponible</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="agl" title="AGL">
+            <desc>La plate-forme Reporting est intégrable à un environnement de développement : API générateur d'états, requêtes, rapports, etc.</desc>
+            <desc0>Non Disponible</desc0>
+            <desc1>Quelques unes de ces fonctions sont présentes</desc1>
+            <desc2>Toutes ces fonctions sont présentes</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="bureautique" title="Bureautique">
+            <desc>La plate-forme Reporting peut s'intégrer dans une suite bureautique (ex. OOo, MS Office).</desc>
+            <desc0>Non Disponible</desc0>
+            <desc1>Intégration basique (OLE, automation, plug in, etc...)</desc1>
+            <desc2>Intégration totale (menu, barre d'outils, bandeau, etc...)</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="soa" title="SOA">
+            <desc>La plate-forme expose des services SOA de reporting.</desc>
+            <desc0>Non Disponible</desc0>
+            <desc1>Niveau de services élémentaires</desc1>
+            <desc2>Différents niveaux de services</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+      </element>
+      <element name="referentiel" title="Référentiel">
+         <desc></desc>
+         <comment></comment>
+         <element name="proprietaire" title="Partage">
+            <desc>Le référentiel est un fichier de méta données propriétaire.</desc>
+            <desc0>Non Disponible</desc0>
+            <desc1>Mono utilisateur</desc1>
+            <desc2>Multi utilisateur</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="sgbd" title="Stockage">
+            <desc>Mode de stockage du référentiel.</desc>
+            <desc0>Fichier</desc0>
+            <desc1>SGBD</desc1>
+            <desc2>Système de fichiers + SGBD (comme BO Xi)</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="metadonnees" title="Méta Données">
+            <desc>Import et export total ou partiel de méta données.</desc>
+            <desc0>Non Disponible</desc0>
+            <desc1>Format propriétaire</desc1>
+            <desc2>CWM</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+      </element>
+      <element name="mediacible" title="Média Cible">
+         <desc>Média de présentation des rapports.</desc>
+         <comment></comment>
+         <element name="ecran" title="Écran">
+            <desc>Le média cible des rapports est l'écran</desc>
+            <desc0>Non Disponible</desc0>
+            <desc1>Partiellement disponible</desc1>
+            <desc2>Disponible</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="bureautique1" title="Bureautique">
+            <desc>Les rapports sont générés aux formats bureautique (Suite, pdf...).</desc>
+            <desc0>Non Disponible</desc0>
+            <desc1>Format bureautique imposé par la solution</desc1>
+            <desc2>Nombreux formats supportés (suite, pdf, ...)</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="fichiers" title="Fichiers">
+            <desc>Les Rapports sont des fichiers de données.</desc>
+            <desc0>Non Disponible</desc0>
+            <desc1>Export au format CSV supporté</desc1>
+            <desc2>Autres formats d'exports disponibles : xls, xml, ...</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="imprimante" title="Imprimante">
+            <desc>Le rapport peut être imprimé.</desc>
+            <desc0>Non Disponible</desc0>
+            <desc1>Partiellement Disponible</desc1>
+            <desc2>Impression Pixel Ready ou WYSIWYG disponible</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="impressionprofessionnelle" title="Impression professionnelle">
+            <desc>Format d'impression professionnelle</desc>
+            <desc0>Non Disponible</desc0>
+            <desc1>Format imprimable offset</desc1>
+            <desc2>Format pre-presse</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="telephonemobile" title="Téléphone mobile">
+            <desc>Restitution des rapports sur téléphone mobile</desc>
+            <desc0>Pas de prise en charge particulière des terminaux mobiles</desc0>
+            <desc1>Les rapports sont accessibles par les terminaux mobiles via un navigateur et s'adaptent à l'écran</desc1>
+            <desc2>Des applications dédiées destinés aux terminaux mobiles sont disponibles</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+      </element>
+      <element name="formatsdedocuments" title="Formats de documents">
+         <desc>Format utilisé pour stocker les descriptions des rapports et eventuellement des données qu'ils contiennent</desc>
+         <comment></comment>
+         <element name="proprietaire1" title="Propriétaire">
+            <desc>Les Rapports sont dans des formats propriétaires.</desc>
+            <desc0>Non Disponible</desc0>
+            <desc1>Partiellement Disponible</desc1>
+            <desc2>Disponible</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="xml" title="XML">
+            <desc>Les rapports sont dans des fichiers XML.</desc>
+            <desc0>Non Disponible</desc0>
+            <desc1>Partiellement Disponible</desc1>
+            <desc2>Disponible</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+      </element>
+      <element name="diffusion" title="Diffusion">
+         <desc>Critères pour la diffusion des rapports.</desc>
+         <comment></comment>
+         <element name="externe" title="Externe">
+            <desc>Diffusion des fichiers des rapports par envoi externe à la plate-forme (Mail, Fichiers...).</desc>
+            <desc0>Non Disponible</desc0>
+            <desc1>Partiellement Disponible</desc1>
+            <desc2>Disponible</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="messagerieintegree" title="Messagerie Intégrée">
+            <desc>La plate-forme intègre un système de messagerie dédié (ex. BAL, BO Infoview).</desc>
+            <desc0>Non Disponible</desc0>
+            <desc1>Messagerie basique</desc1>
+            <desc2>Messagerie incluant des listes et des groupes de diffusion</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="dossierspartages" title="Dossiers partagés">
+            <desc>La plate-forme gère des dossiers partagés.</desc>
+            <desc0>Non Disponible</desc0>
+            <desc1>Gestion limitée des habilitations</desc1>
+            <desc2>Gestion fine des habilitations : catégories, groupes, rôles, ...</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="planification" title="Planification">
+            <desc>La plate-forme intègre une diffusion de masse planifiée.</desc>
+            <desc0>Non Disponible</desc0>
+            <desc1>Partiellement Disponible</desc1>
+            <desc2>Disponible</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="modesdediffusion" title="Modes de Diffusion">
+            <desc>La plate-forme gère la diffusion personnalisée.</desc>
+            <desc0>1 --- 1 : Diffusion individuelle</desc0>
+            <desc1>1 --- n : Même document vers des groupes</desc1>
+            <desc2>n --- m : Document paramétré selon le destinataire</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+      </element>
+      <element name="securitehabilitations" title="Sécurité Habilitations">
+         <desc>Critères pour la gestion des droits.</desc>
+         <comment></comment>
+         <element name="annuaire" title="Annuaire">
+            <desc>La plate-forme gère un annuaire des utilisateurs.</desc>
+            <desc0>Non Disponible</desc0>
+            <desc1>Propriétaire</desc1>
+            <desc2>LDAP dédié et synchonisable à un annuaire d'entreprise</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="authentification" title="Authentification">
+            <desc>Authentification des utilisateurs dans la plate-forme</desc>
+            <desc0>Non Disponible</desc0>
+            <desc1>Authentification uniquement sur l'annuaire de la plate-forme</desc1>
+            <desc2>Authentification possible sur l'annuaire du portail d'entreprise</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="sso" title="SSO">
+            <desc>La Plate-forme accepte le SSO (Single Sign On).</desc>
+            <desc0>Non Disponible</desc0>
+            <desc1>Partiellement Disponible</desc1>
+            <desc2>Disponible.</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="groupes" title="Groupes">
+            <desc>La plate-forme gère les groupes d'utilisateurs.</desc>
+            <desc0>Non Disponible</desc0>
+            <desc1>Gestion simple de groupes sans notions de rôles</desc1>
+            <desc2>Gestion de rôles</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="donnees" title="Données">
+            <desc>La plate-forme gère les habilitations sur les données.</desc>
+            <desc0>Non Disponible</desc0>
+            <desc1>Gestion limité des objets requêtés</desc1>
+            <desc2>Contenu des objets requêtés gérables (visibilité table, colonne, ligne, par utilisateur ou groupe)</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="journalisation" title="Journalisation">
+            <desc>Fonctionnalités d'audit ou de traçabilité (sécurité et/ou performances)</desc>
+            <desc0>Non Disponible</desc0>
+            <desc1>Limité à certains évènements</desc1>
+            <desc2>Tout peut être tracé</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+      </element>
+      <element name="applicationclient" title="Outillage">
+         <desc>Critères pour les applications des postes de travail.</desc>
+         <comment></comment>
+         <element name="administrateur" title="Administrateur">
+            <desc>La plate-forme comprend une console pour l'administrateur.</desc>
+            <desc0>Non Disponible</desc0>
+            <desc1>Partiellement Disponible</desc1>
+            <desc2>Disponible</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="planificateur" title="Planificateur">
+            <desc>La plate-forme comprend un outil de diffusion planifiée.</desc>
+            <desc0>Non Disponible</desc0>
+            <desc1>Planification pour chaque utilisateur seulement ou globalement seulement</desc1>
+            <desc2>Planification possible pour chaque utilisateur et globalement</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="developpementc/s" title="Création c/s">
+            <desc>La plate-forme comprend un outil de création de rapports clients/serveur.</desc>
+            <desc0>Non Disponible</desc0>
+            <desc1>Partiellement Disponible</desc1>
+            <desc2>Disponible</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="developpementweb" title="Création Web">
+            <desc>La plate-forme comprend un outil de création de rapports web.</desc>
+            <desc0>Non Disponible</desc0>
+            <desc1>Partiellement Disponible</desc1>
+            <desc2>Disponible</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="surcouchemetier1" title="Surcouche métier">
+            <desc>La plate-forme comprend un outil de création de surcouche métier.</desc>
+            <desc0>Non Disponible</desc0>
+            <desc1>Via accès Client/Serveur seulement ou Web seulement</desc1>
+            <desc2>Via accès Client/Serveur et Web</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="visionneusec/s" title="Visionneuse c/s">
+            <desc>La plate-forme comprend un outil de visualisation de rapports en client-serveur (central ou local).</desc>
+            <desc0>Non Disponible</desc0>
+            <desc1>Partiellement Disponible</desc1>
+            <desc2>Disponible</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="navigateurweb" title="Navigateur Web">
+            <desc>La plate-forme permet la visualisation de rapports dans un navigateur.</desc>
+            <desc0>Non Disponible</desc0>
+            <desc1>Partiellement Disponible</desc1>
+            <desc2>Disponible</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+      </element>
+   </section>
+   <section name="reportingbi" title="Reporting BI">
+      <desc>Section pour les fonctions liées au formatage et la visualisation des rapports BI.</desc>
+      <element name="miseenforme" title="Mise en Forme c/s">
+         <desc>Section pour les fonctions de mise en forme des informations affichées dans les rapports en client lourd (sur des postes autonomes).</desc>
+         <comment></comment>
+         <element name="statique" title="Statique">
+            <desc>Mise en forme statique (pas de style). Ex. gras, italique, couleurs fond, couleur police, etc.</desc>
+            <desc0>Non Disponible</desc0>
+            <desc1>Possibilités de mise en formes existants mais limités</desc1>
+            <desc2>Possibilités de mise en formes aussi riches que dans une suite bureautique</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="style" title="Style">
+            <desc>Mise en forme en nommant des styles réutilisables (document, onglet, section, paragraphe, caractères, listes, puces, etc.)</desc>
+            <desc0>Non Disponible</desc0>
+            <desc1>Partiellement Disponible</desc1>
+            <desc2>Disponible</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="colorcoding" title="Color Coding">
+            <desc>Fonction de mise en couleur ou formatage selon des fonctions statiques (seuils). Note : le data coding est évalué à part.</desc>
+            <desc0>Non Disponible</desc0>
+            <desc1>Accès au seuillage imposé ou accès à la mise en forme limité</desc1>
+            <desc2>Plusieurs possiblités de seuillage : nombre de seuils, valeurs de seuils; accès à la mise en forme complète</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="datacoding" title="Data Coding">
+            <desc>Fonction de mise en couleur ou formatage selon des fonctions dynamiques, calculées sur les données affichées.</desc>
+            <desc0>Non Disponible</desc0>
+            <desc1>Une seule fonction de calcul pour les seuils ou accès limité au formatage</desc1>
+            <desc2>Plusieurs fonctions de calculs pour les seuils et accès au formatage complet</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+      </element>
+      <element name="miseenformeweb" title="Mise en Forme Web">
+         <desc>Section pour les fonctions de mise en forme des informations affichées dans les rapports en web (dans les navigateurs).</desc>
+         <comment></comment>
+         <element name="statique1" title="Statique">
+            <desc>Mise en forme statique (pas de style). Ex. gras, italique, couleurs fond, couleur police, etc.</desc>
+            <desc0>Non Disponible</desc0>
+            <desc1>Mise en forme existant mais limité</desc1>
+            <desc2>Mise en forme aussi riches que dans une suite bureautique</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="styles" title="Styles">
+            <desc>Mise en forme en nommant des styles réutilisables (document, onglet, section, paragraphe, caractères, listes, puces, etc.).</desc>
+            <desc0>Non Disponible</desc0>
+            <desc1>Seules les feuilles CSS sont utilisables</desc1>
+            <desc2>Technologies avancées de chartes graphiques utilisables : CSS, XML, XSL ...</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="colorcoding1" title="Color Coding">
+            <desc>Fonction de mise en couleur ou formatage selon des fonctions statiques (seuils). Note : le data coding est évalué à part.</desc>
+            <desc0>Non Disponible</desc0>
+            <desc1>Accès unique au seuillage</desc1>
+            <desc2>Plusieurs accès possible au seuillage : nombre de seuils, valeurs de seuils, accès à la mise en forme complète</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="datacoding1" title="Data Coding">
+            <desc>Fonction de mise en couleur ou formatage selon des fonctions dynamiques, mais calculées sur les données affichées.</desc>
+            <desc0>Non Disponible</desc0>
+            <desc1>Fonctions de calculs limités ou inexistant pour les seuils ou accès limité/inexistant au formatage complet</desc1>
+            <desc2>Plusieurs fonctions de calculs pour les seuils et accès au formatage complet.</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+      </element>
+      <element name="uiconception" title="Conception des rapports">
+         <desc>Critères pour la conception des rapports et requêtes.</desc>
+         <comment></comment>
+         <element name="requeteurtechnique" title="IHM Requêteur">
+            <desc>Critères pour les requêteurs en accès directs aux serveurs (ex. Constructeurs SQL)</desc>
+            <comment></comment>
+            <element name="textederequete" title="Texte de requête">
+               <desc>Écriture du texte de requête dans le langage du SGBD.</desc>
+               <desc0>Non Disponible</desc0>
+               <desc1>Partiellement Disponible</desc1>
+               <desc2>Disponible</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="constructeurderequete" title="Constructeur de Requête">
+               <desc>Assistant graphique de construction des requêtes d'après les objets techniques du SGBD (ex. MS Access, OOo Base).</desc>
+               <desc0>Non Disponible</desc0>
+               <desc1>Partiellement Disponible</desc1>
+               <desc2>Disponible</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="surcouchemetier" title="Surcouche métier">
+               <desc>Fonction de construction par objets métiers indépendants de la technicité de la base de données, accessible aux utilisateurs non informaticiens.</desc>
+               <desc0>Non Disponible</desc0>
+               <desc1>Partiellement Disponible</desc1>
+               <desc2>Disponible</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+         </element>
+         <element name="requetage" title="Requétage">
+            <desc>Critères évaluant les possibilités de requêtage. (Ne s'applique pas au requêteur texte).</desc>
+            <comment></comment>
+            <element name="requetessimples" title="Requêtes Simples">
+               <desc>Requêtes mettant en œuvre une seule phrase SQL (Select From where ...).</desc>
+               <desc0>Non Dispopnible</desc0>
+               <desc1>Partiellement Disponible</desc1>
+               <desc2>Disponible</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="requetesimbriquees" title="Requêtes Imbriquées">
+               <desc>Les rapports font appels à des requêtes imbriquées. (Ne s'applique pas au SQL à la carte).</desc>
+               <desc0>Non Disponible</desc0>
+               <desc1>Partiellement Disponible</desc1>
+               <desc2>Disponible</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="requetagemultiple" title="Requêtage Multiple">
+               <desc>Plusieurs requêtes dans le même rapport.</desc>
+               <desc0>Non Disponible</desc0>
+               <desc1>Requêtes Union ou dans des onglets</desc1>
+               <desc2>Requêtes dans le même écran</desc2>
+               <score></score>
+               <comment></comment>
+            </element>
+            <element name="requetagemultisources" title="Requêtage Multi Sources">
+               <desc>Critères pour les requêtes à plusieurs sources.</desc>
+               <comment></comment>
+               <element name="multisourcesrequete" title="Multi Sources Requête">
+                  <desc>Un rapport accepte des requêtes provenant de plusieurs sources de données.</desc>
+                  <desc0>Non Disponible</desc0>
+                  <desc1>Partiellement Disponible</desc1>
+                  <desc2>Disponible</desc2>
+                  <score></score>
+                  <comment></comment>
+               </element>
+               <element name="jointureexterne" title="Jointure Externe">
+                  <desc>Le rapport fait une jointure sur plusieurs sources.</desc>
+                  <desc0>Non Disponible</desc0>
+                  <desc1>Partiellement Disponible</desc1>
+                  <desc2>Disponible</desc2>
+                  <score></score>
+                  <comment></comment>
+               </element>
+               <element name="multisurcouchemetier" title="Multi Surcouche Métier">
+                  <desc>Le rapport présente des requêtes provenant de plusieurs surcouches métiers.</desc>
+                  <desc0>Non Disponible</desc0>
+                  <desc1>Partiellement Disponible</desc1>
+                  <desc2>Disponible</desc2>
+                  <score></score>
+                  <comment></comment>
+               </element>
+            </element>
+         </element>
+      </element>
+      <element name="structuredesrapports" title="Structure des Rapports">
+         <desc>Critères pour la structure des rapports.</desc>
+         <comment></comment>
+         <element name="unedimension" title="Une Dimension">
+            <desc>Rapport simple (Ex. ligne / Colonne)</desc>
+            <desc0>Non Disponible</desc0>
+            <desc1>Partiellement Disponible</desc1>
+            <desc2>Disponible</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="tableaucroise" title="Tableau Croisé">
+            <desc>Rapport à deux dimensions (Ex. Matrice).</desc>
+            <desc0>Non Disponible</desc0>
+            <desc1>Interactions limitées</desc1>
+            <desc2>Interactions par glisser/déposer</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="multidimensionnel" title="Multi Dimensionnel">
+            <desc>Rapport multi dimensionnel (ligne, colonnes, pages selon d'autres dimensions).</desc>
+            <desc0>Non Disponible</desc0>
+            <desc1>Interaction par glisser-déposer ou juxtaposition de graphique/tableaux</desc1>
+            <desc2>Interaction par glisser-déposer et juxtaposition de graphique/tableaux</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="groupements" title="Groupements">
+            <desc>Le rapport présente des groupements en diverses sections triées de diverses manières.</desc>
+            <desc0>Non Disponible</desc0>
+            <desc1>Partiellement Disponible</desc1>
+            <desc2>Disponible</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="liensentrerapports" title="Liens entre rapports">
+            <desc>Le rapport présente des liens vers d'autres données ou rapports.</desc>
+            <desc0>Non Disponible</desc0>
+            <desc1>Liens statiques vers d'autres rapports</desc1>
+            <desc2>Liens sur des données</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="miseenpage" title="Mise en page">
+            <desc>Le rapport présente une structure de mise en page (Modèles de page, entêtes, pieds, etc.).</desc>
+            <desc0>Pas de mise en page</desc0>
+            <desc1>Mise en page global pour le document</desc1>
+            <desc2>Mise en page avancée pour les sections ou groupements</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+      </element>
+      <element name="typologiedesrapports" title="Types de rapport">
+         <desc>Critères pour caractériser le contenu des rapports.</desc>
+         <comment></comment>
+         <element name="rapportpredefini" title="Rapport Prédéfini">
+            <desc>Rapport préparé à l'avance et ouvert par l'utilisateur.</desc>
+            <desc0>Non Disponible</desc0>
+            <desc1>Avec données</desc1>
+            <desc2>Raffraichi à la volée</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="rapportadhoc" title="Rapport Ad Hoc">
+            <desc>Rapport dont le contenu est défini par un utilisateur final.</desc>
+            <desc0>Non Disponible</desc0>
+            <desc1>Pour Informaticien (SQL)</desc1>
+            <desc2>Pour non Informaticien</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="interactivite" title="Interactivité">
+            <desc>Le rapport présente des possibilités d'interaction.</desc>
+            <desc0>Statique (Sans interactivité).</desc0>
+            <desc1>Explorable (Filtrage à l'aide de boites déroulantes).</desc1>
+            <desc2>Interactif (Exploration en agissant sur les données avec complément de requêtes).</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="miseajourdesdonnees" title="Mise à jour des données">
+            <desc>Le rapport permet la mise à jour des données.</desc>
+            <desc0>Non Disponible</desc0>
+            <desc1>Copie utilisateur</desc1>
+            <desc2>Selon sécurité</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+      </element>
+      <element name="affichagedesdonnees" title="Affichage des données">
+         <desc>Critères pour la richesse des possibilités d'affichage des données.</desc>
+         <comment></comment>
+         <element name="tableaux" title="Tableaux">
+            <desc>Le Rapport affiche des tableaux plus ou moins riches.</desc>
+            <desc0>Tableaux simples, eventuellement explorables</desc0>
+            <desc1>Tableaux croisés, regroupement et éventuellement avec calculs partiels, etc.</desc1>
+            <desc2>Regroupements multi tableaux, variables calculées indépendamment, etc.</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="graphiques" title="Graphiques">
+            <desc>Le rapport affiche des graphiques plus ou moins riches.</desc>
+            <desc0>Quelques graphiques standards (histogrammes, camemberts, lignes, aires)</desc0>
+            <desc1>Graphiques équivalents à un tableur bureautique</desc1>
+            <desc2>Graphiques propres à l'application (comprend au moins les équivalents des graphiques disponibles dans les tableurs bureautiques)</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="graphiquesimprimables" title="Graphiques imprimables">
+            <desc>Les graphiques sont imprimables.</desc>
+            <desc0>Non Disponible</desc0>
+            <desc1>Partiellement Disponible</desc1>
+            <desc2>Tous les graphiques s'impriment</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+         <element name="appeldefonctionsutilisateur" title="Appel de fonctions utilisateur">
+            <desc>Capacité d'appeler du code (externe ou embarqué)</desc>
+            <desc0>Non disponilbe</desc0>
+            <desc1>Code embarqué dans le rapport</desc1>
+            <desc2>Appel de code externe possible en plus du code embarqué</desc2>
+            <score></score>
+            <comment></comment>
+         </element>
+      </element>
+   </section>
+</document>

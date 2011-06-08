@@ -1,0 +1,90 @@
+%Copyright (c) 2004 2005 2006 Atos Origin
+%Permission is granted to copy, distribute and/or modify this
+%document
+%under the terms of the GNU Free Documentation License,
+%      Version 1.2
+%      or any later version published by the Free Software
+%      Foundation;
+%      with no Invariant Sections, no Front-Cover
+%      Texts, and no Back-Cover
+%      Texts.  A copy of the license is
+%      included in the section entitled "GNU
+%      Free Documentation License".
+%
+% $Id: qsos.tex,v 1.2 2006/04/13 15:11:20 rsemeteys Exp $
+\documentclass[a4paper]{article}
+
+\usepackage[T1]{fontenc}      % Police contenant les caractères français ? No need in english ?
+\usepackage{geometry}         % Définir les marges
+\usepackage{hyperref}
+\usepackage{graphicx}  % picture incusion 
+\usepackage{url}
+\usepackage{color}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\usepackage{float}
+%\floatstyle{ruled}
+%\newfloat{figure}{thp}{lop}
+\newfloat{figure}{!htb}{lop}
+\floatname{figure}
+
+\date{April 2006}
+\author{}
+\title{Method for Qualification and Selection \\ of Open Source software (QSOS) \\ version 1.6}
+% title param :  title, author, date
+\begin{document}
+
+\cfoot{}
+\rfoot{Page \thepage{}}
+\lfoot{{\footnotesize \textbf{QSOS 1.6} Copyright \copyright 2004,2005,2006 Atos Origin\\
+Document under the terms of the Gnu FDL \url{http://www.gnu.org/copyleft/fdl.html}}}
+\renewcommand{\footrulewidth}{0.5pt}
+
+\renewcommand{\arraystretch}{1.75} 
+\setlength{\tabcolsep}{10pt}
+
+% MACRO
+% TabluarStrong : for tabular colonne title
+\newcommand{\TS}[1]{\textbf{#1}}
+
+% Begin of the document
+\maketitle
+
+\begin{figure}
+\center
+\includegraphics[width=13cm]{images/QSOS}
+\end{figure}
+
+
+\begin{abstract}
+\begin{center}
+This document describes the QSOS method, conceived to qualify, select and compare free and open source software in an objective, traceable and argued way.
+
+
+It is made available to all, under the terms of the \\ \textbf{GNU Free Documentation Licence}.
+
+
+This document and its \LaTeX\ source files are available on \textbf{\url{http://www.qsos.org}}.
+\end{center}
+\end{abstract}
+
+\newpage
+\tableofcontents
+
+\include{license}
+\include{manifest}
+\include{changelog}
+\include{intro}
+\include{general_process}
+\include{define}
+\include{eval}
+\include{eval_app}
+\include{qualify}
+\include{select}
+\include{internet_site}
+\include{glossary}
+
+
+
+\end{document}
+% vi:syntax=tex

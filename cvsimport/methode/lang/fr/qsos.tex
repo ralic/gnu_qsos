@@ -1,0 +1,93 @@
+%Copyright (c) 2004 2005 2006 Atos Origin
+%Permission is granted to copy, distribute and/or modify this
+%document
+%under the terms of the GNU Free Documentation License,
+%      Version 1.2
+%      or any later version published by the Free Software
+%      Foundation;
+%      with no Invariant Sections, no Front-Cover
+%      Texts, and no Back-Cover
+%      Texts.  A copy of the license is
+%      included in the section entitled "GNU
+%      Free Documentation License".
+%
+% $Id: qsos.tex,v 1.4 2006/04/13 15:11:20 rsemeteys Exp $
+\documentclass[a4paper]{article}
+
+
+\usepackage[latin1]{inputenc} % LaTeX, comprends les accents !
+\usepackage[T1]{fontenc}      % Police contenant les caractères français
+\usepackage{geometry}         % Définir les marges
+\usepackage[francais]{babel}  % Placez ici une liste de langues, la
+\usepackage{hyperref}
+\usepackage{graphicx}  % picture incusion 
+\usepackage{url}
+\usepackage{color}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\usepackage{float}
+%\floatstyle{ruled}
+%\newfloat{figure}{thp}{lop}
+\newfloat{figure}{!htb}{lop}
+\floatname{figure}
+
+\date{Avril 2006}
+\author{}
+\title{Méthode de Qualification et de Sélection \\ de logiciels Open Source (QSOS) \\ version 1.6}
+% title param :  title, author, date
+\begin{document}
+
+\cfoot{}
+\rfoot{Page \thepage{}}
+\lfoot{{\footnotesize \textbf{QSOS 1.6} Copyright \copyright 2004,2005,2006 Atos Origin\\
+Document sous licence Gnu FDL \url{http://www.gnu.org/copyleft/fdl.html}}}
+\renewcommand{\footrulewidth}{0.5pt}
+
+\renewcommand{\arraystretch}{1.75} 
+\setlength{\tabcolsep}{10pt}
+
+% MACRO
+% TabluarStrong : for tabular colonne title
+\newcommand{\TS}[1]{\textbf{#1}}
+
+% Begin of the document
+\maketitle
+
+\begin{figure}
+\center
+\includegraphics[width=13cm]{images/fr/QSOS}
+\end{figure}
+
+
+\begin{abstract}
+\begin{center}
+Ce document décrit la méthode QSOS, conçue pour qualifier, sélectionner et comparer les logiciels libres et open source de manière objective, traçable et argumentée.
+
+
+Elle est mise à disposition de tous selon les termes de la\\ \textbf{GNU Free Documentation Licence}.
+
+
+Ce document ainsi que ses fichiers sources \LaTeX\ sont disponibles sur \textbf{\url{http://www.qsos.org}}.
+\end{center}
+\end{abstract}
+
+\newpage
+\tableofcontents
+
+\include{lang/fr/license}
+\include{lang/fr/manifest}
+\include{lang/fr/changelog}
+\include{lang/fr/intro}
+\include{lang/fr/general_process}
+\include{lang/fr/define}
+\include{lang/fr/eval}
+\include{lang/fr/eval_app}
+\include{lang/fr/qualify}
+\include{lang/fr/select}
+\include{lang/fr/internet_site}
+\include{lang/fr/glossary}
+
+
+
+\end{document}
+% vi:syntax=tex

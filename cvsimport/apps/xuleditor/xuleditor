@@ -1,0 +1,12 @@
+#!/bin/sh
+case ${1} in
+	debug)
+		xulrunner application.ini -console -jsconsole
+		;;
+	help)
+		echo "usage: xuleditor [debug]"
+		;;
+	*)
+		xulrunner application.ini -file ${1}
+		;;
+esac

@@ -1,0 +1,703 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document>
+   <header>
+      <authors>
+         <author>
+            <name>Carlos Augusto</name>
+            <email>caugusto_ny@yahoo.com</email>
+         </author>
+      </authors>
+      <dates>
+         <creation>20051025</creation>
+         <validation></validation>
+      </dates>
+      <language>en</language>
+      <appname>PostgreSQL</appname>
+      <release>8.4</release>
+      <licenseid>33</licenseid>
+      <licensedesc>BSD</licensedesc>
+      <url>http://www.postgresql.org</url>
+      <desc>Object-Relational Database Management System</desc>
+      <demourl>Not applicable</demourl>
+      <qsosformat>1.7</qsosformat>
+      <qsosappfamily>RDBMS</qsosappfamily>
+      <qsosappname>postgresql</qsosappname>
+      <qsosspecificformat></qsosspecificformat>
+   </header>
+   <section name="generic" title="Generic section">
+      <desc>Generic criteria from QSOS version 1.6</desc>
+      <element name="intrinsicdurability" title="Intrinsic durability">
+         <desc>Intrinsic durability</desc>
+         <element name="maturity" title="Maturity">
+            <desc>Maturity</desc>
+            <element name="age" title="Age">
+               <desc0>less than 3 months</desc0>
+               <desc1>if between 3 months and 3 years</desc1>
+               <desc2>after 3 years</desc2>
+               <score>2</score>
+               <comment>PostgreSQL evolved from the Ingres project at University of California, Berkeley. In 1994, Berkeley released project Postgres under BSD license. Berkeley graduate students Andrew Yu and Jolly Chen replaced the Ingres-based QUEL query language interpreter with one for the SQL query language, creating Postgres95. The code was released on the web.
+
+In 1996, the project was renamed to PostgreSQL to reflect its support for SQL. The first PostgreSQL release formed version 6.0 in January 1997.
+
+In mid-2005 EnterpriseDB announced plans to make proprietary products based on PostgreSQL with focus on niche markets. EnterpriseDB added functionality to allow applications written to work with Oracle to be more readily run with PostgreSQL.
+
+In August 2007, EnterpriseDB announced the Postgres Resource Center and EnterpriseDB Postgres, designed to be a fully configured distribution of PostgreSQL including many contrib modules and add-on components. EnterpriseDB Postgres was renamed to Postgres Plus in March 2008. Postgres Plus is available in two versions: Postgres Plus Standard Server which has all the features of PostgreSQL plus additional QA testing, integrated components, tuning and one-click install, and Postgres Plus Advanced Server which has all the features of Postgres Standard Server plus Oracle compatibility, scalability features, and DBA and developer tools. Both versions are available for download and are fully supported.
+
+In August 2009, EnterpriseDB announced that Red Hat made a financial investment in EnterpriseDB as part of a partnership aimed at increasing enterprise adoption of open source IT infrastructure. With the new partnership, EnterpriseDB and Red Hat plan to promote open source infrastructure solutions that emphasize the advantages of using Red Hat Enterprise Linux, JBoss and Postgres Plus to deliver lower total-cost-of-ownership. 
+</comment>
+            </element>
+            <element name="stability" title="Stability">
+               <desc0>Unstable software with numerous releases or patches generating side effects</desc0>
+               <desc1>Stabilized production release existing but old. Difficulties to stabilize developpement releases</desc1>
+               <desc2>Stabilized software. Releases provide bug fixes corrections but mainly new functionalities</desc2>
+               <score>2</score>
+               <comment>8.5 is being worked on. A tentative schedule for this version has a release in the first quarter of 2010.</comment>
+            </element>
+            <element name="historyknowproblems" title="History">
+               <desc0>Software knows several problems which can be prohibitive</desc0>
+               <desc1>No know major problem or crisis</desc1>
+               <desc2>History of good management of crisis situations</desc2>
+               <score>2</score>
+               <comment>PostgreSQL is generally considered by DBA as the most advanced open source RDBMS</comment>
+            </element>
+            <element name="forkprobability" title="Fork">
+               <desc0>Software is very likely to be forked in the future</desc0>
+               <desc1>Software comes from a fork but has very few chances of being forked in the future</desc1>
+               <desc2>Software has very little chance of being forked. It does not come from a fork either</desc2>
+               <score>1</score>
+               <comment>The BSD license theorically allows proprietary forks, however the large community existing around PostgreSQL reduces this risk. Plus Advanced Server provided by EnterpriseDB is an example. 
+
+Another example is Yahoo! Everest, a multi-petabyte private database.</comment>
+            </element>
+         </element>
+         <element name="adoption" title="Adoption">
+            <desc>Adoption by community and industry</desc>
+            <element name="popularity" title="Popularity">
+               <desc0>Very few users identified</desc0>
+               <desc1>Detectable use on Internet</desc1>
+               <desc2>Numerous users, numerous references</desc2>
+               <score>2</score>
+               <comment>A lot of customers are using PostgreSQL today. 
+
+PostgreSQL was presented as one of the Enterprise Ready Open Source Databases options on Forrester Wave Q2 2009 database report.
+
+More customer stories on: 
+http://www.postgresql.org/about/users and http://www.enterprisedb.com/customers.do#ui-tabs-57
+</comment>
+            </element>
+            <element name="references" title="References">
+               <desc0>None</desc0>
+               <desc1>Few refences, non critical usages</desc1>
+               <desc2>Often implemented for critical applications</desc2>
+               <score>1</score>
+               <comment>Numerous references
+
+More customer stories on: 
+http://www.postgresql.org/about/users and http://www.enterprisedb.com/customers.do#ui-tabs-57
+</comment>
+            </element>
+            <element name="contributingcommunity" title="Contributing Community">
+               <desc0>No community or without real activity (forum, mailing list, ...)</desc0>
+               <desc1>Existing community with a notable activity</desc1>
+               <desc2>Strong community: big activity on forums, numerous contributors and advocates</desc2>
+               <score>2</score>
+               <comment>More than 200 worldwide contributors</comment>
+            </element>
+            <element name="books" title="books">
+               <desc0>No book about the software</desc0>
+               <desc1>Less than 5 books about the software are available</desc1>
+               <desc2>More than 5 books about software are available, in several languages</desc2>
+               <score>2</score>
+               <comment>Several books related to PostgreSQL, in several languages.</comment>
+            </element>
+         </element>
+         <element name="developmentleadership" title="Development leadership">
+            <desc>Organisation and leadership of developments</desc>
+            <element name="leadingteam" title="Leading team">
+               <desc0>1 to 2 individuals involved, not clearly identified</desc0>
+               <desc1>Between 2 and 5 independent people</desc1>
+               <desc2>More than 5 people</desc2>
+               <score>2</score>
+               <comment>The 7 members of the leading team are known and respected.</comment>
+            </element>
+            <element name="managementstyle" title="Management style">
+               <desc0>Complete dictatorship</desc0>
+               <desc1>Enlightened despotism</desc1>
+               <desc2>Council of architects with identified leader (e.g: KDE)</desc2>
+               <score>1</score>
+               <comment>Team of 7 leaders which decide dates and strategy based on members opinions</comment>
+            </element>
+         </element>
+         <element name="activity" title="Activity">
+            <desc>Activity of the project and around the software</desc>
+            <element name="developersidentificationturnover" title="Developers, identification, turnover">
+               <desc0>Less than 3 developers, not clearly identified</desc0>
+               <desc1>Between 4 and 7 developers, or more unidentified developers with important turnover</desc1>
+               <desc2>More than 7 developers, very stable team</desc2>
+               <score>2</score>
+               <comment>More than 250 developpers. Real open source project: few have write access to the code repository however everybody can submit a patch.</comment>
+            </element>
+            <element name="activityonbugs" title="Activity on bugs">
+               <desc0>Slow reactivity in forum or on mailing list, or nothing regarding bug fixes in releases note</desc0>
+               <desc1>Detectable activity but without process clearly exposed, loing reaction/resolution time</desc1>
+               <desc2>Strong reactivity based on roles and tasks assignment</desc2>
+               <score>1</score>
+               <comment>No bug tracking tool and thus no global view and statictics. Everything passes via the mailing list but the project has recently been adding some infrastructure to address this area. You can check the status of submitted patches at http://wiki.postgresql.org/wiki/Development_information and at CommitFest https://commitfest.postgresql.org/action/commitfest_view/open.</comment>
+            </element>
+            <element name="activityonfunctionalities" title="Activity on functionalities">
+               <desc0>No or few new functionalities</desc0>
+               <desc1>Evolution of the product driven by the core team or by user's request without any clearly explained process</desc1>
+               <desc2>Tool(s) to manage feature requests, strong interaction with roadmap</desc2>
+               <score>1</score>
+               <comment>No features request tool and thus no global view and statictics. Everything passes via the mailing list. Lately usage of CommitFest improved and allowed some visibility.</comment>
+            </element>
+            <element name="activityonreleases" title="Activity on releases">
+               <desc0>Very weak activity on both production and development releases</desc0>
+               <desc1>Activity on production and developmenet releases. Frequent minor releases (bug fixes)</desc1>
+               <desc2>Important activity with frequent minor releases (bugs fixes) and planned major releases relating to the roadmap forcast</desc2>
+               <score>2</score>
+               <comment>Regular releases, almost always including new major features</comment>
+            </element>
+         </element>
+      </element>
+      <element name="industrializedsolution" title="Industrialized solution">
+         <desc>Industrialization level of the project</desc>
+         <element name="independenceofdevelopments" title="Independence of developments">
+            <desc0>Developments realized at 100% by employees of a single company</desc0>
+            <desc1>60% maximum</desc1>
+            <desc2>20% maximum</desc2>
+            <score>2</score>
+            <comment>Project based on volonteers work only</comment>
+         </element>
+         <element name="services" title="Services">
+            <desc>Services offering</desc>
+            <element name="training" title="Training">
+               <desc0>No offer of training identified</desc0>
+               <desc1>Offer exists but is restricted geographically and to one language or is provided by a single contractor</desc1>
+               <desc2>Rich offers provided by several contractors, in serveral languages and split into modules of gradual levels</desc2>
+               <score>2</score>
+               <comment></comment>
+            </element>
+            <element name="support" title="Support">
+               <desc0>No offer of support except via public forums and mailing lists</desc0>
+               <desc1>Offer exists but is provided by a single contractor without strong commitment quality of services</desc1>
+               <desc2>Multiple service providers with strong commitment (e.g: guaranteed resolution time)</desc2>
+               <score>2</score>
+               <comment>Many offers references on the project's website:  
+http://www.postgresql.org/support/professional_support or on http://www.opensourcexperts.com/Index/index_html/PostgreSQL or
+http://www.enterprisedb.com/products/support/overview.do</comment>
+            </element>
+            <element name="consulting" title="Consulting">
+               <desc0>No offer of consulting service</desc0>
+               <desc1>Offer exists but is restricted geographically and to one language or is provided by a single contractor</desc1>
+               <desc2>Consulting services provided by different contractors in serveral languages</desc2>
+               <score>2</score>
+               <comment>Serveral offers exist like Persuasive Postgres (http://www.pervasive-postgres.com) or EnterpriseDB (http://www.enterprisedb.com)</comment>
+            </element>
+         </element>
+         <element name="documentation" title="Documentation">
+            <desc0>No user documentation</desc0>
+            <desc1>Documentation exists but shifted in time, is restricted to one language or is poorly detailed</desc1>
+            <desc2>Documentation always up to date, translated and possibly adapted to different target readers (end user, sysadmin, manager, ...)</desc2>
+            <score>2</score>
+            <comment>Official english documentation is freely available in SGML, PDF or HTML formats. 
+
+Numerous technical documents are also available (tutorials, howtos,  installation and migration guides). 
+
+French and Japanese translation also available. Other languages on http://wiki.postgresql.org/wiki/Main_Page</comment>
+         </element>
+         <element name="qualityassurance" title="Quality Assurance">
+            <desc>Quality assurance process</desc>
+            <element name="quality" title="Quality Assurance">
+               <desc0>No QA process</desc0>
+               <desc1>Identifies QA process but not much formalized and with no tool</desc1>
+               <desc2>Automatic testing process included in code's life-cycle with publication of results</desc2>
+               <score>1</score>
+               <comment>No clearly defined process. Code verification scripts are used before each release. There is a build farm where one can publish build results (http://www.pgbuildfarm.org).
+
+PostgreSQL Plus provided by EnterpriseDB goes thru a formal QA cycle.</comment>
+            </element>
+            <element name="tools" title="Tools">
+               <desc0>No bug or feature request management tool</desc0>
+               <desc1>Standard tools provided (for instance by a hosting forge) but poorly used</desc1>
+               <desc2>Very active use of tools for roles/tasks allocation and progress monitoring</desc2>
+               <score>1</score>
+               <comment>No central tool available. A test suite is provided (make check). 
+
+EnterpriseDB is an exception with PostgreSQL Plus.</comment>
+            </element>
+         </element>
+      </element>
+      <element name="packaging" title="Packaging">
+         <desc>Packaging for various operating systems</desc>
+         <element name="packagingbsd" title="BSD">
+            <desc>BSD</desc>
+            <element name="packagingfreebsd" title="FreeBSD">
+               <desc0>The software is not packaged for FreeBSD</desc0>
+               <desc1>A port exists but it has important issues or it doesn't have official support</desc1>
+               <desc2>A official port exists in FreeBSD</desc2>
+               <score>2</score>
+               <comment></comment>
+            </element>
+            <element name="packagingmacosx" title="Mac OS X">
+               <desc0>The software is not packaged for Mac OS X</desc0>
+               <desc1>A package exists but it has important issues or it doesn't have official support</desc1>
+               <desc2>The software is packaged in the distribution</desc2>
+               <score>2</score>
+               <comment>A one click installer is available for for Mac OS X 10.4 and above on Intel and PPC and includes PostgreSQL, pgAdmin, PL/Java and the PL/pgSQL debugger plugin.The one click installer is maintained by Dave Page at EnterpriseDB.
+
+PostgreSQL packages are also available for Mac OS X from the Fink Project.</comment>
+            </element>
+            <element name="packagingnet" title="NetBSD">
+               <desc0>The software is not packaged for NetBSD</desc0>
+               <desc1>A port exists but it has important issues or it doesn't have official support</desc1>
+               <desc2>A official port exists in NetBSD</desc2>
+               <score>2</score>
+               <comment></comment>
+            </element>
+            <element name="packagingopen" title="OpenBSD">
+               <desc0>The software is not packaged for OpenBSD</desc0>
+               <desc1>A port exists but it has important issues or it doesn't have official support</desc1>
+               <desc2>A official port exists in OpenBSD</desc2>
+               <score>2</score>
+               <comment></comment>
+            </element>
+         </element>
+         <element name="packaginglinux" title="Linux">
+            <desc>Linux</desc>
+            <element name="packagingdebian" title="Debian">
+               <desc0>The software is not packaged for Debian</desc0>
+               <desc1>A Debian package exists but it has important issues or it doesn't have official support</desc1>
+               <desc2>The software is packaged in the distribution</desc2>
+               <score>1</score>
+               <comment>Debian users may install PostgreSQL using the apt utility. A list of PostgreSQL Debian packages is available from the package search tool. The PostgreSQL packages for Debian are maintained by Martin Pitt.</comment>
+            </element>
+            <element name="packagingmandriva" title="Mandriva">
+               <desc0>The software is not packaged for Mandriva</desc0>
+               <desc1>A package exists but it has important issues or it doesn't have official support</desc1>
+               <desc2>The software is packaged in the distribution</desc2>
+               <score>2</score>
+               <comment></comment>
+            </element>
+            <element name="packagingredhat" title="Red Hat">
+               <desc0>The software is not packaged for Red Hat/Fedora</desc0>
+               <desc1>A package exists but it has important issues or it doesn't have official support</desc1>
+               <desc2>The software is packaged in the distribution</desc2>
+               <score>2</score>
+               <comment>Project provides RPM for Red Hat Entreprise Linux. EnterpriseDB also supports it.</comment>
+            </element>
+            <element name="packagingsuse" title="SuSE">
+               <desc0>The software is not packaged for SuSE</desc0>
+               <desc1>A package exists but it has important issues or it doesn't have official support</desc1>
+               <desc2>The software is packaged in the distribution</desc2>
+               <score>2</score>
+               <comment>Project provides package for SuSE. EnterpriseDB also supports it.</comment>
+            </element>
+         </element>
+         <element name="packagingsource" title="Source">
+            <desc0>Software can't be installed from source without lot of work</desc0>
+            <desc1>Installation from source is limited and depends on very strict conditions (OS, arch, lib, ...)</desc1>
+            <desc2>Installation from source is easy</desc2>
+            <score>2</score>
+            <comment>Installation from source  is well documented</comment>
+         </element>
+         <element name="packagingunix" title="Unix">
+            <desc>Unix</desc>
+            <element name="packagingaix" title="AIX">
+               <desc0>The software is not packaged for AIX</desc0>
+               <desc1>A package exists but it has important issues or it doesn't have official support</desc1>
+               <desc2>A stable package is provided for AIX</desc2>
+               <score>0</score>
+               <comment></comment>
+            </element>
+            <element name="packaginghpux" title="HP-UX">
+               <desc0>The software is not packaged for HP-UX</desc0>
+               <desc1>A package exists but it has important issues or it doesn't have official support</desc1>
+               <desc2>A stable package is provided for HP-UX</desc2>
+               <score>0</score>
+               <comment>You need to build from sources.</comment>
+            </element>
+            <element name="packagingsolaris" title="Solaris">
+               <desc0>The software is not packaged for Solaris</desc0>
+               <desc1>A package exists but it has important issues or it doesn't have official support (e.g: SunFreeware.com )</desc1>
+               <desc2>The software is supported by Sun for Solaris</desc2>
+               <score>2</score>
+               <comment>Sun fully supports PostgreSQL on Solaris.</comment>
+            </element>
+         </element>
+         <element name="packagingwindows" title="Windows">
+            <desc0>The project can't be installed on Windows</desc0>
+            <desc1>A package exists but it is limited or has important issues or just cover some specific Windows release (e.g: Windows 2000 and Windows XP)</desc1>
+            <desc2>Windows is full supported and a package is provided</desc2>
+            <score>2</score>
+            <comment>An installer is provided</comment>
+         </element>
+      </element>
+      <element name="exploitability" title="Exploitability">
+         <desc>Exploitability level</desc>
+         <element name="easeofuseergonomics" title="Ease of use, ergonomics">
+            <desc0>Difficult to use, requires an in depth knowledge of the software functionality</desc0>
+            <desc1>Austere and very technical ergonomics</desc1>
+            <desc2>GUI including help functions and elaborated ergonomics</desc2>
+            <score>1</score>
+            <comment>Advanced installation requires DBA skills. Graphical tools are user-friendly (specially those provided by Red Hat).</comment>
+         </element>
+         <element name="administrationmonitoring" title="Administration / Monitoring">
+            <desc0>No administrative or monitoring functionalities</desc0>
+            <desc1>Existing, functionalities but uncomplete and or need improvement</desc1>
+            <desc2>Complete and easy-to-use administration and monitoring functionalities. Possible integration with external tools (e.g: SNMP, syslog, ...)</desc2>
+            <score>1</score>
+            <comment>Administration console (PgAdmin III) is intuitive and can manage several servers, but doesn't include monitoring features. PostgreSQL Plus Advanced Server has additional monitoring capabilities.</comment>
+         </element>
+      </element>
+      <element name="technicaladaptability" title="Technical adaptability">
+         <desc>Technical adaptability</desc>
+         <element name="modularity" title="Modularity">
+            <desc0>Monolithic software</desc0>
+            <desc1>Presence of hight level modules allowing a first level of software adaptation</desc1>
+            <desc2>Modular conception, allowing easy adaptation of the software by selecting or creating modules</desc2>
+            <score>1</score>
+            <comment></comment>
+         </element>
+         <element name="codemodification" title="Code modification">
+            <desc0>Everything by hand</desc0>
+            <desc1>Recompilation possible but complex without any tools or documentation</desc1>
+            <desc2>Recompilation with tools (e.g: make, ANT, ...) and documentation provided</desc2>
+            <score>1</score>
+            <comment>Relatively complex C code source</comment>
+         </element>
+         <element name="codeextension" title="Code extension">
+            <desc0>Any modification requires code recompilation</desc0>
+            <desc1>Architecture designed for static extension but requires recompilation</desc1>
+            <desc2>Principle of plugin, architecture designed for dynamic extension without recompilation</desc2>
+            <score>2</score>
+            <comment>Possibility to add new functions, data types, operators, aggregators as shared libraries that can be dynamiocally loaded by PostgreSQL.</comment>
+         </element>
+      </element>
+      <element name="strategy" title="Strategy">
+         <desc>Project's strategy</desc>
+         <element name="license" title="License">
+            <desc>License, only if user wants to become owner of code</desc>
+            <element name="permissiveness" title="Permissiveness">
+               <desc0>Very strict license, like GPL</desc0>
+               <desc1>Moderate permissive license located between both extremes (GPL and BSD) dual-licensing depending on the type of user (person, company, ...) or their activities</desc1>
+               <desc2>Very permissive like BSD or Apache licenses</desc2>
+               <score>2</score>
+               <comment>PostgreSQL has a simple licensing scheme. It is released under the Berkley License, which allows for any use as long as a copy of the Berkley License is included with it. This means that you can release a commercial product that uses PostgreSQL or is a derivative of PostgreSQL without including source code.</comment>
+            </element>
+            <element name="protectionagainstproprietaryforks" title="Protection against proprietary forks">
+               <desc0>Very permissive like BSD or Apache licenses</desc0>
+               <desc1>Moderate permissive license located between both extremes (GPL and BSD), dual-licensing depending on the type of user (person, company, ...) or their activies</desc1>
+               <desc2>Very strict license, like GPL</desc2>
+               <score>0</score>
+               <comment></comment>
+            </element>
+         </element>
+         <element name="copyrightowners" title="Copyright owners">
+            <desc0>Rights held by a few individuals or entities, making it easier to change the license</desc0>
+            <desc1>Rights held by numerous individuals owning the code in a homogeneous way, making relicense very difficult</desc1>
+            <desc2>Rights held by a legal entity in whom the community trusts (e.g: FSF or ASF)</desc2>
+            <score>1</score>
+            <comment></comment>
+         </element>
+         <element name="modificationofsourcecode" title="Modification of source code">
+            <desc0>No pratical way to propose code modification</desc0>
+            <desc1>Tools provided to access and modify code (like CVS or SVN) but not really used to develop the software</desc1>
+            <desc2>The code modification process is well defined, exposed and respected, based on roles assignment</desc2>
+            <score>1</score>
+            <comment>Source code available but no development guide or architecture document</comment>
+         </element>
+         <element name="roadmap" title="Roadmap">
+            <desc0>No published roadmap</desc0>
+            <desc1>Existing roadmap without planning</desc1>
+            <desc2>Versionned roadmap, with planning and measure of delays</desc2>
+            <score>0</score>
+            <comment>No roadmap published, just a TODO list.</comment>
+         </element>
+         <element name="sponsor" title="Sponsor">
+            <desc0>Software has no sponsor, the core team is not paid</desc0>
+            <desc1>Software has an unique sponsor who might determine its strategy</desc1>
+            <desc2>Software is sponsored by industry</desc2>
+            <score>2</score>
+            <comment>Example: EnterpriseDB, Red Hat, NTT Group, Fujitsu, HP, Open Technology Group, Skype and others</comment>
+         </element>
+         <element name="strategicalindependence" title="Strategical independence">
+            <desc0>No detectable strategy or strong dependency on one unique actor (person, company, sponsor)</desc0>
+            <desc1>Strategical vision shared with several other free and open source projects but without strong commitment from copyrights owners</desc1>
+            <desc2>Strong independence of the code team, legal entity holding rights, strong involvement in the standardization process</desc2>
+            <score>2</score>
+            <comment>Project team is really independent. Its strategy is to stick as possible to the standards.</comment>
+         </element>
+      </element>
+   </section>
+   <section name="rdbmsfeatures" title="RDBMS features">
+      <desc>Standard RDBMS features</desc>
+      <element name="sqlcompliance" title="SQL compliance">
+         <desc>Compliance levels with SQL standards</desc>
+         <comment></comment>
+         <element name="sql92" title="SQL-92 compliance">
+            <desc0>Limited to Entry-level only</desc0>
+            <desc1>Transitional or Intermediate support levels</desc1>
+            <desc2>Full support level</desc2>
+            <score>2</score>
+            <comment></comment>
+         </element>
+         <element name="sql99" title="SQL-99 compliance">
+            <desc0>Limited to Core level only</desc0>
+            <desc1>Some optional features are implemented and compliant</desc1>
+            <desc2>Most of options in packages (Framework, Foundation, Call Level Interface, Persistent Stored Modules, and Host Language Bindings) are implemented</desc2>
+            <score>1</score>
+            <comment>OO concepts are also implemented (heritance between tables, ...)</comment>
+         </element>
+         <element name="sql2003" title="SQL:2003 compliance">
+            <desc0>Features implemented far from SQL:2003 core compliance</desc0>
+            <desc1>Most of SQL:2003 core features are implemented and compliant</desc1>
+            <desc2>SQL:2003 core compliant and most of options in packages (SQL/Framework, SQL/Foundation, SQL/CLI, SQL/PSM, SQL/MED, SQL/OLB, SQL/Schemata, SQL/JRT, SQL/XML) are implemented</desc2>
+            <score>1</score>
+            <comment>PostgreSQL supports most of the major features of SQL:2003. Out of 164 mandatory features required for full Core conformance, PostgreSQL conforms to at least 150.
+
+For more information: http://www.postgresql.org/docs/8.4/static/features-sql-standard.html</comment>
+         </element>
+      </element>
+      <element name="classicsqlfeatures" title="Classic SQL features">
+         <desc>Classic SQL features</desc>
+         <comment></comment>
+         <element name="tableconstraints" title="Table constraints">
+            <desc0>Not implemented</desc0>
+            <desc1>Partially implemented</desc1>
+            <desc2>Fully implemented</desc2>
+            <score>2</score>
+            <comment></comment>
+         </element>
+         <element name="namedconstraints" title="Named constraints">
+            <desc0>Not implemented</desc0>
+            <desc1>Partially implemented</desc1>
+            <desc2>Fully implemented</desc2>
+            <score>2</score>
+            <comment></comment>
+         </element>
+         <element name="columnconstraints" title="Column constraints">
+            <desc0>Not implemented</desc0>
+            <desc1>Partially implemented</desc1>
+            <desc2>Fully implemented</desc2>
+            <score>2</score>
+            <comment></comment>
+         </element>
+         <element name="nullconstraints" title="NULL constraints">
+            <desc0>Not implemented</desc0>
+            <desc1>Partially implemented</desc1>
+            <desc2>Fully implemented</desc2>
+            <score>2</score>
+            <comment></comment>
+         </element>
+         <element name="columndefaultvalues" title="Column's default values">
+            <desc0>Not implemented</desc0>
+            <desc1>Partially implemented</desc1>
+            <desc2>Fully implemented</desc2>
+            <score>2</score>
+            <comment></comment>
+         </element>
+         <element name="functionsdefaultvalues" title="Functions for default values">
+            <desc0>Not implemented</desc0>
+            <desc1>Partially implemented</desc1>
+            <desc2>Fully implemented</desc2>
+            <score>2</score>
+            <comment></comment>
+         </element>
+         <element name="foreignkeys" title="Foreign keys support">
+            <desc0>Not implemented</desc0>
+            <desc1>Partially implemented</desc1>
+            <desc2>Fully implemented</desc2>
+            <score>2</score>
+            <comment></comment>
+         </element>
+         <element name="fkupdates" title="Foreign key updates">
+            <desc0>Not implemented</desc0>
+            <desc1>Partially implemented</desc1>
+            <desc2>Fully implemented</desc2>
+            <score>2</score>
+            <comment>Using ON DELETE/ON UPDATE CASCADE clause</comment>
+         </element>
+      </element>
+      <element name="security" title="Security">
+         <desc>Security features</desc>
+         <comment></comment>
+         <element name="accesscontrol" title="Access control levels">
+            <desc>Levels of access control supported (usaername, table, base, etc...)</desc>
+            <comment>username, kerberos (4 and 5), ident, PAM, LDAP</comment>
+         </element>
+         <element name="authenticationmethods" title="Authentication methods">
+            <desc>Authentication methods supported</desc>
+            <comment>md5, crypt, password and kerberos</comment>
+         </element>
+         <element name="sslsupport" title="SSL support">
+            <desc0>Not implemented</desc0>
+            <desc1>Partially implemented</desc1>
+            <desc2>Fully implemented</desc2>
+            <score>2</score>
+            <comment></comment>
+         </element>
+      </element>
+      <element name="transactions" title="Transactions">
+         <desc>Transactional aspects</desc>
+         <comment></comment>
+         <element name="transactionalengine" title="Transactional engine">
+            <desc0>Not implemented</desc0>
+            <desc1>Partially implemented</desc1>
+            <desc2>Fully implemented</desc2>
+            <score>2</score>
+            <comment></comment>
+         </element>
+         <element name="transactionmodes" title="Transactional modes">
+            <desc>Transactional modes (or isolation level) supported</desc>
+            <comment>READ-COMMITTED, SERIALIZABLE. In PostgreSQL, you can request any of the four standard transaction isolation levels. But internally, there are only two distinct isolation levels, which correspond to the levels Read Committed and Serializable. When you select the level Read Uncommitted you really get Read Committed, and when you select Repeatable Read you really get Serializable, so the actual isolation level might be stricter than what you select. This is permitted by the SQL standard: the four isolation levels only define which phenomena must not happen, they do not define which phenomena must happen. The reason that PostgreSQL only provides two isolation levels is that this is the only sensible way to map the standard isolation levels to the multiversion concurrency control architecture.</comment>
+         </element>
+         <element name="locking" title="Locking granularity">
+            <desc0>Table locks only</desc0>
+            <desc1>Pages locks</desc1>
+            <desc2>Row locks</desc2>
+            <score>2</score>
+            <comment></comment>
+         </element>
+         <element name="xacompliance" title="XA compliance">
+            <desc0>Not implemented</desc0>
+            <desc1>Partially implemented</desc1>
+            <desc2>Fully implemented</desc2>
+            <score>1</score>
+            <comment>Yes, starting with the 8.1dev-403 driver. However, transaction interleaving is not supported. </comment>
+         </element>
+      </element>
+      <element name="othersqlfeatures" title="Other SQL features">
+         <desc>Other SQL features</desc>
+         <comment></comment>
+         <element name="views" title="Views">
+            <desc0>Not implemented</desc0>
+            <desc1>Partially implemented</desc1>
+            <desc2>Fully implemented</desc2>
+            <score>2</score>
+            <comment></comment>
+         </element>
+         <element name="storedprocedures" title="Stored procedures">
+            <desc0>Not implemented</desc0>
+            <desc1>Partially implemented</desc1>
+            <desc2>Fully implemented</desc2>
+            <score>2</score>
+            <comment></comment>
+         </element>
+         <element name="triggers" title="Triggers">
+            <desc0>Not implemented</desc0>
+            <desc1>Partially implemented</desc1>
+            <desc2>Fully implemented</desc2>
+            <score>2</score>
+            <comment></comment>
+         </element>
+         <element name="schemas" title="Schemas">
+            <desc0>Not implemented</desc0>
+            <desc1>Partially implemented</desc1>
+            <desc2>Fully implemented</desc2>
+            <score>2</score>
+            <comment></comment>
+         </element>
+         <element name="subselects" title="Subselects">
+            <desc0>Not implemented</desc0>
+            <desc1>Partially implemented</desc1>
+            <desc2>Fully implemented</desc2>
+            <score>2</score>
+            <comment></comment>
+         </element>
+         <element name="tablespaces" title="Tablespaces">
+            <desc0>Not implemented</desc0>
+            <desc1>Partially implemented</desc1>
+            <desc2>Fully implemented</desc2>
+            <score>2</score>
+            <comment></comment>
+         </element>
+         <element name="unicode" title="UNICODE">
+            <desc0>Not implemented</desc0>
+            <desc1>Partially implemented</desc1>
+            <desc2>Fully implemented</desc2>
+            <score>2</score>
+            <comment></comment>
+         </element>
+      </element>
+   </section>
+   <section name="advancedfeatures" title="Advanced features">
+      <desc>Advanced features</desc>
+      <element name="proginterfaces" title="Programming interfaces">
+         <desc>Existing interfaces available from  external programs</desc>
+         <comment>ODBC, JDBC, C/C++, Embeded SQL (dans du C), Tcl/Tk, Perl, Python, PHP .</comment>
+      </element>
+      <element name="clustering" title="Clustering">
+         <desc0>No clustering capacities</desc0>
+         <desc1>Active/Passive clustering possible</desc1>
+         <desc2>Active/Active clustering possible</desc2>
+         <score>1</score>
+         <comment></comment>
+      </element>
+      <element name="replication" title="Replication">
+         <desc0>No replication features</desc0>
+         <desc1>Master/Slave replication</desc1>
+         <desc2>Mutli-master replication</desc2>
+         <score>1</score>
+         <comment>Via third party products (Slony or eRServer)</comment>
+      </element>
+      <element name="olap" title="OLAP">
+         <desc0>Not supported</desc0>
+         <desc1>Partially supported</desc1>
+         <desc2>Fully supported</desc2>
+         <score>0</score>
+         <comment>Third party options available but not integrated. Example: 
+Cybertec - http://www.postgresql.at/english/start_e.html</comment>
+      </element>
+      <element name="xmlfeatures" title="XML features">
+         <desc0>No XML features</desc0>
+         <desc1>Very few XML features</desc1>
+         <desc2>XML data is deeply integrated in the system</desc2>
+         <score>1</score>
+         <comment>The xml data type can be used to store XML data (well-formed "documents"). Its advantage over storing XML data in a text field is that it checks the input values for well-formedness, and there are support functions to perform type-safe operations on it. Use of this data type requires the installation to have been built with configure --with-libxml.
+
+Since there are no comparison operators for the xml data type, it is not possible to create an index directly on a column of this type. If speedy searches in XML data are desired, possible workarounds include casting the expression to a character string type and indexing that, or indexing an XPath expression. Of course, the actual query would have to be adjusted to search by the indexed expression.
+
+The text-search functionality in PostgreSQL can also be used to speed up full-document searches of XML data. The necessary preprocessing support is, however, not yet available in the PostgreSQL distribution. 
+</comment>
+      </element>
+      <element name="gis" title="GIS features">
+         <desc0>No spatial features</desc0>
+         <desc1>Few and limited spatial features</desc1>
+         <desc2>Full OpenGIS compliance</desc2>
+         <score>2</score>
+         <comment>PostGIS 1.1 and higher is OpenGIS Compliant</comment>
+      </element>
+   </section>
+   <section name="rdbmstools" title="Tools">
+      <desc>Existing tools around the RDBMS</desc>
+      <element name="admintools" title="Administration tools">
+         <desc0>No tool available</desc0>
+         <desc1>Tool(s) available but limited (features or plateforms)</desc1>
+         <desc2>Available tool(s) is(are) complete and easily integrable (scripts, API, ...)</desc2>
+         <score>2</score>
+         <comment>PGAdmin III, PhpPgAdmin (Web client), RedHat Administrator and Control Center</comment>
+      </element>
+      <element name="querytools" title="Query tools">
+         <desc0>No tool available</desc0>
+         <desc1>Tool(s) available but limited (features or plateforms)</desc1>
+         <desc2>Available tool(s) is(are) complete and easily integrable (scripts, API, ...)</desc2>
+         <score>2</score>
+         <comment>PGAdmin III, PhpPgAdmin (Web client)</comment>
+      </element>
+      <element name="migrationtools" title="Migration tools">
+         <desc0>No tool available</desc0>
+         <desc1>Tool(s) available but limited (features or plateforms)</desc1>
+         <desc2>Available tool(s) is(are) complete and easily integrable (scripts, API, ...)</desc2>
+         <score>2</score>
+         <comment>EnterpriseDB has a migration tool if buying PostgreSQL Plus Advanced. Other tools are available like ESF Data Migration tool, SwisSQL, EMS SQL Manager, etc.</comment>
+      </element>
+      <element name="optimizetools" title="Optimization tools">
+         <desc0>No tool available</desc0>
+         <desc1>Tool(s) available but limited (features or plateforms)</desc1>
+         <desc2>Available tool(s) is(are) complete and easily integrable (scripts, API, ...)</desc2>
+         <score>2</score>
+         <comment>EXPLAIN and EXPLAIN ANALYZE functions, EMS Postgres Manager, EnterpriseDB Postgres Studio, etc.</comment>
+      </element>
+   </section>
+</document>

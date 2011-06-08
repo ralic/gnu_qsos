@@ -1,0 +1,1201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document>
+  <header>
+    <authors>
+      <author>
+        <email>jihed.trifi@atosorigin.com</email>
+        <name>Jihed TRIFI</name>
+      </author>
+    </authors>
+    <dates>
+      <creation></creation>
+      <validation></validation>
+    </dates>
+    <language>en</language>
+    <appname>Alfresco-2.0</appname>
+    <release>2.0</release>
+    <licenseid>32</licenseid>
+    <licensedesc>GNU LGPL</licensedesc>
+    <url>www.alfresco.org</url>
+    <desc>ECM ( Entreprise Content Management )</desc>
+    <demourl>www.alfresco.com </demourl>
+    <qsosformat>1.7</qsosformat>
+    <qsosappfamily>cms</qsosappfamily>
+    <qsosappname>Alfresco</qsosappname>
+    <qsosspecificformat></qsosspecificformat>
+  </header>
+  <!-- BEGIN include: generic -->
+  <section name="generic" title="Generic section">
+    <desc>Generic criteria from QSOS version 1.6</desc>
+    <element name="intrinsicdurability" title="Intrinsic durability">
+      <desc>Intrinsic durability</desc>
+      <element name="maturity" title="Maturity">
+        <desc>Maturity</desc>
+        <element name="age" title="Age">
+          <desc0>less than 3 months</desc0>
+          <desc1>if between 3 months and 3 years</desc1>
+          <desc2>after 3 years</desc2>
+          <score>1</score>
+          <comment></comment>
+        </element>
+        <element name="stability" title="Stability">
+          <desc0>Unstable software with numerous releases or patches generating side effects</desc0>
+          <desc1>Stabilized production release existing but old. Difficulties to stabilize developpement releases</desc1>
+          <desc2>Stabilized software. Releases provide bug fixes corrections but mainly new functionalities</desc2>
+          <score>2</score>
+          <comment>Stabilized project with active community for bug reports and corrections .</comment>
+        </element>
+        <element name="historyknownproblems" title="History, known problems">
+          <desc0>Software knows several problems which can be prohibitive</desc0>
+          <desc1>No know major problem or crisis</desc1>
+          <desc2>History of good management of crisis situations</desc2>
+          <score>1</score>
+          <comment></comment>
+        </element>
+        <element name="forkprobability" title="Fork probability, source of Forking">
+          <desc0>Software is very likely to be forked in the future</desc0>
+          <desc1>Software comes from a fork but has very few chances of being forked in the future</desc1>
+          <desc2>Software has very little chance of being forked. It does not come from a fork either</desc2>
+          <score>2</score>
+          <comment></comment>
+        </element>
+      </element>
+      <element name="adoption" title="Adoption">
+        <desc>Adoption by community and industry</desc>
+        <element name="popularity" title="Popularity (related to: general public, niche, ...)">
+          <desc0>Very few users identified</desc0>
+          <desc1>Detectable use on Internet</desc1>
+          <desc2>Numerous users, numerous references</desc2>
+          <score>2</score>
+          <comment>alfresco has few customers in different branch of industry like Financial, Government, Education etc...
+http://www.alfresco.com/customers/</comment>
+        </element>
+        <element name="references" title="References">
+          <desc0>None</desc0>
+          <desc1>Few refences, non critical usages</desc1>
+          <desc2>Often implemented for critical applications</desc2>
+          <score>1</score>
+          <comment>http://www.alfresco.com/customers/</comment>
+        </element>
+        <element name="contributingcommunity" title="Contributing Community">
+          <desc0>No community or without real activity (forum, mailing list, ...)</desc0>
+          <desc1>Existing community with a notable activity</desc1>
+          <desc2>Strong community: big activity on forums, numerous contributors and advocates</desc2>
+          <score>2</score>
+          <comment>Strong activity for the community a wiki, forum, forge and blogs are provided </comment>
+        </element>
+        <element name="books" title="books">
+          <desc0>No book about the software</desc0>
+          <desc1>Less than 5 books about the software are available</desc1>
+          <desc2>More than 5 books about software are available, in several languages</desc2>
+          <score>1</score>
+          <comment>http://www.amazon.fr/Alfresco-Enterprise-Content-Management-Implementation/dp/1904811116/ref=pd_bbs_sr_1/171-5230348-4250656?ie=UTF8&amp;s=english-books&amp;qid=1180949051&amp;sr=8-1</comment>
+        </element>
+      </element>
+      <element name="developmentleadership" title="Development leadership">
+        <desc>Organisation and leadership of developments</desc>
+        <element name="leadingteam" title="Leading team">
+          <desc0>1 to 2 individuals involved, not clearly identified</desc0>
+          <desc1>Between 2 and 5 independent people</desc1>
+          <desc2>More than 5 people</desc2>
+          <score>2</score>
+          <comment>Founders are former managers of Business Objects and Documentum . Core developers are identifiable on the forums</comment>
+        </element>
+        <element name="managementstyle" title="Management style">
+          <desc0>Complete dictatorship</desc0>
+          <desc1>Enlightened despotism</desc1>
+          <desc2>Council of architects with identified leader (e.g: KDE)</desc2>
+          <score>2</score>
+          <comment>Identified roadmap, can evoluate with due to costumer request.</comment>
+        </element>
+      </element>
+      <element name="activity" title="Activity">
+        <desc>Activity of the project and around the software</desc>
+        <element name="developersidentificationturnover" title="Developers, identification, turnover">
+          <desc0>Less than 3 developers, not clearly identified</desc0>
+          <desc1>Between 4 and 7 developers, or more unidentified developers with important turnover</desc1>
+          <desc2>More than 7 developers, very stable team</desc2>
+          <score>2</score>
+          <comment>http://www.alfresco.com/about/people/</comment>
+        </element>
+        <element name="activityonbugs" title="Activity on bugs">
+          <desc0>Slow reactivity in forum or on mailing list, or nothing regarding bug fixes in releases note</desc0>
+          <desc1>Detectable activity but without process clearly exposed, loing reaction/resolution time</desc1>
+          <desc2>Strong reactivity based on roles and tasks assignment</desc2>
+          <score>2</score>
+          <comment>Tools  provided; jira for bug  reports and issues and forums for discussions regarding functionalities :
+Jira: http://issues.alfresco.com/secure/Dashboard.jspa
+Forum: http://forums.alfresco.com/</comment>
+        </element>
+        <element name="activityonfunctionalities" title="Activity on functionalities">
+          <desc0>No or few new functionalities</desc0>
+          <desc1>Evolution of the product driven by the core team or by user's request without any clearly explained process</desc1>
+          <desc2>Tool(s) to manage feature requests, strong interaction with roadmap</desc2>
+          <score>2</score>
+          <comment>Jira: http://issues.alfresco.com/secure/Dashboard.jspa
+Forum: http://forums.alfresco.com/</comment>
+        </element>
+        <element name="activityonreleases" title="Activity on releases">
+          <desc0>Very weak activity on both production and development releases</desc0>
+          <desc1>Activity on production and developmenet releases. Frequent minor releases (bug fixes)</desc1>
+          <desc2>Important activity with frequent minor releases (bugs fixes) and planned major releases relating to the roadmap forcast</desc2>
+          <score>1</score>
+          <comment>Major releases planned and displayed on the roadmap . 
+Minor releases reserved for enterprise version.</comment>
+        </element>
+      </element>
+    </element>
+    <element name="industrializedsolution" title="Industrialized solution">
+      <desc>Industrialization level of the project</desc>
+      <element name="independenceofdevelopments" title="Independence of developments">
+        <desc0>Developments realized at 100% by employees of a single company</desc0>
+        <desc1>60% maximum</desc1>
+        <desc2>20% maximum</desc2>
+        <score>0</score>
+        <comment></comment>
+      </element>
+      <element name="services" title="Services">
+        <desc>Services offering</desc>
+        <element name="training" title="Training">
+          <desc0>No offer of training identified</desc0>
+          <desc1>Offer exists but is restricted geographically and to one language or is provided by a single contractor</desc1>
+          <desc2>Rich offers provided by several contractors, in serveral languages and split into modules of gradual levels</desc2>
+          <score>2</score>
+          <comment>Several module courses are provided in several langage and several contries 
+http://www.alfresco.com/services/training/</comment>
+        </element>
+        <element name="support" title="Support">
+          <desc0>No offer of support except via public forums and mailing lists</desc0>
+          <desc1>Offer exists but is provided by a single contractor without strong commitment quality of services</desc1>
+          <desc2>Multiple service providers with strong commitment (e.g: guaranteed resolution time)</desc2>
+          <score>2</score>
+          <comment>Two types of support provided Gold and Platinium with different level http://www.alfresco.com/services/support/</comment>
+        </element>
+        <element name="consulting" title="Consulting">
+          <desc0>No offer of consulting service</desc0>
+          <desc1>Offer exists but is restricted geographically and to one language or is provided by a single contractor</desc1>
+          <desc2>Consulting services provided by different contractors in serveral languages</desc2>
+          <score>1</score>
+          <comment>http://www.alfresco.com/services/consulting/</comment>
+        </element>
+      </element>
+      <element name="documentation" title="Documentation">
+        <desc0>No user documentation</desc0>
+        <desc1>Documentation exists but shifted in time, is restricted to one language or is poorly detailed</desc1>
+        <desc2>Documentation always up to date, translated and possibly adapted to different target readers (end user, sysadmin, manager, ...)</desc2>
+        <score>2</score>
+        <comment>Forum :http://forums.alfresco.com/
+Wiki :http://wiki.alfresco.com/wiki/Main_Page
+are provided.</comment>
+      </element>
+      <element name="qualityassurance" title="Quality Assurance">
+        <desc>Quality assurance process</desc>
+        <element name="quality" title="Quality Assurance">
+          <desc0>No QA process</desc0>
+          <desc1>Identifies QA process but not much formalized and with no tool</desc1>
+          <desc2>Automatic testing process included in code's life-cycle with publication of results</desc2>
+          <score>2</score>
+          <comment>http://wiki.alfresco.com/wiki/Qa_test_plan
+</comment>
+        </element>
+        <element name="tools" title="Tools">
+          <desc0>No bug or feature request management tool</desc0>
+          <desc1>Standard tools provided (for instance by a hosting forge) but poorly used</desc1>
+          <desc2>Very active use of tools for roles/tasks allocation and progress monitoring</desc2>
+          <score>2</score>
+          <comment>Jira provided with roles/tasks assignement and progress monitoring .</comment>
+        </element>
+      </element>
+      <element name="packaging" title="Packaging">
+        <desc>Packaging for various operating systems</desc>
+        <element name="packagingsource" title="Source">
+          <desc0>Software can't be installed from source without lot of work</desc0>
+          <desc1>Installation from source is limited and depends on very strict conditions (OS, arch, lib, ...)</desc1>
+          <desc2>Installation from source is easy</desc2>
+          <score>2</score>
+          <comment>A zipped war and a bundle war with Tomcat are provided .
+it is a Java/J2EE architecture easy to deploy,  it does not depend on the Operating System.</comment>
+        </element>
+        <element name="packagingdebian" title="Debian">
+          <desc0>The software is not packaged for Debian</desc0>
+          <desc1>A Debian package exists but it has important issues or it doesn't have official support</desc1>
+          <desc2>The software is packaged in the distribution</desc2>
+          <score>0</score>
+          <comment></comment>
+        </element>
+        <element name="packagingfreebsd" title="FreeBSD">
+          <desc0>The software is not packaged for FreeBSD</desc0>
+          <desc1>A port exists but it has important issues or it doesn't have official support</desc1>
+          <desc2>A official port exists in FreeBSD</desc2>
+          <score>0</score>
+          <comment></comment>
+        </element>
+        <element name="packaginghpux" title="HP-UX">
+          <desc0>The software is not packaged for HP-UX</desc0>
+          <desc1>A package exists but it has important issues or it doesn't have official support</desc1>
+          <desc2>A stable package is provided for HP-UX</desc2>
+          <score>0</score>
+          <comment></comment>
+        </element>
+        <element name="packagingmacosx" title="MacOSX">
+          <desc0>The software is not packaged for MacOSX</desc0>
+          <desc1>A package exists but it has important issues or it doesn't have official support</desc1>
+          <desc2>The software is packaged in the distribution</desc2>
+          <score>0</score>
+          <comment></comment>
+        </element>
+        <element name="packagingmandriva" title="Mandriva">
+          <desc0>The software is not packaged for Mandriva</desc0>
+          <desc1>A package exists but it has important issues or it doesn't have official support</desc1>
+          <desc2>The software is packaged in the distribution</desc2>
+          <score>0</score>
+          <comment></comment>
+        </element>
+        <element name="packagingnet" title="NetBSD">
+          <desc0>The software is not packaged for NetBSD</desc0>
+          <desc1>A port exists but it has important issues or it doesn't have official support</desc1>
+          <desc2>A official port exists in NetBSD</desc2>
+          <score>0</score>
+          <comment></comment>
+        </element>
+        <element name="packagingopen" title="OpenBSD">
+          <desc0>The software is not packaged for OpenBSD</desc0>
+          <desc1>A port exists but it has important issues or it doesn't have official support</desc1>
+          <desc2>A official port exists in OpenBSD</desc2>
+          <score>0</score>
+          <comment></comment>
+        </element>
+        <element name="packagingredhat" title="RedHat">
+          <desc0>The software is not packaged for RedHat/Fedora</desc0>
+          <desc1>A package exists but it has important issues or it doesn't have official support</desc1>
+          <desc2>The software is packaged in the distribution</desc2>
+          <score>0</score>
+          <comment></comment>
+        </element>
+        <element name="packagingsolaris" title="Solaris">
+          <desc0>The software is not packaged for Solaris</desc0>
+          <desc1>A package exists but it has important issues or it doesn't have official support (e.g: SunFreeware.com )</desc1>
+          <desc2>The software is supported by Sun for Solaris</desc2>
+          <score>0</score>
+          <comment></comment>
+        </element>
+        <element name="packagingsuse" title="SuSE">
+          <desc0>The software is not packaged for SuSE</desc0>
+          <desc1>A package exists but it has important issues or it doesn't have official support</desc1>
+          <desc2>The software is packaged in the distribution</desc2>
+          <score>0</score>
+          <comment></comment>
+        </element>
+        <element name="packagingwindows" title="Windows">
+          <desc0>The project can't be installed on Windows</desc0>
+          <desc1>A package exists but it is limited or has important issues or just cover some specific Windows release (e.g: Windows2000 and WindowsXP)</desc1>
+          <desc2>Windows is full supported and a package is provided</desc2>
+          <score>2</score>
+          <comment>http://sourceforge.net/project/showfiles.php?group_id=143373&amp;package_id=157460&amp;release_id=488010</comment>
+        </element>
+      </element>
+    </element>
+    <element name="exploitability" title="Exploitability">
+      <desc>Exploitability level</desc>
+      <element name="easeofuseergonomics" title="Ease of use, ergonomics">
+        <desc0>Difficult to use, requires an in depth knowledge of the software functionality</desc0>
+        <desc1>Austere and very technical ergonomics</desc1>
+        <desc2>GUI including help functions and elaborated ergonomics</desc2>
+        <score>2</score>
+        <comment>A module is provided to customize the web UI, and changes can also be made by creating template by using the Freemarker langage.</comment>
+      </element>
+      <element name="administrationmonitoring" title="Administration / Monitoring">
+        <desc0>No administrative or monitoring functionalities</desc0>
+        <desc1>Existing, functionalities but uncomplete and or need improvement</desc1>
+        <desc2>Complete and easy-to-use administration and monitoring functionalities. Possible integration with external tools (e.g: SNMP, syslog, ...)</desc2>
+        <score>1</score>
+        <comment>With the version bundled with Jboss AS we can use the JMX console, to administrate MBeans .
+Repository can be imported / exported via an admin console , and these actions can be scheduled . </comment>
+      </element>
+    </element>
+    <element name="technicaladaptability" title="Technical adaptability">
+      <desc>Technical adaptability</desc>
+      <element name="modularity" title="Modularity">
+        <desc0>Monolithic software</desc0>
+        <desc1>Presence of hight level modules allowing a first level of software adaptation</desc1>
+        <desc2>Modular conception, allowing easy adaptation of the software by selecting or creating modules</desc2>
+        <score>2</score>
+        <comment></comment>
+      </element>
+      <element name="codemodification" title="Code modification">
+        <desc0>Everything by hand</desc0>
+        <desc1>Recompilation possible but complex without any tools or documentation</desc1>
+        <desc2>Recompilation with tools (e.g: make, ANT, ...) and documentation provided</desc2>
+        <score>2</score>
+        <comment>Ant scripts , supplied documentation .</comment>
+      </element>
+      <element name="codeextension" title="Code extension">
+        <desc0>Any modification requires code recompilation</desc0>
+        <desc1>Architecture designed for static extension but requires recompilation</desc1>
+        <desc2>Principle of plugin, architecture designed for dynamic extension without recompilation</desc2>
+        <score>2</score>
+        <comment>Most extensions can be done by modifying XML configuration files . More extensive modifications will need recompilation .</comment>
+      </element>
+    </element>
+    <element name="strategy" title="Strategy">
+      <desc>Project's strategy</desc>
+      <element name="license" title="License">
+        <desc>License</desc>
+        <element name="permissiveness" title="Permissiveness (only if user wants to become owner of code)">
+          <desc0>Very strict license, like GPL</desc0>
+          <desc1>Moderate permissive license located between both extremes (GPL and BSD) dual-licensing depending on the type of user (person, company, ...) or their activities</desc1>
+          <desc2>Very permissive like BSD or Apache licenses</desc2>
+          <score>0</score>
+          <comment>alfresco2.0 is under GNU GPL with FLOSS Exception (http://wiki.alfresco.com/wiki/Open_Source_Licensing ) </comment>
+        </element>
+        <element name="protectionagainstproprietaryforks" title="Protection against proprietary forks">
+          <desc0>Very permissive like BSD or Apache licenses</desc0>
+          <desc1>Moderate permissive license located between both extremes (GPL and BSD), dual-licensing depending on the type of user (person, company, ...) or their activies</desc1>
+          <desc2>Very strict license, like GPL</desc2>
+          <score>1</score>
+          <comment></comment>
+        </element>
+      </element>
+      <element name="copyrightowners" title="Copyright owners">
+        <desc0>Rights held by a few individuals or entities, making it easier to change the license</desc0>
+        <desc1>Rights held by numerous individuals owning the code in a homogeneous way, making relicense very difficult</desc1>
+        <desc2>Rights held by a legal entity in whom the community trusts (e.g: FSF or ASF)</desc2>
+        <score>0</score>
+        <comment>Rights held by Alfresco.</comment>
+      </element>
+      <element name="modificationofsourcecode" title="Modification of source code">
+        <desc0>No pratical way to propose code modification</desc0>
+        <desc1>Tools provided to access and modify code (like CVS or SVN) but not really used to develop the software</desc1>
+        <desc2>The code modification process is well defined, exposed and respected, based on roles assignment</desc2>
+        <score>2</score>
+        <comment>http://wiki.alfresco.com/wiki/Source_Code</comment>
+      </element>
+      <element name="roadmap" title="Roadmap">
+        <desc0>No published roadmap</desc0>
+        <desc1>Existing roadmap without planning</desc1>
+        <desc2>Versionned roadmap, with planning and measure of delays</desc2>
+        <score>2</score>
+        <comment>Raodmap clearly detailed: http://wiki.alfresco.com/wiki/Roadmap</comment>
+      </element>
+      <element name="sponsor" title="Sponsor">
+        <desc0>Software has no sponsor, the core team is not paid</desc0>
+        <desc1>Software has an unique sponsor who might determine its strategy</desc1>
+        <desc2>Software is sponsored by industry</desc2>
+        <score>1</score>
+        <comment>core team paid by Alfresco</comment>
+      </element>
+      <element name="strategicalindependence" title="Strategical independence">
+        <desc0>No detectable strategy or strong dependency on one unique actor(person, company,sponsor)</desc0>
+        <desc1>Strategical vision shared with several other free and open source projects but without strong commitment from copyrights owners</desc1>
+        <desc2>Strong independence of the code team, legal entity holding rights, strong involvement in the standardization process</desc2>
+        <score>1</score>
+        <comment>Integration with others Open Source projects :
+JBoss AS, Tomcat, Apache Myfaces.
+Uses of standars like JCR170 </comment>
+      </element>
+    </element>
+  </section>
+  <!-- END include: generic -->
+  <section name="documentmanagement" title="Document content management">
+    <desc>this section describe how the application manage document</desc>
+    <element name="importformatsupported" title="Mime Type supported">
+      <desc>Supported means that the internal engine is able to read or parse file content to create preview file or find key words</desc>
+      <element name="importtext" title="text formats">
+        <element name="importformathtml" title="HTML files">
+          <desc></desc>
+          <desc0>not supported</desc0>
+          <desc1>partialy (buggy or limited feature)</desc1>
+          <desc2>fully supported</desc2>
+          <comment>HTML files can be directly created via a basic inline editor ( TinyMCE)</comment>
+          <score>2</score>
+        </element>
+        <element name="importformatrtf" title="RTF (Rich Text Format)">
+          <desc></desc>
+          <desc0>not supported</desc0>
+          <desc1>partialy (buggy or limited feature)</desc1>
+          <desc2>fully supported</desc2>
+          <comment></comment>
+          <score>2</score>
+        </element>
+        <element name="importformatcsv" title="CSV">
+          <desc></desc>
+          <desc0>not supported</desc0>
+          <desc1>partialy (buggy or limited feature)</desc1>
+          <desc2>fully supported</desc2>
+          <comment></comment>
+          <score>2</score>
+        </element>
+        <element name="importformatxml" title="XML files">
+          <desc></desc>
+          <desc0>not supported</desc0>
+          <desc1>partialy (buggy or limited feature)</desc1>
+          <desc2>fully supported</desc2>
+          <comment></comment>
+          <score>2</score>
+        </element>
+      </element>
+      <element name="importformatopenoffice" title="Office Suite">
+        <element name="importformatopendocument" title="Opendocument files">
+          <desc></desc>
+          <desc0>not supported</desc0>
+          <desc1>partialy (buggy or limited feature)</desc1>
+          <desc2>fully supported</desc2>
+          <comment></comment>
+          <score>2</score>
+        </element>
+        <element name="importformatooo" title="MS Office files">
+          <desc></desc>
+          <desc0>not supported</desc0>
+          <desc1>partialy (buggy or limited feature)</desc1>
+          <desc2>fully supported</desc2>
+          <comment></comment>
+          <score>2</score>
+        </element>
+        <element name="importformatpdf" title="PDF files">
+          <desc></desc>
+          <desc0>not supported</desc0>
+          <desc1>partialy (buggy or limited feature)</desc1>
+          <desc2>fully supported</desc2>
+          <comment></comment>
+          <score>2</score>
+        </element>
+      </element>
+      <element name="importpicutre" title="picture formats">
+        <element name="importcommonpictureformat" title="common file format">
+          <desc>Format are: jpg, gif, png, bmp, tiff, xpm, </desc>
+          <desc0>not supported</desc0>
+          <desc1>partialy (buggy or limited feature)</desc1>
+          <desc2>fully supported</desc2>
+          <comment>png and PIXmap, Bitmap, jpeg </comment>
+          <score>1</score>
+        </element>
+        <element name="importvectorialformat" title="common vectorial format">
+          <desc>Format are: wmf, svg</desc>
+          <desc0>not supported</desc0>
+          <desc1>partialy (buggy or limited feature)</desc1>
+          <desc2>fully supported</desc2>
+          <comment>SVG </comment>
+          <score>2</score>
+        </element>
+        <element name="importcommercialpcitureformat" title="commercial formats">
+          <desc>Format are: psp (PaintShopPro), psd (Photopshop)</desc>
+          <desc0>not supported</desc0>
+          <desc1>partialy (buggy or limited feature)</desc1>
+          <desc2>fully supported</desc2>
+          <comment>AUTOCAD Drawing ...</comment>
+          <score>2</score>
+        </element>
+      </element>
+      <element name="importvideo" title="Video Formats">
+        <desc>Format videos</desc>
+        <element name="importmpeg" title="MPEG Format">
+          <desc></desc>
+          <desc0>not supported</desc0>
+          <desc1>partialy (buggy or limited feature)</desc1>
+          <desc2>fully supported</desc2>
+          <comment>MPEG, MPEG2, MPEG4 fully supported, Quicktime </comment>
+          <score>2</score>
+        </element>
+        <element name="importavi" title="AVI Format">
+          <desc></desc>
+          <desc0>not supported</desc0>
+          <desc1>partialy (buggy or limited feature)</desc1>
+          <desc2>fully supported</desc2>
+          <comment></comment>
+          <score>2</score>
+        </element>
+        <element name="importdvix" title="Dvix Format">
+          <desc></desc>
+          <desc0>not supported</desc0>
+          <desc1>partialy (buggy or limited feature)</desc1>
+          <desc2>fully supported</desc2>
+          <comment></comment>
+          <score>0</score>
+        </element>
+      </element>
+      <element name="importaudio" title="Audio Formats">
+        <desc>Format videos</desc>
+        <element name="importmp3" title="MP3 Format">
+          <desc></desc>
+          <desc0>not supported</desc0>
+          <desc1>partialy (buggy or limited feature)</desc1>
+          <desc2>fully supported</desc2>
+          <comment></comment>
+          <score>2</score>
+        </element>
+        <element name="importwav" title="Wav Format">
+          <desc></desc>
+          <desc0>not supported</desc0>
+          <desc1>partialy (buggy or limited feature)</desc1>
+          <desc2>fully supported</desc2>
+          <comment></comment>
+          <score>2</score>
+        </element>
+        <element name="importogg" title="Ogg Format">
+          <desc></desc>
+          <desc0>not supported</desc0>
+          <desc1>partialy (buggy or limited feature)</desc1>
+          <desc2>fully supported</desc2>
+          <comment></comment>
+          <score>0</score>
+        </element>
+      </element>
+    </element>
+    <element name="fileconversion" title="File Conversion">
+      <element name="textformat" title="Text format">
+        <desc0>not supported</desc0>
+        <desc1>partialy (buggy or limited feature)</desc1>
+        <desc2>fully supported</desc2>
+        <comment>transformation from Text format ( .odt, .doc, .txt) to PDF using pdfbox .</comment>
+        <score>2</score>
+      </element>
+      <element name="pictureformat" title="Picture Format (jpg, png, bpm, gif)">
+        <desc0>not supported</desc0>
+        <desc1>partialy (buggy or limited feature)</desc1>
+        <desc2>fully supported</desc2>
+        <comment>ImageMagick is integrated to convert pictures to GIF, JPEG, JPEG-2000, PDF, PhotoCD...</comment>
+        <score>2</score>
+      </element>
+      <element name="audioformat" title="Audio Format">
+        <desc0>Feature is not supported</desc0>
+        <desc1>Feature is partialy supported</desc1>
+        <desc2>Feature is supported</desc2>
+        <comment> </comment>
+        <score>0</score>
+      </element>
+      <element name="videoformat" title="Video Format">
+        <desc0>Feature is not supported</desc0>
+        <desc1>Feature is partialy supported</desc1>
+        <desc2>Feature is supported</desc2>
+        <comment></comment>
+        <score>0</score>
+      </element>
+    </element>
+    <element name="filemanipulation" title="File Manipulation">
+      <element name="compressedfile" title="Compressed File Browsing">
+        <element name="zipfilesprowsing" title="ZIP files">
+          <desc>zip files</desc>
+          <desc0>The engine see zip file as opaque binary</desc0>
+          <desc1>The engine can browse zip archive with limitation (need of a specific action from the use, content not indexed, no keyword can by attached to its content).</desc1>
+          <desc2>Zip archive are seen like common folder.</desc2>
+          <comment></comment>
+          <score>0</score>
+        </element>
+        <element name="rarfilesprowsing" title="RAR files">
+          <desc>rar files</desc>
+          <desc0>The engine see rar file as opaque binary</desc0>
+          <desc1>The engine can browse rar archive with limitation (need of a specific action from the use, content not indexed, no keyword can by attached to its content).</desc1>
+          <desc2>Rar archive are seen like common folder.</desc2>
+          <comment></comment>
+          <score>0</score>
+        </element>
+        <element name="tarfilesprowsing" title="TAR files">
+          <desc>tar.gz, tar.bz2 and tar.Z archives</desc>
+          <desc0>The engine see tar file as opaque binary</desc0>
+          <desc1>The engine can browse tar archive with limitation (need of a specific action from the use, content not indexed, no keyword can by attached to its content).</desc1>
+          <desc2>Tarball archive are seen like common folder.</desc2>
+          <comment></comment>
+          <score>0</score>
+        </element>
+      </element>
+      <element name="previewcreation" title="Preview creation">
+        <desc>Please keep in mind that here we just evaluate the object creation (does it work or not). We ignore how the results are published (e.g: poor visiblity).</desc>
+        <element name="picturepreview" title="Picture preview">
+          <desc0>The software can't create picture preview</desc0>
+          <desc1>The software create picture preview for all the major formats (jpg, png, bmp, gif)</desc1>
+          <desc2>The software can create preview for more than 10 pictures formats</desc2>
+          <comment></comment>
+          <score>0</score>
+        </element>
+        <element name="odtpreview" title="OpenOffice files preview">
+          <desc0>The feature doesn't exist</desc0>
+          <desc1>Work fine for at last odt files</desc1>
+          <desc2>Work fine for the majority of the formats</desc2>
+          <comment></comment>
+          <score>0</score>
+        </element>
+        <element name="mswordpreview" title="MS Office files preview">
+          <desc0>The feature doesn't exist</desc0>
+          <desc1>Work fine for at last doc files</desc1>
+          <desc2>Work fine for the majority of the formats</desc2>
+          <comment></comment>
+          <score>0</score>
+        </element>
+        <element name="videopreview" title="Video preview">
+          <desc>Please keep in mind that DRM protected file can't be load without official from its manifacturer. Because of this limitation, we prefere to ignore these files in this evaluation. Preview could be a little preview movie (e.g: in flash format) or just a picture.</desc>
+          <desc0>The feature doesn't exist</desc0>
+          <desc1>The software doesn't support the majority of the files</desc1>
+          <desc2>The software can create preview for a large amount of files</desc2>
+          <comment></comment>
+          <score>0</score>
+        </element>
+        <element name="audiopreview" title="Audio files preview">
+          <desc0>The feature doesn't exist</desc0>
+          <desc1>Work fine for at last odt files</desc1>
+          <desc2>Work fine for the majority of the formats</desc2>
+          <comment></comment>
+          <score>0</score>
+        </element>
+      </element>
+    </element>
+  </section>
+  <section name="webcontentmanagement" title="Web content management">
+    <desc>this section describe how the application manage web page</desc>
+    <comment>This feature will be implemented in september 2007 in the Nuxeo EP 5.2</comment>
+    <element name="blog" title="Blog">
+      <desc0>The feature doesn't exist</desc0>
+      <desc1>Work fine for at last odt files</desc1>
+      <desc2>Work fine for the majority of the formats</desc2>
+      <comment>Alfresco provides a WCM module to manage web site, adding, deleting, web project..
+Also "Blog Spaces" can be created allowing users to post, categorize, subscribe via RSS and comment on posts.</comment>
+      <score>2</score>
+    </element>
+    <element name="updatenotification" title="Support for new content or update notifications">
+      <element name="recentchanges" title="recent changes advertised on the web interface">
+        <desc0>No such features</desc0>
+        <desc1>recent changes advertised according to the today's date</desc1>
+        <desc2>recent changes advertised only changes that happened since user's last visit</desc2>
+        <comment>Custom freemarker dashlets can be added on the dashboard allowing to be notified of recent changes .</comment>
+        <score>2</score>
+      </element>
+      <element name="othernotifications" title="support for other notifications media">
+        <desc>Do detail the media in the comment section</desc>
+        <desc0>This feature doesn't exist</desc0>
+        <desc1>The feature exists for one communication media</desc1>
+        <desc2>This feature exists for several media: e.mail, and IM for instance </desc2>
+        <comment> RSS, email notification are available but not IM.</comment>
+        <score>2</score>
+      </element>
+    </element>
+  </section>
+  <section name="commonservice " title="Common Service">
+    <desc> common services betwen ECM an Document managment </desc>
+    <element name="search" title="Support for search">
+      <desc>The metadata and media content support is to be detailed in the above metadata and mediasupport elements </desc>
+      <element name="searchengine" title="Search Engine feature">
+        <desc0>No search engine available</desc0>
+        <desc1>Searches are limited (to filename, metadata or text content for instance)</desc1>
+        <desc2>Searches are feasable through most of the media content and the metadata</desc2>
+        <comment>search can be done using Lucene , Xpath and Opensearch(Execution of searches is supported via HTTP requests and responses).
+Search is possible on content metadata as well as full text search . </comment>
+        <score>2</score>
+      </element>
+      <element name="searchAPI" title="Search API for more detailed results in the contents and their meta-data">
+        <desc0>This feature doesn't exist</desc0>
+        <desc1>The feature exist but is limited.</desc1>
+        <desc2>This feature is fully powered</desc2>
+        <comment>API provided for lucene and for JSR 170 for the content repository .
+(http://wiki.alfresco.com/wiki/Search ) </comment>
+        <score>2</score>
+      </element>
+    </element>
+    <element name="pluginsandpluginability" title="Plugins, pluginability, built-in objects, and page templates">
+      <element name="pluginability" title="plugin ability">
+        <desc>adequate software architecture for custom plugin creation, easy plugin interface 
+					for writing your own additions. Do detail in the comment section the supported plugin languages </desc>
+        <desc0>monolitic not pluggable</desc0>
+        <desc1>modular plugable but plugin not provided</desc1>
+        <desc2>modular plugins provided</desc2>
+        <comment>Many plugins exist  on the forge http://forge.alfresco.com/softwaremap/trove_list.php
+divided in numerous sections like Metadata Extractors ...</comment>
+        <score>1</score>
+      </element>
+      <element name="remoteAPI" title="XML/RPC Remote API">
+        <desc0>No such feature</desc0>
+        <desc1>poor API</desc1>
+        <desc2>rich API</desc2>
+        <comment></comment>
+        <score>0</score>
+      </element>
+      <element name="webserviceplugin" title="web service plugin">
+        <desc0>No such feature</desc0>
+        <desc1>limited integration capabilities</desc1>
+        <desc2>good capabilities</desc2>
+        <comment>many webservices available e.g for repository access and for authentication ( http://wiki.alfresco.com/wiki/Alfresco_Content_Management_Web_Service.)
+many web plugins downloadable from forge
+http://forge.alfresco.com/ .</comment>
+        <score>2</score>
+      </element>
+      <element name="builtinobjects" title="builtin objects or plugins">
+        <element name="calendars" title="Calendars and Calendars events">
+          <desc0>No such feature</desc0>
+          <desc1>partially or poorly implemented </desc1>
+          <desc2>well done</desc2>
+          <comment>an additional module exists based on AJAX technology.
+http://sourceforge.net/projects/ajaxcalendar/</comment>
+          <score>0</score>
+        </element>
+        <element name="polls" title="polls and vote editing and publishing">
+          <desc0>No such feature</desc0>
+          <desc1>partially or poorly implemented </desc1>
+          <desc2>well done</desc2>
+          <comment>This workflow is not present by default but can be added thanks to JBPM.</comment>
+          <score>2</score>
+        </element>
+        <element name="photoalbums" title="photo albums editing and publishing">
+          <desc0>No such feature</desc0>
+          <desc1>partially or poorly implemented </desc1>
+          <desc2>well done</desc2>
+          <comment></comment>
+          <score>0</score>
+        </element>
+        <element name="slideshows" title="slide show editing and launching within the internet browser">
+          <desc0>No such feature</desc0>
+          <desc1>partially or poorly implemented </desc1>
+          <desc2>well done</desc2>
+          <comment></comment>
+          <score>0</score>
+        </element>
+      </element>
+    </element>
+    <element name="versioncontrol" title="On line version control">
+      <desc> The documents targeted by the version control are those listed as fully supported in the above "documentsupport" elements </desc>
+      <element name="history" title="online access to each pages/docs (of fully supported media) history/versioning">
+        <desc0>No history/versioning</desc0>
+        <desc1>limited number of document revisions</desc1>
+        <desc2>unlimited number of document revisions</desc2>
+        <comment></comment>
+        <score>2</score>
+      </element>
+      <element name="diff" title="online supports for version differencing diff and retrieving prior versions.">
+        <desc0>No diff feature</desc0>
+        <desc1>Revision Diffs with the latest</desc1>
+        <desc2>Revision Diffs with the all</desc2>
+        <comment></comment>
+        <score>0</score>
+      </element>
+      <element name="rollback" title="online supports for retrieving/rollbacking to prior versions.">
+        <desc0>No rollback feature</desc0>
+        <desc1>rollback to the latest</desc1>
+        <desc2>rollback to all</desc2>
+        <comment></comment>
+        <score>2</score>
+      </element>
+    </element>
+    <element name="accesspoints" title="Access Points">
+      <desc>Describe how we can connect to the repository </desc>
+      <element name="web" title="Web">
+        <desc0>No such feature</desc0>
+        <desc1>limited integration capabilities</desc1>
+        <desc2>good capabilities</desc2>
+        <comment></comment>
+        <score>2</score>
+      </element>
+      <element name="FTP" title="FTP">
+        <desc0>No such feature</desc0>
+        <desc1>limited integration capabilities</desc1>
+        <desc2>good capabilities</desc2>
+        <comment></comment>
+        <score>2</score>
+      </element>
+      <element name="webdav" title="Webdav">
+        <desc0>No such feature</desc0>
+        <desc1>limited integration capabilities</desc1>
+        <desc2>good capabilities</desc2>
+        <comment></comment>
+        <score>2</score>
+      </element>
+      <element name="CIFS" title="CIFS">
+        <desc0>No such feature</desc0>
+        <desc1>limited integration capabilities</desc1>
+        <desc2>good capabilities</desc2>
+        <comment></comment>
+        <score>2</score>
+      </element>
+      <element name="aggregatedfeeds" title="Aggregated Feeds">
+        <desc0>No such feature</desc0>
+        <desc1>RSS OR ATOM </desc1>
+        <desc2>RSS AND ATOM</desc2>
+        <comment></comment>
+        <score>2</score>
+      </element>
+      <element name="Webservice" title="Web Services">
+        <desc0>No such feature</desc0>
+        <desc1>limited integration capabilities</desc1>
+        <desc2>good capabilities</desc2>
+        <comment>http://wiki.alfresco.com/wiki/Repository_Web_Service</comment>
+        <score>1</score>
+      </element>
+      <element name="Servlet" title="Servlet">
+        <desc0>No such feature</desc0>
+        <desc1>limited integration capabilities</desc1>
+        <desc2>good capabilities</desc2>
+        <comment>Many servlets allow HTTP acces to repository actions ( e.g : download content , execute templates or scripts , executing 'approve' and 'reject' workflow commands on a Node , ...) </comment>
+        <score>2</score>
+      </element>
+    </element>
+  </section>
+  <section name="workprocess " title="Work Process">
+    <desc> Description of the internal work proces </desc>
+    <element name="editing" title="Edition tools">
+      <element name="journalisedchanges" title="Journalised Changes">
+        <desc0>No revision control system exist.</desc0>
+        <desc1>Every saved document are archived. Go back to an old revision need an important amount of work.</desc1>
+        <desc2>Every change done with the internal editor are logged. It's easy to come back to an old revision of the document from another user.</desc2>
+        <comment></comment>
+        <score>2</score>
+      </element>
+      <element name="editwithstandalonetools" title="Standalone edition tools">
+        <desc0>In oder to edit a document the user use the official tool.</desc0>
+        <desc1>It's possible to use a remote stand alone tool to edit documents.</desc1>
+        <desc2>All common feature are supported by a last one stand alone tool.</desc2>
+        <comment>Can be done with OpenOffice and Microsoft Office.</comment>
+        <score>1</score>
+      </element>
+    </element>
+    <element name="workflow" title="Workflow">
+      <element name="workflowlock" title="Lock">
+        <desc>Ability to lock file avoid data lost or synchronization issues</desc>
+        <desc0>The feature doesn't exist</desc0>
+        <desc1>The feature just exists, an administrator can quickly unlock a file </desc1>
+        <desc2>The feature exist, administrator can quickly unlock a file and a timeout system exists to unlock file after a certain amount of time.</desc2>
+        <comment></comment>
+        <score>1</score>
+      </element>
+      <element name="workflowstep" title="step by step workflow">
+        <desc></desc>
+        <desc0>The feature doesn't exist</desc0>
+        <desc1>The feature just exist</desc1>
+        <desc2>This feature is fully powered</desc2>
+        <comment></comment>
+        <score>2</score>
+      </element>
+      <element name="workflowbpel" title="BPEL support">
+        <desc></desc>
+        <desc0>The feature doesn't exist</desc0>
+        <desc1>The feature just exist</desc1>
+        <desc2>This feature is fully powered</desc2>
+        <comment>Workflow desigend with JPDL JBPM can easely be added to Alfresco, and documentation 
+already exist and well done .</comment>
+        <score>2</score>
+      </element>
+    </element>
+    <element name="metadata" title="Meta data">
+      <comment>Meta data are infromation related to a document like (author, copyright holder, ...)</comment>
+      <element name="keyword" title="Key word support">
+        <desc>Metadata are all the specific key work that can be attached to a document </desc>
+        <desc0>Can't add specific key words</desc0>
+        <desc1>Key word can be added but with limitation: limited list, no easy to way extend the list</desc1>
+        <desc2>key words easily added and features are easily extended</desc2>
+        <comment>Metadata can be modified through the GUI . Aspects can be dynamically applied to  documents to add metadata . custom metadata can be defined by extending the content model .  
+</comment>
+        <score>2</score>
+      </element>
+      <element name="hierarchicalclassification" title="Hierarchical Classification">
+        <desc>Ability to do a classication in a predesigned hierarchy</desc>
+        <desc0>This feature doesn't exist</desc0>
+        <desc1>The feature exist but is limited.</desc1>
+        <desc2>A new document can quickly be registered in the hierarchy</desc2>
+        <comment>Hierarchical Classification is easy  : classification by user workspace, categories, and folders. </comment>
+        <score>2</score>
+      </element>
+    </element>
+  </section>
+  <section name="applicationarchitecture " title="Architecture">
+    <element name="security" title="Security">
+      <element name="authentifaction" title="Authentification Backend">
+        <element name="authenbackendldap" title="LDAP">
+          <desc0>No LDAP based authentification availble</desc0>
+          <desc1>LDAP availble but limited (e.g: group mapping limited, etc)</desc1>
+          <desc2>LDAP is one of the recommended authentification backend</desc2>
+          <comment>Connector for OpenLdap and Active Directory available .</comment>
+          <score>2</score>
+        </element>
+        <element name="authenbackendad" title="Active Directory">
+          <desc0>No Active Directory based authentification availble</desc0>
+          <desc1>Active Directory availble but limited (e.g: group mapping limited, etc)</desc1>
+          <desc2>Active Directory is one of the recommended authentification backend</desc2>
+          <comment></comment>
+          <score>2</score>
+        </element>
+        <element name="authenbackenddb" title="data base">
+          <desc>Here we do not attach importance on supported data bases, please see the storage section</desc>
+          <desc0>No data base base authentification availble</desc0>
+          <desc1>Data base availble but limited (e.g: group mapping limited, etc)</desc1>
+          <desc2>Data base is one of the recommended authentification backend</desc2>
+          <comment></comment>
+          <score>2</score>
+        </element>
+      </element>
+      <element name="signaturemechansim" title="Signature">
+        <desc>Is possible to create digital cypher (e.g: GNU PGP)</desc>
+        <desc0>Feature not supported</desc0>
+        <desc1>Fetautre partialy supported</desc1>
+        <desc2>Feature fully supported</desc2>
+        <comment></comment>
+        <score>0</score>
+      </element>
+      <element name="digitalwatermarking" title="Digital watermarking">
+        <desc0>Feature not supported</desc0>
+        <desc1>Fetautre partialy supported </desc1>
+        <desc2>Feature fully supported</desc2>
+        <comment></comment>
+        <score>0</score>
+      </element>
+      <element name="DRM" title="DRM">
+        <desc></desc>
+        <desc0>The feature doesn't exist</desc0>
+        <desc1>Fetautre partialy supported </desc1>
+        <desc2>Feature fully supported</desc2>
+        <comment></comment>
+        <score>0</score>
+      </element>
+      <element name="SSL" title="SSL">
+        <desc></desc>
+        <desc0>The feature doesn't exist</desc0>
+        <desc1>Fetautre partialy supported</desc1>
+        <desc2>Feature is fully supported</desc2>
+        <comment>With Apache mod_ssl to access the web client via https .</comment>
+        <score>0</score>
+      </element>
+    </element>
+    <element name="storage" title="Storage">
+      <desc>Please keep in mind, that the score doesn't mean that an element is good or bad. e.g: a solution that doesn't use the filesystem for the data storage can be good. See: QSOS Method to get more details</desc>
+      <element name="filesystem" title="File System">
+        <desc>Can the solution use the file system to store data (files, description, ...). Please, descript the recommended environment.</desc>
+        <desc0>Feature is not supported</desc0>
+        <desc1>Feature is partialy supported</desc1>
+        <desc2>Feature is fully supported</desc2>
+        <comment>Implement the JSR 170 for the content repository .</comment>
+        <score>2</score>
+      </element>
+      <element name="database" title="Data Base">
+        <desc>No data storage available. Please, descript the recommended environment.</desc>
+        <desc0>Feature is not supported</desc0>
+        <desc1>Feature is partialy supported</desc1>
+        <desc2>Feature is fully supported</desc2>
+        <comment>Any database supported by Hibernate, including:
+MySQL,
+PostgreSQL ,
+Oracle,
+Microsoft SQL Server, 
+...
+</comment>
+        <score>2</score>
+      </element>
+      <element name="datawarehouse" title="Data Warehouse">
+        <desc>Can user create link to physical material like book or paper document?</desc>
+        <desc0>Feature is not supported</desc0>
+        <desc1>Feature is partialy supported</desc1>
+        <desc2>Feature is fully supported</desc2>
+        <comment></comment>
+        <score>2</score>
+      </element>
+    </element>
+    <element name="clustering" title="Clustering">
+      <element name="multisite" title="Multisite architecure">
+        <desc0>Application is not designed to support Multisite architecure  </desc0>
+        <desc1>Can be done with a third party</desc1>
+        <desc2>Application supports Multisite architecure </desc2>
+        <comment>This functionnality can be achieved by using Tomcat's or Jboss native clustering capabilities .</comment>
+        <score>1</score>
+      </element>
+      <element name="loadbalancing" title="Load balancing">
+        <desc0>Application is not designed to support Load balancing </desc0>
+        <desc1>Can be done with a third party</desc1>
+        <desc2>Application supports Load balancing </desc2>
+        <comment>Provided by apache mod_JK .</comment>
+        <score>1</score>
+      </element>
+      <element name="failover" title="Fail over">
+        <desc0>Application is not designed to support fail over </desc0>
+        <desc1>Can be done with a third party</desc1>
+        <desc2>Application supports fail over </desc2>
+        <comment>Provided by apache mod_JK .</comment>
+        <score>1</score>
+      </element>
+      <element name="repositoryreplication " title="Repository Replication ">
+        <desc0>Application is not designed to support Repository replication</desc0>
+        <desc1>Can be done with a third party</desc1>
+        <desc2>Application supports Repository replication</desc2>
+        <comment></comment>
+        <score>2</score>
+      </element>
+      <element name="indexreplication" title="Index Replication">
+        <desc0>Application is not designed to support Index replication</desc0>
+        <desc1>Can be done with a third party</desc1>
+        <desc2>Application supports Index replication</desc2>
+        <comment></comment>
+        <score>2</score>
+      </element>
+    </element>
+    <element name="administration" title="Administration">
+      <element name="rights" title="Rights">
+        <element name="usersrights" title="User's rights">
+          <desc0>Feature is not supported</desc0>
+          <desc1>Feature is partialy supported</desc1>
+          <desc2>Feature is supported</desc2>
+          <comment>An administration console is available to handle user, group, rights .</comment>
+          <score>2</score>
+        </element>
+        <element name="groupesrights" title="Group's rights">
+          <desc0>Feature is not supported</desc0>
+          <desc1>Feature is partialy supported</desc1>
+          <desc2>Feature is supported</desc2>
+          <comment>Possibility to create, and affect rights to new groups </comment>
+          <score>2</score>
+        </element>
+        <element name="role" title="Role">
+          <desc>Can we create a virtual user with specific rights and give his rights to phyical people (e.g: the role "backup administrator" read access on the data base)</desc>
+          <desc0>The feature doesn't exist</desc0>
+          <desc1>The feature exists but is limited</desc1>
+          <desc2>The Feature is available or can easily be simulated thanks to a powerful group system</desc2>
+          <comment>Several predefined roles ( contributor , editor ... ) defining a combination of rights : read , write ,  create , delete , checkin , checkout ...</comment>
+          <score>2</score>
+        </element>
+      </element>
+    </element>
+  </section>
+  <section name=" Webcompatibility " title="Web compatibility">
+    <desc> all this section was validated thanks to http://validator.w3.org </desc>
+    <element name="webstandards" title="Standards">
+      <element name="htmlstandard" title="HTML">
+        <desc>http://validator.w3.org</desc>
+        <desc0>Page not valid (parse errors)</desc0>
+        <desc1>Page not valid with important errors (encoding mismatch)</desc1>
+        <desc2>Page valid, or with minor errors (missing "alt" attribute, use of unknow attribute)</desc2>
+        <comment></comment>
+        <score>2</score>
+      </element>
+      <element name="xhtmlstandard" title="XHTML">
+        <desc>http://validator.w3.org</desc>
+        <desc0>Page not valid (parse errors)</desc0>
+        <desc1>Page not valid with important errors (encoding mismatch)</desc1>
+        <desc2>Page valid, or with minor errors (missing "alt" attribute, use of unknow attribute)</desc2>
+        <comment></comment>
+        <score>0</score>
+      </element>
+      <element name="cssstandard" title="CSS">
+        <desc>http://validator.w3.org</desc>
+        <desc0>CSS doesn't or no valid not valide (parse errors)</desc0>
+        <desc1>CSS not valid with important errors (encoding mismatch)</desc1>
+        <desc2>CSS valid, or with minor errors (missing "alt" attribute, use of unknow attribute)</desc2>
+        <comment></comment>
+        <score>2</score>
+      </element>
+    </element>
+    <element name="webbestpractice" title="Best Practices">
+      <desc>http://developer.apple.com/internet/webcontent/bestwebdev.htmls</desc>
+      <element name="tablepsitioning" title="Table Positioning">
+        <desc>html tables should not be used for layout/positioning, css is there to help.</desc>
+        <desc2>html tables are not used for layout/positioning</desc2>
+        <desc1>not too much used</desc1>
+        <desc0>systematically, too much used</desc0>
+        <comment></comment>
+        <score>1</score>
+      </element>
+      <element name="frameuse" title="Frame use">
+        <desc>Frame use </desc>
+        <desc2>frame are not used</desc2>
+        <desc1>frame are rarely used</desc1>
+        <desc0>systematically, too much used</desc0>
+        <comment></comment>
+        <score>2</score>
+      </element>
+      <element name="iframeuse" title="iFrame use">
+        <desc>iFrame use </desc>
+        <desc2>iframe are not used</desc2>
+        <desc1>iframe are rarely used</desc1>
+        <desc0>systematically, too much used</desc0>
+        <comment></comment>
+        <score>2</score>
+      </element>
+      <element name="cssdesignedforprintout" title="css designed for printout">
+        <desc>css designed for printout</desc>
+        <desc0>no</desc0>
+        <desc1>yes, but print-outs are not well rendered for a few use cases.</desc1>
+        <desc2>yes</desc2>
+        <comment></comment>
+        <score>2</score>
+      </element>
+    </element>
+    <element name="supportedbrowser" title="Supported Browsers">
+      <desc>Supported Browser</desc>
+      <element name="browsermozillafirefox" title="Mozilla and Firefox">
+        <desc>Firefox, please detail the supported version in the comment section</desc>
+        <desc0>not supported at all</desc0>
+        <desc1>not officially supported, but works ok or good enough.</desc1>
+        <desc2>supported and advised browser</desc2>
+        <comment>A plugin for Firefox also exist for Drag and Drop .</comment>
+        <score>2</score>
+      </element>
+      <element name="browserkonqueror" title="Konqueror">
+        <desc>Konqueror, please detail the supported version in the comment section</desc>
+        <desc0>not supported at all</desc0>
+        <desc1>not officially supported, but works ok or good enough.</desc1>
+        <desc2>supported and advised browser</desc2>
+        <comment></comment>
+        <score>1</score>
+      </element>
+      <element name="browsermsie" title="MSIE">
+        <desc>MSIE, please detail the supported version in the comment section</desc>
+        <desc0>not supported at all</desc0>
+        <desc1>not officially supported, but works ok or good enough.</desc1>
+        <desc2>supported and advised browser</desc2>
+        <comment></comment>
+        <score>2</score>
+      </element>
+      <element name="browsersafari" title="Safari">
+        <desc>Safarie, please detail the supported version in the comment section</desc>
+        <desc0>not supported at all</desc0>
+        <desc1>not officially supported, but works ok or good enough.</desc1>
+        <desc2>supported and advised browser</desc2>
+        <comment></comment>
+        <score>1</score>
+      </element>
+      <element name="browserlegacy" title="legacy browsers">
+        <desc>Legacy browser are browser outdated like MSIE4 and Netscape 4, please detail the
+ supported version in the comment section.</desc>
+        <desc0>not supported at all</desc0>
+        <desc1>not officially supported, but works ok or good enough.</desc1>
+        <desc2>supported and advised browser</desc2>
+        <comment></comment>
+        <score>1</score>
+      </element>
+    </element>
+    <element name="browserrequiredenablings" title="Required enablings">
+      <desc>Browser required enablings: javascript, applet, SVG, and flash. Reminder: here, a higher score does not mean a better product nor the opposite, it really depends on your needs and non functional requirements. </desc>
+      <element name="javascriptrequired" title="Javascript required">
+        <desc> Is the browser javascript enabling required ? If the score is 1 or 2, do indicate in the comment section the required jvm version. If the score is 1, do detail. </desc>
+        <desc0>The interface makes no use of javascript, and thus, does not need javascript to run at full flavor and speed </desc0>
+        <desc1>The interface makes use of javascript but can properly function without it.</desc1>
+        <desc2>Javascript is necessary to use the interface (beacuse it's AJAX based for instance).</desc2>
+        <comment></comment>
+        <score>0</score>
+      </element>
+      <element name="jvmrequired" title="a Java plugin is required">
+        <desc>Does the browser needs a java plugin (to enable applet) ? If the score is 1 or 2, do indicate in the comment section the required jvm version. If the score is 1, do detail. </desc>
+        <desc0>The interface does not contains any applet, and thus, does not need java to run at full flavor and speed </desc0>
+        <desc1>The interface makes use of applet(s) but can properly function without it.</desc1>
+        <desc2>A Java plugin is necessary to use the interface, the applets are key players in it.</desc2>
+        <comment></comment>
+        <score>0</score>
+      </element>
+      <element name="svgrequired" title="a SVG plugin is required">
+        <desc> Does the browser needs a SVG plugin ? If score is 1 or 2, do indicate in the comment section the required SVG version. If the score is 1, do detail. </desc>
+        <desc0>The interface does not contains any SVG graph, and thus, does not need any SVG plugin to run at full flavor and speed </desc0>
+        <desc1>The interface makes use of SVG but can properly function without it.</desc1>
+        <desc2>A SVG plugin is necessary to use the interface, the SVG graph are part of key features of the interface.</desc2>
+        <comment></comment>
+        <score>0</score>
+      </element>
+      <element name="flashrequired" title="a flash plugin is required">
+        <desc>Does the browser needs a flash plugin ? If score is 1 or 2, do indicate in the comment section the required flash version. If the score is 1, do detail. </desc>
+        <desc0>The interface does not contains any flash graph, and thus, does not need any flash plugin to run at full flavor and speed </desc0>
+        <desc1>The interface makes use of flash but can properly function without it.</desc1>
+        <desc2>A flash plugin is necessary to use the interface, the interface is mainly made of
+ flash.</desc2>
+        <comment></comment>
+        <score>0</score>
+      </element>
+      <element name="rss" title="support for rss feed">
+        <desc>Do detail the rss feed format/protocol in the comment section</desc>
+        <desc0>This feature doesn't exist</desc0>
+        <desc1>The feature exists but is limited</desc1>
+        <desc2>This feature exists and feeds are tunable and/or atom feeds are available</desc2>
+        <comment>RSS generated via freemarker.</comment>
+        <score>2</score>
+      </element>
+    </element>
+  </section>
+</document>

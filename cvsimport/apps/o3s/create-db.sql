@@ -1,0 +1,21 @@
+CREATE TABLE `evaluations` (                      
+  `id` varchar(80) character set latin1 NOT NULL COMMENT 'UID (filename)',
+  `qsosappfamily` varchar(50) character set latin1 NOT NULL COMMENT 'software family',
+  `qsosspecificformat` varchar(5) character set latin1 NOT NULL,                      
+  `qsosappname` varchar(50) character set latin1 NOT NULL default 'noname' COMMENT 'Short application name',
+  `release` varchar(15) character set latin1 NOT NULL default '0',                                          
+  `appname` varchar(80) character set latin1 NOT NULL default 'noname' COMMENT 'Long application name',     
+  `language` varchar(5) character set latin1 NOT NULL COMMENT 'Language on two characters',                 
+  `file` varchar(100) character set latin1 NOT NULL,                                                        
+  `licensedesc` varchar(50) character set latin1 NOT NULL COMMENT 'License name',                           
+  `creation` varchar(8) character set latin1 default NULL,                                                  
+  `validation` varchar(8) character set latin1 default NULL,                                                
+  `sections` tinyint(4) default NULL COMMENT 'Number of sections',                                          
+  `criteria` tinyint(4) default NULL COMMENT 'Total number of criteria',                                    
+  `criteria_scorable` tinyint(4) default NULL COMMENT 'Number of scorable criteria',                        
+  `criteria_scored` tinyint(4) default NULL COMMENT 'Number of criteria actually scored',                   
+  `criteria_notscored` tinyint(4) default NULL COMMENT 'Number of criteria not yet scored',                 
+  `comments` tinyint(4) default NULL COMMENT 'Number of criteria that could be commented',                  
+  `criteria_commented` tinyint(4) default NULL COMMENT 'Number of commented criteria',                      
+  `criteria_notcommented` tinyint(4) default NULL                                                           
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;

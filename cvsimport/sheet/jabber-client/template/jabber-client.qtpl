@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document>
+  <header>
+    <authors>
+    </authors>
+    <dates>
+      <creation></creation>
+      <validation></validation>
+    </dates>
+    <language>en</language>
+    <appname>im-client</appname>
+    <release></release>
+    <licenseid></licenseid>
+    <licensedesc></licensedesc>
+    <url></url>
+    <desc></desc>
+    <demourl></demourl>
+    <qsosformat>1.7</qsosformat>
+    <qsosappfamily>jabber-client</qsosappfamily>
+    <qsosappname></qsosappname>
+    <qsosspecificformat></qsosspecificformat>
+  </header>
+  <include section="generic"/>
+  <include section="im-client-gui"/>
+  <include section="im-protocol-jabber"/>
+</document>

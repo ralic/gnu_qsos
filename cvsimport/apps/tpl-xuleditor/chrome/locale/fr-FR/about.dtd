@@ -1,0 +1,7 @@
+<!ENTITY about.label "A propos">
+<!ENTITY label1.value "Editeur XUL de Template QSOS v0.3">
+<!ENTITY label2.value "Logiciel sous licence GNU Public License">
+<!ENTITY label3.value "Auteurs :">
+<!ENTITY label4.value "   . raphael.semeteys@atosorigin.com">
+<!ENTITY label5.value "Code source disponible sur http://savannah.nongnu.org/projects/qsos">
+<!ENTITY label6.value "Information au sujet de la méthode QSOS sur http://www.qsos.org">

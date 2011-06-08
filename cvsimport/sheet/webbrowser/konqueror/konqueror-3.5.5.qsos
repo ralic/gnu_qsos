@@ -1,0 +1,829 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document>
+  <header>
+    <authors>
+      <author>
+        <email>raphael@semeteys.org</email>
+        <name>Raphaël Semeteys</name>
+      </author>
+    </authors>
+    <dates>
+      <creation></creation>
+      <validation></validation>
+    </dates>
+    <language>en</language>
+    <appname>Konqueror</appname>
+    <release>3.5.5</release>
+    <licenseid>31</licenseid>
+    <licensedesc>GNU GPL</licensedesc>
+    <url>http://www.konqueror.org</url>
+    <desc>KDE Web Browser</desc>
+    <demourl></demourl>
+    <qsosformat>1.7</qsosformat>
+    <qsosappfamily>webbrowser</qsosappfamily>
+    <qsosappname>konqueror</qsosappname>
+    <qsosspecificformat>1.0</qsosspecificformat>
+  </header>
+  <section name="generic" title="Generic section">
+    <desc>Generic criteria from QSOS version 1.6</desc>
+    <element name="intrinsicdurability" title="Intrinsic durability">
+      <desc>Intrinsic durability</desc>
+      <element name="maturity" title="Maturity">
+        <desc>Maturity</desc>
+        <element name="age" title="Age">
+          <desc0>less than 3 months</desc0>
+          <desc1>if between 3 months and 3 years</desc1>
+          <desc2>after 3 years</desc2>
+          <score>2</score>
+          <comment>The first stable release was on october 2000 for KDE 2.0 release. Konqueror is derivated from kfm, KDE 1.x file/web browser.</comment>
+        </element>
+        <element name="stability" title="Stability">
+          <desc0>Unstable software with numerous releases or patches generating side effects</desc0>
+          <desc1>Stabilized production release existing but old. Difficulties to stabilize developpement releases</desc1>
+          <desc2>Stabilized software. Releases provide bug fixes corrections but mainly new functionalities</desc2>
+          <score>2</score>
+          <comment>Konqueor is known to be stable as a Web Browser but also as a file manager</comment>
+        </element>
+        <element name="historyknowproblems" title="History">
+          <desc0>Software knows several problems which can be prohibitive</desc0>
+          <desc1>No know major problem or crisis</desc1>
+          <desc2>History of good management of crisis situations</desc2>
+          <score>1</score>
+          <comment></comment>
+        </element>
+        <element name="forkprobability" title="Fork">
+          <desc0>Software is very likely to be forked in the future</desc0>
+          <desc1>Software comes from a fork but has very few chances of being forked in the future</desc1>
+          <desc2>Software has very little chance of being forked. It does not come from a fork either</desc2>
+          <score>2</score>
+          <comment>KHTML, Konqueror's engine was forked by Apple to create
+	  Webkit, Safari's engine. Initialy Apple did nothing to help KDE
+	  developers to backport changes. Today things changed and Webkit
+	  will provably be the default HTML engine of KDE4.</comment>
+        </element>
+      </element>
+      <element name="adoption" title="Adoption">
+        <desc>Adoption by community and industry</desc>
+        <element name="popularity" title="Popularity">
+          <desc0>Very few users identified</desc0>
+          <desc1>Detectable use on Internet</desc1>
+          <desc2>Numerous users, numerous references</desc2>
+          <score>1</score>
+          <comment>Konqueror is very popular among KDE users. Because of its unavailability on Windows platforms its popularity is not so wide as Mozilla or Opera.</comment>
+        </element>
+        <element name="references" title="References">
+          <desc0>None</desc0>
+          <desc1>Few refences, non critical usages</desc1>
+          <desc2>Often implemented for critical applications</desc2>
+          <score>1</score>
+          <comment>Konqueror engine, khtml is used by Apple Computer for Safari and by Nokia for Nokia Web Browser used on S60 serie phones.</comment>
+        </element>
+        <element name="contributingcommunity" title="Contributing Community">
+          <desc0>No community or without real activity (forum, mailing list, ...)</desc0>
+          <desc1>Existing community with a notable activity</desc1>
+          <desc2>Strong community: big activity on forums, numerous contributors and advocates</desc2>
+          <score>2</score>
+          <comment>As part of KDE base package, Konqueror has a very strong community and 33 identified contributors.</comment>
+        </element>
+        <element name="books" title="books">
+          <desc0>No book about the software</desc0>
+          <desc1>Less than 5 books about the software are available</desc1>
+          <desc2>More than 5 books about software are available, in several languages</desc2>
+          <score>0</score>
+          <comment></comment>
+        </element>
+      </element>
+      <element name="developmentleadership" title="Development leadership">
+        <desc>Organisation and leadership of developments</desc>
+        <element name="leadingteam" title="Leading team">
+          <desc0>1 to 2 individuals involved, not clearly identified</desc0>
+          <desc1>Between 2 and 5 independent people</desc1>
+          <desc2>More than 5 people</desc2>
+          <score>2</score>
+          <comment>14 membres of the core team are well identified, as well as David Faure the current maintainer.</comment>
+        </element>
+        <element name="managementstyle" title="Management style">
+          <desc0>Complete dictatorship</desc0>
+          <desc1>Enlightened despotism</desc1>
+          <desc2>Council of architects with identified leader (e.g: KDE)</desc2>
+          <score>2</score>
+          <comment></comment>
+        </element>
+      </element>
+      <element name="activity" title="Activity">
+        <desc>Activity of the project and around the software</desc>
+        <element name="developersidentificationturnover" title="Developers, identification, turnover">
+          <desc0>Less than 3 developers, not clearly identified</desc0>
+          <desc1>Between 4 and 7 developers, or more unidentified developers with important turnover</desc1>
+          <desc2>More than 7 developers, very stable team</desc2>
+          <score>2</score>
+          <comment>33 contributors</comment>
+        </element>
+        <element name="activityonbugs" title="Activity on bugs">
+          <desc0>Slow reactivity in forum or on mailing list, or nothing regarding bug fixes in releases note</desc0>
+          <desc1>Detectable activity but without process clearly exposed, loing reaction/resolution time</desc1>
+          <desc2>Strong reactivity based on roles and tasks assignment</desc2>
+          <score>2</score>
+          <comment>http://bugs.kde.org</comment>
+        </element>
+        <element name="activityonfunctionalities" title="Activity on functionalities">
+          <desc0>No or few new functionalities</desc0>
+          <desc1>Evolution of the product driven by the core team or by user's request without any clearly explained process</desc1>
+          <desc2>Tool(s) to manage feature requests, strong interaction with roadmap</desc2>
+          <score>2</score>
+          <comment>http://bugs.kde.org</comment>
+        </element>
+        <element name="activityonreleases" title="Activity on releases">
+          <desc0>Very weak activity on both production and development releases</desc0>
+          <desc1>Activity on production and developmenet releases. Frequent minor releases (bug fixes)</desc1>
+          <desc2>Important activity with frequent minor releases (bugs fixes) and planned major releases relating to the roadmap forcast</desc2>
+          <score>2</score>
+          <comment>Konqueror is released as part of KDE (KDEbase and KDElibs packages)</comment>
+        </element>
+      </element>
+    </element>
+    <element name="industrializedsolution" title="Industrialized solution">
+      <desc>Industrialization level of the project</desc>
+      <element name="independenceofdevelopments" title="Independence of developments">
+        <desc0>Developments realized at 100% by employees of a single company</desc0>
+        <desc1>60% maximum</desc1>
+        <desc2>20% maximum</desc2>
+        <score>2</score>
+        <comment></comment>
+      </element>
+      <element name="services" title="Services">
+        <desc>Services offering</desc>
+        <element name="training" title="Training">
+          <desc0>No offer of training identified</desc0>
+          <desc1>Offer exists but is restricted geographically and to one language or is provided by a single contractor</desc1>
+          <desc2>Rich offers provided by several contractors, in serveral languages and split into modules of gradual levels</desc2>
+          <score>1</score>
+          <comment>Konqueror is often included in Linux trainings</comment>
+        </element>
+        <element name="support" title="Support">
+          <desc0>No offer of support except via public forums and mailing lists</desc0>
+          <desc1>Offer exists but is provided by a single contractor without strong commitment quality of services</desc1>
+          <desc2>Multiple service providers with strong commitment (e.g: guaranteed resolution time)</desc2>
+          <score>2</score>
+          <comment>Konqueror is often included in professional Linux support offers (like RedHat, SuSE, Mandriva, ...)</comment>
+        </element>
+        <element name="consulting" title="Consulting">
+          <desc0>No offer of consulting service</desc0>
+          <desc1>Offer exists but is restricted geographically and to one language or is provided by a single contractor</desc1>
+          <desc2>Consulting services provided by different contractors in serveral languages</desc2>
+          <score>2</score>
+          <comment>Konqueror, as part of KDE,  is often included in professional Linux expertise offers (like RedHat, SuSE, Mandriva, ...)</comment>
+        </element>
+      </element>
+      <element name="documentation" title="Documentation">
+        <desc0>No user documentation</desc0>
+        <desc1>Documentation exists but shifted in time, is restricted to one language or is poorly detailed</desc1>
+        <desc2>Documentation always up to date, translated and possibly adapted to different target readers (end user, sysadmin, manager, ...)</desc2>
+        <score>2</score>
+        <comment>Documentation about Konqueror is very complete (user guide, developer guide) and translated in several languages</comment>
+      </element>
+      <element name="qualityassurance" title="Quality Assurance">
+        <desc>Quality assurance process</desc>
+        <element name="quality" title="Quality Assurance">
+          <desc0>No QA process</desc0>
+          <desc1>Identifies QA process but not much formalized and with no tool</desc1>
+          <desc2>Automatic testing process included in code's life-cycle with publication of results</desc2>
+          <score>2</score>
+          <comment>Konqueror benefits from KDE quality process (cf. http://quality.kde.org) and policies. Different porcesses are well documented.</comment>
+        </element>
+        <element name="tools" title="Tools">
+          <desc0>No bug or feature request management tool</desc0>
+          <desc1>Standard tools provided (for instance by a hosting forge) but poorly used</desc1>
+          <desc2>Very active use of tools for roles/tasks allocation and progress monitoring</desc2>
+          <score>2</score>
+          <comment></comment>
+        </element>
+      </element>
+    </element>
+    <element name="packaging" title="Packaging">
+      <desc>Packaging for various operating systems</desc>
+      <element name="packagingbsd" title="BSD">
+        <desc>BSD</desc>
+        <element name="packagingfreebsd" title="FreeBSD">
+          <desc0>The software is not packaged for FreeBSD</desc0>
+          <desc1>A port exists but it has important issues or it doesn't have official support</desc1>
+          <desc2>A official port exists in FreeBSD</desc2>
+          <score>2</score>
+          <comment></comment>
+        </element>
+        <element name="packagingmacosx" title="Mac OS X">
+          <desc0>The software is not packaged for Mac OS X</desc0>
+          <desc1>A package exists but it has important issues or it doesn't have official support</desc1>
+          <desc2>The software is packaged in the distribution</desc2>
+          <score>1</score>
+          <comment>Unsupported port : http://ranger.users.finkproject.org/kde/index.php/Home</comment>
+        </element>
+        <element name="packagingnet" title="NetBSD">
+          <desc0>The software is not packaged for NetBSD</desc0>
+          <desc1>A port exists but it has important issues or it doesn't have official support</desc1>
+          <desc2>A official port exists in NetBSD</desc2>
+          <score>2</score>
+          <comment></comment>
+        </element>
+        <element name="packagingopen" title="OpenBSD">
+          <desc0>The software is not packaged for OpenBSD</desc0>
+          <desc1>A port exists but it has important issues or it doesn't have official support</desc1>
+          <desc2>A official port exists in OpenBSD</desc2>
+          <score>2</score>
+          <comment></comment>
+        </element>
+      </element>
+      <element name="packaginglinux" title="Linux">
+        <desc>Linux</desc>
+        <element name="packagingdebian" title="Debian">
+          <desc0>The software is not packaged for Debian</desc0>
+          <desc1>A Debian package exists but it has important issues or it doesn't have official support</desc1>
+          <desc2>The software is packaged in the distribution</desc2>
+          <score>2</score>
+          <comment></comment>
+        </element>
+        <element name="packagingmandriva" title="Mandriva">
+          <desc0>The software is not packaged for Mandriva</desc0>
+          <desc1>A package exists but it has important issues or it doesn't have official support</desc1>
+          <desc2>The software is packaged in the distribution</desc2>
+          <score>2</score>
+          <comment></comment>
+        </element>
+        <element name="packagingredhat" title="Red Hat">
+          <desc0>The software is not packaged for Red Hat/Fedora</desc0>
+          <desc1>A package exists but it has important issues or it doesn't have official support</desc1>
+          <desc2>The software is packaged in the distribution</desc2>
+          <score>2</score>
+          <comment></comment>
+        </element>
+        <element name="packagingsuse" title="SuSE">
+          <desc0>The software is not packaged for SuSE</desc0>
+          <desc1>A package exists but it has important issues or it doesn't have official support</desc1>
+          <desc2>The software is packaged in the distribution</desc2>
+          <score>2</score>
+          <comment></comment>
+        </element>
+      </element>
+      <element name="packagingsource" title="Source">
+        <desc0>Software can't be installed from source without lot of work</desc0>
+        <desc1>Installation from source is limited and depends on very strict conditions (OS, arch, lib, ...)</desc1>
+        <desc2>Installation from source is easy</desc2>
+        <score>2</score>
+        <comment></comment>
+      </element>
+      <element name="packagingunix" title="Unix">
+        <desc>Unix</desc>
+        <element name="packagingaix" title="AIX">
+          <desc0>The software is not packaged for AIX</desc0>
+          <desc1>A package exists but it has important issues or it doesn't have official support</desc1>
+          <desc2>A stable package is provided for AIX</desc2>
+          <score></score>
+          <comment></comment>
+        </element>
+        <element name="packaginghpux" title="HP-UX">
+          <desc0>The software is not packaged for HP-UX</desc0>
+          <desc1>A package exists but it has important issues or it doesn't have official support</desc1>
+          <desc2>A stable package is provided for HP-UX</desc2>
+          <score>1</score>
+          <comment>Some user have ported parts of KDE on HP-UX but it seems to be buggy and unsupported</comment>
+        </element>
+        <element name="packagingsolaris" title="Solaris">
+          <desc0>The software is not packaged for Solaris</desc0>
+          <desc1>A package exists but it has important issues or it doesn't have official support (e.g: SunFreeware.com )</desc1>
+          <desc2>The software is supported by Sun for Solaris</desc2>
+          <score>2</score>
+          <comment>http://solaris.kde.org/</comment>
+        </element>
+      </element>
+      <element name="packagingwindows" title="Windows">
+        <desc0>The project can't be installed on Windows</desc0>
+        <desc1>A package exists but it is limited or has important issues or just cover some specific Windows release (e.g: Windows 2000 and Windows XP)</desc1>
+        <desc2>Windows is full supported and a package is provided</desc2>
+        <score>0</score>
+        <comment></comment>
+      </element>
+    </element>
+    <element name="exploitability" title="Exploitability">
+      <desc>Exploitability level</desc>
+      <element name="easeofuseergonomics" title="Ease of use, ergonomics">
+        <desc0>Difficult to use, requires an in depth knowledge of the software functionality</desc0>
+        <desc1>Austere and very technical ergonomics</desc1>
+        <desc2>GUI including help functions and elaborated ergonomics</desc2>
+        <score>2</score>
+        <comment>Global and contextual user help</comment>
+      </element>
+      <element name="administrationmonitoring" title="Administration / Monitoring">
+        <desc0>No administrative or monitoring functionalities</desc0>
+        <desc1>Existing, functionalities but uncomplete and or need improvement</desc1>
+        <desc2>Complete and easy-to-use administration and monitoring functionalities. Possible integration with external tools (e.g: SNMP, syslog, ...)</desc2>
+        <score>0</score>
+        <comment>Not applicable</comment>
+      </element>
+    </element>
+    <element name="technicaladaptability" title="Technical adaptability">
+      <desc>Technical adaptability</desc>
+      <element name="modularity" title="Modularity">
+        <desc0>Monolithic software</desc0>
+        <desc1>Presence of hight level modules allowing a first level of software adaptation</desc1>
+        <desc2>Modular conception, allowing easy adaptation of the software by selecting or creating modules</desc2>
+        <score>2</score>
+        <comment>Konqueror is code in C++ and is thus modular and extensible</comment>
+      </element>
+      <element name="codemodification" title="Code modification">
+        <desc0>Everything by hand</desc0>
+        <desc1>Recompilation possible but complex without any tools or documentation</desc1>
+        <desc2>Recompilation with tools (e.g: make, ANT, ...) and documentation provided</desc2>
+        <score>2</score>
+        <comment>KDE compilation process is well tooled and documented</comment>
+      </element>
+      <element name="codeextension" title="Code extension">
+        <desc0>Any modification requires code recompilation</desc0>
+        <desc1>Architecture designed for static extension but requires recompilation</desc1>
+        <desc2>Principle of plugin, architecture designed for dynamic extension without recompilation</desc2>
+        <score>2</score>
+        <comment>Konqueror is designed as a pluggable architecture. A extention system is also available even if very few extentions are available today.</comment>
+      </element>
+    </element>
+    <element name="strategy" title="Strategy">
+      <desc>Project's strategy</desc>
+      <element name="license" title="License">
+        <desc>License, only if user wants to become owner of code</desc>
+        <element name="permissiveness" title="Permissiveness">
+          <desc0>Very strict license, like GPL</desc0>
+          <desc1>Moderate permissive license located between both extremes (GPL and BSD) dual-licensing depending on the type of user (person, company, ...) or their activities</desc1>
+          <desc2>Very permissive like BSD or Apache licenses</desc2>
+          <score>0</score>
+          <comment></comment>
+        </element>
+        <element name="protectionagainstproprietaryforks" title="Protection against proprietary forks">
+          <desc0>Very permissive like BSD or Apache licenses</desc0>
+          <desc1>Moderate permissive license located between both extremes (GPL and BSD), dual-licensing depending on the type of user (person, company, ...) or their activies</desc1>
+          <desc2>Very strict license, like GPL</desc2>
+          <score>2</score>
+          <comment></comment>
+        </element>
+      </element>
+      <element name="copyrightowners" title="Copyright owners">
+        <desc0>Rights held by a few individuals or entities, making it easier to change the license</desc0>
+        <desc1>Rights held by numerous individuals owning the code in a homogeneous way, making relicense very difficult</desc1>
+        <desc2>Rights held by a legal entity in whom the community trusts (e.g: FSF or ASF)</desc2>
+        <score>1</score>
+        <comment></comment>
+      </element>
+      <element name="modificationofsourcecode" title="Modification of source code">
+        <desc0>No pratical way to propose code modification</desc0>
+        <desc1>Tools provided to access and modify code (like CVS or SVN) but not really used to develop the software</desc1>
+        <desc2>The code modification process is well defined, exposed and respected, based on roles assignment</desc2>
+        <score>2</score>
+        <comment>Code modification is rules by well documented policies</comment>
+      </element>
+      <element name="roadmap" title="Roadmap">
+        <desc0>No published roadmap</desc0>
+        <desc1>Existing roadmap without planning</desc1>
+        <desc2>Versionned roadmap, with planning and measure of delays</desc2>
+        <score>1</score>
+        <comment>Konqueror is included in the global KDE macroscopic roadmap</comment>
+      </element>
+      <element name="sponsor" title="Sponsor">
+        <desc0>Software has no sponsor, the core team is not paid</desc0>
+        <desc1>Software has an unique sponsor who might determine its strategy</desc1>
+        <desc2>Software is sponsored by industry</desc2>
+        <score>2</score>
+        <comment>Konqueror, as part of the KDS project, is sponsord by the community. KDE e.V the legal entity representing the KDE project has also a patron program (cf. http://ev.kde.org/supporting-members.php)</comment>
+      </element>
+      <element name="strategicalindependence" title="Strategical independence">
+        <desc0>No detectable strategy or strong dependency on one unique actor (person, company, sponsor)</desc0>
+        <desc1>Strategical vision shared with several other free and open source projects but without strong commitment from copyrights owners</desc1>
+        <desc2>Strong independence of the code team, legal entity holding rights, strong involvement in the standardization process</desc2>
+        <score>2</score>
+        <comment>The non-profit German association KDE e.V. exists to represent legally and financially the project.</comment>
+      </element>
+    </element>
+  </section>
+  <section name="browserfeatures" title="Browser features">
+    <desc>Native browser features</desc>
+    <element name="bookmarkmanaging" title="Bookmark managing">
+      <desc></desc>
+      <desc0>No bookmark features</desc0>
+      <desc1>Limited bookmark features</desc1>
+      <desc2>Comprehensive bookmark features (creation, edition, management, ...).</desc2>
+      <score>2</score>
+      <comment>Create, delete, classify, search and comment bookmarks. Stats are also available (first and last visits, number of visits,.</comment>
+    </element>
+    <element name="downloadmanaging" title="Download managing">
+      <desc></desc>
+      <desc0>No download management</desc0>
+      <desc1>Limited download manager</desc1>
+      <desc2>Comprehensive and configurable download manager</desc2>
+      <score>2</score>
+      <comment>kdenetwork needs to be installed</comment>
+    </element>
+    <element name="passwordmanaging" title="Password managing">
+      <desc></desc>
+      <desc0>No password management features</desc0>
+      <desc1>Limited features</desc1>
+      <desc2>Comprehensive password management features (storage, master password, ...)</desc2>
+      <score>2</score>
+      <comment>With KWallet</comment>
+    </element>
+    <element name="formmanaging" title="Form managing">
+      <desc></desc>
+      <desc0>No form management features</desc0>
+      <desc1>Limited form management features (for instance non persistent storage of user entries)</desc1>
+      <desc2>Comprehensive features (persistent storage, behaviour configuration, ...)</desc2>
+      <score>2</score>
+      <comment></comment>
+    </element>
+    <element name="spellchecking" title="Spell checking">
+      <desc></desc>
+      <desc0>No spell cheking</desc0>
+      <desc1>Limited spell checking (in number of languages or dictionnary enhancement)</desc1>
+      <desc2>Features based on a complete and extensible spell checking framework</desc2>
+      <score>2</score>
+      <comment>Konqueror benefits from KDE spell checking framework</comment>
+    </element>
+    <element name="searchenginetoolbar" title="Search engine toolbar">
+      <desc></desc>
+      <desc0>No search toolbar</desc0>
+      <desc1>Limited search features (for instance no choice in search engines)</desc1>
+      <desc2>Full search framework with ability to define and plug easily new search engines</desc2>
+      <score>2</score>
+      <comment>Search engines can be queried from the URL bar by using shortcuts (like gg: to search Google for instance)</comment>
+    </element>
+  </section>
+  <section name="accessibilityfeatures" title="Accessibility features">
+    <desc>Native accessibility features</desc>
+    <element name="tabbedbrowsing" title="Tabbed browsing">
+      <desc></desc>
+      <desc0>Single window browsing</desc0>
+      <desc1>Limited tab browsing features (no tab relocation, no global view)</desc1>
+      <desc2>Full tab browsing features with tab relocation and global view of opened tabs</desc2>
+      <score>2</score>
+      <comment>Open, close, duplicate, reload, detach tabs</comment>
+    </element>
+    <element name="pop-upblocking" title="Pop-up blocking">
+      <desc></desc>
+      <desc0>No pop-up blocking features</desc0>
+      <desc1>Limited features (for instance no ability to configure behaviour depending on websites)</desc1>
+      <desc2>Configurable pop-up blocking strategy</desc2>
+      <score>2</score>
+      <comment></comment>
+    </element>
+    <element name="incrementalfinding" title="Incremental finding">
+      <desc>Find-as-you-type feature in non modal Search windows</desc>
+      <desc0>No incremental finding features</desc0>
+      <desc1>Limited incremental findind features (no highlight or previous/next features for instance)</desc1>
+      <desc2>Comprehensive incremental finding features</desc2>
+      <score>2</score>
+      <comment></comment>
+    </element>
+    <element name="adfiltering" title="Ad filtering">
+      <desc>Advertisement filtering (content or images)</desc>
+      <desc0>No ad filtering</desc0>
+      <desc1>Limited ad filtering or depending on a third party product</desc1>
+      <desc2>Full ad filtering features</desc2>
+      <score>1</score>
+      <comment></comment>
+    </element>
+    <element name="pagezooming" title="Page zooming">
+      <desc></desc>
+      <desc0>No possibility to zoom browsed pages</desc0>
+      <desc1>Limited zooming features (limited to text resizing)</desc1>
+      <desc2>Full browsing features (all page is zoomed in/ou)</desc2>
+      <score>1</score>
+      <comment></comment>
+    </element>
+    <element name="navigationmodesupport" title="Navigation mode support">
+      <desc>Supported navigation modes</desc>
+      <comment></comment>
+      <element name="htmlaccesskey" title="HTML access key">
+        <desc>Ability to select HTML elemnst (links, input fields, ...) from keyboard shortcuts</desc>
+        <desc0>No HTML access key features</desc0>
+        <desc1>Limited HTML access key features</desc1>
+        <desc2>HTML access key features natively available</desc2>
+        <score>2</score>
+        <comment></comment>
+      </element>
+      <element name="tabbingnavigation" title="Tabbing navigation">
+        <desc>Ability to navigate with TAB key</desc>
+        <desc0>No tabbing navigation features</desc0>
+        <desc1>Limited tabbing navigation features or with a third party product</desc1>
+        <desc2>Tabbing navigation features natively available</desc2>
+        <score>2</score>
+        <comment></comment>
+      </element>
+      <element name="spatialnavigation" title="Spatial navigation">
+        <desc>Ability to navigate between focusable elements according to the spatial location</desc>
+        <desc0>No spatial navigation features</desc0>
+        <desc1>Limited spatial navigation features or with a third party product</desc1>
+        <desc2>Spatial navigation features natively available</desc2>
+        <score>2</score>
+        <comment></comment>
+      </element>
+      <element name="caretnavigation" title="Caret navigation">
+        <desc>Ability to move a cursor in browsed pages</desc>
+        <desc0>No caret navigation available</desc0>
+        <desc1>Limited caret navigation feature</desc1>
+        <desc2>Carte navigation mode natively available</desc2>
+        <score>2</score>
+        <comment></comment>
+      </element>
+      <element name="mousegesture" title="Mouse gesture">
+        <desc>Combination of mouse movements and clicks to trigger commands</desc>
+        <desc0>No mouse gesture features</desc0>
+        <desc1>Limited features or with third party product</desc1>
+        <desc2>Mouse gesture mode natively available</desc2>
+        <score>2</score>
+        <comment>Mouse gesture support is available system-wide in KDE</comment>
+      </element>
+    </element>
+    <element name="voicefeatures" title="Voice features">
+      <desc></desc>
+      <comment></comment>
+      <element name="text-to-speech" title="Text-to-speech">
+        <desc>Conversion of language text into speech</desc>
+        <desc0>No text-to-speech features</desc0>
+        <desc1>Limited features or with third party product</desc1>
+        <desc2>Text-to-speech mode natively available</desc2>
+        <score>1</score>
+        <comment>Depends on the kttsd application in the kdeaccessibility package</comment>
+      </element>
+      <element name="voicecontrol" title="Voice control">
+        <desc>Speech recognition features</desc>
+        <desc0>No voice control features</desc0>
+        <desc1>Limited features or with third party product</desc1>
+        <desc2>Voice control mode natively available</desc2>
+        <score>0</score>
+        <comment></comment>
+      </element>
+    </element>
+  </section>
+  <section name="webtechnologysupport" title="Web technology support">
+    <desc>Web standards and technologies supported (except Javascript)</desc>
+    <element name="css" title="CSS">
+      <desc>Cascading StyleSheet support</desc>
+      <desc0>No CSS support</desc0>
+      <desc1>Old or limited CSS support</desc1>
+      <desc2>Full CSS2.1 support</desc2>
+      <score>2</score>
+      <comment>CSS 2.1</comment>
+    </element>
+    <element name="frames" title="Frames">
+      <desc></desc>
+      <desc0>No frame support</desc0>
+      <desc1>Limited frame support</desc1>
+      <desc2>Full frame support</desc2>
+      <score>2</score>
+      <comment></comment>
+    </element>
+    <element name="java" title="Java">
+      <desc></desc>
+      <desc0>No Java support</desc0>
+      <desc1>Limited Java support (for instance no possibility to change JRE)</desc1>
+      <desc2>Full Java support</desc2>
+      <score>2</score>
+      <comment></comment>
+    </element>
+    <element name="xslt" title="XSLT">
+      <desc>Extensible Stylesheet Language Transformations</desc>
+      <desc0>No XSLT support</desc0>
+      <desc1>Limited XSLT support or with third party product</desc1>
+      <desc2>Full and native XSLT support</desc2>
+      <score>0</score>
+      <comment></comment>
+    </element>
+    <element name="xhtml" title="XHTML">
+      <desc>Extensible HyperText Markup Language</desc>
+      <desc0>No XHTML support</desc0>
+      <desc1>Limited or old XHTML (1.0) support</desc1>
+      <desc2>Full XHTML 1.1 support</desc2>
+      <score>2</score>
+      <comment>XHTML 1.1</comment>
+    </element>
+    <element name="mathml" title="MathML">
+      <desc></desc>
+      <desc0>No MathML support</desc0>
+      <desc1>Limited support or via third party product</desc1>
+      <desc2>Full native MathML support</desc2>
+      <score>0</score>
+      <comment></comment>
+    </element>
+    <element name="xforms" title="XForms">
+      <desc></desc>
+      <desc0>No XForms support</desc0>
+      <desc1>Limited XForms support</desc1>
+      <desc2>Full XForms support</desc2>
+      <score>0</score>
+      <comment></comment>
+    </element>
+    <element name="rss" title="RSS">
+      <desc></desc>
+      <desc0>No RSS support</desc0>
+      <desc1>Limited or old RSS (0.91 or 1.0) support</desc1>
+      <desc2>Full RSS 2.0 support</desc2>
+      <score>1</score>
+      <comment>Depends on the aKregator package which is installed with kdepim</comment>
+    </element>
+    <element name="atom" title="Atom">
+      <desc></desc>
+      <desc0>No Atom support</desc0>
+      <desc1>Limited or old Atom (0.91 or 1.0) support</desc1>
+      <desc2>Full Atom 1.0 support</desc2>
+      <score>1</score>
+      <comment>Depends on the aKregator package which is installed with kdepim</comment>
+    </element>
+    <element name="svg" title="SVG">
+      <desc>Scalable Vector Graphics</desc>
+      <desc0>No SVG support</desc0>
+      <desc1>Old (1.1), limited SVG support or via third party product</desc1>
+      <desc2>Full SVG 1.1 support</desc2>
+      <score>1</score>
+      <comment>With KSVG</comment>
+    </element>
+    <element name="voicexml" title="VoiceXML">
+      <desc></desc>
+      <desc0>No VoiceXML support</desc0>
+      <desc1>Limited VoiceXML support (for iunstance only for recognition or synthesis)</desc1>
+      <desc2>Full VoiceXML support</desc2>
+      <score>0</score>
+      <comment></comment>
+    </element>
+    <element name="wml" title="WML">
+      <desc>Wireless Markup Language</desc>
+      <desc0>No WML support</desc0>
+      <desc1>Limited WML support or via third party product</desc1>
+      <desc2>Full native WML support</desc2>
+      <score>0</score>
+      <comment></comment>
+    </element>
+  </section>
+  <section name="javascriptsupport" title="JavaScript support">
+    <desc>Supported JavaScript technologies </desc>
+    <element name="javascript" title="JavaScript">
+      <desc></desc>
+      <desc0>No JavaScript support</desc0>
+      <desc1>Partial JavaScript support</desc1>
+      <desc2>Full JavaScript support</desc2>
+      <score>2</score>
+      <comment></comment>
+    </element>
+    <element name="ecmascript" title="ECMAScript">
+      <desc>ECMA-262 specification compliance</desc>
+      <desc0>No ECMAScript compliance</desc0>
+      <desc1>Partial or old ECMAScript (1 or 2) compliance </desc1>
+      <desc2>Full ECMAScript 3 compliance</desc2>
+      <score>2</score>
+      <comment></comment>
+    </element>
+    <element name="dom1" title="DOM 1">
+      <desc>Document Object Model Level 1 support</desc>
+      <desc0>DOM 1 not supported</desc0>
+      <desc1>DOM 1 partially supported</desc1>
+      <desc2>Full DOM 1 support</desc2>
+      <score>2</score>
+      <comment></comment>
+    </element>
+    <element name="dom2" title="DOM 2">
+      <desc>Document Object Model Level 2 support</desc>
+      <desc0>DOM 2 not supported</desc0>
+      <desc1>DOM 2 partially supported</desc1>
+      <desc2>Full DOM2 support</desc2>
+      <score>2</score>
+      <comment></comment>
+    </element>
+    <element name="dom3" title="DOM 3">
+      <desc>Document Object Model Level 3 support (except XPath)</desc>
+      <desc0>DOM 3 not supported</desc0>
+      <desc1>DOM 3 partially supported</desc1>
+      <desc2>Full DOM 3 support</desc2>
+      <score>1</score>
+      <comment></comment>
+    </element>
+    <element name="xpath" title="XPath">
+      <desc>XML Path Language support</desc>
+      <desc0>No XPath support</desc0>
+      <desc1>LImited or old XPath support</desc1>
+      <desc2>Full XPath support</desc2>
+      <score>0</score>
+      <comment></comment>
+    </element>
+    <element name="xmlhttprequest" title="XMLHttpRequest">
+      <desc>XMLHttpRequest Object support</desc>
+      <desc0>No XMLHttpRequest Object available</desc0>
+      <desc1>XMLHttpRequest Object available but with limitations (for instance no UNICODE support)</desc1>
+      <desc2>XMLHttpRequest Object available</desc2>
+      <score>2</score>
+      <comment></comment>
+    </element>
+  </section>
+  <section name="protocolsupport" title="Protocol support">
+    <desc>Supported Internet protocols</desc>
+    <element name="http" title="HTTP">
+      <desc>Hypertext Transfer Protocol</desc>
+      <desc0>No HTTP support</desc0>
+      <desc1>Old (1.0) or limited HTTP support</desc1>
+      <desc2>HTTP 1.1 support</desc2>
+      <score>2</score>
+      <comment>HTTP 1.1</comment>
+    </element>
+    <element name="ftp" title="FTP">
+      <desc>File Transfer Protocol</desc>
+      <desc0>No FTP support</desc0>
+      <desc1>Partial FTP support</desc1>
+      <desc2>Full FTP support</desc2>
+      <score>2</score>
+      <comment></comment>
+    </element>
+    <element name="nntp" title="NNTP">
+      <desc>Network News Transfer Protocol</desc>
+      <desc0>No NNTP support</desc0>
+      <desc1>Partial NNTP support</desc1>
+      <desc2>Full NNTP support</desc2>
+      <score>0</score>
+      <comment></comment>
+    </element>
+    <element name="ssl" title="SSL/TLS">
+      <desc>Secure Sockets Layer / Transport Layer Security support</desc>
+      <desc0>No SSL or TLS support</desc0>
+      <desc1>Partial or old SSL/TLS support</desc1>
+      <desc2>TLS 1.1 support</desc2>
+      <score>2</score>
+      <comment>With OpenSSL</comment>
+    </element>
+    <element name="idn" title="IDN">
+      <desc>Internationalized domain name</desc>
+      <desc0>No IDN support</desc0>
+      <desc1>Partial IDN support</desc1>
+      <desc2>Full IDN support</desc2>
+      <score>2</score>
+      <comment></comment>
+    </element>
+    <element name="dataurl" title="data: URI scheme">
+      <desc>RFC 2397 support: inclusion of small data items inline</desc>
+      <desc0>data: URI scheme not supported</desc0>
+      <desc1>data: URI scheme partially supported</desc1>
+      <desc2>data: URI scheme fully supported</desc2>
+      <score>2</score>
+      <comment></comment>
+    </element>
+    <element name="bittorrent" title="BitTorrent">
+      <desc></desc>
+      <desc0>No BitTorrent support</desc0>
+      <desc1>Partial BitTorrent support or via third party product</desc1>
+      <desc2>Full native BitTorrent support</desc2>
+      <score>2</score>
+      <comment></comment>
+    </element>
+  </section>
+  <section name="imageformatsupport" title="Image format support">
+    <desc>Supported image formats</desc>
+    <element name="jpeg" title="JPEG">
+      <desc>Joint Photographic Experts Group image format </desc>
+      <desc0>JPEG not supported</desc0>
+      <desc1>JPEG partially supported</desc1>
+      <desc2>JPEG fully supported</desc2>
+      <score>2</score>
+      <comment></comment>
+    </element>
+    <element name="gif" title="GIF">
+      <desc>Graphics Interchange Format</desc>
+      <desc0>GIF not supported</desc0>
+      <desc1>GIF partially supported</desc1>
+      <desc2>GIF fully supported</desc2>
+      <score>2</score>
+      <comment></comment>
+    </element>
+    <element name="png" title="PNG">
+      <desc>Portable Network Graphics</desc>
+      <desc0>PNG not supported</desc0>
+      <desc1>PNG partially supported</desc1>
+      <desc2>PNG fully supported</desc2>
+      <score>2</score>
+      <comment></comment>
+    </element>
+    <element name="mng" title="MNG">
+      <desc>Multiple-image Network Graphics</desc>
+      <desc0>MNG not supported</desc0>
+      <desc1>MNG partially supported</desc1>
+      <desc2>MNG fully supported</desc2>
+      <score>2</score>
+      <comment></comment>
+    </element>
+    <element name="tiff" title="TIFF">
+      <desc>Tagged Image File Format</desc>
+      <desc0>TIFF not supported</desc0>
+      <desc1>TIFF partially supported</desc1>
+      <desc2>TIFF fully supported</desc2>
+      <score>2</score>
+      <comment></comment>
+    </element>
+    <element name="2dcanvas" title="2D Canvas">
+      <desc>Canvas element support (HTML extention standardized by the Web Hypertext Application Technology Working Group)</desc>
+      <desc0>Canvas element not supported</desc0>
+      <desc1>Canvas element partially supported</desc1>
+      <desc2>Canvas element fully supported</desc2>
+      <score>0</score>
+      <comment></comment>
+    </element>
+  </section>
+</document>

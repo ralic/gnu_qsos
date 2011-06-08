@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document>
+  <header>
+    <authors>
+      <author>
+        <name>Gonéri Le Bouder</name>
+        <email>goneri.le-bouder@atosorigin.com</email>
+      </author>
+      <author>
+        <name>Foo Bar</name>
+        <email>foo@bar.net</email>
+      </author>
+    </authors>
+    <dates>
+      <creation>20060111</creation>
+      <validation></validation>
+    </dates>
+    <language>en</language>
+    <appname>demo</appname>
+    <release>1</release>
+    <licenseid>1</licenseid>
+    <licensedesc>Affero GPL</licensedesc>
+    <url>http://www.qsos.org</url>
+    <desc>a description</desc>
+    <demourl>http://demo.site.org</demourl>
+    <qsosformat>1</qsosformat>
+    <qsosappfamily>groupware</qsosappfamily>
+    <qsosspecificformat>1</qsosspecificformat>
+  </header>
+  <section name="generic">
+    <desc>Generic comment</desc>
+    <comment>a</comment>
+    <element name="supported_os">
+      <comment>Linux, UNIX, Windows</comment>
+      <element name="windows">
+        <comment>pas de supp pour windows</comment>
+        <element name="win95">
+          <comment>Windows 95 SP2 pas ok...</comment>
+        </element>
+      </element>
+    </element>
+    <element name="doc">
+      <comment>La documentation est plutôt limité http://opengroupware.org/en/users/docs/index.html, http://docs.opengroupware.org. La documentation destinée au développeur est un peu plus soignée</comment>
+      <element name="debug">
+        <comment>commentaire de debug</comment>
+      </element>
+    </element>
+  </section>
+  <section name="service">
+    <element name="documentation">
+      <comment>La documentation est plutôt limité http://opengroupware.org/en/users/docs/index.html, http://docs.opengroupware.org. La documentation destinée au développeur est un peu plus soignée</comment>
+    </element>
+    <element name="support">
+      <comment>La documentation est plutôt limité http://opengroupware.org/en/users/docs/index.html, http://docs.opengroupware.org. La documentation destinée au développeur est un peu plus soignée</comment>
+    </element>
+  </section>
+  <section name="offre_supp">
+    <desc>Differentes offres de support.</desc>
+    <comment>Tres bonne</comment>
+    <element name="formation">
+      <desc>Qui propose des formations et qu'en est-il de la qualite</desc>
+      <comment>divers formations blabla</comment>
+      <element name="commercial">
+        <comment>Les socits a et b offrent du service</comment>
+        <score>2</score>
+      </element>
+      <element name="associatif">
+        <comment>plusieurs forums et ml</comment>
+        <score>3</score>
+      </element>
+    </element>
+  </section>
+</document>

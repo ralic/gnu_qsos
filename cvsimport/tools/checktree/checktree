@@ -1,0 +1,13 @@
+#!/bin/sh
+# $Id: checktree,v 1.7 2007/04/06 12:30:46 goneri Exp $
+# Gonéri Le Bouder
+
+set -e
+
+DIR=`pwd`
+SHEETDIR="$DIR/../../sheet"
+
+for i in `find $SHEETDIR -name '*.qsos'`; do
+	./checksheet $i 
+done
+

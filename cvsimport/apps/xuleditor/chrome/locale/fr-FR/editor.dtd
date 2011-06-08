@@ -1,0 +1,49 @@
+<!ENTITY QSOS.label "Editeur XUL QSOS">
+<!ENTITY file-menu.label "Fichier">
+<!ENTITY file-new.label "Nouveau fichier">
+<!ENTITY file-open.label "Ouvrir fichier local">
+<!ENTITY file-open-remote.label "Ouvrir fichier distant">
+<!ENTITY file-save.label "Sauvegarder">
+<!ENTITY file-saveas.label "Sauvegarder sous">
+<!ENTITY file-save-remote.label "Sauvegarder sur le serveur">
+<!ENTITY file-close.label "Fermer">
+<!ENTITY file-exit.label "Sortir">
+<!ENTITY tree-menu.label "Arbre">
+<!ENTITY tree-expand.label "Exploser">
+<!ENTITY tree-collapse.label "Aplatir">
+<!ENTITY chat-menu.label "Chat">
+<!ENTITY chat-start.label "Se connecter">
+<!ENTITY chat-end.label "Se déconnecter">
+<!ENTITY chat-nick.label "Pseudonyme">
+<!ENTITY help-menu.label "Aide">
+<!ENTITY help-about.label "A propos">
+<!ENTITY name.label "Critères">
+<!ENTITY g-evaluation.label "Evaluation">
+<!ENTITY t-header.label "Entête">
+<!ENTITY t-c-title.label "Critères">
+<!ENTITY t-chart.label "Graphe">
+<!ENTITY g-software.label "Logiciel">
+<!ENTITY f-software.value "Nom">
+<!ENTITY f-release.value "Version">
+<!ENTITY f-sotwarefamily.value "Type de logiciel">
+<!ENTITY f-license.value "Licence">
+<!ENTITY f-desc.value "Description">
+<!ENTITY f-url.value "Site Web">
+<!ENTITY f-demourl.value "Site de démonstration">
+<!ENTITY authors.title "Auteurs">
+<!ENTITY f-a-name.value "Nom">
+<!ENTITY f-a-email.value "Courriel">
+<!ENTITY button1.label "Ajouter">
+<!ENTITY button2.label "Supprimer">
+<!ENTITY f-a-list "Auteurs">
+<!ENTITY label1.value "Description">
+<!ENTITY label2.value "Score">
+<!ENTITY f-c-desc0.label "Score 0">
+<!ENTITY f-c-desc1.label "Score 1">
+<!ENTITY f-c-desc2.label "Score 2">
+<!ENTITY f-c-comments.value "Commentaires">
+<!ENTITY chat-conversation "Conversation">
+<!ENTITY chat-input "Dites quelquechose">
+<!ENTITY chat-send "Envoyer">
+<!ENTITY chat-roster "Participants">
+<!ENTITY t-chat.label "Chat">

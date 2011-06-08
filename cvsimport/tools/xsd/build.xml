@@ -1,0 +1,43 @@
+<project name="xsd-qsos" default="test">
+	
+	<property name="target" value="target"/>
+	
+	<target name="cvs-co" depends="clean">
+		<property name="cvs-protocol" value=":pserver:"/>
+		<property name="user" value="anonymous"/>
+		<property name="host" value="cvs.savannah.nongnu.org"/>
+		<property name="cvsroot" value="/sources/qsos/"/>
+		<property name="cvs-path" value="qsos/sheet"/>		
+		
+		<cvs  cvsRoot="${cvs-protocol}${user}@${host}:${cvsroot}"
+				package="qsos/sheet"
+				dest="${target}/"/>
+	
+		<move 	file="${target}/qsos/sheet"
+				tofile="${target}"/>
+	</target>
+	
+	<target name="test" depends="cvs-co">
+
+		<pathconvert dirsep="/" property="xsd.file">
+			<path>
+			   <pathelement location="src/xsd/qsos.xsd"/>
+			</path>
+		</pathconvert>
+
+		<xmlvalidate	failonerror="false" 
+						warn="true">
+		  	<attribute 	name="http://apache.org/xml/features/validation/schema"
+		  				value="true"/>
+		  	<attribute 	name="http://xml.org/sax/features/namespaces" 	
+		  				value="true"/>
+		  	<property	name="http://apache.org/xml/properties/schema/external-noNamespaceSchemaLocation"
+					  	value="${xsd.file}"/>
+			<fileset dir="${target}" includes="**/*.qsos"/>
+		</xmlvalidate>		
+	</target>
+	
+	<target name="clean">
+		<delete dir="${target}"/>
+	</target>
+</project>

@@ -1,0 +1,5 @@
+textbox.inside input { background-color:#EEEEEE; }
+textbox.outside input { background-color:white; }
+
+textbox.inside textarea { background-color:#EEEEEE; }
+textbox.outside textarea { background-color:white; }

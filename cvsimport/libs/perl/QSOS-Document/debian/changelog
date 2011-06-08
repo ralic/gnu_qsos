@@ -1,0 +1,19 @@
+libqsos-document-perl (0.03-1) unstable; urgency=low
+
+  * new release with QSOS 1.6 Format 
+
+ -- Goneri Le Bouder <goneri.lebouder@atosorigin.com>  Tue, 11 Apr 2006 17:03:45 +0200
+
+libqsos-document-perl (0.02-1) unstable; urgency=low
+
+  *  new release to support QSOS 1.6
+
+ -- Goneri Le Bouder <goneri.lebouder@atosorigin.com>  Fri, 31 Mar 2006 18:08:37 +0200
+
+libqsos-document-perl (0.01-1) unstable; urgency=low
+
+  * Initial Release.
+  * removed make test since it doesn't work
+
+ -- Goneri Le Bouder <goneri.lebouder@atosorigin.com>  Fri, 24 Mar 2006 11:38:44 +0100
+

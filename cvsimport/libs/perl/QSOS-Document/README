@@ -1,0 +1,27 @@
+DESCRIPTION
+
+  QSOS::Document - Easy API to access/edit QSOS files
+
+PREREQUISITES
+
+  XML::Twig required
+
+BUILDING/INSTALLING
+
+  Once the archive is unpacked, use these commands:
+
+    perl Makefile.PL
+    make
+    make test
+    make install
+
+STATUS
+
+  QSOS::Document is still in heavy developpement
+
+COPYRIGHT
+
+  Copyright 2006 Atos Origin <goneri.lebouder@atosorigin.com>
+
+  This library is free software; you can redistribute it
+  and/or modify it under the terms of the GNU General Public License.

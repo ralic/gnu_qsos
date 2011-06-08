@@ -1,0 +1,6 @@
+<!ENTITY newscore.label "New score criterion">
+<!ENTITY label1.value "Title ">
+<!ENTITY label2.value "General description: ">
+<!ENTITY label3.value "Score 0 description: ">
+<!ENTITY label4.value "Score 1 description: ">
+<!ENTITY label5.value "Score 2 description: ">

@@ -1,0 +1,559 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document>
+   <header>
+      <authors>
+         <author>
+            <email>raphael.semeteys@atosorigin.com</email>
+            <name>Raphaël Semeteys</name>
+         </author>
+      </authors>
+      <dates>
+         <creation></creation>
+         <validation></validation>
+      </dates>
+      <language>fr</language>
+      <appname>openQRM</appname>
+      <release>4.4</release>
+      <licenseid>31</licenseid>
+      <licensedesc>GNU GPL</licensedesc>
+      <url>http://www.openqrm.com</url>
+      <desc>Plate-forme de gestion de data center visant à gérer des machines physiques, comme des images virtuelles, ainsi que de mettre en place du cloud computing.</desc>
+      <demourl>https://demo.openqrm.com</demourl>
+      <qsosformat>1.6</qsosformat>
+      <qsosappfamily>Gestion infrastructure virtuelle</qsosappfamily>
+      <qsosspecificformat>1.0</qsosspecificformat>
+      <qsosappname></qsosappname>
+   </header>
+   <section name="generic" title="Section générique">
+      <desc>Les critères génériques de l'évaluation Presto de QSOS</desc>
+      <element name="intrinsicdurability" title="Pérennité">
+         <desc>Pérennité</desc>
+         <element name="maturite" title="Maturité">
+            <desc></desc>
+            <desc0>Logiciel provenant d'un fork ou avec une forte probabilité de fork dans un futur proche.</desc0>
+            <desc1>Projet jeune (moins de 3 ans) ou connaissant des difficultés à stabiliser les versions de développement.</desc1>
+            <desc2>Projet stable ou ayant un bon historique de gestion de crise. Les nouvelles versions apportent de façon prépondérante de nouvelles fonctionnalités.</desc2>
+            <score>2</score>
+            <comment>Le projet existe depuis 2005 et provient de développements initiaux propriétaires. La branche 4.X est un portage global de Java vers PHP. OpenQRM a été élu projet du mois en 2006 sur sourceforge.</comment>
+         </element>
+         <element name="adoption1" title="Adoption">
+            <desc></desc>
+            <desc0>Usage détectable sur Internet sans véritable activité communautaire</desc0>
+            <desc1>Utilisation communautaire prépondérante</desc1>
+            <desc2>Nombreuse références industrielles</desc2>
+            <score>0</score>
+            <comment>Faible activité détectable via les listes de discussion et les forums.</comment>
+         </element>
+         <element name="developpement" title="Développement">
+            <desc></desc>
+            <desc0>Deux ou moins de deux développeurs clairement identifiés.</desc0>
+            <desc1>Équipe de développement réduite avec un turn-over important ou sans équipe de direction identifiée.</desc1>
+            <desc2>Équipe de développement structurée comportant plus de 5 développeurs actifs.</desc2>
+            <score>0</score>
+            <comment>La grande majorité des développements sont réalisés par une seule personne (Matt Rechenburg).</comment>
+         </element>
+         <element name="activite" title="Activité">
+            <desc></desc>
+            <desc0>Très faible activité, que ce soit sur les résolutions de bugs, les releases, l'ajout de nouvelles fonctions ou sur les espaces communautaires (wiki, forum, mailing list...)</desc0>
+            <desc1>Activité détectable mais anarchique (pas feuille de route accessible facilement, pas de prévisions de nouvelles fonctionnalités ou de prévisions de nouvelles versions visible)</desc1>
+            <desc2>Activité importante et visible via la mise en place de feuilles de routes traçant les requêtes de nouvelles fonctionnalités et/ou les prévisions de sortie des nouvelles version</desc2>
+            <score>1</score>
+            <comment></comment>
+         </element>
+         <element name="strategicalindependence" title="Indépendance stratégique">
+            <desc0>Pas de stratégie détectable ou stratégie dictée par une société commerciale, un sponsor ou un individu unique.</desc0>
+            <desc1>Stratégie décidée par l'équipe de developpement.</desc1>
+            <desc2>Indépendance forte de l'équipe de développement, fort engagement du projet dans un processus de standardisation.</desc2>
+            <score>0</score>
+            <comment>La stratégie semble décidée par le développeur principal du projet.</comment>
+         </element>
+         <element name="copyrightowners" title="Détenteur des droits">
+            <desc0>Les droits sont détenus par quelques individus ou entités commerciales, facilitant le changement de licence</desc0>
+            <desc1>Les droits sont détenus par de nombreux individus de façon homogène, rendant le changement de licence très difficile</desc1>
+            <desc2>Les droits sont détenus par une entité légale, une fondation dans laquelle la communauté a confiance (ex: FSF, Apache, ObjectWeb)</desc2>
+            <score>0</score>
+            <comment>Chaque contributeur semble détenir les droits sur son code, cependant il n'est pas fait mention de copyright dans le code et le nombre de contributeurs est très restreint.</comment>
+         </element>
+         <element name="license" title="Licence">
+            <desc>Licence, à pondérer uniquement si le client désire un jour devenir propriétaire du code</desc>
+            <element name="permissiveness" title="Permissivité">
+               <desc0>Licence très stricte, comme la GPL</desc0>
+               <desc1>Licence modérée entre les deux extrêmes (GPL et BSD), licence duale dépendante du type d'utilisateur (personne, société…) ou de leur activité</desc1>
+               <desc2>Licence très permissive comme BSD et Apache</desc2>
+               <score>0</score>
+               <comment>GPL.</comment>
+            </element>
+            <element name="protectionagainstproprietaryforks" title="Protection contre des forks commerciaux">
+               <desc0>Licence très permissive comme BSD et Apache</desc0>
+               <desc1>Licence modérée entre les deux extrêmes (GPL et BSD), licence duale dépendante du type d'utilisateur (personne, société…) ou de leur activité</desc1>
+               <desc2>Licence très stricte, comme la GPL</desc2>
+               <score>2</score>
+               <comment>GPL.</comment>
+            </element>
+         </element>
+      </element>
+      <element name="industrializedsolution" title="Industrialisation">
+         <desc>Niveau d'industrialisation du projet</desc>
+         <element name="independenceofdevelopments" title="Indépendance des développements">
+            <desc0>Développements réalisés à plus de 60% par des employés d'une seule société</desc0>
+            <desc1>Développements réalisés à 60% maximum par des employés d'une seule société</desc1>
+            <desc2>Développements réalisés à 20% maximum par des employés d'une seule société</desc2>
+            <score>0</score>
+            <comment></comment>
+         </element>
+         <element name="services1" title="Services">
+            <desc></desc>
+            <desc0>Pas d'offres de services identifiée</desc0>
+            <desc1>Offre existante mais restreinte géographiquement ou en une seule langue ou fournie par un seul fournisseur</desc1>
+            <desc2>Offre riche : plusieurs fournisseurs ou plusieurs langages</desc2>
+            <score>1</score>
+            <comment>Le développeur principal du projet travaille en indépendant et offre des services de support et d'expertise sur openQRM (cf. http://www.rechenburg.com).</comment>
+         </element>
+         <element name="documentation" title="Documentation">
+            <desc0>Pas de documentation utilisateur</desc0>
+            <desc1>La documentation existe mais est en partie obsolète ou restreinte à une seule langue ou peu détaillée</desc1>
+            <desc2>Documentation à jour, traduite et éventuellement adaptée à différentes cibles de lecteurs (end-user, sysadmin, manager…)</desc2>
+            <score>1</score>
+            <comment>Documentation en anglais dans un wiki : http://www.openqrm.com/?q=node/33.</comment>
+         </element>
+         <element name="methodequalite" title="Méthode qualité">
+            <desc></desc>
+            <desc0>Pas de processus de qualité identifié ni d'outils de gestions de bugs</desc0>
+            <desc1>Processus qualité non formalisé ou non outillé ou comportant des outils qui sont très peu utilisés</desc1>
+            <desc2>Utilisation très active d'outils standards (tests unitaires, outils de gestion de build, outils de mesure de qualité du code)</desc2>
+            <score>1</score>
+            <comment>L'outillage standard proposé par sourceforge est disponible.</comment>
+         </element>
+      </element>
+      <element name="packaging" title="Packaging">
+         <desc>Packaging pour les différents systèmes d'exploitation</desc>
+         <element name="packagingbsd" title="BSD">
+            <desc></desc>
+            <desc0>Pas de packaging officiel pour la famille BSD</desc0>
+            <desc1>Packaging existant pour quelques distributions de la famille BSD</desc1>
+            <desc2>Packaging complet pour les distributions de la famille BSD suivantes : FreeBSD, OpenBSD, NetBSD et Mac OS X</desc2>
+            <score>0</score>
+            <comment></comment>
+         </element>
+         <element name="packaginglinux" title="GNU/Linux">
+            <desc></desc>
+            <desc0>Pas de packaging officiel pour les systèmes d'exploitations GNU/Linux</desc0>
+            <desc1>Packaging existant pour quelques distributions GNU/Linux</desc1>
+            <desc2>Packaging complet les systèmes de packaging .deb et .rpm</desc2>
+            <score>2</score>
+            <comment>Paquets disponibles pour Debian, Ubuntu, Fedora, CentOS, SuSE.</comment>
+         </element>
+         <element name="unix" title="Unix">
+            <desc></desc>
+            <desc0>Pas de packaging officiel pour les systèmes de la famille Unix</desc0>
+            <desc1>Packaging existant sur quelques systèmes de la famille Unix</desc1>
+            <desc2>Packaging existant sur au moins ces 3 systèmes : AIX, HP-UX, Solaris</desc2>
+            <score>0</score>
+            <comment></comment>
+         </element>
+         <element name="packagingwindows" title="Windows">
+            <desc0>Le logiciel n'est pas disponible sur un système Windows.</desc0>
+            <desc1>Le logiciel existe sous forme d'archive tout en un.</desc1>
+            <desc2>Le logiciel dispose d'un installeur.</desc2>
+            <score>0</score>
+            <comment></comment>
+         </element>
+         <element name="packagingsource" title="Sources">
+            <desc0>L'installation depuis les sources est hasardeuse et risquée</desc0>
+            <desc1>L'installation depuis les sources est difficile ou limité (seulement à un OS, une architecture, la résolution de l'écran...)</desc1>
+            <desc2>L'installation depuis les sources est outillée (vérification des dépencances, verification de l'installation, gestion de build)</desc2>
+            <score>1</score>
+            <comment></comment>
+         </element>
+         <element name="packagingtar" title="Archive compressée">
+            <desc0>Pas d'archive disponible</desc0>
+            <desc1>Archive globale</desc1>
+            <desc2>Archive séparée pour chaque module installable</desc2>
+            <score>1</score>
+            <comment></comment>
+         </element>
+      </element>
+      <element name="exploitability" title="Exploitabilité">
+         <desc>Niveau d'exploitabilité</desc>
+         <element name="easeofuseergonomics" title="Facilité d'utilisation, ergonomie">
+            <desc0>Difficulté d'utilisation, demande une connaissance approfondie des fonctionnalités du logiciel</desc0>
+            <desc1>Ergonomie austère et très technique</desc1>
+            <desc2>Ergonomie élaborée et IHM comprenant des fonctions d'aide</desc2>
+            <score>1</score>
+            <comment>Complexe à mettre en oeuvre.</comment>
+         </element>
+         <element name="administrationmonitoring" title="Administration et supervision">
+            <desc0>Pas de fonctionnalités de contrôle, ni d'administration</desc0>
+            <desc1>Fonctionnalités présentes mais incomplètes ou à améliorer</desc1>
+            <desc2>Fonctionnalités complètes et faciles de contrôle et d'administration. Intégration possible avec des outils tiers (ex : SNMP, syslog…)</desc2>
+            <score>2</score>
+            <comment>Intégration de Nagios via un greffon.</comment>
+         </element>
+      </element>
+      <element name="technicaladaptability" title="Adaptabilité">
+         <desc>Adaptabilité technique</desc>
+         <element name="modularity" title="Modularité">
+            <desc0>Logiciel monolithique</desc0>
+            <desc1>Présence de modules haut niveau permettant un premier niveau d'adaptation</desc1>
+            <desc2>Conception modulaire, permettant des adaptations faciles par sélection et/ou création de modules</desc2>
+            <score>2</score>
+            <comment>L'architecture d'openQRM est conçue dès le départ comme modulaire.</comment>
+         </element>
+         <element name="codemodification" title="Facilité technique de modification du code existant">
+            <desc0>Tout à la main</desc0>
+            <desc1>Recompilation possible mais complexe, sans outils, ni documentation</desc1>
+            <desc2>Recompilation facile, outillée (ex : make, ANT, Maven…) et documentée</desc2>
+            <score>2</score>
+            <comment>Depuis la branche 4.X openQRM est développé en PHP et dispose d'un système de construction facile d'utilisation (http://www.openqrm.com/?q=node/78).</comment>
+         </element>
+         <element name="codeextension" title="Facilité d'extension du code">
+            <desc0>Toute modification demande une recompilation du code</desc0>
+            <desc1>Architecture conçue pour des extensions statiques mais exige une recompilation</desc1>
+            <desc2>Architecture de plugins, conçue pour des extensions dynamiques et sans recompilation</desc2>
+            <score>2</score>
+            <comment>L'architecture d'openQRM intègre un système de greffons, amélioré lors du portage de Java à PHP.</comment>
+         </element>
+      </element>
+   </section>
+   <section name="objetsgeres" title="Objets gérés">
+      <desc>Elements d'infrastructure gérés par la solution</desc>
+      <element name="imagesvirtuelles" title="Images virtuelles">
+         <desc>Gestion standard des images virtuelles</desc>
+         <comment></comment>
+         <element name="portabilite" title="Portabilité">
+            <desc>Portabilité de la solution de gestion</desc>
+            <comment></comment>
+            <element name="typesdimagessupportees" title="Types d'images supportées">
+               <desc>Solutions de virtualisation supportées.</desc>
+               <desc0>Une seule et unique solution est supportée.</desc0>
+               <desc1>Seules des solutions libres sont supportées (comme Xen, KVM ou OpenVZ par exemple).</desc1>
+               <desc2>Les solutions libres sont supportées ainsi que des solutions propriétaires (telles que celles VMWare ou Microsoft par exemple).</desc2>
+               <score>2</score>
+               <comment>VMware, Xen, Citrix XenServer, KVM et Linux-VServer.</comment>
+            </element>
+            <element name="compatibilitelibvirt" title="Compatibilité libvirt">
+               <desc>Libvirt est utilisé pour assurer une couche d'abstraction vis-à-vis de certaines solutions de virtualisation.</desc>
+               <desc0>Pas de compatibilité libvirt.</desc0>
+               <desc1>Utilisation restreinte de libvirt.</desc1>
+               <desc2>Utilisation complète de libvirt comme couche d'abstraction vis-à-vis de certaines solutions de virtualisation.</desc2>
+               <score>0</score>
+               <comment></comment>
+            </element>
+            <element name="systemesdexploitationsupportes" title="Systèmes d'exploitation supportés">
+               <desc>Outre les solutions de virtualisation, la solution peut ne supporter que certains systèmes d'exploitation (en hôtes comme ne invités).</desc>
+               <desc0>Seule une version spécifique d'un système d'exploitation est supportée.</desc0>
+               <desc1>Plusieurs systèmes d'exploitation sont supportés comme hôtes et comme invités mais ce nombre est limité par rapport à ce que les solutions de virtualisation sous-jacentes permettent.</desc1>
+               <desc2>La solution n'impose pas de contraintes autres que celles des solutions de virtualisation avec lesquelles elle est compatible.</desc2>
+               <score>1</score>
+               <comment>La philosophie d'openQRM est construite autour de l'abstraction de Linux comme un ensemble de fichiers et d'un hyperviseur comme un fournisseur de ressources. Ceci limite l'usage à des serveurs Linux pour les hôtes.</comment>
+            </element>
+         </element>
+         <element name="installation" title="Installation">
+            <desc>Installation et déploiement centralisés d'images virtuelles (provisioning).</desc>
+            <desc0>Aucune fonctionnalité de provisioning disponible.</desc0>
+            <desc1>La solution offre la possibilité de déployer les images virtuelles sur le parc de machines physiques.</desc1>
+            <desc2>La solution offre la possibilité de déployer les images virtuelles sur le parc de machines physiques ainsi que des fichiers de configuration dans les machines virtuelles.</desc2>
+            <score>2</score>
+            <comment>La notion de déploiement de serveur Linux est complètement générique et réduite à du stockage et de la copie de fichiers. Cela offre une grande souplesse dans les possibilités de provisioning. Le greffon puppet-plugin permet en outre de gérer les configurations.</comment>
+         </element>
+         <element name="gestionducycledevie" title="Gestion du cycle de vie">
+            <desc>Fonctionnalité de gestion manuelle du cycle de vie des images virtuelles : démarrage, arrêt, gel, clonage.</desc>
+            <desc0>Pas de gestion du cycle de vie des images.</desc0>
+            <desc1>Gestion manuelle limitée au démarrage et à l'arrêt des images.</desc1>
+            <desc2>Gestion du démarrage, de l'arrêt, du gel et du clonage d'images virtuelles.</desc2>
+            <score>2</score>
+            <comment>Possibilité de démarrer, arrêter, redémarrer et désinstaller une image.
+Le clonage est également possible.</comment>
+         </element>
+         <element name="referentieldimage" title="Référentiel d'images">
+            <desc>Disponibilité d'un référentiel centralisé des images gérées par la solution.</desc>
+            <desc0>Aucun référentiel centralisé des images gérées par la solution n'est disponible.</desc0>
+            <desc1>Référentiel centralisé des images basique.</desc1>
+            <desc2>Référentiel centralisé des images avancé avec notamment des fonctionnalités de recherche avancées.</desc2>
+            <score>1</score>
+            <comment>Le greffon Image-shelf permet de se connecter à des référentiels d'images dont celui d'openQRM qui est publique. Il est également possible d'en créer de nouveaux.</comment>
+         </element>
+         <element name="templates" title="Templates">
+            <desc>Modèles configurables et réutilisables pour générer de nouvelles images.</desc>
+            <desc0>Aucune fonctionnalité de gestion de templates.</desc0>
+            <desc1>Possibilité de gérer des modèles mais restant peu configurables et difficiles à gérer de manière simple et centralisée.</desc1>
+            <desc2>Gestion de modèles centralisée dans un référentiel avec possibilité de configurer simplement les templates.</desc2>
+            <score>1</score>
+            <comment>Certaines images peuvent faire office de templates (appelés golden-images).</comment>
+         </element>
+      </element>
+      <element name="reseauxvirtuels" title="Réseaux virtuels">
+         <desc>Possibilité de gérer des réseaux virtuels au sein de l'infrastructure.</desc>
+         <comment></comment>
+         <element name="pont" title="Ponts virtuels">
+            <desc>Possibilité de configurer des ponts (bridges) virtuels (couche réseau 2 Liaison de données).</desc>
+            <desc0>Pas de possibilité de configurer des ponts virtuels.</desc0>
+            <desc1>Gestion des ponts virtuels disponible mais limitée et complexe à mettre en oeuvre.</desc1>
+            <desc2>Gestion des ponts virtuels disponible, simple d'utilisation. Possibilité de gérer des ponts entre images virtuelles et machines physiques.</desc2>
+            <score>1</score>
+            <comment></comment>
+         </element>
+         <element name="routeursvirtuels" title="Routeurs virtuels">
+            <desc>Possibilité de configurer des routeur virtuels (couche réseau 3 Transport).</desc>
+            <desc0>Pas de possibilité de configurer des routeurs ou switches virtuels.</desc0>
+            <desc1>Gestion des routeurs ou switches virtuels disponible mais limitée et complexe à mettre en oeuvre.</desc1>
+            <desc2>Gestion des routeurs ou switches virtuels disponible et simple d'utilisation. Possibilité de gérer des routeurs entre images virtuelles et machines physiques.</desc2>
+            <score>0</score>
+            <comment></comment>
+         </element>
+         <element name="gestiondevlan" title="Gestion de VLAN">
+            <desc>Fonctionnalités de gestion de réseaux virtuels.</desc>
+            <desc0>Aucune fonctionnalité de gestion de VLAN.</desc0>
+            <desc1>Possibilité de rattacher les images à des réseaux virtuels de manière statique (attribution statique d'adresses MAC et IP).</desc1>
+            <desc2>Possibilité de rattacher les images à des réseaux virtuels de manière dynamique (attribution dynamique d'adresses MAC et IP, via des mécanismes tels que DHCP par exemple).</desc2>
+            <score>2</score>
+            <comment>Le greffon Cloud-Ipgroup permet de gérer des réseaux statiques (plage IP, sous-réseau, passerelle et DNS).
+Le greffon dhcpd-plugin fournit un serveur DHCP qui peut être couplé avec le mode de déploiement PXE d'openQRM.</comment>
+         </element>
+      </element>
+      <element name="stockagevirtuel" title="Stockage virtuel">
+         <desc>Fonctionnalités de virtualisation du stockage dans l'infrastructure.</desc>
+         <comment></comment>
+         <element name="typesdestockagegeres" title="Types de stockage gérés">
+            <desc>Types de stockages physiques supportés pour l'abstraction via virtualisation (réseau, SAN, iSCSI).</desc>
+            <desc0>Uniquement disques locaux des machines hôtes.</desc0>
+            <desc1>Possibilité de virtualiser des espaces de stockage distants mais limitée à un seul type d'attachement (réseau, SAN ou iSCSI).</desc1>
+            <desc2>Virtualisation et abstraction d'espaces de stockages distants indépendamment des types d'attachement (réseau, SAN ou iSCSI).</desc2>
+            <score>2</score>
+            <comment>Disques locaux, filers NetApp.
+NFS, iSCCI, Aoe/Coraid : directeement ou au-dessus de LVM.
+</comment>
+         </element>
+         <element name="attachementsvirtuels" title="Attachements virtuels">
+            <desc>Association d'espaces de stockage à des images, des pools de serveurs</desc>
+            <desc0>Pas de possibilité d'associer les espaces de stockage à des images ou à des pools d'images.</desc0>
+            <desc1>Possibilité d'associer les espaces de stockage à des images mais pas à des pools d'images.</desc1>
+            <desc2>Possibilité d'associer les espaces de stockage à des images et à des pools d'images.</desc2>
+            <score>0</score>
+            <comment>openQRM permet de stocker les images mais pas d'y attacher du stockage virtuel.</comment>
+         </element>
+         <element name="gestiondessnapshots" title="Gestion des snapshots">
+            <desc>Fonctionnalités de gestion des images disques (snapshots).</desc>
+            <desc0>Aucune gestion des snapshots.</desc0>
+            <desc1>Gestion des snapshots existante mais limitée et complexe d'utilisation.</desc1>
+            <desc2>Fonctionnalités avancées de gestion des snapshots (référentiel, planification, etc.).</desc2>
+            <score>1</score>
+            <comment>openQRM supporte LVM et NetApp et donc indirectement les snapshots.</comment>
+         </element>
+      </element>
+      <element name="utilisateurs" title="Utilisateurs">
+         <desc>Gestion des utilisateurs accédant à l'outil</desc>
+         <comment></comment>
+         <element name="gestiondesdroits" title="Gestion des droits">
+            <desc>Possibilité de configurer les droits des utilisateurs sur la gestion de l'infrastructure virtuelle.</desc>
+            <desc0>Pas de notion d'utilisateur, de rôle ou de gestion de droits.</desc0>
+            <desc1>Il existe un gestion des utilisateurs et des droits requérant une authentification mais la base des utilisateurs est propre à la solution.</desc1>
+            <desc2>Authentification et gestion des droits des utilisateurs externalisable via LDAP ou dans Active Directory.</desc2>
+            <score>1</score>
+            <comment>Gestion interne des utilisateurs et des rôles</comment>
+         </element>
+         <element name="delegation" title="Délégation">
+            <desc>Possibilité de déléguer l'administration d'une partie de l'infrastructure.</desc>
+            <desc0>Délégation d'administration impossible. </desc0>
+            <desc1>Délégation de l'administration possible mais pas sur tous les types d'objets gérés dans l'infrastructure.</desc1>
+            <desc2>Délégation de l'administration sur tous les types d'objets gérés dans l'infrastructure, permet de définir des zones d'administrations séparées.</desc2>
+            <score>1</score>
+            <comment>L'utilisation du portail Cloud-portal permet de déléguer l'installation d'images virtuelles (ou physiques) par les utilisateurs mais il s'agit en fait d'un usage de type Cloud computing et non d'une réelle délégation d'administration.</comment>
+         </element>
+         <element name="portailutilisateur" title="Portail utilisateur">
+            <desc>Existence d'un portail d'accès dédié aux utilisateurs non administrateurs.</desc>
+            <desc0>Pas de portail utilisateur.</desc0>
+            <desc1>Possibilité de configurer les droits des utilisateurs sur la console d'administration de manière à leur donner une visibilité restreinte sur l'infrastructure.</desc1>
+            <desc2>Existence d'un portail dédié aux utilisateurs non administrateurs leur donnant une vue sur l'infrastructure et éventuellement la possibilité de provisionner leurs images.</desc2>
+            <score>2</score>
+            <comment>Portail de self-provisioning disponible via les plugins Cloud-plugin et Cloud-Portal, offrant une IHM ergonomique pour créer ses demandes de provisioning (Visual Cloud Designer).</comment>
+         </element>
+      </element>
+   </section>
+   <section name="gestiondynamique" title="Gestion dynamique">
+      <desc>Fonctionnalités de gestion dynamique de l'infrastructure virtuelle</desc>
+      <element name="migration" title="Migration">
+         <desc>Possibilités de migrer manuellement des images</desc>
+         <comment></comment>
+         <element name="conversionphysique-virtuel" title="Conversion physique-virtuel">
+            <desc>Conversion de machines physiques en machines virtuelles</desc>
+            <desc0>Pas de conversion possible de machines physiques en machines virtuelles.</desc0>
+            <desc1>Possibilité de conversion de machines physiques en machines virtuelles mais limitée par des contraintes techniques (OS, solution de virtualisation...) et complexe à utiliser.</desc1>
+            <desc2>Conversion de machines physiques en machines virtuelles existente et simple d'utilisation.</desc2>
+            <score>0</score>
+            <comment>openQRM permet de déployer des systèmes Linux sur des machines physiques ou sous forme d'images virtuelles. Cela permet d'envisager des migrations dans les deux sens. Il ne s'agit cependant pas de conversion.</comment>
+         </element>
+         <element name="deplacementdimages" title="Déplacement d'images">
+            <desc>Possibilité de déplacer manuellement des images virtuelles entre machines physiques.</desc>
+            <desc0>Pas de possibilité de déplacer manuellement des images virtuelles entre machines physiques.</desc0>
+            <desc1>Seul le déplacement manuel à froid d'images virtuelles entre machines physiques est possible, cela implique d'arrêter les images avant la migration.</desc1>
+            <desc2>Le déplacement manuel à chaud d'images virtuelles entre machines physiques est possible, cela n'implique pas d'arrêter les images avant la migration.</desc2>
+            <score>1</score>
+            <comment>Déplacement à chaud uniquement disponible pour des images Xen.</comment>
+         </element>
+         <element name="migrationdepoolsdimages" title="Déplacement de pools d'images">
+            <desc>Possibilité de déplacer manuellement des pools d'images virtuelles entre machines physiques.</desc>
+            <desc0>Pas de possibilité de déplacer manuellement des ppols d'images virtuelles entre machines physiques.</desc0>
+            <desc1>Seul le déplacement manuel à froid de pools d'images virtuelles entre machines physiques est possible, cela implique d'arrêter les images avant la migration.</desc1>
+            <desc2>Le déplacement manuel à chaud de pools d'images virtuelles entre machines physiques est possible, cela n'implique pas d'arrêter les images avant la migration.</desc2>
+            <score>1</score>
+            <comment></comment>
+         </element>
+         <element name="migrationdedisquesvirtuels" title="Migration de disques virtuels">
+            <desc>Possibilité de reconfigurer des zones de stockage virtuelles en migrant les disques.</desc>
+            <desc0>Aucune possibilité de migrer des disques virtuels.</desc0>
+            <desc1>Possibilité de reconfigurer des zones de stockage virtuelles en migrant à froid les disques.</desc1>
+            <desc2>Possibilité de reconfigurer des zones de stockage virtuelles en migrant les disques à chaud</desc2>
+            <score>0</score>
+            <comment></comment>
+         </element>
+      </element>
+      <element name="repartitiondecharge" title="Répartition de charge">
+         <desc>Mécanismes disponibles pour dynamiquement répartir la charge entre images</desc>
+         <comment></comment>
+         <element name="repartitionentreimages" title="Répartition entre images">
+            <desc>Possibilité de répartir la charge entre différentes images virtuelles.</desc>
+            <desc0>Aucun mécanisme de répartition de charge entre images virtuelles n'est disponible.</desc0>
+            <desc1>Possibilité de répartir la charge entre différentes images virtuelles mais avec un nombre restreint d'algorithmes de répartition.</desc1>
+            <desc2>Possibilité de répartir la charge entre différentes images virtuelles avec la possibilité d'utiliser et combiner plusieurs algorithmes de répartition.</desc2>
+            <score>0</score>
+            <comment></comment>
+         </element>
+         <element name="deplacementdynamiquedimages" title="Déplacement dynamique d'images">
+            <desc>Déplacement dynamique d'images entre machines physiques en fonction de la charge</desc>
+            <desc0>Pas de déplacement dynamique d'images possible.</desc0>
+            <desc1>Déplacement dynamique d'images possible avec utilisations de règles de gestion.</desc1>
+            <desc2>Optimisation de la charge des machines via des scénarios couplés à la supervision des ressources.</desc2>
+            <score>0</score>
+            <comment></comment>
+         </element>
+      </element>
+      <element name="hautedisponibilite" title="Haute disponibilité">
+         <desc>Possibilité de configurer une solution de failover en cas de panne</desc>
+         <desc0>Aucune mécanisme de haute disponibilité n'est disponible.</desc0>
+         <desc1>Failover disponible sur une panne du serveur physique hébergeant l'image virtuelle, avec un impact pour l'utilisateur (indisponibilité, perte possible de données...).</desc1>
+         <desc2>Failover disponible sur une panne du serveur physique hébergeant l'image virtuelle, sans impact pour l'utilisateur.</desc2>
+         <score>2</score>
+         <comment>Fonctionnalités de haute disponibilité disponibles via le greffon highavailability-plugin entre machines virtuelles (avec des technologies de virtualisation différentes) mais aussi entre serveurs physiques et machines virtuelles.</comment>
+      </element>
+      <element name="reservationderessources" title="Réservation de ressources">
+         <desc>Possibilité de réserver des ressources auprès du gestionnaire de l'infrastrcture virtuelle.</desc>
+         <desc0>Aucun mécanisme de réservation de ressources n'est disponible.</desc0>
+         <desc1>Mécanisme de réservation de ressources disponible mais limité et complexe à mettre en oeuvre.</desc1>
+         <desc2>Mécanisme de réservation de ressources complet et adaptable, éventuellement, possibilité de s'intégrer avec un gestionnaire de réservation externe.</desc2>
+         <score>0</score>
+         <comment></comment>
+      </element>
+   </section>
+   <section name="exploitationetsupervision" title="Exploitation et supervision">
+      <desc>Fonctionnalités mises à la disposition des administrateurs et des exploitants.</desc>
+      <element name="exploitation" title="Exploitation">
+         <desc>Fonctionnalités disponibles pour exploiter l'infrastructure virtuelle.</desc>
+         <comment></comment>
+         <element name="connexionauxsystemesinvites" title="Connexion aux systèmes invités">
+            <desc>Possibilités offertes pour se connecter directement aux systèmes invités.</desc>
+            <desc0>Aucune connexion aux systèmes invités possible via l'outil d'administration.</desc0>
+            <desc1>Connexion possible aux systèmes invités en mode console uniquement.</desc1>
+            <desc2>Connexion possible aux systèmes invités en mode graphique uniquement (de type VNC), voire en mode sécurisé.</desc2>
+            <score>1</score>
+            <comment>Connexion possible via SSH avec le greffon sshterm-plugin. Il est également possible de se connecter à la console d'administration VMWare d'un hôte via la console.</comment>
+         </element>
+         <element name="sauvegardeetrestauration" title="Sauvegarde et restauration">
+            <desc></desc>
+            <comment>La branche 3.X comportait un greffon bacula mais il n'a pas été porté.</comment>
+            <element name="sauvegardedesimages" title="Sauvegarde des images">
+               <desc>Possibilité de gérer les sauvegardes et les restaurations d'images virtuelles.</desc>
+               <desc0>Pas de sauvegarde possible.</desc0>
+               <desc1>Sauvegarde et restauration à froid des images est possible via l'outil mais pas à chaud.</desc1>
+               <desc2>Sauvegarde et restauration à chaud des images est possible via l'outil.</desc2>
+               <score>0</score>
+               <comment></comment>
+            </element>
+            <element name="sauvegardessynchronisees" title="Sauvegardes synchronisées">
+               <desc>Possibilité de sauvegarder/restaurer un ensemble des machines virtuelles à un moment donné pour éviter tout problème de désynchronisation.</desc>
+               <desc0>Aucune fonctionnalité de sauvegardes/restaurations synchronisées de plusieurs machines virtuelles.</desc0>
+               <desc1>Possibilité de sauvegardes/restaurations synchronisées à froid de plusieurs machines virtuelles, mais pas à chaud.</desc1>
+               <desc2>Possibilité de sauvegardes/restaurations synchronisées à chaud de plusieurs machines virtuelles.</desc2>
+               <score>0</score>
+               <comment></comment>
+            </element>
+         </element>
+         <element name="misesajour" title="Mises à jour">
+            <desc>Fonctionnalités de mise à jour des systèmes gérés par la solution.</desc>
+            <desc0>Aucune possibilité de mise à jour des systèmes via l'outil.</desc0>
+            <desc1>Fonctionnalités de mise à jour des images virtuelles gérées par la solution.</desc1>
+            <desc2>Fonctionnalités de mise à jour des images virtuelles et des machines physiques gérées par la solution.</desc2>
+            <score>0</score>
+            <comment></comment>
+         </element>
+         <element name="automatisationdoperationscomplexes" title="Automatisation d'opérations complexes">
+            <desc>Fonctionnalités permettant d'automatiser des opérations d'exploitation complexes, telles que le scripting ou des workflows.</desc>
+            <desc0>Pas de possibilité d'automatiser des opérations d'exploitation complexes : pas de scripting ni de workflow.</desc0>
+            <desc1>Possibilité d'automatiser des opérations d'exploitation complexes via du scripting et de l'ordonnancement simple.</desc1>
+            <desc2>Possibilité d'automatiser des opérations d'exploitation complexes via du scripting et de le gestion de workflows.</desc2>
+            <score>0</score>
+            <comment></comment>
+         </element>
+         <element name="recherche" title="Recherche">
+            <desc>Possibilité d'effectuer des recherches dans l'infrastructure via mots-clefs sur les noms des objets gérés par la solution.</desc>
+            <desc0>Aucune fonctionnalité de recherche n'est disponible.</desc0>
+            <desc1>Il est possible de lancer des recherches sur l'infrastructure mais elles sont limitées à certains types d'objets.</desc1>
+            <desc2>Il est possible de lancer des recherches sur l'infrastructure sur tous les types d'objets.</desc2>
+            <score>0</score>
+            <comment></comment>
+         </element>
+      </element>
+      <element name="supervision" title="Supervision">
+         <desc>Fonctionnalités de surveillance et de supervision de l'infrastructure virtuelle.</desc>
+         <comment>Nagios est intégré avec openQRM vi a un greffon qui permet de gérer les machines physiques comme les images virtuelles.</comment>
+         <element name="systemesphysiques" title="Systèmes physiques">
+            <desc>Fonctionnalités de supervision des systèmes physiques gérés par la solution.</desc>
+            <desc0>Pas de supervision des systèmes physiques.</desc0>
+            <desc1>Supervision des ressources des systèmes physiques (CPU, RAM, disques locaux, ...).</desc1>
+            <desc2>Supervision des ressources des systèmes physiques (CPU, RAM, disques locaux, ...), d'éléments matériels (ventilateur et température par exemple) ou de la consommation électrique.</desc2>
+            <score>2</score>
+            <comment>Disponible via le greffon Nagios.</comment>
+         </element>
+         <element name="objetsvirtuels" title="Objets virtuels">
+            <desc>Fonctionnalités de supervision des objets virtuels gérés par la solution.</desc>
+            <desc0>Pas de supervision des systèmes objets virtuels (images, réseaux, stockage).</desc0>
+            <desc1>Supervision des systèmes de certains des objets virtuels gérés par la solution (images, réseaux ou stockage).</desc1>
+            <desc2>Supervision des systèmes de tous des objets virtuels gérés par la solution (images, réseaux ou stockage).</desc2>
+            <score>2</score>
+            <comment>Disponible via le greffon Nagios.</comment>
+         </element>
+         <element name="notifications" title="Notifications">
+            <desc>Mécanismes de déclenchement de notifications sur certains évènements au sein de l'infrastructure.</desc>
+            <desc0>Aucune mécanisme de notification n'est disponible.</desc0>
+            <desc1>Possibilité de configurer le déclenchement de notification sur un nombre limité d'évènement et via le canal email uniquement.</desc1>
+            <desc2>Possibilité de configurer le déclenchement de notification sur un grand nombre d'évènements, avec conditions et via plusieurs canaux de communication (email, SMS...).</desc2>
+            <score>2</score>
+            <comment>Disponible via le greffon Nagios.</comment>
+         </element>
+         <element name="journalisationetreporting" title="Journalisation et reporting">
+            <desc>Journalisation des évènements et des opérations au sein de l'infrastructure.</desc>
+            <desc0>Aucune fonctionnalité de journalisation, d'historisation ou de reporting n'est disponible.</desc0>
+            <desc1>Existence de fonctionnalité de journalisation mais limitée à un niveau technique et ne pouvant pas être utilisée à des fins de resporting.</desc1>
+            <desc2>L'outil propose des fonctionnalités de journalisation et de reporting avancées (statistiques, graphes, historiques...).</desc2>
+            <score>1</score>
+            <comment></comment>
+         </element>
+         <element name="integration" title="Intégration">
+            <desc>Possibilités d'intégration de la solution au niveau de la supervision.</desc>
+            <desc0>La solution ne propose aucune ouverture vers des systèmes de supervision externes.</desc0>
+            <desc1>La solution peut être intégrée avec un système de supervision externe mais ne respecte pas les standard du domaine (SNMP, CIM...).</desc1>
+            <desc2>La solution supporte un ou plusieurs standards de supervision (comme par exemple SNMP ou CIM) et peut facilement être intégrée avec un outil externe.</desc2>
+            <score>1</score>
+            <comment>L'intégration avec SNMP est possible via l'utilisation de Nagios.</comment>
+         </element>
+      </element>
+      <element name="encryptagedesflux" title="Encryptage des flux">
+         <desc>Encryptage des flux d'administration</desc>
+         <desc0>Pas d'encryptage des échanges entre la console et les objets gérés.</desc0>
+         <desc1>Possibilité de crypter les flux mais limitée à quelques types d'encryptage.</desc1>
+         <desc2>Présence d'une infrastructure de gestion de la sécurité des flux, supportant plusieurs types d'encryptage. </desc2>
+         <score>1</score>
+         <comment>La version 4.4 ajoute la sécurisation des flux via SSL et la possibilité d'implémenter d'autres mécanismes de sécurisation.</comment>
+      </element>
+   </section>
+</document>
