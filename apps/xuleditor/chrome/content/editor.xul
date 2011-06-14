@@ -4,67 +4,80 @@
 <!DOCTYPE window SYSTEM "chrome://qsos-xuled/locale/editor.dtd">
 <window id="QSOS" title="&QSOS.label;" width="800px" height="600px"
   xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
-  xmlns:html="http://www.w3.org/1999/xhtml"
-  onload="init();">
-  <script type="application/x-javascript" src="jsjac/xmlextras.js"></script>
-  <script type="application/x-javascript" src="jsjac/JSJaCPacket.js"></script>
-  <script type="application/x-javascript" src="jsjac/crypt.js"></script>
-  <script type="application/x-javascript" src="jsjac/json.js"></script>
-  <script type="application/x-javascript" src="jsjac/qm_cookie.js"></script>
-  <script type="application/x-javascript" src="jsjac/JSJaCConnection.js"></script>
-  <script type="application/x-javascript" src="jsjac/JSJaCHttpPollingConnection.js"></script>
+  xmlns:html="http://www.w3.org/1999/xhtml" onload="init();">
   <script type="application/x-javascript" src="Document.js"></script>
   <script type="application/x-javascript" src="editor.js"></script>
+  <script type="application/x-javascript" src="file.js"></script>
+  <script type="application/x-javascript" src="general.js"></script>
+  <script type="application/x-javascript" src="criteria.js"></script>
+  <script type="application/x-javascript" src="chart.js"></script>
+  <script type="application/x-javascript" src="about.js"></script>
   <stringbundle id="properties" src="chrome://qsos-xuled/locale/editor.properties"/>
   <vbox>
-    <toolbox>
-      <menubar id="mymenubar">
-        <menu id="file-menu" label="&file-menu.label;" onclick="document.getElementById('file-menu').focus();">
-          <menupopup id="file-popup">
-            <menuitem id="file-new" label="&file-new.label;" onclick="checknewFile();"/>
-            <menuitem id="file-open" label="&file-open.label;" onclick="checkopenFile();"/>
-            <menuitem id="file-open-remote" label="&file-open-remote.label;" onclick="checkopenRemoteFile();"/>
-            <menuitem id="file-save" label="&file-save.label;" onclick="saveFile();"/>
-            <menuitem id="file-saveas" label="&file-saveas.label;" onclick="saveFileAs();"/>
-            <menuitem id="file-save-remote" label="&file-save-remote.label;" onclick="saveRemote();"/>
-            <menuitem id="file-close" label="&file-close.label;"  onclick="checkcloseFile();"/>
-            <menuseparator/>
-            <menuitem id="file-exit" label="&file-exit.label;" onclick="checkexit();"/>
-          </menupopup>
-        </menu>
-        <menu id="tree-menu" label="&tree-menu.label;" onclick="document.getElementById('tree-menu').focus();">
-          <menupopup id="tree-popup">
-            <menuitem id="tree-expand" label="&tree-expand.label;" onclick="expandTree('true');"/>
-            <menuitem id="tree-collapse" label="&tree-collapse.label;" onclick="expandTree('false');"/>
-          </menupopup>
-        </menu>
-        <menu id="chat-menu" label="&chat-menu.label;" onclick="document.getElementById('chat-menu').focus();">
-          <menupopup id="chat-popup">
-            <menuitem id="chat-start" label="&chat-start.label;" onclick="startChat();"/>
-            <menuitem id="chat-end" label="&chat-end.label;" onclick="doLogout();" disabled="true"/>
-            <menuitem id="chat-nick" label="&chat-nick.label;" onclick="changeNick();"/>
-          </menupopup>
-        </menu>
-        <menu id="help-menu" label="&help-menu.label;" onclick="document.getElementById('help-menu').focus();">
-          <menupopup id="help-popup">
-            <menuitem id="help-about" label="&help-about.label;" onclick="aboutDialog();"/>
-          </menupopup>
-        </menu>
-      </menubar>
-      </toolbox>
     <hbox>
-      <tabbox id = "t" flex = "1">
-      <tabs id = "t-s">
-        <tab id = "t-software" class = "header" label = "&t-header.label;"/>
-        <tab id = "t-c-title" class = "criteria" label = "&t-c-title.label;"/>
-        <tab id = "t-chart" class = "graph" label = "&t-chart.label;"/>
-        <tab id = "t-chat" class = "chat" label = "&t-chat.label;"/>
-      </tabs>
-      <tabpanels flex = "1">
-        <tabpanel flex = "1">
+      <tabbox id="tabBox">
+        <tabs id="tabs">
+          <tab id="fileTab" class="file" label="&fileTab.label;"/>
+          <tab id="generalTab" class="general" label="&generalTab.label;"/>
+          <tab id="criteriaTab" class="criteria" label="&criteriaTab.label;"/>
+          <tab id="chartTab" class="chart" label="&chartTab.label;"/>
+          <tab id="aboutTab" class="about" label="&aboutTab.label;"/>
+        </tabs>
+      <tabpanels>
+        <tabpanel>
+          <vbox>
+            <label value="Veuillez ouvrir une évalutaion QSOS ou en commencer une nouvelle à partir de ....."/>
+            <label value="Description des possibilitées, de l'import O3S, ..."/>
+            <hbox id="fileHBox">
+              <vbox>
+                <groupbox>
+                  <!--<caption><label value="&file-new.label;"/></caption>!-->
+                  <vbox>
+                    <button id="newFile" label="&file-new.label;" oncommand="checknewFile();"/>
+                    <button id="openFile" label="&file-open.label;" oncommand="checkopenFile();"/>
+                    <button id="openRemoteFile" label="&file-open-remote.label;" onclick="checkopenRemoteFile();"/>
+                    <button id="saveFile" label="&file-save.label;" onclick="saveFile();"/>
+                    <button id="saveFileAs" label="&file-saveas.label;" onclick="saveFileAs();"/>
+                    <button id="saveRemoteFile" label="&file-save-remote.label;" onclick="saveRemote();"/>
+                    <button id="closeFile" label="&file-close.label;"  onclick="checkcloseFile();"/>
+                  </vbox>
+                </groupbox>
+              </vbox>
+            </hbox>
+          </vbox>
+          <!--    <toolbox>
+          <menubar id="mymenubar">
+            <menu id="file-menu" label="&file-menu.label;" onclick="document.getElementById('file-menu').focus();">
+              <menupopup id="file-popup">
+                <menuitem id="file-new" label="&file-new.label;" onclick="checknewFile();"/>
+                <menuitem id="file-open" label="&file-open.label;" onclick="checkopenFile();"/>
+                <menuitem id="file-open-remote" label="&file-open-remote.label;" onclick="checkopenRemoteFile();"/>
+                <menuitem id="file-save" label="&file-save.label;" onclick="saveFile();"/>
+                <menuitem id="file-saveas" label="&file-saveas.label;" onclick="saveFileAs();"/>
+                <menuitem id="file-save-remote" label="&file-save-remote.label;" onclick="saveRemote();"/>
+                <menuitem id="file-close" label="&file-close.label;"  onclick="checkcloseFile();"/>
+                <menuseparator/>
+                <menuitem id="file-exit" label="&file-exit.label;" onclick="checkexit();"/>
+              </menupopup>
+            </menu>
+            <menu id="tree-menu" label="&tree-menu.label;" onclick="document.getElementById('tree-menu').focus();">
+              <menupopup id="tree-popup">
+                <menuitem id="tree-expand" label="&tree-expand.label;" onclick="expandTree('true');"/>
+                <menuitem id="tree-collapse" label="&tree-collapse.label;" onclick="expandTree('false');"/>
+              </menupopup>
+            </menu>
+            <menu id="help-menu" label="&help-menu.label;" onclick="document.getElementById('help-menu').focus();">
+              <menupopup id="help-popup">
+                <menuitem id="help-about" label="&help-about.label;" onclick="aboutDialog();"/>
+              </menupopup>
+            </menu>
+          </menubar>
+        </toolbox>!-->
+        </tabpanel>
+        <tabpanel>
           <vbox flex="1">
-            <groupbox>
-              <caption><label value="&g-software.label;"/></caption>
+            <groupbox id="genericGroupbox">
+              <caption id="caption"><label id="label" value="&g-software.label;"/></caption>
               <vbox flex="1">
                 <box>
                   <vbox flex="1">
@@ -84,7 +97,7 @@
                   <label control="f-desc" value="&f-desc.value;"/><textbox id="f-desc" multiline="true" onchange="changeDesc(this);"/>
               </vbox>
             </groupbox>
-            <groupbox>
+            <groupbox id="evaluationGroupbox">
               <caption><label value="&g-evaluation.label;"/></caption>
               <hbox>
                 <vbox flex="1">
@@ -96,11 +109,11 @@
                   <textbox id="f-a-name"/>
                   <label control="f-a-email" value="&f-a-email.value;"/>
                   <textbox id="f-a-email"/>
-                  <hbox flex="1">
+                  <hbox flex="1" id="test">
                     <spacer flex="1"/>
-                    <button label="&button1.label;" flex="1" oncommand="addAuthor();"/>
+                    <button id="addAuthorButton" label="&button1.label;" flex="1" oncommand="addAuthor();"/>
                     <spacer flex="1"/>
-                    <button label="&button2.label;" flex="1" oncommand="deleteAuthor();"/>
+                    <button id="delAuthorButton" label="&button2.label;" flex="1" oncommand="deleteAuthor();"/>
                     <spacer flex="1"/>
                   </hbox>
                 </vbox>
@@ -108,12 +121,18 @@
             </groupbox>
           </vbox>
         </tabpanel>
-        <tabpanel flex = "1">
-          <tree id="mytree" width="250px" hidecolumnpicker="true" onselect="treeselect(this);">
-            <treecols>
-              <treecol id="name" label="&name.label;" primary="true" flex="1"/>
-            </treecols>
-          </tree>
+        <tabpanel>
+          <vbox>
+            <tree id="mytree" width="250px" hidecolumnpicker="true" onselect="treeselect(this);">
+              <treecols>
+                <treecol id="name" label="&name.label;" primary="true" flex="1"/>
+              </treecols>
+            </tree>
+            <hbox>
+              <button id="tree-expand" label="&tree-expand.label;" onclick="expandTree('true');"/>
+              <button id="tree-collapse" label="&tree-collapse.label;" onclick="expandTree('false');"/>
+            </hbox>
+          </vbox>
           <splitter/>
           <vbox flex = "1">
             <groupbox>
@@ -133,7 +152,7 @@
             <textbox id="f-c-comments" multiline="true" rows="5" onchange="changeComments(this);"/>
           </vbox>
         </tabpanel>
-        <tabpanel flex = "1">
+        <tabpanel>
           <vbox id="chart-box" flex = "1">
             <hbox id="chart-label" />
               <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="750px" height="500px">
@@ -141,25 +160,22 @@
               </svg>
           </vbox>
         </tabpanel>
-        <tabpanel id = "chatbox" flex = "1">
-          <hbox flex = "1">
-            <vbox flex = "5">
-              <label value="&chat-conversation;"/>
-              <html:div id="conversation" flex="1"/>
-              <label value="&chat-input;" control="input"/>
-              <textbox id="input" multiline="true" rows="2"/>
-              <textbox id="err" multiline="true" rows="2" hidden="true"/>
-              <hbox>
-                <spacer flex="1"/>
-                <button label="&chat-send;" oncommand="sendMsg();"/>
-                <spacer flex="1"/>
-              </hbox>
-            </vbox>
-          </hbox>
-          <splitter/>
+        <tabpanel id="aboutTab">
           <vbox>
-            <label value="&chat-roster;"/>
-            <listbox id="roster" flex="1" readonly="true" onselect="talkToUser();"/>
+            <hbox>
+              <image src="chrome://qsos-xuled/content/logo-qsos.png" width="150" height="58"/>
+            </hbox>
+            <vbox>
+              <label value=""/>
+              <label value="&label1.value;"/>
+              <label value="&label2.value;"/>
+              <label value=""/>
+              <label value="&label3.value;"/>
+              <label value="&label4.value;"/>
+              <label value=""/>
+              <label value="&label5.value;"/>
+              <label value="&label6.value;"/>
+            </vbox>
           </vbox>
         </tabpanel>
       </tabpanels>

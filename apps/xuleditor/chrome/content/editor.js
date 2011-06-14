@@ -59,7 +59,7 @@ function init() {
     openRemoteFile(urlFirefox);
   } else {
     var cmdLine = window.arguments[0];
-    cmdLine = cmdLine.QueryInterface(Components.interfaces.nsICommandLine);
+    cmdLine = cmdLine.QueryInterface(Components.interfaces.nsICommandLine); // FIXME
     var uri = cmdLine.handleFlagWithParam("file", false);
     if (uri) {
       //Case of a .qsos file passed in parameter through commandline (xuleditor -file filename)
@@ -72,24 +72,6 @@ function init() {
 ////////////////////////////////////////////////////////////////////
 // Chat event functions
 ////////////////////////////////////////////////////////////////////
-
-//Initializes chat session
-function startChat() {
-  var prefManager = Components.classes["@mozilla.org/preferences-service;1"]
-            .getService(Components.interfaces.nsIPrefBranch);
-  chatroom = prefManager.getCharPref("extensions.qsos-xuled.chatroom");
-  nick = prefManager.getCharPref("extensions.qsos-xuled.nick", "_");
-  if (nick == "_") {
-    //If nickname is not stored in preferences, ask for it and store it
-    nick = window.prompt(strbundle.getString("nick"));
-    prefManager.setCharPref("extensions.qsos-xuled.nick", nick);
-  }
-  document.getElementById("chat-start").setAttribute("disabled", "true");
-  document.getElementById("chat-end").setAttribute("disabled", "false");
-  document.getElementById("chat-nick").setAttribute("disabled", "true");
-  document.getElementById('t-s').selectedIndex = 3;
-  doLogin();
-}
 
 //Replace some HTML reserved characters
 function htmlEnc(str) {
@@ -691,19 +673,18 @@ function confirmDialog(content, doaction) {
   window.openDialog('chrome://qsos-xuled/content/confirm.xul','Confirm','chrome,dialog,modal',content,doaction);
 }
 
+
 //(Un)freezes generic input files (software properties)
 //bool: "true" to freeze; "" to unfreeze
 function freezeGeneric(bool) {
-  document.getElementById("f-software").disabled = bool;
-  document.getElementById("f-release").disabled = bool;
-  document.getElementById("f-sotwarefamily").disabled = bool;
-  document.getElementById("f-license").disabled = bool;
-  document.getElementById("f-desc").disabled = bool;
-  document.getElementById("f-url").disabled = bool;
-  document.getElementById("f-demourl").disabled = bool;
-  document.getElementById("f-a-list").disabled = bool;
-  document.getElementById("f-a-name").disabled = bool;
-  document.getElementById("f-a-email").disabled = bool;
+  document.getElementById("generalTab").hidden = true;
+//   document.getElementById("criteriaTab").hidden = true;
+  document.getElementById("chartTab").hidden = true;
+//   var genericGroupBoxId = ["f-software","f-release","f-sotwarefamily","f-license","f-desc","f-url","f-demourl","f-a-list","f-a-name","f-a-email","addAuthorButton","delAuthorButton"];
+//   var length = genericGroupBoxId.length;
+//   for(var i = 0; i < length; ++i){
+//     document.getElementById(genericGroupBoxId[i]).disabled = bool;
+//   }
 }
 
 //(Un)freezes the "Score" input files (current criteria properties)
@@ -835,24 +816,43 @@ function changeAuthor(author) {
 function addAuthor() {
   var mylist = document.getElementById("f-a-list");
   var listitem = document.createElement("listitem");
-  listitem.setAttribute("label", document.getElementById("f-a-name").value);
-  listitem.setAttribute("value", document.getElementById("f-a-email").value);
-  mylist.appendChild(listitem);
-  myDoc.addauthor(document.getElementById("f-a-name").value, document.getElementById("f-a-email").value);
-  docChanged = "true";
-  document.getElementById("file-save").setAttribute("disabled", "false");
+  var name = document.getElementById("f-a-name").value;
+  var email = document.getElementById("f-a-email").value;
+  if (name == "" || email == "") {
+	alert("A valid name and e-mail adress are required");
+  } else {
+	for (var i = 0; i < mylist.getRowCount(); ++i) {
+		if (mylist.getItemAtIndex(i).value == name) {
+			alert("There already is someone named " + name);
+			return;
+		}
+// 		alert("Comparing :" + mylist.getItemAtIndex(i).value + name);
+	}
+	listitem.setAttribute("label", name);
+	listitem.setAttribute("value", email);
+	mylist.appendChild(listitem);
+	myDoc.addauthor(name, email);
+	docChanged = "true";
+	document.getElementById("file-save").setAttribute("disabled", "false");
+	document.getElementById("delAuthorButton").disabled = false;
+  }
 }
 
 //Triggered when an author is deleted
 function deleteAuthor() {
   var mylist = document.getElementById("f-a-list");
-  mylist.removeChild(mylist.selectedItem);
-  alert(document.getElementById("f-a-name").value);
-  myDoc.delauthor(document.getElementById("f-a-name").value);
-  document.getElementById("f-a-name").value = "";
-  document.getElementById("f-a-email").value = "";
-  docChanged = "true";
-  document.getElementById("file-save").setAttribute("disabled", "false");
+  if (mylist.getRowCount() == 0) {
+	  alert("There isn't any author any more");
+	  document.getElementById("delAuthorButton").disabled = true;
+	  return;
+  }
+	mylist.removeChild(mylist.selectedItem);
+	alert(document.getElementById("f-a-name").value);
+	myDoc.delauthor(document.getElementById("f-a-name").value);
+	document.getElementById("f-a-name").value = "";
+	document.getElementById("f-a-email").value = "";
+	docChanged = "true";
+	document.getElementById("file-save").setAttribute("disabled", "false");
 }
 
 //Triggered when current criteria's comments are modified

@@ -1,28 +1,38 @@
-tab.header {
+tab.file {
+/* 	list-style-image: url("chrome://qsos-xuled/skin/header.png"); */
+	-moz-border-radius: 6px 6px 0px 0px;
+	font-weight: bold;
+}
+
+tab.general {
   list-style-image: url("chrome://qsos-xuled/skin/header.png");
   -moz-border-radius: 6px 6px 0px 0px;
+  font-weight: bold;
 }
 
 tab.criteria {
   list-style-image: url("chrome://qsos-xuled/skin/criteria.png");
   -moz-border-radius: 6px 6px 0px 0px;
+  font-weight: bold;
 }
 
-tab.graph {
+tab.chart {
   list-style-image: url("chrome://qsos-xuled/skin/graph.png");
   -moz-border-radius: 6px 6px 0px 0px;
-}
-
-tab.chat {
-  list-style-image: url("chrome://qsos-xuled/skin/chat.png");
-  -moz-border-radius: 6px 6px 0px 0px;
-}
-
-tab[selected="true"] {
-  color: #000066;
   font-weight: bold;
-  -moz-border-radius: 6px 6px 0px 0px;
 }
+
+tab.about {
+/* 	list-style-image: url("chrome://qsos-xuled/skin/graph.png"); */
+	-moz-border-radius: 6px 6px 0px 0px;
+	font-weight: bold;
+}
+
+/* tab[selected="true"] {
+	color: #000066;
+	font-weight: bold;
+	-moz-border-radius: 6px 6px 0px 0px;
+} */
 
 treechildren::-moz-tree-row(selected) {
   background-color: #FFFFAA;
@@ -32,13 +42,13 @@ treechildren::-moz-tree-cell-text(selected) {
   color: #000000;
 }
 
-#conversation {
+/*#conversation {
   padding: 5px;
   background-color: white;
   border-left: grey ridge;
   border-top: grey ridge;
   overflow: auto;
-}
+}*/
 
 
 
