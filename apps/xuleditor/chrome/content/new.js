@@ -1,5 +1,5 @@
 var xmlDoc;
-	 
+
 function init() {
 	try {
 		netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect");
@@ -12,13 +12,13 @@ function init() {
 	var loadremote = prefManager.getCharPref("extensions.qsos-xuled.loadremote-tpl");
 
         req = new XMLHttpRequest();
-        req.open('GET', loadremote, false); 
+        req.open('GET', loadremote, false);
 	//req.overrideMimeType('text/xml');
         req.send(null);
 
 	var domParser = new DOMParser();
 	xmlDoc = domParser.parseFromString(req.responseText, "text/xml");
-	
+
 	var evalTree = document.getElementById("evalTree");
 
 	var treechildren = getlist();

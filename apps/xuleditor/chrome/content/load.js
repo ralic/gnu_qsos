@@ -1,5 +1,5 @@
 /*
-**  Copyright (C) 2006, 2007 Atos Origin 
+**  Copyright (C) 2006, 2007 Atos Origin
 **
 **  Author: Raphael Semeteys <raphael.semeteys@atosorigin.com>
 **
@@ -32,23 +32,23 @@ function init() {
   } catch (e) {
     alert("Permission to open file was denied.");
   }
-  
+
   var prefManager = Components.classes["@mozilla.org/preferences-service;1"]
           .getService(Components.interfaces.nsIPrefBranch);
   var loadremote = prefManager.getCharPref("extensions.qsos-xuled.loadremote");
-  
+
   req = new XMLHttpRequest();
-  req.open('GET', loadremote, false); 
+  req.open('GET', loadremote, false);
   //req.overrideMimeType('text/xml');
   req.send(null);
-  
+
   var domParser = new DOMParser();
   xmlDoc = domParser.parseFromString(req.responseText, "text/xml");
-  
+
   var criteria = getcomplextree();
-  
+
   var evalTree = document.getElementById("evalTree");
-  
+
   var treechildren = buildtree(criteria);
   evalTree.appendChild(treechildren);
 }
@@ -140,7 +140,7 @@ function checkLabel() {
 function doOK() {
   var evalTree = document.getElementById("evalTree");
   var url = evalTree.view.getItemAtIndex(evalTree.currentIndex).firstChild.firstChild.getAttribute("id");
-  
+
   if (url.substr(0, 7) != "http://") url = "";
   //Call window opener callback function
   window.arguments[1](url);

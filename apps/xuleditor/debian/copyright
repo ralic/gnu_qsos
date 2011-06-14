@@ -2,7 +2,7 @@ This package was debianized by Gonéri Le Bouder
 <goneri.lebouder@atosorigin.com> on
 Fri, 16 Jun 2006 17:24:12 +0200.
 
-It was downloaded from http://www.qsos.org 
+It was downloaded from http://www.qsos.org
 
 Upstream Author: Raphaël Semeteys
 
@@ -24,7 +24,7 @@ along with this program; if not, write to the Free Software
 Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 
 
-The Debian packaging is (C) 2006, Gonéri Le Bouder 
+The Debian packaging is (C) 2006, Gonéri Le Bouder
 <goneri.lebouder@atosorigin.com> and
 is licensed under the GPL, see `/usr/share/common-licenses/GPL'.
 

@@ -9,7 +9,7 @@
     onload="init();">
 
 <script type="application/x-javascript" src="authors.js"></script>
-	
+
 <vbox>
 	<hbox><label control="f-a-name" value="&f-a-name.value;"/><textbox id="f-a-name"/></hbox>
 	<hbox><label control="f-a-email" value="&f-a-email.value;"/><textbox id="f-a-email"/></hbox>

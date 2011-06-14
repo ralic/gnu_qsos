@@ -29,7 +29,7 @@ treechildren::-moz-tree-row(selected) {
 }
 
 treechildren::-moz-tree-cell-text(selected) {
-  color: #000000; 
+  color: #000000;
 }
 
 #conversation {

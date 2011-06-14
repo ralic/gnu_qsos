@@ -1,5 +1,5 @@
 /*
-**  Copyright (C) 2006-2009 Atos Origin 
+**  Copyright (C) 2006-2009 Atos Origin
 **
 **  Author: Raphael Semeteys <raphael.semeteys@atosorigin.com>
 **
@@ -28,7 +28,7 @@
 
 //Object "Document" representing data in the QSOS XML file
 var myDoc;
-//Indicator of document modification 
+//Indicator of document modification
 var docChanged;
 //id (actually "name" in the QSOS XML file) of the currently selected criteria in the tree
 var id;
@@ -129,7 +129,7 @@ function handleEvent(aJSJaCPacket) {
 //JSJaC error handler (debug)
 //Remove the "hidden" attribute in "err" textbox in editor.xul file to visualize error messages
 function handleError(e) {
-  document.getElementById('err').value = "An error occured: Code: " + e.getAttribute('code') + "\nType:" + e.getAttribute('type') + "\nCondition: " + e.firstChild.nodeName; 
+  document.getElementById('err').value = "An error occured: Code: " + e.getAttribute('code') + "\nType:" + e.getAttribute('type') + "\nCondition: " + e.firstChild.nodeName;
 }
 
 //JSJaC message handler
@@ -157,9 +157,9 @@ function handleMessage(aJSJaCPacket) {
     msgcolor = 'black';
   }
 
-  conversation.innerHTML += 
-    "<html:span style='font-weight: bold; color: " + nickcolor + "'>" + 
-    usernick + ": </html:span>" + 
+  conversation.innerHTML +=
+    "<html:span style='font-weight: bold; color: " + nickcolor + "'>" +
+    usernick + ": </html:span>" +
     "<html:span style='color: " + msgcolor + "'>" + msg + "</html:span>" +
     "<html:br />";
 
@@ -189,7 +189,7 @@ function handlePresence(aJSJaCPacket) {
   var lid = '_'+getUserNick(aJSJaCPacket.getFrom());
   var listbox = document.getElementById('roster');
   var entry = document.getElementById(lid);
-  
+
   if (entry) {
     //if nick already in roster, update it
     entry.setAttribute('label', item);
@@ -208,7 +208,7 @@ function handleConnected() {
   var aPresence = new JSJaCPresence();
   aPresence.setTo(chatroom + '/' + nick);
   aPresence.setFrom('muckl@semeteys.org');
-  
+
   var x = aPresence.getDoc().createElement('x');
   x.setAttribute('xmlns','http://jabber.org/protocol/muc');
   aPresence.getNode().appendChild(x);
@@ -289,7 +289,7 @@ function changeNick() {
   var prefManager = Components.classes["@mozilla.org/preferences-service;1"]
             .getService(Components.interfaces.nsIPrefBranch);
   var currentnick = prefManager.getCharPref("extensions.qsos-xuled.nick", "_");
-  
+
   var newnick = window.prompt(strbundle.getString("nick"), currentnick);
   if (newnick != currentnick) {
     nick = newnick
@@ -343,19 +343,19 @@ function openFile() {
   fp.init(window, strbundle.getString("selectFile"), nsIFilePicker.modeOpen);
   fp.appendFilter(strbundle.getString("QSOSFile"),"*.qsos");
   var res = fp.show();
-  
+
   if (res == nsIFilePicker.returnOK) {
     myDoc = new Document(fp.file.path);
     myDoc.load();
-    
+
     //Window's title
     document.title =  strbundle.getString("QSOSEvaluation")+"  "+myDoc.getappname();
-    
+
     //Tree population
     var tree = document.getElementById("mytree");
     var treechildren = buildtree();
     tree.appendChild(treechildren);
-    
+
     //License
     var licenses = myDoc.getlicenselist();
     var mypopuplist = document.getElementById("f-license-popup");
@@ -364,11 +364,11 @@ function openFile() {
       menuitem.setAttribute("label", licenses[i]);
       mypopuplist.appendChild(menuitem);
     }
-                      
+
     var licenseid = myDoc.getlicenseid();
     var mylist = document.getElementById("f-license");
     mylist.selectedIndex = licenseid;
-    
+
     //Other fields
     document.getElementById("f-software").value = myDoc.getappname();
     document.getElementById("f-release").value = myDoc.getrelease();
@@ -386,7 +386,7 @@ function openFile() {
       listitem.setAttribute("value", authors[i].email);
       mylist.appendChild(listitem);
     }
-        
+
     freezeGeneric("");
     //Menu management
     document.getElementById("file-close").setAttribute("disabled", "false");
@@ -430,12 +430,12 @@ function openRemoteFile(url) {
 
   //Window's title
   document.title =  strbundle.getString("QSOSEvaluation")+"  "+myDoc.getappname();
-  
+
   //Tree population
   var tree = document.getElementById("mytree");
   var treechildren = buildtree();
   tree.appendChild(treechildren);
-  
+
   //License
   var licenses = myDoc.getlicenselist();
   var mypopuplist = document.getElementById("f-license-popup");
@@ -444,11 +444,11 @@ function openRemoteFile(url) {
     menuitem.setAttribute("label", licenses[i]);
     mypopuplist.appendChild(menuitem);
   }
-                    
+
   var licenseid = myDoc.getlicenseid();
   var mylist = document.getElementById("f-license");
   mylist.selectedIndex = licenseid;
-  
+
   //Other fields
   document.getElementById("f-software").value = myDoc.getappname();
   document.getElementById("f-release").value = myDoc.getrelease();
@@ -466,7 +466,7 @@ function openRemoteFile(url) {
     listitem.setAttribute("value", authors[i].email);
     mylist.appendChild(listitem);
   }
-  
+
   freezeGeneric("");
   //Menu management
   document.getElementById("file-close").setAttribute("disabled", "false");
@@ -572,7 +572,7 @@ function saveRemote() {
   var prefManager = Components.classes["@mozilla.org/preferences-service;1"]
           .getService(Components.interfaces.nsIPrefBranch);
   var saveremote = prefManager.getCharPref("extensions.qsos-xuled.saveremote");
-  
+
   myDoc.writeremote(saveremote);
 }
 
@@ -588,28 +588,28 @@ function closeFile() {
   document.getElementById("f-desc").value = "";
   document.getElementById("f-url").value = "";
   document.getElementById("f-demourl").value = "";
-  
+
   var myList = document.getElementById("f-a-list");
   while (myList.hasChildNodes()) {
     myList.removeChild(myList.childNodes[0]);
   }
-  
+
   document.getElementById("f-a-name").value = "";
   document.getElementById("f-a-email").value = "";
-  
+
   document.getElementById("t-software").setAttribute("label", strbundle.getString("softwareLabel"));
   document.getElementById("t-c-title").setAttribute("label", strbundle.getString("criterionLabel"));
-  
+
   document.getElementById("f-c-desc0").setAttribute("label", strbundle.getString("score0Label"));
   document.getElementById("f-c-desc1").setAttribute("label", strbundle.getString("score1Label"));
   document.getElementById("f-c-desc2").setAttribute("label", strbundle.getString("score2Label"));
   document.getElementById("f-c-score").selectedIndex = -1;
   document.getElementById("f-c-comments").value = "";
-  
+
   init();
   myDoc = null;
   id = null;
-  
+
   var tree = document.getElementById("mytree");
   var treechildren = document.getElementById("myTreechildren");
   tree.removeChild(treechildren);
@@ -731,12 +731,12 @@ function treeselect(tree) {
     id = tree.view.getItemAtIndex(tree.currentIndex).firstChild.firstChild.getAttribute("id");
     //document.getElementById("t").selectedIndex = 1;
     //document.getElementById("t-c-title").setAttribute("label", myDoc.getkeytitle(id));
-    
+
     document.getElementById("f-c-desc0").setAttribute("label", "0: "+myDoc.getkeydesc0(id));
     document.getElementById("f-c-desc1").setAttribute("label", "1: "+myDoc.getkeydesc1(id));
     document.getElementById("f-c-desc2").setAttribute("label", "2: "+myDoc.getkeydesc2(id));
     var score = myDoc.getkeyscore(id);
-    
+
     document.getElementById("f-c-desc").value = myDoc.getkeydesc(id);
     if (score == "-1") {
       document.getElementById("f-g-score").collapsed = true;
@@ -746,10 +746,10 @@ function treeselect(tree) {
       document.getElementById("f-c-score").selectedIndex = score;
       freezeScore("");
     }
-  
+
     document.getElementById("f-c-comments").value = myDoc.getkeycomment(id);
     freezeComments("");
-  
+
     if (myDoc.hassubelements(id)) {
       drawChart(id);
     } else {
@@ -894,26 +894,26 @@ function drawChart(name) {
   var width = 400;
   var height = 250;
   myChart.setAttribute("transform", "translate("+width+","+height+")");
-  
+
   //Collect charting data
   var myScores = (name)?myDoc.getSubChartData(name):myDoc.getChartData();
-  
+
   //Chart's label
   clearLabels();
   var marker = null;
-  
+
   if (name) marker = addLabel(name, null);
   var parentName = myDoc.getChartDataParent(name);
-  
+
   while (parentName != null) {
     marker = addLabel(parentName, marker);
     parentName = myDoc.getChartDataParent(parentName);
   }
   addFirstLabel(marker);
-  
+
   //draw chart's axis
   drawAxis(myScores.length);
-  
+
   //draw path between points on each axis
   var myPath = document.createElementNS("http://www.w3.org/2000/svg", "path");
   var myD = "";
@@ -926,12 +926,12 @@ function drawChart(name) {
     drawText(2.1*SCALE*Math.cos(angle), 2.1*SCALE*Math.sin(angle), myScores[i]);
   }
   myD += "z";
-  
+
   myPath.setAttribute("d", myD);
   myPath.setAttribute("fill", "none");
   myPath.setAttribute("stroke", "red");
   myPath.setAttribute("stroke-width", "2");
-  
+
   myChart.appendChild(myPath);
 }
 
@@ -984,13 +984,13 @@ function drawAxis(n) {
   drawCircle(SCALE);
   drawCircle(1.5*SCALE);
   drawCircle(2*SCALE);
-  
+
   for (i=1; i < n+1; i++) {
     drawSingleAxis(2*i*Math.PI/n);
   }
 }
 
-//draw a single axis at "angle" (in radians) from angle 0	
+//draw a single axis at "angle" (in radians) from angle 0
 function drawSingleAxis(angle) {
   x2 = 2*SCALE*Math.cos(angle);
   y2 = 2*SCALE*Math.sin(angle);
@@ -1000,7 +1000,7 @@ function drawSingleAxis(angle) {
 //draw a circle of "r" radius
 function drawCircle(r) {
   var myChart = document.getElementById("chart");
-  
+
   var myCircle = document.createElementNS("http://www.w3.org/2000/svg", "circle");
   myCircle.setAttribute("cx", 0);
   myCircle.setAttribute("cy", 0);
@@ -1008,14 +1008,14 @@ function drawCircle(r) {
   myCircle.setAttribute("fill", "none");
   myCircle.setAttribute("stroke", "blue");
   myCircle.setAttribute("stroke-width", "1");
-  
+
   myChart.appendChild(myCircle);
 }
 
 //draw a line between two points
 function drawLine(x1, y1, x2, y2) {
   var myChart = document.getElementById("chart");
-  
+
   var myLine = document.createElementNS("http://www.w3.org/2000/svg", "line");
   myLine.setAttribute("x1", x1);
   myLine.setAttribute("y1", y1);
@@ -1023,7 +1023,7 @@ function drawLine(x1, y1, x2, y2) {
   myLine.setAttribute("y2", y2);
   myLine.setAttribute("stroke", "green");
   myLine.setAttribute("stroke-width", "1");
-  
+
   myChart.appendChild(myLine);
 }
 
@@ -1032,7 +1032,7 @@ function drawLine(x1, y1, x2, y2) {
 //myScore: object chartData (cf. Document.js)
 function drawText(x, y, myScore) {
   var myChart = document.getElementById("chart");
-  
+
   var myText = document.createElementNS("http://www.w3.org/2000/svg", "text");
   myText.setAttribute("x", x);
   myText.setAttribute("y", y);
@@ -1044,7 +1044,7 @@ function drawText(x, y, myScore) {
   } else {
     myText.setAttribute("fill", "red");
   }
-  
+
   if (myScore.children) {
     myText.setAttribute("onclick", "selectItem(\"" + myScore.name + "\"); drawChart(\"" + myScore.name + "\")");
   } else {
@@ -1054,7 +1054,7 @@ function drawText(x, y, myScore) {
 
   myText.appendChild(document.createTextNode(myScore.title));
   myChart.appendChild(myText);
-  
+
   //text position is ajusted to be outside the circle shape
   myTextLength = myText.getComputedTextLength();
   myX = (Math.abs(x)==x)?x:x-myTextLength;

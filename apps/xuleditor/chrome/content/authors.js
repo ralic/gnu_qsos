@@ -1,5 +1,5 @@
 /*
-**  Copyright (C) 2006 Atos Origin 
+**  Copyright (C) 2006 Atos Origin
 **
 **  Author: Raphaël Semeteys <raphael.semeteys@atosorigin.com>
 **
@@ -25,7 +25,7 @@
 
 var myDoc;
 var docChanged;
-	 
+
 function init() {
 	docChanged = "false";
 	myDoc = window.arguments[0];

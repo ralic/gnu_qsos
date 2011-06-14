@@ -8,13 +8,13 @@
 	ondialogaccept="return doOK();"
         ondialogcancel="return doCancel();"
 	onload="init();">
-	
+
 <script type="application/x-javascript">
 function init() {
 	var content = window.arguments[0];
 	document.getElementById("content").value = content;
 }
-	
+
 function doOK() {
 	//Call window opener callback function
 	window.arguments[1]();

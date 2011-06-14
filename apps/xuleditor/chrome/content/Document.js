@@ -1,5 +1,5 @@
 /*
-**  Copyright (C) 2006, 2007 Atos Origin 
+**  Copyright (C) 2006, 2007 Atos Origin
 **
 **  Author: Rapha� Semeteys <raphael.semeteys@atosorigin.com>
 **
@@ -30,7 +30,7 @@ function Document(name) {
     var file;
     var req;
     filename = name;
-    
+
     //Public methods declaration
     this.load = load;
     this.loadremote = loadremote;
@@ -98,7 +98,7 @@ function Document(name) {
         } catch (e) {
             alert("Permission to read file was denied.");
         }
-        
+
 	var file = Components.classes["@mozilla.org/file/local;1"]
 		.createInstance(Components.interfaces.nsILocalFile);
         file.initWithPath(filename);
@@ -136,13 +136,13 @@ function Document(name) {
         }
         req = new XMLHttpRequest();
 
-        req.open('GET', url, false); 
+        req.open('GET', url, false);
         req.overrideMimeType('text/xml');
         req.send(null);
 	var domParser = new DOMParser();
 	sheet = domParser.parseFromString(req.responseText, "text/xml");
     }
-    
+
     //Serialize and write the local QSOS XML file
     function write() {
         try {
@@ -171,7 +171,7 @@ function Document(name) {
 	xml = converter.ConvertFromUnicode(xml);
 
 	outputStream.write(xml, xml.length);
-	
+
         outputStream.close();
     }
 
@@ -208,10 +208,10 @@ function Document(name) {
 	//Prepare the MIME POST data
 	var boundaryString = 'qsoswriteremote';
 	var boundary = '--' + boundaryString;
-	var requestbody = boundary + '\n' 
-	+ 'Content-Disposition: form-data; name="myfile"; filename="' 
-		+ filename + '"' + '\n' 
-	+ 'Content-Type: text/xml' + '\n' 
+	var requestbody = boundary + '\n'
+	+ 'Content-Disposition: form-data; name="myfile"; filename="'
+		+ filename + '"' + '\n'
+	+ 'Content-Type: text/xml' + '\n'
 	+ '\n'
 	+ binary.readBytes(binary.available())
 	+ '\n'
@@ -246,15 +246,15 @@ function Document(name) {
     function serialize(node, depth) {
 	var indent = "";
 	var line = "";
-	
+
 	if (depth == 0) {
 		line = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n";
 	}
-	
+
 	for (i=0; i < depth; i++) {
 		indent += "   ";
 	}
-	
+
 	//Opening <tag attribute="value" ...>
 	line += indent + "<" + node.tagName;
 	if (node.hasAttributes()) {
@@ -265,7 +265,7 @@ function Document(name) {
 		}
 	}
 	line += ">";
-		
+
 	//Children tags (recursion)
 	var test = false;
 	var children = node.childNodes;
@@ -277,7 +277,7 @@ function Document(name) {
 			test = true;
 		}
 	}
-			
+
 	//Node value + closing </tag>
 	if (test) {
 		line += "\n" + indent + "</" + node.tagName + ">";
@@ -289,7 +289,7 @@ function Document(name) {
 		}
 		line += "</" + node.tagName + ">";
 	}
-	
+
 	return line;
    }
 
@@ -319,7 +319,7 @@ function Document(name) {
         var nb = sheet.evaluate("count(//*[@name='"+name+"']/element)", sheet, null, XPathResult.ANY_TYPE, null).numberValue;
         if (nb > 0) {
                 return true;
-        } 
+        }
         else {
                 return false;
         }
@@ -334,7 +334,7 @@ function Document(name) {
                 return false;
         }
     }
-    
+
     //Returns hierachical tree of objects representing the sheet's criteria
     //Array of "criterion" objects typed like this:
     //	criterion.name: section or element's name attribute in the QSOS sheet
@@ -391,7 +391,7 @@ function Document(name) {
     function getkey(element) {
         var nodes = sheet.evaluate("//"+element, sheet, null, XPathResult.ANY_TYPE,null);
         var node = nodes.iterateNext();
-        if (node) 
+        if (node)
                 return node.textContent;
         else
             return "";
@@ -416,7 +416,7 @@ function Document(name) {
         if (node)
                 return node.textContent;
         else
-            if (subelement == "score") 
+            if (subelement == "score")
                 return -1;
             else
                 return "";
@@ -430,7 +430,7 @@ function Document(name) {
         var nodes = sheet.evaluate("//*[@name='"+element+"']/"+subelement, sheet, null, XPathResult.ANY_TYPE,null);
         var node = nodes.iterateNext();
         if (node) {
-          node.textContent = value; 
+          node.textContent = value;
         } else {
           //if subelement doesn't exist, create it
           nodes = sheet.evaluate("//*[@name='"+element+"']", sheet, null, XPathResult.ANY_TYPE,null);
@@ -448,11 +448,11 @@ function Document(name) {
     function setfilename(name) {
     	filename = name;
     }
-    
+
     function getfilename() {
     	return filename
     }
-    
+
     function getkeytitle(element) {
     	var nodes = sheet.evaluate("//*[@name='"+element+"']", sheet, null, XPathResult.ANY_TYPE,null);
         var node = nodes.iterateNext();
@@ -461,127 +461,127 @@ function Document(name) {
         else
             return "";
     }
-    
+
     function getappname() {
         return getkey("appname");
     }
-    
+
     function setappname(value) {
         return setkey("appname", value);
     }
-    
+
     function getlanguage() {
         return getkey("language");
     }
-    
+
     function setlanguage(value) {
         return setkey("language", value);
     }
-    
+
     function getrelease() {
         return getkey("release");
     }
-    
+
     function setrelease(value) {
         return setkey("release", value);
     }
-    
+
     function geturl() {
         return getkey("url");
     }
-    
+
     function seturl(value) {
         return setkey("url", value);
     }
-    
+
     function getdesc() {
         return getkey("desc");
     }
-    
+
     function setdesc(value) {
         return setkey("desc", value);
     }
-    
+
     function getdemourl() {
         return getkey("demourl");
     }
-    
+
     function setdemourl(value) {
         return setkey("demourl", value);
     }
-    
+
     function getqsosformat() {
         return getkey("qsosformat");
     }
-    
+
     function setqsosformat(value) {
         return setkey("qsosformat", value);
     }
-    
+
     function getqsosspecificformat() {
         return getkey("qsosspecificformat");
     }
-    
+
     function setqsosspecificformat(value) {
         return setkey("qsosspecificformat", value);
     }
-    
+
     function getqsosappfamily() {
         return getkey("qsosappfamily");
     }
-    
+
     function setqsosappfamily(value) {
         return setkey("qsosappfamily", value);
     }
-    
+
     function getkeydesc(element) {
     	return getgeneric(element, "desc")
     }
-    
+
     function setkeydesc(element, value) {
     	return setgeneric(element, "desc", value);
     }
-    
+
     function getkeydesc0(element) {
         return getgeneric(element, "desc0")
     }
-    
+
     function setkeydesc0(element, value) {
         return setgeneric(element, "desc0", value);
     }
-    
+
     function getkeydesc1(element) {
         return getgeneric(element, "desc1")
     }
-    
+
     function setkeydesc1(element, value) {
         return setgeneric(element, "desc1", value);
     }
-    
+
     function getkeydesc2(element) {
         return getgeneric(element, "desc2")
     }
-    
+
     function setkeydesc2(element, value) {
         return setgeneric(element, "desc2", value);
     }
-    
+
     function getkeycomment(element) {
         return getgeneric(element, "comment")
     }
-    
+
     function setkeycomment(element, value) {
         return setgeneric(element, "comment", value);
     }
-    
+
     function getkeyscore(element) {
         return getgeneric(element, "score");
     }
-    
+
     function setkeyscore(element, value) {
         return setgeneric(element, "score", value);
     }
-    
+
     ////////////////////////////////////////////////////////////////////
     // Authors management
     ////////////////////////////////////////////////////////////////////
@@ -592,13 +592,13 @@ function Document(name) {
 	var node = nodes.iterateNext();
 	while (node) {
 		var author = new Object();
-		
+
 		var names = node.getElementsByTagName("name");
 		if (names.length > 0)
 			author.name = names[0].textContent;
 		else
 			author.name = ""
-		
+
 		var emails = node.getElementsByTagName("email");
 		if (emails.length > 0)
 			author.email = emails[0].textContent;
@@ -610,7 +610,7 @@ function Document(name) {
 	}
 	return authors;
     }
-    
+
     function addauthor(varname, varemail) {
 	var nodes = sheet.evaluate("//authors", sheet, null, XPathResult.ANY_TYPE,null);
 	var node = nodes.iterateNext();
@@ -623,7 +623,7 @@ function Document(name) {
 	author.appendChild(email);
 	node.appendChild(author);
     }
-    
+
     function delauthor(varname) {
     	var marker;
     	var authors = sheet.evaluate("//authors", sheet, null, XPathResult.ANY_TYPE,null).iterateNext();
@@ -639,7 +639,7 @@ function Document(name) {
 	}
 	if (marker != null) authors.removeChild(marker);
     }
-    
+
     ////////////////////////////////////////////////////////////////////
     // Licenses management
     ////////////////////////////////////////////////////////////////////
@@ -647,23 +647,23 @@ function Document(name) {
     function getlicenselist() {
     	return new Array("Affero GPL", "AFPL (Aladdin)", "APSL (Apple)", "Copyback License", "DFSG approved", "Eclipse Public License", "EFL (Eiffel)", "Free for Eductional Use", "Free for Hum Use", "Free for non-commercial use", "Free but Restricted", "Freely Distribuable", "Freeware", "NPL (Netscape)", "NOKOS (Nokia)", "OSI Approved", "Proprietary", "Proprietary with trial", "Proprietary with source", "Public Domain", "Shareware", "SUN Binary Code License", "The Apache License", "The Apache License 2.0", "CeCILL License (INRIA)", "Artistic License", "LPPL (Latex)", "Open Content License", "Voxel Public License", "WTFPL", "Zope Public License", "GNU GPL", "GNU LGPL", "BSD", "GNU approved License", "GNU FDL");
     }
-    
+
     function getlicenseid() {
     	return getkey("licenseid");
     }
-    
+
     function setlicenseid(value) {
     	return setkey("licenseid", value);
     }
-    
+
     function getlicensedesc() {
     	return getkey("licensedesc");
     }
-    
+
     function setlicensedesc(value) {
     	return setkey("licensedesc", value);
     }
- 
+
     ////////////////////////////////////////////////////////////////////
     // Chart functions
     ////////////////////////////////////////////////////////////////////
@@ -715,7 +715,7 @@ function Document(name) {
 		var criterion = new Object();
 		criterion.name = element.getAttribute("name");
 		criterion.title =  element.getAttribute("title");
-		
+
 		if (hassubelements(criterion.name)) {
 			criterion.children = getSubChartData(criterion.name);
 			criterion.score = renderScore(criterion.children);
@@ -733,7 +733,7 @@ function Document(name) {
 	}
 	return chartData;
     }
-    
+
     //Renders the value of a criterion based on its subecriteria's values
     //chartData: object representing the criterion
     //		chartData.name: name of the subcriterion
@@ -745,20 +745,20 @@ function Document(name) {
 	var sum = 0;
 	var totalWeight = 0
 	var isRenderable = true;
-	
+
 	for (i=0; i < chartData.length; i++) {
 		totalWeight++;
 		if (chartData[i].score == null) isRenderable = false;
 		sum += Math.round(chartData[i].score * 100)/100;
 	}
-	
+
 	if (isRenderable) {
 		score = Math.round((sum/totalWeight)*100)/100;
 	}
 	else {
 		score = null;
 	}
-	
+
 	return score;
     }
 }
