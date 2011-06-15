@@ -1,5 +1,5 @@
 tab.file {
-/* 	list-style-image: url("chrome://qsos-xuled/skin/header.png"); */
+	list-style-image: url("chrome://qsos-xuled/skin/header.png");
 	-moz-border-radius: 6px 6px 0px 0px;
 	font-weight: bold;
 }
@@ -23,7 +23,7 @@ tab.chart {
 }
 
 tab.about {
-/* 	list-style-image: url("chrome://qsos-xuled/skin/graph.png"); */
+	list-style-image: url("chrome://qsos-xuled/skin/header.png");
 	-moz-border-radius: 6px 6px 0px 0px;
 	font-weight: bold;
 }

@@ -1,1 +1,157 @@
- 
+/*
+ **  Copyright (C) 2006-2011 Atos Origin
+ **
+ **  Author: Raphael Semeteys <raphael.semeteys@atosorigin.com>
+ **          Timothée Ravier <timothee.ravier@atosorigin.com>
+ **
+ **  This program is free software; you can redistribute it and/or modify
+ **  it under the terms of the GNU General Public License as published by
+ **  the Free Software Foundation; either version 2 of the License, or
+ **  (at your option) any later version.
+ **
+ **  This program is distributed in the hope that it will be useful,
+ **  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ **  GNU General Public License for more details.
+ **
+ **  You should have received a copy of the GNU General Public License
+ **  along with this program; if not, write to the Free Software
+ **  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
+ **
+ **
+ **  QSOS XUL Editor
+ **  general.js: functions associated with the general tab
+ **
+ */
+
+//Forces the selection of element with id in the criteria tree
+function selectItem(id) {
+  expandTree(true);
+  tree = document.getElementById("criteriaTree");
+  for(i = 0; i < tree.view.rowCount; ++i) {
+    currentId = tree.view.getItemAtIndex(i).firstChild.firstChild.getAttribute("id");
+    if (currentId == id) {
+      tree.view.selection.select(i);
+      if (document.getElementById("tabBox").selectedIndex != 1) tree.treeBoxObject.scrollToRow(i);
+      break;
+    }
+  }
+}
+
+function docHasChanged(bool) {
+  if (bool == false){
+    docChanged = false;
+    document.getElementById("saveFile").disabled = "true";
+  } else {
+    docChanged = true;
+    document.getElementById("saveFile").disabled = "";
+  }
+}
+
+//Triggered when software name is modified
+function changeAppName(xulelement) {
+  myDoc.setappname(xulelement.value);
+  docHasChanged();
+}
+
+//Triggered when software release is modified
+function changeRelease(xulelement) {
+  myDoc.setrelease(xulelement.value);
+  docHasChanged();
+}
+
+//Triggered when software family is modified
+function changeSoftwareFamily(xulelement) {
+  myDoc.setqsosappfamily(xulelement.value);
+  docHasChanged();
+}
+
+//Triggered when software license is modified
+function changeLicense(list, id) {
+  myDoc.setlicenseid(id);
+  myDoc.setlicensedesc(list.selectedItem.getAttribute("label"));
+  docHasChanged();
+}
+
+//Triggered when software description is modified
+function changeDesc(xulelement) {
+  myDoc.setdesc(xulelement.value);
+  docHasChanged();
+}
+
+//Triggered when software URL is modified
+function changeUrl(xulelement) {
+  myDoc.seturl(xulelement.value);
+  docHasChanged();
+}
+
+//Triggered when software demo URL is modified
+function changeDemoUrl(xulelement) {
+  myDoc.setdemourl(xulelement.value);
+  docHasChanged();
+}
+
+//Triggered when an author is select in the list
+function changeAuthor(author) {
+  document.getElementById("f-a-name").value = author.label;
+  document.getElementById("f-a-email").value = author.value;
+}
+
+//Triggered when an author is added
+function addAuthor() {
+  var mylist = document.getElementById("f-a-list");
+  var listitem = document.createElement("listitem");
+  var name = document.getElementById("f-a-name").value;
+  var email = document.getElementById("f-a-email").value;
+  alert("Adding:" + name + ", " + email);
+  if (name == "" || email == "") {
+    alert("A valid name and e-mail adress are required");
+  } else {
+    for (var i = 0; i < mylist.getRowCount(); ++i) {
+      if (mylist.getItemAtIndex(i).label == name) {
+        alert("There already is someone named " + name);
+        return;
+      }
+      alert("Comparing: " + mylist.getItemAtIndex(i).label + " to " + name);
+    }
+    listitem.setAttribute("label", name);
+    listitem.setAttribute("value", email);
+    mylist.appendChild(listitem);
+    myDoc.addauthor(name, email);
+    docHasChanged();
+    document.getElementById("delAuthorButton").disabled = "";
+  }
+}
+
+//Triggered when an author is deleted
+function deleteAuthor() {
+  var mylist = document.getElementById("f-a-list");
+  if (mylist.selectedItem == null) {
+    alert("Select an author to be deleted");
+    return;
+  }
+  if (mylist.getRowCount() <= 1) {
+    document.getElementById("delAuthorButton").disabled = true;
+    if (mylist.getRowCount() == 0) {
+      alert("There isn't any author any more");
+      return;
+    }
+  }
+  mylist.removeChild(mylist.selectedItem);
+  myDoc.delauthor(document.getElementById("f-a-name").value);
+  document.getElementById("f-a-name").value = "";
+  document.getElementById("f-a-email").value = "";
+  docHasChanged();
+}
+
+//Triggered when current criteria's comments are modified
+function changeComments(xulelement) {
+  myDoc.setkeycomment(id, xulelement.value);
+  docHasChanged();
+}
+
+//Triggered when current criteria's score is modified
+function changeScore(score) {
+  myDoc.setkeyscore(id, score);
+  docHasChanged();
+}

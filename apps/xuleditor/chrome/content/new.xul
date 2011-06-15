@@ -4,17 +4,14 @@
 
 <dialog id="Load-Remote" title="&new.label;"
         xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
-	buttons="accept"
-	width="300px"
-	height="500px"
-	ondialogaccept="return doOK();"
-	onload="init();">
+        buttons="accept" width="300px" height="500px" ondialogaccept="return doOK();"
+        ondialogcancel="" onload="init();" flex="1"> <!-- FIXME add the close functions !-->
 
 <script type="application/x-javascript" src="new.js"></script>
 
 <tree id="evalTree" flex="1">
 	<treecols>
-		<treecol id="name" width="300px" label="&label1.value;" primary="true" flex="1"/>
+		<treecol id="name" width="600px" label="&label1.value;" primary="true" flex="1"/>
 	</treecols>
 </tree>
 
