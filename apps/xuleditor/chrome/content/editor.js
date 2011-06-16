@@ -39,6 +39,8 @@ function init() {
   strbundle = document.getElementById("properties");
   docChanged = false;
   setStateEvalOpen(false);
+  freezeScore("true");
+  freezeComments("true");
 
   //Parameters management
   var urlFirefox = window.arguments[1];
@@ -109,14 +111,14 @@ function setStateEvalOpen(state) {
 //   }
 // }
 
-// //(Un)freezes the "Score" input files (current criteria properties)
-// //bool: "true" to freeze; "" to unfreeze
-// function freezeScore(bool) {
-//   document.getElementById("f-c-score").disabled = bool;
-// }
-//
-// //(Un)freezes the "Comments" input file (current criteria property)
-// //bool: "true" to freeze; "" to unfreeze
-// function freezeComments(bool) {
-//   document.getElementById("f-c-comments").disabled = bool;
-// }
+//(Un)freezes the "Score" input files (current criteria properties)
+//bool: "true" to freeze; "" to unfreeze
+function freezeScore(bool) {
+  document.getElementById("f-c-score").disabled = bool;
+}
+
+//(Un)freezes the "Comments" input file (current criteria property)
+//bool: "true" to freeze; "" to unfreeze
+function freezeComments(bool) {
+  document.getElementById("f-c-comments").disabled = bool;
+}

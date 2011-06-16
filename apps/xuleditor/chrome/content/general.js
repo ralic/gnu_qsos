@@ -103,7 +103,7 @@ function addAuthor() {
   var listitem = document.createElement("listitem");
   var name = document.getElementById("f-a-name").value;
   var email = document.getElementById("f-a-email").value;
-  alert("Adding:" + name + ", " + email);
+//   alert("Adding:" + name + ", " + email);
   if (name == "" || email == "") {
     alert("A valid name and e-mail adress are required");
   } else {
@@ -112,7 +112,7 @@ function addAuthor() {
         alert("There already is someone named " + name);
         return;
       }
-      alert("Comparing: " + mylist.getItemAtIndex(i).label + " to " + name);
+//       alert("Comparing: " + mylist.getItemAtIndex(i).label + " to " + name);
     }
     listitem.setAttribute("label", name);
     listitem.setAttribute("value", email);

@@ -78,6 +78,7 @@ function openFile() {
     document.title = strbundle.getString("QSOSEvaluation") + "  " + myDoc.getappname();
 
     //Tree population
+//     alert("populating criteriaTree");
     var tree = document.getElementById("criteriaTree");
     var treechildren = buildtree();
     tree.appendChild(treechildren);
@@ -182,6 +183,7 @@ function openRemoteFile(url) {
   document.title =  strbundle.getString("QSOSEvaluation") + "  " + myDoc.getappname();
 
   //Tree population
+//   alert("populating criteriaTree");
   var tree = document.getElementById("criteriaTree");
   var treechildren = buildtree();
   tree.appendChild(treechildren);
@@ -237,6 +239,7 @@ function checkopenRemoteFile() {
 
 //XUL Tree recursive creation function
 function buildtree() {
+//   alert("building criteriaTree");
   var treechildren = document.createElement("treechildren");
   treechildren.setAttribute("id", "myTreechildren");
   var criteria = myDoc.getcomplextree();
@@ -307,7 +310,7 @@ function saveFileAs() {
   if (res == nsIFilePicker.returnOK) {
     myDoc.setfilename(fp.file.path);
     myDoc.write();
-    docChanged = "false";
+    docHasChanged(false);
   }
 }
 
@@ -357,7 +360,7 @@ function closeFile() {
   myDoc = null;
   id = null;
 
-  setStateEvalOpen("false");
+  setStateEvalOpen(false);
 
   var tree = document.getElementById("criteriaTree");
   var treechildren = document.getElementById("myTreechildren");
@@ -368,7 +371,7 @@ function closeFile() {
 
 //Checks Document's state before closing it
 function checkcloseFile() {
-  if (docChanged == "true") {
+  if (docChanged == true) {
     confirmDialog(strbundle.getString("saveBefore"), saveFile);
   }
   closeFile();
@@ -384,7 +387,7 @@ function exit() {
 
 //Checks Document's state before exiting
 function checkexit() {
-  if (docChanged == "true") {
+  if (docChanged == true) {
     confirmDialog(strbundle.getString("exitAnyway"), exit);
     return;
   }

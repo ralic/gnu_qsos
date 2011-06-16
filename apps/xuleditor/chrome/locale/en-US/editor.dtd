@@ -43,8 +43,6 @@
 <!ENTITY file-exit.label "Exit">
 <!ENTITY file-description1.label "Please open a QSOS evaluation or start a fresh one using templates ...">
 <!ENTITY file-description2.label "You can easily import evaluations and templates form O3S ...">
-<!-- "Veuillez ouvrir une évalutaion QSOS ou en commencer une nouvelle à partir d'un patron" !-->
-<!-- "Description des possibilitées, de l'import O3S, ..." !-->
 
 <!-- General Tab !-->
 <!ENTITY g-software.label "Software">
