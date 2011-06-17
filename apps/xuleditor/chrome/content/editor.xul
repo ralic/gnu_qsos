@@ -40,16 +40,16 @@
                   <caption><label value="&file-new.label;"/></caption>
                 <vbox> !-->
                   <separator class="groove-thin" orient="horizontal"/>
-                  <button id="newFile" label="&file-new.label;" oncommand="checknewFile();"/>
+                  <button id="newFile" class="newFile" label="&file-new.label;" oncommand="checknewFile();"/>
                   <separator class="groove-thin" orient="horizontal"/>
-                  <button id="openFile" label="&file-open.label;" oncommand="checkopenFile();"/>
-                  <button id="openRemoteFile" label="&file-open-remote.label;" onclick="checkopenRemoteFile();"/>
+                  <button id="openFile" class="openFile" label="&file-open.label;" oncommand="checkopenFile();"/>
+                  <button id="openRemoteFile" class="openRemoteFile" label="&file-open-remote.label;" onclick="checkopenRemoteFile();"/>
                   <separator class="groove-thin" orient="horizontal"/>
-                  <button id="saveFile" label="&file-save.label;" onclick="saveFile();"/>
-                  <button id="saveFileAs" label="&file-saveas.label;" onclick="saveFileAs();"/>
-                  <button id="saveRemoteFile" label="&file-save-remote.label;" onclick="saveRemote();"/>
+                  <button id="saveFile" class="saveFile" label="&file-save.label;" onclick="saveFile();"/>
+                  <button id="saveFileAs" class="saveFileAs" label="&file-saveas.label;" onclick="saveFileAs();"/>
+                  <button id="saveRemoteFile" class="saveRemoteFile" label="&file-save-remote.label;" onclick="saveRemote();"/>
                   <separator class="groove-thin" orient="horizontal"/>
-                  <button id="closeFile" label="&file-close.label;"  onclick="checkcloseFile();"/>
+                  <button id="closeFile" class="closeFile" label="&file-close.label;"  onclick="checkcloseFile();"/>
                   <!-- <separator class="groove-thin" orient="horizontal"/>
                   <button id="AA" label="SHOW"  onclick="setStateEvalOpen(true);"/> !-->
                 <!-- </vbox>
@@ -58,7 +58,7 @@
           </hbox>
         </vbox>
       </tabpanel>
-      <tabpanel>
+      <tabpanel id="generalTabPanel">
         <vbox flex="1">
           <groupbox>
             <caption id="caption"><label id="label" value="&g-software.label;"/></caption>
@@ -83,19 +83,18 @@
             <caption><label value="&g-evaluation.label;"/></caption>
             <hbox>
               <vbox flex="1">
-                <label control="f-a-list" value="&f-a-list;"/>
-                <listbox id="f-a-list" rows="5" onselect="changeAuthor(this.selectedItem);"></listbox>
-              </vbox>
-              <vbox flex="1">
                 <label control="f-a-name" value="&f-a-name.value;"/><textbox id="f-a-name"/>
                 <label control="f-a-email" value="&f-a-email.value;"/><textbox id="f-a-email"/>
-                <hbox flex="1" id="test">
-                  <spacer flex="1"/>
-                  <button id="addAuthorButton" label="&addAuthorButton.label;" flex="1" oncommand="addAuthor();"/>
-                  <spacer flex="1"/>
-                  <button id="delAuthorButton" label="&delAuthorButton.label;" flex="1" oncommand="deleteAuthor();"/>
-                  <spacer flex="1"/>
-                </hbox>
+              </vbox>
+              <vbox>
+                <separator class="groove-thin" orient="horizontal"/>
+                <button id="addAuthorButton" class="addAuthor" label="&addAuthorButton.label;" flex="1" oncommand="addAuthor();"/>
+                <button id="delAuthorButton" class="delAuthor" label="&delAuthorButton.label;" flex="1" oncommand="deleteAuthor();"/>
+                <separator class="groove-thin" orient="horizontal"/>
+              </vbox>
+              <vbox flex="1">
+                <label control="f-a-list" value="&f-a-list;"/>
+                <listbox id="f-a-list" rows="5" onselect="changeAuthor(this.selectedItem);"></listbox>
               </vbox>
             </hbox>
           </groupbox>
@@ -120,8 +119,7 @@
         <vbox flex = "1">
           <groupbox>
             <caption><label value="&label1.value;"/></caption>
-            <!--label id="f-c-desc"/-->
-            <textbox id="f-c-desc" multiline="true" readonly="true" class="plain"/>
+            <textbox id="f-c-desc" multiline="true" readonly="true" class="plain" style="background-color: transparent;"/>
           </groupbox>
           <groupbox id="f-g-score">
             <caption><label value="&label2.value;"/></caption>
@@ -153,9 +151,14 @@
             <label value="&applicationName.value;"/>
             <label value="&license.value;"/>
             <separator class="groove-thin" orient="horizontal"/>
+            <label value="&currentQSOSVersion.value;"/>
+            <label value="&supportedQSOSVersions.value;"/>
+            <separator class="groove-thin" orient="horizontal"/>
             <label value="&authorsLabel.value;"/>
-            <label value="&authors1.value;"/>
-            <label value="&authors2.value;"/>
+            <label value="&author1.value;"/>
+            <label value="&author2.value;"/>
+            <separator class="groove-thin" orient="horizontal"/>
+            <label value="&iconsetAuthors.value;"/>
             <separator class="groove-thin" orient="horizontal"/>
             <label value="&sourceCodeUrl.value;"/>
             <label value="&projectUrl.value;"/>

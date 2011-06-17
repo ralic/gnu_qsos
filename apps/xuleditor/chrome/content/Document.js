@@ -582,7 +582,7 @@ function Document(name) {
     ////////////////////////////////////////////////////////////////////
 
     function getlicenselist() {
-    	return new Array("Affero GPL", "AFPL (Aladdin)", "APSL (Apple)", "Copyback License", "DFSG approved", "Eclipse Public License", "EFL (Eiffel)", "Free for Eductional Use", "Free for Hum Use", "Free for non-commercial use", "Free but Restricted", "Freely Distribuable", "Freeware", "NPL (Netscape)", "NOKOS (Nokia)", "OSI Approved", "Proprietary", "Proprietary with trial", "Proprietary with source", "Public Domain", "Shareware", "SUN Binary Code License", "The Apache License", "The Apache License 2.0", "CeCILL License (INRIA)", "Artistic License", "LPPL (Latex)", "Open Content License", "Voxel Public License", "WTFPL", "Zope Public License", "GNU GPL", "GNU LGPL", "BSD", "GNU approved License", "GNU FDL");
+      return new Array("Affero GPL", "AFPL (Aladdin)", "APSL (Apple)", "Artistic License", "BSD", "CeCILL License (INRIA)", "Copyback License", "DFSG approved", "Eclipse Public License", "EFL (Eiffel)", "Free but Restricted", "Free for Eductional Use", "Free for Home Use", "Free for non-commercial use", "Freely Distribuable", "Freeware", "GNU FDL", "GNU GPL", "GNU approved License", "GNU LGPL", "LPPL (Latex)", "NOKOS (Nokia)", "NPL (Netscape)", "Open Content License", "OSI Approved", "Proprietary", "Proprietary with source", "Proprietary with trial", "Public Domain", "Shareware", "SUN Binary Code License", "The Apache License", "The Apache License 2.0", "Voxel Public License", "WTFPL", "Zope Public License");
     }
 
     function getlicenseid() {

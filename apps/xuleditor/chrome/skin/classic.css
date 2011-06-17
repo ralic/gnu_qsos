@@ -1,37 +1,78 @@
 tab.file {
-	list-style-image: url("chrome://qsos-xuled/skin/header.png");
-	-moz-border-radius: 6px 6px 0px 0px;
-	font-weight: bold;
+  list-style-image: url("chrome://qsos-xuled/skin/document-open.png");
+  -moz-border-radius: 6px 6px 0px 0px;
+  font-weight: bold;
 }
 
 tab.general {
-  list-style-image: url("chrome://qsos-xuled/skin/header.png");
+  list-style-image: url("chrome://qsos-xuled/skin/documentation.png");
   -moz-border-radius: 6px 6px 0px 0px;
   font-weight: bold;
 }
 
 tab.criteria {
-  list-style-image: url("chrome://qsos-xuled/skin/criteria.png");
+  list-style-image: url("chrome://qsos-xuled/skin/document-edit.png");
   -moz-border-radius: 6px 6px 0px 0px;
   font-weight: bold;
 }
 
 tab.chart {
-  list-style-image: url("chrome://qsos-xuled/skin/graph.png");
+  list-style-image: url("chrome://qsos-xuled/skin/office-chart-pie.png");
   -moz-border-radius: 6px 6px 0px 0px;
   font-weight: bold;
 }
 
 tab.about {
-	list-style-image: url("chrome://qsos-xuled/skin/header.png");
-	-moz-border-radius: 6px 6px 0px 0px;
-	font-weight: bold;
+  list-style-image: url("chrome://qsos-xuled/skin/help-about.png");
+  -moz-border-radius: 6px 6px 0px 0px;
+  font-weight: bold;
+}
+
+button.newFile {
+  list-style-image: url("chrome://qsos-xuled/skin/document-new.png");
+}
+
+button.openFile {
+  list-style-image: url("chrome://qsos-xuled/skin/document-open.png");
+}
+
+button.openRemoteFile {
+  list-style-image: url("chrome://qsos-xuled/skin/document-open-remote.png");
+}
+
+button.saveFile {
+  list-style-image: url("chrome://qsos-xuled/skin/document-save.png");
+}
+
+button.saveFileAs {
+  list-style-image: url("chrome://qsos-xuled/skin/document-save-as.png");
+}
+
+button.saveRemoteFile {
+  list-style-image: url("chrome://qsos-xuled/skin/document-save.png");
+}
+
+button.closeFile {
+  list-style-image: url("chrome://qsos-xuled/skin/document-close.png");
+}
+
+button.addAuthor {
+  list-style-image: url("chrome://qsos-xuled/skin/list-add.png");
+}
+
+button.delAuthor {
+  list-style-image: url("chrome://qsos-xuled/skin/list-remove.png");
+/**
+ * text-align: baseline;
+ * vertical-align: left;
+ * This style doesn't seem to work. That's why we add spaces in editor.dtd
+**/
 }
 
 /* tab[selected="true"] {
-	color: #000066;
-	font-weight: bold;
-	-moz-border-radius: 6px 6px 0px 0px;
+  color: #000066;
+  font-weight: bold;
+  -moz-border-radius: 6px 6px 0px 0px;
 } */
 
 treechildren::-moz-tree-row(selected) {
@@ -41,16 +82,3 @@ treechildren::-moz-tree-row(selected) {
 treechildren::-moz-tree-cell-text(selected) {
   color: #000000;
 }
-
-/*#conversation {
-  padding: 5px;
-  background-color: white;
-  border-left: grey ridge;
-  border-top: grey ridge;
-  overflow: auto;
-}*/
-
-
-
-
-

@@ -64,16 +64,18 @@ function init() {
 // Helper functions
 ////////////////////////////////////////////////////////////////////
 
-//Generic call to a confirmation dialog window in modal mode
-//content: question to be asked to the user
-//doaction: callback function to trigger if user answers "yes" to the question
-function confirmDialog(content, doaction) {
+function exitConfirmDialog() {
   try {
     netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect");
   } catch (e) {
     alert("Permission to open file was denied.");
   }
-  window.openDialog('chrome://qsos-xuled/content/confirm.xul','Confirm','chrome,dialog,modal',content,doaction);
+  try {
+    var text = strbundle.getString("exitAnyway");
+    window.openDialog('chrome://qsos-xuled/content/confirm.xul', 'Confirm', 'chrome,dialog,modal', text, saveFile, saveFileAs);
+  } catch (e) {
+    alert("There is a problem here: " + e.message);
+  }
 }
 
 

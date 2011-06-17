@@ -35,7 +35,7 @@
 function checknewFile() {
   if (myDoc) {
     if (docChanged == "true") {
-      confirmDialog(strbundle.getString("closeAnyway"), closeFile);
+      closeConfirmDialog();
     } else {
       closeFile();
     }
@@ -51,6 +51,7 @@ function newFileDialog() {
   } catch (e) {
     alert("Permission to open file was denied: " + e.message);
   }
+  alert("Opening newFileDialog");
   window.openDialog('chrome://qsos-xuled/content/new.xul', 'Properties','chrome,dialog,modal', myDoc, openRemoteFile);
 }
 
@@ -74,16 +75,16 @@ function openFile() {
     myDoc = new Document(fp.file.path);
     myDoc.load();
 
-    //Window's title
+    // Window's title
     document.title = strbundle.getString("QSOSEvaluation") + "  " + myDoc.getappname();
 
-    //Tree population
+    // Tree population
 //     alert("populating criteriaTree");
     var tree = document.getElementById("criteriaTree");
     var treechildren = buildtree();
     tree.appendChild(treechildren);
 
-    //License
+    // License setup and checks
     var licenses = myDoc.getlicenselist();
     var mypopuplist = document.getElementById("f-license-popup");
     for(var i=0; i < licenses.length; i++) {
@@ -92,11 +93,29 @@ function openFile() {
       mypopuplist.appendChild(menuitem);
     }
 
-    var licenseid = myDoc.getlicenseid();
-    var mylist = document.getElementById("f-license");
-    mylist.selectedIndex = licenseid;
+//     alert("Looking into license stuff");
+    var licenseIdFromDesc = -1;
+    var licenseDesc = myDoc.getlicensedesc();
+//     alert("LicenseDesc : " + licenseDesc);
+    for (var i=0; i < licenses.length; ++i){
+//       alert("License i : " + licenses[i]);
+      if (licenses[i] == licenseDesc) {
+        var licenseIdFromDesc = i;
+        break;
+      }
+    }
+//     alert("LicenseIdFromDesc : " + licenseIdFromDesc);
+    var licenseId = myDoc.getlicenseid();
+    var licenseList = document.getElementById("f-license");
+    if (licenseIdFromDesc != -1){
+//       alert("Choix : " + licenseIdFromDesc);
+      licenseList.selectedIndex = licenseIdFromDesc;
+    } else {
+//       alert("Choix : " + licenseId);
+      licenseList.selectedIndex = licenseId;
+    }
 
-    //Other fields
+    // Other fields
     document.getElementById("f-software").value = myDoc.getappname();
     document.getElementById("f-release").value = myDoc.getrelease();
     document.getElementById("f-sotwarefamily").value = myDoc.getqsosappfamily();
@@ -124,14 +143,16 @@ function openFile() {
 //Checks Document's state before opening a new one
 function checkopenFile() {
   if (myDoc) {
-    if (docChanged == "true") {
-      confirmDialog(strbundle.getString("closeAnyway"), closeFile);
-    } else {
-      closeFile();
+    if (docChanged == true) {
+      if(confirm(strbundle.getString("closeAnyway")) == false) {
+        return false;
+      }
     }
+    closeFile();
   }
   openFile();
 }
+
 
 //////////////////////////
 //Submenu "File/Load Remote File"
@@ -170,7 +191,8 @@ function loadRemoteDialog() {
   } catch (e) {
     alert("Permission to open file was denied.");
   }
-  window.openDialog('chrome://qsos-xuled/content/load.xul','Properties','chrome,dialog,modal',myDoc,openRemoteFile);
+  alert("Opening remote file");
+  window.openDialog('chrome://qsos-xuled/content/load.xul', 'Properties', 'chrome,dialog,modal', myDoc, openRemoteFile);
 }
 
 function openRemoteFile(url) {
@@ -180,7 +202,7 @@ function openRemoteFile(url) {
   myDoc.loadremote(url);
 
   //Window's title
-  document.title =  strbundle.getString("QSOSEvaluation") + "  " + myDoc.getappname();
+  document.title = strbundle.getString("QSOSEvaluation") + "  " + myDoc.getappname();
 
   //Tree population
 //   alert("populating criteriaTree");
@@ -189,17 +211,38 @@ function openRemoteFile(url) {
   tree.appendChild(treechildren);
 
   //License
-  var licenses = myDoc.getlicenselist();
-  var mypopuplist = document.getElementById("f-license-popup");
-  for(var i=0; i < licenses.length; i++) {
-    var menuitem = document.createElement("menuitem");
-    menuitem.setAttribute("label", licenses[i]);
-    mypopuplist.appendChild(menuitem);
+  //     alert("Looking into license stuff");
+  var licenseIdFromDesc = -1;
+  var licenseDesc = myDoc.getlicensedesc();
+  //     alert("LicenseDesc : " + licenseDesc);
+  for (var i=0; i < licenses.length; ++i){
+    //       alert("License i : " + licenses[i]);
+    if (licenses[i] == licenseDesc) {
+      var licenseIdFromDesc = i;
+      break;
+    }
   }
-
-  var licenseid = myDoc.getlicenseid();
-  var mylist = document.getElementById("f-license");
-  mylist.selectedIndex = licenseid;
+  //     alert("LicenseIdFromDesc : " + licenseIdFromDesc);
+  var licenseId = myDoc.getlicenseid();
+  var licenseList = document.getElementById("f-license");
+  if (licenseIdFromDesc != -1){
+    //       alert("Choix : " + licenseIdFromDesc);
+    licenseList.selectedIndex = licenseIdFromDesc;
+  } else {
+    //       alert("Choix : " + licenseId);
+    licenseList.selectedIndex = licenseId;
+  }
+//   var licenses = myDoc.getlicenselist();
+//   var mypopuplist = document.getElementById("f-license-popup");
+//   for(var i=0; i < licenses.length; i++) {
+//     var menuitem = document.createElement("menuitem");
+//     menuitem.setAttribute("label", licenses[i]);
+//     mypopuplist.appendChild(menuitem);
+//   }
+//
+//   var licenseid = myDoc.getlicenseid();
+//   var mylist = document.getElementById("f-license");
+//   mylist.selectedIndex = licenseid;
 
   //Other fields
   document.getElementById("f-software").value = myDoc.getappname();
@@ -228,11 +271,12 @@ function openRemoteFile(url) {
 //Checks Document's state before opening a new one
 function checkopenRemoteFile() {
   if (myDoc) {
-    if (docChanged == "true") {
-      confirmDialog(strbundle.getString("closeAnyway"), closeFile);
-    } else {
-      closeFile();
+    if (docChanged == true) {
+      if(confirm(strbundle.getString("closeAnyway")) == false) {
+        return false;
+      }
     }
+    closeFile();
   }
   loadRemoteDialog();
 }
@@ -286,8 +330,6 @@ function saveFile() {
   if (myDoc) {
     myDoc.write();
     docHasChanged(false);
-    //Menu management
-    document.getElementById("file-save").setAttribute("disabled", "true");
   }
 }
 
@@ -346,21 +388,18 @@ function closeFile() {
 
   document.getElementById("f-a-name").value = "";
   document.getElementById("f-a-email").value = "";
-
-  document.getElementById("t-software").setAttribute("label", strbundle.getString("softwareLabel"));
-  document.getElementById("t-c-title").setAttribute("label", strbundle.getString("criterionLabel"));
-
   document.getElementById("f-c-desc0").setAttribute("label", strbundle.getString("score0Label"));
   document.getElementById("f-c-desc1").setAttribute("label", strbundle.getString("score1Label"));
   document.getElementById("f-c-desc2").setAttribute("label", strbundle.getString("score2Label"));
   document.getElementById("f-c-score").selectedIndex = -1;
   document.getElementById("f-c-comments").value = "";
 
-  init();
   myDoc = null;
   id = null;
 
   setStateEvalOpen(false);
+  freezeScore("true");
+  freezeComments("true");
 
   var tree = document.getElementById("criteriaTree");
   var treechildren = document.getElementById("myTreechildren");
@@ -371,8 +410,12 @@ function closeFile() {
 
 //Checks Document's state before closing it
 function checkcloseFile() {
-  if (docChanged == true) {
-    confirmDialog(strbundle.getString("saveBefore"), saveFile);
+  if (myDoc) {
+    if (docChanged == true) {
+      if(confirm(strbundle.getString("closeAnyway")) == false) {
+        return false;
+      }
+    }
   }
   closeFile();
 }
@@ -387,11 +430,10 @@ function exit() {
 
 //Checks Document's state before exiting
 function checkexit() {
-  if (docChanged == true) {
-    confirmDialog(strbundle.getString("exitAnyway"), exit);
-    return;
+  if (myDoc) {
+    if (docChanged == true) {
+      exitConfirmDialog()
+    }
   }
-  else {
-    exit();
-  }
+  exit();
 }

@@ -33,13 +33,13 @@
 <!ENTITY aboutTab.label "  A propos ">
 
 <!-- File Tab !-->
-<!ENTITY file-new.label "Nouveau fichier">
-<!ENTITY file-open.label "Ouvrir un fichier local">
-<!ENTITY file-open-remote.label "Ouvrir fichier distant">
-<!ENTITY file-save.label "Sauvegarder">
-<!ENTITY file-saveas.label "Sauvegarder sous">
-<!ENTITY file-save-remote.label "Sauvegarder sur le serveur">
-<!ENTITY file-close.label "Fermer">
+<!ENTITY file-new.label "  Nouveau fichier                  ">
+<!ENTITY file-open.label "  Ouvrir un fichier local          ">
+<!ENTITY file-open-remote.label "  Ouvrir fichier distant           ">
+<!ENTITY file-save.label "  Sauvegarder                       ">
+<!ENTITY file-saveas.label "  Sauvegarder sous               ">
+<!ENTITY file-save-remote.label "  Sauvegarder sur le serveur">
+<!ENTITY file-close.label "  Fermer                                ">
 <!ENTITY file-exit.label "Quitter">
 <!ENTITY file-description1.label "Veuillez ouvrir une évalutaion QSOS ou en commencer une nouvelle à partir d'un patron ...">
 <!ENTITY file-description2.label "Description des possibilitées, de l'import O3S, ...">
@@ -53,12 +53,12 @@
 <!ENTITY f-desc.value "Description">
 <!ENTITY f-url.value "Site Web">
 <!ENTITY f-demourl.value "Site de démonstration">
-<!ENTITY f-a-list "Auteurs: ">
+<!ENTITY f-a-list "Auteurs :">
 <!ENTITY g-evaluation.label "Evaluation">
 <!ENTITY f-a-name.value "Nom">
 <!ENTITY f-a-email.value "Courriel">
-<!ENTITY addAuthorButton.label "Ajouter">
-<!ENTITY delAuthorButton.label "Supprimer">
+<!ENTITY addAuthorButton.label "    Ajouter  ">
+<!ENTITY delAuthorButton.label " Supprimer">
 
 <!-- Criteria Tab !-->
 <!ENTITY name.label "Critères">
@@ -75,12 +75,14 @@
 <!-- Chart Tab !-->
 
 <!-- About Tab !-->
-<!ENTITY applicationName.value "QSOS XUL Editor v0.10">
-<!ENTITY license.value "Software under the terms of the GNU Public License version 2">
-<!ENTITY currentQSOSVersion.value "Current QSOS version: 2.0">
-<!ENTITY supportedQSOSVersions.value "Import form versions 1.0, 1.5, ... supported"> <!-- FIXME !-->
-<!ENTITY authorsLabel.value "Authors:">
-<!ENTITY authors1.value "    Raphael Semeteys          (raphael.semeteys@atosorigin.com)">
-<!ENTITY authors2.value "    Timothée Ravier              (timothee.ravier@atosorigin.com)">
-<!ENTITY sourceCodeUrl.value "Source code available at: http://savannah.nongnu.org/projects/qsos">
-<!ENTITY projectUrl.value "Information on QSOS method available at: http://www.qsos.org">
+<!ENTITY applicationName.value "QSOS XUL Editor v1.1">
+<!ENTITY license.value "Logiciel sous license GNU Public License version 2">
+<!ENTITY currentQSOSVersion.value "Version actuelle de QSOS : 1.6">
+<!ENTITY supportedQSOSVersions.value "Versions supportées : 1.6">
+<!ENTITY authorsLabel.value "Auteurs :">
+<!ENTITY author1.value "    Raphael Semeteys          (raphael.semeteys@atosorigin.com)">
+<!ENTITY author2.value "    Timothée Ravier              (timothee.ravier@atosorigin.com)">
+<!ENTITY iconsetAuthors.value "Icones réalisées par Oxygen Team (KDE) : http://www.oxygen-icons.org">
+<!ENTITY sourceCodeUrl.value "Code source disponible à l'adresse : http://savannah.nongnu.org/projects/qsos">
+<!ENTITY projectUrl.value "Informations complémentaires sur la méthode QSOS : http://www.qsos.org">
+<!-- <!ENTITY projectUrl.value "Information sur l'Open Source Cartouche: http://www.opensourcecartouche.org"> -->
