@@ -33,14 +33,14 @@
 <!ENTITY aboutTab.label "  About ">
 
 <!-- File Tab !-->
-<!ENTITY file-new.label "  New file                        ">
+<!ENTITY file-new.label "  New file                       ">
 <!ENTITY file-open.label "  Open local file             ">
 <!ENTITY file-open-remote.label "  Open remote file         ">
 <!ENTITY file-save.label "  Save                            ">
-<!ENTITY file-saveas.label "  Save As                        ">
+<!ENTITY file-saveas.label "  Save As                       ">
 <!ENTITY file-save-remote.label "  Save on remote server">
 <!ENTITY file-close.label "  Close                            ">
-<!ENTITY file-exit.label "Exit">
+<!ENTITY file-exit.label "  Exit                               ">
 <!ENTITY file-description1.label "Please open a QSOS evaluation or start a fresh one using templates ...">
 <!ENTITY file-description2.label "You can easily import evaluations and templates form O3S ...">
 

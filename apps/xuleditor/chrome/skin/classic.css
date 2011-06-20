@@ -1,5 +1,5 @@
 tab.file {
-  list-style-image: url("chrome://qsos-xuled/skin/document-open.png");
+  list-style-image: url("chrome://qsos-xuled/skin/document-open_32.png");
   -moz-border-radius: 6px 6px 0px 0px;
   font-weight: bold;
 }
@@ -54,6 +54,10 @@ button.saveRemoteFile {
 
 button.closeFile {
   list-style-image: url("chrome://qsos-xuled/skin/document-close.png");
+}
+
+button.exitApp {
+  list-style-image: url("chrome://qsos-xuled/skin/application-exit.png");
 }
 
 button.addAuthor {

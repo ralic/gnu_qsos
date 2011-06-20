@@ -50,6 +50,7 @@
                   <button id="saveRemoteFile" class="saveRemoteFile" label="&file-save-remote.label;" onclick="saveRemote();"/>
                   <separator class="groove-thin" orient="horizontal"/>
                   <button id="closeFile" class="closeFile" label="&file-close.label;"  onclick="checkcloseFile();"/>
+                  <button id="exitApp" class="exitApp" label="&file-exit.label;"  onclick="if (checkcloseFile() == true) checkexit();"/>
                   <!-- <separator class="groove-thin" orient="horizontal"/>
                   <button id="AA" label="SHOW"  onclick="setStateEvalOpen(true);"/> !-->
                 <!-- </vbox>

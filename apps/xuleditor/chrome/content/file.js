@@ -51,7 +51,7 @@ function newFileDialog() {
   } catch (e) {
     alert("Permission to open file was denied: " + e.message);
   }
-  alert("Opening newFileDialog");
+//   alert("Opening newFileDialog");
   window.openDialog('chrome://qsos-xuled/content/new.xul', 'Properties','chrome,dialog,modal', myDoc, openRemoteFile);
 }
 
@@ -191,7 +191,7 @@ function loadRemoteDialog() {
   } catch (e) {
     alert("Permission to open file was denied.");
   }
-  alert("Opening remote file");
+//   alert("Opening remote file");
   window.openDialog('chrome://qsos-xuled/content/load.xul', 'Properties', 'chrome,dialog,modal', myDoc, openRemoteFile);
 }
 
@@ -210,7 +210,15 @@ function openRemoteFile(url) {
   var treechildren = buildtree();
   tree.appendChild(treechildren);
 
-  //License
+  // License setup and checks
+  var licenses = myDoc.getlicenselist();
+  var mypopuplist = document.getElementById("f-license-popup");
+  for(var i=0; i < licenses.length; i++) {
+    var menuitem = document.createElement("menuitem");
+    menuitem.setAttribute("label", licenses[i]);
+    mypopuplist.appendChild(menuitem);
+  }
+
   //     alert("Looking into license stuff");
   var licenseIdFromDesc = -1;
   var licenseDesc = myDoc.getlicensedesc();
@@ -232,17 +240,6 @@ function openRemoteFile(url) {
     //       alert("Choix : " + licenseId);
     licenseList.selectedIndex = licenseId;
   }
-//   var licenses = myDoc.getlicenselist();
-//   var mypopuplist = document.getElementById("f-license-popup");
-//   for(var i=0; i < licenses.length; i++) {
-//     var menuitem = document.createElement("menuitem");
-//     menuitem.setAttribute("label", licenses[i]);
-//     mypopuplist.appendChild(menuitem);
-//   }
-//
-//   var licenseid = myDoc.getlicenseid();
-//   var mylist = document.getElementById("f-license");
-//   mylist.selectedIndex = licenseid;
 
   //Other fields
   document.getElementById("f-software").value = myDoc.getappname();
@@ -416,8 +413,9 @@ function checkcloseFile() {
         return false;
       }
     }
+    closeFile();
   }
-  closeFile();
+  return true;
 }
 
 //////////////////////////

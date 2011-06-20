@@ -40,7 +40,7 @@
 <!ENTITY file-saveas.label "  Sauvegarder sous               ">
 <!ENTITY file-save-remote.label "  Sauvegarder sur le serveur">
 <!ENTITY file-close.label "  Fermer                                ">
-<!ENTITY file-exit.label "Quitter">
+<!ENTITY file-exit.label "  Quitter                                ">
 <!ENTITY file-description1.label "Veuillez ouvrir une évalutaion QSOS ou en commencer une nouvelle à partir d'un patron ...">
 <!ENTITY file-description2.label "Description des possibilitées, de l'import O3S, ...">
 
