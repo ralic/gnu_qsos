@@ -123,7 +123,7 @@ function openFile() {
     document.getElementById("f-url").value = myDoc.geturl();
     document.getElementById("f-demourl").value = myDoc.getdemourl();
 
-    //Authors
+    // Authors
     var authors = myDoc.getauthors();
     var mylist = document.getElementById("f-a-list");
     for(var i=0; i < authors.length; i++) {
@@ -135,8 +135,11 @@ function openFile() {
 
     setStateEvalOpen("true");
 
-    //Draw top-level SVG chart
+    // Draw top-level SVG chart
     drawChart();
+
+    // Select the General tab
+    document.getElementById('tabs').selectedIndex = 1;
   }
 }
 
@@ -191,7 +194,6 @@ function loadRemoteDialog() {
   } catch (e) {
     alert("Permission to open file was denied.");
   }
-//   alert("Opening remote file");
   window.openDialog('chrome://qsos-xuled/content/load.xul', 'Properties', 'chrome,dialog,modal', myDoc, openRemoteFile);
 }
 
@@ -201,11 +203,10 @@ function openRemoteFile(url) {
   myDoc = new Document("");
   myDoc.loadremote(url);
 
-  //Window's title
+  // Window's title
   document.title = strbundle.getString("QSOSEvaluation") + "  " + myDoc.getappname();
 
-  //Tree population
-//   alert("populating criteriaTree");
+  // Tree population
   var tree = document.getElementById("criteriaTree");
   var treechildren = buildtree();
   tree.appendChild(treechildren);
@@ -219,29 +220,23 @@ function openRemoteFile(url) {
     mypopuplist.appendChild(menuitem);
   }
 
-  //     alert("Looking into license stuff");
   var licenseIdFromDesc = -1;
   var licenseDesc = myDoc.getlicensedesc();
-  //     alert("LicenseDesc : " + licenseDesc);
   for (var i=0; i < licenses.length; ++i){
-    //       alert("License i : " + licenses[i]);
     if (licenses[i] == licenseDesc) {
       var licenseIdFromDesc = i;
       break;
     }
   }
-  //     alert("LicenseIdFromDesc : " + licenseIdFromDesc);
   var licenseId = myDoc.getlicenseid();
   var licenseList = document.getElementById("f-license");
   if (licenseIdFromDesc != -1){
-    //       alert("Choix : " + licenseIdFromDesc);
     licenseList.selectedIndex = licenseIdFromDesc;
   } else {
-    //       alert("Choix : " + licenseId);
     licenseList.selectedIndex = licenseId;
   }
 
-  //Other fields
+  // Other fields
   document.getElementById("f-software").value = myDoc.getappname();
   document.getElementById("f-release").value = myDoc.getrelease();
   document.getElementById("f-sotwarefamily").value = myDoc.getqsosappfamily();
@@ -249,7 +244,7 @@ function openRemoteFile(url) {
   document.getElementById("f-url").value = myDoc.geturl();
   document.getElementById("f-demourl").value = myDoc.getdemourl();
 
-  //Authors
+  // Authors
   var authors = myDoc.getauthors();
   var mylist = document.getElementById("f-a-list");
   for(var i=0; i < authors.length; i++) {
@@ -261,8 +256,16 @@ function openRemoteFile(url) {
 
   setStateEvalOpen(true);
 
-  //Draw top-level SVG chart
+  // Draw top-level SVG chart
   drawChart();
+
+  // Select the General tab
+  document.getElementById('tabs').selectedIndex = 1;
+
+  // If we're creating a new file, set docHasChanged();
+  if (myDoc.filename == null) {
+    docHasChanged();
+  }
 }
 
 //Checks Document's state before opening a new one
@@ -325,8 +328,12 @@ function buildsubtree(criteria) {
 //Saves modifications to the QSOS XML file
 function saveFile() {
   if (myDoc) {
-    myDoc.write();
-    docHasChanged(false);
+    if (myDoc.filename != null) {
+      myDoc.write();
+      docHasChanged(false);
+    } else {
+      saveFileAs();
+    }
   }
 }
 

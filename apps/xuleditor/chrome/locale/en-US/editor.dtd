@@ -41,8 +41,10 @@
 <!ENTITY file-save-remote.label "  Save on remote server">
 <!ENTITY file-close.label "  Close                            ">
 <!ENTITY file-exit.label "  Exit                               ">
-<!ENTITY file-description1.label "Please open a QSOS evaluation or start a fresh one using templates ...">
-<!ENTITY file-description2.label "You can easily import evaluations and templates form O3S ...">
+<!ENTITY file-description1.label "Please open a QSOS evaluation (Open local file or Open remote file) or start a fresh one using templates (New file).">
+<!ENTITY file-description2.label "">
+<!ENTITY file-description3.label "The 'Save on remote server' function is disabled.">
+<!ENTITY file-description4.label "Please send your evaluations to the QSOS mailling list: qsos-general@nongnu.org">
 
 <!-- General Tab !-->
 <!ENTITY g-software.label "Software">

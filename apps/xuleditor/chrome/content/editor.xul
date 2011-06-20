@@ -32,8 +32,10 @@
           value="mon texte"/>
           !-->
           <label value="&file-description1.label;"/>
-          <separator class="groove-thin" orient="horizontal"/>
           <label value="&file-description2.label;"/>
+          <separator class="groove-thin" orient="horizontal"/>
+          <label value="&file-description3.label;"/>
+          <label value="&file-description4.label;"/>
           <hbox id="fileHBox" flex="1">
             <vbox>
               <!--<groupbox>
@@ -45,12 +47,12 @@
                   <button id="openFile" class="openFile" label="&file-open.label;" oncommand="checkopenFile();"/>
                   <button id="openRemoteFile" class="openRemoteFile" label="&file-open-remote.label;" onclick="checkopenRemoteFile();"/>
                   <separator class="groove-thin" orient="horizontal"/>
-                  <button id="saveFile" class="saveFile" label="&file-save.label;" onclick="saveFile();"/>
-                  <button id="saveFileAs" class="saveFileAs" label="&file-saveas.label;" onclick="saveFileAs();"/>
-                  <button id="saveRemoteFile" class="saveRemoteFile" label="&file-save-remote.label;" onclick="saveRemote();"/>
+                  <button id="saveFile" class="saveFile" label="&file-save.label;" oncommand="saveFile();"/>
+                  <button id="saveFileAs" class="saveFileAs" label="&file-saveas.label;" oncommand="saveFileAs();"/>
+                  <button id="saveRemoteFile" class="saveRemoteFile" label="&file-save-remote.label;" oncommand="saveRemote();" disabled="true"/>
                   <separator class="groove-thin" orient="horizontal"/>
-                  <button id="closeFile" class="closeFile" label="&file-close.label;"  onclick="checkcloseFile();"/>
-                  <button id="exitApp" class="exitApp" label="&file-exit.label;"  onclick="if (checkcloseFile() == true) checkexit();"/>
+                  <button id="closeFile" class="closeFile" label="&file-close.label;"  oncommand="checkcloseFile();"/>
+                  <button id="exitApp" class="exitApp" label="&file-exit.label;"  oncommand="if (checkcloseFile() == true) checkexit();"/>
                   <!-- <separator class="groove-thin" orient="horizontal"/>
                   <button id="AA" label="SHOW"  onclick="setStateEvalOpen(true);"/> !-->
                 <!-- </vbox>

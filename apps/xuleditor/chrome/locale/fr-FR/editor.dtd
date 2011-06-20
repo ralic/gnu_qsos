@@ -37,12 +37,14 @@
 <!ENTITY file-open.label "  Ouvrir un fichier local          ">
 <!ENTITY file-open-remote.label "  Ouvrir fichier distant           ">
 <!ENTITY file-save.label "  Sauvegarder                       ">
-<!ENTITY file-saveas.label "  Sauvegarder sous               ">
+<!ENTITY file-saveas.label "  Sauvegarder sous              ">
 <!ENTITY file-save-remote.label "  Sauvegarder sur le serveur">
 <!ENTITY file-close.label "  Fermer                                ">
 <!ENTITY file-exit.label "  Quitter                                ">
-<!ENTITY file-description1.label "Veuillez ouvrir une évalutaion QSOS ou en commencer une nouvelle à partir d'un patron ...">
-<!ENTITY file-description2.label "Description des possibilitées, de l'import O3S, ...">
+<!ENTITY file-description1.label "Veuillez ouvrir une évalutaion QSOS (Ouvrir un fichier local ou Ouvrir un fichier distant) ou en commencer">
+<!ENTITY file-description2.label "une nouvelle à partir d'un patron (Nouveau Fichier).">
+<!ENTITY file-description3.label "La fonction 'Sauvegarder sur le serveur' n'est plus disponible pour l'instant.">
+<!ENTITY file-description4.label "Vous pouvez envoyer vos évaluations sur la liste de discussion de QSOS : qsos-french@nongnu.org">
 
 <!-- General Tab !-->
 <!ENTITY g-software.label "Logiciel">

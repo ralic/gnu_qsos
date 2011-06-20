@@ -203,7 +203,7 @@ function drawText(x, y, myScore) {
   if (myScore.children) {
     myText.setAttribute("onclick", "selectItem(\"" + myScore.name + "\"); drawChart(\"" + myScore.name + "\")");
   } else {
-    myText.setAttribute("onclick", "selectItem(\"" + myScore.name + "\"); document.getElementById('t-s').selectedIndex = 1");
+    myText.setAttribute("onclick", "selectItem(\"" + myScore.name + "\"); document.getElementById('tabs').selectedIndex = 2");
   }
   myText.style.cursor = "pointer";
 

@@ -96,7 +96,7 @@ function setStateEvalOpen(state) {
   document.getElementById("chartTab").hidden = bool;
   if (!state) { document.getElementById("saveFile").disabled = bool; }
   document.getElementById("saveFileAs").disabled = bool;
-  document.getElementById("saveRemoteFile").disabled = bool;
+  // document.getElementById("saveRemoteFile").disabled = bool;
   document.getElementById("closeFile").disabled = bool;
 }
 
