@@ -72,7 +72,8 @@ function openFile() {
   var res = fp.show();
 
   if (res == nsIFilePicker.returnOK) {
-    myDoc = new Document(fp.file.path);
+    myDoc = new Document();
+    myDoc.filename = fp.file.path;
     myDoc.load();
 
     // Window's title
@@ -200,7 +201,7 @@ function loadRemoteDialog() {
 function openRemoteFile(url) {
   if (url == "") return;
 
-  myDoc = new Document("");
+  myDoc = new Document();
   myDoc.loadremote(url);
 
   // Window's title
@@ -329,12 +330,20 @@ function buildsubtree(criteria) {
 function saveFile() {
   if (myDoc) {
     if (myDoc.filename != null) {
+//       alert("saveFile filename non null");
       myDoc.write();
       docHasChanged(false);
+      return true;
     } else {
-      saveFileAs();
+//       alert("saveFile filename null");
+      if (saveFileAs() == true) {
+        docHasChanged(false);
+        return true;
+      }
+//       alert("saveFile ne marche pas");
     }
   }
+  return false;
 }
 
 //////////////////////////
@@ -348,16 +357,21 @@ function saveFileAs() {
     alert("Permission to open file was denied.");
   }
   var nsIFilePicker = Components.interfaces.nsIFilePicker;
-  var fp = Components.classes["@mozilla.org/filepicker;1"]
-  .createInstance(nsIFilePicker);
+  var fp = Components.classes["@mozilla.org/filepicker;1"].createInstance(nsIFilePicker);
   fp.init(window, strbundle.getString("saveFileAs"), nsIFilePicker.modeSave);
   fp.appendFilter(strbundle.getString("QSOSFile"),"*.qsos");
   var res = fp.show();
-  if (res == nsIFilePicker.returnOK) {
+//   alert("saveFileAs après retour ");
+//   alert(fp.file.path);
+  if ((res == nsIFilePicker.returnOK) || (res == nsIFilePicker.returnReplace)) {
+//     alert(fp.file.path);
     myDoc.setfilename(fp.file.path);
+//     alert("saveFileAs avant write");
     myDoc.write();
     docHasChanged(false);
+    return true;
   }
+  return false;
 }
 
 //////////////////////////

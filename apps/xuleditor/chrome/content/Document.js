@@ -26,11 +26,11 @@
 
 //Constructor
 //name: filepath to the QSOS XML file
-function Document(name) {
+function Document() {
     var sheet;
     var file;
     var req;
-    filename = name;
+    var filename;
 
     //Public methods declaration
     this.load = load;
@@ -94,41 +94,42 @@ function Document(name) {
     //Load and parse the local QSOS XML file
     //initializes local variable: sheet
     function load() {
-        try {
-            netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect");
-        } catch (e) {
-            alert("Permission to read file was denied.");
-        }
+      try {
+          netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect");
+      } catch (e) {
+          alert("Permission to read file was denied.");
+      }
 
       var file = Components.classes["@mozilla.org/file/local;1"]
-        .createInstance(Components.interfaces.nsILocalFile);
-            file.initWithPath(filename);
-            if (file.exists() == false) {
-                alert("File does not exist");
-            }
+                  .createInstance(Components.interfaces.nsILocalFile);
+//       alert("Loading: " + myDoc.filename);
+      file.initWithPath(myDoc.filename);
+      if (file.exists() == false) {
+          alert("File does not exist");
+      }
 
-            var is = Components.classes["@mozilla.org/network/file-input-stream;1"]
-        .createInstance(Components.interfaces.nsIFileInputStream);
-            is.init(file, 0x01, 00004, null);
+      var is = Components.classes["@mozilla.org/network/file-input-stream;1"]
+               .createInstance(Components.interfaces.nsIFileInputStream);
+      is.init(file, 0x01, 00004, null);
 
-            var sis = Components.classes["@mozilla.org/scriptableinputstream;1"]
-        .createInstance(Components.interfaces.nsIScriptableInputStream);
-            sis.init(is);
+      var sis = Components.classes["@mozilla.org/scriptableinputstream;1"]
+                .createInstance(Components.interfaces.nsIScriptableInputStream);
+      sis.init(is);
 
       var output = sis.read(sis.available());
 
       var converter = Components.classes["@mozilla.org/intl/scriptableunicodeconverter"]
-        .createInstance(Components.interfaces.nsIScriptableUnicodeConverter);
+                      .createInstance(Components.interfaces.nsIScriptableUnicodeConverter);
       converter.charset = "UTF-8";
       output = converter.ConvertToUnicode(output);
 
       var domParser = new DOMParser();
       sheet = domParser.parseFromString(output, "text/xml");
-        }
+    }
 
-        //Load and parse a remote QSOS XML file
-        //ex: loadremote("http://localhost/qedit/xul/kolab.qsos")
-        //initializes local variable: sheet
+    //Load and parse a remote QSOS XML file
+    //ex: loadremote("http://localhost/qedit/xul/kolab.qsos")
+    //initializes local variable: sheet
     function loadremote(url) {
       try {
           netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect");
@@ -142,27 +143,32 @@ function Document(name) {
       req.send(null);
       var domParser = new DOMParser();
       sheet = domParser.parseFromString(req.responseText, "text/xml");
-        }
+    }
 
-        //Serialize and write the local QSOS XML file
-        function write() {
-            try {
-                netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect");
-            } catch (e) {
-                alert("Permission to save file was denied.");
-            }
+    //Serialize and write the local QSOS XML file
+    function write() {
+//       alert("Début write : " + myDoc.filename);
+      try {
+          netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect");
+      } catch (e) {
+          alert("Permission to save file was denied.");
+      }
 
-            var file = Components.classes["@mozilla.org/file/local;1"]
-                       .createInstance(Components.interfaces.nsILocalFile);
-            file.initWithPath(filename);
-            if (file.exists() == false) {
-                file.create(Components.interfaces.nsIFile.NORMAL_FILE_TYPE, 420);
-            }
+//       alert("Récup du file");
 
-            var outputStream = Components.classes["@mozilla.org/network/file-output-stream;1"]
-        .createInstance(Components.interfaces.nsIFileOutputStream);
+      var file = Components.classes["@mozilla.org/file/local;1"]
+                  .createInstance(Components.interfaces.nsILocalFile);
 
-            outputStream.init(file, 0x04 | 0x08 | 0x20, 420, 0);
+//       alert("File compo prêt : " + myDoc.filename);
+      file.initWithPath(myDoc.filename);
+      if (file.exists() == false) {
+          file.create(Components.interfaces.nsIFile.NORMAL_FILE_TYPE, 420);
+      }
+
+      var outputStream = Components.classes["@mozilla.org/network/file-output-stream;1"]
+                         .createInstance(Components.interfaces.nsIFileOutputStream);
+
+      outputStream.init(file, 0x04 | 0x08 | 0x20, 420, 0);
 
       var xml = serialize(sheet.documentElement, 0);
 
@@ -186,37 +192,40 @@ function Document(name) {
 
       var xml = serialize(sheet.documentElement, 0);
 
-      var stream = Components.classes["@mozilla.org/io/string-input-stream;1"]
-        .createInstance(Components.interfaces.nsIStringInputStream);
+      var stream = Components.classes["@mozilla.org/io/string-input-stream;1"].createInstance(Components.interfaces.nsIStringInputStream);
       stream.setData(xml, xml.length);
 
-      var bstream =  Components.classes["@mozilla.org/network/buffered-input-stream;1"]
-        .getService();
+      var bstream =  Components.classes["@mozilla.org/network/buffered-input-stream;1"].getService();
       bstream.QueryInterface(Components.interfaces.nsIBufferedInputStream);
       bstream.init(stream, 1000);
       bstream.QueryInterface(Components.interfaces.nsIInputStream);
-      var binary = Components.classes["@mozilla.org/binaryinputstream;1"]
-        .createInstance(Components.interfaces.nsIBinaryInputStream);
+      var binary = Components.classes["@mozilla.org/binaryinputstream;1"].createInstance(Components.interfaces.nsIBinaryInputStream);
       binary.setInputStream(stream);
 
       req = false;
       req = new XMLHttpRequest();
 
       //Set the filename
-      var filename = getqsosappfamily() + "." + getappname() + "." + getrelease();
-      if (filename == "..") filename = "upload";
+      var tmpFilename = getqsosappfamily() + "." + getappname() + "." + getrelease();
+      if (tmpFilename == "..") {
+        if (myDoc.filename == null) {
+          tmpFilename = "upload";
+        } else {
+          tmpFilename = myDoc.filename;
+        }
+      }
 
       //Prepare the MIME POST data
       var boundaryString = 'qsoswriteremote';
       var boundary = '--' + boundaryString;
       var requestbody = boundary + '\n'
-      + 'Content-Disposition: form-data; name="myfile"; filename="'
-        + filename + '"' + '\n'
-      + 'Content-Type: text/xml' + '\n'
-      + '\n'
-      + binary.readBytes(binary.available())
-      + '\n'
-      + boundary;
+                      + 'Content-Disposition: form-data; name="myfile"; filename="'
+                      + tmpFilename + '"' + '\n'
+                      + 'Content-Type: text/xml' + '\n'
+                      + '\n'
+                      + binary.readBytes(binary.available())
+                      + '\n'
+                      + boundary;
 
       //Do the AJAX request
       req.onreadystatechange = requestdone;
@@ -299,6 +308,8 @@ function Document(name) {
       string = string.replace(/&/g, '&amp;');
       string = string.replace(/</g, '&lt;');
       string = string.replace(/>/g, '&gt;');
+      string = string.replace(/"/g, '&quot;');
+      string = string.replace(/'/g, '&apos;');
 
       return string;
     }
@@ -446,9 +457,9 @@ function Document(name) {
     // Specific getters ans setters (public functions)
     ////////////////////////////////////////////////////////////////////
 
-    function setfilename(name) { filename = name; }
+    function setfilename(name) { myDoc.filename = name; }
 
-    function getfilename() { return filename }
+    function getfilename() { return myDoc.filename; }
 
     function getkeytitle(element) {
       var nodes = sheet.evaluate("//*[@name='"+element+"']", sheet, null, XPathResult.ANY_TYPE,null);
