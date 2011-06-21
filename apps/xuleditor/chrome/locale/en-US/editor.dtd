@@ -23,68 +23,67 @@
  **  editor.dtd: english translations
 !-->
 
-<!ENTITY QSOS.label "QSOS XUL Editor">
+<!ENTITY QSOSEditor "QSOS XUL Editor">
 
 <!-- Tabs !-->
-<!ENTITY fileTab.label "  File ">
-<!ENTITY generalTab.label "  General ">
-<!ENTITY criteriaTab.label "  Criteria ">
-<!ENTITY chartTab.label "  Chart ">
-<!ENTITY aboutTab.label "  About ">
+<!ENTITY fileTab "  File ">
+<!ENTITY generalTab "  General ">
+<!ENTITY criteriaTab "  Criteria ">
+<!ENTITY chartTab "  Chart ">
+<!ENTITY aboutTab "  About ">
 
 <!-- File Tab !-->
-<!ENTITY file-new.label "  New file                       ">
-<!ENTITY file-open.label "  Open local file             ">
-<!ENTITY file-open-remote.label "  Open remote file         ">
-<!ENTITY file-save.label "  Save                            ">
-<!ENTITY file-saveas.label "  Save As                       ">
-<!ENTITY file-save-remote.label "  Save on remote server">
-<!ENTITY file-close.label "  Close                            ">
-<!ENTITY file-exit.label "  Exit                               ">
-<!ENTITY file-description1.label "Please open a QSOS evaluation (Open local file or Open remote file) or start a fresh one using templates (New file).">
-<!ENTITY file-description2.label "">
-<!ENTITY file-description3.label "The 'Save on remote server' function is disabled.">
-<!ENTITY file-description4.label "Please send your evaluations to the QSOS mailling list: qsos-general@nongnu.org">
+<!ENTITY newFile "  New file                       ">
+<!ENTITY openLocalFile "  Open local file             ">
+<!ENTITY openRemoteFile "  Open remote file         ">
+<!ENTITY saveFile "  Save                            ">
+<!ENTITY saveFileAs "  Save As                       ">
+<!ENTITY saveRemoteFile "  Save on remote server">
+<!ENTITY closeFile "  Close file                      ">
+<!ENTITY exit "  Exit                              ">
+<!ENTITY description1 "Please open a QSOS evaluation (Open local file or Open remote file) or start a fresh one using templates (New file).">
+<!ENTITY description2 "">
+<!ENTITY description3 "The 'Save on remote server' function is disabled.">
+<!ENTITY description4 "Please send your evaluations to the QSOS mailling list: qsos-general@nongnu.org">
 
 <!-- General Tab !-->
-<!ENTITY g-software.label "Software">
-<!ENTITY f-software.value "Name">
-<!ENTITY f-release.value "Release">
-<!ENTITY f-sotwarefamily.value "Software family">
-<!ENTITY f-license.value "License">
-<!ENTITY f-desc.value "Description">
-<!ENTITY f-url.value "Website">
-<!ENTITY f-demourl.value "Demo site">
-<!ENTITY f-a-list "Authors:">
-<!ENTITY g-evaluation.label "Evaluation">
-<!ENTITY f-a-name.value "Name">
-<!ENTITY f-a-email.value "Email">
-<!ENTITY addAuthorButton.label "  Add   ">
-<!ENTITY delAuthorButton.label " Delete">
+<!ENTITY software "Software">
+<!ENTITY softwareName "Name">
+<!ENTITY release "Release">
+<!ENTITY sotwareFamily "Software family">
+<!ENTITY license "License">
+<!ENTITY softwareDescription "Description">
+<!ENTITY url "Website">
+<!ENTITY demoUrl "Demo site">
+<!ENTITY authors "Authors:">
+<!ENTITY evaluation "Evaluation">
+<!ENTITY authorName "Name">
+<!ENTITY authorEmail "Email">
+<!ENTITY addAuthorButton "  Add   ">
+<!ENTITY delAuthorButton " Delete">
 
 <!-- Criteria Tab !-->
-<!ENTITY name.label "Criteria">
-<!ENTITY tree-menu.label "Tree">
-<!ENTITY tree-expand.label "Expand all">
-<!ENTITY tree-collapse.label "Collapse all">
-<!ENTITY label1.value "Description">
-<!ENTITY label2.value "Score">
-<!ENTITY f-c-desc0.label "Score 0">
-<!ENTITY f-c-desc1.label "Score 1">
-<!ENTITY f-c-desc2.label "Score 2">
-<!ENTITY f-c-comments.value "Comments">
+<!ENTITY criteriaName "Criteria">
+<!ENTITY expandTree "Expand all">
+<!ENTITY collapseTree "Collapse all">
+<!ENTITY criteriaDescription "Description">
+<!ENTITY score "Score">
+<!ENTITY score0 "Score 0">
+<!ENTITY score1 "Score 1">
+<!ENTITY score2 "Score 2">
+<!ENTITY comments "Comments">
 
 <!-- Chart Tab !-->
 
 <!-- About Tab !-->
-<!ENTITY applicationName.value "QSOS XUL Editor v1.1">
-<!ENTITY license.value "Software under the terms of the GNU Public License version 2">
-<!ENTITY currentQSOSVersion.value "Current QSOS version: 1.6">
-<!ENTITY supportedQSOSVersions.value "Supported versions: 1.6">
-<!ENTITY authorsLabel.value "Authors:">
-<!ENTITY author1.value "    Raphael Semeteys          (raphael.semeteys@atosorigin.com)">
-<!ENTITY author2.value "    Timothée Ravier              (timothee.ravier@atosorigin.com)">
-<!ENTITY iconsetAuthors.value "Icons from the Oxygen Team (KDE): http://www.oxygen-icons.org">
-<!ENTITY sourceCodeUrl.value "Source code available at: http://savannah.nongnu.org/projects/qsos">
-<!ENTITY projectUrl.value "Information on QSOS method available at: http://www.qsos.org">
-<!-- <!ENTITY projectUrl.value "Information about the Open Source Cartouche: http://www.opensourcecartouche.org"> -->
+<!ENTITY applicationName "QSOS XUL Editor v1.1">
+<!ENTITY license "Software under the terms of the GNU Public License version 2">
+<!ENTITY currentQSOSVersion "Current QSOS version: 1.6">
+<!ENTITY supportedQSOSVersions "Supported versions: 1.6">
+<!ENTITY xuleditorAuthors "Authors:">
+<!ENTITY xuleditorAuthor1 "    Raphael Semeteys          (raphael.semeteys@atosorigin.com)">
+<!ENTITY xuleditorAuthor2 "    Timothée Ravier              (timothee.ravier@atosorigin.com)">
+<!ENTITY iconsetAuthors "Icons from the Oxygen Team (KDE): http://www.oxygen-icons.org">
+<!ENTITY sourceCodeUrl "Source code available at: http://savannah.nongnu.org/projects/qsos">
+<!ENTITY projectUrl "Information on QSOS method available at: http://www.qsos.org">
+<!ENTITY projectUrlOSCartouche "Information about the Open Source Cartouche: http://www.opensourcecartouche.org">

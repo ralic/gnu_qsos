@@ -6,6 +6,6 @@
 
 	<menupopup id="menu_ToolsPopup">
 		<menuitem id="qsos-xuled"
-			  label="&qsos-xuled.label;" oncommand="window.openDialog('chrome://qsos-xuled/content/editor.xul','&qsos-xuled.label;', '_blank', 'chrome,dialog=no');"/>
+			  label="&qsos-xuled;" oncommand="window.openDialog('chrome://qsos-xuled/content/editor.xul','&qsos-xuled;', '_blank', 'chrome,dialog=no');"/>
 	</menupopup>
 </overlay>

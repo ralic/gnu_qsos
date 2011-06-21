@@ -2,7 +2,7 @@
 <?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
 <!DOCTYPE dialog SYSTEM "chrome://qsos-xuled/locale/new.dtd">
 
-<dialog id="Load-Remote" title="&new.label;"
+<dialog id="Load-Remote" title="&new;"
         xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
         buttons="accept,cancel" width="300px" height="500px"
         ondialogaccept="return doOK();" onload="init();" flex="1">
@@ -11,7 +11,7 @@
 
 <tree id="evalTree" flex="1">
 	<treecols>
-		<treecol id="name" width="600px" label="&label1.value;" primary="true" flex="1"/>
+		<treecol id="name" width="600px" label="&templates;" primary="true" flex="1"/>
 	</treecols>
 </tree>
 
