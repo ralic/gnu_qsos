@@ -31,11 +31,13 @@
           DOMAttrModified="if(event.attrName == 'value') this.value = event.newValue; return true;"
           value="mon texte"/>
           !-->
+          <!--
           <html:p>
             Search for:
             <html:input id="find-text"/>
             <button id="okbutton" value="OK"/>
           </html:p>
+          !-->
           <label value="&description1;"/>
           <label value="&description2;"/>
           <separator class="groove-thin" orient="horizontal"/>
