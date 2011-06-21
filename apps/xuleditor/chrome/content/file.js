@@ -34,11 +34,12 @@
 //Checks Document's state before opening a new one
 function checknewFile() {
   if (myDoc) {
-    if (docChanged == "true") {
-      closeConfirmDialog();
-    } else {
-      closeFile();
+    if (docChanged == true) {
+      if(confirm(strbundle.getString("closeAnyway")) == false) {
+        return false;
+      }
     }
+    closeFile();
   }
   newFileDialog();
 }
