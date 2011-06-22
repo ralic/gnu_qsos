@@ -24,14 +24,8 @@
  **
  */
 
-////////////////////////////////////////////////////////////////////
-// Menu "File" functions
-////////////////////////////////////////////////////////////////////
 
-//////////////////////////
-//Submenu "File/New"
-//////////////////////////
-//Checks Document's state before opening a new one
+// Checks Document's state before opening a new one
 function checknewFile() {
   if (myDoc) {
     if (docChanged == true) {
@@ -44,22 +38,19 @@ function checknewFile() {
   newFileDialog();
 }
 
-//Menu "New File"
-//Shows the new.xul window in modal mode
+// Menu "New File"
+// Shows the new.xul window in modal mode
 function newFileDialog() {
   try {
     netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect");
   } catch (e) {
     alert("Permission to open file was denied: " + e.message);
   }
-//   alert("Opening newFileDialog");
   window.openDialog('chrome://qsos-xuled/content/new.xul', 'Properties','chrome,dialog,modal', myDoc, openRemoteFile);
 }
 
-//////////////////////////
-// Tab "File/Open"
-//////////////////////////
-//Opens a local QSOS XML file and populates the window (tree and generic fields)
+
+// Opens a local QSOS XML file and populates the window (tree and generic fields)
 function openFile() {
   try {
     netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect");
@@ -81,7 +72,6 @@ function openFile() {
     document.title = strbundle.getString("QSOSEvaluation") + "  " + myDoc.getappname();
 
     // Tree population
-//     alert("populating criteriaTree");
     var tree = document.getElementById("criteriaTree");
     var treechildren = buildtree();
     tree.appendChild(treechildren);
@@ -95,25 +85,19 @@ function openFile() {
       mypopuplist.appendChild(menuitem);
     }
 
-//     alert("Looking into license stuff");
     var licenseIdFromDesc = -1;
     var licenseDesc = myDoc.getlicensedesc();
-//     alert("LicenseDesc : " + licenseDesc);
     for (var i=0; i < licenses.length; ++i){
-//       alert("License i : " + licenses[i]);
       if (licenses[i] == licenseDesc) {
         var licenseIdFromDesc = i;
         break;
       }
     }
-//     alert("LicenseIdFromDesc : " + licenseIdFromDesc);
     var licenseId = myDoc.getlicenseid();
     var licenseList = document.getElementById("f-license");
     if (licenseIdFromDesc != -1){
-//       alert("Choix : " + licenseIdFromDesc);
       licenseList.selectedIndex = licenseIdFromDesc;
     } else {
-//       alert("Choix : " + licenseId);
       licenseList.selectedIndex = licenseId;
     }
 
@@ -145,7 +129,8 @@ function openFile() {
   }
 }
 
-//Checks Document's state before opening a new one
+
+// Checks Document's state before opening a new one
 function checkopenFile() {
   if (myDoc) {
     if (docChanged == true) {
@@ -159,10 +144,7 @@ function checkopenFile() {
 }
 
 
-//////////////////////////
-//Submenu "File/Load Remote File"
-//////////////////////////
-//Shows the load.xul window in modal mode
+// Shows the load.xul window in modal mode
 function loadRemoteDialog() {
 //   var filebox = document.getElementById("fileHBox");
 //   tree = document.createElement("tree");
@@ -198,6 +180,7 @@ function loadRemoteDialog() {
   }
   window.openDialog('chrome://qsos-xuled/content/load.xul', 'Properties', 'chrome,dialog,modal', myDoc, openRemoteFile);
 }
+
 
 function openRemoteFile(url) {
   if (url == "") return;
@@ -270,7 +253,8 @@ function openRemoteFile(url) {
   }
 }
 
-//Checks Document's state before opening a new one
+
+// Checks Document's state before opening a new one
 function checkopenRemoteFile() {
   if (myDoc) {
     if (docChanged == true) {
@@ -283,9 +267,9 @@ function checkopenRemoteFile() {
   loadRemoteDialog();
 }
 
-//XUL Tree recursive creation function
+
+// XUL Tree recursive creation function
 function buildtree() {
-//   alert("building criteriaTree");
   var treechildren = document.createElement("treechildren");
   treechildren.setAttribute("id", "myTreechildren");
   var criteria = myDoc.getcomplextree();
@@ -296,7 +280,8 @@ function buildtree() {
   return treechildren;
 }
 
-//XUL Tree recursive creation function
+
+// XUL Tree recursive creation function
 function newtreeitem(criterion) {
   var treeitem = document.createElement("treeitem");
   treeitem.setAttribute("container", "true");
@@ -314,7 +299,8 @@ function newtreeitem(criterion) {
   return treeitem;
 }
 
-//XUL Tree recursive creation function
+
+// XUL Tree recursive creation function
 function buildsubtree(criteria) {
   var treechildren = document.createElement("treechildren");
   for (var i=0; i < criteria.length; i++) {
@@ -324,33 +310,26 @@ function buildsubtree(criteria) {
   return treechildren;
 }
 
-//////////////////////////
-//Submenu "File/Save local file"
-//////////////////////////
-//Saves modifications to the QSOS XML file
+
+// Saves modifications to the QSOS XML file
 function saveFile() {
   if (myDoc) {
     if (myDoc.filename != null) {
-//       alert("saveFile filename non null");
       myDoc.write();
       docHasChanged(false);
       return true;
     } else {
-//       alert("saveFile filename null");
       if (saveFileAs() == true) {
         docHasChanged(false);
         return true;
       }
-//       alert("saveFile ne marche pas");
     }
   }
   return false;
 }
 
-//////////////////////////
-//Submenu "File/Save As"
-//////////////////////////
-//Saves modifications to a new QSOS XML file
+
+// Saves modifications to a new QSOS XML file
 function saveFileAs() {
   try {
     netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect");
@@ -375,10 +354,8 @@ function saveFileAs() {
   return false;
 }
 
-//////////////////////////
-//Submenu "File/Save remote file"
-//////////////////////////
-//Saves modifications to a new QSOS XML file
+
+// Saves modifications to a new QSOS XML file
 function saveRemote() {
   var prefManager = Components.classes["@mozilla.org/preferences-service;1"]
   .getService(Components.interfaces.nsIPrefBranch);
@@ -387,10 +364,8 @@ function saveRemote() {
   myDoc.writeremote(saveremote);
 }
 
-//////////////////////////
-//Submenu "File/Close"
-//////////////////////////
-//Closes the QSOS XML file and resets window
+
+// Closes the QSOS XML file and resets window
 function closeFile() {
   document.getElementById("QSOS").setAttribute("title", strbundle.getString("QSOSEditor"));
   document.getElementById("f-software").value = "";
@@ -427,7 +402,7 @@ function closeFile() {
   clearLabels();
 }
 
-//Checks Document's state before closing it
+// Checks Document's state before closing it
 function checkcloseFile() {
   if (myDoc) {
     if (docChanged == true) {
@@ -440,15 +415,14 @@ function checkcloseFile() {
   return true;
 }
 
-//////////////////////////
-//Submenu "File/Exit"
-//////////////////////////
-//Exits application
+
+// Exits application
 function exit() {
   self.close();
 }
 
-//Checks Document's state before exiting
+
+// Checks Document's state before exiting
 function checkexit() {
   if (myDoc) {
     if (docChanged == true) {

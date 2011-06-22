@@ -100,8 +100,9 @@ function setStateEvalOpen(state) {
   document.getElementById("closeFile").disabled = bool;
 }
 
-//(Un)freezes generic input files (software properties)
-//bool: "true" to freeze; "" to unfreeze
+// (Un)freezes generic input files (software properties)
+// bool: "true" to freeze; "" to unfreeze
+// Not needed anymore.
 // function freezeGeneric(bool) {
 //   document.getElementById("generalTab").hidden = true;
 //   document.getElementById("criteriaTab").hidden = true;

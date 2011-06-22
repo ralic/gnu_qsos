@@ -25,13 +25,23 @@
  */
 
 
-////////////////////////////////////////////////////////////////////
-// Menu "Tree" function
-////////////////////////////////////////////////////////////////////
+// Forces the selection of element with id in the criteria tree
+function selectItem(id) {
+  expandTree(true);
+  tree = document.getElementById("criteriaTree");
+  for(i = 0; i < tree.view.rowCount; ++i) {
+    currentId = tree.view.getItemAtIndex(i).firstChild.firstChild.getAttribute("id");
+    if (currentId == id) {
+      tree.view.selection.select(i);
+      if (document.getElementById("tabBox").selectedIndex != 1) tree.treeBoxObject.scrollToRow(i);
+      break;
+    }
+  }
+}
 
-//Submenus "Tree/Expand All" and "Tree/Collapse All"
-//Expands or collapses the tree
-//bool: "false" dans collapse, "true" to expand
+
+// Expands or collapses the tree
+// bool: "false" dans collapse, "true" to expand
 function expandTree(bool) {
   var treeitems = document.getElementsByTagName("treeitem");
   for (var i = 0; i < treeitems.length ; i++) {
@@ -41,8 +51,8 @@ function expandTree(bool) {
 }
 
 
-//Triggered when a new criterion is selected in the tree
-//Fills criteria's fields with new values
+// Triggered when a new criterion is selected in the tree
+// Fills criteria's fields with new values
 function treeselect(tree) {
   //Forces focus to trigger possible onchange event on another XUL element
   document.getElementById("criteriaTree").focus();
@@ -78,4 +88,18 @@ function treeselect(tree) {
       }
     }
   }
+}
+
+
+// Triggered when current criteria's comments are modified
+function changeComments(xulelement) {
+  myDoc.setkeycomment(id, xulelement.value);
+  docHasChanged();
+}
+
+
+// Triggered when current criteria's score is modified
+function changeScore(score) {
+  myDoc.setkeyscore(id, score);
+  docHasChanged();
 }

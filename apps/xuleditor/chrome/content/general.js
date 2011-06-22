@@ -24,19 +24,6 @@
  **
  */
 
-//Forces the selection of element with id in the criteria tree
-function selectItem(id) {
-  expandTree(true);
-  tree = document.getElementById("criteriaTree");
-  for(i = 0; i < tree.view.rowCount; ++i) {
-    currentId = tree.view.getItemAtIndex(i).firstChild.firstChild.getAttribute("id");
-    if (currentId == id) {
-      tree.view.selection.select(i);
-      if (document.getElementById("tabBox").selectedIndex != 1) tree.treeBoxObject.scrollToRow(i);
-      break;
-    }
-  }
-}
 
 function docHasChanged(bool) {
   if (bool == false){
@@ -48,62 +35,61 @@ function docHasChanged(bool) {
   }
 }
 
-//Triggered when software name is modified
+// Triggered when software name is modified
 function changeAppName(xulelement) {
   myDoc.setappname(xulelement.value);
   docHasChanged();
 }
 
-//Triggered when software release is modified
+// Triggered when software release is modified
 function changeRelease(xulelement) {
   myDoc.setrelease(xulelement.value);
   docHasChanged();
 }
 
-//Triggered when software family is modified
+// Triggered when software family is modified
 function changeSoftwareFamily(xulelement) {
   myDoc.setqsosappfamily(xulelement.value);
   docHasChanged();
 }
 
-//Triggered when software license is modified
+// Triggered when software license is modified
 function changeLicense(list, id) {
   myDoc.setlicenseid(id);
   myDoc.setlicensedesc(list.selectedItem.getAttribute("label"));
   docHasChanged();
 }
 
-//Triggered when software description is modified
+// Triggered when software description is modified
 function changeDesc(xulelement) {
   myDoc.setdesc(xulelement.value);
   docHasChanged();
 }
 
-//Triggered when software URL is modified
+// Triggered when software URL is modified
 function changeUrl(xulelement) {
   myDoc.seturl(xulelement.value);
   docHasChanged();
 }
 
-//Triggered when software demo URL is modified
+// Triggered when software demo URL is modified
 function changeDemoUrl(xulelement) {
   myDoc.setdemourl(xulelement.value);
   docHasChanged();
 }
 
-//Triggered when an author is select in the list
+// Triggered when an author is select in the list
 function changeAuthor(author) {
   document.getElementById("f-a-name").value = author.label;
   document.getElementById("f-a-email").value = author.value;
 }
 
-//Triggered when an author is added
+// Triggered when an author is added
 function addAuthor() {
   var mylist = document.getElementById("f-a-list");
   var listitem = document.createElement("listitem");
   var name = document.getElementById("f-a-name").value;
   var email = document.getElementById("f-a-email").value;
-//   alert("Adding:" + name + ", " + email);
   if (name == "" || email == "") {
     alert("A valid name and e-mail adress are required");
   } else {
@@ -112,7 +98,6 @@ function addAuthor() {
         alert("There already is someone named " + name);
         return;
       }
-//       alert("Comparing: " + mylist.getItemAtIndex(i).label + " to " + name);
     }
     listitem.setAttribute("label", name);
     listitem.setAttribute("value", email);
@@ -123,7 +108,7 @@ function addAuthor() {
   }
 }
 
-//Triggered when an author is deleted
+// Triggered when an author is deleted
 function deleteAuthor() {
   var mylist = document.getElementById("f-a-list");
   if (mylist.selectedItem == null) {
@@ -141,17 +126,5 @@ function deleteAuthor() {
   myDoc.delauthor(document.getElementById("f-a-name").value);
   document.getElementById("f-a-name").value = "";
   document.getElementById("f-a-email").value = "";
-  docHasChanged();
-}
-
-//Triggered when current criteria's comments are modified
-function changeComments(xulelement) {
-  myDoc.setkeycomment(id, xulelement.value);
-  docHasChanged();
-}
-
-//Triggered when current criteria's score is modified
-function changeScore(score) {
-  myDoc.setkeyscore(id, score);
   docHasChanged();
 }

@@ -19,7 +19,7 @@
 **
 **
 ** QSOS XUL Editor
-** load.js: functions associated with the load.xul file
+** load.js: functions associated with the load remote file dialog
 */
 
 //QSOS backend containing the list of available evaluations

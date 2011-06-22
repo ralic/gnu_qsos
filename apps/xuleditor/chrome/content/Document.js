@@ -28,9 +28,9 @@
 //name: filepath to the QSOS XML file
 function Document() {
     var sheet;
-    var file;
     var req;
     var filename;
+    var url;
 
     //Public methods declaration
     this.load = load;
@@ -91,8 +91,8 @@ function Document() {
     // QSOS XML file functions
     ////////////////////////////////////////////////////////////////////
 
-    //Load and parse the local QSOS XML file
-    //initializes local variable: sheet
+    // Load and parse the local QSOS XML file
+    // initializes local variable: sheet
     function load() {
       try {
           netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect");
@@ -102,7 +102,6 @@ function Document() {
 
       var file = Components.classes["@mozilla.org/file/local;1"]
                   .createInstance(Components.interfaces.nsILocalFile);
-//       alert("Loading: " + myDoc.filename);
       file.initWithPath(myDoc.filename);
       if (file.exists() == false) {
           alert("File does not exist");
@@ -127,10 +126,11 @@ function Document() {
       sheet = domParser.parseFromString(output, "text/xml");
     }
 
-    //Load and parse a remote QSOS XML file
-    //ex: loadremote("http://localhost/qedit/xul/kolab.qsos")
-    //initializes local variable: sheet
+    // Load and parse a remote QSOS XML file
+    // ex: loadremote("http://localhost/qedit/xul/kolab.qsos")
+    // initializes local variable: sheet
     function loadremote(url) {
+      myDoc.url = url;
       try {
           netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect");
       } catch (e) {
@@ -145,21 +145,17 @@ function Document() {
       sheet = domParser.parseFromString(req.responseText, "text/xml");
     }
 
-    //Serialize and write the local QSOS XML file
+    // Serialize and write the local QSOS XML file
     function write() {
-//       alert("Début write : " + myDoc.filename);
       try {
           netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect");
       } catch (e) {
           alert("Permission to save file was denied.");
       }
 
-//       alert("Récup du file");
-
       var file = Components.classes["@mozilla.org/file/local;1"]
                   .createInstance(Components.interfaces.nsILocalFile);
 
-//       alert("File compo prêt : " + myDoc.filename);
       file.initWithPath(myDoc.filename);
       if (file.exists() == false) {
           file.create(Components.interfaces.nsIFile.NORMAL_FILE_TYPE, 420);
@@ -249,10 +245,10 @@ function Document() {
       }
     }
 
-    //Recursively serialize a XML node in a string
-    //node: XML node to serialize
-    //depth: depth of recursion (used fo indentation), 0 is used at the beginning
-    //returns the string with identations and \n characters
+    // Recursively serialize a XML node in a string
+    // node: XML node to serialize
+    // depth: depth of recursion (used fo indentation), 0 is used at the beginning
+    // returns the string with identations and \n characters
     function serialize(node, depth) {
       var indent = "";
       var line = "";
@@ -596,21 +592,13 @@ function Document() {
       return new Array("Affero GPL", "AFPL (Aladdin)", "APSL (Apple)", "Artistic License", "BSD", "CeCILL License (INRIA)", "Copyback License", "DFSG approved", "Eclipse Public License", "EFL (Eiffel)", "Free but Restricted", "Free for Eductional Use", "Free for Home Use", "Free for non-commercial use", "Freely Distribuable", "Freeware", "GNU FDL", "GNU GPL", "GNU approved License", "GNU LGPL", "LPPL (Latex)", "NOKOS (Nokia)", "NPL (Netscape)", "Open Content License", "OSI Approved", "Proprietary", "Proprietary with source", "Proprietary with trial", "Public Domain", "Shareware", "SUN Binary Code License", "The Apache License", "The Apache License 2.0", "Voxel Public License", "WTFPL", "Zope Public License");
     }
 
-    function getlicenseid() {
-    	return getkey("licenseid");
-    }
+    function getlicenseid() { return getkey("licenseid"); }
 
-    function setlicenseid(value) {
-    	return setkey("licenseid", value);
-    }
+    function setlicenseid(value) { return setkey("licenseid", value); }
 
-    function getlicensedesc() {
-    	return getkey("licensedesc");
-    }
+    function getlicensedesc() { return getkey("licensedesc"); }
 
-    function setlicensedesc(value) {
-    	return setkey("licensedesc", value);
-    }
+    function setlicensedesc(value) { return setkey("licensedesc", value); }
 
     ////////////////////////////////////////////////////////////////////
     // Chart functions
@@ -706,7 +694,6 @@ function Document() {
       else {
         score = null;
       }
-
       return score;
     }
 }

@@ -33,14 +33,14 @@
 <!ENTITY aboutTab "  A propos ">
 
 <!-- File Tab !-->
-<!ENTITY newFile "  Nouveau fichier                  ">
-<!ENTITY openLocalFile "  Ouvrir un fichier local          ">
-<!ENTITY openRemoteFile "  Ouvrir fichier distant           ">
-<!ENTITY saveFile "  Sauvegarder                       ">
-<!ENTITY saveFileAs "  Sauvegarder sous              ">
-<!ENTITY saveRemoteFile "  Sauvegarder sur le serveur">
-<!ENTITY closeFile "  Fermer le fichier                  ">
-<!ENTITY exit "  Quitter                                ">
+<!ENTITY newFile "  Nouveau fichier                ">
+<!ENTITY openLocalFile "  Ouvrir un fichier local        ">
+<!ENTITY openRemoteFile "  Ouvrir fichier distant         ">
+<!ENTITY saveFile "  Enregistrer                       ">
+<!ENTITY saveFileAs "  Enregistrer sous              ">
+<!ENTITY saveRemoteFile "  Enregistrer sur le serveur">
+<!ENTITY closeFile "  Fermer le fichier                ">
+<!ENTITY exit "  Quitter                              ">
 <!ENTITY description1 "Veuillez ouvrir une évalutaion QSOS (Ouvrir un fichier local ou Ouvrir un fichier distant) ou en commencer une nouvelle à partir d'un patron (Nouveau Fichier).">
 <!ENTITY description2 "La fonction 'Sauvegarder sur le serveur' n'est plus disponible pour l'instant.">
 <!ENTITY description3 "Vous pouvez envoyer vos évaluations sur la liste de discussion de QSOS :">
