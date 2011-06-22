@@ -43,7 +43,8 @@
 <!ENTITY exit "  Quitter                                ">
 <!ENTITY description1 "Veuillez ouvrir une évalutaion QSOS (Ouvrir un fichier local ou Ouvrir un fichier distant) ou en commencer une nouvelle à partir d'un patron (Nouveau Fichier).">
 <!ENTITY description2 "La fonction 'Sauvegarder sur le serveur' n'est plus disponible pour l'instant.">
-<!ENTITY description3 "Vous pouvez envoyer vos évaluations sur la liste de discussion de QSOS : qsos-french@nongnu.org">
+<!ENTITY description3 "Vous pouvez envoyer vos évaluations sur la liste de discussion de QSOS :">
+<!ENTITY maillingList "qsos-french@nongnu.org">
 
 <!-- General Tab !-->
 <!ENTITY software "Logiciel">
@@ -76,7 +77,8 @@
 
 <!-- About Tab !-->
 <!ENTITY xuleditorName "QSOS XUL Editor v1.1">
-<!ENTITY xuleditorLicense "Logiciel sous licence GNU Public License version 2">
+<!ENTITY xuleditorLicense "Logiciel sous licence GNU Public License version 2 :">
+<!ENTITY xuleditorLicenseUrl "http://www.gnu.org/licenses/gpl-2.0.html">
 <!ENTITY currentQSOSVersion "Version actuelle de QSOS : 1.6">
 <!ENTITY supportedQSOSVersions "Versions supportées : 1.6">
 <!ENTITY xuleditorAuthors "Auteurs :">
@@ -84,7 +86,11 @@
 <!ENTITY xuleditorAuthorEmail1 "raphael.semeteys@atosorigin.com">
 <!ENTITY xuleditorAuthorName2 "Timothée Ravier">
 <!ENTITY xuleditorAuthorEmail2 "timothee.ravier@atosorigin.com">
-<!ENTITY iconsetAuthors "Icones réalisées par Oxygen Team (KDE) : http://www.oxygen-icons.org">
-<!ENTITY sourceCodeUrl "Code source disponible à l'adresse : http://savannah.nongnu.org/projects/qsos">
-<!ENTITY projectUrl "Informations complémentaires sur la méthode QSOS : http://www.qsos.org">
-<!ENTITY projectUrlOSCartouche "Information sur l'Open Source Cartouche: http://www.opensourcecartouche.org">
+<!ENTITY iconsetAuthors "Icones réalisées par Oxygen Team (KDE) :">
+<!ENTITY iconsetUrl "http://www.oxygen-icons.org">
+<!ENTITY sourceCode "Code source disponible à l'adresse :">
+<!ENTITY sourceCodeUrl "http://savannah.nongnu.org/projects/qsos">
+<!ENTITY project "Informations complémentaires sur la méthode QSOS :">
+<!ENTITY projectUrl "http://www.qsos.org">
+<!ENTITY projectOSCartouche "Information sur l'Open Source Cartouche :">
+<!ENTITY projectOSCartoucheUrl "http://www.opensourcecartouche.org">

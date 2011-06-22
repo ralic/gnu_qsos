@@ -43,7 +43,8 @@
 <!ENTITY exit "  Exit                              ">
 <!ENTITY description1 "Please open a QSOS evaluation (Open local file or Open remote file) or start a fresh one using templates (New file).">
 <!ENTITY description2 "The 'Save on remote server' function is disabled.">
-<!ENTITY description3 "Please send your evaluations to the QSOS mailling list: qsos-general@nongnu.org">
+<!ENTITY description3 "Please send your evaluations to the QSOS mailling list:">
+<!ENTITY maillingList "qsos-general@nongnu.org">
 
 <!-- General Tab !-->
 <!ENTITY software "Software">
@@ -76,7 +77,8 @@
 
 <!-- About Tab !-->
 <!ENTITY xuleditorName "QSOS XUL Editor v1.1">
-<!ENTITY xuleditorLicense "Software under the terms of the GNU Public License version 2">
+<!ENTITY xuleditorLicense "Software under the terms of the GNU Public License version 2:">
+<!ENTITY xuleditorLicenseUrl "http://www.gnu.org/licenses/gpl-2.0.html">
 <!ENTITY currentQSOSVersion "Current QSOS version: 1.6">
 <!ENTITY supportedQSOSVersions "Supported versions: 1.6">
 <!ENTITY xuleditorAuthors "Authors:">
@@ -84,7 +86,11 @@
 <!ENTITY xuleditorAuthorEmail1 "raphael.semeteys@atosorigin.com">
 <!ENTITY xuleditorAuthorName2 "Timothée Ravier">
 <!ENTITY xuleditorAuthorEmail2 "timothee.ravier@atosorigin.com">
-<!ENTITY iconsetAuthors "Icons from the Oxygen Team (KDE): http://www.oxygen-icons.org">
-<!ENTITY sourceCodeUrl "Source code available at: http://savannah.nongnu.org/projects/qsos">
-<!ENTITY projectUrl "Information on QSOS method available at: http://www.qsos.org">
-<!ENTITY projectUrlOSCartouche "Information about the Open Source Cartouche: http://www.opensourcecartouche.org">
+<!ENTITY iconsetAuthors "Icons from the Oxygen Team (KDE):">
+<!ENTITY iconsetUrl "http://www.oxygen-icons.org">
+<!ENTITY sourceCode "Source code available at:">
+<!ENTITY sourceCodeUrl "http://savannah.nongnu.org/projects/qsos">
+<!ENTITY project "Information on QSOS method available at:">
+<!ENTITY projectUrl "http://www.qsos.org">
+<!ENTITY projectOSCartouche "Information about the Open Source Cartouche">
+<!ENTITY projectOSCartoucheUrl "http://www.opensourcecartouche.org">

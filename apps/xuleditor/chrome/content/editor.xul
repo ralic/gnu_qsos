@@ -29,7 +29,7 @@
             <html:br/>
             &description2;<html:br/>
             <html:br/>
-            &description3;
+            &description3; <textbox value="&maillingList;" readonly="true" class="plain" style="background-color: transparent;" flex="1"/>
           </html:p>
           <hbox id="fileHBox" flex="1">
             <vbox>
@@ -133,54 +133,52 @@
         </vbox>
       </tabpanel>
       <tabpanel id="aboutTab">
-        <html:div>
-          <html:div id="top">
-            <html:div id="logo">
-              <image src="chrome://qsos-xuled/content/logo-qsos.png" width="150" height="58"/>
-            </html:div>
-            <html:div id="title">
-              <html:br/>
-              &xuleditorName;
-            </html:div>
-          </html:div>
-          <html:div id="aboutContent">
-            <html:p>
-              &xuleditorLicense; : http://www.gnu.org/licenses/gpl-2.0.html
-            </html:p>
-            <html:p>
-              &currentQSOSVersion;<html:br/>
-              &supportedQSOSVersions;
-            </html:p>
-            <html:p>
-              &xuleditorAuthors;
-                <html:table class="authorTable">
-                  <html:tr>
-                    <html:td>
-                      &xuleditorAuthorName1;
-                    </html:td>
-                    <html:td>
-                      (&xuleditorAuthorEmail1;)
-                    </html:td>
-                  </html:tr>
-                  <html:tr>
-                    <html:td>
-                      &xuleditorAuthorName2;
-                    </html:td>
-                    <html:td>
-                      (&xuleditorAuthorEmail2;)
-                    </html:td>
-                  </html:tr>
-                </html:table>
-              </html:p>
-              <html:p>
-                &iconsetAuthors;
-              </html:p>
-              <html:p>
-                &sourceCodeUrl;<html:br/>
-                &projectUrl;
-              </html:p>
-          </html:div>
-        </html:div>
+        <vbox flex="1">
+          <hbox>
+            <image src="chrome://qsos-xuled/content/logo-qsos.png" width="150" height="58"/>
+          </hbox>
+          <label value=""/>
+          <label value="&xuleditorName;"/>
+          <label value=""/>
+          <hbox>
+            <label value="&xuleditorLicense;"/>
+            <textbox value="&xuleditorLicenseUrl;" readonly="true" class="plain" style="background-color: transparent;" flex="1"/>
+          </hbox>
+          <label value=""/>
+          <label value="&currentQSOSVersion;"/>
+          <label value="&supportedQSOSVersions;"/>
+          <label value=""/>
+          <label value="&xuleditorAuthors;"/>
+          <vbox>
+            <hbox>
+              <label value="     "/>
+              <label value="&xuleditorAuthorName1;"/>
+              <label value="     "/>
+              <textbox value="&xuleditorAuthorEmail1;" readonly="true" class="plain" style="background-color: transparent;" flex="1"/>
+            </hbox>
+            <hbox>
+              <label value="     "/>
+              <label value="&xuleditorAuthorName2;"/>
+              <label value="     "/>
+              <textbox value="&xuleditorAuthorEmail2;" readonly="true" class="plain" style="background-color: transparent;" flex="1"/>
+            </hbox>
+          </vbox>
+          <label value=""/>
+          <hbox>
+            <label value="&iconsetAuthors;"/>
+            <textbox value="&iconsetUrl;" readonly="true" class="plain" style="background-color: transparent;" flex="1"/>
+          </hbox>
+          <label value=""/>
+          <hbox>
+            <label value="&sourceCode;"/>
+            <textbox value="&sourceCodeUrl;" readonly="true" class="plain" style="background-color: transparent;" flex="1"/>
+          </hbox>
+          <label value=""/>
+          <hbox>
+            <label value="&project;"/>
+            <textbox value="&projectUrl;" readonly="true" class="plain" style="background-color: transparent;" flex="1"/>
+          </hbox>
+        </vbox>
       </tabpanel>
     </tabpanels>
   </tabbox>
