@@ -41,10 +41,9 @@
 <!ENTITY saveRemoteFile "  Sauvegarder sur le serveur">
 <!ENTITY closeFile "  Fermer le fichier                  ">
 <!ENTITY exit "  Quitter                                ">
-<!ENTITY description1 "Veuillez ouvrir une évalutaion QSOS (Ouvrir un fichier local ou Ouvrir un fichier distant) ou en commencer">
-<!ENTITY description2 "une nouvelle à partir d'un patron (Nouveau Fichier).">
-<!ENTITY description3 "La fonction 'Sauvegarder sur le serveur' n'est plus disponible pour l'instant.">
-<!ENTITY description4 "Vous pouvez envoyer vos évaluations sur la liste de discussion de QSOS : qsos-french@nongnu.org">
+<!ENTITY description1 "Veuillez ouvrir une évalutaion QSOS (Ouvrir un fichier local ou Ouvrir un fichier distant) ou en commencer une nouvelle à partir d'un patron (Nouveau Fichier).">
+<!ENTITY description2 "La fonction 'Sauvegarder sur le serveur' n'est plus disponible pour l'instant.">
+<!ENTITY description3 "Vous pouvez envoyer vos évaluations sur la liste de discussion de QSOS : qsos-french@nongnu.org">
 
 <!-- General Tab !-->
 <!ENTITY software "Logiciel">
@@ -76,13 +75,15 @@
 <!-- Chart Tab !-->
 
 <!-- About Tab !-->
-<!ENTITY applicationName "QSOS XUL Editor v1.1">
+<!ENTITY xuleditorName "QSOS XUL Editor v1.1">
 <!ENTITY xuleditorLicense "Logiciel sous licence GNU Public License version 2">
 <!ENTITY currentQSOSVersion "Version actuelle de QSOS : 1.6">
 <!ENTITY supportedQSOSVersions "Versions supportées : 1.6">
 <!ENTITY xuleditorAuthors "Auteurs :">
-<!ENTITY xuleditorAuthor1 "    Raphael Semeteys          (raphael.semeteys@atosorigin.com)">
-<!ENTITY xuleditorAuthor2 "    Timothée Ravier              (timothee.ravier@atosorigin.com)">
+<!ENTITY xuleditorAuthorName1 "Raphael Semeteys">
+<!ENTITY xuleditorAuthorEmail1 "raphael.semeteys@atosorigin.com">
+<!ENTITY xuleditorAuthorName2 "Timothée Ravier">
+<!ENTITY xuleditorAuthorEmail2 "timothee.ravier@atosorigin.com">
 <!ENTITY iconsetAuthors "Icones réalisées par Oxygen Team (KDE) : http://www.oxygen-icons.org">
 <!ENTITY sourceCodeUrl "Code source disponible à l'adresse : http://savannah.nongnu.org/projects/qsos">
 <!ENTITY projectUrl "Informations complémentaires sur la méthode QSOS : http://www.qsos.org">

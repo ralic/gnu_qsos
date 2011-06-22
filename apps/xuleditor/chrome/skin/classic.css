@@ -69,8 +69,28 @@ button.delAuthor {
 /**
  * text-align: baseline;
  * vertical-align: left;
- * This style doesn't seem to work. That's why we add spaces in editor.dtd
+ * This style doesn't seem to work. That's why we're adding spaces in editor.dtd to make icons look left aligned
 **/
+}
+
+div#aboutContent {
+
+}
+
+div#logo {
+  float: left;
+  width: 170px;
+  height: 58px;
+}
+
+div#title {
+/*   text-align: center; */
+  vertical-align: middle;
+  height: 58px;
+}
+
+.authorTable {
+  padding: 15px;
 }
 
 /* tab[selected="true"] {

@@ -24,30 +24,15 @@
     <tabpanels flex="1">
       <tabpanel flex="1">
         <vbox flex="1">
-          <!-- FIXME: find the right way to display multiline text area or use this:
-          <textbox class="plain" style="background-color: transparent;" flex="1"
-          multiline="true" readonly="true"
-          onoverflow="this.height = this.inputField.scrollHeight;"
-          DOMAttrModified="if(event.attrName == 'value') this.value = event.newValue; return true;"
-          value="mon texte"/>
-          !-->
-          <!--
           <html:p>
-            Search for:
-            <html:input id="find-text"/>
-            <button id="okbutton" value="OK"/>
+            &description1;<html:br/>
+            <html:br/>
+            &description2;<html:br/>
+            <html:br/>
+            &description3;
           </html:p>
-          !-->
-          <label value="&description1;"/>
-          <label value="&description2;"/>
-          <separator class="groove-thin" orient="horizontal"/>
-          <label value="&description3;"/>
-          <label value="&description4;"/>
           <hbox id="fileHBox" flex="1">
             <vbox>
-              <!--<groupbox>
-                  <caption><label value="&file-new.label;"/></caption>
-                <vbox> !-->
                   <separator class="groove-thin" orient="horizontal"/>
                   <button id="newFile" class="newFile" label="&newFile;" oncommand="checknewFile();"/>
                   <separator class="groove-thin" orient="horizontal"/>
@@ -60,10 +45,6 @@
                   <separator class="groove-thin" orient="horizontal"/>
                   <button id="closeFile" class="closeFile" label="&closeFile;"  oncommand="checkcloseFile();"/>
                   <button id="exitApp" class="exitApp" label="&exit;"  oncommand="if (checkcloseFile() == true) checkexit();"/>
-                  <!-- <separator class="groove-thin" orient="horizontal"/>
-                  <button id="AA" label="SHOW"  oncommand="setStateEvalOpen(true);"/> !-->
-                <!-- </vbox>
-              </groupbox> !-->
             </vbox>
           </hbox>
         </vbox>
@@ -152,28 +133,54 @@
         </vbox>
       </tabpanel>
       <tabpanel id="aboutTab">
-        <vbox>
-          <hbox>
-            <image src="chrome://qsos-xuled/content/logo-qsos.png" width="150" height="58"/>
-          </hbox>
-          <vbox>
-            <separator class="groove-thin" orient="horizontal"/>
-            <label value="&applicationName;"/>
-            <label value="&xuleditorLicense;"/>
-            <separator class="groove-thin" orient="horizontal"/>
-            <label value="&currentQSOSVersion;"/>
-            <label value="&supportedQSOSVersions;"/>
-            <separator class="groove-thin" orient="horizontal"/>
-            <label value="&xuleditorAuthors;"/>
-            <label value="&xuleditorAuthor1;"/>
-            <label value="&xuleditorAuthor2;"/>
-            <separator class="groove-thin" orient="horizontal"/>
-            <label value="&iconsetAuthors;"/>
-            <separator class="groove-thin" orient="horizontal"/>
-            <label value="&sourceCodeUrl;"/>
-            <label value="&projectUrl;"/>
-          </vbox>
-        </vbox>
+        <html:div>
+          <html:div id="top">
+            <html:div id="logo">
+              <image src="chrome://qsos-xuled/content/logo-qsos.png" width="150" height="58"/>
+            </html:div>
+            <html:div id="title">
+              <html:br/>
+              &xuleditorName;
+            </html:div>
+          </html:div>
+          <html:div id="aboutContent">
+            <html:p>
+              &xuleditorLicense; : http://www.gnu.org/licenses/gpl-2.0.html
+            </html:p>
+            <html:p>
+              &currentQSOSVersion;<html:br/>
+              &supportedQSOSVersions;
+            </html:p>
+            <html:p>
+              &xuleditorAuthors;
+                <html:table class="authorTable">
+                  <html:tr>
+                    <html:td>
+                      &xuleditorAuthorName1;
+                    </html:td>
+                    <html:td>
+                      (&xuleditorAuthorEmail1;)
+                    </html:td>
+                  </html:tr>
+                  <html:tr>
+                    <html:td>
+                      &xuleditorAuthorName2;
+                    </html:td>
+                    <html:td>
+                      (&xuleditorAuthorEmail2;)
+                    </html:td>
+                  </html:tr>
+                </html:table>
+              </html:p>
+              <html:p>
+                &iconsetAuthors;
+              </html:p>
+              <html:p>
+                &sourceCodeUrl;<html:br/>
+                &projectUrl;
+              </html:p>
+          </html:div>
+        </html:div>
       </tabpanel>
     </tabpanels>
   </tabbox>
