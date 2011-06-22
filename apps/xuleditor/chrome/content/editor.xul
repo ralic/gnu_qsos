@@ -159,7 +159,7 @@
           <vbox>
             <separator class="groove-thin" orient="horizontal"/>
             <label value="&applicationName;"/>
-            <label value="&license;"/>
+            <label value="&xuleditorLicense;"/>
             <separator class="groove-thin" orient="horizontal"/>
             <label value="&currentQSOSVersion;"/>
             <label value="&supportedQSOSVersions;"/>

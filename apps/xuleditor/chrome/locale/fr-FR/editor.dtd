@@ -77,7 +77,7 @@
 
 <!-- About Tab !-->
 <!ENTITY applicationName "QSOS XUL Editor v1.1">
-<!ENTITY license "Logiciel sous license GNU Public License version 2">
+<!ENTITY xuleditorLicense "Logiciel sous licence GNU Public License version 2">
 <!ENTITY currentQSOSVersion "Version actuelle de QSOS : 1.6">
 <!ENTITY supportedQSOSVersions "Versions supportées : 1.6">
 <!ENTITY xuleditorAuthors "Auteurs :">
