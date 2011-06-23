@@ -257,7 +257,7 @@ function Document() {
         indent += "   ";
       }
 
-      //Opening <tag attribute="value" ...>
+      // Opening <tag attribute="value" ...>
       line += indent + "<" + node.tagName;
       if (node.hasAttributes()) {
         var attributes = node.attributes;
@@ -268,25 +268,25 @@ function Document() {
       }
       line += ">";
 
-      //Children tags (recursion)
+      // Children tags (recursion)
       var test = false;
       var children = node.childNodes;
       for (var i = 0; i < children.length; i++) {
         var child = children[i];
         if (child.tagName) {
           line += "\n" + serialize(child, depth+1);
-          //closing </tag> should be indented and on a new line
+          // closing </tag> should be indented and on a new line
           test = true;
         }
       }
 
-      //Node value + closing </tag>
+      // Node value + closing </tag>
       if (test) {
         line += "\n" + indent + "</" + node.tagName + ">";
       } else {
-        //childNode is the value of the XML node (<tag>value</tag>)
+        // childNode is the value of the XML node (<tag>value</tag>)
         if (children[0]) {
-          //Convert XML special chars
+          // Convert XML special chars
           line += specialChars(children[0].nodeValue);
         }
         line += "</" + node.tagName + ">";
@@ -295,7 +295,7 @@ function Document() {
       return line;
     }
 
-    //Deals with XML special chars (<,> and &)
+    // Deals with XML special chars (<,>,'," and &)
     function specialChars(string) {
       string = string.replace(/&/g, '&amp;');
       string = string.replace(/</g, '&lt;');
@@ -306,7 +306,7 @@ function Document() {
       return string;
     }
 
-    //Show the XML DOM structure in a dialogbox
+    // Show the XML DOM structure in a dialogbox
     function dump() {
       var serializer = new XMLSerializer();
       var xml = serializer.serializeToString(sheet);
@@ -317,8 +317,8 @@ function Document() {
     // Tree functions
     ////////////////////////////////////////////////////////////////////
 
-    //Returns true if an element has subelements, false if not
-    //name: element's name attribute in the QSOS sheet
+    // Returns true if an element has subelements, false if not
+    // name: element's name attribute in the QSOS sheet
     function hassubelements(name) {
         var nb = sheet.evaluate("count(//*[@name='"+name+"']/element)", sheet, null, XPathResult.ANY_TYPE, null).numberValue;
         if (nb > 0) {
@@ -339,8 +339,8 @@ function Document() {
         }
     }
 
-    //Returns hierachical tree of objects representing the sheet's criteria
-    //Array of "criterion" objects typed like this:
+    // Returns hierachical tree of objects representing the sheet's criteria
+    // Array of "criterion" objects typed like this:
     //	criterion.name: section or element's name attribute in the QSOS sheet
     //	criterion.title: section or element's title attribute in the QSOS sheet
     //	criterion.children: array of "criterion" objects representing the element's subelements
@@ -360,9 +360,9 @@ function Document() {
       return criteria;
     }
 
-    //Recursive function for subelements
-    //name: element's name attribute in the QSOS sheet
-    //Returns an array of "criterion" objects typed like this:
+    // Recursive function for subelements
+    // name: element's name attribute in the QSOS sheet
+    // Returns an array of "criterion" objects typed like this:
     //	criterion.name: section or element's name attribute in the QSOS sheet
     //	criterion.title: section or element's title attribute in the QSOS sheet
     //	criterion.children: array of "criterion" objects representing the element's subelements
@@ -389,9 +389,9 @@ function Document() {
     // Generic getters ans setters (private functions)
     ////////////////////////////////////////////////////////////////////
 
-    //Get the value of a unique tag in the QSOS XML file
-    //element: tagname
-    //Returns tag's value or "" if tag doesn't exist
+    // Get the value of a unique tag in the QSOS XML file
+    // element: tagname
+    // Returns tag's value or "" if tag doesn't exist
     function getkey(element) {
         var nodes = sheet.evaluate("//"+element, sheet, null, XPathResult.ANY_TYPE,null);
         var node = nodes.iterateNext();
@@ -401,19 +401,19 @@ function Document() {
             return "";
     }
 
-    //Set the value of an unique tag in the QSOS XML file
-    //element: tagname
-    //value: tag's new value
+    // Set the value of an unique tag in the QSOS XML file
+    // element: tagname
+    // value: tag's new value
     function setkey(element, value) {
       var nodes = sheet.evaluate("//"+element, sheet, null, XPathResult.ANY_TYPE,null);
       var node = nodes.iterateNext();
       if (node) node.textContent = value;
     }
 
-    //Get the value of a specific element's subelement in the QSOS XML file
-    //element: element's name in the QSOS XML file
-    //subelement: subelement's tagname in the QSOS XML file
-    //Returns subelement's value or "" if subelement doesn't exist (-1 if subelement is "score")
+    // Get the value of a specific element's subelement in the QSOS XML file
+    // element: element's name in the QSOS XML file
+    // subelement: subelement's tagname in the QSOS XML file
+    // Returns subelement's value or "" if subelement doesn't exist (-1 if subelement is "score")
     function getgeneric(element, subelement) {
         var nodes = sheet.evaluate("//*[@name='"+element+"']/"+subelement, sheet, null, XPathResult.ANY_TYPE,null);
         var node = nodes.iterateNext();
@@ -426,10 +426,10 @@ function Document() {
                 return "";
     }
 
-    //Set the value of a specific element's subelement in the QSOS XML file
-    //element: element's name in the QSOS XML file
-    //subelement: subelement's tagname in the QSOS XML file
-    //value: subelement's new value
+    // Set the value of a specific element's subelement in the QSOS XML file
+    // element: element's name in the QSOS XML file
+    // subelement: subelement's tagname in the QSOS XML file
+    // value: subelement's new value
     function setgeneric(element, subelement, value) {
         var nodes = sheet.evaluate("//*[@name='"+element+"']/"+subelement, sheet, null, XPathResult.ANY_TYPE,null);
         var node = nodes.iterateNext();
