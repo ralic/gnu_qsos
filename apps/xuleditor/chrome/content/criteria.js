@@ -41,7 +41,7 @@ function selectItem(id) {
 
 
 // Expands or collapses the tree
-// bool: "false" dans collapse, "true" to expand
+// bool: "false" to collapse, "true" to expand
 function expandTree(bool) {
   var treeitems = document.getElementsByTagName("treeitem");
   for (var i = 0; i < treeitems.length ; i++) {

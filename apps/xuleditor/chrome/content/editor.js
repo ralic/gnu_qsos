@@ -24,17 +24,17 @@
 **
 */
 
-//Object "Document" representing data in the QSOS XML file
+// Object "Document" representing data in the QSOS XML file
 var myDoc;
-//Indicator of document modification
+// Indicator of document modification
 var docChanged;
 var evaluationOpen;
-//id (actually "name" in the QSOS XML file) of the currently selected criteria in the tree
+// id (actually "name" in the QSOS XML file) of the currently selected criteria in the tree
 var id;
-//Localized strings bundle
+// Localized strings bundle
 var strbundle;
 
-//Window initialization after loading
+// Window initialization after loading
 function init() {
   strbundle = document.getElementById("properties");
   docChanged = false;
@@ -42,17 +42,17 @@ function init() {
   freezeScore("true");
   freezeComments("true");
 
-  //Parameters management
+  // Parameters management
   var urlFirefox = window.arguments[1];
   if (urlFirefox) {
-    //Case of a .qsos browsing redirection (cf. qsos-overlay.js)
+    // Case of a .qsos browsing redirection (cf. qsos-overlay.js)
     openRemoteFile(urlFirefox);
   } else {
     var cmdLine = window.arguments[0];
     cmdLine = cmdLine.QueryInterface(Components.interfaces.nsICommandLine); // FIXME
     var uri = cmdLine.handleFlagWithParam("file", false);
     if (uri) {
-      //Case of a .qsos file passed in parameter through commandline (xuleditor -file filename)
+      // Case of a .qsos file passed in parameter through commandline (xuleditor -file filename)
       uri = cmdLine.resolveURI(uri);
       openRemoteFile(uri.spec);
     }
@@ -64,12 +64,21 @@ function init() {
 // Helper functions
 ////////////////////////////////////////////////////////////////////
 
-function exitConfirmDialog() {
+
+// Get privilege to open windows
+function getPrivilege() {
   try {
     netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect");
+    return true;
   } catch (e) {
-    alert("Permission to open file was denied.");
+    alert("newFile: Permission to open file denied: " + e.message);
+    return false;
   }
+}
+
+
+function exitConfirmDialog() {
+  getPrivilege();
   try {
     var text = strbundle.getString("exitAnyway");
     window.openDialog('chrome://qsos-xuled/content/confirm.xul', 'Confirm', 'chrome,dialog,modal', text, saveFile, saveFileAs);
@@ -85,20 +94,19 @@ function setStateEvalOpen(state) {
   evaluationOpen = state;
   if (state) {
     var bool = "";
-  } else if (!state) {
+  } else {
     var bool = "true";
-  }else {
-    alert("setStateEvalOpen: wrong input value (expected true or false)");
-    return;
   }
   document.getElementById("generalTab").hidden = bool;
   document.getElementById("criteriaTab").hidden = bool;
   document.getElementById("chartTab").hidden = bool;
   if (!state) { document.getElementById("saveFile").disabled = bool; }
   document.getElementById("saveFileAs").disabled = bool;
+  // Remote saving is temporarily disabled
   // document.getElementById("saveRemoteFile").disabled = bool;
   document.getElementById("closeFile").disabled = bool;
 }
+
 
 // (Un)freezes generic input files (software properties)
 // bool: "true" to freeze; "" to unfreeze
@@ -114,14 +122,14 @@ function setStateEvalOpen(state) {
 //   }
 // }
 
-//(Un)freezes the "Score" input files (current criteria properties)
-//bool: "true" to freeze; "" to unfreeze
+// (Un)freezes the "Score" input files (current criteria properties)
+// bool: "true" to freeze; "" to unfreeze
 function freezeScore(bool) {
   document.getElementById("f-c-score").disabled = bool;
 }
 
-//(Un)freezes the "Comments" input file (current criteria property)
-//bool: "true" to freeze; "" to unfreeze
+// (Un)freezes the "Comments" input file (current criteria property)
+// bool: "true" to freeze; "" to unfreeze
 function freezeComments(bool) {
   document.getElementById("f-c-comments").disabled = bool;
 }

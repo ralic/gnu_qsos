@@ -41,22 +41,14 @@ function checknewFile() {
 // Menu "New File"
 // Shows the new.xul window in modal mode
 function newFileDialog() {
-  try {
-    netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect");
-  } catch (e) {
-    alert("Permission to open file was denied: " + e.message);
-  }
+  getPrivilege();
   window.openDialog('chrome://qsos-xuled/content/new.xul', 'Properties','chrome,dialog,modal', myDoc, openRemoteFile);
 }
 
 
 // Opens a local QSOS XML file and populates the window (tree and generic fields)
 function openFile() {
-  try {
-    netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect");
-  } catch (e) {
-    alert("Can't open the file: permission denied.");
-  }
+  getPrivilege();
   var nsIFilePicker = Components.interfaces.nsIFilePicker;
   var fp = Components.classes["@mozilla.org/filepicker;1"].createInstance(nsIFilePicker);
   fp.init(window, strbundle.getString("selectFile"), nsIFilePicker.modeOpen);
@@ -173,11 +165,7 @@ function loadRemoteDialog() {
 //   hbox.appendChild(buttonCancel);
 //   hbox.appendChild(buttonOk);
 
-  try {
-    netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect");
-  } catch (e) {
-    alert("Permission to open file was denied.");
-  }
+  getPrivilege();
   window.openDialog('chrome://qsos-xuled/content/load.xul', 'Properties', 'chrome,dialog,modal', myDoc, openRemoteFile);
 }
 
@@ -331,11 +319,7 @@ function saveFile() {
 
 // Saves modifications to a new QSOS XML file
 function saveFileAs() {
-  try {
-    netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect");
-  } catch (e) {
-    alert("Permission to open file was denied.");
-  }
+  getPrivilege();
   var nsIFilePicker = Components.interfaces.nsIFilePicker;
   var fp = Components.classes["@mozilla.org/filepicker;1"].createInstance(nsIFilePicker);
   fp.init(window, strbundle.getString("saveFileAs"), nsIFilePicker.modeSave);

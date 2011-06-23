@@ -31,7 +31,8 @@ function init() {
   try {
     netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect");
   } catch (e) {
-    alert("Permission to open file was denied.");
+    alert("newFile: Permission to open file denied: " + e.message);
+    return false;
   }
 
   var prefManager = Components.classes["@mozilla.org/preferences-service;1"]

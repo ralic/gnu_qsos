@@ -91,14 +91,22 @@ function Document() {
     // QSOS XML file functions
     ////////////////////////////////////////////////////////////////////
 
+    // Get privilege to open windows
+    function getPrivilege() {
+      try {
+        netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect");
+        return true;
+      } catch (e) {
+        alert("newFile: Permission to open file denied: " + e.message);
+        return false;
+      }
+    }
+
+
     // Load and parse the local QSOS XML file
     // initializes local variable: sheet
     function load() {
-      try {
-          netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect");
-      } catch (e) {
-          alert("Permission to read file was denied.");
-      }
+      getPrivilege();
 
       var file = Components.classes["@mozilla.org/file/local;1"]
                   .createInstance(Components.interfaces.nsILocalFile);
@@ -131,11 +139,7 @@ function Document() {
     // initializes local variable: sheet
     function loadremote(url) {
       myDoc.url = url;
-      try {
-          netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect");
-      } catch (e) {
-          alert("Permission to save file was denied.");
-      }
+      getPrivilege();
       req = new XMLHttpRequest();
 
       req.open('GET', url, false);
@@ -147,11 +151,7 @@ function Document() {
 
     // Serialize and write the local QSOS XML file
     function write() {
-      try {
-          netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect");
-      } catch (e) {
-          alert("Permission to save file was denied.");
-      }
+      getPrivilege();
 
       var file = Components.classes["@mozilla.org/file/local;1"]
                   .createInstance(Components.interfaces.nsILocalFile);
@@ -180,11 +180,7 @@ function Document() {
 
     //Serialize and upload the QSOS XML file to a remote server
     function writeremote(url) {
-      try {
-          netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect");
-      } catch (e) {
-          alert("Permission to save file was denied.");
-      }
+       getPrivilege();
 
       var xml = serialize(sheet.documentElement, 0);
 
