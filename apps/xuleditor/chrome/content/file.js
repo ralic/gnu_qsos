@@ -46,136 +46,8 @@ function newFileDialog() {
 }
 
 
-// Opens a local QSOS XML file and populates the window (tree and generic fields)
-function openFile() {
-  getPrivilege();
-  var nsIFilePicker = Components.interfaces.nsIFilePicker;
-  var fp = Components.classes["@mozilla.org/filepicker;1"].createInstance(nsIFilePicker);
-  fp.init(window, strbundle.getString("selectFile"), nsIFilePicker.modeOpen);
-  fp.appendFilter(strbundle.getString("QSOSFile"), "*.qsos");
-  var res = fp.show();
-
-  if (res == nsIFilePicker.returnOK) {
-    myDoc = new Document();
-    myDoc.filename = fp.file.path;
-    myDoc.load();
-
-    // Window's title
-    document.title = strbundle.getString("QSOSEvaluation") + "  " + myDoc.getappname();
-
-    // Tree population
-    var tree = document.getElementById("criteriaTree");
-    var treechildren = buildtree();
-    tree.appendChild(treechildren);
-
-    // License setup and checks
-    var licenses = myDoc.getlicenselist();
-    var mypopuplist = document.getElementById("f-license-popup");
-    for(var i=0; i < licenses.length; i++) {
-      var menuitem = document.createElement("menuitem");
-      menuitem.setAttribute("label", licenses[i]);
-      mypopuplist.appendChild(menuitem);
-    }
-
-    var licenseIdFromDesc = -1;
-    var licenseDesc = myDoc.getlicensedesc();
-    for (var i=0; i < licenses.length; ++i){
-      if (licenses[i] == licenseDesc) {
-        var licenseIdFromDesc = i;
-        break;
-      }
-    }
-    var licenseId = myDoc.getlicenseid();
-    var licenseList = document.getElementById("f-license");
-    if (licenseIdFromDesc != -1){
-      licenseList.selectedIndex = licenseIdFromDesc;
-    } else {
-      licenseList.selectedIndex = licenseId;
-    }
-
-    // Other fields
-    document.getElementById("f-software").value = myDoc.getappname();
-    document.getElementById("f-release").value = myDoc.getrelease();
-    document.getElementById("f-sotwarefamily").value = myDoc.getqsosappfamily();
-    document.getElementById("f-desc").value = myDoc.getdesc();
-    document.getElementById("f-url").value = myDoc.geturl();
-    document.getElementById("f-demourl").value = myDoc.getdemourl();
-
-    // Authors
-    var authors = myDoc.getauthors();
-    var mylist = document.getElementById("f-a-list");
-    for(var i=0; i < authors.length; i++) {
-      var listitem = document.createElement("listitem");
-      listitem.setAttribute("label", authors[i].name);
-      listitem.setAttribute("value", authors[i].email);
-      mylist.appendChild(listitem);
-    }
-
-    setStateEvalOpen("true");
-
-    // Draw top-level SVG chart
-    drawChart();
-
-    // Select the General tab
-    document.getElementById('tabs').selectedIndex = 1;
-  }
-}
-
-
-// Checks Document's state before opening a new one
-function checkopenFile() {
-  if (myDoc) {
-    if (docChanged == true) {
-      if(confirm(strbundle.getString("closeAnyway")) == false) {
-        return false;
-      }
-    }
-    closeFile();
-  }
-  openFile();
-}
-
-
-// Shows the load.xul window in modal mode
-function loadRemoteDialog() {
-//   var filebox = document.getElementById("fileHBox");
-//   tree = document.createElement("tree");
-//   treecols = document.createElement("treecols");
-//   treecol = document.createElement("treecol");
-//   tree.setAttribute("id", "evalTree");
-//   tree.setAttribute("flex", "2");
-//   treecol.setAttribute("id", "name");
-//   treecol.setAttribute("width", "500px");
-//   treecol.setAttribute("label", "&label1.value;");
-//   treecol.setAttribute("primary", "true");
-//   treecol.setAttribute("flex", "2");
-//
-//   var vbox = document.createElement("vbox");
-//   var hbox = document.createElement("hbox");
-//   var buttonOK = document.createElement("button");
-//   var buttonCancel = document.createElement("button");
-//   buttonOk.setAttribute("label", "Ok");
-//   buttonCancel.setAttribute("label", "Cancel");
-//
-//   filebox.appendChild(vbox);
-//   vbox.appendChild(tree);
-//   tree.appendChild(treecols);
-//   treecols.appendChild(treecol);
-//   vbox.appendChild(hbox);
-//   hbox.appendChild(buttonCancel);
-//   hbox.appendChild(buttonOk);
-
-  getPrivilege();
-  window.openDialog('chrome://qsos-xuled/content/load.xul', 'Properties', 'chrome,dialog,modal', myDoc, openRemoteFile);
-}
-
-
-function openRemoteFile(url) {
-  if (url == "") return;
-
-  myDoc = new Document();
-  myDoc.loadremote(url);
-
+// Setup editor when opening a file
+function setupEditorForEval() {
   // Window's title
   document.title = strbundle.getString("QSOSEvaluation") + "  " + myDoc.getappname();
 
@@ -234,6 +106,83 @@ function openRemoteFile(url) {
 
   // Select the General tab
   document.getElementById('tabs').selectedIndex = 1;
+}
+
+
+// Opens a local QSOS XML file and populates the window (tree and generic fields)
+function openFile() {
+  getPrivilege();
+  var nsIFilePicker = Components.interfaces.nsIFilePicker;
+  var fp = Components.classes["@mozilla.org/filepicker;1"].createInstance(nsIFilePicker);
+  fp.init(window, strbundle.getString("selectFile"), nsIFilePicker.modeOpen);
+  fp.appendFilter(strbundle.getString("QSOSFile"), "*.qsos");
+  var res = fp.show();
+
+  if (res == nsIFilePicker.returnOK) {
+    myDoc = new Document();
+    myDoc.filename = fp.file.path;
+    myDoc.load();
+
+    setupEditorForEval();
+  }
+}
+
+
+// Checks Document's state before opening a new one
+function checkopenFile() {
+  if (myDoc) {
+    if (docChanged == true) {
+      if(confirm(strbundle.getString("closeAnyway")) == false) {
+        return false;
+      }
+    }
+    closeFile();
+  }
+  openFile();
+}
+
+
+// Shows the load.xul window in modal mode
+function loadRemoteDialog() {
+//   var filebox = document.getElementById("fileHBox");
+//   tree = document.createElement("tree");
+//   treecols = document.createElement("treecols");
+//   treecol = document.createElement("treecol");
+//   tree.setAttribute("id", "evalTree");
+//   tree.setAttribute("flex", "2");
+//   treecol.setAttribute("id", "name");
+//   treecol.setAttribute("width", "500px");
+//   treecol.setAttribute("label", "&label1.value;");
+//   treecol.setAttribute("primary", "true");
+//   treecol.setAttribute("flex", "2");
+//
+//   var vbox = document.createElement("vbox");
+//   var hbox = document.createElement("hbox");
+//   var buttonOK = document.createElement("button");
+//   var buttonCancel = document.createElement("button");
+//   buttonOk.setAttribute("label", "Ok");
+//   buttonCancel.setAttribute("label", "Cancel");
+//
+//   filebox.appendChild(vbox);
+//   vbox.appendChild(tree);
+//   tree.appendChild(treecols);
+//   treecols.appendChild(treecol);
+//   vbox.appendChild(hbox);
+//   hbox.appendChild(buttonCancel);
+//   hbox.appendChild(buttonOk);
+
+  getPrivilege();
+  window.openDialog('chrome://qsos-xuled/content/load.xul', 'Properties', 'chrome,dialog,modal', myDoc, openRemoteFile);
+}
+
+
+function openRemoteFile(url) {
+  if (url == "") return;
+
+  myDoc = new Document();
+  myDoc.loadremote(url);
+
+  setupEditorForEval();
 
   // If we're creating a new file, set docHasChanged();
   if (myDoc.filename == null) {
