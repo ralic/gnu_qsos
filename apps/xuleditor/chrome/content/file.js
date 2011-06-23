@@ -25,22 +25,11 @@
  */
 
 
-// Checks Document's state before opening a new one
-function checknewFile() {
-  if (myDoc) {
-    if (docChanged == true) {
-      if(confirm(strbundle.getString("closeAnyway")) == false) {
-        return false;
-      }
-    }
-    closeFile();
-  }
-  newFileDialog();
-}
-
-// Menu "New File"
 // Shows the new.xul window in modal mode
 function newFileDialog() {
+  if (checkCloseFile() == false) {
+    return;
+  }
   getPrivilege();
   window.openDialog('chrome://qsos-xuled/content/new.xul', 'Properties','chrome,dialog,modal', myDoc, openRemoteFile);
 }
@@ -111,6 +100,9 @@ function setupEditorForEval() {
 
 // Opens a local QSOS XML file and populates the window (tree and generic fields)
 function openFile() {
+  if (checkCloseFile() == false) {
+    return;
+  }
   getPrivilege();
   var nsIFilePicker = Components.interfaces.nsIFilePicker;
   var fp = Components.classes["@mozilla.org/filepicker;1"].createInstance(nsIFilePicker);
@@ -125,20 +117,6 @@ function openFile() {
 
     setupEditorForEval();
   }
-}
-
-
-// Checks Document's state before opening a new one
-function checkopenFile() {
-  if (myDoc) {
-    if (docChanged == true) {
-      if(confirm(strbundle.getString("closeAnyway")) == false) {
-        return false;
-      }
-    }
-    closeFile();
-  }
-  openFile();
 }
 
 
@@ -171,6 +149,9 @@ function loadRemoteDialog() {
 //   hbox.appendChild(buttonCancel);
 //   hbox.appendChild(buttonOk);
 
+  if (checkCloseFile() == false) {
+    return;
+  }
   getPrivilege();
   window.openDialog('chrome://qsos-xuled/content/load.xul', 'Properties', 'chrome,dialog,modal', myDoc, openRemoteFile);
 }
@@ -188,20 +169,6 @@ function openRemoteFile(url) {
   if (myDoc.filename == null) {
     docHasChanged();
   }
-}
-
-
-// Checks Document's state before opening a new one
-function checkopenRemoteFile() {
-  if (myDoc) {
-    if (docChanged == true) {
-      if(confirm(strbundle.getString("closeAnyway")) == false) {
-        return false;
-      }
-    }
-    closeFile();
-  }
-  loadRemoteDialog();
 }
 
 
@@ -274,12 +241,8 @@ function saveFileAs() {
   fp.init(window, strbundle.getString("saveFileAs"), nsIFilePicker.modeSave);
   fp.appendFilter(strbundle.getString("QSOSFile"),"*.qsos");
   var res = fp.show();
-//   alert("saveFileAs après retour ");
-//   alert(fp.file.path);
   if ((res == nsIFilePicker.returnOK) || (res == nsIFilePicker.returnReplace)) {
-//     alert(fp.file.path);
     myDoc.setfilename(fp.file.path);
-//     alert("saveFileAs avant write");
     myDoc.write();
     docHasChanged(false);
     return true;
@@ -336,7 +299,7 @@ function closeFile() {
 }
 
 // Checks Document's state before closing it
-function checkcloseFile() {
+function checkCloseFile() {
   if (myDoc) {
     if (docChanged == true) {
       if(confirm(strbundle.getString("closeAnyway")) == false) {
@@ -351,16 +314,10 @@ function checkcloseFile() {
 
 // Exits application
 function exit() {
-  self.close();
-}
-
-
-// Checks Document's state before exiting
-function checkexit() {
   if (myDoc) {
     if (docChanged == true) {
       exitConfirmDialog()
     }
   }
-  exit();
+  self.close();
 }

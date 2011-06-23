@@ -4,7 +4,7 @@
 <!DOCTYPE window SYSTEM "chrome://qsos-xuled/locale/editor.dtd">
 <window id="QSOS" title="&QSOSEditor;" width="800px" height="600px"
         xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
-        xmlns:html="http://www.w3.org/1999/xhtml" onload="init();" onclose="checkexit()">
+        xmlns:html="http://www.w3.org/1999/xhtml" onload="init();" onclose="exit()">
   <script type="application/x-javascript" src="Document.js"></script>
   <script type="application/x-javascript" src="editor.js"></script>
   <script type="application/x-javascript" src="file.js"></script>
@@ -34,17 +34,17 @@
           <hbox id="fileHBox" flex="1">
             <vbox>
                   <separator class="groove-thin" orient="horizontal"/>
-                  <button id="newFile" class="newFile" label="&newFile;" oncommand="checknewFile();"/>
+                  <button id="newFile" class="newFile" label="&newFile;" oncommand="newFileDialog();"/>
                   <separator class="groove-thin" orient="horizontal"/>
-                  <button id="openFile" class="openFile" label="&openLocalFile;" oncommand="checkopenFile();"/>
-                  <button id="openRemoteFile" class="openRemoteFile" label="&openRemoteFile;" oncommand="checkopenRemoteFile();"/>
+                  <button id="openFile" class="openFile" label="&openLocalFile;" oncommand="openFile();"/>
+                  <button id="openRemoteFile" class="openRemoteFile" label="&openRemoteFile;" oncommand="loadRemoteDialog();"/>
                   <separator class="groove-thin" orient="horizontal"/>
                   <button id="saveFile" class="saveFile" label="&saveFile;" oncommand="saveFile();"/>
                   <button id="saveFileAs" class="saveFileAs" label="&saveFileAs;" oncommand="saveFileAs();"/>
                   <button id="saveRemoteFile" class="saveRemoteFile" label="&saveRemoteFile;" oncommand="saveRemote();" disabled="true"/>
                   <separator class="groove-thin" orient="horizontal"/>
-                  <button id="closeFile" class="closeFile" label="&closeFile;"  oncommand="checkcloseFile();"/>
-                  <button id="exitApp" class="exitApp" label="&exit;"  oncommand="if (checkcloseFile() == true) checkexit();"/>
+                  <button id="closeFile" class="closeFile" label="&closeFile;"  oncommand="checkCloseFile();"/>
+                  <button id="exitApp" class="exitApp" label="&exit;"  oncommand="if (checkCloseFile() == true) exit();"/>
             </vbox>
           </hbox>
         </vbox>
