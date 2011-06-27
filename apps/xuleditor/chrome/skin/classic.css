@@ -1,23 +1,44 @@
+#QSOS {
+  overflow: auto;
+}
+
+.over {
+  overflow: auto;
+}
+
 tab.file {
-  list-style-image: url("chrome://qsos-xuled/skin/document-open_32.png");
+  list-style-image: url("chrome://qsos-xuled/skin/document-edit.png");
   -moz-border-radius: 6px 6px 0px 0px;
   font-weight: bold;
 }
 
-tab.general {
-  list-style-image: url("chrome://qsos-xuled/skin/documentation.png");
+tab.authors {
+  list-style-image: url("chrome://qsos-xuled/skin/user-properties.png");
+  -moz-border-radius: 6px 6px 0px 0px;
+  font-weight: bold;
+}
+
+tab.osc {
+/* TODO change this icon    */
+  list-style-image: url("chrome://qsos-xuled/skin/OSCartouche_32.png");
   -moz-border-radius: 6px 6px 0px 0px;
   font-weight: bold;
 }
 
 tab.criteria {
-  list-style-image: url("chrome://qsos-xuled/skin/document-edit.png");
+  list-style-image: url("chrome://qsos-xuled/skin/documentation.png");
   -moz-border-radius: 6px 6px 0px 0px;
   font-weight: bold;
 }
 
 tab.chart {
   list-style-image: url("chrome://qsos-xuled/skin/office-chart-pie.png");
+  -moz-border-radius: 6px 6px 0px 0px;
+  font-weight: bold;
+}
+
+tab.config {
+  list-style-image: url("chrome://qsos-xuled/skin/preferences-other.png");
   -moz-border-radius: 6px 6px 0px 0px;
   font-weight: bold;
 }

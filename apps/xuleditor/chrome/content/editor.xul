@@ -1,13 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--
+  *  Copyright (C) 2006-2011 Atos Origin
+  *
+  *  Author: Raphael Semeteys <raphael.semeteys@atosorigin.com>
+  *          Timothée Ravier <travier@portaildulibre.fr>
+  *
+  *  This program is free software; you can redistribute it and/or modify
+  *  it under the terms of the GNU General Public License as published by
+  *  the Free Software Foundation; either version 2 of the License, or
+  *  (at your option) any later version.
+  *
+  *  This program is distributed in the hope that it will be useful,
+  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  *  GNU General Public License for more details.
+  *
+  *  You should have received a copy of the GNU General Public License
+  *  along with this program; if not, write to the Free Software
+  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
+  *
+  *
+  *  QSOS XUL Editor
+  *  editor.xul: main interface file
+  *
+!-->
+
 <?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
 <?xml-stylesheet href="chrome://qsos-xuled/skin/classic.css" type="text/css"?>
 <!DOCTYPE window SYSTEM "chrome://qsos-xuled/locale/editor.dtd">
-<window id="QSOS" title="&QSOSEditor;" width="800px" height="600px"
+<window id="QSOS" title="&QSOSEditor;" width="870px" height="765px"
         xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
         xmlns:html="http://www.w3.org/1999/xhtml" onload="init();" onclose="exit()">
   <script type="application/x-javascript" src="Document.js"></script>
   <script type="application/x-javascript" src="editor.js"></script>
   <script type="application/x-javascript" src="file.js"></script>
+  <script type="application/x-javascript" src="authors.js"></script>
   <script type="application/x-javascript" src="general.js"></script>
   <script type="application/x-javascript" src="criteria.js"></script>
   <script type="application/x-javascript" src="chart.js"></script>
@@ -15,14 +42,120 @@
   <stringbundle id="properties" src="chrome://qsos-xuled/locale/editor.properties"/>
   <tabbox id="tabBox" flex="1">
     <tabs id="tabs">
-      <tab id="fileTab" class="file" label="&fileTab;"/>
-      <tab id="generalTab" class="general" label="&generalTab;"/>
-      <tab id="criteriaTab" class="criteria" label="&criteriaTab;"/>
-      <tab id="chartTab" class="chart" label="&chartTab;"/>
-      <tab id="aboutTab" class="about" label="&aboutTab;"/>
+      <!-- <tab id="aboutTab" class="about" label="&aboutTab;c"/> !-->
+      <tab id="aboutTab" class="about" accesskey="&aboutTabAccessKey;"/>
+      <!-- <tab id="configTab" class="config" label="&configTab;"/> !-->
+      <tab id="configTab" class="config" accesskey="&configTabAccessKey;"/>
+      <tab id="fileTab" class="file" label="&fileTab;" accesskey="&fileTabAccessKey;"/>
+      <tab id="authorsTab" class="authors" label="&authorsTab;" accesskey="&authorsTabAccessKey;"/>
+      <tab id="oscTab" class="osc" label="&oscTab;" accesskey="&oscTabAccessKey;"/>
+      <tab id="criteriaTab" class="criteria" label="&criteriaTab;" accesskey="&criteriaTabAccessKey;"/>
+      <tab id="chartTab" class="chart" label="&chartTab;" accesskey="&chartTabAccessKey;"/>
     </tabs>
     <tabpanels flex="1">
-      <tabpanel flex="1">
+      <tabpanel id="aboutTabPanel" class="over">
+        <vbox flex="1">
+          <hbox>
+            <image src="chrome://qsos-xuled/content/logo-qsos.png" width="150" height="58"/>
+          </hbox>
+          <label value=""/>
+          <label value="&xuleditorName;"/>
+          <label value=""/>
+          <hbox>
+            <label value="&xuleditorLicense;"/>
+            <!--            <label href="http://www.google.fr">&xuleditorLicenseUrl;</label> !-->
+              <textbox value="&xuleditorLicenseUrl;" readonly="true" class="plain" style="background-color: transparent;" flex="1"/>
+              <!--            <description class="text-blurb">
+              a<label class="text-link" href="http://www.mozilla.org/contribute/">abba</label>a
+            </description>
+            <description class="text-blurb">
+              a<label class="text-link" href="mailto:aaa@a.fr">abba</label>a
+            </description> !-->
+          </hbox>
+          <label value=""/>
+          <label value="&currentQSOSVersion;"/>
+          <label value="&supportedQSOSVersions;"/>
+          <label value=""/>
+          <label value="&xuleditorAuthors;"/>
+          <grid>
+            <columns>
+              <column width="20"/>
+              <column flex="1"/>
+              <column width="20"/>
+              <column flex="100"/>
+            </columns>
+            <rows>
+              <row align="center">
+                <label value=""/>
+                <label value="&xuleditorAuthorName1;"/>
+                <label value=""/>
+                <textbox value="&xuleditorAuthorEmail1;" readonly="true" class="plain" style="background-color: transparent;" flex="1"/>
+              </row>
+              <row align="center">
+                <label value=""/>
+                <label value="&xuleditorAuthorName2;"/>
+                <label value=""/>
+                <textbox value="&xuleditorAuthorEmail2;" readonly="true" class="plain" style="background-color: transparent;" flex="1"/>
+              </row>
+            </rows>
+          </grid>
+          <label value=""/>
+          <hbox>
+            <label value="&iconsetAuthors;"/>
+            <textbox value="&iconsetUrl;" readonly="true" class="plain" style="background-color: transparent;" flex="1"/>
+          </hbox>
+          <label value=""/>
+          <hbox>
+            <label value="&sourceCode;"/>
+            <textbox value="&sourceCodeUrl;" readonly="true" class="plain" style="background-color: transparent;" flex="1"/>
+          </hbox>
+          <label value=""/>
+          <hbox>
+            <label value="&project;"/>
+            <textbox value="&projectUrl;" readonly="true" class="plain" style="background-color: transparent;" flex="1"/>
+          </hbox>
+          <!--
+          <vbox id="bottomBox">
+            <hbox pack="center">
+              <label class="text-link bottom-link" href="about:license">AAAA</label>
+              <label class="text-link bottom-link" href="about:rights">BBBB</label>
+              <label class="text-link bottom-link" href="http://www.mozilla.com/legal/privacy/">CCCC</label>
+            </hbox>
+            <description id="trademark">
+              <label class="trademark-label">DDDDDDDDDD</label>
+            </description>
+          </vbox>
+          !-->
+        </vbox>
+      </tabpanel>
+      <tabpanel id="ConfigTabPanel" class="over">
+        <vbox>
+          <groupbox>
+            <caption label="&storedInfo;"/>
+            <grid flex="1">
+              <columns>
+                <column />
+                <column flex="1"/>
+              </columns>
+              <rows>
+                <row align="center">
+                  <label control="authorName" value="&name;"/>
+                  <textbox id="authorName" flex="1"/>
+                </row>
+                <row align="center">
+                  <label control="authorEmail" value="&email;"/>
+                  <textbox id="authorEmail" flex="1"/>
+                </row>
+                <row align="center">
+                  <label control="authorComment" value="&comment;"/>
+                  <textbox id="authorComment" multiline="true" flex="1"/>
+                </row>
+              </rows>
+            </grid>
+          </groupbox>
+        </vbox>
+      </tabpanel>
+      <tabpanel id="fileTabPanel" class="over">
         <vbox flex="1">
           <html:p>
             &description1;<html:br/>
@@ -34,64 +167,357 @@
           <hbox id="fileHBox" flex="1">
             <vbox>
                   <separator class="groove-thin" orient="horizontal"/>
-                  <button id="newFile" class="newFile" label="&newFile;" oncommand="newFileDialog();"/>
+                  <button id="newFile" class="newFile" label="&newFile;" oncommand="newFileDialog();" accesskey="&newFileAccessKey;"/>
                   <separator class="groove-thin" orient="horizontal"/>
-                  <button id="openFile" class="openFile" label="&openLocalFile;" oncommand="openFile();"/>
-                  <button id="openRemoteFile" class="openRemoteFile" label="&openRemoteFile;" oncommand="loadRemoteDialog();"/>
+                  <button id="openFile" class="openFile" label="&openLocalFile;" oncommand="openFile();" accesskey="&openLocalFileAccessKey;"/>
+                  <button id="openRemoteFile" class="openRemoteFile" label="&openRemoteFile;" oncommand="loadRemoteDialog();" accesskey="&openRemoteFileAccessKey;"/>
                   <separator class="groove-thin" orient="horizontal"/>
-                  <button id="saveFile" class="saveFile" label="&saveFile;" oncommand="saveFile();"/>
-                  <button id="saveFileAs" class="saveFileAs" label="&saveFileAs;" oncommand="saveFileAs();"/>
-                  <button id="saveRemoteFile" class="saveRemoteFile" label="&saveRemoteFile;" oncommand="saveRemote();" disabled="true"/>
+                  <button id="saveFile" class="saveFile" label="&saveFile;" oncommand="saveFile();" accesskey="&saveFileAccessKey;"/>
+                  <button id="saveFileAs" class="saveFileAs" label="&saveFileAs;" oncommand="saveFileAs();" accesskey="&saveFileAsAccessKey;"/>
+                  <button id="saveRemoteFile" class="saveRemoteFile" label="&saveRemoteFile;" oncommand="saveRemote();" disabled="true" accesskey="&saveRemoteFileAccessKey;"/>
                   <separator class="groove-thin" orient="horizontal"/>
-                  <button id="closeFile" class="closeFile" label="&closeFile;"  oncommand="checkCloseFile();"/>
-                  <button id="exitApp" class="exitApp" label="&exit;"  oncommand="if (checkCloseFile() == true) exit();"/>
+                  <button id="closeFile" class="closeFile" label="&closeFile;"  oncommand="checkCloseFile();" accesskey="&closeFileAccessKey;"/>
+                  <button id="exitApp" class="exitApp" label="&exit;"  oncommand="if (checkCloseFile() == true) exit();" accesskey="&exitAccessKey;"/>
             </vbox>
           </hbox>
         </vbox>
       </tabpanel>
-      <tabpanel id="generalTabPanel">
+
+      <tabpanel id="AuthorsTabPanel" class="over">
         <vbox flex="1">
           <groupbox>
-            <caption id="caption"><label id="label" value="&software;"/></caption>
-            <vbox flex="1">
-              <box>
-                <vbox flex="1">
-                  <label control="f-software" value="&softwareName;"/><textbox id="f-software" oninput="changeAppName(this);"/>
-                  <label control="f-release" value="&release;"/><textbox id="f-release" oninput="changeRelease(this);"/>
-                  <label control="f-sotwarefamily" value="&sotwareFamily;"/><textbox id="f-sotwarefamily" oninput="changeSoftwareFamily(this);"/>
-                </vbox>
-                <vbox flex="1">
-                  <label control="f-url" value="&url;"/><textbox id="f-url" oninput="changeUrl(this);"/>
-                  <label control="f-demourl" value="&demoUrl;"/><textbox id="f-demourl" oninput="changeDemoUrl(this);"/>
-                  <label control="f-license" value="&license;"/>
-                  <menulist id="f-license" oncommand="changeLicense(this, this.selectedIndex);"><menupopup id="f-license-popup"/></menulist>
-                </vbox>
-              </box>
-                <label control="f-desc" value="&softwareDescription;"/><textbox id="f-desc" multiline="true" oninput="changeDesc(this);"/>
+            <caption label="&template;"/>
+            <vbox>
+              <groupbox>
+                <caption label="&authors;"/>
+                <listbox flex="1" rows="3" class="over" disabled="true">
+                  <listhead flex="1">
+                    <listheader label="&name;" width="300"/>
+                    <listheader label="&email;" width="300"/>
+                    <!--<listheader label="&authorComment;"/>!-->
+                  </listhead>
+                  <listitem flex="1">
+                    <listcell label="teqetqest "/>
+                    <listcell label="fsqdqs@dqds.sss"/>
+                  </listitem>
+                </listbox>
+              </groupbox>
+              <groupbox>
+                <caption label="&reviewer;"/>
+                <grid flex="1">
+                  <columns>
+                    <column />
+                    <column flex="1"/>
+                    <column />
+                    <column flex="1"/>
+                    <column />
+                    <column flex="1"/>
+                  </columns>
+                  <rows>
+                    <row align="center">
+                      <label control="reviewerName" value="&name;"/>
+                      <textbox id="reviewerName" oninput="set('evaluation', 'reviewer', 'Name', this.value);" disabled="true"/>
+                      <label control="reviewerEmail" value="&email;"/>
+                      <textbox id="reviewerEmail" oninput="set('evaluation', 'reviewer', 'Email', this.value);" disabled="true"/>
+                      <label control="reviewerDate" value="&date;"/>
+                      <datepicker id="reviewerDate" type="popup" oninput="set('evaluation', 'reviewer', 'Date', this.value);" disabled="true"/>
+                    </row>
+                    <hbox align="center">
+                      <label control="reviewerComment" value="&comment;"/>
+                      <textbox id="reviewerComment" multiline="true" flex="1" oninput="set('evaluation', 'reviewer', 'Comment', this.value);" disabled="true"/>
+                    </hbox>
+                  </rows>
+                </grid>
+              </groupbox>
+              <groupbox>
+                <caption label="&evaluationDates;"/>
+                <hbox align="center">
+                  <label control="creationDate" value="&creationDate;"/>
+                  <datepicker id="creationDate" type="popup" onchange="set(this.value, 'evaluation', 'dates', 'creation');" disabled="true"/>
+                  <separator class="groove-thin" orient="vertical"/>
+                  <label control="updateDate" value="&updateDate;"/>
+                  <datepicker id="updateDate" type="popup" oninput="set(this.value, 'evaluation', 'dates', 'update');" disabled="true"/>
+                  <separator class="groove-thin" orient="vertical"/>
+                  <label control="validationDate" value="&validationDate;"/>
+                  <datepicker id="validationDate" type="popup" onchange="set(this.value, 'evaluation', 'dates', 'validation');" disabled="true"/>
+                </hbox>
+              </groupbox>
             </vbox>
           </groupbox>
+
           <groupbox>
-            <caption><label value="&evaluation;"/></caption>
-            <hbox>
-              <vbox flex="1">
-                <label control="f-a-name" value="&authorName;"/><textbox id="f-a-name"/>
-                <label control="f-a-email" value="&authorEmail;"/><textbox id="f-a-email"/>
-              </vbox>
-              <vbox>
-                <separator class="groove-thin" orient="horizontal"/>
-                <button id="addAuthorButton" class="addAuthor" label="&addAuthorButton;" flex="1" oncommand="addAuthor();"/>
-                <button id="delAuthorButton" class="delAuthor" label="&delAuthorButton;" flex="1" oncommand="deleteAuthor();"/>
-                <separator class="groove-thin" orient="horizontal"/>
-              </vbox>
-              <vbox flex="1">
-                <label control="f-a-list" value="&authors;"/>
-                <listbox id="f-a-list" rows="5" onselect="changeAuthor(this.selectedItem);"></listbox>
-              </vbox>
-            </hbox>
+            <caption label="&evaluation;"/>
+            <vbox>
+              <hbox align="center">
+                <label control="evaluationVersion" value="&version;"/>
+                <textbox id="evaluationVersion" width="250" placeholder="&evaluationVersion;"/>
+              </hbox>
+              <groupbox>
+                <caption label="&authors;"/>
+                <hbox flex="1">
+                  <grid flex="1">
+                    <columns>
+                      <column />
+                      <column flex="1"/>
+                    </columns>
+                    <rows>
+                      <row align="center">
+                        <label control="authorName" value="&name;"/>
+                        <textbox id="authorName" flex="1"/>
+                      </row>
+                      <row align="center">
+                        <label control="authorEmail" value="&email;"/>
+                        <textbox id="authorEmail" flex="1"/>
+                      </row>
+                      <row align="center">
+                        <label control="authorComment" value="&comment;"/>
+                        <textbox id="authorComment" multiline="true" flex="1"/>
+                      </row>
+                    </rows>
+                  </grid>
+                  <vbox flex="5">
+                    <listbox flex="1" rows="3" onselect="changeAuthor(this.selectedItem);" width="500"  class="over">
+                      <listhead flex="1">
+                        <listheader label="&name;" width="200"/>
+                        <listheader label="&email;" width="300"/>
+                        <!--<listheader label="&authorComment;"/>!-->
+                      </listhead>
+                      <listitem flex="1">
+                        <listcell label="teqetqest "/>
+                        <listcell label="fsqdqs@dqds.sss"/>
+                      </listitem>
+                    </listbox>
+                    <hbox>
+                      <button label="&addButton;" id="addAuthorButton" class="addAuthor" oncommand="addAuthor();"/>
+                      <button label="&delButton;" id="delAuthorButton" class="delAuthor" oncommand="deleteAuthor();"/>
+                    </hbox>
+                  </vbox>
+                </hbox>
+              </groupbox>
+              <groupbox>
+                <caption label="&reviewer;"/>
+                <grid flex="1">
+                  <columns>
+                    <column />
+                    <column flex="1"/>
+                    <column />
+                    <column flex="1"/>
+                    <column />
+                    <column flex="1"/>
+                  </columns>
+                  <rows>
+                    <row align="center">
+                      <label control="reviewerName" value="&name;"/>
+                      <textbox id="reviewerName" oninput="set('evaluation', 'reviewer', 'Name', this.value);"/>
+                      <label control="reviewerEmail" value="&email;"/>
+                      <textbox id="reviewerEmail" oninput="set('evaluation', 'reviewer', 'Email', this.value);"/>
+                      <label control="reviewerDate" value="&date;"/>
+                      <datepicker id="reviewerDate" type="popup" oninput="set('evaluation', 'reviewer', 'Date', this.value);"/>
+                    </row>
+                    <hbox align="center">
+                      <label control="reviewerComment" value="&comment;"/>
+                      <textbox id="reviewerComment" multiline="true" flex="1" oninput="set('evaluation', 'reviewer', 'Comment', this.value);"/>
+                    </hbox>
+                  </rows>
+                </grid>
+              </groupbox>
+              <groupbox>
+                <caption label="&evaluationDates;"/>
+                  <hbox align="center">
+                    <label control="creationDate" value="&creationDate;"/>
+                    <datepicker id="creationDate" type="popup" onchange="set(this.value, 'evaluation', 'dates', 'creation');"/>
+                    <separator class="groove-thin" orient="vertical"/>
+                    <label control="updateDate" value="&updateDate;"/>
+                    <datepicker id="updateDate" type="popup" oninput="set(this.value, 'evaluation', 'dates', 'update');"/>
+                    <separator class="groove-thin" orient="vertical"/>
+                    <label control="validationDate" value="&validationDate;"/>
+                    <datepicker id="validationDate" type="popup" onchange="set(this.value, 'evaluation', 'dates', 'validation');"/>
+                  </hbox>
+              </groupbox>
+            </vbox>
           </groupbox>
         </vbox>
       </tabpanel>
-      <tabpanel>
+
+      <tabpanel id="oscTabPanel" class="over">
+        <vbox flex="1">
+          <vbox flex="1">
+            <groupbox class="over">
+              <caption label="&component;"/>
+              <grid flex="1">
+                <columns>
+                  <column />
+                  <column flex="1"/>
+                  <column />
+                  <column flex="1"/>
+                </columns>
+                <rows>
+                  <row align="center">
+                    <label control="componentName" value="&componentName;"/>
+                    <textbox id="componentName" flex="1" oninput="set(this.value, 'component', 'Name', null);"/>
+                    <label control="componentReleaseDate" value="&componentReleaseDate;"/>
+                    <datepicker id="componentReleaseDate" type="popup" onchange="set(this.value, 'component', 'Name', null);"/>
+                  </row>
+                  <row align="center">
+                    <label control="componentVersion" value="&componentVersion;"/>
+                    <textbox id="componentVersion" flex="1" oninput="set(this.value, 'component', 'Version', null);"/>
+                    <label control="componentMainTech" value="&componentMainTech;"/>
+                    <textbox id="componentMainTech" flex="1" oninput="set(this.value, 'component', 'MainTech', null);"/>
+                  </row>
+                  <row align="center">
+                    <label control="componentArchetype" value="&componentArchetype;"/>
+                    <textbox id="componentArchetype" flex="1" oninput="set(this.value, 'component', 'Archetype', null);"/>
+                    <label control="componentHomepage" value="&componentHomepage;"/>
+                    <textbox id="componentHomepage" placeholder="http://..." flex="1" oninput="set(this.value, 'component', 'Homepage', null);"/>
+                  </row>
+                  <row align="center">
+                    <label control="componentType" value="&componentType;"/>
+                    <textbox id="componentType" flex="1" oninput="set(this.value, 'component', 'Type', null);"/>
+                    <label control="componentStatus" value="&componentStatus;"/>
+                    <textbox id="componentStatus" flex="1" oninput="set(this.value, 'component', 'Status', null);" placeholder="&componentStatusTip;"/>
+                  </row>
+                  <row align="center">
+                    <label control="componentVendor" value="&componentVendor;"/>
+                    <textbox id="componentVendor" flex="1" oninput="set(this.value, 'component', 'Vendor', null);"/>
+                    <label control="componentDescription" value="&componentDescription;"/>
+                    <textbox id="componentDescription" multiline="true" flex="1" oninput="set(this.value, 'component', 'Description', null);"/>
+                  </row>
+                </rows>
+              </grid>
+            </groupbox>
+          </vbox>
+
+          <vbox flex="1">
+            <groupbox class="over">
+              <caption label="&team;"/>
+              <vbox flex="1">
+                <hbox align="center">
+                  <label control="number" value="&number;"/>
+                  <textbox id="number" oninput="update(this)" type="number" size="6"/>
+                </hbox>
+                <groupbox>
+                  <caption label="&developers;"/>
+                  <hbox flex="1">
+                    <grid flex="1">
+                      <columns>
+                        <column />
+                        <column flex="1"/>
+                      </columns>
+                      <rows>
+                        <row align="center">
+                          <label control="devName" value="&name;"/>
+                          <textbox id="devName" flex="1"/>
+                        </row>
+                        <row align="center">
+                          <label control="devEmail" value="&email;"/>
+                          <textbox id="devEmail" flex="1"/>
+                        </row>
+                        <row align="center">
+                          <label control="devCompany" value="&company;"/>
+                          <textbox id="devCompany" flex="1"/>
+                        </row>
+                      </rows>
+                    </grid>
+                    <vbox flex="1">
+                      <listbox flex="1" rows="3" onselect="changeAuthor(this.selectedItem);" width="500"  class="over">
+                        <listhead flex="1">
+                          <listheader label="&name;" width="200"/>
+                          <listheader label="&email;" width="225"/>
+                          <listheader label="&company;" width="125"/>
+                        </listhead>
+                        <listitem flex="1">
+                          <listcell label="teqetqest "/>
+                          <listcell label="fsqdqs@dqds.sss"/>
+                          <listcell label="fsqmoi"/>
+                        </listitem>
+                      </listbox>
+                      <hbox>
+                        <button label="&addButton;" id="addDevButton" class="addAuthor" oncommand="addContrib();"/>
+                        <button label="&delButton;" id="delDevButton" class="delAuthor" oncommand="deleteContrib();"/>
+                      </hbox>
+                    </vbox>
+                  </hbox>
+                </groupbox>
+                <groupbox>
+                  <caption label="&contributors;"/>
+                  <hbox flex="1">
+                    <grid flex="1">
+                      <columns>
+                        <column />
+                        <column flex="1"/>
+                      </columns>
+                      <rows>
+                        <row align="center">
+                          <label control="contribName" value="&name;"/>
+                          <textbox id="contribName" flex="1"/>
+                        </row>
+                        <row align="center">
+                          <label control="devEmail" value="&email;"/>
+                          <textbox id="contribEmail" flex="1"/>
+                        </row>
+                        <row align="center">
+                          <label control="contribCompany" value="&company;"/>
+                          <textbox id="contribCompany" flex="1"/>
+                        </row>
+                      </rows>
+                    </grid>
+                    <vbox flex="1">
+                      <listbox flex="1" rows="3" onselect="changeAuthor(this.selectedItem);" width="500" class="over">
+                        <listhead flex="1">
+                          <listheader label="&name;" width="200"/>
+                          <listheader label="&email;" width="225"/>
+                          <listheader label="&company;" width="125"/>
+                        </listhead>
+                        <listitem flex="1">
+                          <listcell label="teqetqest "/>
+                          <listcell label="fsqdqs@dqds.sss"/>
+                          <listcell label="fsqmoi"/>
+                        </listitem>
+                      </listbox>
+                      <hbox>
+                        <button label="&addButton;" id="addDevButton" class="addAuthor" oncommand="addDev();"/>
+                        <button label="&delButton;" id="delDevButton" class="delAuthor" oncommand="deleteDev();"/>
+                      </hbox>
+                    </vbox>
+                  </hbox>
+                </groupbox>
+              </vbox>
+            </groupbox>
+            <groupbox>
+              <caption label="&license;"/>
+              <grid flex="1">
+                <columns>
+                  <column />
+                  <column flex="1"/>
+                  <column />
+                  <column flex="1"/>
+                  <column />
+                  <column flex="1"/>
+                </columns>
+                <rows>
+                  <row align="center">
+                    <label control="licenseName" value="&licenseName;"/>
+                    <textbox id="licenseName" oninput="setkey()" flex="1"/>
+                    <label control="licenseVersion" value="&licenseVersion;"/>
+                    <textbox id="licenseVersion" oninput="update(this)" flex="1"/>
+                    <label control="licenseHomepage" value="&licenseHomepage;"/>
+                    <textbox id="licenseHomepage" oninput="update(this)" placeholder="http://..." flex="1"/>
+                  </row>
+                </rows>
+              </grid>
+            </groupbox>
+            <groupbox>
+              <caption label="&legal;"/>
+              <hbox align="center">
+                <label control="copyright" value="&copyright;"/>
+                <textbox id="copyright" oninput=""/>
+              </hbox>
+            </groupbox>
+          </vbox>
+        </vbox>
+      </tabpanel>
+
+      <tabpanel id="criteriaTabPanel" class="over">
         <vbox>
           <tree id="criteriaTree" width="300px" hidecolumnpicker="true" onselect="treeselect(this);" flex="1">
             <treecols>
@@ -109,11 +535,11 @@
         <splitter/>
         <vbox flex = "1">
           <groupbox>
-            <caption><label value="&criteriaDescription;"/></caption>
+            <caption label="&criteriaDescription;"/>
             <textbox id="f-c-desc" multiline="true" readonly="true" class="plain" style="background-color: transparent;"/>
           </groupbox>
           <groupbox id="f-g-score">
-            <caption><label value="&score;"/></caption>
+            <caption label="&score;"/>
             <radiogroup id="f-c-score">
               <radio id="f-c-desc0" label="&score0;" oncommand="changeScore(0);"/>
               <radio id="f-c-desc1" label="&score1;" oncommand="changeScore(1);"/>
@@ -124,7 +550,7 @@
           <textbox id="f-c-comments" multiline="true" rows="5" oninput="changeComments(this);"/>
         </vbox>
       </tabpanel>
-      <tabpanel>
+      <tabpanel id="chartTabPanel">
         <vbox id="chart-box" flex = "1">
           <hbox id="chart-label" />
             <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="750px" height="500px">
@@ -132,54 +558,17 @@
             </svg>
         </vbox>
       </tabpanel>
-      <tabpanel id="aboutTab">
-        <vbox flex="1">
-          <hbox>
-            <image src="chrome://qsos-xuled/content/logo-qsos.png" width="150" height="58"/>
-          </hbox>
-          <label value=""/>
-          <label value="&xuleditorName;"/>
-          <label value=""/>
-          <hbox>
-            <label value="&xuleditorLicense;"/>
-            <textbox value="&xuleditorLicenseUrl;" readonly="true" class="plain" style="background-color: transparent;" flex="1"/>
-          </hbox>
-          <label value=""/>
-          <label value="&currentQSOSVersion;"/>
-          <label value="&supportedQSOSVersions;"/>
-          <label value=""/>
-          <label value="&xuleditorAuthors;"/>
-          <vbox>
-            <hbox>
-              <label value="     "/>
-              <label value="&xuleditorAuthorName1;"/>
-              <label value="     "/>
-              <textbox value="&xuleditorAuthorEmail1;" readonly="true" class="plain" style="background-color: transparent;" flex="1"/>
-            </hbox>
-            <hbox>
-              <label value="     "/>
-              <label value="&xuleditorAuthorName2;"/>
-              <label value="     "/>
-              <textbox value="&xuleditorAuthorEmail2;" readonly="true" class="plain" style="background-color: transparent;" flex="1"/>
-            </hbox>
-          </vbox>
-          <label value=""/>
-          <hbox>
-            <label value="&iconsetAuthors;"/>
-            <textbox value="&iconsetUrl;" readonly="true" class="plain" style="background-color: transparent;" flex="1"/>
-          </hbox>
-          <label value=""/>
-          <hbox>
-            <label value="&sourceCode;"/>
-            <textbox value="&sourceCodeUrl;" readonly="true" class="plain" style="background-color: transparent;" flex="1"/>
-          </hbox>
-          <label value=""/>
-          <hbox>
-            <label value="&project;"/>
-            <textbox value="&projectUrl;" readonly="true" class="plain" style="background-color: transparent;" flex="1"/>
-          </hbox>
-        </vbox>
-      </tabpanel>
     </tabpanels>
   </tabbox>
+
+ <keyset>
+  <!-- Classic shortcuts !-->
+  <key id="new file shortcut" modifiers="control" key="&newFileShortcut;" oncommand=";"/>
+  <key id="save shortcut" modifiers="control" key="&saveFileShortcut;" oncommand=";"/>
+  <key id="exit shortcut" modifiers="control" key="&exitShortcut;" oncommand=";"/>
+
+  <!-- Other shortcuts !-->
+  <key keycode="VK_ESCAPE" oncommand="if (checkCloseFile() == true) window.close();"/>
+ </keyset>
+
 </window>

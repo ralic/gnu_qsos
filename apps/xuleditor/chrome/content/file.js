@@ -2,7 +2,7 @@
  **  Copyright (C) 2006-2011 Atos Origin
  **
  **  Author: Raphael Semeteys <raphael.semeteys@atosorigin.com>
- **          Timothée Ravier <timothee.ravier@atosorigin.com>
+ **          Timothée Ravier <travier@portaildulibre.fr>
  **
  **  This program is free software; you can redistribute it and/or modify
  **  it under the terms of the GNU General Public License as published by
@@ -70,13 +70,17 @@ function setupEditorForEval() {
     licenseList.selectedIndex = licenseId;
   }
 
-  // Other fields
-  document.getElementById("f-software").value = myDoc.getappname();
-  document.getElementById("f-release").value = myDoc.getrelease();
-  document.getElementById("f-sotwarefamily").value = myDoc.getqsosappfamily();
-  document.getElementById("f-desc").value = myDoc.getdesc();
-  document.getElementById("f-url").value = myDoc.geturl();
-  document.getElementById("f-demourl").value = myDoc.getdemourl();
+  // Component fields
+  document.getElementById("componentName").value = myDoc.get2('component', 'Name');
+  document.getElementById("componentReleaseDate").value = myDoc.get2('component', 'ReleaseDate');
+  document.getElementById("componentVersion").value = myDoc.get2('component', 'Version');
+  document.getElementById("componentMainTech").value = myDoc.get2('component', 'MainTech');
+  document.getElementById("componentArchetype").value = myDoc.get2('component', 'Archetype');
+  document.getElementById("componentHomepage").value = myDoc.get2('component', 'Homepage');
+  document.getElementById("componentType").value = myDoc.get2('component', 'Type');
+  document.getElementById("componentStatus").value = myDoc.get2('component', 'Status');
+  document.getElementById("componentVendor").value = myDoc.get2('component', 'Vendor');
+  document.getElementById("componentDescription").value = myDoc.get2('component', 'Description');
 
   // Authors
   var authors = myDoc.getauthors();
@@ -94,7 +98,7 @@ function setupEditorForEval() {
   drawChart();
 
   // Select the General tab
-  document.getElementById('tabs').selectedIndex = 1;
+  document.getElementById('tabs').selectedIndex = 2;
 }
 
 

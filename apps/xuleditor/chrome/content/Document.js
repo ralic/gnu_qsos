@@ -41,41 +41,11 @@ function Document() {
     this.getauthors = getauthors;
     this.addauthor = addauthor;
     this.delauthor = delauthor;
-    this.getappname = getappname;
-    this.setappname = setappname;
-    this.getlanguage = getlanguage;
-    this.setlanguage = setlanguage;
-    this.getrelease = getrelease;
-    this.setrelease = setrelease;
-    this.getlicenselist = getlicenselist;
-    this.getlicenseid = getlicenseid;
-    this.setlicenseid = setlicenseid;
-    this.getlicensedesc = getlicensedesc;
-    this.setlicensedesc = setlicensedesc;
-    this.geturl = geturl;
-    this.seturl = seturl;
-    this.getdesc = getdesc;
-    this.setdesc = setdesc;
-    this.getdemourl = getdemourl;
-    this.setdemourl = setdemourl;
-    this.getqsosformat = getqsosformat;
-    this.setqsosformat = setqsosformat;
-    this.getqsosspecificformat = getqsosspecificformat;
-    this.setqsosspecificformat = setqsosspecificformat;
-    this.getqsosappfamily = getqsosappfamily;
-    this.setqsosappfamily = setqsosappfamily;
-    this.getkeydesc = getkeydesc;
-    this.setkeydesc = setkeydesc;
-    this.getkeydesc0 = getkeydesc0;
-    this.setkeydesc0 = setkeydesc0;
-    this.getkeydesc1 = getkeydesc1;
-    this.setkeydesc1 = setkeydesc1;
-    this.getkeydesc2 = getkeydesc2;
-    this.setkeydesc2 = setkeydesc2;
-    this.getkeycomment = getkeycomment;
-    this.setkeycomment = setkeycomment;
-    this.getkeyscore = getkeyscore;
-    this.setkeyscore = setkeyscore;
+
+    this.set3 = set3;
+    this.get3 = get3;
+    this.set2 = set2;
+    this.get2 = get2;
 
     this.dump = dump;
     this.hassubelements = hassubelements;
@@ -333,9 +303,9 @@ function Document() {
         var node = sheet.evaluate("//*[@name='"+name+"']", sheet, null, XPathResult.ANY_TYPE,null).iterateNext();
         var parent = node.parentNode;
         if (parent.nodeName == "section" || parent.nodeName == "element") {
-                return parent.getAttribute("name");
+          return parent.getAttribute("name");
         } else {
-                return false;
+          return false;
         }
     }
 
@@ -405,6 +375,7 @@ function Document() {
     // element: tagname
     // value: tag's new value
     function setkey(element, value) {
+      alert(element + " " + value);
       var nodes = sheet.evaluate("//"+element, sheet, null, XPathResult.ANY_TYPE,null);
       var node = nodes.iterateNext();
       if (node) node.textContent = value;
@@ -462,68 +433,78 @@ function Document() {
             return "";
     }
 
-    function getappname() { return getkey("appname"); }
 
-    function setappname(value) { return setkey("appname", value); }
+    function set3(value, elem1, elem2, elem3) {
+      alert("Setting: " value + " " + elem1 + " " + elem2 + " " + elem3);
+      if (elem1 == null || elem2 == null || elem3 == null) {
+        alert("You're using the wrong function, because some arg is null");
+      }
+      var nodes = sheet.evaluate("//'" + elem1 + "'/'"+ elem2 + "'/'" + elem3 + "'", sheet, null, XPathResult.ANY_TYPE,null);
+      var node = nodes.iterateNext();
+      if (node) {
+        node.textContent = value;
+      } else {
+        //if elem3 does not exist, we create it
+        nodes = sheet.evaluate("//'" + elem1 + "'/'"+ elem2 + "'", sheet, null, XPathResult.ANY_TYPE,null);
+        node = nodes.iterateNext();
+        var newsubelement = sheet.createElement(elem3);
+        newsubelement.appendChild(document.createTextNode(value));
+        node.appendChild(newsubelement);
+      }
+    }
 
-    function getlanguage() { return getkey("language"); }
 
-    function setlanguage(value) { return setkey("language", value); }
+    function set2(value, elem1, elem2) {
+      alert("Setting: " value + " " + elem1 + " " + elem2);
+      if (elem1 == null || elem2 == null) {
+        alert("You're using the wrong function, because some arg is null");
+      }
+      var nodes = sheet.evaluate("//'" + elem1 + "'/'"+ elem2 + "'", sheet, null, XPathResult.ANY_TYPE,null);
+      var node = nodes.iterateNext();
+      if (node) {
+        node.textContent = value;
+      } else {
+        //if elem3 does not exist, we create it
+        nodes = sheet.evaluate("//'" + elem1 + "'", sheet, null, XPathResult.ANY_TYPE,null);
+        node = nodes.iterateNext();
+        var newsubelement = sheet.createElement(elem2);
+        newsubelement.appendChild(document.createTextNode(value));
+        node.appendChild(newsubelement);
+      }
+    }
 
-    function getrelease() { return getkey("release"); }
 
-    function setrelease(value) { return setkey("release", value); }
+    function get3(elem1, elem2, elem3) {
+      alert("Getting: " elem1 + " " + elem2 + " " + elem3);
+      if (elem1 == null || elem2 == null || elem3 == null) {
+        alert("You're using the wrong function, because some arg is null");
+        return null;
+      }
+      var nodes = sheet.evaluate("//'" + elem1 + "'/'"+ elem2 + "'/'" + elem3 + "'", sheet, null, XPathResult.ANY_TYPE,null);
+      var node = nodes.iterateNext();
+      if (node)
+        return node.textContent;
+      else
+        return "";
+    }
 
-    function geturl() { return getkey("url"); }
 
-    function seturl(value) { return setkey("url", value); }
-
-    function getdesc() { return getkey("desc"); }
-
-    function setdesc(value) { return setkey("desc", value); }
-
-    function getdemourl() { return getkey("demourl"); }
-
-    function setdemourl(value) { return setkey("demourl", value); }
-
-    function getqsosformat() { return getkey("qsosformat"); }
-
-    function setqsosformat(value) { return setkey("qsosformat", value); }
-
-    function getqsosspecificformat() { return getkey("qsosspecificformat"); }
-
-    function setqsosspecificformat(value) { return setkey("qsosspecificformat", value); }
-
-    function getqsosappfamily() { return getkey("qsosappfamily"); }
-
-    function setqsosappfamily(value) { return setkey("qsosappfamily", value); }
-
-    function getkeydesc(element) { return getgeneric(element, "desc"); }
-
-    function setkeydesc(element, value) { return setgeneric(element, "desc", value); }
-
-    function getkeydesc0(element) { return getgeneric(element, "desc0"); }
-
-    function setkeydesc0(element, value) { return setgeneric(element, "desc0", value); }
-
-    function getkeydesc1(element) { return getgeneric(element, "desc1"); }
-
-    function setkeydesc1(element, value) { return setgeneric(element, "desc1", value); }
-
-    function getkeydesc2(element) { return getgeneric(element, "desc2"); }
-
-    function setkeydesc2(element, value) { return setgeneric(element, "desc2", value); }
-
-    function getkeycomment(element) { return getgeneric(element, "comment"); }
-
-    function setkeycomment(element, value) { return setgeneric(element, "comment", value); }
-
-    function getkeyscore(element) { return getgeneric(element, "score"); }
-
-    function setkeyscore(element, value) { return setgeneric(element, "score", value); }
+    function get2(elem1, elem2) {
+      alert("Getting: " elem1 + " " + elem2);
+      if (elem1 == null || elem2 == null) {
+        alert("You're using the wrong function, because some arg is null");
+        return null;
+      }
+      var nodes = sheet.evaluate("//'" + elem1 + "'/'"+ elem2 + "'", sheet, null, XPathResult.ANY_TYPE,null);
+      var node = nodes.iterateNext();
+      if (node)
+        return node.textContent;
+      else
+        return "";
+    }
 
     ////////////////////////////////////////////////////////////////////
-    // Authors management
+    // Authors, reviewer, contributors and developers management
     ////////////////////////////////////////////////////////////////////
 
     function getauthors() {
@@ -588,9 +569,9 @@ function Document() {
       return new Array("Affero GPL", "AFPL (Aladdin)", "APSL (Apple)", "Artistic License", "BSD", "CeCILL License (INRIA)", "Copyback License", "DFSG approved", "Eclipse Public License", "EFL (Eiffel)", "Free but Restricted", "Free for Eductional Use", "Free for Home Use", "Free for non-commercial use", "Freely Distribuable", "Freeware", "GNU FDL", "GNU GPL", "GNU approved License", "GNU LGPL", "LPPL (Latex)", "NOKOS (Nokia)", "NPL (Netscape)", "Open Content License", "OSI Approved", "Proprietary", "Proprietary with source", "Proprietary with trial", "Public Domain", "Shareware", "SUN Binary Code License", "The Apache License", "The Apache License 2.0", "Voxel Public License", "WTFPL", "Zope Public License");
     }
 
-    function getlicenseid() { return getkey("licenseid"); }
+//     function getlicenseid() { return getkey("licenseid"); }
 
-    function setlicenseid(value) { return setkey("licenseid", value); }
+//     function setlicenseid(value) { return setkey("licenseid", value); }
 
     function getlicensedesc() { return getkey("licensedesc"); }
 

@@ -1,28 +1,28 @@
-/*
-**  Copyright (C) 2006-2011 Atos Origin
-**
-**  Author: Raphael Semeteys <raphael.semeteys@atosorigin.com>
-**          Timothée Ravier <timothee.ravier@atosorigin.com>
-**
-**  This program is free software; you can redistribute it and/or modify
-**  it under the terms of the GNU General Public License as published by
-**  the Free Software Foundation; either version 2 of the License, or
-**  (at your option) any later version.
-**
-**  This program is distributed in the hope that it will be useful,
-**  but WITHOUT ANY WARRANTY; without even the implied warranty of
-**  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-**  GNU General Public License for more details.
-**
-**  You should have received a copy of the GNU General Public License
-**  along with this program; if not, write to the Free Software
-**  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
-**
-**
-**  QSOS XUL Editor
-**  editor.js: functions associated with the editor.xul file
-**
-*/
+/**
+ *  Copyright (C) 2006-2011 Atos Origin
+ *
+ *  Author: Raphael Semeteys <raphael.semeteys@atosorigin.com>
+ *          Timothée Ravier <travier@portaildulibre.fr>
+ *
+ *  This program is free software; you can redistribute it and/or modify
+ *  it under the terms of the GNU General Public License as published by
+ *  the Free Software Foundation; either version 2 of the License, or
+ *  (at your option) any later version.
+ *
+ *  This program is distributed in the hope that it will be useful,
+ *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *  GNU General Public License for more details.
+ *
+ *  You should have received a copy of the GNU General Public License
+ *  along with this program; if not, write to the Free Software
+ *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
+ *
+ *
+ *  QSOS XUL Editor
+ *  editor.js: functions associated with the editor.xul file
+ *
+**/
 
 // Object "Document" representing data in the QSOS XML file
 var myDoc;
@@ -97,14 +97,17 @@ function setStateEvalOpen(state) {
   } else {
     var bool = "true";
   }
-  document.getElementById("generalTab").hidden = bool;
-  document.getElementById("criteriaTab").hidden = bool;
-  document.getElementById("chartTab").hidden = bool;
+//   document.getElementById("authorsTab").hidden = bool;
+//   document.getElementById("oscTab").hidden = bool;
+//   document.getElementById("criteriaTab").hidden = bool;
+//   document.getElementById("chartTab").hidden = bool;
   if (!state) { document.getElementById("saveFile").disabled = bool; }
   document.getElementById("saveFileAs").disabled = bool;
   // Remote saving is temporarily disabled
   // document.getElementById("saveRemoteFile").disabled = bool;
   document.getElementById("closeFile").disabled = bool;
+
+  document.getElementById('tabs').selectedIndex = 2;
 }
 
 

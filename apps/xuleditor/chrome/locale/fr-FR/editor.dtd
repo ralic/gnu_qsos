@@ -2,7 +2,7 @@
  **  Copyright (C) 2006-2011 Atos Origin
  **
  **  Author: Raphael Semeteys <raphael.semeteys@atosorigin.com>
- **          Timothée Ravier <timothee.ravier@atosorigin.com>
+ **          Timothée Ravier <travier@portaildulibre.fr>
  **
  **  This program is free software; you can redistribute it and/or modify
  **  it under the terms of the GNU General Public License as published by
@@ -27,12 +27,15 @@
 
 <!-- Tabs !-->
 <!ENTITY fileTab "  Fichier ">
-<!ENTITY generalTab "  Général ">
+<!ENTITY authorsTab "  Auteurs ">
+<!ENTITY oscTab "  Cartouche ">
 <!ENTITY criteriaTab "  Critères ">
 <!ENTITY chartTab "  Graphe ">
+<!ENTITY configTab "  Paramètres ">
 <!ENTITY aboutTab "  A propos ">
 
 <!-- File Tab !-->
+<!-- Les espaces ici servent à aligner les boutons sur la gauche, parce que je n'arrive pas à utiliser les styles CSS pour le faire proprement !-->
 <!ENTITY newFile "  Nouveau fichier                ">
 <!ENTITY openLocalFile "  Ouvrir un fichier local        ">
 <!ENTITY openRemoteFile "  Ouvrir fichier distant         ">
@@ -46,21 +49,53 @@
 <!ENTITY description3 "Vous pouvez envoyer vos évaluations sur la liste de discussion de QSOS :">
 <!ENTITY maillingList "qsos-french@nongnu.org">
 
-<!-- General Tab !-->
-<!ENTITY software "Logiciel">
-<!ENTITY softwareName "Nom">
-<!ENTITY release "Version">
-<!ENTITY sotwareFamily "Type de logiciel">
-<!ENTITY license "Licence">
-<!ENTITY softwareDescription "Description">
-<!ENTITY url "Site Web">
-<!ENTITY demoUrl "Site de démonstration">
+<!-- Authors Tab !-->
+<!ENTITY evaluation "Evaluation :">
+<!ENTITY template "Template :">
 <!ENTITY authors "Auteurs :">
-<!ENTITY evaluation "Evaluation">
-<!ENTITY authorName "Nom">
-<!ENTITY authorEmail "Courriel">
-<!ENTITY addAuthorButton "    Ajouter  ">
-<!ENTITY delAuthorButton " Supprimer">
+<!ENTITY name "Nom :">
+<!ENTITY email "Email :">
+<!ENTITY comment "Commentaire :">
+<!ENTITY addButton "    Ajouter  ">
+<!ENTITY delButton " Supprimer">
+<!ENTITY reviewer "Validateur :">
+<!ENTITY date "Date">
+<!ENTITY version "Version :">
+<!ENTITY evaluationVersion "La version de cette évaluation">
+<!ENTITY evaluationDates "Dates :">
+<!ENTITY creationDate "Crée le :">
+<!ENTITY updateDate "Mise à jour le :">
+<!ENTITY validationDate "Validée le :">
+<!ENTITY company "Entreprise:">
+
+<!-- Open Source Cartouche Tab !-->
+<!ENTITY component "Component :">
+<!ENTITY componentName "Nom :">
+<!ENTITY componentVersion "Version :">
+<!ENTITY componentDescription "Description :">
+<!ENTITY componentArchetype "Archetype :">
+<!ENTITY componentVendor "Vendor :">
+<!ENTITY componentStatus "Status :">
+<!ENTITY componentStatusTip "Etat de développement courant (i.e. Alpha, Beta, RC, Stable...)">
+<!ENTITY componentReleaseDate "Date de sortie :">
+<!ENTITY componentType "Type :">
+<!ENTITY componentMainTech "Technologie principale :">
+<!ENTITY componentHomepage "Homepage :">
+
+<!ENTITY license "License">
+<!ENTITY licenseName "Nom :">
+<!ENTITY licenseVersion "Version :">
+<!ENTITY licenseHomepage "Homepage :">
+
+<!ENTITY legal "Legal">
+<!ENTITY copyright "Copyright :">
+<!ENTITY patent "Patent :">
+<!ENTITY cypher "Cypher :">
+
+<!ENTITY team "Team">
+<!ENTITY number "Number:">
+<!ENTITY developers "Developers">
+<!ENTITY contributors "Contributors">
 
 <!-- Criteria Tab !-->
 <!ENTITY criteriaName "Critères">
@@ -75,17 +110,20 @@
 
 <!-- Chart Tab !-->
 
+<!-- Settings Tab !-->
+<!ENTITY storedInfo "Informations stockées">
+
 <!-- About Tab !-->
-<!ENTITY xuleditorName "QSOS XUL Editor v1.1">
+<!ENTITY xuleditorName "QSOS XUL Editor v2.0">
 <!ENTITY xuleditorLicense "Logiciel sous licence GNU Public License version 2 :">
 <!ENTITY xuleditorLicenseUrl "http://www.gnu.org/licenses/gpl-2.0.html">
-<!ENTITY currentQSOSVersion "Version actuelle de QSOS : 1.6">
-<!ENTITY supportedQSOSVersions "Versions supportées : 1.6">
+<!ENTITY currentQSOSVersion "Version actuelle de QSOS : 2.0">
+<!ENTITY supportedQSOSVersions "Versions supportées : 2.0, import depuis la version 1.6 possible">
 <!ENTITY xuleditorAuthors "Auteurs :">
 <!ENTITY xuleditorAuthorName1 "Raphael Semeteys">
 <!ENTITY xuleditorAuthorEmail1 "raphael.semeteys@atosorigin.com">
 <!ENTITY xuleditorAuthorName2 "Timothée Ravier">
-<!ENTITY xuleditorAuthorEmail2 "timothee.ravier@atosorigin.com">
+<!ENTITY xuleditorAuthorEmail2 "travier@portaildulibre.fr">
 <!ENTITY iconsetAuthors "Icones réalisées par Oxygen Team (KDE) :">
 <!ENTITY iconsetUrl "http://www.oxygen-icons.org">
 <!ENTITY sourceCode "Code source disponible à l'adresse :">
@@ -94,3 +132,27 @@
 <!ENTITY projectUrl "http://www.qsos.org">
 <!ENTITY projectOSCartouche "Information sur l'Open Source Cartouche :">
 <!ENTITY projectOSCartoucheUrl "http://www.opensourcecartouche.org">
+
+<!-- Access key for buttons !-->
+<!ENTITY newFileAccessKey "n">
+<!ENTITY openLocalFileAccessKey "l">
+<!ENTITY openRemoteFileAccessKey "d">
+<!ENTITY saveFileAccessKey "e">
+<!ENTITY saveFileAsAccessKey "s">
+<!ENTITY saveRemoteFileAccessKey "u">
+<!ENTITY closeFileAccessKey "m">
+<!ENTITY exitAccessKey "q">
+
+<!-- Access key for tabs !-->
+<!ENTITY fileTabAccessKey "f">
+<!ENTITY authorsTabAccessKey "a">
+<!ENTITY oscTabAccessKey "t">
+<!ENTITY criteriaTabAccessKey "r">
+<!ENTITY chartTabAccessKey "g">
+<!ENTITY configTabAccessKey "p">
+<!ENTITY aboutTabAccessKey "o">
+
+<!-- Key for keyboard shortcuts !-->
+<!ENTITY newFileShortcut "n">
+<!ENTITY saveFileShortcut "s">
+<!ENTITY exitShortcut "q">
