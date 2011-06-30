@@ -38,12 +38,12 @@ function newFileDialog() {
 // Setup editor when opening a file
 function setupEditorForEval() {
   // Window's title
-  document.title = strbundle.getString("QSOSEvaluation") + "  " + myDoc.getappname();
+  document.title = strbundle.getString("QSOSEvaluation") + "  " + myDoc.get("component/Name");
 
   // Tree population
-  var tree = document.getElementById("criteriaTree");
+/*  var tree = document.getElementById("criteriaTree");
   var treechildren = buildtree();
-  tree.appendChild(treechildren);
+  tree.appendChild(treechildren);*/
 
   // License setup and checks
 /*  var licenses = myDoc.getlicenselist();
@@ -71,16 +71,17 @@ function setupEditorForEval() {
   }*/
 
   // Component fields
-  document.getElementById("componentName").value = myDoc.get2('component', 'Name');
-  document.getElementById("componentReleaseDate").value = myDoc.get2('component', 'ReleaseDate');
-  document.getElementById("componentVersion").value = myDoc.get2('component', 'Version');
-  document.getElementById("componentMainTech").value = myDoc.get2('component', 'MainTech');
-  document.getElementById("componentArchetype").value = myDoc.get2('component', 'Archetype');
-  document.getElementById("componentHomepage").value = myDoc.get2('component', 'Homepage');
-  document.getElementById("componentType").value = myDoc.get2('component', 'Type');
-  document.getElementById("componentStatus").value = myDoc.get2('component', 'Status');
-  document.getElementById("componentVendor").value = myDoc.get2('component', 'Vendor');
-  document.getElementById("componentDescription").value = myDoc.get2('component', 'Description');
+  document.getElementById("componentName").value = myDoc.get("component/Name");
+  document.getElementById("componentReleaseDate").value = myDoc.get("component/ReleaseDate");
+  alert("3");
+  document.getElementById("componentVersion").value = myDoc.get("component/Version");
+  document.getElementById("componentMainTech").value = myDoc.get("component/MainTech");
+  document.getElementById("componentArchetype").value = myDoc.get("component/Archetype");
+  document.getElementById("componentHomepage").value = myDoc.get("component/Homepage");
+  document.getElementById("componentType").value = myDoc.get("component/Type");
+  document.getElementById("componentStatus").value = myDoc.get("component/Status");
+  document.getElementById("componentVendor").value = myDoc.get("component/Vendor");
+  document.getElementById("componentDescription").value = myDoc.get("component/Description");
 
   // Authors
 /*  var authors = myDoc.getauthors();

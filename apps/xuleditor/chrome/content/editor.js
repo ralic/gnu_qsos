@@ -97,10 +97,10 @@ function setStateEvalOpen(state) {
   } else {
     var bool = "true";
   }
-//   document.getElementById("authorsTab").hidden = bool;
-//   document.getElementById("oscTab").hidden = bool;
-//   document.getElementById("criteriaTab").hidden = bool;
-//   document.getElementById("chartTab").hidden = bool;
+  document.getElementById("authorsTab").hidden = bool;
+  document.getElementById("oscTab").hidden = bool;
+  document.getElementById("criteriaTab").hidden = bool;
+  document.getElementById("chartTab").hidden = bool;
   if (!state) { document.getElementById("saveFile").disabled = bool; }
   document.getElementById("saveFileAs").disabled = bool;
   // Remote saving is temporarily disabled

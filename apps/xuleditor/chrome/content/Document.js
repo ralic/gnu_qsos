@@ -42,10 +42,7 @@ function Document() {
     this.addauthor = addauthor;
     this.delauthor = delauthor;
 
-    this.set3 = set3;
-    this.get3 = get3;
-    this.set2 = set2;
-    this.get2 = get2;
+    this.get = get;
 
     this.dump = dump;
     this.hassubelements = hassubelements;
@@ -104,58 +101,12 @@ function Document() {
       var domParser = new DOMParser();
       sheet = domParser.parseFromString(output, "text/xml");
 
-      myDoc.dump();
-
-      alert("error check");
-      var errorNodes = sheet.evaluate("//parsererror", sheet, null, XPathResult.ANY_TYPE,null);
-      alert(errorNodes.nextSibling);
-      try {
-        var errorNodes = errorNodes.iterateNext();
-      } catch (e) {
-        alert(e.message);
-      }
-      if (errorNodes) {
-        alert("has error node");
-        error = errorNodes.textContent;
-        var sourcetextNode = sheet.evaluate("//parsererror/sourcetext", sheet, null, XPathResult.ANY_TYPE,null);
-        try {
-          var sourcetextNode = sourcetextNode.iterateNext();
-        } catch (e) {
-          alert(e.message);
-        }
-        if (sourcetextNode) {
-          alert("has sourcetext node");
-          sourcetext = sourcetextNode.textContent;
-        } else {
-          sourcetext = "";
-        }
-        alert(strbundle.getString("parsingError") + "\n" + error + "\n" + sourcetext);
+      var error = sheet.getElementsByTagName("parsererror");
+      if (error.length == 1) {
+        error = error[0].textContent;
+        alert(strbundle.getString("parsingError") + "\n\n" + error);
         return false;
       }
-
-//       var errorNodes = sheet.evaluate("//" + element, sheet, null, XPathResult.ANY_TYPE,null);
-//       var node = nodes.iterateNext();
-//       if (node)
-//         return node.textContent;
-//       else
-//         return "";
-
-//       myDoc.dump();
-
-//       var error = myDoc.getkey("parsererror");
-//       if (error != "") {
-//          alert(strbundle.getString("parsingError") + "\n" + error + "\n" + myDoc.getkey("sourcetext"));
-//          return false;
-//       }
-
-      // TODO Improve error handling (use the root name: parseerror)
-//       var tmpSerializer = new XMLSerializer();
-//       var tmpXml = tmpSerializer.serializeToString(sheet);
-//       if (getkey(element)tmpXml.search("Parsing Error") != -1)
-//
-//         alert() + root.textContent);
-//         return false;
-//       }
 
       return true;
     }
@@ -472,6 +423,17 @@ function Document() {
         }
     }
 
+
+    function get(element) {
+      var nodes = sheet.evaluate("//"+element, sheet, null, XPathResult.ANY_TYPE, null);
+      var node = nodes.iterateNext();
+      if (node)
+        return node.textContent;
+      else
+        return "";
+    }
+
+
     ////////////////////////////////////////////////////////////////////
     // Specific getters ans setters (public functions)
     ////////////////////////////////////////////////////////////////////
@@ -489,75 +451,6 @@ function Document() {
             return "";
     }
 
-
-    function set3(value, elem1, elem2, elem3) {
-      alert("Setting: " + value + " " + elem1 + " " + elem2 + " " + elem3);
-      if (elem1 == null || elem2 == null || elem3 == null) {
-        alert("You're using the wrong function, because some arg is null");
-      }
-      var nodes = sheet.evaluate("//'" + elem1 + "'/'"+ elem2 + "'/'" + elem3 + "'", sheet, null, XPathResult.ANY_TYPE,null);
-      var node = nodes.iterateNext();
-      if (node) {
-        node.textContent = value;
-      } else {
-        //if elem3 does not exist, we create it
-        nodes = sheet.evaluate("//'" + elem1 + "'/'"+ elem2 + "'", sheet, null, XPathResult.ANY_TYPE,null);
-        node = nodes.iterateNext();
-        var newsubelement = sheet.createElement(elem3);
-        newsubelement.appendChild(document.createTextNode(value));
-        node.appendChild(newsubelement);
-      }
-    }
-
-
-    function set2(value, elem1, elem2) {
-      alert("Setting: " + value + " " + elem1 + " " + elem2);
-      if (elem1 == null || elem2 == null) {
-        alert("You're using the wrong function, because some arg is null");
-      }
-      var nodes = sheet.evaluate("//'" + elem1 + "'/'"+ elem2 + "'", sheet, null, XPathResult.ANY_TYPE,null);
-      var node = nodes.iterateNext();
-      if (node) {
-        node.textContent = value;
-      } else {
-        //if elem3 does not exist, we create it
-        nodes = sheet.evaluate("//'" + elem1 + "'", sheet, null, XPathResult.ANY_TYPE,null);
-        node = nodes.iterateNext();
-        var newsubelement = sheet.createElement(elem2);
-        newsubelement.appendChild(document.createTextNode(value));
-        node.appendChild(newsubelement);
-      }
-    }
-
-
-    function get3(elem1, elem2, elem3) {
-      alert("Getting: " + elem1 + " " + elem2 + " " + elem3);
-      if (elem1 == null || elem2 == null || elem3 == null) {
-        alert("You're using the wrong function, because some arg is null");
-        return null;
-      }
-      var nodes = sheet.evaluate("//'" + elem1 + "'/'"+ elem2 + "'/'" + elem3 + "'", sheet, null, XPathResult.ANY_TYPE,null);
-      var node = nodes.iterateNext();
-      if (node)
-        return node.textContent;
-      else
-        return "";
-    }
-
-
-    function get2(elem1, elem2) {
-      alert("Getting: " + elem1 + " " + elem2);
-      if (elem1 == null || elem2 == null) {
-        alert("You're using the wrong function, because some arg is null");
-        return null;
-      }
-      var nodes = sheet.evaluate("//'" + elem1 + "'/'"+ elem2 + "'", sheet, null, XPathResult.ANY_TYPE,null);
-      var node = nodes.iterateNext();
-      if (node)
-        return node.textContent;
-      else
-        return "";
-    }
 
     ////////////////////////////////////////////////////////////////////
     // Authors, reviewer, contributors and developers management
