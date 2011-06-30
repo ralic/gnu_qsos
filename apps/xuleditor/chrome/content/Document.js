@@ -2,7 +2,7 @@
 **  Copyright (C) 2006-2011 Atos Origin
 **
 **  Author: Raphael Semeteys <raphael.semeteys@atosorigin.com>
-**          Timothée Ravier <timothee.ravier@atosorigin.com>
+**          Timothée Ravier <travier@portaildulibre.fr>
 **
 **  This program is free software; you can redistribute it and/or modify
 **  it under the terms of the GNU General Public License as published by
@@ -83,6 +83,7 @@ function Document() {
       file.initWithPath(myDoc.filename);
       if (file.exists() == false) {
           alert("File does not exist");
+          return false;
       }
 
       var is = Components.classes["@mozilla.org/network/file-input-stream;1"]
@@ -102,6 +103,61 @@ function Document() {
 
       var domParser = new DOMParser();
       sheet = domParser.parseFromString(output, "text/xml");
+
+      myDoc.dump();
+
+      alert("error check");
+      var errorNodes = sheet.evaluate("//parsererror", sheet, null, XPathResult.ANY_TYPE,null);
+      alert(errorNodes.nextSibling);
+      try {
+        var errorNodes = errorNodes.iterateNext();
+      } catch (e) {
+        alert(e.message);
+      }
+      if (errorNodes) {
+        alert("has error node");
+        error = errorNodes.textContent;
+        var sourcetextNode = sheet.evaluate("//parsererror/sourcetext", sheet, null, XPathResult.ANY_TYPE,null);
+        try {
+          var sourcetextNode = sourcetextNode.iterateNext();
+        } catch (e) {
+          alert(e.message);
+        }
+        if (sourcetextNode) {
+          alert("has sourcetext node");
+          sourcetext = sourcetextNode.textContent;
+        } else {
+          sourcetext = "";
+        }
+        alert(strbundle.getString("parsingError") + "\n" + error + "\n" + sourcetext);
+        return false;
+      }
+
+//       var errorNodes = sheet.evaluate("//" + element, sheet, null, XPathResult.ANY_TYPE,null);
+//       var node = nodes.iterateNext();
+//       if (node)
+//         return node.textContent;
+//       else
+//         return "";
+
+//       myDoc.dump();
+
+//       var error = myDoc.getkey("parsererror");
+//       if (error != "") {
+//          alert(strbundle.getString("parsingError") + "\n" + error + "\n" + myDoc.getkey("sourcetext"));
+//          return false;
+//       }
+
+      // TODO Improve error handling (use the root name: parseerror)
+//       var tmpSerializer = new XMLSerializer();
+//       var tmpXml = tmpSerializer.serializeToString(sheet);
+//       if (getkey(element)tmpXml.search("Parsing Error") != -1)
+//
+//         alert() + root.textContent);
+//         return false;
+//       }
+
+      return true;
     }
 
     // Load and parse a remote QSOS XML file
@@ -241,7 +297,7 @@ function Document() {
       // Children tags (recursion)
       var test = false;
       var children = node.childNodes;
-      for (var i = 0; i < children.length; i++) {
+      for (i = 0; i < children.length; i++) {
         var child = children[i];
         if (child.tagName) {
           line += "\n" + serialize(child, depth+1);
@@ -435,7 +491,7 @@ function Document() {
 
 
     function set3(value, elem1, elem2, elem3) {
-      alert("Setting: " value + " " + elem1 + " " + elem2 + " " + elem3);
+      alert("Setting: " + value + " " + elem1 + " " + elem2 + " " + elem3);
       if (elem1 == null || elem2 == null || elem3 == null) {
         alert("You're using the wrong function, because some arg is null");
       }
@@ -455,7 +511,7 @@ function Document() {
 
 
     function set2(value, elem1, elem2) {
-      alert("Setting: " value + " " + elem1 + " " + elem2);
+      alert("Setting: " + value + " " + elem1 + " " + elem2);
       if (elem1 == null || elem2 == null) {
         alert("You're using the wrong function, because some arg is null");
       }
@@ -475,7 +531,7 @@ function Document() {
 
 
     function get3(elem1, elem2, elem3) {
-      alert("Getting: " elem1 + " " + elem2 + " " + elem3);
+      alert("Getting: " + elem1 + " " + elem2 + " " + elem3);
       if (elem1 == null || elem2 == null || elem3 == null) {
         alert("You're using the wrong function, because some arg is null");
         return null;
@@ -490,7 +546,7 @@ function Document() {
 
 
     function get2(elem1, elem2) {
-      alert("Getting: " elem1 + " " + elem2);
+      alert("Getting: " + elem1 + " " + elem2);
       if (elem1 == null || elem2 == null) {
         alert("You're using the wrong function, because some arg is null");
         return null;

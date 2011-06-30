@@ -46,7 +46,7 @@ function setupEditorForEval() {
   tree.appendChild(treechildren);
 
   // License setup and checks
-  var licenses = myDoc.getlicenselist();
+/*  var licenses = myDoc.getlicenselist();
   var mypopuplist = document.getElementById("f-license-popup");
   for(var i=0; i < licenses.length; i++) {
     var menuitem = document.createElement("menuitem");
@@ -68,7 +68,7 @@ function setupEditorForEval() {
     licenseList.selectedIndex = licenseIdFromDesc;
   } else {
     licenseList.selectedIndex = licenseId;
-  }
+  }*/
 
   // Component fields
   document.getElementById("componentName").value = myDoc.get2('component', 'Name');
@@ -83,14 +83,14 @@ function setupEditorForEval() {
   document.getElementById("componentDescription").value = myDoc.get2('component', 'Description');
 
   // Authors
-  var authors = myDoc.getauthors();
+/*  var authors = myDoc.getauthors();
   var mylist = document.getElementById("f-a-list");
   for(var i=0; i < authors.length; i++) {
     var listitem = document.createElement("listitem");
     listitem.setAttribute("label", authors[i].name);
     listitem.setAttribute("value", authors[i].email);
     mylist.appendChild(listitem);
-  }
+  }*/
 
   setStateEvalOpen(true);
 
@@ -115,9 +115,17 @@ function openFile() {
   var res = fp.show();
 
   if (res == nsIFilePicker.returnOK) {
-    myDoc = new Document();
+    try {
+      myDoc = new Document();
+    } catch (e) {
+      alert(e.message);
+      return;
+    }
     myDoc.filename = fp.file.path;
-    myDoc.load();
+    if (myDoc.load() == false) {
+      myDoc = null;
+      return;
+    }
 
     setupEditorForEval();
   }
@@ -267,6 +275,14 @@ function saveRemote() {
 
 // Closes the QSOS XML file and resets window
 function closeFile() {
+  myDoc = null;
+  id = null;
+
+  setStateEvalOpen(false);
+  freezeScore("true");
+  freezeComments("true");
+
+  // Resetting interface :
   document.getElementById("QSOS").setAttribute("title", strbundle.getString("QSOSEditor"));
   document.getElementById("f-software").value = "";
   document.getElementById("f-release").value = "";
@@ -287,13 +303,6 @@ function closeFile() {
   document.getElementById("f-c-desc2").setAttribute("label", strbundle.getString("score2Label"));
   document.getElementById("f-c-score").selectedIndex = -1;
   document.getElementById("f-c-comments").value = "";
-
-  myDoc = null;
-  id = null;
-
-  setStateEvalOpen(false);
-  freezeScore("true");
-  freezeComments("true");
 
   var tree = document.getElementById("criteriaTree");
   var treechildren = document.getElementById("myTreechildren");
