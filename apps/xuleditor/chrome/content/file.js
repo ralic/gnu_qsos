@@ -276,6 +276,12 @@ function closeFile() {
     myList.removeChild(myList.childNodes[0]);
   }
 
+  var licensePopupList = document.getElementById("f-license-popup");
+  while (licensePopupList.hasChildNodes()) {
+    licensePopupList.removeChild(licensePopupList.childNodes[0]);
+  }
+//   document.getElementById("f-license").removeAllItems();
+
   document.getElementById("f-a-name").value = "";
   document.getElementById("f-a-email").value = "";
   document.getElementById("f-c-desc0").setAttribute("label", strbundle.getString("score0Label"));
