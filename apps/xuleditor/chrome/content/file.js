@@ -38,7 +38,7 @@ function newFileDialog() {
 // Setup editor when opening a file
 function setupEditorForEval() {
   // Window's title
-  document.title = strbundle.getString("QSOSEvaluation") + "  " + myDoc.get("component/Name");
+  document.title = strbundle.getString("QSOSEvaluation") + " " + myDoc.get("component/Name") + " (" + myDoc.getfilename() + ")";
 
   // Tree population
 /*  var tree = document.getElementById("criteriaTree");
@@ -73,7 +73,6 @@ function setupEditorForEval() {
   // Component fields
   document.getElementById("componentName").value = myDoc.get("component/Name");
   document.getElementById("componentReleaseDate").value = myDoc.get("component/ReleaseDate");
-  alert("3");
   document.getElementById("componentVersion").value = myDoc.get("component/Version");
   document.getElementById("componentMainTech").value = myDoc.get("component/MainTech");
   document.getElementById("componentArchetype").value = myDoc.get("component/Archetype");
@@ -82,6 +81,40 @@ function setupEditorForEval() {
   document.getElementById("componentStatus").value = myDoc.get("component/Status");
   document.getElementById("componentVendor").value = myDoc.get("component/Vendor");
   document.getElementById("componentDescription").value = myDoc.get("component/Description");
+
+  // License and Legal
+  document.getElementById("licenseName").value = myDoc.get("openSourceCartouche/license/name");
+  document.getElementById("licenseVersion").value = myDoc.get("openSourceCartouche/license/Version");
+  document.getElementById("licenseHomepage").value = myDoc.get("openSourceCartouche/license/homepage");
+
+  document.getElementById("copyright").value = myDoc.get("openSourceCartouche/legal/copyright");
+
+  // Team
+  document.getElementById("number").value = myDoc.get("team/number");
+
+  // Authors tab
+  // Template
+  document.getElementById("templateReviewerName").value = myDoc.get("template/reviewer/Name");
+  document.getElementById("templateReviewerEmail").value = myDoc.get("template/reviewer/Email");
+  document.getElementById("templateReviewerDate").value = myDoc.get("template/reviewer/Date");
+  document.getElementById("templateReviewerComment").value = myDoc.get("template/reviewer/Comment");
+
+  document.getElementById("templateCreationDate").value = myDoc.get("template/dates/creation");
+  document.getElementById("templateUpdateDate").value = myDoc.get("template/dates/update");
+  document.getElementById("templateValidationDate").value = myDoc.get("template/dates/validation");
+
+  // Evaluation
+  document.getElementById("version").value = myDoc.get("qsosMetadata/Version");
+  document.getElementById("language").value = myDoc.get("qsosMetadata/language");
+
+  document.getElementById("reviewerName").value = myDoc.get("evaluation/reviewer/Name");
+  document.getElementById("reviewerEmail").value = myDoc.get("evaluation/reviewer/Email");
+  document.getElementById("reviewerDate").value = myDoc.get("evaluation/reviewer/Date");
+  document.getElementById("reviewerComment").value = myDoc.get("evaluation/reviewer/Comment");
+
+  document.getElementById("creationDate").value = myDoc.get("evaluation/dates/creation");
+  document.getElementById("updateDate").value = myDoc.get("evaluation/dates/update");
+  document.getElementById("validationDate").value = myDoc.get("evaluation/dates/validation");
 
   // Authors
 /*  var authors = myDoc.getauthors();
@@ -231,6 +264,54 @@ function buildsubtree(criteria) {
 // Saves modifications to the QSOS XML file
 function saveFile() {
   if (myDoc) {
+    // Updating evaluation content
+
+    // Component fields
+    document.getElementById("componentName").value = myDoc.set("component/Name");
+    document.getElementById("componentReleaseDate").value = myDoc.set("component/ReleaseDate");
+    document.getElementById("componentVersion").value = myDoc.set("component/Version");
+    document.getElementById("componentMainTech").value = myDoc.set("component/MainTech");
+    document.getElementById("componentArchetype").value = myDoc.set("component/Archetype");
+    document.getElementById("componentHomepage").value = myDoc.set("component/Homepage");
+    document.getElementById("componentType").value = myDoc.set("component/Type");
+    document.getElementById("componentStatus").value = myDoc.set("component/Status");
+    document.getElementById("componentVendor").value = myDoc.set("component/Vendor");
+    document.getElementById("componentDescription").value = myDoc.set("component/Description");
+
+    // License and Legal
+    document.getElementById("licenseName").value = myDoc.set("openSourceCartouche/license/name");
+    document.getElementById("licenseVersion").value = myDoc.set("openSourceCartouche/license/Version");
+    document.getElementById("licenseHomepage").value = myDoc.set("openSourceCartouche/license/homepage");
+
+    document.getElementById("copyright").value = myDoc.set("openSourceCartouche/legal/copyright");
+
+    // Team
+    document.getElementById("number").value = myDoc.set("team/number");
+
+    // Authors tab
+    // Template
+    document.getElementById("templateReviewerName").value = myDoc.set("template/reviewer/Name");
+    document.getElementById("templateReviewerEmail").value = myDoc.set("template/reviewer/Email");
+    document.getElementById("templateReviewerDate").value = myDoc.set("template/reviewer/Date");
+    document.getElementById("templateReviewerComment").value = myDoc.set("template/reviewer/Comment");
+
+    document.getElementById("templateCreationDate").value = myDoc.set("template/dates/creation");
+    document.getElementById("templateUpdateDate").value = myDoc.set("template/dates/update");
+    document.getElementById("templateValidationDate").value = myDoc.set("template/dates/validation");
+
+    // Evaluation
+    document.getElementById("version").value = myDoc.set("qsosMetadata/Version");
+    document.getElementById("language").value = myDoc.set("qsosMetadata/language");
+
+    document.getElementById("reviewerName").value = myDoc.set("evaluation/reviewer/Name");
+    document.getElementById("reviewerEmail").value = myDoc.set("evaluation/reviewer/Email");
+    document.getElementById("reviewerDate").value = myDoc.set("evaluation/reviewer/Date");
+    document.getElementById("reviewerComment").value = myDoc.set("evaluation/reviewer/Comment");
+
+    document.getElementById("creationDate").value = myDoc.set("evaluation/dates/creation");
+    document.getElementById("updateDate").value = myDoc.set("evaluation/dates/update");
+    document.getElementById("validationDate").value = myDoc.set("evaluation/dates/validation");
+
     if (myDoc.filename != null) {
       myDoc.write();
       docHasChanged(false);
@@ -256,9 +337,7 @@ function saveFileAs() {
   var res = fp.show();
   if ((res == nsIFilePicker.returnOK) || (res == nsIFilePicker.returnReplace)) {
     myDoc.setfilename(fp.file.path);
-    myDoc.write();
-    docHasChanged(false);
-    return true;
+    return saveFile();
   }
   return false;
 }
@@ -285,25 +364,80 @@ function closeFile() {
 
   // Resetting interface :
   document.getElementById("QSOS").setAttribute("title", strbundle.getString("QSOSEditor"));
-  document.getElementById("f-software").value = "";
-  document.getElementById("f-release").value = "";
-  document.getElementById("f-sotwarefamily").value = "";
-  document.getElementById("f-desc").value = "";
-  document.getElementById("f-url").value = "";
-  document.getElementById("f-demourl").value = "";
 
-  var myList = document.getElementById("f-a-list");
-  while (myList.hasChildNodes()) {
-    myList.removeChild(myList.childNodes[0]);
-  }
+  // Component fields
+  document.getElementById("componentName").value = "";
+  document.getElementById("componentReleaseDate").value = "";
+  document.getElementById("componentVersion").value = "";
+  document.getElementById("componentMainTech").value = "";
+  document.getElementById("componentArchetype").value = "";
+  document.getElementById("componentHomepage").value = "";
+  document.getElementById("componentType").value = "";
+  document.getElementById("componentStatus").value = "";
+  document.getElementById("componentVendor").value = "";
+  document.getElementById("componentDescription").value = "";
 
-  document.getElementById("f-a-name").value = "";
-  document.getElementById("f-a-email").value = "";
-  document.getElementById("f-c-desc0").setAttribute("label", strbundle.getString("score0Label"));
-  document.getElementById("f-c-desc1").setAttribute("label", strbundle.getString("score1Label"));
-  document.getElementById("f-c-desc2").setAttribute("label", strbundle.getString("score2Label"));
-  document.getElementById("f-c-score").selectedIndex = -1;
-  document.getElementById("f-c-comments").value = "";
+  document.getElementById("componentName").value = "";
+  document.getElementById("componentReleaseDate").value = "";
+  document.getElementById("componentVersion").value = "";
+  document.getElementById("componentMainTech").value = "";
+  document.getElementById("componentArchetype").value = "";
+  document.getElementById("componentHomepage").value = "";
+  document.getElementById("componentType").value = "";
+  document.getElementById("componentStatus").value = "";
+  document.getElementById("componentVendor").value = "";
+  document.getElementById("componentDescription").value = "";
+
+  // License and Legal
+  document.getElementById("licenseName").value = "";
+  document.getElementById("licenseVersion").value = "";
+  document.getElementById("licenseHomepage").value = "";
+
+  document.getElementById("copyright").value = "";
+
+  // Team
+  document.getElementById("number").value = "";
+
+  // Authors tab
+  // Template
+  document.getElementById("templateReviewerName").value = "";
+  document.getElementById("templateReviewerEmail").value = "";
+  document.getElementById("templateReviewerDate").value = "";
+  document.getElementById("templateReviewerComment").value = "";
+
+  document.getElementById("templateCreationDate").value = "";
+  document.getElementById("templateUpdateDate").value = "";
+  document.getElementById("templateValidationDate").value = "";
+
+  // Evaluation
+  document.getElementById("version").value = "";
+  document.getElementById("language").value = "";
+
+  document.getElementById("authorName").value = "";
+  document.getElementById("authorEmail").value = "";
+  document.getElementById("authorComment").value = "";
+
+  document.getElementById("reviewerName").value = "";
+  document.getElementById("reviewerEmail").value = "";
+  document.getElementById("reviewerDate").value = "";
+  document.getElementById("reviewerComment").value =  "";
+
+  document.getElementById("creationDate").value = "";
+  document.getElementById("updateDate").value = "";
+  document.getElementById("validationDate").value = "";
+
+//   var myList = document.getElementById("f-a-list");
+//   while (myList.hasChildNodes()) {
+//     myList.removeChild(myList.childNodes[0]);
+//   }
+
+//   document.getElementById("f-a-name").value = "";
+//   document.getElementById("f-a-email").value = "";
+//   document.getElementById("f-c-desc0").setAttribute("label", strbundle.getString("score0Label"));
+//   document.getElementById("f-c-desc1").setAttribute("label", strbundle.getString("score1Label"));
+//   document.getElementById("f-c-desc2").setAttribute("label", strbundle.getString("score2Label"));
+//   document.getElementById("f-c-score").selectedIndex = -1;
+//   document.getElementById("f-c-comments").value = "";
 
   var tree = document.getElementById("criteriaTree");
   var treechildren = document.getElementById("myTreechildren");

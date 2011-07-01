@@ -24,3 +24,22 @@
  *
 **/
 
+
+// Triggered when an author/reviewer/contributor is select in a list
+function changeEvalAuthor(elem1, elem2, elem3, author) {
+//   for(var i = 0; i < author.childNodes.length; ++i)
+//     alert(author.childNodes[i].nodeName + " " + author.childNodes[i].getAttribute(author.childNodes[i].attributes[0].nodeName));
+
+  alert("FIXME");
+  // FIXME
+//   var i = 0;
+//   alert(author.childNodes[i].getAttribute(author.childNodes[i].attributes[0].nodeName));
+//   alert(elem1);
+//   document.getElementById(elem1).value = author.childNodes[i].getAttribute(author.childNodes[i].attributes[0].nodeName);
+//   ++i;
+//   alert(elem2);
+//   alert(author.childNodes[i].getAttribute(author.childNodes[i].attributes[0].nodeName));
+//   document.getElementById(elem2).value = author.childNodes[i].getAttribute(author.childNodes[i].attributes[0].nodeName);
+//   ++i;
+//   document.getElementById(elem3).value = author.childNodes[i].getAttribute(author.childNodes[i].attributes[0].nodeName);
+}

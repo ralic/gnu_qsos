@@ -35,53 +35,14 @@ function docHasChanged(bool) {
   }
 }
 
-// Triggered when software name is modified
-function changeAppName(xulelement) {
-  myDoc.setappname(xulelement.value);
-  docHasChanged();
-}
-
-// Triggered when software release is modified
-function changeRelease(xulelement) {
-  myDoc.setrelease(xulelement.value);
-  docHasChanged();
-}
-
-// Triggered when software family is modified
-function changeSoftwareFamily(xulelement) {
-  myDoc.setqsosappfamily(xulelement.value);
-  docHasChanged();
-}
-
-// Triggered when software license is modified
-function changeLicense(list, id) {
-  myDoc.setlicenseid(id);
-  myDoc.setlicensedesc(list.selectedItem.getAttribute("label"));
-  docHasChanged();
-}
-
-// Triggered when software description is modified
-function changeDesc(xulelement) {
-  myDoc.setdesc(xulelement.value);
-  docHasChanged();
-}
-
-// Triggered when software URL is modified
-function changeUrl(xulelement) {
-  myDoc.seturl(xulelement.value);
-  docHasChanged();
-}
-
-// Triggered when software demo URL is modified
-function changeDemoUrl(xulelement) {
-  myDoc.setdemourl(xulelement.value);
-  docHasChanged();
-}
-
-// Triggered when an author is select in the list
-function changeAuthor(author) {
-  document.getElementById("f-a-name").value = author.label;
-  document.getElementById("f-a-email").value = author.value;
+// Triggered when an author/reviewer/contributor is select in a list
+function changePerson(elem1, elem2, elem3, author) {
+  var i = 0;
+  document.getElementById(elem1).value = author.childNodes[i].getAttribute(author.childNodes[i].attributes[0].nodeName);
+  ++i;
+  document.getElementById(elem2).value = author.childNodes[i].getAttribute(author.childNodes[i].attributes[0].nodeName);
+  ++i;
+  document.getElementById(elem3).value = author.childNodes[i].getAttribute(author.childNodes[i].attributes[0].nodeName);
 }
 
 // Triggered when an author is added

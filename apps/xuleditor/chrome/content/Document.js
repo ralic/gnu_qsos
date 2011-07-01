@@ -43,6 +43,7 @@ function Document() {
     this.delauthor = delauthor;
 
     this.get = get;
+    this.set = set;
 
     this.dump = dump;
     this.hassubelements = hassubelements;
@@ -430,7 +431,19 @@ function Document() {
       if (node)
         return node.textContent;
       else
+        alert("Element: " + element + " doesn't exist.");
         return "";
+    }
+
+
+    function set(element, value) {
+      var nodes = sheet.evaluate("//"+element, sheet, null, XPathResult.ANY_TYPE, null);
+      var node = nodes.iterateNext();
+      if (node) {
+        node.textContent = value;
+      } else {
+        alert("Element: " + element + " doesn't exist. You're probably using the wrong function.");
+      }
     }
 
 

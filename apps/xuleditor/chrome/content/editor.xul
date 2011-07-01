@@ -196,10 +196,10 @@
                     <listheader label="&email;" width="300"/>
                     <!--<listheader label="&authorComment;"/>!-->
                   </listhead>
-                  <listitem flex="1">
+                  <!-- <listitem flex="1">
                     <listcell label="teqetqest "/>
                     <listcell label="fsqdqs@dqds.sss"/>
-                  </listitem>
+                  </listitem> !-->
                 </listbox>
               </groupbox>
               <groupbox>
@@ -215,16 +215,16 @@
                   </columns>
                   <rows>
                     <row align="center">
-                      <label control="reviewerName" value="&name;"/>
-                      <textbox id="reviewerName" oninput="set('evaluation', 'reviewer', 'Name', this.value);" disabled="true"/>
-                      <label control="reviewerEmail" value="&email;"/>
-                      <textbox id="reviewerEmail" oninput="set('evaluation', 'reviewer', 'Email', this.value);" disabled="true"/>
-                      <label control="reviewerDate" value="&date;"/>
-                      <datepicker id="reviewerDate" type="popup" oninput="set('evaluation', 'reviewer', 'Date', this.value);" disabled="true"/>
+                      <label control="templateReviewerName" value="&name;"/>
+                      <textbox id="templateReviewerName" oninput="docHasChanged(true);" disabled="true"/>
+                      <label control="templateReviewerEmail" value="&email;"/>
+                      <textbox id="templateReviewerEmail" oninput="docHasChanged(true);" disabled="true"/>
+                      <label control="templateReviewerDate" value="&date;"/>
+                      <datepicker id="templateReviewerDate" type="popup" onchange="docHasChanged(true);" disabled="true"/>
                     </row>
                     <hbox align="center">
-                      <label control="reviewerComment" value="&comment;"/>
-                      <textbox id="reviewerComment" multiline="true" flex="1" oninput="set('evaluation', 'reviewer', 'Comment', this.value);" disabled="true"/>
+                      <label control="templateReviewerComment" value="&comment;"/>
+                      <textbox id="templateReviewerComment" multiline="true" flex="1" oninput="docHasChanged(true);" disabled="true"/>
                     </hbox>
                   </rows>
                 </grid>
@@ -232,14 +232,14 @@
               <groupbox>
                 <caption label="&evaluationDates;"/>
                 <hbox align="center">
-                  <label control="creationDate" value="&creationDate;"/>
-                  <datepicker id="creationDate" type="popup" onchange="set(this.value, 'evaluation', 'dates', 'creation');" disabled="true"/>
+                  <label control="templateCreationDate" value="&creationDate;"/>
+                  <datepicker id="templateCreationDate" type="popup" onchange="docHasChanged(true);" disabled="true"/>
                   <separator class="groove-thin" orient="vertical"/>
-                  <label control="updateDate" value="&updateDate;"/>
-                  <datepicker id="updateDate" type="popup" oninput="set(this.value, 'evaluation', 'dates', 'update');" disabled="true"/>
+                  <label control="templateUpdateDate" value="&updateDate;"/>
+                  <datepicker id="templateUpdateDate" type="popup" oninput="docHasChanged(true);" disabled="true"/>
                   <separator class="groove-thin" orient="vertical"/>
-                  <label control="validationDate" value="&validationDate;"/>
-                  <datepicker id="validationDate" type="popup" onchange="set(this.value, 'evaluation', 'dates', 'validation');" disabled="true"/>
+                  <label control="templateValidationDate" value="&validationDate;"/>
+                  <datepicker id="templateValidationDate" type="popup" onchange="docHasChanged(true);" disabled="true"/>
                 </hbox>
               </groupbox>
             </vbox>
@@ -248,10 +248,22 @@
           <groupbox>
             <caption label="&evaluation;"/>
             <vbox>
-              <hbox align="center">
-                <label control="evaluationVersion" value="&version;"/>
-                <textbox id="evaluationVersion" width="250" placeholder="&evaluationVersion;"/>
-              </hbox>
+              <grid flex="1">
+                <columns>
+                  <column />
+                  <column flex="1"/>
+                  <column />
+                  <column flex="1"/>
+                </columns>
+                <rows>
+                  <row align="center">
+                    <label control="version" value="&version;"/>
+                    <textbox id="version" placeholder="&evaluationVersion;"/>
+                    <label control="language" value="&language;"/>
+                    <textbox id="language" oninput="docHasChanged(true);" flex="1"/>
+                  </row>
+                </rows>
+              </grid>
               <groupbox>
                 <caption label="&authors;"/>
                 <hbox flex="1">
@@ -276,16 +288,16 @@
                     </rows>
                   </grid>
                   <vbox flex="5">
-                    <listbox flex="1" rows="3" onselect="changeAuthor(this.selectedItem);" width="500"  class="over">
+                    <listbox flex="1" rows="3" onselect="changeEvalAuthor('authorName', 'authorEmail', 'authorComment', this.selectedItem);" width="500"  class="over">
                       <listhead flex="1">
                         <listheader label="&name;" width="200"/>
-                        <listheader label="&email;" width="300"/>
-                        <!--<listheader label="&authorComment;"/>!-->
+                        <listheader label="&email;" width="200"/>
+                        <listheader label="&comment;" width="100"/>
                       </listhead>
-                      <listitem flex="1">
+                      <!--<listitem flex="1">
                         <listcell label="teqetqest "/>
                         <listcell label="fsqdqs@dqds.sss"/>
-                      </listitem>
+                      </listitem>!-->
                     </listbox>
                     <hbox>
                       <button label="&addButton;" id="addAuthorButton" class="addAuthor" oncommand="addAuthor();"/>
@@ -308,15 +320,15 @@
                   <rows>
                     <row align="center">
                       <label control="reviewerName" value="&name;"/>
-                      <textbox id="reviewerName" oninput="set('evaluation', 'reviewer', 'Name', this.value);"/>
+                      <textbox id="reviewerName" oninput="docHasChanged(true);"/>
                       <label control="reviewerEmail" value="&email;"/>
-                      <textbox id="reviewerEmail" oninput="set('evaluation', 'reviewer', 'Email', this.value);"/>
+                      <textbox id="reviewerEmail" oninput="docHasChanged(true);"/>
                       <label control="reviewerDate" value="&date;"/>
-                      <datepicker id="reviewerDate" type="popup" oninput="set('evaluation', 'reviewer', 'Date', this.value);"/>
+                      <datepicker id="reviewerDate" type="popup" onchange="docHasChanged(true);"/>
                     </row>
                     <hbox align="center">
                       <label control="reviewerComment" value="&comment;"/>
-                      <textbox id="reviewerComment" multiline="true" flex="1" oninput="set('evaluation', 'reviewer', 'Comment', this.value);"/>
+                      <textbox id="reviewerComment" multiline="true" flex="1" oninput="docHasChanged(true);"/>
                     </hbox>
                   </rows>
                 </grid>
@@ -325,13 +337,13 @@
                 <caption label="&evaluationDates;"/>
                   <hbox align="center">
                     <label control="creationDate" value="&creationDate;"/>
-                    <datepicker id="creationDate" type="popup" onchange="set(this.value, 'evaluation', 'dates', 'creation');"/>
+                    <datepicker id="creationDate" type="popup" onchange="docHasChanged(true);"/>
                     <separator class="groove-thin" orient="vertical"/>
                     <label control="updateDate" value="&updateDate;"/>
-                    <datepicker id="updateDate" type="popup" oninput="set(this.value, 'evaluation', 'dates', 'update');"/>
+                    <datepicker id="updateDate" type="popup" oninput="docHasChanged(true);"/>
                     <separator class="groove-thin" orient="vertical"/>
                     <label control="validationDate" value="&validationDate;"/>
-                    <datepicker id="validationDate" type="popup" onchange="set(this.value, 'evaluation', 'dates', 'validation');"/>
+                    <datepicker id="validationDate" type="popup" onchange="docHasChanged(true);"/>
                   </hbox>
               </groupbox>
             </vbox>
@@ -354,33 +366,33 @@
                 <rows>
                   <row align="center">
                     <label control="componentName" value="&componentName;"/>
-                    <textbox id="componentName" flex="1" oninput="set(this.value, 'component', 'Name', null);"/>
+                    <textbox id="componentName" flex="1" oninput="docHasChanged(true);"/>
                     <label control="componentReleaseDate" value="&componentReleaseDate;"/>
-                    <datepicker id="componentReleaseDate" type="popup" onchange="set(this.value, 'component', 'Name', null);"/>
+                    <datepicker id="componentReleaseDate" type="popup" onchange="docHasChanged(true);"/>
                   </row>
                   <row align="center">
                     <label control="componentVersion" value="&componentVersion;"/>
-                    <textbox id="componentVersion" flex="1" oninput="set(this.value, 'component', 'Version', null);"/>
+                    <textbox id="componentVersion" flex="1" oninput="docHasChanged(true);"/>
                     <label control="componentMainTech" value="&componentMainTech;"/>
-                    <textbox id="componentMainTech" flex="1" oninput="set(this.value, 'component', 'MainTech', null);"/>
+                    <textbox id="componentMainTech" flex="1" oninput="docHasChanged(true);"/>
                   </row>
                   <row align="center">
                     <label control="componentArchetype" value="&componentArchetype;"/>
-                    <textbox id="componentArchetype" flex="1" oninput="set(this.value, 'component', 'Archetype', null);"/>
+                    <textbox id="componentArchetype" flex="1" oninput="docHasChanged(true);"/>
                     <label control="componentHomepage" value="&componentHomepage;"/>
-                    <textbox id="componentHomepage" placeholder="http://..." flex="1" oninput="set(this.value, 'component', 'Homepage', null);"/>
+                    <textbox id="componentHomepage" placeholder="http://..." flex="1" oninput="docHasChanged(true);"/>
                   </row>
                   <row align="center">
                     <label control="componentType" value="&componentType;"/>
-                    <textbox id="componentType" flex="1" oninput="set(this.value, 'component', 'Type', null);"/>
+                    <textbox id="componentType" flex="1" oninput="docHasChanged(true);"/>
                     <label control="componentStatus" value="&componentStatus;"/>
-                    <textbox id="componentStatus" flex="1" oninput="set(this.value, 'component', 'Status', null);" placeholder="&componentStatusTip;"/>
+                    <textbox id="componentStatus" flex="1" oninput="docHasChanged(true);" placeholder="&componentStatusTip;"/>
                   </row>
                   <row align="center">
                     <label control="componentVendor" value="&componentVendor;"/>
-                    <textbox id="componentVendor" flex="1" oninput="set(this.value, 'component', 'Vendor', null);"/>
+                    <textbox id="componentVendor" flex="1" oninput="docHasChanged(true);"/>
                     <label control="componentDescription" value="&componentDescription;"/>
-                    <textbox id="componentDescription" multiline="true" flex="1" oninput="set(this.value, 'component', 'Description', null);"/>
+                    <textbox id="componentDescription" multiline="true" flex="1" oninput="docHasChanged(true);"/>
                   </row>
                 </rows>
               </grid>
@@ -393,7 +405,7 @@
               <vbox flex="1">
                 <hbox align="center">
                   <label control="number" value="&number;"/>
-                  <textbox id="number" oninput="update(this)" type="number" size="6"/>
+                  <textbox id="number" oninput="docHasChanged(true);" type="number" size="6"/>
                 </hbox>
                 <groupbox>
                   <caption label="&developers;"/>
@@ -419,17 +431,17 @@
                       </rows>
                     </grid>
                     <vbox flex="1">
-                      <listbox flex="1" rows="3" onselect="changeAuthor(this.selectedItem);" width="500"  class="over">
+                      <listbox flex="1" rows="3" onselect="changePerson('devName', 'devEmail', 'devCompany', this.selectedItem);" width="500"  class="over">
                         <listhead flex="1">
                           <listheader label="&name;" width="200"/>
                           <listheader label="&email;" width="225"/>
                           <listheader label="&company;" width="125"/>
                         </listhead>
-                        <listitem flex="1">
+                        <!--<listitem flex="1">
                           <listcell label="teqetqest "/>
                           <listcell label="fsqdqs@dqds.sss"/>
                           <listcell label="fsqmoi"/>
-                        </listitem>
+                        </listitem>!-->
                       </listbox>
                       <hbox>
                         <button label="&addButton;" id="addDevButton" class="addAuthor" oncommand="addContrib();"/>
@@ -452,7 +464,7 @@
                           <textbox id="contribName" flex="1"/>
                         </row>
                         <row align="center">
-                          <label control="devEmail" value="&email;"/>
+                          <label control="contribEmail" value="&email;"/>
                           <textbox id="contribEmail" flex="1"/>
                         </row>
                         <row align="center">
@@ -462,17 +474,17 @@
                       </rows>
                     </grid>
                     <vbox flex="1">
-                      <listbox flex="1" rows="3" onselect="changeAuthor(this.selectedItem);" width="500" class="over">
+                      <listbox flex="1" rows="3" onselect="changePerson('contribName', 'contribEmail', 'contribCompany', this.selectedItem);" width="500" class="over">
                         <listhead flex="1">
                           <listheader label="&name;" width="200"/>
                           <listheader label="&email;" width="225"/>
                           <listheader label="&company;" width="125"/>
                         </listhead>
-                        <listitem flex="1">
+                        <!--<listitem flex="1">
                           <listcell label="teqetqest "/>
                           <listcell label="fsqdqs@dqds.sss"/>
                           <listcell label="fsqmoi"/>
-                        </listitem>
+                        </listitem>!-->
                       </listbox>
                       <hbox>
                         <button label="&addButton;" id="addDevButton" class="addAuthor" oncommand="addDev();"/>
@@ -490,18 +502,18 @@
                   <column />
                   <column flex="1"/>
                   <column />
-                  <column flex="1"/>
+                  <column width="100"/>
                   <column />
-                  <column flex="1"/>
+                  <column flex="3"/>
                 </columns>
                 <rows>
                   <row align="center">
                     <label control="licenseName" value="&licenseName;"/>
-                    <textbox id="licenseName" oninput="setkey()" flex="1"/>
+                    <textbox id="licenseName" oninput="docHasChanged(true);" flex="1"/>
                     <label control="licenseVersion" value="&licenseVersion;"/>
-                    <textbox id="licenseVersion" oninput="update(this)" flex="1"/>
+                    <textbox id="licenseVersion" oninput="docHasChanged(true);" flex="1"/>
                     <label control="licenseHomepage" value="&licenseHomepage;"/>
-                    <textbox id="licenseHomepage" oninput="update(this)" placeholder="http://..." flex="1"/>
+                    <textbox id="licenseHomepage" oninput="docHasChanged(true);" placeholder="http://..." flex="3"/>
                   </row>
                 </rows>
               </grid>
@@ -510,7 +522,7 @@
               <caption label="&legal;"/>
               <hbox align="center">
                 <label control="copyright" value="&copyright;"/>
-                <textbox id="copyright" oninput=""/>
+                <textbox id="copyright" oninput="docHasChanged(true);"/>
               </hbox>
             </groupbox>
           </vbox>

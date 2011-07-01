@@ -61,6 +61,7 @@
 <!ENTITY reviewer "Validateur :">
 <!ENTITY date "Date">
 <!ENTITY version "Version :">
+<!ENTITY language "Langue :">
 <!ENTITY evaluationVersion "La version de cette évaluation">
 <!ENTITY evaluationDates "Dates :">
 <!ENTITY creationDate "Crée le :">
