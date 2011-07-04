@@ -125,14 +125,14 @@ function setupEditorForEval() {
       alert("setupEditorForEval: couldn't get " + authorsArray[i] + " authors: " + e.message);
     }
     var authorList = document.getElementById(authorsArray[i] + "Authors");
-    for(var i=0; i < authors.length; i++) {
+    for(var j = 0; j < authors.length; ++j) {
       var listitem = document.createElement("listitem");
       var listcellName = document.createElement("listcell");
       var listcellEmail = document.createElement("listcell");
       var listcellComment = document.createElement("listcell");
-      listcellName.setAttribute("label", authors[i].name);
-      listcellEmail.setAttribute("label", authors[i].email);
-      listcellComment.setAttribute("label", authors[i].comment);
+      listcellName.setAttribute("label", authors[j].name);
+      listcellEmail.setAttribute("label", authors[j].email);
+      listcellComment.setAttribute("label", authors[j].comment);
       listitem.appendChild(listcellName);
       listitem.appendChild(listcellEmail);
       listitem.appendChild(listcellComment);
@@ -148,17 +148,17 @@ function setupEditorForEval() {
       alert("setupEditorForEval: couldn't get " + teamArray[i] + " team: " + e.message);
     }
     var authorList = document.getElementById(teamArray[i] + "Team");
-    for(var i=0; i < authors.length; i++) {
+    for(var j = 0; j < authors.length; ++j) {
       var listitem = document.createElement("listitem");
       var listcellName = document.createElement("listcell");
       var listcellEmail = document.createElement("listcell");
-      var listcellCompagny = document.createElement("listcell");
-      listcellName.setAttribute("label", authors[i].name);
-      listcellEmail.setAttribute("label", authors[i].email);
-      listcellCompagny.setAttribute("label", authors[i].compagny);
+      var listcellCompany = document.createElement("listcell");
+      listcellName.setAttribute("label", authors[j].name);
+      listcellEmail.setAttribute("label", authors[j].email);
+      listcellCompany.setAttribute("label", authors[j].company);
       listitem.appendChild(listcellName);
       listitem.appendChild(listcellEmail);
-      listitem.appendChild(listcellCompagny);
+      listitem.appendChild(listcellCompany);
       authorList.appendChild(listitem);
     }
   }
@@ -169,7 +169,7 @@ function setupEditorForEval() {
   drawChart();
 
   // Select the General tab
-  document.getElementById('tabs').selectedIndex = 2;
+  document.getElementById('tabs').selectedIndex = 3;
 }
 
 
@@ -203,6 +203,7 @@ function openFile() {
     } catch (e) {
       alert("openFile: an error occured while setting up the editor " + e.message);
       closeFile();
+      return;
     }
   }
 }
@@ -256,8 +257,10 @@ function openRemoteFile(url) {
   } catch (e) {
     alert("openRemoteFile: an error occured while setting up the editor " + e.message);
     closeFile();
+    return;
   }
 
+  alert("c");
   // If we're creating a new file, set docHasChanged();
   if (myDoc.filename == null) {
     docHasChanged();

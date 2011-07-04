@@ -120,7 +120,6 @@ function Document() {
       myDoc.url = url;
       getPrivilege();
       req = new XMLHttpRequest();
-
       req.open('GET', url, false);
       req.overrideMimeType('text/xml');
       req.send(null);
@@ -519,11 +518,11 @@ function Document() {
         } else {
           author.email = "";
         }
-        var compagnies = node.getElementsByTagName("compagny");
-        if (compagnies.length > 0) {
-          author.compagny = compagnies[0].textContent;
+        var companies = node.getElementsByTagName("compagny");
+        if (companies.length > 0) {
+          author.company = companies[0].textContent;
         } else {
-          author.compagny = "";
+          author.company = "";
         }
         authors.push(author);
         node = nodes.iterateNext();

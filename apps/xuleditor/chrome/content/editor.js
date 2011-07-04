@@ -54,7 +54,13 @@ function init() {
     if (uri) {
       // Case of a .qsos file passed in parameter through commandline (xuleditor -file filename)
       uri = cmdLine.resolveURI(uri);
-      openRemoteFile(uri.spec);
+      try {
+        // FIXME Open file with spaces
+        openRemoteFile(uri.spec);
+      } catch (e) {
+        alert("init: fail to open file " + uri.spec + ": " + e.message);
+        closeFile();
+      }
     }
   }
 }
@@ -97,6 +103,8 @@ function setStateEvalOpen(state) {
   } else {
     var bool = "true";
   }
+  // Settings tab disable as it's not currently functionnal
+  document.getElementById("configTab").hidden = "true";
   document.getElementById("authorsTab").hidden = bool;
   document.getElementById("oscTab").hidden = bool;
   document.getElementById("criteriaTab").hidden = bool;

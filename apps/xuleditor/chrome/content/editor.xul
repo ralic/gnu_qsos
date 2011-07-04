@@ -114,7 +114,7 @@
             <label value="&project;"/>
             <textbox value="&projectUrl;" readonly="true" class="plain" style="background-color: transparent;" flex="1"/>
           </hbox>
-          <!--
+          <!-- TODO: find the correct way to do HTML links in xul
           <vbox id="bottomBox">
             <hbox pack="center">
               <label class="text-link bottom-link" href="about:license">AAAA</label>
@@ -196,10 +196,6 @@
                     <listheader label="&email;" width="200"/>
                     <listheader label="&comment;" width="200"/>
                   </listhead>
-                  <!-- <listitem flex="1">
-                    <listcell label="teqetqest "/>
-                    <listcell label="fsqdqs@dqds.sss"/>
-                  </listitem> !-->
                 </listbox>
               </groupbox>
               <groupbox>
@@ -294,10 +290,6 @@
                         <listheader label="&email;" width="200"/>
                         <listheader label="&comment;" width="100"/>
                       </listhead>
-                      <!--<listitem flex="1">
-                        <listcell label="teqetqest "/>
-                        <listcell label="fsqdqs@dqds.sss"/>
-                      </listitem>!-->
                     </listbox>
                     <hbox>
                       <button label="&addButton;" id="addAuthorButton" class="addAuthor" oncommand="addAuthor();"/>
@@ -437,11 +429,6 @@
                           <listheader label="&email;" width="225"/>
                           <listheader label="&company;" width="125"/>
                         </listhead>
-                        <!--<listitem flex="1">
-                          <listcell label="teqetqest "/>
-                          <listcell label="fsqdqs@dqds.sss"/>
-                          <listcell label="fsqmoi"/>
-                        </listitem>!-->
                       </listbox>
                       <hbox>
                         <button label="&addButton;" id="addDevButton" class="addAuthor" oncommand="addContrib();"/>
@@ -480,11 +467,6 @@
                           <listheader label="&email;" width="225"/>
                           <listheader label="&company;" width="125"/>
                         </listhead>
-                        <!--<listitem flex="1">
-                          <listcell label="teqetqest "/>
-                          <listcell label="fsqdqs@dqds.sss"/>
-                          <listcell label="fsqmoi"/>
-                        </listitem>!-->
                       </listbox>
                       <hbox>
                         <button label="&addButton;" id="addDevButton" class="addAuthor" oncommand="addDev();"/>
@@ -522,7 +504,7 @@
               <caption label="&legal;"/>
               <hbox align="center">
                 <label control="copyright" value="&copyright;"/>
-                <textbox id="copyright" oninput="docHasChanged(true);"/>
+                <textbox id="copyright" oninput="docHasChanged(true);" width="300"/>
               </hbox>
             </groupbox>
           </vbox>
