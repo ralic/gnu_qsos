@@ -38,7 +38,8 @@ function Document() {
     this.write = write;
     this.writeremote = writeremote;
     this.getkeytitle = getkeytitle;
-    this.getauthors = getauthors;
+    this.getAuthors = getAuthors;
+    this.getTeam = getTeam;
     this.addauthor = addauthor;
     this.delauthor = delauthor;
 
@@ -176,7 +177,7 @@ function Document() {
       req = new XMLHttpRequest();
 
       //Set the filename
-      var tmpFilename = getqsosappfamily() + "." + getappname() + "." + getrelease();
+      var tmpFilename = myDoc.get("component/mainTech") + "." + myDoc.get("component/name") + "." + myDoc.get("component/version");
       if (tmpFilename == "..") {
         if (myDoc.filename == null) {
           tmpFilename = "upload";
@@ -469,30 +470,67 @@ function Document() {
     // Authors, reviewer, contributors and developers management
     ////////////////////////////////////////////////////////////////////
 
-    function getauthors() {
+    function getAuthors(type) {
       var authors = new Array();
-      var nodes = sheet.evaluate("//author", sheet, null, XPathResult.ANY_TYPE,null);
-      var node = nodes.iterateNext();
-      while (node) {
+      var nodes = sheet.evaluate("//" + type + "/authors/author", sheet, null, XPathResult.ANY_TYPE,null);
+      node = nodes.iterateNext();
+      while (node != null) {
         var author = new Object();
-
         var names = node.getElementsByTagName("name");
-        if (names.length > 0)
+        if (names.length > 0) {
           author.name = names[0].textContent;
-        else
-          author.name = ""
-
+        } else {
+          author.name = "";
+        }
         var emails = node.getElementsByTagName("email");
-        if (emails.length > 0)
+        if (emails.length > 0) {
           author.email = emails[0].textContent;
-        else
-          author.email = ""
-
+        } else {
+          author.email = "";
+        }
+        var comments = node.getElementsByTagName("comment");
+        if (comments.length > 0) {
+          author.comment = comments[0].textContent;
+        } else {
+          author.comment = "";
+        }
         authors.push(author);
         node = nodes.iterateNext();
       }
       return authors;
     }
+
+
+    function getTeam(type) {
+      var authors = new Array();
+      var nodes = sheet.evaluate("//team/" + type + "s/" + type, sheet, null, XPathResult.ANY_TYPE,null);
+      node = nodes.iterateNext();
+      while (node != null) {
+        var author = new Object();
+        var names = node.getElementsByTagName("name");
+        if (names.length > 0) {
+          author.name = names[0].textContent;
+        } else {
+          author.name = "";
+        }
+        var emails = node.getElementsByTagName("email");
+        if (emails.length > 0) {
+          author.email = emails[0].textContent;
+        } else {
+          author.email = "";
+        }
+        var compagnies = node.getElementsByTagName("compagny");
+        if (compagnies.length > 0) {
+          author.compagny = compagnies[0].textContent;
+        } else {
+          author.compagny = "";
+        }
+        authors.push(author);
+        node = nodes.iterateNext();
+      }
+      return authors;
+    }
+
 
     function addauthor(varname, varemail) {
       var nodes = sheet.evaluate("//authors", sheet, null, XPathResult.ANY_TYPE,null);

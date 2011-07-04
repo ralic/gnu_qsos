@@ -91,7 +91,7 @@ function drawChart(name) {
 function addFirstLabel(marker) {
   var label = document.getElementById("chart-label");
   var newLabel = document.createElement("label");
-  newLabel.setAttribute("value", myDoc.getappname() + " " + myDoc.getrelease());
+  newLabel.setAttribute("value", myDoc.get("component/name") + " " + myDoc.get("component/version"));
   newLabel.setAttribute("onclick", "drawChart()");
   newLabel.style.cursor = "pointer";
 

@@ -139,16 +139,16 @@
               </columns>
               <rows>
                 <row align="center">
-                  <label control="authorName" value="&name;"/>
-                  <textbox id="authorName" flex="1"/>
+                  <label control="savedAuthorName" value="&name;"/>
+                  <textbox id="savedAuthorName" flex="1"/>
                 </row>
                 <row align="center">
-                  <label control="authorEmail" value="&email;"/>
-                  <textbox id="authorEmail" flex="1"/>
+                  <label control="savedAuthorEmail" value="&email;"/>
+                  <textbox id="saveAuthorEmail" flex="1"/>
                 </row>
                 <row align="center">
-                  <label control="authorComment" value="&comment;"/>
-                  <textbox id="authorComment" multiline="true" flex="1"/>
+                  <label control="savedAuthorComment" value="&comment;"/>
+                  <textbox id="savedAuthorComment" multiline="true" flex="1"/>
                 </row>
               </rows>
             </grid>
@@ -190,11 +190,11 @@
             <vbox>
               <groupbox>
                 <caption label="&authors;"/>
-                <listbox flex="1" rows="3" class="over" disabled="true">
+                <listbox id="templateAuthors" flex="1" rows="3" class="over" disabled="true">
                   <listhead flex="1">
-                    <listheader label="&name;" width="300"/>
-                    <listheader label="&email;" width="300"/>
-                    <!--<listheader label="&authorComment;"/>!-->
+                    <listheader label="&name;" width="200"/>
+                    <listheader label="&email;" width="200"/>
+                    <listheader label="&comment;" width="200"/>
                   </listhead>
                   <!-- <listitem flex="1">
                     <listcell label="teqetqest "/>
@@ -288,7 +288,7 @@
                     </rows>
                   </grid>
                   <vbox flex="5">
-                    <listbox flex="1" rows="3" onselect="changeEvalAuthor('authorName', 'authorEmail', 'authorComment', this.selectedItem);" width="500"  class="over">
+                    <listbox id="evaluationAuthors" flex="1" rows="3" onselect="changeEvalAuthor('authorName', 'authorEmail', 'authorComment', this.selectedItem);" width="500"  class="over">
                       <listhead flex="1">
                         <listheader label="&name;" width="200"/>
                         <listheader label="&email;" width="200"/>
@@ -431,7 +431,7 @@
                       </rows>
                     </grid>
                     <vbox flex="1">
-                      <listbox flex="1" rows="3" onselect="changePerson('devName', 'devEmail', 'devCompany', this.selectedItem);" width="500"  class="over">
+                      <listbox id="developerTeam" flex="1" rows="3" onselect="changePerson('devName', 'devEmail', 'devCompany', this.selectedItem);" width="500"  class="over">
                         <listhead flex="1">
                           <listheader label="&name;" width="200"/>
                           <listheader label="&email;" width="225"/>
@@ -474,7 +474,7 @@
                       </rows>
                     </grid>
                     <vbox flex="1">
-                      <listbox flex="1" rows="3" onselect="changePerson('contribName', 'contribEmail', 'contribCompany', this.selectedItem);" width="500" class="over">
+                      <listbox id="contributorTeam" flex="1" rows="3" onselect="changePerson('contribName', 'contribEmail', 'contribCompany', this.selectedItem);" width="500" class="over">
                         <listhead flex="1">
                           <listheader label="&name;" width="200"/>
                           <listheader label="&email;" width="225"/>
