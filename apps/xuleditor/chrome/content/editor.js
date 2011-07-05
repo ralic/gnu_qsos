@@ -49,7 +49,7 @@ function init() {
     openRemoteFile(urlFirefox);
   } else {
     var cmdLine = window.arguments[0];
-    cmdLine = cmdLine.QueryInterface(Components.interfaces.nsICommandLine); // FIXME
+    cmdLine = cmdLine.QueryInterface(Components.interfaces.nsICommandLine); // FIXME Firefox display an error here
     var uri = cmdLine.handleFlagWithParam("file", false);
     if (uri) {
       // Case of a .qsos file passed in parameter through commandline (xuleditor -file filename)
@@ -136,11 +136,11 @@ function setStateEvalOpen(state) {
 // (Un)freezes the "Score" input files (current criteria properties)
 // bool: "true" to freeze; "" to unfreeze
 function freezeScore(bool) {
-  document.getElementById("f-c-score").disabled = bool;
+  document.getElementById("scoreRadiogroup").disabled = bool;
 }
 
 // (Un)freezes the "Comments" input file (current criteria property)
 // bool: "true" to freeze; "" to unfreeze
 function freezeComments(bool) {
-  document.getElementById("f-c-comments").disabled = bool;
+  document.getElementById("criteriaComments").disabled = bool;
 }

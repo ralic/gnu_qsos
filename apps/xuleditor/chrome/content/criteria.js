@@ -61,28 +61,28 @@ function treeselect(tree) {
     //document.getElementById("t").selectedIndex = 1;
     //document.getElementById("t-c-title").setAttribute("label", myDoc.getkeytitle(id));
 
-    document.getElementById("f-c-desc0").setAttribute("label", "0: "+myDoc.getkeydesc0(id));
-    document.getElementById("f-c-desc1").setAttribute("label", "1: "+myDoc.getkeydesc1(id));
-    document.getElementById("f-c-desc2").setAttribute("label", "2: "+myDoc.getkeydesc2(id));
+    document.getElementById("scoreDescription0").setAttribute("label", "0: "+myDoc.getkeydesc0(id));
+    document.getElementById("scoreDescription1").setAttribute("label", "1: "+myDoc.getkeydesc1(id));
+    document.getElementById("scoreDescription2").setAttribute("label", "2: "+myDoc.getkeydesc2(id));
     var score = myDoc.getkeyscore(id);
 
-    document.getElementById("f-c-desc").value = myDoc.getkeydesc(id);
+    document.getElementById("criteriaDescription").value = myDoc.getkeydesc(id);
     if (score == "-1") {
-      document.getElementById("f-g-score").collapsed = true;
+      document.getElementById("scoreRadiogroup").collapsed = true;
       freezeScore("true");
     } else {
-      document.getElementById("f-g-score").collapsed = false;
-      document.getElementById("f-c-score").selectedIndex = score;
+      document.getElementById("scoreGroupbox").collapsed = false;
+      document.getElementById("scoreRadiogroup").selectedIndex = score;
       freezeScore("");
     }
 
-    document.getElementById("f-c-comments").value = myDoc.getkeycomment(id);
+    document.getElementById("criteriaComments").value = myDoc.getkeycomment(id);
     freezeComments("");
 
     if (myDoc.hassubelements(id)) {
       drawChart(id);
     } else {
-      if (document.getElementById("t-s").selectedIndex == 1) {
+      if (document.getElementById("tabs").selectedIndex == 3) {
         var parentId = myDoc.getparent(id);
         if (parentId) drawChart(parentId);
       }

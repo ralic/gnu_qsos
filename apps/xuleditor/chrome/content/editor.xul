@@ -254,7 +254,7 @@
                 <rows>
                   <row align="center">
                     <label control="version" value="&version;"/>
-                    <textbox id="version" placeholder="&evaluationVersion;"/>
+                    <textbox id="version" placeholder="&evaluationVersion;" oninput="docHasChanged(true);"/>
                     <label control="language" value="&language;"/>
                     <textbox id="language" oninput="docHasChanged(true);" flex="1"/>
                   </row>
@@ -530,18 +530,18 @@
         <vbox flex = "1">
           <groupbox>
             <caption label="&criteriaDescription;"/>
-            <textbox id="f-c-desc" multiline="true" readonly="true" class="plain" style="background-color: transparent;"/>
+            <textbox id="criteriaDescription" multiline="true" readonly="true" class="plain" style="background-color: transparent;"/>
           </groupbox>
-          <groupbox id="f-g-score">
+          <groupbox id="scoreGroupbox">
             <caption label="&score;"/>
-            <radiogroup id="f-c-score">
-              <radio id="f-c-desc0" label="&score0;" oncommand="changeScore(0);"/>
-              <radio id="f-c-desc1" label="&score1;" oncommand="changeScore(1);"/>
-              <radio id="f-c-desc2" label="&score2;" oncommand="changeScore(2);"/>
+            <radiogroup id="scoreRadiogroup">
+              <radio id="scoreDescription0" label="&score0;" oncommand="changeScore(0);"/>
+              <radio id="scoreDescription1" label="&score1;" oncommand="changeScore(1);"/>
+              <radio id="scoreDescription2" label="&score2;" oncommand="changeScore(2);"/>
             </radiogroup>
           </groupbox>
-          <label control="f-c-comments" value="&comments;"/>
-          <textbox id="f-c-comments" multiline="true" rows="5" oninput="changeComments(this);"/>
+          <label control="criteriaComments" value="&comments;"/>
+          <textbox id="criteriaComments" multiline="true" rows="5" oninput="changeComments(this);"/>
         </vbox>
       </tabpanel>
       <tabpanel id="chartTabPanel">
@@ -557,9 +557,11 @@
 
  <keyset>
   <!-- Classic shortcuts !-->
-  <key id="new file shortcut" modifiers="control" key="&newFileShortcut;" oncommand=";"/>
-  <key id="save shortcut" modifiers="control" key="&saveFileShortcut;" oncommand=";"/>
-  <key id="exit shortcut" modifiers="control" key="&exitShortcut;" oncommand=";"/>
+  <key id="new file shortcut" modifiers="control" key="&newFileShortcut;" oncommand="newFileDialog();"/>
+  <key id="open local file shortcut" modifiers="control" key="&openLocalFileShortcut;" oncommand="openFile();"/>
+  <key id="save shortcut" modifiers="control" key="&saveFileShortcut;" oncommand="saveFile();"/>
+  <key id="close file shortcut" modifiers="control" key="&closeFileShortcut;" oncommand="closeFile();"/>
+  <key id="exit shortcut" modifiers="control" key="&exitShortcut;" oncommand="if (checkCloseFile() == true) exit();"/>
 
   <!-- Other shortcuts !-->
   <key keycode="VK_ESCAPE" oncommand="if (checkCloseFile() == true) window.close();"/>

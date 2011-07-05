@@ -155,5 +155,7 @@
 
 <!-- Key for keyboard shortcuts !-->
 <!ENTITY newFileShortcut "n">
+<!ENTITY openLocalFileShortcut "o">
 <!ENTITY saveFileShortcut "s">
+<!ENTITY closeFileShortcut "w">
 <!ENTITY exitShortcut "q">

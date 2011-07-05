@@ -40,36 +40,6 @@ function setupEditorForEval() {
   // Window's title
   document.title = strbundle.getString("QSOSEvaluation") + " " + myDoc.get("component/name") + " (" + myDoc.getfilename() + ")";
 
-  // Tree population
-/*  var tree = document.getElementById("criteriaTree");
-  var treechildren = buildtree();
-  tree.appendChild(treechildren);*/
-
-  // License setup and checks
-/*  var licenses = myDoc.getlicenselist();
-  var mypopuplist = document.getElementById("f-license-popup");
-  for(var i=0; i < licenses.length; i++) {
-    var menuitem = document.createElement("menuitem");
-    menuitem.setAttribute("label", licenses[i]);
-    mypopuplist.appendChild(menuitem);
-  }
-
-  var licenseIdFromDesc = -1;
-  var licenseDesc = myDoc.getlicensedesc();
-  for (var i=0; i < licenses.length; ++i){
-    if (licenses[i] == licenseDesc) {
-      var licenseIdFromDesc = i;
-      break;
-    }
-  }
-  var licenseId = myDoc.getlicenseid();
-  var licenseList = document.getElementById("f-license");
-  if (licenseIdFromDesc != -1){
-    licenseList.selectedIndex = licenseIdFromDesc;
-  } else {
-    licenseList.selectedIndex = licenseId;
-  }*/
-
   // Component fields
   document.getElementById("componentName").value = myDoc.get("component/name");
   document.getElementById("componentReleaseDate").value = myDoc.get("component/releaseDate");
@@ -163,13 +133,42 @@ function setupEditorForEval() {
     }
   }
 
-  setStateEvalOpen(true);
+  // Tree population
+  /*  var tree = document.getElementById("criteriaTree");
+   v ar treechildren = buildtree(); * *
+   tree.appendChild(treechildren);*/
 
   // Draw top-level SVG chart
   drawChart();
 
+  setStateEvalOpen(true);
+
   // Select the General tab
   document.getElementById('tabs').selectedIndex = 3;
+}
+
+
+function openLocalFile(filename) {
+  try {
+    myDoc = new Document();
+  } catch (e) {
+    alert("openLocalFile: new Document(): " + e.message);
+    closeFile();
+    return;
+  }
+  myDoc.filename = filename;
+  if (myDoc.load() == false) {
+    closeFile();
+    return;
+  }
+
+  try {
+    setupEditorForEval();
+  } catch (e) {
+    alert("openFile: an error occured while setting up the editor " + e.message);
+    closeFile();
+    return;
+  }
 }
 
 
@@ -186,25 +185,7 @@ function openFile() {
   var res = fp.show();
 
   if (res == nsIFilePicker.returnOK) {
-    try {
-      myDoc = new Document();
-    } catch (e) {
-      alert("openFile: new Document(): " + e.message);
-      return;
-    }
-    myDoc.filename = fp.file.path;
-    if (myDoc.load() == false) {
-      myDoc = null;
-      return;
-    }
-
-    try {
-      setupEditorForEval();
-    } catch (e) {
-      alert("openFile: an error occured while setting up the editor " + e.message);
-      closeFile();
-      return;
-    }
+    openLocalFile(fp.file.path);
   }
 }
 
@@ -248,22 +229,25 @@ function loadRemoteDialog() {
 
 function openRemoteFile(url) {
   if (url == "") return;
+  if (url.search("file:///") != -1) {
+    url = url.replace(/file\:\/\//g, '');
+    openLocalFile(url);
+  } else {
+    myDoc = new Document();
+    myDoc.loadremote(url);
 
-  myDoc = new Document();
-  myDoc.loadremote(url);
+    try {
+      setupEditorForEval();
+    } catch (e) {
+      alert("openRemoteFile: an error occured while setting up the editor " + e.message);
+      closeFile();
+      return;
+    }
 
-  try {
-    setupEditorForEval();
-  } catch (e) {
-    alert("openRemoteFile: an error occured while setting up the editor " + e.message);
-    closeFile();
-    return;
-  }
-
-  alert("c");
-  // If we're creating a new file, set docHasChanged();
-  if (myDoc.filename == null) {
-    docHasChanged();
+    // If we're creating a new file, set docHasChanged();
+    if (myDoc.filename == null) {
+      docHasChanged();
+    }
   }
 }
 
@@ -313,54 +297,57 @@ function buildsubtree(criteria) {
 
 // Saves modifications to the QSOS XML file
 function saveFile() {
+//   try {
   if (myDoc) {
     // Updating evaluation content
 
     // Component fields
-    document.getElementById("componentName").value = myDoc.set("component/name");
-    document.getElementById("componentReleaseDate").value = myDoc.set("component/releaseDate");
-    document.getElementById("componentVersion").value = myDoc.set("component/version");
-    document.getElementById("componentMainTech").value = myDoc.set("component/mainTech");
-    document.getElementById("componentArchetype").value = myDoc.set("component/archetype");
-    document.getElementById("componentHomepage").value = myDoc.set("component/homepage");
-    document.getElementById("componentType").value = myDoc.set("component/type");
-    document.getElementById("componentStatus").value = myDoc.set("component/status");
-    document.getElementById("componentVendor").value = myDoc.set("component/vendor");
-    document.getElementById("componentDescription").value = myDoc.set("component/description");
+    myDoc.set("component/name", document.getElementById("componentName").value);
+    myDoc.set("component/releaseDate", document.getElementById("componentReleaseDate").value);
+    myDoc.set("component/version", document.getElementById("componentVersion").value);
+    myDoc.set("component/mainTech", document.getElementById("componentMainTech").value);
+    myDoc.set("component/archetype", document.getElementById("componentArchetype").value);
+    myDoc.set("component/homepage", document.getElementById("componentHomepage").value);
+    myDoc.set("component/type", document.getElementById("componentType").value);
+    myDoc.set("component/status", document.getElementById("componentStatus").value);
+    myDoc.set("component/vendor", document.getElementById("componentVendor").value);
+    myDoc.set("component/description", document.getElementById("componentDescription").value);
 
     // License and Legal
-    document.getElementById("licenseName").value = myDoc.set("openSourceCartouche/license/name");
-    document.getElementById("licenseVersion").value = myDoc.set("openSourceCartouche/license/version");
-    document.getElementById("licenseHomepage").value = myDoc.set("openSourceCartouche/license/homepage");
+    myDoc.set("openSourceCartouche/license/name", document.getElementById("licenseName").value);
+    myDoc.set("openSourceCartouche/license/version", document.getElementById("licenseVersion").value);
+    myDoc.set("openSourceCartouche/license/homepage", document.getElementById("licenseHomepage").value);
 
-    document.getElementById("copyright").value = myDoc.set("openSourceCartouche/legal/copyright");
+    myDoc.set("openSourceCartouche/legal/copyright", document.getElementById("copyright").value);
 
     // Team
-    document.getElementById("number").value = myDoc.set("team/number");
+    myDoc.set("team/number", document.getElementById("number").value);
 
     // Authors tab
     // Template
-    document.getElementById("templateReviewerName").value = myDoc.set("template/reviewer/name");
-    document.getElementById("templateReviewerEmail").value = myDoc.set("template/reviewer/email");
-    document.getElementById("templateReviewerDate").value = myDoc.set("template/reviewer/date");
-    document.getElementById("templateReviewerComment").value = myDoc.set("template/reviewer/comment");
+    myDoc.set("template/reviewer/name", document.getElementById("templateReviewerName").value);
+    myDoc.set("template/reviewer/email", document.getElementById("templateReviewerEmail").value);
+    myDoc.set("template/reviewer/date", document.getElementById("templateReviewerDate").value);
+    myDoc.set("template/reviewer/comment", document.getElementById("templateReviewerComment").value);
 
-    document.getElementById("templateCreationDate").value = myDoc.set("template/dates/creation");
-    document.getElementById("templateUpdateDate").value = myDoc.set("template/dates/update");
-    document.getElementById("templateValidationDate").value = myDoc.set("template/dates/validation");
+    myDoc.set("template/dates/creation", document.getElementById("templateCreationDate").value);
+    myDoc.set("template/dates/update", document.getElementById("templateUpdateDate").value);
+    myDoc.set("template/dates/validation", document.getElementById("templateValidationDate").value);
 
     // Evaluation
-    document.getElementById("version").value = myDoc.set("qsosMetadata/version");
-    document.getElementById("language").value = myDoc.set("qsosMetadata/language");
+    myDoc.set("qsosMetadata/version", document.getElementById("version").value);
+    myDoc.set("qsosMetadata/language", document.getElementById("language").value);
 
-    document.getElementById("reviewerName").value = myDoc.set("evaluation/reviewer/name");
-    document.getElementById("reviewerEmail").value = myDoc.set("evaluation/reviewer/email");
-    document.getElementById("reviewerDate").value = myDoc.set("evaluation/reviewer/date");
-    document.getElementById("reviewerComment").value = myDoc.set("evaluation/reviewer/comment");
+    myDoc.set("evaluation/reviewer/name", document.getElementById("reviewerName").value);
+    myDoc.set("evaluation/reviewer/email", document.getElementById("reviewerEmail").value);
+    myDoc.set("evaluation/reviewer/date", document.getElementById("reviewerDate").value);
+    myDoc.set("evaluation/reviewer/comment", document.getElementById("reviewerComment").value);
 
-    document.getElementById("creationDate").value = myDoc.set("evaluation/dates/creation");
-    document.getElementById("updateDate").value = myDoc.set("evaluation/dates/update");
-    document.getElementById("validationDate").value = myDoc.set("evaluation/dates/validation");
+    myDoc.set("evaluation/dates/creation", document.getElementById("creationDate").value);
+    myDoc.set("evaluation/dates/update", document.getElementById("updateDate").value);
+    myDoc.set("evaluation/dates/validation", document.getElementById("validationDate").value);
+
+    alert("Save: Warning: Authors aren't saved yet!");
 
     if (myDoc.filename != null) {
       myDoc.write();
@@ -373,6 +360,7 @@ function saveFile() {
       }
     }
   }
+//   } catch(e) { alert(e.message); }
   return false;
 }
 
@@ -403,8 +391,25 @@ function saveRemote() {
 }
 
 
+// FIXME Find a ay to reset datepickers properly
+function resetDate() {
+//   var today = Date.now();
+//   function pad(n){return n<10 ? '0'+n : n}
+//   return today.getUTCFullYear() + "-" + pad(today.getUTCMonth() + 1) + "-" + pad(today.getUTCDate());
+// //     function pad(n){return n<10 ? '0'+n : n}
+// //     return d.getUTCFullYear()+'-'
+// //     + pad(d.getUTCMonth()+1)+'-'
+// //     + pad(d.getUTCDate())+'T'
+// //     + pad(d.getUTCHours())+':'
+// //     + pad(d.getUTCMinutes())+':'
+// //     + pad(d.getUTCSeconds())+'Z'}
+  return "2011-01-01";
+}
+
+
 // Closes the QSOS XML file and resets window
 function closeFile() {
+  if (myDoc == null) return;
   myDoc = null;
   id = null;
 
@@ -417,18 +422,7 @@ function closeFile() {
 
   // Component fields
   document.getElementById("componentName").value = "";
-  document.getElementById("componentReleaseDate").value = "";
-  document.getElementById("componentVersion").value = "";
-  document.getElementById("componentMainTech").value = "";
-  document.getElementById("componentArchetype").value = "";
-  document.getElementById("componentHomepage").value = "";
-  document.getElementById("componentType").value = "";
-  document.getElementById("componentStatus").value = "";
-  document.getElementById("componentVendor").value = "";
-  document.getElementById("componentDescription").value = "";
-
-  document.getElementById("componentName").value = "";
-  document.getElementById("componentReleaseDate").value = "";
+  document.getElementById("componentReleaseDate").value = resetDate();
   document.getElementById("componentVersion").value = "";
   document.getElementById("componentMainTech").value = "";
   document.getElementById("componentArchetype").value = "";
@@ -452,12 +446,12 @@ function closeFile() {
   // Template
   document.getElementById("templateReviewerName").value = "";
   document.getElementById("templateReviewerEmail").value = "";
-  document.getElementById("templateReviewerDate").value = "";
+  document.getElementById("templateReviewerDate").value = resetDate();
   document.getElementById("templateReviewerComment").value = "";
 
-  document.getElementById("templateCreationDate").value = "";
-  document.getElementById("templateUpdateDate").value = "";
-  document.getElementById("templateValidationDate").value = "";
+  document.getElementById("templateCreationDate").value = resetDate();
+  document.getElementById("templateUpdateDate").value = resetDate();
+  document.getElementById("templateValidationDate").value = resetDate();
 
   // Evaluation
   document.getElementById("version").value = "";
@@ -469,31 +463,32 @@ function closeFile() {
 
   document.getElementById("reviewerName").value = "";
   document.getElementById("reviewerEmail").value = "";
-  document.getElementById("reviewerDate").value = "";
+  document.getElementById("reviewerDate").value = resetDate();
   document.getElementById("reviewerComment").value =  "";
 
-  document.getElementById("creationDate").value = "";
-  document.getElementById("updateDate").value = "";
-  document.getElementById("validationDate").value = "";
+  document.getElementById("creationDate").value = resetDate();
+  document.getElementById("updateDate").value = resetDate();
+  document.getElementById("validationDate").value = resetDate();
 
+  // Reset authors lists, contributors lists, ...
 //   var myList = document.getElementById("f-a-list");
 //   while (myList.hasChildNodes()) {
 //     myList.removeChild(myList.childNodes[0]);
 //   }
 
-//   document.getElementById("f-a-name").value = "";
-//   document.getElementById("f-a-email").value = "";
-//   document.getElementById("f-c-desc0").setAttribute("label", strbundle.getString("score0Label"));
-//   document.getElementById("f-c-desc1").setAttribute("label", strbundle.getString("score1Label"));
-//   document.getElementById("f-c-desc2").setAttribute("label", strbundle.getString("score2Label"));
-//   document.getElementById("f-c-score").selectedIndex = -1;
-//   document.getElementById("f-c-comments").value = "";
+  // Resets the criteria tab
+  document.getElementById("criteriaDescription").value = "";
+  document.getElementById("scoreDescription0").label = strbundle.getString("score0Label");
+  document.getElementById("scoreDescription1").label = strbundle.getString("score1Label");
+  document.getElementById("scoreDescription2").label = strbundle.getString("score2Label");
+  document.getElementById("scoreRadiogroup").selectedIndex = -1;
+  document.getElementById("criteriaComments").value = "";
 
-  var tree = document.getElementById("criteriaTree");
-  var treechildren = document.getElementById("myTreechildren");
-  tree.removeChild(treechildren);
-  clearChart();
-  clearLabels();
+//   var tree = document.getElementById("criteriaTree");
+//   var treechildren = document.getElementById("myTreechildren");
+//   tree.removeChild(treechildren);
+//   clearChart();
+//   clearLabels();
 }
 
 // Checks Document's state before closing it
