@@ -25,6 +25,13 @@
 **/
 
 
+function displayXML(xmlObject) {
+  var serializer = new XMLSerializer();
+  var xml = serializer.serializeToString(xmlObject);
+  alert(xml);
+}
+
+
 function docHasChanged(bool) {
   if (bool == false){
     docChanged = false;
@@ -45,47 +52,73 @@ function changePerson(elem1, elem2, elem3, author) {
   document.getElementById(elem3).value = author.childNodes[i].getAttribute(author.childNodes[i].attributes[0].nodeName);
 }
 
-// Triggered when an author is added
-function addAuthor() {
-  var mylist = document.getElementById("f-a-list");
-  var listitem = document.createElement("listitem");
-  var name = document.getElementById("f-a-name").value;
-  var email = document.getElementById("f-a-email").value;
-  if (name == "" || email == "") {
-    alert("A valid name and e-mail adress are required");
-  } else {
-    for (var i = 0; i < mylist.getRowCount(); ++i) {
-      if (mylist.getItemAtIndex(i).label == name) {
-        alert("There already is someone named " + name);
-        return;
+
+// Triggered when a team member is added
+function addTeamMember(type) {
+  try{
+    var list = document.getElementById(type + "Team");
+    var listitem = document.createElement("listitem");
+    var name = document.getElementById(type + "Name").value;
+    var email = document.getElementById(type + "Email").value;
+    var company = document.getElementById(type + "Company").value;
+
+    if (name == "" || email == "") {
+      alert(strbundle.getString("validAuthor")); // TODO Change this
+    } else {
+      for (var i = 1; i <= list.getRowCount(); ++i) {
+        if (list.childNodes[i].firstChild.getAttribute("label") == name) {
+          alert(strbundle.getString("alreadyAuthor") + " " + name); // TODO Change this
+          return;
+        }
       }
+
+      var listcellName = document.createElement("listcell");
+      var listcellEmail = document.createElement("listcell");
+      var listcellCompany = document.createElement("listcell");
+
+      listcellName.setAttribute("label", name);
+      listcellEmail.setAttribute("label", email);
+      listcellCompany.setAttribute("label", company);
+      listitem.appendChild(listcellName);
+      listitem.appendChild(listcellEmail);
+      listitem.appendChild(listcellCompany);
+      list.appendChild(listitem);
+
+      // myDoc.addTeamMember(name, email, comment);
+
+      docHasChanged(true);
+      document.getElementById("del" + type + "Button").disabled = "";
     }
-    listitem.setAttribute("label", name);
-    listitem.setAttribute("value", email);
-    mylist.appendChild(listitem);
-    myDoc.addauthor(name, email);
-    docHasChanged();
-    document.getElementById("delAuthorButton").disabled = "";
-  }
+  } catch(e) { alert(e.message); }
 }
 
-// Triggered when an author is deleted
-function deleteAuthor() {
-  var mylist = document.getElementById("f-a-list");
-  if (mylist.selectedItem == null) {
-    alert("Select an author to be deleted");
+
+// Triggered when a team member is deleted
+function delTeamMember(type) {
+  try{
+  var list = document.getElementById(type + "Team");
+
+  if (list.selectedItem == null) {
+    alert("Select an author to be deleted"); // TODO localize
     return;
   }
-  if (mylist.getRowCount() <= 1) {
-    document.getElementById("delAuthorButton").disabled = true;
-    if (mylist.getRowCount() == 0) {
-      alert("There isn't any author any more");
+
+  if (list.getRowCount() <= 1) {
+    document.getElementById("del" + type + "Button").disabled = true;
+    if (list.getRowCount() == 0) {
+      alert("There isn't any author any more"); // TODO localize
       return;
     }
   }
-  mylist.removeChild(mylist.selectedItem);
-  myDoc.delauthor(document.getElementById("f-a-name").value);
-  document.getElementById("f-a-name").value = "";
-  document.getElementById("f-a-email").value = "";
+
+  // myDoc.delTeamMember(list.selectedItem.firstChild.getAttribute("label"), list.selectedItem.childNodes[1].getAttribute("label"));
+
+  list.removeChild(list.selectedItem);
+
+  document.getElementById(type + "Name").value = "";
+  document.getElementById(type + "Email").value = "";
+  document.getElementById(type + "Company").value = "";
+
   docHasChanged();
+  } catch(e) { alert(e.message); }
 }

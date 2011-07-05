@@ -292,8 +292,8 @@
                       </listhead>
                     </listbox>
                     <hbox>
-                      <button label="&addButton;" id="addAuthorButton" class="addAuthor" oncommand="addAuthor();"/>
-                      <button label="&delButton;" id="delAuthorButton" class="delAuthor" oncommand="deleteAuthor();"/>
+                      <button label="&addButton;" id="addAuthorButton" class="addAuthor" oncommand="addEvalAuthor();"/>
+                      <button label="&delButton;" id="delAuthorButton" class="delAuthor" oncommand="delEvalAuthor();"/>
                     </hbox>
                   </vbox>
                 </hbox>
@@ -409,21 +409,21 @@
                       </columns>
                       <rows>
                         <row align="center">
-                          <label control="devName" value="&name;"/>
-                          <textbox id="devName" flex="1"/>
+                          <label control="developerName" value="&name;"/>
+                          <textbox id="developerName" flex="1"/>
                         </row>
                         <row align="center">
-                          <label control="devEmail" value="&email;"/>
-                          <textbox id="devEmail" flex="1"/>
+                          <label control="developerEmail" value="&email;"/>
+                          <textbox id="developerEmail" flex="1"/>
                         </row>
                         <row align="center">
-                          <label control="devCompany" value="&company;"/>
-                          <textbox id="devCompany" flex="1"/>
+                          <label control="developerCompany" value="&company;"/>
+                          <textbox id="developerCompany" flex="1"/>
                         </row>
                       </rows>
                     </grid>
                     <vbox flex="1">
-                      <listbox id="developerTeam" flex="1" rows="3" onselect="changePerson('devName', 'devEmail', 'devCompany', this.selectedItem);" width="500"  class="over">
+                      <listbox id="developerTeam" flex="1" rows="3" onselect="changePerson('developerName', 'developerEmail', 'developerCompany', this.selectedItem);" width="500"  class="over">
                         <listhead flex="1">
                           <listheader label="&name;" width="200"/>
                           <listheader label="&email;" width="225"/>
@@ -431,8 +431,8 @@
                         </listhead>
                       </listbox>
                       <hbox>
-                        <button label="&addButton;" id="addDevButton" class="addAuthor" oncommand="addContrib();"/>
-                        <button label="&delButton;" id="delDevButton" class="delAuthor" oncommand="deleteContrib();"/>
+                        <button label="&addButton;" id="adddeveloperButton" class="addAuthor" oncommand="addTeamMember('developer');"/>
+                        <button label="&delButton;" id="deldeveloperButton" class="delAuthor" oncommand="delTeamMember('developer');"/>
                       </hbox>
                     </vbox>
                   </hbox>
@@ -447,21 +447,21 @@
                       </columns>
                       <rows>
                         <row align="center">
-                          <label control="contribName" value="&name;"/>
-                          <textbox id="contribName" flex="1"/>
+                          <label control="contributorName" value="&name;"/>
+                          <textbox id="contributorName" flex="1"/>
                         </row>
                         <row align="center">
-                          <label control="contribEmail" value="&email;"/>
-                          <textbox id="contribEmail" flex="1"/>
+                          <label control="contributorEmail" value="&email;"/>
+                          <textbox id="contributorEmail" flex="1"/>
                         </row>
                         <row align="center">
-                          <label control="contribCompany" value="&company;"/>
-                          <textbox id="contribCompany" flex="1"/>
+                          <label control="contributorCompany" value="&company;"/>
+                          <textbox id="contributorCompany" flex="1"/>
                         </row>
                       </rows>
                     </grid>
                     <vbox flex="1">
-                      <listbox id="contributorTeam" flex="1" rows="3" onselect="changePerson('contribName', 'contribEmail', 'contribCompany', this.selectedItem);" width="500" class="over">
+                      <listbox id="contributorTeam" flex="1" rows="3" onselect="changePerson('contributorName', 'contributorEmail', 'contributorCompany', this.selectedItem);" width="500" class="over">
                         <listhead flex="1">
                           <listheader label="&name;" width="200"/>
                           <listheader label="&email;" width="225"/>
@@ -469,8 +469,8 @@
                         </listhead>
                       </listbox>
                       <hbox>
-                        <button label="&addButton;" id="addDevButton" class="addAuthor" oncommand="addDev();"/>
-                        <button label="&delButton;" id="delDevButton" class="delAuthor" oncommand="deleteDev();"/>
+                        <button label="&addButton;" id="addcontributorButton" class="addAuthor" oncommand="addTeamMember('contributor');"/>
+                        <button label="&delButton;" id="delcontributorButton" class="delAuthor" oncommand="delTeamMember('contributor');"/>
                       </hbox>
                     </vbox>
                   </hbox>

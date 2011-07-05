@@ -139,7 +139,7 @@ function setupEditorForEval() {
    tree.appendChild(treechildren);*/
 
   // Draw top-level SVG chart
-  drawChart();
+//   drawChart();
 
   setStateEvalOpen(true);
 
@@ -470,11 +470,14 @@ function closeFile() {
   document.getElementById("updateDate").value = resetDate();
   document.getElementById("validationDate").value = resetDate();
 
-  // Reset authors lists, contributors lists, ...
-//   var myList = document.getElementById("f-a-list");
-//   while (myList.hasChildNodes()) {
-//     myList.removeChild(myList.childNodes[0]);
-//   }
+  // Reset authors & contributors lists
+  lists = new Array("templateAuthors","evaluationAuthors","developerTeam","contributorTeam");
+  for (var i = 0; i < lists.length; ++i) {
+    var list = document.getElementById(lists[i]);
+    while (list.childElementCount > 1) {
+      list.removeChild(list.lastChild);
+    }
+  }
 
   // Resets the criteria tab
   document.getElementById("criteriaDescription").value = "";
@@ -484,6 +487,7 @@ function closeFile() {
   document.getElementById("scoreRadiogroup").selectedIndex = -1;
   document.getElementById("criteriaComments").value = "";
 
+  // FIXME
 //   var tree = document.getElementById("criteriaTree");
 //   var treechildren = document.getElementById("myTreechildren");
 //   tree.removeChild(treechildren);
