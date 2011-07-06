@@ -3,13 +3,13 @@
          xmlns:NC="http://home.netscape.com/NC-rdf#"
          xmlns:RDF="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
   <RDF:Description RDF:about="urn:mozilla:extension:xuleditor@qsos.org"
-                   NS1:version="1.0"
-                   NS1:updateLink="http://www.qsos.org/tools/xuleditor-firefox-1.0.xpi"
-                   NS1:signature="MIGTMA0GCSqGSIb3DQEBDQUAA4GBACCTi75e+7cfgG2MM8ksDEDqMm8e5uMbeV8e502f0CCRvd1QaoOAU/0gBeVZEiehlIhHaeoZZpJfM1tjXSy7uf/QszmTSNz/eJD2fAcILtfTHk2p7GIk3dTJvdXPUul2aU2mHurCdssheALioLBttbxbomzxmMmgzybrDGFD1Wxo">
+                   NS1:version="1.1"
+                   NS1:updateLink="http://www.qsos.org/tools/xuleditor-firefox-1.1.xpi"
+                   NS1:signature="MIGTMA0GCSqGSIb3DQEBDQUAA4GBAGpswtIjTUbQhO/Dv/w6wrQWMsdA+2C/PfNmp0RBtXlqF5lnJTeAYW/64CoK8/WBcPjHZwffjnbIHxQ0sUqD5DJZ7l/Ml5wOP02FJGsW7xN+XyVHMiR8ZeTS9J05rCKFFcMfmaHsQDLfK1cPnc9kLc7GtjOLUEFqKxUdVISgTbK/">
     <NS1:updates RDF:resource="rdf:#$LNYy83"/>
   </RDF:Description>
   <RDF:Description RDF:about="rdf:#$MNYy83"
-                   NS1:version="01.0">
+                   NS1:version="01.1">
     <NS1:targetApplication RDF:resource="rdf:#$PNYy83"/>
   </RDF:Description>
   <RDF:Seq RDF:about="rdf:#$LNYy83">
@@ -17,7 +17,7 @@
   </RDF:Seq>
   <RDF:Description RDF:about="rdf:#$PNYy83"
                    NS1:id="{ec8030f7-c20a-464f-9b0e-13a3a9e97384}"
-                   NS1:minVersion="1.5"
-                   NS1:maxVersion="3.*"
-                   NS1:updateLink="http://www.qsos.org/tools/xuleditor-firefox-1.0.xpi" />
+                   NS1:minVersion="3.5"
+                   NS1:maxVersion="6.*"
+                   NS1:updateLink="http://www.qsos.org/tools/xuleditor-firefox-1.1.xpi" />
 </RDF:RDF>
