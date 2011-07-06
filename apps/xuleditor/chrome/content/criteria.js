@@ -54,6 +54,7 @@ function expandTree(bool) {
 // Triggered when a new criterion is selected in the tree
 // Fills criteria's fields with new values
 function treeselect(tree) {
+//   alert("treeselect: begin");
   //Forces focus to trigger possible onchange event on another XUL element
   document.getElementById("criteriaTree").focus();
   if (tree.currentIndex != -1) {
@@ -61,19 +62,25 @@ function treeselect(tree) {
     //document.getElementById("t").selectedIndex = 1;
     //document.getElementById("t-c-title").setAttribute("label", myDoc.getkeytitle(id));
 
-    document.getElementById("scoreDescription0").setAttribute("label", "0: "+myDoc.getkeydesc0(id));
-    document.getElementById("scoreDescription1").setAttribute("label", "1: "+myDoc.getkeydesc1(id));
-    document.getElementById("scoreDescription2").setAttribute("label", "2: "+myDoc.getkeydesc2(id));
-    var score = myDoc.getkeyscore(id);
-
     document.getElementById("criteriaDescription").value = myDoc.getkeydesc(id);
+
+    var score = myDoc.getkeyscore(id);
     if (score == "-1") {
-      document.getElementById("scoreRadiogroup").collapsed = true;
+      document.getElementById("scoreRadiogroup").hidden = "true";
       freezeScore("true");
     } else {
-      document.getElementById("scoreGroupbox").collapsed = false;
+      document.getElementById("scoreRadiogroup").hidden = "";
       document.getElementById("scoreRadiogroup").selectedIndex = score;
       freezeScore("");
+    }
+
+    var desc = new Array(myDoc.getkeydesc0(id), myDoc.getkeydesc1(id), myDoc.getkeydesc2(id));
+    for (var i = 0; i < desc.length; ++i) {
+      if (desc[i] == "") {
+        document.getElementById("scoreDescription" + i).setAttribute("label", strbundle.getString("score" + i + "Label"));
+      } else {
+        document.getElementById("scoreDescription" + i).setAttribute("label", i + ": " + desc[i]);
+      }
     }
 
     document.getElementById("criteriaComments").value = myDoc.getkeycomment(id);

@@ -87,7 +87,7 @@ function setupEditorForEval() {
   document.getElementById("validationDate").value = myDoc.get("evaluation/dates/validation");
 
   // Authors (template + evaluation), Contributors, Developers
-  authorsArray = new Array("template","evaluation");
+  var authorsArray = new Array("template","evaluation");
   for (var i = 0; i < authorsArray.length; ++i) {
     try {
       var authors = myDoc.getAuthors(authorsArray[i]);
@@ -110,7 +110,7 @@ function setupEditorForEval() {
     }
   }
 
-  teamArray = new Array("developer", "contributor");
+  var teamArray = new Array("developer", "contributor");
   for (var i = 0; i < teamArray.length; ++i) {
     try {
       var authors = myDoc.getTeam(teamArray[i]);
@@ -135,9 +135,9 @@ function setupEditorForEval() {
 
   // Tree population
   try {
-  var tree = document.getElementById("criteriaTree");
-  var treechildren = buildtree();
-  tree.appendChild(treechildren);
+    var tree = document.getElementById("criteriaTree");
+    var treechildren = buildtree();
+    tree.appendChild(treechildren);
   } catch (e) {
     alert(e.message);
   }
@@ -258,19 +258,22 @@ function openRemoteFile(url) {
 
 // XUL Tree recursive creation function
 function buildtree() {
+//   alert("buildTree: begin");
   var treechildren = document.createElement("treechildren");
   treechildren.setAttribute("id", "myTreechildren");
   var criteria = myDoc.getcomplextree();
   for (var i=0; i < criteria.length; i++) {
-    treeitem = newtreeitem(criteria[i]);
+    var treeitem = newtreeitem(criteria[i]);
     treechildren.appendChild(treeitem);
   }
+//   alert("buildTree: end");
   return treechildren;
 }
 
 
 // XUL Tree recursive creation function
 function newtreeitem(criterion) {
+//   alert("newtreeitem: begin");
   var treeitem = document.createElement("treeitem");
   treeitem.setAttribute("container", "true");
   treeitem.setAttribute("open", "true");
@@ -284,17 +287,20 @@ function newtreeitem(criterion) {
     treeitem.setAttribute("open", "false");
     treeitem.appendChild(buildsubtree(criterion.children));
   }
+//   alert("newtreeitem: end");
   return treeitem;
 }
 
 
 // XUL Tree recursive creation function
 function buildsubtree(criteria) {
+//   alert("buildsubtree: begin");
   var treechildren = document.createElement("treechildren");
   for (var i=0; i < criteria.length; i++) {
-    treeitem = newtreeitem(criteria[i]);
+    var treeitem = newtreeitem(criteria[i]);
     treechildren.appendChild(treeitem);
   }
+//   alert("buildsubtree: end");
   return treechildren;
 }
 

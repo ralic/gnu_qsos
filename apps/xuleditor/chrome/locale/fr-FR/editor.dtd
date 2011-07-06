@@ -100,8 +100,8 @@
 
 <!-- Criteria Tab !-->
 <!ENTITY criteriaName "Critères">
-<!ENTITY expandTree "Exploser tout">
-<!ENTITY collapseTree "Tout aplatir">
+<!ENTITY expandTree "Tout déplier">
+<!ENTITY collapseTree "Tout replier">
 <!ENTITY criteriaDescription "Description">
 <!ENTITY score "Score">
 <!ENTITY score0 "Score 0">

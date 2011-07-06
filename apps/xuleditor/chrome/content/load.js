@@ -72,6 +72,7 @@ function getcomplextree() {
 
 //Recursive function used by getcomplextree()
 function getsubcriteria(id) {
+  alert("getsubcriteria: begin");
   var subcriteria = new Array();
   var items = xmlDoc.evaluate("//*[@id='"+id+"']/children/item", xmlDoc, null, XPathResult.ANY_TYPE,null);
   var item = items.iterateNext();
@@ -83,6 +84,7 @@ function getsubcriteria(id) {
     subcriteria.push(criterion);
     item = items.iterateNext();
   }
+  alert("getsubcriteria: end: " + subcriteria.length);
   if (subcriteria.length > 0) {
     return subcriteria;
   } else {
@@ -92,17 +94,20 @@ function getsubcriteria(id) {
 
 //XUL Tree recursive creation function
 function buildtree(criteria) {
+  alert("buildtree: begin");
   var treechildren = document.createElement("treechildren");
   treechildren.setAttribute("id", "myTreechildren");
   for (var i=0; i < criteria.length; i++) {
     treeitem = newtreeitem(criteria[i]);
     treechildren.appendChild(treeitem);
   }
+  alert("buildtree: end");
   return treechildren;
 }
 
 //XUL Tree recursive creation function
 function newtreeitem(criterion) {
+  alert("newtreeitem: begin");
   var treeitem = document.createElement("treeitem");
   if (criterion.label.substr(-5) != ".qsos") {
     treeitem.setAttribute("container", "true");
@@ -115,16 +120,19 @@ function newtreeitem(criterion) {
   treerow.appendChild(treecell);
   treeitem.appendChild(treerow);
   if (criterion.children != "null") treeitem.appendChild(buildsubtree(criterion.children));
+  alert("newtreeitem: end");
   return treeitem;
 }
 
 //XUL Tree recursive creation function
 function buildsubtree(criteria) {
+  alert("buildsubtree: begin");
   var treechildren = document.createElement("treechildren");
   for (var i=0; i < criteria.length; i++) {
     treeitem = newtreeitem(criteria[i]);
     treechildren.appendChild(treeitem);
   }
+  alert("buildsubtree: end");
   return treechildren;
 }
 

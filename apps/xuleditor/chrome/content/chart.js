@@ -25,7 +25,7 @@
  */
 
 const SCALE = 100; //1 QSOS unit in pixels
-const FONT_SIZE = SCALE/10;
+const FONT_SIZE = SCALE/7;
 
 //Clear the SVG chart
 function clearChart() {
@@ -69,12 +69,12 @@ function drawChart(name) {
   var myPath = document.createElementNS("http://www.w3.org/2000/svg", "path");
   var myD = "";
   var angle;
-  for (i=0; i < myScores.length; i++) {
-    myD += (i==0)?"M":"L";
-    angle = (i+1)*2*Math.PI/(myScores.length);
-    myD += " " + (myScores[i].score)*SCALE*Math.cos(angle) + " " + (myScores[i].score)*SCALE*Math.sin(angle) + " ";
+  for (var i = 0; i < myScores.length; ++i) {
+    myD += (i == 0) ? "M" : "L";
+    angle = (i + 1) * 2 * Math.PI / (myScores.length);
+    myD += " " + (myScores[i].score) * SCALE * Math.cos(angle) + " " + (myScores[i].score) * SCALE * Math.sin(angle) + " ";
     //2.1 = 2 + 0.1 of padding before actual text display
-    drawText(2.1*SCALE*Math.cos(angle), 2.1*SCALE*Math.sin(angle), myScores[i]);
+    drawText(2.1 * SCALE * Math.cos(angle), 2.1 * SCALE * Math.sin(angle), myScores[i]);
   }
   myD += "z";
 
@@ -131,20 +131,20 @@ function clearLabels() {
 
 //draw "n" equidistant axis
 function drawAxis(n) {
-  drawCircle(0.5*SCALE);
+  drawCircle(0.5 * SCALE);
   drawCircle(SCALE);
-  drawCircle(1.5*SCALE);
-  drawCircle(2*SCALE);
+  drawCircle(1.5 * SCALE);
+  drawCircle(2 * SCALE);
 
-  for (i=1; i < n+1; i++) {
-    drawSingleAxis(2*i*Math.PI/n);
+  for (var i = 1; i < n + 1; ++i) {
+    drawSingleAxis(2 * i * Math.PI / n);
   }
 }
 
 //draw a single axis at "angle" (in radians) from angle 0
 function drawSingleAxis(angle) {
-  x2 = 2*SCALE*Math.cos(angle);
-  y2 = 2*SCALE*Math.sin(angle);
+  var x2 = 2 * SCALE * Math.cos(angle);
+  var y2 = 2 * SCALE * Math.sin(angle);
   drawLine(0, 0, x2, y2);
 }
 
@@ -207,9 +207,9 @@ function drawText(x, y, myScore) {
   myChart.appendChild(myText);
 
   //text position is ajusted to be outside the circle shape
-  myTextLength = myText.getComputedTextLength();
-  myX = (Math.abs(x)==x)?x:x-myTextLength;
-  myY = (Math.abs(y)==y)?y+FONT_SIZE:y;
+  var myTextLength = myText.getComputedTextLength();
+  var myX = (Math.abs(x) == x) ? x : x - myTextLength;
+  var myY = (Math.abs(y) == y) ? y + FONT_SIZE : y;
   myText.setAttribute("x", myX);
   myText.setAttribute("y", myY);
 }

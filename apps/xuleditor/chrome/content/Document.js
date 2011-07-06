@@ -487,7 +487,7 @@ function Document() {
     function getAuthors(type) {
       var authors = new Array();
       var nodes = sheet.evaluate("//" + type + "/authors/author", sheet, null, XPathResult.ANY_TYPE, null);
-      node = nodes.iterateNext();
+      var node = nodes.iterateNext();
       while (node != null) {
         var author = new Object();
         var names = node.getElementsByTagName("name");
@@ -518,7 +518,7 @@ function Document() {
     function getTeam(type) {
       var authors = new Array();
       var nodes = sheet.evaluate("//team/" + type + "s/" + type, sheet, null, XPathResult.ANY_TYPE, null);
-      node = nodes.iterateNext();
+      var node = nodes.iterateNext();
       while (node != null) {
         var author = new Object();
         var names = node.getElementsByTagName("name");
@@ -767,7 +767,7 @@ function Document() {
       var totalWeight = 0
       var isRenderable = true;
 
-      for (i=0; i < chartData.length; i++) {
+      for (var i = 0; i < chartData.length; ++i) {
         totalWeight++;
         if (chartData[i].score == null) isRenderable = false;
         sum += Math.round(chartData[i].score * 100)/100;
