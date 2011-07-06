@@ -40,11 +40,26 @@ function Document() {
     this.getkeytitle = getkeytitle;
     this.getAuthors = getAuthors;
     this.getTeam = getTeam;
-    this.addauthor = addauthor;
-    this.delauthor = delauthor;
+    this.addEvalAuthor = addEvalAuthor;
+    this.delEvalAuthor = delEvalAuthor;
+    this.addTeamMember = addTeamMember;
+    this.delTeamMember = delTeamMember;
 
     this.get = get;
     this.set = set;
+
+    this.getkeydesc = getkeydesc;
+    this.setkeydesc = setkeydesc;
+    this.getkeydesc0 = getkeydesc0;
+    this.setkeydesc0 = setkeydesc0;
+    this.getkeydesc1 = getkeydesc1;
+    this.setkeydesc1 = setkeydesc1;
+    this.getkeydesc2 = getkeydesc2;
+    this.setkeydesc2 = setkeydesc2;
+    this.getkeycomment = getkeycomment;
+    this.setkeycomment = setkeycomment;
+    this.getkeyscore = getkeyscore;
+    this.setkeyscore = setkeyscore;
 
     this.dump = dump;
     this.hassubelements = hassubelements;
@@ -471,7 +486,7 @@ function Document() {
 
     function getAuthors(type) {
       var authors = new Array();
-      var nodes = sheet.evaluate("//" + type + "/authors/author", sheet, null, XPathResult.ANY_TYPE,null);
+      var nodes = sheet.evaluate("//" + type + "/authors/author", sheet, null, XPathResult.ANY_TYPE, null);
       node = nodes.iterateNext();
       while (node != null) {
         var author = new Object();
@@ -502,7 +517,7 @@ function Document() {
 
     function getTeam(type) {
       var authors = new Array();
-      var nodes = sheet.evaluate("//team/" + type + "s/" + type, sheet, null, XPathResult.ANY_TYPE,null);
+      var nodes = sheet.evaluate("//team/" + type + "s/" + type, sheet, null, XPathResult.ANY_TYPE, null);
       node = nodes.iterateNext();
       while (node != null) {
         var author = new Object();
@@ -531,50 +546,144 @@ function Document() {
     }
 
 
-    function addauthor(varname, varemail) {
-      var nodes = sheet.evaluate("//authors", sheet, null, XPathResult.ANY_TYPE,null);
+    function addEvalAuthor(name, email, comment) {
+      var nodes = sheet.evaluate("//evaluation/authors", sheet, null, XPathResult.ORDERED_NODE_ITERATOR_TYPE, null);
       var node = nodes.iterateNext();
       var author = sheet.createElement("author");
-      var name = sheet.createElement("name");
-      name.appendChild(document.createTextNode(varname));
-      var email = sheet.createElement("email");
-      email.appendChild(document.createTextNode(varemail));
-      author.appendChild(name);
-      author.appendChild(email);
+      var nameElem = sheet.createElement("name");
+      nameElem.appendChild(document.createTextNode(name));
+      var emailElem = sheet.createElement("email");
+      emailElem.appendChild(document.createTextNode(email));
+      var commentElem = sheet.createElement("comment");
+      commentElem.appendChild(document.createTextNode(comment));
+      author.appendChild(nameElem);
+      author.appendChild(emailElem);
+      author.appendChild(commentElem);
       node.appendChild(author);
-        }
+    }
 
-    function delauthor(varname) {
-      var marker;
-      var authors = sheet.evaluate("//authors", sheet, null, XPathResult.ANY_TYPE,null).iterateNext();
-      var nodes = sheet.evaluate("//author", sheet, null, XPathResult.ANY_TYPE,null);
+
+    function delEvalAuthor (name, email) {
+      var nodes = sheet.evaluate("//evaluation/authors/author", sheet, null, XPathResult.ORDERED_NODE_ITERATOR_TYPE, null);
       var node = nodes.iterateNext();
-      marker = null;
-      while (node) {
+      while (node != null) {
         var names = node.getElementsByTagName("name");
-        if (names.length > 0) {
-          if (names[0].textContent == varname) marker = node;
+        var emails = node.getElementsByTagName("email");
+        if ((names.length > 0) && (emails.length > 0)) {
+          if ((names[0].textContent == name) && (emails[0].textContent == email)) {
+            nodes = sheet.evaluate("//evaluation/authors", sheet, null, XPathResult.ORDERED_NODE_ITERATOR_TYPE, null);
+            nodes = nodes.iterateNext();
+            nodes.removeChild(node);
+            return;
+          }
         }
         node = nodes.iterateNext()
       }
-      if (marker != null) authors.removeChild(marker);
+      alert("Warning: delEvalAuthor: the author you're trying to remove has not been found!");
     }
+
+
+    function addTeamMember(type, name, email, company) {
+      var nodes = sheet.evaluate("//team/" + type + "s", sheet, null, XPathResult.ANY_TYPE, null);
+      var node = nodes.iterateNext();
+      var author = sheet.createElement(type);
+      var nameElem = sheet.createElement("name");
+      nameElem.appendChild(document.createTextNode(name));
+      var emailElem = sheet.createElement("email");
+      emailElem.appendChild(document.createTextNode(email));
+      var companyElem = sheet.createElement("company");
+      companyElem.appendChild(document.createTextNode(company));
+      author.appendChild(nameElem);
+      author.appendChild(emailElem);
+      author.appendChild(companyElem);
+      node.appendChild(author);
+    }
+
+
+    function delTeamMember (type, name, email) {
+      var nodes = sheet.evaluate("//team/" + type + "s/" + type, sheet, null, XPathResult.ANY_TYPE, null);
+      var node = nodes.iterateNext();
+      while (node != null) {
+        var names = node.getElementsByTagName("name");
+        var emails = node.getElementsByTagName("email");
+        if ((names.length > 0) && (emails.length > 0)) {
+          if ((names[0].textContent == name) && (emails[0].textContent == email)) {
+            var nodes = sheet.evaluate("//team/" + type + "s", sheet, null, XPathResult.ANY_TYPE, null);
+            nodes = nodes.iterateNext();
+            nodes.removeChild(node);
+            return;
+          }
+        }
+        node = nodes.iterateNext()
+      }
+      alert("Warning: delTeamMember: the team member you're trying to remove has not been found!");
+    }
+
+
+    function getkeydesc(element) {
+      return getgeneric(element, "desc")
+    }
+
+    function setkeydesc(element, value) {
+      return setgeneric(element, "desc", value);
+    }
+
+    function getkeydesc0(element) {
+      return getgeneric(element, "desc0")
+    }
+
+    function setkeydesc0(element, value) {
+      return setgeneric(element, "desc0", value);
+    }
+
+    function getkeydesc1(element) {
+      return getgeneric(element, "desc1")
+    }
+
+    function setkeydesc1(element, value) {
+      return setgeneric(element, "desc1", value);
+    }
+
+    function getkeydesc2(element) {
+      return getgeneric(element, "desc2")
+    }
+
+    function setkeydesc2(element, value) {
+      return setgeneric(element, "desc2", value);
+    }
+
+    function getkeycomment(element) {
+      return getgeneric(element, "comment")
+    }
+
+    function setkeycomment(element, value) {
+      return setgeneric(element, "comment", value);
+    }
+
+    function getkeyscore(element) {
+      return getgeneric(element, "score");
+    }
+
+    function setkeyscore(element, value) {
+      return setgeneric(element, "score", value);
+    }
+
 
     ////////////////////////////////////////////////////////////////////
     // Licenses management
     ////////////////////////////////////////////////////////////////////
 
-    function getlicenselist() {
-      return new Array("Affero GPL", "AFPL (Aladdin)", "APSL (Apple)", "Artistic License", "BSD", "CeCILL License (INRIA)", "Copyback License", "DFSG approved", "Eclipse Public License", "EFL (Eiffel)", "Free but Restricted", "Free for Eductional Use", "Free for Home Use", "Free for non-commercial use", "Freely Distribuable", "Freeware", "GNU FDL", "GNU GPL", "GNU approved License", "GNU LGPL", "LPPL (Latex)", "NOKOS (Nokia)", "NPL (Netscape)", "Open Content License", "OSI Approved", "Proprietary", "Proprietary with source", "Proprietary with trial", "Public Domain", "Shareware", "SUN Binary Code License", "The Apache License", "The Apache License 2.0", "Voxel Public License", "WTFPL", "Zope Public License");
-    }
+//     function getlicenselist() {
+//       return new Array("Affero GPL", "AFPL (Aladdin)", "APSL (Apple)", "Artistic License", "BSD", "CeCILL License (INRIA)", "Copyback License", "DFSG approved", "Eclipse Public License", "EFL (Eiffel)", "Free but Restricted", "Free for Eductional Use", "Free for Home Use", "Free for non-commercial use", "Freely Distribuable", "Freeware", "GNU FDL", "GNU GPL", "GNU approved License", "GNU LGPL", "LPPL (Latex)", "NOKOS (Nokia)", "NPL (Netscape)", "Open Content License", "OSI Approved", "Proprietary", "Proprietary with source", "Proprietary with trial", "Public Domain", "Shareware", "SUN Binary Code License", "The Apache License", "The Apache License 2.0", "Voxel Public License", "WTFPL", "Zope Public License");
+//     }
 
 //     function getlicenseid() { return getkey("licenseid"); }
 
 //     function setlicenseid(value) { return setkey("licenseid", value); }
 
-    function getlicensedesc() { return getkey("licensedesc"); }
+//     function getlicensedesc() { return getkey("licensedesc"); }
 
-    function setlicensedesc(value) { return setkey("licensedesc", value); }
+//     function setlicensedesc(value) { return setkey("licensedesc", value); }
 
     ////////////////////////////////////////////////////////////////////
     // Chart functions

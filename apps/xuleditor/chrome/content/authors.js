@@ -74,7 +74,10 @@ function addEvalAuthor() {
       listitem.appendChild(listcellComment);
       list.appendChild(listitem);
 
-      // myDoc.addEvalAuthor(name, email, comment);
+      alert(name + " " + email + " " + comment);
+      try {
+      myDoc.addEvalAuthor(name, email, comment);
+      } catch (e) { alert(e.message); }
 
       docHasChanged(true);
       document.getElementById("delAuthorButton").disabled = "";
@@ -101,7 +104,10 @@ function delEvalAuthor() {
     }
   }
 
-  // myDoc.delEvalAuthor(list.selectedItem.firstChild.getAttribute("label"), list.selectedItem.childNodes[1].getAttribute("label"));
+  alert(list.selectedItem.firstChild.getAttribute("label") + " " +  list.selectedItem.childNodes[1].getAttribute("label"));
+  try {
+  myDoc.delEvalAuthor(list.selectedItem.firstChild.getAttribute("label"), list.selectedItem.childNodes[1].getAttribute("label"));
+  } catch (e) { alert(e.message); }
 
   list.removeChild(list.selectedItem);
 

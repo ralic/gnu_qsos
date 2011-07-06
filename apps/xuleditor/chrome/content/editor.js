@@ -109,11 +109,17 @@ function setStateEvalOpen(state) {
   document.getElementById("oscTab").hidden = bool;
   document.getElementById("criteriaTab").hidden = bool;
   document.getElementById("chartTab").hidden = bool;
+
   if (!state) { document.getElementById("saveFile").disabled = bool; }
   document.getElementById("saveFileAs").disabled = bool;
-  // Remote saving is temporarily disabled
-  // document.getElementById("saveRemoteFile").disabled = bool;
   document.getElementById("closeFile").disabled = bool;
+
+  // Remote saving is temporarily disabled
+  document.getElementById("saveRemoteFile").disabled = "true";
+  // New file button disable since it doesn't work for now
+  document.getElementById("newFile").disabled = "true";
+  // Open Remote File button disable since it doesn't work for now
+  document.getElementById("openRemoteFile").disabled = "true";
 
   document.getElementById('tabs').selectedIndex = 2;
 }

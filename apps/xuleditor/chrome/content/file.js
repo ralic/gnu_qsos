@@ -134,12 +134,16 @@ function setupEditorForEval() {
   }
 
   // Tree population
-  /*  var tree = document.getElementById("criteriaTree");
-   v ar treechildren = buildtree(); * *
-   tree.appendChild(treechildren);*/
+  try {
+  var tree = document.getElementById("criteriaTree");
+  var treechildren = buildtree();
+  tree.appendChild(treechildren);
+  } catch (e) {
+    alert(e.message);
+  }
 
   // Draw top-level SVG chart
-//   drawChart();
+  drawChart();
 
   setStateEvalOpen(true);
 
@@ -347,7 +351,7 @@ function saveFile() {
     myDoc.set("evaluation/dates/update", document.getElementById("updateDate").value);
     myDoc.set("evaluation/dates/validation", document.getElementById("validationDate").value);
 
-    alert("Save: Warning: Authors aren't saved yet!");
+//     alert("Save: Warning: Authors aren't saved yet!");
 
     if (myDoc.filename != null) {
       myDoc.write();

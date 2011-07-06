@@ -84,7 +84,10 @@ function addTeamMember(type) {
       listitem.appendChild(listcellCompany);
       list.appendChild(listitem);
 
-      // myDoc.addTeamMember(name, email, comment);
+      alert(type + " " + name + " " + email + " " + company);
+      try {
+      myDoc.addTeamMember(type, name, email, company);
+      } catch (e) { alert(e.message); }
 
       docHasChanged(true);
       document.getElementById("del" + type + "Button").disabled = "";
@@ -111,7 +114,10 @@ function delTeamMember(type) {
     }
   }
 
-  // myDoc.delTeamMember(list.selectedItem.firstChild.getAttribute("label"), list.selectedItem.childNodes[1].getAttribute("label"));
+  alert(type + " " + list.selectedItem.firstChild.getAttribute("label") + " " + list.selectedItem.childNodes[1].getAttribute("label") + " " + list.selectedItem.childNodes[2].getAttribute("label"));
+  try {
+  myDoc.delTeamMember(type, list.selectedItem.firstChild.getAttribute("label"), list.selectedItem.childNodes[1].getAttribute("label"));
+  } catch (e) { alert(e.message); }
 
   list.removeChild(list.selectedItem);
 
