@@ -257,7 +257,10 @@
                     <label control="version" value="&version;"/>
                     <textbox id="version" placeholder="&evaluationVersion;" oninput="docHasChanged(true);"/>
                     <label control="language" value="&language;"/>
-                    <textbox id="language" oninput="docHasChanged(true);" flex="1"/>
+                    <menulist id="language" oncommand="changeLanguage(this);">
+                      <menupopup id="languagePopup"/>
+                    </menulist>
+                    <!--<textbox id="language" oninput="docHasChanged(true);" flex="1"/>!-->
                   </row>
                 </rows>
               </grid>
@@ -371,7 +374,10 @@
                   </row>
                   <row align="center">
                     <label control="componentArchetype" value="&componentArchetype;"/>
-                    <textbox id="componentArchetype" flex="1" oninput="docHasChanged(true);"/>
+                    <menulist id="componentArchetype" oncommand="changeArchetype(this);">
+                      <menupopup id="archetypePopup"/>
+                    </menulist>
+                    <!--<textbox id="componentArchetype" flex="1" oninput="docHasChanged(true);"/>!-->
                     <label control="componentHomepage" value="&componentHomepage;"/>
                     <textbox id="componentHomepage" placeholder="http://..." flex="1" oninput="docHasChanged(true);"/>
                   </row>
@@ -492,7 +498,10 @@
                 <rows>
                   <row align="center">
                     <label control="licenseName" value="&licenseName;"/>
-                    <textbox id="licenseName" oninput="docHasChanged(true);" flex="1"/>
+                    <menulist id="licenseName" oncommand="changeLicense(this);">
+                      <menupopup id="licensePopup"/>
+                    </menulist>
+                    <!--<textbox id="licenseName" oninput="docHasChanged(true);" flex="1"/>!-->
                     <label control="licenseVersion" value="&licenseVersion;"/>
                     <textbox id="licenseVersion" oninput="docHasChanged(true);" flex="1"/>
                     <label control="licenseHomepage" value="&licenseHomepage;"/>

@@ -48,6 +48,10 @@ function Document() {
     this.get = get;
     this.set = set;
 
+    this.getLicenseList = getLicenseList;
+    this.getLanguageList = getLanguageList;
+    this.getArchetypeList = getArchetypeList;
+
     this.getkeydesc = getkeydesc;
     this.setkeydesc = setkeydesc;
     this.getkeydesc0 = getkeydesc0;
@@ -670,12 +674,23 @@ function Document() {
 
 
     ////////////////////////////////////////////////////////////////////
-    // Licenses management
+    // Lists management
     ////////////////////////////////////////////////////////////////////
 
-//     function getlicenselist() {
-//       return new Array("Affero GPL", "AFPL (Aladdin)", "APSL (Apple)", "Artistic License", "BSD", "CeCILL License (INRIA)", "Copyback License", "DFSG approved", "Eclipse Public License", "EFL (Eiffel)", "Free but Restricted", "Free for Eductional Use", "Free for Home Use", "Free for non-commercial use", "Freely Distribuable", "Freeware", "GNU FDL", "GNU GPL", "GNU approved License", "GNU LGPL", "LPPL (Latex)", "NOKOS (Nokia)", "NPL (Netscape)", "Open Content License", "OSI Approved", "Proprietary", "Proprietary with source", "Proprietary with trial", "Public Domain", "Shareware", "SUN Binary Code License", "The Apache License", "The Apache License 2.0", "Voxel Public License", "WTFPL", "Zope Public License");
-//     }
+    function getLicenseList() {
+      return new Array("Affero GPL", "AFPL (Aladdin)", "APSL (Apple)", "Artistic License", "BSD", "CeCILL License (INRIA)", "Copyback License", "DFSG approved", "Eclipse Public License", "EFL (Eiffel)", "Free but Restricted", "Free for Eductional Use", "Free for Home Use", "Free for non-commercial use", "Freely Distribuable", "Freeware", "GNU FDL", "GNU GPL", "GNU approved License", "GNU LGPL", "LPPL (Latex)", "NOKOS (Nokia)", "NPL (Netscape)", "Open Content License", "OSI Approved", "Proprietary", "Proprietary with source", "Proprietary with trial", "Public Domain", "Shareware", "SUN Binary Code License", "The Apache License", "The Apache License 2.0", "Voxel Public License", "WTFPL", "Zope Public License");
+    }
+
+
+    function getLanguageList() {
+      return new Array("EN", "FR");
+    }
+
+
+    function getArchetypeList() {
+      return new Array("Framework", "Functional bundle", "Library", "Methodology/Documentation", "Plugin", "Stand alone");
+    }
+
 
 //     function getlicenseid() { return getkey("licenseid"); }
 

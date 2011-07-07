@@ -150,3 +150,22 @@ function freezeScore(bool) {
 function freezeComments(bool) {
   document.getElementById("criteriaComments").disabled = bool;
 }
+
+
+// Changes selected language and updates document
+function changeLanguage(object) {
+  myDoc.set("qsosMetadata/language", object.selectedItem.label);
+  docHasChanged();
+}
+
+
+function changeArchetype(object) {
+  myDoc.set("component/archetype", object.selectedItem.label);
+  docHasChanged();
+}
+
+
+function changeLicense(object) {
+  myDoc.set("openSourceCartouche/license/name", object.selectedItem.label);
+  docHasChanged();
+}

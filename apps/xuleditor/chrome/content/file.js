@@ -35,6 +35,57 @@ function newFileDialog() {
 }
 
 
+function populateLanguage() {
+  var languages = myDoc.getLanguageList();
+  var languageList = document.getElementById("languagePopup");
+  for(var i = 0; i < languages.length; ++i) {
+    var menuitem = document.createElement("menuitem");
+    menuitem.setAttribute("label", languages[i]);
+    languageList.appendChild(menuitem);
+  }
+}
+
+
+function populateArchetype() {
+  var archetypes = myDoc.getArchetypeList();
+  var archetypeList = document.getElementById("archetypePopup");
+  for(var i = 0; i < archetypes.length; ++i) {
+    var menuitem = document.createElement("menuitem");
+    menuitem.setAttribute("label", archetypes[i]);
+    archetypeList.appendChild(menuitem);
+  }
+}
+
+
+function populateLicense() {
+  var licenses = myDoc.getLicenseList();
+  var licenseList = document.getElementById("licensePopup");
+  for(var i = 0; i < licenses.length; ++i) {
+    var menuitem = document.createElement("menuitem");
+    menuitem.setAttribute("label", licenses[i]);
+    licenseList.appendChild(menuitem);
+  }
+}
+
+
+function emptyList(list) {
+  while(list.childElementCount > 0) {
+    list.removeChild(list.firstChild);
+  }
+}
+
+
+function selectElementInList(list, name) {
+  for (var i = 0; i < list.itemCount; ++i) {
+    if (list.getItemAtIndex(i).label == name) {
+      list.selectedItem = list.getItemAtIndex(i);
+      return;
+    }
+  }
+  alert("Can't find " + name + " in the list!");
+}
+
+
 // Setup editor when opening a file
 function setupEditorForEval() {
   // Window's title
@@ -45,7 +96,10 @@ function setupEditorForEval() {
   document.getElementById("componentReleaseDate").value = myDoc.get("component/releaseDate");
   document.getElementById("componentVersion").value = myDoc.get("component/version");
   document.getElementById("componentMainTech").value = myDoc.get("component/mainTech");
-  document.getElementById("componentArchetype").value = myDoc.get("component/archetype");
+
+  populateArchetype();
+  selectElementInList(document.getElementById("componentArchetype"), myDoc.get("component/archetype"));
+
   document.getElementById("componentHomepage").value = myDoc.get("component/homepage");
   document.getElementById("componentType").value = myDoc.get("component/type");
   document.getElementById("componentStatus").value = myDoc.get("component/status");
@@ -53,7 +107,9 @@ function setupEditorForEval() {
   document.getElementById("componentDescription").value = myDoc.get("component/description");
 
   // License and Legal
-  document.getElementById("licenseName").value = myDoc.get("openSourceCartouche/license/name");
+  populateLicense();
+  selectElementInList(document.getElementById("licenseName"), myDoc.get("openSourceCartouche/license/name"));
+
   document.getElementById("licenseVersion").value = myDoc.get("openSourceCartouche/license/version");
   document.getElementById("licenseHomepage").value = myDoc.get("openSourceCartouche/license/homepage");
 
@@ -75,7 +131,9 @@ function setupEditorForEval() {
 
   // Evaluation
   document.getElementById("version").value = myDoc.get("qsosMetadata/version");
-  document.getElementById("language").value = myDoc.get("qsosMetadata/language");
+
+  populateLanguage();
+  selectElementInList(document.getElementById("language"), myDoc.get("qsosMetadata/language"));
 
   document.getElementById("reviewerName").value = myDoc.get("evaluation/reviewer/name");
   document.getElementById("reviewerEmail").value = myDoc.get("evaluation/reviewer/email");
@@ -316,7 +374,6 @@ function saveFile() {
     myDoc.set("component/releaseDate", document.getElementById("componentReleaseDate").value);
     myDoc.set("component/version", document.getElementById("componentVersion").value);
     myDoc.set("component/mainTech", document.getElementById("componentMainTech").value);
-    myDoc.set("component/archetype", document.getElementById("componentArchetype").value);
     myDoc.set("component/homepage", document.getElementById("componentHomepage").value);
     myDoc.set("component/type", document.getElementById("componentType").value);
     myDoc.set("component/status", document.getElementById("componentStatus").value);
@@ -324,7 +381,6 @@ function saveFile() {
     myDoc.set("component/description", document.getElementById("componentDescription").value);
 
     // License and Legal
-    myDoc.set("openSourceCartouche/license/name", document.getElementById("licenseName").value);
     myDoc.set("openSourceCartouche/license/version", document.getElementById("licenseVersion").value);
     myDoc.set("openSourceCartouche/license/homepage", document.getElementById("licenseHomepage").value);
 
@@ -346,7 +402,6 @@ function saveFile() {
 
     // Evaluation
     myDoc.set("qsosMetadata/version", document.getElementById("version").value);
-    myDoc.set("qsosMetadata/language", document.getElementById("language").value);
 
     myDoc.set("evaluation/reviewer/name", document.getElementById("reviewerName").value);
     myDoc.set("evaluation/reviewer/email", document.getElementById("reviewerEmail").value);
@@ -435,7 +490,8 @@ function closeFile() {
   document.getElementById("componentReleaseDate").value = resetDate();
   document.getElementById("componentVersion").value = "";
   document.getElementById("componentMainTech").value = "";
-  document.getElementById("componentArchetype").value = "";
+//   document.getElementById("componentArchetype").value = "";
+  emptyList(document.getElementById("archetypePopup"));
   document.getElementById("componentHomepage").value = "";
   document.getElementById("componentType").value = "";
   document.getElementById("componentStatus").value = "";
@@ -443,7 +499,8 @@ function closeFile() {
   document.getElementById("componentDescription").value = "";
 
   // License and Legal
-  document.getElementById("licenseName").value = "";
+//   document.getElementById("licenseName").value = "";
+  emptyList(document.getElementById("licensePopup"));
   document.getElementById("licenseVersion").value = "";
   document.getElementById("licenseHomepage").value = "";
 
@@ -465,7 +522,8 @@ function closeFile() {
 
   // Evaluation
   document.getElementById("version").value = "";
-  document.getElementById("language").value = "";
+//   document.getElementById("language").value = "";
+  emptyList(document.getElementById("languagePopup"));
 
   document.getElementById("authorName").value = "";
   document.getElementById("authorEmail").value = "";
