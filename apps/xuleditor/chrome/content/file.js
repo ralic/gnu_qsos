@@ -368,6 +368,14 @@ function saveFile() {
 //   try {
   if (myDoc) {
     // Updating evaluation content
+    // Checking component fields
+    toCheck = new Array("componentName", "componentReleaseDate", "componentVersion", "componentMainTech", "componentHomepage", "componentType", "componentStatus", "componentVendor");
+    for(var i = 0; i < toCheck.length; ++i) {
+      if (document.getElementById(toCheck[i]).value == ""){
+        alert(strbundle.getString("componentEmpty") + " " + toCheck[i]);
+        break;
+      }
+    }
 
     // Component fields
     myDoc.set("component/name", document.getElementById("componentName").value);
