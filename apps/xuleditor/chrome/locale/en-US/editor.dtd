@@ -1,8 +1,8 @@
 <!--
- *  Copyright (C) 2006-2011 Atos Origin
+ *  Copyright (C) 2006-2011 Atos
  *
- *  Author: Raphael Semeteys <raphael.semeteys@atosorigin.com>
- *          Timothée Ravier <travier@portaildulibre.fr>
+ *  Authors: Raphael Semeteys <raphael.semeteys@atos.net>
+ *           Timothée Ravier <travier@portaildulibre.fr>
  *
  *  This program is free software; you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
@@ -45,7 +45,7 @@
 <!ENTITY closeFile "  Close file                      ">
 <!ENTITY exit "  Exit                              ">
 <!ENTITY description1 "Please open a QSOS evaluation (Open local file or Open remote file) or start a fresh one using templates (New file).">
-<!ENTITY description2 "The 'Save on remote server' function is disabled.">
+<!ENTITY description2 "The 'New file', 'Open remote file' and 'Save on remote server' functions are temporarily disabled.">
 <!ENTITY description3 "Please send your evaluations to the QSOS mailling list:">
 <!ENTITY maillingList "qsos-general@nongnu.org">
 
@@ -119,10 +119,10 @@
 <!ENTITY xuleditorLicense "Software under the terms of the GNU Public License version 2:">
 <!ENTITY xuleditorLicenseUrl "http://www.gnu.org/licenses/gpl-2.0.html">
 <!ENTITY currentQSOSVersion "Current QSOS version: 2.0">
-<!ENTITY supportedQSOSVersions "Supported versions: 2.0, import from 1.6 available">
+<!ENTITY supportedQSOSVersions "Supported versions: 2.0, import from 1.6 will be available in a future version">
 <!ENTITY xuleditorAuthors "Authors:">
 <!ENTITY xuleditorAuthorName1 "Raphael Semeteys">
-<!ENTITY xuleditorAuthorEmail1 "raphael.semeteys@atosorigin.com">
+<!ENTITY xuleditorAuthorEmail1 "raphael.semeteys@atos.net">
 <!ENTITY xuleditorAuthorName2 "Timothée Ravier">
 <!ENTITY xuleditorAuthorEmail2 "travier@portaildulibre.fr">
 <!ENTITY iconsetAuthors "Icons from the Oxygen Team (KDE):">

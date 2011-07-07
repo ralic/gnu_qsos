@@ -1,26 +1,26 @@
 <!--
- **  Copyright (C) 2006-2011 Atos Origin
- **
- **  Author: Raphael Semeteys <raphael.semeteys@atosorigin.com>
- **          Timothée Ravier <travier@portaildulibre.fr>
- **
- **  This program is free software; you can redistribute it and/or modify
- **  it under the terms of the GNU General Public License as published by
- **  the Free Software Foundation; either version 2 of the License, or
- **  (at your option) any later version.
- **
- **  This program is distributed in the hope that it will be useful,
- **  but WITHOUT ANY WARRANTY; without even the implied warranty of
- **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- **  GNU General Public License for more details.
- **
- **  You should have received a copy of the GNU General Public License
- **  along with this program; if not, write to the Free Software
- **  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
- **
- **
- **  QSOS XUL Editor
- **  editor.dtd: french translations
+ *  Copyright (C) 2006-2011 Atos
+ *
+ *  Authors: Raphael Semeteys <raphael.semeteys@atos.net>
+ *           Timothée Ravier <travier@portaildulibre.fr>
+ *
+ *  This program is free software; you can redistribute it and/or modify
+ *  it under the terms of the GNU General Public License as published by
+ *  the Free Software Foundation; either version 2 of the License, or
+ *  (at your option) any later version.
+ *
+ *  This program is distributed in the hope that it will be useful,
+ *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *  GNU General Public License for more details.
+ *
+ *  You should have received a copy of the GNU General Public License
+ *  along with this program; if not, write to the Free Software
+ *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
+ *
+ *
+ *  QSOS XUL Editor
+ *  editor.dtd: french translations
 !-->
 
 <!ENTITY QSOSEditor "Editeur XUL QSOS">
@@ -45,7 +45,7 @@
 <!ENTITY closeFile "  Fermer le fichier                ">
 <!ENTITY exit "  Quitter                              ">
 <!ENTITY description1 "Veuillez ouvrir une évalutaion QSOS (Ouvrir un fichier local ou Ouvrir un fichier distant) ou en commencer une nouvelle à partir d'un patron (Nouveau Fichier).">
-<!ENTITY description2 "La fonction 'Sauvegarder sur le serveur' n'est plus disponible pour l'instant.">
+<!ENTITY description2 "Les fonctions 'Nouveau fichier', 'Ouvrir un fichier distant' et 'Sauvegarder sur le serveur' ne sont plus disponible pour l'instant.">
 <!ENTITY description3 "Vous pouvez envoyer vos évaluations sur la liste de discussion de QSOS :">
 <!ENTITY maillingList "qsos-french@nongnu.org">
 
@@ -119,10 +119,10 @@
 <!ENTITY xuleditorLicense "Logiciel sous licence GNU Public License version 2 :">
 <!ENTITY xuleditorLicenseUrl "http://www.gnu.org/licenses/gpl-2.0.html">
 <!ENTITY currentQSOSVersion "Version actuelle de QSOS : 2.0">
-<!ENTITY supportedQSOSVersions "Versions supportées : 2.0, import depuis la version 1.6 possible">
+<!ENTITY supportedQSOSVersions "Versions supportées : 2.0, l'import depuis la version 1.6 sera disponible dans une prochaine version">
 <!ENTITY xuleditorAuthors "Auteurs :">
 <!ENTITY xuleditorAuthorName1 "Raphael Semeteys">
-<!ENTITY xuleditorAuthorEmail1 "raphael.semeteys@atosorigin.com">
+<!ENTITY xuleditorAuthorEmail1 "raphael.semeteys@atos.net">
 <!ENTITY xuleditorAuthorName2 "Timothée Ravier">
 <!ENTITY xuleditorAuthorEmail2 "travier@portaildulibre.fr">
 <!ENTITY iconsetAuthors "Icones réalisées par Oxygen Team (KDE) :">

@@ -6,7 +6,7 @@ PREREQUISITES
 
 QSOS XML mozilla-javascript library: Document.js (included in chrome/content/ folder)
 Mozilla Javascript
-Xulrunner 1.8+ OR Mozilla Firefox 1.5+
+Xulrunner 2+ OR Mozilla Firefox 3.5+
 
 INSTALLING ON XULRUNNER
 
@@ -42,7 +42,7 @@ QSOS XUL Editor is still under development.
 
 COPYRIGHT
 
-Copyright 2006, 2007 Atos Origin <raphael.semeteys@atosorigin.com>
+Copyright 2006, 2011 Atos <raphael.semeteys@atos.net>
 
 This library is free software; you can redistribute it
 and/or modify it under the terms of the GNU General Public License.

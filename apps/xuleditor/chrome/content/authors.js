@@ -1,7 +1,7 @@
 /**
- *  Copyright (C) 2006-2011 Atos Origin
+ *  Copyright (C) 2006-2011 Atos
  *
- *  Author: Raphael Semeteys <raphael.semeteys@atosorigin.com>
+ *  Authors: Raphael Semeteys <raphael.semeteys@atos.net>
  *          Timothée Ravier <travier@portaildulibre.fr>
  *
  *  This program is free software; you can redistribute it and/or modify
@@ -74,7 +74,7 @@ function addEvalAuthor() {
       listitem.appendChild(listcellComment);
       list.appendChild(listitem);
 
-      alert(name + " " + email + " " + comment);
+//       alert(name + " " + email + " " + comment);
       try {
       myDoc.addEvalAuthor(name, email, comment);
       } catch (e) { alert(e.message); }
@@ -104,7 +104,7 @@ function delEvalAuthor() {
     }
   }
 
-  alert(list.selectedItem.firstChild.getAttribute("label") + " " +  list.selectedItem.childNodes[1].getAttribute("label"));
+//   alert(list.selectedItem.firstChild.getAttribute("label") + " " +  list.selectedItem.childNodes[1].getAttribute("label"));
   try {
   myDoc.delEvalAuthor(list.selectedItem.firstChild.getAttribute("label"), list.selectedItem.childNodes[1].getAttribute("label"));
   } catch (e) { alert(e.message); }

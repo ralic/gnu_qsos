@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-  *  Copyright (C) 2006-2011 Atos Origin
+  *  Copyright (C) 2006-2011 Atos
   *
-  *  Author: Raphael Semeteys <raphael.semeteys@atosorigin.com>
-  *          Timothée Ravier <travier@portaildulibre.fr>
+  *  Authors: Raphael Semeteys <raphael.semeteys@atos.net>
+  *           Timothée Ravier <travier@portaildulibre.fr>
   *
   *  This program is free software; you can redistribute it and/or modify
   *  it under the terms of the GNU General Public License as published by
@@ -35,7 +35,8 @@
   <script type="application/x-javascript" src="editor.js"></script>
   <script type="application/x-javascript" src="file.js"></script>
   <script type="application/x-javascript" src="authors.js"></script>
-  <script type="application/x-javascript" src="general.js"></script>
+  <script type="application/x-javascript" src="opensourcecartouche.js">
+  </script>
   <script type="application/x-javascript" src="criteria.js"></script>
   <script type="application/x-javascript" src="chart.js"></script>
   <script type="application/x-javascript" src="about.js"></script>

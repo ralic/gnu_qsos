@@ -1,8 +1,8 @@
 /**
- *  Copyright (C) 2006-2011 Atos Origin
+ *  Copyright (C) 2006-2011 Atos
  *
- *  Author: Raphael Semeteys <raphael.semeteys@atosorigin.com>
- *          Timothée Ravier <travier@portaildulibre.fr>
+ *  Authors: Raphael Semeteys <raphael.semeteys@atos.net>
+ *           Timothée Ravier <travier@portaildulibre.fr>
  *
  *  This program is free software; you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by

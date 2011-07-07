@@ -1,8 +1,8 @@
 /**
- *  Copyright (C) 2006-2011 Atos Origin
+ *  Copyright (C) 2006-2011 Atos
  *
- *  Author: Raphael Semeteys <raphael.semeteys@atosorigin.com>
- *          Timothée Ravier <travier@portaildulibre.fr>
+ *  Authors: Raphael Semeteys <raphael.semeteys@atos.net>
+ *           Timothée Ravier <travier@portaildulibre.fr>
  *
  *  This program is free software; you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
@@ -20,7 +20,7 @@
  *
  *
  *  QSOS XUL Editor
- *  general.js: functions associated with the general tab
+ *  opensourcecartouche.js: functions associated with the opensourcecartouche tab
  *
 **/
 
@@ -84,7 +84,7 @@ function addTeamMember(type) {
       listitem.appendChild(listcellCompany);
       list.appendChild(listitem);
 
-      alert(type + " " + name + " " + email + " " + company);
+//       alert(type + " " + name + " " + email + " " + company);
       try {
       myDoc.addTeamMember(type, name, email, company);
       } catch (e) { alert(e.message); }
@@ -114,7 +114,7 @@ function delTeamMember(type) {
     }
   }
 
-  alert(type + " " + list.selectedItem.firstChild.getAttribute("label") + " " + list.selectedItem.childNodes[1].getAttribute("label") + " " + list.selectedItem.childNodes[2].getAttribute("label"));
+//   alert(type + " " + list.selectedItem.firstChild.getAttribute("label") + " " + list.selectedItem.childNodes[1].getAttribute("label") + " " + list.selectedItem.childNodes[2].getAttribute("label"));
   try {
   myDoc.delTeamMember(type, list.selectedItem.firstChild.getAttribute("label"), list.selectedItem.childNodes[1].getAttribute("label"));
   } catch (e) { alert(e.message); }
