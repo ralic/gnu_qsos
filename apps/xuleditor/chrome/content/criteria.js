@@ -24,6 +24,8 @@
  *
 **/
 
+var currentId;
+
 
 // Forces the selection of element with id in the criteria tree
 function selectItem(id) {
@@ -88,10 +90,13 @@ function treeselect(tree) {
 
     if (myDoc.hassubelements(id)) {
       drawChart(id);
+      currentId = id;
     } else {
-      if (document.getElementById("tabs").selectedIndex == 3) {
-        var parentId = myDoc.getparent(id);
-        if (parentId) drawChart(parentId);
+      var parentId = myDoc.getparent(id);
+      if (parentId) {
+          drawChart(parentId);
+          // Store the Id for fixing groubox selection
+          currentId = parentId;
       }
     }
   }

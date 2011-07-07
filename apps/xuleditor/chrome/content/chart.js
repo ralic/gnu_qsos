@@ -24,8 +24,8 @@
  *
 **/
 
-const SCALE = 100; //1 QSOS unit in pixels
-const FONT_SIZE = SCALE/7;
+const SCALE = 65; //1 QSOS unit in pixels
+const FONT_SIZE = SCALE/5;
 
 //Clear the SVG chart
 function clearChart() {
@@ -42,8 +42,8 @@ function drawChart(name) {
   var myChart = document.getElementById("chart");
   //var width = myChart.parentNode.width.animVal.value / 2;
   //var height = myChart.parentNode.height.animVal.value / 2;
-  var width = 400;
-  var height = 250;
+  var width = 250;
+  var height = 200;
   myChart.setAttribute("transform", "translate("+width+","+height+")");
 
   //Collect charting data

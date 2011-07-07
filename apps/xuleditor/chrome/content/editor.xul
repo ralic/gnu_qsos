@@ -51,7 +51,7 @@
       <tab id="authorsTab" class="authors" label="&authorsTab;" accesskey="&authorsTabAccessKey;"/>
       <tab id="oscTab" class="osc" label="&oscTab;" accesskey="&oscTabAccessKey;"/>
       <tab id="criteriaTab" class="criteria" label="&criteriaTab;" accesskey="&criteriaTabAccessKey;"/>
-      <tab id="chartTab" class="chart" label="&chartTab;" accesskey="&chartTabAccessKey;"/>
+      <!--<tab id="chartTab" class="chart" label="&chartTab;" accesskey="&chartTabAccessKey;"/>!-->
     </tabs>
     <tabpanels flex="1">
       <tabpanel id="aboutTabPanel" class="over">
@@ -545,21 +545,22 @@
           <groupbox id="scoreGroupbox">
             <caption label="&score;"/>
             <radiogroup id="scoreRadiogroup">
-              <radio id="scoreDescription0" label="&score0;" oncommand="changeScore(0);"/>
-              <radio id="scoreDescription1" label="&score1;" oncommand="changeScore(1);"/>
-              <radio id="scoreDescription2" label="&score2;" oncommand="changeScore(2);"/>
+              <radio id="scoreDescription0" label="&score0;" oncommand="changeScore(0); drawChart(currentId);"/>
+              <radio id="scoreDescription1" label="&score1;" oncommand="changeScore(1); drawChart(currentId);"/>
+              <radio id="scoreDescription2" label="&score2;" oncommand="changeScore(2); drawChart(currentId);"/>
             </radiogroup>
           </groupbox>
           <label control="criteriaComments" value="&comments;"/>
           <textbox id="criteriaComments" multiline="true" rows="5" oninput="changeComments(this);"/>
-        </vbox>
-      </tabpanel>
-      <tabpanel id="chartTabPanel">
-        <vbox id="chart-box" flex = "1">
-          <hbox id="chart-label" />
-            <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="750px" height="500px">
-              <g id="chart"/>
-            </svg>
+          <groupbox id="chartGroupbox" flex="1">
+            <caption label="&chartTab;"/>
+            <vbox id="chart-box" flex = "1">
+              <hbox id="chart-label" />
+              <svg xmlns="http://www.w3.org/2000/svg" version="1.1" flex="1"> <!-- width="400px" height="350px"> !-->
+                <g id="chart" flex="1"/>
+              </svg>
+            </vbox>
+          </groupbox>
         </vbox>
       </tabpanel>
     </tabpanels>
