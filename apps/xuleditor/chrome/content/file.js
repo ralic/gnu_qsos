@@ -563,12 +563,11 @@ function closeFile() {
   document.getElementById("scoreRadiogroup").selectedIndex = -1;
   document.getElementById("criteriaComments").value = "";
 
-  // FIXME
-//   var tree = document.getElementById("criteriaTree");
-//   var treechildren = document.getElementById("myTreechildren");
-//   tree.removeChild(treechildren);
-//   clearChart();
-//   clearLabels();
+  var tree = document.getElementById("criteriaTree");
+  var treechildren = document.getElementById("myTreechildren");
+  tree.removeChild(treechildren);
+  clearChart();
+  clearLabels();
 }
 
 // Checks Document's state before closing it
