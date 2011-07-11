@@ -26,31 +26,28 @@
 
 
 // Triggered when an author/reviewer/contributor is select in a list
-function changeEvalAuthor(elem1, elem2, elem3, author) {
-//   for(var i = 0; i < author.childNodes.length; ++i)
-//     alert(author.childNodes[i].nodeName + " " + author.childNodes[i].getAttribute(author.childNodes[i].attributes[0].nodeName));
+function changeAuthor(type, author) {
+  var nameElem = document.getElementById(type + "AuthorName");
+  var emailElem = document.getElementById(type + "AuthorEmail");
+  var commentElem = document.getElementById(type + "AuthorComment");
 
   var i = 0;
-//   alert(author.childNodes[i].getAttribute(author.childNodes[i].attributes[0].nodeName));
-//   alert(elem1);
-  document.getElementById(elem1).value = author.childNodes[i].getAttribute(author.childNodes[i].attributes[0].nodeName);
+  nameElem.value = author.childNodes[i].getAttribute(author.childNodes[i].attributes[0].nodeName);
   ++i;
-//   alert(elem2);
-//   alert(author.childNodes[i].getAttribute(author.childNodes[i].attributes[0].nodeName));
-  document.getElementById(elem2).value = author.childNodes[i].getAttribute(author.childNodes[i].attributes[0].nodeName);
+  emailElem.value = author.childNodes[i].getAttribute(author.childNodes[i].attributes[0].nodeName);
   ++i;
-  document.getElementById(elem3).value = author.childNodes[i].getAttribute(author.childNodes[i].attributes[0].nodeName);
+  commentElem.value = author.childNodes[i].getAttribute(author.childNodes[i].attributes[0].nodeName);
 }
 
 
 // Triggered when an evaluation author is added
-function addEvalAuthor() {
+function addAuthor(type) {
   try{
-    var list = document.getElementById("evaluationAuthors");
+    var list = document.getElementById( type + "Authors");
     var listitem = document.createElement("listitem");
-    var name = document.getElementById("authorName").value;
-    var email = document.getElementById("authorEmail").value;
-    var comment = document.getElementById("authorComment").value;
+    var name = document.getElementById(type + "AuthorName").value;
+    var email = document.getElementById(type + "AuthorEmail").value;
+    var comment = document.getElementById(type + "AuthorComment").value;
 
     if (name == "" || email == "") {
       alert(strbundle.getString("validAuthor"));
@@ -87,9 +84,9 @@ function addEvalAuthor() {
 
 
 // Triggered when an evaluation author is deleted
-function delEvalAuthor() {
+function delAuthor(type) {
   try{
-  var list = document.getElementById("evaluationAuthors");
+  var list = document.getElementById(type + "Authors");
 
   if (list.selectedItem == null) {
     alert("Select an author to be deleted"); // TODO localize
@@ -111,9 +108,9 @@ function delEvalAuthor() {
 
   list.removeChild(list.selectedItem);
 
-  document.getElementById("authorName").value = "";
-  document.getElementById("authorEmail").value = "";
-  document.getElementById("authorComment").value = "";
+  document.getElementById(type + "AuthorName").value = "";
+  document.getElementById(type + "AuthorEmail").value = "";
+  document.getElementById(type + "AuthorComment").value = "";
 
   docHasChanged();
   } catch(e) { alert(e.message); }

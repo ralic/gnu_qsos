@@ -187,63 +187,7 @@
       <tabpanel id="AuthorsTabPanel" class="over">
         <vbox flex="1">
           <groupbox>
-            <caption label="&template;"/>
-            <vbox>
-              <groupbox>
-                <caption label="&authors;"/>
-                <listbox id="templateAuthors" flex="1" rows="3" class="over" disabled="true">
-                  <listhead flex="1">
-                    <listheader label="&name;" width="200"/>
-                    <listheader label="&email;" width="200"/>
-                    <listheader label="&comment;" width="200"/>
-                  </listhead>
-                </listbox>
-              </groupbox>
-              <groupbox>
-                <caption label="&reviewer;"/>
-                <grid flex="1">
-                  <columns>
-                    <column />
-                    <column flex="1"/>
-                    <column />
-                    <column flex="1"/>
-                    <column />
-                    <column flex="1"/>
-                  </columns>
-                  <rows>
-                    <row align="center">
-                      <label control="templateReviewerName" value="&name;"/>
-                      <textbox id="templateReviewerName" oninput="docHasChanged(true);" disabled="true"/>
-                      <label control="templateReviewerEmail" value="&email;"/>
-                      <textbox id="templateReviewerEmail" oninput="docHasChanged(true);" disabled="true"/>
-                      <label control="templateReviewerDate" value="&date;"/>
-                      <datepicker id="templateReviewerDate" type="popup" onchange="docHasChanged(true);" disabled="true"/>
-                    </row>
-                    <hbox align="center">
-                      <label control="templateReviewerComment" value="&comment;"/>
-                      <textbox id="templateReviewerComment" multiline="true" flex="1" oninput="docHasChanged(true);" disabled="true"/>
-                    </hbox>
-                  </rows>
-                </grid>
-              </groupbox>
-              <groupbox>
-                <caption label="&evaluationDates;"/>
-                <hbox align="center">
-                  <label control="templateCreationDate" value="&creationDate;"/>
-                  <datepicker id="templateCreationDate" type="popup" onchange="docHasChanged(true);" disabled="true"/>
-                  <separator class="groove-thin" orient="vertical"/>
-                  <label control="templateUpdateDate" value="&updateDate;"/>
-                  <datepicker id="templateUpdateDate" type="popup" oninput="docHasChanged(true);" disabled="true"/>
-                  <separator class="groove-thin" orient="vertical"/>
-                  <label control="templateValidationDate" value="&validationDate;"/>
-                  <datepicker id="templateValidationDate" type="popup" onchange="docHasChanged(true);" disabled="true"/>
-                </hbox>
-              </groupbox>
-            </vbox>
-          </groupbox>
-
-          <groupbox>
-            <caption label="&evaluation;"/>
+            <caption label="&evaluationAuthors;"/>
             <vbox>
               <grid flex="1">
                 <columns>
@@ -254,10 +198,10 @@
                 </columns>
                 <rows>
                   <row align="center">
-                    <label control="version" value="&version;"/>
-                    <textbox id="version" placeholder="&evaluationVersion;" oninput="docHasChanged(true);"/>
-                    <label control="language" value="&language;"/>
-                    <menulist id="language" oncommand="changeLanguage(this);">
+                    <label control="evaluationVersion" value="&evaluationVersion;"/>
+                    <textbox id="evaluationVersion" placeholder="&evaluationVersionPlaceholder;" oninput="docHasChanged(true);"/>
+                    <label control="evaluationLanguage" value="&evaluationLanguage;"/>
+                    <menulist id="evaluationLanguage" oncommand="changeLanguage(this);">
                       <menupopup id="languagePopup"/>
                     </menulist>
                     <!--<textbox id="language" oninput="docHasChanged(true);" flex="1"/>!-->
@@ -274,21 +218,21 @@
                     </columns>
                     <rows>
                       <row align="center">
-                        <label control="authorName" value="&name;"/>
-                        <textbox id="authorName" flex="1"/>
+                        <label control="evaluationAuthorName" value="&name;"/>
+                        <textbox id="evaluationAuthorName" flex="1"/>
                       </row>
                       <row align="center">
-                        <label control="authorEmail" value="&email;"/>
-                        <textbox id="authorEmail" flex="1"/>
+                        <label control="evaluationAuthorEmail" value="&email;"/>
+                        <textbox id="evaluationAuthorEmail" flex="1"/>
                       </row>
                       <row align="center">
-                        <label control="authorComment" value="&comment;"/>
-                        <textbox id="authorComment" multiline="true" flex="1"/>
+                        <label control="evaluationAuthorComment" value="&comment;"/>
+                        <textbox id="evaluationAuthorComment" multiline="true" flex="1"/>
                       </row>
                     </rows>
                   </grid>
                   <vbox flex="5">
-                    <listbox id="evaluationAuthors" flex="1" rows="3" onselect="changeEvalAuthor('authorName', 'authorEmail', 'authorComment', this.selectedItem);" width="500"  class="over">
+                    <listbox id="evaluationAuthors" flex="1" rows="3" onselect="changeAuthor('evaluation', this.selectedItem);" width="500"  class="over">
                       <listhead flex="1">
                         <listheader label="&name;" width="200"/>
                         <listheader label="&email;" width="200"/>
@@ -296,8 +240,8 @@
                       </listhead>
                     </listbox>
                     <hbox>
-                      <button label="&addButton;" id="addAuthorButton" class="addAuthor" oncommand="addEvalAuthor();"/>
-                      <button label="&delButton;" id="delAuthorButton" class="delAuthor" oncommand="delEvalAuthor();"/>
+                      <button label="&addButton;" id="addAuthorButton" class="addAuthor" oncommand="addAuthor('evaluation');"/>
+                      <button label="&delButton;" id="delAuthorButton" class="delAuthor" oncommand="delAuthor('evaluation');"/>
                     </hbox>
                   </vbox>
                 </hbox>
@@ -315,35 +259,132 @@
                   </columns>
                   <rows>
                     <row align="center">
-                      <label control="reviewerName" value="&name;"/>
-                      <textbox id="reviewerName" oninput="docHasChanged(true);"/>
-                      <label control="reviewerEmail" value="&email;"/>
-                      <textbox id="reviewerEmail" oninput="docHasChanged(true);"/>
-                      <label control="reviewerDate" value="&date;"/>
-                      <datepicker id="reviewerDate" type="popup" onchange="docHasChanged(true);"/>
+                      <label control="evaluationReviewerName" value="&name;"/>
+                      <textbox id="evaluationReviewerName" oninput="docHasChanged(true);"/>
+                      <label control="evaluationReviewerEmail" value="&email;"/>
+                      <textbox id="evaluationReviewerEmail" oninput="docHasChanged(true);"/>
+                      <label control="evaluationReviewerDate" value="&date;"/>
+                      <datepicker id="evaluationReviewerDate" type="popup" onchange="docHasChanged(true);"/>
                     </row>
                     <hbox align="center">
-                      <label control="reviewerComment" value="&comment;"/>
-                      <textbox id="reviewerComment" multiline="true" flex="1" oninput="docHasChanged(true);"/>
+                      <label control="evaluationReviewerComment" value="&comment;"/>
+                      <textbox id="evaluationReviewerComment" multiline="true" flex="1" oninput="docHasChanged(true);"/>
                     </hbox>
                   </rows>
                 </grid>
               </groupbox>
               <groupbox>
-                <caption label="&evaluationDates;"/>
+                <caption label="&dates;"/>
                   <hbox align="center">
-                    <label control="creationDate" value="&creationDate;"/>
-                    <datepicker id="creationDate" type="popup" onchange="docHasChanged(true);"/>
+                    <label control="evaluationCreationDate" value="&creationDate;"/>
+                    <datepicker id="evaluationCreationDate" type="popup" onchange="docHasChanged(true);"/>
                     <separator class="groove-thin" orient="vertical"/>
-                    <label control="updateDate" value="&updateDate;"/>
-                    <datepicker id="updateDate" type="popup" oninput="docHasChanged(true);"/>
+                    <label control="evaluationUpdateDate" value="&updateDate;"/>
+                    <datepicker id="evaluationUpdateDate" type="popup" oninput="docHasChanged(true);"/>
                     <separator class="groove-thin" orient="vertical"/>
-                    <label control="validationDate" value="&validationDate;"/>
-                    <datepicker id="validationDate" type="popup" onchange="docHasChanged(true);"/>
+                    <label control="evaluationValidationDate" value="&validationDate;"/>
+                    <datepicker id="evaluationValidationDate" type="popup" onchange="docHasChanged(true);"/>
                   </hbox>
               </groupbox>
             </vbox>
           </groupbox>
+
+          <groupbox>
+            <caption label="&oscAuthors;"/>
+            <vbox>
+              <grid flex="1">
+                <columns>
+                  <column />
+                  <column flex="1"/>
+                </columns>
+                <rows>
+                  <row align="center">
+                    <label control="oscVersion" value="&oscVersion;"/>
+                    <textbox id="oscVersion" placeholder="&oscVersionPlaceholder;" oninput="docHasChanged(true);"/>
+                  </row>
+                </rows>
+              </grid>
+              <groupbox>
+                <caption label="&authors;"/>
+                <hbox flex="1">
+                  <grid flex="1">
+                    <columns>
+                      <column />
+                      <column flex="1"/>
+                    </columns>
+                    <rows>
+                      <row align="center">
+                        <label control="oscAuthorName" value="&name;"/>
+                        <textbox id="oscAuthorName" flex="1" disabled="true"/>
+                      </row>
+                      <row align="center">
+                        <label control="oscAuthorEmail" value="&email;"/>
+                        <textbox id="oscAuthorEmail" flex="1" disabled="true"/>
+                      </row>
+                      <row align="center">
+                        <label control="oscAuthorComment" value="&comment;"/>
+                        <textbox id="oscAuthorComment" multiline="true" flex="1" disabled="true"/>
+                      </row>
+                    </rows>
+                  </grid>
+                  <vbox flex="5">
+                    <listbox id="oscAuthors" flex="1" rows="3" onselect="changeAuthor('osc', this.selectedItem);" width="500"  class="over">
+                      <listhead flex="1">
+                        <listheader label="&name;" width="200"/>
+                        <listheader label="&email;" width="200"/>
+                        <listheader label="&comment;" width="100"/>
+                      </listhead>
+                    </listbox>
+                    <hbox>
+                      <button label="&addButton;" id="addAuthorButton" class="addAuthor" oncommand="addAuthor('osc');" disabled="true"/>
+                      <button label="&delButton;" id="delAuthorButton" class="delAuthor" oncommand="delAuthor('osc');" disabled="true"/>
+                    </hbox>
+                  </vbox>
+                </hbox>
+              </groupbox>
+              <groupbox>
+                <caption label="&reviewer;"/>
+                <grid flex="1">
+                  <columns>
+                    <column />
+                    <column flex="1"/>
+                    <column />
+                    <column flex="1"/>
+                    <column />
+                    <column flex="1"/>
+                  </columns>
+                  <rows>
+                    <row align="center">
+                      <label control="oscReviewerName" value="&name;"/>
+                      <textbox id="oscReviewerName" oninput="docHasChanged(true);"/>
+                      <label control="oscReviewerEmail" value="&email;"/>
+                      <textbox id="oscReviewerEmail" oninput="docHasChanged(true);"/>
+                      <label control="oscReviewerDate" value="&date;"/>
+                      <datepicker id="oscReviewerDate" type="popup" onchange="docHasChanged(true);"/>
+                    </row>
+                    <hbox align="center">
+                      <label control="oscReviewerComment" value="&comment;"/>
+                      <textbox id="oscReviewerComment" multiline="true" flex="1" oninput="docHasChanged(true);"/>
+                    </hbox>
+                  </rows>
+                </grid>
+              </groupbox>
+              <groupbox>
+                <caption label="&dates;"/>
+                <hbox align="center">
+                  <label control="oscCreationDate" value="&creationDate;"/>
+                  <datepicker id="oscCreationDate" type="popup" onchange="docHasChanged(true);"/>
+                  <separator class="groove-thin" orient="vertical"/>
+                  <label control="oscUpdateDate" value="&updateDate;"/>
+                  <datepicker id="oscUpdateDate" type="popup" oninput="docHasChanged(true);"/>
+                  <separator class="groove-thin" orient="vertical"/>
+                  <label control="oscValidationDate" value="&validationDate;"/>
+                  <datepicker id="oscValidationDate" type="popup" onchange="docHasChanged(true);"/>
+                </hbox>
+              </groupbox>
+            </vbox>
+          </groupbox>
+
         </vbox>
       </tabpanel>
 

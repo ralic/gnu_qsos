@@ -50,8 +50,8 @@
 <!ENTITY maillingList "qsos-french@nongnu.org">
 
 <!-- Authors Tab !-->
-<!ENTITY evaluation "Evaluation :">
-<!ENTITY template "Template :">
+<!ENTITY evaluationAuthors "Evaluation :">
+<!ENTITY oscAuthors "Template :">
 <!ENTITY authors "Auteurs :">
 <!ENTITY name "Nom :">
 <!ENTITY email "Email :">
@@ -60,10 +60,12 @@
 <!ENTITY delButton " Supprimer">
 <!ENTITY reviewer "Validateur :">
 <!ENTITY date "Date">
-<!ENTITY version "Version :">
-<!ENTITY language "Langue :">
-<!ENTITY evaluationVersion "La version de cette évaluation">
-<!ENTITY evaluationDates "Dates :">
+<!ENTITY evaluationVersion "Version :">
+<!ENTITY evaluationVersionPlaceholder "La version de cette évaluation">
+<!ENTITY oscVersion "Version:">
+<!ENTITY oscVersionPlaceholder "La version de ce Cartouche">
+<!ENTITY evaluationLanguage "Langue :">
+<!ENTITY dates "Dates :">
 <!ENTITY creationDate "Crée le :">
 <!ENTITY updateDate "Mise à jour le :">
 <!ENTITY validationDate "Validée le :">

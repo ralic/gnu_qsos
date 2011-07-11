@@ -490,7 +490,11 @@ function Document() {
 
     function getAuthors(type) {
       var authors = new Array();
-      var nodes = sheet.evaluate("//" + type + "/authors/author", sheet, null, XPathResult.ANY_TYPE, null);
+      if(type == "osc"){
+        var nodes = sheet.evaluate("//openSourceCartouche/metadata/author", sheet, null, XPathResult.ANY_TYPE, null);
+      } else {
+        var nodes = sheet.evaluate("//" + type + "/authors/author", sheet, null, XPathResult.ANY_TYPE, null);
+      }
       var node = nodes.iterateNext();
       while (node != null) {
         var author = new Object();

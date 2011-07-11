@@ -34,6 +34,62 @@ var id;
 // Localized strings bundle
 var strbundle;
 
+
+// Objects to save/modify/empty cells and set/reset dates the easy way
+// This is a dictionnary that gives the correpsondant xml path for each xul element
+var textElements = new Object();
+// Component
+textElements["componentName"] = "component/name";
+
+textElements["componentVersion"] = "component/version";
+textElements["componentMainTech"] = "component/mainTech";
+textElements["componentHomepage"] = "component/homepage";
+textElements["componentType"] = "component/type";
+textElements["componentStatus"] = "component/status";
+textElements["componentVendor"] = "component/vendor";
+textElements["componentDescription"] = "component/description";
+
+// License and Legal
+textElements["licenseVersion"] = "openSourceCartouche/license/version";
+textElements["licenseHomepage"] = "openSourceCartouche/license/homepage";
+
+textElements["copyright"] = "openSourceCartouche/legal/copyright";
+
+// Team
+textElements["number"] = "team/number";
+
+// Authors tab
+// Evaluation
+textElements["evaluationVersion"] = "qsosMetadata/version";
+
+textElements["evaluationReviewerName"] = "evaluation/reviewer/name";
+textElements["evaluationReviewerEmail"] = "evaluation/reviewer/email";
+textElements["evaluationReviewerComment"] = "evaluation/reviewer/comment";
+
+// Open Source Cartouche Metadata
+textElements["oscVersion"] = "qsosMetadata/version";
+
+textElements["oscReviewerName"] = "openSourceCartouche/metadata/reviewer/name";
+textElements["oscReviewerEmail"] = "openSourceCartouche/metadata/reviewer/email";
+textElements["oscReviewerComment"] = "openSourceCartouche/metadata/reviewer/comment";
+
+
+var dateElements = new Object();
+dateElements["componentReleaseDate"] = "component/releaseDate";
+
+dateElements["evaluationReviewerDate"] = "evaluation/reviewer/date";
+
+dateElements["evaluationCreationDate"] = "evaluation/dates/creation";
+dateElements["evaluationUpdateDate"] = "evaluation/dates/update";
+dateElements["evaluationValidationDate"] = "evaluation/dates/validation";
+
+dateElements["oscReviewerDate"] = "openSourceCartouche/metadata/reviewer/date";
+
+dateElements["oscCreationDate"] = "openSourceCartouche/metadata/dates/creation";
+dateElements["oscUpdateDate"] = "openSourceCartouche/metadata/dates/update";
+dateElements["oscValidationDate"] = "openSourceCartouche/metadata/dates/validation";
+
+
 // Window initialization after loading
 function init() {
   strbundle = document.getElementById("properties");
