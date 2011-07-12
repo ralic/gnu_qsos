@@ -696,14 +696,6 @@ function Document() {
     }
 
 
-//     function getlicenseid() { return getkey("licenseid"); }
-
-//     function setlicenseid(value) { return setkey("licenseid", value); }
-
-//     function getlicensedesc() { return getkey("licensedesc"); }
-
-//     function setlicensedesc(value) { return setkey("licensedesc", value); }
-
     ////////////////////////////////////////////////////////////////////
     // Chart functions
     ////////////////////////////////////////////////////////////////////

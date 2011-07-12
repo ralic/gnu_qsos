@@ -43,7 +43,6 @@
   <stringbundle id="properties" src="chrome://qsos-xuled/locale/editor.properties"/>
   <tabbox id="tabBox" flex="1">
     <tabs id="tabs">
-      <!-- <tab id="aboutTab" class="about" label="&aboutTab;c"/> !-->
       <tab id="aboutTab" class="about" accesskey="&aboutTabAccessKey;"/>
       <!-- <tab id="configTab" class="config" label="&configTab;"/> !-->
       <tab id="configTab" class="config" accesskey="&configTabAccessKey;"/>
@@ -51,7 +50,6 @@
       <tab id="metadataTab" class="metadata" label="&metadataTab;" accesskey="&metadataTabAccessKey;"/>
       <tab id="oscTab" class="osc" label="&oscTab;" accesskey="&oscTabAccessKey;"/>
       <tab id="criteriaTab" class="criteria" label="&criteriaTab;" accesskey="&criteriaTabAccessKey;"/>
-      <!--<tab id="chartTab" class="chart" label="&chartTab;" accesskey="&chartTabAccessKey;"/>!-->
     </tabs>
     <tabpanels flex="1">
       <tabpanel id="aboutTabPanel" class="over">
@@ -64,14 +62,7 @@
           <label value=""/>
           <hbox>
             <label value="&xuleditorLicense;"/>
-            <!--            <label href="http://www.google.fr">&xuleditorLicenseUrl;</label> !-->
-              <textbox value="&xuleditorLicenseUrl;" readonly="true" class="plain" style="background-color: transparent;" flex="1"/>
-              <!--            <description class="text-blurb">
-              a<label class="text-link" href="http://www.mozilla.org/contribute/">abba</label>a
-            </description>
-            <description class="text-blurb">
-              a<label class="text-link" href="mailto:aaa@a.fr">abba</label>a
-            </description> !-->
+            <textbox value="&xuleditorLicenseUrl;" readonly="true" class="plain" style="background-color: transparent;" flex="1"/>
           </hbox>
           <label value=""/>
           <label value="&currentQSOSVersion;"/>
@@ -225,7 +216,6 @@
                     <menulist id="evaluationLanguage" oncommand="changeLanguage(this);" disabled="true">
                       <menupopup id="languagePopup"/>
                     </menulist>
-                    <!--<textbox id="language" oninput="docHasChanged(true);" flex="1"/>!-->
                   </row>
                 </rows>
               </grid>
@@ -562,7 +552,6 @@
                     <menulist id="licenseName" oncommand="changeLicense(this);">
                       <menupopup id="licensePopup"/>
                     </menulist>
-                    <!--<textbox id="licenseName" oninput="docHasChanged(true);" flex="1"/>!-->
                     <label control="licenseVersion" value="&licenseVersion;"/>
                     <textbox id="licenseVersion" oninput="docHasChanged(true);" flex="1"/>
                     <label control="licenseHomepage" value="&licenseHomepage;"/>

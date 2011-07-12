@@ -71,7 +71,6 @@ function addAuthor(type) {
       listitem.appendChild(listcellComment);
       list.appendChild(listitem);
 
-//       alert(name + " " + email + " " + comment);
       try {
       myDoc.addEvalAuthor(name, email, comment);
       } catch (e) { alert(e.message); }
@@ -101,7 +100,6 @@ function delAuthor(type) {
     }
   }
 
-//   alert(list.selectedItem.firstChild.getAttribute("label") + " " +  list.selectedItem.childNodes[1].getAttribute("label"));
   try {
   myDoc.delEvalAuthor(list.selectedItem.firstChild.getAttribute("label"), list.selectedItem.childNodes[1].getAttribute("label"));
   } catch (e) { alert(e.message); }

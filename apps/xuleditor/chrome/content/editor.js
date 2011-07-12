@@ -189,20 +189,6 @@ function setStateEvalOpen(state) {
 }
 
 
-// (Un)freezes generic input files (software properties)
-// bool: "true" to freeze; "" to unfreeze
-// Not needed anymore.
-// function freezeGeneric(bool) {
-//   document.getElementById("generalTab").hidden = true;
-//   document.getElementById("criteriaTab").hidden = true;
-//   document.getElementById("chartTab").hidden = true;
-//   var genericGroupBoxId = ["f-software","f-release","f-sotwarefamily","f-license","f-desc","f-url","f-demourl","f-a-list","f-a-name","f-a-email","addAuthorButton","delAuthorButton"];
-//   var length = genericGroupBoxId.length;
-//   for(var i = 0; i < length; ++i){
-//     document.getElementById(genericGroupBoxId[i]).disabled = bool;
-//   }
-// }
-
 // (Un)freezes the "Score" input files (current criteria properties)
 // bool: "true" to freeze; "" to unfreeze
 function freezeScore(bool) {

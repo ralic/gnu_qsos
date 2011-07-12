@@ -84,7 +84,6 @@ function addTeamMember(type) {
       listitem.appendChild(listcellCompany);
       list.appendChild(listitem);
 
-//       alert(type + " " + name + " " + email + " " + company);
       try {
       myDoc.addTeamMember(type, name, email, company);
       } catch (e) { alert(e.message); }
@@ -114,7 +113,6 @@ function delTeamMember(type) {
     }
   }
 
-//   alert(type + " " + list.selectedItem.firstChild.getAttribute("label") + " " + list.selectedItem.childNodes[1].getAttribute("label") + " " + list.selectedItem.childNodes[2].getAttribute("label"));
   try {
   myDoc.delTeamMember(type, list.selectedItem.firstChild.getAttribute("label"), list.selectedItem.childNodes[1].getAttribute("label"));
   } catch (e) { alert(e.message); }

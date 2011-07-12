@@ -106,60 +106,16 @@ function setupEditorForEval() {
     }
   }
 
-// Component fields
-//   document.getElementById("componentName").value = myDoc.get("component/name");
-//   document.getElementById("componentReleaseDate").value = myDoc.get("component/releaseDate");
-//   document.getElementById("componentVersion").value = myDoc.get("component/version");
-//   document.getElementById("componentMainTech").value = myDoc.get("component/mainTech");
-
+  // Component fields
   populateArchetype();
   selectElementInList(document.getElementById("componentArchetype"), myDoc.get("component/archetype"));
-
-//   document.getElementById("componentHomepage").value = myDoc.get("component/homepage");
-//   document.getElementById("componentType").value = myDoc.get("component/type");
-//   document.getElementById("componentStatus").value = myDoc.get("component/status");
-//   document.getElementById("componentVendor").value = myDoc.get("component/vendor");
-//   document.getElementById("componentDescription").value = myDoc.get("component/description");
 
   // License and Legal
   populateLicense();
   selectElementInList(document.getElementById("licenseName"), myDoc.get("openSourceCartouche/license/name"));
 
-//   document.getElementById("licenseVersion").value = myDoc.get("openSourceCartouche/license/version");
-//   document.getElementById("licenseHomepage").value = myDoc.get("openSourceCartouche/license/homepage");
-
-//   document.getElementById("copyright").value = myDoc.get("openSourceCartouche/legal/copyright");
-
-  // Team
-//   document.getElementById("number").value = myDoc.get("team/number");
-
-  // Authors tab
-  // Evaluation
-//   document.getElementById("evaluationVersion").value = myDoc.get("qsosMetadata/version");
-
   populateLanguage();
   selectElementInList(document.getElementById("evaluationLanguage"), myDoc.get("qsosMetadata/language"));
-
-//   document.getElementById("evaluationReviewerName").value = myDoc.get("evaluation/reviewer/name");
-//   document.getElementById("evaluationReviewerEmail").value = myDoc.get("evaluation/reviewer/email");
-//   document.getElementById("evaluationReviewerDate").value = myDoc.get("evaluation/reviewer/date");
-//   document.getElementById("evaluationReviewerComment").value = myDoc.get("evaluation/reviewer/comment");
-
-//   document.getElementById("evaluationCreationDate").value = myDoc.get("evaluation/dates/creation");
-//   document.getElementById("evaluationUpdateDate").value = myDoc.get("evaluation/dates/update");
-//   document.getElementById("evaluationValidationDate").value = myDoc.get("evaluation/dates/validation");
-
-  // Open Source Cartouche Metadata
-//   document.getElementById("oscVersion").value = myDoc.get("qsosMetadata/version");
-
-//   document.getElementById("oscReviewerName").value = myDoc.get("openSourceCartouche/metadata/reviewer/name");
-//   document.getElementById("oscReviewerEmail").value = myDoc.get("openSourceCartouche/metadata/reviewer/email");
-//   document.getElementById("oscReviewerDate").value = myDoc.get("openSourceCartouche/metadata/reviewer/date");
-//   document.getElementById("oscReviewerComment").value = myDoc.get("openSourceCartouche/metadata/reviewer/comment");
-
-//   document.getElementById("oscCreationDate").value = myDoc.get("openSourceCartouche/metadata/dates/creation");
-//   document.getElementById("oscUpdateDate").value = myDoc.get("openSourceCartouche/metadata/dates/update");
-//   document.getElementById("oscValidationDate").value = myDoc.get("openSourceCartouche/metadata/dates/validation");
 
   // Authors (evaluation + Open Source Cartouche metadata), Contributors, Developers
   var authorsArray = new Array("evaluation","osc");
@@ -271,33 +227,6 @@ function openFile() {
 
 // Shows the load.xul window in modal mode
 function loadRemoteDialog() {
-//   var filebox = document.getElementById("fileHBox");
-//   tree = document.createElement("tree");
-//   treecols = document.createElement("treecols");
-//   treecol = document.createElement("treecol");
-//   tree.setAttribute("id", "evalTree");
-//   tree.setAttribute("flex", "2");
-//   treecol.setAttribute("id", "name");
-//   treecol.setAttribute("width", "500px");
-//   treecol.setAttribute("label", "&label1.value;");
-//   treecol.setAttribute("primary", "true");
-//   treecol.setAttribute("flex", "2");
-//
-//   var vbox = document.createElement("vbox");
-//   var hbox = document.createElement("hbox");
-//   var buttonOK = document.createElement("button");
-//   var buttonCancel = document.createElement("button");
-//   buttonOk.setAttribute("label", "Ok");
-//   buttonCancel.setAttribute("label", "Cancel");
-//
-//   filebox.appendChild(vbox);
-//   vbox.appendChild(tree);
-//   tree.appendChild(treecols);
-//   treecols.appendChild(treecol);
-//   vbox.appendChild(hbox);
-//   hbox.appendChild(buttonCancel);
-//   hbox.appendChild(buttonOk);
-
   if (checkCloseFile() == false) {
     return;
   }
@@ -382,86 +311,42 @@ function buildsubtree(criteria) {
 
 // Saves modifications to the QSOS XML file
 function saveFile() {
-//   try {
-  if (myDoc) {
-    // Updating evaluation content
-    // Checking component fields
-    toCheck = new Array("componentName", "componentReleaseDate", "componentVersion", "componentMainTech", "componentHomepage", "componentType", "componentStatus", "componentVendor");
-    for(var i = 0; i < toCheck.length; ++i) {
-      if (document.getElementById(toCheck[i]).value == ""){
-        alert(strbundle.getString("componentEmpty") + " " + toCheck[i]);
-        break;
+  try {
+    if (myDoc) {
+      // Updating evaluation content
+      // Checking component fields
+      toCheck = new Array("componentName", "componentReleaseDate", "componentVersion", "componentMainTech", "componentHomepage", "componentType", "componentStatus", "componentVendor");
+      for(var i = 0; i < toCheck.length; ++i) {
+        if (document.getElementById(toCheck[i]).value == ""){
+          alert(strbundle.getString("componentEmpty") + " " + toCheck[i]);
+          break;
+        }
       }
-    }
 
-    for (var element in textElements) {
-      myDoc.set(element, document.getElementById(textElements[element]).value);
-    }
+      for (var element in textElements) {
+        myDoc.set(textElements[element], document.getElementById(element).value);
+      }
 
-    // Setting up date fields
-    for (var element in dateElements) {
-      myDoc.set(element, document.getElementById(dateElements[element]).value);
-    }
+      // Setting up date fields
+      for (var element in dateElements) {
+        myDoc.set(dateElements[element], document.getElementById(element).value);
+      }
 
-    // Component fields
-//     myDoc.set("component/name", document.getElementById("componentName").value);
-//     myDoc.set("component/releaseDate", document.getElementById("componentReleaseDate").value);
-//     myDoc.set("component/version", document.getElementById("componentVersion").value);
-//     myDoc.set("component/mainTech", document.getElementById("componentMainTech").value);
-//     myDoc.set("component/homepage", document.getElementById("componentHomepage").value);
-//     myDoc.set("component/type", document.getElementById("componentType").value);
-//     myDoc.set("component/status", document.getElementById("componentStatus").value);
-//     myDoc.set("component/vendor", document.getElementById("componentVendor").value);
-//     myDoc.set("component/description", document.getElementById("componentDescription").value);
-
-    // License and Legal
-//     myDoc.set("openSourceCartouche/license/version", document.getElementById("licenseVersion").value);
-//     myDoc.set("openSourceCartouche/license/homepage", document.getElementById("licenseHomepage").value);
-
-//     myDoc.set("openSourceCartouche/legal/copyright", document.getElementById("copyright").value);
-
-    // Team
-//     myDoc.set("team/number", document.getElementById("number").value);
-
-    // Authors tab
-    // Evaluation
-//     myDoc.set("qsosMetadata/version", document.getElementById("version").value);
-
-//     myDoc.set("evaluation/reviewer/name", document.getElementById("evaluationReviewerName").value);
-//     myDoc.set("evaluation/reviewer/email", document.getElementById("evaluationReviewerEmail").value);
-//     myDoc.set("evaluation/reviewer/date", document.getElementById("evaluationReviewerDate").value);
-//     myDoc.set("evaluation/reviewer/comment", document.getElementById("evaluationReviewerComment").value);
-
-//     myDoc.set("evaluation/dates/creation", document.getElementById("evaluationCreationDate").value);
-//     myDoc.set("evaluation/dates/update", document.getElementById("evaluationUpdateDate").value);
-//     myDoc.set("evaluation/dates/validation", document.getElementById("evaluationValidationDate").value);
-
-    // Open Source Cartouche Metadata
-//     myDoc.set("openSourceCartouche/metadata/version", document.getElementById("oscVersion").value);
-
-//     myDoc.set("openSourceCartouche/metadata/reviewer/name", document.getElementById("oscReviewerName").value);
-//     myDoc.set("openSourceCartouche/metadata/reviewer/email", document.getElementById("oscReviewerEmail").value);
-//     myDoc.set("openSourceCartouche/metadata/reviewer/date", document.getElementById("oscReviewerDate").value);
-//     myDoc.set("openSourceCartouche/metadata/reviewer/comment", document.getElementById("oscReviewerComment").value);
-
-//     myDoc.set("openSourceCartouche/metadata/dates/creation", document.getElementById("oscCreationDate").value);
-//     myDoc.set("openSourceCartouche/metadata/dates/update", document.getElementById("oscUpdateDate").value);
-//     myDoc.set("openSourceCartouche/metadata/dates/validation", document.getElementById("oscValidationDate").value);
-
-//     alert("Save: Warning: Authors aren't saved yet!");
-
-    if (myDoc.filename != null) {
-      myDoc.write();
-      docHasChanged(false);
-      return true;
-    } else {
-      if (saveFileAs() == true) {
+      if (myDoc.filename != null) {
+        myDoc.write();
         docHasChanged(false);
         return true;
+      } else {
+        if (saveFileAs() == true) {
+          docHasChanged(false);
+          return true;
+        }
       }
     }
+  } catch (e) {
+    alert("An error occured while saving file: " + e.message);
   }
-//   } catch(e) { alert(e.message); }
+
   return false;
 }
 
@@ -531,54 +416,13 @@ function closeFile() {
   }
 
   // Component fields
-//   document.getElementById("componentName").value = "";
-//   document.getElementById("componentReleaseDate").value = resetDate();
-//   document.getElementById("componentVersion").value = "";
-//   document.getElementById("componentMainTech").value = "";
-//   document.getElementById("componentArchetype").value = "";
   emptyList(document.getElementById("archetypePopup"));
-//   document.getElementById("componentHomepage").value = "";
-//   document.getElementById("componentType").value = "";
-//   document.getElementById("componentStatus").value = "";
-//   document.getElementById("componentVendor").value = "";
-//   document.getElementById("componentDescription").value = "";
 
   // License and Legal
-//   document.getElementById("licenseName").value = "";
   emptyList(document.getElementById("licensePopup"));
-//   document.getElementById("licenseVersion").value = "";
-//   document.getElementById("licenseHomepage").value = "";
 
-//   document.getElementById("copyright").value = "";
-
-  // Team
-//   document.getElementById("number").value = "";
-
-  // Authors tab
-  // Evaluation
-//   document.getElementById("evaluationVersion").value = "";
+  // Metadata
   emptyList(document.getElementById("languagePopup"));
-
-//   document.getElementById("evaluationReviewerName").value = "";
-//   document.getElementById("evaluationReviewerEmail").value = "";
-//   document.getElementById("evaluationReviewerDate").value = resetDate();
-//   document.getElementById("evaluationReviewerComment").value = "";
-
-//   document.getElementById("evaluationCreationDate").value = resetDate();
-//   document.getElementById("evaluationUpdateDate").value = resetDate();
-//   document.getElementById("evaluationValidationDate").value = resetDate();
-
-  // Open Source Cartouche Metadata
-//   document.getElementById("oscVersion").value = "";
-
-//   document.getElementById("oscReviewerName").value = "";
-//   document.getElementById("oscReviewerEmail").value = "";
-//   document.getElementById("oscReviewerDate").value = resetDate();
-//   document.getElementById("oscReviewerComment").value = "";
-
-//   document.getElementById("oscCreationDate").value = resetDate();
-//   document.getElementById("oscUpdateDate").value = resetDate();
-//   document.getElementById("oscValidationDate").value = resetDate();
 
   // Reset authors & contributors lists
   lists = new Array("oscAuthors","evaluationAuthors","developerTeam","contributorTeam");
