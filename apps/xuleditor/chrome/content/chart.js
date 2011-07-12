@@ -47,7 +47,7 @@ function drawChart(name) {
   myChart.setAttribute("transform", "translate("+width+","+height+")");
 
   //Collect charting data
-  var myScores = (name)?myDoc.getSubChartData(name):myDoc.getChartData();
+  var myScores = (name) ? myDoc.getSubChartData(name) : myDoc.getChartData();
 
   //Chart's label
   clearLabels();

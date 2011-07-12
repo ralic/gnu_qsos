@@ -27,7 +27,7 @@
 
 <!-- Tabs !-->
 <!ENTITY fileTab "  File ">
-<!ENTITY authorsTab "  Authors ">
+<!ENTITY metadataTab "  Metadata ">
 <!ENTITY oscTab "  Cartouche ">
 <!ENTITY criteriaTab "  Criteria ">
 <!ENTITY chartTab "  Chart ">
@@ -49,7 +49,7 @@
 <!ENTITY description3 "Please send your evaluations to the QSOS mailling list:">
 <!ENTITY maillingList "qsos-general@nongnu.org">
 
-<!-- Authors Tab !-->
+<!-- Metadata Tab !-->
 <!ENTITY evaluationAuthors "Evaluation:">
 <!ENTITY oscAuthors "Open Source Cartouche:">
 <!ENTITY authors "Authors:">
@@ -74,16 +74,23 @@
 <!-- Open Source Cartouche Tab !-->
 <!ENTITY component "Component:">
 <!ENTITY componentName "Name:">
+<!ENTITY componentNamePlaceholder "The current project name">
 <!ENTITY componentVersion "Version:">
+<!ENTITY componentVersionPlaceholder "The evaluated version">
 <!ENTITY componentDescription "Description:">
+<!ENTITY componentDescriptionPlaceholder "Project goals description...">
 <!ENTITY componentArchetype "Archetype:">
 <!ENTITY componentVendor "Vendor:">
+<!ENTITY componentVendorPlaceholder "If applicable, the main compagny behind the project">
 <!ENTITY componentStatus "Status:">
-<!ENTITY componentStatusTip "Current state of development (i.e. Alpha, Beta, RC, Stable...)">
+<!ENTITY componentStatusPlaceholder "Current state of development (i.e. Alpha, Beta, RC, Stable...)">
 <!ENTITY componentReleaseDate "Release date:">
 <!ENTITY componentType "Type:">
+<!ENTITY componentTypePlaceholder "FIXME">
 <!ENTITY componentMainTech "Main technology:">
+<!ENTITY componentMainTechPlaceholder "FIXME">
 <!ENTITY componentHomepage "Homepage:">
+<!ENTITY componentHomepagePlaceholder "http://...">
 
 <!ENTITY license "License">
 <!ENTITY licenseName "Name:">
@@ -148,7 +155,7 @@
 
 <!-- Access key for tabs !-->
 <!ENTITY fileTabAccessKey "l">
-<!ENTITY authorsTabAccessKey "u">
+<!ENTITY metadataTabAccessKey "m">
 <!ENTITY oscTabAccessKey "t">
 <!ENTITY criteriaTabAccessKey "i">
 <!ENTITY chartTabAccessKey "h">

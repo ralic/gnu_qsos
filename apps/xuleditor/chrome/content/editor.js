@@ -92,11 +92,15 @@ dateElements["oscValidationDate"] = "openSourceCartouche/metadata/dates/validati
 
 // Window initialization after loading
 function init() {
-  strbundle = document.getElementById("properties");
-  docChanged = false;
-  setStateEvalOpen(false);
-  freezeScore("true");
-  freezeComments("true");
+  try{
+    strbundle = document.getElementById("properties");
+    docChanged = false;
+    setStateEvalOpen(false);
+    freezeScore("true");
+    freezeComments("true");
+  } catch (e) {
+    alert("An error occured while setting up the editor: " + e.message);
+  }
 
   // Parameters management
   var urlFirefox = window.arguments[1];
@@ -161,7 +165,7 @@ function setStateEvalOpen(state) {
   }
   // Settings tab disable as it's not currently functionnal
   document.getElementById("configTab").hidden = "true";
-  document.getElementById("authorsTab").hidden = bool;
+  document.getElementById("metadataTab").hidden = bool;
   document.getElementById("oscTab").hidden = bool;
   document.getElementById("criteriaTab").hidden = bool;
 //   document.getElementById("chartTab").hidden = bool;

@@ -34,7 +34,7 @@
   <script type="application/x-javascript" src="Document.js"></script>
   <script type="application/x-javascript" src="editor.js"></script>
   <script type="application/x-javascript" src="file.js"></script>
-  <script type="application/x-javascript" src="authors.js"></script>
+  <script type="application/x-javascript" src="metadata.js"></script>
   <script type="application/x-javascript" src="opensourcecartouche.js">
   </script>
   <script type="application/x-javascript" src="criteria.js"></script>
@@ -48,7 +48,7 @@
       <!-- <tab id="configTab" class="config" label="&configTab;"/> !-->
       <tab id="configTab" class="config" accesskey="&configTabAccessKey;"/>
       <tab id="fileTab" class="file" label="&fileTab;" accesskey="&fileTabAccessKey;"/>
-      <tab id="authorsTab" class="authors" label="&authorsTab;" accesskey="&authorsTabAccessKey;"/>
+      <tab id="metadataTab" class="metadata" label="&metadataTab;" accesskey="&metadataTabAccessKey;"/>
       <tab id="oscTab" class="osc" label="&oscTab;" accesskey="&oscTabAccessKey;"/>
       <tab id="criteriaTab" class="criteria" label="&criteriaTab;" accesskey="&criteriaTabAccessKey;"/>
       <!--<tab id="chartTab" class="chart" label="&chartTab;" accesskey="&chartTabAccessKey;"/>!-->
@@ -184,7 +184,7 @@
         </vbox>
       </tabpanel>
 
-      <tabpanel id="AuthorsTabPanel" class="over">
+      <tabpanel id="MetadataTabPanel" class="over">
         <vbox flex="1">
           <groupbox>
             <caption label="&evaluationAuthors;"/>
@@ -192,16 +192,16 @@
               <grid flex="1">
                 <columns>
                   <column />
-                  <column flex="1"/>
+                  <column width="200"/>
                   <column />
-                  <column flex="1"/>
+                  <column width="100"/>
                 </columns>
                 <rows>
                   <row align="center">
                     <label control="evaluationVersion" value="&evaluationVersion;"/>
-                    <textbox id="evaluationVersion" placeholder="&evaluationVersionPlaceholder;" oninput="docHasChanged(true);"/>
+                    <textbox id="evaluationVersion" placeholder="&evaluationVersionPlaceholder;" oninput="docHasChanged(true);" disabled="true"/>
                     <label control="evaluationLanguage" value="&evaluationLanguage;"/>
-                    <menulist id="evaluationLanguage" oncommand="changeLanguage(this);">
+                    <menulist id="evaluationLanguage" oncommand="changeLanguage(this);" disabled="true">
                       <menupopup id="languagePopup"/>
                     </menulist>
                     <!--<textbox id="language" oninput="docHasChanged(true);" flex="1"/>!-->
@@ -295,7 +295,7 @@
               <grid flex="1">
                 <columns>
                   <column />
-                  <column flex="1"/>
+                  <column width="200"/>
                 </columns>
                 <rows>
                   <row align="center">
@@ -403,36 +403,35 @@
                 <rows>
                   <row align="center">
                     <label control="componentName" value="&componentName;"/>
-                    <textbox id="componentName" flex="1" oninput="docHasChanged(true);"/>
+                    <textbox id="componentName" flex="1" oninput="docHasChanged(true);" placeholder="&componentNamePlaceholder;"/>
                     <label control="componentReleaseDate" value="&componentReleaseDate;"/>
                     <datepicker id="componentReleaseDate" type="popup" onchange="docHasChanged(true);"/>
                   </row>
                   <row align="center">
                     <label control="componentVersion" value="&componentVersion;"/>
-                    <textbox id="componentVersion" flex="1" oninput="docHasChanged(true);"/>
+                    <textbox id="componentVersion" flex="1" oninput="docHasChanged(true);" placeholder="&componentVersionPlaceholder;"/>
                     <label control="componentMainTech" value="&componentMainTech;"/>
-                    <textbox id="componentMainTech" flex="1" oninput="docHasChanged(true);"/>
+                    <textbox id="componentMainTech" flex="1" oninput="docHasChanged(true);" placeholder="&componentMainTechPlaceholder;"/>
                   </row>
                   <row align="center">
                     <label control="componentArchetype" value="&componentArchetype;"/>
                     <menulist id="componentArchetype" oncommand="changeArchetype(this);">
                       <menupopup id="archetypePopup"/>
                     </menulist>
-                    <!--<textbox id="componentArchetype" flex="1" oninput="docHasChanged(true);"/>!-->
                     <label control="componentHomepage" value="&componentHomepage;"/>
-                    <textbox id="componentHomepage" placeholder="http://..." flex="1" oninput="docHasChanged(true);"/>
+                    <textbox id="componentHomepage" flex="1" oninput="docHasChanged(true);" placeholder="&componentHomepagePlaceholder;"/>
                   </row>
                   <row align="center">
                     <label control="componentType" value="&componentType;"/>
-                    <textbox id="componentType" flex="1" oninput="docHasChanged(true);"/>
+                    <textbox id="componentType" flex="1" oninput="docHasChanged(true);" placeholder="&componentTypePlaceholder;"/>
                     <label control="componentStatus" value="&componentStatus;"/>
-                    <textbox id="componentStatus" flex="1" oninput="docHasChanged(true);" placeholder="&componentStatusTip;"/>
+                    <textbox id="componentStatus" flex="1" oninput="docHasChanged(true);" placeholder="&componentStatusPlaceholder;"/>
                   </row>
                   <row align="center">
                     <label control="componentVendor" value="&componentVendor;"/>
-                    <textbox id="componentVendor" flex="1" oninput="docHasChanged(true);"/>
+                    <textbox id="componentVendor" flex="1" oninput="docHasChanged(true);" placeholder="&componentVendorPlaceholder;"/>
                     <label control="componentDescription" value="&componentDescription;"/>
-                    <textbox id="componentDescription" multiline="true" flex="1" oninput="docHasChanged(true);"/>
+                    <textbox id="componentDescription" multiline="true" flex="1" oninput="docHasChanged(true);" placeholder="&componentDescriptionPlaceholder;"/>
                   </row>
                 </rows>
               </grid>

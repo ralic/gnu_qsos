@@ -38,7 +38,7 @@ tab.file {
   font-weight: bold;
 }
 
-tab.authors {
+tab.metadata {
   list-style-image: url("chrome://qsos-xuled/skin/user-properties.png");
   -moz-border-radius: 6px 6px 0px 0px;
   font-weight: bold;

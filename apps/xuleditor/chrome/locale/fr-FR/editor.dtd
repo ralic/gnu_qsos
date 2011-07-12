@@ -27,7 +27,7 @@
 
 <!-- Tabs !-->
 <!ENTITY fileTab "  Fichier ">
-<!ENTITY authorsTab "  Auteurs ">
+<!ENTITY metadataTab "  Metadata ">
 <!ENTITY oscTab "  Cartouche ">
 <!ENTITY criteriaTab "  Critères ">
 <!ENTITY chartTab "  Graphe ">
@@ -49,7 +49,7 @@
 <!ENTITY description3 "Vous pouvez envoyer vos évaluations sur la liste de discussion de QSOS :">
 <!ENTITY maillingList "qsos-french@nongnu.org">
 
-<!-- Authors Tab !-->
+<!-- Metadata Tab !-->
 <!ENTITY evaluationAuthors "Evaluation :">
 <!ENTITY oscAuthors "Template :">
 <!ENTITY authors "Auteurs :">
@@ -74,16 +74,23 @@
 <!-- Open Source Cartouche Tab !-->
 <!ENTITY component "Component :">
 <!ENTITY componentName "Nom :">
+<!ENTITY componentNamePlaceholder "Le nom du projet">
 <!ENTITY componentVersion "Version :">
+<!ENTITY componentVersionPlaceholder "La version qui est évaluée">
 <!ENTITY componentDescription "Description :">
+<!ENTITY componentDescriptionPlaceholder "Description générale du projet et des buts...">
 <!ENTITY componentArchetype "Archetype :">
 <!ENTITY componentVendor "Vendor :">
+<!ENTITY componentVendorPlaceholder "Si c'est le cas, quelle entreprise soutient ce projet">
 <!ENTITY componentStatus "Status :">
-<!ENTITY componentStatusTip "Etat de développement courant (i.e. Alpha, Beta, RC, Stable...)">
+<!ENTITY componentStatusPlaceholder "Etat de développement courant (i.e. Alpha, Beta, RC, Stable...)">
 <!ENTITY componentReleaseDate "Date de sortie :">
 <!ENTITY componentType "Type :">
+<!ENTITY componentTypePlaceholder "FIXME">
 <!ENTITY componentMainTech "Technologie principale :">
+<!ENTITY componentMainTechPlaceholder "FIXME">
 <!ENTITY componentHomepage "Homepage :">
+<!ENTITY componentHomepagePlaceholder "http://...">
 
 <!ENTITY license "License">
 <!ENTITY licenseName "Nom :">
@@ -148,7 +155,7 @@
 
 <!-- Access key for tabs !-->
 <!ENTITY fileTabAccessKey "f">
-<!ENTITY authorsTabAccessKey "a">
+<!ENTITY metadataTabAccessKey "a">
 <!ENTITY oscTabAccessKey "t">
 <!ENTITY criteriaTabAccessKey "r">
 <!ENTITY chartTabAccessKey "g">

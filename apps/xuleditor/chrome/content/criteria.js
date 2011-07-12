@@ -32,8 +32,8 @@ function selectItem(id) {
   expandTree(true);
   tree = document.getElementById("criteriaTree");
   for(i = 0; i < tree.view.rowCount; ++i) {
-    currentId = tree.view.getItemAtIndex(i).firstChild.firstChild.getAttribute("id");
-    if (currentId == id) {
+    tmpCurrentId = tree.view.getItemAtIndex(i).firstChild.firstChild.getAttribute("id");
+    if (tmpCurrentId == id) {
       tree.view.selection.select(i);
       if (document.getElementById("tabBox").selectedIndex != 1) tree.treeBoxObject.scrollToRow(i);
       break;
