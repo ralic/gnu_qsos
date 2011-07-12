@@ -166,19 +166,40 @@
             &description3; <textbox value="&maillingList;" readonly="true" class="plain" style="background-color: transparent;" flex="1"/>
           </html:p>
           <hbox id="fileHBox" flex="1">
+            <separator class="groove-thin" orient="vertical"/>
+            <separator class="groove-thin" orient="vertical"/>
+            <separator class="groove-thin" orient="vertical"/>
+            <separator class="groove-thin" orient="vertical"/>
+            <separator class="groove-thin" orient="vertical"/>
             <vbox>
-                  <separator class="groove-thin" orient="horizontal"/>
-                  <button id="newFile" class="newFile" label="&newFile;" oncommand="newFileDialog();" accesskey="&newFileAccessKey;"/>
-                  <separator class="groove-thin" orient="horizontal"/>
-                  <button id="openFile" class="openFile" label="&openLocalFile;" oncommand="openFile();" accesskey="&openLocalFileAccessKey;"/>
-                  <button id="openRemoteFile" class="openRemoteFile" label="&openRemoteFile;" oncommand="loadRemoteDialog();" accesskey="&openRemoteFileAccessKey;"/>
-                  <separator class="groove-thin" orient="horizontal"/>
-                  <button id="saveFile" class="saveFile" label="&saveFile;" oncommand="saveFile();" accesskey="&saveFileAccessKey;"/>
-                  <button id="saveFileAs" class="saveFileAs" label="&saveFileAs;" oncommand="saveFileAs();" accesskey="&saveFileAsAccessKey;"/>
-                  <button id="saveRemoteFile" class="saveRemoteFile" label="&saveRemoteFile;" oncommand="saveRemote();" disabled="true" accesskey="&saveRemoteFileAccessKey;"/>
-                  <separator class="groove-thin" orient="horizontal"/>
-                  <button id="closeFile" class="closeFile" label="&closeFile;"  oncommand="checkCloseFile();" accesskey="&closeFileAccessKey;"/>
-                  <button id="exitApp" class="exitApp" label="&exit;"  oncommand="if (checkCloseFile() == true) exit();" accesskey="&exitAccessKey;"/>
+              <separator class="groove-thin" orient="horizontal"/>
+              <button id="newFile" class="newFile" label="&newFile;" oncommand="newFileDialog();" accesskey="&newFileAccessKey;"/>
+              <separator class="groove-thin" orient="horizontal"/>
+              <button id="openFile" class="openFile" label="&openLocalFile;" oncommand="openFile();" accesskey="&openLocalFileAccessKey;"/>
+              <button id="openRemoteFile" class="openRemoteFile" label="&openRemoteFile;" oncommand="loadRemoteDialog();" accesskey="&openRemoteFileAccessKey;"/>
+              <separator class="groove-thin" orient="horizontal"/>
+              <button id="saveFile" class="saveFile" label="&saveFile;" oncommand="saveFile();" accesskey="&saveFileAccessKey;"/>
+              <button id="saveFileAs" class="saveFileAs" label="&saveFileAs;" oncommand="saveFileAs();" accesskey="&saveFileAsAccessKey;"/>
+              <button id="saveRemoteFile" class="saveRemoteFile" label="&saveRemoteFile;" oncommand="saveRemote();" disabled="true" accesskey="&saveRemoteFileAccessKey;"/>
+              <separator class="groove-thin" orient="horizontal"/>
+              <button id="closeFile" class="closeFile" label="&closeFile;"  oncommand="checkCloseFile();" accesskey="&closeFileAccessKey;"/>
+              <button id="exitApp" class="exitApp" label="&exit;"  oncommand="if (checkCloseFile() == true) exit();" accesskey="&exitAccessKey;"/>
+            </vbox>
+            <separator class="groove-thin" orient="vertical"/>
+            <separator class="groove-thin" orient="vertical"/>
+            <separator class="groove-thin" orient="vertical"/>
+            <vbox>
+              <separator class="groove-thin" orient="horizontal"/>
+              <separator class="groove-thin" orient="horizontal"/>
+              <separator class="groove-thin" orient="horizontal"/>
+              <separator class="groove-thin" orient="horizontal"/>
+              <separator class="groove-thin" orient="horizontal"/>
+              <separator class="groove-thin" orient="horizontal"/>
+              <button id="updateFromTemplate" class="updateFromTemplate" label="&updateFromTemplate;" oncommand="updateFromTemplate();" accesskey="&updateFromTemplateAccessKey;"/>
+              <separator class="groove-thin" orient="horizontal"/>
+              <button id="exportOSC" class="exportOSC" label="&exportOSC;" oncommand="exportOSC();" accesskey="&exportOSCAccessKey;"/>
+              <separator class="groove-thin" orient="horizontal"/>
+              <button id="exportToFreeMind" class="exportToFreeMind" label="&exportToFreeMind;" oncommand="exportToFreeMind();" accesskey="&exportToFreeMindAccessKey;"/>
             </vbox>
           </hbox>
         </vbox>

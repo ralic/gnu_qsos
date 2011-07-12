@@ -181,6 +181,10 @@ function setStateEvalOpen(state) {
   // Open Remote File button disable since it doesn't work for now
   document.getElementById("openRemoteFile").disabled = "true";
 
+  document.getElementById("updateFromTemplate").disabled = "true";
+  document.getElementById("exportOSC").disabled = "true";
+  document.getElementById("exportToFreeMind").disabled = "true";
+
   document.getElementById('tabs').selectedIndex = 2;
 }
 

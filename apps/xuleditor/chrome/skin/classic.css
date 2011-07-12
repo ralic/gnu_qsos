@@ -120,6 +120,18 @@ button.delAuthor {
 **/
 }
 
+button.updateFromTemplate {
+  list-style-image: url("chrome://qsos-xuled/skin/edit-redo.png");
+}
+
+button.exportOSC {
+  list-style-image: url("chrome://qsos-xuled/skin/edit-redo.png");
+}
+
+button.exportToFreeMind {
+  list-style-image: url("chrome://qsos-xuled/skin/edit-redo.png");
+}
+
 div#aboutContent {
 
 }

@@ -44,10 +44,15 @@
 <!ENTITY saveRemoteFile "  Enregistrer sur le serveur">
 <!ENTITY closeFile "  Fermer le fichier                ">
 <!ENTITY exit "  Quitter                              ">
+
 <!ENTITY description1 "Veuillez ouvrir une évalutaion QSOS (Ouvrir un fichier local ou Ouvrir un fichier distant) ou en commencer une nouvelle à partir d'un patron (Nouveau Fichier).">
 <!ENTITY description2 "Les fonctions 'Nouveau fichier', 'Ouvrir un fichier distant' et 'Sauvegarder sur le serveur' ne sont plus disponible pour l'instant.">
 <!ENTITY description3 "Vous pouvez envoyer vos évaluations sur la liste de discussion de QSOS :">
 <!ENTITY maillingList "qsos-french@nongnu.org">
+
+<!ENTITY updateFromTemplate "  Mettre à jour à partir d'un template">
+<!ENTITY exportOSC "  Exporter l'Open Source Cartouche">
+<!ENTITY exportToFreeMind "  Exporter au format FreeMind">
 
 <!-- Metadata Tab !-->
 <!ENTITY evaluationAuthors "Evaluation :">
@@ -152,6 +157,10 @@
 <!ENTITY saveRemoteFileAccessKey "u">
 <!ENTITY closeFileAccessKey "m">
 <!ENTITY exitAccessKey "q">
+
+<!ENTITY updateFromTemplateAccessKey "j">
+<!ENTITY exportOSCAccessKey "h">
+<!ENTITY exportToFreeMindAccessKey "x">
 
 <!-- Access key for tabs !-->
 <!ENTITY fileTabAccessKey "f">
