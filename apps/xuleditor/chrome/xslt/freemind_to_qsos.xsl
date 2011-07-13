@@ -1,4 +1,4 @@
-<?xml version="1.0"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
 <xsl:output method="xml" indent="yes" encoding="UTF-8"/>
 
@@ -63,11 +63,11 @@
       </xsl:otherwise>
     </xsl:choose>
   </xsl:template>
-  
+
   <xsl:template match="attribute">
     <xsl:element name="{@NAME}">
       <xsl:value-of select="@VALUE"/>
     </xsl:element>
   </xsl:template>
-  
+
 </xsl:stylesheet>

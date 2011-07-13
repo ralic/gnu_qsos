@@ -29,7 +29,7 @@
 	<xsl:attribute name="POSITION">right</xsl:attribute>
       </xsl:if>
       <font NAME="SansSerif" BOLD="true" SIZE="12"/>
-      <xsl:if test="desc != ''"> 
+      <xsl:if test="desc != ''">
 	<xsl:element name="node">
 	  <xsl:attribute name="TEXT"><xsl:value-of select="desc"/></xsl:attribute>
 	  <xsl:attribute name="STYLE">bubble</xsl:attribute>
@@ -60,7 +60,7 @@
 
       <xsl:choose>
 	<xsl:when test="child::element">
-	  <xsl:if test="desc != ''"> 
+	  <xsl:if test="desc != ''">
 	    <xsl:element name="node">
 	      <xsl:attribute name="TEXT"><xsl:value-of select="desc"/></xsl:attribute>
 	      <xsl:attribute name="STYLE">bubble</xsl:attribute>
@@ -84,7 +84,7 @@
 	    <font NAME="SansSerif" ITALIC="true" SIZE="10"/>
 	  </xsl:element>
 
-	  <xsl:if test="comment != ''">     
+	  <xsl:if test="comment != ''">
 	    <xsl:element name="node">
 	      <xsl:attribute name="TEXT"><xsl:value-of select="comment"/></xsl:attribute>
 	      <font NAME="SansSerif" ITALIC="true" SIZE="10"/>

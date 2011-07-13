@@ -27,11 +27,13 @@
 
 // Shows the new.xul window in modal mode
 function newFileDialog() {
-  if (checkCloseFile() == false) {
+  // FIXME
+  alert("FIXME");
+/*  if (checkCloseFile() == false) {
     return;
   }
   getPrivilege();
-  window.openDialog('chrome://qsos-xuled/content/new.xul', 'Properties','chrome,dialog,modal', myDoc, openRemoteFile);
+  window.openDialog('chrome://qsos-xuled/content/new.xul', 'Properties','chrome,dialog,modal', myDoc, openRemoteFile);*/
 }
 
 
