@@ -31,15 +31,15 @@
 <window id="QSOS" title="&QSOSEditor;" width="870px" height="765px"
         xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
         xmlns:html="http://www.w3.org/1999/xhtml" onload="init();" onclose="exit()">
-  <script type="application/x-javascript" src="Document.js"></script>
-  <script type="application/x-javascript" src="editor.js"></script>
-  <script type="application/x-javascript" src="file.js"></script>
-  <script type="application/x-javascript" src="metadata.js"></script>
-  <script type="application/x-javascript" src="opensourcecartouche.js">
-  </script>
-  <script type="application/x-javascript" src="criteria.js"></script>
-  <script type="application/x-javascript" src="chart.js"></script>
-  <script type="application/x-javascript" src="about.js"></script>
+  <script type="application/x-javascript" src="Document.js"/>
+  <script type="application/x-javascript" src="editor.js"/>
+  <script type="application/x-javascript" src="file.js"/>
+  <script type="application/x-javascript" src="metadata.js"/>
+  <script type="application/x-javascript" src="compatibility.js"/>
+  <script type="application/x-javascript" src="opensourcecartouche.js"/>
+  <script type="application/x-javascript" src="criteria.js"/>
+  <script type="application/x-javascript" src="chart.js"/>
+  <script type="application/x-javascript" src="about.js"/>
   <stringbundle id="properties" src="chrome://qsos-xuled/locale/editor.properties"/>
   <tabbox id="tabBox" flex="1">
     <tabs id="tabs">
@@ -201,7 +201,7 @@
           <groupbox>
             <caption label="&evaluationAuthors;"/>
             <vbox>
-              <grid flex="1">
+              <!--<grid flex="1">
                 <columns>
                   <column />
                   <column width="200"/>
@@ -218,7 +218,7 @@
                     </menulist>
                   </row>
                 </rows>
-              </grid>
+              </grid>!-->
               <groupbox>
                 <caption label="&authors;"/>
                 <hbox flex="1">
@@ -274,7 +274,7 @@
                       <textbox id="evaluationReviewerName" oninput="docHasChanged(true);"/>
                       <label control="evaluationReviewerEmail" value="&email;"/>
                       <textbox id="evaluationReviewerEmail" oninput="docHasChanged(true);"/>
-                      <label control="evaluationReviewerDate" value="&date;"/>
+                      <checkbox id="evaluationReviewerDateCheckbox" label="&date;" checked="true" oncommand="dateControl(this, 'evaluationReviewerDate'); docHasChanged(true);"/>
                       <datepicker id="evaluationReviewerDate" type="popup" onchange="docHasChanged(true);"/>
                     </row>
                     <hbox align="center">
@@ -287,13 +287,13 @@
               <groupbox>
                 <caption label="&dates;"/>
                   <hbox align="center">
-                    <label control="evaluationCreationDate" value="&creationDate;"/>
+                    <checkbox id="evaluationCreationDateCheckbox" label="&creationDate;" checked="true" oncommand="dateControl(this, 'evaluationCreationDate'); docHasChanged(true);"/>
                     <datepicker id="evaluationCreationDate" type="popup" onchange="docHasChanged(true);"/>
                     <separator class="groove-thin" orient="vertical"/>
-                    <label control="evaluationUpdateDate" value="&updateDate;"/>
+                    <checkbox id="evaluationUpdateCheckbox" label="&updateDate;" checked="true" oncommand="dateControl(this, 'evaluationUpdateDate'); docHasChanged(true);"/>
                     <datepicker id="evaluationUpdateDate" type="popup" oninput="docHasChanged(true);"/>
                     <separator class="groove-thin" orient="vertical"/>
-                    <label control="evaluationValidationDate" value="&validationDate;"/>
+                    <checkbox id="evaluationValidationDateCheckbox" label="&validationDate;" checked="true" oncommand="dateControl(this, 'evaluationValidationDate'); docHasChanged(true);"/>
                     <datepicker id="evaluationValidationDate" type="popup" onchange="docHasChanged(true);"/>
                   </hbox>
               </groupbox>
@@ -303,21 +303,46 @@
           <groupbox>
             <caption label="&oscAuthors;"/>
             <vbox>
-              <grid flex="1">
-                <columns>
-                  <column />
-                  <column width="200"/>
-                </columns>
-                <rows>
-                  <row align="center">
-                    <label control="oscVersion" value="&oscVersion;"/>
-                    <textbox id="oscVersion" placeholder="&oscVersionPlaceholder;" oninput="docHasChanged(true);"/>
-                  </row>
-                </rows>
-              </grid>
-              <groupbox>
-                <caption label="&authors;"/>
-                <hbox flex="1">
+              <hbox flex="1">
+                <!--<grid flex="1">
+                  <columns>
+                    <column />
+                    <column width="200"/>
+                  </columns>
+                  <rows>
+                    <row align="center">
+                      <label control="oscVersion" value="&oscVersion;"/>
+                      <textbox id="oscVersion" placeholder="&oscVersionPlaceholder;" oninput="docHasChanged(true);"/>
+                    </row>
+                  </rows>
+                </grid>!-->
+                <groupbox flex="1">
+                  <caption label="&authors;"/>
+                  <hbox flex="1">
+                    <grid flex="1">
+                      <columns>
+                        <column />
+                        <column flex="1"/>
+                      </columns>
+                      <rows>
+                        <row align="center">
+                          <label control="oscAuthorName" value="&name;"/>
+                          <textbox id="oscAuthorName" flex="1"/>
+                        </row>
+                        <row align="center">
+                          <label control="oscAuthorEmail" value="&email;"/>
+                          <textbox id="oscAuthorEmail" flex="1"/>
+                        </row>
+                        <row align="center">
+                          <label control="oscAuthorComment" value="&comment;"/>
+                          <textbox id="oscAuthorComment" multiline="true" flex="1"/>
+                        </row>
+                      </rows>
+                    </grid>
+                  </hbox>
+                </groupbox>
+                <groupbox flex="1">
+                  <caption label="&reviewer;"/>
                   <grid flex="1">
                     <columns>
                       <column />
@@ -325,71 +350,35 @@
                     </columns>
                     <rows>
                       <row align="center">
-                        <label control="oscAuthorName" value="&name;"/>
-                        <textbox id="oscAuthorName" flex="1" disabled="true"/>
+                        <label control="oscReviewerName" value="&name;"/>
+                        <textbox id="oscReviewerName" oninput="docHasChanged(true);"/>
                       </row>
                       <row align="center">
-                        <label control="oscAuthorEmail" value="&email;"/>
-                        <textbox id="oscAuthorEmail" flex="1" disabled="true"/>
+                        <label control="oscReviewerEmail" value="&email;"/>
+                        <textbox id="oscReviewerEmail" oninput="docHasChanged(true);"/>
                       </row>
                       <row align="center">
-                        <label control="oscAuthorComment" value="&comment;"/>
-                        <textbox id="oscAuthorComment" multiline="true" flex="1" disabled="true"/>
+                        <label control="oscReviewerComment" value="&comment;"/>
+                        <textbox id="oscReviewerComment" multiline="true" flex="1" oninput="docHasChanged(true);"/>
+                      </row>
+                      <row>
+                        <checkbox id="oscReviewerDateCheckbox" label="&date;" checked="true" oncommand="dateControl(this, 'oscReviewerDate'); docHasChanged(true);"/>
+                        <datepicker id="oscReviewerDate" type="popup" onchange="docHasChanged(true);"/>
                       </row>
                     </rows>
                   </grid>
-                  <vbox flex="5">
-                    <listbox id="oscAuthors" flex="1" rows="3" onselect="changeAuthor('osc', this.selectedItem);" width="500"  class="over">
-                      <listhead flex="1">
-                        <listheader label="&name;" width="200"/>
-                        <listheader label="&email;" width="200"/>
-                        <listheader label="&comment;" width="100"/>
-                      </listhead>
-                    </listbox>
-                    <hbox>
-                      <button label="&addButton;" id="addAuthorButton" class="addAuthor" oncommand="addAuthor('osc');" disabled="true"/>
-                      <button label="&delButton;" id="delAuthorButton" class="delAuthor" oncommand="delAuthor('osc');" disabled="true"/>
-                    </hbox>
-                  </vbox>
-                </hbox>
-              </groupbox>
-              <groupbox>
-                <caption label="&reviewer;"/>
-                <grid flex="1">
-                  <columns>
-                    <column />
-                    <column flex="1"/>
-                    <column />
-                    <column flex="1"/>
-                    <column />
-                    <column flex="1"/>
-                  </columns>
-                  <rows>
-                    <row align="center">
-                      <label control="oscReviewerName" value="&name;"/>
-                      <textbox id="oscReviewerName" oninput="docHasChanged(true);"/>
-                      <label control="oscReviewerEmail" value="&email;"/>
-                      <textbox id="oscReviewerEmail" oninput="docHasChanged(true);"/>
-                      <label control="oscReviewerDate" value="&date;"/>
-                      <datepicker id="oscReviewerDate" type="popup" onchange="docHasChanged(true);"/>
-                    </row>
-                    <hbox align="center">
-                      <label control="oscReviewerComment" value="&comment;"/>
-                      <textbox id="oscReviewerComment" multiline="true" flex="1" oninput="docHasChanged(true);"/>
-                    </hbox>
-                  </rows>
-                </grid>
-              </groupbox>
-              <groupbox>
+                </groupbox>
+              </hbox>
+              <groupbox flex="1">
                 <caption label="&dates;"/>
                 <hbox align="center">
-                  <label control="oscCreationDate" value="&creationDate;"/>
+                  <checkbox id="oscCreationDateCheckbox" label="&creationDate;" checked="true" oncommand="dateControl(this, 'oscCreationDate'); docHasChanged(true);"/>
                   <datepicker id="oscCreationDate" type="popup" onchange="docHasChanged(true);"/>
                   <separator class="groove-thin" orient="vertical"/>
-                  <label control="oscUpdateDate" value="&updateDate;"/>
+                  <checkbox id="oscUpdateDateCheckbox" label="&updateDate;" checked="true" oncommand="dateControl(this, 'oscUpdateDate'); docHasChanged(true);"/>
                   <datepicker id="oscUpdateDate" type="popup" oninput="docHasChanged(true);"/>
                   <separator class="groove-thin" orient="vertical"/>
-                  <label control="oscValidationDate" value="&validationDate;"/>
+                  <checkbox id="oscValidationDateCheckbox" label="&validationDate;" checked="true" oncommand="dateControl(this, 'oscValidationDate'); docHasChanged(true);"/>
                   <datepicker id="oscValidationDate" type="popup" onchange="docHasChanged(true);"/>
                 </hbox>
               </groupbox>

@@ -25,7 +25,7 @@ APPPACK=application.ini Changes chrome.manifest LICENSE README xuleditor xuledit
 
 EXTPACK=Changes chrome.manifest install.rdf LICENSE README
 
-APPSRC=chrome/content/confirm.xul chrome/content/Document.js chrome/content/editor.js chrome/content/editor.xul chrome/content/load.js chrome/content/load.xul chrome/content/new.js chrome/content/new.xul chrome/content/logo-qsos.png chrome/content/logo32.png chrome/content/file.js chrome/content/opensourcecartouche.js chrome/content/criteria.js chrome/content/chart.js chrome/content/metadata.js
+APPSRC=chrome/content/confirm.xul chrome/content/Document.js chrome/content/editor.js chrome/content/editor.xul chrome/content/load.js chrome/content/load.xul chrome/content/new.js chrome/content/new.xul chrome/content/logo-qsos.png chrome/content/logo32.png chrome/content/file.js chrome/content/opensourcecartouche.js chrome/content/criteria.js chrome/content/chart.js chrome/content/metadata.js chrome/content/compatibility.js
 
 EXTSRC=$(APPSRC) chrome/content/qsos-overlay.js chrome/content/qsos-overlay.xul
 
@@ -35,15 +35,17 @@ SKIN=chrome/skin/classic.css chrome/skin/document-open.png chrome/skin/documenta
 
 PREFS=defaults/preferences/qsos-xuled.js
 
+XSLT=chrome/xslt/freemind_to_qsos.xsl chrome/xslt/qsos_to_freemind.xsl chrome/xslt/qsos_to_new_qsos.xsl
+
 PREFS_XULRUNNER=defaults/preferences/qsos-xuled-xulrunner.js
 
 VERSION=2.0
 
 ext:
 	rm -f xuleditor-firefox-${VERSION}.xpi
-	zip -r xuleditor $(EXTPACK) $(EXTSRC) $(LOCALE) $(SKIN) $(PREFS)
+	zip -r xuleditor $(EXTPACK) $(EXTSRC) $(LOCALE) $(SKIN) $(PREFS) $(XSLT)
 	mv xuleditor.zip xuleditor-firefox-${VERSION}.xpi
 
 app:
 	rm -f xuleditor-application-${VERSION}.zip
-	zip -r xuleditor-application-${VERSION}.zip $(APPPACK) $(APPSRC) $(LOCALE) $(SKIN) $(PREFS_XULRUNNER)
+	zip -r xuleditor-application-${VERSION}.zip $(APPPACK) $(APPSRC) $(LOCALE) $(SKIN) $(PREFS_XULRUNNER) $(XSLT)

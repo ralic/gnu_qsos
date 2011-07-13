@@ -64,7 +64,7 @@
 <!ENTITY addButton "    Ajouter">
 <!ENTITY delButton " Supprimer">
 <!ENTITY reviewer "Validateur :">
-<!ENTITY date "Date">
+<!ENTITY date "Date :">
 <!ENTITY evaluationVersion "Version :">
 <!ENTITY evaluationVersionPlaceholder "La version de cette évaluation">
 <!ENTITY oscVersion "Version:">

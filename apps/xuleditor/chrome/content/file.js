@@ -99,8 +99,19 @@ function setupEditorForEval() {
   // Setting up date fields
   for (var element in dateElements) {
     var tmp = myDoc.get(dateElements[element]);
-    if (tmp == "") {
-      document.getElementById(element).value = resetDate();
+    try {
+    var tmpCb = document.getElementById(element + "Checkbox");
+    } catch(e) {};
+    if (tmpCb != null) {
+      if (tmp == "") {
+        document.getElementById(element + "Checkbox").checked = false;
+        document.getElementById(element).disabled = "true";
+        document.getElementById(element).value = resetDate();
+      } else {
+        document.getElementById(element + "Checkbox").checked = true;
+        document.getElementById(element).disabled = "";
+        document.getElementById(element).value = tmp;
+      }
     } else {
       document.getElementById(element).value = tmp;
     }
@@ -114,11 +125,11 @@ function setupEditorForEval() {
   populateLicense();
   selectElementInList(document.getElementById("licenseName"), myDoc.get("openSourceCartouche/license/name"));
 
-  populateLanguage();
-  selectElementInList(document.getElementById("evaluationLanguage"), myDoc.get("qsosMetadata/language"));
+//   populateLanguage();
+//   selectElementInList(document.getElementById("evaluationLanguage"), myDoc.get("qsosMetadata/language"));
 
   // Authors (evaluation + Open Source Cartouche metadata), Contributors, Developers
-  var authorsArray = new Array("evaluation","osc");
+  var authorsArray = new Array("evaluation");
   for (var i = 0; i < authorsArray.length; ++i) {
     try {
       var authors = myDoc.getAuthors(authorsArray[i]);
@@ -329,7 +340,14 @@ function saveFile() {
 
       // Setting up date fields
       for (var element in dateElements) {
-        myDoc.set(dateElements[element], document.getElementById(element).value);
+        try {
+        var tmpCb = document.getElementById(element + "Checkbox");
+        } catch(e) {};
+        if ((tmpCb != null) && (tmpCb.checked == false)) {
+          myDoc.set(dateElements[element], "");
+        } else {
+          myDoc.set(dateElements[element], document.getElementById(element).value);
+        }
       }
 
       if (myDoc.filename != null) {
@@ -395,6 +413,7 @@ function resetDate() {
 
 // Closes the QSOS XML file and resets window
 function closeFile() {
+  try{
   if (myDoc == null) return;
   myDoc = null;
   id = null;
@@ -410,9 +429,13 @@ function closeFile() {
     document.getElementById(element).value = "";
   }
 
-  // Setting up date fields
+  // Resetting date fields
   for (var element in dateElements) {
     document.getElementById(element).value = resetDate();
+    document.getElementById(element).disabled = false;
+    try {
+    document.getElementById(element + "Checkbox").checked = false;
+    } catch(e) {};
   }
 
   // Component fields
@@ -422,10 +445,10 @@ function closeFile() {
   emptyList(document.getElementById("licensePopup"));
 
   // Metadata
-  emptyList(document.getElementById("languagePopup"));
+//   emptyList(document.getElementById("languagePopup"));
 
   // Reset authors & contributors lists
-  lists = new Array("oscAuthors","evaluationAuthors","developerTeam","contributorTeam");
+  lists = new Array("evaluationAuthors","developerTeam","contributorTeam");
   for (var i = 0; i < lists.length; ++i) {
     var list = document.getElementById(lists[i]);
     while (list.childElementCount > 1) {
@@ -446,6 +469,7 @@ function closeFile() {
   tree.removeChild(treechildren);
   clearChart();
   clearLabels();
+  }catch(e){alert(e.message);}
 }
 
 // Checks Document's state before closing it

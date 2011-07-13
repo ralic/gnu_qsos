@@ -1,4 +1,5 @@
 content qsos-xuled  chrome/content/
+xslt qsos-xuled  chrome/xslt/
 skin qsos-xuled  classic chrome/skin/
 overlay chrome://browser/content/browser.xul chrome://qsos-xuled/content/qsos-overlay.xul
 

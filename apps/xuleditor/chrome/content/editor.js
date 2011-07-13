@@ -60,14 +60,16 @@ textElements["number"] = "team/number";
 
 // Authors tab
 // Evaluation
-textElements["evaluationVersion"] = "qsosMetadata/version";
+// textElements["evaluationVersion"] = "qsosMetadata/version";
 
 textElements["evaluationReviewerName"] = "evaluation/reviewer/name";
 textElements["evaluationReviewerEmail"] = "evaluation/reviewer/email";
 textElements["evaluationReviewerComment"] = "evaluation/reviewer/comment";
 
 // Open Source Cartouche Metadata
-textElements["oscVersion"] = "qsosMetadata/version";
+textElements["oscAuthorName"] = "openSourceCartouche/metadata/author/name";
+textElements["oscAuthorEmail"] = "openSourceCartouche/metadata/author/email";
+textElements["oscAuthorComment"] = "openSourceCartouche/metadata/author/comment";
 
 textElements["oscReviewerName"] = "openSourceCartouche/metadata/reviewer/name";
 textElements["oscReviewerEmail"] = "openSourceCartouche/metadata/reviewer/email";
@@ -168,7 +170,7 @@ function setStateEvalOpen(state) {
   document.getElementById("metadataTab").hidden = bool;
   document.getElementById("oscTab").hidden = bool;
   document.getElementById("criteriaTab").hidden = bool;
-//   document.getElementById("chartTab").hidden = bool;
+  // document.getElementById("chartTab").hidden = bool;
 
   if (!state) { document.getElementById("saveFile").disabled = bool; }
   document.getElementById("saveFileAs").disabled = bool;
@@ -186,6 +188,17 @@ function setStateEvalOpen(state) {
   document.getElementById("exportToFreeMind").disabled = "true";
 
   document.getElementById('tabs').selectedIndex = 2;
+}
+
+
+// Function to deal with date checkbox
+function dateControl(checkbox, datepicker) {
+  var datepickerElem = document.getElementById(datepicker);
+  if (checkbox.checked) {
+    datepickerElem.disabled = "";
+  } else {
+    datepickerElem.disabled = "true";
+  }
 }
 
 
