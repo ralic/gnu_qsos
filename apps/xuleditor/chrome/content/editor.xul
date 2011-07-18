@@ -163,7 +163,7 @@
             <separator class="groove-thin" orient="vertical"/>
             <vbox>
               <separator class="groove-thin" orient="horizontal"/>
-              <button id="newFile" class="newFile" label="&newFile;" oncommand="newFileDialog();" accesskey="&newFileAccessKey;"/>
+              <button id="newFile" class="newFile" label="&newFile;" oncommand="newFileFromTemplate();" accesskey="&newFileAccessKey;"/>
               <separator class="groove-thin" orient="horizontal"/>
               <button id="openFile" class="openFile" label="&openLocalFile;" oncommand="openFile();" accesskey="&openLocalFileAccessKey;"/>
               <button id="openRemoteFile" class="openRemoteFile" label="&openRemoteFile;" oncommand="loadRemoteDialog();" accesskey="&openRemoteFileAccessKey;"/>
@@ -183,6 +183,7 @@
               <separator class="groove-thin" orient="horizontal"/>
               <separator class="groove-thin" orient="horizontal"/>
               <separator class="groove-thin" orient="horizontal"/>
+              <button id="updateFromOldQSOS" class="updateFromOldQSOS" label="&updateFromOldQSOS;" oncommand="updateFromOldQSOS();" accesskey="&updateFromOldQSOSAccessKey;"/>
               <separator class="groove-thin" orient="horizontal"/>
               <button id="updateFromTemplate" class="updateFromTemplate" label="&updateFromTemplate;" oncommand="updateFromTemplate();" accesskey="&updateFromTemplateAccessKey;"/>
               <separator class="groove-thin" orient="horizontal"/>

@@ -132,6 +132,10 @@ button.exportToFreeMind {
   list-style-image: url("chrome://qsos-xuled/skin/edit-redo.png");
 }
 
+button.updateFromOldQSOS {
+  list-style-image: url("chrome://qsos-xuled/skin/edit-redo.png");
+}
+
 div#aboutContent {
 
 }

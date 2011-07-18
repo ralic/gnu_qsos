@@ -50,9 +50,10 @@
 <!ENTITY description3 "Vous pouvez envoyer vos évaluations sur la liste de discussion de QSOS :">
 <!ENTITY maillingList "qsos-french@nongnu.org">
 
-<!ENTITY updateFromTemplate "  Mettre à jour à partir d'un template">
-<!ENTITY exportOSC "  Exporter l'Open Source Cartouche">
-<!ENTITY exportToFreeMind "  Exporter au format FreeMind">
+<!ENTITY updateFromTemplate "  Mettre à jour à partir d'un template       ">
+<!ENTITY updateFromOldQSOS "  Importer une ancienne version de QSOS">
+<!ENTITY exportOSC "  Exporter l'Open Source Cartouche         ">
+<!ENTITY exportToFreeMind "  Exporter au format FreeMind                ">
 
 <!-- Metadata Tab !-->
 <!ENTITY evaluationAuthors "Evaluation :">
@@ -159,6 +160,7 @@
 <!ENTITY exitAccessKey "q">
 
 <!ENTITY updateFromTemplateAccessKey "j">
+<!ENTITY updateFromOldQSOSAccessKey "v">
 <!ENTITY exportOSCAccessKey "h">
 <!ENTITY exportToFreeMindAccessKey "x">
 

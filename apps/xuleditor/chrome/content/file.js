@@ -25,174 +25,90 @@
 **/
 
 
-// Shows the new.xul window in modal mode
-function newFileDialog() {
-  // FIXME
-  alert("FIXME");
-/*  if (checkCloseFile() == false) {
-    return;
-  }
-  getPrivilege();
-  window.openDialog('chrome://qsos-xuled/content/new.xul', 'Properties','chrome,dialog,modal', myDoc, openRemoteFile);*/
-}
-
-
-function populateLanguage() {
-  var languages = myDoc.getLanguageList();
-  var languageList = document.getElementById("languagePopup");
-  for(var i = 0; i < languages.length; ++i) {
-    var menuitem = document.createElement("menuitem");
-    menuitem.setAttribute("label", languages[i]);
-    languageList.appendChild(menuitem);
-  }
-}
-
-
-function populateArchetype() {
-  var archetypes = myDoc.getArchetypeList();
-  var archetypeList = document.getElementById("archetypePopup");
-  for(var i = 0; i < archetypes.length; ++i) {
-    var menuitem = document.createElement("menuitem");
-    menuitem.setAttribute("label", archetypes[i]);
-    archetypeList.appendChild(menuitem);
-  }
-}
-
-
-function populateLicense() {
-  var licenses = myDoc.getLicenseList();
-  var licenseList = document.getElementById("licensePopup");
-  for(var i = 0; i < licenses.length; ++i) {
-    var menuitem = document.createElement("menuitem");
-    menuitem.setAttribute("label", licenses[i]);
-    licenseList.appendChild(menuitem);
-  }
-}
-
-
-function emptyList(list) {
-  while(list.childElementCount > 0) {
-    list.removeChild(list.firstChild);
-  }
-}
-
-
-function selectElementInList(list, name) {
-  for (var i = 0; i < list.itemCount; ++i) {
-    if (list.getItemAtIndex(i).label == name) {
-      list.selectedItem = list.getItemAtIndex(i);
-      return;
-    }
-  }
-  alert("Can't find " + name + " in the list!");
-}
-
-
-// Setup editor when opening a file
-function setupEditorForEval() {
-  // Window's title
-  document.title = strbundle.getString("QSOSEvaluation") + " " + myDoc.get("component/name") + " (" + myDoc.getfilename() + ")";
-
-  // Setting up text fields (see editor.js for details)
-  for (var element in textElements) {
-    document.getElementById(element).value = myDoc.get(textElements[element]);
-  }
-
-  // Setting up date fields
-  for (var element in dateElements) {
-    var tmp = myDoc.get(dateElements[element]);
-    try {
-    var tmpCb = document.getElementById(element + "Checkbox");
-    } catch(e) {};
-    if (tmpCb != null) {
-      if (tmp == "") {
-        document.getElementById(element + "Checkbox").checked = false;
-        document.getElementById(element).disabled = "true";
-        document.getElementById(element).value = resetDate();
-      } else {
-        document.getElementById(element + "Checkbox").checked = true;
-        document.getElementById(element).disabled = "";
-        document.getElementById(element).value = tmp;
-      }
-    } else {
-      document.getElementById(element).value = tmp;
-    }
-  }
-
-  // Component fields
-  populateArchetype();
-  selectElementInList(document.getElementById("componentArchetype"), myDoc.get("component/archetype"));
-
-  // License and Legal
-  populateLicense();
-  selectElementInList(document.getElementById("licenseName"), myDoc.get("openSourceCartouche/license/name"));
-
-//   populateLanguage();
-//   selectElementInList(document.getElementById("evaluationLanguage"), myDoc.get("qsosMetadata/language"));
-
-  // Authors (evaluation + Open Source Cartouche metadata), Contributors, Developers
-  var authorsArray = new Array("evaluation");
-  for (var i = 0; i < authorsArray.length; ++i) {
-    try {
-      var authors = myDoc.getAuthors(authorsArray[i]);
-    } catch (e) {
-      alert("setupEditorForEval: couldn't get " + authorsArray[i] + " authors: " + e.message);
-    }
-    var authorList = document.getElementById(authorsArray[i] + "Authors");
-    for(var j = 0; j < authors.length; ++j) {
-      var listitem = document.createElement("listitem");
-      var listcellName = document.createElement("listcell");
-      var listcellEmail = document.createElement("listcell");
-      var listcellComment = document.createElement("listcell");
-      listcellName.setAttribute("label", authors[j].name);
-      listcellEmail.setAttribute("label", authors[j].email);
-      listcellComment.setAttribute("label", authors[j].comment);
-      listitem.appendChild(listcellName);
-      listitem.appendChild(listcellEmail);
-      listitem.appendChild(listcellComment);
-      authorList.appendChild(listitem);
-    }
-  }
-
-  var teamArray = new Array("developer", "contributor");
-  for (var i = 0; i < teamArray.length; ++i) {
-    try {
-      var authors = myDoc.getTeam(teamArray[i]);
-    } catch (e) {
-      alert("setupEditorForEval: couldn't get " + teamArray[i] + " team: " + e.message);
-    }
-    var authorList = document.getElementById(teamArray[i] + "Team");
-    for(var j = 0; j < authors.length; ++j) {
-      var listitem = document.createElement("listitem");
-      var listcellName = document.createElement("listcell");
-      var listcellEmail = document.createElement("listcell");
-      var listcellCompany = document.createElement("listcell");
-      listcellName.setAttribute("label", authors[j].name);
-      listcellEmail.setAttribute("label", authors[j].email);
-      listcellCompany.setAttribute("label", authors[j].company);
-      listitem.appendChild(listcellName);
-      listitem.appendChild(listcellEmail);
-      listitem.appendChild(listcellCompany);
-      authorList.appendChild(listitem);
-    }
-  }
-
-  // Tree population
+// Reads a file and return its content as a string
+// Returns null if the file can't be found/opened
+function readFile(filename) {
+  var file = Components.classes["@mozilla.org/file/local;1"]
+  .createInstance(Components.interfaces.nsILocalFile);
   try {
-    var tree = document.getElementById("criteriaTree");
-    var treechildren = buildtree();
-    tree.appendChild(treechildren);
-  } catch (e) {
-    alert(e.message);
+    file.initWithPath(filename);
+    if (file.exists() == false) {
+      alert("readFile: " + filename + " doesn't exist");
+      return null;
+    }
+  } catch(e) {
+    alert("readFile: can't open file " + filename);
+    return null;
   }
 
-  // Draw top-level SVG chart
-  drawChart();
+  var is = Components.classes["@mozilla.org/network/file-input-stream;1"]
+  .createInstance(Components.interfaces.nsIFileInputStream);
+  is.init(file, 0x01, 00004, null);
 
-  setStateEvalOpen(true);
+  var sis = Components.classes["@mozilla.org/scriptableinputstream;1"]
+  .createInstance(Components.interfaces.nsIScriptableInputStream);
+  sis.init(is);
 
-  // Select the General tab
-  document.getElementById('tabs').selectedIndex = 3;
+  var output = sis.read(sis.available());
+
+  var converter = Components.classes["@mozilla.org/intl/scriptableunicodeconverter"]
+  .createInstance(Components.interfaces.nsIScriptableUnicodeConverter);
+  converter.charset = "UTF-8";
+  output = converter.ConvertToUnicode(output);
+
+  return output;
+}
+
+
+// Open a dialog box to pick a file with the extension 'ext', and type 'type'
+// Returns the complete file as a string
+function pickAFile(ext, type) {
+  getPrivilege();
+  var nsIFilePicker = Components.interfaces.nsIFilePicker;
+  var fp = Components.classes["@mozilla.org/filepicker;1"].createInstance(nsIFilePicker);
+  fp.init(window, strbundle.getString("selectFile"), nsIFilePicker.modeOpen);
+  fp.appendFilter(type, "*" + ext);
+  var res = fp.show();
+
+  if (res != nsIFilePicker.returnOK) {
+    return "";
+  }
+  return fp.file.path;
+}
+
+
+// Parse an XML string read from a file
+// Returns an XML Object
+function parseXML(string) {
+  var domParser = new DOMParser();
+  return domParser.parseFromString(string, "text/xml");
+}
+
+
+// Serialize an XML Object to a string for printing and file writing purposes
+function serializeXML(xmlObject) {
+  var serializer = new XMLSerializer();
+  return serializer.serializeToString(xmlObject);
+}
+
+
+// Load an XML file
+function loadFile(filename) {
+  if (filename == "") {
+    return null;
+  }
+  var fileContent = readFile(filename);
+  if (fileContent == "") {
+    alert("loadFile: file empty");
+    return null;
+  }
+  var xml = parseXML(fileContent);
+  var error = xml.getElementsByTagName("parsererror");
+  if (error.length == 1) {
+    alert("loadFile: " + strbundle.getString("parsingError") + "\n\n" + error[0].textContent);
+    return null;
+  }
+  return xml;
 }
 
 
@@ -225,16 +141,11 @@ function openFile() {
   if (checkCloseFile() == false) {
     return;
   }
-  getPrivilege();
-  var nsIFilePicker = Components.interfaces.nsIFilePicker;
-  var fp = Components.classes["@mozilla.org/filepicker;1"].createInstance(nsIFilePicker);
-  fp.init(window, strbundle.getString("selectFile"), nsIFilePicker.modeOpen);
-  fp.appendFilter(strbundle.getString("QSOSFile"), "*.qsos");
-  var res = fp.show();
-
-  if (res == nsIFilePicker.returnOK) {
-    openLocalFile(fp.file.path);
+  var res = pickAFile(".qsos", strbundle.getString("QSOSFile"));
+  if (res == "") {
+    return;
   }
+  openLocalFile(res);
 }
 
 
@@ -397,7 +308,7 @@ function saveRemote() {
 }
 
 
-// FIXME Find a ay to reset datepickers properly
+// FIXME Find a ay to reset datepickers properly (We are using checkboxes for now)
 function resetDate() {
 //   var today = Date.now();
 //   function pad(n){return n<10 ? '0'+n : n}
@@ -427,6 +338,7 @@ function closeFile() {
   // Resetting interface :
   document.getElementById("QSOS").setAttribute("title", strbundle.getString("QSOSEditor"));
 
+  // Resetting basic text elements
   for (var element in textElements) {
     document.getElementById(element).value = "";
   }
@@ -442,12 +354,8 @@ function closeFile() {
 
   // Component fields
   emptyList(document.getElementById("archetypePopup"));
-
   // License and Legal
   emptyList(document.getElementById("licensePopup"));
-
-  // Metadata
-//   emptyList(document.getElementById("languagePopup"));
 
   // Reset authors & contributors lists
   lists = new Array("evaluationAuthors","developerTeam","contributorTeam");
@@ -471,7 +379,9 @@ function closeFile() {
   tree.removeChild(treechildren);
   clearChart();
   clearLabels();
-  }catch(e){alert(e.message);}
+  } catch(e) {
+    alert("closeFile: " + e.message);
+  }
 }
 
 // Checks Document's state before closing it
@@ -497,3 +407,16 @@ function exit() {
   }
   self.close();
 }
+
+/*
+// Shows the new.xul window in modal mode
+function newFileDialog() {
+ //FIXME
+ alert("FIXME");
+ if (checkCloseFile() == false) {
+   return;
+ }
+ getPrivilege();
+ window.openDialog('chrome://qsos-xuled/content/new.xul', 'Properties','chrome,dialog,modal', myDoc, openRemoteFile);
+}
+*/

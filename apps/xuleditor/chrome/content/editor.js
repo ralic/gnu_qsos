@@ -111,10 +111,10 @@ function init() {
     openRemoteFile(urlFirefox);
   } else {
     var cmdLine = window.arguments[0];
-    cmdLine = cmdLine.QueryInterface(Components.interfaces.nsICommandLine); // FIXME Firefox display an error here
+    cmdLine = cmdLine.QueryInterface(Components.interfaces.nsICommandLine); // FIXME Firefox shows an error here
     var uri = cmdLine.handleFlagWithParam("file", false);
     if (uri) {
-      // Case of a .qsos file passed in parameter through commandline (xuleditor -file filename)
+      // Case of a .qsos file passed in parameter through commandline (xuleditor filename)
       uri = cmdLine.resolveURI(uri);
       try {
         // FIXME Open file with spaces
@@ -126,11 +126,6 @@ function init() {
     }
   }
 }
-
-
-////////////////////////////////////////////////////////////////////
-// Helper functions
-////////////////////////////////////////////////////////////////////
 
 
 // Get privilege to open windows
@@ -162,8 +157,10 @@ function setStateEvalOpen(state) {
   evaluationOpen = state;
   if (state) {
     var bool = "";
+    var nbool= "true";
   } else {
     var bool = "true";
+    var nbool = "";
   }
   // Settings tab disable as it's not currently functionnal
   document.getElementById("configTab").hidden = "true";
@@ -176,16 +173,17 @@ function setStateEvalOpen(state) {
   document.getElementById("saveFileAs").disabled = bool;
   document.getElementById("closeFile").disabled = bool;
 
+  // Update old QSOS button is active only when the evaluation is closed
+  document.getElementById("updateFromOldQSOS").disabled = nbool;
+
   // Remote saving is temporarily disabled
   document.getElementById("saveRemoteFile").disabled = "true";
-  // New file button disable since it doesn't work for now
-  document.getElementById("newFile").disabled = "true";
   // Open Remote File button disable since it doesn't work for now
   document.getElementById("openRemoteFile").disabled = "true";
 
-  document.getElementById("updateFromTemplate").disabled = "true";
-  document.getElementById("exportOSC").disabled = "true";
-  document.getElementById("exportToFreeMind").disabled = "true";
+  document.getElementById("updateFromTemplate").disabled = bool;
+  document.getElementById("exportOSC").disabled = bool;
+  document.getElementById("exportToFreeMind").disabled = bool;
 
   document.getElementById('tabs').selectedIndex = 2;
 }
@@ -207,6 +205,7 @@ function dateControl(checkbox, datepicker) {
 function freezeScore(bool) {
   document.getElementById("scoreRadiogroup").disabled = bool;
 }
+
 
 // (Un)freezes the "Comments" input file (current criteria property)
 // bool: "true" to freeze; "" to unfreeze
@@ -231,4 +230,163 @@ function changeArchetype(object) {
 function changeLicense(object) {
   myDoc.set("openSourceCartouche/license/name", object.selectedItem.label);
   docHasChanged();
+}
+
+
+function populateLanguage() {
+  var languages = myDoc.getLanguageList();
+  var languageList = document.getElementById("languagePopup");
+  for(var i = 0; i < languages.length; ++i) {
+    var menuitem = document.createElement("menuitem");
+    menuitem.setAttribute("label", languages[i]);
+    languageList.appendChild(menuitem);
+  }
+}
+
+
+function populateArchetype() {
+  var archetypes = myDoc.getArchetypeList();
+  var archetypeList = document.getElementById("archetypePopup");
+  for(var i = 0; i < archetypes.length; ++i) {
+    var menuitem = document.createElement("menuitem");
+    menuitem.setAttribute("label", archetypes[i]);
+    archetypeList.appendChild(menuitem);
+  }
+}
+
+
+function populateLicense() {
+  var licenses = myDoc.getLicenseList();
+  var licenseList = document.getElementById("licensePopup");
+  for(var i = 0; i < licenses.length; ++i) {
+    var menuitem = document.createElement("menuitem");
+    menuitem.setAttribute("label", licenses[i]);
+    licenseList.appendChild(menuitem);
+  }
+}
+
+
+function emptyList(list) {
+  while(list.childElementCount > 0) {
+    list.removeChild(list.firstChild);
+  }
+}
+
+
+function selectElementInList(list, name) {
+  for (var i = 0; i < list.itemCount; ++i) {
+    if (list.getItemAtIndex(i).label == name) {
+      list.selectedItem = list.getItemAtIndex(i);
+      return;
+    }
+  }
+  alert("Can't find " + name + " in the list!");
+}
+
+
+// Setup editor when opening a file
+function setupEditorForEval() {
+  // Window's title
+  document.title = strbundle.getString("QSOSEvaluation") + " " + myDoc.get("component/name") + " (" + myDoc.getfilename() + ")";
+
+  // Setting up text fields (see editor.js for details)
+  for (var element in textElements) {
+    document.getElementById(element).value = myDoc.get(textElements[element]);
+  }
+
+  // Setting up date fields
+  for (var element in dateElements) {
+    var tmp = myDoc.get(dateElements[element]);
+    try {
+      var tmpCb = document.getElementById(element + "Checkbox");
+    } catch(e) {};
+    if (tmpCb != null) {
+      if (tmp == "") {
+        document.getElementById(element + "Checkbox").checked = false;
+        document.getElementById(element).disabled = "true";
+        document.getElementById(element).value = resetDate();
+      } else {
+        document.getElementById(element + "Checkbox").checked = true;
+        document.getElementById(element).disabled = "";
+        document.getElementById(element).value = tmp;
+      }
+    } else {
+      document.getElementById(element).value = tmp;
+    }
+  }
+
+  // Component fields
+  populateArchetype();
+  selectElementInList(document.getElementById("componentArchetype"), myDoc.get("component/archetype"));
+
+  // License and Legal
+  populateLicense();
+  selectElementInList(document.getElementById("licenseName"), myDoc.get("openSourceCartouche/license/name"));
+
+  //   populateLanguage();
+  //   selectElementInList(document.getElementById("evaluationLanguage"), myDoc.get("qsosMetadata/language"));
+
+  // Authors (evaluation + Open Source Cartouche metadata), Contributors, Developers
+  var authorsArray = new Array("evaluation");
+  for (var i = 0; i < authorsArray.length; ++i) {
+    try {
+      var authors = myDoc.getAuthors(authorsArray[i]);
+    } catch (e) {
+      alert("setupEditorForEval: couldn't get " + authorsArray[i] + " authors: " + e.message);
+    }
+    var authorList = document.getElementById(authorsArray[i] + "Authors");
+    for(var j = 0; j < authors.length; ++j) {
+      var listitem = document.createElement("listitem");
+      var listcellName = document.createElement("listcell");
+      var listcellEmail = document.createElement("listcell");
+      var listcellComment = document.createElement("listcell");
+      listcellName.setAttribute("label", authors[j].name);
+      listcellEmail.setAttribute("label", authors[j].email);
+      listcellComment.setAttribute("label", authors[j].comment);
+      listitem.appendChild(listcellName);
+      listitem.appendChild(listcellEmail);
+      listitem.appendChild(listcellComment);
+      authorList.appendChild(listitem);
+    }
+  }
+
+  var teamArray = new Array("developer", "contributor");
+  for (var i = 0; i < teamArray.length; ++i) {
+    try {
+      var authors = myDoc.getTeam(teamArray[i]);
+    } catch (e) {
+      alert("setupEditorForEval: couldn't get " + teamArray[i] + " team: " + e.message);
+    }
+    var authorList = document.getElementById(teamArray[i] + "Team");
+    for(var j = 0; j < authors.length; ++j) {
+      var listitem = document.createElement("listitem");
+      var listcellName = document.createElement("listcell");
+      var listcellEmail = document.createElement("listcell");
+      var listcellCompany = document.createElement("listcell");
+      listcellName.setAttribute("label", authors[j].name);
+      listcellEmail.setAttribute("label", authors[j].email);
+      listcellCompany.setAttribute("label", authors[j].company);
+      listitem.appendChild(listcellName);
+      listitem.appendChild(listcellEmail);
+      listitem.appendChild(listcellCompany);
+      authorList.appendChild(listitem);
+    }
+  }
+
+  // Tree population
+  try {
+    var tree = document.getElementById("criteriaTree");
+    var treechildren = buildtree();
+    tree.appendChild(treechildren);
+  } catch (e) {
+    alert(e.message);
+  }
+
+  // Draw top-level SVG chart
+  drawChart();
+
+  setStateEvalOpen(true);
+
+  // Select the General tab
+  document.getElementById('tabs').selectedIndex = 3;
 }

@@ -45,8 +45,12 @@ function Document() {
     this.addTeamMember = addTeamMember;
     this.delTeamMember = delTeamMember;
 
+    this.getCartouche = getCartouche;
+    this.writeOSC = writeOSC;
+
     this.get = get;
     this.set = set;
+    this.setSheet = setSheet;
 
     this.getLicenseList = getLicenseList;
     this.getLanguageList = getLanguageList;
@@ -78,6 +82,10 @@ function Document() {
     ////////////////////////////////////////////////////////////////////
     // QSOS XML file functions
     ////////////////////////////////////////////////////////////////////
+
+    function setSheet(tmpSheet) {
+      this.sheet = tmpSheet;
+    }
 
     // Get privilege to open windows
     function getPrivilege() {
@@ -146,27 +154,28 @@ function Document() {
       sheet = domParser.parseFromString(req.responseText, "text/xml");
     }
 
-    // Serialize and write the local QSOS XML file
-    function write() {
+
+    // Serialize and write the designated part the evaluation to a QSOS XML file
+    function writeXMLtoFile(element, filename) {
       getPrivilege();
 
       var file = Components.classes["@mozilla.org/file/local;1"]
-                  .createInstance(Components.interfaces.nsILocalFile);
+      .createInstance(Components.interfaces.nsILocalFile);
 
-      file.initWithPath(myDoc.filename);
+      file.initWithPath(filename);
       if (file.exists() == false) {
-          file.create(Components.interfaces.nsIFile.NORMAL_FILE_TYPE, 420);
+        file.create(Components.interfaces.nsIFile.NORMAL_FILE_TYPE, 420);
       }
 
       var outputStream = Components.classes["@mozilla.org/network/file-output-stream;1"]
-                         .createInstance(Components.interfaces.nsIFileOutputStream);
+      .createInstance(Components.interfaces.nsIFileOutputStream);
 
       outputStream.init(file, 0x04 | 0x08 | 0x20, 420, 0);
 
-      var xml = serialize(sheet.documentElement, 0);
+      var xml = serialize(element, 0);
 
       var converter = Components.classes["@mozilla.org/intl/scriptableunicodeconverter"]
-                      .createInstance(Components.interfaces.nsIScriptableUnicodeConverter);
+      .createInstance(Components.interfaces.nsIScriptableUnicodeConverter);
       converter.charset = "UTF-8";
       xml = converter.ConvertFromUnicode(xml);
 
@@ -174,6 +183,17 @@ function Document() {
 
       outputStream.close();
     }
+
+
+    function write() {
+      writeXMLtoFile(sheet.documentElement, myDoc.filename);
+    }
+
+
+    function writeOSC(filename) {
+      writeXMLtoFile(sheet.getElementsByTagName("openSourceCartouche")[0], filename);
+    }
+
 
     //Serialize and upload the QSOS XML file to a remote server
     function writeremote(url) {
@@ -625,6 +645,13 @@ function Document() {
         node = nodes.iterateNext()
       }
       alert("Warning: delTeamMember: the team member you're trying to remove has not been found!");
+    }
+
+
+    function getCartouche() {
+      var nodes = sheet.evaluate("//openSourceCartouche", sheet, null, XPathResult.ORDERED_NODE_ITERATOR_TYPE, null);
+      var node = nodes.iterateNext();
+      return node;
     }
 
 

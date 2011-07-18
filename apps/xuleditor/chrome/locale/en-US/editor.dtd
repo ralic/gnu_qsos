@@ -51,6 +51,7 @@
 <!ENTITY maillingList "qsos-general@nongnu.org">
 
 <!ENTITY updateFromTemplate "  Update file from template        ">
+<!ENTITY updateFromOldQSOS "  Update an old QSOS file           ">
 <!ENTITY exportOSC "  Export Open Source Cartouche">
 <!ENTITY exportToFreeMind "  Export to FreeMind                   ">
 
@@ -159,8 +160,9 @@
 <!ENTITY exitAccessKey "e">
 
 <!ENTITY updateFromTemplateAccessKey "u">
+<!ENTITY updateFromOldQSOSAccessKey "p">
 <!ENTITY exportOSCAccessKey "p">
-<!ENTITY exportToFreeMindAccessKey "d">
+<!ENTITY exportToFreeMindAccessKey "x">
 
 <!-- Access key for tabs !-->
 <!ENTITY fileTabAccessKey "l">
