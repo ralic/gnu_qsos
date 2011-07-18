@@ -149,7 +149,55 @@ function exportOSC() {
 
 
 function exportToFreeMind() {
-  alert("TODO");
+  try {
+    alert("First, choose the right XSLT to export the template part to FreeMind.");
+    var filename = pickAFile(".xsl", "XSLT");
+    if (filename == "") {
+      return false;
+    }
+    var xslt = loadFile(filename);
+    if (xslt == null) {
+      return false;
+    }
+
+    // FIXME find a way to open the right XSLT from the extension
+    /*xslt = loadXSLT("chrome://qsos-xuled/content/freemind_to_qsos.xsl");
+     *  if (xslt == null) {
+     *  return false;
+    }*/
+
+    // FIXME
+    alert("FIXME");
+    var toTrans = myDoc.getSheet().getElementsByTagName("section")[0];
+
+    var processor = new XSLTProcessor();
+    processor.importStylesheet(xslt);
+    element = processor.transformToDocument(toTrans);
+
+    var serializer = new XMLSerializer();
+    var xmlOutput = serializer.serializeToString(toTrans);
+    alert("Output:\n" + xmlOutput);
+
+    getPrivilege();
+    alert("Then choose the file to save the template.");
+    var nsIFilePicker = Components.interfaces.nsIFilePicker;
+    var fp = Components.classes["@mozilla.org/filepicker;1"].createInstance(nsIFilePicker);
+    fp.init(window, strbundle.getString("saveFileAs"), nsIFilePicker.modeSave);
+    fp.appendFilter(strbundle.getString("FreeMindTemplate"),"*.mm");
+    var res = fp.show();
+    if ((res != nsIFilePicker.returnOK) && (res != nsIFilePicker.returnReplace)) {
+      return false;
+    }
+    var filename = fp.file.path;
+    // FIXME Write the file
+  } catch(e) {
+    alert("exportOSC: " + e.message);
+    return false;
+  }
+
+  alert(strbundle.getString("saveSuccessFreeMind") + " " + filename);
+
+  return true;
 }
 
 

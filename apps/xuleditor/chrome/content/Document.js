@@ -51,6 +51,7 @@ function Document() {
     this.get = get;
     this.set = set;
     this.setSheet = setSheet;
+    this.getSheet = getSheet;
 
     this.getLicenseList = getLicenseList;
     this.getLanguageList = getLanguageList;
@@ -84,7 +85,11 @@ function Document() {
     ////////////////////////////////////////////////////////////////////
 
     function setSheet(tmpSheet) {
-      this.sheet = tmpSheet;
+      sheet = tmpSheet;
+    }
+
+    function getSheet() {
+      return sheet;
     }
 
     // Get privilege to open windows
