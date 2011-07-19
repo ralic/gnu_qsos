@@ -18,47 +18,47 @@
 	<xsl:apply-templates select="qsosformat"/>
 	<xsl:apply-templates select="qsosspecificformat"/>
       </xsl:element>
-      <xsl:element name="Cartouche">
-	<xsl:attribute name="Version">0.1</xsl:attribute>
+      <xsl:element name="cartouche">
+	<xsl:attribute name="version">0.1</xsl:attribute>
 	<Component>
 	  <xsl:apply-templates select="appname"/>
 	  <xsl:apply-templates select="release"/>
 	  <xsl:apply-templates select="url"/>
-	  <Status/>
-	  <ReleaseDate/>
+	  <status/>
+	  <releaseDate/>
 	  <xsl:apply-templates select="qsosappfamily"/>
-	  <MainTech/>
+	  <mainTech/>
 	</Component>
-	<License>
+	<license>
 	  <xsl:apply-templates select="licensedesc"/>
-	  <LicenseVersion></LicenseVersion>
-	  <LicenseHomepage></LicenseHomepage>
-	</License>
-	<Team/>
-	<Legal/>
-	<Misc/>
+	  <version></version>
+	  <homepage></homepage>
+	</license>
+	<team/>
+	<legal/>
+	<misc/>
       </xsl:element>
     </xsl:element>
   </xsl:template>
 
   <xsl:template match="appname">
-    <xsl:element name="ComponentName"><xsl:apply-templates select="@*|node()"/></xsl:element>
+    <xsl:element name="name"><xsl:apply-templates select="@*|node()"/></xsl:element>
   </xsl:template>
 
   <xsl:template match="release">
-    <xsl:element name="ComponentVersion"><xsl:apply-templates select="@*|node()"/></xsl:element>
+    <xsl:element name="version"><xsl:apply-templates select="@*|node()"/></xsl:element>
   </xsl:template>
 
   <xsl:template match="url">
-    <xsl:element name="ComponentHomepage"><xsl:apply-templates select="@*|node()"/></xsl:element>
+    <xsl:element name="homepage"><xsl:apply-templates select="@*|node()"/></xsl:element>
   </xsl:template>
 
   <xsl:template match="qsosappfamily">
-    <xsl:element name="Type"><xsl:apply-templates select="@*|node()"/></xsl:element>
+    <xsl:element name="type"><xsl:apply-templates select="@*|node()"/></xsl:element>
   </xsl:template>
 
   <xsl:template match="licensedesc">
-    <xsl:element name="LicenseName"><xsl:apply-templates select="@*|node()"/></xsl:element>
+    <xsl:element name="name"><xsl:apply-templates select="@*|node()"/></xsl:element>
   </xsl:template>
 
   <xsl:template match="authors">

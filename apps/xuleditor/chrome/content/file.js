@@ -129,7 +129,7 @@ function openLocalFile(filename) {
   try {
     setupEditorForEval();
   } catch (e) {
-    alert("openFile: an error occured while setting up the editor " + e.message);
+    alert("openLocalFile: an error occured while setting up the editor " + e.message);
     closeFile();
     return;
   }

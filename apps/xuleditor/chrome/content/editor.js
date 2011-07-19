@@ -311,9 +311,12 @@ function setupEditorForEval() {
         document.getElementById(element).value = tmp;
       }
     } else {
+//       alert(element + " " + dateElements[element]);
       document.getElementById(element).value = tmp;
     }
   }
+
+//   alert("la");
 
   // Component fields
   populateArchetype();

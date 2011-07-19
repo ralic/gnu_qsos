@@ -47,6 +47,7 @@ function Document() {
 
     this.getCartouche = getCartouche;
     this.writeOSC = writeOSC;
+    this.writeXMLtoFile = writeXMLtoFile;
 
     this.get = get;
     this.set = set;

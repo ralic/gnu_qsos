@@ -134,7 +134,7 @@
 <!ENTITY xuleditorLicense "Software under the terms of the GNU Public License version 2:">
 <!ENTITY xuleditorLicenseUrl "http://www.gnu.org/licenses/gpl-2.0.html">
 <!ENTITY currentQSOSVersion "Current QSOS version: 2.0">
-<!ENTITY supportedQSOSVersions "Supported versions: 2.0, import from 1.6 will be available in a future version">
+<!ENTITY supportedQSOSVersions "Supported versions: 2.0, import from 1.6 is available thanks to XSLT sheets">
 <!ENTITY xuleditorAuthors "Authors:">
 <!ENTITY xuleditorAuthorName1 "Raphael Semeteys">
 <!ENTITY xuleditorAuthorEmail1 "raphael.semeteys@atos.net">

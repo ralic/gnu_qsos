@@ -150,15 +150,15 @@ function exportOSC() {
 
 function exportToFreeMind() {
   try {
-    alert("First, choose the right XSLT to export the template part to FreeMind.");
-    var filename = pickAFile(".xsl", "XSLT");
-    if (filename == "") {
-      return false;
-    }
-    var xslt = loadFile(filename);
-    if (xslt == null) {
-      return false;
-    }
+//     alert("First, choose the right XSLT to export the template part to FreeMind.");
+//     var filename = pickAFile(".xsl", "XSLT");
+//     if (filename == "") {
+//       return false;
+//     }
+//     var xslt = loadFile(filename);
+//     if (xslt == null) {
+//       return false;
+//     }
 
     // FIXME find a way to open the right XSLT from the extension
     /*xslt = loadXSLT("chrome://qsos-xuled/content/freemind_to_qsos.xsl");
@@ -166,8 +166,16 @@ function exportToFreeMind() {
      *  return false;
     }*/
 
+    var xslt = parseXML(qsos_to_freemind);
+    var error = xslt.getElementsByTagName("parsererror");
+    if (error.length == 1) {
+      alert("An error occurred while parsing the XSLT! This is a bug.");
+      alert("loadFile: " + strbundle.getString("parsingError") + "\n\n" + error[0].textContent);
+      return false;
+    }
+
     // FIXME
-    alert("FIXME");
+//     alert("FIXME");
     var toTrans = myDoc.getSheet().getElementsByTagName("section")[0];
 
     var processor = new XSLTProcessor();
@@ -179,7 +187,7 @@ function exportToFreeMind() {
     alert("Output:\n" + xmlOutput);
 
     getPrivilege();
-    alert("Then choose the file to save the template.");
+    alert("Choose the file to save the template.");
     var nsIFilePicker = Components.interfaces.nsIFilePicker;
     var fp = Components.classes["@mozilla.org/filepicker;1"].createInstance(nsIFilePicker);
     fp.init(window, strbundle.getString("saveFileAs"), nsIFilePicker.modeSave);
@@ -189,9 +197,9 @@ function exportToFreeMind() {
       return false;
     }
     var filename = fp.file.path;
-    // FIXME Write the file
+    myDoc.writeXMLtoFile(element, filename);
   } catch(e) {
-    alert("exportOSC: " + e.message);
+    alert("exportToFreeMind: " + e.message);
     return false;
   }
 
@@ -250,3 +258,105 @@ function updateFromOldQSOS() {
     alert("updateFromOldQSOS: " + e.message);
   }
 }
+
+var qsos_to_freemind = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\
+<xsl:stylesheet xmlns:xsl=\"http://www.w3.org/1999/XSL/Transform\" version=\"1.0\">\
+<xsl:output method=\"xml\" indent=\"yes\" encoding=\"UTF-8\"/>\
+\
+<xsl:template match=\"document\">\
+<xsl:element name=\"map\">\
+<xsl:attribute name=\"version\">0.7.1</xsl:attribute>\
+<xsl:element name=\"node\">\
+<xsl:attribute name=\"ID\"><xsl:value-of select=\"header/Cartouche/Component/ComponentName\"/></xsl:attribute>\
+<richcontent TYPE=\"NODE\"><html>\
+<head></head>\
+<body><p style=\"text-align: center\">\
+<xsl:value-of select=\"header/Cartouche/Component/ComponentName\"/><br/>\
+<xsl:value-of select=\"header/Cartouche/Component/ComponentVersion\"/>\
+</p></body>\
+</html></richcontent>\
+<font NAME=\"SansSerif\" BOLD=\"true\" SIZE=\"12\"/>\
+<xsl:apply-templates select=\"section\"/>\
+</xsl:element>\
+</xsl:element>\
+</xsl:template>\
+\
+<xsl:template match=\"section\">\
+<node ID=\"{@name}\" TEXT=\"{@title}\">\
+<xsl:if test=\"position() mod 2 = 0\">\
+<xsl:attribute name=\"POSITION\">left</xsl:attribute>\
+</xsl:if>\
+<xsl:if test=\"position() mod 2 = 1\">\
+<xsl:attribute name=\"POSITION\">right</xsl:attribute>\
+</xsl:if>\
+<font NAME=\"SansSerif\" BOLD=\"true\" SIZE=\"12\"/>\
+<xsl:if test=\"desc != ''\">\
+<xsl:element name=\"node\">\
+<xsl:attribute name=\"TEXT\"><xsl:value-of select=\"desc\"/></xsl:attribute>\
+<xsl:attribute name=\"STYLE\">bubble</xsl:attribute>\
+<font NAME=\"SansSerif\" ITALIC=\"true\" SIZE=\"10\"/>\
+</xsl:element>\
+</xsl:if>\
+<xsl:apply-templates select=\"element\"/>\
+</node>\
+</xsl:template>\
+\
+<xsl:template match=\"element\">\
+<xsl:element name=\"node\">\
+<xsl:attribute name=\"ID\"><xsl:value-of select=\"@name\"/></xsl:attribute>\
+<xsl:attribute name=\"TEXT\"><xsl:value-of select=\"@title\"/></xsl:attribute>\
+\
+<xsl:if test=\"score = '0'\">\
+<xsl:attribute name=\"FOLDED\">true</xsl:attribute>\
+<icon BUILTIN=\"button_cancel\"/>\
+</xsl:if>\
+<xsl:if test=\"score = '1'\">\
+<xsl:attribute name=\"FOLDED\">true</xsl:attribute>\
+<icon BUILTIN=\"yes\"/>\
+</xsl:if>\
+<xsl:if test=\"score = '2'\">\
+<xsl:attribute name=\"FOLDED\">true</xsl:attribute>\
+<icon BUILTIN=\"button_ok\"/>\
+</xsl:if>\
+\
+<xsl:choose>\
+<xsl:when test=\"child::element\">\
+<xsl:if test=\"desc != ''\">\
+<xsl:element name=\"node\">\
+<xsl:attribute name=\"TEXT\"><xsl:value-of select=\"desc\"/></xsl:attribute>\
+<xsl:attribute name=\"STYLE\">bubble</xsl:attribute>\
+<font NAME=\"SansSerif\" ITALIC=\"true\" SIZE=\"10\"/>\
+</xsl:element>\
+</xsl:if>\
+</xsl:when>\
+\
+<xsl:otherwise>\
+<xsl:element name=\"node\">\
+<xsl:if test=\"score = '0'\">\
+<xsl:attribute name=\"TEXT\"><xsl:value-of select=\"desc0\"/></xsl:attribute>\
+</xsl:if>\
+<xsl:if test=\"score = '1'\">\
+<xsl:attribute name=\"TEXT\"><xsl:value-of select=\"desc1\"/></xsl:attribute>\
+</xsl:if>\
+<xsl:if test=\"score = '2'\">\
+<xsl:attribute name=\"TEXT\"><xsl:value-of select=\"desc2\"/></xsl:attribute>\
+</xsl:if>\
+<xsl:attribute name=\"STYLE\">bubble</xsl:attribute>\
+<font NAME=\"SansSerif\" ITALIC=\"true\" SIZE=\"10\"/>\
+</xsl:element>\
+\
+<xsl:if test=\"comment != ''\">\
+<xsl:element name=\"node\">\
+<xsl:attribute name=\"TEXT\"><xsl:value-of select=\"comment\"/></xsl:attribute>\
+<font NAME=\"SansSerif\" ITALIC=\"true\" SIZE=\"10\"/>\
+</xsl:element>\
+</xsl:if>\
+</xsl:otherwise>\
+</xsl:choose>\
+\
+<xsl:apply-templates select=\"element\"/>\
+\
+</xsl:element>\
+</xsl:template>\
+\
+</xsl:stylesheet>"
