@@ -194,7 +194,7 @@ You should clear them if you want me to validate your evaluation...</comment>
           <comment></comment>
           <score></score>
         </element>
-        <element name="crisisManagment" title="Historique">
+        <element name="crisisManagement" title="Historique">
           <desc0>Le logiciel connaît de nombreux problèmes qui peuvent être rédhibitoires</desc0>
           <desc1>Pas de problèmes majeurs, ni de crise ou historique inconnu</desc1>
           <desc2>Bon historique de gestion de projet et de crise</desc2>
@@ -218,7 +218,7 @@ You should clear them if you want me to validate your evaluation...</comment>
     </element>
     <element name="activity" title="Activité">
         <desc>Activité du et autour du projet</desc>
-        <element name="contributingcommunity" title="Communauté des contributeurs">
+        <element name="contributionCommunity" title="Communauté des contributeurs">
           <desc0>Pas de communauté ou de réelle activité (forum, liste de diffusion…)</desc0>
           <desc1>Communauté existante avec une activité notable</desc1>
           <desc2>Communauté forte : grosse activité sur les forums, de nombreux contributeurs et défenseurs</desc2>
