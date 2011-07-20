@@ -1,5 +1,21 @@
 Revision history for QSOS XUL Editor
 
+1.1  2011/07/06
+      - Major changes:
+        * The toolbar as been removed, introducing a new tab based design
+        * Licenses are now displayed in alphabetical order and do not rely exclusively on the Id anymore
+        * Saving on a remote server is temporarily disabled
+      - Bugs fixed:
+        * Closing the window now opens a confirm dialog if there is an unsaved document in the editor
+        * Opening or closing an unsaved document opens a prompt window
+        * Closing a new file prompt for saving
+        * Adding/removing authors in the general tab works as exepected and raise exceptions
+        * Several bugs related to closing files fixed
+      - Look: 
+        * Updated icons from the Oxygen team
+      - Translations:
+        * French and english translations updated
+
 1.0  2010/12/23
       - Support for Firefox 3.* and xulrunner 1.9.*
 
