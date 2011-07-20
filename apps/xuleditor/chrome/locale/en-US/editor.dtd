@@ -56,22 +56,22 @@
 <!ENTITY exportToFreeMind "  Export to FreeMind                   ">
 
 <!-- Metadata Tab !-->
-<!ENTITY evaluationAuthors "Evaluation:">
-<!ENTITY oscAuthors "Open Source Cartouche:">
-<!ENTITY authors "Authors:">
+<!ENTITY evaluationAuthors "Evaluation">
+<!ENTITY oscAuthors "Open Source Cartouche">
+<!ENTITY authors "Authors">
 <!ENTITY name "Name:">
 <!ENTITY email "Email:">
 <!ENTITY comment "Comment:">
 <!ENTITY addButton "  Add">
 <!ENTITY delButton " Delete">
-<!ENTITY reviewer "Reviewer:">
+<!ENTITY reviewer "Reviewer">
 <!ENTITY date "Date:">
 <!ENTITY evaluationVersion "Version:">
 <!ENTITY evaluationVersionPlaceholder "This evaluation version">
 <!ENTITY oscVersion "Version:">
 <!ENTITY oscVersionPlaceholder "This Open Source Cartouche version">
 <!ENTITY evaluationLanguage "Language:">
-<!ENTITY dates "Dates:">
+<!ENTITY dates "Dates">
 <!ENTITY creationDate "Created:">
 <!ENTITY updateDate "Last updated:">
 <!ENTITY validationDate "Validated:">
