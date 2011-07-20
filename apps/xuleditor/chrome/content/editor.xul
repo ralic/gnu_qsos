@@ -310,7 +310,7 @@
           </groupbox>
 
           <groupbox>
-            <caption label="&oscAuthors;"/>
+            <caption id="oscLabel" label="&oscAuthors;"/>
             <vbox>
               <hbox flex="1">
                 <!--<grid flex="1">
@@ -431,10 +431,12 @@
                     <textbox id="componentHomepage" flex="1" oninput="docHasChanged(true);" placeholder="&componentHomepagePlaceholder;"/>
                   </row>
                   <row align="center">
-                    <label control="componentType" value="&componentType;"/>
-                    <textbox id="componentType" flex="1" oninput="docHasChanged(true);" placeholder="&componentTypePlaceholder;"/>
+                    <label control="componentTags" value="&componentTags;"/>
+                    <textbox id="componentTags" flex="1" oninput="docHasChanged(true);" placeholder="&componentTagsPlaceholder;"/>
                     <label control="componentStatus" value="&componentStatus;"/>
-                    <textbox id="componentStatus" flex="1" oninput="docHasChanged(true);" placeholder="&componentStatusPlaceholder;"/>
+                    <menulist id="componentStatus" oncommand="changeStatus(this);">
+                      <menupopup id="statusPopup"/>
+                    </menulist>
                   </row>
                   <row align="center">
                     <label control="componentVendor" value="&componentVendor;"/>

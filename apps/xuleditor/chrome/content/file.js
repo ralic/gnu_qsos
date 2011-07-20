@@ -374,6 +374,12 @@ function closeFile() {
   document.getElementById("scoreRadiogroup").selectedIndex = -1;
   document.getElementById("criteriaComments").value = "";
 
+  // Resets authors & team stuff
+  var toBeCleared = new Array("evaluationAuthorName", "evaluationAuthorEmail", "evaluationAuthorComment", "developerName", "developerEmail", "developerCompany", "contributorName", "contributorEmail", "contributorCompany");
+  for (var element in toBeCleared) {
+     document.getElementById(toBeCleared[element]).value = "";
+  }
+
   var tree = document.getElementById("criteriaTree");
   var treechildren = document.getElementById("myTreechildren");
   tree.removeChild(treechildren);

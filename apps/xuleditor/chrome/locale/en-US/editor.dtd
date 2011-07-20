@@ -45,8 +45,8 @@
 <!ENTITY closeFile "  Close file                      ">
 <!ENTITY exit "  Exit                              ">
 
-<!ENTITY description1 "Please open a QSOS evaluation (Open local file or Open remote file) or start a fresh one using templates (New file).">
-<!ENTITY description2 "The 'New file', 'Open remote file' and 'Save on remote server' functions are temporarily disabled.">
+<!ENTITY description1 "Please open a QSOS evaluation (Open local file) or start a fresh one using templates (New file from template).">
+<!ENTITY description2 "The 'Open remote file' and 'Save on remote server' functions are temporarily disabled.">
 <!ENTITY description3 "Please send your evaluations to the QSOS mailling list:">
 <!ENTITY maillingList "qsos-general@nongnu.org">
 
@@ -57,7 +57,7 @@
 
 <!-- Metadata Tab !-->
 <!ENTITY evaluationAuthors "Evaluation">
-<!ENTITY oscAuthors "Open Source Cartouche">
+<!ENTITY oscAuthors "OpenSource Cartouche">
 <!ENTITY authors "Authors">
 <!ENTITY name "Name:">
 <!ENTITY email "Email:">
@@ -78,7 +78,7 @@
 <!ENTITY company "Company:">
 
 <!-- Open Source Cartouche Tab !-->
-<!ENTITY component "Component:">
+<!ENTITY component "Component">
 <!ENTITY componentName "Name:">
 <!ENTITY componentNamePlaceholder "The current project name">
 <!ENTITY componentVersion "Version:">
@@ -91,8 +91,8 @@
 <!ENTITY componentStatus "Status:">
 <!ENTITY componentStatusPlaceholder "Current state of development (i.e. Alpha, Beta, RC, Stable...)">
 <!ENTITY componentReleaseDate "Release date:">
-<!ENTITY componentType "Type:">
-<!ENTITY componentTypePlaceholder "FIXME">
+<!ENTITY componentTags "Tags:">
+<!ENTITY componentTagsPlaceholder "Keywords related to the project">
 <!ENTITY componentMainTech "Main technology:">
 <!ENTITY componentMainTechPlaceholder "FIXME">
 <!ENTITY componentHomepage "Homepage:">

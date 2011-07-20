@@ -44,8 +44,8 @@ textElements["componentName"] = "component/name";
 textElements["componentVersion"] = "component/version";
 textElements["componentMainTech"] = "component/mainTech";
 textElements["componentHomepage"] = "component/homepage";
-textElements["componentType"] = "component/type";
-textElements["componentStatus"] = "component/status";
+textElements["componentTags"] = "component/tags";
+// textElements["componentStatus"] = "component/status";
 textElements["componentVendor"] = "component/vendor";
 textElements["componentDescription"] = "component/description";
 
@@ -79,13 +79,13 @@ textElements["oscReviewerComment"] = "openSourceCartouche/metadata/reviewer/comm
 var dateElements = new Object();
 dateElements["componentReleaseDate"] = "component/releaseDate";
 
-dateElements["evaluationReviewerDate"] = "evaluation/reviewer/date";
+dateElements["evaluationReviewerDate"] = "evaluation/reviewer/reviewDate";
 
 dateElements["evaluationCreationDate"] = "evaluation/dates/creation";
 dateElements["evaluationUpdateDate"] = "evaluation/dates/update";
 dateElements["evaluationValidationDate"] = "evaluation/dates/validation";
 
-dateElements["oscReviewerDate"] = "openSourceCartouche/metadata/reviewer/date";
+dateElements["oscReviewerDate"] = "openSourceCartouche/metadata/reviewer/reviewDate";
 
 dateElements["oscCreationDate"] = "openSourceCartouche/metadata/dates/creation";
 dateElements["oscUpdateDate"] = "openSourceCartouche/metadata/dates/update";
@@ -169,7 +169,7 @@ function setStateEvalOpen(state) {
   document.getElementById("criteriaTab").hidden = bool;
   // document.getElementById("chartTab").hidden = bool;
 
-  if (!state) { document.getElementById("saveFile").disabled = bool; }
+  document.getElementById("saveFile").disabled = "true";
   document.getElementById("saveFileAs").disabled = bool;
   document.getElementById("closeFile").disabled = bool;
 
@@ -186,6 +186,10 @@ function setStateEvalOpen(state) {
   document.getElementById("exportToFreeMind").disabled = bool;
 
   document.getElementById('tabs').selectedIndex = 2;
+
+  if (!state) {
+    document.getElementById("oscLabel").label = strbundle.getString("oscAuthors");
+  }
 }
 
 
@@ -232,36 +236,19 @@ function changeLicense(object) {
   docHasChanged();
 }
 
-
-function populateLanguage() {
-  var languages = myDoc.getLanguageList();
-  var languageList = document.getElementById("languagePopup");
-  for(var i = 0; i < languages.length; ++i) {
-    var menuitem = document.createElement("menuitem");
-    menuitem.setAttribute("label", languages[i]);
-    languageList.appendChild(menuitem);
-  }
+function changeStatus(object) {
+  myDoc.set("component/status", object.selectedItem.label);
+  docHasChanged();
 }
 
 
-function populateArchetype() {
-  var archetypes = myDoc.getArchetypeList();
-  var archetypeList = document.getElementById("archetypePopup");
-  for(var i = 0; i < archetypes.length; ++i) {
+function populateList(type) {
+  var items = myDoc.getList(type);
+  var listElement = document.getElementById(type + "Popup");
+  for(var i = 0; i < items.length; ++i) {
     var menuitem = document.createElement("menuitem");
-    menuitem.setAttribute("label", archetypes[i]);
-    archetypeList.appendChild(menuitem);
-  }
-}
-
-
-function populateLicense() {
-  var licenses = myDoc.getLicenseList();
-  var licenseList = document.getElementById("licensePopup");
-  for(var i = 0; i < licenses.length; ++i) {
-    var menuitem = document.createElement("menuitem");
-    menuitem.setAttribute("label", licenses[i]);
-    licenseList.appendChild(menuitem);
+    menuitem.setAttribute("label", items[i]);
+    listElement.appendChild(menuitem);
   }
 }
 
@@ -275,10 +262,15 @@ function emptyList(list) {
 
 function selectElementInList(list, name) {
   for (var i = 0; i < list.itemCount; ++i) {
-    if (list.getItemAtIndex(i).label == name) {
-      list.selectedItem = list.getItemAtIndex(i);
+    var tmp = list.getItemAtIndex(i);
+    if (tmp.label == name) {
+      list.selectedItem = tmp;
       return;
     }
+  }
+  if ((list.itemCount > 0) && (list.getItemAtIndex(0).label == "")) {
+    list.selectedItem = list.getItemAtIndex(0);
+    return;
   }
   alert("Can't find " + name + " in the list!");
 }
@@ -286,8 +278,19 @@ function selectElementInList(list, name) {
 
 // Setup editor when opening a file
 function setupEditorForEval() {
+  // Check the QSOS version
+  var QSOSVersion = myDoc.get("qsosMetadata/qsosVersion");
+  var currentVersion = strbundle.getString("currentQSOSVersion");
+  if (QSOSVersion != currentVersion) {
+    alert("Warning: This is a " + QSOSVersion + " QSOS evaluation, but this editor only supports version " + currentVersion + ".\n\nUse it at your own risk!");
+  }
+
   // Window's title
   document.title = strbundle.getString("QSOSEvaluation") + " " + myDoc.get("component/name") + " (" + myDoc.getfilename() + ")";
+
+  // Display the OpenSource Cartouche version
+  labelElem = document.getElementById("oscLabel");
+  labelElem.label = strbundle.getString("oscAuthors") + " (" + myDoc.get("openSourceCartouche/metadata/cartoucheVersion") + ")";
 
   // Setting up text fields (see editor.js for details)
   for (var element in textElements) {
@@ -318,12 +321,14 @@ function setupEditorForEval() {
 
 //   alert("la");
 
-  // Component fields
-  populateArchetype();
+  // Component & Status fields
+  populateList("archetype");
   selectElementInList(document.getElementById("componentArchetype"), myDoc.get("component/archetype"));
+  populateList("status");
+  selectElementInList(document.getElementById("componentStatus"), myDoc.get("component/status"));
 
   // License and Legal
-  populateLicense();
+  populateList("license");
   selectElementInList(document.getElementById("licenseName"), myDoc.get("openSourceCartouche/license/name"));
 
   //   populateLanguage();

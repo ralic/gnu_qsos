@@ -36,7 +36,7 @@
 
 <!-- File Tab !-->
 <!-- Les espaces ici servent à aligner les boutons sur la gauche, parce que je n'arrive pas à utiliser les styles CSS pour le faire proprement !-->
-<!ENTITY newFile "  Nouveau fichier                ">
+<!ENTITY newFile "  Nouveau à partir d'un patron  ">
 <!ENTITY openLocalFile "  Ouvrir un fichier local        ">
 <!ENTITY openRemoteFile "  Ouvrir fichier distant         ">
 <!ENTITY saveFile "  Enregistrer                       ">
@@ -45,19 +45,19 @@
 <!ENTITY closeFile "  Fermer le fichier                ">
 <!ENTITY exit "  Quitter                              ">
 
-<!ENTITY description1 "Veuillez ouvrir une évalutaion QSOS (Ouvrir un fichier local ou Ouvrir un fichier distant) ou en commencer une nouvelle à partir d'un patron (Nouveau Fichier).">
-<!ENTITY description2 "Les fonctions 'Nouveau fichier', 'Ouvrir un fichier distant' et 'Sauvegarder sur le serveur' ne sont plus disponible pour l'instant.">
+<!ENTITY description1 "Veuillez ouvrir une évalutaion QSOS (Ouvrir un fichier local) ou en commencer une nouvelle à partir d'un patron (Nouveau à partir d'un patron).">
+<!ENTITY description2 "Les fonctions 'Ouvrir un fichier distant' et 'Sauvegarder sur le serveur' ne sont plus disponibles pour l'instant.">
 <!ENTITY description3 "Vous pouvez envoyer vos évaluations sur la liste de discussion de QSOS :">
 <!ENTITY maillingList "qsos-french@nongnu.org">
 
-<!ENTITY updateFromTemplate "  Mettre à jour à partir d'un template       ">
+<!ENTITY updateFromTemplate "  Mettre à jour à partir d'un patron        ">
 <!ENTITY updateFromOldQSOS "  Importer une ancienne version de QSOS">
 <!ENTITY exportOSC "  Exporter l'Open Source Cartouche         ">
 <!ENTITY exportToFreeMind "  Exporter au format FreeMind                ">
 
 <!-- Metadata Tab !-->
 <!ENTITY evaluationAuthors "Evaluation">
-<!ENTITY oscAuthors "Template">
+<!ENTITY oscAuthors "OpenSource Cartouche">
 <!ENTITY authors "Auteurs">
 <!ENTITY name "Nom :">
 <!ENTITY email "Email :">
@@ -78,7 +78,7 @@
 <!ENTITY company "Entreprise :">
 
 <!-- Open Source Cartouche Tab !-->
-<!ENTITY component "Component :">
+<!ENTITY component "Component">
 <!ENTITY componentName "Nom :">
 <!ENTITY componentNamePlaceholder "Le nom du projet">
 <!ENTITY componentVersion "Version :">
@@ -91,8 +91,8 @@
 <!ENTITY componentStatus "Status :">
 <!ENTITY componentStatusPlaceholder "Etat de développement courant (i.e. Alpha, Beta, RC, Stable...)">
 <!ENTITY componentReleaseDate "Date de sortie :">
-<!ENTITY componentType "Type :">
-<!ENTITY componentTypePlaceholder "FIXME">
+<!ENTITY componentTags "Mots clés :">
+<!ENTITY componentTagsPlaceholder "Catégories et mots clés relatifs au projet">
 <!ENTITY componentMainTech "Technologie principale :">
 <!ENTITY componentMainTechPlaceholder "FIXME">
 <!ENTITY componentHomepage "Homepage :">

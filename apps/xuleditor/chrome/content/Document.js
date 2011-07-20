@@ -54,9 +54,7 @@ function Document() {
     this.setSheet = setSheet;
     this.getSheet = getSheet;
 
-    this.getLicenseList = getLicenseList;
-    this.getLanguageList = getLanguageList;
-    this.getArchetypeList = getArchetypeList;
+    this.getList = getList;
 
     this.getkeydesc = getkeydesc;
     this.setkeydesc = setkeydesc;
@@ -714,18 +712,19 @@ function Document() {
     // Lists management
     ////////////////////////////////////////////////////////////////////
 
-    function getLicenseList() {
-      return new Array("Affero GPL", "AFPL (Aladdin)", "APSL (Apple)", "Artistic License", "BSD", "CeCILL License (INRIA)", "Copyback License", "DFSG approved", "Eclipse Public License", "EFL (Eiffel)", "Free but Restricted", "Free for Eductional Use", "Free for Home Use", "Free for non-commercial use", "Freely Distribuable", "Freeware", "GNU FDL", "GNU GPL", "GNU approved License", "GNU LGPL", "LPPL (Latex)", "NOKOS (Nokia)", "NPL (Netscape)", "Open Content License", "OSI Approved", "Proprietary", "Proprietary with source", "Proprietary with trial", "Public Domain", "Shareware", "SUN Binary Code License", "The Apache License", "The Apache License 2.0", "Voxel Public License", "WTFPL", "Zope Public License");
-    }
-
-
-    function getLanguageList() {
-      return new Array("EN", "FR");
-    }
-
-
-    function getArchetypeList() {
-      return new Array("Framework", "Functional bundle", "Library", "Methodology/Documentation", "Plugin", "Stand alone");
+    function getList(type) {
+      if (type == "license") {
+        return new Array("", "Affero GPL", "AFPL (Aladdin)", "APSL (Apple)", "Artistic License", "BSD", "CeCILL License (INRIA)", "Copyback License", "DFSG approved", "Eclipse Public License", "EFL (Eiffel)", "Free but Restricted", "Free for Eductional Use", "Free for Home Use", "Free for non-commercial use", "Freely Distribuable", "Freeware", "GNU FDL", "GNU GPL", "GNU approved License", "GNU LGPL", "LPPL (Latex)", "NOKOS (Nokia)", "NPL (Netscape)", "Open Content License", "OSI Approved", "Proprietary", "Proprietary with source", "Proprietary with trial", "Public Domain", "Shareware", "SUN Binary Code License", "The Apache License", "The Apache License 2.0", "Voxel Public License", "WTFPL", "Zope Public License");
+      } else if (type == "language") {
+        return new Array("", "EN", "FR");
+      } else if (type == "archetype") {
+        return new Array("", "Framework", "Functional bundle", "Library", "Methodology/Documentation", "Plugin", "Stand alone");
+      } else if (type == "status") {
+        return new Array("", "Blueprint", "Alpha", "Beta", "RC", "Final");
+      } else {
+        alert("myDoc.getList: This type doesn't exist!");
+        return null;
+      }
     }
 
 
