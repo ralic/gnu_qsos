@@ -35,17 +35,15 @@ SKIN=chrome/skin/classic.css chrome/skin/document-open.png chrome/skin/documenta
 
 PREFS=defaults/preferences/qsos-xuled.js
 
-XSLT=chrome/content/freemind_to_qsos.xsl chrome/content/qsos_to_freemind.xsl chrome/content/qsos_to_new_qsos.xsl
-
 PREFS_XULRUNNER=defaults/preferences/qsos-xuled-xulrunner.js
 
 VERSION=2.0
 
 ext:
 	rm -f xuleditor-firefox-${VERSION}.xpi
-	zip -r xuleditor $(EXTPACK) $(EXTSRC) $(LOCALE) $(SKIN) $(PREFS) $(XSLT)
+	zip -r xuleditor $(EXTPACK) $(EXTSRC) $(LOCALE) $(SKIN) $(PREFS)
 	mv xuleditor.zip xuleditor-firefox-${VERSION}.xpi
 
 app:
 	rm -f xuleditor-application-${VERSION}.zip
-	zip -r xuleditor-application-${VERSION}.zip $(APPPACK) $(APPSRC) $(LOCALE) $(SKIN) $(PREFS_XULRUNNER) $(XSLT)
+	zip -r xuleditor-application-${VERSION}.zip $(APPPACK) $(APPSRC) $(LOCALE) $(SKIN) $(PREFS_XULRUNNER)
