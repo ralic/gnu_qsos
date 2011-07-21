@@ -163,30 +163,41 @@ function setStateEvalOpen(state) {
     var bool = "true";
     var nbool = "";
   }
+//   document.getElementById("fileTab").hidden = "true";
   // Settings tab disable as it's not currently functionnal
-  document.getElementById("configTab").hidden = "true";
+//   document.getElementById("configTab").hidden = "true";
   document.getElementById("metadataTab").hidden = bool;
   document.getElementById("oscTab").hidden = bool;
   document.getElementById("criteriaTab").hidden = bool;
   // document.getElementById("chartTab").hidden = bool;
 
   document.getElementById("saveFile").disabled = "true";
+  document.getElementById("saveFile").hidden= bool;
   document.getElementById("saveFileAs").disabled = bool;
+  document.getElementById("saveFileAs").hidden = bool;
   document.getElementById("closeFile").disabled = bool;
+  document.getElementById("closeFile").hidden = bool;
 
   // Update old QSOS button is active only when the evaluation is closed
   document.getElementById("updateFromOldQSOS").disabled = nbool;
+  document.getElementById("updateFromOldQSOS").hidden = nbool;
 
   // Remote saving is temporarily disabled
   document.getElementById("saveRemoteFile").disabled = "true";
+  document.getElementById("saveRemoteFile").hidden = "true";
   // Open Remote File button disable since it doesn't work for now
   document.getElementById("openRemoteFile").disabled = "true";
+  document.getElementById("openRemoteFile").hidden = "true";
 
-  document.getElementById("updateFromTemplate").disabled = bool;
-  document.getElementById("exportOSC").disabled = bool;
-  document.getElementById("exportToFreeMind").disabled = bool;
+  document.getElementById("extraToolbar").hidden = bool;
 
-  document.getElementById('tabs').selectedIndex = 2;
+  document.getElementById("updateFromTemplate").hidden = bool;
+  document.getElementById("exportOSC").hidden = bool;
+  document.getElementById("exportToFreeMind").hidden = bool;
+
+//   document.getElementById('tabs').selectedIndex = 2;
+  document.getElementById("tabPanels").hidden = bool;
+  document.getElementById("intoVbox").hidden = nbool;
 
   if (!state) {
     document.getElementById("oscLabel").label = strbundle.getString("oscAuthors");
@@ -273,11 +284,7 @@ function selectElementInList(list, name) {
       return;
     }
   }
-  if ((list.itemCount > 0) && (list.getItemAtIndex(0).label == "")) {
-    list.selectedItem = list.getItemAtIndex(0);
-    return;
-  }
-  alert("Can't find " + name + " in the list!");
+  list.selectedItem = list.getItemAtIndex(0);
 }
 
 
@@ -431,6 +438,12 @@ function setupEditorForEval() {
 
   setStateEvalOpen(true);
 
-  // Select the General tab
-  document.getElementById('tabs').selectedIndex = 3;
+//   // Select the General tab
+//   document.getElementById('tabs').selectedIndex = 3;
+}
+
+
+// Opens the about window
+function about() {
+  alert("TODO");
 }

@@ -35,7 +35,8 @@ function selectItem(id) {
     tmpCurrentId = tree.view.getItemAtIndex(i).firstChild.firstChild.getAttribute("id");
     if (tmpCurrentId == id) {
       tree.view.selection.select(i);
-      if (document.getElementById("tabBox").selectedIndex != 1) tree.treeBoxObject.scrollToRow(i);
+//       if (document.getElementById("tabBox").selectedIndex != 1)
+      tree.treeBoxObject.scrollToRow(i);
       break;
     }
   }

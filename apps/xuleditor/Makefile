@@ -25,7 +25,7 @@ APPPACK=application.ini Changes chrome.manifest LICENSE README xuleditor xuledit
 
 EXTPACK=Changes chrome.manifest install.rdf LICENSE README
 
-APPSRC=chrome/content/confirm.xul chrome/content/Document.js chrome/content/editor.js chrome/content/editor.xul chrome/content/load.js chrome/content/load.xul chrome/content/new.js chrome/content/new.xul chrome/content/logo-qsos.png chrome/content/logo32.png chrome/content/file.js chrome/content/opensourcecartouche.js chrome/content/criteria.js chrome/content/chart.js chrome/content/metadata.js chrome/content/compatibility.js
+APPSRC=chrome/content/confirm.xul chrome/content/Document.js chrome/content/editor.js chrome/content/editor.xul chrome/content/load.js chrome/content/load.xul chrome/content/new.js chrome/content/new.xul chrome/content/logo-qsos.png chrome/content/logo32.png chrome/content/file.js chrome/content/opensourcecartouche.js chrome/content/criteria.js chrome/content/chart.js chrome/content/metadata.js chrome/content/compatibility.js chrome/content/about.xul
 
 EXTSRC=$(APPSRC) chrome/content/qsos-overlay.js chrome/content/qsos-overlay.xul
 
