@@ -198,6 +198,9 @@
       <tabpanel id="MetadataTabPanel" class="over">
         <vbox flex="1">
           <groupbox>
+            <caption id="templateCaption" label="&template;"/>
+          </groupbox>
+          <groupbox>
             <caption label="&evaluationAuthors;"/>
             <vbox>
               <!--<grid flex="1">

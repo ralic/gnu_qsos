@@ -190,6 +190,7 @@ function setStateEvalOpen(state) {
 
   if (!state) {
     document.getElementById("oscLabel").label = strbundle.getString("oscAuthors");
+    document.getElementById("templateCaption").label = strbundle.getString("template");
   }
   } catch (e) {
     alert("setStateEvalOpen: error: " + e.message);
@@ -289,15 +290,23 @@ function setupEditorForEval() {
   if (QSOSVersion != currentVersion) {
     alert("Warning: This is a " + QSOSVersion + " QSOS evaluation, but this editor only supports version " + currentVersion + ".\n\nUse it at your own risk!");
   }
+  } catch (e) {
+    alert("setupEditorForEval: a problem occured in window setup stuff: " + e.message);
+  }
 
+  try {
   // Window's title
   document.title = strbundle.getString("QSOSEvaluation") + " " + myDoc.get("component/name") + " (" + myDoc.getfilename() + ")";
 
   // Display the OpenSource Cartouche version
-  labelElem = document.getElementById("oscLabel");
+  var labelElem = document.getElementById("oscLabel");
   labelElem.label = strbundle.getString("oscAuthors") + " (" + myDoc.get("openSourceCartouche/metadata/cartoucheVersion") + ")";
+
+  // Display the template type and verison
+  labelElem = document.getElementById("templateCaption");
+  labelElem.label = strbundle.getString("template") + " " + strbundle.getString("templateType") + " " + myDoc.get("qsosMetadata/template/type") + " (" + strbundle.getString("templateVersion") + " " + myDoc.get("qsosMetadata/template/version") + ")";
   } catch (e) {
-    alert("setupEditorForEval: a problem occured in window setup stuff: " + e.message);
+    alert("setupEditorForEval: a problem occured in label setup stuff: " + e.message);
   }
 
   try {

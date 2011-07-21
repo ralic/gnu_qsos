@@ -35,7 +35,7 @@ SKIN=chrome/skin/classic.css chrome/skin/document-open.png chrome/skin/documenta
 
 PREFS=defaults/preferences/qsos-xuled.js
 
-XSLT=chrome/xslt/freemind_to_qsos.xsl chrome/xslt/qsos_to_freemind.xsl chrome/xslt/qsos_to_new_qsos.xsl
+XSLT=chrome/content/freemind_to_qsos.xsl chrome/content/qsos_to_freemind.xsl chrome/content/qsos_to_new_qsos.xsl
 
 PREFS_XULRUNNER=defaults/preferences/qsos-xuled-xulrunner.js
 
