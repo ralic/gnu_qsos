@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <!--
 *  Copyright (C) 2006-2011 Atos
 *
@@ -23,3 +24,79 @@
 *  about.xul: about window
 *
 !-->
+
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+<!DOCTYPE dialog SYSTEM "chrome://qsos-xuled/locale/about.dtd">
+
+<window id="Load-Remote" title="&about;" flex="1" buttons="accept"
+        xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+ <groupbox flex="1">
+  <vbox flex="1">
+    <hbox>
+      <image src="chrome://qsos-xuled/content/logo-qsos.png" width="150" height="58"/>
+    </hbox>
+    <label value=""/>
+    <label value="&xuleditorName;"/>
+    <label value=""/>
+    <hbox>
+      <label value="&xuleditorLicense;"/>
+      <textbox value="&xuleditorLicenseUrl;" readonly="true" class="plain" style="background-color: transparent;" flex="1"/>
+    </hbox>
+    <label value=""/>
+    <label value="&currentQSOSVersion;"/>
+    <label value="&supportedQSOSVersions;"/>
+    <label value=""/>
+    <label value="&xuleditorAuthors;"/>
+    <grid>
+      <columns>
+        <column width="20"/>
+        <column flex="1"/>
+        <column width="20"/>
+        <column flex="100"/>
+      </columns>
+      <rows>
+        <row align="center">
+          <label value=""/>
+          <label value="&xuleditorAuthorName1;"/>
+          <label value=""/>
+          <textbox value="&xuleditorAuthorEmail1;" readonly="true" class="plain" style="background-color: transparent;" flex="1"/>
+        </row>
+        <row align="center">
+          <label value=""/>
+          <label value="&xuleditorAuthorName2;"/>
+          <label value=""/>
+          <textbox value="&xuleditorAuthorEmail2;" readonly="true" class="plain" style="background-color: transparent;" flex="1"/>
+        </row>
+      </rows>
+    </grid>
+    <label value=""/>
+    <hbox>
+      <label value="&iconsetAuthors;"/>
+      <textbox value="&iconsetUrl;" readonly="true" class="plain" style="background-color: transparent;" flex="1"/>
+    </hbox>
+    <label value=""/>
+    <hbox>
+      <label value="&sourceCode;"/>
+      <textbox value="&sourceCodeUrl;" readonly="true" class="plain" style="background-color: transparent;" flex="1"/>
+    </hbox>
+    <label value=""/>
+    <hbox>
+      <label value="&project;"/>
+      <textbox value="&projectUrl;" readonly="true" class="plain" style="background-color: transparent;" flex="1"/>
+    </hbox>
+    <!--
+    TODO: find the correct way to do HTML links in xul
+      <vbox id="bottomBox">
+        <hbox pack="center">
+          <label class="text-link bottom-link" href="about:license">AAAA</label>
+          <label class="text-link bottom-link" href="about:rights">BBBB</label>
+          <label class="text-link bottom-link" href="http://www.mozilla.com/legal/privacy/">CCCC</label>
+        </hbox>
+        <description id="trademark">
+          <label class="trademark-label">DDDDDDDDDD</label>
+        </description>
+      </vbox>
+      !-->
+    </vbox>
+  </groupbox>
+</window>

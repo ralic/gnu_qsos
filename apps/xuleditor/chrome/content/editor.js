@@ -279,12 +279,14 @@ function emptyList(list) {
 function selectElementInList(list, name) {
   for (var i = 0; i < list.itemCount; ++i) {
     var tmp = list.getItemAtIndex(i);
-    if (tmp.label == name) {
+    if (tmp.getAttribute("label") == name) {
       list.selectedItem = tmp;
       return;
     }
   }
-  list.selectedItem = list.getItemAtIndex(0);
+  if(list.selectedItem == null) {
+    list.selectedItem = list.getItemAtIndex(0);
+  }
 }
 
 
@@ -299,6 +301,7 @@ function setupEditorForEval() {
   }
   } catch (e) {
     alert("setupEditorForEval: a problem occured in window setup stuff: " + e.message);
+    return false;
   }
 
   try {
@@ -314,6 +317,7 @@ function setupEditorForEval() {
   labelElem.label = strbundle.getString("template") + " " + strbundle.getString("templateType") + " " + myDoc.get("qsosMetadata/template/type") + " (" + strbundle.getString("templateVersion") + " " + myDoc.get("qsosMetadata/template/version") + ")";
   } catch (e) {
     alert("setupEditorForEval: a problem occured in label setup stuff: " + e.message);
+    return false;
   }
 
   try {
@@ -323,6 +327,7 @@ function setupEditorForEval() {
   }
   } catch (e) {
     alert("setupEditorForEval: a problem occured in text setup: " + e.message);
+    return false;
   }
 
   try {
@@ -354,6 +359,7 @@ function setupEditorForEval() {
   }
   } catch (e) {
     alert("setupEditorForEval: a problem occured in date fields setup: " + e.message);
+    return false;
   }
 
   // Component & Status fields
@@ -368,6 +374,7 @@ function setupEditorForEval() {
   selectElementInList(document.getElementById("licenseName"), myDoc.get("openSourceCartouche/license/name"));
   } catch (e) {
     alert("setupEditorForEval: a problem occured in list stuff: " + e.message);
+    return false;
   }
 
   //   populateLanguage();
@@ -381,6 +388,7 @@ function setupEditorForEval() {
       var authors = myDoc.getAuthors(authorsArray[i]);
     } catch (e) {
       alert("setupEditorForEval: couldn't get " + authorsArray[i] + " authors: " + e.message);
+      return false;
     }
     var authorList = document.getElementById(authorsArray[i] + "Authors");
     for(var j = 0; j < authors.length; ++j) {
@@ -404,6 +412,7 @@ function setupEditorForEval() {
       var authors = myDoc.getTeam(teamArray[i]);
     } catch (e) {
       alert("setupEditorForEval: couldn't get " + teamArray[i] + " team: " + e.message);
+      return false;
     }
     var authorList = document.getElementById(teamArray[i] + "Team");
     for(var j = 0; j < authors.length; ++j) {
@@ -422,6 +431,7 @@ function setupEditorForEval() {
   }
   } catch (e) {
     alert("setupEditorForEval: a problem occured in author/team stuff: " + e.message);
+    return false;
   }
 
   // Tree population
@@ -431,6 +441,7 @@ function setupEditorForEval() {
     tree.appendChild(treechildren);
   } catch (e) {
     alert("setupEditorForEval: can't populate the criteria tree: " + e.message);
+    return false;
   }
 
   // Draw top-level SVG chart
@@ -440,10 +451,13 @@ function setupEditorForEval() {
 
 //   // Select the General tab
 //   document.getElementById('tabs').selectedIndex = 3;
+
+  return true;
 }
 
 
 // Opens the about window
 function about() {
-  alert("TODO");
+  getPrivilege();
+  window.openDialog('chrome://qsos-xuled/content/about.xul', 'Properties', 'chrome,dialog,modal', myDoc, openRemoteFile);
 }

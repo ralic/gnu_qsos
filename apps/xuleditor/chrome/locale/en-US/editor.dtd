@@ -145,7 +145,7 @@
 <!-- Settings Tab !-->
 <!ENTITY storedInfo "Currently used and stored informations">
 
-<!-- About Tab !-->
+<!-- About stuff !-->
 <!ENTITY xuleditorName "QSOS XUL Editor v2.0">
 <!ENTITY xuleditorLicense "Software under the terms of the GNU Public License version 2:">
 <!ENTITY xuleditorLicenseUrl "http://www.gnu.org/licenses/gpl-2.0.html">
