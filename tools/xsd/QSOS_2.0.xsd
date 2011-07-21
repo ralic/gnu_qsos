@@ -1,0 +1,286 @@
+<?xml version="1.0"? encoding="UTF-8">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+
+	<xs:element name="document">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="qsosMetadata"/>
+				<xs:element ref="openSourceCartouche"/>
+				<xs:element ref="section" minOccurs="1"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="qsosMetadata">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="template">
+				<xs:element ref="evaluation">
+				<xs:element name="language" type="xs.language"/>
+				<xs:element name="qsosVersion" type="xs.string"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="template">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="authors">
+				<xs:element ref="reviewer">
+				<xs:element ref="dates">
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+		<xs:element name="authors">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="author">
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="evaluation">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="authors">
+				<xs:element ref="reviewer">
+				<xs:element ref="dates">
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="openSourceCartouche">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="metadata"/>
+				<xs:element ref="component"/>
+				<xs:element ref="license"/>
+				<xs:element ref="team"/>
+				<xs:element ref="legal"/>
+				<xs:element ref="misc" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="metadata">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="cartoucheVersion" type="xs.string"/>
+				<xs:element ref="author"/>
+				<xs:element ref="reviewer"/>
+				<xs:element ref="dates"/>
+			</xs:sequence>
+	</xs:element>
+
+	<xs:element name="author">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="authorName" type="xs.string"/>
+				<xs:element name="authorEmail" type="xs.string"/>
+				<xs:element name="authorComment" type="xs.string" minOccurs="0"/>
+			</xs:sequence>
+	</xs:element>
+
+	<xs:element name="reviewer">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="reviewerName" type="xs.string"/>
+				<xs:element name="reviewerEmail" type="xs.string"/>
+				<xs:element name="reviewDate" type="xs.date"/>
+				<xs:element name="reviewerComment" type="xs.string"/>
+			</xs:sequence>
+	</xs:element>
+
+	<xs:element name="dates">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="creationDate" type="xs.date"/>
+				<xs:element name="updateDate" type="xs.date" minOccurs="0"/>
+				<xs:element name="validationDate" type="xs.date" minOccurs="0"/>
+			</xs:sequence>
+	</xs:element>
+
+	<xs:element name="component">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="name" type="xs.string"/>
+				<xs:element name="version" type="xs.string"/>
+				<xs:element name="status">
+				<xs:element name="releaseDate" type="xs.string"/>
+				<xs:element name="homepage" type="xs.string">
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:enumeration value="Blueprint"/>
+							<xs:enumeration value="Alpha"/>
+							<xs:enumeration value="Beta"/>
+							<xs:enumeration value="RC"/>
+							<xs:enumeration value="Final"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="description" type="xs.string"/>
+				<xs:element name="archetype">
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:enumeration value="Plugin"/>
+							<xs:enumeration value="StandAlone"/>
+							<xs:enumeration value="Library"/>
+							<xs:enumeration value="Framework"/>
+							<xs:enumeration value="Bundle"/>
+							<xs:enumeration value="Documentation"/>
+							<xs:enumeration value="Other"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="vendor" type="xs.string" minOccurs="0"/>
+				<xs:element name="tags" type="xs.string" minOccurs="0"/>
+				<xs:element name="mainTech" type="xs.string" minOccurs="0"/>
+				<xs:element name="checksum" type="xs.string" minOccurs="0"/>
+			</xs:sequence>
+	</xs:element>
+
+	<xs:element name="license">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="name" type="xs.string"/>
+				<xs:element name="version" type="xs.string"/>
+				<xs:element name="homepage" type="xs.string" minOccurs="0"/>
+			</xs:sequence>
+	</xs:element>
+
+		<xs:element name="team">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="number" type="xs.string"/>
+				<xs:element ref="developers" minOccurs="0"/>
+				<xs:element ref="contributors" minOccurs="0"/>
+			</xs:sequence>
+	</xs:element>
+
+		</xs:element>
+		 <xs:element name="developers">
+		 <xs:complexType>
+				<xs:sequence>
+					 <xs:element ref="developer" minOccurs="1"/>
+				</xs:sequence>
+	</xs:element>
+
+	<xs:element name="developer">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="developerName" type="xs.string"/>
+				<xs:element name="developerEmail" type="xs.string"/>
+				<xs:element name="developerCompany" type="xs.string" minOccurs="0"/>
+			</xs:sequence>
+	</xs:element>
+
+	</xs:element>
+		 <xs:element name="contributors">
+		 <xs:complexType>
+				<xs:sequence>
+					 <xs:element ref="contributor" minOccurs="1"/>
+				</xs:sequence>
+	</xs:element>
+
+	<xs:element name="contributor">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="contributorName" type="xs.string"/>
+				<xs:element name="contributorEmail" type="xs.string"/>
+				<xs:element name="contributorCompany" type="xs.string" minOccurs="0"/>
+			</xs:sequence>
+	</xs:element>
+
+		<xs:element name="legal">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="copyright" type="xs.string"/>
+				<xs:element ref="patents" minOccurs="0"/>
+				<xs:element ref="cyphers" minOccurs="0"/>
+			</xs:sequence>
+	</xs:element>
+
+	</xs:element>
+		 <xs:element name="patents">
+		 <xs:complexType>
+				<xs:sequence>
+					 <xs:element ref="patent" minOccurs="1"/>
+				</xs:sequence>
+	</xs:element>
+
+	<xs:element name="patent">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="number" type="xs.string"/>
+				<xs:element name="publicationDate" type="xs.date" minOccurs="0"/>
+				<xs:element name="description" type="xs.string" minOccurs="0"/>
+			</xs:sequence>
+	</xs:element>
+
+	</xs:element>
+		 <xs:element name="cyphers">
+		 <xs:complexType>
+				<xs:sequence>
+					 <xs:element ref="cypher" minOccurs="1"/>
+				</xs:sequence>
+	</xs:element>
+
+	<xs:element name="cypher">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="name" type="xs.string"/>
+				<xs:element name="exportRestrictions" type="xs.string" minOccurs="0"/>
+			</xs:sequence>
+	</xs:element>
+
+	<xs:element name="misc">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="comment" type="xs.string" minOccurs="0"/>
+				<xs:element name="dependencies" type="xs.string" minOccurs="0"/>
+				<xs:element name="fileNumber" type="xs.string" minOccurs="0"/>
+				<xs:element ref="data" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="data">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="volume" type="xs.decimal"/>
+				<xs:element name="unit" type="xs.string"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="section">
+		<xs:attribute name="name" use="required" type="xs.ID"/>
+		<xs:attribute name="title" use="required" type="xs.string"/>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="desc" type="xs.string"/>
+				<xs:element ref="element">
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+
+	<xs:element name="element">
+		<xs:attribute name="name" use="required" type="xs.ID"/>
+		<xs:attribute name="title" use="required" type="xs.string"/>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="desc" type="xs.string" maxOccurs="1"/>
+				<!-- Forcer les descriptions?-->
+				<xs:element ref="desc0" minOccurs="0" maxOccurs="1"/>
+				<xs:element ref="desc1" minOccurs="0" maxOccurs="1"/>
+				<xs:element ref="desc2" minOccurs="0" maxOccurs="1"/>
+				<xs:element ref="score" minOccurs="0" maxOccurs="1"/>
+				<xs:element ref="comment" minOccurs="0" maxOccurs="1"/>
+				<!-- Recursivity Starts Here -->
+				<xs:element ref="element" minOccurs="0">
+			</xs:sequence>
+		 </xs:complexType>
+	 </xs:element>
+</xs:schema>
