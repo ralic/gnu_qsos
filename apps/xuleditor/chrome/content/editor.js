@@ -154,6 +154,7 @@ function exitConfirmDialog() {
 // Toogle the state of the editor between "eval opened" and "eval closed"
 // The general, criteria and chart tabs are open only if a document is opened.
 function setStateEvalOpen(state) {
+  try {
   evaluationOpen = state;
   if (state) {
     var bool = "";
@@ -189,6 +190,9 @@ function setStateEvalOpen(state) {
 
   if (!state) {
     document.getElementById("oscLabel").label = strbundle.getString("oscAuthors");
+  }
+  } catch (e) {
+    alert("setStateEvalOpen: error: " + e.message);
   }
 }
 
@@ -279,6 +283,7 @@ function selectElementInList(list, name) {
 // Setup editor when opening a file
 function setupEditorForEval() {
   // Check the QSOS version
+  try {
   var QSOSVersion = myDoc.get("qsosMetadata/qsosVersion");
   var currentVersion = strbundle.getString("currentQSOSVersion");
   if (QSOSVersion != currentVersion) {
@@ -291,19 +296,29 @@ function setupEditorForEval() {
   // Display the OpenSource Cartouche version
   labelElem = document.getElementById("oscLabel");
   labelElem.label = strbundle.getString("oscAuthors") + " (" + myDoc.get("openSourceCartouche/metadata/cartoucheVersion") + ")";
+  } catch (e) {
+    alert("setupEditorForEval: a problem occured in window setup stuff: " + e.message);
+  }
 
+  try {
   // Setting up text fields (see editor.js for details)
   for (var element in textElements) {
     document.getElementById(element).value = myDoc.get(textElements[element]);
   }
+  } catch (e) {
+    alert("setupEditorForEval: a problem occured in text setup: " + e.message);
+  }
 
+  try {
   // Setting up date fields
   for (var element in dateElements) {
     var tmp = myDoc.get(dateElements[element]);
+//     alert(dateElements[element]);
     try {
       var tmpCb = document.getElementById(element + "Checkbox");
     } catch(e) {};
     if (tmpCb != null) {
+//       alert("Dans le if");
       if (tmp == "") {
         document.getElementById(element + "Checkbox").checked = false;
         document.getElementById(element).disabled = "true";
@@ -314,14 +329,19 @@ function setupEditorForEval() {
         document.getElementById(element).value = tmp;
       }
     } else {
-//       alert(element + " " + dateElements[element]);
-      document.getElementById(element).value = tmp;
+      if (tmp == "") {
+        document.getElementById(element).value = resetDate();
+      } else {
+        document.getElementById(element).value = tmp;
+      }
     }
   }
-
-//   alert("la");
+  } catch (e) {
+    alert("setupEditorForEval: a problem occured in date fields setup: " + e.message);
+  }
 
   // Component & Status fields
+  try {
   populateList("archetype");
   selectElementInList(document.getElementById("componentArchetype"), myDoc.get("component/archetype"));
   populateList("status");
@@ -330,11 +350,15 @@ function setupEditorForEval() {
   // License and Legal
   populateList("license");
   selectElementInList(document.getElementById("licenseName"), myDoc.get("openSourceCartouche/license/name"));
+  } catch (e) {
+    alert("setupEditorForEval: a problem occured in list stuff: " + e.message);
+  }
 
   //   populateLanguage();
   //   selectElementInList(document.getElementById("evaluationLanguage"), myDoc.get("qsosMetadata/language"));
 
   // Authors (evaluation + Open Source Cartouche metadata), Contributors, Developers
+  try {
   var authorsArray = new Array("evaluation");
   for (var i = 0; i < authorsArray.length; ++i) {
     try {
@@ -380,6 +404,9 @@ function setupEditorForEval() {
       authorList.appendChild(listitem);
     }
   }
+  } catch (e) {
+    alert("setupEditorForEval: a problem occured in author/team stuff: " + e.message);
+  }
 
   // Tree population
   try {
@@ -387,7 +414,7 @@ function setupEditorForEval() {
     var treechildren = buildtree();
     tree.appendChild(treechildren);
   } catch (e) {
-    alert(e.message);
+    alert("setupEditorForEval: can't populate the criteria tree: " + e.message);
   }
 
   // Draw top-level SVG chart

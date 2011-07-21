@@ -4,14 +4,14 @@
 
   <xsl:template match="document">
       <xsl:element name="map">
-        <xsl:attribute name="version">0.7.1</xsl:attribute>
+        <xsl:attribute name="version">0.9</xsl:attribute>
 	      <xsl:element name="node">
-	        <xsl:attribute name="ID"><xsl:value-of select="header/Cartouche/Component/ComponentName"/></xsl:attribute>
+	        <xsl:attribute name="ID"><xsl:value-of select="openSourceCartouche/Component/ComponentName"/></xsl:attribute>
 		<richcontent TYPE="NODE"><html>
 		  <head></head>
 		  <body><p style="text-align: center">
-		      <xsl:value-of select="header/Cartouche/Component/ComponentName"/><br/>
-		      <xsl:value-of select="header/Cartouche/Component/ComponentVersion"/>
+		      <xsl:value-of select="openSourceCartouche/Component/ComponentName"/><br/>
+		      <xsl:value-of select="openSourceCartouche/Component/ComponentVersion"/>
 		    </p></body>
 		</html></richcontent>
 	        <font NAME="SansSerif" BOLD="true" SIZE="12"/>

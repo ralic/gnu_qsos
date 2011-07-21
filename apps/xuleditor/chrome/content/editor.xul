@@ -299,7 +299,7 @@
                     <checkbox id="evaluationCreationDateCheckbox" label="&creationDate;" checked="true" oncommand="dateControl(this, 'evaluationCreationDate'); docHasChanged(true);"/>
                     <datepicker id="evaluationCreationDate" type="popup" onchange="docHasChanged(true);"/>
                     <separator class="groove-thin" orient="vertical"/>
-                    <checkbox id="evaluationUpdateCheckbox" label="&updateDate;" checked="true" oncommand="dateControl(this, 'evaluationUpdateDate'); docHasChanged(true);"/>
+                    <checkbox id="evaluationUpdateDateCheckbox" label="&updateDate;" checked="true" oncommand="dateControl(this, 'evaluationUpdateDate'); docHasChanged(true);"/>
                     <datepicker id="evaluationUpdateDate" type="popup" oninput="docHasChanged(true);"/>
                     <separator class="groove-thin" orient="vertical"/>
                     <checkbox id="evaluationValidationDateCheckbox" label="&validationDate;" checked="true" oncommand="dateControl(this, 'evaluationValidationDate'); docHasChanged(true);"/>
@@ -413,7 +413,7 @@
                   <row align="center">
                     <label control="componentName" value="&componentName;"/>
                     <textbox id="componentName" flex="1" oninput="docHasChanged(true);" placeholder="&componentNamePlaceholder;"/>
-                    <label control="componentReleaseDate" value="&componentReleaseDate;"/>
+                    <checkbox id="componentReleaseDateCheckbox" label="&componentReleaseDate;" checked="true" oncommand="dateControl(this, 'componentReleaseDate'); docHasChanged(true);"/>
                     <datepicker id="componentReleaseDate" type="popup" onchange="docHasChanged(true);"/>
                   </row>
                   <row align="center">

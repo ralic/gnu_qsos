@@ -335,6 +335,7 @@ function closeFile() {
   freezeScore("true");
   freezeComments("true");
 
+  try {
   // Resetting interface :
   document.getElementById("QSOS").setAttribute("title", strbundle.getString("QSOSEditor"));
 
@@ -351,7 +352,11 @@ function closeFile() {
     document.getElementById(element + "Checkbox").checked = false;
     } catch(e) {};
   }
+  } catch (e) {
+    alert("closeFile: problem in basic interface stuff: " + e.message);
+  }
 
+  try {
   // Component fields
   emptyList(document.getElementById("archetypePopup"));
   // License and Legal
@@ -378,6 +383,9 @@ function closeFile() {
   var toBeCleared = new Array("evaluationAuthorName", "evaluationAuthorEmail", "evaluationAuthorComment", "developerName", "developerEmail", "developerCompany", "contributorName", "contributorEmail", "contributorCompany");
   for (var element in toBeCleared) {
      document.getElementById(toBeCleared[element]).value = "";
+  }
+  } catch (e) {
+    alert("closeFile: problem in basic interface stuff: " + e.message);
   }
 
   var tree = document.getElementById("criteriaTree");
