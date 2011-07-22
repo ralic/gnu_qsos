@@ -28,6 +28,8 @@
 				<xs:element ref="authors">
 				<xs:element ref="reviewer">
 				<xs:element ref="dates">
+				<xs:element name="version" type="xs.string"/>
+				<xs:element name="type" type="xs.string"/>
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
@@ -76,28 +78,28 @@
 	<xs:element name="author">
 		<xs:complexType>
 			<xs:sequence>
-				<xs:element name="authorName" type="xs.string"/>
-				<xs:element name="authorEmail" type="xs.string"/>
-				<xs:element name="authorComment" type="xs.string" minOccurs="0"/>
+				<xs:element name="name" type="xs.string"/>
+				<xs:element name="email" type="xs.string"/>
+				<xs:element name="comment" type="xs.string" minOccurs="0"/>
 			</xs:sequence>
 	</xs:element>
 
 	<xs:element name="reviewer">
 		<xs:complexType>
 			<xs:sequence>
-				<xs:element name="reviewerName" type="xs.string"/>
-				<xs:element name="reviewerEmail" type="xs.string"/>
+				<xs:element name="name" type="xs.string"/>
+				<xs:element name="email" type="xs.string"/>
 				<xs:element name="reviewDate" type="xs.date"/>
-				<xs:element name="reviewerComment" type="xs.string"/>
+				<xs:element name="comment" type="xs.string"/>
 			</xs:sequence>
 	</xs:element>
 
 	<xs:element name="dates">
 		<xs:complexType>
 			<xs:sequence>
-				<xs:element name="creationDate" type="xs.date"/>
-				<xs:element name="updateDate" type="xs.date" minOccurs="0"/>
-				<xs:element name="validationDate" type="xs.date" minOccurs="0"/>
+				<xs:element name="creation" type="xs.date"/>
+				<xs:element name="update" type="xs.date" minOccurs="0"/>
+				<xs:element name="validation" type="xs.date" minOccurs="0"/>
 			</xs:sequence>
 	</xs:element>
 
@@ -107,8 +109,6 @@
 				<xs:element name="name" type="xs.string"/>
 				<xs:element name="version" type="xs.string"/>
 				<xs:element name="status">
-				<xs:element name="releaseDate" type="xs.string"/>
-				<xs:element name="homepage" type="xs.string">
 					<xs:simpleType>
 						<xs:restriction base="xs:string">
 							<xs:enumeration value="Blueprint"/>
@@ -119,6 +119,8 @@
 						</xs:restriction>
 					</xs:simpleType>
 				</xs:element>
+				<xs:element name="releaseDate" type="xs.string"/>
+				<xs:element name="homepage" type="xs.string">
 				<xs:element name="description" type="xs.string"/>
 				<xs:element name="archetype">
 					<xs:simpleType>
@@ -169,9 +171,9 @@
 	<xs:element name="developer">
 		<xs:complexType>
 			<xs:sequence>
-				<xs:element name="developerName" type="xs.string"/>
-				<xs:element name="developerEmail" type="xs.string"/>
-				<xs:element name="developerCompany" type="xs.string" minOccurs="0"/>
+				<xs:element name="name" type="xs.string"/>
+				<xs:element name="email" type="xs.string"/>
+				<xs:element name="company" type="xs.string" minOccurs="0"/>
 			</xs:sequence>
 	</xs:element>
 
@@ -186,9 +188,9 @@
 	<xs:element name="contributor">
 		<xs:complexType>
 			<xs:sequence>
-				<xs:element name="contributorName" type="xs.string"/>
-				<xs:element name="contributorEmail" type="xs.string"/>
-				<xs:element name="contributorCompany" type="xs.string" minOccurs="0"/>
+				<xs:element name="name" type="xs.string"/>
+				<xs:element name="email" type="xs.string"/>
+				<xs:element name="company" type="xs.string" minOccurs="0"/>
 			</xs:sequence>
 	</xs:element>
 
@@ -212,7 +214,8 @@
 	<xs:element name="patent">
 		<xs:complexType>
 			<xs:sequence>
-				<xs:element name="number" type="xs.string"/>
+				<xs:element name="IPCNumber" type="xs.string"/>
+				<xs:element name="name" type="xs.date" minOccurs="0"/>
 				<xs:element name="publicationDate" type="xs.date" minOccurs="0"/>
 				<xs:element name="description" type="xs.string" minOccurs="0"/>
 			</xs:sequence>

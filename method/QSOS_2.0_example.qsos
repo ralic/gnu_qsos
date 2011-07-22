@@ -77,13 +77,13 @@ You should clear them if you want me to validate your evaluation...</comment>
         <version>4.02 Beta +</version>
         <status>Beta</status>
         <releaseDate>2011-05-01</releaseDate>
-        <homepage>http://www.opensourcecartouche.org</homepage>
+        <homepage>http://www.crypton.org</homepage>
         <description>Crypthon is an advanced cypher/decypher library for python that implements the Asymetric Pipelined One-way Inter-Locked algorithm (APOIL)</description>
         <archetype>Library</archetype>
         <vendor>Doe inc.</vendor>
         <tags>Crypto, library</tags>
         <mainTech>Python</mainTech>
-        <checksum>I'm_a_cool_checksum_function://blablabla</checksum>
+        <checksum>md5:9ec4d855051a83cf456abe274415fa4f</checksum>
       </component>
       <license>
         <name>GNU FDL</name>
@@ -131,7 +131,7 @@ You should clear them if you want me to validate your evaluation...</comment>
         <copyright>2004-2011 Doe inc.</copyright>
         <patents>
           <patent>
-            <ipcNumber>0000</ipcNumber>
+            <ipcNumber>12345ABCDE</ipcNumber>
             <name>Asymetric Pipelined One-way Inter-Locked algorithm (APOIL)</name>
             <publicationDate>2004-04-05</publicationDate>
             <description>The APOIL algorithm protects undesired access to data by changing its content on the fly...</description>
@@ -154,38 +154,6 @@ You should clear them if you want me to validate your evaluation...</comment>
   </openSourceCartouche>
   <section name="maturity" title="Maturité">
     <desc>Section sur la maturité du projet</desc>
-    <element name="strategy" title="Gouvernance">
-        <desc>Stratégie du projet</desc>
-        <element name="copyrightOwner" title="Détenteur des droits">
-          <desc0>Les droits sont détenus par quelques individus ou entités commerciales</desc0>
-          <desc1>Les droits sont détenus par de nombreux individus de façon homogène</desc1>
-          <desc2>Les droits sont détenus par une entité légale, une fondation dans laquelle la communauté a confiance (ex: FSF, Apache, ObjectWeb)</desc2>
-          <comment></comment>
-          <score>2</score>
-        </element>
-        <element name="roadmap" title="Feuille de route">
-          <desc0>Pas de feuille de route publiée</desc0>
-          <desc1>Feuille de route sans planning</desc1>
-          <desc2>Feuille de route versionnée, avec planning et mesures de retard</desc2>
-          <comment></comment>
-          <score>1</score>
-        </element>
-        <element name="projectGovernance" title="Pilotage du projet">
-          <desc0>Pas de pilotage clair du projet</desc0>
-          <desc1>Pilotage dicté par un seul individu ou une entité commerciale</desc1>
-          <desc2>Indépendance forte de l&apos;équipe de développement, droits détenus par une entité reconnue</desc2>
-          <comment></comment>
-          <score>0</score>
-        </element>
-        <element name="distributionMode" title="Mode de distribution">
-          <desc0>Existence d&apos;une distribution commerciale ou propriétaire ou distribution libre limitée fonctionellement</desc0>
-          <desc1>Sous-partie du logiciel disponible sous licence propriétaire (Coeur / Greffons...)</desc1>
-          <desc2>Distribution totalement ouverte et libre</desc2>
-          <comment></comment>
-          <score></score>
-        </element>
-        <comment>zefegzeg</comment>
-    </element>
     <element name="legacy" title="Patrimoine">
         <element name="age" title="Age du projet">
           <desc0>Inférieur à trois mois</desc0>
@@ -194,7 +162,7 @@ You should clear them if you want me to validate your evaluation...</comment>
           <comment></comment>
           <score></score>
         </element>
-        <element name="crisisManagement" title="Historique">
+        <element name="history" title="Historique">
           <desc0>Le logiciel connaît de nombreux problèmes qui peuvent être rédhibitoires</desc0>
           <desc1>Pas de problèmes majeurs, ni de crise ou historique inconnu</desc1>
           <desc2>Bon historique de gestion de projet et de crise</desc2>
@@ -216,30 +184,62 @@ You should clear them if you want me to validate your evaluation...</comment>
           <score></score>
         </element>
     </element>
+    <element name="governance" title="Gouvernance">
+        <desc>Stratégie du projet</desc>
+        <element name="copyrightHolder" title="Détenteur des droits">
+          <desc0>Les droits sont détenus par quelques individus ou entités commerciales</desc0>
+          <desc1>Les droits sont détenus par de nombreux individus de façon homogène</desc1>
+          <desc2>Les droits sont détenus par une entité légale, une fondation dans laquelle la communauté a confiance (ex: FSF, Apache, ObjectWeb)</desc2>
+          <comment></comment>
+          <score>2</score>
+        </element>
+        <element name="roadmap" title="Feuille de route">
+          <desc0>Pas de feuille de route publiée</desc0>
+          <desc1>Feuille de route sans planning</desc1>
+          <desc2>Feuille de route versionnée, avec planning et mesures de retard</desc2>
+          <comment></comment>
+          <score>1</score>
+        </element>
+        <element name="management" title="Pilotage du projet">
+          <desc0>Pas de pilotage clair du projet</desc0>
+          <desc1>Pilotage dicté par un seul individu ou une entité commerciale</desc1>
+          <desc2>Indépendance forte de l&apos;équipe de développement, droits détenus par une entité reconnue</desc2>
+          <comment></comment>
+          <score>0</score>
+        </element>
+        <element name="distribution" title="Mode de distribution">
+          <desc0>Existence d&apos;une distribution commerciale ou propriétaire ou distribution libre limitée fonctionellement</desc0>
+          <desc1>Sous-partie du logiciel disponible sous licence propriétaire (Coeur / Greffons...)</desc1>
+          <desc2>Distribution totalement ouverte et libre</desc2>
+          <comment></comment>
+          <score></score>
+        </element>
+        <comment>zefegzeg</comment>
+    </element>
     <element name="activity" title="Activité">
         <desc>Activité du et autour du projet</desc>
-        <element name="contributionCommunity" title="Communauté des contributeurs">
+        <element name="community" title="Communauté des contributeurs">
           <desc0>Pas de communauté ou de réelle activité (forum, liste de diffusion…)</desc0>
           <desc1>Communauté existante avec une activité notable</desc1>
           <desc2>Communauté forte : grosse activité sur les forums, de nombreux contributeurs et défenseurs</desc2>
           <comment></comment>
           <score></score>
         </element>
-        <element name="bugsActivity" title="Activité autour des bugs">
+        <element name="bugFixing" title="Activité autour des bugs">
           <desc0>Pas de processus de gestion de bugs identifiés</desc0>
           <desc1>Activité détectable mais sans processus clairement exposé, temps de résolution long</desc1>
           <desc2>Forte réactivité, basée sur des rôles et des assignations de tâches</desc2>
           <comment></comment>
           <score></score>
         </element>
-        <element name="evolutionsActivity" title="Activité autour des fonctionnalités">
+        <element name="functionDevelopment" title="Activité autour des fonctionnalités">
           <desc0>Pas ou peu de nouvelles fonctionnalités</desc0>
           <desc1>Évolution du produit conduite par une équipe dédiée ou par des utilisateurs, mais sans processus clairement exposé</desc1>
           <desc2>Les requêtes pour les nouvelles fonctionnalités sont clairement outillées, feuille de route disponible</desc2>
           <comment></comment>
           <score></score>
         </element>
-        <element name="releaseActivity" title="Activité sur les releases/versions">
+        <element name="releases" title="Activité sur les releases/versions">
           <desc0>Très faible activité que ce soit sur les versions de production ou de développement (alpha, beta)</desc0>
           <desc1>Activité que ce soit sur les versions de production ou de développement (alpha, beta), avec des versions correctives mineures fréquentes</desc1>
           <desc2>Activité importante avec des versions correctives fréquentes et des versions majeures planifiées liées aux prévisions de la feuille de route</desc2>
@@ -247,7 +247,7 @@ You should clear them if you want me to validate your evaluation...</comment>
           <score></score>
         </element>
     </element>
-    <element name="industrialization" title="Industrialisation">
+    <element name="industrialisation" title="Industrialisation">
         <desc>Niveau d&apos;industrialisation du projet</desc>
         <element name="services" title="Services">
           <desc>Offres de services (Support, Formation, Audit...)</desc>
@@ -264,7 +264,7 @@ You should clear them if you want me to validate your evaluation...</comment>
           <comment></comment>
           <score></score>
         </element>
-        <element name="QC" title="Méthode qualité">
+        <element name="qualityControl" title="Méthode qualité">
           <desc>Processus et méthode qualité</desc>
           <desc0>Pas de processus qualité identifié</desc0>
           <desc1>Processus qualité existant, mais non formalisé ou non outillé</desc1>

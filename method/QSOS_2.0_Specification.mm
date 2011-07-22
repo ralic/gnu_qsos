@@ -1,16 +1,16 @@
 <map version="0.9.0">
 <!-- To view this file, download free mind mapping software FreeMind from http://freemind.sourceforge.net -->
-<node CREATED="1307433935211" ID="ID_246531047" MODIFIED="1311166239870" TEXT="QSOS 2.0">
+<node CREATED="1307433935211" ID="ID_246531047" MODIFIED="1311264898624" TEXT="QSOS 2.0">
 <font BOLD="true" NAME="SansSerif" SIZE="12"/>
 <hook NAME="accessories/plugins/HierarchicalIcons.properties"/>
-<node CREATED="1306847257001" FOLDED="true" ID="generic" MODIFIED="1311163264834" POSITION="left" TEXT="Maturit&#xe9;">
+<node CREATED="1306847257001" ID="generic" MODIFIED="1311264901056" POSITION="left" TEXT="Maturit&#xe9;">
 <font BOLD="true" NAME="SansSerif" SIZE="12"/>
 <node CREATED="1307459578754" ID="ID_829515390" MODIFIED="1307459611773" STYLE="bubble" TEXT="Axe donn&#xe9; &#xe0; titre d&apos;exemple r&#xe9;initialis&#xe9; lors de l&apos;export"/>
-<node CREATED="1306847257024" ID="strategy" MODIFIED="1306848223366" TEXT="Gouvernance">
+<node CREATED="1306847257024" FOLDED="true" ID="strategy" MODIFIED="1311264897281" TEXT="Gouvernance">
 <node CREATED="1306847257024" ID="ID_1129175527" MODIFIED="1306847257024" STYLE="bubble" TEXT="Strat&#xe9;gie du projet">
 <font ITALIC="true" NAME="SansSerif" SIZE="10"/>
 </node>
-<node CREATED="1306847257025" ID="copyrightowners" MODIFIED="1306848205360" TEXT="D&#xe9;tenteur des droits">
+<node CREATED="1306847257025" FOLDED="true" ID="copyrightowners" MODIFIED="1311264897130" TEXT="D&#xe9;tenteur des droits">
 <node CREATED="1306847257025" ID="ID_1692211230" MODIFIED="1306850141589" TEXT="Les droits sont d&#xe9;tenus par quelques individus ou entit&#xe9;s commerciales">
 <icon BUILTIN="full-0"/>
 </node>
@@ -21,7 +21,7 @@
 <icon BUILTIN="full-2"/>
 </node>
 </node>
-<node CREATED="1306847257026" ID="roadmap" MODIFIED="1306847939394" TEXT="Feuille de route">
+<node CREATED="1306847257026" FOLDED="true" ID="roadmap" MODIFIED="1311264897130" TEXT="Feuille de route">
 <node COLOR="#338800" CREATED="1306847257026" ID="ID_1914617156" MODIFIED="1311162734422" TEXT="Pas de feuille de route publi&#xe9;e">
 <icon BUILTIN="full-0"/>
 </node>
@@ -32,7 +32,7 @@
 <icon BUILTIN="full-2"/>
 </node>
 </node>
-<node CREATED="1306849515154" ID="ID_740641571" MODIFIED="1306849517849" TEXT="Pilotage du projet">
+<node CREATED="1306849515154" FOLDED="true" ID="ID_740641571" MODIFIED="1311264897131" TEXT="Pilotage du projet">
 <node CREATED="1306847257027" ID="ID_413080058" MODIFIED="1306849684549" TEXT="Pas de pilotage clair du projet">
 <icon BUILTIN="full-0"/>
 </node>
@@ -43,7 +43,7 @@
 <icon BUILTIN="full-2"/>
 </node>
 </node>
-<node CREATED="1306849899626" ID="ID_548761152" MODIFIED="1306849911781" TEXT="Mode de distribution">
+<node CREATED="1306849899626" FOLDED="true" ID="ID_548761152" MODIFIED="1311264897131" TEXT="Mode de distribution">
 <node CREATED="1306847257027" ID="ID_326808433" MODIFIED="1306850108523" TEXT="Existence d&apos;une distribution commerciale ou propri&#xe9;taire ou distribution libre limit&#xe9;e fonctionellement">
 <icon BUILTIN="full-0"/>
 </node>
@@ -55,8 +55,8 @@
 </node>
 </node>
 </node>
-<node CREATED="1306847257002" ID="maturity" MODIFIED="1306851259662" TEXT="Patrimoine">
-<node CREATED="1306847257002" ID="age" MODIFIED="1306853805753" TEXT="Age du projet">
+<node CREATED="1306847257002" FOLDED="true" ID="maturity" MODIFIED="1311264897282" TEXT="Patrimoine">
+<node CREATED="1306847257002" FOLDED="true" ID="age" MODIFIED="1311264897132" TEXT="Age du projet">
 <node CREATED="1306847257002" ID="ID_1399393385" MODIFIED="1306853655042" TEXT="Inf&#xe9;rieur &#xe0; trois mois">
 <icon BUILTIN="full-0"/>
 </node>
@@ -67,7 +67,7 @@
 <icon BUILTIN="full-2"/>
 </node>
 </node>
-<node CREATED="1306847257002" ID="historyknowproblems" MODIFIED="1306848848836" TEXT="Historique">
+<node CREATED="1306847257002" FOLDED="true" ID="historyknowproblems" MODIFIED="1311264897132" TEXT="Historique">
 <node CREATED="1306847257003" ID="ID_1055053760" MODIFIED="1306847257003" TEXT="Le logiciel conna&#xee;t de nombreux probl&#xe8;mes qui peuvent &#xea;tre r&#xe9;dhibitoires">
 <icon BUILTIN="full-0"/>
 </node>
@@ -78,7 +78,7 @@
 <icon BUILTIN="full-2"/>
 </node>
 </node>
-<node CREATED="1306847257006" ID="developersidentificationturnover" MODIFIED="1306850525777" TEXT="Equipe de d&#xe9;veloppement">
+<node CREATED="1306847257006" FOLDED="true" ID="developersidentificationturnover" MODIFIED="1311264897132" TEXT="Equipe de d&#xe9;veloppement">
 <node CREATED="1306847257006" ID="ID_279344414" MODIFIED="1306850462911" TEXT="Tr&#xe8;s peu de d&#xe9;veloppeurs identifi&#xe9;s ou d&#xe9;veloppeur unique">
 <icon BUILTIN="full-0"/>
 </node>
@@ -89,7 +89,7 @@
 <icon BUILTIN="full-2"/>
 </node>
 </node>
-<node CREATED="1306847257003" ID="popularity" MODIFIED="1306848857120" TEXT="Popularit&#xe9;">
+<node CREATED="1306847257003" FOLDED="true" ID="popularity" MODIFIED="1311264897132" TEXT="Popularit&#xe9;">
 <node CREATED="1306847257003" ID="ID_828500712" MODIFIED="1306847257003" TEXT="Tr&#xe8;s peu d&apos;utilisateurs identifi&#xe9;s">
 <icon BUILTIN="full-0"/>
 </node>
@@ -101,11 +101,11 @@
 </node>
 </node>
 </node>
-<node CREATED="1306847257006" ID="activity" MODIFIED="1306847260230" TEXT="Activit&#xe9;">
+<node CREATED="1306847257006" FOLDED="true" ID="activity" MODIFIED="1311264897282" TEXT="Activit&#xe9;">
 <node CREATED="1306847257006" ID="ID_560443100" MODIFIED="1306847257006" STYLE="bubble" TEXT="Activit&#xe9; du et autour du projet">
 <font ITALIC="true" NAME="SansSerif" SIZE="10"/>
 </node>
-<node CREATED="1306847257004" ID="contributingcommunity" MODIFIED="1306851454164" TEXT="Communaut&#xe9; des contributeurs">
+<node CREATED="1306847257004" FOLDED="true" ID="contributingcommunity" MODIFIED="1311264897133" TEXT="Communaut&#xe9; des contributeurs">
 <node CREATED="1306847257004" ID="ID_990810027" MODIFIED="1306847257004" TEXT="Pas de communaut&#xe9; ou de r&#xe9;elle activit&#xe9; (forum, liste de diffusion&#x2026;)">
 <icon BUILTIN="full-0"/>
 </node>
@@ -116,7 +116,7 @@
 <icon BUILTIN="full-2"/>
 </node>
 </node>
-<node CREATED="1306847257006" ID="activityonbugs" MODIFIED="1306850271107" TEXT="Activit&#xe9; autour des bugs">
+<node CREATED="1306847257006" FOLDED="true" ID="activityonbugs" MODIFIED="1311264897133" TEXT="Activit&#xe9; autour des bugs">
 <node CREATED="1306847257006" ID="ID_1964458088" MODIFIED="1306847257006" TEXT="R&#xe9;activit&#xe9; faible sur le forum ou sur la liste de diffusion, ou rien au sujet des corrections de bugs dans les notes de versions">
 <icon BUILTIN="full-0"/>
 </node>
@@ -128,7 +128,7 @@
 <icon BUILTIN="full-2"/>
 </node>
 </node>
-<node CREATED="1306847257006" ID="activityonfunctionalities" MODIFIED="1306850271748" TEXT="Activit&#xe9; autour des fonctionnalit&#xe9;s">
+<node CREATED="1306847257006" FOLDED="true" ID="activityonfunctionalities" MODIFIED="1311264897133" TEXT="Activit&#xe9; autour des fonctionnalit&#xe9;s">
 <node CREATED="1306847257006" ID="ID_1889366873" MODIFIED="1306847257006" TEXT="Pas ou peu de nouvelles fonctionnalit&#xe9;s">
 <icon BUILTIN="full-0"/>
 </node>
@@ -139,7 +139,7 @@
 <icon BUILTIN="full-2"/>
 </node>
 </node>
-<node CREATED="1306847257007" ID="activityonreleases" MODIFIED="1306850272455" TEXT="Activit&#xe9; sur les releases/versions">
+<node CREATED="1306847257007" FOLDED="true" ID="activityonreleases" MODIFIED="1311264897134" TEXT="Activit&#xe9; sur les releases/versions">
 <node CREATED="1306847257007" ID="ID_1274890780" MODIFIED="1306847257007" TEXT="Tr&#xe8;s faible activit&#xe9; que ce soit sur les versions de production ou de d&#xe9;veloppement (alpha, beta)">
 <icon BUILTIN="full-0"/>
 </node>
@@ -151,11 +151,11 @@
 </node>
 </node>
 </node>
-<node CREATED="1306847257007" ID="industrializedsolution" MODIFIED="1306847260276" TEXT="Industrialisation">
+<node CREATED="1306847257007" FOLDED="true" ID="industrializedsolution" MODIFIED="1311264897282" TEXT="Industrialisation">
 <node CREATED="1306847257007" ID="ID_1603425941" MODIFIED="1306847257007" STYLE="bubble" TEXT="Niveau d&apos;industrialisation du projet">
 <font ITALIC="true" NAME="SansSerif" SIZE="10"/>
 </node>
-<node CREATED="1306847257018" ID="services" MODIFIED="1306848608373" TEXT="Services">
+<node CREATED="1306847257018" FOLDED="true" ID="services" MODIFIED="1311264897134" TEXT="Services">
 <node CREATED="1306847257018" ID="ID_1286182543" MODIFIED="1306848692042" STYLE="bubble" TEXT="Offres de services (Support, Formation, Audit...)">
 <font ITALIC="true" NAME="SansSerif" SIZE="10"/>
 </node>
@@ -169,7 +169,7 @@
 <icon BUILTIN="full-2"/>
 </node>
 </node>
-<node CREATED="1306847257020" ID="documentation" MODIFIED="1306848608990" TEXT="Documentation">
+<node CREATED="1306847257020" FOLDED="true" ID="documentation" MODIFIED="1311264897134" TEXT="Documentation">
 <node CREATED="1306847257020" ID="ID_1935245522" MODIFIED="1306847257020" TEXT="Pas de documentation utilisateur">
 <icon BUILTIN="full-0"/>
 </node>
@@ -180,7 +180,7 @@
 <icon BUILTIN="full-2"/>
 </node>
 </node>
-<node CREATED="1306847257020" ID="qualityassurance" MODIFIED="1306847260306" TEXT="M&#xe9;thode qualit&#xe9;">
+<node CREATED="1306847257020" FOLDED="true" ID="qualityassurance" MODIFIED="1311264897135" TEXT="M&#xe9;thode qualit&#xe9;">
 <node CREATED="1306847257020" ID="ID_837499546" MODIFIED="1306847257020" STYLE="bubble" TEXT="Processus et m&#xe9;thode qualit&#xe9;">
 <font ITALIC="true" NAME="SansSerif" SIZE="10"/>
 </node>
@@ -194,7 +194,7 @@
 <icon BUILTIN="full-2"/>
 </node>
 </node>
-<node CREATED="1306847257025" ID="modificationofsourcecode" MODIFIED="1306847941039" TEXT="Modification du code">
+<node CREATED="1306847257025" FOLDED="true" ID="modificationofsourcecode" MODIFIED="1311264897135" TEXT="Modification du code">
 <node CREATED="1306847257025" ID="ID_627223624" MODIFIED="1306847257025" TEXT="Pas de moyen pratique de proposer des modifications de code">
 <icon BUILTIN="full-0"/>
 </node>
@@ -207,14 +207,14 @@
 </node>
 </node>
 </node>
-<node CREATED="1306825876351" FOLDED="true" ID="ID_375638368" MODIFIED="1311166437763" POSITION="right" TEXT="OpenSourceCartouche">
+<node CREATED="1306825876351" ID="ID_375638368" MODIFIED="1311264901060" POSITION="right" TEXT="OpenSourceCartouche">
 <font BOLD="true" NAME="SansSerif" SIZE="12"/>
-<node COLOR="#000000" CREATED="1306928723708" FOLDED="true" ID="ID_225187320" MODIFIED="1311166099668" TEXT="Metadata">
+<node COLOR="#000000" CREATED="1306928723708" FOLDED="true" ID="ID_225187320" MODIFIED="1311264897283" TEXT="Metadata">
 <icon BUILTIN="go"/>
 <node CREATED="1306928726203" ID="ID_602623956" MODIFIED="1311160992091" TEXT="CartoucheVersion">
 <icon BUILTIN="go"/>
 </node>
-<node CREATED="1306932072712" ID="ID_1480564279" MODIFIED="1307721719835" TEXT="Author">
+<node CREATED="1306932072712" FOLDED="true" ID="ID_1480564279" MODIFIED="1311264897135" TEXT="Author">
 <icon BUILTIN="go"/>
 <node CREATED="1306928737708" ID="ID_202792178" MODIFIED="1307721719832" TEXT="Name">
 <icon BUILTIN="go"/>
@@ -226,7 +226,7 @@
 <icon BUILTIN="go"/>
 </node>
 </node>
-<node CREATED="1306929279724" ID="ID_327390494" MODIFIED="1307721719835" TEXT="[Reviewer]">
+<node CREATED="1306929279724" FOLDED="true" ID="ID_327390494" MODIFIED="1311264897136" TEXT="[Reviewer]">
 <icon BUILTIN="go"/>
 <node CREATED="1306932088600" ID="ID_655543655" MODIFIED="1307721719832" TEXT="Name">
 <icon BUILTIN="go"/>
@@ -241,7 +241,7 @@
 <icon BUILTIN="go"/>
 </node>
 </node>
-<node CREATED="1307439822009" ID="ID_968251554" MODIFIED="1307721719835" TEXT="Dates">
+<node CREATED="1307439822009" FOLDED="true" ID="ID_968251554" MODIFIED="1311264897136" TEXT="Dates">
 <icon BUILTIN="go"/>
 <node CREATED="1307439826281" ID="ID_1714923957" MODIFIED="1311161021371" TEXT="Creation">
 <icon BUILTIN="go"/>
@@ -254,7 +254,7 @@
 </node>
 </node>
 </node>
-<node CREATED="1306825891576" FOLDED="true" ID="ID_1051347137" MODIFIED="1311166407141" TEXT="Component">
+<node CREATED="1306825891576" FOLDED="true" ID="ID_1051347137" MODIFIED="1311264897283" TEXT="Component">
 <icon BUILTIN="button_ok"/>
 <icon BUILTIN="go"/>
 <node CREATED="1306826331534" ID="ID_433957112" MODIFIED="1307787604643" TEXT="Name">
@@ -265,7 +265,7 @@
 <icon BUILTIN="button_ok"/>
 <icon BUILTIN="go"/>
 </node>
-<node CREATED="1306826340918" ID="ID_1237809668" MODIFIED="1311162724443" TEXT="Status">
+<node CREATED="1306826340918" FOLDED="true" ID="ID_1237809668" MODIFIED="1311264897136" TEXT="Status">
 <icon BUILTIN="button_ok"/>
 <icon BUILTIN="go"/>
 <icon BUILTIN="info"/>
@@ -286,7 +286,7 @@
 <node CREATED="1306854872331" ID="ID_291307165" MODIFIED="1307787629898" TEXT="Description">
 <icon BUILTIN="go"/>
 </node>
-<node CREATED="1306841073454" ID="ID_375053269" MODIFIED="1307815642641" TEXT="Archetype">
+<node CREATED="1306841073454" FOLDED="true" ID="ID_375053269" MODIFIED="1311264897137" TEXT="Archetype">
 <icon BUILTIN="go"/>
 <node CREATED="1306841094056" ID="ID_1068540677" MODIFIED="1311161064509" STYLE="bubble" TEXT="Plugin">
 <icon BUILTIN="go"/>
@@ -300,13 +300,13 @@
 <node CREATED="1307440527484" ID="ID_951193530" MODIFIED="1311161064508" STYLE="bubble" TEXT="Framework">
 <icon BUILTIN="go"/>
 </node>
-<node CREATED="1307440534532" ID="ID_1845022494" MODIFIED="1311166226542" STYLE="bubble" TEXT="Fonctionnal bundle">
+<node CREATED="1307440534532" ID="ID_1845022494" MODIFIED="1311262623868" STYLE="bubble" TEXT="Bundle">
 <icon BUILTIN="go"/>
 </node>
-<node CREATED="1306841100508" ID="ID_1610663812" MODIFIED="1311161064507" STYLE="bubble" TEXT="Methodology">
+<node CREATED="1306841100508" ID="ID_1610663812" MODIFIED="1311262617844" STYLE="bubble" TEXT="Documentation">
 <icon BUILTIN="go"/>
 </node>
-<node CREATED="1306841105942" ID="ID_1346031302" MODIFIED="1311161064507" STYLE="bubble" TEXT="Documentation">
+<node CREATED="1306841105942" ID="ID_1346031302" MODIFIED="1311262620979" STYLE="bubble" TEXT="Other">
 <icon BUILTIN="go"/>
 </node>
 </node>
@@ -326,7 +326,7 @@
 <icon BUILTIN="info"/>
 </node>
 </node>
-<node CREATED="1306826376438" FOLDED="true" ID="ID_346225819" MODIFIED="1311166409035" TEXT="License">
+<node CREATED="1306826376438" FOLDED="true" ID="ID_346225819" MODIFIED="1311264897284" TEXT="License">
 <icon BUILTIN="button_ok"/>
 <icon BUILTIN="go"/>
 <node CREATED="1306826382934" ID="ID_1592823642" MODIFIED="1307800030137" TEXT="Name">
@@ -342,14 +342,14 @@
 <icon BUILTIN="go"/>
 </node>
 </node>
-<node CREATED="1306826395928" FOLDED="true" ID="ID_153166410" MODIFIED="1311166414941" TEXT="Team">
+<node CREATED="1306826395928" FOLDED="true" ID="ID_153166410" MODIFIED="1311264897284" TEXT="Team">
 <icon BUILTIN="button_ok"/>
 <icon BUILTIN="go"/>
 <node CREATED="1306917582893" ID="ID_1973284830" MODIFIED="1307812347729" TEXT="Number">
 <icon BUILTIN="go"/>
 </node>
-<node CREATED="1311161645098" ID="ID_1976458248" MODIFIED="1311162151044" TEXT="[Developpers]">
-<node CREATED="1306826404310" ID="ID_648331085" MODIFIED="1311161682957" TEXT="Developper1">
+<node CREATED="1311161645098" FOLDED="true" ID="ID_1976458248" MODIFIED="1311264897137" TEXT="[Developers]">
+<node CREATED="1306826404310" FOLDED="true" ID="ID_648331085" MODIFIED="1311264896317" TEXT="Developper1">
 <icon BUILTIN="button_ok"/>
 <icon BUILTIN="go"/>
 <node CREATED="1306826408870" ID="ID_999450135" MODIFIED="1307812347726" TEXT="Name">
@@ -360,12 +360,12 @@
 <icon BUILTIN="button_ok"/>
 <icon BUILTIN="go"/>
 </node>
-<node CREATED="1306826415814" ID="ID_1982602656" MODIFIED="1307812347727" TEXT="Company">
+<node CREATED="1306826415814" ID="ID_1982602656" MODIFIED="1311259169838" TEXT="[Company]">
 <icon BUILTIN="button_ok"/>
 <icon BUILTIN="go"/>
 </node>
 </node>
-<node CREATED="1306826404310" ID="ID_1905920787" MODIFIED="1311161693502" TEXT="[Developper2]">
+<node CREATED="1306826404310" FOLDED="true" ID="ID_1905920787" MODIFIED="1311264896318" TEXT="[Developper2]">
 <icon BUILTIN="button_ok"/>
 <icon BUILTIN="go"/>
 <node CREATED="1306826408870" ID="ID_862751892" MODIFIED="1307812347726" TEXT="Name">
@@ -376,16 +376,16 @@
 <icon BUILTIN="button_ok"/>
 <icon BUILTIN="go"/>
 </node>
-<node CREATED="1306826415814" ID="ID_42296950" MODIFIED="1307812347727" TEXT="Company">
+<node CREATED="1306826415814" ID="ID_88412299" MODIFIED="1311259169838" TEXT="[Company]">
 <icon BUILTIN="button_ok"/>
 <icon BUILTIN="go"/>
 </node>
 </node>
 </node>
-<node CREATED="1306826404310" ID="ID_575376486" MODIFIED="1311162155662" TEXT="[Contributors]">
+<node CREATED="1306826404310" FOLDED="true" ID="ID_575376486" MODIFIED="1311264897137" TEXT="[Contributors]">
 <icon BUILTIN="button_ok"/>
 <icon BUILTIN="go"/>
-<node CREATED="1306826404310" ID="ID_1381848857" MODIFIED="1311162187758" TEXT="Contributor1">
+<node CREATED="1306826404310" FOLDED="true" ID="ID_1381848857" MODIFIED="1311264896319" TEXT="Contributor1">
 <icon BUILTIN="button_ok"/>
 <icon BUILTIN="go"/>
 <node CREATED="1306826408870" ID="ID_1070524258" MODIFIED="1307812347728" TEXT="Name">
@@ -396,12 +396,12 @@
 <icon BUILTIN="button_ok"/>
 <icon BUILTIN="go"/>
 </node>
-<node CREATED="1306826415814" ID="ID_793920283" MODIFIED="1307812347728" TEXT="Company">
+<node CREATED="1306826415814" ID="ID_1796973990" MODIFIED="1311259169838" TEXT="[Company]">
 <icon BUILTIN="button_ok"/>
 <icon BUILTIN="go"/>
 </node>
 </node>
-<node CREATED="1306826404310" ID="ID_111122081" MODIFIED="1311162192014" TEXT="[Contributor2]">
+<node CREATED="1306826404310" FOLDED="true" ID="ID_111122081" MODIFIED="1311264896319" TEXT="[Contributor2]">
 <icon BUILTIN="button_ok"/>
 <icon BUILTIN="go"/>
 <node CREATED="1306826408870" ID="ID_1941559582" MODIFIED="1307812347728" TEXT="Name">
@@ -412,24 +412,24 @@
 <icon BUILTIN="button_ok"/>
 <icon BUILTIN="go"/>
 </node>
-<node CREATED="1306826415814" ID="ID_1570647023" MODIFIED="1307812347728" TEXT="Company">
+<node CREATED="1306826415814" ID="ID_47529693" MODIFIED="1311259169838" TEXT="[Company]">
 <icon BUILTIN="button_ok"/>
 <icon BUILTIN="go"/>
 </node>
 </node>
 </node>
 </node>
-<node CREATED="1306826441814" FOLDED="true" ID="ID_370680648" MODIFIED="1311166429804" TEXT="Legal">
+<node CREATED="1306826441814" FOLDED="true" ID="ID_370680648" MODIFIED="1311264897284" TEXT="Legal">
 <icon BUILTIN="button_ok"/>
 <icon BUILTIN="go"/>
 <node CREATED="1306826444606" ID="ID_802424667" MODIFIED="1307815629159" TEXT="Copyright">
 <icon BUILTIN="button_ok"/>
 <icon BUILTIN="go"/>
 </node>
-<node CREATED="1306826451158" ID="ID_618549733" MODIFIED="1311166417184" TEXT="[Patents]">
+<node CREATED="1306826451158" FOLDED="true" ID="ID_618549733" MODIFIED="1311264897138" TEXT="[Patents]">
 <icon BUILTIN="button_ok"/>
 <icon BUILTIN="go"/>
-<node CREATED="1306826451158" ID="ID_1317404095" MODIFIED="1311165168180" TEXT="Patent1">
+<node CREATED="1306826451158" FOLDED="true" ID="ID_1317404095" MODIFIED="1311264896320" TEXT="Patent1">
 <icon BUILTIN="button_ok"/>
 <icon BUILTIN="go"/>
 <node CREATED="1306826457470" ID="ID_96617659" MODIFIED="1311165146635" TEXT="IPCNumber">
@@ -449,7 +449,7 @@
 <icon BUILTIN="go"/>
 </node>
 </node>
-<node CREATED="1306826451158" ID="ID_1305193131" MODIFIED="1311165185258" TEXT="[Patent2]">
+<node CREATED="1306826451158" FOLDED="true" ID="ID_1305193131" MODIFIED="1311264896320" TEXT="[Patent2]">
 <icon BUILTIN="button_ok"/>
 <icon BUILTIN="go"/>
 <node CREATED="1306826457470" ID="ID_1891307248" MODIFIED="1311165146635" TEXT="IPCNumber">
@@ -470,7 +470,8 @@
 </node>
 </node>
 </node>
-<node CREATED="1306826496190" FOLDED="true" ID="ID_357146995" MODIFIED="1311165231955" TEXT="[Cypher]">
+<node CREATED="1311259367062" FOLDED="true" ID="ID_240608190" MODIFIED="1311264897138" TEXT="Cyphers">
+<node CREATED="1306826496190" FOLDED="true" ID="ID_357146995" MODIFIED="1311264896320" TEXT="Cypher1">
 <icon BUILTIN="go"/>
 <node CREATED="1306826507375" ID="ID_544041361" MODIFIED="1307815629160" TEXT="Name">
 <icon BUILTIN="button_ok"/>
@@ -480,11 +481,26 @@
 <icon BUILTIN="go"/>
 </node>
 </node>
+<node CREATED="1306826496190" FOLDED="true" ID="ID_119808108" MODIFIED="1311264896320" TEXT="Cypher2">
+<icon BUILTIN="go"/>
+<node CREATED="1306826507375" ID="ID_1566832318" MODIFIED="1307815629160" TEXT="Name">
+<icon BUILTIN="button_ok"/>
+<icon BUILTIN="go"/>
 </node>
-<node CREATED="1306826514093" FOLDED="true" ID="ID_983537133" MODIFIED="1311166436443" TEXT="[Misc]">
+<node CREATED="1307815568560" ID="ID_807485627" MODIFIED="1307818812501" TEXT="[ExportRestrictions]">
+<icon BUILTIN="go"/>
+</node>
+</node>
+</node>
+</node>
+<node CREATED="1306826514093" FOLDED="true" ID="ID_983537133" MODIFIED="1311264897285" TEXT="[Misc]">
 <icon BUILTIN="button_ok"/>
 <icon BUILTIN="go"/>
 <node CREATED="1306826526062" ID="ID_1920727561" MODIFIED="1307819019698" TEXT="[Comment]">
+<icon BUILTIN="button_ok"/>
+<icon BUILTIN="go"/>
+</node>
+<node CREATED="1306826560758" ID="ID_1737297669" MODIFIED="1311259435854" TEXT="[Dependencies]">
 <icon BUILTIN="button_ok"/>
 <icon BUILTIN="go"/>
 </node>
@@ -492,7 +508,7 @@
 <icon BUILTIN="button_ok"/>
 <icon BUILTIN="go"/>
 </node>
-<node CREATED="1306826542374" ID="ID_604228069" MODIFIED="1307819019699" TEXT="[Data]">
+<node CREATED="1306826542374" FOLDED="true" ID="ID_604228069" MODIFIED="1311264897138" TEXT="[Data]">
 <icon BUILTIN="button_ok"/>
 <icon BUILTIN="go"/>
 <node CREATED="1306826549030" ID="ID_393179027" MODIFIED="1307819019697" TEXT="Volume">
@@ -504,26 +520,15 @@
 <icon BUILTIN="go"/>
 </node>
 </node>
-<node CREATED="1306826560758" ID="ID_1737297669" MODIFIED="1307819019698" TEXT="[Dependencies]">
-<icon BUILTIN="button_ok"/>
-<icon BUILTIN="go"/>
 </node>
 </node>
-</node>
-<node CREATED="1307434118419" FOLDED="true" ID="ID_1706745987" MODIFIED="1311166384155" POSITION="right" TEXT="QSOSMetadata">
+<node CREATED="1307434118419" ID="ID_1706745987" MODIFIED="1311264901061" POSITION="right" TEXT="QSOSMetadata">
 <font BOLD="true" NAME="SansSerif" SIZE="12"/>
-<node CREATED="1307434644476" ID="ID_1804775764" MODIFIED="1307721728802" TEXT="Language">
+<node CREATED="1307434587188" FOLDED="true" ID="ID_633346022" MODIFIED="1311264897285" TEXT="Template">
 <icon BUILTIN="go"/>
-</node>
-<node CREATED="1306928726203" ID="ID_1154346170" MODIFIED="1311166013099" TEXT="QSOSVersion">
+<node CREATED="1306932072712" FOLDED="true" ID="ID_1087196249" MODIFIED="1311264897138" TEXT="Authors">
 <icon BUILTIN="go"/>
-<icon BUILTIN="info"/>
-</node>
-<node CREATED="1307434587188" FOLDED="true" ID="ID_633346022" MODIFIED="1311166087005" TEXT="Template">
-<icon BUILTIN="go"/>
-<node CREATED="1306932072712" ID="ID_1087196249" MODIFIED="1307821048672" TEXT="Authors">
-<icon BUILTIN="go"/>
-<node CREATED="1306932072712" ID="ID_989124954" MODIFIED="1307821048674" TEXT="Author1">
+<node CREATED="1306932072712" FOLDED="true" ID="ID_989124954" MODIFIED="1311264896321" TEXT="Author1">
 <icon BUILTIN="go"/>
 <node CREATED="1306928737708" ID="ID_1985621625" MODIFIED="1307821048675" TEXT="Name">
 <icon BUILTIN="go"/>
@@ -535,7 +540,7 @@
 <icon BUILTIN="go"/>
 </node>
 </node>
-<node CREATED="1306932072712" ID="ID_304744867" MODIFIED="1311160343720" TEXT="[Author2]">
+<node CREATED="1306932072712" FOLDED="true" ID="ID_304744867" MODIFIED="1311264896321" TEXT="[Author2]">
 <icon BUILTIN="go"/>
 <node CREATED="1306928737708" ID="ID_1424119340" MODIFIED="1307821048674" TEXT="Name">
 <icon BUILTIN="go"/>
@@ -548,7 +553,7 @@
 </node>
 </node>
 </node>
-<node CREATED="1306929279724" ID="ID_1223978718" MODIFIED="1307821048672" TEXT="[Reviewer]">
+<node CREATED="1306929279724" FOLDED="true" ID="ID_1223978718" MODIFIED="1311264897139" TEXT="[Reviewer]">
 <icon BUILTIN="go"/>
 <node CREATED="1306932088600" ID="ID_1566121891" MODIFIED="1307821048673" TEXT="Name">
 <icon BUILTIN="go"/>
@@ -563,7 +568,7 @@
 <icon BUILTIN="go"/>
 </node>
 </node>
-<node CREATED="1307439822009" ID="ID_988534879" MODIFIED="1311159199602" TEXT="Dates">
+<node CREATED="1307439822009" FOLDED="true" ID="ID_988534879" MODIFIED="1311264897139" TEXT="Dates">
 <icon BUILTIN="go"/>
 <node CREATED="1307439826281" ID="ID_1673614988" MODIFIED="1311160236442" TEXT="Creation">
 <icon BUILTIN="go"/>
@@ -582,11 +587,11 @@
 <icon BUILTIN="info"/>
 </node>
 </node>
-<node CREATED="1306932060831" FOLDED="true" ID="ID_215660894" MODIFIED="1311166088221" TEXT="Evaluation">
+<node CREATED="1306932060831" FOLDED="true" ID="ID_215660894" MODIFIED="1311264897285" TEXT="Evaluation">
 <icon BUILTIN="go"/>
-<node CREATED="1306932072712" ID="ID_1240002846" MODIFIED="1311160476458" TEXT="Authors">
+<node CREATED="1306932072712" FOLDED="true" ID="ID_1240002846" MODIFIED="1311264897139" TEXT="Authors">
 <icon BUILTIN="go"/>
-<node CREATED="1306932072712" ID="ID_1559276020" MODIFIED="1311160372866" TEXT="Author1">
+<node CREATED="1306932072712" FOLDED="true" ID="ID_1559276020" MODIFIED="1311264896321" TEXT="Author1">
 <icon BUILTIN="go"/>
 <node CREATED="1306928737708" ID="ID_113789587" MODIFIED="1307821111645" TEXT="Name">
 <icon BUILTIN="go"/>
@@ -598,7 +603,7 @@
 <icon BUILTIN="go"/>
 </node>
 </node>
-<node CREATED="1306932072712" ID="ID_751645415" MODIFIED="1311160480010" TEXT="[Author2]">
+<node CREATED="1306932072712" FOLDED="true" ID="ID_751645415" MODIFIED="1311264896322" TEXT="[Author2]">
 <icon BUILTIN="go"/>
 <node CREATED="1306928737708" ID="ID_302171554" MODIFIED="1307821111644" TEXT="Name">
 <icon BUILTIN="go"/>
@@ -611,7 +616,7 @@
 </node>
 </node>
 </node>
-<node CREATED="1306929279724" ID="ID_1054760829" MODIFIED="1307821111645" TEXT="[Reviewer]">
+<node CREATED="1306929279724" FOLDED="true" ID="ID_1054760829" MODIFIED="1311264897139" TEXT="[Reviewer]">
 <icon BUILTIN="go"/>
 <node CREATED="1306932088600" ID="ID_352713232" MODIFIED="1307821111644" TEXT="Name">
 <icon BUILTIN="go"/>
@@ -626,7 +631,7 @@
 <icon BUILTIN="go"/>
 </node>
 </node>
-<node CREATED="1307439822009" ID="ID_1659627982" MODIFIED="1307821111645" TEXT="Dates">
+<node CREATED="1307439822009" FOLDED="true" ID="ID_1659627982" MODIFIED="1311264897140" TEXT="Dates">
 <icon BUILTIN="go"/>
 <node CREATED="1307439826281" ID="ID_1377236689" MODIFIED="1311160312617" TEXT="Creation">
 <icon BUILTIN="go"/>
@@ -638,6 +643,13 @@
 <icon BUILTIN="go"/>
 </node>
 </node>
+</node>
+<node CREATED="1307434644476" ID="ID_1804775764" MODIFIED="1311258490413" TEXT="Language">
+<icon BUILTIN="go"/>
+</node>
+<node CREATED="1306928726203" ID="ID_1154346170" MODIFIED="1311166013099" TEXT="QSOSVersion">
+<icon BUILTIN="go"/>
+<icon BUILTIN="info"/>
 </node>
 </node>
 </node>
