@@ -374,6 +374,15 @@ function closeFile() {
     }
   }
 
+  // Resets authors & team stuff
+  var toBeCleared = new Array("evaluationAuthorName", "evaluationAuthorEmail", "evaluationAuthorComment", "developerName", "developerEmail", "developerCompany", "contributorName", "contributorEmail", "contributorCompany");
+  for (var element in toBeCleared) {
+    document.getElementById(toBeCleared[element]).value = "";
+  }
+  } catch (e) {
+    alert("closeFile: problem in basic interface stuff: " + e.message);
+  }
+
   // Resets the criteria tab
   document.getElementById("criteriaDescription").value = "";
   document.getElementById("scoreDescription0").label = strbundle.getString("score0Label");
@@ -381,15 +390,6 @@ function closeFile() {
   document.getElementById("scoreDescription2").label = strbundle.getString("score2Label");
   document.getElementById("scoreRadiogroup").selectedIndex = -1;
   document.getElementById("criteriaComments").value = "";
-
-  // Resets authors & team stuff
-  var toBeCleared = new Array("evaluationAuthorName", "evaluationAuthorEmail", "evaluationAuthorComment", "developerName", "developerEmail", "developerCompany", "contributorName", "contributorEmail", "contributorCompany");
-  for (var element in toBeCleared) {
-     document.getElementById(toBeCleared[element]).value = "";
-  }
-  } catch (e) {
-    alert("closeFile: problem in basic interface stuff: " + e.message);
-  }
 
   var tree = document.getElementById("criteriaTree");
   var treechildren = document.getElementById("myTreechildren");

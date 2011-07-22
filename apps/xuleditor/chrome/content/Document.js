@@ -609,7 +609,7 @@ function Document() {
             return;
           }
         }
-        node = nodes.iterateNext()
+        node = nodes.iterateNext();
       }
       alert("Warning: delEvalAuthor: the author you're trying to remove has not been found!");
     }

@@ -110,7 +110,7 @@
 <!ENTITY componentTags "Mots clés :">
 <!ENTITY componentTagsPlaceholder "Catégories et mots clés relatifs au projet">
 <!ENTITY componentMainTech "Technologie principale :">
-<!ENTITY componentMainTechPlaceholder "FIXME">
+<!ENTITY componentMainTechPlaceholder "Le(s) langage(s) de programmation ou le(s) framework(s) utilisé(s)">
 <!ENTITY componentHomepage "Homepage :">
 <!ENTITY componentHomepagePlaceholder "http://...">
 

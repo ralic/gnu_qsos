@@ -110,7 +110,7 @@
 <!ENTITY componentTags "Tags:">
 <!ENTITY componentTagsPlaceholder "Keywords related to the project">
 <!ENTITY componentMainTech "Main technology:">
-<!ENTITY componentMainTechPlaceholder "FIXME">
+<!ENTITY componentMainTechPlaceholder "The language(s)/framework(s) used for this project">
 <!ENTITY componentHomepage "Homepage:">
 <!ENTITY componentHomepagePlaceholder "http://...">
 
