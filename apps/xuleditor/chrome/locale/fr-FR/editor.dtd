@@ -56,7 +56,7 @@
 <!ENTITY saveFile " Enregistrer">
 <!ENTITY saveFileAs " Enregistrer sous">
 <!ENTITY saveRemoteFile " Enregistrer sur le serveur">
-<!ENTITY closeFile " Fermer le fichier">
+<!ENTITY closeFile " Fermer">
 <!ENTITY about " A propos">
 <!ENTITY exit " Quitter">
 
