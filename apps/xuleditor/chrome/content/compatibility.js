@@ -151,8 +151,9 @@ function updateFromTemplate() {
 
   // Do the update
   try {
-    // Removes the metadata and OSC part and moves the sections
-    var newSheet = mergeSections(myDoc.getSheet(), templateXML);
+    // Creates of copy in order to work on the sheet easily
+    var tmpTemplateXML = parseXML(serializeXML(myDoc.getSheet()));
+    var newSheet = mergeSections(myDoc.getSheet(), templateXML, tmpTemplateXML);
   } catch(e) {
     alert("updateFromTemplate: " + e.message);
   }
@@ -188,10 +189,8 @@ function updateFromTemplate() {
 }
 
 
-function mergeSections(oldSheet, newSheet) {
+function mergeSections(oldSheet, newSheet, tmpOldSheet) {
   try {
-    var tmpOldSheet = oldSheet;
-
     // Removes the old sections form the oldSheet
     oldDocument = oldSheet.evaluate("//document", oldSheet, null, XPathResult.ORDERED_NODE_ITERATOR_TYPE, null).iterateNext();
     var oldSections = oldSheet.evaluate("//document/section", oldSheet, null, XPathResult.ORDERED_NODE_ITERATOR_TYPE, null);
@@ -220,8 +219,28 @@ function mergeSections(oldSheet, newSheet) {
 
 
 function updateNode(section, oldSheet) {
-  // FIXME
-//   alert("TODO");
+  try {
+    var comments = section.getElementsByTagName("comment");
+    var len = comments.length;
+//     alert(len);
+    for (var i = 0; i < len; ++i) {
+//       alert(comments[i]);
+      var id = comments[i].parentNode.getAttribute("name");
+//       alert(id);
+//       alert("//element[@name='" + id + "']");
+      var node = oldSheet.evaluate("//element[@name='" + id + "']", oldSheet, null, XPathResult.ORDERED_NODE_ITERATOR_TYPE, null).iterateNext();
+//       alert(node);
+      if (node) {
+//         alert("trouvé !");
+//         alert(node.getElementsByTagName("comment")[0]);
+//         alert(node.getElementsByTagName("comment")[0].textContent);
+        comments[i].textContent = node.getElementsByTagName("comment")[0].textContent;
+        comments[i].nextSibling.textContent = node.getElementsByTagName("score")[0].textContent;
+      }
+    }
+  } catch (e) {
+    alert("updateNode: " + e.message);
+  }
 
   return section;
 }
@@ -329,17 +348,15 @@ function exportToFreeMind() {
       return false;
     }
 
-    // FIXME
-    alert("FIXME");
-    var toTrans = myDoc.getSheet().getElementsByTagName("section")[0];
+    var toTrans = myDoc.getSheet();
 
     var processor = new XSLTProcessor();
     processor.importStylesheet(xslt);
     element = processor.transformToDocument(toTrans);
 
-    var serializer = new XMLSerializer();
-    var xmlOutput = serializer.serializeToString(toTrans);
-    alert("Output:\n" + xmlOutput);
+//     var serializer = new XMLSerializer();
+//     var xmlOutput = serializer.serializeToString(toTrans);
+//     alert("Output:\n" + xmlOutput);
 
     getPrivilege();
 //     alert("Choose the file to save the template.");
@@ -402,15 +419,15 @@ function updateFromOldQSOS() {
       return false;
     }
 
-    try {
-    var serializer = new XMLSerializer();
-    var xmlOutput = serializer.serializeToString(myDoc.sheet);
+//     try {
+//     var serializer = new XMLSerializer();
+//     var xmlOutput = serializer.serializeToString(myDoc.getSheet());
 //     alert("Output:\n" + xmlOutput);
-    } catch (e) {
-      alert("updateFromOldQSOS: failed to serialize, check your evaluation : " + e.message);
-      closeFile();
-      return false;
-    }
+//     } catch (e) {
+//       alert("updateFromOldQSOS: failed to serialize, check your evaluation : " + e.message);
+//       closeFile();
+//       return false;
+//     }
 
     try {
       setupEditorForEval();

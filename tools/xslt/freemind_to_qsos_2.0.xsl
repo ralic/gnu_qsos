@@ -30,11 +30,6 @@
 	  </template>
 	  <evaluation>
 	    <authors>
-		<author>
-		  <name></name>
-		  <email></email>
-		  <comment></comment>
-		</author>
 	    </authors>
 	    <reviewer>
 		<name></name>
@@ -92,18 +87,8 @@
 	  <team>
 	    <number></number>
 	    <developers>
-		<developer>
-		  <name></name>
-		  <email></email>
-		  <company></company>
-		</developer>
 	    </developers>
 	    <contributors>
-		<contributor>
-		  <name></name>
-		  <email></email>
-		  <company></company>
-		</contributor>
 	    </contributors>
 	  </team>
 	  <legal>

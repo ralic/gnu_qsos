@@ -55,7 +55,7 @@
       <toolbarbutton id="exportToFreeMind" label="&exportToFreeMind;" oncommand="exportToFreeMind();" accesskey="&exportToFreeMindAccessKey;"/>
       <toolbarbutton id="closeFile" label="&closeFile;"  oncommand="checkCloseFile();" accesskey="&closeFileAccessKey;"/>
       <!--<toolbarbutton id="about" label="&about;"  oncommand="about();" accesskey="&aboutAccessKey;"/>!-->
-        <!--<toolbarbutton id="exitApp" label="&exit;"  oncommand="if (checkCloseFile() == true) exit();" accesskey="&exitAccessKey;"/>!-->
+      <toolbarbutton id="exitApp" label="&exit;"  oncommand="if (checkCloseFile() == true) exit();" accesskey="&exitAccessKey;"/>
     </toolbar>
   </toolbox>
   <tabbox id="tabBox" flex="1">

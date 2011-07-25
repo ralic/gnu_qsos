@@ -186,6 +186,9 @@ function setStateEvalOpen(state) {
   document.getElementById("closeFile").disabled = bool;
   document.getElementById("closeFile").hidden = bool;
 
+  document.getElementById("exitApp").disabled = nbool;
+  document.getElementById("exitApp").hidden = nbool;
+
   // Remote saving is temporarily disabled
   document.getElementById("saveRemoteFile").disabled = "true";
   document.getElementById("saveRemoteFile").hidden = "true";

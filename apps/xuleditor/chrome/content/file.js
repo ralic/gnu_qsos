@@ -434,8 +434,6 @@ function exit() {
 /*
 // Shows the new.xul window in modal mode
 function newFileDialog() {
- //FIXME
- alert("FIXME");
  if (checkCloseFile() == false) {
    return;
  }
