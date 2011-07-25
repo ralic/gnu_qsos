@@ -1,0 +1,18 @@
+TODO list:
+
+ - Global changes:
+    * Correctly include XSLT files in the extension
+    * Improve QSOS 2.0 version support
+    * Find a way to validate sheets before opening them
+    * Clean the code, remove alert(), translate error messages
+
+ - Bugs to fix:
+    * Fix space related stuff (buttons)
+    * Make sure (" < > &) are replaced by XML equivalents (&lt &gt &...) in evaluations fields edited/imported by the editor
+    * Fix "collapse all" button randomly not working and sometimes very slow
+    * Fix selecting items in tree moving stuff the wrong way (xul bug ?)
+    * Make sure that open, load, new evaluations keeps item order.
+    * Opening a file with spaces with the command line doesn't work
+
+ - Translations:
+    * Keep french and english translations updated and correct wrong phrasing
