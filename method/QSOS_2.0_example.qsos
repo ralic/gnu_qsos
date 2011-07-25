@@ -53,7 +53,6 @@
   </qsosMetadata>
   <openSourceCartouche>
       <metadata>
-        <cartoucheVersion>0.2 Beta</cartoucheVersion>
         <author>
             <name>Hugh Doe</name>
             <email>hugh@doe.net</email>
@@ -69,8 +68,8 @@ You should clear them if you want me to validate your evaluation...</comment>
         <dates>
             <creation>2011-06-23</creation>
             <update>2011-06-24</update>
-            <validation></validation>
         </dates>
+        <cartoucheVersion>0.2 Beta</cartoucheVersion>
       </metadata>
       <component>
         <name>Crypthon</name>
@@ -131,25 +130,27 @@ You should clear them if you want me to validate your evaluation...</comment>
         <copyright>2004-2011 Doe inc.</copyright>
         <patents>
           <patent>
-            <ipcNumber>12345ABCDE</ipcNumber>
+            <IPCNumber>12345ABCDE</IPCNumber>
             <name>Asymetric Pipelined One-way Inter-Locked algorithm (APOIL)</name>
             <publicationDate>2004-04-05</publicationDate>
             <description>The APOIL algorithm protects undesired access to data by changing its content on the fly...</description>
           </patent>
         </patents>
-        <cypher>
-            <name>Asymetric Pipelined One-way Inter-Locked algorithm (APOIL)</name>
-            <exportRestrictions>France</exportRestrictions>
-        </cypher>
+        <cyphers>
+           <cypher>
+               <name>Asymetric Pipelined One-way Inter-Locked algorithm (APOIL)</name>
+               <exportRestrictions>France</exportRestrictions>
+           </cypher>
+        </cyphers>
       </legal>
       <misc>
         <comment>Nothing to be said here... for the moment</comment>
+        <dependencies></dependencies>
         <fileNumber>1</fileNumber>
         <data>
             <volume>122</volume>
             <unit>Ko</unit>
         </data>
-        <dependencies></dependencies>
       </misc>
   </openSourceCartouche>
   <section name="maturity" title="Maturité">
