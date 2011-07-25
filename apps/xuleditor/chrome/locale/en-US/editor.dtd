@@ -78,7 +78,7 @@
 <!ENTITY name "Name:">
 <!ENTITY email "Email:">
 <!ENTITY comment "Comment:">
-<!ENTITY addButton "  Add">
+<!ENTITY addButton " Add">
 <!ENTITY delButton " Delete">
 <!ENTITY reviewer "Reviewer">
 <!ENTITY date "Date:">
