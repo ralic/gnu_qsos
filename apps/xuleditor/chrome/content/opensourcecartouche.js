@@ -63,11 +63,11 @@ function addTeamMember(type) {
     var company = document.getElementById(type + "Company").value;
 
     if (name == "" || email == "") {
-      alert(strbundle.getString("validAuthor")); // TODO Change this
+      alert(strbundle.getString("validAuthor"));
     } else {
       for (var i = 1; i <= list.getRowCount(); ++i) {
         if (list.childNodes[i].firstChild.getAttribute("label") == name) {
-          alert(strbundle.getString("alreadyAuthor") + " " + name); // TODO Change this
+          alert(strbundle.getString("alreadyAuthor") + " " + name);
           return;
         }
       }
@@ -101,14 +101,14 @@ function delTeamMember(type) {
   var list = document.getElementById(type + "Team");
 
   if (list.selectedItem == null) {
-    alert("Select an author to be deleted"); // TODO localize
+    alert(strbundle.getString("selectPerson"));
     return;
   }
 
   if (list.getRowCount() <= 1) {
     document.getElementById("del" + type + "Button").disabled = true;
     if (list.getRowCount() == 0) {
-      alert("There isn't any author any more"); // TODO localize
+      alert(strbundle.getString("noOneToRemove"));
       return;
     }
   }

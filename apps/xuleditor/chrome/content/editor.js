@@ -171,16 +171,20 @@ function setStateEvalOpen(state) {
   document.getElementById("criteriaTab").hidden = bool;
   // document.getElementById("chartTab").hidden = bool;
 
+  document.getElementById("newFile").disabled = nbool;
+  document.getElementById("newFile").hidden = nbool;
+  document.getElementById("openFile").disabled = nbool;
+  document.getElementById("openFile").hidden = nbool;
+  // Update old QSOS button is active only when the evaluation is closed
+  document.getElementById("updateFromOldQSOS").disabled = nbool;
+  document.getElementById("updateFromOldQSOS").hidden = nbool;
+
   document.getElementById("saveFile").disabled = "true";
   document.getElementById("saveFile").hidden= bool;
   document.getElementById("saveFileAs").disabled = bool;
   document.getElementById("saveFileAs").hidden = bool;
   document.getElementById("closeFile").disabled = bool;
   document.getElementById("closeFile").hidden = bool;
-
-  // Update old QSOS button is active only when the evaluation is closed
-  document.getElementById("updateFromOldQSOS").disabled = nbool;
-  document.getElementById("updateFromOldQSOS").hidden = nbool;
 
   // Remote saving is temporarily disabled
   document.getElementById("saveRemoteFile").disabled = "true";
@@ -189,7 +193,7 @@ function setStateEvalOpen(state) {
   document.getElementById("openRemoteFile").disabled = "true";
   document.getElementById("openRemoteFile").hidden = "true";
 
-  document.getElementById("extraToolbar").hidden = bool;
+//   document.getElementById("extraToolbar").hidden = bool;
 
   document.getElementById("updateFromTemplate").hidden = bool;
   document.getElementById("exportOSC").hidden = bool;

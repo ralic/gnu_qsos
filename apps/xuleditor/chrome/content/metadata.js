@@ -88,14 +88,14 @@ function delAuthor(type) {
   var list = document.getElementById(type + "Authors");
 
   if (list.selectedItem == null) {
-    alert("Select an author to be deleted"); // TODO localize
+    alert(strbundle.getString("selectPerson"));
     return;
   }
 
   if (list.getRowCount() <= 1) {
     document.getElementById("delAuthorButton").disabled = true;
     if (list.getRowCount() == 0) {
-      alert("There isn't any author any more"); // TODO localize
+      alert(strbundle.getString("noOneToRemove"));
       return;
     }
   }

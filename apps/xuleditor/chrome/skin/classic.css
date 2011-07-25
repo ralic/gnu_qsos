@@ -66,16 +66,16 @@
 {list-style-image: url("chrome://qsos-xuled/skin/application-exit.png");}
 
 #updateFromTemplate
-{list-style-image: url("chrome://qsos-xuled/skin/edit-redo.png");}
+{list-style-image: url("chrome://qsos-xuled/skin/go-next-view-page.png");}
 
 #exportOSC
 {list-style-image: url("chrome://qsos-xuled/skin/edit-redo.png");}
 
 #exportToFreeMind
-{list-style-image: url("chrome://qsos-xuled/skin/edit-redo.png");}
+{list-style-image: url("chrome://qsos-xuled/skin/tools-wizard.png");}
 
 #updateFromOldQSOS
-{list-style-image: url("chrome://qsos-xuled/skin/edit-redo.png");}
+{list-style-image: url("chrome://qsos-xuled/skin/quickopen-file.png");}
 
 #about
 {list-style-image: url("chrome://qsos-xuled/skin/help-about.png");}

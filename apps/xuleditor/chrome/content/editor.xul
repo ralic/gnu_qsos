@@ -28,7 +28,7 @@
 <?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
 <?xml-stylesheet href="chrome://qsos-xuled/skin/classic.css" type="text/css"?>
 <!DOCTYPE window SYSTEM "chrome://qsos-xuled/locale/editor.dtd">
-<window id="QSOS" title="&QSOSEditor;" width="860px" height="790px"
+<window id="QSOS" title="&QSOSEditor;" width="920px" height="750px"
         xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
         xmlns:html="http://www.w3.org/1999/xhtml" onload="init();" onclose="exit()">
   <script type="application/x-javascript" src="Document.js"/>
@@ -50,14 +50,12 @@
       <toolbarbutton id="saveFile" label="&saveFile;" oncommand="saveFile();" accesskey="&saveFileAccessKey;"/>
       <toolbarbutton id="saveFileAs" label="&saveFileAs;" oncommand="saveFileAs();" accesskey="&saveFileAsAccessKey;"/>
       <toolbarbutton id="saveRemoteFile" label="&saveRemoteFile;" oncommand="saveRemote();" accesskey="&saveRemoteFileAccessKey;"/>
-      <toolbarbutton id="closeFile" label="&closeFile;"  oncommand="checkCloseFile();" accesskey="&closeFileAccessKey;"/>
-      <!--<toolbarbutton id="about" label="&about;"  oncommand="about();" accesskey="&aboutAccessKey;"/>!-->
-      <toolbarbutton id="exitApp" label="&exit;"  oncommand="if (checkCloseFile() == true) exit();" accesskey="&exitAccessKey;"/>
-    </toolbar>
-    <toolbar id="extraToolbar">
       <toolbarbutton id="updateFromTemplate" label="&updateFromTemplate;" oncommand="updateFromTemplate();" accesskey="&updateFromTemplateAccessKey;"/>
       <toolbarbutton id="exportOSC" label="&exportOSC;" oncommand="exportOSC();" accesskey="&exportOSCAccessKey;"/>
       <toolbarbutton id="exportToFreeMind" label="&exportToFreeMind;" oncommand="exportToFreeMind();" accesskey="&exportToFreeMindAccessKey;"/>
+      <toolbarbutton id="closeFile" label="&closeFile;"  oncommand="checkCloseFile();" accesskey="&closeFileAccessKey;"/>
+      <!--<toolbarbutton id="about" label="&about;"  oncommand="about();" accesskey="&aboutAccessKey;"/>!-->
+        <!--<toolbarbutton id="exitApp" label="&exit;"  oncommand="if (checkCloseFile() == true) exit();" accesskey="&exitAccessKey;"/>!-->
     </toolbar>
   </toolbox>
   <tabbox id="tabBox" flex="1">
