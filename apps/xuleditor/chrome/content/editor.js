@@ -186,6 +186,9 @@ function setStateEvalOpen(state) {
   document.getElementById("closeFile").disabled = bool;
   document.getElementById("closeFile").hidden = bool;
 
+  document.getElementById("exitApp").disabled = nbool;
+  document.getElementById("exitApp").hidden = nbool;
+
   // Remote saving is temporarily disabled
   document.getElementById("saveRemoteFile").disabled = "true";
   document.getElementById("saveRemoteFile").hidden = "true";
@@ -308,6 +311,7 @@ function setupEditorForEval() {
   }
   } catch (e) {
     alert("setupEditorForEval: a problem occured in window setup stuff: " + e.message);
+    closeFile();
     return false;
   }
 
@@ -324,6 +328,7 @@ function setupEditorForEval() {
   labelElem.label = strbundle.getString("template") + " " + strbundle.getString("templateType") + " " + myDoc.get("qsosMetadata/template/type") + " (" + strbundle.getString("templateVersion") + " " + myDoc.get("qsosMetadata/template/version") + ")";
   } catch (e) {
     alert("setupEditorForEval: a problem occured in label setup stuff: " + e.message);
+    closeFile();
     return false;
   }
 
@@ -334,6 +339,7 @@ function setupEditorForEval() {
   }
   } catch (e) {
     alert("setupEditorForEval: a problem occured in text setup: " + e.message);
+    closeFile();
     return false;
   }
 
@@ -366,6 +372,7 @@ function setupEditorForEval() {
   }
   } catch (e) {
     alert("setupEditorForEval: a problem occured in date fields setup: " + e.message);
+    closeFile();
     return false;
   }
 
@@ -381,6 +388,7 @@ function setupEditorForEval() {
   selectElementInList(document.getElementById("licenseName"), myDoc.get("openSourceCartouche/license/name"));
   } catch (e) {
     alert("setupEditorForEval: a problem occured in list stuff: " + e.message);
+    closeFile();
     return false;
   }
 
@@ -395,6 +403,7 @@ function setupEditorForEval() {
       var authors = myDoc.getAuthors(authorsArray[i]);
     } catch (e) {
       alert("setupEditorForEval: couldn't get " + authorsArray[i] + " authors: " + e.message);
+      closeFile();
       return false;
     }
     var authorList = document.getElementById(authorsArray[i] + "Authors");
@@ -419,6 +428,7 @@ function setupEditorForEval() {
       var authors = myDoc.getTeam(teamArray[i]);
     } catch (e) {
       alert("setupEditorForEval: couldn't get " + teamArray[i] + " team: " + e.message);
+      closeFile();
       return false;
     }
     var authorList = document.getElementById(teamArray[i] + "Team");
@@ -438,6 +448,7 @@ function setupEditorForEval() {
   }
   } catch (e) {
     alert("setupEditorForEval: a problem occured in author/team stuff: " + e.message);
+    closeFile();
     return false;
   }
 
@@ -448,6 +459,7 @@ function setupEditorForEval() {
     tree.appendChild(treechildren);
   } catch (e) {
     alert("setupEditorForEval: can't populate the criteria tree: " + e.message);
+    closeFile();
     return false;
   }
 

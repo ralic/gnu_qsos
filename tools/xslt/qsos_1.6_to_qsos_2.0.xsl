@@ -11,7 +11,7 @@
 
   <xsl:template match="header">
       <xsl:element name="qsosMetadata">
-        <xsl:element name="template">	
+        <xsl:element name="template">
 	  <xsl:apply-templates select="qsosappfamily"/>
 	  <xsl:apply-templates select="qsosspecificformat"/>
         </xsl:element>
