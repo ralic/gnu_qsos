@@ -10,7 +10,6 @@
   </xsl:template>
 
   <xsl:template match="header">
-    <xsl:element name="header">
       <xsl:element name="qsosMetadata">
         <xsl:element name="template">	
 	  <xsl:apply-templates select="qsosappfamily"/>
@@ -71,7 +70,6 @@
 	</legal>
 	<misc/>
       </xsl:element>
-    </xsl:element>
   </xsl:template>
 
   <xsl:template match="appname">
