@@ -392,13 +392,25 @@ function updateFromOldQSOS() {
 
     myDoc = new Document();
 
+    try {
     var processor = new XSLTProcessor();
     processor.importStylesheet(xslt);
     myDoc.setSheet(processor.transformToDocument(xml));
+    } catch (e) {
+      alert("updateFromOldQSOS: can't process sheet: " + e.message);
+      closeFile();
+      return false;
+    }
 
+    try {
     var serializer = new XMLSerializer();
     var xmlOutput = serializer.serializeToString(myDoc.sheet);
-    alert("Output:\n" + xmlOutput);
+//     alert("Output:\n" + xmlOutput);
+    } catch (e) {
+      alert("updateFromOldQSOS: failed to serialize, check your evaluation : " + e.message);
+      closeFile();
+      return false;
+    }
 
     try {
       setupEditorForEval();
@@ -408,7 +420,9 @@ function updateFromOldQSOS() {
       return false;
     }
   } catch (e) {
-    alert("updateFromOldQSOS: " + e.message);
+    alert("updateFromOldQSOS: general error: " + e.message);
+    closeFile();
+    return false;
   }
 }
 

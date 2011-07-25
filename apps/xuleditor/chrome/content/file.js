@@ -330,74 +330,80 @@ function resetDate() {
 // Closes the QSOS XML file and resets window
 function closeFile() {
   try{
-  if (myDoc == null) return;
-  myDoc = null;
-  id = null;
+    if (myDoc == null) return;
+    myDoc = null;
+    id = null;
 
-  setStateEvalOpen(false);
-  freezeScore("true");
-  freezeComments("true");
-
-  try {
-  // Resetting interface :
-  document.getElementById("QSOS").setAttribute("title", strbundle.getString("QSOSEditor"));
-
-  // Resetting basic text elements
-  for (var element in textElements) {
-    document.getElementById(element).value = "";
-  }
-
-  // Resetting date fields
-  for (var element in dateElements) {
-    document.getElementById(element).value = resetDate();
-    document.getElementById(element).disabled = false;
-    try {
-    document.getElementById(element + "Checkbox").checked = false;
-    } catch(e) {};
-  }
+    setStateEvalOpen(false);
+    freezeScore("true");
+    freezeComments("true");
   } catch (e) {
-    alert("closeFile: problem in basic interface stuff: " + e.message);
+    alert("closeFile: problem in first interface stuff: " + e.message);
   }
 
   try {
-  // Component fields
-  emptyList(document.getElementById("archetypePopup"));
-  // License and Legal
-  emptyList(document.getElementById("licensePopup"));
+    // Resetting interface :
+    document.getElementById("QSOS").setAttribute("title", strbundle.getString("QSOSEditor"));
 
-  // Reset authors & contributors lists
-  lists = new Array("evaluationAuthors","developerTeam","contributorTeam");
-  for (var i = 0; i < lists.length; ++i) {
-    var list = document.getElementById(lists[i]);
-    while (list.childElementCount > 1) {
-      list.removeChild(list.lastChild);
+    // Resetting basic text elements
+    for (var element in textElements) {
+      document.getElementById(element).value = "";
     }
-  }
 
-  // Resets authors & team stuff
-  var toBeCleared = new Array("evaluationAuthorName", "evaluationAuthorEmail", "evaluationAuthorComment", "developerName", "developerEmail", "developerCompany", "contributorName", "contributorEmail", "contributorCompany");
-  for (var element in toBeCleared) {
-    document.getElementById(toBeCleared[element]).value = "";
-  }
+    // Resetting date fields
+    for (var element in dateElements) {
+      document.getElementById(element).value = resetDate();
+      document.getElementById(element).disabled = false;
+      try {
+      document.getElementById(element + "Checkbox").checked = false;
+      } catch(e) {};
+    }
   } catch (e) {
-    alert("closeFile: problem in basic interface stuff: " + e.message);
+    alert("closeFile: problem in interface reset stuff: " + e.message);
   }
 
-  // Resets the criteria tab
-  document.getElementById("criteriaDescription").value = "";
-  document.getElementById("scoreDescription0").label = strbundle.getString("score0Label");
-  document.getElementById("scoreDescription1").label = strbundle.getString("score1Label");
-  document.getElementById("scoreDescription2").label = strbundle.getString("score2Label");
-  document.getElementById("scoreRadiogroup").selectedIndex = -1;
-  document.getElementById("criteriaComments").value = "";
+  try {
+    // Component fields
+    emptyList(document.getElementById("archetypePopup"));
+    // License and Legal
+    emptyList(document.getElementById("licensePopup"));
 
-  var tree = document.getElementById("criteriaTree");
-  var treechildren = document.getElementById("myTreechildren");
-  tree.removeChild(treechildren);
-  clearChart();
-  clearLabels();
+    // Reset authors & contributors lists
+    lists = new Array("evaluationAuthors","developerTeam","contributorTeam");
+    for (var i = 0; i < lists.length; ++i) {
+      var list = document.getElementById(lists[i]);
+      while (list.childElementCount > 1) {
+        list.removeChild(list.lastChild);
+      }
+    }
+
+    // Resets authors & team stuff
+    var toBeCleared = new Array("evaluationAuthorName", "evaluationAuthorEmail", "evaluationAuthorComment", "developerName", "developerEmail", "developerCompany", "contributorName", "contributorEmail", "contributorCompany");
+    for (var element in toBeCleared) {
+      document.getElementById(toBeCleared[element]).value = "";
+    }
+  } catch (e) {
+    alert("closeFile: problem in interface lists reset stuff: " + e.message);
+  }
+
+  try {
+    // Resets the criteria tab
+    document.getElementById("criteriaDescription").value = "";
+    document.getElementById("scoreDescription0").label = strbundle.getString("score0Label");
+    document.getElementById("scoreDescription1").label = strbundle.getString("score1Label");
+    document.getElementById("scoreDescription2").label = strbundle.getString("score2Label");
+    document.getElementById("scoreRadiogroup").selectedIndex = -1;
+    document.getElementById("criteriaComments").value = "";
+
+    var tree = document.getElementById("criteriaTree");
+    var treechildren = document.getElementById("myTreechildren");
+    if (tree.firstChild) {
+      tree.removeChild(treechildren);
+    }
+    clearChart();
+    clearLabels();
   } catch(e) {
-    alert("closeFile: " + e.message);
+//     alert("closeFile: problem in final part: " + e.message);
   }
 }
 

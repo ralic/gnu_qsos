@@ -297,6 +297,9 @@ function setupEditorForEval() {
   var QSOSVersion = myDoc.get("qsosMetadata/qsosVersion");
   var currentVersion = strbundle.getString("currentQSOSVersion");
   if (QSOSVersion != currentVersion) {
+    if (QSOSVersion == "") {
+      QSOSVersion = "'unknown version'";
+    }
     alert("Warning: This is a " + QSOSVersion + " QSOS evaluation, but this editor only supports version " + currentVersion + ".\n\nUse it at your own risk!");
   }
   } catch (e) {
