@@ -443,11 +443,14 @@ function updateFromOldQSOS() {
   }
 }
 
+
+////////////////////////////////////////////////////////////////////////////////
+
 // Commands used to produce "Javascript compliant" strings form raw xslt files:
 // sed 's/"/\\"/g' <file.xslt> | sed 's/$/\\/g'
 
 var qsos_1_6_to_qsos_2_0 = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\
-<xsl:stylesheet xmlns:xsl=\"http://www.w3.org/1999/XSL/Transform\" version=\"1.0\">\
+<xsl:stylesheet xmlns:xsl=\"http://www.w3.org/1999/XSL/Transform\" xmlns:str=\"http://exslt.org/strings\" xmlns:fn=\"http://www.w3.org/2005/xpath-functions\" version=\"1.0\">\
 <xsl:output method=\"xml\" indent=\"yes\" encoding=\"UTF-8\"/>\
 \
 <xsl:template match=\"document\">\
@@ -459,31 +462,64 @@ var qsos_1_6_to_qsos_2_0 = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\
 \
 <xsl:template match=\"header\">\
 <xsl:element name=\"header\">\
-<xsl:element name=\"metadata\">\
-<xsl:apply-templates select=\"authors\"/>\
-<xsl:apply-templates select=\"dates\"/>\
-<xsl:apply-templates select=\"language\"/>\
-<xsl:apply-templates select=\"qsosformat\"/>\
+<xsl:element name=\"qsosMetadata\">\
+<xsl:element name=\"template\">\
+<xsl:apply-templates select=\"qsosappfamily\"/>\
 <xsl:apply-templates select=\"qsosspecificformat\"/>\
 </xsl:element>\
-<xsl:element name=\"cartouche\">\
-<xsl:attribute name=\"version\">0.1</xsl:attribute>\
-<Component>\
+<xsl:element name=\"evaluation\">\
+<xsl:apply-templates select=\"authors\"/>\
+<reviewer>\
+<name/>\
+<email/>\
+<reviewDate/>\
+<comment/>\
+</reviewer>\
+<xsl:apply-templates select=\"dates\"/>\
+</xsl:element>\
+<xsl:apply-templates select=\"language\"/>\
+<xsl:apply-templates select=\"qsosformat\"/>\
+</xsl:element>\
+<xsl:element name=\"openSourceCartouche\">\
+<metadata>\
+<cartoucheVersion>1.0</cartoucheVersion>\
+<author>\
+<name/>\
+<email/>\
+<comment/>\
+</author>\
+<reviewer>\
+<name/>\
+<email/>\
+<comment/>\
+<reviewDate/>\
+</reviewer>\
+<xsl:apply-templates select=\"dates\"/>\
+</metadata>\
+<component>\
 <xsl:apply-templates select=\"appname\"/>\
 <xsl:apply-templates select=\"release\"/>\
+<xsl:apply-templates select=\"desc\"/>\
+<archetype/>\
+<vendor/>\
 <xsl:apply-templates select=\"url\"/>\
 <status/>\
 <releaseDate/>\
 <xsl:apply-templates select=\"qsosappfamily\"/>\
+<tags/>\
 <mainTech/>\
-</Component>\
+</component>\
 <license>\
 <xsl:apply-templates select=\"licensedesc\"/>\
 <version></version>\
 <homepage></homepage>\
 </license>\
-<team/>\
-<legal/>\
+<team>\
+<number/>\
+</team>\
+<legal>\
+<copyright/>\
+</legal>\
 <misc/>\
 </xsl:element>\
 </xsl:element>\
@@ -495,6 +531,10 @@ var qsos_1_6_to_qsos_2_0 = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\
 \
 <xsl:template match=\"release\">\
 <xsl:element name=\"version\"><xsl:apply-templates select=\"@*|node()\"/></xsl:element>\
+</xsl:template>\
+\
+<xsl:template match=\"desc\">\
+<xsl:element name=\"description\"><xsl:apply-templates select=\"@*|node()\"/></xsl:element>\
 </xsl:template>\
 \
 <xsl:template match=\"url\">\
@@ -524,8 +564,28 @@ var qsos_1_6_to_qsos_2_0 = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\
 \
 <xsl:template match=\"dates\">\
 <dates>\
-<creation><xsl:value-of select=\"creation\"/></creation>\
-<validation><xsl:value-of select=\"validation\"/></validation>\
+<creation>\
+<xsl:choose>\
+<xsl:when test=\"contains(creation,'/')\">\
+<xsl:variable name=\"tokenizedDate\" select=\"str:tokenize(creation,'/')\"/>\
+<xsl:value-of select=\"$tokenizedDate[3]\"/>-<xsl:value-of select=\"$tokenizedDate[2]\"/>-<xsl:value-of select=\"$tokenizedDate[1]\"/>\
+</xsl:when>\
+<xsl:otherwise>\
+<xsl:value-of select=\"creation\"/>\
+</xsl:otherwise>\
+</xsl:choose>\
+</creation>\
+<validation>\
+<xsl:choose>\
+<xsl:when test=\"contains(validation,'/')\">\
+<xsl:variable name=\"tokenizedDate\" select=\"str:tokenize(validation,'/')\"/>\
+<xsl:value-of select=\"$tokenizedDate[3]\"/>-<xsl:value-of select=\"$tokenizedDate[2]\"/>-<xsl:value-of select=\"$tokenizedDate[1]\"/>\
+</xsl:when>\
+<xsl:otherwise>\
+<xsl:value-of select=\"validation\"/>\
+</xsl:otherwise>\
+</xsl:choose>\
+</validation>\
 <update/>\
 </dates>\
 </xsl:template>\
@@ -535,11 +595,11 @@ var qsos_1_6_to_qsos_2_0 = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\
 </xsl:template>\
 \
 <xsl:template match=\"qsosformat\">\
-<xsl:element name=\"qsosversion\">2.0</xsl:element>\
+<xsl:element name=\"qsosVersion\">2.0</xsl:element>\
 </xsl:template>\
 \
 <xsl:template match=\"qsosspecificformat\">\
-<xsl:element name=\"templateversion\"><xsl:apply-templates select=\"@*|node()\"/></xsl:element>\
+<xsl:element name=\"version\"><xsl:apply-templates select=\"@*|node()\"/></xsl:element>\
 </xsl:template>\
 \
 <xsl:template match=\"@*|node()\">\
@@ -547,6 +607,9 @@ var qsos_1_6_to_qsos_2_0 = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\
 </xsl:template>\
 \
 </xsl:stylesheet>";
+
+
+////////////////////////////////////////////////////////////////////////////////
 
 var freemind_to_qsos_2_0 = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\
 <xsl:stylesheet xmlns:xsl=\"http://www.w3.org/1999/XSL/Transform\" version=\"1.0\">\
@@ -737,6 +800,9 @@ var freemind_to_qsos_2_0 = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\
 </xsl:template>\
 \
 </xsl:stylesheet>";
+
+
+////////////////////////////////////////////////////////////////////////////////
 
 var qsos_2_0_to_freemind = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\
 <xsl:stylesheet xmlns:xsl=\"http://www.w3.org/1999/XSL/Transform\" version=\"1.0\">\
