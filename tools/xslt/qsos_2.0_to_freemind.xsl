@@ -1,17 +1,16 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
-<xsl:output method="xml" indent="yes" encoding="UTF-8"/>
+<xsl:output method="xml" indent="yes" encoding="UTF-8" omit-xml-declaration="yes"/>
 
   <xsl:template match="document">
       <xsl:element name="map">
-        <xsl:attribute name="version">0.9</xsl:attribute>
+        <xsl:attribute name="version">0.9.0</xsl:attribute>
 	      <xsl:element name="node">
-	        <xsl:attribute name="ID"><xsl:value-of select="openSourceCartouche/Component/ComponentName"/></xsl:attribute>
+	        <xsl:attribute name="ID"><xsl:value-of select="openSourceCartouche/component/name"/></xsl:attribute>
 		<richcontent TYPE="NODE"><html>
 		  <head></head>
 		  <body><p style="text-align: center">
-		      <xsl:value-of select="openSourceCartouche/Component/ComponentName"/><br/>
-		      <xsl:value-of select="openSourceCartouche/Component/ComponentVersion"/>
+		      <xsl:value-of select="openSourceCartouche/component/name"/><br/>
+		      <xsl:value-of select="openSourceCartouche/component/version"/>
 		    </p></body>
 		</html></richcontent>
 	        <font NAME="SansSerif" BOLD="true" SIZE="12"/>
