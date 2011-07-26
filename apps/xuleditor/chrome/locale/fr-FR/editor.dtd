@@ -80,6 +80,7 @@
 <!ENTITY comment "Commentaire :">
 <!ENTITY addButton " Ajouter">
 <!ENTITY delButton " Supprimer">
+<!ENTITY addMyselfButton " M'ajouter">
 <!ENTITY reviewer "Validateur :">
 <!ENTITY date "Date :">
 <!ENTITY evaluationVersion "Version :">
@@ -143,7 +144,7 @@
 <!-- Chart Tab !-->
 
 <!-- Settings Tab !-->
-<!ENTITY storedInfo "Informations stockées">
+<!ENTITY storedInfo "Informations sur vous stockées :">
 
 <!-- About stuff !-->
 <!ENTITY xuleditorName "QSOS XUL Editor v2.0">

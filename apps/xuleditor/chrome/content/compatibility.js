@@ -307,7 +307,7 @@ function exportToFreeMind() {
      *  return false;
     }*/
 
-    var xslt = parseXML(qsos_to_freemind);
+    var xslt = parseXML(qsos_2_0_to_freemind);
     var error = xslt.getElementsByTagName("parsererror");
     if (error.length == 1) {
       alert("An error occurred while parsing the XSLT! This is a bug. Please report it using this description:\nThe QSOS 2.0 to Freemind XSLT doesn't work.\nPlease include your evaluations in the report.");
@@ -319,7 +319,8 @@ function exportToFreeMind() {
 
     var processor = new XSLTProcessor();
     processor.importStylesheet(xslt);
-    element = processor.transformToDocument(toTrans);
+    var tmp = processor.transformToDocument(toTrans);
+    element = tmp.getElementsByTagName("map")[0];
 
 //     var serializer = new XMLSerializer();
 //     var xmlOutput = serializer.serializeToString(toTrans);
@@ -416,6 +417,7 @@ function updateFromOldQSOS() {
 // Commands used to produce "Javascript compliant" strings form raw xslt files:
 // sed 's/"/\\"/g' <file.xslt> | sed 's/$/\\/g'
 
+// Last updated: 25/07/2011
 var qsos_1_6_to_qsos_2_0 = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\
 <xsl:stylesheet xmlns:xsl=\"http://www.w3.org/1999/XSL/Transform\" xmlns:str=\"http://exslt.org/strings\" xmlns:fn=\"http://www.w3.org/2005/xpath-functions\" version=\"1.0\">\
 <xsl:output method=\"xml\" indent=\"yes\" encoding=\"UTF-8\"/>\
@@ -578,6 +580,7 @@ var qsos_1_6_to_qsos_2_0 = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\
 
 ////////////////////////////////////////////////////////////////////////////////
 
+// Last updated: 25/07/2011
 var freemind_to_qsos_2_0 = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\
 <xsl:stylesheet xmlns:xsl=\"http://www.w3.org/1999/XSL/Transform\" version=\"1.0\">\
 <xsl:output method=\"xml\" indent=\"yes\" encoding=\"UTF-8\"/>\
@@ -770,29 +773,35 @@ var freemind_to_qsos_2_0 = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\
 
 
 ////////////////////////////////////////////////////////////////////////////////
-
+//omit-xml-declaration=\"yes\"
+// Last updated: 26/07/2011
 var qsos_2_0_to_freemind = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\
 <xsl:stylesheet xmlns:xsl=\"http://www.w3.org/1999/XSL/Transform\" version=\"1.0\">\
 <xsl:output method=\"xml\" indent=\"yes\" encoding=\"UTF-8\"/>\
-\
 <xsl:template match=\"document\">\
 <xsl:element name=\"map\">\
-<xsl:attribute name=\"version\">0.9</xsl:attribute>\
+<xsl:attribute name=\"version\">0.9.0</xsl:attribute>\
 <xsl:element name=\"node\">\
-<xsl:attribute name=\"ID\"><xsl:value-of select=\"openSourceCartouche/Component/ComponentName\"/></xsl:attribute>\
-<richcontent TYPE=\"NODE\"><html>\
-<head></head>\
-<body><p style=\"text-align: center\">\
-<xsl:value-of select=\"openSourceCartouche/Component/ComponentName\"/><br/>\
-<xsl:value-of select=\"openSourceCartouche/Component/ComponentVersion\"/>\
-</p></body>\
-</html></richcontent>\
+<xsl:attribute name=\"ID\">\
+<xsl:value-of select=\"openSourceCartouche/component/name\"/>\
+</xsl:attribute>\
+<richcontent TYPE=\"NODE\">\
+<html>\
+<head/>\
+<body>\
+<p style=\"text-align: center\">\
+<xsl:value-of select=\"openSourceCartouche/component/name\"/>\
+<br/>\
+<xsl:value-of select=\"openSourceCartouche/component/version\"/>\
+</p>\
+</body>\
+</html>\
+</richcontent>\
 <font NAME=\"SansSerif\" BOLD=\"true\" SIZE=\"12\"/>\
 <xsl:apply-templates select=\"section\"/>\
 </xsl:element>\
 </xsl:element>\
 </xsl:template>\
-\
 <xsl:template match=\"section\">\
 <node ID=\"{@name}\" TEXT=\"{@title}\">\
 <xsl:if test=\"position() mod 2 = 0\">\
@@ -804,7 +813,9 @@ var qsos_2_0_to_freemind = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\
 <font NAME=\"SansSerif\" BOLD=\"true\" SIZE=\"12\"/>\
 <xsl:if test=\"desc != ''\">\
 <xsl:element name=\"node\">\
-<xsl:attribute name=\"TEXT\"><xsl:value-of select=\"desc\"/></xsl:attribute>\
+<xsl:attribute name=\"TEXT\">\
+<xsl:value-of select=\"desc\"/>\
+</xsl:attribute>\
 <xsl:attribute name=\"STYLE\">bubble</xsl:attribute>\
 <font NAME=\"SansSerif\" ITALIC=\"true\" SIZE=\"10\"/>\
 </xsl:element>\
@@ -812,12 +823,14 @@ var qsos_2_0_to_freemind = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\
 <xsl:apply-templates select=\"element\"/>\
 </node>\
 </xsl:template>\
-\
 <xsl:template match=\"element\">\
 <xsl:element name=\"node\">\
-<xsl:attribute name=\"ID\"><xsl:value-of select=\"@name\"/></xsl:attribute>\
-<xsl:attribute name=\"TEXT\"><xsl:value-of select=\"@title\"/></xsl:attribute>\
-\
+<xsl:attribute name=\"ID\">\
+<xsl:value-of select=\"@name\"/>\
+</xsl:attribute>\
+<xsl:attribute name=\"TEXT\">\
+<xsl:value-of select=\"@title\"/>\
+</xsl:attribute>\
 <xsl:if test=\"score = '0'\">\
 <xsl:attribute name=\"FOLDED\">true</xsl:attribute>\
 <icon BUILTIN=\"button_cancel\"/>\
@@ -830,45 +843,49 @@ var qsos_2_0_to_freemind = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\
 <xsl:attribute name=\"FOLDED\">true</xsl:attribute>\
 <icon BUILTIN=\"button_ok\"/>\
 </xsl:if>\
-\
 <xsl:choose>\
 <xsl:when test=\"child::element\">\
 <xsl:if test=\"desc != ''\">\
 <xsl:element name=\"node\">\
-<xsl:attribute name=\"TEXT\"><xsl:value-of select=\"desc\"/></xsl:attribute>\
+<xsl:attribute name=\"TEXT\">\
+<xsl:value-of select=\"desc\"/>\
+</xsl:attribute>\
 <xsl:attribute name=\"STYLE\">bubble</xsl:attribute>\
 <font NAME=\"SansSerif\" ITALIC=\"true\" SIZE=\"10\"/>\
 </xsl:element>\
 </xsl:if>\
 </xsl:when>\
-\
 <xsl:otherwise>\
 <xsl:element name=\"node\">\
 <xsl:if test=\"score = '0'\">\
-<xsl:attribute name=\"TEXT\"><xsl:value-of select=\"desc0\"/></xsl:attribute>\
+<xsl:attribute name=\"TEXT\">\
+<xsl:value-of select=\"desc0\"/>\
+</xsl:attribute>\
 </xsl:if>\
 <xsl:if test=\"score = '1'\">\
-<xsl:attribute name=\"TEXT\"><xsl:value-of select=\"desc1\"/></xsl:attribute>\
+<xsl:attribute name=\"TEXT\">\
+<xsl:value-of select=\"desc1\"/>\
+</xsl:attribute>\
 </xsl:if>\
 <xsl:if test=\"score = '2'\">\
-<xsl:attribute name=\"TEXT\"><xsl:value-of select=\"desc2\"/></xsl:attribute>\
+<xsl:attribute name=\"TEXT\">\
+<xsl:value-of select=\"desc2\"/>\
+</xsl:attribute>\
 </xsl:if>\
 <xsl:attribute name=\"STYLE\">bubble</xsl:attribute>\
 <font NAME=\"SansSerif\" ITALIC=\"true\" SIZE=\"10\"/>\
 </xsl:element>\
-\
 <xsl:if test=\"comment != ''\">\
 <xsl:element name=\"node\">\
-<xsl:attribute name=\"TEXT\"><xsl:value-of select=\"comment\"/></xsl:attribute>\
+<xsl:attribute name=\"TEXT\">\
+<xsl:value-of select=\"comment\"/>\
+</xsl:attribute>\
 <font NAME=\"SansSerif\" ITALIC=\"true\" SIZE=\"10\"/>\
 </xsl:element>\
 </xsl:if>\
 </xsl:otherwise>\
 </xsl:choose>\
-\
 <xsl:apply-templates select=\"element\"/>\
-\
 </xsl:element>\
 </xsl:template>\
-\
 </xsl:stylesheet>";

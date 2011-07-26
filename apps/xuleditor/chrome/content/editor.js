@@ -33,6 +33,8 @@ var evaluationOpen;
 var id;
 // Localized strings bundle
 var strbundle;
+// Preferences
+var pref;
 
 
 // Objects to save/modify/empty cells and set/reset dates the easy way
@@ -100,6 +102,11 @@ function init() {
     setStateEvalOpen(false);
     freezeScore("true");
     freezeComments("true");
+    pref = Components.classes["@mozilla.org/preferences-service;1"].getService(Components.interfaces.nsIPrefService);
+//     var nameElem = document.getElementById(type + "Name");
+//     var emailElem = document.getElementById(type + "Email");
+//     nameElem.value = getPreference("userName");
+//     emailElem.value = getPreference("userEmail");
   } catch (e) {
     alert("An error occured while setting up the editor: " + e.message);
   }
@@ -479,4 +486,43 @@ function setupEditorForEval() {
 function about() {
   getPrivilege();
   window.openDialog('chrome://qsos-xuled/content/about.xul', 'Properties', 'chrome,dialog,modal', myDoc, openRemoteFile);
+}
+
+
+// Preferences stuff
+function getPreference(name) {
+  var branch = pref.getBranch("pref.");
+  branch.QueryInterface(Components.interfaces.nsIPrefBranch2);
+
+  return branch.getCharPref(name);
+}
+
+function setPreference(name, value) {
+  var branch = pref.getBranch("pref.");
+  branch.QueryInterface(Components.interfaces.nsIPrefBranch2);
+  branch.setCharPref(name, value);
+}
+
+
+function addMyself(type) {
+  var nameElem = document.getElementById(type + "Name");
+  var emailElem = document.getElementById(type + "Email");
+  nameElem.value = getPreference("userName");
+  emailElem.value = getPreference("userEmail");
+
+  if (type != "evaluationAuthor") {
+    docHasChanged();
+  }
+//   if (type == "evaluationAuthor") {
+// //     alert("evaluationAuthor");
+//   } else if (type == "evaluationReviewer") {
+// //     alert("evaluationReviewer");
+//     docHasChanged();
+//   } else if (type == "oscAuthor") {
+// //     alert("oscAuthor");
+//     docHasChanged();
+//   } else if (type == "oscReviewer") {
+// //     alert("oscReviewer");
+//     docHasChanged();
+//   }
 }

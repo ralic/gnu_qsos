@@ -41,6 +41,12 @@
   <script type="application/x-javascript" src="chart.js"/>
   <script type="application/x-javascript" src="about.js"/>
   <stringbundle id="properties" src="chrome://qsos-xuled/locale/editor.properties"/>
+
+  <preferences>
+    <preference id="prefUserName" name="pref.userName" type="string"/>
+    <preference id="prefUserEmail" name="pref.userEmail" type="string"/>
+  </preferences>
+
   <toolbox>
     <toolbar>
       <toolbarbutton id="newFile" label="&newFile;" oncommand="newFileFromTemplate();" accesskey="&newFileAccessKey;"/>
@@ -58,6 +64,7 @@
       <toolbarbutton id="exitApp" label="&exit;"  oncommand="if (checkCloseFile() == true) exit();" accesskey="&exitAccessKey;"/>
     </toolbar>
   </toolbox>
+
   <tabbox id="tabBox" flex="1">
     <tabs id="tabs">
       <!-- <tab id="aboutTab" accesskey="&aboutTabAccessKey;"/> !-->
@@ -68,6 +75,7 @@
       <tab id="oscTab" label="&oscTab;" accesskey="&oscTabAccessKey;"/>
       <tab id="criteriaTab" label="&criteriaTab;" accesskey="&criteriaTabAccessKey;"/>
     </tabs>
+
     <vbox id="intoVbox">
       <groupbox flex="1">
         <vbox flex="1">
@@ -78,6 +86,31 @@
             <html:br/>
             &description3; <textbox value="&maillingList;" readonly="true" class="plain" style="background-color: transparent;" flex="1"/>
           </html:p>
+        </vbox>
+      </groupbox>
+      <groupbox flex="1">
+        <caption label="&storedInfo;"/>
+        <vbox flex="1">
+          <grid flex="1">
+            <columns>
+              <column />
+              <column flex="1"/>
+              <column />
+              <column flex="1"/>
+              <!--<column />
+              <column flex="1"/>!-->
+            </columns>
+            <rows>
+              <row align="center">
+                <label control="userName" value="&name;"/>
+                <textbox id="userName" oninput="setPreference('userName', this.value);" preference="pref.userName"/>
+                <label control="userEmail" value="&email;"/>
+                <textbox id="userEmail" oninput="setPreference('userEmail', this.value);" preference="pref.userEmail"/>
+                <!--<label control="" value="&name;"/>
+                <textbox id="userCompagny" oninput=""/>!-->
+              </row>
+            </rows>
+          </grid>
         </vbox>
       </groupbox>
       <groupbox flex="1">
@@ -151,6 +184,7 @@
         </vbox>
       </groupbox>
     </vbox>
+
     <tabpanels flex="1" id="tabPanels">
       <!--<tabpanel id="aboutTabPanel" class="over">
         <vbox flex="1">
@@ -359,6 +393,7 @@
                     <hbox>
                       <button label="&addButton;" id="addAuthorButton" class="addAuthor" oncommand="addAuthor('evaluation');"/>
                       <button label="&delButton;" id="delAuthorButton" class="delAuthor" oncommand="delAuthor('evaluation');"/>
+                      <button label="&addMyselfButton;" id="addMyselfAuthorButton" class="addAuthor" oncommand="addMyself('evaluationAuthor');"/>
                     </hbox>
                   </vbox>
                 </hbox>
@@ -398,6 +433,7 @@
                 <hbox align="center">
                   <checkbox id="evaluationReviewerDateCheckbox" label="&date;" checked="true" oncommand="dateControl(this, 'evaluationReviewerDate'); docHasChanged(true);"/>
                   <datepicker id="evaluationReviewerDate" type="popup" onchange="docHasChanged(true);"/>
+                  <button label="&addMyselfButton;" id="addMyselfAuthorButton" class="addAuthor" oncommand="addMyself('evaluationReviewer');"/>
                 </hbox>
               </groupbox>
               <groupbox>
@@ -453,6 +489,10 @@
                           <label control="oscAuthorComment" value="&comment;"/>
                           <textbox id="oscAuthorComment" multiline="true" flex="1"/>
                         </row>
+                        <row>
+                          <label value=""/>
+                          <button label="&addMyselfButton;" id="addMyselfAuthorButton" class="addAuthor" oncommand="addMyself('oscAuthor');"/>
+                        </row>
                       </rows>
                     </grid>
                   </hbox>
@@ -479,7 +519,10 @@
                       </row>
                       <row>
                         <checkbox id="oscReviewerDateCheckbox" label="&date;" checked="true" oncommand="dateControl(this, 'oscReviewerDate'); docHasChanged(true);"/>
-                        <datepicker id="oscReviewerDate" type="popup" onchange="docHasChanged(true);"/>
+                        <hbox>
+                          <datepicker id="oscReviewerDate" type="popup" onchange="docHasChanged(true);"/>
+                          <button label="&addMyselfButton;" id="addMyselfAuthorButton" class="addAuthor" oncommand="addMyself('oscReviewer');" flex="1"/>
+                        </hbox>
                       </row>
                     </rows>
                   </grid>
@@ -520,8 +563,8 @@
                   <row align="center">
                     <label control="componentName" value="&componentName;"/>
                     <textbox id="componentName" flex="1" oninput="docHasChanged(true);" placeholder="&componentNamePlaceholder;"/>
-                    <checkbox id="componentReleaseDateCheckbox" label="&componentReleaseDate;" checked="true" oncommand="dateControl(this, 'componentReleaseDate'); docHasChanged(true);"/>
-                    <datepicker id="componentReleaseDate" type="popup" onchange="docHasChanged(true);"/>
+                    <label control="componentVendor" value="&componentVendor;"/>
+                    <textbox id="componentVendor" flex="1" oninput="docHasChanged(true);" placeholder="&componentVendorPlaceholder;"/>
                   </row>
                   <row align="center">
                     <label control="componentVersion" value="&componentVersion;"/>
@@ -546,8 +589,8 @@
                     </menulist>
                   </row>
                   <row align="center">
-                    <label control="componentVendor" value="&componentVendor;"/>
-                    <textbox id="componentVendor" flex="1" oninput="docHasChanged(true);" placeholder="&componentVendorPlaceholder;"/>
+                    <checkbox id="componentReleaseDateCheckbox" label="&componentReleaseDate;" checked="true" oncommand="dateControl(this, 'componentReleaseDate'); docHasChanged(true);"/>
+                    <datepicker id="componentReleaseDate" type="popup" onchange="docHasChanged(true);"/>
                     <label control="componentDescription" value="&componentDescription;"/>
                     <textbox id="componentDescription" multiline="true" flex="1" oninput="docHasChanged(true);" placeholder="&componentDescriptionPlaceholder;"/>
                   </row>
