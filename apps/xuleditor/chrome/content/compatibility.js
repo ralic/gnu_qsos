@@ -154,11 +154,30 @@ function updateFromTemplate() {
     // Creates of copy in order to work on the sheet easily
     var tmpTemplateXML = parseXML(serializeXML(myDoc.getSheet()));
     var newSheet = mergeSections(myDoc.getSheet(), templateXML, tmpTemplateXML);
+
+    // Updates the template part :
+    var newTemplateNode = templateXML.evaluate("//template/version", templateXML, null, XPathResult.ORDERED_NODE_ITERATOR_TYPE, null).iterateNext();
+    var finalTemplateNode = newSheet.evaluate("//template/version", newSheet, null, XPathResult.ORDERED_NODE_ITERATOR_TYPE, null).iterateNext();
+    var firstChild = finalTemplateNode.firstChild;
+    while (firstChild) {
+      finalTemplateNode.removeChild(firstChild);
+      firstChild = finalTemplateNode.firstChild;
+    }
+
+    var children = newTemplateNode.childNodes;
+    var len = children.length;
+    for (var i = 0; i < len; ++i) {
+      finalTemplateNode.appendChild(children[i]);
+    }
   } catch(e) {
-    alert("updateFromTemplate: " + e.message);
+    alert("updateFromTemplate: merge failed: " + e.message);
   }
 
   myDoc.setSheet(newSheet);
+
+  // Updates the template type and verison
+  var labelElem = document.getElementById("templateCaption");
+  labelElem.label = strbundle.getString("template") + " " + strbundle.getString("templateType") + " " + myDoc.get("qsosMetadata/template/type") + " (" + strbundle.getString("templateVersion") + " " + myDoc.get("qsosMetadata/template/version") + ")";
 
   // Resets the criteria tab
   document.getElementById("criteriaDescription").value = "";
@@ -244,58 +263,6 @@ function updateNode(section, oldSheet) {
 
   return section;
 }
-
-
-// function getSections(sheet) {
-//   var nodes = sheet.evaluate("//document/qsosMetadata", sheet, null, XPathResult.ORDERED_NODE_ITERATOR_TYPE, null);
-//   var node = nodes.iterateNext();
-//   if (node) {
-//     nodes.removeChild(node);
-//   } else {
-//     alert("This evaluation doesn't have a QSOS Metadata part!");
-//   }
-//   var nodes = sheet.evaluate("//document/openSourceCartouche", sheet, null, XPathResult.ORDERED_NODE_ITERATOR_TYPE, null);
-//   var node = nodes.iterateNext();
-//   if (node) {
-//     nodes.removeChild(node);
-//   } else {
-//     alert("This evaluation doesn't have an OpenSource Cartouche part!");
-//   }
-//   sheet.dump();
-//
-//   return sheet;
-// }
-//
-//
-// function removeSections(sheet) {
-//   var nodes = sheet.evaluate("//document/section", sheet, null, XPathResult.ORDERED_NODE_ITERATOR_TYPE, null);
-//   var node = nodes.iterateNext();
-//   while (node != null) {
-//     nodes.removeChild(node);
-//     node = nodes.iterateNext();
-//   }
-//
-//   return sheet;
-// }
-//
-//
-// function setSections(updateSheet, newSheet) {
-//   var nodes = sheet.evaluate("//evaluation/authors", sheet, null, XPathResult.ORDERED_NODE_ITERATOR_TYPE, null);
-//   var node = nodes.iterateNext();
-//   var author = sheet.createElement("author");
-//   var nameElem = sheet.createElement("name");
-//   nameElem.appendChild(document.createTextNode(name));
-//   var emailElem = sheet.createElement("email");
-//   emailElem.appendChild(document.createTextNode(email));
-//   var commentElem = sheet.createElement("comment");
-//   commentElem.appendChild(document.createTextNode(comment));
-//   author.appendChild(nameElem);
-//   author.appendChild(emailElem);
-//   author.appendChild(commentElem);
-//   node.appendChild(author);
-//
-//   return sheet;
-// }
 
 
 function exportOSC() {
