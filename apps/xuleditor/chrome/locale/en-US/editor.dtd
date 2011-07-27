@@ -29,7 +29,6 @@
 <!ENTITY metadataTab "  Metadata ">
 <!ENTITY oscTab "  Cartouche ">
 <!ENTITY criteriaTab "  Criteria ">
-<!ENTITY chartTab "  Chart ">
 
 <!-- Buttons !-->
 <!ENTITY newFile " New from template">
@@ -124,6 +123,7 @@
 <!ENTITY comments "Comments">
 
 <!-- Chart Tab !-->
+<!ENTITY chart "Chart">
 
 <!-- Settings Tab !-->
 <!ENTITY storedInfo "Currently stored informations about you:">

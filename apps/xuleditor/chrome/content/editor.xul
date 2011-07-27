@@ -576,7 +576,7 @@
           <label control="criteriaComments" value="&comments;"/>
           <textbox id="criteriaComments" multiline="true" rows="5" oninput="changeComments(this);"/>
           <groupbox id="chartGroupbox" flex="1">
-            <caption label="&chartTab;"/>
+            <caption label="&chart;"/>
             <vbox id="chart-box" flex = "1">
               <hbox id="chart-label" />
               <svg xmlns="http://www.w3.org/2000/svg" version="1.1" flex="1"> <!-- width="400px" height="350px"> !-->
