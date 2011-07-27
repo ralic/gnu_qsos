@@ -93,7 +93,7 @@ function delAuthor(type) {
   }
 
   if (list.getRowCount() <= 1) {
-    document.getElementById("delAuthorButton").disabled = true;
+    document.getElementById("delAuthorButton").disabled = "true";
     if (list.getRowCount() == 0) {
       alert(strbundle.getString("noOneToRemove"));
       return;

@@ -437,6 +437,9 @@ function setupEditorForEval() {
         listitem.appendChild(listcellComment);
         authorList.appendChild(listitem);
       }
+      if (authors.length == 0) {
+        document.getElementById("delAuthorButton").disabled = "true";
+      }
     }
 
     var teamArray = new Array("developer", "contributor");
@@ -461,6 +464,9 @@ function setupEditorForEval() {
         listitem.appendChild(listcellEmail);
         listitem.appendChild(listcellCompany);
         authorList.appendChild(listitem);
+      }
+      if (authors.length == 0) {
+        document.getElementById("del" + teamArray[i] + "Button").disabled = "true";
       }
     }
   } catch (e) {

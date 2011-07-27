@@ -106,7 +106,7 @@ function delTeamMember(type) {
   }
 
   if (list.getRowCount() <= 1) {
-    document.getElementById("del" + type + "Button").disabled = true;
+    document.getElementById("del" + type + "Button").disabled = "true";
     if (list.getRowCount() == 0) {
       alert(strbundle.getString("noOneToRemove"));
       return;

@@ -182,10 +182,10 @@
           <groupbox>
             <caption id="templateCaption" label="&template;"/>
           </groupbox>
-          <groupbox>
+          <groupbox flex="1">
             <caption label="&evaluationAuthors;"/>
-            <vbox>
-              <groupbox>
+            <vbox flex="1">
+              <groupbox flex="1">
                 <caption label="&authors;"/>
                 <hbox flex="1">
                   <grid flex="1">
@@ -224,9 +224,9 @@
                   </vbox>
                 </hbox>
               </groupbox>
-              <groupbox>
+              <groupbox flex="1">
                 <caption label="&reviewer;"/>
-                <hbox align="center">
+                <hbox align="center" flex="1">
                   <grid flex="1">
                     <columns>
                       <column />
@@ -256,13 +256,13 @@
                     </rows>
                   </grid>
                 </hbox>
-                <hbox align="center">
+                <hbox align="center" flex="1">
                   <checkbox id="evaluationReviewerDateCheckbox" label="&date;" checked="true" oncommand="dateControl(this, 'evaluationReviewerDate'); docHasChanged(true);"/>
                   <datepicker id="evaluationReviewerDate" type="popup" onchange="docHasChanged(true);"/>
                   <button label="&addMyselfButton;" id="addMyselfAuthorButton" class="addAuthor" oncommand="addMyself('evaluationReviewer');"/>
                 </hbox>
               </groupbox>
-              <groupbox>
+              <groupbox flex="1">
                 <caption label="&dates;"/>
                   <hbox align="center">
                     <checkbox id="evaluationCreationDateCheckbox" label="&creationDate;" checked="true" oncommand="dateControl(this, 'evaluationCreationDate'); docHasChanged(true);"/>
@@ -277,10 +277,9 @@
               </groupbox>
             </vbox>
           </groupbox>
-
-          <groupbox>
+          <groupbox flex="1">
             <caption id="oscLabel" label="&oscAuthors;"/>
-            <vbox>
+            <vbox flex="1">
               <hbox flex="1">
                 <groupbox flex="1">
                   <caption label="&authors;"/>
@@ -344,7 +343,7 @@
               </hbox>
               <groupbox flex="1">
                 <caption label="&dates;"/>
-                <hbox align="center">
+                <hbox align="center" flex="1">
                   <checkbox id="oscCreationDateCheckbox" label="&creationDate;" checked="true" oncommand="dateControl(this, 'oscCreationDate'); docHasChanged(true);"/>
                   <datepicker id="oscCreationDate" type="popup" onchange="docHasChanged(true);"/>
                   <separator class="groove-thin" orient="vertical"/>
@@ -360,7 +359,7 @@
         </vbox>
       </tabpanel>
 
-      <tabpanel id="oscTabPanel" class="over">
+      <tabpanel id="oscTabPanel" class="over" flex="1">
         <vbox flex="1">
           <vbox flex="1">
             <groupbox class="over" flex="1">
@@ -410,13 +409,10 @@
                 </rows>
               </grid>
             </groupbox>
-          </vbox>
-
-          <vbox flex="1">
             <groupbox flex="1" class="over">
               <caption label="&team;"/>
               <vbox flex="1">
-                <hbox align="center">
+                <hbox align="center" flex="1">
                   <label control="number" value="&number;"/>
                   <textbox id="number" oninput="docHasChanged(true);" type="number" size="6"/>
                 </hbox>
