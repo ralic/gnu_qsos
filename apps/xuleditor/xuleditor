@@ -35,8 +35,8 @@ case ${1} in
 		echo "  Use './xuleditor clear' if you want to start the editor with"
 		echo "  clear settings."
 		echo ""
-		echo "  Use './xuleditor release' if you don't want to see this warning"
-		echo "  anymore."
+		echo "  Use './xuleditor release' if you don't want to see this"
+		echo "  warning anymore."
 		echo ""
 		xulrunner application.ini -file ${1}
 		;;

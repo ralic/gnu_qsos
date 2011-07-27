@@ -236,7 +236,7 @@ function saveFile() {
     if (myDoc) {
       // Updating evaluation content
       // Checking component fields
-      toCheck = new Array("componentName", "componentReleaseDate", "componentVersion", "componentMainTech", "componentHomepage", "componentTags", "componentStatus", "componentVendor");
+      toCheck = new Array("componentName", "componentReleaseDate", "componentVersion", "componentMainTech", "componentHomepage", "componentTags", "componentVendor");
       for(var i = 0; i < toCheck.length; ++i) {
         if (document.getElementById(toCheck[i]).value == ""){
           alert(strbundle.getString("componentEmpty") + " " + toCheck[i]);
