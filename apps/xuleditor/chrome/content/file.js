@@ -132,7 +132,7 @@ function openLocalFile(filename) {
       return;
     }
   } catch (e) {
-    alert("openLocalFile: an error occured while setting up the editor " + e.message);
+    alert("openLocalFile: an error occured while setting up the editor " + e.message + "\n\n" + strbundle.getString("advice"));
     closeFile();
     return;
   }
@@ -366,8 +366,10 @@ function closeFile() {
   try {
     // Component fields
     emptyList(document.getElementById("archetypePopup"));
-    // License and Legal
+    // License
     emptyList(document.getElementById("licensePopup"));
+    // Status
+    emptyList(document.getElementById("statusPopup"));
 
     // Reset authors & contributors lists
     lists = new Array("evaluationAuthors","developerTeam","contributorTeam");

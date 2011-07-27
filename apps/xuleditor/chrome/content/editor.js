@@ -103,10 +103,10 @@ function init() {
     freezeScore("true");
     freezeComments("true");
     pref = Components.classes["@mozilla.org/preferences-service;1"].getService(Components.interfaces.nsIPrefService);
-//     var nameElem = document.getElementById(type + "Name");
-//     var emailElem = document.getElementById(type + "Email");
-//     nameElem.value = getPreference("userName");
-//     emailElem.value = getPreference("userEmail");
+    var nameElem = document.getElementById("userName");
+    var emailElem = document.getElementById("userEmail");
+    nameElem.value = getPreference("userName");
+    emailElem.value = getPreference("userEmail");
   } catch (e) {
     alert("An error occured while setting up the editor: " + e.message);
   }
@@ -127,7 +127,7 @@ function init() {
         // FIXME Open file with spaces
         openRemoteFile(uri.spec);
       } catch (e) {
-        alert("init: fail to open file " + uri.spec + ": " + e.message);
+        alert("init: can't open file " + uri.spec + ": " + e.message);
         closeFile();
       }
     }
@@ -153,7 +153,7 @@ function exitConfirmDialog() {
     var text = strbundle.getString("exitAnyway");
     window.openDialog('chrome://qsos-xuled/content/confirm.xul', 'Confirm', 'chrome,dialog,modal', text, saveFile, saveFileAs);
   } catch (e) {
-    alert("There is a problem here: " + e.message);
+    alert("exitConfirmDialog: There is a problem here: " + e.message);
   }
 }
 
@@ -308,14 +308,14 @@ function selectElementInList(list, name) {
 function setupEditorForEval() {
   // Check the QSOS version
   try {
-  var QSOSVersion = myDoc.get("qsosMetadata/qsosVersion");
-  var currentVersion = strbundle.getString("currentQSOSVersion");
-  if (QSOSVersion != currentVersion) {
-    if (QSOSVersion == "") {
-      QSOSVersion = "'unknown version'";
+    try { var QSOSVersion = myDoc.get("qsosMetadata/qsosVersion"); } catch (e) { var QSOSVersion = ""; }
+    var currentVersion = strbundle.getString("currentQSOSVersion");
+    if (QSOSVersion != currentVersion) {
+      if (QSOSVersion == "") {
+        QSOSVersion = "'unknown version'";
+      }
+      alert("Warning: This is a " + QSOSVersion + " QSOS evaluation, but this editor only supports version " + currentVersion + ".\n\nUse it at your own risk!");
     }
-    alert("Warning: This is a " + QSOSVersion + " QSOS evaluation, but this editor only supports version " + currentVersion + ".\n\nUse it at your own risk!");
-  }
   } catch (e) {
     alert("setupEditorForEval: a problem occured in window setup stuff: " + e.message);
     closeFile();
@@ -323,16 +323,20 @@ function setupEditorForEval() {
   }
 
   try {
-  // Window's title
-  document.title = strbundle.getString("QSOSEvaluation") + " " + myDoc.get("component/name") + " (" + myDoc.getfilename() + ")";
+    // Window's title
+    try { var name = myDoc.get("component/name"); } catch (e) { var name = ""; }
+    document.title = strbundle.getString("QSOSEvaluation") + " " + name + " (" + myDoc.getfilename() + ")";
 
-  // Display the OpenSource Cartouche version
-  var labelElem = document.getElementById("oscLabel");
-  labelElem.label = strbundle.getString("oscAuthors") + " (" + myDoc.get("openSourceCartouche/metadata/cartoucheVersion") + ")";
+    // Display the OpenSource Cartouche version
+    var labelElem = document.getElementById("oscLabel");
+    try { var cartoucheVersion = myDoc.get("openSourceCartouche/metadata/cartoucheVersion"); } catch (e) { var cartoucheVersion = ""; }
+    labelElem.label = strbundle.getString("oscAuthors") + " (" + cartoucheVersion + ")";
 
-  // Display the template type and verison
-  labelElem = document.getElementById("templateCaption");
-  labelElem.label = strbundle.getString("template") + " " + strbundle.getString("templateType") + " " + myDoc.get("qsosMetadata/template/type") + " (" + strbundle.getString("templateVersion") + " " + myDoc.get("qsosMetadata/template/version") + ")";
+    // Display the template type and verison
+    labelElem = document.getElementById("templateCaption");
+    try { var type = myDoc.get("qsosMetadata/template/type"); } catch (e) { var type = ""; }
+    try { var version = myDoc.get("qsosMetadata/template/version"); } catch (e) { var version = strbundle.getString("noVersionFound"); }
+    labelElem.label = strbundle.getString("template") + " " + strbundle.getString("templateType") + " " + type + " (" + strbundle.getString("templateVersion") + " " + version + ")";
   } catch (e) {
     alert("setupEditorForEval: a problem occured in label setup stuff: " + e.message);
     closeFile();
@@ -340,10 +344,18 @@ function setupEditorForEval() {
   }
 
   try {
-  // Setting up text fields (see editor.js for details)
-  for (var element in textElements) {
-    document.getElementById(element).value = myDoc.get(textElements[element]);
-  }
+    // Setting up text fields (see editor.js for details)
+    var error = false;
+    var errorText = "";
+    for (var element in textElements) {
+      try {
+        document.getElementById(element).value = myDoc.get(textElements[element]);
+      } catch (e) {
+        document.getElementById(element).value = "";
+        error = true;
+        errorText += e + "\n";
+      }
+    }
   } catch (e) {
     alert("setupEditorForEval: a problem occured in text setup: " + e.message);
     closeFile();
@@ -351,48 +363,57 @@ function setupEditorForEval() {
   }
 
   try {
-  // Setting up date fields
-  for (var element in dateElements) {
-    var tmp = myDoc.get(dateElements[element]);
-//     alert(dateElements[element]);
-    try {
-      var tmpCb = document.getElementById(element + "Checkbox");
-    } catch(e) {};
-    if (tmpCb != null) {
-//       alert("Dans le if");
-      if (tmp == "") {
-        document.getElementById(element + "Checkbox").checked = false;
-        document.getElementById(element).disabled = "true";
-        document.getElementById(element).value = resetDate();
-      } else {
-        document.getElementById(element + "Checkbox").checked = true;
-        document.getElementById(element).disabled = "";
-        document.getElementById(element).value = tmp;
+    // Setting up date fields
+    for (var element in dateElements) {
+      try {
+        var tmp = myDoc.get(dateElements[element]);
+      } catch (e) {
+        var tmp = "";
+        error = true;
+        errorText += e + "\n";
       }
-    } else {
-      if (tmp == "") {
-        document.getElementById(element).value = resetDate();
+      try { var tmpCb = document.getElementById(element + "Checkbox"); } catch(e) {};
+      if (tmpCb != null) {
+        if (tmp == "") {
+          document.getElementById(element + "Checkbox").checked = false;
+          document.getElementById(element).disabled = "true";
+          document.getElementById(element).value = resetDate();
+        } else {
+          document.getElementById(element + "Checkbox").checked = true;
+          document.getElementById(element).disabled = "";
+          document.getElementById(element).value = tmp;
+        }
       } else {
-        document.getElementById(element).value = tmp;
+        if (tmp == "") {
+          document.getElementById(element).value = resetDate();
+        } else {
+          document.getElementById(element).value = tmp;
+        }
       }
     }
-  }
   } catch (e) {
     alert("setupEditorForEval: a problem occured in date fields setup: " + e.message);
     closeFile();
     return false;
   }
 
+  if (error) {
+    alert(strbundle.getString("errorsFound") + "\n" + errorText + "\n" + strbundle.getString("adviceOpenLocalFile"));
+  }
+
   // Component & Status fields
   try {
-  populateList("archetype");
-  selectElementInList(document.getElementById("componentArchetype"), myDoc.get("component/archetype"));
-  populateList("status");
-  selectElementInList(document.getElementById("componentStatus"), myDoc.get("component/status"));
+    populateList("archetype");
+    try { var archetype = myDoc.get("component/archetype"); } catch (e) { var archetype = ""; }
+    selectElementInList(document.getElementById("componentArchetype"), archetype);
+    populateList("status");
+    try { var status = myDoc.get("component/status"); } catch (e) { var status = ""; }
+    selectElementInList(document.getElementById("componentStatus"), status);
 
-  // License and Legal
-  populateList("license");
-  selectElementInList(document.getElementById("licenseName"), myDoc.get("openSourceCartouche/license/name"));
+    // License and Legal
+    populateList("license");
+    try { var name = myDoc.get("openSourceCartouche/license/name"); } catch (e) { var name = ""; }
+    selectElementInList(document.getElementById("licenseName"), name);
   } catch (e) {
     alert("setupEditorForEval: a problem occured in list stuff: " + e.message);
     closeFile();
@@ -404,55 +425,55 @@ function setupEditorForEval() {
 
   // Authors (evaluation + Open Source Cartouche metadata), Contributors, Developers
   try {
-  var authorsArray = new Array("evaluation");
-  for (var i = 0; i < authorsArray.length; ++i) {
-    try {
-      var authors = myDoc.getAuthors(authorsArray[i]);
-    } catch (e) {
-      alert("setupEditorForEval: couldn't get " + authorsArray[i] + " authors: " + e.message);
-      closeFile();
-      return false;
+    var authorsArray = new Array("evaluation");
+    for (var i = 0; i < authorsArray.length; ++i) {
+      try {
+        var authors = myDoc.getAuthors(authorsArray[i]);
+      } catch (e) {
+        alert("setupEditorForEval: couldn't get " + authorsArray[i] + " authors: " + e.message);
+        closeFile();
+        return false;
+      }
+      var authorList = document.getElementById(authorsArray[i] + "Authors");
+      for(var j = 0; j < authors.length; ++j) {
+        var listitem = document.createElement("listitem");
+        var listcellName = document.createElement("listcell");
+        var listcellEmail = document.createElement("listcell");
+        var listcellComment = document.createElement("listcell");
+        listcellName.setAttribute("label", authors[j].name);
+        listcellEmail.setAttribute("label", authors[j].email);
+        listcellComment.setAttribute("label", authors[j].comment);
+        listitem.appendChild(listcellName);
+        listitem.appendChild(listcellEmail);
+        listitem.appendChild(listcellComment);
+        authorList.appendChild(listitem);
+      }
     }
-    var authorList = document.getElementById(authorsArray[i] + "Authors");
-    for(var j = 0; j < authors.length; ++j) {
-      var listitem = document.createElement("listitem");
-      var listcellName = document.createElement("listcell");
-      var listcellEmail = document.createElement("listcell");
-      var listcellComment = document.createElement("listcell");
-      listcellName.setAttribute("label", authors[j].name);
-      listcellEmail.setAttribute("label", authors[j].email);
-      listcellComment.setAttribute("label", authors[j].comment);
-      listitem.appendChild(listcellName);
-      listitem.appendChild(listcellEmail);
-      listitem.appendChild(listcellComment);
-      authorList.appendChild(listitem);
-    }
-  }
 
-  var teamArray = new Array("developer", "contributor");
-  for (var i = 0; i < teamArray.length; ++i) {
-    try {
-      var authors = myDoc.getTeam(teamArray[i]);
-    } catch (e) {
-      alert("setupEditorForEval: couldn't get " + teamArray[i] + " team: " + e.message);
-      closeFile();
-      return false;
+    var teamArray = new Array("developer", "contributor");
+    for (var i = 0; i < teamArray.length; ++i) {
+      try {
+        var authors = myDoc.getTeam(teamArray[i]);
+      } catch (e) {
+        alert("setupEditorForEval: couldn't get " + teamArray[i] + " team: " + e.message);
+        closeFile();
+        return false;
+      }
+      var authorList = document.getElementById(teamArray[i] + "Team");
+      for(var j = 0; j < authors.length; ++j) {
+        var listitem = document.createElement("listitem");
+        var listcellName = document.createElement("listcell");
+        var listcellEmail = document.createElement("listcell");
+        var listcellCompany = document.createElement("listcell");
+        listcellName.setAttribute("label", authors[j].name);
+        listcellEmail.setAttribute("label", authors[j].email);
+        listcellCompany.setAttribute("label", authors[j].company);
+        listitem.appendChild(listcellName);
+        listitem.appendChild(listcellEmail);
+        listitem.appendChild(listcellCompany);
+        authorList.appendChild(listitem);
+      }
     }
-    var authorList = document.getElementById(teamArray[i] + "Team");
-    for(var j = 0; j < authors.length; ++j) {
-      var listitem = document.createElement("listitem");
-      var listcellName = document.createElement("listcell");
-      var listcellEmail = document.createElement("listcell");
-      var listcellCompany = document.createElement("listcell");
-      listcellName.setAttribute("label", authors[j].name);
-      listcellEmail.setAttribute("label", authors[j].email);
-      listcellCompany.setAttribute("label", authors[j].company);
-      listitem.appendChild(listcellName);
-      listitem.appendChild(listcellEmail);
-      listitem.appendChild(listcellCompany);
-      authorList.appendChild(listitem);
-    }
-  }
   } catch (e) {
     alert("setupEditorForEval: a problem occured in author/team stuff: " + e.message);
     closeFile();
@@ -496,6 +517,7 @@ function getPreference(name) {
 
   return branch.getCharPref(name);
 }
+
 
 function setPreference(name, value) {
   var branch = pref.getBranch("pref.");

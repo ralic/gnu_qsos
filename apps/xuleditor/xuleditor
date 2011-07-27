@@ -1,14 +1,44 @@
 #!/bin/sh
+
 case ${1} in
+	release)
+		xulrunner application.ini -file ${2}
+		;;
+
+	clean)
+		rm -rf ~/.raphael.semeteys@atosorigin.com/
+		;;
+
 	debug)
 		rm -rf ~/.raphael.semeteys@atosorigin.com/
-		xulrunner application.ini -console -jsconsole
+		xulrunner application.ini -console -jsconsole ${2}
 		;;
+
 	help)
-		echo "usage: xuleditor [debug]"
+		echo "usage: xuleditor [debug] [evaluation.qsos]"
+		;;
+
+	clear)
+		rm -rf ~/.raphael.semeteys@atosorigin.com/
+		xulrunner application.ini -file ${2}
 		;;
 	*)
-		rm -rf ~/.raphael.semeteys@atosorigin.com/
+		echo ""
+		echo "  !! WARNING !!"
+		echo ""
+		echo "  As we are now using preferences to store information, this"
+		echo "  script doesn't remove the xulrunner cache by default anymore."
+		echo ""
+		echo "  Use './xuleditor clean' if you have just updated the editor"
+		echo "  or if you want to reset stored preferences."
+		echo ""
+		echo "  Use './xuleditor clear' if you want to start the editor with"
+		echo "  clear settings."
+		echo ""
+		echo "  Use './xuleditor release' if you don't want to see this warning"
+		echo "  anymore."
+		echo ""
 		xulrunner application.ini -file ${1}
 		;;
 esac
+

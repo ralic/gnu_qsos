@@ -686,7 +686,7 @@
               </vbox>
             </groupbox>
             <hbox flex="1">
-              <groupbox flex="100">
+              <groupbox flex="1">
                 <caption label="&license;"/>
                 <grid flex="1">
                   <columns>
@@ -706,7 +706,7 @@
                     </row>
                     <row align="center">
                       <label control="licenseHomepage" value="&licenseHomepage;"/>
-                      <textbox id="licenseHomepage" oninput="docHasChanged(true);" placeholder="http://..." flex="3"/>
+                      <textbox id="licenseHomepage" oninput="docHasChanged(true);" placeholder="http://..." flex="1"/>
                     </row>
                   </rows>
                 </grid>
@@ -721,7 +721,7 @@
                   <rows>
                     <row align="center">
                       <label control="copyright" value="&copyright;"/>
-                      <textbox id="copyright" oninput="docHasChanged(true);" width="300"/>
+                      <textbox id="copyright" oninput="docHasChanged(true);" flex="1"/>
                     </row>
                   </rows>
                 </grid>

@@ -110,7 +110,7 @@ function updateFromTemplate() {
 
   // Type and version testing
   try {
-    var currentType = myDoc.get("qsosMetadata/template/type");
+    try { var currentType = myDoc.get("qsosMetadata/template/type"); } catch (e) { var currentType = "" }
 
     var nodes = templateXML.evaluate("//qsosMetadata/template/type", templateXML, null, XPathResult.ANY_TYPE, null);
     var node = nodes.iterateNext();
@@ -125,7 +125,7 @@ function updateFromTemplate() {
       alert(strbundle.getString("wrongTemplateType") + " " + currentType + " != " + newType);
       return false;
     } else {
-      var currentVersion = myDoc.get("qsosMetadata/template/version");
+      try { var currentVersion = myDoc.get("qsosMetadata/template/version"); } catch (e) { var currentVersion = "" }
 
       var nodes = templateXML.evaluate("//qsosMetadata/template/version", templateXML, null, XPathResult.ANY_TYPE, null);
       var node = nodes.iterateNext();
@@ -177,7 +177,9 @@ function updateFromTemplate() {
 
   // Updates the template type and verison
   var labelElem = document.getElementById("templateCaption");
-  labelElem.label = strbundle.getString("template") + " " + strbundle.getString("templateType") + " " + myDoc.get("qsosMetadata/template/type") + " (" + strbundle.getString("templateVersion") + " " + myDoc.get("qsosMetadata/template/version") + ")";
+  try { var type = myDoc.get("qsosMetadata/template/type"); } catch (e) { var type = ""; }
+  try { var version = myDoc.get("qsosMetadata/template/version"); } catch (e) { var version = ""; }
+  labelElem.label = strbundle.getString("template") + " " + strbundle.getString("templateType") + " " + type + " (" + strbundle.getString("templateVersion") + " " + version + ")";
 
   // Resets the criteria tab
   document.getElementById("criteriaDescription").value = "";
