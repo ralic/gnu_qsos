@@ -1,5 +1,5 @@
 /**
- *  Copyright (C) 2006, 2011 Atos
+ *  Copyright (C) 2006-2011 Atos
  *
  *  Author: Raphael Semeteys <raphael.semeteys@atos.net>
  *

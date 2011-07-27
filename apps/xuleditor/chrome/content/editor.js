@@ -47,7 +47,6 @@ textElements["componentVersion"] = "component/version";
 textElements["componentMainTech"] = "component/mainTech";
 textElements["componentHomepage"] = "component/homepage";
 textElements["componentTags"] = "component/tags";
-// textElements["componentStatus"] = "component/status";
 textElements["componentVendor"] = "component/vendor";
 textElements["componentDescription"] = "component/description";
 
@@ -60,10 +59,7 @@ textElements["copyright"] = "openSourceCartouche/legal/copyright";
 // Team
 textElements["number"] = "team/number";
 
-// Authors tab
-// Evaluation
-// textElements["evaluationVersion"] = "qsosMetadata/version";
-
+// Evaluation Metadata
 textElements["evaluationReviewerName"] = "evaluation/reviewer/name";
 textElements["evaluationReviewerEmail"] = "evaluation/reviewer/email";
 textElements["evaluationReviewerComment"] = "evaluation/reviewer/comment";
@@ -77,7 +73,7 @@ textElements["oscReviewerName"] = "openSourceCartouche/metadata/reviewer/name";
 textElements["oscReviewerEmail"] = "openSourceCartouche/metadata/reviewer/email";
 textElements["oscReviewerComment"] = "openSourceCartouche/metadata/reviewer/comment";
 
-
+// Dates related stuff
 var dateElements = new Object();
 dateElements["componentReleaseDate"] = "component/releaseDate";
 
@@ -162,61 +158,57 @@ function exitConfirmDialog() {
 // The general, criteria and chart tabs are open only if a document is opened.
 function setStateEvalOpen(state) {
   try {
-  evaluationOpen = state;
-  if (state) {
-    var bool = "";
-    var nbool= "true";
-  } else {
-    var bool = "true";
-    var nbool = "";
-  }
-//   document.getElementById("fileTab").hidden = "true";
-  // Settings tab disable as it's not currently functionnal
-//   document.getElementById("configTab").hidden = "true";
-  document.getElementById("metadataTab").hidden = bool;
-  document.getElementById("oscTab").hidden = bool;
-  document.getElementById("criteriaTab").hidden = bool;
-  // document.getElementById("chartTab").hidden = bool;
+    evaluationOpen = state;
+    if (state) {
+      var bool = "";
+      var nbool= "true";
+    } else {
+      var bool = "true";
+      var nbool = "";
+    }
 
-  document.getElementById("newFile").disabled = nbool;
-  document.getElementById("newFile").hidden = nbool;
-  document.getElementById("openFile").disabled = nbool;
-  document.getElementById("openFile").hidden = nbool;
-  // Update old QSOS button is active only when the evaluation is closed
-  document.getElementById("updateFromOldQSOS").disabled = nbool;
-  document.getElementById("updateFromOldQSOS").hidden = nbool;
+    document.getElementById("metadataTab").hidden = bool;
+    document.getElementById("oscTab").hidden = bool;
+    document.getElementById("criteriaTab").hidden = bool;
 
-  document.getElementById("saveFile").disabled = "true";
-  document.getElementById("saveFile").hidden= bool;
-  document.getElementById("saveFileAs").disabled = bool;
-  document.getElementById("saveFileAs").hidden = bool;
-  document.getElementById("closeFile").disabled = bool;
-  document.getElementById("closeFile").hidden = bool;
+    document.getElementById("newFile").disabled = nbool;
+    document.getElementById("newFile").hidden = nbool;
+    document.getElementById("openFile").disabled = nbool;
+    document.getElementById("openFile").hidden = nbool;
 
-  document.getElementById("exitApp").disabled = nbool;
-  document.getElementById("exitApp").hidden = nbool;
+    // Update old QSOS button is active only when the evaluation is closed
+    document.getElementById("updateFromOldQSOS").disabled = nbool;
+    document.getElementById("updateFromOldQSOS").hidden = nbool;
 
-  // Remote saving is temporarily disabled
-  document.getElementById("saveRemoteFile").disabled = "true";
-  document.getElementById("saveRemoteFile").hidden = "true";
-  // Open Remote File button disable since it doesn't work for now
-  document.getElementById("openRemoteFile").disabled = "true";
-  document.getElementById("openRemoteFile").hidden = "true";
+    document.getElementById("saveFile").disabled = "true";
+    document.getElementById("saveFile").hidden= bool;
+    document.getElementById("saveFileAs").disabled = bool;
+    document.getElementById("saveFileAs").hidden = bool;
+    document.getElementById("closeFile").disabled = bool;
+    document.getElementById("closeFile").hidden = bool;
 
-//   document.getElementById("extraToolbar").hidden = bool;
+    document.getElementById("exitApp").disabled = nbool;
+    document.getElementById("exitApp").hidden = nbool;
 
-  document.getElementById("updateFromTemplate").hidden = bool;
-  document.getElementById("exportOSC").hidden = bool;
-  document.getElementById("exportToFreeMind").hidden = bool;
+    // Remote saving is temporarily disabled
+    document.getElementById("saveRemoteFile").disabled = "true";
+    document.getElementById("saveRemoteFile").hidden = "true";
 
-//   document.getElementById('tabs').selectedIndex = 2;
-  document.getElementById("tabPanels").hidden = bool;
-  document.getElementById("intoVbox").hidden = nbool;
+    // Open Remote File button disable since it doesn't work for now
+    document.getElementById("openRemoteFile").disabled = "true";
+    document.getElementById("openRemoteFile").hidden = "true";
 
-  if (!state) {
-    document.getElementById("oscLabel").label = strbundle.getString("oscAuthors");
-    document.getElementById("templateCaption").label = strbundle.getString("template");
-  }
+    document.getElementById("updateFromTemplate").hidden = bool;
+    document.getElementById("exportOSC").hidden = bool;
+    document.getElementById("exportToFreeMind").hidden = bool;
+
+    document.getElementById("tabPanels").hidden = bool;
+    document.getElementById("intoVbox").hidden = nbool;
+
+    if (!state) {
+      document.getElementById("oscLabel").label = strbundle.getString("oscAuthors");
+      document.getElementById("templateCaption").label = strbundle.getString("template");
+    }
   } catch (e) {
     alert("setStateEvalOpen: error: " + e.message);
   }
@@ -420,9 +412,6 @@ function setupEditorForEval() {
     return false;
   }
 
-  //   populateLanguage();
-  //   selectElementInList(document.getElementById("evaluationLanguage"), myDoc.get("qsosMetadata/language"));
-
   // Authors (evaluation + Open Source Cartouche metadata), Contributors, Developers
   try {
     var authorsArray = new Array("evaluation");
@@ -496,9 +485,6 @@ function setupEditorForEval() {
 
   setStateEvalOpen(true);
 
-//   // Select the General tab
-//   document.getElementById('tabs').selectedIndex = 3;
-
   return true;
 }
 
@@ -535,16 +521,4 @@ function addMyself(type) {
   if (type != "evaluationAuthor") {
     docHasChanged();
   }
-//   if (type == "evaluationAuthor") {
-// //     alert("evaluationAuthor");
-//   } else if (type == "evaluationReviewer") {
-// //     alert("evaluationReviewer");
-//     docHasChanged();
-//   } else if (type == "oscAuthor") {
-// //     alert("oscAuthor");
-//     docHasChanged();
-//   } else if (type == "oscReviewer") {
-// //     alert("oscReviewer");
-//     docHasChanged();
-//   }
 }

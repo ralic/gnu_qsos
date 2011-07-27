@@ -57,7 +57,6 @@ function expandTree(bool) {
 // Triggered when a new criterion is selected in the tree
 // Fills criteria's fields with new values
 function treeselect(tree) {
-//   alert("treeselect: begin");
   //Forces focus to trigger possible onchange event on another XUL element
   document.getElementById("criteriaTree").focus();
   if (tree.currentIndex != -1) {

@@ -21,12 +21,12 @@
  *  QSOS XUL Editor
  *  compability.js: functions to import/export/update evaluations thanks to xslt sheet
  *
- **/
+**/
 
 
 function newFileFromTemplate() {
   try {
-//     alert("First, choose the template you want to use for your evaluation.");
+    // Asks for the template
     var filename = pickAFile(".mm", strbundle.getString("FreeMindTemplate"));
     if (filename == "") {
       return false;
@@ -36,7 +36,7 @@ function newFileFromTemplate() {
       return false;
     }
 
-//     alert("Then, choose the right XSLT sheet to convert it to an evaluation.");
+    // Uses "included" xslt to convert the template to an evaluation
     var xslt = parseXML(freemind_to_qsos_2_0);
     var error = xslt.getElementsByTagName("parsererror");
     if (error.length == 1) {
@@ -57,10 +57,6 @@ function newFileFromTemplate() {
     processor.importStylesheet(xslt);
     myDoc.setSheet(processor.transformToDocument(xml));
 
-    var serializer = new XMLSerializer();
-    var xmlOutput = serializer.serializeToString(myDoc.getSheet());
-//     alert("Output:\n" + xmlOutput);
-
     try {
       setupEditorForEval();
     } catch (e) {
@@ -71,7 +67,6 @@ function newFileFromTemplate() {
   } catch (e) {
     alert("newFileFromTemplate: " + e.message);
   }
-//   alert("newFileFromTemplate: fin");
 }
 
 
@@ -83,7 +78,6 @@ function updateFromTemplate() {
     }
 
     // Open template file dialog to choose a template to take stuff from
-//     alert("Choose the template you want to use in order to update your evaluation.");
     var filename = pickAFile(".mm", strbundle.getString("FreeMindTemplate"));
     if (filename == "") {
       return false;
@@ -153,6 +147,8 @@ function updateFromTemplate() {
   try {
     // Creates of copy in order to work on the sheet easily
     var tmpTemplateXML = parseXML(serializeXML(myDoc.getSheet()));
+
+    // Merge the sections
     var newSheet = mergeSections(myDoc.getSheet(), templateXML, tmpTemplateXML);
 
     // Updates the template part :
@@ -173,6 +169,7 @@ function updateFromTemplate() {
     alert("updateFromTemplate: merge failed: " + e.message);
   }
 
+  //Update the editor for the new template
   myDoc.setSheet(newSheet);
 
   // Updates the template type and verison
@@ -239,22 +236,15 @@ function mergeSections(oldSheet, newSheet, tmpOldSheet) {
 }
 
 
+// Updates a section with content from oldSheet
 function updateNode(section, oldSheet) {
   try {
     var comments = section.getElementsByTagName("comment");
     var len = comments.length;
-//     alert(len);
     for (var i = 0; i < len; ++i) {
-//       alert(comments[i]);
       var id = comments[i].parentNode.getAttribute("name");
-//       alert(id);
-//       alert("//element[@name='" + id + "']");
       var node = oldSheet.evaluate("//element[@name='" + id + "']", oldSheet, null, XPathResult.ORDERED_NODE_ITERATOR_TYPE, null).iterateNext();
-//       alert(node);
       if (node) {
-//         alert("trouvé !");
-//         alert(node.getElementsByTagName("comment")[0]);
-//         alert(node.getElementsByTagName("comment")[0].textContent);
         comments[i].textContent = node.getElementsByTagName("comment")[0].textContent;
         comments[i].nextSibling.textContent = node.getElementsByTagName("score")[0].textContent;
       }
@@ -293,16 +283,6 @@ function exportOSC() {
 
 function exportToFreeMind() {
   try {
-//     alert("First, choose the right XSLT to export the template part to FreeMind.");
-//     var filename = pickAFile(".xsl", "XSLT");
-//     if (filename == "") {
-//       return false;
-//     }
-//     var xslt = loadFile(filename);
-//     if (xslt == null) {
-//       return false;
-//     }
-
     // FIXME find a way to open the right XSLT from the extension
     /*xslt = loadXSLT("chrome://qsos-xuled/content/freemind_to_qsos.xsl");
      *  if (xslt == null) {
@@ -312,8 +292,7 @@ function exportToFreeMind() {
     var xslt = parseXML(qsos_2_0_to_freemind);
     var error = xslt.getElementsByTagName("parsererror");
     if (error.length == 1) {
-      alert("An error occurred while parsing the XSLT! This is a bug. Please report it using this description:\nThe QSOS 2.0 to Freemind XSLT doesn't work.\nPlease include your evaluations in the report.");
-      alert("loadFile: " + strbundle.getString("parsingError") + "\n\n" + error[0].textContent);
+      alert("An error occurred while parsing the XSLT! This is a bug. Please report it using this description:\nThe QSOS 2.0 to Freemind XSLT doesn't work.\nPlease include your evaluations and this message in the report:\n" + "loadFile: " + strbundle.getString("parsingError") + "\n\n" + error[0].textContent);
       return false;
     }
 
@@ -324,12 +303,8 @@ function exportToFreeMind() {
     var tmp = processor.transformToDocument(toTrans);
     element = tmp.getElementsByTagName("map")[0];
 
-//     var serializer = new XMLSerializer();
-//     var xmlOutput = serializer.serializeToString(toTrans);
-//     alert("Output:\n" + xmlOutput);
-
     getPrivilege();
-//     alert("Choose the file to save the template.");
+
     var nsIFilePicker = Components.interfaces.nsIFilePicker;
     var fp = Components.classes["@mozilla.org/filepicker;1"].createInstance(nsIFilePicker);
     fp.init(window, strbundle.getString("saveFileAs"), nsIFilePicker.modeSave);
@@ -353,7 +328,7 @@ function exportToFreeMind() {
 
 function updateFromOldQSOS() {
   try {
-//     alert("Choose the evaluation you want to update.");
+    // Opens the evaluation to update
     var filename = pickAFile(".qsos", strbundle.getString("QSOSFile"));
     if (filename == "") {
       return false;
@@ -389,16 +364,6 @@ function updateFromOldQSOS() {
       return false;
     }
 
-//     try {
-//     var serializer = new XMLSerializer();
-//     var xmlOutput = serializer.serializeToString(myDoc.getSheet());
-//     alert("Output:\n" + xmlOutput);
-//     } catch (e) {
-//       alert("updateFromOldQSOS: failed to serialize, check your evaluation : " + e.message);
-//       closeFile();
-//       return false;
-//     }
-
     try {
       setupEditorForEval();
     } catch (e) {
@@ -416,7 +381,7 @@ function updateFromOldQSOS() {
 
 ////////////////////////////////////////////////////////////////////////////////
 
-// Commands used to produce "Javascript compliant" strings form raw xslt files:
+// Commands used to produce "Javascript compliant" strings form "raw" xslt files:
 // sed 's/"/\\"/g' <file.xslt> | sed 's/$/\\/g'
 
 // Last updated: 25/07/2011
