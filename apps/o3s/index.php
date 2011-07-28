@@ -1,28 +1,30 @@
 <?php
-/*
-**  Copyright (C) 2009 Atos Origin 
-**
-**  Author: Raphael Semeteys <raphael.semeteys@atosorigin.com>
-**
-**  This program is free software; you can redistribute it and/or modify
-** it under the terms of the GNU General Public License as published by
-**  the Free Software Foundation; either version 2 of the License, or
-**  (at your option) any later version.
-**
-** This program is distributed in the hope that it will be useful,
-**  but WITHOUT ANY WARRANTY; without even the implied warranty of
-**  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-**  GNU General Public License for more details.
-**
-**  You should have received a copy of the GNU General Public License
-** along with this program; if not, write to the Free Software
-** Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
-**
-**
-** O3S
-** index.php: lists software families and shows search box
-**
-*/
+/**
+ *  Copyright (C) 2007-2011 Atos
+ *
+ *  Author: Raphael Semeteys <raphael.semeteys@atos.net>
+ *
+ *  This program is free software; you can redistribute it and/or modify
+ *  it under the terms of the GNU General Public License as published by
+ *  the Free Software Foundation; either version 2 of the License, or
+ *  (at your option) any later version.
+ *
+ *  This program is distributed in the hope that it will be useful,
+ *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *  GNU General Public License for more details.
+ *
+ *  You should have received a copy of the GNU General Public License
+ *  along with this program; if not, write to the Free Software
+ *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
+ *
+ *
+ *  O3S
+ *  index.php: lists software families and shows search box
+ *
+**/
+
+
 session_start();
 $_SESSION = array();
 
@@ -63,9 +65,9 @@ $query = "SELECT qsosappfamily, qsosspecificformat, count(*) FROM evaluations WH
 $IdReq = mysql_query($query, $IdDB);
 while($row = mysql_fetch_row($IdReq)) {
   $link = "list.php?lang=$lang&family=$row[0]&qsosspecificformat=$row[1]";
-  $over0 =  "onmouseover=\"this.setAttribute('class','highlight')\" 
+  $over0 =  "onmouseover=\"this.setAttribute('class','highlight')\"
     onmouseout=\"this.setAttribute('class','level0')\"";
-  $over1 =  "onmouseover=\"this.setAttribute('class','highlight')\" 
+  $over1 =  "onmouseover=\"this.setAttribute('class','highlight')\"
     onmouseout=\"this.setAttribute('class','level1')\"";
   echo "<tr>\n";
   echo "<td class='level0' $over0><a href='$link'><b>$row[0]</b></a</td>\n";

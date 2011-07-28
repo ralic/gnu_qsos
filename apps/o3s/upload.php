@@ -1,28 +1,29 @@
 <?php
-/*
-**  Copyright (C) 2007 Atos Origin 
-**
-**  Author: Raphael Semeteys <raphael.semeteys@atosorigin.com>
-**
-**  This program is free software; you can redistribute it and/or modify
-** it under the terms of the GNU General Public License as published by
-**  the Free Software Foundation; either version 2 of the License, or
-**  (at your option) any later version.
-**
-** This program is distributed in the hope that it will be useful,
-**  but WITHOUT ANY WARRANTY; without even the implied warranty of
-**  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-**  GNU General Public License for more details.
-**
-**  You should have received a copy of the GNU General Public License
-** along with this program; if not, write to the Free Software
-** Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
-**
-**
-** O3S - 
-** upload.php: uploads QSOS evaluation on local filesystem
-**
-*/
+/**
+ *  Copyright (C) 2007-2011 Atos
+ *
+ *  Author: Raphael Semeteys <raphael.semeteys@atos.net>
+ *
+ *  This program is free software; you can redistribute it and/or modify
+ *  it under the terms of the GNU General Public License as published by
+ *  the Free Software Foundation; either version 2 of the License, or
+ *  (at your option) any later version.
+ *
+ *  This program is distributed in the hope that it will be useful,
+ *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *  GNU General Public License for more details.
+ *
+ *  You should have received a copy of the GNU General Public License
+ *  along with this program; if not, write to the Free Software
+ *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
+ *
+ *
+ *  O3S
+ *  upload.php: uploads QSOS evaluation on local filesystem
+ *
+**/
+
 
 include("config.php");
 include("lang.php");
@@ -41,7 +42,7 @@ if (isset($_FILES['myFile']) && $_FILES['myFile']['tmp_name'] <> "") {
   $file = $_FILES['myFile'];
   $destination = $sheet.$delim.basename($file['name']);
   if (move_uploaded_file($file['tmp_name'], $destination)) {
-    chmod ($destination, 0770);
+    chmod ($destination, 0660);
     echo "<div style='color: red'>File ".basename($file['name'])." successfully uploaded<br/></div>";
   } else {
     echo "<div style='color: red'>Upload error: ".$file['error']."<br/></div>";

@@ -1,27 +1,28 @@
 <?php
-/*
-**  Copyright (C) 2007 Atos Origin 
-**
-**  Author: Raphael Semeteys <raphael.semeteys@atosorigin.com>
-**
-**  This program is free software; you can redistribute it and/or modify
-**  it under the terms of the GNU General Public License as published by
-**  the Free Software Foundation; either version 2 of the License, or
-**  (at your option) any later version.
-**
-**  This program is distributed in the hope that it will be useful,
-**  but WITHOUT ANY WARRANTY; without even the implied warranty of
-**  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-**  GNU General Public License for more details.
-**
-**  You should have received a copy of the GNU General Public License
-**  along with this program; if not, write to the Free Software
-**  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
-**
-**
-** QSOSDocument.php: PHP classes to access and manipulate QSOS documents
-**
-*/
+/**
+ *  Copyright (C) 2007-2011 Atos
+ *
+ *  Author: Raphael Semeteys <raphael.semeteys@atos.net>
+ *
+ *  This program is free software; you can redistribute it and/or modify
+ *  it under the terms of the GNU General Public License as published by
+ *  the Free Software Foundation; either version 2 of the License, or
+ *  (at your option) any later version.
+ *
+ *  This program is distributed in the hope that it will be useful,
+ *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *  GNU General Public License for more details.
+ *
+ *  You should have received a copy of the GNU General Public License
+ *  along with this program; if not, write to the Free Software
+ *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
+ *
+ *
+ *  QSOSDocument.php: PHP classes to access and manipulate QSOS documents
+ *
+**/
+
 
 //Class representing a QSOS criterion (<section/> or <element/>)
 class QSOSCriterion {
@@ -72,7 +73,7 @@ class QSOSDocument {
 			return "";
 		}
 	}
-	
+
     //$element: name of the element
     //$subelement: name of the XML tag
     //Returns: value of the XML tag included in the element
@@ -109,7 +110,7 @@ class QSOSDocument {
 
     //Returns: array of Author objects (cf. Author class above)
 	public function getauthors() {
-		$authors = array();	
+		$authors = array();
 
 		$nodes = $this->xpath->query("//author");
 		for ($i=0; $i < $nodes->length; $i++) {
@@ -245,7 +246,7 @@ class QSOSDocument {
 		}
 
 		$score = round(($sum/$totalWeight), 2);
-		
+
 		return $score;
 	}
 
@@ -273,7 +274,7 @@ class QSOSDocument {
 
 		if ($totalWeight == 0) return 0;
     $score = round(($sum/$totalWeight), 2);
-		
+
 		return $score;
 	}
 

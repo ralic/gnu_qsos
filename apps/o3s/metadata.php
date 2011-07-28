@@ -1,28 +1,29 @@
 <?php
-/*
-**  Copyright (C) 2009 Atos Origin 
-**
-**  Author: Raphael Semeteys <raphael.semeteys@atosorigin.com>
-**
-**  This program is free software; you can redistribute it and/or modify
-** it under the terms of the GNU General Public License as published by
-**  the Free Software Foundation; either version 2 of the License, or
-**  (at your option) any later version.
-**
-** This program is distributed in the hope that it will be useful,
-**  but WITHOUT ANY WARRANTY; without even the implied warranty of
-**  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-**  GNU General Public License for more details.
-**
-**  You should have received a copy of the GNU General Public License
-** along with this program; if not, write to the Free Software
-** Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
-**
-**
-** O3S
-** metadata.php: extract metadata from QSOS files
-**
-*/
+/**
+ *  Copyright (C) 2007-2011 Atos
+ *
+ *  Author: Raphael Semeteys <raphael.semeteys@atos.net>
+ *
+ *  This program is free software; you can redistribute it and/or modify
+ *  it under the terms of the GNU General Public License as published by
+ *  the Free Software Foundation; either version 2 of the License, or
+ *  (at your option) any later version.
+ *
+ *  This program is distributed in the hope that it will be useful,
+ *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *  GNU General Public License for more details.
+ *
+ *  You should have received a copy of the GNU General Public License
+ *  along with this program; if not, write to the Free Software
+ *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
+ *
+ *
+ *  O3S
+ *  metadata.php: extract metadata from QSOS files
+ *
+**/
+
 
 include("config.php");
 include("lang.php");
@@ -37,22 +38,22 @@ function getmetadata($file) {
   $metadata = array();
   $keys = array( "qsosappfamily", "qsosspecificformat", "appname", "qsosappname", "release", "language", "licensedesc" ,"creation", "validation" );
   $myDoc = new QSOSDocument($file);
-  
+
   foreach ($keys as $key) {
     $metadata[$key] = $myDoc->getkey($key);
   }
-  
+
   $metadata["authors"] = $myDoc->getauthors();
 
   $metadata["sections"] = $myDoc->getcountkey("section");
-  
+
   $metadata["criteria"] = array(
     "total" => $myDoc->getcountkey("element"),
     "scorable" => $myDoc->getcountkey("element/score"),
     "scored" => $myDoc->getcountkey("element[score >= 0]"),
     "notscored" => $myDoc->getcountkey("element[score = '']")
   );
-  
+
   $metadata["comments"] = array(
     "total" => $myDoc->getcountkey("element/comment"),
     "commented" => $myDoc->getcountkey("element[comment != '']"),
@@ -66,15 +67,15 @@ $array = array();
 function retrieveTree($path, $parent)  {
   global $delim;
   global $array;
-  
+
   if ($dir=@opendir($path)) {
   while (($element=readdir($dir))!== false) {
-    if (is_dir($path.$delim.$element) 
-    && $element != "." 
-    && $element != ".." 
-    && $element != "CVS" 
-    && $element != "template" 
-    && $element != "templates" 
+    if (is_dir($path.$delim.$element)
+    && $element != "."
+    && $element != ".."
+    && $element != "CVS"
+    && $element != "template"
+    && $element != "templates"
     && $element != ".svn") {
       retrieveTree($path.$delim.$element, $parent.$delim.$element);
     } elseif (substr($element, -5) == ".qsos") {
@@ -111,27 +112,27 @@ $evaluations = retrieveTree($sheet, $sheet);
 foreach ($evaluations as $evaluation) {
   $id = end(explode($delim, $evaluation));
   $m = getmetadata($evaluation);
-  
-  $query = "INSERT INTO evaluations VALUES (\"$id\", 
+
+  $query = "INSERT INTO evaluations VALUES (\"$id\",
   \"".$m['qsosappfamily']."\",
   \"".$m['qsosspecificformat']."\",
-  \"".$m['qsosappname']."\", 
-  \"".$m['release']."\", 
-  \"".$m['appname']."\", 
-  \"".$m['language']."\", 
-  \"$evaluation\", 
-  \"".$m['licensedesc']."\", 
-  \"".$m['creation']."\", 
-  \"".$m['validation']."\", 
-  ".$m['sections'].", 
-  ".$m['criteria']['total'].", 
-  ".$m['criteria']['scorable'].", 
-  ".$m['criteria']['scored'].", 
-  ".$m['criteria']['notscored'].", 
-  ".$m['comments']['total'].", 
-  ".$m['comments']['commented'].", 
+  \"".$m['qsosappname']."\",
+  \"".$m['release']."\",
+  \"".$m['appname']."\",
+  \"".$m['language']."\",
+  \"$evaluation\",
+  \"".$m['licensedesc']."\",
+  \"".$m['creation']."\",
+  \"".$m['validation']."\",
+  ".$m['sections'].",
+  ".$m['criteria']['total'].",
+  ".$m['criteria']['scorable'].",
+  ".$m['criteria']['scored'].",
+  ".$m['criteria']['notscored'].",
+  ".$m['comments']['total'].",
+  ".$m['comments']['commented'].",
   ".$m['comments']['notcommented'].")";
-  
+
   if ($IdReq = mysql_query($query, $IdDB)) {
     echo $m['appname']." proceeded.<br/>";
   } else {

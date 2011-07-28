@@ -1,28 +1,30 @@
 <?php
-/*
-**  Copyright (C) 2007-2009 Atos Origin 
-**
-**  Author: Raphael Semeteys <raphael.semeteys@atosorigin.com>
-**
-**  This program is free software; you can redistribute it and/or modify
-** it under the terms of the GNU General Public License as published by
-**  the Free Software Foundation; either version 2 of the License, or
-**  (at your option) any later version.
-**
-** This program is distributed in the hope that it will be useful,
-**  but WITHOUT ANY WARRANTY; without even the implied warranty of
-**  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-**  GNU General Public License for more details.
-**
-**  You should have received a copy of the GNU General Public License
-** along with this program; if not, write to the Free Software
-** Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
-**
-**
-** O3S
-** show.php: show QSOS evaluation(s)
-**
-*/
+/**
+ *  Copyright (C) 2007-2011 Atos
+ *
+ *  Author: Raphael Semeteys <raphael.semeteys@atos.net>
+ *
+ *  This program is free software; you can redistribute it and/or modify
+ *  it under the terms of the GNU General Public License as published by
+ *  the Free Software Foundation; either version 2 of the License, or
+ *  (at your option) any later version.
+ *
+ *  This program is distributed in the hope that it will be useful,
+ *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *  GNU General Public License for more details.
+ *
+ *  You should have received a copy of the GNU General Public License
+ *  along with this program; if not, write to the Free Software
+ *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
+ *
+ *
+ *  O3S
+ *  show.php: show QSOS evaluation(s)
+ *
+**/
+
+
 session_start();
 
 $weights = $_SESSION;
@@ -159,35 +161,35 @@ foreach($ids as $id) {
 echo "<table>\n";
 echo "<tr width='100%' align='center'><td>\n";
 echo "<a id='comment_selector' href='javascript:hideComments();'>";
-echo "<img id='column' 
-  src='skins/$skin/hide-comments.png' 
-  border=0 
+echo "<img id='column'
+  src='skins/$skin/hide-comments.png'
+  border=0
   onmouseover=\"return escape('Hide/Show comments')\"/>";
 echo "</a>\n";
 echo " <a href='javascript:decreaseFontSize();'>";
-echo "<img src='skins/$skin/decrease-font.png' 
-  border=0 
+echo "<img src='skins/$skin/decrease-font.png'
+  border=0
   onmouseover=\"return escape('Decrease font size')\"/>";
 echo "</a>\n";
 echo " <a href='javascript:increaseFontSize();'>";
-echo "<img src='skins/$skin/increase-font.png' 
-  border=0 
+echo "<img src='skins/$skin/increase-font.png'
+  border=0
   onmouseover=\"return escape('Increase font size')\"/>";
 echo "</a>\n";
 if (!isset($s)) {
   echo " <a href='radar.php?lang=$lang&".$f."svg=$svg'>";
-  echo "<img src='skins/$skin/graph.png' 
+  echo "<img src='skins/$skin/graph.png'
     border=0 onmouseover=\"return escape('Show graph')\"/>";
   echo "</a>\n";
 }
 echo "</td></tr>\n";
 echo "<tr><td align='center'>\n";
 if (isset($s)) {
-  echo "<input type='button' 
+  echo "<input type='button'
     value='".$msg['s4_button_back_alt']
     ."' onclick='location.href=\"search.php?s=$s\"'><br/><br/>";
 } else {
-  echo "<input type='button' 
+  echo "<input type='button'
     value='".$msg['s4_button_back']
     ."' onclick='location.href=\"list.php?lang=$lang&family=".$family."&qsosspecificformat=$qsosspecificformat&svg=$svg\"'><br/><br/>";
 }
@@ -244,10 +246,10 @@ function showtree($myDoc, $trees, $depth, $idP, $weights) {
       $idDOM = $idP."-".$idF;
     }
 
-    echo "<tr id='$idDOM' 
-      name='$name' 
-      class='level$depth' 
-      onmouseover=\"this.setAttribute('class','highlight')\" 
+    echo "<tr id='$idDOM'
+      name='$name'
+      class='level$depth'
+      onmouseover=\"this.setAttribute('class','highlight')\"
       onmouseout=\"this.setAttribute('class','level$depth')\">\n";
     if ($subtree) {
       echo "<td style='width: 250px; text-indent: $offset'>
@@ -269,13 +271,13 @@ function showtree($myDoc, $trees, $depth, $idP, $weights) {
     for($i=0; $i<count($trees); $i++) {
       $desc = addslashes($myDoc[$i]->getgeneric($name, "desc".$trees[$i][$k]->score));
       if ($desc != "") {
-        echo "<td class='score' 
+        echo "<td class='score'
           style='width: 60px; cursor:help' onmouseover=\"return escape('".janitize($desc)."')\">
           <div style='text-align: center'>"
             .$trees[$i][$k]->score
           ."</div></td>\n";
       } else {
-        echo "<td class='score' 
+        echo "<td class='score'
           style='width: 60px; text-align: center'>
           <div style='text-align: center'>"
             .$trees[$i][$k]->score

@@ -1,28 +1,30 @@
 <?php
-/*
-**  Copyright (C) 2007-2009 Atos Origin 
-**
-**  Author: Raphael Semeteys <raphael.semeteys@atosorigin.com>
-**
-**  This program is free software; you can redistribute it and/or modify
-** it under the terms of the GNU General Public License as published by
-**  the Free Software Foundation; either version 2 of the License, or
-**  (at your option) any later version.
-**
-** This program is distributed in the hope that it will be useful,
-**  but WITHOUT ANY WARRANTY; without even the implied warranty of
-**  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-**  GNU General Public License for more details.
-**
-**  You should have received a copy of the GNU General Public License
-** along with this program; if not, write to the Free Software
-** Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
-**
-**
-** O3S
-** set_weighting.php: displays form to enter weigthings
-**
-*/
+/**
+ *  Copyright (C) 2007-2011 Atos
+ *
+ *  Author: Raphael Semeteys <raphael.semeteys@atos.net>
+ *
+ *  This program is free software; you can redistribute it and/or modify
+ *  it under the terms of the GNU General Public License as published by
+ *  the Free Software Foundation; either version 2 of the License, or
+ *  (at your option) any later version.
+ *
+ *  This program is distributed in the hope that it will be useful,
+ *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *  GNU General Public License for more details.
+ *
+ *  You should have received a copy of the GNU General Public License
+ *  along with this program; if not, write to the Free Software
+ *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
+ *
+ *
+ *  O3S
+ *  set_weighting.php: displays form to enter weigthings
+ *
+**/
+
+
 session_start();
 
 $params = array('lang', 'svg', 'family', 'qsosspecificformat', 'new');
@@ -35,14 +37,14 @@ $weights = array();
 
 if (isset($new) && ($new == "true")) {
   $_SESSION = array();
-  while (list($name, $value) = each($_REQUEST)) { 
+  while (list($name, $value) = each($_REQUEST)) {
     if (!(in_array($name,$params))) {
       $_SESSION[$name] = $value;
     }
   }
 }
 
-while (list($name, $value) = each($_SESSION)) { 
+while (list($name, $value) = each($_SESSION)) {
   if (!(in_array($name,$params))) {
     $weights[$name] = $_SESSION[$name];
   }
@@ -114,7 +116,7 @@ $familiesFQDN = array();
 while($row = mysql_fetch_row($IdReq)) {
   array_push($familiesFQDN, $row[0]);
 }
-if (!in_array($family.$qsosspecificformat,$familiesFQDN)) 
+if (!in_array($family.$qsosspecificformat,$familiesFQDN))
   die ("$family $qsosspecificformat".$msg['s3_err_no_family']);
 
 $query = "SELECT file FROM evaluations WHERE qsosappfamily = '$family' AND qsosspecificformat = '$qsosspecificformat' LIMIT 0,1";
@@ -176,14 +178,14 @@ echo "</tr>\n";
 
 showtree($myDoc, $tree, 0, '');
 
-echo "<input type='button' value='".$msg['s2_button_back']."' 
+echo "<input type='button' value='".$msg['s2_button_back']."'
   onclick='back()'> ";
-echo " <input type='button' value='".$msg['s2_button_save']."' 
+echo " <input type='button' value='".$msg['s2_button_save']."'
   onclick='save()'> ";
-echo " <input type='button' value='".$msg['s2_button_saveFile']."' 
+echo " <input type='button' value='".$msg['s2_button_saveFile']."'
   onclick='saveFile()'><br/><br/>\n";
 echo "<input type='file' id='weighting' name='weighting'/> ";
-echo "<input type='button' value='".$msg['s2_button_upload']."' 
+echo "<input type='button' value='".$msg['s2_button_upload']."'
   onclick='upload()'><br/><br/>\n";
 echo "</table>\n";
 echo "</form>\n";
@@ -200,17 +202,17 @@ function showtree($myDoc, $tree, $depth, $idP) {
     $name = $tree[$k]->name;
     $title = $tree[$k]->title;
     $subtree = $tree[$k]->children;
-  
+
     $idF++;
     if ($idP == '') {
       $id = $idF;
     } else  {
       $id = $idP."-".$idF;
     }
-  
-    echo "<tr id='$id' 
-      class='level$depth' 
-      onmouseover=\"this.setAttribute('class','highlight')\" 
+
+    echo "<tr id='$id'
+      class='level$depth'
+      onmouseover=\"this.setAttribute('class','highlight')\"
       onmouseout=\"this.setAttribute('class','level$depth')\">\n";
     if ($subtree) {
       echo "<td style='width: 400px; text-indent: $offset'>
@@ -219,15 +221,15 @@ function showtree($myDoc, $tree, $depth, $idP) {
       echo "<td style='width: 400px; text-indent: $offset'>
         <span>$title</span></td>\n";
     }
-  
+
     echo "<td><div style='width: 60px; text-align: center'>\n";
     //If a weighting file has been uploaded use $weights array, if not use default value 1
-    echo "<input type='text' 
-      name='$name' size='3' style='text-align: center' onblur='checkWeight(this)' 
+    echo "<input type='text'
+      name='$name' size='3' style='text-align: center' onblur='checkWeight(this)'
       value='".((isset($weights[$name]))?$weights[$name]:1)."'/>\n";
 
     echo "</div></td>\n";
-  
+
     echo "</tr>\n";
 
     if ($subtree) {

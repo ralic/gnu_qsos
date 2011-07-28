@@ -1,28 +1,30 @@
 <?php
-/*
-**  Copyright (C) 2007-2009 Atos Origin 
-**
-**  Author: Raphael Semeteys <raphael.semeteys@atosorigin.com>
-**
-**  This program is free software; you can redistribute it and/or modify
-** it under the terms of the GNU General Public License as published by
-**  the Free Software Foundation; either version 2 of the License, or
-**  (at your option) any later version.
-**
-** This program is distributed in the hope that it will be useful,
-**  but WITHOUT ANY WARRANTY; without even the implied warranty of
-**  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-**  GNU General Public License for more details.
-**
-**  You should have received a copy of the GNU General Public License
-** along with this program; if not, write to the Free Software
-** Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
-**
-**
-** O3S
-** radar.php: graph generation (in SVG or PNG format)
-**
-*/
+/**
+ *  Copyright (C) 2007-2011 Atos
+ *
+ *  Author: Raphael Semeteys <raphael.semeteys@atos.net>
+ *
+ *  This program is free software; you can redistribute it and/or modify
+ *  it under the terms of the GNU General Public License as published by
+ *  the Free Software Foundation; either version 2 of the License, or
+ *  (at your option) any later version.
+ *
+ *  This program is distributed in the hope that it will be useful,
+ *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *  GNU General Public License for more details.
+ *
+ *  You should have received a copy of the GNU General Public License
+ *  along with this program; if not, write to the Free Software
+ *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
+ *
+ *
+ *  O3S
+ *  radar.php: graph generation (in SVG or PNG format)
+ *
+**/
+
+
 session_start();
 
 include("config.php");
@@ -65,25 +67,25 @@ if(isset($svg) && ($svg == "yes")) {
 //Graph generated in SVG format
   header("Content-type: image/svg+xml");
   include('libs/QSOSDocument.php');
-  
+
   if (!(isset($files))) {
     die("<error>No QSOS evaluation provided!</error>");
   }
-  
+
   $SCALE = 70; //1 QSOS unit in pixels
   $FONT_SIZE = 12; //$SCALE/10;
   $dx = 500; // X offset
   $dy = 300; // Y offset
   $doc = new DOMDocument('1.0');
-  
+
   $myDoc = array();
   $num = count($files);
-  
+
   //Initialization of data arrays
   for($i=0; $i<$num; $i++) {
     $myDoc[$i] = new QSOSDocument($files[$i]);
   }
-  
+
   //draw $n equidistant axis
   function drawAxis($n) {
     global $SCALE;
@@ -95,21 +97,21 @@ if(isset($svg) && ($svg == "yes")) {
     drawMark(1.5*$SCALE-25, 15, "1.5");
     drawCircle(2*$SCALE);
     drawMark(2*$SCALE-15, 15, "2");
-    
+
     //N: should be commented
     for ($i=1; $i < $n+1; $i++) {
       drawSingleAxis(2*$i*pi()/$n);
     }
   }
-  
-  //draw a single axis at $angle (in radians) from angle 0	
+
+  //draw a single axis at $angle (in radians) from angle 0
   function drawSingleAxis($angle) {
     global $SCALE, $dx, $dy;
     $x2 = 2*$SCALE*cos($angle) + $dx;
     $y2 = 2*$SCALE*sin($angle) + $dy;
     drawLine($dx, $dy, $x2, $y2);
   }
-  
+
   //draw a circle of $r radius
   function drawCircle($r) {
     global $doc;
@@ -123,7 +125,7 @@ if(isset($svg) && ($svg == "yes")) {
     $circle->setAttribute("stroke-width", "1");
     $g->appendChild($circle);
   }
-  
+
   //draw a line between two points
   function drawLine($x1, $y1, $x2, $y2) {
     global $doc;
@@ -137,7 +139,7 @@ if(isset($svg) && ($svg == "yes")) {
     $line->setAttribute("stroke-width", "1");
     $g->appendChild($line);
   }
-  
+
   //draw scale mark on the radar
   //$x, $y: coordinates
   //$mark : text to be displayed
@@ -150,12 +152,12 @@ if(isset($svg) && ($svg == "yes")) {
     $text->setAttribute("y", $y + $dy);
     $text->setAttribute("font-family", "Verdana");
     $text->setAttribute("font-size", $FONT_SIZE);
-  
+
     $text->setAttribute("fill", "lightgrey");
     $text->appendChild($doc->createTextNode($mark));
     $g->appendChild($text);
   }
-  
+
   //draw an axis legend
   //$x, $y: coordinates
   //$element : element which title is to be displayed
@@ -171,7 +173,7 @@ if(isset($svg) && ($svg == "yes")) {
     $text->setAttribute("font-family", "Verdana");
     $text->setAttribute("font-size", $FONT_SIZE);
     $text->appendChild($doc->createTextNode($element->title));
-    
+
     if ($element->children) {
       $text->setAttribute("fill", "green");
       $a = $doc->createElement("a");
@@ -182,7 +184,7 @@ if(isset($svg) && ($svg == "yes")) {
       $text->setAttribute("fill", "black");
       $g->appendChild($text);
     }
-    
+
     //text position is ajusted to be outside the circle shape
     //8 here is empiric data :)
     $textLength = strlen($element->title)*8;
@@ -231,12 +233,12 @@ if(isset($svg) && ($svg == "yes")) {
     global $doc;
     global $myDoc;
     global $FONT_SIZE;
-  
+
     $text = $doc->createElement("text");
     $text->setAttribute("font-family", "Verdana");
     $text->setAttribute("font-weight", "bold");
     $text->setAttribute("font-size", $FONT_SIZE);
-    
+
     $tspan = $doc->createElement("tspan");
     $tspan->appendChild($doc->createTextNode($title = $myDoc[0]->getkeytitle($name)));
     $text->appendChild($tspan);
@@ -258,10 +260,10 @@ if(isset($svg) && ($svg == "yes")) {
       $tspan->appendChild($doc->createTextNode($myDoc[$i]->getkey("appname")." ".$myDoc[$i]->getkey("release")." "));
       $text->insertBefore($tspan, $lasttspan);
     }
-  
+
     return $text;
   }
-  
+
   //draw path between points on each axis
   //$myDoc : QSOSDocument concerned
   //$name : name of the criteria regrouping subcriteria to be displayed
@@ -274,13 +276,13 @@ if(isset($svg) && ($svg == "yes")) {
     global $num;
     $path = $doc->createElement("path");
     $myD = "";
-    
+
     if (isset($name) && $name != "") {
       $tree = $myDoc->getWeightedSubTree($name, $weights);
     } else {
       $tree = $myDoc->getWeightedTree($weights);
     }
-    
+
     /*N
     $totalWeight = 0;
     for ($i=0; $i < count($tree); $i++) {
@@ -313,10 +315,10 @@ if(isset($svg) && ($svg == "yes")) {
     $path->setAttribute("fill-opacity", "0.2");
     $path->setAttribute("stroke-width", "3");
     $path->setAttribute("stroke", getColor($n));
-  
+
     return $path;
   }
-  
+
   $colors = array('red', 'blue', 'green', 'purple');
   //Return drawing color depending on software position in the list
   function getColor($i) {
@@ -327,14 +329,14 @@ if(isset($svg) && ($svg == "yes")) {
       return "black";
     }
   }
-  
+
   //svg element
   $svg = $doc->createElement('svg');
   $svg->setAttribute('xmlns', 'http://www.w3.org/2000/svg');
   $svg->setAttribute('xmlns:xlink', 'http://www.w3.org/1999/xlink');
   $svg->setAttribute('width', '100%');
   $svg->setAttribute('height', '100%');
-  
+
   //Graph element
   $g = $doc->createElement('g');
   //$g->setAttribute('transform', 'translate(500,300)');
@@ -347,7 +349,7 @@ if(isset($svg) && ($svg == "yes")) {
   }
   $svg->appendChild($g);
   $doc->appendChild($svg);
-  
+
   echo $doc->saveXML();
 } else {
 //Graph generated with jpgraph
@@ -355,16 +357,16 @@ if(isset($svg) && ($svg == "yes")) {
   include ($jpgraph_path."jpgraph.php");
   include ($jpgraph_path."jpgraph_radar.php");
   include("libs/QSOSDocument.php");
-  
+
   $myDoc = array();
   $app = array();
   $trees = array();
   $scores = array();
   $titles = array();
-  
+
   $i = 0;
   $num = count($files);
-  
+
   //Initialization of data arrays
   for($i=0; $i<$num; $i++) {
     $myDoc[$i] = new QSOSDocument($files[$i]);
@@ -374,58 +376,58 @@ if(isset($svg) && ($svg == "yes")) {
     } else {
       $trees[$i] = $myDoc[$i]->getTree();
     }
-  
+
     $scores[$i] = array();
     foreach($trees[$i] as $element) {
       array_push($scores[$i], $element->score);
     }
   }
-  
+
   //Graph's title
   if (isset($name) && $name != "") {
     $title = $myDoc[0]->getkeytitle($name);
   } else {
     $title = $myDoc[0]->getkey("qsosappfamily");
   }
-  
+
   //Axis titles
   foreach($trees[0] as $element) {
     array_push($titles, $element->title);
   }
-  
+
   // Create the basic radar graph
   $graph = new RadarGraph(700,500,"auto");
-  
+
   // Set background color and shadow
   $graph->SetColor("white");
   $graph->SetFrame(false,'',0);
-  
+
   // Position the graph
   $graph->SetCenter(0.4,0.55);
   $graph->SetPos(0.5,0.6);
-  
-  // Setup the axis formatting  
+
+  // Setup the axis formatting
   $graph->SetScale('lin',0,2);
   $graph->axis->SetFont(FF_ARIAL,FS_BOLD);
   $graph->axis->title->SetFont(FF_ARIAL,FS_BOLD);
   $graph->axis->title->SetMargin(5);
   $graph->axis->SetWeight(1);
-  $graph->axis->SetColor('darkgray'); 
-  
+  $graph->axis->SetColor('darkgray');
+
   // Setup the grid lines
   $graph->grid->SetLineStyle("longdashed");
   $graph->grid->SetColor("darkgray");
   $graph->grid->Show();
   $graph->HideTickMarks();
-    
+
   // Setup graph titles
   $graph->title->Set($title);
   $graph->title->SetFont(FF_ARIAL,FS_BOLD,12);
   $graph->SetTitles($titles);
-  
+
   // Setup graph legend
   $graph->legend->SetFont(FF_ARIAL,FS_BOLD);
-  
+
   function getColor($b_safe = TRUE) {
     //if a browser safe color is requested then set the array up
     //so that only a browser safe color can be returned
@@ -446,16 +448,16 @@ if(isset($svg) && ($svg == "yes")) {
       $max = 256; //the highest array offset
     }
     $retVal = '';
-    
+
     //generate a random color code
     for($i=0;$i<3;$i++) {
       $offset = rand(0,$max);
       $retVal .= $ary_codes[$offset];
     } //end for i
-    
+
     return "#".$retVal;
   }
-  
+
   //Generate graph for each software
   function getPlot($scores, $myDoc) {
     global $num;
@@ -467,14 +469,14 @@ if(isset($svg) && ($svg == "yes")) {
     $plot->SetLineWeight(3);
     return $plot;
   }
-  
+
   //Add them to the global graph
   for($i=0; $i<$num; $i++) {
     $graph->Add(getPlot($scores[$i], $myDoc[$i]));
   }
-  
+
   //Output the graph
   $graph->Stroke();
 }
 
-?> 
+?>

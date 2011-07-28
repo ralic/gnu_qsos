@@ -1,28 +1,29 @@
 <?php
-/*
-**  Copyright (C) 2007 Atos Origin 
-**
-**  Author: Raphael Semeteys <raphael.semeteys@atosorigin.com>
-**
-**  This program is free software; you can redistribute it and/or modify
-** it under the terms of the GNU General Public License as published by
-**  the Free Software Foundation; either version 2 of the License, or
-**  (at your option) any later version.
-**
-** This program is distributed in the hope that it will be useful,
-**  but WITHOUT ANY WARRANTY; without even the implied warranty of
-**  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-**  GNU General Public License for more details.
-**
-**  You should have received a copy of the GNU General Public License
-** along with this program; if not, write to the Free Software
-** Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
-**
-**
-** O3S
-** software.php: lists software in a given family
-**
-*/
+/**
+ *  Copyright (C) 2007-2011 Atos
+ *
+ *  Author: Raphael Semeteys <raphael.semeteys@atos.net>
+ *
+ *  This program is free software; you can redistribute it and/or modify
+ *  it under the terms of the GNU General Public License as published by
+ *  the Free Software Foundation; either version 2 of the License, or
+ *  (at your option) any later version.
+ *
+ *  This program is distributed in the hope that it will be useful,
+ *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *  GNU General Public License for more details.
+ *
+ *  You should have received a copy of the GNU General Public License
+ *  along with this program; if not, write to the Free Software
+ *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
+ *
+ *
+ *  O3S
+ *  software.php: lists software in a given family
+ *
+**/
+
 
 session_start();
 include("config.php");
@@ -45,10 +46,10 @@ function toggleSVG() {
       if (ref.search(/&svg=yes/) == -1) ref += "&svg=yes";
       document.getElementById("check").setAttribute("svg", "on");
     }
-    
+
     links[i].setAttribute("href", ref);
   }
-  
+
 }
 
 function submitForm() {
@@ -78,27 +79,27 @@ echo "<br/><br/>\n";
 $family = $_REQUEST['family'];
 
 if (!isset($_SESSION["generic"])) {
-  while (list($name, $value) = each($_REQUEST)) { 
+  while (list($name, $value) = each($_REQUEST)) {
     if (($name != 'f') && ($name != 'svg')) {
       $_SESSION[$name] = $value;
     }
   }
 }
 
-$tree= retrieveTree($sheet.$delim.$family); 
+$tree= retrieveTree($sheet.$delim.$family);
 $keys = array_keys($tree);
 
 function retrieveTree($path)  {
   global $delim;
-  
+
   if ($dir=@opendir($path)) {
   while (($element=readdir($dir))!== false) {
-    if (is_dir($path.$delim.$element) 
-    && $element != "." 
-    && $element != ".." 
-    && $element != "CVS" 
-    && $element != "template" 
-    && $element != "templates" 
+    if (is_dir($path.$delim.$element)
+    && $element != "."
+    && $element != ".."
+    && $element != "CVS"
+    && $element != "template"
+    && $element != "templates"
     && $element != ".svn") {
       $array[$element] = retrieveTree($path.$delim.$element);
     } elseif (substr($element, -5) == ".qsos") {
@@ -113,8 +114,8 @@ function retrieveTree($path)  {
 echo "<div style='font-weight: bold'>".
   $msg['s3_title'].
   "<br/><br/>\n";
-echo "<input type='button' 
-  value='".$msg['s3_button_back']."' 
+echo "<input type='button'
+  value='".$msg['s3_button_back']."'
   onclick='location.href=\"set_weighting.php?family=$family\"'/><br/><br/>\n";
 echo "<form id='myForm' action='show.php'>\n";
 echo "<input type='hidden' name='family' value='$family'/>\n";
@@ -133,9 +134,9 @@ for ($i=0; $i<count($keys); $i++) {
       $link = $sheet.$delim.$family.$delim.$keys[$i].$delim.$file;
       $name = basename($file, ".qsos");
       $odsfile = $name.".ods";
-      
-      echo "<tr class='level1' 
-        onmouseover=\"this.setAttribute('class','highlight')\" 
+
+      echo "<tr class='level1'
+        onmouseover=\"this.setAttribute('class','highlight')\"
         onmouseout=\"this.setAttribute('class','level1')\">\n";
       echo "<td>$name</td>\n";
       echo "<td align='center'>

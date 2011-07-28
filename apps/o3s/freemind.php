@@ -1,28 +1,30 @@
 <?php
-/*
-**  Copyright (C) 2009 Atos Origin 
-**
-**  Author: Raphael Semeteys <raphael.semeteys@atosorigin.com>
-**
-**  This program is free software; you can redistribute it and/or modify
-** it under the terms of the GNU General Public License as published by
-**  the Free Software Foundation; either version 2 of the License, or
-**  (at your option) any later version.
-**
-** This program is distributed in the hope that it will be useful,
-**  but WITHOUT ANY WARRANTY; without even the implied warranty of
-**  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-**  GNU General Public License for more details.
-**
-**  You should have received a copy of the GNU General Public License
-** along with this program; if not, write to the Free Software
-** Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
-**
-**
-** O3S
-** freemind.php: show the template of a given family with FreeMind Flash Viewer
-**
-*/
+/**
+ *  Copyright (C) 2007-2011 Atos
+ *
+ *  Author: Raphael Semeteys <raphael.semeteys@atos.net>
+ *
+ *  This program is free software; you can redistribute it and/or modify
+ *  it under the terms of the GNU General Public License as published by
+ *  the Free Software Foundation; either version 2 of the License, or
+ *  (at your option) any later version.
+ *
+ *  This program is distributed in the hope that it will be useful,
+ *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *  GNU General Public License for more details.
+ *
+ *  You should have received a copy of the GNU General Public License
+ *  along with this program; if not, write to the Free Software
+ *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
+ *
+ *
+ *  O3S
+ *  freemind.php: show the template of a given family with FreeMind Flash Viewer
+ *
+**/
+
+
 session_start();
 
 include("config.php");
@@ -66,7 +68,7 @@ $familiesFQDN = array();
 while($row = mysql_fetch_row($IdReq)) {
   array_push($familiesFQDN, $row[0]);
 }
-if (!in_array($family.$qsosspecificformat,$familiesFQDN)) 
+if (!in_array($family.$qsosspecificformat,$familiesFQDN))
   die ("$family $qsosspecificformat".$msg['s3_err_no_family']);
 
 $query = "SELECT file FROM evaluations WHERE qsosappfamily = \"$family\" AND qsosspecificformat = '$qsosspecificformat' LIMIT 0:,1";
@@ -109,6 +111,6 @@ fo.write("flashcontent");
 } else {
   print "Error: no $family ($qsosspecificformat) found in QSOS database!";
 }
-?> 
+?>
 </body>
 </html>

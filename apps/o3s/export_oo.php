@@ -1,28 +1,29 @@
 <?php
-/*
-**  Copyright (C) 2007-2009 Atos Origin 
-**
-**  Author: Raphael Semeteys <raphael.semeteys@atosorigin.com>
-**
-**  This program is free software; you can redistribute it and/or modify
-** it under the terms of the GNU General Public License as published by
-**  the Free Software Foundation; either version 2 of the License, or
-**  (at your option) any later version.
-**
-** This program is distributed in the hope that it will be useful,
-**  but WITHOUT ANY WARRANTY; without even the implied warranty of
-**  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-**  GNU General Public License for more details.
-**
-**  You should have received a copy of the GNU General Public License
-** along with this program; if not, write to the Free Software
-** Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
-**
-**
-** O3S
-** export_oo.php: OpenDocument export
-**
-*/
+/**
+ *  Copyright (C) 2007-2011 Atos
+ *
+ *  Author: Raphael Semeteys <raphael.semeteys@atos.net>
+ *
+ *  This program is free software; you can redistribute it and/or modify
+ *  it under the terms of the GNU General Public License as published by
+ *  the Free Software Foundation; either version 2 of the License, or
+ *  (at your option) any later version.
+ *
+ *  This program is distributed in the hope that it will be useful,
+ *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *  GNU General Public License for more details.
+ *
+ *  You should have received a copy of the GNU General Public License
+ *  along with this program; if not, write to the Free Software
+ *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
+ *
+ *
+ *  O3S
+ *  export_oo.php: OpenDocument export
+ *
+**/
+
 
 session_start();
 
@@ -364,7 +365,7 @@ function createHeaderRow($title,$value) {
 function createTitleRow1() {
   global $output;
   global $msg;
-  
+
   $row = $output->createElement('table:table-row');
   $row->setAttribute("table:style-name","ro1");
   $cell = $output->createElement('table:table-cell');
@@ -373,13 +374,13 @@ function createTitleRow1() {
   $text = $output->createElement('text:p',$msg['ods_header']);
   $cell->appendChild($text);
   $row->appendChild($cell);
-  
+
   return $row;
 }
 
 function createTitleRow2($title) {
   global $output;
-  
+
   $row = $output->createElement('table:table-row');
   $row->setAttribute("table:style-name","ro1");
   $cell = $output->createElement('table:table-cell');
@@ -388,13 +389,13 @@ function createTitleRow2($title) {
   $text = $output->createElement('text:p',$title);
   $cell->appendChild($text);
   $row->appendChild($cell);
-  
+
   return $row;
 }
 
 function createTitleRow3($title) {
   global $output;
-  
+
   $row = $output->createElement('table:table-row');
   $row->setAttribute("table:style-name","ro1");
   $cell = $output->createElement('table:table-cell');
@@ -403,29 +404,29 @@ function createTitleRow3($title) {
   $text = $output->createElement('text:p',$title);
   $cell->appendChild($text);
   $row->appendChild($cell);
-  
+
   return $row;
 }
 
 function createValidator() {
   global $output;
   global $msg;
-  
+
   $validators = $output->createElement('table:content-validations');
-  
+
   $validator = $output->createElement('table:content-validation');
   $validator->setAttribute("table:name","val1");
   $validator->setAttribute("table:condition","oooc:cell-content-is-whole-number() and cell-content()>=0");
   $validator->setAttribute("table:allow-empty-cell","false");
   $validator->setAttribute("table:base-cell-address",$msg['ods_synthesis']."B6");
-  
+
   $help = $output->createElement('table:help-message');
   $help->setAttribute("table:title",$msg['ods_val_title']);
   $help->setAttribute("table:display","true");
   $text = $output->createElement('text:p',$msg['ods_val_helpmsg']);
   $help->appendChild($text);
   $validator->appendChild($help);
-  
+
   $error = $output->createElement('table:error-message');
   $error->setAttribute("table:message-type","stop");
   $error->setAttribute("table:title",$msg['ods_val_error']);
@@ -535,7 +536,7 @@ function initSynthesisSheet() {
   $table0->appendChild(createTitleRow3($msg['ods_synthesis_title']));
 
   $table0->appendChild(createSimpleRow());
-  
+
   //Note on weight modification
   $row = $output->createElement('table:table-row');
   $row->setAttribute("table:style-name","ro1");
@@ -546,7 +547,7 @@ function initSynthesisSheet() {
   $cell->appendChild($text);
   $row->appendChild($cell);
   $table0->appendChild($row);
-  
+
   $table0->appendChild(createSimpleRow());
 
   //Criteria
@@ -558,7 +559,7 @@ function initSynthesisSheet() {
   $text = $output->createElement('text:p',$msg['ods_criterion']);
   $cell->appendChild($text);
   $row->appendChild($cell);
-  
+
   //Weight
   $cell = $output->createElement('table:table-cell');
   $cell->setAttribute("table:style-name","ce12");
@@ -566,7 +567,7 @@ function initSynthesisSheet() {
   $text = $output->createElement('text:p',$msg['ods_weight']);
   $cell->appendChild($text);
   $row->appendChild($cell);
-  
+
   //Evaluations
   foreach($ids as $id) {
     $name = getTableName($id);
@@ -577,7 +578,7 @@ function initSynthesisSheet() {
     $cell->appendChild($text);
     $row->appendChild($cell);
   }
-  
+
   $table0->appendChild($row);
 }
 
@@ -816,7 +817,7 @@ function initDocument() {
   $styles->appendChild(createCellStyle("ce15", null, null, null, null, "middle", null, null, "#000000", "bold", null, 14, null));
   $styles->appendChild(createCellStyle("ce16", null, null, null, null, "middle", null, null, "#000000", null, null, null, "italic"));
   $document->appendChild($styles);
-  
+
   return $document;
 }
 
@@ -837,29 +838,29 @@ function createODS() {
   global $ids;
 
   $output = new DOMDocument();
-  
+
   //Init document
   $document = initDocument();
   $body = $output->createElement('office:body');
   $spreadsheet = $output->createElement('office:spreadsheet');
-  
+
   //Validator for weight values
   $spreadsheet->appendChild(createValidator());
-  
+
   $IdDB = mysql_connect($db_host ,$db_user, $db_pwd);
   mysql_select_db($db_db);
   $query = "SELECT file FROM evaluations WHERE id = \"$ids[0]\"";
   $IdReq = mysql_query($query, $IdDB);
   $files = mysql_fetch_row($IdReq);
   $file = $files[0];
-  
+
   //Synthesis Sheet
   $input = new QSOSDocument("$file");
   initSynthesisSheet();
   $numrow = 7; //Reinit row counter
   createTreeSynthesis($input->getTree(), $table0, 0);
   $spreadsheet->appendChild($table0);
-  
+
   //Criteria Sheet
   initCriteriaSheet();
   createTreeCriteria($input->getTree(), $table0, 0);
@@ -871,14 +872,14 @@ function createODS() {
     $IdReq = mysql_query($query, $IdDB);
     $files = mysql_fetch_row($IdReq);
     $file = $files[0];
-  
+
     $input = new QSOSDocument("$file");
     initEvaluationSheet(getTableName($id));
     $numrow = 14; //Reinit row counter
     createTreeEval($input->getTree(), $table1, 0);
     $spreadsheet->appendChild($table1);
   }
-  
+
   //Finalize Document (in memory)
   $body->appendChild($spreadsheet);
   $document->appendChild($body);
