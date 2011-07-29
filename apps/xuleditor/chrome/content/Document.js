@@ -160,7 +160,7 @@ function Document() {
 
 
     // Serialize and write the designated part the evaluation to a QSOS XML file
-    function writeXMLtoFile(element, filename) {
+    function writeXMLtoFile(element, filename, fullHeader) {
       getPrivilege();
 
       var file = Components.classes["@mozilla.org/file/local;1"]
@@ -176,7 +176,7 @@ function Document() {
 
       outputStream.init(file, 0x04 | 0x08 | 0x20, 420, 0);
 
-      var xml = serialize(element, 0);
+      var xml = serializeAll(element, 0, fullHeader);
 
       var converter = Components.classes["@mozilla.org/intl/scriptableunicodeconverter"]
       .createInstance(Components.interfaces.nsIScriptableUnicodeConverter);
@@ -190,12 +190,12 @@ function Document() {
 
 
     function write() {
-      writeXMLtoFile(sheet.documentElement, myDoc.filename);
+      writeXMLtoFile(sheet.documentElement, myDoc.filename, true);
     }
 
 
     function writeOSC(filename) {
-      writeXMLtoFile(sheet.getElementsByTagName("openSourceCartouche")[0], filename);
+      writeXMLtoFile(sheet.getElementsByTagName("openSourceCartouche")[0], filename, true);
     }
 
 
@@ -265,15 +265,19 @@ function Document() {
       }
     }
 
+    function serialize(node, depth) {
+      return serializeAll(node, depth, true);
+    }
+
     // Recursively serialize a XML node in a string
     // node: XML node to serialize
     // depth: depth of recursion (used fo indentation), 0 is used at the beginning
     // returns the string with identations and \n characters
-    function serialize(node, depth) {
+    function serializeAll(node, depth, fullHeader) {
       var indent = "";
       var line = "";
 
-      if (depth == 0) {
+      if ((depth == 0) && (fullHeader)) {
         line = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n";
       }
 
@@ -298,7 +302,7 @@ function Document() {
       for (i = 0; i < children.length; i++) {
         var child = children[i];
         if (child.tagName) {
-          line += "\n" + serialize(child, depth+1);
+          line += "\n" + serializeAll(child, depth + 1, false);
           // closing </tag> should be indented and on a new line
           test = true;
         }
@@ -498,7 +502,13 @@ function Document() {
 
     function setfilename(name) { myDoc.filename = name; }
 
-    function getfilename() { return myDoc.filename; }
+    function getfilename() {
+      if (myDoc.filename) {
+        return myDoc.filename;
+      } else {
+        return "";
+      }
+    }
 
     function getkeytitle(element) {
       var nodes = sheet.evaluate("//*[@name='"+element+"']", sheet, null, XPathResult.ANY_TYPE,null);

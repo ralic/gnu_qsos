@@ -236,7 +236,7 @@ function saveFile() {
     if (myDoc) {
       // Updating evaluation content
       // Checking component fields
-      toCheck = new Array("componentName", "componentReleaseDate", "componentVersion", "componentMainTech", "componentHomepage", "componentTags", "componentVendor");
+      var toCheck = new Array("componentName", "componentReleaseDate", "componentVersion", "componentMainTech", "componentHomepage", "componentTags", "componentVendor");
       for(var i = 0; i < toCheck.length; ++i) {
         if (document.getElementById(toCheck[i]).value == ""){
           alert(strbundle.getString("componentEmpty") + " " + toCheck[i]);
@@ -359,7 +359,7 @@ function closeFile() {
     emptyList(document.getElementById("statusPopup"));
 
     // Reset authors & contributors lists
-    lists = new Array("evaluationAuthors","developerTeam","contributorTeam");
+    var lists = new Array("evaluationAuthors","developerTeam","contributorTeam");
     for (var i = 0; i < lists.length; ++i) {
       var list = document.getElementById(lists[i]);
       while (list.childElementCount > 1) {

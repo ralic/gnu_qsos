@@ -27,6 +27,7 @@
 
 // Triggered when an author/reviewer/contributor is select in a list
 function changeAuthor(type, author) {
+  if (author == null) { return; }
   var nameElem = document.getElementById(type + "AuthorName");
   var emailElem = document.getElementById(type + "AuthorEmail");
   var commentElem = document.getElementById(type + "AuthorComment");
