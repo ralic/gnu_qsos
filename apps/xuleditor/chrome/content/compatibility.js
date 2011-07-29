@@ -21,12 +21,12 @@
  *  QSOS XUL Editor
  *  compability.js: functions to import/export/update evaluations thanks to xslt sheet
  *
- **/
+**/
 
 
 function newFileFromTemplate() {
   try {
-//     alert("First, choose the template you want to use for your evaluation.");
+    // Asks for the template
     var filename = pickAFile(".mm", strbundle.getString("FreeMindTemplate"));
     if (filename == "") {
       return false;
@@ -36,7 +36,7 @@ function newFileFromTemplate() {
       return false;
     }
 
-//     alert("Then, choose the right XSLT sheet to convert it to an evaluation.");
+    // Uses "included" xslt to convert the template to an evaluation
     var xslt = parseXML(freemind_to_qsos_2_0);
     var error = xslt.getElementsByTagName("parsererror");
     if (error.length == 1) {
@@ -57,10 +57,6 @@ function newFileFromTemplate() {
     processor.importStylesheet(xslt);
     myDoc.setSheet(processor.transformToDocument(xml));
 
-    var serializer = new XMLSerializer();
-    var xmlOutput = serializer.serializeToString(myDoc.getSheet());
-//     alert("Output:\n" + xmlOutput);
-
     try {
       setupEditorForEval();
     } catch (e) {
@@ -71,7 +67,6 @@ function newFileFromTemplate() {
   } catch (e) {
     alert("newFileFromTemplate: " + e.message);
   }
-//   alert("newFileFromTemplate: fin");
 }
 
 
@@ -83,7 +78,6 @@ function updateFromTemplate() {
     }
 
     // Open template file dialog to choose a template to take stuff from
-//     alert("Choose the template you want to use in order to update your evaluation.");
     var filename = pickAFile(".mm", strbundle.getString("FreeMindTemplate"));
     if (filename == "") {
       return false;
@@ -110,7 +104,7 @@ function updateFromTemplate() {
 
   // Type and version testing
   try {
-    var currentType = myDoc.get("qsosMetadata/template/type");
+    try { var currentType = myDoc.get("qsosMetadata/template/type"); } catch (e) { var currentType = "" }
 
     var nodes = templateXML.evaluate("//qsosMetadata/template/type", templateXML, null, XPathResult.ANY_TYPE, null);
     var node = nodes.iterateNext();
@@ -125,7 +119,7 @@ function updateFromTemplate() {
       alert(strbundle.getString("wrongTemplateType") + " " + currentType + " != " + newType);
       return false;
     } else {
-      var currentVersion = myDoc.get("qsosMetadata/template/version");
+      try { var currentVersion = myDoc.get("qsosMetadata/template/version"); } catch (e) { var currentVersion = "" }
 
       var nodes = templateXML.evaluate("//qsosMetadata/template/version", templateXML, null, XPathResult.ANY_TYPE, null);
       var node = nodes.iterateNext();
@@ -153,12 +147,36 @@ function updateFromTemplate() {
   try {
     // Creates of copy in order to work on the sheet easily
     var tmpTemplateXML = parseXML(serializeXML(myDoc.getSheet()));
+
+    // Merge the sections
     var newSheet = mergeSections(myDoc.getSheet(), templateXML, tmpTemplateXML);
+
+    // Updates the template part :
+    var newTemplateNode = templateXML.evaluate("//template/version", templateXML, null, XPathResult.ORDERED_NODE_ITERATOR_TYPE, null).iterateNext();
+    var finalTemplateNode = newSheet.evaluate("//template/version", newSheet, null, XPathResult.ORDERED_NODE_ITERATOR_TYPE, null).iterateNext();
+    var firstChild = finalTemplateNode.firstChild;
+    while (firstChild) {
+      finalTemplateNode.removeChild(firstChild);
+      firstChild = finalTemplateNode.firstChild;
+    }
+
+    var children = newTemplateNode.childNodes;
+    var len = children.length;
+    for (var i = 0; i < len; ++i) {
+      finalTemplateNode.appendChild(children[i]);
+    }
   } catch(e) {
-    alert("updateFromTemplate: " + e.message);
+    alert("updateFromTemplate: merge failed: " + e.message);
   }
 
+  //Update the editor for the new template
   myDoc.setSheet(newSheet);
+
+  // Updates the template type and verison
+  var labelElem = document.getElementById("templateCaption");
+  try { var type = myDoc.get("qsosMetadata/template/type"); } catch (e) { var type = ""; }
+  try { var version = myDoc.get("qsosMetadata/template/version"); } catch (e) { var version = ""; }
+  labelElem.label = strbundle.getString("template") + " " + strbundle.getString("templateType") + " " + type + " (" + strbundle.getString("templateVersion") + " " + version + ")";
 
   // Resets the criteria tab
   document.getElementById("criteriaDescription").value = "";
@@ -218,22 +236,15 @@ function mergeSections(oldSheet, newSheet, tmpOldSheet) {
 }
 
 
+// Updates a section with content from oldSheet
 function updateNode(section, oldSheet) {
   try {
     var comments = section.getElementsByTagName("comment");
     var len = comments.length;
-//     alert(len);
     for (var i = 0; i < len; ++i) {
-//       alert(comments[i]);
       var id = comments[i].parentNode.getAttribute("name");
-//       alert(id);
-//       alert("//element[@name='" + id + "']");
       var node = oldSheet.evaluate("//element[@name='" + id + "']", oldSheet, null, XPathResult.ORDERED_NODE_ITERATOR_TYPE, null).iterateNext();
-//       alert(node);
       if (node) {
-//         alert("trouvé !");
-//         alert(node.getElementsByTagName("comment")[0]);
-//         alert(node.getElementsByTagName("comment")[0].textContent);
         comments[i].textContent = node.getElementsByTagName("comment")[0].textContent;
         comments[i].nextSibling.textContent = node.getElementsByTagName("score")[0].textContent;
       }
@@ -244,58 +255,6 @@ function updateNode(section, oldSheet) {
 
   return section;
 }
-
-
-// function getSections(sheet) {
-//   var nodes = sheet.evaluate("//document/qsosMetadata", sheet, null, XPathResult.ORDERED_NODE_ITERATOR_TYPE, null);
-//   var node = nodes.iterateNext();
-//   if (node) {
-//     nodes.removeChild(node);
-//   } else {
-//     alert("This evaluation doesn't have a QSOS Metadata part!");
-//   }
-//   var nodes = sheet.evaluate("//document/openSourceCartouche", sheet, null, XPathResult.ORDERED_NODE_ITERATOR_TYPE, null);
-//   var node = nodes.iterateNext();
-//   if (node) {
-//     nodes.removeChild(node);
-//   } else {
-//     alert("This evaluation doesn't have an OpenSource Cartouche part!");
-//   }
-//   sheet.dump();
-//
-//   return sheet;
-// }
-//
-//
-// function removeSections(sheet) {
-//   var nodes = sheet.evaluate("//document/section", sheet, null, XPathResult.ORDERED_NODE_ITERATOR_TYPE, null);
-//   var node = nodes.iterateNext();
-//   while (node != null) {
-//     nodes.removeChild(node);
-//     node = nodes.iterateNext();
-//   }
-//
-//   return sheet;
-// }
-//
-//
-// function setSections(updateSheet, newSheet) {
-//   var nodes = sheet.evaluate("//evaluation/authors", sheet, null, XPathResult.ORDERED_NODE_ITERATOR_TYPE, null);
-//   var node = nodes.iterateNext();
-//   var author = sheet.createElement("author");
-//   var nameElem = sheet.createElement("name");
-//   nameElem.appendChild(document.createTextNode(name));
-//   var emailElem = sheet.createElement("email");
-//   emailElem.appendChild(document.createTextNode(email));
-//   var commentElem = sheet.createElement("comment");
-//   commentElem.appendChild(document.createTextNode(comment));
-//   author.appendChild(nameElem);
-//   author.appendChild(emailElem);
-//   author.appendChild(commentElem);
-//   node.appendChild(author);
-//
-//   return sheet;
-// }
 
 
 function exportOSC() {
@@ -324,27 +283,16 @@ function exportOSC() {
 
 function exportToFreeMind() {
   try {
-//     alert("First, choose the right XSLT to export the template part to FreeMind.");
-//     var filename = pickAFile(".xsl", "XSLT");
-//     if (filename == "") {
-//       return false;
-//     }
-//     var xslt = loadFile(filename);
-//     if (xslt == null) {
-//       return false;
-//     }
-
     // FIXME find a way to open the right XSLT from the extension
     /*xslt = loadXSLT("chrome://qsos-xuled/content/freemind_to_qsos.xsl");
      *  if (xslt == null) {
      *  return false;
     }*/
 
-    var xslt = parseXML(qsos_to_freemind);
+    var xslt = parseXML(qsos_2_0_to_freemind);
     var error = xslt.getElementsByTagName("parsererror");
     if (error.length == 1) {
-      alert("An error occurred while parsing the XSLT! This is a bug. Please report it using this description:\nThe QSOS 2.0 to Freemind XSLT doesn't work.\nPlease include your evaluations in the report.");
-      alert("loadFile: " + strbundle.getString("parsingError") + "\n\n" + error[0].textContent);
+      alert("An error occurred while parsing the XSLT! This is a bug. Please report it using this description:\nThe QSOS 2.0 to Freemind XSLT doesn't work.\nPlease include your evaluations and this message in the report:\n" + "loadFile: " + strbundle.getString("parsingError") + "\n\n" + error[0].textContent);
       return false;
     }
 
@@ -352,14 +300,11 @@ function exportToFreeMind() {
 
     var processor = new XSLTProcessor();
     processor.importStylesheet(xslt);
-    element = processor.transformToDocument(toTrans);
-
-//     var serializer = new XMLSerializer();
-//     var xmlOutput = serializer.serializeToString(toTrans);
-//     alert("Output:\n" + xmlOutput);
+    var tmp = processor.transformToDocument(toTrans);
+    element = tmp.getElementsByTagName("map")[0];
 
     getPrivilege();
-//     alert("Choose the file to save the template.");
+
     var nsIFilePicker = Components.interfaces.nsIFilePicker;
     var fp = Components.classes["@mozilla.org/filepicker;1"].createInstance(nsIFilePicker);
     fp.init(window, strbundle.getString("saveFileAs"), nsIFilePicker.modeSave);
@@ -383,7 +328,7 @@ function exportToFreeMind() {
 
 function updateFromOldQSOS() {
   try {
-//     alert("Choose the evaluation you want to update.");
+    // Opens the evaluation to update
     var filename = pickAFile(".qsos", strbundle.getString("QSOSFile"));
     if (filename == "") {
       return false;
@@ -419,16 +364,6 @@ function updateFromOldQSOS() {
       return false;
     }
 
-//     try {
-//     var serializer = new XMLSerializer();
-//     var xmlOutput = serializer.serializeToString(myDoc.getSheet());
-//     alert("Output:\n" + xmlOutput);
-//     } catch (e) {
-//       alert("updateFromOldQSOS: failed to serialize, check your evaluation : " + e.message);
-//       closeFile();
-//       return false;
-//     }
-
     try {
       setupEditorForEval();
     } catch (e) {
@@ -446,9 +381,10 @@ function updateFromOldQSOS() {
 
 ////////////////////////////////////////////////////////////////////////////////
 
-// Commands used to produce "Javascript compliant" strings form raw xslt files:
+// Commands used to produce "Javascript compliant" strings form "raw" xslt files:
 // sed 's/"/\\"/g' <file.xslt> | sed 's/$/\\/g'
 
+// Last updated: 25/07/2011
 var qsos_1_6_to_qsos_2_0 = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\
 <xsl:stylesheet xmlns:xsl=\"http://www.w3.org/1999/XSL/Transform\" xmlns:str=\"http://exslt.org/strings\" xmlns:fn=\"http://www.w3.org/2005/xpath-functions\" version=\"1.0\">\
 <xsl:output method=\"xml\" indent=\"yes\" encoding=\"UTF-8\"/>\
@@ -611,6 +547,7 @@ var qsos_1_6_to_qsos_2_0 = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\
 
 ////////////////////////////////////////////////////////////////////////////////
 
+// Last updated: 25/07/2011
 var freemind_to_qsos_2_0 = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\
 <xsl:stylesheet xmlns:xsl=\"http://www.w3.org/1999/XSL/Transform\" version=\"1.0\">\
 <xsl:output method=\"xml\" indent=\"yes\" encoding=\"UTF-8\"/>\
@@ -643,11 +580,6 @@ var freemind_to_qsos_2_0 = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\
 </template>\
 <evaluation>\
 <authors>\
-<author>\
-<name></name>\
-<email></email>\
-<comment></comment>\
-</author>\
 </authors>\
 <reviewer>\
 <name></name>\
@@ -705,18 +637,8 @@ var freemind_to_qsos_2_0 = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\
 <team>\
 <number></number>\
 <developers>\
-<developer>\
-<name></name>\
-<email></email>\
-<company></company>\
-</developer>\
 </developers>\
 <contributors>\
-<contributor>\
-<name></name>\
-<email></email>\
-<company></company>\
-</contributor>\
 </contributors>\
 </team>\
 <legal>\
@@ -803,29 +725,35 @@ var freemind_to_qsos_2_0 = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\
 
 
 ////////////////////////////////////////////////////////////////////////////////
-
+//omit-xml-declaration=\"yes\"
+// Last updated: 26/07/2011
 var qsos_2_0_to_freemind = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\
 <xsl:stylesheet xmlns:xsl=\"http://www.w3.org/1999/XSL/Transform\" version=\"1.0\">\
 <xsl:output method=\"xml\" indent=\"yes\" encoding=\"UTF-8\"/>\
-\
 <xsl:template match=\"document\">\
 <xsl:element name=\"map\">\
-<xsl:attribute name=\"version\">0.9</xsl:attribute>\
+<xsl:attribute name=\"version\">0.9.0</xsl:attribute>\
 <xsl:element name=\"node\">\
-<xsl:attribute name=\"ID\"><xsl:value-of select=\"openSourceCartouche/Component/ComponentName\"/></xsl:attribute>\
-<richcontent TYPE=\"NODE\"><html>\
-<head></head>\
-<body><p style=\"text-align: center\">\
-<xsl:value-of select=\"openSourceCartouche/Component/ComponentName\"/><br/>\
-<xsl:value-of select=\"openSourceCartouche/Component/ComponentVersion\"/>\
-</p></body>\
-</html></richcontent>\
+<xsl:attribute name=\"ID\">\
+<xsl:value-of select=\"openSourceCartouche/component/name\"/>\
+</xsl:attribute>\
+<richcontent TYPE=\"NODE\">\
+<html>\
+<head/>\
+<body>\
+<p style=\"text-align: center\">\
+<xsl:value-of select=\"openSourceCartouche/component/name\"/>\
+<br/>\
+<xsl:value-of select=\"openSourceCartouche/component/version\"/>\
+</p>\
+</body>\
+</html>\
+</richcontent>\
 <font NAME=\"SansSerif\" BOLD=\"true\" SIZE=\"12\"/>\
 <xsl:apply-templates select=\"section\"/>\
 </xsl:element>\
 </xsl:element>\
 </xsl:template>\
-\
 <xsl:template match=\"section\">\
 <node ID=\"{@name}\" TEXT=\"{@title}\">\
 <xsl:if test=\"position() mod 2 = 0\">\
@@ -837,7 +765,9 @@ var qsos_2_0_to_freemind = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\
 <font NAME=\"SansSerif\" BOLD=\"true\" SIZE=\"12\"/>\
 <xsl:if test=\"desc != ''\">\
 <xsl:element name=\"node\">\
-<xsl:attribute name=\"TEXT\"><xsl:value-of select=\"desc\"/></xsl:attribute>\
+<xsl:attribute name=\"TEXT\">\
+<xsl:value-of select=\"desc\"/>\
+</xsl:attribute>\
 <xsl:attribute name=\"STYLE\">bubble</xsl:attribute>\
 <font NAME=\"SansSerif\" ITALIC=\"true\" SIZE=\"10\"/>\
 </xsl:element>\
@@ -845,12 +775,14 @@ var qsos_2_0_to_freemind = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\
 <xsl:apply-templates select=\"element\"/>\
 </node>\
 </xsl:template>\
-\
 <xsl:template match=\"element\">\
 <xsl:element name=\"node\">\
-<xsl:attribute name=\"ID\"><xsl:value-of select=\"@name\"/></xsl:attribute>\
-<xsl:attribute name=\"TEXT\"><xsl:value-of select=\"@title\"/></xsl:attribute>\
-\
+<xsl:attribute name=\"ID\">\
+<xsl:value-of select=\"@name\"/>\
+</xsl:attribute>\
+<xsl:attribute name=\"TEXT\">\
+<xsl:value-of select=\"@title\"/>\
+</xsl:attribute>\
 <xsl:if test=\"score = '0'\">\
 <xsl:attribute name=\"FOLDED\">true</xsl:attribute>\
 <icon BUILTIN=\"button_cancel\"/>\
@@ -863,45 +795,49 @@ var qsos_2_0_to_freemind = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\
 <xsl:attribute name=\"FOLDED\">true</xsl:attribute>\
 <icon BUILTIN=\"button_ok\"/>\
 </xsl:if>\
-\
 <xsl:choose>\
 <xsl:when test=\"child::element\">\
 <xsl:if test=\"desc != ''\">\
 <xsl:element name=\"node\">\
-<xsl:attribute name=\"TEXT\"><xsl:value-of select=\"desc\"/></xsl:attribute>\
+<xsl:attribute name=\"TEXT\">\
+<xsl:value-of select=\"desc\"/>\
+</xsl:attribute>\
 <xsl:attribute name=\"STYLE\">bubble</xsl:attribute>\
 <font NAME=\"SansSerif\" ITALIC=\"true\" SIZE=\"10\"/>\
 </xsl:element>\
 </xsl:if>\
 </xsl:when>\
-\
 <xsl:otherwise>\
 <xsl:element name=\"node\">\
 <xsl:if test=\"score = '0'\">\
-<xsl:attribute name=\"TEXT\"><xsl:value-of select=\"desc0\"/></xsl:attribute>\
+<xsl:attribute name=\"TEXT\">\
+<xsl:value-of select=\"desc0\"/>\
+</xsl:attribute>\
 </xsl:if>\
 <xsl:if test=\"score = '1'\">\
-<xsl:attribute name=\"TEXT\"><xsl:value-of select=\"desc1\"/></xsl:attribute>\
+<xsl:attribute name=\"TEXT\">\
+<xsl:value-of select=\"desc1\"/>\
+</xsl:attribute>\
 </xsl:if>\
 <xsl:if test=\"score = '2'\">\
-<xsl:attribute name=\"TEXT\"><xsl:value-of select=\"desc2\"/></xsl:attribute>\
+<xsl:attribute name=\"TEXT\">\
+<xsl:value-of select=\"desc2\"/>\
+</xsl:attribute>\
 </xsl:if>\
 <xsl:attribute name=\"STYLE\">bubble</xsl:attribute>\
 <font NAME=\"SansSerif\" ITALIC=\"true\" SIZE=\"10\"/>\
 </xsl:element>\
-\
 <xsl:if test=\"comment != ''\">\
 <xsl:element name=\"node\">\
-<xsl:attribute name=\"TEXT\"><xsl:value-of select=\"comment\"/></xsl:attribute>\
+<xsl:attribute name=\"TEXT\">\
+<xsl:value-of select=\"comment\"/>\
+</xsl:attribute>\
 <font NAME=\"SansSerif\" ITALIC=\"true\" SIZE=\"10\"/>\
 </xsl:element>\
 </xsl:if>\
 </xsl:otherwise>\
 </xsl:choose>\
-\
 <xsl:apply-templates select=\"element\"/>\
-\
 </xsl:element>\
 </xsl:template>\
-\
 </xsl:stylesheet>";

@@ -27,7 +27,7 @@
 const SCALE = 65; //1 QSOS unit in pixels
 const FONT_SIZE = SCALE/5;
 
-//Clear the SVG chart
+// Clear the SVG chart
 function clearChart() {
   var myChart = document.getElementById("chart");
   while (myChart.firstChild) {
@@ -35,21 +35,21 @@ function clearChart() {
   }
 }
 
-//Draw the SVG chart of a criterion
-//criterion: if not specified, the top-level chart of sections is displayed
+// Draw the SVG chart of a criterion
+// criterion: if not specified, the top-level chart of sections is displayed
 function drawChart(name) {
   clearChart();
   var myChart = document.getElementById("chart");
-  //var width = myChart.parentNode.width.animVal.value / 2;
-  //var height = myChart.parentNode.height.animVal.value / 2;
+  // var width = myChart.parentNode.width.animVal.value / 2;
+  // var height = myChart.parentNode.height.animVal.value / 2;
   var width = 250;
   var height = 200;
   myChart.setAttribute("transform", "translate("+width+","+height+")");
 
-  //Collect charting data
+  // Collect charting data
   var myScores = (name) ? myDoc.getSubChartData(name) : myDoc.getChartData();
 
-  //Chart's label
+  // Chart's label
   clearLabels();
   var marker = null;
 
@@ -62,10 +62,10 @@ function drawChart(name) {
   }
   addFirstLabel(marker);
 
-  //draw chart's axis
+  // Draw chart's axis
   drawAxis(myScores.length);
 
-  //draw path between points on each axis
+  // Draw path between points on each axis
   var myPath = document.createElementNS("http://www.w3.org/2000/svg", "path");
   var myD = "";
   var angle;
@@ -86,12 +86,14 @@ function drawChart(name) {
   myChart.appendChild(myPath);
 }
 
-//Add the root label of the chart navigation bar
-//marker: label before which the new label is to be inserted, can be null
+// Add the root label of the chart navigation bar
+// marker: label before which the new label is to be inserted, can be null
 function addFirstLabel(marker) {
   var label = document.getElementById("chart-label");
   var newLabel = document.createElement("label");
-  newLabel.setAttribute("value", myDoc.get("component/name") + " " + myDoc.get("component/version"));
+  try { var name = myDoc.get("component/name"); } catch (e) { var name = "" }
+  try { var version = myDoc.get("component/version"); } catch (e) { var version = "" }
+  newLabel.setAttribute("value", name + " " + version);
   newLabel.setAttribute("onclick", "drawChart()");
   newLabel.style.cursor = "pointer";
 
@@ -104,7 +106,7 @@ function addFirstLabel(marker) {
   return newLabel;
 }
 
-//Add a label to the chart navigation bar
+// Add a label to the chart navigation bar
 function addLabel(name, marker) {
   var label = document.getElementById("chart-label");
   var newLabel = document.createElement("label");
@@ -121,7 +123,7 @@ function addLabel(name, marker) {
   return newLabel;
 }
 
-//Clear all labels
+// Clear all labels
 function clearLabels() {
   var label = document.getElementById("chart-label");
   while (label.firstChild) {
@@ -129,7 +131,7 @@ function clearLabels() {
   }
 }
 
-//draw "n" equidistant axis
+// Draw "n" equidistant axis
 function drawAxis(n) {
   drawCircle(0.5 * SCALE);
   drawCircle(SCALE);
@@ -141,14 +143,14 @@ function drawAxis(n) {
   }
 }
 
-//draw a single axis at "angle" (in radians) from angle 0
+// Draw a single axis at "angle" (in radians) from angle 0
 function drawSingleAxis(angle) {
   var x2 = 2 * SCALE * Math.cos(angle);
   var y2 = 2 * SCALE * Math.sin(angle);
   drawLine(0, 0, x2, y2);
 }
 
-//draw a circle of "r" radius
+// raw a circle of "r" radius
 function drawCircle(r) {
   var myChart = document.getElementById("chart");
 
@@ -163,7 +165,7 @@ function drawCircle(r) {
   myChart.appendChild(myCircle);
 }
 
-//draw a line between two points
+// Draw a line between two points
 function drawLine(x1, y1, x2, y2) {
   var myChart = document.getElementById("chart");
 
@@ -178,9 +180,9 @@ function drawLine(x1, y1, x2, y2) {
   myChart.appendChild(myLine);
 }
 
-//draw an axis legend
-//x, y: coordinates
-//myScore: object chartData (cf. Document.js)
+// Draw an axis legend
+// x, y: coordinates
+// myScore: object chartData (cf. Document.js)
 function drawText(x, y, myScore) {
   var myChart = document.getElementById("chart");
 

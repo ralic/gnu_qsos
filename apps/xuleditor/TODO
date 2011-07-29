@@ -1,5 +1,7 @@
 TODO list:
 
+!! Fix the export to freemind template !!
+
  - Global changes:
     * Correctly include XSLT files in the extension
     * Improve QSOS 2.0 version support

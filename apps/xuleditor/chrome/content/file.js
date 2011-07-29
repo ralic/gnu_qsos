@@ -132,7 +132,7 @@ function openLocalFile(filename) {
       return;
     }
   } catch (e) {
-    alert("openLocalFile: an error occured while setting up the editor " + e.message);
+    alert("openLocalFile: an error occured while setting up the editor " + e.message + "\n\n" + strbundle.getString("advice"));
     closeFile();
     return;
   }
@@ -189,7 +189,6 @@ function openRemoteFile(url) {
 
 // XUL Tree recursive creation function
 function buildtree() {
-//   alert("buildTree: begin");
   var treechildren = document.createElement("treechildren");
   treechildren.setAttribute("id", "myTreechildren");
   var criteria = myDoc.getcomplextree();
@@ -197,14 +196,12 @@ function buildtree() {
     var treeitem = newtreeitem(criteria[i]);
     treechildren.appendChild(treeitem);
   }
-//   alert("buildTree: end");
   return treechildren;
 }
 
 
 // XUL Tree recursive creation function
 function newtreeitem(criterion) {
-//   alert("newtreeitem: begin");
   var treeitem = document.createElement("treeitem");
   treeitem.setAttribute("container", "true");
   treeitem.setAttribute("open", "true");
@@ -218,20 +215,17 @@ function newtreeitem(criterion) {
     treeitem.setAttribute("open", "false");
     treeitem.appendChild(buildsubtree(criterion.children));
   }
-//   alert("newtreeitem: end");
   return treeitem;
 }
 
 
 // XUL Tree recursive creation function
 function buildsubtree(criteria) {
-//   alert("buildsubtree: begin");
   var treechildren = document.createElement("treechildren");
   for (var i=0; i < criteria.length; i++) {
     var treeitem = newtreeitem(criteria[i]);
     treechildren.appendChild(treeitem);
   }
-//   alert("buildsubtree: end");
   return treechildren;
 }
 
@@ -242,7 +236,7 @@ function saveFile() {
     if (myDoc) {
       // Updating evaluation content
       // Checking component fields
-      toCheck = new Array("componentName", "componentReleaseDate", "componentVersion", "componentMainTech", "componentHomepage", "componentType", "componentStatus", "componentVendor");
+      toCheck = new Array("componentName", "componentReleaseDate", "componentVersion", "componentMainTech", "componentHomepage", "componentTags", "componentVendor");
       for(var i = 0; i < toCheck.length; ++i) {
         if (document.getElementById(toCheck[i]).value == ""){
           alert(strbundle.getString("componentEmpty") + " " + toCheck[i]);
@@ -313,16 +307,6 @@ function saveRemote() {
 
 // FIXME Find a ay to reset datepickers properly (We are using checkboxes for now)
 function resetDate() {
-//   var today = Date.now();
-//   function pad(n){return n<10 ? '0'+n : n}
-//   return today.getUTCFullYear() + "-" + pad(today.getUTCMonth() + 1) + "-" + pad(today.getUTCDate());
-// //     function pad(n){return n<10 ? '0'+n : n}
-// //     return d.getUTCFullYear()+'-'
-// //     + pad(d.getUTCMonth()+1)+'-'
-// //     + pad(d.getUTCDate())+'T'
-// //     + pad(d.getUTCHours())+':'
-// //     + pad(d.getUTCMinutes())+':'
-// //     + pad(d.getUTCSeconds())+'Z'}
   return "2000-01-01";
 }
 
@@ -365,8 +349,10 @@ function closeFile() {
   try {
     // Component fields
     emptyList(document.getElementById("archetypePopup"));
-    // License and Legal
+    // License
     emptyList(document.getElementById("licensePopup"));
+    // Status
+    emptyList(document.getElementById("statusPopup"));
 
     // Reset authors & contributors lists
     lists = new Array("evaluationAuthors","developerTeam","contributorTeam");
@@ -402,9 +388,7 @@ function closeFile() {
     }
     clearChart();
     clearLabels();
-  } catch(e) {
-//     alert("closeFile: problem in final part: " + e.message);
-  }
+  } catch(e) {}
 }
 
 // Checks Document's state before closing it
@@ -430,14 +414,3 @@ function exit() {
   }
   self.close();
 }
-
-/*
-// Shows the new.xul window in modal mode
-function newFileDialog() {
- if (checkCloseFile() == false) {
-   return;
- }
- getPrivilege();
- window.openDialog('chrome://qsos-xuled/content/new.xul', 'Properties','chrome,dialog,modal', myDoc, openRemoteFile);
-}
-*/

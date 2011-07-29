@@ -1,28 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-  *  Copyright (C) 2006-2011 Atos
-  *
-  *  Authors: Raphael Semeteys <raphael.semeteys@atos.net>
-  *           Timothée Ravier <travier@portaildulibre.fr>
-  *
-  *  This program is free software; you can redistribute it and/or modify
-  *  it under the terms of the GNU General Public License as published by
-  *  the Free Software Foundation; either version 2 of the License, or
-  *  (at your option) any later version.
-  *
-  *  This program is distributed in the hope that it will be useful,
-  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
-  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-  *  GNU General Public License for more details.
-  *
-  *  You should have received a copy of the GNU General Public License
-  *  along with this program; if not, write to the Free Software
-  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
-  *
-  *
-  *  QSOS XUL Editor
-  *  editor.xul: main interface file
-  *
+ *  Copyright (C) 2006-2011 Atos
+ *
+ *  Authors: Raphael Semeteys <raphael.semeteys@atos.net>
+ *           Timothée Ravier <travier@portaildulibre.fr>
+ *
+ *  This program is free software; you can redistribute it and/or modify
+ *  it under the terms of the GNU General Public License as published by
+ *  the Free Software Foundation; either version 2 of the License, or
+ *  (at your option) any later version.
+ *
+ *  This program is distributed in the hope that it will be useful,
+ *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *  GNU General Public License for more details.
+ *
+ *  You should have received a copy of the GNU General Public License
+ *  along with this program; if not, write to the Free Software
+ *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
+ *
+ *
+ *  QSOS XUL Editor
+ *  editor.xul: main interface file
+ *
 !-->
 
 <?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
@@ -41,6 +41,12 @@
   <script type="application/x-javascript" src="chart.js"/>
   <script type="application/x-javascript" src="about.js"/>
   <stringbundle id="properties" src="chrome://qsos-xuled/locale/editor.properties"/>
+
+  <preferences>
+    <preference id="prefUserName" name="pref.userName" type="string"/>
+    <preference id="prefUserEmail" name="pref.userEmail" type="string"/>
+  </preferences>
+
   <toolbox>
     <toolbar>
       <toolbarbutton id="newFile" label="&newFile;" oncommand="newFileFromTemplate();" accesskey="&newFileAccessKey;"/>
@@ -54,20 +60,17 @@
       <toolbarbutton id="exportOSC" label="&exportOSC;" oncommand="exportOSC();" accesskey="&exportOSCAccessKey;"/>
       <toolbarbutton id="exportToFreeMind" label="&exportToFreeMind;" oncommand="exportToFreeMind();" accesskey="&exportToFreeMindAccessKey;"/>
       <toolbarbutton id="closeFile" label="&closeFile;"  oncommand="checkCloseFile();" accesskey="&closeFileAccessKey;"/>
-      <!--<toolbarbutton id="about" label="&about;"  oncommand="about();" accesskey="&aboutAccessKey;"/>!-->
       <toolbarbutton id="exitApp" label="&exit;"  oncommand="if (checkCloseFile() == true) exit();" accesskey="&exitAccessKey;"/>
     </toolbar>
   </toolbox>
+
   <tabbox id="tabBox" flex="1">
     <tabs id="tabs">
-      <!-- <tab id="aboutTab" accesskey="&aboutTabAccessKey;"/> !-->
-      <!-- <tab id="configTab" label="&configTab;"/> !-->
-      <!--<tab id="configTab" accesskey="&configTabAccessKey;"/>!-->
-        <!--<tab id="fileTab" label="&fileTab;" accesskey="&fileTabAccessKey;"/>!-->
       <tab id="metadataTab" label="&metadataTab;" accesskey="&metadataTabAccessKey;"/>
       <tab id="oscTab" label="&oscTab;" accesskey="&oscTabAccessKey;"/>
       <tab id="criteriaTab" label="&criteriaTab;" accesskey="&criteriaTabAccessKey;"/>
     </tabs>
+
     <vbox id="intoVbox">
       <groupbox flex="1">
         <vbox flex="1">
@@ -78,6 +81,27 @@
             <html:br/>
             &description3; <textbox value="&maillingList;" readonly="true" class="plain" style="background-color: transparent;" flex="1"/>
           </html:p>
+        </vbox>
+      </groupbox>
+      <groupbox flex="1">
+        <caption label="&storedInfo;"/>
+        <vbox flex="1">
+          <grid flex="1">
+            <columns>
+              <column />
+              <column flex="1"/>
+              <column />
+              <column flex="1"/>
+            </columns>
+            <rows>
+              <row align="center">
+                <label control="userName" value="&name;"/>
+                <textbox id="userName" oninput="setPreference('userName', this.value);" preference="pref.userName"/>
+                <label control="userEmail" value="&email;"/>
+                <textbox id="userEmail" oninput="setPreference('userEmail', this.value);" preference="pref.userEmail"/>
+              </row>
+            </rows>
+          </grid>
         </vbox>
       </groupbox>
       <groupbox flex="1">
@@ -151,181 +175,17 @@
         </vbox>
       </groupbox>
     </vbox>
-    <tabpanels flex="1" id="tabPanels">
-      <!--<tabpanel id="aboutTabPanel" class="over">
-        <vbox flex="1">
-          <hbox>
-            <image src="chrome://qsos-xuled/content/logo-qsos.png" width="150" height="58"/>
-          </hbox>
-          <label value=""/>
-          <label value="&xuleditorName;"/>
-          <label value=""/>
-          <hbox>
-            <label value="&xuleditorLicense;"/>
-            <textbox value="&xuleditorLicenseUrl;" readonly="true" class="plain" style="background-color: transparent;" flex="1"/>
-          </hbox>
-          <label value=""/>
-          <label value="&currentQSOSVersion;"/>
-          <label value="&supportedQSOSVersions;"/>
-          <label value=""/>
-          <label value="&xuleditorAuthors;"/>
-          <grid>
-            <columns>
-              <column width="20"/>
-              <column flex="1"/>
-              <column width="20"/>
-              <column flex="100"/>
-            </columns>
-            <rows>
-              <row align="center">
-                <label value=""/>
-                <label value="&xuleditorAuthorName1;"/>
-                <label value=""/>
-                <textbox value="&xuleditorAuthorEmail1;" readonly="true" class="plain" style="background-color: transparent;" flex="1"/>
-              </row>
-              <row align="center">
-                <label value=""/>
-                <label value="&xuleditorAuthorName2;"/>
-                <label value=""/>
-                <textbox value="&xuleditorAuthorEmail2;" readonly="true" class="plain" style="background-color: transparent;" flex="1"/>
-              </row>
-            </rows>
-          </grid>
-          <label value=""/>
-          <hbox>
-            <label value="&iconsetAuthors;"/>
-            <textbox value="&iconsetUrl;" readonly="true" class="plain" style="background-color: transparent;" flex="1"/>
-          </hbox>
-          <label value=""/>
-          <hbox>
-            <label value="&sourceCode;"/>
-            <textbox value="&sourceCodeUrl;" readonly="true" class="plain" style="background-color: transparent;" flex="1"/>
-          </hbox>
-          <label value=""/>
-          <hbox>
-            <label value="&project;"/>
-            <textbox value="&projectUrl;" readonly="true" class="plain" style="background-color: transparent;" flex="1"/>
-          </hbox>
-          TODO: find the correct way to do HTML links in xul
-          <vbox id="bottomBox">
-            <hbox pack="center">
-              <label class="text-link bottom-link" href="about:license">AAAA</label>
-              <label class="text-link bottom-link" href="about:rights">BBBB</label>
-              <label class="text-link bottom-link" href="http://www.mozilla.com/legal/privacy/">CCCC</label>
-            </hbox>
-            <description id="trademark">
-              <label class="trademark-label">DDDDDDDDDD</label>
-            </description>
-          </vbox>
-        </vbox>
-      </tabpanel>
-      !-->
-      <!--
-      <tabpanel id="ConfigTabPanel" class="over">
-        <vbox>
-          <groupbox>
-            <caption label="&storedInfo;"/>
-            <grid flex="1">
-              <columns>
-                <column />
-                <column flex="1"/>
-              </columns>
-              <rows>
-                <row align="center">
-                  <label control="savedAuthorName" value="&name;"/>
-                  <textbox id="savedAuthorName" flex="1"/>
-                </row>
-                <row align="center">
-                  <label control="savedAuthorEmail" value="&email;"/>
-                  <textbox id="saveAuthorEmail" flex="1"/>
-                </row>
-                <row align="center">
-                  <label control="savedAuthorComment" value="&comment;"/>
-                  <textbox id="savedAuthorComment" multiline="true" flex="1"/>
-                </row>
-              </rows>
-            </grid>
-          </groupbox>
-        </vbox>
-      </tabpanel>
-      !-->
-      <!--
-      <tabpanel id="fileTabPanel" class="over">
-        <vbox flex="1">
-          <html:p>
-            &description1;<html:br/>
-            <html:br/>
-            &description2;<html:br/>
-            <html:br/>
-            &description3; <textbox value="&maillingList;" readonly="true" class="plain" style="background-color: transparent;" flex="1"/>
-          </html:p>
-          <separator class="groove-thin" orient="horizontal"/>
-          <hbox id="fileHBox" flex="1">
-            <separator class="groove-thin" orient="vertical"/>
-            <separator class="groove-thin" orient="vertical"/>
-            <separator class="groove-thin" orient="vertical"/>
-            <vbox>
-              <separator class="groove-thin" orient="horizontal"/>
-              <button id="newFile" class="newFile" label="&newFile;" oncommand="newFileFromTemplate();" accesskey="&newFileAccessKey;"/>
-              <separator class="groove-thin" orient="horizontal"/>
-              <button id="openFile" class="openFile" label="&openLocalFile;" oncommand="openFile();" accesskey="&openLocalFileAccessKey;"/>
-              <button id="openRemoteFile" class="openRemoteFile" label="&openRemoteFile;" oncommand="loadRemoteDialog();" accesskey="&openRemoteFileAccessKey;"/>
-              <separator class="groove-thin" orient="horizontal"/>
-              <button id="saveFile" class="saveFile" label="&saveFile;" oncommand="saveFile();" accesskey="&saveFileAccessKey;"/>
-              <button id="saveFileAs" class="saveFileAs" label="&saveFileAs;" oncommand="saveFileAs();" accesskey="&saveFileAsAccessKey;"/>
-              <button id="saveRemoteFile" class="saveRemoteFile" label="&saveRemoteFile;" oncommand="saveRemote();" disabled="true" accesskey="&saveRemoteFileAccessKey;"/>
-              <separator class="groove-thin" orient="horizontal"/>
-              <button id="closeFile" class="closeFile" label="&closeFile;"  oncommand="checkCloseFile();" accesskey="&closeFileAccessKey;"/>
-              <button id="exitApp" class="exitApp" label="&exit;"  oncommand="if (checkCloseFile() == true) exit();" accesskey="&exitAccessKey;"/>
-            </vbox>
-            <separator class="groove-thin" orient="vertical"/>
-            <separator class="groove-thin" orient="vertical"/>
-            <vbox>
-              <separator class="groove-thin" orient="horizontal"/>
-              <separator class="groove-thin" orient="horizontal"/>
-              <separator class="groove-thin" orient="horizontal"/>
-              <separator class="groove-thin" orient="horizontal"/>
-              <separator class="groove-thin" orient="horizontal"/>
-              <button id="updateFromOldQSOS" class="updateFromOldQSOS" label="&updateFromOldQSOS;" oncommand="updateFromOldQSOS();" accesskey="&updateFromOldQSOSAccessKey;"/>
-              <separator class="groove-thin" orient="horizontal"/>
-              <button id="updateFromTemplate" class="updateFromTemplate" label="&updateFromTemplate;" oncommand="updateFromTemplate();" accesskey="&updateFromTemplateAccessKey;"/>
-              <separator class="groove-thin" orient="horizontal"/>
-              <button id="exportOSC" class="exportOSC" label="&exportOSC;" oncommand="exportOSC();" accesskey="&exportOSCAccessKey;"/>
-              <separator class="groove-thin" orient="horizontal"/>
-              <button id="exportToFreeMind" class="exportToFreeMind" label="&exportToFreeMind;" oncommand="exportToFreeMind();" accesskey="&exportToFreeMindAccessKey;"/>
-            </vbox>
-          </hbox>
-        </vbox>
-      </tabpanel>
-      !-->
 
+    <tabpanels flex="1" id="tabPanels">
       <tabpanel id="MetadataTabPanel" class="over">
         <vbox flex="1">
           <groupbox>
             <caption id="templateCaption" label="&template;"/>
           </groupbox>
-          <groupbox>
+          <groupbox flex="1">
             <caption label="&evaluationAuthors;"/>
-            <vbox>
-              <!--<grid flex="1">
-                <columns>
-                  <column />
-                  <column width="200"/>
-                  <column />
-                  <column width="100"/>
-                </columns>
-                <rows>
-                  <row align="center">
-                    <label control="evaluationVersion" value="&evaluationVersion;"/>
-                    <textbox id="evaluationVersion" placeholder="&evaluationVersionPlaceholder;" oninput="docHasChanged(true);" disabled="true"/>
-                    <label control="evaluationLanguage" value="&evaluationLanguage;"/>
-                    <menulist id="evaluationLanguage" oncommand="changeLanguage(this);" disabled="true">
-                      <menupopup id="languagePopup"/>
-                    </menulist>
-                  </row>
-                </rows>
-              </grid>!-->
-              <groupbox>
+            <vbox flex="1">
+              <groupbox flex="1">
                 <caption label="&authors;"/>
                 <hbox flex="1">
                   <grid flex="1">
@@ -359,13 +219,14 @@
                     <hbox>
                       <button label="&addButton;" id="addAuthorButton" class="addAuthor" oncommand="addAuthor('evaluation');"/>
                       <button label="&delButton;" id="delAuthorButton" class="delAuthor" oncommand="delAuthor('evaluation');"/>
+                      <button label="&addMyselfButton;" id="addMyselfAuthorButton" class="addAuthor" oncommand="addMyself('evaluationAuthor');"/>
                     </hbox>
                   </vbox>
                 </hbox>
               </groupbox>
-              <groupbox>
+              <groupbox flex="1">
                 <caption label="&reviewer;"/>
-                <hbox align="center">
+                <hbox align="center" flex="1">
                   <grid flex="1">
                     <columns>
                       <column />
@@ -395,12 +256,13 @@
                     </rows>
                   </grid>
                 </hbox>
-                <hbox align="center">
+                <hbox align="center" flex="1">
                   <checkbox id="evaluationReviewerDateCheckbox" label="&date;" checked="true" oncommand="dateControl(this, 'evaluationReviewerDate'); docHasChanged(true);"/>
                   <datepicker id="evaluationReviewerDate" type="popup" onchange="docHasChanged(true);"/>
+                  <button label="&addMyselfButton;" id="addMyselfAuthorButton" class="addAuthor" oncommand="addMyself('evaluationReviewer');"/>
                 </hbox>
               </groupbox>
-              <groupbox>
+              <groupbox flex="1">
                 <caption label="&dates;"/>
                   <hbox align="center">
                     <checkbox id="evaluationCreationDateCheckbox" label="&creationDate;" checked="true" oncommand="dateControl(this, 'evaluationCreationDate'); docHasChanged(true);"/>
@@ -415,23 +277,10 @@
               </groupbox>
             </vbox>
           </groupbox>
-
-          <groupbox>
+          <groupbox flex="1">
             <caption id="oscLabel" label="&oscAuthors;"/>
-            <vbox>
+            <vbox flex="1">
               <hbox flex="1">
-                <!--<grid flex="1">
-                  <columns>
-                    <column />
-                    <column width="200"/>
-                  </columns>
-                  <rows>
-                    <row align="center">
-                      <label control="oscVersion" value="&oscVersion;"/>
-                      <textbox id="oscVersion" placeholder="&oscVersionPlaceholder;" oninput="docHasChanged(true);"/>
-                    </row>
-                  </rows>
-                </grid>!-->
                 <groupbox flex="1">
                   <caption label="&authors;"/>
                   <hbox flex="1">
@@ -452,6 +301,10 @@
                         <row align="center">
                           <label control="oscAuthorComment" value="&comment;"/>
                           <textbox id="oscAuthorComment" multiline="true" flex="1"/>
+                        </row>
+                        <row>
+                          <label value=""/>
+                          <button label="&addMyselfButton;" id="addMyselfAuthorButton" class="addAuthor" oncommand="addMyself('oscAuthor');"/>
                         </row>
                       </rows>
                     </grid>
@@ -479,7 +332,10 @@
                       </row>
                       <row>
                         <checkbox id="oscReviewerDateCheckbox" label="&date;" checked="true" oncommand="dateControl(this, 'oscReviewerDate'); docHasChanged(true);"/>
-                        <datepicker id="oscReviewerDate" type="popup" onchange="docHasChanged(true);"/>
+                        <hbox>
+                          <datepicker id="oscReviewerDate" type="popup" onchange="docHasChanged(true);"/>
+                          <button label="&addMyselfButton;" id="addMyselfAuthorButton" class="addAuthor" oncommand="addMyself('oscReviewer');" flex="1"/>
+                        </hbox>
                       </row>
                     </rows>
                   </grid>
@@ -487,7 +343,7 @@
               </hbox>
               <groupbox flex="1">
                 <caption label="&dates;"/>
-                <hbox align="center">
+                <hbox align="center" flex="1">
                   <checkbox id="oscCreationDateCheckbox" label="&creationDate;" checked="true" oncommand="dateControl(this, 'oscCreationDate'); docHasChanged(true);"/>
                   <datepicker id="oscCreationDate" type="popup" onchange="docHasChanged(true);"/>
                   <separator class="groove-thin" orient="vertical"/>
@@ -500,11 +356,10 @@
               </groupbox>
             </vbox>
           </groupbox>
-
         </vbox>
       </tabpanel>
 
-      <tabpanel id="oscTabPanel" class="over">
+      <tabpanel id="oscTabPanel" class="over" flex="1">
         <vbox flex="1">
           <vbox flex="1">
             <groupbox class="over" flex="1">
@@ -520,8 +375,8 @@
                   <row align="center">
                     <label control="componentName" value="&componentName;"/>
                     <textbox id="componentName" flex="1" oninput="docHasChanged(true);" placeholder="&componentNamePlaceholder;"/>
-                    <checkbox id="componentReleaseDateCheckbox" label="&componentReleaseDate;" checked="true" oncommand="dateControl(this, 'componentReleaseDate'); docHasChanged(true);"/>
-                    <datepicker id="componentReleaseDate" type="popup" onchange="docHasChanged(true);"/>
+                    <label control="componentVendor" value="&componentVendor;"/>
+                    <textbox id="componentVendor" flex="1" oninput="docHasChanged(true);" placeholder="&componentVendorPlaceholder;"/>
                   </row>
                   <row align="center">
                     <label control="componentVersion" value="&componentVersion;"/>
@@ -546,21 +401,18 @@
                     </menulist>
                   </row>
                   <row align="center">
-                    <label control="componentVendor" value="&componentVendor;"/>
-                    <textbox id="componentVendor" flex="1" oninput="docHasChanged(true);" placeholder="&componentVendorPlaceholder;"/>
+                    <checkbox id="componentReleaseDateCheckbox" label="&componentReleaseDate;" checked="true" oncommand="dateControl(this, 'componentReleaseDate'); docHasChanged(true);"/>
+                    <datepicker id="componentReleaseDate" type="popup" onchange="docHasChanged(true);"/>
                     <label control="componentDescription" value="&componentDescription;"/>
                     <textbox id="componentDescription" multiline="true" flex="1" oninput="docHasChanged(true);" placeholder="&componentDescriptionPlaceholder;"/>
                   </row>
                 </rows>
               </grid>
             </groupbox>
-          </vbox>
-
-          <vbox flex="1">
             <groupbox flex="1" class="over">
               <caption label="&team;"/>
               <vbox flex="1">
-                <hbox align="center">
+                <hbox align="center" flex="1">
                   <label control="number" value="&number;"/>
                   <textbox id="number" oninput="docHasChanged(true);" type="number" size="6"/>
                 </hbox>
@@ -643,7 +495,7 @@
               </vbox>
             </groupbox>
             <hbox flex="1">
-              <groupbox flex="100">
+              <groupbox flex="1">
                 <caption label="&license;"/>
                 <grid flex="1">
                   <columns>
@@ -663,7 +515,7 @@
                     </row>
                     <row align="center">
                       <label control="licenseHomepage" value="&licenseHomepage;"/>
-                      <textbox id="licenseHomepage" oninput="docHasChanged(true);" placeholder="http://..." flex="3"/>
+                      <textbox id="licenseHomepage" oninput="docHasChanged(true);" placeholder="http://..." flex="1"/>
                     </row>
                   </rows>
                 </grid>
@@ -678,7 +530,7 @@
                   <rows>
                     <row align="center">
                       <label control="copyright" value="&copyright;"/>
-                      <textbox id="copyright" oninput="docHasChanged(true);" width="300"/>
+                      <textbox id="copyright" oninput="docHasChanged(true);" flex="1"/>
                     </row>
                   </rows>
                 </grid>
@@ -720,7 +572,7 @@
           <label control="criteriaComments" value="&comments;"/>
           <textbox id="criteriaComments" multiline="true" rows="5" oninput="changeComments(this);"/>
           <groupbox id="chartGroupbox" flex="1">
-            <caption label="&chartTab;"/>
+            <caption label="&chart;"/>
             <vbox id="chart-box" flex = "1">
               <hbox id="chart-label" />
               <svg xmlns="http://www.w3.org/2000/svg" version="1.1" flex="1"> <!-- width="400px" height="350px"> !-->

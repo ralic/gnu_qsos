@@ -26,30 +26,11 @@
 <!ENTITY QSOSEditor "QSOS XUL Editor">
 
 <!-- Tabs !-->
-<!ENTITY fileTab "  File ">
 <!ENTITY metadataTab "  Metadata ">
 <!ENTITY oscTab "  Cartouche ">
 <!ENTITY criteriaTab "  Criteria ">
-<!ENTITY chartTab "  Chart ">
-<!ENTITY configTab "  Settings ">
-<!ENTITY aboutTab "  About ">
 
-<!-- File Tab !-->
-<!-- We need space here in order to move icons to the left. I couldn't get any CSS propery working properly !-->
-<!--<!ENTITY newFile "  New from template      ">
-<!ENTITY openLocalFile "  Open local file             ">
-<!ENTITY openRemoteFile "  Open remote file         ">
-<!ENTITY saveFile "  Save                            ">
-<!ENTITY saveFileAs "  Save As                       ">
-<!ENTITY saveRemoteFile "  Save on remote server">
-<!ENTITY closeFile "  Close file                      ">
-<!ENTITY exit "  Exit                              ">
-
-<!ENTITY updateFromTemplate "  Update file from template        ">
-<!ENTITY updateFromOldQSOS "  Update an old QSOS file           ">
-<!ENTITY exportOSC "  Export Open Source Cartouche">
-<!ENTITY exportToFreeMind "  Export to FreeMind                   ">!-->
-
+<!-- Buttons !-->
 <!ENTITY newFile " New from template">
 <!ENTITY openLocalFile " Open local file">
 <!ENTITY openRemoteFile " Open remote file">
@@ -80,6 +61,7 @@
 <!ENTITY comment "Comment:">
 <!ENTITY addButton " Add">
 <!ENTITY delButton " Delete">
+<!ENTITY addMyselfButton " Add myself">
 <!ENTITY reviewer "Reviewer">
 <!ENTITY date "Date:">
 <!ENTITY evaluationVersion "Version:">
@@ -141,9 +123,10 @@
 <!ENTITY comments "Comments">
 
 <!-- Chart Tab !-->
+<!ENTITY chart "Chart">
 
 <!-- Settings Tab !-->
-<!ENTITY storedInfo "Currently used and stored informations">
+<!ENTITY storedInfo "Currently stored informations about you:">
 
 <!-- About stuff !-->
 <!ENTITY xuleditorName "QSOS XUL Editor v2.0">
@@ -182,13 +165,9 @@
 <!ENTITY exportToFreeMindAccessKey "x">
 
 <!-- Access key for tabs !-->
-<!ENTITY fileTabAccessKey "l">
 <!ENTITY metadataTabAccessKey "m">
 <!ENTITY oscTabAccessKey "t">
 <!ENTITY criteriaTabAccessKey "i">
-<!ENTITY chartTabAccessKey "h">
-<!ENTITY configTabAccessKey "g">
-<!-- <!ENTITY aboutTabAccessKey "o"> -->
 
 <!-- Key for keyboard shortcuts !-->
 <!ENTITY newFileShortcut "n">

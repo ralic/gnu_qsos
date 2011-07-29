@@ -219,7 +219,10 @@ function Document() {
       req = new XMLHttpRequest();
 
       //Set the filename
-      var tmpFilename = myDoc.get("component/mainTech") + "." + myDoc.get("component/name") + "." + myDoc.get("component/version");
+      try { var mainTech = myDoc.get("component/mainTech"); } catch (e) { var mainTech = "" }
+      try { var name = myDoc.get("component/name"); } catch (e) { var name = "" }
+      try { var version = myDoc.get("component/version"); } catch (e) { var version = "" }
+      var tmpFilename = mainTech + "." + name + "." + version;
       if (tmpFilename == "..") {
         if (myDoc.filename == null) {
           tmpFilename = "upload";
@@ -474,8 +477,7 @@ function Document() {
       if (node)
         return node.textContent;
       else
-        alert("Element: " + element + " doesn't exist.");
-        return "";
+        throw element + " " + strbundle.getString("doesntExist");
     }
 
 

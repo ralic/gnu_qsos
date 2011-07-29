@@ -26,30 +26,11 @@
 <!ENTITY QSOSEditor "Editeur XUL QSOS">
 
 <!-- Tabs !-->
-<!ENTITY fileTab "  Fichier ">
 <!ENTITY metadataTab "  Metadata ">
 <!ENTITY oscTab "  Cartouche ">
 <!ENTITY criteriaTab "  Critères ">
-<!ENTITY chartTab "  Graphe ">
-<!ENTITY configTab "  Paramètres ">
-<!ENTITY aboutTab "  A propos ">
 
-<!-- File Tab !-->
-<!-- Les espaces ici servent à aligner les boutons sur la gauche, parce que je n'arrive pas à utiliser les styles CSS pour le faire proprement !-->
-<!--<!ENTITY newFile "  Nouveau à partir d'un patron  ">
-<!ENTITY openLocalFile "  Ouvrir un fichier local        ">
-<!ENTITY openRemoteFile "  Ouvrir fichier distant         ">
-<!ENTITY saveFile "  Enregistrer                       ">
-<!ENTITY saveFileAs "  Enregistrer sous              ">
-<!ENTITY saveRemoteFile "  Enregistrer sur le serveur">
-<!ENTITY closeFile "  Fermer le fichier                ">
-<!ENTITY exit "  Quitter                              ">
-
-<!ENTITY updateFromTemplate "  Mettre à jour à partir d'un patron        ">
-<!ENTITY updateFromOldQSOS "  Importer une ancienne version de QSOS">
-<!ENTITY exportOSC "  Exporter l'Open Source Cartouche         ">
-<!ENTITY exportToFreeMind "  Exporter au format FreeMind                ">!-->
-
+<!-- Buttons !-->
 <!ENTITY newFile " Nouveau à partir d'un patron">
 <!ENTITY openLocalFile " Ouvrir un fichier local">
 <!ENTITY openRemoteFile "  uvrir fichier distant">
@@ -80,6 +61,7 @@
 <!ENTITY comment "Commentaire :">
 <!ENTITY addButton " Ajouter">
 <!ENTITY delButton " Supprimer">
+<!ENTITY addMyselfButton " M'ajouter">
 <!ENTITY reviewer "Validateur :">
 <!ENTITY date "Date :">
 <!ENTITY evaluationVersion "Version :">
@@ -141,9 +123,10 @@
 <!ENTITY comments "Commentaires">
 
 <!-- Chart Tab !-->
+<!ENTITY chart "Graphique">
 
 <!-- Settings Tab !-->
-<!ENTITY storedInfo "Informations stockées">
+<!ENTITY storedInfo "Informations sur vous stockées :">
 
 <!-- About stuff !-->
 <!ENTITY xuleditorName "QSOS XUL Editor v2.0">
@@ -182,13 +165,9 @@
 <!ENTITY exportToFreeMindAccessKey "x">
 
 <!-- Access key for tabs !-->
-<!ENTITY fileTabAccessKey "f">
 <!ENTITY metadataTabAccessKey "a">
 <!ENTITY oscTabAccessKey "t">
 <!ENTITY criteriaTabAccessKey "r">
-<!ENTITY chartTabAccessKey "g">
-<!ENTITY configTabAccessKey "p">
-<!-- <!ENTITY aboutTabAccessKey "o"> -->
 
 <!-- Key for keyboard shortcuts !-->
 <!ENTITY newFileShortcut "n">
