@@ -450,7 +450,7 @@ function updateFromOldQSOS() {
 
 // Last updated: 29/07/2011
 var qsos_1_6_to_qsos_2_0 = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\
-<xsl:stylesheet xmlns:xsl=\"http://www.w3.org/1999/XSL/Transform\" xmlns:str=\"http://exslt.org/strings\" xmlns:fn=\"http://www.w3.org/2005/xpath-functions\" version=\"1.0\">\
+<xsl:stylesheet xmlns:xsl=\"http://www.w3.org/1999/XSL/Transform\" xmlns:str=\"http://exslt.org/strings\" version=\"1.0\">\
 <xsl:output method=\"xml\" indent=\"yes\" encoding=\"UTF-8\"/>\
 \
 <xsl:template match=\"document\">\
@@ -589,7 +589,7 @@ var qsos_1_6_to_qsos_2_0 = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\
 </xsl:template>\
 \
 <xsl:template match=\"language\">\
-<xsl:element name=\"language\"><xsl:apply-templates select=\"@*|node()\"/></xsl:element>\
+<xsl:element name=\"language\">-<xsl:value-of select=\"translate(@*|node(), 'abcdefghijklmnopqrstuvwxyz', 'ABCDEFGHIJKLMNOPQRSTUVWXYZ')\"/></xsl:element>\
 </xsl:template>\
 \
 <xsl:template match=\"qsosformat\">\
@@ -788,10 +788,10 @@ var freemind_to_qsos_2_0 = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\
 
 ////////////////////////////////////////////////////////////////////////////////
 //omit-xml-declaration=\"yes\"
-// Last updated: 26/07/2011
+// Last updated: 29/07/2011
 var qsos_2_0_to_freemind = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\
 <xsl:stylesheet xmlns:xsl=\"http://www.w3.org/1999/XSL/Transform\" version=\"1.0\">\
-<xsl:output method=\"xml\" indent=\"yes\" encoding=\"UTF-8\"/>\
+<xsl:output method=\"xml\" indent=\"yes\" encoding=\"UTF-8\" omit-xml-declaration=\"yes\"/>\
 <xsl:template match=\"document\">\
 <xsl:element name=\"map\">\
 <xsl:attribute name=\"version\">0.9.0</xsl:attribute>\
