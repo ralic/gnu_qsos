@@ -305,7 +305,7 @@ function exportToFreeMind() {
     var processor = new XSLTProcessor();
     processor.importStylesheet(xslt);
     var tmp = processor.transformToDocument(toTrans);
-    element = tmp.getElementsByTagName("map")[0];
+    var element = tmp.getElementsByTagName("map")[0];
 
     getPrivilege();
 
@@ -322,7 +322,7 @@ function exportToFreeMind() {
     if (test[test.length - 1] != "mm") {
       filename += ".mm";
     }
-    myDoc.writeXMLtoFile(element, filename);
+    myDoc.writeXMLtoFile(element, filename, false);
   } catch(e) {
     alert("exportToFreeMind: " + e.message);
     return false;
@@ -348,14 +348,24 @@ function exportToFreeMindTemplate() {
     var processor = new XSLTProcessor();
     processor.importStylesheet(xslt);
     var tmp = processor.transformToDocument(toTrans);
-    element = tmp.getElementsByTagName("map")[0];
+    var element = tmp.getElementsByTagName("map")[0];
 
     getPrivilege();
+
+    try { var type = myDoc.get("qsosMetadata/template/type"); } catch (e) { var type = ""; }
+    try { var version = myDoc.get("qsosMetadata/template/version"); } catch (e) { var version = ""; }
+    try { var language = myDoc.get("qsosMetadata/language"); } catch (e) { var language = ""; }
+    var suggest = type + "_" + version;
+    if ((language != "en") && (language != "EN")) {
+      suggest += "_" + language;
+    }
 
     var nsIFilePicker = Components.interfaces.nsIFilePicker;
     var fp = Components.classes["@mozilla.org/filepicker;1"].createInstance(nsIFilePicker);
     fp.init(window, strbundle.getString("saveFileAs"), nsIFilePicker.modeSave);
     fp.appendFilter(strbundle.getString("FreeMindTemplate"),"*.mm");
+    fp.defaultString = suggest;
+    // fp.defaultExtension = ".mm"; FIXME
     var res = fp.show();
     if ((res != nsIFilePicker.returnOK) && (res != nsIFilePicker.returnReplace)) {
       return false;
@@ -365,7 +375,7 @@ function exportToFreeMindTemplate() {
     if (test[test.length - 1] != "mm") {
       filename += ".mm";
     }
-    myDoc.writeXMLtoFile(element, filename);
+    myDoc.writeXMLtoFile(element, filename, false);
   } catch(e) {
     alert("exportToFreeMind: " + e.message);
     return false;
@@ -422,6 +432,9 @@ function updateFromOldQSOS() {
       closeFile();
       return false;
     }
+
+    docHasChanged();
+
   } catch (e) {
     alert("updateFromOldQSOS: general error: " + e.message);
     closeFile();
@@ -435,7 +448,7 @@ function updateFromOldQSOS() {
 // Commands used to produce "Javascript compliant" strings form "raw" xslt files:
 // sed 's/"/\\"/g' <file.xslt> | sed 's/$/\\/g'
 
-// Last updated: 25/07/2011
+// Last updated: 29/07/2011
 var qsos_1_6_to_qsos_2_0 = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\
 <xsl:stylesheet xmlns:xsl=\"http://www.w3.org/1999/XSL/Transform\" xmlns:str=\"http://exslt.org/strings\" xmlns:fn=\"http://www.w3.org/2005/xpath-functions\" version=\"1.0\">\
 <xsl:output method=\"xml\" indent=\"yes\" encoding=\"UTF-8\"/>\
@@ -448,7 +461,6 @@ var qsos_1_6_to_qsos_2_0 = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\
 </xsl:template>\
 \
 <xsl:template match=\"header\">\
-<xsl:element name=\"header\">\
 <xsl:element name=\"qsosMetadata\">\
 <xsl:element name=\"template\">\
 <xsl:apply-templates select=\"qsosappfamily\"/>\
@@ -508,7 +520,6 @@ var qsos_1_6_to_qsos_2_0 = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\
 <copyright/>\
 </legal>\
 <misc/>\
-</xsl:element>\
 </xsl:element>\
 </xsl:template>\
 \
