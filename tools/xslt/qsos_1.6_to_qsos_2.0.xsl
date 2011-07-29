@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:str="http://exslt.org/strings" xmlns:fn="http://www.w3.org/2005/xpath-functions" version="1.0">
+<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:str="http://exslt.org/strings" version="1.0">
 <xsl:output method="xml" indent="yes" encoding="UTF-8"/>
 
   <xsl:template match="document">
@@ -138,7 +138,7 @@
   </xsl:template>
 
   <xsl:template match="language">
-    <xsl:element name="language"><xsl:apply-templates select="@*|node()"/></xsl:element>
+    <xsl:element name="language">-<xsl:value-of select="translate(@*|node(), 'abcdefghijklmnopqrstuvwxyz', 'ABCDEFGHIJKLMNOPQRSTUVWXYZ')"/></xsl:element>
   </xsl:template>
 
   <xsl:template match="qsosformat">

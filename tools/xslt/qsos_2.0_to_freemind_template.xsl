@@ -40,7 +40,7 @@
 	    </node>
 	    <node CREATED="1311177840941" ID="language" MODIFIED="1311177848879" TEXT="language">
 	      <node CREATED="1311176605382" ID="language_entry" MODIFIED="1311234870295" STYLE="bubble">
-		<xsl:attribute name="TEXT"><xsl:value-of select="qsosMetadata/language"/></xsl:attribute>
+		<xsl:attribute name="TEXT"><xsl:value-of select="translate(qsosMetadata/language, 'abcdefghijklmnopqrstuvwxyz', 'ABCDEFGHIJKLMNOPQRSTUVWXYZ')"/></xsl:attribute>
 		<font ITALIC="true" NAME="SansSerif" SIZE="12"/>
 	      </node>
 	    </node>
