@@ -74,6 +74,9 @@
 #exportToFreeMind
 {list-style-image: url("chrome://qsos-xuled/skin/tools-wizard.png");}
 
+#exportToFreeMindTemplate
+{list-style-image: url("chrome://qsos-xuled/skin/freemind.png");}
+
 #updateFromOldQSOS
 {list-style-image: url("chrome://qsos-xuled/skin/quickopen-file.png");}
 

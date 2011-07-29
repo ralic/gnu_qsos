@@ -201,6 +201,7 @@ function setStateEvalOpen(state) {
     document.getElementById("updateFromTemplate").hidden = bool;
     document.getElementById("exportOSC").hidden = bool;
     document.getElementById("exportToFreeMind").hidden = bool;
+    document.getElementById("exportToFreeMindTemplate").hidden = bool;
 
     document.getElementById("tabPanels").hidden = bool;
     document.getElementById("intoVbox").hidden = nbool;

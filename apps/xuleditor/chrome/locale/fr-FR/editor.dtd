@@ -33,7 +33,7 @@
 <!-- Buttons !-->
 <!ENTITY newFile " Nouveau à partir d'un patron">
 <!ENTITY openLocalFile " Ouvrir un fichier local">
-<!ENTITY openRemoteFile "  uvrir fichier distant">
+<!ENTITY openRemoteFile "  Ouvrir un fichier distant">
 <!ENTITY saveFile " Enregistrer">
 <!ENTITY saveFileAs " Enregistrer sous">
 <!ENTITY saveRemoteFile " Enregistrer sur le serveur">
@@ -45,6 +45,7 @@
 <!ENTITY updateFromOldQSOS " Importer une ancienne version de QSOS">
 <!ENTITY exportOSC " Exporter l'Open Source Cartouche">
 <!ENTITY exportToFreeMind " Exporter au format FreeMind">
+<!ENTITY exportToFreeMindTemplate " Exporter comme patron">
 
 <!ENTITY description1 "Veuillez ouvrir une évalutaion QSOS (Ouvrir un fichier local) ou en commencer une nouvelle à partir d'un patron (Nouveau à partir d'un patron).">
 <!ENTITY description2 "Les fonctions 'Ouvrir un fichier distant' et 'Sauvegarder sur le serveur' ne sont plus disponibles pour l'instant.">
@@ -163,6 +164,7 @@
 <!ENTITY updateFromOldQSOSAccessKey "v">
 <!ENTITY exportOSCAccessKey "h">
 <!ENTITY exportToFreeMindAccessKey "x">
+<!ENTITY exportToFreeMindTemplateAccessKey "o">
 
 <!-- Access key for tabs !-->
 <!ENTITY metadataTabAccessKey "a">

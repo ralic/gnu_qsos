@@ -261,6 +261,10 @@ function saveFile() {
       }
 
       if (myDoc.filename != null) {
+        var test = myDoc.filename.split(".");
+        if (test[test.length - 1] != "qsos") {
+          myDoc.setfilename(myDoc.filename + ".qsos");
+        }
         myDoc.write();
         docHasChanged(false);
         return true;
