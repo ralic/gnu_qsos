@@ -259,11 +259,16 @@ function updateNode(section, oldSheet) {
 
 function exportOSC() {
   try{
+    try { var name = myDoc.get("openSourceCartouche/component/name"); } catch (e) { var name = ""; }
+    try { var version = myDoc.get("openSourceCartouche/component/version"); } catch (e) { var version = ""; }
+    var suggest = name + "_" + version;
+
     getPrivilege();
     var nsIFilePicker = Components.interfaces.nsIFilePicker;
     var fp = Components.classes["@mozilla.org/filepicker;1"].createInstance(nsIFilePicker);
     fp.init(window, strbundle.getString("saveFileAs"), nsIFilePicker.modeSave);
     fp.appendFilter(strbundle.getString("OSC"),"*.osc");
+    fp.defaultString = suggest;
     var res = fp.show();
     if ((res != nsIFilePicker.returnOK) && (res != nsIFilePicker.returnReplace)) {
       return false;
@@ -307,12 +312,21 @@ function exportToFreeMind() {
     var tmp = processor.transformToDocument(toTrans);
     var element = tmp.getElementsByTagName("map")[0];
 
-    getPrivilege();
+    try { var name = myDoc.get("openSourceCartouche/component/name"); } catch (e) { var name = ""; }
+    try { var version = myDoc.get("openSourceCartouche/component/version"); } catch (e) { var version = ""; }
+    try { var language = myDoc.get("qsosMetadata/language"); } catch (e) { var language = ""; }
+    var suggest = name + "_" + version;
+    if ((language != "en") && (language != "EN")) {
+      suggest += "_" + language;
+    }
 
+    getPrivilege();
     var nsIFilePicker = Components.interfaces.nsIFilePicker;
     var fp = Components.classes["@mozilla.org/filepicker;1"].createInstance(nsIFilePicker);
     fp.init(window, strbundle.getString("saveFileAs"), nsIFilePicker.modeSave);
     fp.appendFilter(strbundle.getString("FreeMindTemplate"),"*.mm");
+    fp.defaultString = suggest;
+
     var res = fp.show();
     if ((res != nsIFilePicker.returnOK) && (res != nsIFilePicker.returnReplace)) {
       return false;
@@ -353,9 +367,8 @@ function exportToFreeMindTemplate() {
     getPrivilege();
 
     try { var type = myDoc.get("qsosMetadata/template/type"); } catch (e) { var type = ""; }
-    try { var version = myDoc.get("qsosMetadata/template/version"); } catch (e) { var version = ""; }
     try { var language = myDoc.get("qsosMetadata/language"); } catch (e) { var language = ""; }
-    var suggest = type + "_" + version;
+    var suggest = type; // + "_" + version;
     if ((language != "en") && (language != "EN")) {
       suggest += "_" + language;
     }
@@ -589,7 +602,7 @@ var qsos_1_6_to_qsos_2_0 = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\
 </xsl:template>\
 \
 <xsl:template match=\"language\">\
-<xsl:element name=\"language\">-<xsl:value-of select=\"translate(@*|node(), 'abcdefghijklmnopqrstuvwxyz', 'ABCDEFGHIJKLMNOPQRSTUVWXYZ')\"/></xsl:element>\
+<xsl:element name=\"language\"><xsl:value-of select=\"translate(@*|node(), 'abcdefghijklmnopqrstuvwxyz', 'ABCDEFGHIJKLMNOPQRSTUVWXYZ')\"/></xsl:element>\
 </xsl:template>\
 \
 <xsl:template match=\"qsosformat\">\
@@ -788,7 +801,7 @@ var freemind_to_qsos_2_0 = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\
 
 ////////////////////////////////////////////////////////////////////////////////
 //omit-xml-declaration=\"yes\"
-// Last updated: 29/07/2011
+// Last updated: 01/08/2011
 var qsos_2_0_to_freemind = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\
 <xsl:stylesheet xmlns:xsl=\"http://www.w3.org/1999/XSL/Transform\" version=\"1.0\">\
 <xsl:output method=\"xml\" indent=\"yes\" encoding=\"UTF-8\" omit-xml-declaration=\"yes\"/>\
@@ -799,18 +812,9 @@ var qsos_2_0_to_freemind = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\
 <xsl:attribute name=\"ID\">\
 <xsl:value-of select=\"openSourceCartouche/component/name\"/>\
 </xsl:attribute>\
-<richcontent TYPE=\"NODE\">\
-<html>\
-<head/>\
-<body>\
-<p style=\"text-align: center\">\
-<xsl:value-of select=\"openSourceCartouche/component/name\"/>\
-<br/>\
-<xsl:value-of select=\"openSourceCartouche/component/version\"/>\
-</p>\
-</body>\
-</html>\
-</richcontent>\
+<xsl:attribute name=\"TEXT\">\
+<xsl:value-of select=\"openSourceCartouche/component/name\"/>_<xsl:value-of select=\"openSourceCartouche/component/version\"/>\
+</xsl:attribute>\
 <font NAME=\"SansSerif\" BOLD=\"true\" SIZE=\"12\"/>\
 <xsl:apply-templates select=\"section\"/>\
 </xsl:element>\

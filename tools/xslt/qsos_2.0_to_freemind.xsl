@@ -8,18 +8,9 @@
         <xsl:attribute name="ID">
           <xsl:value-of select="openSourceCartouche/component/name"/>
         </xsl:attribute>
-        <richcontent TYPE="NODE">
-          <html>
-            <head/>
-            <body>
-              <p style="text-align: center">
-                <xsl:value-of select="openSourceCartouche/component/name"/>
-                <br/>
-                <xsl:value-of select="openSourceCartouche/component/version"/>
-              </p>
-            </body>
-          </html>
-        </richcontent>
+        <xsl:attribute name="TEXT">
+          <xsl:value-of select="openSourceCartouche/component/name"/>_<xsl:value-of select="openSourceCartouche/component/version"/>
+        </xsl:attribute>
         <font NAME="SansSerif" BOLD="true" SIZE="12"/>
         <xsl:apply-templates select="section"/>
       </xsl:element>

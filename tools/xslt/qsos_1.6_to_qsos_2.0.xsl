@@ -138,7 +138,7 @@
   </xsl:template>
 
   <xsl:template match="language">
-    <xsl:element name="language">-<xsl:value-of select="translate(@*|node(), 'abcdefghijklmnopqrstuvwxyz', 'ABCDEFGHIJKLMNOPQRSTUVWXYZ')"/></xsl:element>
+    <xsl:element name="language"><xsl:value-of select="translate(@*|node(), 'abcdefghijklmnopqrstuvwxyz', 'ABCDEFGHIJKLMNOPQRSTUVWXYZ')"/></xsl:element>
   </xsl:template>
 
   <xsl:template match="qsosformat">

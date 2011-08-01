@@ -285,11 +285,21 @@ function saveFile() {
 
 // Saves modifications to a new QSOS XML file
 function saveFileAs() {
+  try { var name = myDoc.get("openSourceCartouche/component/name"); } catch (e) { var name = ""; }
+  try { var version = myDoc.get("openSourceCartouche/component/version"); } catch (e) { var version = ""; }
+  try { var language = myDoc.get("qsosMetadata/language"); } catch (e) { var language = ""; }
+  var suggest = name + "_" + version;
+  if ((language != "en") && (language != "EN")) {
+    suggest += "_" + language;
+  }
+
   getPrivilege();
   var nsIFilePicker = Components.interfaces.nsIFilePicker;
   var fp = Components.classes["@mozilla.org/filepicker;1"].createInstance(nsIFilePicker);
   fp.init(window, strbundle.getString("saveFileAs"), nsIFilePicker.modeSave);
   fp.appendFilter(strbundle.getString("QSOSFile"),"*.qsos");
+  fp.defaultString = suggest;
+
   var res = fp.show();
   if ((res == nsIFilePicker.returnOK) || (res == nsIFilePicker.returnReplace)) {
     myDoc.setfilename(fp.file.path);
