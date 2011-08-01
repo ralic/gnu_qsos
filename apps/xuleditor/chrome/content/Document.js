@@ -240,6 +240,7 @@ function Document() {
       tmpFilename = tmpFilename.replace(/:/g, '_');
       tmpFilename = tmpFilename.replace(/;/g, '_');
       tmpFilename = tmpFilename.replace(/,/g, '_');
+      tmpFilename = tmpFilename.replace(/ /g, '_');
 
       alert(tmpFilename);
 

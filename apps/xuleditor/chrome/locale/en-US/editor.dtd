@@ -30,22 +30,25 @@
 <!ENTITY oscTab "  Cartouche ">
 <!ENTITY criteriaTab "  Criteria ">
 
-<!-- Buttons !-->
-<!ENTITY newFile " New from template">
-<!ENTITY openLocalFile " Open local file">
-<!ENTITY openRemoteFile " Open remote file">
-<!ENTITY saveFile " Save">
-<!ENTITY saveFileAs " Save as">
-<!ENTITY saveRemoteFile " Save on remote server">
-<!ENTITY closeFile " Close">
-<!ENTITY about " About">
-<!ENTITY exit " Exit">
+<!-- Buttons & Menuitems !-->
+<!ENTITY file "File">
+<!ENTITY importExport "Import/Export">
 
-<!ENTITY updateFromTemplate " Update from template">
-<!ENTITY updateFromOldQSOS " Update from old QSOS">
-<!ENTITY exportOSC " Export Open Source Cartouche">
-<!ENTITY exportToFreeMind " Export to FreeMind">
-<!ENTITY exportToFreeMindTemplate " Export to template">
+<!ENTITY newFile "New from template">
+<!ENTITY openLocalFile "Open local file">
+<!ENTITY openRemoteFile "Open remote file">
+<!ENTITY saveFile "Save">
+<!ENTITY saveFileAs "Save as">
+<!ENTITY saveRemoteFile "Save on remote server">
+<!ENTITY closeFile "Close">
+<!ENTITY about "About">
+<!ENTITY exit "Exit">
+
+<!ENTITY updateFromTemplate "Update from template">
+<!ENTITY updateFromOldQSOS "Update from old QSOS">
+<!ENTITY exportOSC "Export Open Source Cartouche">
+<!ENTITY exportToFreeMind "Export to FreeMind">
+<!ENTITY exportToFreeMindTemplate "Export to template">
 
 <!ENTITY description1 "Please open or update a QSOS evaluation or start a fresh one using templates.">
 <!ENTITY description2 "The 'Open remote file' and 'Save on remote server' functions may not work as they depend on the O3S website availability.">

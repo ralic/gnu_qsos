@@ -298,7 +298,7 @@ function saveFileAs() {
   var fp = Components.classes["@mozilla.org/filepicker;1"].createInstance(nsIFilePicker);
   fp.init(window, strbundle.getString("saveFileAs"), nsIFilePicker.modeSave);
   fp.appendFilter(strbundle.getString("QSOSFile"),"*.qsos");
-  fp.defaultString = suggest;
+  fp.defaultString = suggest + ".qsos";
 
   var res = fp.show();
   if ((res == nsIFilePicker.returnOK) || (res == nsIFilePicker.returnReplace)) {

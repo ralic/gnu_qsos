@@ -268,7 +268,7 @@ function exportOSC() {
     var fp = Components.classes["@mozilla.org/filepicker;1"].createInstance(nsIFilePicker);
     fp.init(window, strbundle.getString("saveFileAs"), nsIFilePicker.modeSave);
     fp.appendFilter(strbundle.getString("OSC"),"*.osc");
-    fp.defaultString = suggest;
+    fp.defaultString = suggest + ".osc";
     var res = fp.show();
     if ((res != nsIFilePicker.returnOK) && (res != nsIFilePicker.returnReplace)) {
       return false;
@@ -325,7 +325,7 @@ function exportToFreeMind() {
     var fp = Components.classes["@mozilla.org/filepicker;1"].createInstance(nsIFilePicker);
     fp.init(window, strbundle.getString("saveFileAs"), nsIFilePicker.modeSave);
     fp.appendFilter(strbundle.getString("FreeMindTemplate"),"*.mm");
-    fp.defaultString = suggest;
+    fp.defaultString = suggest + ".mm";
 
     var res = fp.show();
     if ((res != nsIFilePicker.returnOK) && (res != nsIFilePicker.returnReplace)) {
@@ -377,7 +377,7 @@ function exportToFreeMindTemplate() {
     var fp = Components.classes["@mozilla.org/filepicker;1"].createInstance(nsIFilePicker);
     fp.init(window, strbundle.getString("saveFileAs"), nsIFilePicker.modeSave);
     fp.appendFilter(strbundle.getString("FreeMindTemplate"),"*.mm");
-    fp.defaultString = suggest;
+    fp.defaultString = suggest + ".mm";
     // fp.defaultExtension = ".mm"; FIXME
     var res = fp.show();
     if ((res != nsIFilePicker.returnOK) && (res != nsIFilePicker.returnReplace)) {

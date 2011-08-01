@@ -171,30 +171,34 @@ function setStateEvalOpen(state) {
     var i;
     var len;
     // Available when no evaluation is opened
-    var evalClosed = new Array("newFile", "openFile", "updateFromOldQSOS", "exitApp", "openRemoteFile");
+    var evalClosed = new Array("newFile", "openFile", "updateFromOldQSOS", "openRemoteFile");
     len = evalClosed.length;
     for (i = 0; i < len; ++i) {
       elem = document.getElementById(evalClosed[i]);
-      elem.hidden = nbool;
+      elem.disabled = nbool;
+      elem = document.getElementById(evalClosed[i] + "Menuitem");
+      elem.disabled = nbool;
     }
     // Available when an evaluation is opened
     var evalOpened = new Array("saveFile", "saveFileAs", "closeFile", "saveRemoteFile", "updateFromTemplate", "exportOSC", "exportToFreeMind", "exportToFreeMindTemplate");
     len = evalOpened.length;
     for (i = 0; i < len; ++i) {
       elem = document.getElementById(evalOpened[i]);
-      elem.hidden = bool;
+      elem.disabled = bool;
+      elem = document.getElementById(evalOpened[i] + "Menuitem");
+      elem.disabled = bool;
     }
 
     // Tabs and the special toolbar are opened only when editing
     document.getElementById("introVbox").hidden = nbool;
     document.getElementById("tabPanels").hidden = bool;
-    document.getElementById("specialToolbar").hidden = bool;
     document.getElementById("metadataTab").hidden = bool;
     document.getElementById("oscTab").hidden = bool;
     document.getElementById("criteriaTab").hidden = bool;
 
     // The save button is always set to disabled when openning an evaluation
     document.getElementById("saveFile").disabled = "true";
+    document.getElementById("saveFileMenuitem").disabled = "true";
 
     // Resets template and OSC versions displayed in the editor
     if (!state) {
