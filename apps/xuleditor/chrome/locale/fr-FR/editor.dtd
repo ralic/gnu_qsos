@@ -47,9 +47,9 @@
 <!ENTITY exportToFreeMind " Exporter au format FreeMind">
 <!ENTITY exportToFreeMindTemplate " Exporter comme patron">
 
-<!ENTITY description1 "Veuillez ouvrir une évalutaion QSOS (Ouvrir un fichier local) ou en commencer une nouvelle à partir d'un patron (Nouveau à partir d'un patron).">
-<!ENTITY description2 "Les fonctions 'Ouvrir un fichier distant' et 'Sauvegarder sur le serveur' ne sont plus disponibles pour l'instant.">
-<!ENTITY description3 "Vous pouvez envoyer vos évaluations sur la liste de discussion de QSOS :">
+<!ENTITY description1 "Veuillez ouvrir, mettre à jour une évalutaion QSOS ou en commencer une nouvelle à partir d'un patron.">
+<!ENTITY description2 "Les fonctions 'Ouvrir un fichier distant' et 'Sauvegarder sur le serveur' ne fonctionnent pas toujours car elles dépendent de la disponibilité du site O3S.">
+<!ENTITY description3 "Si O3S n'est pas disponible, vous pouvez envoyer vos évaluations sur la liste de discussion de QSOS :">
 <!ENTITY maillingList "qsos-french@nongnu.org">
 
 <!-- Metadata Tab !-->
@@ -134,7 +134,7 @@
 <!ENTITY xuleditorLicense "Logiciel sous licence GNU Public License version 2 :">
 <!ENTITY xuleditorLicenseUrl "http://www.gnu.org/licenses/gpl-2.0.html">
 <!ENTITY currentQSOSVersion "Version actuelle de QSOS : 2.0">
-<!ENTITY supportedQSOSVersions "Versions supportées : 2.0, l'import depuis la version 1.6 est possible à l'aide de feuilles XSLT">
+<!ENTITY supportedQSOSVersions "Versions supportées : 2.0, l'import depuis la version 1.6 est possible">
 <!ENTITY xuleditorAuthors "Auteurs :">
 <!ENTITY xuleditorAuthorName1 "Raphael Semeteys">
 <!ENTITY xuleditorAuthorEmail1 "raphael.semeteys@atos.net">

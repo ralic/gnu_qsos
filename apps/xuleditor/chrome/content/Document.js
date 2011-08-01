@@ -34,9 +34,9 @@ function Document() {
 
     //Public methods declaration
     this.load = load;
-    this.loadremote = loadremote;
+    this.loadRemote = loadRemote;
     this.write = write;
-    this.writeremote = writeremote;
+    this.writeRemote = writeRemote;
     this.getkeytitle = getkeytitle;
     this.getAuthors = getAuthors;
     this.getTeam = getTeam;
@@ -145,9 +145,9 @@ function Document() {
     }
 
     // Load and parse a remote QSOS XML file
-    // ex: loadremote("http://localhost/qedit/xul/kolab.qsos")
+    // ex: loadRemote("http://localhost/qedit/xul/kolab.qsos")
     // initializes local variable: sheet
-    function loadremote(url) {
+    function loadRemote(url) {
       myDoc.url = url;
       getPrivilege();
       req = new XMLHttpRequest();
@@ -200,7 +200,7 @@ function Document() {
 
 
     //Serialize and upload the QSOS XML file to a remote server
-    function writeremote(url) {
+    function writeRemote(url) {
        getPrivilege();
 
       var xml = serialize(sheet.documentElement, 0);
@@ -219,17 +219,29 @@ function Document() {
       req = new XMLHttpRequest();
 
       //Set the filename
-      try { var mainTech = myDoc.get("component/mainTech"); } catch (e) { var mainTech = "" }
-      try { var name = myDoc.get("component/name"); } catch (e) { var name = "" }
-      try { var version = myDoc.get("component/version"); } catch (e) { var version = "" }
-      var tmpFilename = mainTech + "." + name + "." + version;
-      if (tmpFilename == "..") {
-        if (myDoc.filename == null) {
-          tmpFilename = "upload";
-        } else {
-          tmpFilename = myDoc.filename;
-        }
+      try { var type = myDoc.get("qsosMetadata/template/type"); } catch (e) { var type = "notype" }
+      try { var name = myDoc.get("openSourceCartouche/component/name"); } catch (e) { var name = "noname" }
+      try { var version = myDoc.get("openSourceCartouche/component/version"); } catch (e) { var version = "noversion" }
+      try { var language = myDoc.get("qsosMetadata/language"); } catch (e) { var language = "nolanguage"; }
+      var tmpFilename = type + "_" + name + "_" + version;
+      if ((language != "en") && (language != "EN")) {
+        tmpFilename += "_" + language;
       }
+      tmpFilename += ".qsos";
+
+      tmpFilename = tmpFilename.replace(/</g, '_');
+      tmpFilename = tmpFilename.replace(/>/g, '_');
+      tmpFilename = tmpFilename.replace(/"/g, '_');
+      tmpFilename = tmpFilename.replace(/'/g, '_');
+      tmpFilename = tmpFilename.replace(/#/g, '_');
+      tmpFilename = tmpFilename.replace(/!/g, '_');
+      tmpFilename = tmpFilename.replace(/\//g, '_');
+      tmpFilename = tmpFilename.replace(/\\/g, '_');
+      tmpFilename = tmpFilename.replace(/:/g, '_');
+      tmpFilename = tmpFilename.replace(/;/g, '_');
+      tmpFilename = tmpFilename.replace(/,/g, '_');
+
+      alert(tmpFilename);
 
       //Prepare the MIME POST data
       var boundaryString = 'qsoswriteremote';
@@ -257,10 +269,10 @@ function Document() {
     function requestdone() {
       if (req.readyState == 4) {
         if (req.status == 200) {
-          result = req.responseText;
+          var result = req.responseText;
           alert(result);
         } else {
-          alert('There was a problem with the upload.');
+          alert('An error occurred during the upload. Please check your internet/firefox/QSOS xuleditor settings.');
         }
       }
     }

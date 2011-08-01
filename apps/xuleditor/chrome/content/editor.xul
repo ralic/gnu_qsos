@@ -51,17 +51,19 @@
     <toolbar>
       <toolbarbutton id="newFile" label="&newFile;" oncommand="newFileFromTemplate();" accesskey="&newFileAccessKey;"/>
       <toolbarbutton id="openFile" label="&openLocalFile;" oncommand="openFile();" accesskey="&openLocalFileAccessKey;"/>
+      <toolbarbutton id="openRemoteFile" label="&openRemoteFile;" oncommand="openRemoteFile();" accesskey="&openRemoteFileAccessKey;"/>
       <toolbarbutton id="updateFromOldQSOS" label="&updateFromOldQSOS;" oncommand="updateFromOldQSOS();" accesskey="&updateFromOldQSOSAccessKey;"/>
-      <toolbarbutton id="openRemoteFile" label="&openRemoteFile;" oncommand="loadRemoteDialog();" accesskey="&openRemoteFileAccessKey;"/>
       <toolbarbutton id="saveFile" label="&saveFile;" oncommand="saveFile();" accesskey="&saveFileAccessKey;"/>
       <toolbarbutton id="saveFileAs" label="&saveFileAs;" oncommand="saveFileAs();" accesskey="&saveFileAsAccessKey;"/>
-      <toolbarbutton id="saveRemoteFile" label="&saveRemoteFile;" oncommand="saveRemote();" accesskey="&saveRemoteFileAccessKey;"/>
+      <toolbarbutton id="saveRemoteFile" label="&saveRemoteFile;" oncommand="saveRemoteFile();" accesskey="&saveRemoteFileAccessKey;"/>
+      <toolbarbutton id="closeFile" label="&closeFile;"  oncommand="checkCloseFile();" accesskey="&closeFileAccessKey;"/>
+      <toolbarbutton id="exitApp" label="&exit;"  oncommand="if (checkCloseFile() == true) exit();" accesskey="&exitAccessKey;"/>
+    </toolbar>
+    <toolbar id="specialToolbar">
       <toolbarbutton id="updateFromTemplate" label="&updateFromTemplate;" oncommand="updateFromTemplate();" accesskey="&updateFromTemplateAccessKey;"/>
       <toolbarbutton id="exportOSC" label="&exportOSC;" oncommand="exportOSC();" accesskey="&exportOSCAccessKey;"/>
       <toolbarbutton id="exportToFreeMind" label="&exportToFreeMind;" oncommand="exportToFreeMind();" accesskey="&exportToFreeMindAccessKey;"/>
       <toolbarbutton id="exportToFreeMindTemplate" label="&exportToFreeMindTemplate;" oncommand="exportToFreeMindTemplate();" accesskey="&exportToFreeMindTemplateAccessKey;"/>
-      <toolbarbutton id="closeFile" label="&closeFile;"  oncommand="checkCloseFile();" accesskey="&closeFileAccessKey;"/>
-      <toolbarbutton id="exitApp" label="&exit;"  oncommand="if (checkCloseFile() == true) exit();" accesskey="&exitAccessKey;"/>
     </toolbar>
   </toolbox>
 
@@ -72,7 +74,7 @@
       <tab id="criteriaTab" label="&criteriaTab;" accesskey="&criteriaTabAccessKey;"/>
     </tabs>
 
-    <vbox id="intoVbox">
+    <vbox id="introVbox">
       <groupbox flex="1">
         <vbox flex="1">
           <html:p>

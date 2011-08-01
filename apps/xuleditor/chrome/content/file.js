@@ -153,28 +153,28 @@ function openFile() {
 
 
 // Shows the load.xul window in modal mode
-function loadRemoteDialog() {
+function openRemoteFile() {
   if (checkCloseFile() == false) {
     return;
   }
   getPrivilege();
-  window.openDialog('chrome://qsos-xuled/content/load.xul', 'Properties', 'chrome,dialog,modal', myDoc, openRemoteFile);
+  window.openDialog('chrome://qsos-xuled/content/load.xul', 'Properties', 'chrome,dialog,modal', myDoc, openRemote);
 }
 
 
-function openRemoteFile(url) {
+function openRemote(url) {
   if (url == "") return;
   if (url.search("file:///") != -1) {
     url = url.replace(/file\:\/\//g, '');
     openLocalFile(url);
   } else {
     myDoc = new Document();
-    myDoc.loadremote(url);
+    myDoc.loadRemote(url);
 
     try {
       setupEditorForEval();
     } catch (e) {
-      alert("openRemoteFile: an error occured while setting up the editor " + e.message);
+      alert("openRemote: an error occured while setting up the editor " + e.message);
       closeFile();
       return;
     }
@@ -310,12 +310,12 @@ function saveFileAs() {
 
 
 // Saves modifications to a new QSOS XML file
-function saveRemote() {
+function saveRemoteFile() {
   var prefManager = Components.classes["@mozilla.org/preferences-service;1"]
   .getService(Components.interfaces.nsIPrefBranch);
   var saveremote = prefManager.getCharPref("extensions.qsos-xuled.saveremote");
 
-  myDoc.writeremote(saveremote);
+  myDoc.writeRemote(saveremote);
 }
 
 
