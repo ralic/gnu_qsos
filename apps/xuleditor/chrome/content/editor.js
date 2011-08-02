@@ -387,6 +387,7 @@ function setupEditorForEval() {
 
   if (error) {
     alert(strbundle.getString("errorsFound") + "\n" + errorText + "\n" + strbundle.getString("adviceOpenLocalFile"));
+    // TODO error dialog
   }
 
   // Component & Status fields

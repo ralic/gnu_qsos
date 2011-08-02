@@ -51,28 +51,28 @@
     <menubar id="menubar">
       <menu id="file-menu" label="&file;">
         <menupopup id="filePopup">
-          <menuitem id="newFileMenuitem" label="&newFile;" oncommand="newFileFromTemplate();" accesskey="&newFileAccessKey;"/>
-          <menuitem id="openFileMenuitem" label="&openLocalFile;" oncommand="openFile();" accesskey="&openLocalFileAccessKey;"/>
-          <menuitem id="openRemoteFileMenuitem" label="&openRemoteFile;" oncommand="openRemoteFile();" accesskey="&openRemoteFileAccessKey;"/>
+          <menuitem id="newFileMenuitem" label="&newFile;" oncommand="newFileFromTemplate();" accesskey="&newFileAccessKey;" class="menuitem-iconic"/>
+          <menuitem id="openFileMenuitem" label="&openLocalFile;" oncommand="openFile();" accesskey="&openLocalFileAccessKey;" class="menuitem-iconic"/>
+          <menuitem id="openRemoteFileMenuitem" label="&openRemoteFile;" oncommand="openRemoteFile();" accesskey="&openRemoteFileAccessKey;" class="menuitem-iconic"/>
           <menuseparator/>
-          <menuitem id="saveFileMenuitem" label="&saveFile;" oncommand="saveFile();" accesskey="&saveFileAccessKey;"/>
-          <menuitem id="saveFileAsMenuitem" label="&saveFileAs;" oncommand="saveFileAs();" accesskey="&saveFileAsAccessKey;"/>
-          <menuitem id="saveRemoteFileMenuitem" label="&saveRemoteFile;" oncommand="saveRemoteFile();" accesskey="&saveRemoteFileAccessKey;"/>
+          <menuitem id="saveFileMenuitem" label="&saveFile;" oncommand="saveFile();" accesskey="&saveFileAccessKey;" class="menuitem-iconic"/>
+          <menuitem id="saveFileAsMenuitem" label="&saveFileAs;" oncommand="saveFileAs();" accesskey="&saveFileAsAccessKey;" class="menuitem-iconic"/>
+          <menuitem id="saveRemoteFileMenuitem" label="&saveRemoteFile;" oncommand="saveRemoteFile();" accesskey="&saveRemoteFileAccessKey;" class="menuitem-iconic"/>
           <menuseparator/>
-          <menuitem id="closeFileMenuitem" label="&closeFile;"  oncommand="checkCloseFile();" accesskey="&closeFileAccessKey;"/>
+          <menuitem id="closeFileMenuitem" label="&closeFile;"  oncommand="checkCloseFile();" accesskey="&closeFileAccessKey;" class="menuitem-iconic"/>
           <menuseparator/>
-          <menuitem id="exitAppMenuitem" label="&exit;"  oncommand="if (checkCloseFile() == true) exit();" accesskey="&exitAccessKey;"/>
+          <menuitem id="exitAppMenuitem" label="&exit;"  oncommand="if (checkCloseFile() == true) exit();" accesskey="&exitAccessKey;" class="menuitem-iconic"/>
         </menupopup>
       </menu>
       <menu id="edit-menu" label="&importExport;">
         <menupopup id="importExportPopup">
-          <menuitem id="updateFromOldQSOSMenuitem" label="&updateFromOldQSOS;" oncommand="updateFromOldQSOS();" accesskey="&updateFromOldQSOSAccessKey;"/>
+          <menuitem id="updateFromOldQSOSMenuitem" label="&updateFromOldQSOS;" oncommand="updateFromOldQSOS();" accesskey="&updateFromOldQSOSAccessKey;" class="menuitem-iconic"/>
           <menuseparator/>
-          <menuitem id="updateFromTemplateMenuitem" label="&updateFromTemplate;" oncommand="updateFromTemplate();" accesskey="&updateFromTemplateAccessKey;"/>
+          <menuitem id="updateFromTemplateMenuitem" label="&updateFromTemplate;" oncommand="updateFromTemplate();" accesskey="&updateFromTemplateAccessKey;" class="menuitem-iconic"/>
           <menuseparator/>
-          <menuitem id="exportOSCMenuitem" label="&exportOSC;" oncommand="exportOSC();" accesskey="&exportOSCAccessKey;"/>
-          <menuitem id="exportToFreeMindMenuitem" label="&exportToFreeMind;" oncommand="exportToFreeMind();" accesskey="&exportToFreeMindAccessKey;"/>
-          <menuitem id="exportToFreeMindTemplateMenuitem" label="&exportToFreeMindTemplate;" oncommand="exportToFreeMindTemplate();" accesskey="&exportToFreeMindTemplateAccessKey;"/>
+          <menuitem id="exportOSCMenuitem" label="&exportOSC;" oncommand="exportOSC();" accesskey="&exportOSCAccessKey;" class="menuitem-iconic"/>
+          <menuitem id="exportToFreeMindMenuitem" label="&exportToFreeMind;" oncommand="exportToFreeMind();" accesskey="&exportToFreeMindAccessKey;" class="menuitem-iconic"/>
+          <menuitem id="exportToFreeMindTemplateMenuitem" label="&exportToFreeMindTemplate;" oncommand="exportToFreeMindTemplate();" accesskey="&exportToFreeMindTemplateAccessKey;" class="menuitem-iconic"/>
         </menupopup>
       </menu>
     </menubar>
