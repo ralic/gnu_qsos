@@ -25,6 +25,28 @@
 **/
 
 
+// Remove special characters from a sting, replacing them with '_'
+function clearString(string) {
+  string = string.replace(/</g, '_');
+  string = string.replace(/>/g, '_');
+  string = string.replace(/"/g, '_');
+  string = string.replace(/'/g, '_');
+  string = string.replace(/#/g, '_');
+  string = string.replace(/!/g, '_');
+  string = string.replace(/\//g, '_');
+  string = string.replace(/\\/g, '_');
+  string = string.replace(/:/g, '_');
+  string = string.replace(/;/g, '_');
+  string = string.replace(/,/g, '_');
+  string = string.replace(/ /g, '_');
+  string = string.replace(/\+/g, '_');
+  string = string.replace(/&/g, '_');
+  string = string.replace(/=/g, '_');
+
+  return string;
+}
+
+
 // Reads a file and return its content as a string
 // Returns null if the file can't be found/opened
 function readFile(filename) {
@@ -298,7 +320,7 @@ function saveFileAs() {
   var fp = Components.classes["@mozilla.org/filepicker;1"].createInstance(nsIFilePicker);
   fp.init(window, strbundle.getString("saveFileAs"), nsIFilePicker.modeSave);
   fp.appendFilter(strbundle.getString("QSOSFile"),"*.qsos");
-  fp.defaultString = suggest + ".qsos";
+  fp.defaultString = clearString(suggest) + ".qsos";
 
   var res = fp.show();
   if ((res == nsIFilePicker.returnOK) || (res == nsIFilePicker.returnReplace)) {

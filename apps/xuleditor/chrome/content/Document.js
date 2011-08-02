@@ -72,8 +72,10 @@ function Document() {
     this.dump = dump;
     this.hassubelements = hassubelements;
     this.getparent = getparent;
+
     this.getfilename = getfilename;
     this.setfilename = setfilename;
+
     this.getcomplextree = getcomplextree;
     this.getChartData = getChartData;
     this.getSubChartData = getSubChartData;
@@ -227,29 +229,23 @@ function Document() {
       if ((language != "en") && (language != "EN")) {
         tmpFilename += "_" + language;
       }
-      tmpFilename += ".qsos";
+      tmpFilename = clearString(tmpFilename) + ".qsos";
 
-      tmpFilename = tmpFilename.replace(/</g, '_');
-      tmpFilename = tmpFilename.replace(/>/g, '_');
-      tmpFilename = tmpFilename.replace(/"/g, '_');
-      tmpFilename = tmpFilename.replace(/'/g, '_');
-      tmpFilename = tmpFilename.replace(/#/g, '_');
-      tmpFilename = tmpFilename.replace(/!/g, '_');
-      tmpFilename = tmpFilename.replace(/\//g, '_');
-      tmpFilename = tmpFilename.replace(/\\/g, '_');
-      tmpFilename = tmpFilename.replace(/:/g, '_');
-      tmpFilename = tmpFilename.replace(/;/g, '_');
-      tmpFilename = tmpFilename.replace(/,/g, '_');
-      tmpFilename = tmpFilename.replace(/ /g, '_');
+      getPrivilege();
+      var retVals = {err: false, filename: tmpFilename};
+      window.openDialog('chrome://qsos-xuled/content/confirmUpload.xul', 'Confirm upload filename', 'chrome,dialog,modal', retVals);
 
-      alert(tmpFilename);
+      if (retVals.err) {
+        return;
+      }
+      alert(retVals.filename);
 
       //Prepare the MIME POST data
       var boundaryString = 'qsoswriteremote';
       var boundary = '--' + boundaryString;
       var requestbody = boundary + '\n'
                       + 'Content-Disposition: form-data; name="myfile"; filename="'
-                      + tmpFilename + '"' + '\n'
+                      + retVals.filename + '"' + '\n'
                       + 'Content-Type: text/xml' + '\n'
                       + '\n'
                       + binary.readBytes(binary.available())
@@ -513,7 +509,9 @@ function Document() {
     // Specific getters ans setters (public functions)
     ////////////////////////////////////////////////////////////////////
 
-    function setfilename(name) { myDoc.filename = name; }
+    function setfilename(name) {
+      myDoc.filename = name;
+    }
 
     function getfilename() {
       if (myDoc.filename) {

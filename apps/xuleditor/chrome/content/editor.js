@@ -386,8 +386,10 @@ function setupEditorForEval() {
   }
 
   if (error) {
-    alert(strbundle.getString("errorsFound") + "\n" + errorText + "\n" + strbundle.getString("adviceOpenLocalFile"));
-    // TODO error dialog
+    if(confirm(strbundle.getString("errorsFound") + "\n" + errorText + "\n" + strbundle.getString("adviceOpenLocalFile")) == false) {
+      closeFile();
+      return false;
+    }
   }
 
   // Component & Status fields
