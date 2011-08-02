@@ -238,28 +238,31 @@ function Document() {
       if (retVals.err) {
         return;
       }
-      alert(retVals.filename);
 
-      //Prepare the MIME POST data
-      var boundaryString = 'qsoswriteremote';
-      var boundary = '--' + boundaryString;
-      var requestbody = boundary + '\n'
-                      + 'Content-Disposition: form-data; name="myfile"; filename="'
-                      + retVals.filename + '"' + '\n'
-                      + 'Content-Type: text/xml' + '\n'
-                      + '\n'
-                      + binary.readBytes(binary.available())
-                      + '\n'
-                      + boundary;
+      try{
+        //Prepare the MIME POST data
+        var boundaryString = 'qsoswriteremote';
+        var boundary = '--' + boundaryString;
+        var requestbody = boundary + '\n'
+                        + 'Content-Disposition: form-data; name="myfile"; filename="'
+                        + retVals.filename + '"' + '\n'
+                        + 'Content-Type: text/xml' + '\n'
+                        + '\n'
+                        + binary.readBytes(binary.available())
+                        + '\n'
+                        + boundary;
 
-      //Do the AJAX request
-      req.onreadystatechange = requestdone;
-      req.open('POST', url, true);
-      req.setRequestHeader("Content-type", "multipart/form-data; \
-        boundary=\"" + boundaryString + "\"");
-      req.setRequestHeader("Connection", "close");
-      req.setRequestHeader("Content-length", requestbody.length);
-      req.send(requestbody);
+        //Do the AJAX request
+        req.onreadystatechange = requestdone;
+        req.open('POST', url, true);
+        req.setRequestHeader("Content-type", "multipart/form-data; \
+          boundary=\"" + boundaryString + "\"");
+        req.setRequestHeader("Connection", "close");
+        req.setRequestHeader("Content-length", requestbody.length);
+        req.send(requestbody);
+      } catch (e) {
+        alert("myDoc.writeRemote: " + e.message);
+      }
     }
 
     //Upload callback
