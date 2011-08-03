@@ -486,7 +486,7 @@ function Document() {
         }
     }
 
-
+    // Should be used instead of getKey()
     function get(element) {
       var nodes = sheet.evaluate("//"+element, sheet, null, XPathResult.ANY_TYPE, null);
       var node = nodes.iterateNext();
@@ -496,7 +496,7 @@ function Document() {
         throw element + " " + strbundle.getString("doesntExist");
     }
 
-
+    // Should be used instead of setKey()
     function set(element, value) {
       var nodes = sheet.evaluate("//"+element, sheet, null, XPathResult.ANY_TYPE, null);
       var node = nodes.iterateNext();
