@@ -25,57 +25,57 @@
 **/
 
 
-session_start();
+  session_start();
 
-include("config.php");
-include("lang.php");
-include('libs/QSOSDocument.php');
+  include("config.php");
+  include("lang.php");
+  include('libs/QSOSDocument.php');
 
-//QSOS evaluations to display
-$ids = $_REQUEST['id'];
-//Weightings are stored in session
-$weights = $_SESSION;
+  //QSOS evaluations to display
+  $ids = $_REQUEST['id'];
+  //Weightings are stored in session
+  $weights = $_SESSION;
 
-$IdDB = mysql_connect($db_host ,$db_user, $db_pwd);
-mysql_select_db($db_db);
+  $IdDB = mysql_connect($db_host ,$db_user, $db_pwd);
+  mysql_select_db($db_db);
 
-$query = "SELECT id FROM evaluations WHERE appname <> '' AND language = '$lang'";
-$IdReq = mysql_query($query, $IdDB);
-$allIds = array();
-while($row = mysql_fetch_row($IdReq)) {
-  array_push($allIds, $row[0]);
-}
-
-$files = array();
-foreach($ids as $id) {
-  if (!(in_array($id,$allIds))) die("<error>".$id.$msg['s4_err_no_id']."</error>");
-  $query = "SELECT file FROM evaluations WHERE id = \"$id\"";
+  $query = "SELECT id FROM evaluations WHERE appname <> '' AND language = '$lang'";
   $IdReq = mysql_query($query, $IdDB);
-  $result = mysql_fetch_row($IdReq);
-  array_push($files, $result[0]);
-}
+  $allIds = array();
+  while($row = mysql_fetch_row($IdReq)) {
+    array_push($allIds, $row[0]);
+  }
 
-$myDoc = array();
-$num = count($files);
+  $files = array();
+  foreach($ids as $id) {
+    if (!(in_array($id,$allIds))) die("<error>".$id.$msg['s4_err_no_id']."</error>");
+    $query = "SELECT file FROM evaluations WHERE id = \"$id\"";
+    $IdReq = mysql_query($query, $IdDB);
+    $result = mysql_fetch_row($IdReq);
+    array_push($files, $result[0]);
+  }
 
-header("Content-type: image/svg+xml");
-echo "<?xml version='1.0' encoding='UTF-8' standalone='no'?>\n";
+  $myDoc = array();
+  $num = count($files);
 
-//$x, $y: position where to draw text (and ellipsis)
-//$text: text to draw
-//$i: id of software (for link)
-//$ellipsis: shoul the texte be inserted in an ellipsis?
-function draw($x,$y,$text,$i,$ellipsis=false) {
-  echo("        <g transform='translate($x,$y)'>\n");
-  echo("<a xlink:href='show.php?lang=$lang&amp;id[]=$i&amp;svg=yes'>");
-  if ($ellipsis) {
-    echo("         <path style='fill:#fcdea2;fill-opacity:0.5;stroke:#000000;stroke-width:2;stroke-opacity:1' d='M -57,0 A 57,21 0 1 1 57,0 A 57,21 0 1 1 -57,0 z' />\n");
-    $fontSize = '10px';
-  } else $fontSize = '14px';
-  echo("         <text><tspan style='font-size:$fontSize;text-anchor:middle;font-family:Bitstream Vera Sans' y='2.7' x='0'>$text</tspan></text>\n");
-  echo("        </a>\n");
-  echo("        </g>\n");
-}
+  header("Content-type: image/svg+xml");
+  echo "<?xml version='1.0' encoding='UTF-8' standalone='no'?>\n";
+
+  //$x, $y: position where to draw text (and ellipsis)
+  //$text: text to draw
+  //$i: id of software (for link)
+  //$ellipsis: shoul the texte be inserted in an ellipsis?
+  function draw($x,$y,$text,$i,$ellipsis=false) {
+    echo("        <g transform='translate($x,$y)'>\n");
+    echo("<a xlink:href='show.php?lang=$lang&amp;id[]=$i&amp;svg=yes'>");
+    if ($ellipsis) {
+      echo("         <path style='fill:#fcdea2;fill-opacity:0.5;stroke:#000000;stroke-width:2;stroke-opacity:1' d='M -57,0 A 57,21 0 1 1 57,0 A 57,21 0 1 1 -57,0 z' />\n");
+      $fontSize = '10px';
+    } else $fontSize = '14px';
+    echo("         <text><tspan style='font-size:$fontSize;text-anchor:middle;font-family:Bitstream Vera Sans' y='2.7' x='0'>$text</tspan></text>\n");
+    echo("        </a>\n");
+    echo("        </g>\n");
+  }
 ?>
 <svg
    xmlns:svg="http://www.w3.org/2000/svg"

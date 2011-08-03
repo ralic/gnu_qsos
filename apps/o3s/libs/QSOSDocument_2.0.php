@@ -25,7 +25,7 @@
 **/
 
 
-//Class representing a QSOS criterion (<section/> or <element/>)
+// Class representing a QSOS criterion (<section/> or <element/>)
 class QSOSCriterion {
 	var $name;
 	var $title;
@@ -33,16 +33,20 @@ class QSOSCriterion {
 	var $score;
 }
 
-//Class representing a QSOS author (<author/>)
+
+// Class representing a QSOS author (<author/>)
 class Author {
 	var $name;
 	var $email;
+//   var $comment;
 }
+
 
 //Class representing a QSOS document
 class QSOSDocument {
 	var $doc;
 	var $xpath;
+
 
     //$file: filename (or URI) of the QSOS document to load
 	function __construct($file) {
@@ -55,6 +59,7 @@ class QSOSDocument {
 			return 'Failed to open file '.$file;
 		}
 	}
+
 
     //$name: name of the tested element
     //Returns: true if element has children elements
@@ -75,6 +80,7 @@ class QSOSDocument {
 		}
 	}
 
+
     //$element: name of the element
     //$subelement: name of the XML tag
     //Returns: value of the XML tag included in the element
@@ -87,6 +93,7 @@ class QSOSDocument {
 		}
 	}
 
+
     //$element: name of the element
     //Returns: value of the <score/> tag included in the element
 	public function getkeyscore($element) {
@@ -97,6 +104,7 @@ class QSOSDocument {
 			return -1;
 		}
 	}
+
 
     //$element: name of the element (<section/> or <element/>)
     //Returns: value of the "title" attribute of the element
@@ -109,11 +117,12 @@ class QSOSDocument {
 		}
 	}
 
+
     //Returns: array of Author objects (cf. Author class above)
 	public function getauthors() {
 		$authors = array();
 
-		$nodes = $this->xpath->query("//author");
+		$nodes = $this->xpath->query("//qsosMetadata/evaluation/authors/author");
 		for ($i=0; $i < $nodes->length; $i++) {
 			$author = new Author();
 
@@ -136,6 +145,7 @@ class QSOSDocument {
 		return $authors;
 	}
 
+
     //Returns the name of a criterion's parent
 	function getParent($name) {
 		$nodes = $this->xpath->query("//*[@name='".$name."']");
@@ -146,6 +156,7 @@ class QSOSDocument {
 			return null;
 		}
 	}
+
 
     //Returns: tree of QSOSCriterion objects representing the scored criteria of the QSOS document
 	public function getTree() {
@@ -161,6 +172,7 @@ class QSOSDocument {
 		}
 		return $tree;
 	}
+
 
     //Recursive function
     //$name: name of the element
@@ -187,6 +199,7 @@ class QSOSDocument {
 		return $tree;
 	}
 
+
     //Returns: tree of QSOSCriterion objects representing the scored criteria of the QSOS document
 	public function getWeightedTree($weights) {
 		$tree = array();
@@ -201,6 +214,7 @@ class QSOSDocument {
 		}
 		return $tree;
 	}
+
 
     //Recursive function
     //$name: name of the element
@@ -227,6 +241,7 @@ class QSOSDocument {
 		return $tree;
 	}
 
+
     //$tree: tree of QSOSCriterion objects to render
     //Returns: the rendered score of the single QSOScriterion in $tree
     //Recursive function
@@ -250,6 +265,7 @@ class QSOSDocument {
 
 		return $score;
 	}
+
 
     //$tree: tree of QSOSCriterion objects to render
     //Returns: the rendered score of the single QSOScriterion in $tree
@@ -279,11 +295,13 @@ class QSOSDocument {
 		return $score;
 	}
 
+
         //$element: name of the XML element to count
         //Returns: number of XML element occurences
 	public function getcountkey($element) {
 		return $this->xpath->evaluate("count(//$element)");
 	}
+
 
         //$element: name of the XML element to count
         //Returns: number of XML element occurences

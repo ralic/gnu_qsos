@@ -25,57 +25,62 @@
 **/
 
 
-session_start();
-include("config.php");
-include("lang.php");
-
-echo "<html>\n";
-echo "<head>\n";
-echo "<LINK REL=StyleSheet HREF='skins/$skin/o3s.css' TYPE='text/css'/>\n";
+  session_start();
+  include("config.php");
+  include("lang.php");
 ?>
-<script>
-function toggleSVG() {
-  var svg = document.getElementById("check").getAttribute("svg");
-  var links = document.getElementsByTagName("a");
-  for(var i=0; i < links.length; i++) {
-    var ref = links[i].getAttribute("href");
-    if (svg == "on") {
-      if (ref.search(/&svg=yes/) != -1) ref = ref.split("&svg=")[0];
-      document.getElementById("check").setAttribute("svg", "off");
-    } else {
-      if (ref.search(/&svg=yes/) == -1) ref += "&svg=yes";
-      document.getElementById("check").setAttribute("svg", "on");
-    }
 
-    links[i].setAttribute("href", ref);
-  }
-
-}
-
-function submitForm() {
-  var ok = false;
-  var inputs = document.getElementsByTagName("input");
-  for(var i=0; i < inputs.length; i++) {
-    if (inputs[i].type == "checkbox" && inputs[i].name == "f[]" && inputs[i].checked) {
-      ok = true;
-    }
-  }
-
-  if (ok == true) {
-    myForm.submit();
-  } else {
-    alert("At least one product must be checked");
-  }
-}
-</script>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+  <head>
 <?php
-echo "</head>\n";
+  echo "    <link rel=StyleSheet href='skins/$skin/o3s.css' type='text/css'/>\n";
+?>
+    <meta http-equiv="Content-type" content="text/html; charset=UTF-8"/>
+    <script>
+      function toggleSVG() {
+        var svg = document.getElementById("check").getAttribute("svg");
+        var links = document.getElementsByTagName("a");
+        for(var i=0; i < links.length; i++) {
+          var ref = links[i].getAttribute("href");
+          if (svg == "on") {
+            if (ref.search(/&svg=yes/) != -1) ref = ref.split("&svg=")[0];
+            document.getElementById("check").setAttribute("svg", "off");
+          } else {
+            if (ref.search(/&svg=yes/) == -1) ref += "&svg=yes";
+            document.getElementById("check").setAttribute("svg", "on");
+          }
 
-echo "<body>\n";
-echo "<center>\n";
-echo "<img src='skins/$skin/o3s.png'/>\n";
-echo "<br/><br/>\n";
+          links[i].setAttribute("href", ref);
+        }
 
+      }
+
+      function submitForm() {
+        var ok = false;
+        var inputs = document.getElementsByTagName("input");
+        for(var i=0; i < inputs.length; i++) {
+          if (inputs[i].type == "checkbox" && inputs[i].name == "f[]" && inputs[i].checked) {
+            ok = true;
+          }
+        }
+
+        if (ok == true) {
+          myForm.submit();
+        } else {
+          alert("At least one product must be checked");
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <center>
+<?php
+  echo "      <img src='skins/$skin/o3s.png'/>\n";
+?>
+      <br/>
+      <br/>
+<?php
 $family = $_REQUEST['family'];
 
 if (!isset($_SESSION["generic"])) {

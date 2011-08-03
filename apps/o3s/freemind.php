@@ -25,92 +25,97 @@
 **/
 
 
-session_start();
+  session_start();
 
-include("config.php");
-include("lang.php");
+  include("config.php");
+  include("lang.php");
 
-$family = $_REQUEST['family'];
-$qsosspecificformat = $_REQUEST['qsosspecificformat'];
-if (!isset($family)) die("No QSOS family to process");
+  if(!isset($_REQUEST['family']) || !isset($_REQUEST['qsosspecificformat'])) {
+    die("No QSOS family to process (you can't acces this page directly, go back to O3S)");
+  } else {
+    $family = $_REQUEST['family'];
+    $qsosspecificformat = $_REQUEST['qsosspecificformat'];
+  }
 
-include("config.php");
-$IdDB = mysql_connect($db_host ,$db_user, $db_pwd);
-mysql_select_db($db_db);
+  $IdDB = mysql_connect($db_host ,$db_user, $db_pwd);
+  mysql_select_db($db_db);
 ?>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>Mind Map Flash Viewer</title>
-<style type="text/css">
-  /* hide from ie on mac \*/
-  html {
-  height: 100%;
-  overflow: hidden;
-  }
-  #flashcontent {
-  height: 100%;
-  }
-  /* end hide */
-  body {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  background-color: #ffffff;
-  }
-</style>
-</head>
-<body>
+  <head>
+    <meta http-equiv="Content-type" content="text/html; charset=UTF-8"/>
+    <title>
+      Mind Map Flash Viewer
+    </title>
+    <style type="text/css">
+      /* hide from ie on mac \*/
+      html {
+      height: 100%;
+      overflow: hidden;
+      }
+      #flashcontent {
+      height: 100%;
+      }
+      /* end hide */
+      body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      background-color: #ffffff;
+      }
+    </style>
+  </head>
+  <body>
 <?php
-$query = "SELECT DISTINCT CONCAT(qsosappfamily,qsosspecificformat) FROM evaluations WHERE appname <> '' AND language = '$lang'";
-$IdReq = mysql_query($query, $IdDB);
-$familiesFQDN = array();
-while($row = mysql_fetch_row($IdReq)) {
-  array_push($familiesFQDN, $row[0]);
-}
-if (!in_array($family.$qsosspecificformat,$familiesFQDN))
-  die ("$family $qsosspecificformat".$msg['s3_err_no_family']);
+  $query = "SELECT DISTINCT CONCAT(qsosappfamily,qsosspecificformat) FROM evaluations WHERE appname <> '' AND language = '$lang'";
+  $IdReq = mysql_query($query, $IdDB);
+  $familiesFQDN = array();
+  while($row = mysql_fetch_row($IdReq)) {
+    array_push($familiesFQDN, $row[0]);
+  }
+  if (!in_array($family.$qsosspecificformat,$familiesFQDN))
+    die ("$family $qsosspecificformat".$msg['s3_err_no_family']);
 
-$query = "SELECT file FROM evaluations WHERE qsosappfamily = \"$family\" AND qsosspecificformat = '$qsosspecificformat' LIMIT 0:,1";
-$IdReq = mysql_query($query, $IdDB);
+  $query = "SELECT file FROM evaluations WHERE qsosappfamily = \"$family\" AND qsosspecificformat = '$qsosspecificformat' LIMIT 0:,1";
+  $IdReq = mysql_query($query, $IdDB);
 
-if ($file = mysql_fetch_row($IdReq)) {
-  # LOAD XML FILE
-  $XML = new DOMDocument();
-  $XML->load($file[0]);
+  if ($file = mysql_fetch_row($IdReq)) {
+    # LOAD XML FILE
+    $XML = new DOMDocument();
+    $XML->load($file[0]);
 
-  # START XSLT
-  $xslt = new XSLTProcessor();
+    # START XSLT
+    $xslt = new XSLTProcessor();
 
-  # IMPORT STYLESHEET
-  $XSL = new DOMDocument();
-  $XSL->load('xslt/template-freemind.xsl');
-  $xslt->importStylesheet($XSL);
+    # IMPORT STYLESHEET
+    $XSL = new DOMDocument();
+    $XSL->load('xslt/template-freemind.xsl');
+    $xslt->importStylesheet($XSL);
 
-  #SAVE RESULT
-  $name = $family."-".$qsosspecificformat.".mm";
-  $filename = "mindmaps/".$name;
-  $file = fopen($filename, "w");
-  fwrite($file, $xslt->transformToXML($XML));
-  fclose($file);
+    #SAVE RESULT
+    $name = $family."-".$qsosspecificformat.".mm";
+    $filename = "mindmaps/".$name;
+    $file = fopen($filename, "w");
+    fwrite($file, $xslt->transformToXML($XML));
+    fclose($file);
 
-  #DISPLAY RESULT WITH FLASHVIEWER
-  print '<script type="text/javascript" src="mindmaps/flashobject.js"></script>
-<p style="text-align:center; font-weight:bold"><a href="'.$filename.'">'.$name.'</a></p>
-<div id="flashcontent"> Flash plugin or Javascript are turned off. Activate both  and reload to view the mindmap</div>
-<script type="text/javascript">
-// <![CDATA[
-var fo = new FlashObject("mindmaps/visorFreemind.swf", "visorFreeMind", "100%", "100%", 6, "");
-fo.addParam("quality", "high");
-fo.addParam("bgcolor", "#ffffff");
-fo.addVariable("initLoadFile", "'.$filename.'");
-fo.write("flashcontent");
-// ]]>
-</script>';
+    #DISPLAY RESULT WITH FLASHVIEWER
+    print '<script type="text/javascript" src="mindmaps/flashobject.js"></script>
+  <p style="text-align:center; font-weight:bold"><a href="'.$filename.'">'.$name.'</a></p>
+  <div id="flashcontent"> Flash plugin or Javascript are turned off. Activate both  and reload to view the mindmap</div>
+  <script type="text/javascript">
+  // <![CDATA[
+  var fo = new FlashObject("mindmaps/visorFreemind.swf", "visorFreeMind", "100%", "100%", 6, "");
+  fo.addParam("quality", "high");
+  fo.addParam("bgcolor", "#ffffff");
+  fo.addVariable("initLoadFile", "'.$filename.'");
+  fo.write("flashcontent");
+  // ]]>
+  </script>';
 
-} else {
-  print "Error: no $family ($qsosspecificformat) found in QSOS database!";
-}
+  } else {
+    print "Error: no $family ($qsosspecificformat) found in QSOS database!";
+  }
 ?>
-</body>
+  </body>
 </html>
