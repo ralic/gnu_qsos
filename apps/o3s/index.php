@@ -46,6 +46,13 @@
     </script>
   </head>
   <body>
+    <div id="bandeau">
+      <center>
+        <a href="index.php">Start page</a> |
+        <a href="upload.php">Upload an evaluation</a> |
+        <a href="search.php">Search for an evaluation</a>
+      </center>
+    </div>
     <center>
 <?php
   echo "      <img src='skins/$skin/o3s.png'/>\n";

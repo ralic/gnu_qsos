@@ -7,14 +7,14 @@ Installation instructions
 ** XML support (needs DOMDocument class, php-xml package on Fedora)
 ** XSL in php (php5-xsl package on Debian)
 ** JpGraph2, for PNG graph generation
-*** Note that the 2.x branch is needed (on my Debian/etch I had to download source code from JPGraph website: http://www.aditus.nu/jpgraph/jpdownload.php) 
+*** Note that the 2.x branch is needed (on my Debian/etch I had to download source code from JPGraph website: http://www.aditus.nu/jpgraph/jpdownload.php)
 *** You might have to do something like "ln -s /usr/share/fonts/truetype/msttcorefonts /usr/X11R6/lib/X11/fonts/truetype" to enable Mirosoft Arial font support
 
-* Download o3s source code from QSOS CVS : cvs -d:pserver:anonymous@cvs.sv.gnu.org:/sources/qsos co qsos/apps/o3s
+* Download o3s source code from QSOS git: git clone git://git.sv.gnu.org/qsos.git
 
 * Modify config.php accordingly to comments included in the file itself
 
-* Make sure the account running your webserver owner od the o3s folder (Debian: chown -R www-data:www-data o3s)
+* Make sure the account running your webserver owns the o3s folder (Debian: chown -R www-data:www-data o3s)
 
 * The folder containing the QSOS evaluation ($sheet in config.php) must be organized in this way:
 [Family F1]
