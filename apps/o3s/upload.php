@@ -2,8 +2,8 @@
 /**
  *  Copyright (C) 2007-2011 Atos
  *
- *  Author: Raphael Semeteys <raphael.semeteys@atos.net>
- *
+ *  Authors: Raphael Semeteys <raphael.semeteys@atos.net>
+ *           Timothée Ravier  <travier@portaildulibre.fr>
  *  This program is free software; you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
  *  the Free Software Foundation; either version 2 of the License, or
@@ -22,6 +22,16 @@
  *  O3S
  *  upload.php: uploads QSOS evaluation on local filesystem
  *
+**/
+
+/**
+ * !!WARNING!!
+ *
+ * This script assumes that you are working in the o3s directory, in which you have cloned the qsos git repository, in a folder named qsos.
+ * You should not allow users to access the qsos directory remotely!
+ * Once you have given a git account to O3S with a private key and uncommented the 'git push origin' lines, evaluations will be automatically added and pushed to the repository!
+ *
+ * This script uses A LOT of exec(), and could be exploited as we're not all the necessary checks. We should also use more php 'native' functions instead of exec calls.
 **/
 
 
@@ -76,6 +86,7 @@
 
     $evaluationDir = "qsos/repositories/incoming/" . $lang . "/evaluations/" . $type . "/";
 
+    // Creates the correct type directory in the correct language to hold the evaluation
     exec("mkdir -p " . $evaluationDir, $output, $return_var);
     if ($return_var != 0) {
       die(displayUploadError("Can't create dir: " . $evaluationDir));
@@ -85,6 +96,7 @@
       die(displayUploadError("Can't change directory to: " . $evaluationDir));
     }
 
+    // Resets git state (just in case, should do anything here)
     exec("git reset --hard HEAD", $output, $return_var);
     if ($return_var != 0) {
       die(displayUploadError("Can't reset git dir"));
@@ -96,6 +108,55 @@
 
     if (chmod($filename, 0660) == FALSE) {
       die(displayUploadError("Can't chmod the file: " . $filename));
+    }
+
+    // Check the evaluation with the provided XSD
+    // Code comming from : http://forums.devshed.com/xml-programming-19/validating-xml-against-xsd-with-php-430794.html
+    // FIXME We should check it!!
+    function libxml_display_error($error)
+    {
+        $return = "<br/>\n";
+        switch ($error->level) {
+            case LIBXML_ERR_WARNING:
+                $return .= "<b>Warning $error->code</b>: ";
+                break;
+            case LIBXML_ERR_ERROR:
+                $return .= "<b>Error $error->code</b>: ";
+                break;
+            case LIBXML_ERR_FATAL:
+                $return .= "<b>Fatal Error $error->code</b>: ";
+                break;
+        }
+        $return .= trim($error->message);
+        if ($error->file) {
+            $return .= " in <b>$error->file</b>";
+        }
+        $return .= " on line <b>$error->line</b>\n";
+
+        return $return;
+    }
+
+    function libxml_display_errors()
+    {
+        $errors = libxml_get_errors();
+        foreach ($errors as $error) {
+            print libxml_display_error($error);
+        }
+        libxml_clear_errors();
+    }
+
+    // Enable user error handling
+    libxml_use_internal_errors(true);
+
+    $xml = new DOMDocument();
+    $xml->load($filename);
+
+    if (!$xml->schemaValidate('../../../../../tools/xsd/QSOS_2.0.xsd')) {
+        print '<b>DOMDocument::schemaValidate() Generated Errors!</b>';
+        libxml_display_errors();
+        unlink($filename);
+        exec("git reset --hard HEAD", $output, $return_var);
+        die(displayUploadError("This file isn't a valid QSOS evaluation. Check it with the XSD from git, found in git_root/tools/xsd/QSOS_2.0.xsd"));
     }
 
     exec("git config user.name \"O3S\"", $output, $return_var);
@@ -115,7 +176,6 @@
 
     exec("git add " . $filename, $output, $return_var);
     if ($return_var != 0) {
-      echo $output;
       die(displayUploadError("Can't add file " . $filename));
     }
 
