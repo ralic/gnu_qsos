@@ -28,7 +28,7 @@
 <?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
 <?xml-stylesheet href="chrome://qsos-xuled/skin/classic.css" type="text/css"?>
 <!DOCTYPE window SYSTEM "chrome://qsos-xuled/locale/editor.dtd">
-<window id="QSOS" title="&QSOSEditor;" width="920px" height="750px"
+<window id="QSOS" title="&QSOSEditor;" width="950px" height="750px"
         xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
         xmlns:html="http://www.w3.org/1999/xhtml" onload="init();" onclose="exit()">
   <script type="application/x-javascript" src="Document.js"/>
@@ -48,19 +48,48 @@
   </preferences>
 
   <toolbox>
+    <menubar id="menubar">
+      <menu id="file-menu" label="&file;">
+        <menupopup id="filePopup">
+          <menuitem id="newFileMenuitem" label="&newFile;" oncommand="newFileFromTemplate();" accesskey="&newFileAccessKey;" class="menuitem-iconic"/>
+          <menuitem id="openFileMenuitem" label="&openLocalFile;" oncommand="openFile();" accesskey="&openLocalFileAccessKey;" class="menuitem-iconic"/>
+          <menuitem id="openRemoteFileMenuitem" label="&openRemoteFile;" oncommand="openRemoteFile();" accesskey="&openRemoteFileAccessKey;" class="menuitem-iconic"/>
+          <menuseparator/>
+          <menuitem id="saveFileMenuitem" label="&saveFile;" oncommand="saveFile();" accesskey="&saveFileAccessKey;" class="menuitem-iconic"/>
+          <menuitem id="saveFileAsMenuitem" label="&saveFileAs;" oncommand="saveFileAs();" accesskey="&saveFileAsAccessKey;" class="menuitem-iconic"/>
+          <menuitem id="saveRemoteFileMenuitem" label="&saveRemoteFile;" oncommand="saveRemoteFile();" accesskey="&saveRemoteFileAccessKey;" class="menuitem-iconic"/>
+          <menuseparator/>
+          <menuitem id="closeFileMenuitem" label="&closeFile;"  oncommand="checkCloseFile();" accesskey="&closeFileAccessKey;" class="menuitem-iconic"/>
+          <menuseparator/>
+          <menuitem id="exitAppMenuitem" label="&exit;"  oncommand="if (checkCloseFile() == true) exit();" accesskey="&exitAccessKey;" class="menuitem-iconic"/>
+        </menupopup>
+      </menu>
+      <menu id="edit-menu" label="&importExport;">
+        <menupopup id="importExportPopup">
+          <menuitem id="updateFromOldQSOSMenuitem" label="&updateFromOldQSOS;" oncommand="updateFromOldQSOS();" accesskey="&updateFromOldQSOSAccessKey;" class="menuitem-iconic"/>
+          <menuseparator/>
+          <menuitem id="updateFromTemplateMenuitem" label="&updateFromTemplate;" oncommand="updateFromTemplate();" accesskey="&updateFromTemplateAccessKey;" class="menuitem-iconic"/>
+          <menuseparator/>
+          <menuitem id="exportOSCMenuitem" label="&exportOSC;" oncommand="exportOSC();" accesskey="&exportOSCAccessKey;" class="menuitem-iconic"/>
+          <menuitem id="exportToFreeMindMenuitem" label="&exportToFreeMind;" oncommand="exportToFreeMind();" accesskey="&exportToFreeMindAccessKey;" class="menuitem-iconic"/>
+          <menuitem id="exportToFreeMindTemplateMenuitem" label="&exportToFreeMindTemplate;" oncommand="exportToFreeMindTemplate();" accesskey="&exportToFreeMindTemplateAccessKey;" class="menuitem-iconic"/>
+        </menupopup>
+      </menu>
+    </menubar>
     <toolbar>
-      <toolbarbutton id="newFile" label="&newFile;" oncommand="newFileFromTemplate();" accesskey="&newFileAccessKey;"/>
-      <toolbarbutton id="openFile" label="&openLocalFile;" oncommand="openFile();" accesskey="&openLocalFileAccessKey;"/>
-      <toolbarbutton id="updateFromOldQSOS" label="&updateFromOldQSOS;" oncommand="updateFromOldQSOS();" accesskey="&updateFromOldQSOSAccessKey;"/>
-      <toolbarbutton id="openRemoteFile" label="&openRemoteFile;" oncommand="loadRemoteDialog();" accesskey="&openRemoteFileAccessKey;"/>
-      <toolbarbutton id="saveFile" label="&saveFile;" oncommand="saveFile();" accesskey="&saveFileAccessKey;"/>
-      <toolbarbutton id="saveFileAs" label="&saveFileAs;" oncommand="saveFileAs();" accesskey="&saveFileAsAccessKey;"/>
-      <toolbarbutton id="saveRemoteFile" label="&saveRemoteFile;" oncommand="saveRemote();" accesskey="&saveRemoteFileAccessKey;"/>
-      <toolbarbutton id="updateFromTemplate" label="&updateFromTemplate;" oncommand="updateFromTemplate();" accesskey="&updateFromTemplateAccessKey;"/>
-      <toolbarbutton id="exportOSC" label="&exportOSC;" oncommand="exportOSC();" accesskey="&exportOSCAccessKey;"/>
-      <toolbarbutton id="exportToFreeMind" label="&exportToFreeMind;" oncommand="exportToFreeMind();" accesskey="&exportToFreeMindAccessKey;"/>
-      <toolbarbutton id="closeFile" label="&closeFile;"  oncommand="checkCloseFile();" accesskey="&closeFileAccessKey;"/>
-      <toolbarbutton id="exitApp" label="&exit;"  oncommand="if (checkCloseFile() == true) exit();" accesskey="&exitAccessKey;"/>
+      <toolbarbutton id="newFile" tooltiptext="&newFile;" oncommand="newFileFromTemplate();" accesskey="&newFileAccessKey;"/>
+      <toolbarbutton id="openFile" tooltiptext="&openLocalFile;" oncommand="openFile();" accesskey="&openLocalFileAccessKey;"/>
+      <toolbarbutton id="openRemoteFile" tooltiptext="&openRemoteFile;" oncommand="openRemoteFile();" accesskey="&openRemoteFileAccessKey;"/>
+      <toolbarbutton id="updateFromOldQSOS" tooltiptext="&updateFromOldQSOS;" oncommand="updateFromOldQSOS();" accesskey="&updateFromOldQSOSAccessKey;"/>
+      <toolbarbutton id="saveFile" tooltiptext="&saveFile;" oncommand="saveFile();" accesskey="&saveFileAccessKey;"/>
+      <toolbarbutton id="saveFileAs" tooltiptext="&saveFileAs;" oncommand="saveFileAs();" accesskey="&saveFileAsAccessKey;"/>
+      <toolbarbutton id="saveRemoteFile" tooltiptext="&saveRemoteFile;" oncommand="saveRemoteFile();" accesskey="&saveRemoteFileAccessKey;"/>
+      <toolbarbutton id="updateFromTemplate" tooltiptext="&updateFromTemplate;" oncommand="updateFromTemplate();" accesskey="&updateFromTemplateAccessKey;"/>
+      <toolbarbutton id="exportOSC" tooltiptext="&exportOSC;" oncommand="exportOSC();" accesskey="&exportOSCAccessKey;"/>
+      <toolbarbutton id="exportToFreeMind" tooltiptext="&exportToFreeMind;" oncommand="exportToFreeMind();" accesskey="&exportToFreeMindAccessKey;"/>
+      <toolbarbutton id="exportToFreeMindTemplate" tooltiptext="&exportToFreeMindTemplate;" oncommand="exportToFreeMindTemplate();" accesskey="&exportToFreeMindTemplateAccessKey;"/>
+      <toolbarbutton id="closeFile" tooltiptext="&closeFile;"  oncommand="checkCloseFile();" accesskey="&closeFileAccessKey;"/>
+      <toolbarbutton id="exitApp" tooltiptext="&exit;"  oncommand="if (checkCloseFile() == true) exit();" accesskey="&exitAccessKey;"/>
     </toolbar>
   </toolbox>
 
@@ -71,7 +100,7 @@
       <tab id="criteriaTab" label="&criteriaTab;" accesskey="&criteriaTabAccessKey;"/>
     </tabs>
 
-    <vbox id="intoVbox">
+    <vbox id="introVbox">
       <groupbox flex="1">
         <vbox flex="1">
           <html:p>

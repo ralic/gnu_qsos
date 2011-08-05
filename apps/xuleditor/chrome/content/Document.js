@@ -34,9 +34,9 @@ function Document() {
 
     //Public methods declaration
     this.load = load;
-    this.loadremote = loadremote;
+    this.loadRemote = loadRemote;
     this.write = write;
-    this.writeremote = writeremote;
+    this.writeRemote = writeRemote;
     this.getkeytitle = getkeytitle;
     this.getAuthors = getAuthors;
     this.getTeam = getTeam;
@@ -72,8 +72,10 @@ function Document() {
     this.dump = dump;
     this.hassubelements = hassubelements;
     this.getparent = getparent;
+
     this.getfilename = getfilename;
     this.setfilename = setfilename;
+
     this.getcomplextree = getcomplextree;
     this.getChartData = getChartData;
     this.getSubChartData = getSubChartData;
@@ -145,9 +147,9 @@ function Document() {
     }
 
     // Load and parse a remote QSOS XML file
-    // ex: loadremote("http://localhost/qedit/xul/kolab.qsos")
+    // ex: loadRemote("http://localhost/qedit/xul/kolab.qsos")
     // initializes local variable: sheet
-    function loadremote(url) {
+    function loadRemote(url) {
       myDoc.url = url;
       getPrivilege();
       req = new XMLHttpRequest();
@@ -160,7 +162,7 @@ function Document() {
 
 
     // Serialize and write the designated part the evaluation to a QSOS XML file
-    function writeXMLtoFile(element, filename) {
+    function writeXMLtoFile(element, filename, fullHeader) {
       getPrivilege();
 
       var file = Components.classes["@mozilla.org/file/local;1"]
@@ -176,7 +178,7 @@ function Document() {
 
       outputStream.init(file, 0x04 | 0x08 | 0x20, 420, 0);
 
-      var xml = serialize(element, 0);
+      var xml = serializeAll(element, 0, fullHeader);
 
       var converter = Components.classes["@mozilla.org/intl/scriptableunicodeconverter"]
       .createInstance(Components.interfaces.nsIScriptableUnicodeConverter);
@@ -190,17 +192,17 @@ function Document() {
 
 
     function write() {
-      writeXMLtoFile(sheet.documentElement, myDoc.filename);
+      writeXMLtoFile(sheet.documentElement, myDoc.filename, true);
     }
 
 
     function writeOSC(filename) {
-      writeXMLtoFile(sheet.getElementsByTagName("openSourceCartouche")[0], filename);
+      writeXMLtoFile(sheet.getElementsByTagName("openSourceCartouche")[0], filename, true);
     }
 
 
     //Serialize and upload the QSOS XML file to a remote server
-    function writeremote(url) {
+    function writeRemote(url) {
        getPrivilege();
 
       var xml = serialize(sheet.documentElement, 0);
@@ -219,61 +221,75 @@ function Document() {
       req = new XMLHttpRequest();
 
       //Set the filename
-      try { var mainTech = myDoc.get("component/mainTech"); } catch (e) { var mainTech = "" }
-      try { var name = myDoc.get("component/name"); } catch (e) { var name = "" }
-      try { var version = myDoc.get("component/version"); } catch (e) { var version = "" }
-      var tmpFilename = mainTech + "." + name + "." + version;
-      if (tmpFilename == "..") {
-        if (myDoc.filename == null) {
-          tmpFilename = "upload";
-        } else {
-          tmpFilename = myDoc.filename;
-        }
+      try { var type = myDoc.get("qsosMetadata/template/type"); } catch (e) { var type = "notype" }
+      try { var name = myDoc.get("openSourceCartouche/component/name"); } catch (e) { var name = "noname" }
+      try { var version = myDoc.get("openSourceCartouche/component/version"); } catch (e) { var version = "noversion" }
+      try { var language = myDoc.get("qsosMetadata/language"); } catch (e) { var language = "nolanguage"; }
+      var tmpFilename = type + "_" + name + "_" + version;
+      if ((language != "en") && (language != "EN")) {
+        tmpFilename += "_" + language;
+      }
+      tmpFilename = clearString(tmpFilename) + ".qsos";
+
+      getPrivilege();
+      var retVals = {err: false, filename: tmpFilename};
+      window.openDialog('chrome://qsos-xuled/content/confirmUpload.xul', 'Confirm upload filename', 'chrome,dialog,modal', retVals);
+
+      if (retVals.err) {
+        return;
       }
 
-      //Prepare the MIME POST data
-      var boundaryString = 'qsoswriteremote';
-      var boundary = '--' + boundaryString;
-      var requestbody = boundary + '\n'
-                      + 'Content-Disposition: form-data; name="myfile"; filename="'
-                      + tmpFilename + '"' + '\n'
-                      + 'Content-Type: text/xml' + '\n'
-                      + '\n'
-                      + binary.readBytes(binary.available())
-                      + '\n'
-                      + boundary;
+      try{
+        //Prepare the MIME POST data
+        var boundaryString = 'qsoswriteremote';
+        var boundary = '--' + boundaryString;
+        var requestbody = boundary + '\n'
+                        + 'Content-Disposition: form-data; name="myfile"; filename="'
+                        + retVals.filename + '"' + '\n'
+                        + 'Content-Type: text/xml' + '\n'
+                        + '\n'
+                        + binary.readBytes(binary.available())
+                        + '\n'
+                        + boundary;
 
-      //Do the AJAX request
-      req.onreadystatechange = requestdone;
-      req.open('POST', url, true);
-      req.setRequestHeader("Content-type", "multipart/form-data; \
-        boundary=\"" + boundaryString + "\"");
-      req.setRequestHeader("Connection", "close");
-      req.setRequestHeader("Content-length", requestbody.length);
-      req.send(requestbody);
+        //Do the AJAX request
+        req.onreadystatechange = requestdone;
+        req.open('POST', url, true);
+        req.setRequestHeader("Content-type", "multipart/form-data; \
+          boundary=\"" + boundaryString + "\"");
+        req.setRequestHeader("Connection", "close");
+        req.setRequestHeader("Content-length", requestbody.length);
+        req.send(requestbody);
+      } catch (e) {
+        alert("myDoc.writeRemote: " + e.message);
+      }
     }
 
     //Upload callback
     function requestdone() {
       if (req.readyState == 4) {
         if (req.status == 200) {
-          result = req.responseText;
+          var result = req.responseText;
           alert(result);
         } else {
-          alert('There was a problem with the upload.');
+          alert('An error occurred during the upload. Please check your internet/firefox/QSOS xuleditor settings.');
         }
       }
+    }
+
+    function serialize(node, depth) {
+      return serializeAll(node, depth, true);
     }
 
     // Recursively serialize a XML node in a string
     // node: XML node to serialize
     // depth: depth of recursion (used fo indentation), 0 is used at the beginning
     // returns the string with identations and \n characters
-    function serialize(node, depth) {
+    function serializeAll(node, depth, fullHeader) {
       var indent = "";
       var line = "";
 
-      if (depth == 0) {
+      if ((depth == 0) && (fullHeader)) {
         line = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n";
       }
 
@@ -298,7 +314,7 @@ function Document() {
       for (i = 0; i < children.length; i++) {
         var child = children[i];
         if (child.tagName) {
-          line += "\n" + serialize(child, depth+1);
+          line += "\n" + serializeAll(child, depth + 1, false);
           // closing </tag> should be indented and on a new line
           test = true;
         }
@@ -470,7 +486,7 @@ function Document() {
         }
     }
 
-
+    // Should be used instead of getKey()
     function get(element) {
       var nodes = sheet.evaluate("//"+element, sheet, null, XPathResult.ANY_TYPE, null);
       var node = nodes.iterateNext();
@@ -480,7 +496,7 @@ function Document() {
         throw element + " " + strbundle.getString("doesntExist");
     }
 
-
+    // Should be used instead of setKey()
     function set(element, value) {
       var nodes = sheet.evaluate("//"+element, sheet, null, XPathResult.ANY_TYPE, null);
       var node = nodes.iterateNext();
@@ -496,9 +512,17 @@ function Document() {
     // Specific getters ans setters (public functions)
     ////////////////////////////////////////////////////////////////////
 
-    function setfilename(name) { myDoc.filename = name; }
+    function setfilename(name) {
+      myDoc.filename = name;
+    }
 
-    function getfilename() { return myDoc.filename; }
+    function getfilename() {
+      if (myDoc.filename) {
+        return myDoc.filename;
+      } else {
+        return "";
+      }
+    }
 
     function getkeytitle(element) {
       var nodes = sheet.evaluate("//*[@name='"+element+"']", sheet, null, XPathResult.ANY_TYPE,null);

@@ -25,6 +25,28 @@
 **/
 
 
+// Remove special characters from a sting, replacing them with '_'
+function clearString(string) {
+  string = string.replace(/</g, '_');
+  string = string.replace(/>/g, '_');
+  string = string.replace(/"/g, '_');
+  string = string.replace(/'/g, '_');
+  string = string.replace(/#/g, '_');
+  string = string.replace(/!/g, '_');
+  string = string.replace(/\//g, '_');
+  string = string.replace(/\\/g, '_');
+  string = string.replace(/:/g, '_');
+  string = string.replace(/;/g, '_');
+  string = string.replace(/,/g, '_');
+  string = string.replace(/ /g, '_');
+  string = string.replace(/\+/g, '_');
+  string = string.replace(/&/g, '_');
+  string = string.replace(/=/g, '_');
+
+  return string;
+}
+
+
 // Reads a file and return its content as a string
 // Returns null if the file can't be found/opened
 function readFile(filename) {
@@ -153,28 +175,28 @@ function openFile() {
 
 
 // Shows the load.xul window in modal mode
-function loadRemoteDialog() {
+function openRemoteFile() {
   if (checkCloseFile() == false) {
     return;
   }
   getPrivilege();
-  window.openDialog('chrome://qsos-xuled/content/load.xul', 'Properties', 'chrome,dialog,modal', myDoc, openRemoteFile);
+  window.openDialog('chrome://qsos-xuled/content/load.xul', 'Properties', 'chrome,dialog,modal', myDoc, openRemote);
 }
 
 
-function openRemoteFile(url) {
+function openRemote(url) {
   if (url == "") return;
   if (url.search("file:///") != -1) {
     url = url.replace(/file\:\/\//g, '');
     openLocalFile(url);
   } else {
     myDoc = new Document();
-    myDoc.loadremote(url);
+    myDoc.loadRemote(url);
 
     try {
       setupEditorForEval();
     } catch (e) {
-      alert("openRemoteFile: an error occured while setting up the editor " + e.message);
+      alert("openRemote: an error occured while setting up the editor " + e.message);
       closeFile();
       return;
     }
@@ -236,7 +258,7 @@ function saveFile() {
     if (myDoc) {
       // Updating evaluation content
       // Checking component fields
-      toCheck = new Array("componentName", "componentReleaseDate", "componentVersion", "componentMainTech", "componentHomepage", "componentTags", "componentVendor");
+      var toCheck = new Array("componentName", "componentReleaseDate", "componentVersion", "componentMainTech", "componentHomepage", "componentTags", "componentVendor");
       for(var i = 0; i < toCheck.length; ++i) {
         if (document.getElementById(toCheck[i]).value == ""){
           alert(strbundle.getString("componentEmpty") + " " + toCheck[i]);
@@ -261,6 +283,10 @@ function saveFile() {
       }
 
       if (myDoc.filename != null) {
+        var test = myDoc.filename.split(".");
+        if (test[test.length - 1] != "qsos") {
+          myDoc.setfilename(myDoc.filename + ".qsos");
+        }
         myDoc.write();
         docHasChanged(false);
         return true;
@@ -281,11 +307,21 @@ function saveFile() {
 
 // Saves modifications to a new QSOS XML file
 function saveFileAs() {
+  try { var name = myDoc.get("openSourceCartouche/component/name"); } catch (e) { var name = ""; }
+  try { var version = myDoc.get("openSourceCartouche/component/version"); } catch (e) { var version = ""; }
+  try { var language = myDoc.get("qsosMetadata/language"); } catch (e) { var language = ""; }
+  var suggest = name + "_" + version;
+  if ((language != "en") && (language != "EN")) {
+    suggest += "_" + language;
+  }
+
   getPrivilege();
   var nsIFilePicker = Components.interfaces.nsIFilePicker;
   var fp = Components.classes["@mozilla.org/filepicker;1"].createInstance(nsIFilePicker);
   fp.init(window, strbundle.getString("saveFileAs"), nsIFilePicker.modeSave);
   fp.appendFilter(strbundle.getString("QSOSFile"),"*.qsos");
+  fp.defaultString = clearString(suggest) + ".qsos";
+
   var res = fp.show();
   if ((res == nsIFilePicker.returnOK) || (res == nsIFilePicker.returnReplace)) {
     myDoc.setfilename(fp.file.path);
@@ -296,12 +332,12 @@ function saveFileAs() {
 
 
 // Saves modifications to a new QSOS XML file
-function saveRemote() {
+function saveRemoteFile() {
   var prefManager = Components.classes["@mozilla.org/preferences-service;1"]
   .getService(Components.interfaces.nsIPrefBranch);
   var saveremote = prefManager.getCharPref("extensions.qsos-xuled.saveremote");
 
-  myDoc.writeremote(saveremote);
+  myDoc.writeRemote(saveremote);
 }
 
 
@@ -355,7 +391,7 @@ function closeFile() {
     emptyList(document.getElementById("statusPopup"));
 
     // Reset authors & contributors lists
-    lists = new Array("evaluationAuthors","developerTeam","contributorTeam");
+    var lists = new Array("evaluationAuthors","developerTeam","contributorTeam");
     for (var i = 0; i < lists.length; ++i) {
       var list = document.getElementById(lists[i]);
       while (list.childElementCount > 1) {

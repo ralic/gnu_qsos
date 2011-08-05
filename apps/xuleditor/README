@@ -18,7 +18,7 @@ On MacOS
 
 LAUNCHING ON LINUX
 
-./xuleditor [debug]
+./xuleditor [debug|clean|clear|release]
 or
 xulrunner application.ini
 
@@ -46,3 +46,7 @@ Copyright 2006, 2011 Atos <raphael.semeteys@atos.net>
 
 This library is free software; you can redistribute it
 and/or modify it under the terms of the GNU General Public License.
+
+Icons from the Oxygen Team: http://www.oxygen-icons.org/
+
+FreeMind icon is under the GPL, find more at: http://freemind.sourceforge.net/wiki/index.php/Main_Page

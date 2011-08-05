@@ -167,44 +167,40 @@ function setStateEvalOpen(state) {
       var nbool = "";
     }
 
+    var elem;
+    var i;
+    var len;
+    // Available when no evaluation is opened
+    var evalClosed = new Array("newFile", "openFile", "updateFromOldQSOS", "openRemoteFile");
+    len = evalClosed.length;
+    for (i = 0; i < len; ++i) {
+      elem = document.getElementById(evalClosed[i]);
+      elem.disabled = nbool;
+      elem = document.getElementById(evalClosed[i] + "Menuitem");
+      elem.disabled = nbool;
+    }
+    // Available when an evaluation is opened
+    var evalOpened = new Array("saveFile", "saveFileAs", "closeFile", "saveRemoteFile", "updateFromTemplate", "exportOSC", "exportToFreeMind", "exportToFreeMindTemplate");
+    len = evalOpened.length;
+    for (i = 0; i < len; ++i) {
+      elem = document.getElementById(evalOpened[i]);
+      elem.disabled = bool;
+      elem = document.getElementById(evalOpened[i] + "Menuitem");
+      elem.disabled = bool;
+    }
+
+    // Tabs and the special toolbar are opened only when editing
+    document.getElementById("introVbox").hidden = nbool;
+    document.getElementById("tabPanels").hidden = bool;
     document.getElementById("metadataTab").hidden = bool;
     document.getElementById("oscTab").hidden = bool;
     document.getElementById("criteriaTab").hidden = bool;
 
-    document.getElementById("newFile").disabled = nbool;
-    document.getElementById("newFile").hidden = nbool;
-    document.getElementById("openFile").disabled = nbool;
-    document.getElementById("openFile").hidden = nbool;
-
-    // Update old QSOS button is active only when the evaluation is closed
-    document.getElementById("updateFromOldQSOS").disabled = nbool;
-    document.getElementById("updateFromOldQSOS").hidden = nbool;
-
+    // The save button is always set to disabled when openning an evaluation
     document.getElementById("saveFile").disabled = "true";
-    document.getElementById("saveFile").hidden= bool;
-    document.getElementById("saveFileAs").disabled = bool;
-    document.getElementById("saveFileAs").hidden = bool;
-    document.getElementById("closeFile").disabled = bool;
-    document.getElementById("closeFile").hidden = bool;
+    document.getElementById("saveFileMenuitem").disabled = "true";
 
-    document.getElementById("exitApp").disabled = nbool;
-    document.getElementById("exitApp").hidden = nbool;
-
-    // Remote saving is temporarily disabled
-    document.getElementById("saveRemoteFile").disabled = "true";
-    document.getElementById("saveRemoteFile").hidden = "true";
-
-    // Open Remote File button disable since it doesn't work for now
-    document.getElementById("openRemoteFile").disabled = "true";
-    document.getElementById("openRemoteFile").hidden = "true";
-
-    document.getElementById("updateFromTemplate").hidden = bool;
-    document.getElementById("exportOSC").hidden = bool;
-    document.getElementById("exportToFreeMind").hidden = bool;
-
-    document.getElementById("tabPanels").hidden = bool;
-    document.getElementById("intoVbox").hidden = nbool;
-
+    // Resets template and OSC versions displayed in the editor
     if (!state) {
       document.getElementById("oscLabel").label = strbundle.getString("oscAuthors");
       document.getElementById("templateCaption").label = strbundle.getString("template");
@@ -390,7 +386,10 @@ function setupEditorForEval() {
   }
 
   if (error) {
-    alert(strbundle.getString("errorsFound") + "\n" + errorText + "\n" + strbundle.getString("adviceOpenLocalFile"));
+    if(confirm(strbundle.getString("errorsFound") + "\n" + errorText + "\n" + strbundle.getString("adviceOpenLocalFile")) == false) {
+      closeFile();
+      return false;
+    }
   }
 
   // Component & Status fields

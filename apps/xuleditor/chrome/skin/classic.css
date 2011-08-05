@@ -41,6 +41,8 @@
 [iconsize="small"] .custombutton:hover
 {-moz-image-region: rect(24px 40px 40px 24px);}
 
+/* Enabled version */
+
 #newFile
 {list-style-image: url("chrome://qsos-xuled/skin/document-new.png");}
 
@@ -57,7 +59,7 @@
 {list-style-image: url("chrome://qsos-xuled/skin/document-save-as.png");}
 
 #saveRemoteFile
-{list-style-image: url("chrome://qsos-xuled/skin/document-save.png");}
+{list-style-image: url("chrome://qsos-xuled/skin/upload.png");}
 
 #closeFile
 {list-style-image: url("chrome://qsos-xuled/skin/document-close.png");}
@@ -69,17 +71,144 @@
 {list-style-image: url("chrome://qsos-xuled/skin/go-next-view-page.png");}
 
 #exportOSC
-{list-style-image: url("chrome://qsos-xuled/skin/edit-redo.png");}
+{list-style-image: url("chrome://qsos-xuled/skin/osc_small.png");}
 
 #exportToFreeMind
 {list-style-image: url("chrome://qsos-xuled/skin/tools-wizard.png");}
 
+#exportToFreeMindTemplate
+{list-style-image: url("chrome://qsos-xuled/skin/freemind.png");}
+
 #updateFromOldQSOS
 {list-style-image: url("chrome://qsos-xuled/skin/quickopen-file.png");}
 
-#about
-{list-style-image: url("chrome://qsos-xuled/skin/help-about.png");}
 
+/* Disabled version */
+
+#newFile[disabled="true"]
+{list-style-image: url("chrome://qsos-xuled/skin/document-new_disabled.png");}
+
+#openFile[disabled="true"]
+{list-style-image: url("chrome://qsos-xuled/skin/document-open_disabled.png");}
+
+#openRemoteFile[disabled="true"]
+{list-style-image: url("chrome://qsos-xuled/skin/document-open-remote_disabled.png");}
+
+#saveFile[disabled="true"]
+{list-style-image: url("chrome://qsos-xuled/skin/document-save_disabled.png");}
+
+#saveFileAs[disabled="true"]
+{list-style-image: url("chrome://qsos-xuled/skin/document-save-as_disabled.png");}
+
+#saveRemoteFile[disabled="true"]
+{list-style-image: url("chrome://qsos-xuled/skin/upload_disabled.png");}
+
+#closeFile[disabled="true"]
+{list-style-image: url("chrome://qsos-xuled/skin/document-close_disabled.png");}
+
+#exitApp[disabled="true"]
+{list-style-image: url("chrome://qsos-xuled/skin/application-exit_disabled.png");}
+
+#updateFromTemplate[disabled="true"]
+{list-style-image: url("chrome://qsos-xuled/skin/go-next-view-page_disabled.png");}
+
+#exportOSC[disabled="true"]
+{list-style-image: url("chrome://qsos-xuled/skin/osc_small_disabled.png");}
+
+#exportToFreeMind[disabled="true"]
+{list-style-image: url("chrome://qsos-xuled/skin/tools-wizard_disabled.png");}
+
+#exportToFreeMindTemplate[disabled="true"]
+{list-style-image: url("chrome://qsos-xuled/skin/freemind_disabled.png");}
+
+#updateFromOldQSOS[disabled="true"]
+{list-style-image: url("chrome://qsos-xuled/skin/quickopen-file_disabled.png");}
+
+
+/* Menuitems */
+
+/* Enabled version */
+
+#newFileMenuitem
+{list-style-image: url("chrome://qsos-xuled/skin/document-new.png");}
+
+#openFileMenuitem
+{list-style-image: url("chrome://qsos-xuled/skin/document-open.png");}
+
+#openRemoteFileMenuitem
+{list-style-image: url("chrome://qsos-xuled/skin/document-open-remote.png");}
+
+#saveFileMenuitem
+{list-style-image: url("chrome://qsos-xuled/skin/document-save.png");}
+
+#saveFileAsMenuitem
+{list-style-image: url("chrome://qsos-xuled/skin/document-save-as.png");}
+
+#saveRemoteFileMenuitem
+{list-style-image: url("chrome://qsos-xuled/skin/upload.png");}
+
+#closeFileMenuitem
+{list-style-image: url("chrome://qsos-xuled/skin/document-close.png");}
+
+#exitAppMenuitem
+{list-style-image: url("chrome://qsos-xuled/skin/application-exit.png");}
+
+#updateFromTemplateMenuitem
+{list-style-image: url("chrome://qsos-xuled/skin/go-next-view-page.png");}
+
+#exportOSCMenuitem
+{list-style-image: url("chrome://qsos-xuled/skin/osc_small.png");}
+
+#exportToFreeMindMenuitem
+{list-style-image: url("chrome://qsos-xuled/skin/tools-wizard.png");}
+
+#exportToFreeMindTemplateMenuitem
+{list-style-image: url("chrome://qsos-xuled/skin/freemind.png");}
+
+#updateFromOldQSOSMenuitem
+{list-style-image: url("chrome://qsos-xuled/skin/quickopen-file.png");}
+
+
+/* Disabled version */
+
+#newFileMenuitem[disabled="true"]
+{list-style-image: url("chrome://qsos-xuled/skin/document-new_disabled.png");}
+
+#openFileMenuitem[disabled="true"]
+{list-style-image: url("chrome://qsos-xuled/skin/document-open_disabled.png");}
+
+#openRemoteFileMenuitem[disabled="true"]
+{list-style-image: url("chrome://qsos-xuled/skin/document-open-remote_disabled.png");}
+
+#saveFileMenuitem[disabled="true"]
+{list-style-image: url("chrome://qsos-xuled/skin/document-save_disabled.png");}
+
+#saveFileAsMenuitem[disabled="true"]
+{list-style-image: url("chrome://qsos-xuled/skin/document-save-as_disabled.png");}
+
+#saveRemoteFileMenuitem[disabled="true"]
+{list-style-image: url("chrome://qsos-xuled/skin/upload_disabled.png");}
+
+#closeFileMenuitem[disabled="true"]
+{list-style-image: url("chrome://qsos-xuled/skin/document-close_disabled.png");}
+
+#exitAppMenuitem[disabled="true"]
+{list-style-image: url("chrome://qsos-xuled/skin/application-exit_disabled.png");}
+
+#updateFromTemplateMenuitem[disabled="true"]
+{list-style-image: url("chrome://qsos-xuled/skin/go-next-view-page_disabled.png");}
+
+#exportOSCMenuitem[disabled="true"]
+{list-style-image: url("chrome://qsos-xuled/skin/osc_small_disabled.png");}
+
+#exportToFreeMindMenuitem[disabled="true"]
+{list-style-image: url("chrome://qsos-xuled/skin/tools-wizard_disabled.png");}
+
+#exportToFreeMindTemplateMenuitem[disabled="true"]
+{list-style-image: url("chrome://qsos-xuled/skin/freemind_disabled.png");}
+
+#updateFromOldQSOSMenuitem[disabled="true"]
+{list-style-image: url("chrome://qsos-xuled/skin/quickopen-file_disabled.png");}
 
 /**
  * General
@@ -98,12 +227,6 @@
  * Tabs stuff
  **/
 
-#fileTab {
-  list-style-image: url("chrome://qsos-xuled/skin/document-edit.png");
-  -moz-border-radius: 6px 6px 0px 0px;
-  font-weight: bold;
-}
-
 #metadataTab {
   list-style-image: url("chrome://qsos-xuled/skin/user-properties.png");
   -moz-border-radius: 6px 6px 0px 0px;
@@ -111,8 +234,7 @@
 }
 
 #oscTab {
-/* TODO change/fix this icon    */
-  list-style-image: url("chrome://qsos-xuled/skin/OSCartouche_32.png");
+  list-style-image: url("chrome://qsos-xuled/skin/osc_22.png");
   -moz-border-radius: 6px 6px 0px 0px;
   font-weight: bold;
 }
@@ -123,23 +245,6 @@
   font-weight: bold;
 }
 
-#chartTab {
-  list-style-image: url("chrome://qsos-xuled/skin/office-chart-pie.png");
-  -moz-border-radius: 6px 6px 0px 0px;
-  font-weight: bold;
-}
-
-#configTab {
-  list-style-image: url("chrome://qsos-xuled/skin/preferences-other.png");
-  -moz-border-radius: 6px 6px 0px 0px;
-  font-weight: bold;
-}
-
-/*#aboutTab {
-  list-style-image: url("chrome://qsos-xuled/skin/help-about.png");
-  -moz-border-radius: 6px 6px 0px 0px;
-  font-weight: bold;
-}*/
 
 /**
  * Add and delete buttons
@@ -163,31 +268,9 @@ button.delAuthor {
  * About page stuff
  **/
 
-div#aboutContent {
-
-}
-
-div#logo {
-  float: left;
-  width: 170px;
-  height: 58px;
-}
-
-div#title {
-/*   text-align: center; */
-  vertical-align: middle;
-  height: 58px;
-}
-
 .authorTable {
   padding: 15px;
 }
-
-/* tab[selected="true"] {
-  color: #000066;
-  font-weight: bold;
-  -moz-border-radius: 6px 6px 0px 0px;
-} */
 
 
 /**
