@@ -1,1 +1,2 @@
-<!ENTITY confirmUpload "Please confirm the filename used to upload this evaluation on the O3S server:">
+<!ENTITY confirmUpload "Please confirm the filename used to upload this file on the O3S server:">
+<!ENTITY confirmUrl "Please confirm the url:">

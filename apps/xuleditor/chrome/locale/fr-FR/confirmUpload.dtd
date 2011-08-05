@@ -1,1 +1,2 @@
-<!ENTITY confirmUpload "Confirmez le nom du fichier qui va être utilisé pour envoyer cette évaluation :">
+<!ENTITY confirmUpload "Confirmez le nom du fichier qui va être utilisé pour envoyer ce fichier :">
+<!ENTITY confirmUrl "Confirmez l'url :">

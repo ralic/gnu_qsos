@@ -28,6 +28,11 @@
  * !!WARNING!!
  *
  * This script assumes that you are working in the o3s directory, in which you have cloned the qsos git repository, in a folder named qsos.
+ *
+ * You MUST choose a group / make sure permissions are OK before using O3S or it will break (especially the git part). If you can set a group to both apache and php stuff, use :
+ *    setfacl -R -m default:group:$group_name:rwx $directory
+ *    setfacl -R -m group:$group_name:rwx $directory
+ *
  * You should not allow users to access the qsos directory remotely!
  * Once you have given a git account to O3S with a private key and uncommented the 'git push origin' lines, evaluations will be automatically added and pushed to the repository!
  *
@@ -151,13 +156,14 @@
     $xml = new DOMDocument();
     $xml->load($filename);
 
-    if (!$xml->schemaValidate('../../../../../tools/xsd/QSOS_2.0.xsd')) {
-        print '<b>DOMDocument::schemaValidate() Generated Errors!</b>';
-        libxml_display_errors();
-        unlink($filename);
-        exec("git reset --hard HEAD", $output, $return_var);
-        die(displayUploadError("This file isn't a valid QSOS evaluation. Check it with the XSD from git, found in git_root/tools/xsd/QSOS_2.0.xsd"));
-    }
+    // FIXME Uncomment those lines to enable XSD validation
+//     if ($xml->schemaValidate('../../../../../tools/xsd/QSOS_2.0.xsd') == FALSE) {
+//         print '<b>DOMDocument::schemaValidate() Generated Errors!</b>';
+//         libxml_display_errors();
+//         unlink($filename);
+//         exec("git reset --hard HEAD", $output, $return_var);
+//         die(displayUploadError("This file isn't a valid QSOS evaluation. Check it with the XSD from git, found in git_root/tools/xsd/QSOS_2.0.xsd"));
+//     }
 
     exec("git config user.name \"O3S\"", $output, $return_var);
     if ($return_var != 0) {

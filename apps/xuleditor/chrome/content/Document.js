@@ -202,8 +202,8 @@ function Document() {
 
 
     //Serialize and upload the QSOS XML file to a remote server
-    function writeRemote(url) {
-       getPrivilege();
+    function writeRemote(tmpUrl) {
+      getPrivilege();
 
       var xml = serialize(sheet.documentElement, 0);
 
@@ -232,7 +232,7 @@ function Document() {
       tmpFilename = clearString(tmpFilename) + ".qsos";
 
       getPrivilege();
-      var retVals = {err: false, filename: tmpFilename};
+      var retVals = {err: false, filename: tmpFilename, url: tmpUrl};
       window.openDialog('chrome://qsos-xuled/content/confirmUpload.xul', 'Confirm upload filename', 'chrome,dialog,modal', retVals);
 
       if (retVals.err) {
@@ -244,7 +244,7 @@ function Document() {
         var boundaryString = 'qsoswriteremote';
         var boundary = '--' + boundaryString;
         var requestbody = boundary + '\n'
-                        + 'Content-Disposition: form-data; name="myfile"; filename="'
+                        + 'Content-Disposition: form-data; name="myFile"; filename="'
                         + retVals.filename + '"' + '\n'
                         + 'Content-Type: text/xml' + '\n'
                         + '\n'
@@ -254,9 +254,8 @@ function Document() {
 
         //Do the AJAX request
         req.onreadystatechange = requestdone;
-        req.open('POST', url, true);
-        req.setRequestHeader("Content-type", "multipart/form-data; \
-          boundary=\"" + boundaryString + "\"");
+        req.open('POST', retVals.url, true);
+        req.setRequestHeader("Content-type", "multipart/form-data; boundary=\"" + boundaryString + "\"");
         req.setRequestHeader("Connection", "close");
         req.setRequestHeader("Content-length", requestbody.length);
         req.send(requestbody);
@@ -269,10 +268,13 @@ function Document() {
     function requestdone() {
       if (req.readyState == 4) {
         if (req.status == 200) {
-          var result = req.responseText;
-          alert(result);
+          // Everything should be ok here
+          alert(req.responseText);
+        } else if (req.status == 400) {
+          // The stuff we're sending seems incorrect
+          alert("Upload error: This is a bug, please report it as:\n\"400 HTTP error code when sending evaluation\"");
         } else {
-          alert('An error occurred during the upload. Please check your internet/firefox/QSOS xuleditor settings.');
+          alert(strbundle.getString("uploadError") + "\n\nHTTP error code: " + req.status);
         }
       }
     }

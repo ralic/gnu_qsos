@@ -333,11 +333,7 @@ function saveFileAs() {
 
 // Saves modifications to a new QSOS XML file
 function saveRemoteFile() {
-  var prefManager = Components.classes["@mozilla.org/preferences-service;1"]
-  .getService(Components.interfaces.nsIPrefBranch);
-  var saveremote = prefManager.getCharPref("extensions.qsos-xuled.saveremote");
-
-  myDoc.writeRemote(saveremote);
+  myDoc.writeRemote(getPreference("saveremote"));
 }
 
 

@@ -36,6 +36,7 @@
   <script type="application/x-javascript">
   function init() {
     document.getElementById("filenameTextbox").value = window.arguments[0].filename;
+    document.getElementById("urlTextbox").value = window.arguments[0].url;
   }
 
   function ok() {
@@ -52,6 +53,8 @@
   <vbox>
     <label id="" value="&confirmUpload;"/>
     <textbox id="filenameTextbox" value=""/>
+    <label id="" value="&confirmUrl;"/>
+    <textbox id="urlTextbox" value=""/>
   </vbox>
 
 </dialog>

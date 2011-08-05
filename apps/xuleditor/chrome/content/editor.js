@@ -33,8 +33,6 @@ var evaluationOpen;
 var id;
 // Localized strings bundle
 var strbundle;
-// Preferences
-var pref;
 
 
 // Objects to save/modify/empty cells and set/reset dates the easy way
@@ -98,20 +96,23 @@ function init() {
     setStateEvalOpen(false);
     freezeScore("true");
     freezeComments("true");
-    pref = Components.classes["@mozilla.org/preferences-service;1"].getService(Components.interfaces.nsIPrefService);
+  } catch (e) {
+    alert("Init: Can't do basic setup for the editor: " + e.message);
+  }
+  try {
     var nameElem = document.getElementById("userName");
     var emailElem = document.getElementById("userEmail");
     nameElem.value = getPreference("userName");
     emailElem.value = getPreference("userEmail");
   } catch (e) {
-    alert("An error occured while setting up the editor: " + e.message);
+    alert("Init: Error getting preferences: " + e.message);
   }
 
   // Parameters management
   var urlFirefox = window.arguments[1];
   if (urlFirefox) {
     // Case of a .qsos browsing redirection (cf. qsos-overlay.js)
-    openRemoteFile(urlFirefox);
+    openRemote(urlFirefox);
   } else {
     var cmdLine = window.arguments[0];
     cmdLine = cmdLine.QueryInterface(Components.interfaces.nsICommandLine); // FIXME Firefox shows an error here
@@ -121,7 +122,7 @@ function init() {
       uri = cmdLine.resolveURI(uri);
       try {
         // FIXME Open file with spaces
-        openRemoteFile(uri.spec);
+        openRemote(uri.spec);
       } catch (e) {
         alert("init: can't open file " + uri.spec + ": " + e.message);
         closeFile();
@@ -503,17 +504,16 @@ function about() {
 
 // Preferences stuff
 function getPreference(name) {
-  var branch = pref.getBranch("pref.");
-  branch.QueryInterface(Components.interfaces.nsIPrefBranch2);
-
-  return branch.getCharPref(name);
+  var prefs = Components.classes["@mozilla.org/preferences-service;1"].getService(Components.interfaces.nsIPrefService);
+  prefs = prefs.getBranch("extensions.qsos-xuled.");
+  return prefs.getCharPref(name);
 }
 
 
 function setPreference(name, value) {
-  var branch = pref.getBranch("pref.");
-  branch.QueryInterface(Components.interfaces.nsIPrefBranch2);
-  branch.setCharPref(name, value);
+  var prefs = Components.classes["@mozilla.org/preferences-service;1"].getService(Components.interfaces.nsIPrefService);
+  prefs = prefs.getBranch("extensions.qsos-xuled.");
+  prefs.setCharPref(name, value);
 }
 
 

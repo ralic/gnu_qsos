@@ -30,7 +30,7 @@
 
   include("config.php");
   include("lang.php");
-  $$lang = 'checked';
+  $lang = 'checked';
 ?>
 
 <html>
@@ -67,7 +67,7 @@
   echo "    <div>\n";
   foreach($supported_lang as $l) {
     $checked = $l;
-    echo "<input type='radio' onclick=\"changeLang('$l')\" $checked/> $l";
+    echo "<input type='radio' onclick=\"changeLang('$l')\"/> $l";
   }
   echo "<br/><br/></div>";
 
