@@ -15,13 +15,14 @@ case ${1} in
 		;;
 
 	help)
-		echo "usage: xuleditor [debug] [evaluation.qsos]"
+		echo "usage: xuleditor [debug|clean|clear|release] [evaluation.qsos]"
 		;;
 
 	clear)
 		rm -rf ~/.raphael.semeteys@atosorigin.com/
 		xulrunner application.ini -file ${2}
 		;;
+
 	*)
 		echo ""
 		echo "  !! WARNING !!"

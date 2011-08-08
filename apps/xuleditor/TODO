@@ -3,7 +3,7 @@ TODO list:
  - Global changes:
     * Correctly include XSLT files in the extension
     * Improve QSOS 2.0 version support
-    * Find a way to validate sheets before opening them
+    * Find a way to validate sheets before opening/saving them
     * Clean the code, remove alert(), translate error messages
 
  - Bugs to fix:

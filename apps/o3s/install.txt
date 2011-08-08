@@ -2,6 +2,7 @@ Open Source Software Selection (O3S)
 Installation instructions
 
 * Prerequisites
+** git
 ** PHP5
 ** GD support (Debian: apt-get install php5-gd)
 ** XML support (needs DOMDocument class, php-xml package on Fedora)
@@ -14,16 +15,14 @@ Installation instructions
 
 * Modify config.php accordingly to comments included in the file itself
 
+* Place a clone of the repository you want to push evaluations to in the o3s folder.
+
 * Make sure the account running your webserver owns the o3s folder (Debian: chown -R www-data:www-data o3s)
 
-* The folder containing the QSOS evaluation ($sheet in config.php) must be organized in this way:
-[Family F1]
-  [Software F1S1]
-    [evaluation F1S1 v1.3].qsos
-    [evaluation F1S1 v2.4].qsos
-  [Software F1S2]
-    [evaluation F1S2 v1].qsos
-[Family F2]
-  [Software F2S2]
-    [evaluation F2S2 v1].qsos
-and so on...
+* Make sure your webserver has password-less (ssh-key) commit access to the repository
+
+* Uncomment the designated lines in upload.php
+
+* The folder containing the QSOS evaluation must be organized in this way:
+  - o3s_folder/qsos/repositories/incoming/[language]/evaluations/[type]/my_evaluation.qsos
+  - o3s_folder/qsos/repositories/incoming/[language]/templates/my_template.[mm,qtpl] (mm for QSOS 2.0, qtpl for QSOS 1.6)

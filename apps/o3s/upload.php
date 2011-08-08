@@ -29,11 +29,12 @@
  *
  * This script assumes that you are working in the o3s directory, in which you have cloned the qsos git repository, in a folder named qsos.
  *
- * You MUST choose a group / make sure permissions are OK before using O3S or it will break (especially the git part). If you can set a group to both apache and php stuff, use :
+ * You MUST choose a group / make sure permissions are OK before using O3S or it will break (especially the git part). If you want to give a user/group access to the repository, use :
  *    setfacl -R -m default:group:$group_name:rwx $directory
  *    setfacl -R -m group:$group_name:rwx $directory
  *    setfacl -R -m default:u:$group_name:rwx $directory
  *    setfacl -R -m u:$group_name:rwx $directory
+ * and remember to give ownership of all files to apache/cherokee/...
  *
  * You should not allow users to access the qsos directory remotely!
  * Once you have given a git account to O3S with a private key and uncommented the 'git push origin' lines, evaluations will be automatically added and pushed to the repository!

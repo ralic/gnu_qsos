@@ -52,6 +52,9 @@
 #openRemoteFile
 {list-style-image: url("chrome://qsos-xuled/skin/document-open-remote.png");}
 
+/* #saveRemoteFile */
+/* {list-style-image: url("chrome://qsos-xuled/skin/upload.png");} */
+
 #saveFile
 {list-style-image: url("chrome://qsos-xuled/skin/document-save.png");}
 
@@ -93,6 +96,9 @@
 
 #openRemoteFile[disabled="true"]
 {list-style-image: url("chrome://qsos-xuled/skin/document-open-remote_disabled.png");}
+
+/* #openRemoteFile[disabled="true"] */
+/* {list-style-image: url("chrome://qsos-xuled/skin/document-open-remote_disabled.png");} */
 
 #saveFile[disabled="true"]
 {list-style-image: url("chrome://qsos-xuled/skin/document-save_disabled.png");}
@@ -138,6 +144,9 @@
 #openRemoteFileMenuitem
 {list-style-image: url("chrome://qsos-xuled/skin/document-open-remote.png");}
 
+/* #openRemoteFileMenuitem */
+/* {list-style-image: url("chrome://qsos-xuled/skin/document-open-remote.png");} */
+
 #saveFileMenuitem
 {list-style-image: url("chrome://qsos-xuled/skin/document-save.png");}
 
@@ -179,6 +188,9 @@
 
 #openRemoteFileMenuitem[disabled="true"]
 {list-style-image: url("chrome://qsos-xuled/skin/document-open-remote_disabled.png");}
+
+/* #openRemoteFileMenuitem[disabled="true"] */
+/* {list-style-image: url("chrome://qsos-xuled/skin/document-open-remote_disabled.png");} */
 
 #saveFileMenuitem[disabled="true"]
 {list-style-image: url("chrome://qsos-xuled/skin/document-save_disabled.png");}

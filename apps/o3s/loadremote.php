@@ -30,8 +30,9 @@ include("config.php");
 $output = new DOMDocument();
 
 //Should we return the templates list or the sheets list?
-$selector = $_REQUEST["tpl"];
-if (isset($selector) && $selector == "yes") $list_templates = true;
+if (isset($_REQUEST["tpl"]) && (strcmp($_REQUEST["tpl"], "yes") == 0) {
+  $list_templates = true;
+}
 
 function getListTemplates($path, $webpath) {
 	global $output;
