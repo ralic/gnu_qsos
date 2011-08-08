@@ -27,36 +27,6 @@
 
   session_start();
 
-  $params = array('lang', 'svg', 'family', 'qsosspecificformat', 'new');
-
-  foreach($params as $param) {
-    if(!isset($_REQUEST[$param])) {
-      echo "" . $param . " is not set!<br/>";
-    } else {
-      $$param = $_REQUEST[$param];
-    }
-  }
-
-  $weights = array();
-
-  if (isset($new) && ($new == "true")) {
-    $_SESSION = array();
-    while (list($name, $value) = each($_REQUEST)) {
-      if (!(in_array($name,$params))) {
-        $_SESSION[$name] = $value;
-      }
-    }
-  }
-
-  while (list($name, $value) = each($_SESSION)) {
-    if (!(in_array($name,$params))) {
-      $weights[$name] = $_SESSION[$name];
-    }
-  }
-
-
-  $_SESSION["nbWeights"] = count($weights);
-
   include("config.php");
   include("lang.php");
 ?>
@@ -66,6 +36,7 @@
 <?php
   echo "    <link rel=StyleSheet href='skins/$skin/o3s.css' type='text/css'/>\n";
 ?>
+    <meta http-equiv="Content-type" content="text/html; charset=UTF-8"/>
     <script src="commons.js" language="JavaScript" type="text/javascript"></script>
     <script language="JavaScript" type="text/javascript">
       function checkWeight(field) {
@@ -137,6 +108,36 @@
       <br/>
 <?php
   include("libs/QSOSDocument.php");
+
+  $params = array('lang', 'svg', 'family', 'qsosspecificformat', 'new');
+
+  foreach($params as $param) {
+    if(!isset($_REQUEST[$param])) {
+      echo "" . $param . " is not set!<br/>";
+    } else {
+      $param = $_REQUEST[$param];
+    }
+  }
+
+  $weights = array();
+
+  if (isset($new) && ($new == "true")) {
+    $_SESSION = array();
+    while (list($name, $value) = each($_REQUEST)) {
+      if (!(in_array($name,$params))) {
+        $_SESSION[$name] = $value;
+      }
+    }
+  }
+
+  while (list($name, $value) = each($_SESSION)) {
+    if (!(in_array($name,$params))) {
+      $weights[$name] = $_SESSION[$name];
+    }
+  }
+
+
+  $_SESSION["nbWeights"] = count($weights);
 
   //Check if family and template version exist
   $IdDB = mysql_connect($db_host ,$db_user, $db_pwd);

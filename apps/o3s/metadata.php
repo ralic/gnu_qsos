@@ -27,7 +27,9 @@
 
   include("config.php");
   include("lang.php");
-  include("libs/QSOSDocument_2.0.php");
+  include("libs/QSOSDocument.php");
+  // FIXME Update to QSOS 2.0
+//   include("libs/QSOSDocument_2.0.php");
 
   $IdDB = mysql_connect($db_host ,$db_user, $db_pwd);
   mysql_select_db($db_db);
@@ -125,10 +127,15 @@
     <center>
 <?php
   echo "<img src='skins/$skin/o3s.png'/>\n";
-  echo "<br/><br/>\n";
-
-  echo "<div style='font-weight: bold'>Metadata repository update<br/><br/></div>\n";
-
+?>
+      <br/>
+      <br/>
+      <div style='font-weight: bold'>
+        Metadata repository update
+        <br/>
+        <br/>
+      </div>
+<?php
   echo "Output: <div style='font-size: small; text-align: left; width: 50%; background-color: lightgrey'>";
   $query = "TRUNCATE TABLE evaluations";
   if ($IdReq = mysql_query($query, $IdDB)) {
@@ -169,12 +176,8 @@
       echo "Error while inserting in database...<br/>";
     }
   }
-
-  echo "</div>";
-  echo "<br/><input type='button' value='Back to o3s' onclick=\"window.location='index.php'\">";
-  echo " <input type='button' value='Upload evaluations' onclick=\"window.location='upload.php'\">";
-
-  echo "</center>\n";
-  echo "</body>\n";
-  echo "</html>\n";
 ?>
+      </div>
+    </center>
+  </body>
+</html>

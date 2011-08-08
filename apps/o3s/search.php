@@ -85,7 +85,6 @@
   echo "<p><form action='$_SERVER[PHP_SELF]' method='post'>\n";
   echo "	<input type='text' name='s' value='$searchstr' size='20' maxlength='30'/>\n";
   echo "	<input type='submit' value='".$msg['s1_button_search']."'/><br/><br/>\n";
-  echo "	<input type='button' value='".$msg['s1_button_back']."' onclick=\"location.href='index.php'\"/>\n";
   echo "</form></p>\n";
 
   echo "</center>\n";

@@ -44,6 +44,7 @@
 
   include("config.php");
   include("lang.php");
+  include("libs/QSOSDocument_2.0.php");
 ?>
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -87,12 +88,30 @@
 ?>
       <br/>
       <br/>
+      <div style='font-weight: bold'>
+        Upload a QSOS evaluation
+        <br/>
+        <br/>
+      </div>
+      <p>
+        <form id='myForm' enctype='multipart/form-data' method='POST' action='upload.php'>
+          <input type='file' id='myFile' name='myFile'/>
+<?php
+  echo "          <input type='text' id='lang' name='lang' value='" . $lang . "' hidden='true'/>\n";
+?>
+          <input type='submit' value='Upload'/>
+        </form>
+      </p>
+<?php
+  echo "      <input type='button' value='Update repository' onclick=\"window.location='metadata.php?lang=" . $lang . "'\">";
+?>
+      <br/>
 <?php
   if ((isset($_FILES['myFile'])) && ($_FILES['myFile']['tmp_name'] <> "")) {
     $file = $_FILES['myFile'];
 
     function displayUploadError($errorString) {
-      return "<div style='color: red'>Upload error: " . $errorString . "<br/></div>\n";
+      return "<div style='color: red'>Upload error: " . $errorString . "<br/>Check if permissions are correct</div>\n";
     }
 
     function cleanString($str) {
@@ -196,10 +215,11 @@
       die(displayUploadError("Can't setup git user.email"));
     }
 
-    exec("git pull origin", $output, $return_var);
-    if ($return_var != 0) {
-      die(displayUploadError("Can't pull origin"));
-    }
+    // FIXME Uncomment those lines when you have given O3S an ssh key to pull/push to the savannah git repository
+//     exec("git pull origin", $output, $return_var);
+//     if ($return_var != 0) {
+//       die(displayUploadError("Can't pull origin"));
+//     }
 
     exec("git add " . $filename, $output, $return_var);
     if ($return_var != 0) {
@@ -218,6 +238,7 @@
 
     echo "<div style='color: red'>File " . $filename . " successfully uploaded<br/></div>\n";
 
+    // TODO Old code, to be removed
 //     $destination = $sheet.$delim.basename($file['name']);
 //     if (move_uploaded_file($file['tmp_name'], $destination)) {
 //       chmod ($destination, 0660);
@@ -228,18 +249,6 @@
   }
 
 ?>
-      <div style='font-weight: bold'>
-        Upload a QSOS evaluation
-        <br/>
-        <br/>
-      </div>
-      <p>
-        <form id='myForm' enctype='multipart/form-data' method='POST' action='upload.php'>
-          <input type='file' id='myFile' name='myFile'/>
-          <input type='submit' value='Upload'/>
-        </form>
-      </p>
-      <input type='button' value='Update repository' onclick="window.location='metadata.php'">
     </center>
   </body>
 </html>

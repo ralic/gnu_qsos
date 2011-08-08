@@ -43,8 +43,8 @@
   echo "    <link rel=StyleSheet href='skins/$skin/o3s.css' type='text/css'/>\n";
 ?>
     <meta http-equiv="Content-type" content="text/html; charset=UTF-8"/>
-    <script src="commons.js" language="JavaScript" type="text/javascript"></script>
-    <script src="search.js" language="JavaScript" type="text/javascript"></script>
+    <script src="commons.js" language="JavaScript" type="text/javascript"/>
+    <script src="search.js" language="JavaScript" type="text/javascript"/>
     <script>
       var size = 12;
 
@@ -341,7 +341,7 @@
   }
 
 //  echo "</form>";
-  echo "      <br/>"
+  echo "      <br/>";
   echo "      " . $msg['g_license_notice'];
 ?>
     </center>
