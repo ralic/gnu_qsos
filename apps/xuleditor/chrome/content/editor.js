@@ -201,6 +201,12 @@ function setStateEvalOpen(state) {
     document.getElementById("saveFile").disabled = "true";
     document.getElementById("saveFileMenuitem").disabled = "true";
 
+    // Disabled for mow, until it works with O3S
+    document.getElementById("openRemoteFile").disabled = "true";
+    document.getElementById("openRemoteFileMenuitem").disabled = "true";
+    document.getElementById("newFromRemoteTemplate").disabled = "true";
+    document.getElementById("newFromRemoteTemplateMenuitem").disabled = "true";
+
     // Resets template and OSC versions displayed in the editor
     if (!state) {
       document.getElementById("oscLabel").label = strbundle.getString("oscAuthors");

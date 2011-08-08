@@ -36,6 +36,7 @@
 
 <!ENTITY newFile "Nouveau à partir d'un patron">
 <!ENTITY openLocalFile "Ouvrir un fichier local">
+<!ENTITY newFromRemoteTemplate "Nouveau à partir d'un patron distant">
 <!ENTITY openRemoteFile " Ouvrir un fichier distant">
 <!ENTITY saveFile "Enregistrer">
 <!ENTITY saveFileAs "Enregistrer sous">
@@ -155,6 +156,7 @@
 <!-- Access key for buttons !-->
 <!ENTITY newFileAccessKey "n">
 <!ENTITY openLocalFileAccessKey "l">
+<!ENTITY newFromRemoteTemplateAccessKey "">
 <!ENTITY openRemoteFileAccessKey "d">
 <!ENTITY saveFileAccessKey "e">
 <!ENTITY saveFileAsAccessKey "s">

@@ -209,6 +209,12 @@ function openRemote(url) {
 }
 
 
+// TODO
+function newFromRemoteTemplate() {
+  alert("Not yet available");
+}
+
+
 // XUL Tree recursive creation function
 function buildtree() {
   var treechildren = document.createElement("treechildren");

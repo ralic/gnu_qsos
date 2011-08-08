@@ -53,6 +53,7 @@
         <menupopup id="filePopup">
           <menuitem id="newFileMenuitem" label="&newFile;" oncommand="newFileFromTemplate();" accesskey="&newFileAccessKey;" class="menuitem-iconic"/>
           <menuitem id="openFileMenuitem" label="&openLocalFile;" oncommand="openFile();" accesskey="&openLocalFileAccessKey;" class="menuitem-iconic"/>
+          <menuitem id="newFromRemoteTemplateMenuitem" label="&newFromRemoteTemplate;" oncommand="newFromRemoteTemplate();" accesskey="&newFromRemoteTemplateAccessKey;" class="menuitem-iconic"/>
           <menuitem id="openRemoteFileMenuitem" label="&openRemoteFile;" oncommand="openRemoteFile();" accesskey="&openRemoteFileAccessKey;" class="menuitem-iconic"/>
           <menuseparator/>
           <menuitem id="saveFileMenuitem" label="&saveFile;" oncommand="saveFile();" accesskey="&saveFileAccessKey;" class="menuitem-iconic"/>
@@ -79,6 +80,7 @@
     <toolbar>
       <toolbarbutton id="newFile" tooltiptext="&newFile;" oncommand="newFileFromTemplate();" accesskey="&newFileAccessKey;"/>
       <toolbarbutton id="openFile" tooltiptext="&openLocalFile;" oncommand="openFile();" accesskey="&openLocalFileAccessKey;"/>
+      <toolbarbutton id="newFromRemoteTemplate" tooltiptext="&newFromRemoteTemplate;" oncommand="newFromRemoteTemplate();" accesskey="&newFromRemoteTemplateAccessKey;"/>
       <toolbarbutton id="openRemoteFile" tooltiptext="&openRemoteFile;" oncommand="openRemoteFile();" accesskey="&openRemoteFileAccessKey;"/>
       <toolbarbutton id="updateFromOldQSOS" tooltiptext="&updateFromOldQSOS;" oncommand="updateFromOldQSOS();" accesskey="&updateFromOldQSOSAccessKey;"/>
       <toolbarbutton id="saveFile" tooltiptext="&saveFile;" oncommand="saveFile();" accesskey="&saveFileAccessKey;"/>

@@ -36,6 +36,7 @@
 
 <!ENTITY newFile "New from template">
 <!ENTITY openLocalFile "Open local file">
+<!ENTITY newFromRemoteTemplate "New from remote template">
 <!ENTITY openRemoteFile "Open remote file">
 <!ENTITY saveFile "Save">
 <!ENTITY saveFileAs "Save as">
@@ -155,6 +156,7 @@
 <!-- Access key for buttons !-->
 <!ENTITY newFileAccessKey "n">
 <!ENTITY openLocalFileAccessKey "f">
+<!ENTITY newFromRemoteTemplateAccessKey "">
 <!ENTITY openRemoteFileAccessKey "r">
 <!ENTITY saveFileAccessKey "s">
 <!ENTITY saveFileAsAccessKey "a">
