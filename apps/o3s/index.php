@@ -30,7 +30,7 @@
 
   include("config.php");
   include("lang.php");
-  $lang = 'checked';
+//   $lang = 'checked';
 ?>
 
 <html>
@@ -41,16 +41,30 @@
     <meta http-equiv="Content-type" content="text/html; charset=UTF-8"/>
     <script>
       function changeLang(lang) {
-        window.location = 'index.php?lang='+lang
+        window.location = 'index.php?lang=' + lang;
       }
     </script>
   </head>
   <body>
     <div id="bandeau">
+      <div id="language">
+<?php
+  foreach($supported_lang as $l) {
+//     $checked = $l;
+    if (strcmp($l, $lang) == 0) {
+      echo "        <input type='radio' onclick=\"changeLang('$l')\" checked=\"true\"/> $l\n";
+    } else {
+      echo "        <input type='radio' onclick=\"changeLang('$l')\"/> $l\n";
+    }
+  }
+?>
+      </div>
       <center>
-        <a href="index.php">Start page</a> |
-        <a href="upload.php">Upload an evaluation</a> |
-        <a href="search.php">Search for an evaluation</a>
+<?php
+  echo "        <a href=\"index.php?lang=" . $lang . "\">Start page</a> |\n";
+  echo "        <a href=\"upload.php?lang=" . $lang . "\">Upload an evaluation</a> |\n";
+  echo "        <a href=\"search.php?lang=" . $lang . "\">Search for an evaluation</a>\n";
+?>
       </center>
     </div>
     <center>
@@ -58,18 +72,14 @@
   echo "      <img src='skins/$skin/o3s.png'/>\n";
   echo "      <br/>\n";
   echo "      <br/>\n";
-  echo "      <div style='font-weight: bold'>";
-  echo "        " . $msg['s1_title'];
+  echo "      <div style='font-weight: bold'>\n";
+  echo "        " . $msg['s1_title'] . "\n";
   echo "        <br/>\n";
   echo "        <br/>\n";
   echo "      </div>\n";
 
-  echo "    <div>\n";
-  foreach($supported_lang as $l) {
-    $checked = $l;
-    echo "<input type='radio' onclick=\"changeLang('$l')\"/> $l";
-  }
-  echo "<br/><br/></div>";
+
+  echo "<br/><br/>\n";
 
   echo "<table>\n";
   echo "<tr class='title'>\n";

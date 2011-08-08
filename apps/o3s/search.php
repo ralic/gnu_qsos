@@ -47,13 +47,32 @@
   echo "    <link rel=StyleSheet href='skins/$skin/o3s.css' type='text/css'/>\n";
 ?>
     <meta http-equiv="Content-type" content="text/html; charset=UTF-8"/>
+    <script>
+      function changeLang(lang) {
+        window.location = 'search.php?lang=' + lang;
+      }
+    </script>
   </head>
   <body>
     <div id="bandeau">
+      <div id="language">
+<?php
+  foreach($supported_lang as $l) {
+    $checked = $l;
+    if (strcmp($l, $lang) == 0) {
+      echo "        <input type='radio' onclick=\"changeLang('$l')\" checked=\"true\"/> $l\n";
+    } else {
+      echo "        <input type='radio' onclick=\"changeLang('$l')\"/> $l\n";
+    }
+  }
+?>
+      </div>
       <center>
-        <a href="index.php">Start page</a> |
-        <a href="upload.php">Upload an evaluation</a> |
-        <a href="search.php">Search for an evaluation</a>
+<?php
+  echo "        <a href=\"index.php?lang=" . $lang . "\">Start page</a> |\n";
+  echo "        <a href=\"upload.php?lang=" . $lang . "\">Upload an evaluation</a> |\n";
+  echo "        <a href=\"search.php?lang=" . $lang . "\">Search for an evaluation</a>\n";
+?>
       </center>
     </div>
     <center>

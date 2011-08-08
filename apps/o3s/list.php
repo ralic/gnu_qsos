@@ -46,82 +46,89 @@
 <?php
 echo "    <link rel=StyleSheet href='skins/$skin/o3s.css' type='text/css'/>\n";
 ?>
-<script>
-  function toggleSVG() {
-    var svg = document.getElementById("check").getAttribute("svg");
-    var links = document.getElementsByTagName("a");
-    for(var i=0; i < links.length; i++) {
-      var ref = links[i].getAttribute("href");
-      if (svg == "on") {
-        if (ref.search(/&svg=yes/) != -1) ref = ref.split("&svg=")[0];
-        document.getElementById("check").setAttribute("svg", "off");
-      } else {
-        if (ref.search(/&svg=yes/) == -1) ref += "&svg=yes";
-        document.getElementById("check").setAttribute("svg", "on");
+    <script>
+      function toggleSVG() {
+        var svg = document.getElementById("check").getAttribute("svg");
+        var links = document.getElementsByTagName("a");
+        for(var i=0; i < links.length; i++) {
+          var ref = links[i].getAttribute("href");
+          if (svg == "on") {
+            if (ref.search(/&svg=yes/) != -1) ref = ref.split("&svg=")[0];
+            document.getElementById("check").setAttribute("svg", "off");
+          } else {
+            if (ref.search(/&svg=yes/) == -1) ref += "&svg=yes";
+            document.getElementById("check").setAttribute("svg", "on");
+          }
+          links[i].setAttribute("href", ref);
+        }
       }
-      links[i].setAttribute("href", ref);
-    }
-  }
 
-  function checkboxes() {
-    var ok = false;
-    var inputs = document.getElementsByTagName("input");
-    for(var i=0; i < inputs.length; i++) {
-      if (inputs[i].type == "checkbox" && inputs[i].name == "id[]" && inputs[i].checked) {
-        ok = true;
+      function checkboxes() {
+        var ok = false;
+        var inputs = document.getElementsByTagName("input");
+        for(var i=0; i < inputs.length; i++) {
+          if (inputs[i].type == "checkbox" && inputs[i].name == "id[]" && inputs[i].checked) {
+            ok = true;
+          }
+        }
+        return ok;
       }
-    }
-    return ok;
-  }
 
-  function submitForm() {
-    if (checkboxes() == true) {
-      myForm.action = "show.php";
-      myForm.submit();
-    } else {
-      alert("<? echo $msg['s3_err_js_no_file']; ?>");
-    }
-  }
+      function submitForm() {
+        if (checkboxes() == true) {
+          myForm.action = "show.php";
+          myForm.submit();
+        } else {
+          alert("<? echo $msg['s3_err_js_no_file']; ?>");
+        }
+      }
 
-  function showFreeMind() {
-      myForm.action = "freemind.php";
-      myForm.submit();
-  }
+      function showFreeMind() {
+          myForm.action = "freemind.php";
+          myForm.submit();
+      }
 
-  function exportODS() {
-    if (checkboxes() == true) {
-      myForm.action = "export_oo.php";
-      myForm.submit();
-    } else {
-      alert("<? echo $msg['s3_err_js_no_file']; ?>");
-    }
-  }
+      function exportODS() {
+        if (checkboxes() == true) {
+          myForm.action = "export_oo.php";
+          myForm.submit();
+        } else {
+          alert("<? echo $msg['s3_err_js_no_file']; ?>");
+        }
+      }
 
-  function showGraph() {
-    if (checkboxes() == true) {
-      myForm.action = "radar.php";
-      myForm.submit();
-    } else {
-      alert("<? echo $msg['s3_err_js_no_file']; ?>");
-    }
-  }
+      function showGraph() {
+        if (checkboxes() == true) {
+          myForm.action = "radar.php";
+          myForm.submit();
+        } else {
+          alert("<? echo $msg['s3_err_js_no_file']; ?>");
+        }
+      }
 
-  function showQuadrant() {
-    if (checkboxes() == true) {
-      myForm.action = "quadrant.php";
-      myForm.submit();
-    } else {
-      alert("<? echo $msg['s3_err_js_no_file']; ?>");
-    }
-  }
+      function showQuadrant() {
+        if (checkboxes() == true) {
+          myForm.action = "quadrant.php";
+          myForm.submit();
+        } else {
+          alert("<? echo $msg['s3_err_js_no_file']; ?>");
+        }
+      }
 
-  function setWeights() {
-    myForm.action = "set_weighting.php";
-    myForm.submit();
-  }
-</script>
+      function setWeights() {
+        myForm.action = "set_weighting.php";
+        myForm.submit();
+      }
+    </script>
   </head>
   <body>
+    <div id="bandeau">
+      <center>
+        <a href="index.php">Start page</a> |
+        <a href="upload.php">Upload an evaluation</a> |
+        <a href="search.php">Search for an evaluation</a>
+      </center>
+    </div>
     <center>
 <?php
   echo "      <img src='skins/$skin/o3s.png'/>\n";

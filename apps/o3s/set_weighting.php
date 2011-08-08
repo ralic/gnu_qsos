@@ -101,9 +101,34 @@
         myForm.action = "set_weighting.php";
         myForm.submit();
       }
+
+      function changeLang(lang) {
+        window.location = 'set_weighting.php?lang=' + lang;
+      }
     </script>
   </head>
   <body>
+    <div id="bandeau">
+      <div id="language">
+<?php
+  foreach($supported_lang as $l) {
+    $checked = $l;
+    if (strcmp($l, $lang) == 0) {
+      echo "        <input type='radio' onclick=\"changeLang('$l')\" checked=\"true\"/> $l\n";
+    } else {
+      echo "        <input type='radio' onclick=\"changeLang('$l')\"/> $l\n";
+    }
+  }
+?>
+      </div>
+      <center>
+<?php
+  echo "        <a href=\"index.php?lang=" . $lang . "\">Start page</a> |\n";
+  echo "        <a href=\"upload.php?lang=" . $lang . "\">Upload an evaluation</a> |\n";
+  echo "        <a href=\"search.php?lang=" . $lang . "\">Search for an evaluation</a>\n";
+?>
+      </center>
+    </div>
     <center>
 <?php
   echo "      <img src='skins/$skin/o3s.png'/>\n";

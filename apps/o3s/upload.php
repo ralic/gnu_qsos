@@ -32,6 +32,8 @@
  * You MUST choose a group / make sure permissions are OK before using O3S or it will break (especially the git part). If you can set a group to both apache and php stuff, use :
  *    setfacl -R -m default:group:$group_name:rwx $directory
  *    setfacl -R -m group:$group_name:rwx $directory
+ *    setfacl -R -m default:u:$group_name:rwx $directory
+ *    setfacl -R -m u:$group_name:rwx $directory
  *
  * You should not allow users to access the qsos directory remotely!
  * Once you have given a git account to O3S with a private key and uncommented the 'git push origin' lines, evaluations will be automatically added and pushed to the repository!
@@ -51,13 +53,32 @@
   echo "    <link REL=StyleSheet HREF='skins/$skin/o3s.css' TYPE='text/css'/>\n";
 ?>
     <meta http-equiv="Content-type" content="text/html; charset=UTF-8"/>
+    <script>
+      function changeLang(lang) {
+        window.location = 'upload.php?lang=' + lang;
+      }
+    </script>
   </head>
   <body>
     <div id="bandeau">
+      <div id="language">
+<?php
+  foreach($supported_lang as $l) {
+    $checked = $l;
+    if (strcmp($l, $lang) == 0) {
+      echo "        <input type='radio' onclick=\"changeLang('$l')\" checked=\"true\"/> $l\n";
+    } else {
+      echo "        <input type='radio' onclick=\"changeLang('$l')\"/> $l\n";
+    }
+  }
+?>
+      </div>
       <center>
-        <a href="index.php">Start page</a> |
-        <a href="upload.php">Upload an evaluation</a> |
-        <a href="search.php">Search for an evaluation</a>
+<?php
+  echo "        <a href=\"index.php?lang=" . $lang . "\">Start page</a> |\n";
+  echo "        <a href=\"upload.php?lang=" . $lang . "\">Upload an evaluation</a> |\n";
+  echo "        <a href=\"search.php?lang=" . $lang . "\">Search for an evaluation</a>\n";
+?>
       </center>
     </div>
     <center>

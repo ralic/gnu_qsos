@@ -87,6 +87,10 @@
         document.getElementById("c").value = c;
         myForm.submit();
       }
+
+      function changeLang(lang) {
+        window.location = 'show.php?lang=' + lang;
+      }
     </script>
   </head>
 <?php
@@ -106,9 +110,35 @@
   } else {
     echo "<body>\n";
   }
-  echo "<center>\n";
-  echo "<img src='skins/$skin/o3s.png'/>\n";
-  echo "<br/><br/>\n";
+?>
+    <div id="bandeau">
+      <div id="language">
+<?php
+  foreach($supported_lang as $l) {
+    $checked = $l;
+    if (strcmp($l, $lang) == 0) {
+      echo "        <input type='radio' onclick=\"changeLang('$l')\" checked=\"true\"/> $l\n";
+    } else {
+      echo "        <input type='radio' onclick=\"changeLang('$l')\"/> $l\n";
+    }
+  }
+?>
+      </div>
+      <center>
+<?php
+  echo "        <a href=\"index.php?lang=" . $lang . "\">Start page</a> |\n";
+  echo "        <a href=\"upload.php?lang=" . $lang . "\">Upload an evaluation</a> |\n";
+  echo "        <a href=\"search.php?lang=" . $lang . "\">Search for an evaluation</a>\n";
+?>
+      </center>
+    </div>
+    <center>
+<?php
+  echo "      <img src='skins/$skin/o3s.png'/>\n";
+?>
+        <br/>
+        <br/>
+<?php
   echo "<div style='font-weight: bold'>".$msg['s4_title']."<br/><br/>\n";
 
   $IdDB = mysql_connect($db_host ,$db_user, $db_pwd);
