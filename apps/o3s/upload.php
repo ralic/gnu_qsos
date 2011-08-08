@@ -111,7 +111,7 @@
     $file = $_FILES['myFile'];
 
     function displayUploadError($errorString) {
-      return "<div style='color: red'>Upload error: " . $errorString . "<br/>Check if permissions are correct</div>\n";
+      return "<div style='color: red' id='answer'>Upload error: " . $errorString . "<br/>Check if permissions are correct</div>\n</center>\n</body>\n</html>\n";
     }
 
     function cleanString($str) {
@@ -236,7 +236,7 @@
 //       die(displayUploadError("Can't push changes to origin"));
 //     }
 
-    echo "<div style='color: red'>File " . $filename . " successfully uploaded<br/></div>\n";
+    echo "<div style='color: red' id='answer'>File " . $filename . " successfully uploaded<br/></div>\n";
 
     // TODO Old code, to be removed
 //     $destination = $sheet.$delim.basename($file['name']);

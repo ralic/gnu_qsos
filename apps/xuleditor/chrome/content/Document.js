@@ -231,6 +231,9 @@ function Document() {
       }
       tmpFilename = clearString(tmpFilename) + ".qsos";
 
+      try { var language = myDoc.get("qsosMetadata/language"); } catch (e) { var language = ""; }
+      tmpUrl += "?lang=" + language.toLowerCase();
+
       getPrivilege();
       var retVals = {err: false, filename: tmpFilename, url: tmpUrl};
       window.openDialog('chrome://qsos-xuled/content/confirmUpload.xul', 'Confirm upload filename', 'chrome,dialog,modal', retVals);
@@ -266,10 +269,28 @@ function Document() {
 
     //Upload callback
     function requestdone() {
+      try {
       if (req.readyState == 4) {
         if (req.status == 200) {
-          // Everything should be ok here
-          alert(req.responseText);
+          // Everything should be ok here, but an error on the server side could have occured. Let's display the server answer:
+          var rep = req.responseText;
+          var answer = rep.search("id='answer'");
+          if (answer != -1) {
+            // We don't want to see the id... part, so we just skip it.
+            // Example output from upload.php (with good indentation, not really what we're getting from the server, yet):
+            // <div style='color: red' id='answer'>
+            //   Upload error: Can't commit changes: this evaluation may already be there!
+            //   <br/>
+            //   Check your evaluation and/or look for wrong permissions on the server side
+            // </div>
+            var message = rep.substr(answer + 12);
+            answer = message.search("</div>");
+            message = message.substr(0, answer);
+            message = message.replace("<br/>", "\n");
+            alert("The server answered:\n" + message);
+          } else {
+            alert("No clear answer from the server:\n" + rep.responseText);
+          }
         } else if (req.status == 400) {
           // The stuff we're sending seems incorrect
           alert("Upload error: This is a bug, please report it as:\n\"400 HTTP error code when sending evaluation\"");
@@ -277,6 +298,7 @@ function Document() {
           alert(strbundle.getString("uploadError") + "\n\nHTTP error code: " + req.status);
         }
       }
+      } catch (e) { alert(e.message); }
     }
 
     function serialize(node, depth) {
