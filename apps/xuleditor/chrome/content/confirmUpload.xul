@@ -41,6 +41,7 @@
 
   function ok() {
     window.arguments[0].filename = document.getElementById("filenameTextbox").value;
+    window.arguments[0].url = document.getElementById("urlTextbox").value;
     self.close();
   }
 

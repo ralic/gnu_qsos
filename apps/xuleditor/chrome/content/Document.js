@@ -287,13 +287,13 @@ function Document() {
             answer = message.search("</div>");
             message = message.substr(0, answer);
             message = message.replace("<br/>", "\n");
-            alert("The server answered:\n" + message);
+            alert(strbundle.getString("serverAnswer") + "\n" + message);
           } else {
-            alert("No clear answer from the server:\n" + rep.responseText);
+            alert(strbundle.getString("serverUnclearAnswer") + "\n" + rep);
           }
         } else if (req.status == 400) {
           // The stuff we're sending seems incorrect
-          alert("Upload error: This is a bug, please report it as:\n\"400 HTTP error code when sending evaluation\"");
+          alert("Upload error: This could be a bug, please report it as:\n\"400 HTTP error code when sending evaluation\"\nPlease, Check your internet settings");
         } else {
           alert(strbundle.getString("uploadError") + "\n\nHTTP error code: " + req.status);
         }

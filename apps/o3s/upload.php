@@ -121,46 +121,43 @@
     }
 
     $filename = basename($file['name']);
-
-    // Here we should get informations from the evaluation in order to validate it's upload (like template type, component name and version
-    if(isset($lang) == FALSE) { $lang="";}
-    if(isset($type) == FALSE) { $type="test";}
-
-    $lang = cleanString($lang);
-    $type = cleanString($type);
     $filename = cleanString($filename);
 
-    $evaluationDir = "qsos/repositories/incoming/" . $lang . "/evaluations/" . $type . "/";
+    // Temporary place to put evaluations, for XSD checks...
+    $evaluationDir = "qsos/repositories/incoming/";
 
-    // Creates the correct type directory in the correct language to hold the evaluation
-    exec("mkdir -p " . $evaluationDir, $output, $return_var);
-    if ($return_var != 0) {
-      die(displayUploadError("Can't create dir: " . $evaluationDir));
+    // Check if this directory exists
+    if(is_dir($evaluationDir) == FALSE) {
+      if(mkdir($evaluationDir, 0770, TRUE) == FALSE) {
+            die(displayUploadError("Can't create dir: " . $evaluationDir));
+      }
     }
 
     if (chdir($evaluationDir) == FALSE) {
       die(displayUploadError("Can't change directory to: " . $evaluationDir));
     }
 
-    // Resets git state (just in case, should do anything here)
+    // Resets git state (just in case, should not do anything particular here)
     exec("git reset --hard HEAD", $output, $return_var);
     if ($return_var != 0) {
       die(displayUploadError("Can't reset git dir"));
     }
 
+    // FIXME Uncomment those lines when you have given O3S an ssh key to pull/push to the savannah git repository
+//     exec("git pull origin", $output, $return_var);
+//     if ($return_var != 0) {
+//       die(displayUploadError("Can't pull origin"));
+//     }
+
+    // Move the uploaded file to the temporary directory
     if (move_uploaded_file($file['tmp_name'], $filename) == FALSE) {
       die(displayUploadError("Can't move file to: $evaluationDir"));
-    }
-
-    if (chmod($filename, 0660) == FALSE) {
-      die(displayUploadError("Can't chmod the file: " . $filename));
     }
 
     // Check the evaluation with the provided XSD
     // Code comming from : http://forums.devshed.com/xml-programming-19/validating-xml-against-xsd-with-php-430794.html
     // FIXME We should check it!!
-    function libxml_display_error($error)
-    {
+    function libxml_display_error($error) {
         $return = "<br/>\n";
         switch ($error->level) {
             case LIBXML_ERR_WARNING:
@@ -182,8 +179,7 @@
         return $return;
     }
 
-    function libxml_display_errors()
-    {
+    function libxml_display_errors() {
         $errors = libxml_get_errors();
         foreach ($errors as $error) {
             print libxml_display_error($error);
@@ -206,6 +202,29 @@
 //         die(displayUploadError("This file isn't a valid QSOS evaluation. Check it with the XSD from git, found in git_root/tools/xsd/QSOS_2.0.xsd"));
 //     }
 
+    // As the evaluation can now be considered valid, we try to retrieve some informations from it
+    // TODO: get the language, type, component name from the evaluation
+    if(isset($lang) == FALSE) { $lang="en";}
+    if(isset($type) == FALSE) { $type="test";}
+
+    $lang = cleanString($lang);
+    $type = cleanString($type);
+
+    $evaluationDir = $lang . "/evaluations/" . $type . "/";
+
+    if (rename($filename, $evaluationDir . $filename) == FALSE) {
+      die(displayUploadError("Can't move file to:" . $evaluationDir));
+    }
+
+    if (chdir($evaluationDir) == FALSE) {
+      die(displayUploadError("Can't change directory to: " . $evaluationDir));
+    }
+
+    if (chmod($filename, 0660) == FALSE) {
+      die(displayUploadError("Can't chmod the file: " . $filename));
+    }
+
+    // Makes sure O3S git setup is ok
     exec("git config user.name \"O3S\"", $output, $return_var);
     if ($return_var != 0) {
       die(displayUploadError("Can't setup git user.name"));
@@ -216,37 +235,23 @@
       die(displayUploadError("Can't setup git user.email"));
     }
 
-    // FIXME Uncomment those lines when you have given O3S an ssh key to pull/push to the savannah git repository
-//     exec("git pull origin", $output, $return_var);
-//     if ($return_var != 0) {
-//       die(displayUploadError("Can't pull origin"));
-//     }
-
     exec("git add " . $filename, $output, $return_var);
     if ($return_var != 0) {
       die(displayUploadError("Can't add file " . $filename));
     }
 
-    exec("git commit -m \"Adds evaluation coming from O3S (" . $filename . ") in incoming folder\"", $output, $return_var);
+    exec("git commit -m \"Adds evaluation coming from O3S (" . $filename . ") in incoming/" . $evaluationDir . "\"", $output, $return_var);
     if ($return_var != 0) {
       die(displayUploadError("Can't commit changes: this evaluation may already be there!"));
     }
 
+    // FIXME Uncomment me once you're ready to push evaluations to the main repository
 //     exec("git push origin", $output, $return_var);
 //     if ($return_var != 0) {
 //       die(displayUploadError("Can't push changes to origin"));
 //     }
 
     echo "<div style='color: red' id='answer'>File " . $filename . " successfully uploaded<br/></div>\n";
-
-    // TODO Old code, to be removed
-//     $destination = $sheet.$delim.basename($file['name']);
-//     if (move_uploaded_file($file['tmp_name'], $destination)) {
-//       chmod ($destination, 0660);
-//       echo "<div style='color: red'>File ".basename($file['name'])." successfully uploaded<br/></div>";
-//     } else {
-//       echo "<div style='color: red'>Upload error: ".$file['error']."<br/></div>";
-//     }
   }
 
 ?>
