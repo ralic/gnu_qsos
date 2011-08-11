@@ -205,7 +205,7 @@ echo "    <link rel=StyleSheet href='skins/$skin/o3s.css' type='text/css'/>\n";
   echo "<input type='button' value='".$msg['s3_button_next']."' onclick='submitForm()'>";
   echo "<br/><br/>";
   echo $msg['s3_check_svg'].
-    " <input id='check' type='checkbox' name='svg' value='yes' onclick='toggleSVG()' svg='on' checked><br/><br/>";
+    " <input id='check' type='checkbox' name='svg' value='yes' onclick='toggleSVG()' svg='on' checked=\"true\"><br/><br/>";
   echo "<input type='button' value='".$msg['s3_graph']."' onclick='showGraph()'><br/><br/>";
   echo "<input type='button' value='".$msg['s3_quadrant']."' onclick='showQuadrant()'>";
 ?>

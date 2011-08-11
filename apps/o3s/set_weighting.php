@@ -83,7 +83,6 @@
       <div id="language">
 <?php
   foreach($supported_lang as $l) {
-    $checked = $l;
     if (strcmp($l, $lang) == 0) {
       echo "        <input type='radio' onclick=\"changeLang('$l')\" checked=\"true\"/> $l\n";
     } else {
@@ -115,7 +114,7 @@
     if(!isset($_REQUEST[$param])) {
       echo "" . $param . " is not set!<br/>";
     } else {
-      $param = $_REQUEST[$param];
+      $$param = $_REQUEST[$param];
     }
   }
 
