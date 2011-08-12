@@ -95,6 +95,12 @@
       </div>
       <p>
         <form id='myForm' enctype='multipart/form-data' method='POST' action='upload.php'>
+          If you want to be credited as an author for this commit in Git, please fill this form :
+          <br/>
+          Name: <input type='text' id='commitAuthorName' name='commitAuthorName'/>
+          <br/>
+          Email: <input type='text' id='commitAuthorEmail' name='commitAuthorEmail'/>
+          <br/>
           <input type='file' id='myFile' name='myFile'/>
 <?php
   echo "          <input type='text' id='lang' name='lang' value='" . $lang . "' hidden='true'/>\n";
@@ -111,7 +117,7 @@
     $file = $_FILES['myFile'];
 
     function displayUploadError($errorString) {
-      return "<div style='color: red' id='answer'>Upload error: " . $errorString . "<br/>Check if permissions are correct</div>\n</center>\n</body>\n</html>\n";
+      return "<br/><div style='color: red' id='answer'>Upload error: " . $errorString . "<br/>Check if permissions are correct</div>\n</center>\n</body>\n</html>\n";
     }
 
     function cleanString($str) {
@@ -211,36 +217,68 @@
 
     $evaluationDir = $lang . "/evaluations/" . $type . "/";
 
+    $evaluationUpdated = FALSE;
+    if (file_exists($evaluationDir . $filename) == TRUE) {
+      $evaluationUpdated = TRUE;
+    }
+
     if (rename($filename, $evaluationDir . $filename) == FALSE) {
-      die(displayUploadError("Can't move file to:" . $evaluationDir));
+      unlink($filename);
+      die(displayUploadError("Can't move file to: $evaluationDir"));
     }
 
     if (chdir($evaluationDir) == FALSE) {
+      unlink($evaluationDir . $filename);
       die(displayUploadError("Can't change directory to: " . $evaluationDir));
     }
 
     if (chmod($filename, 0660) == FALSE) {
+      unlink($filename);
       die(displayUploadError("Can't chmod the file: " . $filename));
     }
 
     // Makes sure O3S git setup is ok
     exec("git config user.name \"O3S\"", $output, $return_var);
     if ($return_var != 0) {
+      unlink($filename);
       die(displayUploadError("Can't setup git user.name"));
     }
 
     exec("git config user.email \"qsos-general@nongnu.org\"", $output, $return_var);
     if ($return_var != 0) {
+      unlink($filename);
       die(displayUploadError("Can't setup git user.email"));
     }
 
     exec("git add " . $filename, $output, $return_var);
     if ($return_var != 0) {
+      unlink($filename);
       die(displayUploadError("Can't add file " . $filename));
     }
 
-    exec("git commit -m \"Adds evaluation coming from O3S (" . $filename . ") in incoming/" . $evaluationDir . "\"", $output, $return_var);
+    if ($evaluationUpdated) {
+      $commitMessage = "\"Updates evaluation coming from O3S (" . $filename . ") in incoming/" . $evaluationDir . "\"";
+    } else {
+      $commitMessage = "\"Adds evaluation coming from O3S (" . $filename . ") in incoming/" . $evaluationDir . "\"";
+    }
+
+    // Adds the checks in order to add the author to the commit (check this code !)
+    $authorSet = FALSE;
+    if (isset($_POST['commitAuthorName'])) {
+      $authorSet = TRUE;
+      $authorOption = cleanString($_POST['commitAuthorName']);
+      if (isset($_POST['commitAuthorEmail'])) {
+        $authorOption += " <" . cleanString($_POST['commitAuthorEmail']) . ">";
+      }
+    }
+
+    if ($authorSet) {
+      exec("git commit -m " . $commitMessage . " --author=" . $authorOption, $output, $return_var);
+    } else {
+      exec("git commit -m " . $commitMessage, $output, $return_var);
+    }
     if ($return_var != 0) {
+      unlink($filename);
       die(displayUploadError("Can't commit changes: this evaluation may already be there!"));
     }
 
