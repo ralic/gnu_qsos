@@ -1,9 +1,14 @@
 Revision history for O3S
 
-1.0 2007/02/02
+2.0 TO BE CONFIRMED
+  - QSOS support
+  - New uploadpage to make it work with the git backend
 
 1.1 2009/05/17
   - New database backend for evaluations metadata
   - Better localization (user can change locale from the GUI)
   - ODF export for multiple evaluations of the same family
   - Several bugfixes
+
+1.0 2007/02/02
+  - Initial release

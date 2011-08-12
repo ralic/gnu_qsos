@@ -1,5 +1,31 @@
 Revision history for QSOS XUL Editor
 
+2.0 TO BE CONFIRMED
+       - Support for Firefox 3.5 to 6.*
+       - Major changes:
+         * The editor takes a lot more space on the screen than before: 1024x728 will feel small, but 1280x1024 and bigger should be good
+         * UI changes, featuring a clean interface with a button toolbar for quick access to every functionality
+         * Supports the Open Source Cartouche and the QSOS 2.0 file scheme
+         * New shortcuts and access keys for almost every action available (try Ctrl + o, Ctrl + s...)
+         * Offers the choice to migrate from previous QSOS version (<2.0) as those aren't editable in their current form anymore
+         * Offers the choice to export the OSC from an evaluation
+         * Displays OSC/template versions and warn about QSOS version mismatch
+         * You can now update the criteria part without losing all of your work using the 'update from template' feature
+         * Export to freemind template available
+         * O3S support : you can upload your evaluation to the O3S server, making them available in the git repository if they are complete and valid
+      - Bugs fixed:
+         * All bugs on https://savannah.nongnu.org/bugs/?group=qsos are fixed! (one task remains to be done)
+         * Properly handle error in loading files with inconsistent XML scheme
+         * Opening files from (command line) argument now works as expected (not read-only anymore)
+         * Fix labels on exiting dialog
+         * Each date field has a checkbox attached to it in order to enable/disable it properly
+         * Adds correct extensions to files saved from the editor
+      - Look:
+         * Updated icons from the Oxygen team
+         * Open Source Cartouche Logo
+      - Translations:
+         * French and english translations updated
+
 1.1  2011/07/06
       - Major changes:
         * The toolbar as been removed, introducing a new tab based design
@@ -11,7 +37,7 @@ Revision history for QSOS XUL Editor
         * Closing a new file prompt for saving
         * Adding/removing authors in the general tab works as exepected and raise exceptions
         * Several bugs related to closing files fixed
-      - Look: 
+      - Look:
         * Updated icons from the Oxygen team
       - Translations:
         * French and english translations updated

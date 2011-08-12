@@ -5,6 +5,7 @@ TODO list:
     * Improve QSOS 2.0 version support
     * Find a way to validate sheets before opening/saving them
     * Clean the code, remove alert(), translate error messages
+    * Tell O3S who we are when we're uploading evaluations (require changes in O3S too)
 
  - Bugs to fix:
     * Fix space related stuff (buttons, flex...)
