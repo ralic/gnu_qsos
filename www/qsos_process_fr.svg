@@ -35,8 +35,8 @@
     </rdf:RDF>
   </metadata>
   <sodipodi:namedview
-     inkscape:window-height="850"
-     inkscape:window-width="1440"
+     inkscape:window-height="1138"
+     inkscape:window-width="954"
      inkscape:pageshadow="2"
      inkscape:pageopacity="0.0"
      guidetolerance="10.0"
@@ -47,13 +47,13 @@
      pagecolor="#ffffff"
      id="base"
      showgrid="false"
-     inkscape:zoom="3.461116"
-     inkscape:cx="367.82342"
-     inkscape:cy="207.66337"
-     inkscape:window-x="1437"
-     inkscape:window-y="-3"
+     inkscape:zoom="1.1383406"
+     inkscape:cx="367.20119"
+     inkscape:cy="194.44595"
+     inkscape:window-x="960"
+     inkscape:window-y="0"
      inkscape:current-layer="svg2"
-     inkscape:window-maximized="1"
+     inkscape:window-maximized="0"
      fit-margin-top="0"
      fit-margin-left="0"
      fit-margin-right="0"
@@ -670,7 +670,7 @@
   <g
      style="visibility:visible"
      id="g361"
-     transform="translate(-155.34464,-7222.6136)">
+     transform="translate(-155.34464,-7222.6135)">
     <g
        id="g363"
        style="fill:#a066cc;stroke:none">
@@ -713,7 +713,7 @@
   <g
      style="visibility:visible"
      id="g387"
-     transform="translate(-223.61554,-7222.6136)">
+     transform="translate(-223.61554,-7222.6135)">
     <g
        id="g389">
       <g
@@ -736,7 +736,7 @@
   <g
      style="visibility:visible"
      id="g399"
-     transform="translate(-155.34464,-7222.6136)">
+     transform="translate(-155.34464,-7222.6135)">
     <desc
        id="desc401">Drawing</desc>
     <g
@@ -824,7 +824,7 @@
   <g
      style="visibility:visible"
      id="g449"
-     transform="translate(-217.13956,-7017.8016)">
+     transform="translate(-217.13956,-7017.8015)">
     <g
        id="g451">
       <g
@@ -847,7 +847,7 @@
   <g
      style="visibility:visible"
      id="g473"
-     transform="translate(-155.34464,-7222.6136)">
+     transform="translate(-155.34464,-7222.6135)">
     <desc
        id="desc475">Drawing</desc>
     <g
@@ -895,7 +895,7 @@
   <g
      style="visibility:visible"
      id="g499"
-     transform="translate(-87.073736,-7165.4286)">
+     transform="translate(-87.073732,-7165.4285)">
     <desc
        id="desc501">Drawing</desc>
     <g
@@ -923,7 +923,7 @@
   <g
      style="visibility:visible"
      id="g515"
-     transform="translate(-155.34464,-7222.6136)">
+     transform="translate(-155.34464,-7222.6135)">
     <desc
        id="desc517">Drawing</desc>
     <g
@@ -1011,7 +1011,7 @@
   <g
      style="visibility:visible"
      id="g565"
-     transform="translate(-253.13956,-6977.3386)">
+     transform="translate(-253.13956,-6977.3385)">
     <g
        id="g567">
       <g
@@ -1034,7 +1034,7 @@
   <g
      style="visibility:visible"
      id="g589"
-     transform="translate(-155.34464,-7222.6136)">
+     transform="translate(-155.34464,-7222.6135)">
     <desc
        id="desc591">Drawing</desc>
     <g
@@ -1082,7 +1082,7 @@
   <g
      style="visibility:visible"
      id="g615"
-     transform="translate(-87.073736,-7154.3426)">
+     transform="translate(-87.073732,-7154.3425)">
     <desc
        id="desc617">Drawing</desc>
     <g
@@ -1110,7 +1110,7 @@
   <g
      style="visibility:visible"
      id="g631"
-     transform="translate(-155.34464,-7222.6136)">
+     transform="translate(-155.34464,-7222.6135)">
     <desc
        id="desc633">Drawing</desc>
     <g
@@ -1198,7 +1198,7 @@
   <g
      style="visibility:visible"
      id="g681"
-     transform="translate(-275.80704,-7359.1556)">
+     transform="translate(-275.80704,-7359.1555)">
     <g
        id="g683">
       <g
@@ -1221,7 +1221,7 @@
   <g
      style="visibility:visible"
      id="g705"
-     transform="translate(-155.34464,-7222.6136)">
+     transform="translate(-155.34464,-7222.6135)">
     <desc
        id="desc707">Drawing</desc>
     <g
@@ -1269,7 +1269,7 @@
   <g
      style="visibility:visible"
      id="g731"
-     transform="translate(-291.88644,-7154.0326)">
+     transform="translate(-291.88644,-7154.0325)">
     <desc
        id="desc733">Drawing</desc>
     <g
@@ -1297,7 +1297,7 @@
   <g
      style="visibility:visible"
      id="g747"
-     transform="translate(-155.34464,-7222.6136)">
+     transform="translate(-155.34464,-7222.6135)">
     <desc
        id="desc749">Drawing</desc>
     <g
@@ -1385,7 +1385,7 @@
   <g
      style="visibility:visible"
      id="g797"
-     transform="translate(-210.28336,-7339.5856)">
+     transform="translate(-210.28336,-7339.5855)">
     <g
        id="g799">
       <g
@@ -1408,7 +1408,7 @@
   <g
      style="visibility:visible"
      id="g817"
-     transform="translate(-155.34464,-7222.6136)">
+     transform="translate(-155.34464,-7222.6135)">
     <g
        id="g819"
        style="fill:#008df6;stroke:none">
@@ -1463,7 +1463,7 @@
   <g
      style="visibility:visible"
      id="g849"
-     transform="translate(-190.34464,-7268.3296)">
+     transform="translate(-190.34464,-7268.3295)">
     <g
        id="g851">
       <g
@@ -1561,7 +1561,7 @@
   <g
      style="visibility:visible"
      id="g909"
-     transform="translate(-155.34464,-7222.6136)">
+     transform="translate(-155.34464,-7222.6135)">
     <g
        id="g911"
        style="fill:#b6da00;stroke:none">
@@ -1616,7 +1616,7 @@
   <g
      style="visibility:visible"
      id="g941"
-     transform="translate(-155.34464,-7296.4406)">
+     transform="translate(-155.34464,-7296.4405)">
     <g
        id="g943">
       <g
@@ -1684,7 +1684,7 @@
   <g
      style="visibility:visible"
      id="g985"
-     transform="translate(-155.34464,-7222.6136)">
+     transform="translate(-155.34464,-7222.6135)">
     <g
        id="g987"
        style="fill:#ffb03b;stroke:none">
@@ -1739,7 +1739,7 @@
   <g
      style="visibility:visible"
      id="g1017"
-     transform="translate(-206.86221,-7427.4616)">
+     transform="translate(-206.86221,-7427.4615)">
     <g
        id="g1019">
       <g
@@ -1821,7 +1821,7 @@
   <g
      style="visibility:visible"
      id="g1069"
-     transform="translate(-155.34464,-7222.6136)">
+     transform="translate(-155.34464,-7222.6135)">
     <g
        id="g1071"
        style="fill:#7d7d7d;stroke:none">
@@ -1836,7 +1836,7 @@
   <g
      style="visibility:visible"
      id="g1081"
-     transform="translate(-156.34458,-7222.6136)">
+     transform="translate(-156.34458,-7222.6135)">
     <g
        id="g1083">
       <g
@@ -1896,7 +1896,7 @@
   <g
      style="visibility:visible"
      id="g1121"
-     transform="translate(-155.34464,-7222.6136)">
+     transform="translate(-155.34464,-7222.6135)">
     <desc
        id="desc1123">Drawing</desc>
     <g
@@ -1956,7 +1956,7 @@
   <g
      style="visibility:visible"
      id="g1153"
-     transform="translate(-155.34464,-7288.4406)">
+     transform="translate(-155.34464,-7288.4405)">
     <desc
        id="desc1155">Drawing</desc>
     <g
@@ -2066,7 +2066,7 @@
   <g
      style="visibility:visible"
      id="g1217"
-     transform="translate(-155.34464,-7563.9686)">
+     transform="translate(-155.34464,-7563.9685)">
     <desc
        id="desc1219">Drawing</desc>
     <g
@@ -2086,7 +2086,7 @@
   <g
      style="visibility:visible"
      id="g1229"
-     transform="translate(-155.34464,-6862.8036)">
+     transform="translate(-155.34464,-6862.8035)">
     <desc
        id="desc1231">Drawing</desc>
     <g
@@ -2140,7 +2140,7 @@
   <g
      style="visibility:visible"
      id="g1259"
-     transform="translate(-129.34849,-7260.9086)">
+     transform="translate(-129.34849,-7260.9085)">
     <desc
        id="desc1261">Drawing</desc>
     <g
@@ -2194,7 +2194,7 @@
   <g
      style="visibility:visible"
      id="g1289"
-     transform="translate(-155.34464,-7086.0726)">
+     transform="translate(-155.34464,-7086.0725)">
     <desc
        id="desc1291">Drawing</desc>
     <g
@@ -2214,7 +2214,7 @@
   <g
      style="visibility:visible"
      id="g1309"
-     transform="translate(-155.34464,-7154.3426)">
+     transform="translate(-155.34464,-7154.3425)">
     <g
        id="g1311"
        style="fill:#7d7d7d;stroke:none">
@@ -2228,7 +2228,7 @@
   </g>
   <g
      id="g8089"
-     transform="translate(-71.128466,-5598.2476)">
+     transform="translate(-71.128462,-5598.2475)">
     <g
        transform="translate(-76.997256,-2053.2602)"
        id="g1321"
@@ -2287,7 +2287,7 @@
   <g
      style="visibility:visible"
      id="g1355"
-     transform="translate(-155.34464,-7563.9686)">
+     transform="translate(-155.34464,-7563.9685)">
     <g
        id="g1357"
        style="fill:#7d7d7d;stroke:none">
@@ -2301,7 +2301,7 @@
   </g>
   <g
      id="g8074"
-     transform="translate(-48.34723,-5491.1866)">
+     transform="translate(-48.347226,-5491.1865)">
     <g
        transform="translate(-76.997256,-2053.2602)"
        id="g1367"
@@ -2360,7 +2360,7 @@
   <g
      style="visibility:visible"
      id="g1405"
-     transform="translate(-18.802836,-7086.0726)">
+     transform="translate(-18.802832,-7086.0725)">
     <g
        id="g1407"
        style="fill:#7d7d7d;stroke:none">
@@ -2375,7 +2375,7 @@
   <g
      style="visibility:visible"
      id="g1417"
-     transform="translate(-155.34464,-7069.3756)">
+     transform="translate(-155.34464,-7069.3755)">
     <g
        id="g1419">
       <g
@@ -2424,7 +2424,7 @@
   <g
      style="visibility:visible"
      id="g1447"
-     transform="translate(-70.13434,-7427.4266)">
+     transform="translate(-70.134336,-7427.4265)">
     <g
        id="g1449"
        style="fill:#7d7d7d;stroke:none">
@@ -2438,7 +2438,7 @@
   </g>
   <g
      id="g8036"
-     transform="translate(-151.55784,-5831.4756)">
+     transform="translate(-151.55784,-5831.4755)">
     <g
        transform="translate(-76.997256,-2053.2602)"
        id="g1459"
@@ -2486,7 +2486,7 @@
   <g
      style="visibility:visible"
      id="g1507"
-     transform="matrix(0.9998174,0.01910918,-0.01910918,0.9998174,34.054133,-7390.6223)">
+     transform="matrix(0.9998174,0.01910918,-0.01910918,0.9998174,34.054137,-7390.6222)">
     <g
        id="g1509"
        style="fill:#cc0000;stroke:none">
@@ -4305,7 +4305,7 @@
   <g
      style="visibility:visible"
      id="g2421"
-     transform="translate(-155.34464,-7222.6136)">
+     transform="translate(-155.34464,-7222.6135)">
     <g
        id="g2423"
        style="fill:#cc0000;stroke:none">

@@ -10,7 +10,7 @@
    xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="892.7334"
+   width="905.06738"
    height="518.57092"
    id="svg2"
    sodipodi:version="0.32"
@@ -720,21 +720,21 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.93303299"
-     inkscape:cx="587.00644"
-     inkscape:cy="225.69997"
+     inkscape:zoom="0.92368813"
+     inkscape:cx="452.53369"
+     inkscape:cy="259.28544"
      inkscape:document-units="px"
      inkscape:current-layer="g1580"
-     inkscape:window-width="1440"
-     inkscape:window-height="850"
-     inkscape:window-x="1437"
-     inkscape:window-y="-3"
+     inkscape:window-width="954"
+     inkscape:window-height="1138"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
      showgrid="true"
      fit-margin-top="0"
      fit-margin-left="0"
      fit-margin-right="0"
      fit-margin-bottom="0"
-     inkscape:window-maximized="1" />
+     inkscape:window-maximized="0" />
   <metadata
      id="metadata7">
     <rdf:RDF>
@@ -751,7 +751,7 @@
      inkscape:label="Calque 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(-73.609375,-74.094483)">
+     transform="translate(-67.212891,-74.094483)">
     <g
        id="g1580"
        inkscape:export-filename="/home/raph/smb4k/osc-server/osc/QSOS/Communication/Images/Schemas/QSOS-tools.png"
@@ -1447,7 +1447,7 @@
              y="184.86011">Control</tspan><tspan
              sodipodi:role="line"
              id="tspan1753"
-             x="920.15137"
+             x="920.56152"
              y="204.86011">Publication </tspan></text>
         <path
            d="m 833.80244,217.47649 c -41.21864,0 -82.44099,0 -123.65591,0 -12.41472,0 -5.92081,-28.95725 -5.92081,-39.27543 0,-10.24107 -6.75068,-57.80264 0,-65.14799 4.86764,-5.27475 42.33135,0 49.24951,0 24.79965,0 49.59931,0 74.40268,0 12.41466,0 5.92081,28.9688 5.92081,39.27927 0.004,21.71601 0.004,43.43971 0.004,65.14415"
