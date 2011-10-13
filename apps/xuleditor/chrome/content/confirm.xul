@@ -2,28 +2,29 @@
 <?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
 <!DOCTYPE window SYSTEM "chrome://qsos-xuled/locale/confirm.dtd">
 
-<dialog id="confirm" title="&confirm.title;"
+<dialog id="confirm" title="&confirm;"
         xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
-	buttons="accept,cancel"
-	ondialogaccept="return doOK();"
-        ondialogcancel="return doCancel();"
-	onload="init();">
-	
+        buttons="accept,extra1,extra2" ondialogextra1="return save();"
+        ondialogextra2="return saveAs();" onload="init();"
+        buttonlabelextra1="&save;" buttonlabelextra2="&saveAs;">
+
 <script type="application/x-javascript">
 function init() {
-	var content = window.arguments[0];
-	document.getElementById("content").value = content;
-}
-	
-function doOK() {
-	//Call window opener callback function
-	window.arguments[1]();
-	return true;
+  var content = window.arguments[0];
+  document.getElementById("content").value = content;
 }
 
-function doCancel() {
-	return true;
+function save() {
+  window.arguments[1]();
+  self.close();
 }
+
+function saveAs() {
+  window.arguments[2]();
+  self.close();
+
+}
+
 </script>
 
 <description id = "content" value = "?"/>

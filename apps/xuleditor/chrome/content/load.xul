@@ -2,20 +2,16 @@
 <?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
 <!DOCTYPE dialog SYSTEM "chrome://qsos-xuled/locale/load.dtd">
 
-<dialog id="Load" title="&load.label;"
+<dialog id="Load" title="&load;"
         xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
-	buttons="accept,cancel"
-	width="300px"
-	height="500px"
-        ondialogaccept="return doOK();"
-        ondialogcancel="cancelDialog();"
-	onload="init();">
+        buttons="accept,cancel" width="300px" height="500px"
+        ondialogaccept="return doOK();" onload="init();" flex="1">
 
 <script type="application/x-javascript" src="load.js"></script>
 
 <tree id="evalTree" flex="1" ondblclick="checkLabel();">
 	<treecols>
-		<treecol id="name" width="300px" label="&label1.value;" primary="true" flex="1"/>
+    <treecol id="name" width="300px" label="&evaluations;" primary="true" flex="1"/>
 	</treecols>
 </tree>
 

@@ -14,7 +14,7 @@ If not done yet, install xulrunner and register it (xulrunner --register-global)
 Unzip xuleditor-application-<version>.zip file where it fits you.
 
 On MacOS
-/Library/Frameworks/XUL.framework/xulrunner-bin --install-app /path/xuleditor-application-<version>.zip will generate an .app 
+/Library/Frameworks/XUL.framework/xulrunner-bin --install-app /path/xuleditor-application-<version>.zip will generate an .app
 
 LAUNCHING ON LINUX
 

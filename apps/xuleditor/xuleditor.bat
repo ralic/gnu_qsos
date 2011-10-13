@@ -2,7 +2,7 @@
 
 IF ""=="%1" GOTO NODEBUG
 IF "%1"=="debug" GOTO DEBUG
-    
+
 echo "usage: xuleditor [debug]"
 GOTO END
 

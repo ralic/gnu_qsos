@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-#Copyright: 2006 Goneri Le Bouder 
+#Copyright: 2006 Goneri Le Bouder
 #License:
 #
 # This program is free software; you can redistribute it and/or modify

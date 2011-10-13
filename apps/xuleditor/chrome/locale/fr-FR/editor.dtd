@@ -1,49 +1,96 @@
-<!ENTITY QSOS.label "Editeur XUL QSOS">
-<!ENTITY file-menu.label "Fichier">
-<!ENTITY file-new.label "Nouveau fichier">
-<!ENTITY file-open.label "Ouvrir fichier local">
-<!ENTITY file-open-remote.label "Ouvrir fichier distant">
-<!ENTITY file-save.label "Sauvegarder">
-<!ENTITY file-saveas.label "Sauvegarder sous">
-<!ENTITY file-save-remote.label "Sauvegarder sur le serveur">
-<!ENTITY file-close.label "Fermer">
-<!ENTITY file-exit.label "Sortir">
-<!ENTITY tree-menu.label "Arbre">
-<!ENTITY tree-expand.label "Exploser">
-<!ENTITY tree-collapse.label "Aplatir">
-<!ENTITY chat-menu.label "Chat">
-<!ENTITY chat-start.label "Se connecter">
-<!ENTITY chat-end.label "Se déconnecter">
-<!ENTITY chat-nick.label "Pseudonyme">
-<!ENTITY help-menu.label "Aide">
-<!ENTITY help-about.label "A propos">
-<!ENTITY name.label "Critères">
-<!ENTITY g-evaluation.label "Evaluation">
-<!ENTITY t-header.label "Entête">
-<!ENTITY t-c-title.label "Critères">
-<!ENTITY t-chart.label "Graphe">
-<!ENTITY g-software.label "Logiciel">
-<!ENTITY f-software.value "Nom">
-<!ENTITY f-release.value "Version">
-<!ENTITY f-sotwarefamily.value "Type de logiciel">
-<!ENTITY f-license.value "Licence">
-<!ENTITY f-desc.value "Description">
-<!ENTITY f-url.value "Site Web">
-<!ENTITY f-demourl.value "Site de démonstration">
-<!ENTITY authors.title "Auteurs">
-<!ENTITY f-a-name.value "Nom">
-<!ENTITY f-a-email.value "Courriel">
-<!ENTITY button1.label "Ajouter">
-<!ENTITY button2.label "Supprimer">
-<!ENTITY f-a-list "Auteurs">
-<!ENTITY label1.value "Description">
-<!ENTITY label2.value "Score">
-<!ENTITY f-c-desc0.label "Score 0">
-<!ENTITY f-c-desc1.label "Score 1">
-<!ENTITY f-c-desc2.label "Score 2">
-<!ENTITY f-c-comments.value "Commentaires">
-<!ENTITY chat-conversation "Conversation">
-<!ENTITY chat-input "Dites quelquechose">
-<!ENTITY chat-send "Envoyer">
-<!ENTITY chat-roster "Participants">
-<!ENTITY t-chat.label "Chat">
+<!--
+ **  Copyright (C) 2006-2011 Atos Origin
+ **
+ **  Author: Raphael Semeteys <raphael.semeteys@atosorigin.com>
+ **          Timothée Ravier <timothee.ravier@atosorigin.com>
+ **
+ **  This program is free software; you can redistribute it and/or modify
+ **  it under the terms of the GNU General Public License as published by
+ **  the Free Software Foundation; either version 2 of the License, or
+ **  (at your option) any later version.
+ **
+ **  This program is distributed in the hope that it will be useful,
+ **  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ **  GNU General Public License for more details.
+ **
+ **  You should have received a copy of the GNU General Public License
+ **  along with this program; if not, write to the Free Software
+ **  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
+ **
+ **
+ **  QSOS XUL Editor
+ **  editor.dtd: french translations
+!-->
+
+<!ENTITY QSOSEditor "Editeur XUL QSOS">
+
+<!-- Tabs !-->
+<!ENTITY fileTab "  Fichier ">
+<!ENTITY generalTab "  Général ">
+<!ENTITY criteriaTab "  Critères ">
+<!ENTITY chartTab "  Graphe ">
+<!ENTITY aboutTab "  A propos ">
+
+<!-- File Tab !-->
+<!ENTITY newFile "  Nouveau fichier                ">
+<!ENTITY openLocalFile "  Ouvrir un fichier local        ">
+<!ENTITY openRemoteFile "  Ouvrir fichier distant         ">
+<!ENTITY saveFile "  Enregistrer                       ">
+<!ENTITY saveFileAs "  Enregistrer sous              ">
+<!ENTITY saveRemoteFile "  Enregistrer sur le serveur">
+<!ENTITY closeFile "  Fermer le fichier                ">
+<!ENTITY exit "  Quitter                              ">
+<!ENTITY description1 "Veuillez ouvrir une évalutaion QSOS (Ouvrir un fichier local ou Ouvrir un fichier distant) ou en commencer une nouvelle à partir d'un patron (Nouveau Fichier).">
+<!ENTITY description2 "La fonction 'Sauvegarder sur le serveur' n'est plus disponible pour l'instant.">
+<!ENTITY description3 "Vous pouvez envoyer vos évaluations sur la liste de discussion de QSOS :">
+<!ENTITY maillingList "qsos-french@nongnu.org">
+
+<!-- General Tab !-->
+<!ENTITY software "Logiciel">
+<!ENTITY softwareName "Nom">
+<!ENTITY release "Version">
+<!ENTITY sotwareFamily "Type de logiciel">
+<!ENTITY license "Licence">
+<!ENTITY softwareDescription "Description">
+<!ENTITY url "Site Web">
+<!ENTITY demoUrl "Site de démonstration">
+<!ENTITY authors "Auteurs :">
+<!ENTITY evaluation "Evaluation">
+<!ENTITY authorName "Nom">
+<!ENTITY authorEmail "Courriel">
+<!ENTITY addAuthorButton "    Ajouter  ">
+<!ENTITY delAuthorButton " Supprimer">
+
+<!-- Criteria Tab !-->
+<!ENTITY criteriaName "Critères">
+<!ENTITY expandTree "Exploser tout">
+<!ENTITY collapseTree "Tout aplatir">
+<!ENTITY criteriaDescription "Description">
+<!ENTITY score "Score">
+<!ENTITY score0 "Score 0">
+<!ENTITY score1 "Score 1">
+<!ENTITY score2 "Score 2">
+<!ENTITY comments "Commentaires">
+
+<!-- Chart Tab !-->
+
+<!-- About Tab !-->
+<!ENTITY xuleditorName "QSOS XUL Editor v1.1">
+<!ENTITY xuleditorLicense "Logiciel sous licence GNU Public License version 2 :">
+<!ENTITY xuleditorLicenseUrl "http://www.gnu.org/licenses/gpl-2.0.html">
+<!ENTITY currentQSOSVersion "Version actuelle de QSOS : 1.6">
+<!ENTITY supportedQSOSVersions "Versions supportées : 1.6">
+<!ENTITY xuleditorAuthors "Auteurs :">
+<!ENTITY xuleditorAuthorName1 "Raphael Semeteys">
+<!ENTITY xuleditorAuthorEmail1 "raphael.semeteys@atosorigin.com">
+<!ENTITY xuleditorAuthorName2 "Timothée Ravier">
+<!ENTITY xuleditorAuthorEmail2 "timothee.ravier@atosorigin.com">
+<!ENTITY iconsetAuthors "Icones réalisées par Oxygen Team (KDE) :">
+<!ENTITY iconsetUrl "http://www.oxygen-icons.org">
+<!ENTITY sourceCode "Code source disponible à l'adresse :">
+<!ENTITY sourceCodeUrl "http://savannah.nongnu.org/projects/qsos">
+<!ENTITY project "Informations complémentaires sur la méthode QSOS :">
+<!ENTITY projectUrl "http://www.qsos.org">
+<!ENTITY projectOSCartouche "Information sur l'Open Source Cartouche :">
+<!ENTITY projectOSCartoucheUrl "http://www.opensourcecartouche.org">
