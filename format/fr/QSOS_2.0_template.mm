@@ -1,163 +1,7 @@
 <map version="0.9.0">
 <!-- To view this file, download free mind mapping software FreeMind from http://freemind.sourceforge.net -->
-<node CREATED="1306102952710" ID="type" MODIFIED="1311175933831" TEXT="DI Framework">
-<node CREATED="1306102952710" ID="ID_703298031" MODIFIED="1306162078086" POSITION="left" TEXT="Configuration">
-<node CREATED="1306139232433" ID="ID_1790807873" MODIFIED="1306139280581" STYLE="bubble" TEXT="Configurations sp&#xe9;cifiques au framework d&apos;injection.">
-<font ITALIC="true" NAME="SansSerif" SIZE="10"/>
-</node>
-<node CREATED="1306104039180" ID="ID_95812423" MODIFIED="1306160358675" TEXT="Types d&apos;associations support&#xe9;s">
-<node CREATED="1306139289012" ID="ID_882021861" MODIFIED="1306139430813" STYLE="bubble" TEXT="Types d&apos;associations (bindings) possibles entre une injection et l&apos;objet r&#xe9;ellement inject&#xe9;.">
-<font ITALIC="true" NAME="SansSerif" SIZE="10"/>
-</node>
-<node CREATED="1306104052969" ID="ID_991109595" MODIFIED="1306139421771" STYLE="fork" TEXT="Association directe &#xe0; une instance">
-<font NAME="SansSerif" SIZE="12"/>
-<node CREATED="1306137836973" ID="ID_137161806" MODIFIED="1306139507245" STYLE="bubble" TEXT="Possibiblit&#xe9; d&apos;associer une injection directement &#xe0; une instance donn&#xe9;e.">
-<font ITALIC="true" NAME="SansSerif" SIZE="10"/>
-</node>
-<node CREATED="1306137743826" ID="ID_1735038052" MODIFIED="1306139457443" TEXT="Type d&apos;association non support&#xe9;">
-<icon BUILTIN="full-0"/>
-</node>
-<node CREATED="1306137762235" ID="ID_123805832" MODIFIED="1306139465083" TEXT="Type d&apos;association support&#xe9; mais de mani&#xe8;re limit&#xe9;e">
-<icon BUILTIN="full-1"/>
-</node>
-<node CREATED="1306137779474" ID="ID_325679008" MODIFIED="1306139470541" TEXT="Type d&apos;association compl&#xe8;tement support&#xe9;">
-<icon BUILTIN="full-2"/>
-</node>
-</node>
-<node CREATED="1306104066007" ID="ID_844423049" MODIFIED="1306104074896" TEXT="Association par identifiant">
-<node CREATED="1306137836973" ID="ID_1358359887" MODIFIED="1306139686065" STYLE="bubble" TEXT="L&apos;instance &#xe0; injecter est s&#xe9;lectionn&#xe9;e via un identifiant textuel non typ&#xe9; (@Named dans JSR-330).">
-<font ITALIC="true" NAME="SansSerif" SIZE="10"/>
-</node>
-<node CREATED="1306137743826" ID="ID_651771917" MODIFIED="1306139457443" TEXT="Type d&apos;association non support&#xe9;">
-<icon BUILTIN="full-0"/>
-</node>
-<node CREATED="1306137762235" ID="ID_1263339256" MODIFIED="1306139465083" TEXT="Type d&apos;association support&#xe9; mais de mani&#xe8;re limit&#xe9;e">
-<icon BUILTIN="full-1"/>
-</node>
-<node CREATED="1306137779474" ID="ID_1749465160" MODIFIED="1306139470541" TEXT="Type d&apos;association compl&#xe8;tement support&#xe9;">
-<icon BUILTIN="full-2"/>
-</node>
-</node>
-<node CREATED="1306104077343" ID="ID_1722556385" MODIFIED="1306104085406" TEXT="Association par annotation">
-<node CREATED="1306137836973" ID="ID_1712213893" MODIFIED="1306139713401" STYLE="bubble" TEXT="L&apos;instance &#xe0; injecter est s&#xe9;lectionn&#xe9;e via une annotation &#xe0; cr&#xe9;er et associ&#xe9;e &#xe0; un type (@Qualifier dans JSR-330).">
-<font ITALIC="true" NAME="SansSerif" SIZE="10"/>
-</node>
-<node CREATED="1306137743826" ID="ID_1642521758" MODIFIED="1306139457443" TEXT="Type d&apos;association non support&#xe9;">
-<icon BUILTIN="full-0"/>
-</node>
-<node CREATED="1306137762235" ID="ID_267579673" MODIFIED="1306139465083" TEXT="Type d&apos;association support&#xe9; mais de mani&#xe8;re limit&#xe9;e">
-<icon BUILTIN="full-1"/>
-</node>
-<node CREATED="1306137779474" ID="ID_773983433" MODIFIED="1306139470541" TEXT="Type d&apos;association compl&#xe8;tement support&#xe9;">
-<icon BUILTIN="full-2"/>
-</node>
-</node>
-<node CREATED="1306104087819" ID="ID_331671268" MODIFIED="1306139780865" TEXT="Association par type de Managed Bean">
-<node CREATED="1306137836973" ID="ID_1372759595" MODIFIED="1306139770844" STYLE="bubble" TEXT="L&apos;instance &#xe0; injecter est s&#xe9;lectionn&#xe9;e en fonction d&apos;un de ses types de Managed Bean (au sens JSR-299). ">
-<font ITALIC="true" NAME="SansSerif" SIZE="10"/>
-</node>
-<node CREATED="1306137743826" ID="ID_1897529460" MODIFIED="1306139457443" TEXT="Type d&apos;association non support&#xe9;">
-<icon BUILTIN="full-0"/>
-</node>
-<node CREATED="1306137762235" ID="ID_1320968063" MODIFIED="1306139465083" TEXT="Type d&apos;association support&#xe9; mais de mani&#xe8;re limit&#xe9;e">
-<icon BUILTIN="full-1"/>
-</node>
-<node CREATED="1306137779474" ID="ID_1035444303" MODIFIED="1306139470541" TEXT="Type d&apos;association compl&#xe8;tement support&#xe9;">
-<icon BUILTIN="full-2"/>
-</node>
-</node>
-<node CREATED="1306104098372" ID="ID_1603894662" MODIFIED="1306104146661" TEXT="Association via Factory">
-<node CREATED="1306137836973" ID="ID_626729356" MODIFIED="1306139809105" STYLE="bubble" TEXT="Possibiblit&#xe9; d&apos;utiliser une Factory pour r&#xe9;cup&#xe9;rer l&apos;instance &#xe0; injecter.">
-<font ITALIC="true" NAME="SansSerif" SIZE="10"/>
-</node>
-<node CREATED="1306137743826" ID="ID_965783158" MODIFIED="1306139457443" TEXT="Type d&apos;association non support&#xe9;">
-<icon BUILTIN="full-0"/>
-</node>
-<node CREATED="1306137762235" ID="ID_1746978193" MODIFIED="1306139465083" TEXT="Type d&apos;association support&#xe9; mais de mani&#xe8;re limit&#xe9;e">
-<icon BUILTIN="full-1"/>
-</node>
-<node CREATED="1306137779474" ID="ID_1971083046" MODIFIED="1306139470541" TEXT="Type d&apos;association compl&#xe8;tement support&#xe9;">
-<icon BUILTIN="full-2"/>
-</node>
-</node>
-<node CREATED="1306104167001" ID="ID_1296339357" MODIFIED="1306139527207" TEXT="Association via Provider">
-<node CREATED="1306137836973" ID="ID_988802617" MODIFIED="1306139887801" STYLE="bubble" TEXT="Possibiblit&#xe9; d&apos;utiliser une Factory &#xe9;volu&#xe9;e respectant le typage pour r&#xe9;cup&#xe9;rer l&apos;instance &#xe0; injecter (notio nde Provider de JSR-330).">
-<font ITALIC="true" NAME="SansSerif" SIZE="10"/>
-</node>
-<node CREATED="1306137743826" ID="ID_464801230" MODIFIED="1306139457443" TEXT="Type d&apos;association non support&#xe9;">
-<icon BUILTIN="full-0"/>
-</node>
-<node CREATED="1306137762235" ID="ID_585489497" MODIFIED="1306139465083" TEXT="Type d&apos;association support&#xe9; mais de mani&#xe8;re limit&#xe9;e">
-<icon BUILTIN="full-1"/>
-</node>
-<node CREATED="1306137779474" ID="ID_815434430" MODIFIED="1306139470541" TEXT="Type d&apos;association compl&#xe8;tement support&#xe9;">
-<icon BUILTIN="full-2"/>
-</node>
-</node>
-<node CREATED="1306160363621" ID="ID_1996917015" MODIFIED="1306160370906" TEXT="Association automatique">
-<node CREATED="1306137836973" ID="ID_902308987" MODIFIED="1306160422395" STYLE="bubble" TEXT="Le framework propose un m&#xe9;canisme pour automatiquement identifier les instances &#xe0; injecter sans configuration sp&#xe9;cifique">
-<font ITALIC="true" NAME="SansSerif" SIZE="10"/>
-</node>
-<node CREATED="1306137743826" ID="ID_755174185" MODIFIED="1306139457443" TEXT="Type d&apos;association non support&#xe9;">
-<icon BUILTIN="full-0"/>
-</node>
-<node CREATED="1306137762235" ID="ID_807049114" MODIFIED="1306139465083" TEXT="Type d&apos;association support&#xe9; mais de mani&#xe8;re limit&#xe9;e">
-<icon BUILTIN="full-1"/>
-</node>
-<node CREATED="1306137779474" ID="ID_629560902" MODIFIED="1306139470541" TEXT="Type d&apos;association compl&#xe8;tement support&#xe9;">
-<icon BUILTIN="full-2"/>
-</node>
-</node>
-</node>
-<node CREATED="1306104239796" ID="ID_800110472" MODIFIED="1306162080452" TEXT="Initialisation">
-<node CREATED="1306139904867" ID="ID_150647476" MODIFIED="1306139945090" STYLE="bubble" TEXT="Possibilit&#xe9;s li&#xe9;es &#xe0; l&apos;initialisation du framework et des instances.">
-<font ITALIC="true" NAME="SansSerif" SIZE="10"/>
-</node>
-<node CREATED="1306104299737" ID="ID_1654604626" MODIFIED="1306162083216" TEXT="Scan des packages">
-<node CREATED="1306139991181" ID="ID_517347308" MODIFIED="1306140033531" STYLE="bubble" TEXT="Le framework analyse les packages Java pour initialiser les instances.">
-<font ITALIC="true" NAME="SansSerif" SIZE="10"/>
-</node>
-<node CREATED="1306137743826" ID="ID_903300046" MODIFIED="1306140066035" TEXT="Le framework ne propose pas ce type d&apos;initialisation">
-<icon BUILTIN="full-0"/>
-</node>
-<node CREATED="1306137762235" ID="ID_710255586" MODIFIED="1306140120531" TEXT="Le framework propose ce type d&apos;initialisation mais ne permet pas de filtrer les packages &#xe0; analyser">
-<icon BUILTIN="full-1"/>
-</node>
-<node CREATED="1306137779474" ID="ID_686838374" MODIFIED="1306140122763" TEXT="Le framework propose ce type d&apos;initialisation et permet de filtrer les packages &#xe0; analyser">
-<icon BUILTIN="full-2"/>
-</node>
-</node>
-<node CREATED="1306104276237" FOLDED="true" ID="ID_1939593246" MODIFIED="1306140755829" TEXT="Web">
-<node CREATED="1306140222348" ID="ID_480823664" MODIFIED="1306140277626" STYLE="bubble" TEXT="Possibilit&#xe9; d&apos;initialiser les instances depuis le conteneur Web.">
-<font ITALIC="true" NAME="SansSerif" SIZE="10"/>
-</node>
-<node CREATED="1306140491506" ID="ID_1899345045" MODIFIED="1306140666451" TEXT="Fonctionnalit&#xe9; non support&#xe9;e">
-<icon BUILTIN="full-0"/>
-</node>
-<node CREATED="1306140681941" ID="ID_550239284" MODIFIED="1306140742381" TEXT="Possibilit&#xe9; de cr&#xe9;er des filtres pour associer l&apos;injecteur aux Servlets ">
-<icon BUILTIN="full-1"/>
-</node>
-<node CREATED="1306140515170" ID="ID_592465714" MODIFIED="1306140744477" TEXT="Possibilit&#xe9; de cr&#xe9;er des filtres avec des possibilit&#xe9;s avanc&#xe9;es d&apos;association (expressions r&#xe9;guli&#xe8;res) et la possibilit&#xe9; de passer des param&#xe8;tres aux Servlets">
-<icon BUILTIN="full-2"/>
-</node>
-</node>
-<node CREATED="1306105135348" FOLDED="true" ID="ID_1218948251" MODIFIED="1306140896021" TEXT="Priorisation de l&apos;ordre d&apos;initialisation">
-<node CREATED="1306105164153" ID="ID_1925934218" MODIFIED="1306140870517" STYLE="bubble" TEXT="Possibilit&#xe9; d&apos;affecter des ordres de priorit&#xe9; pour l&apos;initialisation des instances.">
-<font ITALIC="true" NAME="SansSerif" SIZE="10"/>
-</node>
-<node CREATED="1306138827998" ID="ID_1757812687" MODIFIED="1306139121704" TEXT="Fonctionnalit&#xe9; non support&#xe9;e">
-<icon BUILTIN="full-0"/>
-</node>
-<node CREATED="1306138841035" ID="ID_596170044" MODIFIED="1306139115220" TEXT="Fonctionnalit&#xe9; support&#xe9;e de mani&#xe8;re partielle">
-<icon BUILTIN="full-1"/>
-</node>
-<node CREATED="1306138852372" ID="ID_835505225" MODIFIED="1306139134084" TEXT="Fonctionnalit&#xe9; compl&#xe8;tement support&#xe9;e">
-<icon BUILTIN="full-2"/>
-</node>
-</node>
-</node>
-</node>
-<node CREATED="1306847257001" ID="maturity" MODIFIED="1311176216239" POSITION="right" TEXT="Maturit&#xe9;">
+<node CREATED="1306102952710" ID="type" MODIFIED="1318523198265" TEXT="Type de logiciel">
+<node CREATED="1306847257001" FOLDED="true" ID="maturity" MODIFIED="1318523081660" POSITION="right" TEXT="Maturit&#xe9;">
 <font NAME="SansSerif" SIZE="12"/>
 <node BACKGROUND_COLOR="#ffcccc" CREATED="1311176012521" ID="ID_1102533672" MODIFIED="1311176849708" STYLE="bubble">
 <richcontent TYPE="NODE"><html>
@@ -406,7 +250,7 @@
 </node>
 </node>
 <node CREATED="1311176311468" ID="authors" MODIFIED="1311176319000" TEXT="authors">
-<node CREATED="1311176419876" ID="ID_497256339" MODIFIED="1311176456352" STYLE="bubble" TEXT="Create new author nodes here if necessary">
+<node CREATED="1311176419876" ID="ID_497256339" MODIFIED="1318523149630" STYLE="bubble" TEXT="Cr&#xe9;er ici de nouveaux noeuds &quot;author&quot; si n&#xe9;cessaire">
 <font ITALIC="true" NAME="SansSerif" SIZE="12"/>
 </node>
 <node CREATED="1311176321071" ID="ID_1573932839" MODIFIED="1311176324722" TEXT="author">
@@ -421,7 +265,7 @@
 </node>
 </node>
 <node CREATED="1311176348053" ID="ID_1556413098" MODIFIED="1311176350924" TEXT="comment">
-<node CREATED="1311176394385" ID="ID_1447602460" MODIFIED="1311176456353" STYLE="bubble" TEXT="Insert here any comments you find usefull">
+<node CREATED="1311176394385" ID="ID_1447602460" MODIFIED="1318523170731" STYLE="bubble" TEXT="Ins&#xe9;rer ici un commentaire">
 <font ITALIC="true" NAME="SansSerif" SIZE="12"/>
 </node>
 </node>
@@ -458,6 +302,120 @@
 <node CREATED="1311176691625" ID="update" MODIFIED="1311176695012" TEXT="update">
 <node CREATED="1311176696701" ID="update_entry" MODIFIED="1311234935855" STYLE="bubble" TEXT="2011-07-21">
 <font ITALIC="true" NAME="SansSerif" SIZE="12"/>
+</node>
+</node>
+</node>
+</node>
+<node CREATED="1307087019175" FOLDED="true" ID="ID_1420531772" MODIFIED="1318523009645" POSITION="right" TEXT="Axe fonctionnel 1">
+<node CREATED="1318511956813" ID="ID_329143175" MODIFIED="1318512264126" STYLE="bubble" TEXT="Description de l&apos;axe fonctionnel"/>
+<node CREATED="1307087047525" ID="ID_1530089480" MODIFIED="1318511934658" TEXT="Crit&#xe8;res 1.1">
+<node CREATED="1318511984344" ID="ID_694904666" MODIFIED="1318511995629" STYLE="bubble" TEXT="Description du groupe de crit&#xe8;res"/>
+<node CREATED="1318511996962" ID="ID_1086984077" MODIFIED="1318512348021" TEXT="Crit&#xe8;re 1.1.1">
+<node CREATED="1318512105753" ID="ID_656176554" MODIFIED="1318512117349" STYLE="bubble" TEXT="Description du crit&#xe8;re"/>
+<node CREATED="1318512118626" ID="ID_19188458" MODIFIED="1318512173548" TEXT="Score 0">
+<icon BUILTIN="full-0"/>
+</node>
+<node CREATED="1318512125796" ID="ID_324966841" MODIFIED="1318512176139" TEXT="Score 1">
+<icon BUILTIN="full-1"/>
+</node>
+<node CREATED="1318512127947" ID="ID_1028237126" MODIFIED="1318512177931" TEXT="Score 2">
+<icon BUILTIN="full-2"/>
+</node>
+</node>
+<node CREATED="1318511996962" FOLDED="true" ID="ID_1209375360" MODIFIED="1318512206332" TEXT="Crit&#xe8;re 1.1.n">
+<node CREATED="1318512105753" ID="ID_1081395312" MODIFIED="1318512117349" STYLE="bubble" TEXT="Description du crit&#xe8;re"/>
+<node CREATED="1318512118626" ID="ID_1326802652" MODIFIED="1318512173548" TEXT="Score 0">
+<icon BUILTIN="full-0"/>
+</node>
+<node CREATED="1318512125796" ID="ID_394363005" MODIFIED="1318512176139" TEXT="Score 1">
+<icon BUILTIN="full-1"/>
+</node>
+<node CREATED="1318512127947" ID="ID_1781333467" MODIFIED="1318512177931" TEXT="Score 2">
+<icon BUILTIN="full-2"/>
+</node>
+</node>
+</node>
+<node CREATED="1307087047525" ID="ID_1683072308" MODIFIED="1318512247856" TEXT="Crit&#xe8;res 1.x">
+<node CREATED="1318511984344" ID="ID_462071103" MODIFIED="1318512235463" STYLE="bubble" TEXT="Description du groupe de crit&#xe8;res"/>
+<node CREATED="1318511996962" FOLDED="true" ID="ID_919648182" MODIFIED="1318512254079" TEXT="Crit&#xe8;re 1.x.1">
+<node CREATED="1318512105753" ID="ID_902412659" MODIFIED="1318512117349" STYLE="bubble" TEXT="Description du crit&#xe8;re"/>
+<node CREATED="1318512118626" ID="ID_1250501600" MODIFIED="1318512173548" TEXT="Score 0">
+<icon BUILTIN="full-0"/>
+</node>
+<node CREATED="1318512125796" ID="ID_845050793" MODIFIED="1318512176139" TEXT="Score 1">
+<icon BUILTIN="full-1"/>
+</node>
+<node CREATED="1318512127947" ID="ID_1761643464" MODIFIED="1318512177931" TEXT="Score 2">
+<icon BUILTIN="full-2"/>
+</node>
+</node>
+<node CREATED="1318511996962" FOLDED="true" ID="ID_680727439" MODIFIED="1318512258322" TEXT="Crit&#xe8;re 1.x.n">
+<node CREATED="1318512105753" ID="ID_701700554" MODIFIED="1318512117349" STYLE="bubble" TEXT="Description du crit&#xe8;re"/>
+<node CREATED="1318512118626" ID="ID_521252856" MODIFIED="1318512173548" TEXT="Score 0">
+<icon BUILTIN="full-0"/>
+</node>
+<node CREATED="1318512125796" ID="ID_1224725520" MODIFIED="1318512176139" TEXT="Score 1">
+<icon BUILTIN="full-1"/>
+</node>
+<node CREATED="1318512127947" ID="ID_1206914607" MODIFIED="1318512177931" TEXT="Score 2">
+<icon BUILTIN="full-2"/>
+</node>
+</node>
+</node>
+</node>
+<node CREATED="1307087019175" FOLDED="true" ID="ID_457443261" MODIFIED="1318523068503" POSITION="right" TEXT="Axe fonctionnel N">
+<node CREATED="1318511956813" ID="ID_838968545" MODIFIED="1318512264126" STYLE="bubble" TEXT="Description de l&apos;axe fonctionnel"/>
+<node CREATED="1307087047525" ID="ID_1141972218" MODIFIED="1318512315980" TEXT="Crit&#xe8;res N.1">
+<node CREATED="1318511984344" ID="ID_1253556252" MODIFIED="1318511995629" STYLE="bubble" TEXT="Description du groupe de crit&#xe8;res"/>
+<node CREATED="1318511996962" FOLDED="true" ID="ID_1819720884" MODIFIED="1318523066807" TEXT="Crit&#xe8;re N.1.1">
+<node CREATED="1318512105753" ID="ID_1444161438" MODIFIED="1318512117349" STYLE="bubble" TEXT="Description du crit&#xe8;re"/>
+<node CREATED="1318512118626" ID="ID_1139558279" MODIFIED="1318512173548" TEXT="Score 0">
+<icon BUILTIN="full-0"/>
+</node>
+<node CREATED="1318512125796" ID="ID_1803482223" MODIFIED="1318512176139" TEXT="Score 1">
+<icon BUILTIN="full-1"/>
+</node>
+<node CREATED="1318512127947" ID="ID_1423149257" MODIFIED="1318512177931" TEXT="Score 2">
+<icon BUILTIN="full-2"/>
+</node>
+</node>
+<node CREATED="1318511996962" FOLDED="true" ID="ID_1891061295" MODIFIED="1318512330393" TEXT="Crit&#xe8;re N.1.n">
+<node CREATED="1318512105753" ID="ID_1097420909" MODIFIED="1318512117349" STYLE="bubble" TEXT="Description du crit&#xe8;re"/>
+<node CREATED="1318512118626" ID="ID_679236395" MODIFIED="1318512173548" TEXT="Score 0">
+<icon BUILTIN="full-0"/>
+</node>
+<node CREATED="1318512125796" ID="ID_640269122" MODIFIED="1318512176139" TEXT="Score 1">
+<icon BUILTIN="full-1"/>
+</node>
+<node CREATED="1318512127947" ID="ID_400406510" MODIFIED="1318512177931" TEXT="Score 2">
+<icon BUILTIN="full-2"/>
+</node>
+</node>
+</node>
+<node CREATED="1307087047525" ID="ID_252847048" MODIFIED="1318512319581" TEXT="Crit&#xe8;res N.x">
+<node CREATED="1318511984344" ID="ID_518970414" MODIFIED="1318512235463" STYLE="bubble" TEXT="Description du groupe de crit&#xe8;res"/>
+<node CREATED="1318511996962" FOLDED="true" ID="ID_1333968205" MODIFIED="1318512323473" TEXT="Crit&#xe8;re N.x.1">
+<node CREATED="1318512105753" ID="ID_328155601" MODIFIED="1318512117349" STYLE="bubble" TEXT="Description du crit&#xe8;re"/>
+<node CREATED="1318512118626" ID="ID_1129208851" MODIFIED="1318512173548" TEXT="Score 0">
+<icon BUILTIN="full-0"/>
+</node>
+<node CREATED="1318512125796" ID="ID_269991013" MODIFIED="1318512176139" TEXT="Score 1">
+<icon BUILTIN="full-1"/>
+</node>
+<node CREATED="1318512127947" ID="ID_796529416" MODIFIED="1318512177931" TEXT="Score 2">
+<icon BUILTIN="full-2"/>
+</node>
+</node>
+<node CREATED="1318511996962" FOLDED="true" ID="ID_517087433" MODIFIED="1318512326586" TEXT="Crit&#xe8;re N.x.n">
+<node CREATED="1318512105753" ID="ID_1549276349" MODIFIED="1318512117349" STYLE="bubble" TEXT="Description du crit&#xe8;re"/>
+<node CREATED="1318512118626" ID="ID_399848596" MODIFIED="1318512173548" TEXT="Score 0">
+<icon BUILTIN="full-0"/>
+</node>
+<node CREATED="1318512125796" ID="ID_520723243" MODIFIED="1318512176139" TEXT="Score 1">
+<icon BUILTIN="full-1"/>
+</node>
+<node CREATED="1318512127947" ID="ID_1784970072" MODIFIED="1318512177931" TEXT="Score 2">
+<icon BUILTIN="full-2"/>
 </node>
 </node>
 </node>

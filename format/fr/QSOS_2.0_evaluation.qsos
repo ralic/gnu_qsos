@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document>
+  <qsosMetadata>
+    <template>
+      <authors>
+        <desc>Créer ici de nouveaux noeuds "author" si nécessaire</desc>
+        <author>
+          <name>John Doe</name>
+          <email>john.doe@mail.com</email>
+          <comment>Insérer ici un commentaire</comment>
+        </author>
+      </authors>
+      <reviewer>
+        <name/>
+        <email/>
+        <reviewDate/>
+        <comment/>
+      </reviewer>
+      <dates>
+        <creation>2011-07-21</creation>
+        <update>2011-07-21</update>
+        <validation/>
+      </dates>
+      <version>1.0</version>
+      <type>Type de logiciel</type>
+    </template>
+    <evaluation>
+      <authors/>
+      <reviewer>
+        <name/>
+        <email/>
+        <reviewDate/>
+        <comment/>
+      </reviewer>
+      <dates>
+        <creation/>
+        <update/>
+        <validation/>
+      </dates>
+    </evaluation>
+    <language>FR</language>
+    <qsosVersion>2.0</qsosVersion>
+  </qsosMetadata>
+  <openSourceCartouche>
+    <metadata>
+      <cartoucheVersion>0.2 Beta</cartoucheVersion>
+      <author>
+        <name/>
+        <email/>
+        <comment/>
+      </author>
+      <reviewer>
+        <name/>
+        <email/>
+        <reviewDate/>
+        <comment/>
+      </reviewer>
+      <dates>
+        <creation/>
+        <update/>
+        <validation/>
+      </dates>
+    </metadata>
+    <component>
+      <name/>
+      <version/>
+      <status/>
+      <releaseDate/>
+      <homepage/>
+      <description/>
+      <archetype/>
+      <vendor/>
+      <tags/>
+      <mainTech/>
+      <checksum/>
+    </component>
+    <license>
+      <name/>
+      <version/>
+      <homepage/>
+    </license>
+    <team>
+      <number/>
+      <developers/>
+      <contributors/>
+    </team>
+    <legal>
+      <copyright/>
+      <patents>
+        <patent>
+          <ipcNumber/>
+          <name/>
+          <publicationDate/>
+          <description/>
+        </patent>
+      </patents>
+      <cypher>
+        <name/>
+        <exportRestrictions/>
+      </cypher>
+    </legal>
+    <misc>
+      <comment/>
+      <fileNumber>1</fileNumber>
+      <data>
+        <volume/>
+        <unit/>
+      </data>
+      <dependencies/>
+    </misc>
+  </openSourceCartouche>
+  <section name="maturity" title="Maturité">
+    <desc/>
+    <element name="legacy" title="Patrimoine">
+      <desc>Historique et patrimoine du projet</desc>
+      <element name="age" title="Age du projet">
+        <desc0>Inférieur à trois mois</desc0>
+        <desc1>Entre trois mois et trois ans</desc1>
+        <desc2>Supérieur à trois ans</desc2>
+        <comment/>
+        <score/>
+      </element>
+      <element name="historyknowproblems" title="Historique">
+        <desc0>Le logiciel connaît de nombreux problèmes qui peuvent être rédhibitoires</desc0>
+        <desc1>Pas de problèmes majeurs, ni de crise ou historique inconnu</desc1>
+        <desc2>Bon historique de gestion de projet et de crise</desc2>
+        <comment/>
+        <score/>
+      </element>
+      <element name="developersidentificationturnover" title="Equipe de développement">
+        <desc0>Très peu de développeurs identifiés ou développeur unique</desc0>
+        <desc1>Quelques développeurs actifs</desc1>
+        <desc2>Equipe de développement importante et identifiée</desc2>
+        <comment/>
+        <score/>
+      </element>
+      <element name="popularity" title="Popularité">
+        <desc0>Très peu d'utilisateurs identifiés</desc0>
+        <desc1>Usage décelable</desc1>
+        <desc2>Nombreux utilisateurs et références</desc2>
+        <comment/>
+        <score/>
+      </element>
+    </element>
+    <element name="activity" title="Activité">
+      <desc>Activité du et autour du projet</desc>
+      <element name="contributingcommunity" title="Communauté des contributeurs">
+        <desc0>Pas de communauté ou de réelle activité (forum, liste de diffusion…)</desc0>
+        <desc1>Communauté existante avec une activité notable</desc1>
+        <desc2>Communauté forte : grosse activité sur les forums, de nombreux contributeurs et défenseurs</desc2>
+        <comment/>
+        <score/>
+      </element>
+      <element name="activityonbugs" title="Activité autour des bugs">
+        <desc0>Réactivité faible sur le forum ou sur la liste de diffusion, ou rien au sujet des corrections de bugs dans les notes de versions</desc0>
+        <desc1>Activité détectable mais sans processus clairement exposé, temps de résolution long</desc1>
+        <desc2>Forte réactivité, basée sur des rôles et des assignations de tâches</desc2>
+        <comment/>
+        <score/>
+      </element>
+      <element name="activityonfunctionalities" title="Activité autour des fonctionnalités">
+        <desc0>Pas ou peu de nouvelles fonctionnalités</desc0>
+        <desc1>Évolution du produit conduite par une équipe dédiée ou par des utilisateurs, mais sans processus clairement exposé</desc1>
+        <desc2>Les requêtes pour les nouvelles fonctionnalités sont clairement outillées, feuille de route disponible</desc2>
+        <comment/>
+        <score/>
+      </element>
+      <element name="activityonreleases" title="Activité sur les releases/versions">
+        <desc0>Très faible activité que ce soit sur les versions de production ou de développement (alpha, beta)</desc0>
+        <desc1>Activité que ce soit sur les versions de production ou de développement (alpha, beta), avec des versions correctives mineures fréquentes</desc1>
+        <desc2>Activité importante avec des versions correctives fréquentes et des versions majeures planifiées liées aux prévisions de la feuille de route</desc2>
+        <comment/>
+        <score/>
+      </element>
+    </element>
+    <element name="strategy" title="Gouvernance">
+      <desc>Stratégie du projet</desc>
+      <element name="copyrightowners" title="Détenteur des droits">
+        <desc0>Les droits sont détenus par quelques individus ou entités commerciales</desc0>
+        <desc1>Les droits sont détenus par de nombreux individus de façon homogène</desc1>
+        <desc2>Les droits sont détenus par une entité légale, une fondation dans laquelle la communauté a confiance (ex: FSF, Apache, ObjectWeb)</desc2>
+        <comment/>
+        <score/>
+      </element>
+      <element name="roadmap" title="Feuille de route">
+        <desc0>Pas de feuille de route publiée</desc0>
+        <desc1>Feuille de route sans planning</desc1>
+        <desc2>Feuille de route versionnée, avec planning et mesures de retard</desc2>
+        <comment/>
+        <score/>
+      </element>
+      <element name="ID_740641571" title="Pilotage du projet">
+        <desc0>Pas de pilotage clair du projet</desc0>
+        <desc1>Pilotage dicté par un seul individu ou une entité commerciale</desc1>
+        <desc2>Indépendance forte de l'équipe de développement, droits détenus par une entité reconnue</desc2>
+        <comment/>
+        <score/>
+      </element>
+      <element name="ID_548761152" title="Mode de distribution">
+        <desc0>Existence d'une distribution commerciale ou propriétaire ou distribution libre limitée fonctionnellement</desc0>
+        <desc1>Sous-partie du logiciel disponible sous licence propriétaire (Coeur / Greffons...)</desc1>
+        <desc2>Distribution totalement ouverte et libre</desc2>
+        <comment/>
+        <score/>
+      </element>
+    </element>
+    <element name="industrializedsolution" title="Industrialisation">
+      <desc>Niveau d'industrialisation du projet</desc>
+      <element name="services" title="Services">
+        <desc>Offres de services (Support, Formation, Audit...)</desc>
+        <desc0>Pas d'offre de service identifiée</desc0>
+        <desc1>Offre existante mais restreinte géographiquement ou en une seule langue ou fournie par un seul fournisseur ou sans garantie</desc1>
+        <desc2>Offre riche, plusieurs fournisseurs, avec des garanties de résultats</desc2>
+        <comment/>
+        <score/>
+      </element>
+      <element name="documentation" title="Documentation">
+        <desc0>Pas de documentation utilisateur</desc0>
+        <desc1>La documentation existe mais est en partie obsolète ou restreinte à une seule langue ou peu détaillée</desc1>
+        <desc2>Documentation à jour, traduite et éventuellement adaptée à différentes cibles de lecteurs (end-user, sysadmin, manager…)</desc2>
+        <comment/>
+        <score/>
+      </element>
+      <element name="qualityassurance" title="Méthode qualité">
+        <desc>Processus et méthode qualité</desc>
+        <desc0>Pas de processus qualité identifié</desc0>
+        <desc1>Processus qualité existant, mais non formalisé ou non outillé</desc1>
+        <desc2>Processus qualité basé sur l'utilisation d'outils et de méthodologies standards</desc2>
+        <comment/>
+        <score/>
+      </element>
+      <element name="modificationofsourcecode" title="Modification du code">
+        <desc0>Pas de moyen pratique de proposer des modifications de code</desc0>
+        <desc1>Des outils sont fournis pour accéder et modifier le code (ex : CVS, SVN) mais ne sont pas vraiment utilisés pour développer le produit</desc1>
+        <desc2>Le processus de modification de code est bien défini, exposé et respecté, basé sur des rôles bien définis</desc2>
+        <comment/>
+        <score/>
+      </element>
+    </element>
+  </section>
+  <section name="ID_1420531772" title="Axe fonctionnel 1">
+    <desc>Description de l'axe fonctionnel</desc>
+    <element name="ID_1530089480" title="Critères 1.1">
+      <desc>Description du groupe de critères</desc>
+      <element name="ID_1086984077" title="Critère 1.1.1">
+        <desc>Description du critère</desc>
+        <desc0>Score 0</desc0>
+        <desc1>Score 1</desc1>
+        <desc2>Score 2</desc2>
+        <comment/>
+        <score/>
+      </element>
+      <element name="ID_1209375360" title="Critère 1.1.n">
+        <desc>Description du critère</desc>
+        <desc0>Score 0</desc0>
+        <desc1>Score 1</desc1>
+        <desc2>Score 2</desc2>
+        <comment/>
+        <score/>
+      </element>
+    </element>
+    <element name="ID_1683072308" title="Critères 1.x">
+      <desc>Description du groupe de critères</desc>
+      <element name="ID_919648182" title="Critère 1.x.1">
+        <desc>Description du critère</desc>
+        <desc0>Score 0</desc0>
+        <desc1>Score 1</desc1>
+        <desc2>Score 2</desc2>
+        <comment/>
+        <score/>
+      </element>
+      <element name="ID_680727439" title="Critère 1.x.n">
+        <desc>Description du critère</desc>
+        <desc0>Score 0</desc0>
+        <desc1>Score 1</desc1>
+        <desc2>Score 2</desc2>
+        <comment/>
+        <score/>
+      </element>
+    </element>
+  </section>
+  <section name="ID_457443261" title="Axe fonctionnel N">
+    <desc>Description de l'axe fonctionnel</desc>
+    <element name="ID_1141972218" title="Critères N.1">
+      <desc>Description du groupe de critères</desc>
+      <element name="ID_1819720884" title="Critère N.1.1">
+        <desc>Description du critère</desc>
+        <desc0>Score 0</desc0>
+        <desc1>Score 1</desc1>
+        <desc2>Score 2</desc2>
+        <comment/>
+        <score/>
+      </element>
+      <element name="ID_1891061295" title="Critère N.1.n">
+        <desc>Description du critère</desc>
+        <desc0>Score 0</desc0>
+        <desc1>Score 1</desc1>
+        <desc2>Score 2</desc2>
+        <comment/>
+        <score/>
+      </element>
+    </element>
+    <element name="ID_252847048" title="Critères N.x">
+      <desc>Description du groupe de critères</desc>
+      <element name="ID_1333968205" title="Critère N.x.1">
+        <desc>Description du critère</desc>
+        <desc0>Score 0</desc0>
+        <desc1>Score 1</desc1>
+        <desc2>Score 2</desc2>
+        <comment/>
+        <score/>
+      </element>
+      <element name="ID_517087433" title="Critère N.x.n">
+        <desc>Description du critère</desc>
+        <desc0>Score 0</desc0>
+        <desc1>Score 1</desc1>
+        <desc2>Score 2</desc2>
+        <comment/>
+        <score/>
+      </element>
+    </element>
+  </section>
+</document>
